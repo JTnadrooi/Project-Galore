@@ -90,7 +90,13 @@
 	"Lua.workspace.userThirdParty": [
 		"c:\\Users\\Gebruiker\\AppData\\Roaming\\Code\\User\\workspaceStorage\\648fe773d272e8bac46c1892fb5296f3\\justarandomgeek.factoriomod-debug\\sumneko-3rd"
 	],
-	"Lua.workspace.checkThirdParty": "ApplyInMemory"
+	"Lua.workspace.checkThirdParty": "ApplyInMemory",
+	"files.exclude": {
+		"**/deepignore": false,
+		"prototypes\\buildings": false,
+		"prototypes\\fluids": false,
+		"prototypes\\intermediates": false
+	}
 }
 // {
 // 	"Lua.diagnostics.globals": [

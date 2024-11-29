@@ -69,9 +69,17 @@ fi
 ### Prepare zip for Factorio native use and mod portal
 ### https://www.7-zip.org/download.html
 local name="${MOD_NAME}_${MOD_VERSION}"
-if command -v git &> /dev/null; then
-	git clean -xdf
-fi
 7z a -xr'!.*' "${mod_folder}/${name}.zip" "${mod_folder}"
+# Specify the target folder for the ZIP file
+target_folder="C:\Users\Gebruiker\AppData\Roaming\Factorio\mods"
+
+# Create the target folder if it doesn't exist
+mkdir -p "${target_folder}"
+
+# Move the ZIP file to the target folder
+mv "${mod_folder}/${name}.zip" "${target_folder}"
+
+# Confirm the operation
+echo "Moved to ${target_folder}/${name}.zip"
 }
 main

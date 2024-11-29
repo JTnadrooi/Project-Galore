@@ -72,7 +72,6 @@ vgal.default_synced_items = {
 ---@param recipes vgal.VgalRecipe[]
 function vgal.data.extend(recipes)
     for _, recipe in ipairs(recipes) do
-
         recipe.complementary_recipe = recipe.complementary_recipe or recipe.dependent_recipe
 
         if recipe.complementary_recipe then
@@ -93,6 +92,7 @@ function vgal.data.extend(recipes)
             end
         end
 
+        -- if any needed fields are missing this fills them in.
         if recipe.dependent_recipe then
             local dependent_recipe = data.raw["recipe"][recipe.dependent_recipe]
             recipe.category = recipe.category or dependent_recipe.category
@@ -134,6 +134,21 @@ function vgal.data.extend(recipes)
 
         if not recipe.energy_required then
             error()
+        end
+
+        if recipe.ingredients then
+            local transformed = {}
+            for _, item in ipairs(recipe.ingredients) do
+                table.insert(transformed, { type = "item", name = item[1], amount = item[2] })
+            end
+            recipe.ingredients = transformed
+        end
+        if recipe.results then
+            local transformed = {}
+            for _, item in ipairs(recipe.results) do
+                table.insert(transformed, { type = "item", name = item[1], amount = item[2] })
+            end
+            recipe.results = transformed
         end
 
         data:extend({ {

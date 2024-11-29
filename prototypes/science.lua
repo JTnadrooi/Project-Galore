@@ -10,6 +10,7 @@ vgal.data.extend { -- todo: fix tech
         category = "crafting",
         energy_required = 10,
         enabled = false,
+        technology = "steel-processing",
         ingredients = {
             { "steel-plate",     1 },
             { "iron-gear-wheel", 1 }

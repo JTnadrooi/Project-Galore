@@ -141,7 +141,7 @@ function vgal.icon.get(keyName, iconSource)
     return toret
 end
 
-local function targeted_shift_iron(icon, target, scaleOverride)
+local function targeted_shift_icon(icon, target, scaleOverride)
     icon = vgal.icon.set_target(icon, target)
     local shift = {}
     local scale = 1
@@ -186,23 +186,23 @@ function vgal.icon.set_target(icon, target)
 end
 
 function vgal.icon.get_in(keyName, iconSource)
-    return targeted_shift_iron(vgal.icon.get(keyName, iconSource), "in1")
+    return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "in1")
 end
 
 function vgal.icon.get_in2(keyName, iconSource)
-    return targeted_shift_iron(vgal.icon.get(keyName, iconSource), "in2")
+    return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "in2")
 end
 
 function vgal.icon.get_out(keyName, iconSource)
-    return targeted_shift_iron(vgal.icon.get(keyName, iconSource), "out1")
+    return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "out1")
 end
 
 function vgal.icon.get_out2(keyName, iconSource)
-    return targeted_shift_iron(vgal.icon.get(keyName, iconSource), "out2")
+    return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "out2")
 end
 
 function vgal.icon.get_out3(keyName, iconSource)
-    return targeted_shift_iron(vgal.icon.get(keyName, iconSource), "out3")
+    return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "out3")
 end
 
 function vgal.icon.get_icon_target(icon, trim)
@@ -260,9 +260,9 @@ function vgal.icon.register(icons, composition)
         local newIcons = {}
         for _, iconTable in ipairs(icons) do
             if vgal.icon.get_icon_target(iconTable, true) == "in" then
-                table.insert(newIcons, targeted_shift_iron(iconTable, vgal.icon.get_icon_target(iconTable), 0.3))
+                table.insert(newIcons, targeted_shift_icon(iconTable, vgal.icon.get_icon_target(iconTable), 0.3))
             elseif vgal.icon.get_icon_target(iconTable, true) == "out" then
-                table.insert(newIcons, targeted_shift_iron(iconTable, vgal.icon.get_icon_target(iconTable), 0.3))
+                table.insert(newIcons, targeted_shift_icon(iconTable, vgal.icon.get_icon_target(iconTable), 0.3))
             else
                 table.insert(newIcons, iconTable)
             end

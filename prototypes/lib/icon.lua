@@ -130,7 +130,8 @@ function vgal.icon.get(keyName, iconSource)
             end
 
             toret = {
-                { icon = object.icon, icon_size = icon_size, target = "core" }
+                { icon = object.icon, target = "core" }
+                -- { icon = object.icon, icon_size = icon_size, target = "core" }
             }
         end
         if object.icons then

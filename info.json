@@ -1,0 +1,14 @@
+{
+    "name": "vanilla_galore_continued",
+    "version": "0.2.0",
+    "title": "Vanilla Galore Continued",
+    "author": "JTnadrooi",
+    "contact": "",
+    "homepage": "",
+    "factorio_version": "2.0",
+  "dependencies": [
+    "base >= 2.0",
+    "ylib >= 0.0.4"
+  ],
+    "description": "Recipies Galore! (Adds more than 100 recipes to the base game.)\nNow (And only) for 2.0!"
+}

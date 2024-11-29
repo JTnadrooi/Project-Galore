@@ -68,14 +68,10 @@ vgal.default_synced_items = {
         item_type = "item"
     },
 }
--- vgal.default_synced_items[1]["output"] = "mud"
-
+---Register a recipe to the vgal (Vanilla Galore - Continued) ecosystem.
 ---@param recipes vgal.VgalRecipe[]
 function vgal.data.extend(recipes)
     for _, recipe in ipairs(recipes) do
-        if recipe.type and (not (recipe.type == "recipe")) then
-            error()
-        end
 
         recipe.complementary_recipe = recipe.complementary_recipe or recipe.dependent_recipe
 
@@ -112,11 +108,6 @@ function vgal.data.extend(recipes)
         recipe.tier = recipe.tier == 1 and nil or recipe.tier
 
         recipe.name = recipe.prefix .. recipe.name .. (recipe.tier and ("-" .. recipe.tier) or "")
-
-        if recipe.icon_method then
-
-        end
-
         if recipe.technology then
             if recipe.technologies then
                 error()
@@ -125,8 +116,6 @@ function vgal.data.extend(recipes)
                 recipe.technology
             }
         end
-
-
         recipe.enabled = (recipe.enabled ~= nil) or not recipe.technologies
 
         if recipe.icon then
@@ -145,22 +134,6 @@ function vgal.data.extend(recipes)
 
         if not recipe.energy_required then
             error()
-        end
-
-        if recipe.synced_items then
-            for _, synced_item in ipairs(recipe.synced_items) do
-                for _, ingredient in ipairs(recipe.ingredients) do
-                    if ingredient.name == synced_item.input and ingredient.type == synced_item.item_type then
-                        table.insert(recipe.results,
-                            {
-                                type = synced_item.item_type,
-                                name = synced_item.output,
-                                amount = ingredient.amount *
-                                    (synced_item.multiplier or 1)
-                            })
-                    end
-                end
-            end
         end
 
         data:extend({ {

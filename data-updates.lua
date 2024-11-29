@@ -1,2 +1,2 @@
-vgal.tech.vgal_tech_clean()
-vgal.finalize()
+-- vgal.tech.vgal_tech_clean()
+-- vgal.finalize()

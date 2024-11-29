@@ -1,4 +1,4 @@
-vgal.data.extend {
+data:extend {
     {
         type = "bool-setting",
         name = "vgal-vanilla-galore-rocket-parts-require-space-science",

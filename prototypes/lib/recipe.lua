@@ -109,19 +109,6 @@ function vgal.recipe.throw_nil_error(recipeName)
     throw_nil_error(recipeName)
 end
 
-function vgal.recipe.regularize(recipeName)
-    throw_nil_error(recipeName)
-    local recipe = data.raw["recipe"][recipeName]
-    if recipe.result then
-        recipe.results = {
-            { type = "item", name = recipe.result, amount = recipe.result_count or 1 },
-        }
-        recipe.result = nil
-        recipe.result_count = nil
-        recipe.main_product = nil
-    end
-end
-
 function vgal.recipe.force_get_icons(recipeName)
     local recipe = data.raw["recipe"][recipeName]
     if recipe.icons then
@@ -131,7 +118,6 @@ function vgal.recipe.force_get_icons(recipeName)
         return {
             {
                 icon = recipe.icon,
-                icon_mipmaps = recipe.icon_mipmaps,
                 icon_size = recipe.icon_size,
             }
         }
@@ -140,7 +126,6 @@ function vgal.recipe.force_get_icons(recipeName)
         return data.raw["item"][recipe.results[1].name].icons or {
             {
                 icon = data.raw["item"][recipe.results[1].name].icon,
-                icon_mipmaps = data.raw["item"][recipe.results[1].name].icon_mipmaps,
                 icon_size = data.raw["item"][recipe.results[1].name].icon_size,
             }
         }
@@ -152,24 +137,6 @@ function vgal.recipe.overlay_tier(recipeName, tier)
     local recipe = data.raw["recipe"][recipeName]
 
     recipe.icons = vgal.icon.register({ vgal.recipe.force_get_icons(recipe.name), vgal.icon.get("tier" .. tier, "raw") })
-end
-
-function vgal.recipe.normalize(recipeName)
-    throw_nil_error(recipeName)
-    local recipe = data.raw["recipe"][recipeName]
-    recipe.energy_required = recipe.energy_required or 1
-    local normal = recipe.normal
-    if normal then
-        recipe.ingredients = normal.ingredients or recipe.ingredients
-        recipe.results = normal.results or recipe.results
-        recipe.result = normal.result or recipe.result
-        recipe.result_count = normal.result_count or recipe.result_count
-        recipe.energy_required = normal.energy_required or recipe.energy_required
-    end
-    if recipe.expensive and not normal then error("WHAT") end
-    vgal.recipe.regularize(recipeName)
-    recipe.normal = nil
-    recipe.expensive = nil
 end
 
 function vgal.recipe.is_item_group(recipeName, itemGroupName)
@@ -315,7 +282,7 @@ end
 function vgal.recipe.copy_claim_extend(recipeName, as)
     local newRecipe = util.table.deepcopy(data.raw["recipe"][recipeName])
     newRecipe.name = as
-    vgal.data.extend({ newRecipe })
+    data:extend({ newRecipe })
     vgal.recipe.normalize(newRecipe.name)
     vgal.recipe.unhide(newRecipe.name)
 end
@@ -455,7 +422,6 @@ end
 
 function vgal.recipe.has_result(recipeName, result)
     local recipe = data.raw["recipe"][recipeName]
-    if recipe.result then return recipe.result == result end
     if recipe and recipe.results then
         for _, item in ipairs(vgal.recipe.get_results(recipeName)) do
             if item.name == result then
@@ -543,63 +509,6 @@ function vgal.recipe.get_result(recipeName, resultName)
     error("invalid result: " .. resultName .. " for recipe: " .. recipeName)
 end
 
-function vgal.recipe.bulkify(recipeName, multiplier)
-    vgal.recipe.normalize(recipeName)
-    local recipe = data.raw.recipe[recipeName]
-
-    if recipe then
-        recipe.energy_required = recipe.energy_required * multiplier
-
-        for _, ingredient in pairs(recipe.ingredients) do
-            if ingredient.name then
-                ingredient.amount = ingredient.amount * multiplier
-            end
-            if ingredient[1] then
-                if ingredient[2] then
-                    ingredient[2] = ingredient[2] * multiplier
-                else
-                    ingredient = { ingredient[1], multiplier }
-                end
-            end
-        end
-
-        if recipe.results then
-            for _, result in pairs(recipe.results) do
-                if result.name then
-                    result.amount = result.amount * multiplier
-                else
-                    if result[2] then
-                        result[2] = result[2] * multiplier
-                    else
-                        result[2] = multiplier
-                    end
-                end
-            end
-        else
-            if (recipe.result_count) then
-                recipe.result_count = recipe.result_count * multiplier
-            else
-                recipe.result_count = multiplier
-            end
-        end
-    else
-        error("Recipe " .. recipeName .. " not found.")
-    end
-end
-
-function vgal.recipe.to_poly_result(recipeName)
-    local recipe = data.raw["recipe"][recipeName]
-    if recipe.results then
-        return
-    end
-    recipe.results = {
-        { type = "item", name = recipe.result, amount = recipe.result_count }
-    }
-    recipe.main_product = recipe.main_product or recipe.result
-    recipe.result = nil
-    recipe.result_count = nil
-end
-
 function vgal.recipe.sync_ingredient(recipeName, ingredient, result)
     local recipe = data.raw["recipe"][recipeName]
     vgal.recipe.to_poly_result(recipeName)
@@ -617,38 +526,8 @@ end
 function vgal.recipe.set_icons(recipeName, icons)
     local recipe = data.raw["recipe"][recipeName]
     recipe.icon = nil
-    recipe.icon_mipmaps = nil
     recipe.icon_size = nil
     recipe.icons = icons
-end
-
-function vgal.recipe.is_modded(recipeName, modtag)
-    if not data.raw["recipe"][recipeName] then
-        error()
-    end
-    if modtag == "bitumen" then
-        if string.find(recipeName, "-dl") then
-            return true
-        end
-        local subg = data.raw["recipe"][recipeName].subgroup
-        if not subg then
-            if data.raw["recipe"][recipeName].result ~= nil then
-                if data.raw["item"][data.raw["recipe"][recipeName].result] then
-                    subg = data.raw["item"][data.raw["recipe"][recipeName].result].subgroup
-                end
-            end
-        end
-        if subg then
-            local group = data.raw["item-subgroup"][subg].group
-            return group == "tooling" or group == "precision-machining" or group == "bitumen"
-        end
-    end
-
-    if data.raw["recipe"][recipeName].icon then
-        return string.find(data.raw["recipe"][recipeName].icon, modtag)
-    else
-        return false
-    end
 end
 
 ---@param ingredients (data.IngredientPrototype[])
@@ -688,8 +567,6 @@ end
 function vgal.recipe.set_results(recipeName, results)
     local recipe = data.raw["recipe"][recipeName]
     vgal.recipe.normalize(recipeName)
-    recipe.result = nil
-    recipe.result_count = nil
     recipe.results = results
 end
 
@@ -710,7 +587,6 @@ end
 function vgal.recipe.clear_icon_data(recipeName)
     local recipe = data.raw["recipe"][recipeName]
     recipe.icon = nil
-    recipe.icon_mipmaps = nil
     recipe.icon_size = nil
     recipe.icons = nil
 end

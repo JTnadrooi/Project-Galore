@@ -23,20 +23,6 @@ local function get_icon_item(keyName, iconSource)
         iconSource = "ammo"
     end
     vgal.log("getting icon item from; " .. "keyname: " .. keyName .. " iconSource: " .. iconSource)
-    -- if keyName == "slag" then
-    --     return {
-    --         icon = "__Molten_Metals__/graphics/icons/slag-stone.png",
-    --         icon_size = 32,
-    --         icon_mipmaps = 2
-    --     }
-    -- end
-    -- if keyName == "slag-pellet" then
-    --     return {
-    --         icon = "__Molten_Metals__/graphics/icons/slag-pellet.png",
-    --         icon_size = 32,
-    --         icon_mipmaps = 2
-    --     }
-    -- end
     local toret = data.raw[iconSource][keyName]
     if not toret then
         error("get_icon_item did not find a icon. keyname: " .. keyName .. " iconSource: " .. (iconSource or "nil"))
@@ -55,13 +41,6 @@ local function get_icon_size(object)
     end
 
     return size
-end
-local function get_icon_mipmaps(object)
-    local mipmaps = 0
-    if object.icon_mipmaps then
-        mipmaps = object.icon_mipmaps
-    end
-    return mipmaps
 end
 function shift_iron(icon, scale, shift)
     local icons = {}
@@ -83,7 +62,6 @@ function vgal.icon.get(keyName, iconSource)
             return {
                 {
                     icon = "__angelsrefining__/graphics/icons/sort-icon.png",
-                    icon_mipmaps = 1,
                     icon_size = 32,
                     target = "core",
                 }
@@ -93,7 +71,6 @@ function vgal.icon.get(keyName, iconSource)
             return {
                 {
                     icon = "__angels_galore__/graphics/icons/electrolyzing-icon-2.png",
-                    icon_mipmaps = 1,
                     icon_size = 52,
                     target = "core",
                 }
@@ -105,14 +82,12 @@ function vgal.icon.get(keyName, iconSource)
                 {
                     icon = "__angelsrefining__/graphics/icons/numerals/num-" .. tier .. "-outline.png",
                     icon_size = 64,
-                    icon_mipmaps = 2,
                     tint = { 0, 0, 0, 1 },
                     target = "tier" .. tier
                 },
                 {
                     icon = "__angelsrefining__/graphics/icons/numerals/num-" .. tier .. ".png",
                     icon_size = 64,
-                    icon_mipmaps = 2,
                     tint = angelsmods.petrochem.number_tint, -- angelsmods.bioprocessing.number_tint
                     target = "tier" .. tier
                 },
@@ -131,14 +106,6 @@ function vgal.icon.get(keyName, iconSource)
     if iconSource == "gas-recipe" and mods["angelspetrochem"] then
         return vgal.icon.set_target(angelsmods.functions.create_gas_recipe_icon(nil, keyName), "core1")
     end
-
-    -- if (keyName == "crude-oil" or keyName == "light-oil" or keyName == "lubricant" or keyName == "heavy-oil") and iconSource == "fluid" and mods["angelspetrochem"] then
-    --     return {
-    --                 icon = "__base__/graphics/icons/fluid/"..keyName..".png",
-    --                 icon_size = 64,
-    --                 icon_mipmaps = 4,
-    --             }
-    -- end
     if (keyName == "petroleum-gas") and iconSource == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("methane", "molecule")
     end
@@ -158,13 +125,12 @@ function vgal.icon.get(keyName, iconSource)
     if object then
         if object.icon then
             local icon_size = get_icon_size(object)
-            local icon_mipmaps = get_icon_mipmaps(object)
             if object.icon == nil or object.icon == '' then
                 error()
             end
 
             toret = {
-                { icon = object.icon, icon_size = icon_size, icon_mipmaps = icon_mipmaps, target = "core" }
+                { icon = object.icon, icon_size = icon_size, target = "core" }
             }
         end
         if object.icons then

@@ -1,6 +1,3 @@
-
-
-
 --require("__ylib__/util/util")
 require("__ylib__/data")
 
@@ -12,10 +9,6 @@ require("prototypes.other.technology")
 require("prototypes.other.them")
 require("prototypes.other.fluids")
 require("prototypes.other.invalid")
-
--- require("prototypes.military.m-ammo")
--- require("prototypes.military.m-guns")
--- require("prototypes.military.m-buildings")
 
 require("prototypes.fluids.f-intermediates")
 require("prototypes.fluids.oils")
@@ -39,7 +32,6 @@ require("prototypes.intermediates.explosives")
 
 
 require("prototypes.rocket-parts")
--- require("prototypes.mineral")
 require("prototypes.modules")
 require("prototypes.raw-materials")
 require("prototypes.science")
@@ -48,5 +40,3 @@ require("prototypes.alloy")
 
 require("prototypes.mods.ksp")
 require("prototypes.mods.bep")
-
---settings.startup["ymm-replace-electric-furnace"].value = false

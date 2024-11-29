@@ -137,25 +137,14 @@ function vgal.data.extend(recipes)
                 {
                     icon = recipe.icon,
                     icon_size = recipe.icon_size or 32,
-                    icon_mipmaps = recipe.icon_mipmaps or 1,
                 }
             }
             recipe.icon = nil
-            recipe.icon_mipmaps = nil
             recipe.icon_size = nil
         end
 
         if not recipe.energy_required then
             error()
-        end
-
-        if recipe.result then
-            recipe.results = {
-                { type = "item", name = recipe.result, amount = recipe.result_count or 1 },
-            }
-            recipe.result = nil
-            recipe.result_count = nil
-            recipe.main_product = nil
         end
 
         if recipe.synced_items then

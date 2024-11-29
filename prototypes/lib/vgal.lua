@@ -1,7 +1,6 @@
 vgal = {}
 
 vgal.data = vgal.data or {}
-
 vgal.table = vgal.table or {}
 vgal.math = vgal.math or {}
 vgal.category = vgal.category or {}
@@ -16,7 +15,9 @@ vgal.any = vgal.any or {}
 
 
 function vgal.log(toLog)
-    log("vgal.log-[" .. toLog .. "]")
+    if settings.startup["vgal-log"].value then
+        log("vgal.log-[" .. toLog .. "]")
+    end
 end
 
 function vgal.get_tier_tint(tier)
@@ -41,57 +42,10 @@ function vgal.get_tier_tint(tier)
     return { a = 1, b = 0.5, g = 0.5, r = 0.5 }
 end
 
-vgal.default_synced_items = {
-    -- {
-    --     input = "water",
-    --     output = "steam",
-    --     item_type = "fluid"
-    -- },
-    -- {
-    --     input = "water-purified",
-    --     output = "steam",
-    --     item_type = "fluid"
-    -- },
-    {
-        input = "catalyst-metal-red",
-        output = "catalyst-metal-carrier",
-        item_type = "item"
-    },
-    {
-        input = "catalyst-metal-green",
-        output = "catalyst-metal-carrier",
-        item_type = "item"
-    },
-    {
-        input = "apm_crusher_drums",
-        output = "apm_crusher_drums_used",
-        item_type = "item"
-    },
-}
 ---Register a recipe to the vgal (Vanilla Galore - Continued) ecosystem.
 ---@param recipes vgal.VgalRecipe[]
 function vgal.data.extend(recipes)
     for _, recipe in ipairs(recipes) do
-        recipe.complementary_recipe = recipe.complementary_recipe or recipe.dependent_recipe
-
-        if recipe.complementary_recipe then
-            local complementary_recipe = data.raw["recipe"][recipe.complementary_recipe]
-            recipe.order = recipe.order or complementary_recipe.order
-            recipe.subgroup = recipe.subgroup or complementary_recipe.subgroup
-            recipe.main_product = recipe.main_product or complementary_recipe.main_product
-            local main_product_valid = false
-            if recipe.main_product then
-                for _, result in ipairs(recipe.results) do
-                    if result == recipe.main_product then
-                        main_product_valid = true
-                    end
-                end
-            end
-            if not main_product_valid then
-                recipe.main_product = nil
-            end
-        end
-
         -- if any needed fields are missing this fills them in.
         if recipe.dependent_recipe then
             local dependent_recipe = data.raw["recipe"][recipe.dependent_recipe]
@@ -104,10 +58,9 @@ function vgal.data.extend(recipes)
         end
 
         recipe.prefix = recipe.prefix or ""
-
         recipe.tier = recipe.tier == 1 and nil or recipe.tier
+        recipe.name = recipe.prefix .. "-" .. recipe.name .. (recipe.tier and ("-" .. recipe.tier) or "")
 
-        recipe.name = recipe.prefix .. recipe.name .. (recipe.tier and ("-" .. recipe.tier) or "")
         if recipe.technology then
             if recipe.technologies then
                 error()
@@ -116,6 +69,7 @@ function vgal.data.extend(recipes)
                 recipe.technology
             }
         end
+
         recipe.enabled = (recipe.enabled ~= nil) or not recipe.technologies
 
         if recipe.icon then
@@ -150,6 +104,8 @@ function vgal.data.extend(recipes)
             end
             recipe.results = transformed
         end
+
+        vgal.log("registering: " .. recipe.name)
 
         data:extend({ {
             type = "recipe",

@@ -2,14 +2,14 @@ vgal.data.extend { -- todo: fix tech
     -- AUTOMATION
     -- region *steel-automation-science-pack
     {
-        name = "vgal-steel-automation-science-pack",
+        name = "steel-automation-science-pack",
+        prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("automation-science-pack"),
             vgal.icon.get_in("steel-plate"),
         },
         category = "crafting",
         energy_required = 10,
-        enabled = false,
         technology = "steel-processing",
         ingredients = {
             { "steel-plate",     1 },

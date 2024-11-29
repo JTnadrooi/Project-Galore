@@ -7,8 +7,6 @@ end
 do
     ---A vgal recipe - to be registed.
     ---@class vgal.VgalRecipe:data.RecipePrototype
-    ---Optional empty fields get borrowed from this recipe. (order, subgroup, main_product(if posible), etc..)
-    ---@field complementary_recipe? string
     ---Non optional empty fields get borrowed from this recipe. (except the name)
     ---@field dependent_recipe? string
     ---A item of witch the input amount will be linked to the output amount. Usefull for water<>steam, cooling and waste liquids.

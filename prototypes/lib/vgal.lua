@@ -52,10 +52,16 @@ function normalizeSync(single, multiple)
     return multiple
 end
 
-function shortHand(table, newType)
+function shortHand(inTable, newType)
     local transformed = {}
-    for _, item in ipairs(table) do
-        table.insert(transformed, { type = newType, name = item[1], amount = item[2] })
+    for _, item in ipairs(inTable) do
+        if item[3] then
+            table.insert(transformed, { type = newType, name = item[1], amount = item[2], probability = item[3] })
+        elseif item[4] then
+            table.insert(transformed, { type = newType, name = item[1], amount = item[2], probability = item[3], amount_min=item[4], amount_max=item[5] })
+        else
+            table.insert(transformed, { type = newType, name = item[1], amount = item[2] })
+        end
     end
     return transformed
 end
@@ -86,6 +92,12 @@ function vgal.data.extend(recipes)
         -- name components
         recipe.enabled = (recipe.enabled ~= nil) or not recipe.technologies
 
+        -- null stuff
+        recipe.fluid_ingredients = recipe.fluid_ingredients or {}
+        recipe.fluid_results = recipe.fluid_results or {}
+        recipe.ingredients = recipe.ingredients or {}
+        recipe.results = recipe.results or {}
+
         -- name components
         if recipe.icon then
             if recipe.icons then
@@ -107,11 +119,15 @@ function vgal.data.extend(recipes)
         end
         recipe.ingredients = shortHand(recipe.ingredients, "item")
         recipe.results = shortHand(recipe.results, "item")
-
-        recipe.fluid_ingredients = shortHand(recipe.ingredients, "fluid")
+        
+        recipe.fluid_ingredients = shortHand(recipe.fluid_ingredients, "fluid")
+        recipe.fluid_results = shortHand(recipe.fluid_results, "fluid")
 
         for _, value in pairs(recipe.fluid_ingredients) do
             table.insert(recipe.ingredients, { type = "fluid", name = value.name, amount = value.amount })
+        end
+        for _, value in pairs(recipe.fluid_results) do
+            table.insert(recipe.results, { type = "fluid", name = value.name, amount = value.amount })
         end
 
         if not recipe.main_product then

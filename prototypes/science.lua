@@ -13,7 +13,7 @@ vgal.data.extend {
         technology = "steel-processing",
         ingredients = {
             { "steel-plate",     1 },
-            { "iron-gear-wheel", 1 }
+            { "iron-gear-wheel", 2 }
         },
         results = {
             { "automation-science-pack", 3 },
@@ -55,10 +55,36 @@ vgal.data.extend {
         technology = "stone-wall",
         ingredients = {
             { "stone-wall",    1 },
-            { "stone-furnace", 1 }
+            { "stone-furnace", 3 }
         },
         results = {
             { "automation-science-pack", 5 },
+        },
+    },
+    -- endregion
+    -- region *copper-plate-iron-stick-automation-science-pack
+    {
+        type = "recipe",
+        name = "copper-plate-iron-stick-automation-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("automation-science-pack"),
+            vgal.icon.get_in("iron-stick"),
+        },
+        category = "crafting",
+        energy_required = 4,
+        technologies = {
+            "circuit-network",
+            "concrete",
+            "electric-energy-distribution-1",
+            "railway",
+        },
+        ingredients = {
+            { "iron-stick",    3 },
+            { "copper-plate", 1 }
+        },
+        results = {
+            { "automation-science-pack", 1 },
         },
     },
     -- endregion
@@ -187,7 +213,9 @@ vgal.data.extend {
         ingredients = {
             { "bulk-inserter",       2 },
             { "fast-transport-belt", 8 },
-            { "petroleum-gas",      40 }
+        },
+        fluid_ingredients = {
+            { "petroleum-gas", 40 }
         },
         results = {
             { "chemical-science-pack", 12 },

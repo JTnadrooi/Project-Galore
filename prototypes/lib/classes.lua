@@ -21,5 +21,6 @@ do
     ---@field icon_method? string
     ---@field ingredients ItemKeyPrototype[]|table[]
     ---@field fluid_ingredients? ItemKeyPrototype[]|table[]
+    ---@field fluid_results? ItemKeyPrototype[]|table[]
     ---@field results? ItemKeyPrototype[]|table[]
 end

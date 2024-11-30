@@ -52,13 +52,19 @@ function normalizeSync(single, multiple)
     return multiple
 end
 
+function shortHand(table, newType)
+    local transformed = {}
+    for _, item in ipairs(table) do
+        table.insert(transformed, { type = newType, name = item[1], amount = item[2] })
+    end
+    return transformed
+end
+
 ---Register a recipe to the vgal (Vanilla Galore - Continued) ecosystem.
 ---@param recipes vgal.VgalRecipe[]
 function vgal.data.extend(recipes)
     for _, recipe in ipairs(recipes) do
 
-        recipe.technologies = normalizeSync(recipe.technology, recipe.technologies)
-        recipe.results = normalizeSync(recipe.result, recipe.results)
         recipe.technologies = normalizeSync(recipe.technology, recipe.technologies)
 
         -- if any needed fields are missing this fills them in.
@@ -77,10 +83,10 @@ function vgal.data.extend(recipes)
         recipe.tier = recipe.tier == 1 and nil or recipe.tier
         recipe.name = recipe.prefix .. "-" .. recipe.name .. (recipe.tier and ("-" .. recipe.tier) or "")
 
-
-
+        -- name components
         recipe.enabled = (recipe.enabled ~= nil) or not recipe.technologies
 
+        -- name components
         if recipe.icon then
             if recipe.icons then
                 error()
@@ -95,23 +101,17 @@ function vgal.data.extend(recipes)
             recipe.icon_size = nil
         end
 
+        -- validate
         if not recipe.energy_required then
             error()
         end
+        recipe.ingredients = shortHand(recipe.ingredients, "item")
+        recipe.results = shortHand(recipe.results, "item")
 
-        if recipe.ingredients then
-            local transformed = {}
-            for _, item in ipairs(recipe.ingredients) do
-                table.insert(transformed, { type = "item", name = item[1], amount = item[2] })
-            end
-            recipe.ingredients = transformed
-        end
-        if recipe.results then
-            local transformed = {}
-            for _, item in ipairs(recipe.results) do
-                table.insert(transformed, { type = "item", name = item[1], amount = item[2] })
-            end
-            recipe.results = transformed
+        recipe.fluid_ingredients = shortHand(recipe.ingredients, "fluid")
+
+        for _, value in pairs(recipe.fluid_ingredients) do
+            table.insert(recipe.ingredients, { type = "fluid", name = value.name, amount = value.amount })
         end
 
         if not recipe.main_product then

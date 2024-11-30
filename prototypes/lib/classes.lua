@@ -20,5 +20,6 @@ do
     ---The method that will be used to determine an icon composition based on the ingredients and results of this recipe.
     ---@field icon_method? string
     ---@field ingredients ItemKeyPrototype[]|table[]
+    ---@field fluid_ingredients? ItemKeyPrototype[]|table[]
     ---@field results? ItemKeyPrototype[]|table[]
 end

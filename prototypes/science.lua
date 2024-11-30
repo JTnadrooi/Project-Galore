@@ -187,7 +187,7 @@ vgal.data.extend {
         ingredients = {
             { "bulk-inserter",       2 },
             { "fast-transport-belt", 8 },
-            { type = "fluid",        name = "petroleum-gas", amount = 40 }
+            { "petroleum-gas",      40 }
         },
         results = {
             { "chemical-science-pack", 12 },
@@ -247,7 +247,7 @@ vgal.data.extend {
         technology = "efficiency-module-2",
         ingredients = {
             { "efficiency-module", 1 },
-            { "battery",            2 }
+            { "battery",           2 }
         },
         results = {
             { "chemical-science-pack", 2 },
@@ -268,7 +268,7 @@ vgal.data.extend {
         ingredients = {
             { "solar-panel-equipment", 1 },
             { "small-lamp",            2 },
-            { "plastic-bar", 8 },
+            { "plastic-bar",           8 },
         },
         results = {
             { "chemical-science-pack", 6 },

@@ -1,8 +1,3 @@
----@diagnostic disable: param-type-mismatch
-function string:endsWithVGAL(suffix)
-    return self:sub(- #suffix) == suffix
-end
-
 function endsWithVGAL(str, suffix)
     return str:sub(- #suffix) == suffix
 end
@@ -14,11 +9,9 @@ local function get_icon_item(keyName, iconSource)
     if endsWithVGAL(keyName, "-science-pack") then
         iconSource = "tool"
     end
-
     if endsWithVGAL(keyName, "-module") then
         iconSource = "module"
     end
-
     if endsWithVGAL(keyName, "-ammo") then
         iconSource = "ammo"
     end
@@ -27,7 +20,6 @@ local function get_icon_item(keyName, iconSource)
     if not toret then
         error("get_icon_item did not find a icon. keyname: " .. keyName .. " iconSource: " .. (iconSource or "nil"))
     end
-
     return toret
 end
 

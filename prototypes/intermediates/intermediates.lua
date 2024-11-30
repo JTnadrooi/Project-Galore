@@ -62,12 +62,12 @@ vgal.data.extend
         },
     },
     -- endregion
-    -- region *copper-plate-copper-wire
+    -- region *copper-plate-copper-cable
     {
-        name = "copper-plate-copper-wire",
+        name = "copper-plate-copper-cable",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("copper-wire"),
+            vgal.icon.get("copper-cable"),
             vgal.icon.get_in("copper-plate"),
         },
         technology = "advanced-material-processing",
@@ -76,7 +76,7 @@ vgal.data.extend
             { "copper-plate", 2 },
         },
         results = {
-            { "copper-wire", 6 },
+            { "copper-cable", 6 },
         },
         category = "smelting",
     },

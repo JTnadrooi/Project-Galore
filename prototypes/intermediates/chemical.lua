@@ -19,7 +19,7 @@ vgal.data.extend
             { "steam", 250 },
         },
         results = {
-            { "sulfur", 4 }
+            { "sulfur", 2 }
         },
         fluid_results = {
             { "water",         10 },

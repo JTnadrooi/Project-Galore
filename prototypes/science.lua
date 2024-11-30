@@ -20,9 +20,9 @@ vgal.data.extend {
         },
     },
     -- endregion
-    -- region *optic-automation-science-pack
+    -- region *lamp-automation-science-pack
     {
-        type = "recipe",
+        
         name = "lamp-automation-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -43,7 +43,7 @@ vgal.data.extend {
     -- endregion
     -- region *wall-furnace-automation-science-pack
     {
-        type = "recipe",
+        
         name = "wall-furnace-automation-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -64,7 +64,7 @@ vgal.data.extend {
     -- endregion
     -- region *copper-plate-iron-stick-automation-science-pack
     {
-        type = "recipe",
+        
         name = "copper-plate-iron-stick-automation-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -92,7 +92,7 @@ vgal.data.extend {
     -- LOGISTIC
     -- region *gate-logistic-science-pack
     {
-        type = "recipe",
+        
         name = "gate-logistic-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -113,7 +113,7 @@ vgal.data.extend {
     -- endregion
     -- region *concrete-logistic-science-pack
     {
-        type = "recipe",
+        
         name = "concrete-logistic-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -134,7 +134,7 @@ vgal.data.extend {
     -- endregion
     -- region *assembling-machine-2-logistic-science-pack
     {
-        type = "recipe",
+        
         name = "assembling-machine-2-logistic-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -155,7 +155,7 @@ vgal.data.extend {
     -- endregion
     -- region *solar-planel-logistic-science-pack
     {
-        type = "recipe",
+        
         name = "solar-planel-logistic-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -178,7 +178,7 @@ vgal.data.extend {
     -- CHEMICAL
     -- region *accumulator-chemical-science-pack
     {
-        type = "recipe",
+        
         name = "accumulator-chemical-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -199,7 +199,7 @@ vgal.data.extend {
     -- endregion
     -- region *bulk-inserter-chemical-science-pack
     {
-        type = "recipe",
+        
         name = "bulk-inserter-chemical-science-pack", -- ISSUE #10
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -224,7 +224,7 @@ vgal.data.extend {
     -- endregion
     -- region *productivity-chemical-science-pack
     {
-        type = "recipe",
+        
         name = "vgal-productivity-chemical-science-pack",
         icons = vgal.icon.register {
             vgal.icon.get("chemical-science-pack"),
@@ -244,7 +244,7 @@ vgal.data.extend {
     -- endregion
     -- region *speed-chemical-science-pack
     {
-        type = "recipe",
+        
         name = "vgal-speed-chemical-science-pack", -- ISSUE #10
         icons = vgal.icon.register {
             vgal.icon.get("chemical-science-pack"),
@@ -264,7 +264,7 @@ vgal.data.extend {
     -- endregion
     -- region *efficiency-chemical-science-pack
     {
-        type = "recipe",
+        
         name = "vgal-efficiency-chemical-science-pack",
         icons = vgal.icon.register {
             vgal.icon.get("chemical-science-pack"),
@@ -284,7 +284,7 @@ vgal.data.extend {
     -- endregion
     -- region *solar-panel-equipment-chemical-science-pack
     {
-        type = "recipe",
+        
         name = "vgal-solar-panel-equipment-chemical-science-pack", -- ISSUE #10
         icons = vgal.icon.register {
             vgal.icon.get("chemical-science-pack"),
@@ -307,7 +307,7 @@ vgal.data.extend {
     -- MILITAIRY
     -- region *logistic-to-military-science-pack
     {
-        type = "recipe",
+        
         name = "vgal-logistic-to-military-science-pack",
         icons = vgal.icon.register {
             vgal.icon.get("military-science-pack"),
@@ -329,7 +329,7 @@ vgal.data.extend {
     -- PRODUCTION
     -- region *low-density-structure-production-science-pack
     {
-        type = "recipe",
+        
         name = "vgal-low-density-structure-production-science-pack", -- ISSUE #10
         icons = vgal.icon.register {
             vgal.icon.get("production-science-pack"),
@@ -350,7 +350,7 @@ vgal.data.extend {
     -- endregion
     -- region *roboport-production-science-pack
     {
-        type = "recipe",
+        
         name = "vgal-roboport-production-science-pack",
         icons = vgal.icon.register {
             vgal.icon.get("production-science-pack"),
@@ -371,7 +371,7 @@ vgal.data.extend {
     -- endregion
     -- region *steel-furnace-production-science-pack
     {
-        type = "recipe",
+        
         name = "vgal-steel-furnace-production-science-pack",
         icons = vgal.icon.register {
             vgal.icon.get("production-science-pack"),
@@ -391,7 +391,7 @@ vgal.data.extend {
     -- endregion
     -- region *construction-robot-production-science-pack
     {
-        type = "recipe",
+        
         name = "vgal-construction-robot-production-science-pack",
         icons = vgal.icon.register {
             vgal.icon.get("production-science-pack"),
@@ -413,7 +413,7 @@ vgal.data.extend {
     -- UTILITY
     -- region *production-flying-robot-frame-to-utility-science-pack
     {
-        type = "recipe",
+        
         name = "vgal-production-flying-robot-frame-utility-science-pack", -- ISSUE #10
         icons = vgal.icon.register {
             vgal.icon.get("utility-science-pack"),

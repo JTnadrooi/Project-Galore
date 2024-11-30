@@ -85,9 +85,8 @@ function vgal.data.extend(recipes)
         end
 
         -- name components
-        recipe.prefix = recipe.prefix or ""
         recipe.tier = recipe.tier == 1 and nil or recipe.tier
-        recipe.name = recipe.prefix .. "-" .. recipe.name .. (recipe.tier and ("-" .. recipe.tier) or "")
+        recipe.name = (recipe.prefix and (recipe.prefix .. "-") or "") .. recipe.name .. (recipe.tier and ("-" .. recipe.tier) or "")
 
         -- name components
         recipe.enabled = (recipe.enabled ~= nil) or not recipe.technologies

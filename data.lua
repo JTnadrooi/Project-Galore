@@ -1,4 +1,3 @@
---require("__ylib__/util/util")
 require("__ylib__/data")
 
 vgal = require("prototypes.lib.vgal")

@@ -8,17 +8,13 @@ function vgal.tech.add_recipe(techName, recipeName)
     if techName ~= "" and not data.raw.technology[techName] then
         error("technology with name: " .. techName .. "does not exist")
     end
-    if (techName == "") then
-        data.raw.recipe[recipeName].enabled = true
-    else
-        table.insert(
-            data.raw.technology[techName].effects,
-            {
-                type = "unlock-recipe",
-                recipe = recipeName
-            }
-        )
-    end
+    table.insert(
+        data.raw.technology[techName].effects,
+        {
+            type = "unlock-recipe",
+            recipe = recipeName
+        }
+    )
 end
 
 function vgal.tech.queue_to_clean(techName) -- no work
@@ -45,7 +41,7 @@ function vgal.tech.multiply_unit_count(techName, amount, roundingNumber)
         return
     end
     data.raw["technology"][techName].unit.count = math.floor(((data.raw["technology"][techName].unit.count or 1) * amount) /
-    roundingNumber) * roundingNumber
+        roundingNumber) * roundingNumber
     if data.raw["technology"][techName].unit.count < 1 then
         data.raw["technology"][techName].unit.count = 1
     end

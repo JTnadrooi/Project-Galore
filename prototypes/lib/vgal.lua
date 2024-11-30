@@ -42,10 +42,25 @@ function vgal.get_tier_tint(tier)
     return { a = 1, b = 0.5, g = 0.5, r = 0.5 }
 end
 
+function normalizeSync(single, multiple)
+    if single then
+        if multiple then
+            error("'single' and 'multiple' set at the same time.")
+        end
+        return { single }
+    end
+    return multiple
+end
+
 ---Register a recipe to the vgal (Vanilla Galore - Continued) ecosystem.
 ---@param recipes vgal.VgalRecipe[]
 function vgal.data.extend(recipes)
     for _, recipe in ipairs(recipes) do
+
+        recipe.technologies = normalizeSync(recipe.technology, recipe.technologies)
+        recipe.results = normalizeSync(recipe.result, recipe.results)
+        recipe.technologies = normalizeSync(recipe.technology, recipe.technologies)
+
         -- if any needed fields are missing this fills them in.
         if recipe.dependent_recipe then
             local dependent_recipe = data.raw["recipe"][recipe.dependent_recipe]
@@ -57,18 +72,12 @@ function vgal.data.extend(recipes)
             recipe.main_product = recipe.main_product or dependent_recipe.main_product
         end
 
+        -- name components
         recipe.prefix = recipe.prefix or ""
         recipe.tier = recipe.tier == 1 and nil or recipe.tier
         recipe.name = recipe.prefix .. "-" .. recipe.name .. (recipe.tier and ("-" .. recipe.tier) or "")
 
-        if recipe.technology then
-            if recipe.technologies then
-                error()
-            end
-            recipe.technologies = {
-                recipe.technology
-            }
-        end
+
 
         recipe.enabled = (recipe.enabled ~= nil) or not recipe.technologies
 
@@ -105,25 +114,49 @@ function vgal.data.extend(recipes)
             recipe.results = transformed
         end
 
+        if not recipe.main_product then
+            recipe.main_product = recipe.results[1].name
+        end
+
         vgal.log("registering: " .. recipe.name)
 
-        data:extend({ {
-            type = "recipe",
-            name = recipe.name,
-            enabled = recipe.enabled,
+        data:extend(
+            {
+                {
+                    type = "recipe",
+                    name = recipe.name,
+                    enabled = recipe.enabled,
 
-            icons = recipe.icons,
+                    icons = recipe.icons,
 
-            energy_required = recipe.energy_required,
+                    energy_required = recipe.energy_required,
 
-            ingredients = recipe.ingredients,
-            results = recipe.results,
-            category = recipe.category,
+                    ingredients = recipe.ingredients,
+                    results = recipe.results,
+                    category = recipe.category,
 
-            subgroup = recipe.subgroup,
-            order = recipe.order,
-            main_product = recipe.main_product,
-        } })
+                    subgroup = recipe.subgroup,
+                    order = recipe.order,
+                    -- main_product = recipe.main_product,
+                    -- localised_name = { "item-name." .. recipe.main_product, " x" .. recipe.results[1].amount },
+                    localised_name = { "item-name." .. recipe.main_product },
+                    -- localised_name = { "", { "item-name.iron-plate" }, ": ", tostring(60) }
+                },
+                -- {
+                --     type = "recipe",
+                --     name = "u-speed-module",
+                --     enabled = false,
+                --     ingredients =
+                --     {
+                --         { type = "item", name = "advanced-circuit",   amount = 5 },
+                --         { type = "item", name = "electronic-circuit", amount = 5 }
+                --     },
+                --     energy_required = 15,
+                --     results = { { type = "item", name = "speed-module", amount = 1 } },
+                --     main_product = "speed-module",
+                -- },
+            })
+
         if recipe.technologies then
             for _, tech in ipairs(recipe.technologies) do
                 vgal.tech.add_recipe(tech, recipe.name)
@@ -172,7 +205,7 @@ function vgal.finalize()
             tech.effects = new_effects
         end
     end
-    for index, value in ipairs(vgal.recipe.toclean) do
+    for _, value in ipairs(vgal.recipe.toclean) do
         if data.raw["recipe"][value] then
             vgal.recipe.hide(value)
             --data.raw["recipe"][value] = nil

@@ -23,21 +23,6 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Content Include="graphics\icons\adv.png" />
-    <Content Include="graphics\icons\mineral-water.png" />
-    <Content Include="graphics\icons\polyethylene.png" />
-    <Content Include="graphics\icons\wood-petro.png" />
-    <Content Include="graphics\icons\wood-sul-oil.png" />
-    <Content Include="graphics\tech\aaaa.png" />
-    <Content Include="graphics\tech\adv-greenery.png" />
-    <Content Include="graphics\tech\basic-wood-processing.png" />
-    <Content Include="graphics\tech\advanced-wood-processing.png" />
-    <Content Include="graphics\tech\basic-wood-synthesizing.png" />
-    <Content Include="graphics\tech\cirno.png" />
-    <Content Include="graphics\tech\hastalavista.png" />
-    <Content Include="graphics\tech\poggers.png" />
-    <Content Include="graphics\tech\traintest.jpg" />
-    <Content Include="graphics\tech\yuuma.png" />
     <Content Include="info.json" />
     <Content Include="locale\en\en.cfg" />
     <Content Include="thumbnail.png" />

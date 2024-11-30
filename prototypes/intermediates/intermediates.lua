@@ -62,9 +62,25 @@ vgal.data.extend
         },
     },
     -- endregion
-
-
-
+    -- region *copper-plate-copper-wire
+    {
+        name = "copper-plate-copper-wire",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("copper-wire"),
+            vgal.icon.get_in("copper-plate"),
+        },
+        technology = "advanced-material-processing",
+        energy_required = 2,
+        ingredients = {
+            { "copper-plate", 2 },
+        },
+        results = {
+            { "copper-wire", 6 },
+        },
+        category = "smelting",
+    },
+    -- endregion
     -- region *steam-engine-engine-unit
     {
         name = "steam-engine-engine-unit",
@@ -86,7 +102,6 @@ vgal.data.extend
     -- endregion
     -- region *steel-plate-uranium-fuel-cell
     {
-        type = "recipe",
         name = "steel-plate-uranium-fuel-cell",
         prefix = "vgal",
         icons = vgal.icon.register {

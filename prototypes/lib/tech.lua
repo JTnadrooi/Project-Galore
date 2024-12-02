@@ -102,8 +102,7 @@ vgal.tech.iconDirectory = "__vanilla_galore__/graphics/tech/"
 function vgal.tech.set_icon_directory(directoryName)
     vgal.tech.iconDirectory = directoryName
 end
-
-function vgal.tech.create_empty(techName, tier, units, unitCount, unitTime, prerequisites, order)
+function vgal.tech.create_empty(techName, tier, units, unitCount, unitTime, prerequisites, order, icons)
     tier = tier or 1
     if not unitTime then
         if unitCount > 120 then
@@ -114,8 +113,8 @@ function vgal.tech.create_empty(techName, tier, units, unitCount, unitTime, prer
     end
     local toret = {
         type = "technology",
-        name = "vgal-" .. techName,
-        icons = {
+        name = techName,
+        icons = icons or {
             {
                 -- icon = "__vanilla_galore__/graphics/tech/".."analog-electronics"..".png",
                 icon = vgal.tech.iconDirectory .. techName .. ".png",
@@ -136,13 +135,13 @@ function vgal.tech.create_empty(techName, tier, units, unitCount, unitTime, prer
         toret.name = toret.name .. "-" .. tier
         --if data.raw["technology"]["vgal-"..techName.."-"..(tier - 1)] or data.raw["technology"]["vgal-"..techName] then
         if tier == 2 then
-            table.insert(prerequisites, "vgal-" .. techName)
+            table.insert(prerequisites, techName)
         else
-            table.insert(prerequisites, "vgal-" .. techName .. "-" .. (tier - 1))
+            table.insert(prerequisites, techName .. "-" .. (tier - 1))
         end
         --end
     end
-    toret.icons[1].tint = vgal.get_tier_tint(tier)
+    -- toret.icons[1].tint = vgal.get_tier_tint(tier)
     for _, value in ipairs(units) do
         if type(value) ~= "string" then
             if value == 1 then

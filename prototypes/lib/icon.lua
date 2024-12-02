@@ -24,7 +24,9 @@ local function get_icon_item(keyName, iconSource)
 end
 
 local function get_icon_size(object)
+    -- local size = 16
     local size = 32
+    -- local size = 256
 
     if object.icon_size then
         size = object.icon_size

@@ -145,36 +145,43 @@ function vgal.data.extend(recipes)
                     icons = recipe.icons,
 
                     energy_required = recipe.energy_required,
-
                     ingredients = recipe.ingredients,
                     results = recipe.results,
                     category = recipe.category,
 
                     subgroup = recipe.subgroup,
                     order = recipe.order,
-                    -- main_product = recipe.main_product,
+                    main_product = recipe.main_product,
                     -- localised_name = { "item-name." .. recipe.main_product, " x" .. recipe.results[1].amount },
-                    localised_name = { "item-name." .. recipe.main_product },
+                    -- localised_name = { "item-name." .. recipe.main_product },
+                    localised_name = nil,
                     -- localised_name = { "", { "item-name.iron-plate" }, ": ", tostring(60) }
                 },
-                -- {
-                --     type = "recipe",
-                --     name = "u-speed-module",
-                --     enabled = false,
-                --     ingredients =
-                --     {
-                --         { type = "item", name = "advanced-circuit",   amount = 5 },
-                --         { type = "item", name = "electronic-circuit", amount = 5 }
-                --     },
-                --     energy_required = 15,
-                --     results = { { type = "item", name = "speed-module", amount = 1 } },
-                --     main_product = "speed-module",
-                -- },
-            })
+            }
+        )
 
         if recipe.technologies then
-            for _, tech in ipairs(recipe.technologies) do
-                vgal.tech.add_recipe(tech, recipe.name)
+            if type(recipe.technologies[1]) == "table" then
+                for i, preColl in ipairs(recipe.technologies) do
+                    local techName = recipe.name .. "-tech" .. i
+                    data:extend({
+                        vgal.tech.create_empty(techName, 1, { 1, 2, 3 }, 100, 30, preColl, "a", recipe.icons)
+                    })
+                    vgal.tech.add_recipe(techName, recipe.name)
+                    ---@diagnostic disable-next-line: param-type-mismatch
+                    -- for _, prereq in ipairs(preColl) do
+                    --     vgal.tech.add_prerequisite(techName, prereq)
+                    -- end
+                end
+
+
+
+            elseif type(recipe.technologies[1]) == "string" then
+                for _, tech in ipairs(recipe.technologies) do
+                    vgal.tech.add_recipe(tech, recipe.name)
+                end
+            else
+                error()
             end
         end
     end
@@ -249,5 +256,30 @@ require("item")
 require("fluid")
 require("entity")
 
+data:extend(
+    {
+        {
+            type = "recipe",
+            name = "vgal-petroleum-gas-heavy-oil",
+            category = "oil-processing",
+            energy_required = 2,
+            ingredients = {
+                { type = "item",  name = "coal",          amount = 1 },
+                { type = "fluid", name = "petroleum-gas", amount = 20 },
+            },
+            results = {
+                { type = "fluid", name = "heavy-oil", amount = 30 },
+            },
+            icons = vgal.icon.register {
+                vgal.icon.get("heavy-oil", "fluid"),
+                vgal.icon.get_in("petroleum-gas", "fluid"),
+            },
+            subgroup = data.raw.fluid["heavy-oil"].subgroup,
+            order = data.raw.fluid["heavy-oil"].order,
+            
+            enabled = false
+        },
+    }
+)
 
 return vgal

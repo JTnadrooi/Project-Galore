@@ -22,7 +22,7 @@ vgal.data.extend
     -- endregion
     -- region *advanced-circuit-flying-robot-frame
     {
-        
+
         name = "advanced-circuit-flying-robot-frame", -- ISSUE #10
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -30,7 +30,7 @@ vgal.data.extend
             vgal.icon.get_in("advanced-circuit"),
         },
         energy_required = 40,
-        technology = "robotics", 
+        technology = "robotics",
         category = "crafting",
         ingredients = {
             { "battery",          1 },
@@ -44,7 +44,7 @@ vgal.data.extend
     -- endregion
     -- region *plastic-bar-repair-pack
     {
-        
+
         name = "plastic-bar-repair-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -111,12 +111,12 @@ vgal.data.extend
         },
         technology = "nuclear-power",
         ingredients = {
-            { "steel-plate",  2 },
-            { "uranium-235",  1 },
-            { "uranium-238",  25 },
+            { "steel-plate", 2 },
+            { "uranium-235", 1 },
+            { "uranium-238", 25 },
         },
         fluid_ingredients = {
-            {"sulfuric-acid", 20},
+            { "sulfuric-acid", 20 },
         },
         results = {
             { "uranium-fuel-cell", 15 },

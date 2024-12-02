@@ -209,7 +209,14 @@ vgal.data.extend {
         },
         category = "crafting-with-fluid",
         energy_required = 64,
-        technology = "chemical-science-pack",
+        -- technology = "chemical-science-pack",
+        technology = { "bulk-inserter", "chemical-science-pack" },
+        -- technologies = {
+        --     { "bulk-inserter", "logistics-2", "chemical-science-pack" },
+        -- },
+        -- technologies = {
+        --     "logistics-2",
+        -- },
         ingredients = {
             { "bulk-inserter",       2 },
             { "fast-transport-belt", 8 },

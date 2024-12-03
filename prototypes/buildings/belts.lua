@@ -188,6 +188,7 @@ vgal.data.extend {
         results = {
             { "transport-belt", 4 },
         },
+        category = "crafting",
     },
     {
         name = "plastic-fast-transport-belt",

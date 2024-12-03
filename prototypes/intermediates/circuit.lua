@@ -8,7 +8,7 @@ vgal.data.extend
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("sulfuric-acid", "fluid"),
         },
-        energy_required = 16,
+        energy_required = 32,
         ingredients = {
             { "copper-cable",       8 },
             { "electronic-circuit", 4 },
@@ -18,7 +18,7 @@ vgal.data.extend
             { "sulfuric-acid", 40 },
         },
         results = {
-            { "advanced-circuit", 8 }
+            { "advanced-circuit", 4 }
         },
         category = "crafting-with-fluid"
     },
@@ -29,6 +29,7 @@ vgal.data.extend
         icons = vgal.icon.register {
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("iron-gear-wheel"),
+            vgal.icon.get_in2("sulfur"),
         },
         energy_required = 6,
         ingredients = {
@@ -43,17 +44,45 @@ vgal.data.extend
         category = "crafting"
     },
     {
-        name = "iron-gear-wheel-electronic-circuit",
+        name = "iron-gear-wheel-lubricant-advanced-circuit",
+        prefix = "vgal",
+        technology = "lubricant",
+        icons = vgal.icon.register {
+            vgal.icon.get("advanced-circuit"),
+            vgal.icon.get_in("iron-gear-wheel"),
+            vgal.icon.get_in2("lubricant", "fluid"),
+        },
+        energy_required = 6,
+        ingredients = {
+            { "iron-gear-wheel", 6 },
+            { "iron-stick",      4 },
+            { "steel-plate",     2 },
+            { "iron-plate",     2 },
+        },
+        fluid_ingredients = {
+            { "lubricant", 20 },
+        },
+        results = {
+            { "advanced-circuit", 3 }
+        },
+        category = "crafting"
+    },
+    {
+        name = "iron-gear-wheel-lubricant-electronic-circuit",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("iron-gear-wheel"),
+            vgal.icon.get_in2("lubricant", "fluid"),
         },
-        technology = "electronics",
+        technology = "lubricant",
         energy_required = 0.5,
         ingredients = {
             { "iron-gear-wheel", 1 },
-            { "iron-stick",      2 }
+            { "iron-stick",      1 }
+        },
+        fluid_ingredients = {
+            { "lubricant", 5 },
         },
         results = {
             { "electronic-circuit", 1 }
@@ -98,8 +127,6 @@ vgal.data.extend
             { "copper-ore",         1, 0.8 },
             { "iron-ore",           1, 0.8 },
         },
-        subgroup = data.raw.item["electronic-circuit"].subgroup,
-        order = data.raw.item["electronic-circuit"].order
     },
     {
         name = "processing-unit-from-advanced-circuit",
@@ -121,7 +148,6 @@ vgal.data.extend
         results = {
             { "processing-unit", 1 },
         },
-        main_product = "processing-unit",
     },
     {
         name = "plastic-bar-processing-unit",
@@ -144,7 +170,6 @@ vgal.data.extend
         results = {
             { "processing-unit", 1 },
         },
-        main_product = "processing-unit",
     },
     {
         name = "iron-gear-wheel-processing-unit",
@@ -168,17 +193,40 @@ vgal.data.extend
         results = {
             { "processing-unit", 1 },
         },
-        main_product = "processing-unit",
     },
     {
-        name = "efficiency-module-processing-unit", -- ISSUE #10
+        name = "iron-gear-wheel-lubricant-processing-unit",
+        prefix = "vgal",
+        category = "crafting-with-fluid",
+        icons = vgal.icon.register {
+            vgal.icon.get("processing-unit"),
+            vgal.icon.get_in("engine-unit"),
+            vgal.icon.get_in2("lubricant", "fluid"),
+        },
+        technology = { "lubricant", "processing-unit" },
+        energy_required = 8,
+        ingredients = {
+            { "engine-unit",      2 },
+            { "pipe",             2 },
+            { "iron-gear-wheel",  2 },
+            { "advanced-circuit", 2 },
+        },
+        fluid_ingredients = {
+            { "lubricant", 5 },
+        },
+        results = {
+            { "processing-unit", 1 },
+        },
+    },
+    {
+        name = "efficiency-module-processing-unit",
         prefix = "vgal",
         category = "crafting-with-fluid",
         icons = vgal.icon.register {
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("efficiency-module")
         },
-        technology = "processing-unit",
+        technology = "efficiency-module-2",
         energy_required = 16,
         ingredients = {
             { "efficiency-module", 2 },
@@ -190,6 +238,5 @@ vgal.data.extend
         results = {
             { "processing-unit", 2 },
         },
-        main_product = "processing-unit",
     },
 }

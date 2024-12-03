@@ -1,5 +1,4 @@
 data:extend {
-    -- region *steel-express-transport-belt
     {
         type = "recipe",
         name = "vgal-steel-express-transport-belt",
@@ -21,8 +20,6 @@ data:extend {
         subgroup = data.raw.item["express-transport-belt"].subgroup,
         order = data.raw.item["express-transport-belt"].order
     },
-    -- endregion
-    -- region *steel-express-splitter
     {
         type = "recipe",
         name = "vgal-steel-express-splitter",
@@ -45,8 +42,6 @@ data:extend {
         subgroup = data.raw.item["express-splitter"].subgroup,
         order = data.raw.item["express-splitter"].order
     },
-    -- endregion
-    -- region *steel-express-underground-belt
     {
         type = "recipe",
         name = "vgal-steel-express-underground-belt",
@@ -68,9 +63,6 @@ data:extend {
         subgroup = data.raw.item["express-underground-belt"].subgroup,
         order = data.raw.item["express-underground-belt"].order
     },
-    -- endregion
-
-    -- region *sulfuric-transport-belt
     {
         type = "recipe",
         name = "vgal-sulfuric-transport-belt",
@@ -93,8 +85,6 @@ data:extend {
         subgroup = data.raw.item["transport-belt"].subgroup,
         order = data.raw.item["transport-belt"].order
     },
-    -- endregion
-    -- region *sulfuric-fast-transport-belt
     {
         type = "recipe",
         name = "vgal-sulfuric-fast-transport-belt",
@@ -118,9 +108,6 @@ data:extend {
         subgroup = data.raw.item["fast-transport-belt"].subgroup,
         order = data.raw.item["fast-transport-belt"].order
     },
-    -- endregion
-    
-    -- region *steel-transport-belt
     {
         type = "recipe",
         name = "vgal-steel-transport-belt",
@@ -139,8 +126,6 @@ data:extend {
         },
         category = "crafting"
     },
-    -- endregion
-    -- region *steel-underground-belt
     {
         type = "recipe",
         name = "vgal-steel-underground-belt",
@@ -159,8 +144,6 @@ data:extend {
         },
         category = "crafting"
     },
-    -- endregion
-    -- region *steel-splitter
     {
         type = "recipe",
         name = "vgal-steel-splitter",
@@ -182,9 +165,6 @@ data:extend {
         subgroup = data.raw.item["splitter"].subgroup,
         order = data.raw.item["splitter"].order
     },
-    -- endregion
-
-    -- region *steel-fast-splitter
     {
         type = "recipe",
         name = "vgal-steel-fast-splitter",
@@ -206,8 +186,6 @@ data:extend {
         subgroup = data.raw.item["fast-splitter"].subgroup,
         order = data.raw.item["fast-splitter"].order
     },
-    -- endregion
-    -- region *steel-fast-transport-belt
     {
         type = "recipe",
         name = "vgal-steel-fast-transport-belt",
@@ -228,8 +206,6 @@ data:extend {
         subgroup = data.raw.item["fast-transport-belt"].subgroup,
         order = data.raw.item["fast-transport-belt"].order
     },
-    -- endregion
-    -- region *steel-fast-underground-belt
     {
         type = "recipe",
         name = "vgal-steel-fast-underground-belt",
@@ -250,9 +226,6 @@ data:extend {
         subgroup = data.raw.item["fast-underground-belt"].subgroup,
         order = data.raw.item["fast-underground-belt"].order
     },
-    -- endregion
-    
-    -- region *plastic-transport-belt
     {
         type = "recipe",
         name = "vgal-plastic-transport-belt",
@@ -268,8 +241,6 @@ data:extend {
         result = "transport-belt",
         result_count = 4
     },
-    -- endregion
-    -- region *plastic-fast-transport-belt
     {
         type = "recipe",
         name = "vgal-plastic-fast-transport-belt",
@@ -287,8 +258,6 @@ data:extend {
         result = "fast-transport-belt",
         result_count = 2
     },
-    -- endregion
-    -- region *plastic-express-transport-belt
     {
         type = "recipe",
         name = "vgal-plastic-express-transport-belt",
@@ -308,24 +277,18 @@ data:extend {
         result = "express-transport-belt",
         result_count = 2
     },
-    -- endregion
 }
 vgal.tech.add_recipe("plastics", "vgal-plastic-transport-belt")
 vgal.tech.add_recipe("vgal-alternative-logistics-2", "vgal-plastic-fast-transport-belt")
 vgal.tech.add_recipe("vgal-alternative-logistics-3", "vgal-plastic-express-transport-belt")
-
 vgal.tech.add_recipe("vgal-sulfuric-alternative-logistics", "vgal-sulfuric-transport-belt")
 vgal.tech.add_recipe("vgal-sulfuric-alternative-logistics-2", "vgal-sulfuric-fast-transport-belt")
-
 vgal.tech.add_recipe("vgal-alternative-logistics-2", "vgal-steel-fast-splitter")
 vgal.tech.add_recipe("vgal-alternative-logistics-2", "vgal-steel-fast-transport-belt")
 vgal.tech.add_recipe("vgal-alternative-logistics-2", "vgal-steel-fast-underground-belt")
-
 vgal.tech.add_recipe("vgal-alternative-logistics-3", "vgal-steel-express-splitter")
 vgal.tech.add_recipe("vgal-alternative-logistics-3", "vgal-steel-express-transport-belt")
 vgal.tech.add_recipe("vgal-alternative-logistics-3", "vgal-steel-express-underground-belt")
-
 vgal.tech.add_recipe("vgal-alternative-logistics", "vgal-steel-splitter")
 vgal.tech.add_recipe("vgal-alternative-logistics", "vgal-steel-transport-belt")
 vgal.tech.add_recipe("vgal-alternative-logistics", "vgal-steel-underground-belt")
-

@@ -1,6 +1,5 @@
 vgal.data.extend
 {
-    -- -- region *rocket-part-electric
     -- {
     --     name = "rocket-part-electric",
     --     technology = "rocket-silo",
@@ -19,8 +18,6 @@ vgal.data.extend
     --     },
     --     category = "rocket-building",
     -- },
-    -- -- endregion
-    -- -- region *rocket-part-nuclear
     -- {
     --     name = "rocket-part-nuclear",
     --     prefix = "vgal",
@@ -40,8 +37,6 @@ vgal.data.extend
     --     },
     --     category = "rocket-building",
     -- },
-    -- -- endregion
-    -- region *rocket-part-swarm
     {
         name = "rocket-part-swarm",
         prefix = "vgal",
@@ -61,8 +56,6 @@ vgal.data.extend
         },
         category = "rocket-building",
     },
-    -- endregion
 }
-
 data.raw.recipe["rocket-part"].hidden = false
 data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil

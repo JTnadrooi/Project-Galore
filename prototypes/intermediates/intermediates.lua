@@ -1,6 +1,5 @@
 vgal.data.extend
 {
-    -- region *plastic-bar-low-density-structure
     {
         name = "plastic-bar-low-density-structure",
         prefix = "vgal",
@@ -19,10 +18,7 @@ vgal.data.extend
             { "low-density-structure", 2 },
         },
     },
-    -- endregion
-    -- region *advanced-circuit-flying-robot-frame
     {
-
         name = "advanced-circuit-flying-robot-frame", -- ISSUE #10
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -41,10 +37,7 @@ vgal.data.extend
             { "flying-robot-frame", 2 },
         },
     },
-    -- endregion
-    -- region *plastic-bar-repair-pack
     {
-
         name = "plastic-bar-repair-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -61,8 +54,6 @@ vgal.data.extend
             { "repair-pack", 2 },
         },
     },
-    -- endregion
-    -- region *copper-plate-copper-cable
     {
         name = "copper-plate-copper-cable",
         prefix = "vgal",
@@ -80,8 +71,6 @@ vgal.data.extend
         },
         category = "smelting",
     },
-    -- endregion
-    -- region *steam-engine-engine-unit
     {
         name = "steam-engine-engine-unit",
         prefix = "vgal",
@@ -99,8 +88,6 @@ vgal.data.extend
             { "engine-unit", 4 },
         },
     },
-    -- endregion
-    -- region *steel-plate-uranium-fuel-cell
     {
         name = "steel-plate-uranium-fuel-cell",
         prefix = "vgal",
@@ -124,5 +111,4 @@ vgal.data.extend
         energy_required = 12,
         category = "crafting-with-fluid",
     },
-    -- endregion
 }

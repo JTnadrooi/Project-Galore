@@ -1,6 +1,5 @@
 vgal.data.extend
 {
-    -- region *sulfuric-acid-advanced-circuit
     {
         name = "sulfuric-acid-advanced-circuit",
         prefix = "vgal",
@@ -23,8 +22,6 @@ vgal.data.extend
         },
         category = "crafting-with-fluid"
     },
-    -- endregion
-    -- region *iron-gear-wheel-advanced-circuit
     {
         name = "iron-gear-wheel-advanced-circuit",
         prefix = "vgal",
@@ -45,8 +42,6 @@ vgal.data.extend
         },
         category = "crafting"
     },
-    -- endregion
-    -- region *iron-gear-wheel-electronic-circuit
     {
         name = "iron-gear-wheel-electronic-circuit",
         prefix = "vgal",
@@ -64,10 +59,7 @@ vgal.data.extend
             { "electronic-circuit", 1 }
         },
     },
-    -- endregion
-    -- region *electronic-circuit-from-plastic-bar
     {
-
         name = "electronic-circuit-from-plastic-bar",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -84,10 +76,7 @@ vgal.data.extend
             { "electronic-circuit", 1 }
         },
     },
-    -- endregion
-    -- region *sulfuric-electronic-circuit
     {
-
         name = "sulfuric-electronic-circuit",
         prefix = "vgal",
         category = "crafting-with-fluid",
@@ -112,11 +101,7 @@ vgal.data.extend
         subgroup = data.raw.item["electronic-circuit"].subgroup,
         order = data.raw.item["electronic-circuit"].order
     },
-    -- endregion
-
-    -- region *processing-unit-from-advanced-circuit
     {
-
         name = "processing-unit-from-advanced-circuit",
         prefix = "vgal",
         category = "crafting-with-fluid",
@@ -138,10 +123,7 @@ vgal.data.extend
         },
         main_product = "processing-unit",
     },
-    -- endregion
-    -- region *plastic-bar-processing-unit
     {
-
         name = "plastic-bar-processing-unit",
         prefix = "vgal",
         category = "crafting-with-fluid",
@@ -164,10 +146,7 @@ vgal.data.extend
         },
         main_product = "processing-unit",
     },
-    -- endregion
-    -- region *iron-gear-wheel-processing-unit
     {
-
         name = "iron-gear-wheel-processing-unit",
         prefix = "vgal",
         category = "crafting-with-fluid",
@@ -191,8 +170,6 @@ vgal.data.extend
         },
         main_product = "processing-unit",
     },
-    -- endregion
-    -- region *efficiency-module-processing-unit
     {
         name = "efficiency-module-processing-unit", -- ISSUE #10
         prefix = "vgal",
@@ -215,5 +192,4 @@ vgal.data.extend
         },
         main_product = "processing-unit",
     },
-    -- endregion
 }

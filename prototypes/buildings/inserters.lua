@@ -1,5 +1,4 @@
 vgal.data.extend {
-    -- region *inserter-from-copper-plate
     {
         name = "inserter-from-copper-plate",
         prefix = "vgal",
@@ -18,8 +17,6 @@ vgal.data.extend {
             { "inserter", 2 },
         },
     },
-    -- endregion
-    -- region *inserter-from-engine-unit
     {
         name = "inserter-from-engine-unit",
         prefix = "vgal",
@@ -38,8 +35,6 @@ vgal.data.extend {
             { "inserter", 4 },
         },
     },
-    -- endregion
-    -- region *burner-inserter-from-engine-unit
     {
         name = "burner-inserter-from-engine-unit",
         prefix = "vgal",
@@ -57,5 +52,4 @@ vgal.data.extend {
             { "burner-inserter", 4 },
         },
     },
-    -- endregion
 }

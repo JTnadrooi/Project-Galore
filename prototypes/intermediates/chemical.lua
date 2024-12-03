@@ -1,6 +1,5 @@
 vgal.data.extend
 {
-    -- region *coal-steam-sulfur
     {
         type = "recipe",
         name = "coal-steam-sulfur",
@@ -26,5 +25,4 @@ vgal.data.extend
             { "sulfuric-acid", 10 },
         },
     },
-    -- endregion
 }

@@ -73,6 +73,13 @@ function vgal.data.extend(recipes)
 
         recipe.technologies = normalizeSync(recipe.technology, recipe.technologies)
 
+        if recipe.complementairy_recipe then
+            local complementairy_recipe = data.raw["recipe"][recipe.complementairy_recipe]
+            recipe.order = recipe.order or complementairy_recipe.order
+            recipe.subgroup = recipe.subgroup or complementairy_recipe.subgroup
+        end
+
+
         -- if any needed fields are missing this fills them in.
         if recipe.dependent_recipe then
             local dependent_recipe = data.raw["recipe"][recipe.dependent_recipe]
@@ -82,6 +89,8 @@ function vgal.data.extend(recipes)
             recipe.icons = recipe.icons or dependent_recipe.icons
             recipe.energy_required = recipe.energy_required or dependent_recipe.energy_required
             recipe.main_product = recipe.main_product or dependent_recipe.main_product
+            recipe.order = recipe.order or dependent_recipe.order
+            recipe.subgroup = recipe.subgroup or dependent_recipe.subgroup
         end
 
         -- name components
@@ -256,30 +265,30 @@ require("item")
 require("fluid")
 require("entity")
 
-data:extend(
-    {
-        {
-            type = "recipe",
-            name = "vgal-petroleum-gas-heavy-oil",
-            category = "oil-processing",
-            energy_required = 2,
-            ingredients = {
-                { type = "item",  name = "coal",          amount = 1 },
-                { type = "fluid", name = "petroleum-gas", amount = 20 },
-            },
-            results = {
-                { type = "fluid", name = "heavy-oil", amount = 30 },
-            },
-            icons = vgal.icon.register {
-                vgal.icon.get("heavy-oil", "fluid"),
-                vgal.icon.get_in("petroleum-gas", "fluid"),
-            },
-            subgroup = data.raw.fluid["heavy-oil"].subgroup,
-            order = data.raw.fluid["heavy-oil"].order,
+-- data:extend(
+--     {
+--         {
+--             type = "recipe",
+--             name = "vgal-petroleum-gas-heavy-oil",
+--             category = "oil-processing",
+--             energy_required = 2,
+--             ingredients = {
+--                 { type = "item",  name = "coal",          amount = 1 },
+--                 { type = "fluid", name = "petroleum-gas", amount = 20 },
+--             },
+--             results = {
+--                 { type = "fluid", name = "heavy-oil", amount = 30 },
+--             },
+--             icons = vgal.icon.register {
+--                 vgal.icon.get("heavy-oil", "fluid"),
+--                 vgal.icon.get_in("petroleum-gas", "fluid"),
+--             },
+--             subgroup = data.raw.fluid["heavy-oil"].subgroup,
+--             order = data.raw.fluid["heavy-oil"].order,
             
-            enabled = false
-        },
-    }
-)
+--             enabled = false
+--         },
+--     }
+-- )
 
 return vgal

@@ -9,6 +9,8 @@ do
     ---@class vgal.VgalRecipe:data.RecipePrototype
     ---Non optional empty fields get borrowed from this recipe. (except the name)
     ---@field dependent_recipe? string
+    ---Non optional empty fields get borrowed from this recipe. (except the name)
+    ---@field complementairy_recipe? string
     ---A item of witch the input amount will be linked to the output amount. Usefull for water<>steam, cooling and waste liquids.
     ---@field tier? number
     ---The technology this recipe will be added to as unlock.

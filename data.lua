@@ -12,7 +12,7 @@ vgal.log("the *core-of-galore* has loaded.")
 -- require("prototypes.fluids.f-intermediates")
 require("prototypes.intermediates.oils")
 
--- require("prototypes.buildings.belts")
+require("prototypes.buildings.belts")
 -- require("prototypes.buildings.assembling")
 -- require("prototypes.buildings.fluid-transport")
 -- require("prototypes.buildings.deco")

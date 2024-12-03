@@ -1,294 +1,231 @@
-data:extend {
+vgal.data.extend {
     {
-        type = "recipe",
-        name = "vgal-steel-express-transport-belt",
-        enabled = false,
+        name = "steel-express-transport-belt",
+        prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("express-transport-belt"),
             vgal.icon.get_in("steel-plate"),
         },
         energy_required = 0.5,
+        technology = "logistics-3",
         ingredients = {
-            {type = "item", name = "steel-plate", amount = 3},
-            {type = "fluid", name = "lubricant", amount = 20},
-            {type = "item", name = "fast-transport-belt", amount = 1}
+            { "steel-plate",         3 },
+            { "fast-transport-belt", 1 }
+        },
+        fluid_ingredients = {
+            { "lubricant", 20 },
         },
         results = {
-            {type = "item", name = "express-transport-belt", amount = 1}
+            { "express-transport-belt", 1 }
         },
         category = "crafting-with-fluid",
-        subgroup = data.raw.item["express-transport-belt"].subgroup,
-        order = data.raw.item["express-transport-belt"].order
     },
     {
-        type = "recipe",
-        name = "vgal-steel-express-splitter",
-        enabled = false,
+        name = "steel-express-splitter",
+        prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("express-splitter"),
             vgal.icon.get_in("steel-plate"),
         },
+        technology = "logistics-3",
         energy_required = 2,
         ingredients = {
-            {type = "item", name = "steel-plate", amount = 2},
-            {type = "item", name = "express-transport-belt", amount = 4},
-            {type = "fluid", name = "lubricant", amount = 20},
-            {type = "item", name = "advanced-circuit", amount = 10}
+            { "steel-plate",            2 },
+            { "express-transport-belt", 4 },
+            { "advanced-circuit",       10 }
+        },
+        fluid_ingredients = {
+            { "lubricant", 20 },
         },
         results = {
-            {type = "item", name = "express-splitter", amount = 1}
+            { "express-splitter", 1 }
         },
         category = "crafting-with-fluid",
-        subgroup = data.raw.item["express-splitter"].subgroup,
-        order = data.raw.item["express-splitter"].order
     },
     {
-        type = "recipe",
-        name = "vgal-steel-express-underground-belt",
-        enabled = false,
+        name = "steel-express-underground-belt",
+        prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("express-underground-belt"),
             vgal.icon.get_in("steel-plate"),
         },
+        technology = "logistics-3",
         energy_required = 2,
         ingredients = {
-            {type = "item", name = "steel-plate", amount = 10},
-            {type = "item", name = "express-transport-belt", amount = 10},
-            {type = "fluid", name = "lubricant", amount = 40}
+            { "steel-plate",            10 },
+            { "express-transport-belt", 10 },
+        },
+        fluid_ingredients = {
+            { "lubricant", 20 },
         },
         results = {
-            {type = "item", name = "express-underground-belt", amount = 2}
+            { "express-underground-belt", 2 }
         },
         category = "crafting-with-fluid",
-        subgroup = data.raw.item["express-underground-belt"].subgroup,
-        order = data.raw.item["express-underground-belt"].order
     },
     {
-        type = "recipe",
-        name = "vgal-sulfuric-transport-belt",
-        enabled = false,
+        name = "steel-transport-belt",
+        prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("transport-belt"),
-            vgal.icon.get_in("sulfuric-acid", "fluid"),
+            vgal.icon.get_in("steel-plate")
         },
-        energy_required = 8,
-        ingredients = {
-            {type = "fluid", name = "sulfuric-acid", amount = 40},
-            {type = "item", name = "steel-plate", amount = 1},
-            {type = "item", name = "iron-gear-wheel", amount = 5}
-        },
-        results = {
-            {type = "item", name = "transport-belt", amount = 12},
-            {type = "item", name = "iron-ore", amount = 1}
-        },
-        category = "crafting-with-fluid",
-        subgroup = data.raw.item["transport-belt"].subgroup,
-        order = data.raw.item["transport-belt"].order
-    },
-    {
-        type = "recipe",
-        name = "vgal-sulfuric-fast-transport-belt",
-        enabled = false,
-        icons = vgal.icon.register {
-            vgal.icon.get("fast-transport-belt"),
-            vgal.icon.get_in("sulfuric-acid", "fluid"),
-        },
-        energy_required = 4,
-        ingredients = {
-            {type = "fluid", name = "sulfuric-acid", amount = 40},
-            {type = "item", name = "steel-plate", amount = 2},
-            {type = "item", name = "transport-belt", amount = 4},
-            {type = "item", name = "iron-gear-wheel", amount = 10}
-        },
-        results = {
-            {type = "item", name = "fast-transport-belt", amount = 4},
-            {type = "item", name = "iron-ore", amount = 1}
-        },
-        category = "crafting-with-fluid",
-        subgroup = data.raw.item["fast-transport-belt"].subgroup,
-        order = data.raw.item["fast-transport-belt"].order
-    },
-    {
-        type = "recipe",
-        name = "vgal-steel-transport-belt",
-        enabled = false,
-        icons = vgal.icon.register {
-                vgal.icon.get("transport-belt"),
-                vgal.icon.get_in("steel-plate")
-        },
+        technology = "steel-processing",
         energy_required = 6,
         ingredients = {
-            {type = "item", name = "steel-plate", amount = 1},
-            {type = "item", name = "iron-gear-wheel", amount = 6}
+            { "steel-plate",     1 },
+            { "iron-gear-wheel", 6 }
         },
         results = {
-            {type = "item", name = "transport-belt", amount = 12}
+            { "transport-belt", 12 }
         },
         category = "crafting"
     },
     {
-        type = "recipe",
-        name = "vgal-steel-underground-belt",
-        enabled = false,
+        name = "steel-underground-belt",
+        prefix = "vgal",
         icons = vgal.icon.register {
-                vgal.icon.get("underground-belt"),
-                vgal.icon.get_in("steel-plate")
+            vgal.icon.get("underground-belt"),
+            vgal.icon.get_in("steel-plate")
         },
         energy_required = 3,
+        technology = "steel-processing",
         ingredients = {
-            {type = "item", name = "steel-plate", amount = 2},
-            {type = "item", name = "transport-belt", amount = 3},
+            { "steel-plate",    2 },
+            { "transport-belt", 3 },
         },
         results = {
-            {type = "item", name = "underground-belt", amount = 2}
+            { "underground-belt", 2 }
         },
         category = "crafting"
     },
     {
-        type = "recipe",
-        name = "vgal-steel-splitter",
-        enabled = false,
+        name = "steel-splitter",
+        prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("splitter"),
             vgal.icon.get_in("steel-plate"),
         },
+        technology = "steel-processing",
         energy_required = 1,
         ingredients = {
-            {type = "item", name = "steel-plate", amount = 1},
-            {type = "item", name = "electronic-circuit", amount = 5},
-            {type = "item", name = "transport-belt", amount = 2},
+            { "steel-plate",        1 },
+            { "electronic-circuit", 5 },
+            { "transport-belt",     2 },
         },
         results = {
-            {type = "item", name = "splitter", amount = 1}
+            { "splitter", 1 }
         },
         category = "crafting",
-        subgroup = data.raw.item["splitter"].subgroup,
-        order = data.raw.item["splitter"].order
     },
     {
-        type = "recipe",
-        name = "vgal-steel-fast-splitter",
-        enabled = false,
+        name = "steel-fast-splitter",
+        prefix = "vgal",
+        technology = {"steel-processing", "logistics-2"},
         icons = vgal.icon.register {
             vgal.icon.get("fast-splitter"),
             vgal.icon.get_in("steel-plate"),
         },
         energy_required = 2,
         ingredients = {
-            {type = "item", name = "steel-plate", amount = 2},
-            {type = "item", name = "electronic-circuit", amount = 6},
-            {type = "item", name = "fast-transport-belt", amount = 4}
+            { "steel-plate",         2 },
+            { "electronic-circuit",  6 },
+            { "fast-transport-belt", 4 }
         },
         results = {
-            {type = "item", name = "fast-splitter", amount = 1}
+            { "fast-splitter", 1 }
         },
         category = "crafting",
-        subgroup = data.raw.item["fast-splitter"].subgroup,
-        order = data.raw.item["fast-splitter"].order
     },
     {
-        type = "recipe",
-        name = "vgal-steel-fast-transport-belt",
-        enabled = false,
+        name = "steel-fast-transport-belt",
+        prefix = "vgal",
+        technology = { "steel-processing", "logistics-2" },
         icons = vgal.icon.register {
             vgal.icon.get("fast-transport-belt"),
             vgal.icon.get_in("steel-plate"),
         },
         energy_required = 2,
         ingredients = {
-            {type = "item", name = "steel-plate", amount = 8},
-            {type = "item", name = "transport-belt", amount = 5},
+            { "steel-plate",    8 },
+            { "transport-belt", 5 },
         },
         results = {
-            {type = "item", name = "fast-transport-belt", amount = 5}
+            { "fast-transport-belt", 5 }
         },
         category = "crafting",
-        subgroup = data.raw.item["fast-transport-belt"].subgroup,
-        order = data.raw.item["fast-transport-belt"].order
     },
     {
-        type = "recipe",
-        name = "vgal-steel-fast-underground-belt",
-        enabled = false,
+        name = "steel-fast-underground-belt",
+        prefix = "vgal",
+        technology = { "steel-processing", "logistics-2" },
         icons = vgal.icon.register {
             vgal.icon.get("fast-underground-belt"),
             vgal.icon.get_in("steel-plate"),
         },
         energy_required = 2,
         ingredients = {
-            {type = "item", name = "steel-plate", amount = 10},
-            {type = "item", name = "fast-transport-belt", amount = 5}
+            { "steel-plate",         10 },
+            { "fast-transport-belt", 5 }
         },
         results = {
-            {type = "item", name = "fast-underground-belt", amount = 2}
+            { "fast-underground-belt", 2 }
         },
         category = "crafting",
-        subgroup = data.raw.item["fast-underground-belt"].subgroup,
-        order = data.raw.item["fast-underground-belt"].order
     },
     {
-        type = "recipe",
-        name = "vgal-plastic-transport-belt",
-        enabled = false,
+        name = "plastic-transport-belt",
+        prefix = "vgal",
+        technology = "plastics",
         icons = vgal.icon.register {
             vgal.icon.get("transport-belt"),
             vgal.icon.get_in("plastic-bar"),
         },
         ingredients = {
-            {"plastic-bar", 2},
-            {"iron-gear-wheel", 1}
+            { "plastic-bar",     2 },
+            { "iron-gear-wheel", 1 }
         },
-        result = "transport-belt",
-        result_count = 4
+        results = {
+            { "transport-belt", 4 },
+        },
     },
     {
-        type = "recipe",
-        name = "vgal-plastic-fast-transport-belt",
-        enabled = false,
+        name = "plastic-fast-transport-belt",
+        prefix = "vgal",
+        technology = { "plastics", "logistics-2" },
         icons = vgal.icon.register {
             vgal.icon.get("fast-transport-belt"),
             vgal.icon.get_in("plastic-bar"),
         },
         energy_required = 1,
         ingredients = {
-            {"iron-gear-wheel", 5},
-            {"transport-belt", 2},
-            {"plastic-bar", 8}
+            { "iron-gear-wheel", 5 },
+            { "transport-belt",  2 },
+            { "plastic-bar",     8 }
         },
         result = "fast-transport-belt",
         result_count = 2
     },
     {
-        type = "recipe",
-        name = "vgal-plastic-express-transport-belt",
+        name = "plastic-express-transport-belt",
+        prefix = "vgal",
+        technology = "logistics-3",
         icons = vgal.icon.register {
             vgal.icon.get("express-transport-belt"),
             vgal.icon.get_in("plastic-bar"),
         },
         category = "crafting-with-fluid",
-        enabled = false,
         energy_required = 2,
         ingredients = {
-            {"iron-gear-wheel", 10},
-            {"fast-transport-belt", 2},
-            {type = "fluid", name = "lubricant", amount = 30},
-            {"plastic-bar", 10}
+            { "iron-gear-wheel",     10 },
+            { "fast-transport-belt", 2 },
+            { "plastic-bar",         10 }
         },
-        result = "express-transport-belt",
-        result_count = 2
+        fluid_ingredients = {
+            { "lubricant", 30 },
+        },
+        results = {
+            { "express-transport-belt", 2 },
+        },
     },
 }
-vgal.tech.add_recipe("plastics", "vgal-plastic-transport-belt")
-vgal.tech.add_recipe("vgal-alternative-logistics-2", "vgal-plastic-fast-transport-belt")
-vgal.tech.add_recipe("vgal-alternative-logistics-3", "vgal-plastic-express-transport-belt")
-vgal.tech.add_recipe("vgal-sulfuric-alternative-logistics", "vgal-sulfuric-transport-belt")
-vgal.tech.add_recipe("vgal-sulfuric-alternative-logistics-2", "vgal-sulfuric-fast-transport-belt")
-vgal.tech.add_recipe("vgal-alternative-logistics-2", "vgal-steel-fast-splitter")
-vgal.tech.add_recipe("vgal-alternative-logistics-2", "vgal-steel-fast-transport-belt")
-vgal.tech.add_recipe("vgal-alternative-logistics-2", "vgal-steel-fast-underground-belt")
-vgal.tech.add_recipe("vgal-alternative-logistics-3", "vgal-steel-express-splitter")
-vgal.tech.add_recipe("vgal-alternative-logistics-3", "vgal-steel-express-transport-belt")
-vgal.tech.add_recipe("vgal-alternative-logistics-3", "vgal-steel-express-underground-belt")
-vgal.tech.add_recipe("vgal-alternative-logistics", "vgal-steel-splitter")
-vgal.tech.add_recipe("vgal-alternative-logistics", "vgal-steel-transport-belt")
-vgal.tech.add_recipe("vgal-alternative-logistics", "vgal-steel-underground-belt")

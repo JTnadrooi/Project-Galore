@@ -25,7 +25,7 @@ vgal.data.extend
     {
         name = "iron-gear-wheel-advanced-circuit",
         prefix = "vgal",
-        technology = "advanced-circuit",
+        technology = { "advanced-circuit", "sulfur-processing" },
         icons = vgal.icon.register {
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("iron-gear-wheel"),
@@ -57,7 +57,7 @@ vgal.data.extend
             { "iron-gear-wheel", 6 },
             { "iron-stick",      4 },
             { "steel-plate",     2 },
-            { "iron-plate",     2 },
+            { "iron-plate",      2 },
         },
         fluid_ingredients = {
             { "lubricant", 20 },
@@ -65,7 +65,7 @@ vgal.data.extend
         results = {
             { "advanced-circuit", 3 }
         },
-        category = "crafting"
+        category = "crafting-with-fluid",
     },
     {
         name = "iron-gear-wheel-lubricant-electronic-circuit",
@@ -87,6 +87,25 @@ vgal.data.extend
         results = {
             { "electronic-circuit", 1 }
         },
+        category = "crafting-with-fluid",
+    },
+    {
+        name = "iron-gear-wheel-electronic-circuit",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("electronic-circuit"),
+            vgal.icon.get_in("iron-gear-wheel"),
+        },
+        technology = "electronics",
+        energy_required = 0.5,
+        ingredients = {
+            { "iron-gear-wheel", 1 },
+            { "iron-stick",      2 }
+        },
+        results = {
+            { "electronic-circuit", 1 }
+        },
+        category = "crafting",
     },
     {
         name = "electronic-circuit-from-plastic-bar",

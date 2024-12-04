@@ -121,7 +121,7 @@ vgal.data.extend {
     {
         name = "steel-fast-splitter",
         prefix = "vgal",
-        technology = {"steel-processing", "logistics-2"},
+        technology = { "steel-processing", "logistics-2" },
         icons = vgal.icon.register {
             vgal.icon.get("fast-splitter"),
             vgal.icon.get_in("steel-plate"),
@@ -181,6 +181,7 @@ vgal.data.extend {
             vgal.icon.get("transport-belt"),
             vgal.icon.get_in("plastic-bar"),
         },
+        energy_required = 0.5,
         ingredients = {
             { "plastic-bar",     2 },
             { "iron-gear-wheel", 1 }
@@ -204,8 +205,9 @@ vgal.data.extend {
             { "transport-belt",  2 },
             { "plastic-bar",     8 }
         },
-        result = "fast-transport-belt",
-        result_count = 2
+        results = {
+            { "fast-transport-belt", 2 },
+        },
     },
     {
         name = "plastic-express-transport-belt",

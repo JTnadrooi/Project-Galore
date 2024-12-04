@@ -101,7 +101,7 @@ vgal.data.extend {
             vgal.icon.get("assembling-machine-2"),
             vgal.icon.get_in("speed-module", "module"),
         },
-        technology = "automation-2",
+        technology = "speed-module",
         energy_required = 1.5,
         ingredients = {
             { "assembling-machine-1", 3 },
@@ -136,7 +136,7 @@ vgal.data.extend {
             vgal.icon.get("assembling-machine-2"),
             vgal.icon.get_in("electric-engine-unit"),
         },
-        technology = "engine",
+        technology = "electric-engine",
         energy_required = 1,
         ingredients = {
             { "assembling-machine-1", 2 },

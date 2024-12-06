@@ -52,13 +52,74 @@ function normalizeSync(single, multiple)
     return multiple
 end
 
+local function sumArray(array)
+    local sum = 0
+    for _, value in ipairs(array) do
+        sum = sum + value
+    end
+    return sum
+end
+
+---@param tech data.TechnologyPrototype
+function techToUnits(tech)
+    local units = {}
+    if not tech.unit then
+        return {}
+    end
+    for _, value in ipairs(tech.unit.ingredients) do
+        local name = value[1]:gsub("%-science%-pack", "")
+        if name == "automation" then
+            table.insert(units, 1)
+        end
+        if name == "logistic" then
+            table.insert(units, 2)
+        end
+        if name == "chemical" then
+            table.insert(units, 3)
+        end
+        if name == "production" then
+            table.insert(units, 4)
+        end
+        if name == "utility" then
+            table.insert(units, 5)
+        end
+        vgal.log(name)
+    end
+    vgal.log(table.concat(units, ", "))
+    return units
+end
+
+function getLocalized(product)
+    if data.raw.item[product] then
+        if data.raw.item[product].place_result then
+            return { "entity-name." .. product }
+        end
+        return { "item-name." .. product }
+    elseif data.raw.fluid[product] then
+        return { "fluid-name." .. product }
+    elseif data.raw["module"][product] then
+        return { "item-name." .. product }
+    elseif data.raw["tool"][product] then
+        return { "item-name." .. product }
+    end
+end
+
 function shortHand(inTable, newType)
     local transformed = {}
     for _, item in ipairs(inTable) do
         if item[3] then
             table.insert(transformed, { type = newType, name = item[1], amount = item[2], probability = item[3] })
         elseif item[4] then
-            table.insert(transformed, { type = newType, name = item[1], amount = item[2], probability = item[3], amount_min=item[4], amount_max=item[5] })
+            table.insert(transformed,
+                {
+                    type = newType,
+                    name = item[1],
+                    amount = item[2],
+                    probability = item[3],
+                    amount_min = item[4],
+                    amount_max =
+                        item[5]
+                })
         else
             table.insert(transformed, { type = newType, name = item[1], amount = item[2] })
         end
@@ -70,7 +131,6 @@ end
 ---@param recipes vgal.VgalRecipe[]
 function vgal.data.extend(recipes)
     for _, recipe in ipairs(recipes) do
-
         recipe.technologies = normalizeSync(recipe.technology, recipe.technologies)
 
         if recipe.complementairy_recipe then
@@ -95,7 +155,8 @@ function vgal.data.extend(recipes)
 
         -- name components
         recipe.tier = recipe.tier == 1 and nil or recipe.tier
-        recipe.name = (recipe.prefix and (recipe.prefix .. "-") or "") .. recipe.name .. (recipe.tier and ("-" .. recipe.tier) or "")
+        recipe.name = (recipe.prefix and (recipe.prefix .. "-") or "") ..
+            recipe.name .. (recipe.tier and ("-" .. recipe.tier) or "")
 
         -- name components
         recipe.enabled = (recipe.enabled ~= nil) or not recipe.technologies
@@ -127,18 +188,21 @@ function vgal.data.extend(recipes)
         end
         recipe.ingredients = shortHand(recipe.ingredients, "item")
         recipe.results = shortHand(recipe.results, "item")
-        
+
         recipe.fluid_ingredients = shortHand(recipe.fluid_ingredients, "fluid")
         recipe.fluid_results = shortHand(recipe.fluid_results, "fluid")
 
         for _, value in pairs(recipe.fluid_ingredients) do
+            ---@diagnostic disable-next-line: undefined-field
             table.insert(recipe.ingredients, { type = "fluid", name = value.name, amount = value.amount })
         end
         for _, value in pairs(recipe.fluid_results) do
+            ---@diagnostic disable-next-line: undefined-field
             table.insert(recipe.results, { type = "fluid", name = value.name, amount = value.amount })
         end
 
         if not recipe.main_product then
+            ---@diagnostic disable-next-line: undefined-field
             recipe.main_product = recipe.results[1].name
         end
 
@@ -163,7 +227,7 @@ function vgal.data.extend(recipes)
                     main_product = recipe.main_product,
                     -- localised_name = { "item-name." .. recipe.main_product, " x" .. recipe.results[1].amount },
                     -- localised_name = { "item-name." .. recipe.main_product },
-                    localised_name = nil,
+                    localised_name = getLocalized(recipe.main_product),
                     -- localised_name = { "", { "item-name.iron-plate" }, ": ", tostring(60) }
                 },
             }
@@ -172,21 +236,48 @@ function vgal.data.extend(recipes)
         if recipe.technologies then
             if type(recipe.technologies[1]) == "table" then
                 for i, preColl in ipairs(recipe.technologies) do
-                    local techName = recipe.name .. "-tech" .. i
+                    ---@cast preColl table
+
+                    local techName = recipe.name .. "-node" .. i
+
+                    local eventualUnitsWorth = 0
+                    local eventualUnits = {}
+                    for _, prerequisite in ipairs(preColl) do
+                        tech = data.raw["technology"][prerequisite]
+                        units = techToUnits(tech)
+                        unitsWorth = sumArray(units)
+                        if unitsWorth > eventualUnitsWorth then
+                            eventualUnits = units
+                            eventualUnitsWorth = unitsWorth
+                        end
+                    end
+
+                    -- unitCount = unitCount / #preColl -- unused.
+                    
                     data:extend({
-                        vgal.tech.create_empty(techName, 1, { 1, 2, 3 }, 100, 30, preColl, "a", recipe.icons)
+                        vgal.tech.create_empty(techName, 1, eventualUnits, 10, 15, preColl,
+                            "a", {
+                                {
+                                    icon = "__vanilla_galore_continued__/graphics/" .. "node.png",
+                                    icon_size = 256,
+                                },
+                                {
+                                    icon = recipe.icons[1].icon,
+                                    icon_size = recipe.icons[1].icon_size,
+                                    scale = 1.5,
+                                },
+                            })
                     })
+                    data.raw.technology[techName].localised_name = { "?",
+                        { "", "Galore Tech Node: ", getLocalized(recipe.main_product) },
+                        { "", "Galore Tech Node: ", { "entity-name." .. recipe.main_product } },
+                    }
                     vgal.tech.add_recipe(techName, recipe.name)
                     ---@diagnostic disable-next-line: param-type-mismatch
-                    -- for _, prereq in ipairs(preColl) do
-                    --     vgal.tech.add_prerequisite(techName, prereq)
-                    -- end
                 end
-
-
-
             elseif type(recipe.technologies[1]) == "string" then
                 for _, tech in ipairs(recipe.technologies) do
+                    ---@cast tech string
                     vgal.tech.add_recipe(tech, recipe.name)
                 end
             else
@@ -285,7 +376,7 @@ require("entity")
 --             },
 --             subgroup = data.raw.fluid["heavy-oil"].subgroup,
 --             order = data.raw.fluid["heavy-oil"].order,
-            
+
 --             enabled = false
 --         },
 --     }

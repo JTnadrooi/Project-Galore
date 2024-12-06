@@ -16,7 +16,7 @@ do
     ---The technology this recipe will be added to as unlock.
     ---@field technology? string|table
     ---The array technologies this recipe will be added to as unlock.
-    ---@field technologies? string[]
+    ---@field technologies? string[]|table[]
     ---The recipe prefix. "vgal-" for (Vanilla) Galore recipes
     ---@field prefix? string
     ---The method that will be used to determine an icon composition based on the ingredients and results of this recipe.

@@ -167,6 +167,8 @@ function vgal.data.extend(recipes)
         recipe.ingredients = recipe.ingredients or {}
         recipe.results = recipe.results or {}
 
+        recipe.auto_localise = (recipe.auto_localise == nil) and true or recipe.auto_localise
+
         -- name components
         if recipe.icon then
             if recipe.icons then
@@ -225,10 +227,9 @@ function vgal.data.extend(recipes)
                     subgroup = recipe.subgroup,
                     order = recipe.order,
                     main_product = recipe.main_product,
-                    -- localised_name = { "item-name." .. recipe.main_product, " x" .. recipe.results[1].amount },
-                    -- localised_name = { "item-name." .. recipe.main_product },
-                    localised_name = getLocalized(recipe.main_product),
-                    -- localised_name = { "", { "item-name.iron-plate" }, ": ", tostring(60) }
+                    localised_name = recipe.auto_localise and getLocalized(recipe.main_product) or {
+                        "recipe-name." .. recipe.name,
+                    }
                 },
             }
         )
@@ -253,7 +254,7 @@ function vgal.data.extend(recipes)
                     end
 
                     -- unitCount = unitCount / #preColl -- unused.
-                    
+
                     data:extend({
                         vgal.tech.create_empty(techName, 1, eventualUnits, 10, 15, preColl,
                             "a", {
@@ -269,8 +270,9 @@ function vgal.data.extend(recipes)
                             })
                     })
                     data.raw.technology[techName].localised_name = { "?",
+                        { "", "Galore Tech Node: ", { "recipe-name." .. recipe.name } },
                         { "", "Galore Tech Node: ", getLocalized(recipe.main_product) },
-                        { "", "Galore Tech Node: ", { "entity-name." .. recipe.main_product } },
+                        -- { "", "Galore Tech Node: ", { "entity-name." .. recipe.main_product } },
                     }
                     vgal.tech.add_recipe(techName, recipe.name)
                     ---@diagnostic disable-next-line: param-type-mismatch

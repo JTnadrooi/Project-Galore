@@ -11,7 +11,6 @@ do
     ---@field dependent_recipe? string
     ---Non optional empty fields get borrowed from this recipe. (except the name)
     ---@field complementairy_recipe? string
-    ---A item of witch the input amount will be linked to the output amount. Usefull for water<>steam, cooling and waste liquids.
     ---@field tier? number
     ---The technology this recipe will be added to as unlock.
     ---@field technology? string|table
@@ -19,9 +18,10 @@ do
     ---@field technologies? string[]|table[]
     ---The recipe prefix. "vgal-" for (Vanilla) Galore recipes
     ---@field prefix? string
+    ---@field auto_localise? boolean
     ---The method that will be used to determine an icon composition based on the ingredients and results of this recipe.
     ---@field icon_method? string
-    ---@field ingredients ItemKeyPrototype[]|table
+    ---@field ingredients? ItemKeyPrototype[]|table
     ---@field fluid_ingredients? ItemKeyPrototype[]|table
     ---@field fluid_results? ItemKeyPrototype[]|table
     ---@field results? ItemKeyPrototype[]|table

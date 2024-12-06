@@ -18,25 +18,25 @@ vgal.data.extend
             { "low-density-structure", 2 },
         },
     },
-    {
-        name = "advanced-circuit-flying-robot-frame", -- ISSUE #10
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("flying-robot-frame"),
-            vgal.icon.get_in("advanced-circuit"),
-        },
-        energy_required = 40,
-        technology = "robotics",
-        category = "crafting",
-        ingredients = {
-            { "battery",          1 },
-            { "speed-module",     1 },
-            { "advanced-circuit", 2 },
-        },
-        results = {
-            { "flying-robot-frame", 2 },
-        },
-    },
+    -- {
+    --     name = "engine-flying-robot-frame", -- ISSUE #10
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("flying-robot-frame"),
+    --         vgal.icon.get_in("advanced-circuit"),
+    --     },
+    --     energy_required = 40,
+    --     technology = "robotics",
+    --     category = "crafting",
+    --     ingredients = {
+    --         { "battery",          1 },
+    --         { "speed-module",     1 },
+    --         { "advanced-circuit", 2 },
+    --     },
+    --     results = {
+    --         { "flying-robot-frame", 2 },
+    --     },
+    -- },
     {
         name = "plastic-bar-repair-pack",
         prefix = "vgal",

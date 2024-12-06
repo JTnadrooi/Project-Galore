@@ -54,81 +54,46 @@ vgal.data.extend {
             { "assembling-machine-1", 2 }
         },
     },
-    {
-        name = "assembling-machine-2-roboport",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("roboport"),
-            vgal.icon.get_in("assembling-machine-2"),
-        },
-        category = "crafting",
-        energy_required = 6,
-        technologies = {
-            "construction-robotics",
-            "logistic-robotics",
-        },
-        ingredients = {
-            { "assembling-machine-2", 6 }, -- 3,240mw
-            { "steel-plate",          6 },
-            { "advanced-circuit",     12 },
-            { "battery",              6 },
-        },
-        results = {
-            { "roboport", 1 }
-        },
-    },
-    {
-        name = "burner-inserter-assembling-machine-1",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("assembling-machine-1"),
-            vgal.icon.get_in("burner-inserter"),
-        },
-        technology = "automation",
-        energy_required = 0.5,
-        ingredients = {
-            { "burner-inserter",    5 },
-            { "electronic-circuit", 3 },
-        },
-        results = {
-            { "assembling-machine-1", 1 }
-        },
-    },
-    {
-        name = "speed-module-assembling-machine-2",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("assembling-machine-2"),
-            vgal.icon.get_in("speed-module", "module"),
-        },
-        technology = "speed-module",
-        energy_required = 1.5,
-        ingredients = {
-            { "assembling-machine-1", 3 },
-            { "speed-module",         1 }
-        },
-        results = {
-            { "assembling-machine-2", 3 }
-        },
-    },
-    {
-        name = "inserter-assembling-machine-2",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("assembling-machine-2"),
-            vgal.icon.get_in("inserter"),
-        },
-        technology = "automation-2",
-        energy_required = 1.5,
-        ingredients = {
-            { "assembling-machine-1", 1 },
-            { "steel-plate",          2 },
-            { "inserter",             3 },
-        },
-        results = {
-            { "assembling-machine-2", 1 }
-        },
-    },
+    -- {
+    --     name = "assembling-machine-2-roboport",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("roboport"),
+    --         vgal.icon.get_in("assembling-machine-2"),
+    --     },
+    --     category = "crafting",
+    --     energy_required = 6,
+    --     technologies = {
+    --         "construction-robotics",
+    --         "logistic-robotics",
+    --     },
+    --     ingredients = {
+    --         { "assembling-machine-2", 6 }, -- 3,240mw
+    --         { "steel-plate",          6 },
+    --         { "advanced-circuit",     12 },
+    --         { "battery",              6 },
+    --     },
+    --     results = {
+    --         { "roboport", 1 }
+    --     },
+    -- },
+    -- {
+    --     name = "burner-inserter-assembling-machine-1",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("assembling-machine-1"),
+    --         vgal.icon.get_in("burner-inserter"),
+    --     },
+    --     technology = "automation",
+    --     energy_required = 0.5,
+    --     ingredients = {
+    --         { "burner-inserter",    5 },
+    --         { "electronic-circuit", 3 },
+    --     },
+    --     results = {
+    --         { "assembling-machine-1", 1 }
+    --     },
+    -- },
     {
         name = "electric-engine-unit-assembling-machine-2",
         prefix = "vgal",
@@ -145,24 +110,6 @@ vgal.data.extend {
         },
         results = {
             { "assembling-machine-2", 2 }
-        },
-    },
-    {
-        name = "advanced-circuit-assembling-machine-2",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("assembling-machine-2"),
-            vgal.icon.get_in("advanced-circuit"),
-        },
-        technology = "electric-engine",
-        energy_required = 4,
-        ingredients = {
-            { "advanced-circuit",     2 },
-            { "electric-engine-unit", 2 },
-            { "steel-chest",          2 },
-        },
-        results = {
-            { "assembling-machine-2", 4 }
         },
     },
     {

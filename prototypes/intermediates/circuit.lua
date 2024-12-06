@@ -23,7 +23,7 @@ vgal.data.extend
         category = "crafting-with-fluid"
     },
     {
-        name = "iron-gear-wheel-advanced-circuit",
+        name = "iron-gear-wheel-advanced-circuit", -- analog
         prefix = "vgal",
         technology = { "advanced-circuit", "sulfur-processing" },
         icons = vgal.icon.register {
@@ -41,10 +41,11 @@ vgal.data.extend
         results = {
             { "advanced-circuit", 3 }
         },
-        category = "crafting"
+        category = "crafting",
+        auto_localise = false,
     },
     {
-        name = "iron-gear-wheel-lubricant-advanced-circuit",
+        name = "iron-gear-wheel-lubricant-advanced-circuit", -- analog
         prefix = "vgal",
         technology = "lubricant",
         icons = vgal.icon.register {
@@ -66,9 +67,10 @@ vgal.data.extend
             { "advanced-circuit", 3 }
         },
         category = "crafting-with-fluid",
+        auto_localise = false,
     },
     {
-        name = "iron-gear-wheel-lubricant-electronic-circuit",
+        name = "iron-gear-wheel-lubricant-electronic-circuit", -- analog
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("electronic-circuit"),
@@ -82,15 +84,16 @@ vgal.data.extend
             { "iron-stick",      1 }
         },
         fluid_ingredients = {
-            { "lubricant", 5 },
+            { "lubricant", 1 },
         },
         results = {
             { "electronic-circuit", 1 }
         },
         category = "crafting-with-fluid",
+        auto_localise = false,
     },
     {
-        name = "iron-gear-wheel-electronic-circuit",
+        name = "iron-gear-wheel-electronic-circuit", -- analog
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("electronic-circuit"),
@@ -106,6 +109,7 @@ vgal.data.extend
             { "electronic-circuit", 1 }
         },
         category = "crafting",
+        auto_localise = false,
     },
     {
         name = "electronic-circuit-from-plastic-bar",
@@ -191,7 +195,7 @@ vgal.data.extend
         },
     },
     {
-        name = "iron-gear-wheel-processing-unit",
+        name = "iron-gear-wheel-processing-unit", -- analog
         prefix = "vgal",
         category = "crafting-with-fluid",
         icons = vgal.icon.register {
@@ -212,9 +216,10 @@ vgal.data.extend
         results = {
             { "processing-unit", 1 },
         },
+        auto_localise = false,
     },
     {
-        name = "iron-gear-wheel-lubricant-processing-unit",
+        name = "iron-gear-wheel-lubricant-processing-unit", -- analog
         prefix = "vgal",
         category = "crafting-with-fluid",
         icons = vgal.icon.register {
@@ -236,6 +241,7 @@ vgal.data.extend
         results = {
             { "processing-unit", 1 },
         },
+        auto_localise = false,
     },
     {
         name = "efficiency-module-processing-unit",

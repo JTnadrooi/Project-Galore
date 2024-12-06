@@ -12,7 +12,7 @@ vgal.data.extend
         energy_required = 6,
         technology = "sulfur-processing",
         ingredients = {
-            { "coal",  6 }
+            { "coal", 6 }
         },
         fluid_ingredients = {
             { "steam", 250 },
@@ -24,5 +24,6 @@ vgal.data.extend
             { "water",         10 },
             { "sulfuric-acid", 10 },
         },
+        auto_localise = false,
     },
 }

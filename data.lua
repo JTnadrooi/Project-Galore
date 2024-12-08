@@ -8,6 +8,7 @@ vgal.log("the *core-of-galore* has loaded.")
 -- require("prototypes.other.them")
 -- require("prototypes.other.fluids")
 -- require("prototypes.other.invalid")
+require("prototypes.subgroups")
 
 -- require("prototypes.fluids.f-intermediates")
 require("prototypes.intermediates.oils")

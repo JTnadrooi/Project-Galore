@@ -13,7 +13,6 @@ vgal.fluid = vgal.fluid or {}
 vgal.entity = vgal.entity or {}
 vgal.any = vgal.any or {}
 
-
 function vgal.log(toLog)
     if settings.startup["vgal-log"].value then
         log("vgal.log-[" .. toLog .. "]")

@@ -1,44 +1,68 @@
-vgal.data.extend
+vgal.data.extend -- just ignore the graphics of the rocket itself..
 {
-    -- {
-    --     name = "rocket-part-electric",
-    --     technology = "rocket-silo",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("rocket-part"),
-    --         vgal.icon.get_in("electric-engine-unit")
-    --     },
-    --     energy_required = 3,
-    --     ingredients = {
-    --         { "electric-engine-unit", 10 }, -- todo
-    --         { "battery-equipment",    4 },
-    --         { "rocket-control-unit",  10 },
-    --     },
-    --     results = {
-    --         { "rocket-part", 1 },
-    --     },
-    --     category = "rocket-building",
-    -- },
-    -- {
-    --     name = "rocket-part-nuclear",
-    --     prefix = "vgal",
-    --     technology = "rocket-silo",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("rocket-part"),
-    --         vgal.icon.get_in("uranium-235")
-    --     },
-    --     energy_required = 4,
-    --     ingredients = {
-    --         { "steam-turbine",       2 }, -- todo
-    --         { "uranium-fuel-cell",   1 },
-    --         { "rocket-control-unit", 10 },
-    --     },
-    --     results = {
-    --         { "rocket-part", 1 },
-    --     },
-    --     category = "rocket-building",
-    -- },
     {
-        name = "rocket-part-swarm",
+        name = "engine-unit-rocket-part",
+        prefix = "vgal",
+        technology = "rocket-silo",
+        icons = vgal.icon.register {
+            vgal.icon.get("rocket-part"),
+            vgal.icon.get_in("engine-unit")
+        },
+        energy_required = 2,
+        ingredients = {
+            { "engine-unit",           40 }, -- 3630
+            { "rocket-fuel",           20 }, -- 4000
+            { "low-density-structure", 10 }, -- 3750
+            { "processing-unit",       2 },  -- 1420
+        },
+        results = {
+            { "rocket-part", 1 }, -- 12800 mw
+        },
+        category = "rocket-building",
+        auto_localise = false,
+    },
+    {
+        name = "solar-panel-rocket-part",
+        prefix = "vgal",
+        technology = "rocket-silo",
+        icons = vgal.icon.register {
+            vgal.icon.get("rocket-part"),
+            vgal.icon.get_in("solar-panel")
+        },
+        energy_required = 2,
+        ingredients = {
+            { "solar-panel",           4 },
+            { "low-density-structure", 10 }, -- 3750
+            { "processing-unit",       10 }, -- 7100
+        },
+        results = {
+            { "rocket-part", 1 }, -- 12800 mw
+        },
+        category = "rocket-building",
+        auto_localise = false,
+    },
+    {
+        name = "uranium-fuel-cell-rocket-part",
+        prefix = "vgal",
+        technology = "rocket-silo",
+        icons = vgal.icon.register {
+            vgal.icon.get("rocket-part"),
+            vgal.icon.get_in("uranium-fuel-cell")
+        },
+        energy_required = 2,
+        ingredients = {
+            { "steam-turbine",     2 },  -- 3400
+            { "uranium-fuel-cell", 5 },  -- 460
+            { "processing-unit",   10 }, -- 7100
+        },
+        results = {
+            { "rocket-part", 1 }, -- 12800 mw
+        },
+        category = "rocket-building",
+        auto_localise = false,
+    },
+    {
+        name = "flying-robot-frame-rocket-part",
         prefix = "vgal",
         technology = "rocket-silo",
         icons = vgal.icon.register {
@@ -47,15 +71,18 @@ vgal.data.extend
         },
         energy_required = 2,
         ingredients = {
-            { "flying-robot-frame",    20 }, --10740
-            { "processing-unit",       2 },  -- ~16k
-            { "low-density-structure", 10 }, -- 7270 mw
+            { "flying-robot-frame",    15 },
+            { "processing-unit",       4 },  -- 2840
+            { "low-density-structure", 10 }, -- 3750
         },
         results = {
-            { "rocket-part", 1 }, -- 23,580 mw
+            { "rocket-part", 1 }, -- 12800 mw
         },
         category = "rocket-building",
+        auto_localise = false,
     },
 }
+data.raw.item["rocket-part"].hidden = false
 data.raw.recipe["rocket-part"].hidden = false
+data.raw.recipe["rocket-part"].hide_from_player_crafting = false
 data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil

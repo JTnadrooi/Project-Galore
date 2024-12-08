@@ -1,6 +1,6 @@
 vgal.data.extend {
     {
-        name = "inserter-from-copper-plate",
+        name = "copper-plate-inserter",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("inserter"),
@@ -18,7 +18,7 @@ vgal.data.extend {
         },
     },
     {
-        name = "inserter-from-engine-unit",
+        name = "engine-unit-inserter",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("inserter"),
@@ -36,7 +36,7 @@ vgal.data.extend {
         },
     },
     {
-        name = "burner-inserter-from-engine-unit",
+        name = "engine-unit-burner-inserter",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("burner-inserter"),

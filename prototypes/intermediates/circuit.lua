@@ -31,7 +31,7 @@ vgal.data.extend
             vgal.icon.get_in("iron-gear-wheel"),
             vgal.icon.get_in2("sulfur"),
         },
-        energy_required = 6,
+        energy_required = 18,
         ingredients = {
             { "sulfur",          1 },
             { "iron-gear-wheel", 8 },
@@ -112,7 +112,7 @@ vgal.data.extend
         auto_localise = false,
     },
     {
-        name = "electronic-circuit-from-plastic-bar",
+        name = "plastic-bar-electronic-circuit",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("electronic-circuit"),
@@ -152,7 +152,7 @@ vgal.data.extend
         },
     },
     {
-        name = "processing-unit-from-advanced-circuit",
+        name = "advanced-circuit-processing-unit",
         prefix = "vgal",
         category = "crafting-with-fluid",
         icons = vgal.icon.register {
@@ -262,6 +262,28 @@ vgal.data.extend
         },
         results = {
             { "processing-unit", 2 },
+        },
+    },
+    {
+        name = "low-density-structure-processing-unit",
+        prefix = "vgal",
+        category = "crafting-with-fluid",
+        icons = vgal.icon.register {
+            vgal.icon.get("processing-unit"),
+            vgal.icon.get_in("low-density-structure")
+        },
+        technology = { "low-density-structure", "processing-unit" },
+        energy_required = 8,
+        ingredients = {
+            { "low-density-structure", 1 },
+            { "advanced-circuit",      2 },
+            { "electronic-circuit",    4 },
+        },
+        fluid_ingredients = {
+            { "sulfuric-acid", 5 },
+        },
+        results = {
+            { "processing-unit", 1 },
         },
     },
 }

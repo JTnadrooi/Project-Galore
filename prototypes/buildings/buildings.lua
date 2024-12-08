@@ -1,6 +1,6 @@
 vgal.data.extend {
     {
-        name = "boiler-from-storage-tank",
+        name = "storage-tank-boiler",
         prefix = "vgal",
         technology = "fluid-handling",
         icons = vgal.icon.register {
@@ -19,7 +19,7 @@ vgal.data.extend {
     },
     {
         type = "recipe",
-        name = "lab-from-inserter",
+        name = "inserter-lab",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("lab"),

@@ -147,7 +147,7 @@ vgal.data.extend {
             vgal.icon.get_in("processing-unit"),
         },
         energy_required = 12,
-        technology = { "logistics", "steel-processing" },
+        technology = "processing-unit",
         ingredients = {
             { "steel-plate",     6 },  -- 300
             { "processing-unit", 1 },  -- 710
@@ -185,7 +185,7 @@ vgal.data.extend {
             vgal.icon.get_in("processing-unit"),
         },
         energy_required = 8,
-        technology = { "logistics-2", "steel-processing" },
+        technology = "processing-unit",
         ingredients = {
             { "steel-plate",     3 }, -- 200
             { "processing-unit", 1 }, -- 710
@@ -226,7 +226,7 @@ vgal.data.extend {
             vgal.icon.get_in("processing-unit"),
         },
         energy_required = 4,
-        technology = { "logistics-3" },
+        technology = { "logistics-3", "processing-unit" },
         ingredients = {
             { "steel-plate",     4 }, -- 200
             { "processing-unit", 1 }, -- 710

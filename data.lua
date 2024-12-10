@@ -11,7 +11,7 @@ vgal.log("the *core-of-galore* has loaded.")
 require("prototypes.subgroups")
 
 -- require("prototypes.fluids.f-intermediates")
-require("prototypes.intermediates.oils")
+require("prototypes.intermediates.oil-processing")
 
 -- require("prototypes.buildings.belts")
 -- require("prototypes.buildings.assembling")
@@ -26,7 +26,7 @@ require("prototypes.intermediates.oils")
 -- require("prototypes.car")
 require("prototypes.intermediates.intermediates")
 require("prototypes.intermediates.chemical")
-require("prototypes.intermediates.circuit")
+require("prototypes.intermediates.circuits")
 -- require("prototypes.intermediates.fuel")
 -- require("prototypes.intermediates.engines")
 
@@ -40,4 +40,4 @@ require("prototypes.rocket-parts")
 -- require("prototypes.mods.ksp")
 -- require("prototypes.mods.bep")
 
-require("prototypes.science")
+require("prototypes.science-packs")

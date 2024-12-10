@@ -34,7 +34,7 @@ local subgroups = {
         values = { "iron-plate", "copper-plate", "steel-plate" }
     },
     {
-        name = "fuels", -- non uranium
+        name = "fuels", -- but not uranium fuel cells.
         group = "intermediate-products",
         order = "ga",
         values = { "solid-fuel", "rocket-fuel", "nuclear-fuel" }

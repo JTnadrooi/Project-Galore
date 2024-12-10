@@ -10,15 +10,15 @@ vgal.data.extend
         },
         energy_required = 32,
         ingredients = {
-            { "copper-cable",       8 },
-            { "electronic-circuit", 4 },
-            { "plastic-bar",        8 },
+            { "copper-cable",       8 }, -- 40
+            { "electronic-circuit", 6 }, -- 150
+            { "plastic-bar",        8 }, -- 120
         },
         fluid_ingredients = {
-            { "sulfuric-acid", 40 },
+            { "sulfuric-acid", 40 }, -- 60
         },
         results = {
-            { "advanced-circuit", 4 }
+            { "advanced-circuit", 4 } -- 400
         },
         category = "crafting-with-fluid"
     },
@@ -33,13 +33,13 @@ vgal.data.extend
         },
         energy_required = 18,
         ingredients = {
-            { "sulfur",          1 },
-            { "iron-gear-wheel", 8 },
-            { "iron-stick",      4 },
-            { "steel-plate",     2 },
+            { "copper-cable",    4 }, -- 20
+            { "iron-gear-wheel", 8 }, -- 160
+            { "iron-stick",      4 }, -- 20
+            { "steel-plate",     2 }, -- 100
         },
         results = {
-            { "advanced-circuit", 3 }
+            { "advanced-circuit", 3 }, -- 300
         },
         category = "crafting",
         auto_localise = false,
@@ -53,15 +53,15 @@ vgal.data.extend
             vgal.icon.get_in("iron-gear-wheel"),
             vgal.icon.get_in2("lubricant", "fluid"),
         },
-        energy_required = 6,
+        energy_required = 18,
         ingredients = {
-            { "iron-gear-wheel", 6 },
-            { "iron-stick",      4 },
-            { "steel-plate",     2 },
-            { "iron-plate",      2 },
+            { "copper-cable",    2 }, -- 10
+            { "iron-gear-wheel", 6 }, -- 120
+            { "iron-stick",      4 }, -- 20
+            { "steel-plate",     2 }, -- 100
         },
         fluid_ingredients = {
-            { "lubricant", 20 },
+            { "lubricant", 20 }, -- 50
         },
         results = {
             { "advanced-circuit", 3 }
@@ -102,8 +102,8 @@ vgal.data.extend
         technology = "electronics",
         energy_required = 0.5,
         ingredients = {
-            { "iron-gear-wheel", 1 },
-            { "iron-stick",      2 }
+            { "iron-gear-wheel", 1 }, -- 20
+            { "iron-stick",      2 }, -- 10
         },
         results = {
             { "electronic-circuit", 1 }
@@ -121,11 +121,11 @@ vgal.data.extend
         technology = "plastics",
         energy_required = 0.5,
         ingredients = {
-            { "plastic-bar",  1 },
-            { "copper-cable", 2 }
+            { "plastic-bar",  1 }, -- 15
+            { "copper-cable", 2 }, -- 10
         },
         results = {
-            { "electronic-circuit", 1 }
+            { "electronic-circuit", 1 }, -- 25
         },
     },
     {
@@ -139,14 +139,14 @@ vgal.data.extend
         technology = "sulfur-processing",
         energy_required = 4,
         ingredients = {
-            { "iron-plate",   6 },
-            { "copper-cable", 12 },
+            { "iron-plate",   6 },  -- 60
+            { "copper-cable", 18 }, -- 90
         },
         fluid_ingredients = {
-            { "sulfuric-acid", 20 },
+            { "sulfuric-acid", 20 }, -- 30
         },
         results = {
-            { "electronic-circuit", 12 },
+            { "electronic-circuit", 10 }, -- 300
             { "copper-ore",         1, 0.8 },
             { "iron-ore",           1, 0.8 },
         },
@@ -162,14 +162,15 @@ vgal.data.extend
         technology = "processing-unit",
         energy_required = 10,
         ingredients = {
-            { "copper-plate",     4 },
-            { "advanced-circuit", 6 },
+            { "copper-plate",     4 }, -- 40
+            { "copper-cable",     5 }, -- 25
+            { "advanced-circuit", 6 }, -- 600
         },
         fluid_ingredients = {
-            { "sulfuric-acid", 10 },
+            { "sulfuric-acid", 10 }, -- 15
         },
         results = {
-            { "processing-unit", 1 },
+            { "processing-unit", 1 }, -- 710
         },
     },
     {
@@ -183,15 +184,15 @@ vgal.data.extend
         technology = "processing-unit",
         energy_required = 10,
         ingredients = {
-            { "plastic-bar",        6 },
-            { "electronic-circuit", 5 },
-            { "advanced-circuit",   4 },
+            { "plastic-bar",        6 }, -- 90
+            { "electronic-circuit", 8 }, -- 200
+            { "advanced-circuit",   4 }, -- 400
         },
         fluid_ingredients = {
-            { "sulfuric-acid", 5 },
+            { "sulfuric-acid", 5 }, -- 10
         },
         results = {
-            { "processing-unit", 1 },
+            { "processing-unit", 1 }, -- 710
         },
     },
     {
@@ -205,16 +206,16 @@ vgal.data.extend
         technology = "processing-unit",
         energy_required = 8,
         ingredients = {
-            { "engine-unit",      2 },
-            { "pipe",             2 },
-            { "iron-gear-wheel",  2 },
-            { "advanced-circuit", 2 },
+            { "engine-unit",      2 }, -- 180
+            { "pipe",             8 }, -- 80
+            { "iron-gear-wheel",  2 }, -- 40
+            { "advanced-circuit", 4 }, -- 400
         },
         fluid_ingredients = {
-            { "sulfuric-acid", 5 },
+            { "sulfuric-acid", 5 }, -- 10
         },
         results = {
-            { "processing-unit", 1 },
+            { "processing-unit", 1 }, -- 710
         },
         auto_localise = false,
     },
@@ -230,16 +231,16 @@ vgal.data.extend
         technology = { "lubricant", "processing-unit" },
         energy_required = 8,
         ingredients = {
-            { "engine-unit",      2 },
-            { "pipe",             2 },
-            { "iron-gear-wheel",  2 },
-            { "advanced-circuit", 2 },
+            { "engine-unit",      2 }, -- 180
+            { "pipe",             3 }, -- 30
+            { "iron-gear-wheel",  2 }, -- 40
+            { "advanced-circuit", 4 }, -- 400
         },
         fluid_ingredients = {
-            { "lubricant", 5 },
+            { "lubricant", 5 }, -- 15
         },
         results = {
-            { "processing-unit", 1 },
+            { "processing-unit", 1 }, -- 710
         },
         auto_localise = false,
     },
@@ -254,14 +255,14 @@ vgal.data.extend
         technology = "efficiency-module-2",
         energy_required = 16,
         ingredients = {
-            { "efficiency-module", 2 },
-            { "advanced-circuit",  1 },
+            { "efficiency-module", 2 }, -- 1250
+            { "advanced-circuit",  1 }, -- 100
         },
         fluid_ingredients = {
-            { "sulfuric-acid", 5 },
+            { "sulfuric-acid", 10 }, -- 15
         },
         results = {
-            { "processing-unit", 2 },
+            { "processing-unit", 2 }, -- 1420
         },
     },
     {

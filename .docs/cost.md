@@ -1,10 +1,10 @@
 # Item and fluid costs
 
-These provide general guidelines when making recipes. These purelly factor in raw cost, stuff like the complexity is not calculated in.
+These provide general guidelines when making recipes.
 
-MW stands for **Mineral Water**. Vanilla galore originally started as extension of the [Mineral Liquid mod](https://mods.factorio.com/mod/Liquid_Ore_Conversion) for _1.1_.
+MW stands for **Mineral Water**. Vanilla galore originally an extension of the [Mineral Liquid mod](https://mods.factorio.com/mod/Liquid_Ore_Conversion) for _1.1_.
 
-\*Note: YAFC to MW is 1:2.17 or 1:2 for simplicity, While YAFC was nice to verify my calculations it is not suitable to be used as baseline.
+\*Note: YAFC to MW is 1:2.17 or 1:2 for simplicity, While YAFC was nice to verify my calculations, it is not suitable to be used as a baseline.
 
 ## Main
 
@@ -24,7 +24,7 @@ MW stands for **Mineral Water**. Vanilla galore originally started as extension 
 | copper-cable             | 5        |
 | big-electric-pole        | 310      |
 | electronic-circuit       | 25       |
-| advanced-circuit         | 5        |
+| advanced-circuit         | 100      |
 | inserter                 | 55       |
 | fast-inserter            | 125      |
 | bulk-inserter            | 900      |
@@ -41,7 +41,6 @@ MW stands for **Mineral Water**. Vanilla galore originally started as extension 
 | firearm-magazine         | 40       |
 | piercing-rounds-magazine | 140      |
 | military-science-pack    | 210      |
-| transport-belt           | 15       |
 | automation-science-pack  | 30       |
 | logistic-science-pack    | 70       |
 | chemical-science-pack    | 245      |
@@ -49,7 +48,9 @@ MW stands for **Mineral Water**. Vanilla galore originally started as extension 
 | utility-science-pack     | 990      |
 | low-density-structure    | 375      |
 | rail                     | 32       |
+| transport-belt           | 15       |
 | fast-transport-belt      | 115      |
+| express-transport-belt   | 365      |
 | underground-belt         | 88       |
 | fast-underground-belt    | 487      |
 | solar-panel              | 675      |
@@ -79,9 +80,11 @@ I have multiple options here, I could value them based on the fuel value of soli
 1 crude-oil = 0.45 petroleum-gas (basic);
 1 crude-oil = 0.975 petroleum-gas (adv)
 
-So as a middleground I pick 1 crude-oil = 0.8 petroleum-gas; Its more toward the adv side bc no one uses the normal recipe for long.
+So as a middle ground, I pick 1 crude-oil = 0.8 petroleum-gas; Its more toward the adv side bc no one uses the normal recipe for long.
 
-However, this would make crude-oil worth more than petroleum-gas. I instead opt to make oil half as valueable, simply becasue of the productionstep.
+However, this would make crude-oil worth more than petroleum-gas. I instead opt to make oil half as valuable, simply because of the production step.
+
+YAFC seems to agree with me; one plastic bar is 15 mw.
 
 | ItemID               | Cost(MW) |
 | -------------------- | -------- |
@@ -104,10 +107,11 @@ However, this would make crude-oil worth more than petroleum-gas. I instead opt 
 | logistic-robot       | 605      |
 | construction-robot   | 455      |
 | steam-turbine        | 1700     |
+| small-lamp           | 50       |
 
 ## Nuclear products
 
-Should be simpler than oil but instead of going on a ramble here are some notable things I used in my calculations.
+It should be simpler than oil but instead of going on a ramble, here are some notable things I used in my calculations.
 
 -   Uranium is way more worth than normal ores. Both because of mining time and the sulfuric requirement. (21.5 rounded to 20)
 -   1420 uranium-ore = 1 uranium-235 = 141 uranium-238

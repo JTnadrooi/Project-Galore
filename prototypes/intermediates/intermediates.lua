@@ -208,24 +208,6 @@ vgal.data.extend
     --     category = "smelting",
     -- },
     {
-        name = "steam-engine-engine-unit",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("engine-unit"),
-            vgal.icon.get_in("steam-engine"),
-        },
-        technology = "engine",
-        energy_required = 40,
-        ingredients = {
-            { "steam-engine", 1 },
-            { "steel-plate",  2 }
-        },
-        results = {
-            { "engine-unit", 4 },
-        },
-        category = "advanced-crafting",
-    },
-    {
         name = "iron-stick-engine-unit",
         prefix = "vgal",
         icons = vgal.icon.register {

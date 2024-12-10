@@ -53,6 +53,10 @@ MW stands for **Mineral Water**. Vanilla galore originally an extension of the [
 | express-transport-belt   | 365      |
 | underground-belt         | 88       |
 | fast-underground-belt    | 487      |
+| express-underground-belt | 1330     |
+| splitter                 | 235      |
+| fast-splitter            | 685      |
+| express-splitter         | 2045     |
 | solar-panel              | 675      |
 | concrete                 | 12       |
 | refined-concrete         | 34       |

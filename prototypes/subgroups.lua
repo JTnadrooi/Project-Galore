@@ -15,6 +15,26 @@ function subGroup(name, newSubgroup)
 end
 
 local subgroups = {
+    -- LOGISTICS
+    {
+        name = "belt-t1",
+        group = "logistics",
+        order = "baa",
+        values = { "transport-belt", "splitter", "underground-belt" }
+    },
+    {
+        name = "belt-t2",
+        group = "logistics",
+        order = "bab",
+        values = { "fast-transport-belt", "fast-splitter", "fast-underground-belt" }
+    },
+    {
+        name = "belt-t3",
+        group = "logistics",
+        order = "bac",
+        values = { "express-transport-belt", "express-splitter", "express-underground-belt" }
+    },
+    -- INTERMEDIATES
     {
         name = "chemistry-products",
         group = "intermediate-products",

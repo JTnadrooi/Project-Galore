@@ -27,4 +27,5 @@ One recipe pack to rule them all.
 -   The combat tab.
 -   The logistics tab.
 -   Alternate uranium recipes.
+-   Improve info.json.
 -   # SPACE AGE

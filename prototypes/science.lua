@@ -317,9 +317,9 @@ vgal.data.extend {
         energy_required = 16,
         technology = "production-science-pack",
         ingredients = {
-            { "electric-furnace",    1 }, -- 1200
-            { "stone-furnace",       8 }, -- 200
-            { "productivity-module", 2 }, -- 1250
+            { "electric-furnace",    1 },  -- 1200
+            { "stone-furnace",       16 }, -- 400 a:200, lazy, those who use this are
+            { "productivity-module", 2 },  -- 1250
         },
         results = {
             { "production-science-pack", 3 }, -- 2850 a:2805
@@ -353,15 +353,15 @@ vgal.data.extend {
             vgal.icon.get_in("express-transport-belt"),
         },
         category = "crafting",
-        energy_required = 8,
+        energy_required = 16,
         technology = { "utility-science-pack", "logistics-3" },
         ingredients = {
-            { "express-transport-belt", 2 }, -- 730
-            { "rocket-fuel",            1 }, -- 200
-            { "electronic-circuit",     2 }, -- 50
+            { "express-transport-belt", 4 }, -- 730 *2
+            { "rocket-fuel",            2 }, -- 200 *2
+            { "advanced-circuit",       1 }, -- 100
         },
         results = {
-            { "utility-science-pack", 1 }, -- 990
+            { "utility-science-pack", 2 }, -- 990 *2
         },
     },
 }

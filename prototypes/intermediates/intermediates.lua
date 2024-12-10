@@ -106,7 +106,7 @@ vgal.data.extend
             vgal.icon.get_in("steel-plate"),
         },
         category = "crafting",
-        energy_required = 1.5,
+        energy_required = 5,
         technology = "steel-processing",
         ingredients = {
             { "steel-plate", 1 },

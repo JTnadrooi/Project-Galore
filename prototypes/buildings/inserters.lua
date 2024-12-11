@@ -18,24 +18,6 @@ vgal.data.extend {
         },
     },
     {
-        name = "engine-unit-inserter",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("inserter"),
-            vgal.icon.get_in("engine-unit"),
-        },
-        technology = "engine",
-        energy_required = 1,
-        ingredients = {
-            { "engine-unit",        1 },
-            { "iron-plate",         2 },
-            { "electronic-circuit", 4 },
-        },
-        results = {
-            { "inserter", 4 },
-        },
-    },
-    {
         name = "engine-unit-burner-inserter",
         prefix = "vgal",
         icons = vgal.icon.register {

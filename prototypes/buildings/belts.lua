@@ -1,6 +1,6 @@
 vgal.data.extend {
     {
-        name = "steel-transport-belt",
+        name = "steel-plate-transport-belt",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("transport-belt"),
@@ -18,7 +18,25 @@ vgal.data.extend {
         category = "crafting",
     },
     {
-        name = "steel-fast-transport-belt",
+        name = "plastic-bar-transport-belt",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("transport-belt"),
+            vgal.icon.get_in("plastic-bar"),
+        },
+        energy_required = 2,
+        technology = "plastics",
+        ingredients = {
+            { "plastic-bar",     2 },
+            { "iron-gear-wheel", 1 },
+        },
+        results = {
+            { "transport-belt", 4 },
+        },
+        category = "crafting",
+    },
+    {
+        name = "steel-plate-fast-transport-belt",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("fast-transport-belt"),
@@ -37,7 +55,26 @@ vgal.data.extend {
         category = "crafting",
     },
     {
-        name = "steel-express-transport-belt",
+        name = "plastic-bar-fast-transport-belt",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("fast-transport-belt"),
+            vgal.icon.get_in("plastic-bar"),
+        },
+        energy_required = 1,
+        technology = { "logistics-2", "steel-processing" },
+        ingredients = {
+            { "plastic-bar",     3 },
+            { "iron-gear-wheel", 1 },
+            { "transport-belt",  1 },
+        },
+        results = {
+            { "fast-transport-belt", 1 },
+        },
+        category = "crafting",
+    },
+    {
+        name = "steel-plate-express-transport-belt",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("express-transport-belt"),
@@ -58,9 +95,31 @@ vgal.data.extend {
         },
         category = "crafting-with-fluid",
     },
+    {
+        name = "plastic-bar-express-transport-belt",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("express-transport-belt"),
+            vgal.icon.get_in("plastic-bar"),
+        },
+        energy_required = 1,
+        technology = { "logistics-3" },
+        ingredients = {
+            { "plastic-bar",         10 },
+            { "iron-gear-wheel",     2 },
+            { "fast-transport-belt", 1 },
+        },
+        fluid_ingredients = {
+            { "lubricant", 25 },
+        },
+        results = {
+            { "express-transport-belt", 1 }
+        },
+        category = "crafting-with-fluid",
+    },
     -- UNDERGROUND
     {
-        name = "steel-underground-belt",
+        name = "steel-plate-underground-belt",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("underground-belt"),
@@ -79,7 +138,7 @@ vgal.data.extend {
         category = "crafting",
     },
     {
-        name = "steel-fast-underground-belt",
+        name = "steel-plate-fast-underground-belt",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("fast-underground-belt"),
@@ -98,7 +157,7 @@ vgal.data.extend {
         category = "crafting",
     },
     {
-        name = "steel-express-underground-belt",
+        name = "steel-plate-express-underground-belt",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("express-underground-belt"),

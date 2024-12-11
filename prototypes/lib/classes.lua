@@ -26,4 +26,5 @@ do
     ---@field fluid_results? ItemKeyPrototype[]|table
     ---@field results? ItemKeyPrototype[]|table
     ---@field type? string
+    ---@field recipe_groups? string[]
 end

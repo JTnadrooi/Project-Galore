@@ -34,6 +34,25 @@ local subgroups = {
         order = "bac",
         values = { "express-transport-belt", "express-splitter", "express-underground-belt" }
     },
+    -- PRODUCTION
+    {
+        name = "assembing-machine",
+        group = "production",
+        order = "eb",
+        values = { "assembling-machine-1", "assembling-machine-2", "assembling-machine-3" }
+    },
+    {
+        name = "beacon",
+        group = "production",
+        order = "fb",
+        values = { "beacon" }
+    },
+    {
+        name = "nuclear-energy",
+        group = "production",
+        order = "bb",
+        values = { "nuclear-reactor", "heat-exchanger", "heat-pipe", "steam-turbine" }
+    },
     -- INTERMEDIATES
     {
         name = "chemistry-products",
@@ -144,13 +163,12 @@ local subgroupDefinitions = {}
 for _, subgroup in ipairs(subgroups) do
     table.insert(subgroupDefinitions, {
         type = "item-subgroup",
-        name = subgroup.name,
+        name = "vgal-" .. subgroup.name,
         group = subgroup.group,
         order = subgroup.order
     })
-
     for _, value in ipairs(subgroup.values) do
-        subGroup(value, subgroup.name)
+        subGroup(value, "vgal-" .. subgroup.name)
     end
 end
 

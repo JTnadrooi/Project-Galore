@@ -88,6 +88,16 @@ function techToUnits(tech)
     return units
 end
 
+---@param recipe vgal.VgalRecipe
+function lazyLocalise(recipe)
+    for _, group in ipairs(recipe.recipe_groups or {}) do
+        if group == "analog-circuit" then
+            return { "recipe-description.vgal-analog-circuit" }
+        end
+    end
+    return { "recipe-description." .. recipe.name }
+end
+
 function getLocalized(product)
     if data.raw.item[product] then
         if data.raw.item[product].place_result then
@@ -228,7 +238,8 @@ function vgal.data.extend(recipes)
                     main_product = recipe.main_product,
                     localised_name = recipe.auto_localise and getLocalized(recipe.main_product) or {
                         "recipe-name." .. recipe.name,
-                    }
+                    },
+                    localised_description = lazyLocalise(recipe),
                 },
             }
         )

@@ -20,7 +20,7 @@ vgal.data.extend
         results = {
             { "advanced-circuit", 4 } -- 400
         },
-        category = "crafting-with-fluid"
+        category = "crafting-with-fluid",
     },
     {
         name = "iron-gear-wheel-advanced-circuit", -- analog
@@ -42,6 +42,7 @@ vgal.data.extend
             { "advanced-circuit", 3 }, -- 300
         },
         category = "crafting",
+        recipe_groups = { "analog-circuit" },
         auto_localise = false,
     },
     {
@@ -67,6 +68,7 @@ vgal.data.extend
             { "advanced-circuit", 3 }
         },
         category = "crafting-with-fluid",
+        recipe_groups = { "analog-circuit" },
         auto_localise = false,
     },
     {
@@ -90,6 +92,7 @@ vgal.data.extend
             { "electronic-circuit", 1 }
         },
         category = "crafting-with-fluid",
+        recipe_groups = { "analog-circuit" },
         auto_localise = false,
     },
     {
@@ -109,6 +112,7 @@ vgal.data.extend
             { "electronic-circuit", 1 }
         },
         category = "crafting",
+        recipe_groups = { "analog-circuit" },
         auto_localise = false,
     },
     {
@@ -217,6 +221,7 @@ vgal.data.extend
         results = {
             { "processing-unit", 1 }, -- 710
         },
+        recipe_groups = { "analog-circuit" },
         auto_localise = false,
     },
     {
@@ -242,6 +247,7 @@ vgal.data.extend
         results = {
             { "processing-unit", 1 }, -- 710
         },
+        recipe_groups = { "analog-circuit" },
         auto_localise = false,
     },
     {

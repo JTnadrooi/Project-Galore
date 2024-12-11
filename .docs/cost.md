@@ -48,6 +48,7 @@ MW stands for **Mineral Water**. Vanilla galore originally an extension of the [
 | production-science-pack  | 935      |
 | utility-science-pack     | 990      |
 | low-density-structure    | 375      |
+| beacon                   | 3050     |
 | rail                     | 32       |
 | transport-belt           | 15       |
 | fast-transport-belt      | 115      |

@@ -26,6 +26,7 @@ MW stands for **Mineral Water**. Vanilla galore originally an extension of the [
 | electronic-circuit       | 25       |
 | advanced-circuit         | 100      |
 | inserter                 | 55       |
+| burner-inserter          | 30       |
 | fast-inserter            | 125      |
 | bulk-inserter            | 900      |
 | long-handed-inserter     | 85       |

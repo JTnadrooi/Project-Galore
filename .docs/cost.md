@@ -4,7 +4,7 @@ These provide general guidelines when making recipes.
 
 MW stands for **Mineral Water**. Vanilla galore originally an extension of the [Mineral Liquid mod](https://mods.factorio.com/mod/Liquid_Ore_Conversion) for _1.1_.
 
-\*Note: YAFC to MW is 1:2.17 or 1:2 for simplicity, While YAFC was nice to verify my calculations, it is not suitable to be used as a baseline.
+\*Note: YAFC to MW is 1:2.25 or 1:2 for simplicity, While YAFC was nice to verify my calculations, it is not suitable to be used as a baseline.
 
 ## Main
 

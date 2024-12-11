@@ -43,7 +43,7 @@ vgal.data.extend {
             vgal.icon.get("express-transport-belt"),
             vgal.icon.get_in("steel-plate"),
         },
-        energy_required = 0.5,
+        energy_required = 2,
         technology = { "logistics-3" },
         ingredients = {
             { "steel-plate",         3 },
@@ -168,12 +168,12 @@ vgal.data.extend {
         energy_required = 4,
         technology = { "logistics-2", "steel-processing" },
         ingredients = {
-            { "steel-plate",      4 },
-            { "advanced-circuit", 2 },
-            { "splitter",         1 },
+            { "steel-plate",      4 }, -- 200
+            { "advanced-circuit", 2 }, -- 200
+            { "splitter",         1 }, -- 235
         },
         results = {
-            { "fast-splitter", 1 },
+            { "fast-splitter", 1 }, -- 685
         },
         category = "crafting",
     },

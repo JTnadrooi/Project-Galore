@@ -29,13 +29,12 @@ vgal.data.extend
         icons = vgal.icon.register {
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("iron-gear-wheel"),
-            vgal.icon.get_in2("sulfur"),
+            vgal.icon.get_in2("steel-plate"),
         },
         energy_required = 18,
         ingredients = {
-            { "copper-cable",    4 }, -- 20
+            { "plastic-bar",     2 }, -- 30
             { "iron-gear-wheel", 8 }, -- 160
-            { "iron-stick",      4 }, -- 20
             { "steel-plate",     2 }, -- 100
         },
         results = {
@@ -56,16 +55,15 @@ vgal.data.extend
         },
         energy_required = 18,
         ingredients = {
-            { "copper-cable",    2 }, -- 10
-            { "iron-gear-wheel", 6 }, -- 120
-            { "iron-stick",      4 }, -- 20
-            { "steel-plate",     2 }, -- 100
+            { "plastic-bar",     2 }, -- 30
+            { "iron-gear-wheel", 8 }, -- 160
+            { "iron-plate",      6 }, -- 60
         },
         fluid_ingredients = {
             { "lubricant", 20 }, -- 50
         },
         results = {
-            { "advanced-circuit", 3 }
+            { "advanced-circuit", 3 } -- 300
         },
         category = "crafting-with-fluid",
         recipe_groups = { "analog-circuit" },
@@ -132,29 +130,29 @@ vgal.data.extend
             { "electronic-circuit", 1 }, -- 25
         },
     },
-    {
-        name = "sulfuric-electronic-circuit",
-        prefix = "vgal",
-        category = "crafting-with-fluid",
-        icons = vgal.icon.register {
-            vgal.icon.get("electronic-circuit"),
-            vgal.icon.get_in("sulfuric-acid", "fluid"),
-        },
-        technology = "sulfur-processing",
-        energy_required = 4,
-        ingredients = {
-            { "iron-plate",   6 },  -- 60
-            { "copper-cable", 18 }, -- 90
-        },
-        fluid_ingredients = {
-            { "sulfuric-acid", 20 }, -- 30
-        },
-        results = {
-            { "electronic-circuit", 10 }, -- 300
-            { "copper-ore",         1, 0.8 },
-            { "iron-ore",           1, 0.8 },
-        },
-    },
+    -- {
+    --     name = "sulfuric-electronic-circuit",
+    --     prefix = "vgal",
+    --     category = "crafting-with-fluid",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("electronic-circuit"),
+    --         vgal.icon.get_in("sulfuric-acid", "fluid"),
+    --     },
+    --     technology = "sulfur-processing",
+    --     energy_required = 4,
+    --     ingredients = {
+    --         { "iron-plate",   6 },  -- 60
+    --         { "copper-cable", 18 }, -- 90
+    --     },
+    --     fluid_ingredients = {
+    --         { "sulfuric-acid", 20 }, -- 30
+    --     },
+    --     results = {
+    --         { "electronic-circuit", 10 }, -- 300
+    --         { "copper-ore",         1, 0.8 },
+    --         { "iron-ore",           1, 0.8 },
+    --     },
+    -- },
     {
         name = "advanced-circuit-processing-unit",
         prefix = "vgal",
@@ -251,27 +249,6 @@ vgal.data.extend
         auto_localise = false,
     },
     {
-        name = "efficiency-module-processing-unit",
-        prefix = "vgal",
-        category = "crafting-with-fluid",
-        icons = vgal.icon.register {
-            vgal.icon.get("processing-unit"),
-            vgal.icon.get_in("efficiency-module")
-        },
-        technology = "efficiency-module-2",
-        energy_required = 16,
-        ingredients = {
-            { "efficiency-module", 2 }, -- 1250
-            { "advanced-circuit",  1 }, -- 100
-        },
-        fluid_ingredients = {
-            { "sulfuric-acid", 10 }, -- 15
-        },
-        results = {
-            { "processing-unit", 2 }, -- 1420
-        },
-    },
-    {
         name = "low-density-structure-processing-unit",
         prefix = "vgal",
         category = "crafting-with-fluid",
@@ -282,15 +259,15 @@ vgal.data.extend
         technology = { "low-density-structure", "processing-unit" },
         energy_required = 8,
         ingredients = {
-            { "low-density-structure", 1 },
-            { "advanced-circuit",      2 },
-            { "electronic-circuit",    4 },
+            { "low-density-structure", 1 }, -- 375
+            { "advanced-circuit",      2 }, -- 200
+            { "electronic-circuit",    4 }, -- 100
         },
         fluid_ingredients = {
-            { "sulfuric-acid", 5 },
+            { "sulfuric-acid", 5 }, -- 10
         },
         results = {
-            { "processing-unit", 1 },
+            { "processing-unit", 1 }, -- 710
         },
     },
 }

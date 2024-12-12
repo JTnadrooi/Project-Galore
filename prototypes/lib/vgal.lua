@@ -140,6 +140,19 @@ end
 ---@param recipes vgal.VgalRecipe[]
 function vgal.data.extend(recipes)
     for _, recipe in ipairs(recipes) do
+        recipe.recipe_groups = recipe.recipe_groups or {}
+        for _, group in ipairs(recipe.recipe_groups) do
+            if (not settings.startup["vgal-rocket-parts"].value) and group == "alternate-rocket-part" then
+                return
+            elseif (not settings.startup["vgal-analog-circuits"].value) and group == "analog-circuit" then
+                return
+            elseif (not settings.startup["vgal-alternate-science"].value) and group == "alternate-science" then
+                return
+            end
+        end
+
+
+
         recipe.technologies = normalizeSync(recipe.technology, recipe.technologies)
 
         if recipe.complementairy_recipe then
@@ -232,6 +245,7 @@ function vgal.data.extend(recipes)
                     ingredients = recipe.ingredients,
                     results = recipe.results,
                     category = recipe.category,
+                    allow_decomposition = false,
 
                     subgroup = recipe.subgroup,
                     order = recipe.order,

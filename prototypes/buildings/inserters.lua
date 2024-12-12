@@ -1,20 +1,38 @@
 vgal.data.extend {
+    -- {
+    --     name = "copper-plate-inserter",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("inserter"),
+    --         vgal.icon.get_in("copper-plate"),
+    --     },
+    --     technology = "electronics",
+    --     energy_required = 1,
+    --     ingredients = {
+    --         { "electronic-circuit", 2 }, -- 50
+    --         { "copper-cable",       6 }, -- 30
+    --         { "copper-plate",       1 }, -- 10
+    --     },
+    --     results = {
+    --         { "inserter", 2 }, -- 110
+    --     },
+    -- },
     {
-        name = "copper-plate-inserter",
+        name = "advanced-circuit-fast-inserter",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("inserter"),
-            vgal.icon.get_in("copper-plate"),
+            vgal.icon.get("fast-inserter"),
+            vgal.icon.get_in("advanced-circuit"),
         },
-        technology = "electronics",
+        technology = "advanced-circuit",
         energy_required = 1,
         ingredients = {
-            { "electronic-circuit", 2 }, -- 50
-            { "copper-cable",       6 }, -- 30
-            { "copper-plate",       1 }, -- 10
+            { "advanced-circuit", 1 }, -- 100
+            { "iron-gear-wheel",  1 }, -- 20
+            { "inserter",         2 }, -- 110
         },
         results = {
-            { "inserter", 2 }, -- 110
+            { "fast-inserter", 2 }, -- 230
         },
     },
     {

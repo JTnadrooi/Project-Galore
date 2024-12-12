@@ -18,6 +18,7 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         results = {
             { "rocket-part", 1 }, -- 12800 mw
         },
+        recipe_groups = { "alternate-rocket-part" },
         category = "rocket-building",
         auto_localise = false,
     },
@@ -38,13 +39,14 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         results = {
             { "rocket-part", 1 }, -- 12800 mw
         },
+        recipe_groups = { "alternate-rocket-part" },
         category = "rocket-building",
         auto_localise = false,
     },
     {
         name = "uranium-fuel-cell-rocket-part",
         prefix = "vgal",
-        technology = "rocket-silo",
+        technology = { "rocket-silo", "nuclear-power" },
         icons = vgal.icon.register {
             vgal.icon.get("rocket-part"),
             vgal.icon.get_in("uranium-fuel-cell")
@@ -58,6 +60,7 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         results = {
             { "rocket-part", 1 }, -- 12800 mw
         },
+        recipe_groups = { "alternate-rocket-part" },
         category = "rocket-building",
         auto_localise = false,
     },
@@ -78,6 +81,7 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         results = {
             { "rocket-part", 1 }, -- 12800 mw
         },
+        recipe_groups = { "alternate-rocket-part" },
         category = "rocket-building",
         auto_localise = false,
     },

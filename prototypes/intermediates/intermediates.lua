@@ -11,11 +11,11 @@ vgal.data.extend
         energy_required = 15,
         technology = "low-density-structure",
         ingredients = {
-            { "steel-plate", 3 },
-            { "plastic-bar", 20 }
+            { "steel-plate", 3 },  -- 150
+            { "plastic-bar", 20 }, -- 300
         },
         results = {
-            { "low-density-structure", 1 },
+            { "low-density-structure", 1 }, -- 375, yeah dont use this recipe
         },
     },
     {
@@ -28,17 +28,17 @@ vgal.data.extend
         },
         category = "crafting-with-fluid",
         energy_required = 15,
-        technology = "low-density-structure",
+        technology = { "low-density-structure", "advanced-oil-processing" },
         ingredients = {
-            { "iron-stick",  15 },
-            { "steel-plate", 4 },
-            { "iron-plate",  4 },
+            { "iron-stick",  10 }, -- 50
+            { "steel-plate", 4 },  -- 200
+            { "iron-plate",  4 },  -- 40
         },
         fluid_ingredients = {
-            { "heavy-oil", 50 },
+            { "heavy-oil", 50 }, -- 100
         },
         results = {
-            { "low-density-structure", 1 },
+            { "low-density-structure", 1 }, -- 375,
         },
     },
     {
@@ -106,7 +106,7 @@ vgal.data.extend
             vgal.icon.get_in("steel-plate"),
         },
         category = "crafting",
-        energy_required = 5,
+        energy_required = 3,
         technology = "steel-processing",
         ingredients = {
             { "steel-plate", 1 },
@@ -141,14 +141,14 @@ vgal.data.extend
             vgal.icon.get_in("copper-cable"),
         },
         category = "chemistry",
-        energy_required = 1,
+        energy_required = 8,
         technology = "battery",
         ingredients = {
             { "copper-cable", 2 },
-            { "iron-plate",   1 },
+            { "iron-plate",   2 },
         },
         fluid_ingredients = {
-            { "sulfuric-acid", 20 }
+            { "sulfuric-acid", 30 }
         },
         results = {
             { "battery", 2 },

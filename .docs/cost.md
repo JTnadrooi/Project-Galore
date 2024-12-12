@@ -64,11 +64,14 @@ MW stands for **Mineral Water**. Vanilla galore originally an extension of the [
 | refined-concrete         | 34       |
 | radar                    | 325      |
 | gate                     | 250      |
+| nuclear-reactor          | 250      |
 | train-stop               | 365      |
 | medium-electric-pole     | 130      |
 | cargo-wagon              | 1400     |
 | locomotive               | 3550     |
+| heat-pipe               | 3550     |
 | roboport                 | 7650     |
+| centrifuge               | 7650     |
 | pipe-to-ground           | 75       |
 | stone-furnace            | 50       |
 | steel-furnace            | 500      |
@@ -113,6 +116,7 @@ YAFC seems to agree with me; one plastic bar is 15 mw.
 | logistic-robot       | 605      |
 | construction-robot   | 455      |
 | steam-turbine        | 1700     |
+| pump                 | 150      |
 | small-lamp           | 50       |
 
 ## Nuclear products

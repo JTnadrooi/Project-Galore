@@ -164,7 +164,7 @@ vgal.data.extend
         technology = "processing-unit",
         energy_required = 10,
         ingredients = {
-            { "copper-plate",     4 }, -- 40
+            { "iron-plate",       4 }, -- 40
             { "copper-cable",     5 }, -- 25
             { "advanced-circuit", 6 }, -- 600
         },
@@ -209,8 +209,7 @@ vgal.data.extend
         energy_required = 8,
         ingredients = {
             { "engine-unit",      2 }, -- 180
-            { "pipe",             8 }, -- 80
-            { "iron-gear-wheel",  2 }, -- 40
+            { "iron-gear-wheel",  6 }, -- 120
             { "advanced-circuit", 4 }, -- 400
         },
         fluid_ingredients = {
@@ -222,32 +221,32 @@ vgal.data.extend
         recipe_groups = { "analog-circuit" },
         auto_localise = false,
     },
-    {
-        name = "iron-gear-wheel-lubricant-processing-unit", -- analog
-        prefix = "vgal",
-        category = "crafting-with-fluid",
-        icons = vgal.icon.register {
-            vgal.icon.get("processing-unit"),
-            vgal.icon.get_in("engine-unit"),
-            vgal.icon.get_in2("lubricant", "fluid"),
-        },
-        technology = { "lubricant", "processing-unit" },
-        energy_required = 8,
-        ingredients = {
-            { "engine-unit",      2 }, -- 180
-            { "pipe",             3 }, -- 30
-            { "iron-gear-wheel",  2 }, -- 40
-            { "advanced-circuit", 4 }, -- 400
-        },
-        fluid_ingredients = {
-            { "lubricant", 5 }, -- 15
-        },
-        results = {
-            { "processing-unit", 1 }, -- 710
-        },
-        recipe_groups = { "analog-circuit" },
-        auto_localise = false,
-    },
+    -- {
+    --     name = "iron-gear-wheel-lubricant-processing-unit", -- analog
+    --     prefix = "vgal",
+    --     category = "crafting-with-fluid",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("processing-unit"),
+    --         vgal.icon.get_in("engine-unit"),
+    --         vgal.icon.get_in2("lubricant", "fluid"),
+    --     },
+    --     technology = { "lubricant", "processing-unit" },
+    --     energy_required = 8,
+    --     ingredients = {
+    --         { "engine-unit",      2 }, -- 180
+    --         { "pipe",             3 }, -- 30
+    --         { "iron-gear-wheel",  2 }, -- 40
+    --         { "advanced-circuit", 4 }, -- 400
+    --     },
+    --     fluid_ingredients = {
+    --         { "lubricant", 5 }, -- 15
+    --     },
+    --     results = {
+    --         { "processing-unit", 1 }, -- 710
+    --     },
+    --     recipe_groups = { "analog-circuit" },
+    --     auto_localise = false,
+    -- },
     {
         name = "low-density-structure-processing-unit",
         prefix = "vgal",

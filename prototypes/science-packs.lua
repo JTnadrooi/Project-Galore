@@ -232,7 +232,7 @@ vgal.data.extend {
         },
         category = "crafting",
         energy_required = 48,
-        technology = { "speed-module-1", "battery" },
+        technology = { "speed-module", "battery" },
         ingredients = {
             { "speed-module", 1 },
             { "battery",      4 }
@@ -251,7 +251,7 @@ vgal.data.extend {
         },
         category = "crafting",
         energy_required = 36,
-        technology = { "efficiency-module-2", "battery" },
+        technology = { "efficiency-module", "battery" },
         ingredients = {
             { "efficiency-module", 1 }, -- 625
             { "battery",           2 }, -- 100

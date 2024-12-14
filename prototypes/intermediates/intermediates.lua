@@ -12,10 +12,11 @@ vgal.data.extend
         technology = "low-density-structure",
         ingredients = {
             { "steel-plate", 3 },  -- 150
-            { "plastic-bar", 20 }, -- 300
+            { "plastic-bar", 10 }, -- 150
+            { "copper-cable", 15 }, -- 75
         },
         results = {
-            { "low-density-structure", 1 }, -- 375, yeah dont use this recipe
+            { "low-density-structure", 1 }, -- 375
         },
     },
     {
@@ -123,14 +124,13 @@ vgal.data.extend
             vgal.icon.get_in("steel-plate"),
         },
         category = "crafting",
-        energy_required = 2,
+        energy_required = 6,
         technology = "steel-processing",
         ingredients = {
             { "steel-plate", 1 },
-            { "iron-plate",  2 },
         },
         results = {
-            { "iron-stick", 10 },
+            { "iron-stick", 12 },
         },
     },
     {

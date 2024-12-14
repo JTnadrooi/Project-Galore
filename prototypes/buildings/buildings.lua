@@ -10,7 +10,7 @@ vgal.data.extend {
         technology = "effect-transmission", -- why do you even need processing units for the reseach when a beacon does not require it in its recipe normally??????
         ingredients = {
             { "steel-plate",      10 },
-            { "copper-wire",      10 },
+            { "copper-cable",     10 },
             { "advanced-circuit", 8 }, -- 800, should be 500; delta = ~300
             { "processing-unit",  2 }, -- 1420, should be 2000; delta = ~500
         },
@@ -108,7 +108,7 @@ vgal.data.extend {
         technology = { "electric-energy-distribution-2", "processing-unit" },
         ingredients = {
             { "steel-plate",     5 },
-            { "copper-wire",     6 },
+            { "copper-cable",    6 },
             { "processing-unit", 1 },
         },
         results = {
@@ -164,20 +164,18 @@ vgal.data.extend {
             vgal.icon.get("assembling-machine-2"),
             vgal.icon.get_in("electric-engine-unit"),
         },
-        energy_required = 5,
+        energy_required = 1,
         technology = "electric-engine",
         ingredients = {
-            { "steel-plate",          8 }, -- 400
-            { "electric-engine-unit", 2 }, -- 360
-            { "advanced-circuit",     5 }, -- 500
-            { "iron-gear-wheel",      2 }, -- 40
-            { "assembling-machine-1", 5 }, -- 265*x(5) = 1325
+            { "steel-plate",          1 }, -- 50
+            { "electric-engine-unit", 1 }, -- 180
+            { "assembling-machine-1", 1 }, -- 265
         },
         fluid_ingredients = {
-            { "lubricant", 20 }, -- 40
+            { "lubricant", 5 }, -- 40
         },
         results = {
-            { "assembling-machine-2", 5 }, -- 540*x(5) = 2700
+            { "assembling-machine-2", 1 }, -- 540
         },
         category = "crafting-with-fluid",
     },
@@ -191,10 +189,8 @@ vgal.data.extend {
         energy_required = 1,
         technology = "electric-engine",
         ingredients = {
-            { "steel-plate",          2 },  -- 50
-            { "electric-engine-unit", 4 },  -- 720
-            { "advanced-circuit",     8 },  -- 800
-            { "iron-gear-wheel",      20 }, -- 400
+            { "electric-engine-unit", 8 },  -- 1440
+            { "iron-gear-wheel",      25 }, -- 400
             { "assembling-machine-2", 1 },  -- 540
         },
         fluid_ingredients = {
@@ -206,6 +202,28 @@ vgal.data.extend {
         category = "crafting-with-fluid",
     },
     -- OTHER
+    {
+        name = "heavy-oil-rail",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("rail", "rail-planner"),
+            vgal.icon.get_in("heavy-oil", "fluid"),
+        },
+        energy_required = 2,
+        technology = { "railway", "advanced-oil-processing" },
+        ingredients = {
+            { "steel-plate", 4 },
+            { "iron-stick",  4 },
+            { "stone",       1 },
+        },
+        fluid_ingredients = {
+            { "heavy-oil", 10 }, -- creosote
+        },
+        results = {
+            { "rail", 8 },
+        },
+        category = "crafting-with-fluid",
+    },
     {
         name = "advanced-circuit-solar-panel",
         prefix = "vgal",

@@ -64,14 +64,14 @@ MW stands for **Mineral Water**. Vanilla galore originally an extension of the [
 | refined-concrete         | 34       |
 | radar                    | 325      |
 | gate                     | 250      |
-| nuclear-reactor          | 250      |
 | train-stop               | 365      |
 | medium-electric-pole     | 130      |
 | cargo-wagon              | 1400     |
 | locomotive               | 3550     |
-| heat-pipe               | 3550     |
 | roboport                 | 7650     |
-| centrifuge               | 7650     |
+| nuclear-reactor          | 86000    |
+| heat-pipe                | 700      |
+| centrifuge               | 15700    |
 | pipe-to-ground           | 75       |
 | stone-furnace            | 50       |
 | steel-furnace            | 500      |
@@ -81,6 +81,7 @@ MW stands for **Mineral Water**. Vanilla galore originally an extension of the [
 | module-t3                | 30250    |
 | rocket-fuel              | 200      |
 | rocket-part              | 12800    |
+| flying-robot              | 12800    |
 
 ## Oil producs
 

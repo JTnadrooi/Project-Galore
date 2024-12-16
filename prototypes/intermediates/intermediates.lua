@@ -11,8 +11,8 @@ vgal.data.extend
         energy_required = 15,
         technology = "low-density-structure",
         ingredients = {
-            { "steel-plate", 3 },  -- 150
-            { "plastic-bar", 10 }, -- 150
+            { "steel-plate",  3 },  -- 150
+            { "plastic-bar",  10 }, -- 150
             { "copper-cable", 15 }, -- 75
         },
         results = {
@@ -39,7 +39,26 @@ vgal.data.extend
             { "heavy-oil", 50 }, -- 100
         },
         results = {
-            { "low-density-structure", 1 }, -- 375,
+            { "low-density-structure", 1 }, -- 375
+        },
+    },
+    {
+        name = "uranium-238-low-density-structure",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("low-density-structure"),
+            vgal.icon.get_in("uranium-238"),
+        },
+        category = "crafting",
+        energy_required = 15,
+        technology = { "low-density-structure", "uranium-processing" },
+        ingredients = {
+            { "uranium-238",  1 },  -- 200
+            { "steel-plate",  1 },  -- 50
+            { "copper-plate", 10 }, -- 100
+        },
+        results = {
+            { "low-density-structure", 1 }, -- 375
         },
     },
     {
@@ -280,7 +299,7 @@ vgal.data.extend
         category = "chemistry",
     },
     {
-        name = "light-oil-iron-plate-plastic-bar",
+        name = "light-oil-plastic-bar",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("plastic-bar"),
@@ -299,5 +318,46 @@ vgal.data.extend
         },
         energy_required = 1,
         category = "chemistry",
+    },
+    {
+        name = "advanced-circuit-flying-robot-frame",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("flying-robot-frame"),
+            vgal.icon.get_in("advanced-circuit"),
+        },
+        technology = "robotics",
+        energy_required = 20,
+        ingredients = {
+            { "electric-engine-unit", 1 },
+            { "iron-plate",           4 },
+            { "advanced-circuit",     1 },
+            { "battery",              1 }, -- 50
+        },
+        results = {
+            { "flying-robot-frame", 1 }, -- 405
+        },
+        category = "crafting",
+    },
+    {
+        name = "processing-unit-flying-robot-frame",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("flying-robot-frame"),
+            vgal.icon.get_in("processing-unit"),
+        },
+        technology = { "robotics", "processing-unit" },
+        energy_required = 100,
+        ingredients = {
+            { "electric-engine-unit", 5 }, -- 180x (5)
+            { "steel-plate",          2 }, -- 200
+            { "processing-unit",      1 }, -- 710
+            { "battery",              5 }, -- 50x (5)
+        },
+        results = {
+            { "flying-robot-frame", 5 }, -- 405x (5)
+        },
+        category = "crafting",
+        auto_localise = false,
     },
 }

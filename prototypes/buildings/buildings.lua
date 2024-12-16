@@ -281,6 +281,48 @@ vgal.data.extend {
         },
         category = "crafting",
     },
+    {
+        name = "iron-stick-concrete",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("concrete"),
+            vgal.icon.get_in("iron-stick"),
+        },
+        energy_required = 10,
+        technology = "concrete",
+        ingredients = {
+            { "iron-stick",           2 },
+            { "stone-brick",          5 },
+        },
+        fluid_ingredients = {
+            { "water",           100 },
+        },
+        results = {
+            { "concrete", 10 },
+        },
+        category = "crafting-with-fluid",
+    },
+    {
+        name = "steam-concrete",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("concrete"),
+            vgal.icon.get_in("steam", "fluid"),
+        },
+        energy_required = 2.5,
+        technology = "concrete",
+        ingredients = {
+            { "iron-stick",   5 },
+            { "stone-brick", 4 },
+        },
+        fluid_ingredients = {
+            { "steam", 10 },
+        },
+        results = {
+            { "concrete", 10 },
+        },
+        category = "crafting-with-fluid",
+    },
     -- {
     --     name = "electric-engine-unit-pump",
     --     prefix = "vgal",

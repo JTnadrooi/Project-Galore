@@ -6,6 +6,13 @@ data:extend {
         default_value = true,
         order = "z"
     },
+    {
+        type = "bool-setting",
+        name = "vgal-suite-mode",
+        setting_type = "startup",
+        default_value = true,
+        order = "aaa"
+    },
 
     {
         type = "bool-setting",

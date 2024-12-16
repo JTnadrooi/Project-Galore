@@ -150,9 +150,9 @@ vgal.data.extend {
         energy_required = 64,
         technology = "solar-energy",
         ingredients = {
-            { "transport-belt", 4 },  -- 60
-            { "solar-panel",    1 },  -- 675
-            { "steel-plate",           2 }, -- 100
+            { "transport-belt", 4 }, -- 60
+            { "solar-panel",    1 }, -- 675
+            { "steel-plate",    2 }, -- 100
         },
         results = {
             { "logistic-science-pack", 12 }, -- 840
@@ -311,11 +311,11 @@ vgal.data.extend {
         },
         category = "crafting",
         energy_required = 18,
-        technology = "production-science-pack",
+        technology = { "production-science-pack", "solar-energy" },
         ingredients = {
-            { "steel-furnace",       3 }, -- 1500
-            { "stone-brick",         3 }, -- 60
-            { "productivity-module", 2 }, -- 1250
+            { "steel-furnace",       3 },  -- 1500
+            { "solar-panel",         1 },  -- 675
+            { "productivity-module", 1 },  -- 625
         },
         results = {
             { "production-science-pack", 3 }, -- 2805
@@ -323,22 +323,42 @@ vgal.data.extend {
         recipe_groups = { "alternate-science" },
     },
     {
-        name = "stone-furnace-production-science-pack",
+        name = "express-transport-belt-production-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("production-science-pack"),
-            vgal.icon.get_in("stone-furnace"),
+            vgal.icon.get_in("express-transport-belt"),
         },
         category = "crafting",
-        energy_required = 16,
-        technology = "production-science-pack",
+        energy_required = 12,
+        technology = "logistics-3",
         ingredients = {
-            { "electric-furnace",    1 },  -- 1200
-            { "stone-furnace",       16 }, -- 400 a:200, lazy, those who use this are
-            { "productivity-module", 2 },  -- 1250
+            { "express-transport-belt", 4 }, -- 1460
+            { "rocket-fuel",            1 }, -- 200
+            { "advanced-circuit",       2 }, -- 200
         },
         results = {
-            { "production-science-pack", 3 }, -- 2850 a:2805
+            { "production-science-pack", 2 }, -- 1,870
+        },
+        recipe_groups = { "alternate-science" },
+    },
+    {
+        name = "fast-transport-belt-production-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("production-science-pack"),
+            vgal.icon.get_in("fast-transport-belt"),
+        },
+        category = "crafting",
+        energy_required = 12,
+        technology = { "production-science-pack", "concrete" },
+        ingredients = {
+            { "fast-transport-belt", 8 },  -- 920
+            { "concrete",            18 }, -- 216
+            { "processing-unit",     1 },  -- 710
+        },
+        results = {
+            { "production-science-pack", 2 }, -- 1,870
         },
         recipe_groups = { "alternate-science" },
     },
@@ -363,23 +383,65 @@ vgal.data.extend {
         },
         recipe_groups = { "alternate-science" },
     },
+
+    ---UNDONE
     {
-        name = "express-transport-belt-utility-science-pack",
+        name = "heat-pipe-utility-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("utility-science-pack"),
-            vgal.icon.get_in("express-transport-belt"),
+            vgal.icon.get_in("heat-pipe"),
         },
         category = "crafting",
-        energy_required = 16,
-        technology = { "utility-science-pack", "logistics-3" },
+        energy_required = 72,
+        technology = "utility-science-pack",
         ingredients = {
-            { "express-transport-belt", 4 }, -- 730 *2
-            { "rocket-fuel",            2 }, -- 200 *2
-            { "advanced-circuit",       1 }, -- 100
+            { "speed-module", 5 },
+            { "plastic-bar",  30 },
+            { "heat-pipe",    1 },
         },
         results = {
-            { "utility-science-pack", 2 }, -- 990 *2
+            { "utility-science-pack", 12 }, -- 11220
+        },
+        recipe_groups = { "alternate-science" },
+    },
+    {
+        name = "refined-concrete-utility-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("utility-science-pack"),
+            vgal.icon.get_in("refined-concrete"),
+        },
+        category = "crafting",
+        energy_required = 72,
+        technology = "utility-science-pack",
+        ingredients = {
+            { "speed-module",     5 },
+            { "plastic-bar",      30 },
+            { "refined-concrete", 1 },
+        },
+        results = {
+            { "utility-science-pack", 12 }, -- 11220
+        },
+        recipe_groups = { "alternate-science" },
+    },
+    {
+        name = "speed-module-2-utility-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("utility-science-pack"),
+            vgal.icon.get_in("speed-module-2", "module"),
+        },
+        category = "crafting",
+        energy_required = 72,
+        technology = "utility-science-pack",
+        ingredients = {
+            { "speed-module",   5 },
+            { "plastic-bar",    30 },
+            { "speed-module-2", 1 },
+        },
+        results = {
+            { "utility-science-pack", 12 }, -- 11220
         },
         recipe_groups = { "alternate-science" },
     },

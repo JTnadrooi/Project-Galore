@@ -15,14 +15,10 @@ vgal.data.extend
             { "coal", 6 }
         },
         fluid_ingredients = {
-            { "steam", 250 },
+            { "steam", 200 },
         },
         results = {
             { "sulfur", 2 }
-        },
-        fluid_results = {
-            { "water",         10 },
-            { "sulfuric-acid", 10 },
         },
     },
 }

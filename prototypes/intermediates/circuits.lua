@@ -126,51 +126,6 @@ vgal.data.extend
             { "electronic-circuit", 1 }, -- 25
         },
     },
-    -- {
-    --     name = "sulfuric-electronic-circuit",
-    --     prefix = "vgal",
-    --     category = "crafting-with-fluid",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("electronic-circuit"),
-    --         vgal.icon.get_in("sulfuric-acid", "fluid"),
-    --     },
-    --     technology = "sulfur-processing",
-    --     energy_required = 4,
-    --     ingredients = {
-    --         { "iron-plate",   6 },  -- 60
-    --         { "copper-cable", 18 }, -- 90
-    --     },
-    --     fluid_ingredients = {
-    --         { "sulfuric-acid", 20 }, -- 30
-    --     },
-    --     results = {
-    --         { "electronic-circuit", 10 }, -- 300
-    --         { "copper-ore",         1, 0.8 },
-    --         { "iron-ore",           1, 0.8 },
-    --     },
-    -- },
-    {
-        name = "advanced-circuit-processing-unit",
-        prefix = "vgal",
-        category = "crafting-with-fluid",
-        icons = vgal.icon.register {
-            vgal.icon.get("processing-unit"),
-            vgal.icon.get_in("advanced-circuit")
-        },
-        technology = "processing-unit",
-        energy_required = 10,
-        ingredients = {
-            { "iron-plate",       4 }, -- 40
-            { "copper-cable",     5 }, -- 25
-            { "advanced-circuit", 6 }, -- 600
-        },
-        fluid_ingredients = {
-            { "sulfuric-acid", 10 }, -- 15
-        },
-        results = {
-            { "processing-unit", 1 }, -- 710
-        },
-    },
     {
         name = "plastic-bar-processing-unit",
         prefix = "vgal",

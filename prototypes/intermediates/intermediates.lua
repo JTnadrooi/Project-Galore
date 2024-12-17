@@ -298,27 +298,27 @@ vgal.data.extend
         energy_required = 1,
         category = "chemistry",
     },
-    {
-        name = "light-oil-plastic-bar",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("light-oil", "fluid"),
-        },
-        technology = "advanced-oil-processing",
-        ingredients = {
-            { "coal", 1 },
-        },
-        fluid_ingredients = {
-            { "light-oil", 25 },
-        },
-        results = {
-            { "plastic-bar", 2 },
-            { "coal",        1, 0.25 },
-        },
-        energy_required = 1,
-        category = "chemistry",
-    },
+    -- {
+    --     name = "light-oil-plastic-bar",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("plastic-bar"),
+    --         vgal.icon.get_in("light-oil", "fluid"),
+    --     },
+    --     technology = "advanced-oil-processing",
+    --     ingredients = {
+    --         { "coal", 1 },
+    --     },
+    --     fluid_ingredients = {
+    --         { "light-oil", 25 },
+    --     },
+    --     results = {
+    --         { "plastic-bar", 2 },
+    --         { "coal",        1, 0.25 },
+    --     },
+    --     energy_required = 1,
+    --     category = "chemistry",
+    -- },
     {
         name = "advanced-circuit-flying-robot-frame",
         prefix = "vgal",

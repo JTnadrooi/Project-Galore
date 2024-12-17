@@ -17,24 +17,24 @@ vgal.data.extend {
     --         { "inserter", 2 }, -- 110
     --     },
     -- },
-    {
-        name = "advanced-circuit-fast-inserter",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("fast-inserter"),
-            vgal.icon.get_in("advanced-circuit"),
-        },
-        technology = "advanced-circuit",
-        energy_required = 1,
-        ingredients = {
-            { "advanced-circuit", 1 }, -- 100
-            { "iron-gear-wheel",  1 }, -- 20
-            { "inserter",         2 }, -- 110
-        },
-        results = {
-            { "fast-inserter", 2 }, -- 230
-        },
-    },
+    -- {
+    --     name = "advanced-circuit-fast-inserter",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("fast-inserter"),
+    --         vgal.icon.get_in("advanced-circuit"),
+    --     },
+    --     technology = "advanced-circuit",
+    --     energy_required = 1,
+    --     ingredients = {
+    --         { "advanced-circuit", 1 }, -- 100
+    --         { "iron-gear-wheel",  1 }, -- 20
+    --         { "inserter",         2 }, -- 110
+    --     },
+    --     results = {
+    --         { "fast-inserter", 2 }, -- 230
+    --     },
+    -- },
     {
         name = "processing-unit-bulk-inserter",
         prefix = "vgal",

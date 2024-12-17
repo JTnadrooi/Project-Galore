@@ -83,25 +83,6 @@ vgal.data.extend {
     },
     -- LOGISTIC
     {
-        name = "gate-logistic-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("logistic-science-pack"),
-            vgal.icon.get_in("landfill"),
-        },
-        category = "crafting",
-        energy_required = 60,
-        technology = "gate",
-        ingredients = {
-            { "gate",     1 }, -- 250
-            { "landfill", 2 }, -- 600 (actually 1000 but landfill is way to easy to make.)
-        },
-        results = {
-            { "logistic-science-pack", 12 },
-        },
-        recipe_groups = { "alternate-science" },
-    },
-    {
         name = "concrete-logistic-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -109,14 +90,14 @@ vgal.data.extend {
             vgal.icon.get_in("concrete")
         },
         category = "crafting",
-        energy_required = 24,
+        energy_required = 6,
         technology = "concrete",
         ingredients = {
-            { "concrete",    20 }, -- 240
-            { "stone-brick", 5 },  -- 100
+            { "concrete",    4 },
+            { "stone-brick", 1 },
         },
         results = {
-            { "logistic-science-pack", 5 }, -- 350
+            { "logistic-science-pack", 1 },
         },
         recipe_groups = { "alternate-science" },
     },
@@ -194,10 +175,9 @@ vgal.data.extend {
         ingredients = {
             { "bulk-inserter",       2 }, -- 1800
             { "fast-transport-belt", 8 }, -- 920
-            { "advanced-circuit",    1 }, -- 100
         },
         fluid_ingredients = {
-            { "petroleum-gas", 60 }, -- 60
+            { "petroleum-gas", 100 }, -- 100
         },
         results = {
             { "chemical-science-pack", 12 }, -- 2940
@@ -302,26 +282,26 @@ vgal.data.extend {
         },
         recipe_groups = { "alternate-science" },
     },
-    {
-        name = "express-transport-belt-production-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("production-science-pack"),
-            vgal.icon.get_in("express-transport-belt"),
-        },
-        category = "crafting",
-        energy_required = 12,
-        technology = "logistics-3",
-        ingredients = {
-            { "express-transport-belt", 4 }, -- 1460
-            { "rocket-fuel",            1 }, -- 200
-            { "advanced-circuit",       2 }, -- 200
-        },
-        results = {
-            { "production-science-pack", 2 }, -- 1,870
-        },
-        recipe_groups = { "alternate-science" },
-    },
+    -- {
+    --     name = "express-transport-belt-production-science-pack",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("production-science-pack"),
+    --         vgal.icon.get_in("express-transport-belt"),
+    --     },
+    --     category = "crafting",
+    --     energy_required = 12,
+    --     technology = "logistics-3",
+    --     ingredients = {
+    --         { "express-transport-belt", 4 }, -- 1460
+    --         { "rocket-fuel",            1 }, -- 200
+    --         { "advanced-circuit",       2 }, -- 200
+    --     },
+    --     results = {
+    --         { "production-science-pack", 2 }, -- 1,870
+    --     },
+    --     recipe_groups = { "alternate-science" },
+    -- },
     {
         name = "fast-transport-belt-production-science-pack",
         prefix = "vgal",

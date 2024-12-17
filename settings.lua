@@ -8,14 +8,6 @@ data:extend {
     },
     {
         type = "bool-setting",
-        name = "vgal-suite-mode",
-        setting_type = "startup",
-        default_value = true,
-        order = "aaa"
-    },
-
-    {
-        type = "bool-setting",
         name = "vgal-rocket-parts",
         setting_type = "startup",
         default_value = true,

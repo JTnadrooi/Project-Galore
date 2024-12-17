@@ -1,5 +1,43 @@
 vgal.data.extend {
     {
+        name = "processing-unit-artillery-turret",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("artillery-turret"),
+            vgal.icon.get_in("processing-unit"),
+        },
+        energy_required = 40,
+        technology = "artillery",
+        ingredients = {
+            { "low-density-structure", 8 },
+            { "processing-unit",       2 },
+            { "iron-gear-wheel",       40 },
+            { "refined-concrete",      15 },
+        },
+        results = {
+            { "artillery-turret", 1 },
+        },
+        category = "crafting",
+    },
+    {
+        name = "steel-plate-accumulator",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("accumulator"),
+            vgal.icon.get_in("steel-plate"),
+        },
+        energy_required = 10,
+        technology = "electric-energy-accumulators",
+        ingredients = {
+            { "steel-plate", 1 },
+            { "battery",     4 },
+        },
+        results = {
+            { "accumulator", 1 },
+        },
+        category = "crafting",
+    },
+    {
         name = "processing-unit-beacon",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -291,11 +329,11 @@ vgal.data.extend {
         energy_required = 10,
         technology = "concrete",
         ingredients = {
-            { "iron-stick",           2 },
-            { "stone-brick",          5 },
+            { "iron-stick",  2 },
+            { "stone-brick", 5 },
         },
         fluid_ingredients = {
-            { "water",           100 },
+            { "water", 100 },
         },
         results = {
             { "concrete", 10 },
@@ -312,7 +350,7 @@ vgal.data.extend {
         energy_required = 2.5,
         technology = "concrete",
         ingredients = {
-            { "iron-stick",   5 },
+            { "iron-stick",  5 },
             { "stone-brick", 4 },
         },
         fluid_ingredients = {

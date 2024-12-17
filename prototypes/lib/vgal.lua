@@ -143,16 +143,16 @@ end
 function vgal.data.extend(recipes)
     for _, recipe in ipairs(recipes) do
         recipe.recipe_groups = recipe.recipe_groups or {}
+        local exclude = false
         for _, group in ipairs(recipe.recipe_groups) do
-            if (not settings.startup["vgal-rocket-parts"].value) and group == "alternate-rocket-part" then
-                return
-            elseif (not settings.startup["vgal-analog-circuits"].value) and group == "analog-circuit" then
-                return
-            elseif (not settings.startup["vgal-alternate-science"].value) and group == "alternate-science" then
-                return
+            if (not settings.startup["vgal-rocket-parts"].value and group == "alternate-rocket-part") or
+                (not settings.startup["vgal-analog-circuits"].value and group == "analog-circuit") or
+                (not settings.startup["vgal-alternate-science"].value and group == "alternate-science") then
+                exclude = true
+                break
             end
         end
-
+        if exclude then goto continue end
 
 
         recipe.technologies = normalizeSync(recipe.technology, recipe.technologies)
@@ -284,7 +284,7 @@ function vgal.data.extend(recipes)
 
                     data:extend({
                         vgal.tech.create_empty(techName, 1, eventualUnits, #eventualUnits * 5,
-                        #eventualUnits >= 4 and 30 or 15, preColl,
+                            #eventualUnits >= 4 and 30 or 15, preColl,
                             "a", {
                                 {
                                     icon = "__vanilla_galore_continued__/graphics/" .. "node.png",
@@ -316,6 +316,7 @@ function vgal.data.extend(recipes)
                 error()
             end
         end
+        ::continue::
     end
 end
 

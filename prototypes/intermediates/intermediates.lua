@@ -358,6 +358,5 @@ vgal.data.extend
             { "flying-robot-frame", 5 }, -- 405x (5)
         },
         category = "crafting",
-        auto_localise = false,
     },
 }

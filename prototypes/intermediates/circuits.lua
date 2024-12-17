@@ -42,7 +42,6 @@ vgal.data.extend
         },
         category = "crafting",
         recipe_groups = { "analog-circuit" },
-        auto_localise = false,
     },
     {
         name = "iron-gear-wheel-lubricant-advanced-circuit", -- analog
@@ -67,7 +66,6 @@ vgal.data.extend
         },
         category = "crafting-with-fluid",
         recipe_groups = { "analog-circuit" },
-        auto_localise = false,
     },
     {
         name = "iron-gear-wheel-lubricant-electronic-circuit", -- analog
@@ -91,7 +89,6 @@ vgal.data.extend
         },
         category = "crafting-with-fluid",
         recipe_groups = { "analog-circuit" },
-        auto_localise = false,
     },
     {
         name = "iron-gear-wheel-electronic-circuit", -- analog
@@ -111,7 +108,6 @@ vgal.data.extend
         },
         category = "crafting",
         recipe_groups = { "analog-circuit" },
-        auto_localise = false,
     },
     {
         name = "plastic-bar-electronic-circuit",
@@ -219,34 +215,7 @@ vgal.data.extend
             { "processing-unit", 1 }, -- 710
         },
         recipe_groups = { "analog-circuit" },
-        auto_localise = false,
     },
-    -- {
-    --     name = "iron-gear-wheel-lubricant-processing-unit", -- analog
-    --     prefix = "vgal",
-    --     category = "crafting-with-fluid",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("processing-unit"),
-    --         vgal.icon.get_in("engine-unit"),
-    --         vgal.icon.get_in2("lubricant", "fluid"),
-    --     },
-    --     technology = { "lubricant", "processing-unit" },
-    --     energy_required = 8,
-    --     ingredients = {
-    --         { "engine-unit",      2 }, -- 180
-    --         { "pipe",             3 }, -- 30
-    --         { "iron-gear-wheel",  2 }, -- 40
-    --         { "advanced-circuit", 4 }, -- 400
-    --     },
-    --     fluid_ingredients = {
-    --         { "lubricant", 5 }, -- 15
-    --     },
-    --     results = {
-    --         { "processing-unit", 1 }, -- 710
-    --     },
-    --     recipe_groups = { "analog-circuit" },
-    --     auto_localise = false,
-    -- },
     {
         name = "low-density-structure-processing-unit",
         prefix = "vgal",

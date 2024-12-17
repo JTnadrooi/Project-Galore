@@ -189,8 +189,6 @@ function vgal.data.extend(recipes)
         recipe.ingredients = recipe.ingredients or {}
         recipe.results = recipe.results or {}
 
-        recipe.auto_localise = (recipe.auto_localise == nil) and true or recipe.auto_localise
-
         -- name components
         if recipe.icon then
             if recipe.icons then
@@ -246,12 +244,15 @@ function vgal.data.extend(recipes)
                     results = recipe.results,
                     category = recipe.category,
                     allow_decomposition = false,
+                    ---@diagnostic disable-next-line: assign-type-mismatch
+                    auto_recycle = false,
 
                     subgroup = recipe.subgroup,
                     order = recipe.order,
                     main_product = recipe.main_product,
-                    localised_name = recipe.auto_localise and getLocalized(recipe.main_product) or {
-                        "recipe-name." .. recipe.name,
+                    localised_name = { "?",
+                        { "", "", { "recipe-name." .. recipe.name } },
+                        { "", "", getLocalized(recipe.main_product) },
                     },
                     localised_description = lazyLocalise(recipe),
                 },
@@ -296,7 +297,6 @@ function vgal.data.extend(recipes)
                     data.raw.technology[techName].localised_name = { "?",
                         { "", "Galore Tech Node: ", { "recipe-name." .. recipe.name } },
                         { "", "Galore Tech Node: ", getLocalized(recipe.main_product) },
-                        -- { "", "Galore Tech Node: ", { "entity-name." .. recipe.main_product } },
                     }
                     vgal.tech.add_recipe(techName, recipe.name)
                     ---@diagnostic disable-next-line: param-type-mismatch

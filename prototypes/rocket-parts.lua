@@ -20,7 +20,6 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         },
         recipe_groups = { "alternate-rocket-part" },
         category = "rocket-building",
-        auto_localise = false,
     },
     {
         name = "solar-panel-rocket-part",
@@ -41,7 +40,6 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         },
         recipe_groups = { "alternate-rocket-part" },
         category = "rocket-building",
-        auto_localise = false,
     },
     {
         name = "uranium-fuel-cell-rocket-part",
@@ -62,7 +60,6 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         },
         recipe_groups = { "alternate-rocket-part" },
         category = "rocket-building",
-        auto_localise = false,
     },
     {
         name = "flying-robot-frame-rocket-part",
@@ -83,7 +80,6 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         },
         recipe_groups = { "alternate-rocket-part" },
         category = "rocket-building",
-        auto_localise = false,
     },
 }
 data.raw.item["rocket-part"].hidden = false

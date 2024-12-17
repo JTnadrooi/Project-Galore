@@ -18,7 +18,6 @@ do
     ---@field technologies? string[]|table[]
     ---The recipe prefix. "vgal-" for (Vanilla) Galore recipes
     ---@field prefix? string
-    ---@field auto_localise? boolean
     ---The method that will be used to determine an icon composition based on the ingredients and results of this recipe.
     ---@field icon_method? string
     ---@field ingredients? ItemKeyPrototype[]|table

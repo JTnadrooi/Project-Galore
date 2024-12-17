@@ -24,6 +24,5 @@ vgal.data.extend
             { "water",         10 },
             { "sulfuric-acid", 10 },
         },
-        auto_localise = false,
     },
 }

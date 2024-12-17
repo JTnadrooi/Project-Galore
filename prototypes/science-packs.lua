@@ -212,33 +212,33 @@ vgal.data.extend {
             vgal.icon.get_in("productivity-module"),
         },
         category = "crafting",
-        energy_required = 48,
+        energy_required = 36,
         technology = { "chemical-science-pack", "battery", "productivity-module" },
         ingredients = {
             { "productivity-module", 1 },
-            { "battery",             4 }
+            { "battery",             2 }
         },
         results = {
-            { "chemical-science-pack", 4 },
+            { "chemical-science-pack", 3 },
         },
         recipe_groups = { "alternate-science" },
     },
     {
-        name = "speed-module-chemical-science-pack", -- ISSUE #10
+        name = "speed-module-chemical-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("chemical-science-pack"),
             vgal.icon.get_in("speed-module"),
         },
         category = "crafting",
-        energy_required = 48,
-        technology = { "speed-module", "battery" },
+        energy_required = 36,
+        technology = { "chemical-science-pack", "speed-module", "battery" },
         ingredients = {
             { "speed-module", 1 },
-            { "battery",      4 }
+            { "battery",      2 }
         },
         results = {
-            { "chemical-science-pack", 4 },
+            { "chemical-science-pack", 3 },
         },
         recipe_groups = { "alternate-science" },
     },
@@ -251,7 +251,7 @@ vgal.data.extend {
         },
         category = "crafting",
         energy_required = 36,
-        technology = { "efficiency-module", "battery" },
+        technology = { "chemical-science-pack", "efficiency-module", "battery" },
         ingredients = {
             { "efficiency-module", 1 }, -- 625
             { "battery",           2 }, -- 100
@@ -262,25 +262,25 @@ vgal.data.extend {
         recipe_groups = { "alternate-science" },
     },
     -- MILITAIRY
-    {
-        name = "logistic-to-military-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("military-science-pack"),
-            vgal.icon.get_in("logistic-science-pack"),
-        },
-        category = "crafting",
-        energy_required = 4,
-        technology = "military-science-pack",
-        ingredients = {
-            { "logistic-science-pack", 1 },
-            { "firearm-magazine",      1 }
-        },
-        results = {
-            { "military-science-pack", 1 },
-        },
-        recipe_groups = { "alternate-science" },
-    },
+    -- {
+    --     name = "logistic-to-military-science-pack",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("military-science-pack"),
+    --         vgal.icon.get_in("logistic-science-pack"),
+    --     },
+    --     category = "crafting",
+    --     energy_required = 4,
+    --     technology = "military-science-pack",
+    --     ingredients = {
+    --         { "logistic-science-pack", 1 },
+    --         { "firearm-magazine",      1 }
+    --     },
+    --     results = {
+    --         { "military-science-pack", 1 },
+    --     },
+    --     recipe_groups = { "alternate-science" },
+    -- },
     -- PRODUCTION
     {
         name = "low-density-structure-production-science-pack",
@@ -299,26 +299,6 @@ vgal.data.extend {
         },
         results = {
             { "production-science-pack", 2 }, -- 1870
-        },
-        recipe_groups = { "alternate-science" },
-    },
-    {
-        name = "steel-furnace-production-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("production-science-pack"),
-            vgal.icon.get_in("steel-furnace"),
-        },
-        category = "crafting",
-        energy_required = 18,
-        technology = { "production-science-pack", "solar-energy" },
-        ingredients = {
-            { "steel-furnace",       3 },  -- 1500
-            { "solar-panel",         1 },  -- 675
-            { "productivity-module", 1 },  -- 625
-        },
-        results = {
-            { "production-science-pack", 3 }, -- 2805
         },
         recipe_groups = { "alternate-science" },
     },
@@ -398,10 +378,10 @@ vgal.data.extend {
         ingredients = {
             { "speed-module", 5 },
             { "plastic-bar",  30 },
-            { "heat-pipe",    1 },
+            { "heat-pipe",    1 }, -- 700
         },
         results = {
-            { "utility-science-pack", 12 }, -- 11220
+            { "utility-science-pack", 1 }, -- 990
         },
         recipe_groups = { "alternate-science" },
     },

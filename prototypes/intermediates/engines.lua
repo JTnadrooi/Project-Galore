@@ -16,7 +16,6 @@ vgal.data.extend {
         results = {
             { "engine-unit", 1 },
         },
-        auto_localise = false,
         category = "advanced-crafting",
     },
     {

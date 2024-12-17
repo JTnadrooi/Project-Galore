@@ -108,8 +108,8 @@ function getLocalized(product)
         return { "fluid-name." .. product }
         -- elseif data.raw["module"][product] then
         --     return { "item-name." .. product }
-        -- elseif data.raw["tool"][product] then
-        --     return { "item-name." .. product }
+    elseif data.raw["item-with-entity-data"][product] then
+        return { "entity-name." .. product }
     else
         return { "item-name." .. product }
     end
@@ -283,7 +283,8 @@ function vgal.data.extend(recipes)
                     -- unitCount = unitCount / #preColl -- unused.
 
                     data:extend({
-                        vgal.tech.create_empty(techName, 1, eventualUnits, #eventualUnits * 5, #eventualUnits >= 4 and 30 or 15, preColl,
+                        vgal.tech.create_empty(techName, 1, eventualUnits, #eventualUnits * 5,
+                        #eventualUnits >= 4 and 30 or 15, preColl,
                             "a", {
                                 {
                                     icon = "__vanilla_galore_continued__/graphics/" .. "node.png",

@@ -147,6 +147,7 @@ function vgal.data.extend(recipes)
         for _, group in ipairs(recipe.recipe_groups) do
             if (not settings.startup["vgal-rocket-parts"].value and group == "alternate-rocket-part") or
                 (not settings.startup["vgal-analog-circuits"].value and group == "analog-circuit") or
+                (not settings.startup["vgal-wood-recipes"].value and group == "wood-recipe") or
                 (not settings.startup["vgal-alternate-science"].value and group == "alternate-science") then
                 exclude = true
                 break

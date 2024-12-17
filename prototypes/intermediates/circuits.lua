@@ -91,7 +91,49 @@ vgal.data.extend
         recipe_groups = { "analog-circuit" },
     },
     {
-        name = "iron-gear-wheel-electronic-circuit", -- analog
+        name = "wood-electronic-circuit",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("electronic-circuit"),
+            vgal.icon.get_in("wood"),
+        },
+        technology = "electronics",
+        energy_required = 0.5,
+        ingredients = {
+            { "wood",         1 },
+            { "copper-cable", 3 },
+        },
+        results = {
+            { "electronic-circuit", 1 }
+        },
+        category = "crafting",
+        recipe_groups = { "wood-recipe" },
+    },
+    {
+        name = "wood-heavy-oil-electronic-circuit",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("electronic-circuit"),
+            vgal.icon.get_in("wood"),
+            vgal.icon.get_in2("heavy-oil", "fluid"),
+        },
+        technology = "advanced-oil-processing",
+        energy_required = 1,
+        ingredients = {
+            { "wood",         1 },
+            { "copper-cable", 6 },
+        },
+        fluid_ingredients = {
+            { "heavy-oil", 5 },
+        },
+        results = {
+            { "electronic-circuit", 2 }
+        },
+        category = "crafting-with-fluid",
+        recipe_groups = { "wood-recipe" },
+    },
+    {
+        name = "iron-gear-wheel-electronic-circuit",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("electronic-circuit"),
@@ -154,7 +196,7 @@ vgal.data.extend
         category = "crafting-with-fluid",
         icons = vgal.icon.register {
             vgal.icon.get("processing-unit"),
-            vgal.icon.get_in("engine-unit")
+            vgal.icon.get_in("iron-gear-wheel")
         },
         technology = "processing-unit",
         energy_required = 8,

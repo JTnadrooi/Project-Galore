@@ -27,4 +27,11 @@ data:extend {
         default_value = true,
         order = "ad"
     },
+    {
+        type = "bool-setting",
+        name = "vgal-wood-recipes",
+        setting_type = "startup",
+        default_value = true,
+        order = "ad"
+    },
 }

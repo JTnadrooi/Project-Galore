@@ -106,9 +106,11 @@ function getLocalized(product)
         return { "item-name." .. product }
     elseif data.raw.fluid[product] then
         return { "fluid-name." .. product }
-    elseif data.raw["module"][product] then
-        return { "item-name." .. product }
-    elseif data.raw["tool"][product] then
+        -- elseif data.raw["module"][product] then
+        --     return { "item-name." .. product }
+        -- elseif data.raw["tool"][product] then
+        --     return { "item-name." .. product }
+    else
         return { "item-name." .. product }
     end
 end
@@ -281,7 +283,7 @@ function vgal.data.extend(recipes)
                     -- unitCount = unitCount / #preColl -- unused.
 
                     data:extend({
-                        vgal.tech.create_empty(techName, 1, eventualUnits, 10, 15, preColl,
+                        vgal.tech.create_empty(techName, 1, eventualUnits, #eventualUnits * 5, #eventualUnits >= 4 and 30 or 15, preColl,
                             "a", {
                                 {
                                     icon = "__vanilla_galore_continued__/graphics/" .. "node.png",
@@ -297,6 +299,9 @@ function vgal.data.extend(recipes)
                     data.raw.technology[techName].localised_name = { "?",
                         { "", "Galore Tech Node: ", { "recipe-name." .. recipe.name } },
                         { "", "Galore Tech Node: ", getLocalized(recipe.main_product) },
+                    }
+                    data.raw.technology[techName].localised_description = {
+                        "", "", { "recipe-description." .. recipe.name },
                     }
                     vgal.tech.add_recipe(techName, recipe.name)
                     ---@diagnostic disable-next-line: param-type-mismatch

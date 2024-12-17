@@ -363,28 +363,6 @@ vgal.data.extend {
         },
         recipe_groups = { "alternate-science" },
     },
-
-    ---UNDONE
-    {
-        name = "heat-pipe-utility-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("utility-science-pack"),
-            vgal.icon.get_in("heat-pipe"),
-        },
-        category = "crafting",
-        energy_required = 72,
-        technology = "utility-science-pack",
-        ingredients = {
-            { "speed-module", 5 },
-            { "plastic-bar",  30 },
-            { "heat-pipe",    1 }, -- 700
-        },
-        results = {
-            { "utility-science-pack", 1 }, -- 990
-        },
-        recipe_groups = { "alternate-science" },
-    },
     {
         name = "refined-concrete-utility-science-pack",
         prefix = "vgal",
@@ -399,26 +377,6 @@ vgal.data.extend {
             { "speed-module",     5 },
             { "plastic-bar",      30 },
             { "refined-concrete", 1 },
-        },
-        results = {
-            { "utility-science-pack", 12 }, -- 11220
-        },
-        recipe_groups = { "alternate-science" },
-    },
-    {
-        name = "speed-module-2-utility-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("utility-science-pack"),
-            vgal.icon.get_in("speed-module-2", "module"),
-        },
-        category = "crafting",
-        energy_required = 72,
-        technology = "utility-science-pack",
-        ingredients = {
-            { "speed-module",   5 },
-            { "plastic-bar",    30 },
-            { "speed-module-2", 1 },
         },
         results = {
             { "utility-science-pack", 12 }, -- 11220

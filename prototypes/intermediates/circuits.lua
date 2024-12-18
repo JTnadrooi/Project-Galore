@@ -41,7 +41,7 @@ vgal.data.extend
             { "advanced-circuit", 3 }, -- 300
         },
         category = "crafting",
-        recipe_groups = { "analog-circuit" },
+        groups = { "analog-circuit" },
     },
     {
         name = "iron-gear-wheel-lubricant-advanced-circuit", -- analog
@@ -65,7 +65,7 @@ vgal.data.extend
             { "advanced-circuit", 3 } -- 300
         },
         category = "crafting-with-fluid",
-        recipe_groups = { "analog-circuit" },
+        groups = { "analog-circuit" },
     },
     {
         name = "iron-gear-wheel-lubricant-electronic-circuit", -- analog
@@ -88,7 +88,7 @@ vgal.data.extend
             { "electronic-circuit", 1 }
         },
         category = "crafting-with-fluid",
-        recipe_groups = { "analog-circuit" },
+        groups = { "analog-circuit" },
     },
     {
         name = "wood-electronic-circuit",
@@ -107,7 +107,7 @@ vgal.data.extend
             { "electronic-circuit", 1 }
         },
         category = "crafting",
-        recipe_groups = { "wood-recipe" },
+        groups = { "wood-recipe" },
     },
     {
         name = "wood-heavy-oil-electronic-circuit",
@@ -130,7 +130,7 @@ vgal.data.extend
             { "electronic-circuit", 2 }
         },
         category = "crafting-with-fluid",
-        recipe_groups = { "wood-recipe" },
+        groups = { "wood-recipe" },
     },
     {
         name = "iron-gear-wheel-electronic-circuit",
@@ -149,7 +149,7 @@ vgal.data.extend
             { "electronic-circuit", 1 }
         },
         category = "crafting",
-        recipe_groups = { "analog-circuit" },
+        groups = { "analog-circuit" },
     },
     {
         name = "plastic-bar-electronic-circuit",
@@ -211,7 +211,7 @@ vgal.data.extend
         results = {
             { "processing-unit", 1 }, -- 710
         },
-        recipe_groups = { "analog-circuit" },
+        groups = { "analog-circuit" },
     },
     {
         name = "low-density-structure-processing-unit",

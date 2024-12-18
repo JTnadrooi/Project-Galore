@@ -17,7 +17,7 @@ vgal.data.extend {
         results = {
             { "automation-science-pack", 3 },
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     {
         name = "lamp-automation-science-pack",
@@ -36,7 +36,7 @@ vgal.data.extend {
         results = {
             { "automation-science-pack", 2 },
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     {
         name = "wall-furnace-automation-science-pack",
@@ -55,7 +55,7 @@ vgal.data.extend {
         results = {
             { "automation-science-pack", 6 }, -- 180, rip those who do not want to smelt iron or copper..
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     {
         name = "copper-plate-iron-stick-automation-science-pack",
@@ -79,7 +79,7 @@ vgal.data.extend {
         results = {
             { "automation-science-pack", 1 }, -- 30
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     -- LOGISTIC
     {
@@ -99,7 +99,7 @@ vgal.data.extend {
         results = {
             { "logistic-science-pack", 1 },
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     {
         name = "assembling-machine-2-logistic-science-pack",
@@ -118,7 +118,7 @@ vgal.data.extend {
         results = {
             { "logistic-science-pack", 10 }, -- 700
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     {
         name = "solar-planel-logistic-science-pack",
@@ -138,7 +138,7 @@ vgal.data.extend {
         results = {
             { "logistic-science-pack", 12 }, -- 840
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     -- CHEMICAL
     {
@@ -159,7 +159,7 @@ vgal.data.extend {
         results = {
             { "chemical-science-pack", 2 }, -- 490
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     {
         name = "bulk-inserter-chemical-science-pack",
@@ -182,7 +182,7 @@ vgal.data.extend {
         results = {
             { "chemical-science-pack", 12 }, -- 2940
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     {
         name = "productivity-module-chemical-science-pack",
@@ -201,7 +201,7 @@ vgal.data.extend {
         results = {
             { "chemical-science-pack", 3 },
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     {
         name = "speed-module-chemical-science-pack",
@@ -220,7 +220,7 @@ vgal.data.extend {
         results = {
             { "chemical-science-pack", 3 },
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     {
         name = "efficiency-chemical-science-pack",
@@ -239,7 +239,7 @@ vgal.data.extend {
         results = {
             { "chemical-science-pack", 3 }, -- 735
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     -- MILITAIRY
     -- {
@@ -259,7 +259,7 @@ vgal.data.extend {
     --     results = {
     --         { "military-science-pack", 1 },
     --     },
-    --     recipe_groups = { "alternate-science" },
+    --     groups = { "alternate-science" },
     -- },
     -- PRODUCTION
     {
@@ -280,7 +280,7 @@ vgal.data.extend {
         results = {
             { "production-science-pack", 2 }, -- 1870
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     -- {
     --     name = "express-transport-belt-production-science-pack",
@@ -300,7 +300,7 @@ vgal.data.extend {
     --     results = {
     --         { "production-science-pack", 2 }, -- 1,870
     --     },
-    --     recipe_groups = { "alternate-science" },
+    --     groups = { "alternate-science" },
     -- },
     {
         name = "fast-transport-belt-production-science-pack",
@@ -320,7 +320,7 @@ vgal.data.extend {
         results = {
             { "production-science-pack", 2 }, -- 1,870
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     -- UTILITY
     {
@@ -341,7 +341,7 @@ vgal.data.extend {
         results = {
             { "utility-science-pack", 12 }, -- 11220
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
     {
         name = "refined-concrete-utility-science-pack",
@@ -351,16 +351,15 @@ vgal.data.extend {
             vgal.icon.get_in("refined-concrete"),
         },
         category = "crafting",
-        energy_required = 72,
+        energy_required = 6,
         technology = "utility-science-pack",
         ingredients = {
-            { "speed-module",     5 },
-            { "plastic-bar",      30 },
-            { "refined-concrete", 1 },
+            { "low-density-structure", 1 },
+            { "refined-concrete",      20 },
         },
         results = {
-            { "utility-science-pack", 12 }, -- 11220
+            { "utility-science-pack", 1 }, -- 990
         },
-        recipe_groups = { "alternate-science" },
+        groups = { "alternate-science" },
     },
 }

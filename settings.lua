@@ -8,6 +8,14 @@ data:extend {
     },
     {
         type = "bool-setting",
+        name = "vgal-always-show-products",
+        setting_type = "startup",
+        default_value = true,
+        order = "a"
+    },
+
+    {
+        type = "bool-setting",
         name = "vgal-rocket-parts",
         setting_type = "startup",
         default_value = true,

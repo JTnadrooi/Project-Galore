@@ -90,7 +90,7 @@ end
 
 ---@param recipe vgal.VgalRecipe
 function lazyLocalise(recipe)
-    for _, group in ipairs(recipe.recipe_groups or {}) do
+    for _, group in ipairs(recipe.groups or {}) do
         if group == "analog-circuit" then
             return { "recipe-description.vgal-analog-circuit" }
         end
@@ -138,13 +138,27 @@ function shortHand(inTable, newType)
     return transformed
 end
 
+function getAutoProductivity(mainProduct)
+    local recipe = data.raw["recipe"][mainProduct]
+    return recipe and (recipe.allow_productivity or false)
+end
+
+function tableContains(tbl, value)
+    for _, v in pairs(tbl) do
+        if v == value then
+            return true
+        end
+    end
+    return false
+end
+
 ---Register a recipe to the vgal (Vanilla Galore - Continued) ecosystem.
 ---@param recipes vgal.VgalRecipe[]
 function vgal.data.extend(recipes)
     for _, recipe in ipairs(recipes) do
-        recipe.recipe_groups = recipe.recipe_groups or {}
+        recipe.groups = recipe.groups or {}
         local exclude = false
-        for _, group in ipairs(recipe.recipe_groups) do
+        for _, group in ipairs(recipe.groups) do
             if (not settings.startup["vgal-rocket-parts"].value and group == "alternate-rocket-part") or
                 (not settings.startup["vgal-analog-circuits"].value and group == "analog-circuit") or
                 (not settings.startup["vgal-wood-recipes"].value and group == "wood-recipe") or
@@ -183,7 +197,8 @@ function vgal.data.extend(recipes)
         recipe.name = (recipe.prefix and (recipe.prefix .. "-") or "") ..
             recipe.name .. (recipe.tier and ("-" .. recipe.tier) or "")
 
-        -- name components
+
+
         recipe.enabled = (recipe.enabled ~= nil) or not recipe.technologies
 
         -- null stuff
@@ -191,8 +206,9 @@ function vgal.data.extend(recipes)
         recipe.fluid_results = recipe.fluid_results or {}
         recipe.ingredients = recipe.ingredients or {}
         recipe.results = recipe.results or {}
+        recipe.module_allows = recipe.module_allows or {}
 
-        -- name components
+        -- icon stuff
         if recipe.icon then
             if recipe.icons then
                 error()
@@ -211,11 +227,19 @@ function vgal.data.extend(recipes)
         if not recipe.energy_required then
             error()
         end
+
+        -- inline propetries
         recipe.ingredients = shortHand(recipe.ingredients, "item")
         recipe.results = shortHand(recipe.results, "item")
-
         recipe.fluid_ingredients = shortHand(recipe.fluid_ingredients, "fluid")
         recipe.fluid_results = shortHand(recipe.fluid_results, "fluid")
+
+        -- modules
+        -- for _, value in ipairs(recipe.module_allows) do
+        --     if value == "productivity" then recipe.allow_productivity = true end
+        --     if value == "productivity" then recipe.allow_pollution = true end
+        --     if value == "productivity" then recipe.allow_consumption = true end
+        -- end
 
         for _, value in pairs(recipe.fluid_ingredients) do
             ---@diagnostic disable-next-line: undefined-field
@@ -230,6 +254,9 @@ function vgal.data.extend(recipes)
             ---@diagnostic disable-next-line: undefined-field
             recipe.main_product = recipe.results[1].name
         end
+
+        recipe.allow_productivity = (recipe.allow_productivity ~= nil) and recipe.allow_productivity or
+            getAutoProductivity(recipe.main_product)
 
         vgal.log("registering: " .. recipe.name)
 
@@ -252,10 +279,12 @@ function vgal.data.extend(recipes)
 
                     subgroup = recipe.subgroup,
                     order = recipe.order,
+                    allow_productivity = recipe.allow_productivity,
+
                     main_product = recipe.main_product,
                     localised_name = { "?",
-                        { "", "", { "recipe-name." .. recipe.name } },
-                        { "", "", getLocalized(recipe.main_product) },
+                        { "", { "recipe-name." .. recipe.name } },
+                        { "", getLocalized(recipe.main_product) },
                     },
                     localised_description = lazyLocalise(recipe),
                 },
@@ -303,7 +332,7 @@ function vgal.data.extend(recipes)
                         { "", "Galore Tech Node: ", getLocalized(recipe.main_product) },
                     }
                     data.raw.technology[techName].localised_description = {
-                        "", "", { "recipe-description." .. recipe.name },
+                        "", { "recipe-description." .. recipe.name },
                     }
                     vgal.tech.add_recipe(techName, recipe.name)
                     ---@diagnostic disable-next-line: param-type-mismatch

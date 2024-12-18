@@ -32,8 +32,7 @@ vgal.data.extend
         technology = { "low-density-structure", "advanced-oil-processing" },
         ingredients = {
             { "iron-stick",  10 }, -- 50
-            { "steel-plate", 4 },  -- 200
-            { "iron-plate",  4 },  -- 40
+            { "steel-plate", 5 },  -- 250
         },
         fluid_ingredients = {
             { "heavy-oil", 50 }, -- 100

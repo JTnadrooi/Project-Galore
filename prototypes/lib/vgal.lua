@@ -280,6 +280,7 @@ function vgal.data.extend(recipes)
                     subgroup = recipe.subgroup,
                     order = recipe.order,
                     allow_productivity = recipe.allow_productivity,
+                    allow_as_intermediate = false,
 
                     main_product = recipe.main_product,
                     localised_name = { "?",

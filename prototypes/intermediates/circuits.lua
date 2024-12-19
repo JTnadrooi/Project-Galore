@@ -139,7 +139,12 @@ vgal.data.extend
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("iron-gear-wheel"),
         },
-        technology = "electronics",
+        technologies = {
+            "circuit-network",
+            "concrete",
+            "electric-energy-distribution-1",
+            "railway",
+        },
         energy_required = 0.5,
         ingredients = {
             { "iron-gear-wheel", 1 }, -- 20

@@ -27,14 +27,14 @@ vgal.data.extend {
             vgal.icon.get_in("small-lamp"),
         },
         category = "crafting",
-        energy_required = 10,
+        energy_required = 20,
         technology = "lamp",
         ingredients = {
-            { "copper-cable", 2 }, -- 10
+            { "copper-cable", 5 }, -- 10
             { "small-lamp",   1 }, -- 50
         },
         results = {
-            { "automation-science-pack", 2 },
+            { "automation-science-pack", 4 },
         },
         groups = { "alternate-science" },
     },

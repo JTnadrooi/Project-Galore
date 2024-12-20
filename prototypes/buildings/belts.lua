@@ -129,7 +129,6 @@ vgal.data.extend {
         technology = { "logistics", "steel-processing" },
         ingredients = {
             { "steel-plate",    1 }, -- 50
-            { "iron-plate",     3 }, -- 30
             { "transport-belt", 5 }, -- 75
         },
         results = {

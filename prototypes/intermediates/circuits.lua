@@ -55,8 +55,8 @@ vgal.data.extend
         energy_required = 18,
         ingredients = {
             { "plastic-bar",     2 }, -- 30
-            { "iron-gear-wheel", 8 }, -- 160
-            { "iron-plate",      6 }, -- 60
+            { "iron-gear-wheel", 6 }, -- 120
+            { "iron-plate",      5 }, -- 60
         },
         fluid_ingredients = {
             { "lubricant", 20 }, -- 50

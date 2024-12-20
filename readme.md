@@ -1,6 +1,6 @@
 # Vanilla Galore Continued
 
-A mod focused on adding recipes galore. Vanilla Galore does not add any items, fluids or buildings.
+A mod focused on adding recipes galore! Vanilla Galore does not add any items, fluids or buildings.
 
 One recipe pack to rule them all.
 

@@ -1,5 +1,3 @@
-require("__ylib__/data")
-
 vgal = require("prototypes.lib.vgal")
 vgal.log("the *core-of-galore* has loaded.")
 

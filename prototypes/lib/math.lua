@@ -5,4 +5,4 @@ function vgal.math.conserve_floor(inputNum)
     else
         return toret
     end
-  end
+end

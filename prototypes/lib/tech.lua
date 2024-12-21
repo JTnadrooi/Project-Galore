@@ -53,7 +53,6 @@ function vgal.tech.is_modded(techName, modtag)
     else
         return false
     end
-    --vgal.any.is_modded(data.raw["technology"][techName], modtag)
 end
 
 ---@param techName (string)
@@ -102,6 +101,7 @@ vgal.tech.iconDirectory = "__vanilla_galore__/graphics/tech/"
 function vgal.tech.set_icon_directory(directoryName)
     vgal.tech.iconDirectory = directoryName
 end
+
 function vgal.tech.create_empty(techName, tier, units, unitCount, unitTime, prerequisites, order, icons)
     tier = tier or 1
     if not unitTime then
@@ -175,9 +175,6 @@ function vgal.tech.deep_remove(techName)
     if data.raw["technology"][techName] then
         if data.raw["technology"][techName].effects then
             for _, effect in pairs(data.raw["technology"][techName].effects) do
-                -- if string.starts(effect.recipe, "vgal-") then
-                --     data.raw["recipe"][effect.recipe] = nil
-                -- end
                 data.raw["recipe"][effect.recipe] = nil
             end
         end
@@ -190,9 +187,6 @@ function vgal.tech.deep_hide(techName)
     if data.raw["technology"][techName] then
         if data.raw["technology"][techName].effects then
             for _, effect in pairs(data.raw["technology"][techName].effects) do
-                -- if string.starts(effect.recipe, "vgal-") then
-                --     data.raw["recipe"][effect.recipe] = nil
-                -- end
                 if effect.recipe then
                     data.raw["recipe"][effect.recipe].hidden = true
                 end
@@ -204,7 +198,7 @@ end
 
 ---@param techName (string)
 function vgal.tech.remove_miltary(techName)
-    vgal.tech.remove_ingredient("military-science-pack")
+    vgal.tech.remove_ingredient(techName, "military-science-pack")
 end
 
 ---@param techName (string)
@@ -218,12 +212,11 @@ function vgal.tech.remove_ingredient(techName, sciencePackName)
             end
         end
     end
-    --data.raw["technology"][techName].hidden = true
 end
 
 function vgal.tech.add_ingredient(techName, sciencePackName)
     if data.raw["technology"][techName] then
-        for index, value in ipairs(data.raw["technology"][techName].unit.ingredients) do
+        for _, value in ipairs(data.raw["technology"][techName].unit.ingredients) do
             if value[1] == sciencePackName then
                 return
             end
@@ -232,42 +225,15 @@ function vgal.tech.add_ingredient(techName, sciencePackName)
     end
 end
 
-function vgal.tech.validate_recipes(technologies)
-    for _, tech in pairs(technologies) do
-        local effects = {}
-        for _, effect in pairs(tech.effects) do
-            if effect.type == "unlock-recipe" then
-                if data.raw.recipe[effect.recipe] then
-                    table.insert(effects, effect)
-                end
-            else
-                table.insert(effects, effect)
-            end
-        end
-        tech.effects = effects
-    end
-    return technologies
-end
-
-local function recursive_shallow_hide_search(currentTechName)
-
-end
 function vgal.tech.shallow_hide_search(techName, untilTechName)
     if data.raw["technology"][techName] then
-        for index, value in ipairs(data.raw["technology"][techName].prerequisites) do
+        for _, value in ipairs(data.raw["technology"][techName].prerequisites) do
             if value ~= untilTechName then
 
             end
         end
     end
     data.raw["technology"][techName].hidden = true
-end
-
-function vgal.tech.new_recipe_effect(recipeName)
-    return {
-        type = "unlock-recipe",
-        recipe = recipeName
-    }
 end
 
 ---@param techName (string)
@@ -307,4 +273,33 @@ function vgal.tech.vgal_tech_clean()
             tech.prerequisites = new_prerequisites
         end
     end
+end
+
+---@param tech data.TechnologyPrototype
+function vgal.tech.extract_units(tech)
+    local units = {}
+    if not tech.unit then
+        return {}
+    end
+    for _, value in ipairs(tech.unit.ingredients) do
+        local name = value[1]:gsub("%-science%-pack", "")
+        if name == "automation" then
+            table.insert(units, 1)
+        end
+        if name == "logistic" then
+            table.insert(units, 2)
+        end
+        if name == "chemical" then
+            table.insert(units, 3)
+        end
+        if name == "production" then
+            table.insert(units, 4)
+        end
+        if name == "utility" then
+            table.insert(units, 5)
+        end
+        vgal.log(name)
+    end
+    vgal.log(table.concat(units, ", "))
+    return units
 end

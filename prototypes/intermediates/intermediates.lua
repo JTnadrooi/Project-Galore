@@ -273,7 +273,7 @@ vgal.data.extend
             { "rocket-fuel", 1 },
             { "coal",        1, 0.25 },
         },
-        energy_required = 30,
+        energy_required = 15,
         category = "crafting-with-fluid",
     },
     {

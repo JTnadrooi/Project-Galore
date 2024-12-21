@@ -1,18 +1,19 @@
-function endsWithVGAL(str, suffix)
-    return str:sub(- #suffix) == suffix
-end
+
 
 local function get_icon_item(keyName, iconSource)
+    local function endsWith(str, suffix)
+        return str:sub(- #suffix) == suffix
+    end
     if iconSource == nil or iconSource == "" then
         iconSource = "item"
     end
-    if endsWithVGAL(keyName, "-science-pack") then
+    if endsWith(keyName, "-science-pack") then
         iconSource = "tool"
     end
-    if endsWithVGAL(keyName, "-module") then
+    if endsWith(keyName, "-module") then
         iconSource = "module"
     end
-    if endsWithVGAL(keyName, "-ammo") then
+    if endsWith(keyName, "-ammo") then
         iconSource = "ammo"
     end
     vgal.log("getting icon item from; " .. "keyname: " .. keyName .. " iconSource: " .. iconSource)
@@ -24,16 +25,12 @@ local function get_icon_item(keyName, iconSource)
 end
 
 local function get_icon_size(object)
-    -- local size = 16
     local size = 32
-    -- local size = 256
-
     if object.icon_size then
         size = object.icon_size
     elseif object.size then
         size = object.size
     end
-
     return size
 end
 function shift_icon(icon, scale, shift)
@@ -48,6 +45,17 @@ function shift_icon(icon, scale, shift)
         table.insert(icons, new_icon)
     end
     return icons
+end
+
+function vgal.icon.get_tier_tint(tier)
+    local tints = {
+        { a = 1, b = 88 / 255,  g = 204 / 255, r = 119 / 255 }, -- #58cc77
+        { a = 1, b = 84 / 255,  g = 208 / 255, r = 222 / 255 }, -- #54d0de
+        { a = 1, b = 250 / 255, g = 120 / 255, r = 194 / 255 }, -- #fa78c2
+        { a = 1, b = 250 / 255, g = 120 / 255, r = 130 / 255 }, -- #fa7885
+        { a = 1, b = 215 / 255, g = 250 / 255, r = 120 / 255 }, -- #d7fa78
+    }
+    return tints[tier] or { a = 1, b = 0.5, g = 0.5, r = 0.5 }
 end
 
 function vgal.icon.get(keyName, iconSource)
@@ -108,11 +116,6 @@ function vgal.icon.get(keyName, iconSource)
     end
     local toret_item = get_icon_item(keyName, iconSource)
     vgal.log("getting icon: " .. toret_item.name)
-    -- local toret =
-    -- if toret_item.icon == nil then
-    --     return toret_item.icons[1]
-    -- end
-
 
     local object = toret_item
     local toret = nil
@@ -125,7 +128,6 @@ function vgal.icon.get(keyName, iconSource)
 
             toret = {
                 { icon = object.icon, target = "core" }
-                -- { icon = object.icon, icon_size = icon_size, target = "core" }
             }
         end
         if object.icons then
@@ -200,7 +202,7 @@ function vgal.icon.get_out3(keyName, iconSource)
 end
 
 function vgal.icon.get_icon_target(icon, trim)
-    for index, value in ipairs(icon) do
+    for _, value in ipairs(icon) do
         if value.target then
             if trim then
                 return value.target:sub(1, -2)
@@ -213,7 +215,7 @@ end
 
 function vgal.icon.get_icon_target_index(icon)
     local toret = nil
-    for index, value in ipairs(icon) do
+    for _, value in ipairs(icon) do
         if value.target then
             toret = string.sub(value.target, -1)
             if not (toret:find("%D")) then
@@ -226,11 +228,11 @@ function vgal.icon.get_icon_target_index(icon)
     error()
 end
 
-function tablelength(T)
-    local count = 0
-    for _ in ipairs(T) do count = count + 1 end
-    return count
-end
+-- function tablelength(T)
+--     local count = 0
+--     for _ in ipairs(T) do count = count + 1 end
+--     return count
+-- end
 
 function vgal.icon.soft_merge(icons)
     local new_icons = {}
@@ -277,18 +279,15 @@ function vgal.icon.register(icons, composition)
             end
         end
         local scalingConst = 0.3
-
-        --error(tablelength(outIcons))
-        if tablelength(outIcons) == 2 then
+        if #outIcons == 2 then
             vgal.icon.set_target(outIcons[2], "out3")
         end
-        if tablelength(inIcons) == 2 then
+        if #inIcons == 2 then
             vgal.icon.set_target(inIcons[2], "in3")
         end
-        if tablelength(inIcons) == 1 then
+        if #inIcons == 1 then
             vgal.icon.set_target(inIcons[1], "in3")
         end
-
         for index2, iconTable2 in ipairs(outIcons) do
             local placeIndex = 0
             placeIndex = vgal.icon.get_icon_target_index(iconTable2) or index2
@@ -299,14 +298,6 @@ function vgal.icon.register(icons, composition)
             placeIndex = vgal.icon.get_icon_target_index(iconTable2) or index2
             table.insert(newIcons, shift_icon(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), -12 }))
         end
-        -- local placeIndex = 0
-        -- if vgal.icon.get_icon_target(iconTable2) == "in1" then
-        --     placeIndex = 1
-        -- elseif vgal.icon.get_icon_target(iconTable2) == "in2" then
-        --     placeIndex = 3
-        -- elseif vgal.icon.get_icon_target(iconTable2) == "in3" then
-        --     placeIndex = 2
-        -- end
         return vgal.icon.register(newIcons)
     end
     if composition == "default" then

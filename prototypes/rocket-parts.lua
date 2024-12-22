@@ -52,7 +52,7 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         energy_required = 2,
         ingredients = {
             { "steam-turbine",     2 },  -- 3400
-            { "uranium-fuel-cell", 5 },  -- 460
+            { "uranium-fuel-cell", 5 },  -- 2300
             { "processing-unit",   10 }, -- 7100
         },
         results = {

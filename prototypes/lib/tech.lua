@@ -1,6 +1,6 @@
 ---@diagnostic disable: param-type-mismatch
 
-vgal.tech.toclean = vgal.tech.toclean or {}
+vgal.tech.totrim = vgal.tech.totrim or {}
 
 ---@param techName (string)
 ---@param recipeName (string)
@@ -17,11 +17,11 @@ function vgal.tech.add_recipe(techName, recipeName)
     )
 end
 
-function vgal.tech.queue_to_clean(techName) -- no work
-    table.insert(vgal.tech.toclean, techName)
+function vgal.tech.queue_to_clean(recipeName)
+    table.insert(vgal.tech.totrim, recipeName)
 end
 
-function vgal.tech.remove_prerequisite(techName, prerequisite) -- no work
+function vgal.tech.remove_prerequisite(techName, prerequisite)
     local tech = data.raw["technology"][techName]
     for i, pre in ipairs(tech.prerequisites) do
         if pre == prerequisite then

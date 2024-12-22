@@ -225,4 +225,25 @@ function vgal.data.extend(recipes)
     end
 end
 
+function vgal.data.trim(recipeName)
+    vgal.tech.queue_to_clean(recipeName)
+    data.raw["recipe"][recipeName] = nil
+end
+
+function vgal.data.finalise()
+    local potential_singles = {}
+    for _, tech in pairs(data.raw["technology"]) do
+        for i, effect in ipairs(tech.effects or {}) do
+            for _, toclean in ipairs(vgal.tech.totrim) do
+                if effect.recipe == toclean then
+                    table.remove(tech.effects, i)
+                end
+            end
+            if #tech.effects == 0 then
+                table.insert(potential_singles, tech.name)
+            end
+        end
+    end
+end
+
 return vgal

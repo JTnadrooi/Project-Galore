@@ -81,7 +81,6 @@ MW stands for **Mineral Water**. Vanilla galore originally an extension of the [
 | module-t3                | 30250    |
 | rocket-fuel              | 200      |
 | rocket-part              | 12800    |
-| flying-robot              | 12800    |
 
 ## Oil producs
 

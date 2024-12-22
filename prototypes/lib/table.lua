@@ -114,6 +114,13 @@ function vgal.table.sum(table)
     return sum
 end
 
+function vgal.table.merge(t1, t2)
+    for i = 1, #t2 do
+        t1[#t1 + 1] = t2[i]
+    end
+    return t1
+end
+
 function vgal.table.get_shorthand(inTable, newType)
     local transformed = {}
     for _, item in ipairs(inTable) do

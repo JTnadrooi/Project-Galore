@@ -12,6 +12,7 @@ vgal.item = vgal.item or {}
 vgal.fluid = vgal.fluid or {}
 vgal.entity = vgal.entity or {}
 vgal.localise = vgal.localise or {}
+vgal.build = vgal.build or {}
 vgal.any = vgal.any or {}
 
 require("classes")
@@ -22,6 +23,7 @@ require("recipe")
 require("subgroup")
 require("tech")
 require("table")
+require("build")
 
 function vgal.log(toLog)
     if settings.startup["vgal-log"].value then
@@ -71,8 +73,7 @@ function vgal.data.extend(recipes)
 
         -- name components
         recipe.tier = recipe.tier == 1 and nil or recipe.tier
-        recipe.name = (recipe.prefix and (recipe.prefix .. "-") or "") ..
-            recipe.name .. (recipe.tier and ("-" .. recipe.tier) or "")
+        recipe.name = vgal.build.name(recipe.prefix, recipe.name, recipe.tier)
 
 
 
@@ -106,19 +107,22 @@ function vgal.data.extend(recipes)
         end
 
         -- inline propetries
-        recipe.ingredients = vgal.table.get_shorthand(recipe.ingredients, "item")
-        recipe.results = vgal.table.get_shorthand(recipe.results, "item")
-        recipe.fluid_ingredients = vgal.table.get_shorthand(recipe.fluid_ingredients, "fluid")
-        recipe.fluid_results = vgal.table.get_shorthand(recipe.fluid_results, "fluid")
+        -- recipe.ingredients = vgal.table.get_shorthand(recipe.ingredients, "item")
+        -- recipe.results = vgal.table.get_shorthand(recipe.results, "item")
+        -- recipe.fluid_ingredients = vgal.table.get_shorthand(recipe.fluid_ingredients, "fluid")
+        -- recipe.fluid_results = vgal.table.get_shorthand(recipe.fluid_results, "fluid")
 
-        for _, value in pairs(recipe.fluid_ingredients) do
-            ---@diagnostic disable-next-line: undefined-field
-            table.insert(recipe.ingredients, { type = "fluid", name = value.name, amount = value.amount })
-        end
-        for _, value in pairs(recipe.fluid_results) do
-            ---@diagnostic disable-next-line: undefined-field
-            table.insert(recipe.results, { type = "fluid", name = value.name, amount = value.amount })
-        end
+        -- for _, value in pairs(recipe.fluid_ingredients) do
+        --     ---@diagnostic disable-next-line: undefined-field
+        --     table.insert(recipe.ingredients, { type = "fluid", name = value.name, amount = value.amount })
+        -- end
+        -- for _, value in pairs(recipe.fluid_results) do
+        --     ---@diagnostic disable-next-line: undefined-field
+        --     table.insert(recipe.results, { type = "fluid", name = value.name, amount = value.amount })
+        -- end
+
+        recipe.ingredients = vgal.build.table(recipe.ingredients, recipe.fluid_ingredients)
+        recipe.results = vgal.build.table(recipe.results, recipe.fluid_results)
 
         if not recipe.main_product then
             ---@diagnostic disable-next-line: undefined-field

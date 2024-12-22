@@ -33,7 +33,7 @@ local function get_icon_size(object)
     end
     return size
 end
-function shift_icon(icon, scale, shift)
+function vgal.icon.shift(icon, scale, shift)
     local icons = {}
     for _, icon2 in pairs(icon) do
         local new_icon = util.table.deepcopy(icon2)
@@ -165,7 +165,7 @@ local function targeted_shift_icon(icon, target, scaleOverride)
             shift = { 0, 8 }
         end
     end
-    return shift_icon(icon, scale, shift)
+    return vgal.icon.shift(icon, scale, shift)
 end
 function vgal.icon.set_target(icon, target)
     local done = false
@@ -291,12 +291,12 @@ function vgal.icon.register(icons, composition)
         for index2, iconTable2 in ipairs(outIcons) do
             local placeIndex = 0
             placeIndex = vgal.icon.get_icon_target_index(iconTable2) or index2
-            table.insert(newIcons, shift_icon(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), 12 }))
+            table.insert(newIcons, vgal.icon.shift(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), 12 }))
         end
         for index2, iconTable2 in ipairs(inIcons) do
             local placeIndex = 0
             placeIndex = vgal.icon.get_icon_target_index(iconTable2) or index2
-            table.insert(newIcons, shift_icon(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), -12 }))
+            table.insert(newIcons, vgal.icon.shift(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), -12 }))
         end
         return vgal.icon.register(newIcons)
     end

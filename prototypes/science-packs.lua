@@ -131,9 +131,8 @@ vgal.data.extend {
         energy_required = 64,
         technology = "solar-energy",
         ingredients = {
-            { "transport-belt", 4 }, -- 60
             { "solar-panel",    1 }, -- 675
-            { "steel-plate",    2 }, -- 100
+            { "transport-belt", 8 }, -- 120
         },
         results = {
             { "logistic-science-pack", 12 }, -- 840

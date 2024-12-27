@@ -225,7 +225,7 @@ vgal.data.extend {
             vgal.icon.get_in("electric-engine-unit"),
         },
         energy_required = 1,
-        technology = "electric-engine",
+        technology = {"electric-engine", "automation-3"},
         ingredients = {
             { "electric-engine-unit", 8 },  -- 1440
             { "iron-gear-wheel",      25 }, -- 400

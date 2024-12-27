@@ -106,8 +106,8 @@ vgal.data.extend {
         technology = { "logistics-3" },
         ingredients = {
             { "plastic-bar",         10 }, -- 150
-            { "iron-gear-wheel",     2 }, -- 40
-            { "fast-transport-belt", 1 }, -- 115
+            { "iron-gear-wheel",     2 },  -- 40
+            { "fast-transport-belt", 1 },  -- 115
         },
         fluid_ingredients = {
             { "lubricant", 25 }, -- 50
@@ -186,7 +186,7 @@ vgal.data.extend {
             vgal.icon.get_in("advanced-circuit"),
         },
         energy_required = 2,
-        technology = { "logistics", "steel-processing" },
+        technology = { "logistics", "advanced-circuit" },
         ingredients = {
             { "steel-plate",      1 },
             { "advanced-circuit", 1 },
@@ -243,7 +243,7 @@ vgal.data.extend {
             vgal.icon.get_in("processing-unit"),
         },
         energy_required = 8,
-        technology = "processing-unit",
+        technology = { "processing-unit", "logistics-2" },
         ingredients = {
             { "steel-plate",     3 }, -- 200
             { "processing-unit", 1 }, -- 710

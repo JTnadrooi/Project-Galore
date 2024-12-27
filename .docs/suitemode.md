@@ -1,6 +1,6 @@
 # Suite mode
 
-A planned setting.
+A planned mod.
 
 ## Changes
 
@@ -10,7 +10,10 @@ A planned setting.
 -   Steel cost reduced to 3 iron and time taken reduced to 9.6 seconds.
 -   Boilers are 2 times as effective.
 -   Better powerpoles.
+-   Better undergrounds.
+-   Mini machines.
+-   Space age only Nauvis.
 
 ## Mod changes
 
--
+-   PRO-1 Assembler overhaul.

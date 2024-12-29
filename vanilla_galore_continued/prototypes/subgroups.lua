@@ -5,6 +5,8 @@ function subGroup(name, newSubgroup)
         data.raw["tool"][name].subgroup = newSubgroup
     elseif data.raw["fluid"][name] then
         data.raw["fluid"][name].subgroup = newSubgroup
+    elseif data.raw["ammo"][name] then
+        data.raw["ammo"][name].subgroup = newSubgroup
     else
         error("item '" .. name .. "' does not exist")
     end
@@ -101,6 +103,32 @@ local subgroups = {
         group = "intermediate-products",
         order = "gcc",
         values = { "processing-unit" }
+    },
+    {
+        name = "ammo-magazine",
+        group = "combat",
+        order = "bb",
+        values = {
+            "firearm-magazine",
+            "piercing-rounds-magazine",
+            "uranium-rounds-magazine",
+            "shotgun-shell",
+            "piercing-shotgun-shell",
+        }
+    },
+    {
+        name = "vehicle-ammo",
+        group = "combat",
+        order = "bc",
+        values = {
+            "cannon-shell",
+            "explosive-cannon-shell",
+            "uranium-cannon-shell",
+            "explosive-uranium-cannon-shell",
+            "rocket",
+            "explosive-rocket",
+            "atomic-bomb",
+        }
     },
     {
         name = "barrels",

@@ -38,6 +38,42 @@ vgal.data.extend {
         category = "crafting",
     },
     {
+        name = "concrete-stone-wall",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("stone-wall"),
+            vgal.icon.get_in("concrete"),
+        },
+        energy_required = 0.5,
+        technology = { "stone-wall", "concrete" },
+        ingredients = {
+            { "concrete",   5 },
+            { "iron-stick", 4 },
+        },
+        results = {
+            { "stone-wall", 1 },
+        },
+        category = "crafting",
+    },
+    {
+        name = "refined-concrete-stone-wall",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("stone-wall"),
+            vgal.icon.get_in("refined-concrete"),
+        },
+        energy_required = 0.5,
+        technology = { "stone-wall", "concrete" },
+        ingredients = {
+            { "refined-concrete", 2 },
+            { "iron-stick",       2 },
+        },
+        results = {
+            { "stone-wall", 1 },
+        },
+        category = "crafting",
+    },
+    {
         name = "processing-unit-beacon",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -225,7 +261,7 @@ vgal.data.extend {
             vgal.icon.get_in("electric-engine-unit"),
         },
         energy_required = 1,
-        technology = {"electric-engine", "automation-3"},
+        technology = { "electric-engine", "automation-3" },
         ingredients = {
             { "electric-engine-unit", 8 },  -- 1440
             { "iron-gear-wheel",      25 }, -- 400

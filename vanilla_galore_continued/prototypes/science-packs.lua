@@ -241,25 +241,45 @@ vgal.data.extend {
         groups = { "alternate-science" },
     },
     -- MILITAIRY
-    -- {
-    --     name = "logistic-to-military-science-pack",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("military-science-pack"),
-    --         vgal.icon.get_in("logistic-science-pack"),
-    --     },
-    --     category = "crafting",
-    --     energy_required = 4,
-    --     technology = "military-science-pack",
-    --     ingredients = {
-    --         { "logistic-science-pack", 1 },
-    --         { "firearm-magazine",      1 }
-    --     },
-    --     results = {
-    --         { "military-science-pack", 1 },
-    --     },
-    --     groups = { "alternate-science" },
-    -- },
+    {
+        name = "gun-turret-military-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("military-science-pack"),
+            vgal.icon.get_in("gun-turret"),
+        },
+        category = "crafting",
+        energy_required = 12,
+        technology = { "military-science-pack", "gun-turret" },
+        ingredients = {
+            { "stone-wall", 2 }, -- 200
+            { "gun-turret", 1 }, -- 500
+        },
+        results = {
+            { "military-science-pack", 3 }, -- 240x =
+        },
+        groups = { "alternate-science" },
+    },
+    {
+        name = "flamethrower-turret-military-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("military-science-pack"),
+            vgal.icon.get_in("flamethrower-turret"),
+        },
+        category = "crafting",
+        energy_required = 60,
+        technology = { "military-science-pack", "flamethrower" },
+        ingredients = {
+            { "explosives",               2 }, -- 60
+            { "piercing-rounds-magazine", 6 }, -- 840
+            { "flamethrower-turret",      1 }, -- 2350
+        },
+        results = {
+            { "military-science-pack", 18 }, -- 240x =
+        },
+        groups = { "alternate-science" },
+    },
     -- PRODUCTION
     {
         name = "low-density-structure-production-science-pack",

@@ -4,6 +4,7 @@ vgal.log("the *core-of-galore* has loaded.")
 require("prototypes.subgroups")
 require("prototypes.rocket-parts")
 require("prototypes.science-packs")
+require("prototypes.military")
 
 require("prototypes.intermediates.intermediates")
 require("prototypes.intermediates.chemical")

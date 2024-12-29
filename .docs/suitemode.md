@@ -15,5 +15,3 @@ A planned mod.
 -   Space age only Nauvis.
 
 ## Mod changes
-
--   PRO-1 Assembler overhaul.

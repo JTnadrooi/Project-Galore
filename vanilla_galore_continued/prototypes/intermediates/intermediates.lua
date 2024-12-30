@@ -20,28 +20,6 @@ vgal.data.extend
         },
     },
     {
-        name = "iron-stick-low-density-structure",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("low-density-structure"),
-            vgal.icon.get_in("iron-stick"),
-            vgal.icon.get_in2("heavy-oil", "fluid"),
-        },
-        category = "crafting-with-fluid",
-        energy_required = 15,
-        technology = { "low-density-structure", "advanced-oil-processing" },
-        ingredients = {
-            { "iron-stick",  10 }, -- 50
-            { "steel-plate", 5 },  -- 250
-        },
-        fluid_ingredients = {
-            { "heavy-oil", 50 }, -- 100
-        },
-        results = {
-            { "low-density-structure", 1 }, -- 375
-        },
-    },
-    {
         name = "uranium-238-low-density-structure",
         prefix = "vgal",
         icons = vgal.icon.register {

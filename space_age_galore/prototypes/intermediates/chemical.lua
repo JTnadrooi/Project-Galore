@@ -9,16 +9,19 @@ vgal.data.extend
             vgal.icon.get_in("solid-fuel"),
         },
         category = "chemistry",
-        energy_required = 6,
+        energy_required = 2,
         technology = "coal-liquefaction",
+        fluid_ingredients = {
+            { "sulfuric-acid", 10 }, -- 15
+        },
         ingredients = {
-            { "solid-fuel", 6 }
+            { "solid-fuel", 2 }, -- 36
         },
         fluid_results = {
-            { "water", 10 },
+            { "steam", 15, { 165 } },
         },
         results = {
-            { "carbon", 2 }
+            { "carbon", 1 } -- 50
         },
     },
 }

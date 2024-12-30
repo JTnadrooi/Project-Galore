@@ -58,13 +58,14 @@ MW as in Mineral Water.
 | ice(~)                | ~null    |
 | holmium-plate         | 170      |
 | holmium-solution      | 8.5      |
+| electrolyte           | 11.5     |
+| supercapacitor        | 1000     |
+| superconductor        | 200      |
+| rocket-part(base)     | 12800    |
+| rocket-part(sa)       | 1280     |
 | null                  | null     |
 | null                  | null     |
 | null                  | null     |
-| null                  | null     |
-| null                  | null     |
-| null                  | null     |
-| rocket-part           | 12800    |
 
 ## Placeable
 
@@ -80,9 +81,11 @@ MW as in Mineral Water.
 | assembling-machine-1     | 265      |
 | assembling-machine-2     | 540      |
 | assembling-machine-3     | 3580     |
+| boiler                   | 90       |
 | stone-furnace            | 50       |
 | steel-furnace            | 500      |
 | electric-furnace         | 1200     |
+| oil-refinery             | 1500     |
 | solar-panel              | 675      |
 | beacon                   | 3050     |
 | radar                    | 325      |
@@ -91,6 +94,9 @@ MW as in Mineral Water.
 | accumulator              | 270      |
 | nuclear-reactor          | 86000    |
 | heat-pipe                | 700      |
+| heat-exchanger           | 1600     |
+| burner-mining-drill      | 140      |
+| power-plant              | 3900     |
 | centrifuge               | 15700    |
 | pipe                     | 10       |
 | transport-belt           | 15       |
@@ -127,6 +133,7 @@ MW as in Mineral Water.
 | explosive-cannon-shell   | 160      |
 | shotgun-shell            | 40       |
 | piercing-shotgun-shell   | 230      |
+| nuke                     | 40860    |
 
 ## Robotics
 

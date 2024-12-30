@@ -75,8 +75,7 @@ function vgal.data.extend(recipes)
         recipe.tier = recipe.tier == 1 and nil or recipe.tier
         recipe.name = vgal.build.name(recipe.prefix, recipe.name, recipe.tier)
 
-
-
+        -- tech kinda, real stuff happens later.
         recipe.enabled = (recipe.enabled ~= nil) or not recipe.technologies
 
         -- null stuff
@@ -132,37 +131,21 @@ function vgal.data.extend(recipes)
         recipe.allow_productivity = (recipe.allow_productivity ~= nil) and recipe.allow_productivity or
             vgal.recipe.get_if_productivity(recipe.main_product)
 
+        recipe.localised_name = { "?",
+            { "", { "recipe-name." .. recipe.name } },
+            { "", vgal.localise.get_lazy(recipe.main_product) },
+        }
+        recipe.localised_description = vgal.localise.get_from_group(recipe)
+        recipe.type = "recipe"
+        recipe.auto_recycle = false
+        recipe.allow_decomposition = false
+        recipe.allow_as_intermediate = false
+
         vgal.log("registering: " .. recipe.name)
 
         data:extend(
             {
-                {
-                    type = "recipe",
-                    name = recipe.name,
-                    enabled = recipe.enabled,
-
-                    icons = recipe.icons,
-
-                    energy_required = recipe.energy_required,
-                    ingredients = recipe.ingredients,
-                    results = recipe.results,
-                    category = recipe.category,
-                    allow_decomposition = false,
-                    ---@diagnostic disable-next-line: assign-type-mismatch
-                    auto_recycle = false,
-
-                    subgroup = recipe.subgroup,
-                    order = recipe.order,
-                    allow_productivity = recipe.allow_productivity,
-                    allow_as_intermediate = false,
-
-                    main_product = recipe.main_product,
-                    localised_name = { "?",
-                        { "", { "recipe-name." .. recipe.name } },
-                        { "", vgal.localise.get_lazy(recipe.main_product) },
-                    },
-                    localised_description = vgal.localise.get_from_group(recipe),
-                },
+                recipe
             }
         )
 
@@ -185,8 +168,6 @@ function vgal.data.extend(recipes)
                         end
                     end
 
-                    -- unitCount = unitCount / #preColl -- unused.
-
                     data:extend({
                         vgal.tech.create_empty(techName, 1, eventualUnits, #eventualUnits * 5,
                             #eventualUnits >= 4 and 30 or 15, preColl,
@@ -202,6 +183,10 @@ function vgal.data.extend(recipes)
                                 },
                             })
                     })
+                    local tech = data.raw["technology"][techName]
+                    if data.raw["technology"][preColl[1]].research_trigger and #preColl == 1 then
+                        tech.research_trigger = data.raw["technology"][preColl[1]].research_trigger
+                    end
                     data.raw.technology[techName].localised_name = { "?",
                         { "", "Galore Tech Node: ", { "recipe-name." .. recipe.name } },
                         { "", "Galore Tech Node: ", vgal.localise.get_lazy(recipe.main_product) },
@@ -213,9 +198,9 @@ function vgal.data.extend(recipes)
                     ---@diagnostic disable-next-line: param-type-mismatch
                 end
             elseif type(recipe.technologies[1]) == "string" then
-                for _, tech in ipairs(recipe.technologies) do
-                    ---@cast tech string
-                    vgal.tech.add_recipe(tech, recipe.name)
+                for _, techName in ipairs(recipe.technologies) do
+                    ---@cast techName string
+                    vgal.tech.add_recipe(techName, recipe.name)
                 end
             else
                 error()

@@ -124,25 +124,17 @@ end
 function vgal.table.get_shorthand(inTable, newType)
     local transformed = {}
     for _, item in ipairs(inTable) do
-        if item[3] then
-            if type(item[3]) == "table" then
-                table.insert(transformed, { type = newType, name = item[1], amount = item[2], temperature = item[3][1] })
-            else
-                table.insert(transformed, { type = newType, name = item[1], amount = item[2], probability = item[3] })
+        local newEntry = {
+            type = newType,
+            name = item[1],
+            amount = item[2]
+        }
+        if type(item[3]) == "table" then
+            for k, v in pairs(item[3]) do
+                newEntry[k] = v
             end
-        elseif item[4] then
-            table.insert(transformed,
-                {
-                    type = newType,
-                    name = item[1],
-                    amount = item[2],
-                    probability = item[3],
-                    amount_min = item[4],
-                    amount_max = item[5],
-                })
-        else
-            table.insert(transformed, { type = newType, name = item[1], amount = item[2] })
         end
+        table.insert(transformed, newEntry)
     end
     return transformed
 end

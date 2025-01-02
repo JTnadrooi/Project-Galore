@@ -249,7 +249,13 @@ vgal.data.extend
         },
         results = {
             { "rocket-fuel", 1 },
-            { "coal",        1, 0.25 },
+            {
+                "coal",
+                1,
+                {
+                    probability = 0.25,
+                },
+            },
         },
         energy_required = 15,
         category = "crafting-with-fluid",

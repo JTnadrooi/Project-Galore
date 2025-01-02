@@ -52,7 +52,7 @@ vgal.data.extend
             vgal.icon.get_in("tungsten-plate"),
         },
         energy_required = 5,
-        technology = { "tungsten-steel" },
+        technology = "tungsten-steel",
         ingredients = {
             { "tungsten-plate", 1 }, -- 90
             { "iron-plate",     4 }, -- 40
@@ -70,7 +70,7 @@ vgal.data.extend
             vgal.icon.get_in("tungsten-plate"),
         },
         energy_required = 5,
-        technology = { "tungsten-steel" },
+        technology = "tungsten-steel",
         ingredients = {
             { "tungsten-plate",  1 }, -- 90
             { "iron-gear-wheel", 4 }, -- 40

@@ -84,19 +84,14 @@ vgal.data.extend
     {
         name = "scrap-crushing",
         prefix = "vgal",
-        icons = {
-            {
-                icon = "__space-age__/graphics/icons/scrap.png",
-                scale = 0.5
-            },
-            {
-                icon = "__space_age_galore__/graphics/icons/crushing-overlay.png"
-            }
+        icons = vgal.icon.register {
+            vgal.icon.get("scrap"),
+            vgal.icon.get_overlay("crushing"),
         },
         energy_required = 0.2,
         technology = "recycling",
         ingredients = {
-            { "scrap", 2 },
+            { "scrap", 1 },
         },
         results = {
             { "iron-ore",    1, { probability = 0.20, show_details_in_recipe_tooltip = false } },
@@ -104,6 +99,26 @@ vgal.data.extend
             { "coal",        1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
             { "stone",       1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
             { "holmium-ore", 1, { probability = 0.01, show_details_in_recipe_tooltip = false } },
+        },
+        category = "crushing",
+    },
+    {
+        name = "stone-crushing",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("stone"),
+            vgal.icon.get_overlay("crushing"),
+        },
+        energy_required = 0.8,
+        technology = "calcite-processing",
+        ingredients = {
+            { "stone", 1 },
+        },
+        results = {
+            { "stone",      1, { probability = 0.20, show_details_in_recipe_tooltip = false } },
+            { "calcite",    1, { probability = 0.02, show_details_in_recipe_tooltip = false } },
+            { "iron-ore",   1, { probability = 0.02, show_details_in_recipe_tooltip = false } },
+            { "copper-ore", 1, { probability = 0.02, show_details_in_recipe_tooltip = false } },
         },
         category = "crushing",
     },

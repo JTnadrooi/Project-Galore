@@ -1,5 +1,3 @@
-
-
 local function get_icon_item(keyName, iconSource)
     local function endsWith(str, suffix)
         return str:sub(- #suffix) == suffix
@@ -56,6 +54,22 @@ function vgal.icon.get_tier_tint(tier)
         { a = 1, b = 215 / 255, g = 250 / 255, r = 120 / 255 }, -- #d7fa78
     }
     return tints[tier] or { a = 1, b = 0.5, g = 0.5, r = 0.5 }
+end
+
+function vgal.icon.get_overlay(overlay)
+    vgal.icon.get_from_path("__vanilla_galore__/graphics/icons/" .. overlay .. "-overlay.png")
+end
+
+function vgal.icon.get_from_path(path, args)
+    local toret = {
+        {
+            icon = path,
+        }
+    }
+    for key, value in pairs(args or {}) do
+        toret[1][key] = value
+    end
+    return toret
 end
 
 function vgal.icon.get(keyName, iconSource)
@@ -115,17 +129,16 @@ function vgal.icon.get(keyName, iconSource)
         return vgal.icon.get("sulfuric-acid", "molecule")
     end
     local toret_item = get_icon_item(keyName, iconSource)
+
     vgal.log("getting icon: " .. toret_item.name)
 
     local object = toret_item
     local toret = nil
     if object then
         if object.icon then
-            local icon_size = get_icon_size(object)
             if object.icon == nil or object.icon == '' then
                 error()
             end
-
             toret = {
                 { icon = object.icon, target = "core" }
             }
@@ -296,7 +309,8 @@ function vgal.icon.register(icons, composition)
         for index2, iconTable2 in ipairs(inIcons) do
             local placeIndex = 0
             placeIndex = vgal.icon.get_icon_target_index(iconTable2) or index2
-            table.insert(newIcons, vgal.icon.shift(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), -12 }))
+            table.insert(newIcons,
+                vgal.icon.shift(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), -12 }))
         end
         return vgal.icon.register(newIcons)
     end

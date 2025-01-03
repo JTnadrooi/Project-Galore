@@ -25,7 +25,7 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("stone"),
-            vgal.icon.get_in("lava", "fluid"),
+            vgal.icon.get("lava", "fluid"),
         },
         category = "metallurgy",
         energy_required = 12,

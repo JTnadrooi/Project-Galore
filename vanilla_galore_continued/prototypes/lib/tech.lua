@@ -17,6 +17,20 @@ function vgal.tech.add_recipe(techName, recipeName)
     )
 end
 
+function vgal.tech.add_productivity_change(techName, recipeName, change)
+    local tech = data.raw["technology"][techName]
+    if tech then
+        table.insert(
+            tech.effects,
+            {
+                type = "change-recipe-productivity",
+                recipe = recipeName,
+                change = change or 0.1,
+            }
+        )
+    end
+end
+
 function vgal.tech.queue_to_clean(recipeName)
     table.insert(vgal.tech.totrim, recipeName)
 end

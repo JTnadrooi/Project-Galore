@@ -63,4 +63,53 @@ vgal.data.extend
         },
         groups = { "unsure" }
     },
+    {
+        type = "recipe",
+        name = "water-fluoroketone-cold-ice",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("ice"),
+            vgal.icon.get_in("water", "fluid"),
+            vgal.icon.get_in2("fluoroketone-cold", "fluid"),
+        },
+        category = "cryogenics",
+        energy_required = 2,
+        technology = "cryogenic-plant",
+        fluid_ingredients = {
+            { "fluoroketone-cold", 12 },
+        },
+        ingredients = {
+            { "water", 300 },
+        },
+        fluid_results = {
+            {
+                "fluoroketone-cold",
+                10,
+                {
+                    temperature = -150,
+                },
+            },
+        },
+        results = {
+            { "ice", 5 },
+        },
+    },
+    {
+        type = "recipe",
+        name = "water-ice",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("ice"),
+            vgal.icon.get_in("water", "fluid"),
+        },
+        category = "cryogenics",
+        energy_required = 10,
+        technology = "cryogenic-plant",
+        ingredients = {
+            { "water", 320 },
+        },
+        results = {
+            { "ice", 5 },
+        },
+    },
 }

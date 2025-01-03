@@ -26,4 +26,5 @@ do
     ---@field results? ItemKeyPrototype[]|table
     ---@field type? string
     ---@field groups? string[]
+    ---@field productivity_technology? string|table
 end

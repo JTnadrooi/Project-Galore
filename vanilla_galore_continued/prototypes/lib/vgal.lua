@@ -206,6 +206,24 @@ function vgal.data.extend(recipes)
                 error()
             end
         end
+        if recipe.productivity_technology ~= "" then
+            if data.raw["technology"][recipe.name .. "-productivity"] then
+                recipe.productivity_technology = recipe.name .. "-productivity"
+            end
+            if recipe.productivity_technology then
+                if type(recipe.productivity_technology) == "string" then
+                    vgal.tech.add_productivity_change(recipe.productivity_technology, recipe.name)
+                else
+                    vgal.tech.add_productivity_change(
+                        recipe.productivity_technology[1],
+                        recipe.name,
+                        recipe.productivity_technology[2]
+                    )
+                end
+            end
+        end
+
+
         ::continue::
     end
 end

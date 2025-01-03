@@ -81,4 +81,30 @@ vgal.data.extend
         },
         category = "crafting",
     },
+    {
+        name = "scrap-crushing",
+        prefix = "vgal",
+        icons = {
+            {
+                icon = "__space-age__/graphics/icons/scrap.png",
+                scale = 0.5
+            },
+            {
+                icon = "__space_age_galore__/graphics/icons/crushing-overlay.png"
+            }
+        },
+        energy_required = 0.2,
+        technology = "recycling",
+        ingredients = {
+            { "scrap", 2 },
+        },
+        results = {
+            { "iron-ore",    1, { probability = 0.20, show_details_in_recipe_tooltip = false } },
+            { "copper-ore",  1, { probability = 0.20, show_details_in_recipe_tooltip = false } },
+            { "coal",        1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
+            { "stone",       1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
+            { "holmium-ore", 1, { probability = 0.01, show_details_in_recipe_tooltip = false } },
+        },
+        category = "crushing",
+    },
 }

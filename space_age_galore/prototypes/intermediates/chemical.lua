@@ -65,7 +65,7 @@ vgal.data.extend
     },
     {
         type = "recipe",
-        name = "water-fluoroketone-cold-ice",
+        name = "water-fluoroketone-cold-ice", -- 1 full rocket = ~3.3m in water. | 1 barrel = ~33300 water | 1 bay = 6.6m water
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("ice"),
@@ -73,26 +73,26 @@ vgal.data.extend
             vgal.icon.get_in2("fluoroketone-cold", "fluid"),
         },
         category = "cryogenics",
-        energy_required = 2,
+        energy_required = 6,
         technology = "cryogenic-plant",
         fluid_ingredients = {
-            { "fluoroketone-cold", 12 },
-        },
-        ingredients = {
-            { "water", 300 },
+            { "fluoroketone-cold", 15 },
+            { "water",             2000 },
         },
         fluid_results = {
             {
-                "fluoroketone-cold",
-                10,
-                {
-                    temperature = -150,
-                },
+                "fluoroketone-hot",
+                12,
+                -- {
+                --     temperature = 180,
+                -- },
             },
         },
         results = {
-            { "ice", 5 },
+            { "ice", 100 },
         },
+        show_amount_in_title = false,
+        allow_productivity = false,
     },
     {
         type = "recipe",
@@ -105,11 +105,33 @@ vgal.data.extend
         category = "cryogenics",
         energy_required = 10,
         technology = "cryogenic-plant",
-        ingredients = {
-            { "water", 320 },
+        fluid_ingredients = {
+            { "water", 150 },
         },
         results = {
             { "ice", 5 },
+        },
+        show_amount_in_title = false,
+        allow_productivity = false,
+    },
+    {
+        name = "raw-fish-heavy-oil",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("heavy-oil", "fluid"),
+            vgal.icon.get_in("raw-fish", "capsule")
+        },
+        technology = "fish-breeding",
+        category = "organic",
+        energy_required = 5,
+        ingredients = {
+            { "raw-fish", 1 },
+        },
+        fluid_ingredients = {
+            { "sulfuric-acid", 5 }, -- 8
+        },
+        fluid_results = {
+            { "light-oil", 25 }, -- 50
         },
     },
 }

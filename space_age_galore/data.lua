@@ -1,5 +1,6 @@
 require("prototypes.vgal-overrides")
-require("prototypes.science")
+require("prototypes.overrides")
+require("prototypes.science-packs")
 require("prototypes.intermediates.chemical")
 require("prototypes.military")
 require("prototypes.intermediates.smelting")

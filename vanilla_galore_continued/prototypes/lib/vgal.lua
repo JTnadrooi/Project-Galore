@@ -151,14 +151,14 @@ function vgal.data.extend(recipes)
 
         if recipe.technologies then
             if type(recipe.technologies[1]) == "table" then
-                for i, preColl in ipairs(recipe.technologies) do
-                    ---@cast preColl table
+                for i, preCollection in ipairs(recipe.technologies) do
+                    ---@cast preCollection table
 
                     local techName = recipe.name .. "-node" .. i
 
                     local eventualUnitsWorth = 0
                     local eventualUnits = {}
-                    for _, prerequisite in ipairs(preColl) do
+                    for _, prerequisite in ipairs(preCollection) do
                         tech = data.raw["technology"][prerequisite]
                         units = vgal.tech.extract_units(tech)
                         unitsWorth = vgal.table.sum(units)
@@ -170,7 +170,7 @@ function vgal.data.extend(recipes)
 
                     data:extend({
                         vgal.tech.create_empty(techName, 1, eventualUnits, #eventualUnits * 5,
-                            #eventualUnits >= 4 and 30 or 15, preColl,
+                            #eventualUnits >= 4 and 30 or 15, preCollection,
                             "a", {
                                 {
                                     icon = "__vanilla_galore_continued__/graphics/" .. "node.png",
@@ -184,8 +184,16 @@ function vgal.data.extend(recipes)
                             })
                     })
                     local tech = data.raw["technology"][techName]
-                    if data.raw["technology"][preColl[1]].research_trigger and #preColl == 1 then
-                        tech.research_trigger = data.raw["technology"][preColl[1]].research_trigger
+
+                    local pureTrigger = true
+                    for _, pre in ipairs(preCollection) do
+                        if data.raw["technology"][pre].research_trigger == nil then
+                            pureTrigger = false
+                        end
+                    end
+                    if pureTrigger then
+                        tech.research_trigger = data.raw["technology"][preCollection[1]].research_trigger
+                        tech.unit = nil
                     end
                     data.raw.technology[techName].localised_name = { "?",
                         { "", "Galore Tech Node: ", { "recipe-name." .. recipe.name } },
@@ -207,8 +215,8 @@ function vgal.data.extend(recipes)
             end
         end
         if recipe.productivity_technology ~= "" then
-            if data.raw["technology"][recipe.name .. "-productivity"] then
-                recipe.productivity_technology = recipe.name .. "-productivity"
+            if data.raw["technology"][recipe.main_product .. "-productivity"] then
+                recipe.productivity_technology = recipe.main_product .. "-productivity"
             end
             if recipe.productivity_technology then
                 if type(recipe.productivity_technology) == "string" then
@@ -233,18 +241,47 @@ function vgal.data.trim(recipeName)
     data.raw["recipe"][recipeName] = nil
 end
 
+-- function vgal.data.finalise()
+--     local potential_singles = {}
+--     for _, tech in pairs(data.raw["technology"]) do
+--         for i, effect in ipairs(tech.effects or {}) do
+--             for _, toclean in ipairs(vgal.tech.totrim) do
+--                 if effect.recipe == toclean then
+--                     table.remove(tech.effects, i)
+--                 end
+--             end
+--             if #tech.effects == 0 then
+--                 table.insert(potential_singles, tech.name)
+--             end
+--         end
+--     end
+-- end
+
 function vgal.data.finalise()
     local potential_singles = {}
     for _, tech in pairs(data.raw["technology"]) do
-        for i, effect in ipairs(tech.effects or {}) do
-            for _, toclean in ipairs(vgal.tech.totrim) do
-                if effect.recipe == toclean then
+        -- Ensure tech.effects is a valid table
+        if tech.effects and #tech.effects > 0 then
+            local i = 1
+            while i <= #tech.effects do
+                local effect = tech.effects[i]
+                local should_remove = false
+                for _, toclean in ipairs(vgal.tech.totrim) do
+                    if effect.recipe == toclean then
+                        should_remove = true
+                        break
+                    end
+                end
+                if should_remove then
                     table.remove(tech.effects, i)
+                else
+                    i = i + 1
                 end
             end
-            if #tech.effects == 0 then
-                table.insert(potential_singles, tech.name)
-            end
+        end
+        -- If effects are now empty, consider this a potential single
+        if tech.effects and #tech.effects == 0 then
+            table.insert(potential_singles, tech.name)
         end
     end
 end

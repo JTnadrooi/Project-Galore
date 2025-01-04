@@ -56,8 +56,8 @@ function vgal.icon.get_tier_tint(tier)
     return tints[tier] or { a = 1, b = 0.5, g = 0.5, r = 0.5 }
 end
 
-function vgal.icon.get_overlay(overlay)
-    vgal.icon.get_from_path("__vanilla_galore__/graphics/icons/" .. overlay .. "-overlay.png")
+function vgal.icon.get_overlay(overlay, args)
+    return vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/" .. overlay .. "-overlay.png", args)
 end
 
 function vgal.icon.get_from_path(path, args)

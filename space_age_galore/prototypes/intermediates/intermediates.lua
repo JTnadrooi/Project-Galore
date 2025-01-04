@@ -115,10 +115,29 @@ vgal.data.extend
             { "stone", 1 },
         },
         results = {
-            { "stone",      1, { probability = 0.20, show_details_in_recipe_tooltip = false } },
-            { "calcite",    1, { probability = 0.02, show_details_in_recipe_tooltip = false } },
+            { "stone",      1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
+            { "calcite",    1, { probability = 0.01, show_details_in_recipe_tooltip = false } },
             { "iron-ore",   1, { probability = 0.02, show_details_in_recipe_tooltip = false } },
             { "copper-ore", 1, { probability = 0.02, show_details_in_recipe_tooltip = false } },
+        },
+        category = "crushing",
+    },
+    {
+        name = "coal-crushing",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("coal"),
+            vgal.icon.get_overlay("crushing"),
+        },
+        energy_required = 0.8,
+        technology = "space-platform",
+        ingredients = {
+            { "coal", 1 },
+        },
+        results = {
+            { "coal",   1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
+            { "carbon", 1, { probability = 0.05, show_details_in_recipe_tooltip = false } },
+            { "sulfur", 1, { probability = 0.02, show_details_in_recipe_tooltip = false } },
         },
         category = "crushing",
     },

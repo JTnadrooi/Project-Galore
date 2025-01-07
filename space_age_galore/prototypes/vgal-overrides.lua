@@ -43,10 +43,27 @@ vgal_electroplantify("plastic-bar-processing-unit")
 vgal_electroplantify("sulfuric-acid-advanced-circuit")
 vgal_electroplantify("low-density-structure-processing-unit")
 
-
 vgal_electroplantify("processing-unit-substation")
 vgal_electroplantify("processing-unit-beacon")
 vgal_electroplantify("advanced-circuit-solar-panel")
 vgal_electroplantify("steel-plate-accumulator")
+
 vgal_cryogenify("copper-cable-plastic-bar")
 vgal_cryogenify("copper-cable-battery")
+
+local valid_suffixes = {
+    "transport-belt",
+    "splitter",
+    "underground-belt"
+}
+
+for _, recipe in pairs(data.raw["recipe"]) do
+    if recipe.name and recipe.name:sub(1, #("vgal-")) == "vgal-" then
+        for _, suffix in ipairs(valid_suffixes) do
+            if recipe.name:sub(- #suffix) == suffix then
+                recipe.category = "metallurgy-or-assembling"
+                break
+            end
+        end
+    end
+end

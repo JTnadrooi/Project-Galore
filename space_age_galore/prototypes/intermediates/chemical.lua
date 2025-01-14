@@ -187,6 +187,29 @@ vgal.data.extend
     },
     {
         type = "recipe",
+        name = "solid-fuel-sulfuric-acid-carbon",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("carbon"),
+            vgal.icon.get_in("solid-fuel"),
+            vgal.icon.get_in2("sulfuric-acid"),
+        },
+        category = "chemistry-or-cryogenics",
+        energy_required = 8,
+        technology = "space-platform",
+        fluid_ingredients = {
+            { "sulfuric-acid", 10 },
+        },
+        ingredients = {
+            { "solid-fuel", 3 }, -- 30
+        },
+        results = {
+            { "carbon", 1 }, -- 50
+        },
+        show_amount_in_title = false,
+    },
+    {
+        type = "recipe",
         name = "carbon-lubricant",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -282,9 +305,9 @@ vgal.data.extend
             vgal.icon.get("crude-oil"),
             vgal.icon.get_in("spoilage"),
         },
-        category = "agriculture",
+        category = "organic",
         energy_required = 10,
-        technology = "organics",
+        technology = "agriculture",
         fluid_ingredients = {
             { "sulfuric-acid", 10 },
         },

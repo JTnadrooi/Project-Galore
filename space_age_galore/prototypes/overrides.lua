@@ -18,3 +18,16 @@ auto_barrel("thruster-oxidizer")
 auto_barrel("thruster-fuel")
 
 data.raw["assembling-machine"]["crusher"].surface_conditions = nil
+
+vgal.recipe.override_iron("solid-fuel-from-ammonia", vgal.icon.register({
+    vgal.icon.get("solid-fuel"),
+    vgal.icon.get_in("ammonia", "fluid"),
+}))
+vgal.recipe.override_iron("ammonia-rocket-fuel", vgal.icon.register({
+    vgal.icon.get("rocket-fuel"),
+    vgal.icon.get_in("ammonia", "fluid"),
+}))
+vgal.recipe.override_iron("burnt-spoilage", vgal.icon.register({
+    vgal.icon.get("carbon"),
+    vgal.icon.get_in("spoilage"),
+}))

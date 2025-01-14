@@ -1,25 +1,29 @@
+-- local function get_icon_item(keyName, iconSource)
+--     local function endsWith(str, suffix)
+--         return str:sub(- #suffix) == suffix
+--     end
+--     if iconSource == nil or iconSource == "" then
+--         iconSource = "item"
+--     end
+--     if endsWith(keyName, "-science-pack") then
+--         iconSource = "tool"
+--     end
+--     if endsWith(keyName, "-module") then
+--         iconSource = "module"
+--     end
+--     if endsWith(keyName, "-ammo") then
+--         iconSource = "ammo"
+--     end
+--     vgal.log("getting icon item from; " .. "keyname: " .. keyName .. " iconSource: " .. iconSource)
+--     local toret = data.raw[iconSource][keyName]
+--     if not toret then
+--         error("get_icon_item did not find a icon. keyname: " .. keyName .. " iconSource: " .. (iconSource or "nil"))
+--     end
+--     return toret
+-- end
+
 local function get_icon_item(keyName, iconSource)
-    local function endsWith(str, suffix)
-        return str:sub(- #suffix) == suffix
-    end
-    if iconSource == nil or iconSource == "" then
-        iconSource = "item"
-    end
-    if endsWith(keyName, "-science-pack") then
-        iconSource = "tool"
-    end
-    if endsWith(keyName, "-module") then
-        iconSource = "module"
-    end
-    if endsWith(keyName, "-ammo") then
-        iconSource = "ammo"
-    end
-    vgal.log("getting icon item from; " .. "keyname: " .. keyName .. " iconSource: " .. iconSource)
-    local toret = data.raw[iconSource][keyName]
-    if not toret then
-        error("get_icon_item did not find a icon. keyname: " .. keyName .. " iconSource: " .. (iconSource or "nil"))
-    end
-    return toret
+    return vgal.any(keyName)
 end
 
 local function get_icon_size(object)

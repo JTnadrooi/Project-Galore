@@ -101,6 +101,7 @@ vgal.data.extend
             { "holmium-ore", 1, { probability = 0.01, show_details_in_recipe_tooltip = false } },
         },
         category = "crushing",
+        subgroup = "vgal-crushing"
     },
     {
         name = "stone-crushing",
@@ -116,9 +117,10 @@ vgal.data.extend
         },
         results = {
             { "stone",   1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
-            { "calcite", 1, { probability = 0.01, show_details_in_recipe_tooltip = false } },
+            { "calcite", 1, { probability = 0.005, show_details_in_recipe_tooltip = false } },
         },
         category = "crushing",
+        subgroup = "vgal-crushing"
     },
     {
         name = "coal-crushing",
@@ -138,5 +140,6 @@ vgal.data.extend
             { "sulfur", 1, { probability = 0.02, show_details_in_recipe_tooltip = false } },
         },
         category = "crushing",
+        subgroup = "vgal-crushing"
     },
 }

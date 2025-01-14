@@ -231,6 +231,15 @@ function vgal.recipe.replace_result(recipeName, oldResult, newResult)
     end
 end
 
+function vgal.recipe.override_iron(recipeName, newIcons)
+    local recipe = data.raw["recipe"][recipeName]
+    if recipe then
+        recipe.icons = newIcons
+        recipe.icon = nil
+        recipe.icon_size = nil
+    end
+end
+
 function vgal.recipe.add_result(recipeName, newResult, recipeType)
     local recipe = data.raw["recipe"][recipeName]
     vgal.recipe.normalise(recipeName)

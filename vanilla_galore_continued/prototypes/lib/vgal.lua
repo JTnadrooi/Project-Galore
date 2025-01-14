@@ -13,7 +13,6 @@ vgal.fluid = vgal.fluid or {}
 vgal.entity = vgal.entity or {}
 vgal.localise = vgal.localise or {}
 vgal.build = vgal.build or {}
-vgal.any = vgal.any or {}
 
 require("classes")
 require("icon")
@@ -241,26 +240,23 @@ function vgal.data.trim(recipeName)
     data.raw["recipe"][recipeName] = nil
 end
 
--- function vgal.data.finalise()
---     local potential_singles = {}
---     for _, tech in pairs(data.raw["technology"]) do
---         for i, effect in ipairs(tech.effects or {}) do
---             for _, toclean in ipairs(vgal.tech.totrim) do
---                 if effect.recipe == toclean then
---                     table.remove(tech.effects, i)
---                 end
---             end
---             if #tech.effects == 0 then
---                 table.insert(potential_singles, tech.name)
---             end
---         end
---     end
--- end
+function vgal.any(anyName, includeRecipes)
+    local categories = { "item", "tool", "fluid", "ammo", "capsule", "module", "repair-tool", "item-with-entity-data",
+    "rail-planner" }
+    if includeRecipes then
+        table.insert(categories, "recipe")
+    end
+    for _, category in ipairs(categories) do
+        if data.raw[category][anyName] then
+            return data.raw[category][anyName]
+        end
+    end
+    error("item '" .. anyName .. "' does not exist")
+end
 
 function vgal.data.finalise()
     local potential_singles = {}
     for _, tech in pairs(data.raw["technology"]) do
-        -- Ensure tech.effects is a valid table
         if tech.effects and #tech.effects > 0 then
             local i = 1
             while i <= #tech.effects do
@@ -279,7 +275,6 @@ function vgal.data.finalise()
                 end
             end
         end
-        -- If effects are now empty, consider this a potential single
         if tech.effects and #tech.effects == 0 then
             table.insert(potential_singles, tech.name)
         end

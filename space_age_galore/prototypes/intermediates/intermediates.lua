@@ -81,28 +81,28 @@ vgal.data.extend
         },
         category = "crafting",
     },
-    {
-        name = "scrap-crushing",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("scrap"),
-            vgal.icon.get_overlay("crushing"),
-        },
-        energy_required = 0.2,
-        technology = "recycling",
-        ingredients = {
-            { "scrap", 1 },
-        },
-        results = {
-            { "iron-ore",    1, { probability = 0.20, show_details_in_recipe_tooltip = false } },
-            { "copper-ore",  1, { probability = 0.20, show_details_in_recipe_tooltip = false } },
-            { "coal",        1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
-            { "stone",       1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
-            { "holmium-ore", 1, { probability = 0.01, show_details_in_recipe_tooltip = false } },
-        },
-        category = "crushing",
-        subgroup = "vgal-crushing"
-    },
+    -- {
+    --     name = "scrap-crushing",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("scrap"),
+    --         vgal.icon.get_overlay("crushing"),
+    --     },
+    --     energy_required = 0.2,
+    --     technology = "recycling",
+    --     ingredients = {
+    --         { "scrap", 1 },
+    --     },
+    --     results = {
+    --         { "iron-ore",    1, { probability = 0.20, show_details_in_recipe_tooltip = false } },
+    --         { "copper-ore",  1, { probability = 0.20, show_details_in_recipe_tooltip = false } },
+    --         { "coal",        1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
+    --         { "stone",       1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
+    --         { "holmium-ore", 1, { probability = 0.01, show_details_in_recipe_tooltip = false } },
+    --     },
+    --     category = "crushing",
+    --     subgroup = "vgal-crushing"
+    -- },
     {
         name = "stone-crushing",
         prefix = "vgal",

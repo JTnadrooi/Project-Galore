@@ -96,7 +96,7 @@ vgal.data.extend
             { "carbon",                  1 },
         },
         fluid_results = {
-            { "lava", 360 },
+            { "lava", 250 },
         },
         category = "metallurgy",
     },

@@ -50,6 +50,7 @@ MW as in Mineral Water.
 | sulfur(gb)            | 60       |
 | sulfur(fg)            | 20       |
 | plastic-bar           | 15       |
+| plastic-bar(gb)       | 40       |
 | carbon                | 50       |
 | tungsten-carbide      | 100      |
 | tungsten-plate        | 90       |

@@ -115,8 +115,8 @@ vgal.data.extend
         energy_required = 8,
         ingredients = {
             { "low-density-structure", 1 }, -- 375
-            { "advanced-circuit",      2 }, -- 200
-            { "electronic-circuit",    4 }, -- 100
+            { "advanced-circuit",      1 }, -- 100
+            { "electronic-circuit",    2 }, -- 50
         },
         fluid_ingredients = {
             { "sulfuric-acid", 5 }, -- 10

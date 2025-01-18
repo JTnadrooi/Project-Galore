@@ -214,8 +214,8 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("lubricant"),
-            vgal.icon.get_in_fluid("carbon"),
             vgal.icon.get_in_fluid("sulfur"),
+            vgal.icon.get_in_fluid("carbon"),
             -- vgal.icon.get_in2("sulfur"),
         },
         category = "chemistry",

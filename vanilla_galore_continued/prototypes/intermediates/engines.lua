@@ -1,24 +1,5 @@
 vgal.data.extend {
     {
-        name = "battery-engine-unit",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("engine-unit"),
-            vgal.icon.get_in("battery"),
-        },
-        technology = "battery",
-        energy_required = 10,
-        ingredients = {
-            { "iron-gear-wheel", 1 },
-            { "copper-cable",    2 },
-            { "battery",         1 }
-        },
-        results = {
-            { "engine-unit", 1 },
-        },
-        category = "advanced-crafting",
-    },
-    {
         name = "low-density-structure-engine-unit",
         prefix = "vgal",
         icons = vgal.icon.register {

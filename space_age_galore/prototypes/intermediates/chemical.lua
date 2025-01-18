@@ -252,6 +252,7 @@ vgal.data.extend
         results = {
             { "rocket-fuel", 1 }, -- 200
         },
+        groups = { "unsure" },
     },
     {
         type = "recipe",
@@ -297,27 +298,27 @@ vgal.data.extend
             { "electrolyte", 20 }, -- 200
         },
     },
-    {
-        type = "recipe",
-        name = "spoilage-crude-oil",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("crude-oil"),
-            vgal.icon.get_in("spoilage"),
-        },
-        category = "organic",
-        energy_required = 10,
-        technology = "agriculture",
-        fluid_ingredients = {
-            { "sulfuric-acid", 10 },
-        },
-        ingredients = {
-            { "spoilage", 15 },
-        },
-        fluid_results = {
-            { "crude-oil", 100 },
-        },
-    },
+    -- {
+    --     type = "recipe",
+    --     name = "spoilage-crude-oil",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("crude-oil"),
+    --         vgal.icon.get_in("spoilage"),
+    --     },
+    --     category = "organic",
+    --     energy_required = 10,
+    --     technology = "agriculture",
+    --     fluid_ingredients = {
+    --         { "sulfuric-acid", 10 },
+    --     },
+    --     ingredients = {
+    --         { "spoilage", 15 },
+    --     },
+    --     fluid_results = {
+    --         { "crude-oil", 100 },
+    --     },
+    -- },
     -- {
     --     type = "recipe",
     --     name = "thruster-fuel-thruster-oxidizer-light-oil-rocket-fuel",

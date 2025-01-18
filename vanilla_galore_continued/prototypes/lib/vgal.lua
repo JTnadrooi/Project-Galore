@@ -32,9 +32,8 @@ end
 
 vgal.groups = {
     { "rocket-parts",      "alternate-rocket-part" },
-    { "analog-circuits",   "analog-circuit" },
-    { "wood-recipes",      "wood-recipe" },
     { "alternate-science", "alternate-science" },
+    { "wood-recipes",      "wood-recipe" },
     { "unsure-recipes",    "unsure" },
     { "removed-recipes",   "removed" },
 }

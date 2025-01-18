@@ -120,6 +120,7 @@ MW as in Mineral Water.
 | refined-concrete         | 35       |
 | train-stop               | 365      |
 | rail                     | 32       |
+| lab                      | 510      |
 
 ## Military Items
 

@@ -397,6 +397,60 @@ vgal.data.extend {
         },
         category = "crafting-with-fluid",
     },
+    {
+        name = "advanced-circuit-lab",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("lab"),
+            vgal.icon.get_in("advanced-circuit"),
+        },
+        energy_required = 2,
+        technology = { "advanced-circuit", "logistics-2" },
+        ingredients = {
+            { "fast-transport-belt", 2 }, -- 230
+            { "advanced-circuit",    1 }, -- 100
+            { "iron-gear-wheel",     2 }, -- 40
+        },
+        results = {
+            { "lab", 1 }, -- 510
+        },
+        category = "crafting",
+    },
+    {
+        name = "steel-plate-pipe",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("pipe"),
+            vgal.icon.get_in("steel-plate"),
+        },
+        energy_required = 2,
+        technology = { "steel-processing" },
+        ingredients = {
+            { "steel-plate", 1 },
+        },
+        results = {
+            { "pipe", 5 },
+        },
+        category = "crafting",
+    },
+    {
+        name = "steel-plate-underground-pipe",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("underground-pipe"),
+            vgal.icon.get_in("steel-plate"),
+        },
+        energy_required = 1,
+        technology = { "steel-processing" },
+        ingredients = {
+            { "steel-plate", 1 },
+            { "pipe", 10 },
+        },
+        results = {
+            { "underground-pipe", 2 },
+        },
+        category = "crafting",
+    },
     -- {
     --     name = "electric-engine-unit-pump",
     --     prefix = "vgal",

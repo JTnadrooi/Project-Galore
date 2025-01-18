@@ -23,13 +23,6 @@ data:extend {
     },
     {
         type = "bool-setting",
-        name = "vgal-analog-circuits",
-        setting_type = "startup",
-        default_value = true,
-        order = "ac"
-    },
-    {
-        type = "bool-setting",
         name = "vgal-alternate-science",
         setting_type = "startup",
         default_value = true,

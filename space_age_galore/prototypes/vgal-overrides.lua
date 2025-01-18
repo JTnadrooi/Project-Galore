@@ -61,7 +61,7 @@ for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.name and recipe.name:sub(1, #("vgal-")) == "vgal-" then
         for _, suffix in ipairs(valid_suffixes) do
             if recipe.name:sub(- #suffix) == suffix then
-                recipe.category = "metallurgy-or-assembling"
+                recipe.category = "pressing"
                 break
             end
         end

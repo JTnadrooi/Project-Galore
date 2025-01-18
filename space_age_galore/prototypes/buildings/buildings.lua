@@ -104,7 +104,7 @@ vgal.data.extend {
             vgal.icon.get_in("tungsten-carbide"),
         },
         energy_required = 8,
-        technology = "oil-processing",
+        technology = "tungsten-steel",
         fluid_ingredients = {
             { "molten-iron", 600 },
         },

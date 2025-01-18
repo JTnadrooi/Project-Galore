@@ -30,6 +30,15 @@ function vgal.log(toLog)
     end
 end
 
+vgal.groups = {
+    { "rocket-parts",      "alternate-rocket-part" },
+    { "analog-circuits",   "analog-circuit" },
+    { "wood-recipes",      "wood-recipe" },
+    { "alternate-science", "alternate-science" },
+    { "unsure-recipes",    "unsure" },
+    { "removed-recipes",   "removed" },
+}
+
 ---Register a recipe to the vgal (Vanilla Galore - Continued) ecosystem.
 ---@param recipes vgal.VgalRecipe[]
 function vgal.data.extend(recipes)
@@ -37,12 +46,19 @@ function vgal.data.extend(recipes)
         recipe.groups = recipe.groups or {}
         local exclude = false
         for _, group in ipairs(recipe.groups) do
-            if (not settings.startup["vgal-rocket-parts"].value and group == "alternate-rocket-part") or
-                (not settings.startup["vgal-analog-circuits"].value and group == "analog-circuit") or
-                (not settings.startup["vgal-wood-recipes"].value and group == "wood-recipe") or
-                (not settings.startup["vgal-alternate-science"].value and group == "alternate-science") then
-                exclude = true
-                break
+            -- if (not settings.startup["vgal-rocket-parts"].value and group == "alternate-rocket-part") or
+            --     (not settings.startup["vgal-analog-circuits"].value and group == "analog-circuit") or
+            --     (not settings.startup["vgal-wood-recipes"].value and group == "wood-recipe") or
+            --     (not settings.startup["vgal-alternate-science"].value and group == "alternate-science") then
+            --     exclude = true
+            --     break
+            -- end
+
+            for _, groupTuple in ipairs(vgal.groups) do
+                if (not settings.startup["vgal-" .. groupTuple[1]].value and group == groupTuple[2]) then
+                    exclude = true
+                    break
+                end
             end
         end
         if exclude then goto continue end
@@ -242,7 +258,7 @@ end
 
 function vgal.any(anyName, includeRecipes)
     local categories = { "item", "tool", "fluid", "ammo", "capsule", "module", "repair-tool", "item-with-entity-data",
-    "rail-planner" }
+        "rail-planner" }
     if includeRecipes then
         table.insert(categories, "recipe")
     end

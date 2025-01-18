@@ -40,6 +40,20 @@ data:extend {
         name = "vgal-wood-recipes",
         setting_type = "startup",
         default_value = true,
-        order = "ad"
+        order = "ae"
+    },
+    {
+        type = "bool-setting",
+        name = "vgal-unsure-recipes",
+        setting_type = "startup",
+        default_value = false,
+        order = "af"
+    },
+    {
+        type = "bool-setting",
+        name = "vgal-removed-recipes",
+        setting_type = "startup",
+        default_value = false,
+        order = "ag"
     },
 }

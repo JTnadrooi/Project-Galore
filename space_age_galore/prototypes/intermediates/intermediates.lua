@@ -32,12 +32,10 @@ vgal.data.extend
         category = "electromagnetics",
         energy_required = 40,
         technology = { "holmium-processing", "robotics" },
-        fluid_ingredients = {
-            { "holmium-solution", 10 }, -- 85
-        },
         ingredients = {
             { "electric-engine-unit", 2 }, -- 360
             { "holmium-plate",        1 }, -- 170
+            { "steel-plate",          2 }, --
             { "battery",              2 }, -- 100
         },
         results = {

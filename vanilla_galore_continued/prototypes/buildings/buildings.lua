@@ -424,7 +424,7 @@ vgal.data.extend {
             vgal.icon.get_in("steel-plate"),
         },
         energy_required = 2,
-        technology = { "steel-processing" },
+        technology = "steel-processing",
         ingredients = {
             { "steel-plate", 1 },
         },
@@ -434,20 +434,20 @@ vgal.data.extend {
         category = "crafting",
     },
     {
-        name = "steel-plate-underground-pipe",
+        name = "steel-plate-pipe-to-ground",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("underground-pipe"),
+            vgal.icon.get("pipe-to-ground"),
             vgal.icon.get_in("steel-plate"),
         },
         energy_required = 1,
-        technology = { "steel-processing" },
+        technology = "steel-processing",
         ingredients = {
             { "steel-plate", 1 },
-            { "pipe", 10 },
+            { "pipe",        10 },
         },
         results = {
-            { "underground-pipe", 2 },
+            { "pipe-to-ground", 2 },
         },
         category = "crafting",
     },

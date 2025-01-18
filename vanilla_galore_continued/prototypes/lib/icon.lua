@@ -198,6 +198,10 @@ function vgal.icon.set_target(icon, target)
     return toret
 end
 
+function vgal.icon.get_in_fluid(keyName, iconSource)
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.35, { 0, -6.5 })
+end
+
 function vgal.icon.get_in(keyName, iconSource)
     return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "in1")
 end

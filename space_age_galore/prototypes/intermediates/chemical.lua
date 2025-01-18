@@ -214,20 +214,22 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("lubricant"),
-            vgal.icon.get_in("carbon"),
-            vgal.icon.get_in2("heavy-oil"),
+            vgal.icon.get_in_fluid("carbon"),
+            vgal.icon.get_in_fluid("sulfur"),
+            -- vgal.icon.get_in2("sulfur"),
         },
         category = "chemistry",
         energy_required = 1,
         technology = "space-platform",
         fluid_ingredients = {
-            { "heavy-oil", 20 }, -- 30
+            { "water", 30 },
         },
         ingredients = {
             { "carbon", 1 }, -- 50
+            { "sulfur", 1 }, -- 15
         },
         fluid_results = {
-            { "lubricant", 40 },
+            { "lubricant", 30 }, -- 60
         },
     },
     {

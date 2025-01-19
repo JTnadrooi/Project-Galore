@@ -27,7 +27,7 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("lubricant"),
-            vgal.icon.get_in_fluid("petroleum-gas"),
+            -- vgal.icon.get_in_fluid("petroleum-gas"),
             vgal.icon.get_in_fluid2("plastic-bar"),
         },
         category = "chemistry",

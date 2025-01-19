@@ -226,7 +226,6 @@ vgal.data.extend
             vgal.icon.get("lubricant"),
             vgal.icon.get_in_fluid("sulfur"),
             vgal.icon.get_in_fluid2("carbon"),
-            -- vgal.icon.get_in2("sulfur"),
         },
         category = "chemistry",
         energy_required = 1,
@@ -241,6 +240,30 @@ vgal.data.extend
         fluid_results = {
             { "lubricant", 30 }, -- 60
         },
+    },
+    {
+        type = "recipe",
+        name = "calcite-stone-holmium-solution",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("holmium-solution"),
+            vgal.icon.get_in_fluid("steam"),
+            vgal.icon.get_in_fluid2("calcite"),
+        },
+        category = "chemistry",
+        energy_required = 1,
+        technology = "space-platform",
+        fluid_ingredients = {
+            { "steam", 100 },
+        },
+        ingredients = {
+            { "calcite",     1 },
+            { "holmium-ore", 1 },
+        },
+        fluid_results = {
+            { "holmium-solution", 100 },
+        },
+        groups = { "unsure" },
     },
     {
         type = "recipe",

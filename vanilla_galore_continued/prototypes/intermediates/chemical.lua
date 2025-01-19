@@ -21,4 +21,26 @@ vgal.data.extend
     --         { "sulfur", 2 }
     --     },
     -- },
+    {
+        type = "recipe",
+        name = "plastic-bar-lubricant",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("lubricant"),
+            vgal.icon.get_in_fluid("petroleum-gas"),
+            vgal.icon.get_in_fluid2("plastic-bar"),
+        },
+        category = "chemistry",
+        energy_required = 2.5,
+        technology = "lubricant",
+        fluid_ingredients = {
+            { "petroleum-gas", 30 }, -- 30
+        },
+        ingredients = {
+            { "plastic-bar", 1 }, -- 15
+        },
+        fluid_results = {
+            { "lubricant", 20 }, -- 40
+        },
+    },
 }

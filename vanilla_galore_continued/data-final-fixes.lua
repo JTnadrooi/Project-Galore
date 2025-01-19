@@ -1,14 +1,3 @@
-local function gcd(a, b)
-    while b ~= 0 do
-        a, b = b, a % b
-    end
-    return a
-end
-
-local function lcm(a, b)
-    return (a * b) / gcd(a, b)
-end
-
 local function create_with_barrel(recipeName, techName)
     local recipe = data.raw.recipe[recipeName]
     if not recipe or not recipe.ingredients then
@@ -18,11 +7,11 @@ local function create_with_barrel(recipeName, techName)
     local fluidIngredients = {}
     local nonFluidIngredients = {}
 
-    -- Separate fluid and non-fluid ingredients
+
     for _, ingredient in ipairs(recipe.ingredients) do
         if ingredient.type == "fluid" then
             if ingredient.amount > 50 or ingredient.amount < 5 then
-                return -- Skip recipes with invalid fluid amounts
+                return
             end
             table.insert(fluidIngredients, ingredient)
         else
@@ -31,16 +20,14 @@ local function create_with_barrel(recipeName, techName)
     end
 
     if #fluidIngredients == 0 then
-        return -- Skip if there are no fluid ingredients
+        return
     end
 
-    -- Determine the best multiplier to make results and fluid ingredients fit perfectly
     local multiplier = 1
     for _, fluid in ipairs(fluidIngredients) do
-        multiplier = lcm(multiplier, math.ceil(50 / fluid.amount))
+        multiplier = vgal.math.lcm(multiplier, math.ceil(50 / fluid.amount))
     end
 
-    -- Create the new recipe
     local newRecipe = {
         type = "recipe",
         name = recipeName .. "-from-barreled",
@@ -53,13 +40,12 @@ local function create_with_barrel(recipeName, techName)
             vgal.icon.get(recipeName),
         },
         localised_name = { "", { "item-name." .. recipeName }, " from barrel" },
-        energy_required = (recipe.energy_required or 1) * multiplier, -- Adjust energy requirement
+        energy_required = (recipe.energy_required or 1) * multiplier,
         ingredients = {},
         results = {},
         allow_productivity = recipe.allow_productivity
     }
 
-    -- Add non-fluid ingredients (scaled by the multiplier)
     for _, ingredient in ipairs(nonFluidIngredients) do
         table.insert(newRecipe.ingredients, {
             type = ingredient.type,
@@ -68,17 +54,15 @@ local function create_with_barrel(recipeName, techName)
         })
     end
 
-    -- Add barreled fluid ingredients (correct fluid amount per barrel)
     for _, fluid in ipairs(fluidIngredients) do
-        local barrelsRequired = math.ceil(fluid.amount * multiplier / 50) -- One barrel holds 50 fluid units
+        local barrelsRequired = math.ceil(fluid.amount * multiplier / 50)
         table.insert(newRecipe.ingredients, {
             type = "item",
-            name = fluid.name .. "-barrel", -- Assumes barreled item name follows this pattern
+            name = fluid.name .. "-barrel",
             amount = barrelsRequired
         })
     end
 
-    -- Add results (scaled by the multiplier)
     for _, result in ipairs(recipe.results or { { type = "item", name = recipeName, amount = 1 } }) do
         table.insert(newRecipe.results, {
             type = result.type,
@@ -87,7 +71,6 @@ local function create_with_barrel(recipeName, techName)
         })
     end
 
-    -- Add empty barrels to results (correct barrel amount)
     for _, fluid in ipairs(fluidIngredients) do
         local barrelsReturned = math.ceil(fluid.amount * multiplier / 50)
         table.insert(newRecipe.results, {
@@ -97,14 +80,12 @@ local function create_with_barrel(recipeName, techName)
         })
     end
 
-    -- Register the new recipe
     data:extend({ newRecipe })
 
     vgal.tech.add_recipe(techName, newRecipe.name)
 end
--- Example usage
-create_with_barrel("processing-unit", "processing-unit")
-create_with_barrel("electric-engine-unit", "electric-engine")
+-- create_with_barrel("processing-unit", "processing-unit")
+-- create_with_barrel("electric-engine-unit", "electric-engine")
 
 vgal.data.finalise()
 
@@ -127,7 +108,7 @@ vgal.data.finalise()
 
 -- {
 --     type = "recipe",
---     name = "processing-unit-barreled",
+--     name = "processing-unit-",
 --     category = "crafting-with-fluid",
 --     enabled = false,
 --     energy_required = 100,

@@ -270,7 +270,7 @@ vgal.data.extend
         technology = "plastics",
         ingredients = {
             { "coal",         1 },
-            { "copper-cable", 2 },
+            { "copper-cable", 1 },
         },
         fluid_ingredients = {
             { "petroleum-gas", 10 },

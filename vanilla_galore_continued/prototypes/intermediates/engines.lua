@@ -19,25 +19,6 @@ vgal.data.extend {
         category = "advanced-crafting",
     },
     {
-        name = "iron-stick-engine-unit",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("engine-unit"),
-            vgal.icon.get_in("iron-stick"),
-        },
-        technology = "engine",
-        energy_required = 8,
-        ingredients = {
-            { "iron-gear-wheel", 1 },
-            { "iron-stick",      4 },
-            { "steel-plate",     1 }
-        },
-        results = {
-            { "engine-unit", 1 },
-        },
-        category = "advanced-crafting",
-    },
-    {
         name = "lubricant-engine-unit",
         prefix = "vgal",
         icons = vgal.icon.register {

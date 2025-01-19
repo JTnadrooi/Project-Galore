@@ -85,15 +85,16 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("lava"),
-            vgal.icon.get_in("metallic-asteroid-chunk"),
-            vgal.icon.get_in2("carbon"),
-            -- vgal.icon.get_overlay("heating"),
+            vgal.icon.get_in_fluid("metallic-asteroid-chunk"),
+            vgal.icon.get_in_fluid2("ammonia"),
         },
         energy_required = 4,
         technology = "foundry",
+        fluid_ingredients = {
+            { "ammonia", 5 },
+        },
         ingredients = {
             { "metallic-asteroid-chunk", 1 },
-            { "carbon",                  1 },
         },
         fluid_results = {
             { "lava", 250 },

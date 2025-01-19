@@ -123,9 +123,9 @@ vgal.data.extend
         name = "pentapod-egg-bioflux-stone",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("stone"),
-            vgal.icon.get_in("pentapod-egg"),
-            vgal.icon.get_in2("bioflux"),
+            vgal.icon.get_in_to("pentapod-egg"),
+            vgal.icon.get_out_to("stone"),
+            vgal.icon.get_overlay("to"),
         },
         category = "organic",
         energy_required = 15,
@@ -145,8 +145,9 @@ vgal.data.extend
         name = "wood-carbon",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("carbon"),
-            vgal.icon.get_in("wood"),
+            vgal.icon.get_in_to("wood"),
+            vgal.icon.get_out_to("carbon"),
+            vgal.icon.get_overlay("to"),
         },
         category = "organic",
         energy_required = 8,
@@ -160,16 +161,22 @@ vgal.data.extend
         fluid_results = {
             { "water", 10 },
         },
+        groups = { "wood-recipe" },
         show_amount_in_title = false,
     },
     {
         type = "recipe",
         name = "solid-fuel-carbon",
         prefix = "vgal",
+        -- icons = vgal.icon.register {
+        --     vgal.icon.get("carbon"),
+        --     vgal.icon.get_in("solid-fuel"),
+        --     vgal.icon.get_in2("steam"),
+        -- },
         icons = vgal.icon.register {
-            vgal.icon.get("carbon"),
-            vgal.icon.get_in("solid-fuel"),
-            vgal.icon.get_in2("steam"),
+            vgal.icon.get_in_to("solid-fuel"),
+            vgal.icon.get_out_to("carbon"),
+            vgal.icon.get_overlay("to"),
         },
         category = "chemistry-or-cryogenics",
         energy_required = 8,
@@ -190,8 +197,10 @@ vgal.data.extend
         name = "solid-fuel-sulfuric-acid-carbon",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("carbon"),
-            vgal.icon.get_in("solid-fuel"),
+            vgal.icon.get_in_to("solid-fuel"),
+            vgal.icon.get_out_to("carbon"),
+            vgal.icon.get_overlay("to"),
+
             vgal.icon.get_in2("sulfuric-acid"),
         },
         category = "chemistry-or-cryogenics",
@@ -206,6 +215,7 @@ vgal.data.extend
         results = {
             { "carbon", 1 }, -- 50
         },
+        groups = { "unsure" },
         show_amount_in_title = false,
     },
     {
@@ -215,7 +225,7 @@ vgal.data.extend
         icons = vgal.icon.register {
             vgal.icon.get("lubricant"),
             vgal.icon.get_in_fluid("sulfur"),
-            vgal.icon.get_in_fluid("carbon"),
+            vgal.icon.get_in_fluid2("carbon"),
             -- vgal.icon.get_in2("sulfur"),
         },
         category = "chemistry",
@@ -258,11 +268,11 @@ vgal.data.extend
     },
     {
         type = "recipe",
-        name = "plastic-bar-electrolyte",
+        name = "plastic-bar-electrolyte", -- absolutelly impossible without a better plastic recipe that doesnt use coal
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("electrolyte"),
-            vgal.icon.get_in("plastic-bar"),
+            vgal.icon.get_in_fluid("plastic-bar"),
         },
         category = "electromagnetics",
         energy_required = 10,
@@ -277,6 +287,7 @@ vgal.data.extend
         fluid_results = {
             { "electrolyte", 20 }, -- 200
         },
+        groups = { "unsure" }
     },
     {
         type = "recipe",
@@ -284,7 +295,7 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("electrolyte"),
-            vgal.icon.get_in("sulfuric-acid"),
+            vgal.icon.get_in_fluid("sulfuric-acid"),
         },
         category = "electromagnetics",
         energy_required = 10,

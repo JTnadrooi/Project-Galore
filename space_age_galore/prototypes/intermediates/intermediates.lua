@@ -33,13 +33,13 @@ vgal.data.extend
         energy_required = 40,
         technology = { "holmium-processing", "robotics" },
         ingredients = {
-            { "electric-engine-unit", 2 }, -- 360
+            { "electric-engine-unit", 4 }, --
             { "holmium-plate",        1 }, -- 170
-            { "steel-plate",          2 }, --
-            { "battery",              2 }, -- 100
+            { "steel-plate",          4 }, --
+            { "battery",              4 }, --
         },
         results = {
-            { "flying-robot-frame", 2 }, -- 810
+            { "flying-robot-frame", 4 }, --
         },
     },
     {

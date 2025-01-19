@@ -240,6 +240,10 @@ function vgal.recipe.override_iron(recipeName, newIcons)
     end
 end
 
+function vgal.recipe.catagory_from_array()
+
+end
+
 function vgal.recipe.add_result(recipeName, newResult, recipeType)
     local recipe = data.raw["recipe"][recipeName]
     vgal.recipe.normalise(recipeName)

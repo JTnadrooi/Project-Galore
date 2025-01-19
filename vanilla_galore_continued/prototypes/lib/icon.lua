@@ -202,6 +202,18 @@ function vgal.icon.get_in_fluid(keyName, iconSource)
     return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.35, { 0, -6.5 })
 end
 
+function vgal.icon.get_in_fluid2(keyName, iconSource)
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { 0, -5 })
+end
+
+function vgal.icon.get_in_to(keyName, iconSource)
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.38, { -6.5, -6.5 })
+end
+
+function vgal.icon.get_out_to(keyName, iconSource)
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.35, { 5.5, 6.5 })
+end
+
 function vgal.icon.get_in(keyName, iconSource)
     return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "in1")
 end

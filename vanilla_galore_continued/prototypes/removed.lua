@@ -46,6 +46,26 @@ vgal.data.extend
         groups = { "removed" },
     },
     {
+        name = "iron-stick-engine-unit",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("engine-unit"),
+            vgal.icon.get_in("iron-stick"),
+        },
+        technology = "engine",
+        energy_required = 8,
+        ingredients = {
+            { "iron-gear-wheel", 1 },
+            { "iron-stick",      4 },
+            { "steel-plate",     1 }
+        },
+        results = {
+            { "engine-unit", 1 },
+        },
+        category = "advanced-crafting",
+        groups = { "removed" },
+    },
+    {
         name = "iron-gear-wheel-lubricant-electronic-circuit", -- analog
         prefix = "vgal",
         icons = vgal.icon.register {

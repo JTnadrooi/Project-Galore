@@ -43,6 +43,51 @@ vgal.data.extend
     },
     {
         type = "recipe",
+        name = "steam-500t-steam-800t", -- for adv casting
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("steam"),
+            vgal.icon.get_overlay("heating"),
+        },
+        show_amount_in_title = false,
+        category = "chemistry-or-cryogenics",
+        energy_required = 4,
+        technology = "calcite-processing",
+        fluid_ingredients = {
+            {
+                "steam",
+                2000,
+                {
+                    temperature = 500,
+                },
+            },
+            { "sulfuric-acid", 200 },
+        },
+        ingredients = {
+            { "calcite", 10 }, -- 10
+        },
+        fluid_results = {
+            {
+                "steam",
+                200,
+                {
+                    temperature = 800,
+                },
+            },
+            { "water", 80 },
+        },
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 4000,
+                max = 4000,
+            }
+        },
+        groups = { "unsure" }
+    },
+    {
+        type = "recipe",
         name = "water-fluoroketone-cold-ice", -- 1 rocket is 5000 fluid, 1r = 500,000 ice, 1r = 10,000,000 water
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -81,9 +126,9 @@ vgal.data.extend
             vgal.icon.get("ice"),
             vgal.icon.get_in("water", "fluid"),
         },
-        category = "cryogenics",
+        category = "chemistry-or-cryogenics",
         energy_required = 20,
-        technology = "cryogenic-plant",
+        technology = "space-platform",
         fluid_ingredients = {
             { "water", 150 },
         },
@@ -252,7 +297,7 @@ vgal.data.extend
         },
         category = "chemistry",
         energy_required = 1,
-        technology = "space-platform",
+        technology = "holmium-processing",
         fluid_ingredients = {
             { "steam", 100 },
         },
@@ -276,7 +321,7 @@ vgal.data.extend
         },
         category = "chemistry-or-cryogenics",
         energy_required = 15,
-        technology = "space-platform",
+        technology = "space-platform-thruster",
         fluid_ingredients = {
             { "thruster-oxidizer", 200 }, -- 200
             { "thruster-fuel",     400 }, -- 200

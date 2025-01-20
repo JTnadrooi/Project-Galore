@@ -121,7 +121,7 @@ vgal.data.extend {
             vgal.icon.get_in("processing-unit"),
         },
         energy_required = 12,
-        technology = { "uranium-processing", "processing-unit" },
+        technology = { "nuclear-power", "processing-unit" },
         ingredients = {
             { "refined-concrete", 150 },
             { "steel-plate",      500 },

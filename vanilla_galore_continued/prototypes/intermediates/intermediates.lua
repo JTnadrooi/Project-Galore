@@ -1,25 +1,6 @@
 vgal.data.extend
 {
     {
-        name = "plastic-bar-low-density-structure",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("low-density-structure"),
-            vgal.icon.get_in("plastic-bar"),
-        },
-        category = "crafting",
-        energy_required = 15,
-        technology = "low-density-structure",
-        ingredients = {
-            { "steel-plate",  3 },  -- 150
-            { "plastic-bar",  10 }, -- 150
-            { "copper-cable", 15 }, -- 75
-        },
-        results = {
-            { "low-density-structure", 1 }, -- 375
-        },
-    },
-    {
         name = "uranium-238-low-density-structure",
         prefix = "vgal",
         icons = vgal.icon.register {

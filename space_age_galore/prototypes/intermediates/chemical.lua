@@ -47,7 +47,7 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("steam"),
-            vgal.icon.get_overlay("heating"),
+            vgal.icon.get_overlay("plus"),
         },
         show_amount_in_title = false,
         category = "chemistry-or-cryogenics",
@@ -56,7 +56,7 @@ vgal.data.extend
         fluid_ingredients = {
             {
                 "steam",
-                2000,
+                50,
                 {
                     temperature = 500,
                 },
@@ -64,7 +64,7 @@ vgal.data.extend
             { "sulfuric-acid", 200 },
         },
         ingredients = {
-            { "calcite", 10 }, -- 10
+            { "calcite", 20 }, -- 200
         },
         fluid_results = {
             {
@@ -74,7 +74,6 @@ vgal.data.extend
                     temperature = 800,
                 },
             },
-            { "water", 80 },
         },
         surface_conditions =
         {
@@ -265,7 +264,7 @@ vgal.data.extend
     },
     {
         type = "recipe",
-        name = "carbon-lubricant",
+        name = "carbon-sulfur-lubricant",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("lubricant"),
@@ -288,6 +287,27 @@ vgal.data.extend
     },
     {
         type = "recipe",
+        name = "carbon-lubricant", -- for vulcanus
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("lubricant"),
+            vgal.icon.get_in_fluid("carbon"),
+        },
+        category = "chemistry",
+        energy_required = 3,
+        technology = "space-platform",
+        fluid_ingredients = {
+            { "water", 30 },
+        },
+        ingredients = {
+            { "carbon", 4 }, -- 200
+        },
+        fluid_results = {
+            { "lubricant", 30 }, -- 60
+        },
+    },
+    {
+        type = "recipe",
         name = "calcite-stone-holmium-solution",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -299,7 +319,7 @@ vgal.data.extend
         energy_required = 1,
         technology = "holmium-processing",
         fluid_ingredients = {
-            { "steam", 100 },
+            { "steam", 100, { temperature = 500 } },
         },
         ingredients = {
             { "calcite",     1 },
@@ -323,8 +343,8 @@ vgal.data.extend
         energy_required = 15,
         technology = "space-platform-thruster",
         fluid_ingredients = {
-            { "thruster-oxidizer", 200 }, -- 200
-            { "thruster-fuel",     400 }, -- 200
+            { "thruster-oxidizer", 100 }, -- 200
+            { "thruster-fuel",     200 }, -- 200
         },
         ingredients = {
             { "solid-fuel", 1 }, -- 15 (in a rocket goes like 1000 so its ok)

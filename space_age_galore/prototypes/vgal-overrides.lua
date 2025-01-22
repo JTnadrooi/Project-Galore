@@ -51,6 +51,8 @@ vgal_electroplantify("steel-plate-accumulator")
 vgal_cryogenify("copper-cable-plastic-bar")
 vgal_cryogenify("copper-cable-battery")
 
+data.raw["recipe"]["vgal-low-density-structure-engine-unit"].category = "pressing"
+
 local valid_suffixes = {
     "transport-belt",
     "splitter",

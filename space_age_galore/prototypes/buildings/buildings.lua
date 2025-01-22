@@ -30,29 +30,29 @@ vgal.data.extend {
             }
         },
     },
-    {
-        name = "tungsten-plate-assembling-machine-3",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("assembling-machine-3"),
-            vgal.icon.get_in("tungsten-plate"),
-        },
-        energy_required = 1,
-        technology = { "tungsten-steel", "automation-3" },
-        fluid_ingredients = {
-            { "lubricant",   50 },
-            { "molten-iron", 200 },
-        },
-        ingredients = {
-            { "tungsten-plate",       5 },
-            { "electric-engine-unit", 6 },
-            { "assembling-machine-2", 1 },
-        },
-        results = {
-            { "assembling-machine-3", 1 },
-        },
-        category = "metallurgy",
-    },
+    -- {
+    --     name = "tungsten-plate-assembling-machine-3",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("assembling-machine-3"),
+    --         vgal.icon.get_in("tungsten-plate"),
+    --     },
+    --     energy_required = 1,
+    --     technology = { "tungsten-steel", "automation-3" },
+    --     fluid_ingredients = {
+    --         { "lubricant",   50 },
+    --         { "molten-iron", 200 },
+    --     },
+    --     ingredients = {
+    --         { "tungsten-plate",       5 },
+    --         { "electric-engine-unit", 6 },
+    --         { "assembling-machine-2", 1 },
+    --     },
+    --     results = {
+    --         { "assembling-machine-3", 1 },
+    --     },
+    --     category = "metallurgy",
+    -- },
     {
         name = "tungsten-carbide-electric-furnace",
         prefix = "vgal",

@@ -92,31 +92,30 @@ vgal.data.extend
         show_amount_in_title = false,
         allow_productivity = false,
     },
-    {
-        type = "recipe",
-        name = "stone-bioflux-calcite",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("calcite"),
-            vgal.icon.get_in("bioflux"),
-        },
-        category = "organic",
-        energy_required = 8,
-        technology = { "bacteria-cultivation", "calcite-processing" },
-        fluid_ingredients = {
-            { "steam", 20, { temperature = 500 } },
-        },
-        ingredients = {
-            { "copper-bacteria", 1 }, -- 30
-            { "bioflux",         1 }, -- 80
-            { "stone",           5 }, -- 50
-        },
-        results = {
-            { "calcite", 1 }, -- 10(vu), 115 import
-            -- { "spoilage", 2, { show_details_in_recipe_tooltip = false } }, -- 20
-        },
-        show_amount_in_title = false,
-    },
+    -- {
+    --     type = "recipe",
+    --     name = "stone-bioflux-calcite",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("calcite"),
+    --         vgal.icon.get_in("bioflux"),
+    --     },
+    --     category = "organic",
+    --     energy_required = 8,
+    --     technology = { "bacteria-cultivation", "calcite-processing" },
+    --     fluid_ingredients = {
+    --         { "steam", 20, { temperature = 500 } },
+    --     },
+    --     ingredients = {
+    --         { "copper-bacteria", 1 }, -- 30
+    --         { "bioflux",         1 }, -- 80
+    --         { "stone",           5 }, -- 50
+    --     },
+    --     results = {
+    --         { "calcite", 1 }, -- 10(vu), 115 import
+    --     },
+    --     show_amount_in_title = false,
+    -- },
     {
         type = "recipe",
         name = "pentapod-egg-bioflux-stone",
@@ -135,7 +134,6 @@ vgal.data.extend
         },
         results = {
             { "stone", 30 }, -- 300
-            -- { "spoilage", 2, { show_details_in_recipe_tooltip = false } }, -- 20
         },
         show_amount_in_title = false,
     },
@@ -386,65 +384,86 @@ vgal.data.extend
             { "electrolyte", 20 }, -- 200
         },
     },
-    -- {
-    --     type = "recipe",
-    --     name = "spoilage-crude-oil",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("crude-oil"),
-    --         vgal.icon.get_in("spoilage"),
-    --     },
-    --     category = "organic",
-    --     energy_required = 10,
-    --     technology = "agriculture",
-    --     fluid_ingredients = {
-    --         { "sulfuric-acid", 10 },
-    --     },
-    --     ingredients = {
-    --         { "spoilage", 15 },
-    --     },
-    --     fluid_results = {
-    --         { "crude-oil", 100 },
-    --     },
-    -- },
-    -- {
-    --     type = "recipe",
-    --     name = "thruster-fuel-thruster-oxidizer-light-oil-rocket-fuel",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("rocket-fuel"),
-    --         vgal.icon.get_in("thruster-fuel"),
-    --         vgal.icon.get_in2("carbon"),
-    --     },
-    --     category = "cryogenics",
-    --     energy_required = 15,
-    --     technology = "cryogenic-plant",
-    --     fluid_ingredients = {
-    --         { "thruster-oxidizer", 100 }, -- 100
-    --         { "thruster-fuel",     100 }, -- 30
-    --     },
-    --     results = {
-    --         { "rocket-fuel", 1 }, -- 200
-    --     },
-    -- },
-    -- {
-    --     name = "raw-fish-light-oil",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("light-oil", "fluid"),
-    --         vgal.icon.get_in("raw-fish", "capsule")
-    --     },
-    --     technology = "fish-breeding",
-    --     category = "organic",
-    --     energy_required = 5,
-    --     ingredients = {
-    --         { "raw-fish", 1 }, -- 900
-    --     },
-    --     fluid_ingredients = {
-    --         { "sulfuric-acid", 10 }, -- 15
-    --     },
-    --     fluid_results = {
-    --         { "light-oil", 500 }, -- 800
-    --     },
-    -- },
+    {
+        type = "recipe",
+        name = "spoilage-sulfuric-acid-ammonia",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("spoilage"),
+            vgal.icon.get_out_to("ammonia"),
+            vgal.icon.get_in2("sulfuric-acid"),
+            vgal.icon.get_overlay("to"),
+        },
+        category = "organic",
+        energy_required = 20,
+        technology = "agriculture",
+        fluid_ingredients = {
+            { "sulfuric-acid", 10 }, -- 25
+        },
+        ingredients = {
+            { "spoilage", 12 }, -- 120
+        },
+        fluid_results = {
+            { "ammonia", 50 }, -- 100 * 1.5 = 150
+        },
+    },
+    {
+        type = "recipe",
+        name = "spoilage-ammonia",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("spoilage"),
+            vgal.icon.get_out_to("ammonia"),
+            vgal.icon.get_overlay("to"),
+        },
+        category = "organic",
+        energy_required = 10,
+        technology = "agriculture",
+        ingredients = {
+            { "spoilage", 10 }, -- 100
+        },
+        fluid_results = {
+            { "ammonia", 20 }, -- 40 * 1.5 = 60
+        },
+    },
+    {
+        type = "recipe",
+        name = "iron-bacteria-ammonia",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("iron-bacteria"),
+            vgal.icon.get_out_to("ammonia"),
+            vgal.icon.get_overlay("to"),
+        },
+        category = "organic",
+        energy_required = 20,
+        technology = "bacteria-cultivation",
+        ingredients = {
+            { "iron-bacteria", 4 }, -- 120
+            { "bioflux",       1 }, -- 90
+        },
+        fluid_results = {
+            { "ammonia", 75 }, -- 150 * 1.5 = 225
+        },
+    },
+    {
+        type = "recipe",
+        name = "copper-bacteria-ammonia",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("copper-bacteria"),
+            vgal.icon.get_out_to("ammonia"),
+            vgal.icon.get_overlay("to"),
+        },
+        category = "organic",
+        energy_required = 20,
+        technology = "bacteria-cultivation",
+        ingredients = {
+            { "copper-bacteria", 2 }, -- 60
+            { "bioflux",         1 }, -- 90
+        },
+        fluid_results = {
+            { "ammonia", 50 }, -- 100 * 1.5 = 150
+        },
+    },
 }

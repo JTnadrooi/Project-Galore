@@ -71,7 +71,7 @@ vgal.data.extend
                 "steam",
                 200,
                 {
-                    temperature = 800,
+                    temperature = 800, -- 1 reactor is ~250/s with mods, no bonus
                 },
             },
         },
@@ -330,6 +330,59 @@ vgal.data.extend
         },
         groups = { "unsure" },
     },
+    -- {
+    --     type = "recipe",
+    --     name = "scrap-sulfuric-acid-holmium-solution", --
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("holmium-solution"),
+    --         vgal.icon.get_in_fluid("sulfuric-acid"),
+    --         vgal.icon.get_in_fluid2("scrap"),
+    --     },
+    --     category = "chemistry-or-cryogenics",
+    --     energy_required = 2,
+    --     technology = "holmium-processing",
+    --     fluid_ingredients = {
+    --         { "sulfuric-acid", 400 }, -- 750
+    --     },
+    --     ingredients = {
+    --         { "scrap",   250 }, -- 1250 (250 scrap = 2,5 ore)
+    --         { "calcite", 5 },   -- 115
+    --         { "carbon",  5 },   -- from the solid fuel, or from space
+    --     },
+    --     fluid_results = {
+    --         { "holmium-solution", 250, { probability = 1 } }, -- 2125
+    --         { "steam",            200, { temperature = 500, ignored_by_stats = 200, ignored_by_productivity = 200 } },
+    --     },
+    --     groups = { "unsure" },
+    -- },
+    {
+        type = "recipe",
+        name = "scrap-sulfuric-acid-holmium-solution", --
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("holmium-solution"),
+            vgal.icon.get_in_fluid("scrap"),
+            vgal.icon.get_in_fluid2("sulfuric-acid"),
+        },
+        category = "chemistry",
+        energy_required = 25,
+        technology = "holmium-processing",
+        fluid_ingredients = {
+            { "sulfuric-acid", 200 }, -- 750
+        },
+        ingredients = {
+            { "scrap",   250 }, -- 1250 (250 scrap = 2,5 ore)
+            { "calcite", 1 },   -- 115
+            { "carbon",  5 },   -- <250 from the solid fuel, or from space
+        },
+        fluid_results = {
+            { "holmium-solution", 250, }, -- 2125
+        },
+        groups = { "unsure" },
+        productivity_technology = "scrap-recycling-productivity",
+        show_amount_in_title = false,
+    },
     {
         type = "recipe",
         name = "thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel",
@@ -389,8 +442,8 @@ vgal.data.extend
         energy_required = 10,
         technology = "electromagnetic-plant",
         fluid_ingredients = {
-            { "sulfuric-acid",    40 }, -- 160 (worth way more on fl)
-            { "holmium-solution", 5 },  -- 40
+            { "sulfuric-acid",    40 }, -- 80
+            { "holmium-solution", 10 },  -- 80
         },
         ingredients = {
             { "stone", 1 }, -- 10

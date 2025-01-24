@@ -116,16 +116,16 @@ vgal.data.extend
             { "engine-unit", 1 },
         },
         fluid_results = {
-            { "steam", 10, { temperature = 165 } },
+            { "steam", 10, { temperature = 165, ignored_by_stats = 10, ignored_by_productivity = 10 } },
         },
         groups = { "pressure-casting" },
         category = "metallurgy",
     },
     {
-        name = "800t-steam-robot-frame",
+        name = "800t-steam-flying-robot-frame",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("robot-frame"),
+            vgal.icon.get("flying-robot-frame"),
             vgal.icon.get_in_fluid("steam"),
         },
         energy_required = 15,
@@ -140,37 +140,35 @@ vgal.data.extend
             { "electronic-circuit",   6 },
         },
         results = {
-            { "robot-frame", 1 },
+            { "flying-robot-frame", 1 },
         },
         fluid_results = {
-            { "steam", 10, { temperature = 165 } },
+            { "steam", 10, { temperature = 165, ignored_by_stats = 10, ignored_by_productivity = 10 } },
         },
         groups = { "pressure-casting" },
         category = "metallurgy",
     },
     {
-        name = "800t-steam-robot-frame",
+        name = "molten-iron-rail",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("robot-frame"),
-            vgal.icon.get_in_fluid("steam"),
+            vgal.icon.get("rail"),
+            vgal.icon.get_overlay("casting-iron"),
         },
-        energy_required = 15,
+        energy_required = 2,
         technology = "foundry",
         fluid_ingredients = {
             { "steam",       40, { temperature = 800 } },
-            { "molten-iron", 90 },
+            { "molten-iron", 120 },
         },
         ingredients = {
-            { "battery",              2 },
-            { "electric-engine-unit", 1 },
-            { "electronic-circuit",   6 },
+            { "stone", 3 },
         },
         results = {
-            { "robot-frame", 1 },
+            { "rail", 6 },
         },
         fluid_results = {
-            { "steam", 10, { temperature = 165 } },
+            { "steam", 10, { temperature = 165, ignored_by_stats = 10, ignored_by_productivity = 10 } },
         },
         groups = { "pressure-casting" },
         category = "metallurgy",

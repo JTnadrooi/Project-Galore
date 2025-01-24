@@ -39,7 +39,7 @@ data:extend {
         type = "bool-setting",
         name = "vgal-convoluted-recipes",
         setting_type = "startup",
-        default_value = true,
+        default_value = false,
         order = "af"
     },
     {

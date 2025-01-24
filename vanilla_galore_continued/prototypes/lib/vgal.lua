@@ -34,7 +34,6 @@ vgal.groups = {
     { "rocket-parts",             "alternate-rocket-part" },
     { "alternate-science",        "alternate-science" },
     { "wood-recipes",             "wood-recipe" },
-    { "pressure-casting-recipes", "pressure-casting" },
     { "convoluted-recipes",       "convoluted" },
 
     { "unsure-recipes",           "unsure" },

@@ -109,7 +109,6 @@ vgal.data.extend
         energy_required = 2,
         technology = "foundry",
         fluid_ingredients = {
-            { "steam",       40, { temperature = 800 } },
             { "molten-iron", 120 },
         },
         ingredients = {
@@ -118,10 +117,6 @@ vgal.data.extend
         results = {
             { "rail", 6 },
         },
-        fluid_results = {
-            { "steam", 10, { temperature = 165, ignored_by_stats = 10, ignored_by_productivity = 10 } },
-        },
-        groups = { "pressure-casting" },
         category = "metallurgy",
     },
 }

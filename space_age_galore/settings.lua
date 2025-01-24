@@ -13,12 +13,4 @@ data:extend {
         default_value = true,
         order = "bb"
     },
-
-    {
-        type = "bool-setting",
-        name = "vgal-pressure-casting-recipes",
-        setting_type = "startup",
-        default_value = true,
-        order = "bc"
-    },
 }

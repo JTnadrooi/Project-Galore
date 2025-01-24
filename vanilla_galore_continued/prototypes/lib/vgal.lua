@@ -31,13 +31,15 @@ function vgal.log(toLog)
 end
 
 vgal.groups = {
-    { "rocket-parts",             "alternate-rocket-part" },
-    { "alternate-science",        "alternate-science" },
-    { "wood-recipes",             "wood-recipe" },
-    { "convoluted-recipes",       "convoluted" },
+    { "rocket-parts",       "alternate-rocket-part" },
+    { "alternate-science",  "alternate-science" },
+    { "organic-circuits",   "organic-circuit" },
 
-    { "unsure-recipes",           "unsure" },
-    { "removed-recipes",          "removed" },
+    { "wood-recipes",       "wood-recipe" },
+    { "convoluted-recipes", "convoluted" },
+
+    { "unsure-recipes",     "unsure" },
+    { "removed-recipes",    "removed" },
 }
 
 ---Register a recipe to the vgal (Vanilla Galore - Continued) ecosystem.

@@ -196,7 +196,6 @@ MW as in Mineral Water.
 | petroleum-gas     | 1        |
 | lubricant         | 2        |
 | sulfuric-acid     | 1.5      |
-| sulfuric-acid(fg) | 4        |
 | solid-fuel        | 18       |
 | solid-fuel(aq)    | 10       |
 | rocket-fuel       | 200      |

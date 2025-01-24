@@ -22,27 +22,6 @@ vgal.data.extend
         },
     },
     {
-        type = "recipe",
-        name = "holmium-plate-flying-robot-frame",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("flying-robot-frame"),
-            vgal.icon.get_in("holmium-plate"),
-        },
-        category = "electromagnetics",
-        energy_required = 40,
-        technology = { "holmium-processing", "robotics" },
-        ingredients = {
-            { "electric-engine-unit", 4 }, --
-            { "holmium-plate",        1 }, -- 170
-            { "steel-plate",          4 }, --
-            { "battery",              4 }, --
-        },
-        results = {
-            { "flying-robot-frame", 4 }, --
-        },
-    },
-    {
         name = "tungsten-plate-barrel",
         prefix = "vgal",
         icons = vgal.icon.register {

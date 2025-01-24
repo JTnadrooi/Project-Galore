@@ -11,7 +11,7 @@ vgal.data.extend
         },
         show_amount_in_title = false,
         category = "chemistry-or-cryogenics",
-        energy_required = 4,
+        energy_required = 2,
         technology = "calcite-processing",
         fluid_ingredients = {
             { "sulfuric-acid", 1000 },
@@ -24,8 +24,8 @@ vgal.data.extend
                 "steam",
                 2000,
                 {
-                    temperature = 105,
-                }, -- gl getting rid of this
+                    temperature = 165,
+                },
             },
         },
         results = {
@@ -39,7 +39,6 @@ vgal.data.extend
                 max = 4000,
             }
         },
-        groups = { "unsure" }
     },
     {
         type = "recipe",
@@ -135,7 +134,7 @@ vgal.data.extend
             { "bioflux",      1 }, -- 80
         },
         results = {
-            { "stone", 32 }, -- 320
+            { "stone", 30 }, -- 300
             -- { "spoilage", 2, { show_details_in_recipe_tooltip = false } }, -- 20
         },
         show_amount_in_title = false,
@@ -215,7 +214,6 @@ vgal.data.extend
         results = {
             { "carbon", 1 }, -- 50
         },
-        groups = { "unsure" },
         show_amount_in_title = false,
     },
     {
@@ -284,7 +282,6 @@ vgal.data.extend
         fluid_results = {
             { "holmium-solution", 100 },
         },
-        groups = { "unsure" },
     },
     {
         type = "recipe",
@@ -336,6 +333,14 @@ vgal.data.extend
             { "rocket-fuel", 1 }, -- 200
         },
         groups = { "unsure" },
+        surface_conditions =
+        {
+            {
+                property = "gravity",
+                min = 0,
+                max = 0
+            }
+        },
     },
     {
         type = "recipe",

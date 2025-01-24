@@ -13,4 +13,11 @@ data:extend {
         default_value = true,
         order = "bb"
     },
+    {
+        type = "bool-setting",
+        name = "vgal-organic-circuits",
+        setting_type = "startup",
+        default_value = true,
+        order = "ab"
+    },
 }

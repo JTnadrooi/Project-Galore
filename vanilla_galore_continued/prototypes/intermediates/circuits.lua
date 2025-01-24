@@ -22,6 +22,32 @@ vgal.data.extend
         },
         category = "crafting-with-fluid",
     },
+    -- {
+    --     name = "plastic-bar-electronic-circuit-advanced-circuit-processing-unit",
+    --     prefix = "vgal",
+    --     technology = "processing-unit",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("processing-unit"),
+    --         vgal.icon.get_in("sulfuric-acid", "fluid"),
+    --         vgal.icon.get_out("electronic-circuit"),
+    --         vgal.icon.get_out2("advanced-circuit"),
+    --     },
+    --     energy_required = 1,
+    --     ingredients = {
+    --         { "copper-cable", 10 }, -- 50
+    --         { "plastic-bar",  2 },  -- 30
+    --     },
+    --     fluid_ingredients = {
+    --         { "sulfuric-acid", 10 }, -- 15
+    --     },
+    --     results = {
+    --         { "electronic-circuit", 1, { probability = 0.5, show_details_in_recipe_tooltip = false } }, -- 15
+    --         { "advanced-circuit",   1, { probability = 0.2, show_details_in_recipe_tooltip = false } }, -- 20
+    --         { "processing-unit",    1, { probability = 0.1, show_details_in_recipe_tooltip = false } }, -- 70
+    --     },                                                                                              -- 105
+    --     category = "crafting-with-fluid",
+    --     groups = { "convoluted" },
+    -- },
     {
         name = "wood-electronic-circuit",
         prefix = "vgal",

@@ -100,55 +100,6 @@ vgal.data.extend
         category = "metallurgy",
     },
     {
-        name = "800t-steam-engine-unit",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("engine-unit"),
-            vgal.icon.get_in_fluid("steam"),
-        },
-        energy_required = 6,
-        technology = "foundry",
-        fluid_ingredients = {
-            { "steam",       40, { temperature = 800 } },
-            { "molten-iron", 80 },
-        },
-        results = {
-            { "engine-unit", 1 },
-        },
-        fluid_results = {
-            { "steam", 10, { temperature = 165, ignored_by_stats = 10, ignored_by_productivity = 10 } },
-        },
-        groups = { "pressure-casting" },
-        category = "metallurgy",
-    },
-    {
-        name = "800t-steam-flying-robot-frame",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("flying-robot-frame"),
-            vgal.icon.get_in_fluid("steam"),
-        },
-        energy_required = 15,
-        technology = "foundry",
-        fluid_ingredients = {
-            { "steam",       40, { temperature = 800 } },
-            { "molten-iron", 90 },
-        },
-        ingredients = {
-            { "battery",              2 },
-            { "electric-engine-unit", 1 },
-            { "electronic-circuit",   6 },
-        },
-        results = {
-            { "flying-robot-frame", 1 },
-        },
-        fluid_results = {
-            { "steam", 10, { temperature = 165, ignored_by_stats = 10, ignored_by_productivity = 10 } },
-        },
-        groups = { "pressure-casting" },
-        category = "metallurgy",
-    },
-    {
         name = "molten-iron-rail",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -173,50 +124,4 @@ vgal.data.extend
         groups = { "pressure-casting" },
         category = "metallurgy",
     },
-    -- {
-    --     name = "800t-steam-low-density-structure",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("low-density-structure"),
-    --         vgal.icon.get_in2("steam"),
-    --         vgal.icon.get_overlay("heating"),
-    --     },
-    --     energy_required = 10,
-    --     technology = "foundry",
-    --     ingredients = {
-    --         { "plastic-bar", 4 },
-    --     },
-    --     fluid_ingredients = {
-    --         { "steam",         40, { temperature = 800 } },
-    --         { "molten-iron",   80 },
-    --         { "molten-copper", 250 },
-    --     },
-    --     results = {
-    --         { "low-density-structure", 1 },
-    --     },
-    --     fluid_results = {
-    --         { "steam", 10, { temperature = 165 } },
-    --     },
-    --     groups = { "pressure-casting" },
-    --     category = "metallurgy",
-    -- },
-    -- {
-    --     name = "165t-steam-water",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("water"),
-    --         vgal.icon.get_in_fluid("steam"),
-    --         vgal.icon.get_in_fluid2("heating"),
-    --     },
-    --     energy_required = 1,
-    --     technology = "calcite-processing",
-    --     fluid_ingredients = {
-    --         { "steam", 200, { temperature = 165 } },
-    --     },
-    --     results = {
-    --         { "water", 10 },
-    --     },
-    --     category = "chemistry",
-    --     allow_productivity = false,
-    -- },
 }

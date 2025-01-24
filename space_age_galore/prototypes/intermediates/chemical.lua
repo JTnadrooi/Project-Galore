@@ -43,50 +43,6 @@ vgal.data.extend
     },
     {
         type = "recipe",
-        name = "steam-500t-steam-800t", -- for adv casting
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("steam"),
-            vgal.icon.get_overlay("plus"),
-        },
-        show_amount_in_title = false,
-        category = "chemistry-or-cryogenics",
-        energy_required = 4,
-        technology = "calcite-processing",
-        fluid_ingredients = {
-            {
-                "steam",
-                50,
-                {
-                    temperature = 500,
-                },
-            },
-            { "sulfuric-acid", 200 },
-        },
-        ingredients = {
-            { "calcite", 20 }, -- 200
-        },
-        fluid_results = {
-            {
-                "steam",
-                200,
-                {
-                    temperature = 800, -- 1 reactor is ~250/s with mods, no bonus
-                },
-            },
-        },
-        surface_conditions =
-        {
-            {
-                property = "pressure",
-                min = 4000,
-                max = 4000,
-            }
-        },
-        groups = { "unsure" }
-    },
-    {
-        type = "recipe",
         name = "water-fluoroketone-cold-ice", -- 1 rocket is 5000 fluid, 1r = 500,000 ice, 1r = 10,000,000 water
         prefix = "vgal",
         icons = vgal.icon.register {

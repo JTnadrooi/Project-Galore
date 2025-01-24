@@ -330,32 +330,6 @@ vgal.data.extend
         },
         groups = { "unsure" },
     },
-    -- {
-    --     type = "recipe",
-    --     name = "scrap-sulfuric-acid-holmium-solution", --
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("holmium-solution"),
-    --         vgal.icon.get_in_fluid("sulfuric-acid"),
-    --         vgal.icon.get_in_fluid2("scrap"),
-    --     },
-    --     category = "chemistry-or-cryogenics",
-    --     energy_required = 2,
-    --     technology = "holmium-processing",
-    --     fluid_ingredients = {
-    --         { "sulfuric-acid", 400 }, -- 750
-    --     },
-    --     ingredients = {
-    --         { "scrap",   250 }, -- 1250 (250 scrap = 2,5 ore)
-    --         { "calcite", 5 },   -- 115
-    --         { "carbon",  5 },   -- from the solid fuel, or from space
-    --     },
-    --     fluid_results = {
-    --         { "holmium-solution", 250, { probability = 1 } }, -- 2125
-    --         { "steam",            200, { temperature = 500, ignored_by_stats = 200, ignored_by_productivity = 200 } },
-    --     },
-    --     groups = { "unsure" },
-    -- },
     {
         type = "recipe",
         name = "scrap-sulfuric-acid-holmium-solution", --
@@ -379,7 +353,7 @@ vgal.data.extend
         fluid_results = {
             { "holmium-solution", 250, }, -- 2125
         },
-        groups = { "unsure" },
+        groups = { "unsure", "convoluted" },
         productivity_technology = "scrap-recycling-productivity",
         show_amount_in_title = false,
     },
@@ -409,7 +383,7 @@ vgal.data.extend
     },
     {
         type = "recipe",
-        name = "plastic-bar-electrolyte", -- absolutelly impossible without a better plastic recipe that doesnt use coal
+        name = "plastic-bar-electrolyte",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("electrolyte"),
@@ -419,16 +393,15 @@ vgal.data.extend
         energy_required = 10,
         technology = "electromagnetic-plant",
         fluid_ingredients = {
-            { "light-oil",        40 }, -- 80 (worth more on fl)
-            { "holmium-solution", 10 }, -- 80
+            { "light-oil",        40 },
+            { "holmium-solution", 10 },
         },
         ingredients = {
-            { "plastic-bar", 2 }, -- 30
+            { "plastic-bar", 2 },
         },
         fluid_results = {
-            { "electrolyte", 20 }, -- 200
+            { "electrolyte", 20 },
         },
-        groups = { "unsure" }
     },
     {
         type = "recipe",
@@ -443,7 +416,7 @@ vgal.data.extend
         technology = "electromagnetic-plant",
         fluid_ingredients = {
             { "sulfuric-acid",    40 }, -- 80
-            { "holmium-solution", 10 },  -- 80
+            { "holmium-solution", 10 }, -- 80
         },
         ingredients = {
             { "stone", 1 }, -- 10

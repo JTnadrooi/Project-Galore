@@ -71,7 +71,7 @@ vgal.data.extend
         technology = "tungsten-steel",
         ingredients = {
             { "tungsten-plate",  1 }, -- 90
-            { "iron-gear-wheel", 4 }, -- 40
+            { "iron-gear-wheel", 2 }, -- 20
             { "iron-plate",      2 }, -- 20
         },
         results = {

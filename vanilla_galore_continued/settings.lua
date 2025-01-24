@@ -37,16 +37,23 @@ data:extend {
     },
     {
         type = "bool-setting",
+        name = "vgal-convoluted-recipes",
+        setting_type = "startup",
+        default_value = true,
+        order = "af"
+    },
+    {
+        type = "bool-setting",
         name = "vgal-unsure-recipes",
         setting_type = "startup",
         default_value = false,
-        order = "af"
+        order = "aza"
     },
     {
         type = "bool-setting",
         name = "vgal-removed-recipes",
         setting_type = "startup",
         default_value = false,
-        order = "ag"
+        order = "azb"
     },
 }

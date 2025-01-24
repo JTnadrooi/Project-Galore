@@ -35,6 +35,7 @@ vgal.groups = {
     { "alternate-science",        "alternate-science" },
     { "wood-recipes",             "wood-recipe" },
     { "pressure-casting-recipes", "pressure-casting" },
+    { "convoluted-recipes",       "convoluted" },
 
     { "unsure-recipes",           "unsure" },
     { "removed-recipes",          "removed" },
@@ -159,11 +160,7 @@ function vgal.data.extend(recipes)
 
         vgal.log("registering: " .. recipe.name)
 
-        data:extend(
-            {
-                recipe
-            }
-        )
+        data:extend { recipe }
 
         if recipe.technologies then
             if type(recipe.technologies[1]) == "table" then

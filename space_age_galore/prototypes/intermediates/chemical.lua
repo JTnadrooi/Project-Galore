@@ -127,7 +127,7 @@ vgal.data.extend
             vgal.icon.get_overlay("to"),
         },
         category = "organic",
-        energy_required = 15,
+        energy_required = 45,
         technology = "biochamber",
         ingredients = {
             { "pentapod-egg", 1 }, -- 300

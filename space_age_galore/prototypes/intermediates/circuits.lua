@@ -38,7 +38,7 @@ vgal.data.extend
             { "plastic-bar", 1 }, -- 15
         },
         results = {
-            { "electronic-circuit", 1 } -- 25 * 1.5 =
+            { "electronic-circuit", 1 } -- 25 * 1.5 = 37.5
         },
         groups = { "organic-circuit" }
     },
@@ -52,17 +52,17 @@ vgal.data.extend
             vgal.icon.get_in2("ammonia"),
         },
         category = "organic",
-        energy_required = 0.6,
+        energy_required = 1.2,
         technology = "biochamber",
         fluid_ingredients = {
             { "ammonia", 5 }, -- 10
         },
         ingredients = {
             { "jelly",       1 }, -- 8
-            { "plastic-bar", 1 }, -- 15
+            { "plastic-bar", 2 }, -- 30
         },
         results = {
-            { "electronic-circuit", 1 } -- 25 * 1.5 =
+            { "electronic-circuit", 2 } -- 50 * 1.5 = 75
         },
         groups = { "organic-circuit" }
     },
@@ -112,52 +112,52 @@ vgal.data.extend
         },
         groups = { "organic-circuit" }
     },
-    {
-        type = "recipe",
-        name = "bioflux-processing-unit",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("processing-unit"),
-            vgal.icon.get_in("bioflux"),
-        },
-        category = "organic",
-        energy_required = 24,
-        technology = "bioflux-processing",
-        fluid_ingredients = {
-            { "sulfuric-acid", 10 }, -- 20
-        },
-        ingredients = {
-            { "bioflux",          6 }, -- 540
-            { "advanced-circuit", 2 }, -- 200
-        },
-        results = {
-            { "processing-unit", 1 } -- 710 * 1.5 = ~1000
-        },
-        groups = { "organic-circuit" }
-    },
-    {
-        type = "recipe",
-        name = "bioflux-ammonia-processing-unit",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("processing-unit"),
-            vgal.icon.get_in("bioflux"),
-            vgal.icon.get_in2("ammonia"),
-        },
-        category = "organic",
-        energy_required = 20,
-        technology = "bioflux-processing",
-        fluid_ingredients = {
-            { "ammonia", 15 }, -- 30
-        },
-        ingredients = {
-            { "jelly",            4 }, -- 32
-            { "bioflux",          4 }, -- 360
-            { "advanced-circuit", 2 }, -- 200
-        },
-        results = {
-            { "processing-unit", 1 } -- 710 * 1.5 = ~1000
-        },
-        groups = { "organic-circuit", "unsure" },
-    },
+    -- {
+    --     type = "recipe",
+    --     name = "bioflux-processing-unit",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("processing-unit"),
+    --         vgal.icon.get_in("bioflux"),
+    --     },
+    --     category = "organic",
+    --     energy_required = 24,
+    --     technology = "bioflux-processing",
+    --     fluid_ingredients = {
+    --         { "sulfuric-acid", 10 }, -- 20
+    --     },
+    --     ingredients = {
+    --         { "bioflux",          6 }, -- 540
+    --         { "advanced-circuit", 2 }, -- 200
+    --     },
+    --     results = {
+    --         { "processing-unit", 1 } -- 710 * 1.5 = ~1000
+    --     },
+    --     groups = { "organic-circuit", "unsure" }
+    -- },
+    -- {
+    --     type = "recipe",
+    --     name = "bioflux-ammonia-processing-unit",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("processing-unit"),
+    --         vgal.icon.get_in("bioflux"),
+    --         vgal.icon.get_in2("ammonia"),
+    --     },
+    --     category = "organic",
+    --     energy_required = 20,
+    --     technology = "bioflux-processing",
+    --     fluid_ingredients = {
+    --         { "ammonia", 15 }, -- 30
+    --     },
+    --     ingredients = {
+    --         { "jelly",            4 }, -- 32
+    --         { "bioflux",          4 }, -- 360
+    --         { "advanced-circuit", 2 }, -- 200
+    --     },
+    --     results = {
+    --         { "processing-unit", 1 } -- 710 * 1.5 = ~1000
+    --     },
+    --     groups = { "organic-circuit", "unsure" },
+    -- },
 }

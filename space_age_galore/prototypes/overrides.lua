@@ -31,3 +31,9 @@ vgal.recipe.override_iron("burnt-spoilage", vgal.icon.register({
     vgal.icon.get("carbon"),
     vgal.icon.get_in("spoilage"),
 }))
+
+if settings.startup["vgal-ammonia-temp-override"] then
+    data.raw["fluid"]["ammonia"].default_temperature = 15
+    data.raw["fluid"]["ammonia"].max_temperature = 450
+    data.raw["fluid"]["ammonia"].gas_temperature = -33
+end

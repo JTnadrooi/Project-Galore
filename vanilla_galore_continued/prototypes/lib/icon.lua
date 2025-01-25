@@ -23,7 +23,7 @@
 -- end
 
 local function get_icon_item(keyName, iconSource)
-    return vgal.any(keyName)
+    return vgal.any(keyName, )
 end
 
 local function get_icon_size(object)
@@ -232,6 +232,22 @@ end
 
 function vgal.icon.get_out3(keyName, iconSource)
     return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "out3")
+end
+
+function vgal.icon.get_bg(keyName, iconSource)
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 1, { 0, 1.2 })
+end
+
+function vgal.icon.get_none()
+    return vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/none.png")
+end
+
+function vgal.icon.get_in_bg(keyName, iconSource)
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.30, { -7, -7 })
+end
+
+function vgal.icon.get_in_bg2(keyName, iconSource)
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.30, { 7, -7 })
 end
 
 function vgal.icon.get_icon_target(icon, trim)

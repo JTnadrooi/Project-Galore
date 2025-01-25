@@ -15,6 +15,14 @@ data:extend {
     },
     {
         type = "bool-setting",
+        name = "vgal-ammonia-temp-override",
+        setting_type = "startup",
+        default_value = true,
+        order = "bc"
+    },
+
+    {
+        type = "bool-setting",
         name = "vgal-organic-circuits",
         setting_type = "startup",
         default_value = true,

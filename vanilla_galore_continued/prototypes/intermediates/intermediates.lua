@@ -181,7 +181,7 @@ vgal.data.extend
         },
         technology = { "nuclear-power", "low-density-structure" },
         ingredients = {
-            { "low-density-structure", 1 },
+            { "low-density-structure", 2 },
             { "uranium-235",           1 },
             { "uranium-238",           30 },
         },

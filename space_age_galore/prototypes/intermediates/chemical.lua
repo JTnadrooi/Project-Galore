@@ -399,7 +399,7 @@ vgal.data.extend
             vgal.icon.get_overlay("to"),
         },
         category = "organic",
-        energy_required = 15,
+        energy_required = 6,
         technology = "bacteria-cultivation",
         ingredients = {
             { "iron-bacteria", 4 }, -- 120
@@ -419,7 +419,7 @@ vgal.data.extend
             vgal.icon.get_overlay("to"),
         },
         category = "organic",
-        energy_required = 10,
+        energy_required = 4,
         technology = "bacteria-cultivation",
         ingredients = {
             { "copper-bacteria", 2 }, -- 60

@@ -90,11 +90,11 @@ vgal.data.extend
         energy_required = 0.8,
         technology = "calcite-processing",
         ingredients = {
-            { "stone", 1 },
+            { "stone", 5 },
         },
         results = {
             { "stone",   1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
-            { "calcite", 1, { probability = 0.005, show_details_in_recipe_tooltip = false } },
+            { "calcite", 1, { probability = 0.12, show_details_in_recipe_tooltip = false } }, -- 42 stone = 1 calcite,  
         },
         category = "crushing",
         subgroup = "vgal-crushing"
@@ -109,12 +109,12 @@ vgal.data.extend
         energy_required = 0.8,
         technology = "space-platform",
         ingredients = {
-            { "coal", 1 },
+            { "coal", 5 },
         },
         results = {
             { "coal",   1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
-            { "carbon", 1, { probability = 0.05, show_details_in_recipe_tooltip = false } },
-            { "sulfur", 1, { probability = 0.02, show_details_in_recipe_tooltip = false } },
+            { "carbon", 1, { probability = 0.25, show_details_in_recipe_tooltip = false } },
+            { "sulfur", 1, { probability = 0.5, show_details_in_recipe_tooltip = false } },
         },
         category = "crushing",
         subgroup = "vgal-crushing"

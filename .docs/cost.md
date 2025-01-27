@@ -101,6 +101,7 @@ MW as in Mineral Water.
 | heat-pipe                | 700      |
 | heat-exchanger           | 1600     |
 | burner-mining-drill      | 140      |
+| electric-mining-drill    | 275      |
 | power-plant              | 3900     |
 | centrifuge               | 15700    |
 | pipe                     | 10       |

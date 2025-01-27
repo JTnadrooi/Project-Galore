@@ -23,7 +23,7 @@
 -- end
 
 local function get_icon_item(keyName, iconSource)
-    return vgal.any(keyName, )
+    return vgal.any(keyName)
 end
 
 local function get_icon_size(object)

@@ -201,6 +201,45 @@ vgal.data.extend {
         },
         category = "metallurgy",
     },
+    {
+        name = "tungsten-carbide-electric-mining-drill",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("electric-mining-drill"),
+            vgal.icon.get_in("tungsten-carbide"),
+        },
+        energy_required = 2,
+        technology = "tungsten-steel",
+        fluid_ingredients = {
+            { "molten-iron", 200 }, -- 200
+        },
+        ingredients = {
+            { "tungsten-carbide",   1 }, -- 100
+            { "electronic-circuit", 4 }, -- 100
+        },
+        results = {
+            { "electric-mining-drill", 1 }, -- 275 * 1.5 =
+        },
+        category = "metallurgy",
+    },
+    {
+        name = "molten-iron-molten-copper-space-platform-foundation",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("space-platform-foundation"),
+            vgal.icon.get_overlay("casting-iron"),
+        },
+        energy_required = 12,
+        technology = "foundry",
+        fluid_ingredients = {
+            { "molten-iron",   1000 }, -- 200
+            { "molten-copper", 100 },  -- 200
+        },
+        results = {
+            { "space-platform-foundation", 1 }, -- 275 * 1.5 =
+        },
+        category = "metallurgy",
+    },
     -- {
     --     name = "tungsten-carbide-power-plant",
     --     prefix = "vgal",

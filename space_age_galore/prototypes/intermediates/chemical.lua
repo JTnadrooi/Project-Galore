@@ -155,7 +155,7 @@ vgal.data.extend
         energy_required = 8,
         technology = "biochamber",
         ingredients = {
-            { "wood", 2 },
+            { "wood", 5 },
         },
         results = {
             { "carbon", 1 }, -- 50
@@ -323,7 +323,7 @@ vgal.data.extend
             vgal.icon.get_in2("thruster-oxidizer"),
         },
         category = "chemistry-or-cryogenics",
-        energy_required = 15,
+        energy_required = 6,
         technology = "space-platform-thruster",
         fluid_ingredients = {
             { "thruster-oxidizer", 100 }, -- 200

@@ -118,5 +118,28 @@ vgal.data.extend
             { "rail", 6 },
         },
         category = "metallurgy",
+        subgroup = "vulcanus-processes",
+    },
+    {
+        name = "molten-iron-refined-concrete",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("refined-concrete"),
+            vgal.icon.get_overlay("casting-iron"),
+        },
+        energy_required = 15,
+        technology = "foundry",
+        fluid_ingredients = {
+            { "molten-iron", 100 },
+            { "water",       100 },
+        },
+        ingredients = {
+            { "concrete", 20 },
+        },
+        results = {
+            { "refined-concrete", 10 },
+        },
+        category = "metallurgy",
+        subgroup = "vulcanus-processes",
     },
 }

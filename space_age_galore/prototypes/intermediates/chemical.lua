@@ -403,11 +403,12 @@ vgal.data.extend
         technology = "bacteria-cultivation",
         ingredients = {
             { "iron-bacteria", 4 }, -- 120
-            { "bioflux",       1 }, -- 90
+            { "nutrients",       10 }, -- 100
         },
         fluid_results = {
             { "ammonia", 80 }, -- 150 * 1.5 = 225
         },
+        show_amount_in_title = false,
     },
     {
         type = "recipe",
@@ -423,10 +424,11 @@ vgal.data.extend
         technology = "bacteria-cultivation",
         ingredients = {
             { "copper-bacteria", 2 }, -- 60
-            { "bioflux",         1 }, -- 90
+            { "nutrients",       8 },   -- 80
         },
         fluid_results = {
             { "ammonia", 50 }, -- 100 * 1.5 = 150
         },
+        show_amount_in_title = false,
     },
 }

@@ -69,5 +69,6 @@ vgal.data.extend {
         results = {
             { "burner-inserter", 4 }, -- 120
         },
+        groups = {"convoluted"},
     },
 }

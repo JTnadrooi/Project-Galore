@@ -28,16 +28,16 @@ vgal.data.extend
             vgal.icon.get("barrel"),
             vgal.icon.get_in("tungsten-plate"),
         },
-        energy_required = 5,
+        energy_required = 2,
         technology = "tungsten-steel",
         ingredients = {
-            { "tungsten-plate", 1 }, -- 90
-            { "iron-plate",     4 }, -- 40
+            { "tungsten-plate", 1 }, -- 80
+            { "iron-plate",     2 }, -- 20
         },
         results = {
-            { "barrel", 4 }, -- 200
+            { "barrel", 2 }, -- 100
         },
-        category = "crafting",
+        category = "pressing",
     },
     {
         name = "tungsten-plate-engine-unit",
@@ -56,7 +56,7 @@ vgal.data.extend
         results = {
             { "engine-unit", 2 }, -- 180
         },
-        category = "crafting",
+        category = "pressing",
     },
     -- {
     --     name = "scrap-crushing",
@@ -94,7 +94,7 @@ vgal.data.extend
         },
         results = {
             { "stone",   1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
-            { "calcite", 1, { probability = 0.12, show_details_in_recipe_tooltip = false } }, -- 42 stone = 1 calcite,  
+            { "calcite", 1, { probability = 0.12, show_details_in_recipe_tooltip = false } }, -- 42 stone = 1 calcite,
         },
         category = "crushing",
         subgroup = "vgal-crushing"

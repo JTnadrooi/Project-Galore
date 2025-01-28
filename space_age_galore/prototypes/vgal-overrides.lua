@@ -1,7 +1,7 @@
 local function vgal_electroplantify(recipeName)
     recipeName = "vgal-" .. recipeName
     if data.raw["recipe"][recipeName] then
-        data.raw["recipe"][recipeName].category = "electronics-or-assembling"
+        data.raw["recipe"][recipeName].category = "electronics"
     else
         error(recipeName)
     end
@@ -22,6 +22,14 @@ local function vgal_cryogenify(recipeName)
         error(recipeName)
     end
 end
+local function vgal_organicify(recipeName)
+    recipeName = "vgal-" .. recipeName
+    if data.raw["recipe"][recipeName] then
+        data.raw["recipe"][recipeName].category = "organic-or-assembling"
+    else
+        error(recipeName)
+    end
+end
 
 data.raw.recipe["vgal-flying-robot-frame-rocket-part"].ingredients = vgal.build.table({
     { "flying-robot-frame", 1 }, -- 405
@@ -33,7 +41,9 @@ data.raw.recipe["vgal-engine-unit-rocket-part"].ingredients = vgal.build.table({
     { "rocket-fuel",     2 }, -- 220
     { "processing-unit", 1 }, -- 710
 })
+if data.raw.recipe["vgal-heavy-oil-rocket-fuel"] then
 data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
+end
 vgal.data.trim("vgal-solar-panel-rocket-part")
 vgal.data.trim("vgal-uranium-fuel-cell-rocket-part")
 vgal.data.trim("vgal-processing-unit-artillery-turret")
@@ -51,7 +61,10 @@ vgal_electroplantify("steel-plate-accumulator")
 vgal_cryogenify("copper-cable-plastic-bar")
 vgal_cryogenify("copper-cable-battery")
 
+vgal_organicify("petroleum-gas-rocket-fuel")
+
 data.raw["recipe"]["vgal-low-density-structure-engine-unit"].category = "pressing"
+data.raw["recipe"]["vgal-low-density-structure-barrel"].category = "pressing"
 
 local valid_suffixes = {
     "transport-belt",

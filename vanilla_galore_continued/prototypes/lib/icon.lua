@@ -77,6 +77,19 @@ function vgal.icon.get_from_path(path, args)
 end
 
 function vgal.icon.get(keyName, iconSource)
+    if iconSource == "recipe" then
+        local recipe = data.raw["recipe"][keyName]
+        if recipe.icon then
+            return {
+                {
+                    icon = recipe.icon,
+                    icon_size = recipe.icon_size,
+                }
+            }
+        else
+            return recipe.icons
+        end
+    end
     if iconSource == "raw" then
         if keyName == "angels_sorting" then
             return {

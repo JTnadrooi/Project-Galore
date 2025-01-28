@@ -9,6 +9,7 @@ MW as in Mineral Water.
 | (X)  | aq(aquilo), fu, sp, gb, ~(average of all environments), |
 | null | null                                                    |
 | \*   | see notes.                                              |
+| d    | the value you see is with prod bonus.                   |
 
 ## Basic Resources
 
@@ -52,8 +53,8 @@ MW as in Mineral Water.
 | plastic-bar           | 15       |
 | plastic-bar(gb)       | 40       |
 | carbon                | 50       |
-| tungsten-carbide      | 100      |
-| tungsten-plate        | 90       |
+| tungsten-carbide      | d60      |
+| tungsten-plate        | d80      |
 | molten-iron           | 1        |
 | molten-copper         | 1        |
 | ice(fu)               | 100      |
@@ -89,6 +90,7 @@ MW as in Mineral Water.
 | stone-furnace            | 50       |
 | steel-furnace            | 500      |
 | electric-furnace         | 1200     |
+| electric-engine-unit     | 170      |
 | oil-refinery             | 1500     |
 | solar-panel              | 675      |
 | beacon                   | 3050     |
@@ -102,6 +104,7 @@ MW as in Mineral Water.
 | heat-exchanger           | 1600     |
 | burner-mining-drill      | 140      |
 | electric-mining-drill    | 275      |
+| big-mining-drill         | d2733    |
 | power-plant              | 3900     |
 | centrifuge               | 15700    |
 | pipe                     | 10       |

@@ -11,7 +11,14 @@ data:extend {
         name = "vgal-always-show-products",
         setting_type = "startup",
         default_value = true,
-        order = "a"
+        order = "aa"
+    },
+    {
+        type = "bool-setting",
+        name = "vgal-always-show-made-in",
+        setting_type = "startup",
+        default_value = true,
+        order = "aab"
     },
 
     {

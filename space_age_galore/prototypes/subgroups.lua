@@ -36,9 +36,15 @@ local subgroups = {
         entries = { "heavy-oil", "light-oil", "petroleum-gas", "crude-oil" }
     },
     {
-        name = "molten-metals",
+        name = "intermediate-casting",
         tab = "intermediate-products",
         order = "ka",
+        entries = {}
+    },
+    {
+        name = "molten-metals",
+        tab = "intermediate-products",
+        order = "kb",
         entries = { "molten-iron", "molten-copper", "lava" }
     },
 }
@@ -108,6 +114,13 @@ vgal.subgroup.set_item_or_fluid("holmium-plate", "vgal-smelting")
 
 vgal.subgroup.set_item_or_fluid("tungsten-plate", "vgal-smelting")
 vgal.subgroup.set_item_or_fluid("tungsten-carbide", "vgal-chemistry-products")
+
+data.raw["recipe"]["casting-iron"].subgroup = "vgal-intermediate-casting"
+data.raw["recipe"]["casting-copper"].subgroup = "vgal-intermediate-casting"
+data.raw["recipe"]["casting-steel"].subgroup = "vgal-intermediate-casting"
+data.raw["recipe"]["casting-iron-gear-wheel"].subgroup = "vgal-intermediate-casting"
+data.raw["recipe"]["casting-iron-stick"].subgroup = "vgal-intermediate-casting"
+data.raw["recipe"]["casting-copper-cable"].subgroup = "vgal-intermediate-casting"
 
 data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"
 data.raw["recipe"]["carbonic-asteroid-crushing"].subgroup = "vgal-crushing"

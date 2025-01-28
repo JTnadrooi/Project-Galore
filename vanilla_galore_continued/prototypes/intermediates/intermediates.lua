@@ -62,15 +62,12 @@ vgal.data.extend
             vgal.icon.get("barrel"),
             vgal.icon.get_in("low-density-structure"),
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
         energy_required = 15,
         technology = "low-density-structure",
         ingredients = {
             { "iron-plate",            15 },
             { "low-density-structure", 1 },
-        },
-        fluid_ingredients = {
-            { "sulfuric-acid", 5 },
         },
         results = {
             { "barrel", 15 },
@@ -210,33 +207,6 @@ vgal.data.extend
         },
         results = {
             { "rocket-fuel", 1 },
-        },
-        energy_required = 15,
-        category = "crafting-with-fluid",
-    },
-    {
-        name = "heavy-oil-rocket-fuel",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("rocket-fuel"),
-            vgal.icon.get_in("heavy-oil", "fluid"),
-        },
-        technology = "rocket-fuel",
-        ingredients = {
-            { "solid-fuel", 8 },
-        },
-        fluid_ingredients = {
-            { "heavy-oil", 50 },
-        },
-        results = {
-            { "rocket-fuel", 1 },
-            {
-                "coal",
-                1,
-                {
-                    probability = 0.25,
-                },
-            },
         },
         energy_required = 15,
         category = "crafting-with-fluid",

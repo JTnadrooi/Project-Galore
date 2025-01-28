@@ -1,7 +1,7 @@
 data:extend {
     {
         type = "bool-setting",
-        name = "vgal-allow-ice-productivity",
+        name = "vgal-disable-ice-productivity",
         setting_type = "startup",
         default_value = false,
         order = "ba"

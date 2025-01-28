@@ -18,6 +18,7 @@ vgal.data.extend
         results = {
             { "steel-plate", 2 } -- 100
         },
+        groups = { "unsure" },
     },
     {
         type = "recipe",
@@ -59,46 +60,46 @@ vgal.data.extend
             { "molten-copper", 400 },
         },
     },
-    {
-        name = "metallic-asteroid-chunk-lava",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("lava"),
-            vgal.icon.get_in_fluid("metallic-asteroid-chunk"),
-            vgal.icon.get_in_fluid2("calcite"),
-        },
-        energy_required = 4,
-        technology = "foundry",
-        ingredients = {
-            { "metallic-asteroid-chunk", 1 },
-            { "calcite",                 1 },
-        },
-        fluid_results = {
-            { "lava", 200 }, -- 100 molten = 10 ore (exluded the prod)
-        },
-        category = "metallurgy",
-    },
-    {
-        name = "metallic-asteroid-chunk-molten-iron-molten-copper",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("metallic-asteroid-chunk"),
-            vgal.icon.get_out("molten-copper"),
-            vgal.icon.get_out2("molten-iron"),
-            vgal.icon.get_in_fluid("calcite"),
-        },
-        energy_required = 6,
-        technology = "foundry",
-        ingredients = {
-            { "metallic-asteroid-chunk", 1 },
-            { "calcite",                 2 },
-        },
-        fluid_results = {
-            { "molten-copper", 30 },
-            { "molten-iron",   80 },
-        },
-        category = "metallurgy",
-    },
+    -- {
+    --     name = "metallic-asteroid-chunk-lava",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("lava"),
+    --         vgal.icon.get_in_fluid("metallic-asteroid-chunk"),
+    --         vgal.icon.get_in_fluid2("calcite"),
+    --     },
+    --     energy_required = 4,
+    --     technology = "foundry",
+    --     ingredients = {
+    --         { "metallic-asteroid-chunk", 1 },
+    --         { "calcite",                 1 },
+    --     },
+    --     fluid_results = {
+    --         { "lava", 200 }, -- 100 molten = 10 ore (exluded the prod)
+    --     },
+    --     category = "metallurgy",
+    -- },
+    -- {
+    --     name = "metallic-asteroid-chunk-molten-iron-molten-copper",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("metallic-asteroid-chunk"),
+    --         vgal.icon.get_out("molten-copper"),
+    --         vgal.icon.get_out2("molten-iron"),
+    --         vgal.icon.get_in_fluid("calcite"),
+    --     },
+    --     energy_required = 6,
+    --     technology = "foundry",
+    --     ingredients = {
+    --         { "metallic-asteroid-chunk", 1 },
+    --         { "calcite",                 2 },
+    --     },
+    --     fluid_results = {
+    --         { "molten-copper", 30 },
+    --         { "molten-iron",   80 },
+    --     },
+    --     category = "metallurgy",
+    -- },
     {
         name = "molten-iron-rail",
         prefix = "vgal",
@@ -109,13 +110,13 @@ vgal.data.extend
         energy_required = 2,
         technology = "foundry",
         fluid_ingredients = {
-            { "molten-iron", 120 },
+            { "molten-iron", 220 },
         },
         ingredients = {
             { "stone", 3 },
         },
         results = {
-            { "rail", 6 },
+            { "rail", 6 }, -- 165molten iron
         },
         category = "metallurgy",
         subgroup = "vulcanus-processes",
@@ -141,5 +142,28 @@ vgal.data.extend
         },
         category = "metallurgy",
         subgroup = "vulcanus-processes",
+    },
+    {
+        name = "molten-iron-molten-copper-uranium-238-low-density-structure",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("casting-low-density-structure", "recipe"),
+            vgal.icon.get_in("uranium-238"),
+        },
+        energy_required = 15,
+        technology = {"foundry", "uranium-processing"},
+        fluid_ingredients = {
+            { "molten-copper", 150 },
+            { "molten-iron",   80 },
+        },
+        ingredients = {
+            { "uranium-238", 1 },
+        },
+        results = {
+            { "low-density-structure", 1 },
+        },
+        category = "metallurgy",
+        subgroup = "vulcanus-processes",
+        order = "b-f-a",
     },
 }

@@ -175,6 +175,34 @@ vgal.data.extend
         },
         groups = { "removed" },
     },
+    {
+        name = "heavy-oil-rocket-fuel",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("rocket-fuel"),
+            vgal.icon.get_in("heavy-oil", "fluid"),
+        },
+        technology = "rocket-fuel",
+        ingredients = {
+            { "solid-fuel", 8 },
+        },
+        fluid_ingredients = {
+            { "heavy-oil", 50 },
+        },
+        results = {
+            { "rocket-fuel", 1 },
+            {
+                "coal",
+                1,
+                {
+                    probability = 0.25,
+                },
+            },
+        },
+        energy_required = 15,
+        category = "crafting-with-fluid",
+        groups = { "removed" },
+    },
 }
 
 -- analog circuits have been removed for being to far fetched and unbalanced.

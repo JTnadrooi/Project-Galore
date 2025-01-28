@@ -1,8 +1,8 @@
 -- doesnt override any base recipes dont worry
-data.raw["recipe"]["copper-bacteria"].surface_conditions = nil
-data.raw["recipe"]["copper-bacteria-cultivation"].surface_conditions = nil
-data.raw["recipe"]["iron-bacteria"].surface_conditions = nil
-data.raw["recipe"]["iron-bacteria-cultivation"].surface_conditions = nil
+-- data.raw["recipe"]["copper-bacteria"].surface_conditions = nil
+-- data.raw["recipe"]["copper-bacteria-cultivation"].surface_conditions = nil
+-- data.raw["recipe"]["iron-bacteria"].surface_conditions = nil
+-- data.raw["recipe"]["iron-bacteria-cultivation"].surface_conditions = nil
 
 local function auto_barrel(fluidName)
     data.raw["fluid"][fluidName].auto_barrel = true
@@ -36,4 +36,8 @@ if settings.startup["vgal-ammonia-temp-override"] then
     data.raw["fluid"]["ammonia"].default_temperature = 15
     data.raw["fluid"]["ammonia"].max_temperature = 450
     data.raw["fluid"]["ammonia"].gas_temperature = -33
+end
+
+if settings.startup["vgal-disable-ice-productivity"].value == true then
+    data.raw["recipe"]["ice-melting"].allow_productivity = false
 end

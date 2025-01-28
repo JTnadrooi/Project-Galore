@@ -40,7 +40,15 @@ vgal.data.extend
         results = {
             { "electronic-circuit", 1 } -- 25 * 1.5 = 37.5
         },
-        groups = { "organic-circuit" }
+        groups = { "organic-circuit" },
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000
+            }
+        },
     },
     {
         type = "recipe",
@@ -64,54 +72,78 @@ vgal.data.extend
         results = {
             { "electronic-circuit", 2 } -- 50 * 1.5 = 75
         },
-        groups = { "organic-circuit" }
+        groups = { "organic-circuit" },
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000
+            }
+        },
     },
-    {
-        type = "recipe",
-        name = "yumako-mash-advanced-circuit",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("advanced-circuit"),
-            vgal.icon.get_in("yumako-mash"),
-        },
-        category = "organic",
-        energy_required = 12,
-        technology = "biochamber",
-        ingredients = {
-            { "yumako-mash",        2 }, -- 30
-            { "plastic-bar",        2 }, -- 30
-            { "electronic-circuit", 2 }, -- 50
-        },
-        results = {
-            { "advanced-circuit", 1 } -- 100 * 1.5 = 150
-        },
-        groups = { "organic-circuit" }
-    },
-    {
-        type = "recipe",
-        name = "yumako-mash-ammonia-advanced-circuit",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("advanced-circuit"),
-            vgal.icon.get_in("yumako-mash"),
-            vgal.icon.get_in2("ammonia"),
-        },
-        category = "organic",
-        energy_required = 8,
-        technology = "biochamber",
-        fluid_ingredients = {
-            { "ammonia", 15 }, -- 30
-        },
-        ingredients = {
-            { "yumako-mash",        1 }, -- 15
-            { "plastic-bar",        2 }, -- 30
-            { "electronic-circuit", 1 }, -- 25
-        },
-        results = {
-            { "advanced-circuit", 1 } -- 100 * 1.5 = 150
-        },
-        groups = { "organic-circuit" }
-    },
+    -- {
+    --     type = "recipe",
+    --     name = "yumako-mash-advanced-circuit",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("advanced-circuit"),
+    --         vgal.icon.get_in("yumako-mash"),
+    --     },
+    --     category = "organic",
+    --     energy_required = 12,
+    --     technology = "biochamber",
+    --     ingredients = {
+    --         { "yumako-mash",        2 }, -- 30
+    --         { "plastic-bar",        2 }, -- 30
+    --         { "electronic-circuit", 2 }, -- 50
+    --     },
+    --     results = {
+    --         { "advanced-circuit", 1 } -- 100 * 1.5 = 150
+    --     },
+    --     groups = { "organic-circuit", "unsure" },
+    --     surface_conditions =
+    --     {
+    --         {
+    --             property = "pressure",
+    --             min = 2000,
+    --             max = 2000
+    --         }
+    --     },
+    -- },
+    -- {
+    --     type = "recipe",
+    --     name = "yumako-mash-ammonia-advanced-circuit",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("advanced-circuit"),
+    --         vgal.icon.get_in("yumako-mash"),
+    --         vgal.icon.get_in2("ammonia"),
+    --     },
+    --     category = "organic",
+    --     energy_required = 8,
+    --     technology = "biochamber",
+    --     fluid_ingredients = {
+    --         { "ammonia", 5 }, -- 10
+    --     },
+    --     ingredients = {
+    --         { "yumako-mash",        1 }, -- 15
+    --         { "plastic-bar",        2 }, -- 30
+    --         { "electronic-circuit", 1 }, -- 25
+    --     },
+    --     results = {
+    --         { "advanced-circuit", 1 } -- 100 * 1.5 = 150
+    --     },
+    --     groups = { "organic-circuit", "unsure" },
+    --     surface_conditions =
+    --     {
+    --         {
+    --             property = "pressure",
+    --             min = 2000,
+    --             max = 2000
+    --         }
+    --     },
+    -- },
     -- {
     --     type = "recipe",
     --     name = "bioflux-processing-unit",

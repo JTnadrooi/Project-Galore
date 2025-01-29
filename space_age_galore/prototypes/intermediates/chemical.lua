@@ -103,10 +103,10 @@ vgal.data.extend
         energy_required = 8,
         technology = "biochamber",
         ingredients = {
-            { "wood", 5 },
+            { "wood", 6 },
         },
         results = {
-            { "carbon", 1 }, -- 50
+            { "carbon", 1 }, -- 50 * 1.5 = 75
         },
         fluid_results = {
             { "water", 10 },
@@ -354,7 +354,7 @@ vgal.data.extend
             { "nutrients",       10 }, -- 100
         },
         fluid_results = {
-            { "ammonia", 80 }, -- 150 * 1.5 = 225
+            { "ammonia", 80 }, -- 160 * 1.5 = 240
         },
         show_amount_in_title = false,
     },

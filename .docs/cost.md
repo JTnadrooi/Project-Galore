@@ -10,6 +10,7 @@ MW as in Mineral Water.
 | null | null                                                    |
 | \*   | see notes.                                              |
 | d    | the value you see is with prod bonus.                   |
+| !!   | pending recalc.                                         |
 
 ## Basic Resources
 
@@ -219,9 +220,9 @@ MW as in Mineral Water.
 | bioflux       | 80       |
 | nutrients     | 10       |
 | raw-fish      | 900      |
-| pentapod-egg  | 300      |
+| pentapod-egg  | b200     |
 | spoilage      | 10       |
-| carbon-fiber  | 200      |
+| carbon-fiber  | 200!!    |
 | landfill      | 500      |
 | biochamber    | 1180     |
 | yumako-seed   | +1200    |

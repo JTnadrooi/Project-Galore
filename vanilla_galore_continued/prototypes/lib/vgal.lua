@@ -42,6 +42,15 @@ vgal.groups = {
     { "removed-recipes",    "removed" },
 }
 
+-- Initialize the enabled_group dictionary
+vgal.enabled_groups = {}
+
+for _, groupTuple in ipairs(vgal.groups) do
+    local key = groupTuple[1]
+    if settings.startup["vgal-" .. key] and settings.startup["vgal-" .. key].value == true then
+        vgal.enabled_groups[groupTuple[2]] = true
+    end
+end
 ---Register a recipe to the vgal (Vanilla Galore - Continued) ecosystem.
 ---@param recipes vgal.VgalRecipe[]
 function vgal.data.extend(recipes)
@@ -57,11 +66,17 @@ function vgal.data.extend(recipes)
             --     break
             -- end
 
-            for _, groupTuple in ipairs(vgal.groups) do
-                if (not settings.startup["vgal-" .. groupTuple[1]].value and group == groupTuple[2]) then
-                    exclude = true
-                    break
-                end
+            -- for _, groupTuple in ipairs(vgal.groups) do
+            --     if (not settings.startup["vgal-" .. groupTuple[1]].value and group == groupTuple[2]) then
+            --         exclude = true
+            --         break
+            --     end
+            -- end
+
+
+            if not vgal.enabled_groups[group] then
+                exclude = true
+                break
             end
         end
         if exclude then goto continue end

@@ -4,8 +4,8 @@
     "title": "Vanilla Galore Continued",
     "author": "JTnadrooi",
     "contact": "@jtnadrooi",
-    "homepage": "https://github.com/JTnadrooi/Vanilla-Galore-Continued",
+    "homepage": "https://github.com/JTnadrooi/Project-Galore",
     "factorio_version": "2.0",
     "dependencies": ["base >= 2.0", "? space-age"],
-    "description": "Adds over 85 unique, well-balanced recipes to the base game, with the option to disable specific ones if desired. Vanilla Galore doesn't add any items, fluids, or buildings."
+    "description": "Vanilla Galore adds over 90 unique and balanced recipes to the base game. Does not add or alter any items, fluids, or buildings."
 }

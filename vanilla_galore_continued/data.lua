@@ -1,6 +1,10 @@
 vgal = require("prototypes.lib.vgal")
 vgal.log("the *core-of-galore* has loaded.")
 
+if mods["space-age"] and not mods["space_age_galore"] then
+    error("\n\n\n\n\nPlease install or enable \"Space Age Galore\" for compatibility with the \"Space Age\" DLC.\n\n\n\n")
+end
+
 require("prototypes.subgroups")
 require("prototypes.rocket-parts")
 require("prototypes.science-packs")

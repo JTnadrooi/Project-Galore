@@ -1,7 +1,5 @@
 # Item and Fluid Costs
 
-MW as in Mineral Water.
-
 ## Legend
 
 | Icon | Meaning                                                 |

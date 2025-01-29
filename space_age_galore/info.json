@@ -7,5 +7,5 @@
     "homepage": "https://github.com/JTnadrooi/Project-Galore",
     "factorio_version": "2.0",
     "dependencies": ["base >= 2.0", "space-age", "vanilla_galore_continued"],
-    "description": "Space Age Galore adds over 50(+80) unique and balanced recipes to the Space Age DLC. Does not add or alter any items, fluids, or buildings. Superset of Vanilla Galore."
+    "description": "Space Age Galore adds over 50(+90) unique and balanced recipes to the Space Age DLC. Does not add or alter any items, fluids, or buildings. Superset of Vanilla Galore."
 }

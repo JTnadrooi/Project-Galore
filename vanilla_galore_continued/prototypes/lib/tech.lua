@@ -312,8 +312,6 @@ function vgal.tech.extract_units(tech)
         if name == "utility" then
             table.insert(units, 5)
         end
-        vgal.log(name)
     end
-    vgal.log(table.concat(units, ", "))
     return units
 end

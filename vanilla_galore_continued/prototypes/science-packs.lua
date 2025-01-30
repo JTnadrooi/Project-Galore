@@ -1,7 +1,7 @@
 vgal.data.extend {
     -- AUTOMATION
     {
-        name = "steel-automation-science-pack",
+        name = "steel-plate-automation-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("automation-science-pack"),
@@ -39,7 +39,7 @@ vgal.data.extend {
         groups = { "alternate-science" },
     },
     {
-        name = "wall-furnace-automation-science-pack",
+        name = "stone-wall-furnace-automation-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("automation-science-pack"),

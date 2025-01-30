@@ -305,7 +305,7 @@ vgal.data.extend
         energy_required = 10,
         technology = "electromagnetic-plant",
         fluid_ingredients = {
-            { "light-oil",        40 },
+            { "light-oil",        10 },
             { "holmium-solution", 10 },
         },
         ingredients = {

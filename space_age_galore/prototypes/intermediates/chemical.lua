@@ -221,7 +221,7 @@ vgal.data.extend
             vgal.icon.get_in_fluid2("calcite"),
         },
         category = "chemistry",
-        energy_required = 1,
+        energy_required = 10,
         technology = "holmium-processing",
         fluid_ingredients = {
             { "steam", 100, { temperature = 500 } },

@@ -1,0 +1,10 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+  Features:
+    - "Maraxsis" and "Demolisher Scales" mod support.
+  Bugfixes:
+    - "vgal-calcite-stone-holmium-solution" recipe time fixed to be more inline with vanilla.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+  Major Features:
+    - Initial release.

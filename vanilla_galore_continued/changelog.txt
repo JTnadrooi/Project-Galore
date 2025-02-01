@@ -1,0 +1,23 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+  Features:
+    - changelog.txt added.
+    - /recipes-reload command.
+    - Code that reloads recipes on game load.
+  Bugfixes:
+    - Fixed internal names of the "stone-wall-furnace-automation-science-pack" and "steel-plate-automation-science-pack" recipes.
+    - Recipe updates not registering.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+  Features:
+    - Space Age support through "Space Age Galore".
+    - "removed" recipe group added.
+  Balancing:
+    - Analog circuits removed.
+    - "vgal-heavy-oil-rocket-fuel" removed.
+    - "vgal-plastic-bar-low-density-structure" removed.
+    - "vgal-iron-stick-engine-unit" removed.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+  Major Features:
+    - Initial release.

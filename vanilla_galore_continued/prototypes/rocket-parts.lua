@@ -16,7 +16,7 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
             { "processing-unit",       2 },  -- 1420
         },
         results = {
-            { "rocket-part", 1 }, -- 12800 mw
+            { "rocket-part", 1 }, -- 12800
         },
         groups = { "alternate-rocket-part" },
         category = "rocket-building",
@@ -36,7 +36,7 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
             { "processing-unit",       10 }, -- 7100
         },
         results = {
-            { "rocket-part", 1 }, -- 12800 mw
+            { "rocket-part", 1 }, -- 12800
         },
         groups = { "alternate-rocket-part" },
         category = "rocket-building",
@@ -56,7 +56,7 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
             { "processing-unit",   10 }, -- 7100
         },
         results = {
-            { "rocket-part", 1 }, -- 12800 mw
+            { "rocket-part", 1 }, -- 12800
         },
         groups = { "alternate-rocket-part" },
         category = "rocket-building",
@@ -76,7 +76,7 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
             { "low-density-structure", 10 }, -- 3750
         },
         results = {
-            { "rocket-part", 1 }, -- 12800 mw
+            { "rocket-part", 1 }, -- 12800
         },
         groups = { "alternate-rocket-part" },
         category = "rocket-building",

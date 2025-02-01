@@ -44,7 +44,7 @@ vgal.data.extend
             }
         },
     },
-   
+
     -- {
     --     type = "recipe",
     --     name = "stone-bioflux-calcite",
@@ -334,7 +334,7 @@ vgal.data.extend
             { "stone", 1 }, -- 10
         },
         fluid_results = {
-            { "electrolyte", 15 }, -- 
+            { "electrolyte", 15 }, --
         },
     },
     {
@@ -350,8 +350,8 @@ vgal.data.extend
         energy_required = 6,
         technology = "bacteria-cultivation",
         ingredients = {
-            { "iron-bacteria", 4 }, -- 120
-            { "nutrients",       10 }, -- 100
+            { "iron-bacteria", 4 },  -- 120
+            { "nutrients",     10 }, -- 100
         },
         fluid_results = {
             { "ammonia", 80 }, -- 160 * 1.5 = 240
@@ -372,7 +372,7 @@ vgal.data.extend
         technology = "bacteria-cultivation",
         ingredients = {
             { "copper-bacteria", 2 }, -- 60
-            { "nutrients",       8 },   -- 80
+            { "nutrients",       8 }, -- 80
         },
         fluid_results = {
             { "ammonia", 50 }, -- 100 * 1.5 = 150

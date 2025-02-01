@@ -11,3 +11,4 @@ require("prototypes.buildings.buildings")
 require("prototypes.subgroups")
 
 require("prototypes.mods.maraxsis")
+require("prototypes.mods.DemolisherScales")

@@ -9,4 +9,4 @@ A collection of mods focused on adding more recipes to the base game and Space A
 
 ## Suggestions
 
-Until this gains enough traction for me to create a Discord server, please create a discussion thread [here](https://mods.factorio.com/mod/vanilla_galore_continued/discussion) if you have any recipe suggestions.
+Until this gains enough traction for me to create a Discord server, please create a discussion thread on the modpage of the designied Galore entry if you have any recipe suggestions.

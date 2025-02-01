@@ -47,4 +47,16 @@ if mods["maraxsis"] then
         recipe.order = "x"
         recipe.main_product = key
     end
+    local function clean_and_main(recipe_name, main_product)
+        local recipe = data.raw["recipe"][recipe_name]
+        if recipe then
+            recipe.order = nil
+            recipe.subgroup = nil
+            recipe.main_product = main_product
+        end
+    end
+
+    clean_and_main("maraxsis-nutrients-from-tropical-fish", "nutrients")
+    -- clean_and_main("maraxsis-nutrients-from-tropical-fish", "nutrients")
+    -- clean_and_main("maraxsis-nutrients-from-tropical-fish", "nutrients")
 end

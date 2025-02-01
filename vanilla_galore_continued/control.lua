@@ -1,4 +1,4 @@
-function reload_recipes(event)
+function vgal_reload_recipes(event)
     for _, force in pairs(game.forces) do
         for _, tech in pairs(force.technologies) do
             if tech.researched then
@@ -12,11 +12,11 @@ function reload_recipes(event)
     end
 end
 
-script.on_init(reload_recipes)
-script.on_configuration_changed(reload_recipes)
+script.on_init(vgal_reload_recipes)
+script.on_configuration_changed(vgal_reload_recipes)
 
 commands.add_command(
     "recipes-reload",
     "Reload all recipes. (This happens automatically.)",
-    reload_recipes
+    vgal_reload_recipes
 )

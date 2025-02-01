@@ -10,6 +10,5 @@ require("prototypes.intermediates.intermediates")
 require("prototypes.buildings.buildings")
 require("prototypes.subgroups")
 
-require("prototypes.mods.general-compat")
 require("prototypes.mods.maraxsis")
-require("prototypes.mods.DemolisherScales")
+require("prototypes.mods.demolisher-scales")

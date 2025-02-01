@@ -19,6 +19,14 @@ vgal.data.extend {
         results = {
             { "space-science-pack", 50 },
         },
+        surface_conditions =
+        {
+            {
+                property = "gravity",
+                min = 0,
+                max = 0
+            }
+        },
         groups = { "alternate-science", "unsure" },
     },
 }

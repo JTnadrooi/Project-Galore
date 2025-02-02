@@ -5,7 +5,9 @@ Version: 0.2.3
     - Maraxsis support improved.
   Bugfixes:
     - Uranium-based space science recipe surface conditions fixed.
-    - Engine units cannot be crafted with ones hands anymore.
+    - Engine units cannot be crafted with ones bare hands anymore.
+  Balancing:
+    - "vgal-uranium-235-space-science-pack" time taken reduced.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.2
   Features:

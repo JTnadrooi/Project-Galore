@@ -7,5 +7,5 @@
     "homepage": "https://github.com/JTnadrooi/Project-Galore",
     "factorio_version": "2.0",
     "dependencies": ["base >= 2.0", "? space-age"],
-    "description": "Vanilla Galore adds over 90 unique and balanced recipes to the base game. Does not add or alter any items, fluids, or buildings."
+    "description": "Adds over 90 unique and balanced recipes to VANILLA!"
 }

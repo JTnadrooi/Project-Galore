@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+  Bugfixes:
+    -  Crash when rocket part recipes are disabled
+  Balancing:
+    - "vgal-flying-robot-frame-rocket-part" cost reduced
+---------------------------------------------------------------------------------------------------
 Version: 0.2.3
   Features:
     - Nuclear rocket part ported from Vanilla Galore.

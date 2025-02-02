@@ -31,21 +31,24 @@ local function vgal_organicify(recipeName)
     end
 end
 
-data.raw.recipe["vgal-flying-robot-frame-rocket-part"].ingredients = vgal.build.table({
-    { "flying-robot-frame", 1 }, -- 405
-    { "processing-unit",    1 }, -- 710
-    { "battery",            4 }, -- 200
-})
-data.raw.recipe["vgal-engine-unit-rocket-part"].ingredients = vgal.build.table({
-    { "engine-unit",     4 }, -- 360
-    { "rocket-fuel",     2 }, -- 220
-    { "processing-unit", 1 }, -- 710
-})
-data.raw.recipe["vgal-uranium-fuel-cell-rocket-part"].ingredients = vgal.build.table({
-    { "low-density-structure", 1 }, --
-    { "uranium-fuel-cell",     1 }, --
-    { "processing-unit",       1 }, --
-})
+if settings.startup["vgal-rocket-parts"].value == true then
+    data.raw.recipe["vgal-flying-robot-frame-rocket-part"].ingredients = vgal.build.table({
+        { "flying-robot-frame", 1 }, -- 405
+        { "processing-unit",    1 }, -- 710
+        { "battery",            2 }, -- 100
+    })
+    data.raw.recipe["vgal-engine-unit-rocket-part"].ingredients = vgal.build.table({
+        { "engine-unit",     4 }, -- 360
+        { "rocket-fuel",     2 }, -- 220
+        { "processing-unit", 1 }, -- 710
+    })
+    data.raw.recipe["vgal-uranium-fuel-cell-rocket-part"].ingredients = vgal.build.table({
+        { "low-density-structure", 1 }, --
+        { "uranium-fuel-cell",     1 }, --
+        { "processing-unit",       1 }, --
+    })
+end
+
 if data.raw.recipe["vgal-heavy-oil-rocket-fuel"] then
     data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
 end

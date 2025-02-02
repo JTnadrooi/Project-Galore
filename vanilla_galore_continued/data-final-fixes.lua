@@ -88,10 +88,12 @@ end
 -- create_with_barrel("electric-engine-unit", "electric-engine")
 
 
-data.raw.item["rocket-part"].hidden = false
-data.raw.recipe["rocket-part"].hidden = false
-data.raw.recipe["rocket-part"].hide_from_player_crafting = false
-data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil
+if settings.startup["vgal-rocket-parts"].value == true then
+    data.raw.item["rocket-part"].hidden = false
+    data.raw.recipe["rocket-part"].hidden = false
+    data.raw.recipe["rocket-part"].hide_from_player_crafting = false
+    data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil
+end
 
 
 vgal.data.finalise()

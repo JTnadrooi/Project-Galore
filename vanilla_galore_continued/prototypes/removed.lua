@@ -136,6 +136,26 @@ vgal.data.extend
         groups = { "removed" },
     },
     {
+        name = "solar-panel-rocket-part",
+        prefix = "vgal",
+        technology = "rocket-silo",
+        icons = vgal.icon.register {
+            vgal.icon.get("rocket-part"),
+            vgal.icon.get_in("solar-panel")
+        },
+        energy_required = 2,
+        ingredients = {
+            { "solar-panel",           4 },
+            { "low-density-structure", 10 }, -- 3750
+            { "processing-unit",       10 }, -- 7100
+        },
+        results = {
+            { "rocket-part", 1 }, -- 12800
+        },
+        groups = { "alternate-rocket-part", "removed" },
+        category = "rocket-building",
+    },
+    {
         name = "battery-engine-unit",
         prefix = "vgal",
         icons = vgal.icon.register {

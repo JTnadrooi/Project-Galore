@@ -41,11 +41,15 @@ data.raw.recipe["vgal-engine-unit-rocket-part"].ingredients = vgal.build.table({
     { "rocket-fuel",     2 }, -- 220
     { "processing-unit", 1 }, -- 710
 })
+data.raw.recipe["vgal-uranium-fuel-cell-rocket-part"].ingredients = vgal.build.table({
+    { "low-density-structure", 1 }, --
+    { "uranium-fuel-cell",     1 }, --
+    { "processing-unit",       1 }, --
+})
 if data.raw.recipe["vgal-heavy-oil-rocket-fuel"] then
-data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
+    data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
 end
 vgal.data.trim("vgal-solar-panel-rocket-part")
-vgal.data.trim("vgal-uranium-fuel-cell-rocket-part")
 vgal.data.trim("vgal-processing-unit-artillery-turret")
 
 vgal_electroplantify("plastic-bar-electronic-circuit")

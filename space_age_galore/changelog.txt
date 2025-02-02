@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+  Features:
+    - Nuclear rocket part ported from Vanilla Galore.
+  Bugfixes:
+    - Uranium-based space science recipe surface conditions fixed.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
   Features:
     - "Maraxsis" and "Demolisher Scales" mod support.

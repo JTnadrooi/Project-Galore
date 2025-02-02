@@ -58,7 +58,7 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         results = {
             { "rocket-part", 1 }, -- 12800
         },
-        groups = { "alternate-rocket-part" },
+        groups = { "alternate-rocket-part", "unsure" },
         category = "rocket-building",
     },
 }

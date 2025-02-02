@@ -49,7 +49,6 @@ data.raw.recipe["vgal-uranium-fuel-cell-rocket-part"].ingredients = vgal.build.t
 if data.raw.recipe["vgal-heavy-oil-rocket-fuel"] then
     data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
 end
-vgal.data.trim("vgal-solar-panel-rocket-part")
 vgal.data.trim("vgal-processing-unit-artillery-turret")
 
 vgal_electroplantify("plastic-bar-electronic-circuit")

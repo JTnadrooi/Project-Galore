@@ -42,8 +42,8 @@ vgal.groups = {
     { "removed-recipes",    "removed" },
 }
 
--- Initialize the enabled_group dictionary
 vgal.enabled_groups = {}
+vgal.recipes = {}
 
 for _, groupTuple in ipairs(vgal.groups) do
     local key = groupTuple[1]
@@ -177,6 +177,7 @@ function vgal.data.extend(recipes)
         vgal.log("registering: " .. recipe.name)
 
         data:extend { recipe }
+        vgal.recipes[recipe.name] = recipe
 
         if recipe.technologies then
             if type(recipe.technologies[1]) == "table" then
@@ -268,6 +269,7 @@ end
 function vgal.data.trim(recipeName)
     vgal.tech.queue_to_clean(recipeName)
     data.raw["recipe"][recipeName] = nil
+    vgal.recipes[recipeName] = nil
 end
 
 function vgal.any(anyName, includeRecipes)

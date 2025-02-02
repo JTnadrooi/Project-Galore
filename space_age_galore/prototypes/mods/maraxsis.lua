@@ -9,8 +9,8 @@ local packFluids = {
     ["utility-science-pack"] = { "maraxsis-hydrogen", 60 },
 }
 local newRecipes = {}
-for _, recipe in pairs(data.raw["recipe"]) do
-    if recipe.name:match("^vgal%-.+%-science%-pack$") then
+for _, recipe in pairs(vgal.recipes) do
+    if recipe.name:match("%-science%-pack$") then
         local resultPack = recipe.results[1].name
         local newRecipe = table.deepcopy(recipe)
         if packFluids[resultPack] then
@@ -36,9 +36,16 @@ for _, recipe in pairs(data.raw["recipe"]) do
             table.insert(data.raw["technology"]["maraxsis-deepsea-research"].effects,
                 { type = "unlock-recipe", recipe = newRecipe.name })
         end
-    end
-    if recipe.name:match("^vgal%-.+%-engine%-unit$") then
+    elseif recipe.main_product == "electric-engine-unit" or recipe.main_product == "engine-unit" then
         recipe.category = "maraxsis-hydro-plant-or-advanced-crafting"
+    elseif recipe.main_product == "chemical-plant" or
+        recipe.main_product == "pumpjack" or
+        recipe.main_product == "nuclear-reactor" or
+        recipe.main_product == "pipe" or
+        recipe.main_product == "pipe-to-ground" or
+        recipe.main_product == "offshore-pump" or
+        recipe.main_product == "pump" then
+        recipe.category = "maraxsis-hydro-plant-or-assembling"
     end
 end
 
@@ -61,3 +68,5 @@ local function clean_and_main(recipe_name, main_product)
 end
 
 clean_and_main("maraxsis-nutrients-from-tropical-fish", "nutrients")
+data.raw["recipe"]["vgal-thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel"].category =
+"maraxsis-hydro-plant-or-chemistry"

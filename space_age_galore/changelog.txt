@@ -2,6 +2,7 @@
 Version: 0.2.3
   Features:
     - Nuclear rocket part ported from Vanilla Galore.
+    - Maraxsis support improved.
   Bugfixes:
     - Uranium-based space science recipe surface conditions fixed.
 ---------------------------------------------------------------------------------------------------

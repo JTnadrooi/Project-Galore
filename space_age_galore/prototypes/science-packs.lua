@@ -8,7 +8,7 @@ vgal.data.extend {
             vgal.icon.get_in("uranium-235"),
         },
         category = "crafting",
-        energy_required = 120,
+        energy_required = 100,
         technology = { "space-science-pack", "uranium-processing" },
         ingredients = {
             { "steel-plate", 2 }, -- 100

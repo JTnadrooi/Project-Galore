@@ -51,9 +51,9 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         },
         energy_required = 2,
         ingredients = {
-            { "steam-turbine",     2 },  -- 3400
-            { "uranium-fuel-cell", 5 },  -- 2300
-            { "processing-unit",   10 }, -- 7100
+            { "low-density-structure", 6 }, -- 2250
+            { "uranium-fuel-cell",     10 }, -- 4600
+            { "processing-unit",       10 }, -- 7100
         },
         results = {
             { "rocket-part", 1 }, -- 12800
@@ -82,7 +82,3 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         category = "rocket-building",
     },
 }
-data.raw.item["rocket-part"].hidden = false
-data.raw.recipe["rocket-part"].hidden = false
-data.raw.recipe["rocket-part"].hide_from_player_crafting = false
-data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil

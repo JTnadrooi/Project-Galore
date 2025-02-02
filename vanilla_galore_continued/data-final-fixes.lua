@@ -87,37 +87,11 @@ end
 -- create_with_barrel("processing-unit", "processing-unit")
 -- create_with_barrel("electric-engine-unit", "electric-engine")
 
+
+data.raw.item["rocket-part"].hidden = false
+data.raw.recipe["rocket-part"].hidden = false
+data.raw.recipe["rocket-part"].hide_from_player_crafting = false
+data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil
+
+
 vgal.data.finalise()
-
-
--- {
---     type = "recipe",
---     name = "processing-unit",
---     category = "crafting-with-fluid",
---     enabled = false,
---     energy_required = 10,
---     ingredients =
---     {
---       {type = "item", name = "electronic-circuit", amount = 20},
---       {type = "item", name = "advanced-circuit", amount = 2},
---       {type = "fluid", name = "sulfuric-acid", amount = 5}
---     },
---     results = {{type="item", name="processing-unit", amount=1}},
---     allow_productivity = true
---},
-
--- {
---     type = "recipe",
---     name = "processing-unit-",
---     category = "crafting-with-fluid",
---     enabled = false,
---     energy_required = 100,
---     ingredients =
---     {
---       {type = "item", name = "electronic-circuit", amount = 200},
---       {type = "item", name = "advanced-circuit", amount = 20},
---       {type = "item", name = "barreled-sulfuric-acid", amount = 1} -- one barrel holds 50 fluid
---     },
---     results = {{type="item", name="processing-unit", amount=10}}, -- AND one empty barrel (empty-barrel, an item)
---     allow_productivity = true
---},

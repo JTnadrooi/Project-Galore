@@ -31,12 +31,14 @@ local function vgal_organicify(recipeName)
     end
 end
 
-if settings.startup["vgal-rocket-parts"].value == true then
-    data.raw.recipe["vgal-flying-robot-frame-rocket-part"].ingredients = vgal.build.table({
-        { "flying-robot-frame", 1 }, -- 405
-        { "processing-unit",    1 }, -- 710
-        { "battery",            2 }, -- 100
-    })
+if settings.startup["vgal-rocket-parts"].value == true then -- NOTE TO SELF: KEEP AN EYE ON THIS
+    if settings.startup["vgal-unsure-recipes"].value == true then
+        data.raw.recipe["vgal-flying-robot-frame-rocket-part"].ingredients = vgal.build.table({
+            { "flying-robot-frame", 1 }, -- 405
+            { "processing-unit",    1 }, -- 710
+            { "battery",            2 }, -- 100
+        })
+    end
     data.raw.recipe["vgal-engine-unit-rocket-part"].ingredients = vgal.build.table({
         { "engine-unit",     4 }, -- 360
         { "rocket-fuel",     2 }, -- 220

@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.5
+  Bugfixes:
+    -  HOTFIX: Crash when rocket part recipes are disabled, this time caused by the "unsure" recipe-group.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.4
   Bugfixes:
     -  HOTFIX: Crash when rocket part recipes are disabled

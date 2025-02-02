@@ -3,6 +3,8 @@ Version: 0.2.3
   Balancing:
     - Rocket part recipes slightly adjusted.
     - Removed the solar rocket part recipe.
+  Bugfixes:
+    - Engine units cannot be crafted with ones hands anymore.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.2
   Features:

@@ -56,7 +56,7 @@ vgal.data.extend
         results = {
             { "engine-unit", 2 }, -- 180
         },
-        category = "pressing",
+        category = "pressing-or-advanced-crafting",
     },
     -- {
     --     name = "scrap-crushing",

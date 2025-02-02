@@ -35,3 +35,11 @@ end
 if settings.startup["vgal-disable-ice-productivity"].value == true then
     data.raw["recipe"]["ice-melting"].allow_productivity = false
 end
+
+data:extend({
+    {
+        type = "recipe-category",
+        name = "pressing-or-advanced-crafting"
+    },
+})
+table.insert(data.raw["assembling-machine"]["foundry"].crafting_categories, "pressing-or-advanced-crafting")

@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.4
   Bugfixes:
-    -  Crash when rocket part recipes are disabled
+    -  HOTFIX: Crash when rocket part recipes are disabled
   Balancing:
     - "vgal-flying-robot-frame-rocket-part" cost reduced
 ---------------------------------------------------------------------------------------------------

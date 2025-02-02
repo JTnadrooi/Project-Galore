@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+  Bugfixes:
+    - Fixed the silo not having a fixed recipe even when only one recipe is avalible.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.3
   Balancing:
     - Rocket part recipes slightly adjusted.

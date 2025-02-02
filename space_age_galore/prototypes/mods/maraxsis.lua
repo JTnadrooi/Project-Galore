@@ -67,5 +67,7 @@ local function clean_and_main(recipe_name, main_product)
 end
 
 clean_and_main("maraxsis-nutrients-from-tropical-fish", "nutrients")
-data.raw["recipe"]["vgal-thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel"].category =
-"maraxsis-hydro-plant-or-chemistry"
+if data.raw["recipe"]["vgal-thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel"] then
+    data.raw["recipe"]["vgal-thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel"].category =
+    "maraxsis-hydro-plant-or-chemistry"
+end

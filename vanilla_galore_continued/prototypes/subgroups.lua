@@ -177,3 +177,6 @@ end
 vgal.subgroup.set_item_or_fluid("heavy-oil", "fluid-recipes")
 vgal.subgroup.set_item_or_fluid("light-oil", "fluid-recipes")
 vgal.subgroup.set_item_or_fluid("petroleum-gas", "fluid-recipes")
+vgal.subgroup.set_item_or_fluid("sulfuric-acid", "fluid-recipes")
+vgal.subgroup.set_item_or_fluid("lubricant", "fluid-recipes")
+vgal.subgroup.set_item_or_fluid("steam", "fluid-recipes")

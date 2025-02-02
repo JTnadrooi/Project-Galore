@@ -72,6 +72,7 @@ local toClean = {
     "molten-iron-from-lava",
     "molten-copper-from-lava",
     "lithium",
+    "acid-neutralisation",
 }
 for _, value in ipairs(toClean) do
     data.raw["recipe"][value].order = nil
@@ -85,14 +86,15 @@ data.raw["recipe"]["molten-iron-from-lava"].main_product = "molten-iron"
 data.raw["recipe"]["molten-copper-from-lava"].main_product = "molten-copper"
 data.raw["recipe"]["ammoniacal-solution-separation"].main_product = "ammonia"
 data.raw["recipe"]["ammoniacal-solution-separation"].subgroup = "vgal-water"
+data.raw["recipe"]["acid-neutralisation"].main_product = "steam"
 
 vgal.subgroup.set_item_or_fluid("fusion-power-cell", "uranium-processing")
 vgal.subgroup.set_item_or_fluid("lithium-plate", "vgal-smelting")
 vgal.subgroup.set_item_or_fluid("lithium", "raw-resource")
 vgal.subgroup.set_item_or_fluid("fluoroketone-hot", "fluid-recipes")
 vgal.subgroup.set_item_or_fluid("fluoroketone-cold", "fluid-recipes")
-vgal.subgroup.set_item_or_fluid("fluoroketone-cold", "fluid-recipes")
-vgal.subgroup.set_item_or_fluid("lubricant", "fluid-recipes")
+vgal.subgroup.set_item_or_fluid("sulfuric-acid", "fluid-recipes")
+vgal.subgroup.set_item_or_fluid("fusion-plasma", "fluid-recipes")
 
 vgal.subgroup.set_item_or_fluid("ammonia", "fluid-recipes")
 vgal.subgroup.set_item_or_fluid("ammoniacal-solution", "fluid-recipes")

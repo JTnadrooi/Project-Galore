@@ -37,10 +37,6 @@ for _, recipe in pairs(vgal.recipes) do
                 { type = "unlock-recipe", recipe = newRecipe.name })
         end
     elseif recipe.main_product == "electric-engine-unit" or recipe.main_product == "engine-unit" then
-        -- if recipe.category == "pressing" then
-        --     recipe.category = "maraxsis-hydro-plant-or-advanced-crafting-or-pressing"
-        -- else
-        -- end
         recipe.category = "maraxsis-hydro-plant-or-advanced-crafting"
     elseif recipe.main_product == "chemical-plant" or
         recipe.main_product == "pumpjack" or

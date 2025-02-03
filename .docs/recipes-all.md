@@ -4,6 +4,9 @@ _I removed the most of the tungsten- steel/carbide buildings recipes at the last
 -   _`vgal-steel-automation-science-pack` and `vgal-wall-furnace-automation-science-pack` have their names fixed in 0.2.2._
 -   _Some of the rocket part recipes are removed with Space age Galore. (And they are all changed of course)_
 
+> [!IMPORTANT]
+> This list does not get updated frequently. _Last update; `0.2.1`_
+
 ```
 vgal-engine-unit-rocket-part
 vgal-solar-panel-rocket-part

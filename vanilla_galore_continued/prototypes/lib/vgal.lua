@@ -273,7 +273,7 @@ function vgal.data.trim(recipeName)
 end
 
 function vgal.any(anyName, includeRecipes)
-    local categories = { "item", "tool", "fluid", "ammo", "capsule", "module", "repair-tool", "item-with-entity-data",
+    local categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "item-with-entity-data",
         "rail-planner" }
     if includeRecipes then
         table.insert(categories, "recipe")
@@ -283,7 +283,7 @@ function vgal.any(anyName, includeRecipes)
             return data.raw[category][anyName]
         end
     end
-    error("item '" .. anyName .. "' does not exist")
+    error("ANY of name '" .. anyName .. "' does not exist")
 end
 
 function vgal.data.finalise()

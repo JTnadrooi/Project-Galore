@@ -34,10 +34,9 @@ vgal.groups = {
     { "rocket-parts",       "alternate-rocket-part" },
     { "alternate-science",  "alternate-science" },
     { "organic-circuits",   "organic-circuit" },
-
     { "wood-recipes",       "wood-recipe" },
-    { "convoluted-recipes", "convoluted" },
 
+    { "convoluted-recipes", "convoluted" },
     { "unsure-recipes",     "unsure" },
     { "removed-recipes",    "removed" },
 }
@@ -51,7 +50,7 @@ for _, groupTuple in ipairs(vgal.groups) do
         vgal.enabled_groups[groupTuple[2]] = true
     end
 end
----Register a recipe to the vgal (Vanilla Galore - Continued) ecosystem.
+---Register a recipe to the vgal (Vanilla Galore) ecosystem.
 ---@param recipes vgal.VgalRecipe[]
 function vgal.data.extend(recipes)
     for _, recipe in ipairs(recipes) do
@@ -72,15 +71,12 @@ function vgal.data.extend(recipes)
             --         break
             --     end
             -- end
-
-
             if not vgal.enabled_groups[group] then
                 exclude = true
                 break
             end
         end
         if exclude then goto continue end
-
 
         recipe.technologies = vgal.table.ensure(recipe.technology, recipe.technologies)
 

@@ -13,5 +13,6 @@
         "? maraxsis",
         "? DemolisherScales"
     ],
-    "description": "Adds over 140 unique and balanced recipes to SPACE AGE!"
+    "description": "Adds over 140 unique and balanced alternate recipes to SPACE AGE!",
+    "space_travel_required": true
 }

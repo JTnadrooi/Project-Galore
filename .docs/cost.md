@@ -7,7 +7,9 @@
 | (X)  | aq(aquilo), fu, sp, gb, ~(average of all environments), |
 | null | null                                                    |
 | \*   | see notes.                                              |
-| d    | the value you see is with prod bonus.                   |
+| i    | the value of the item as ingredient.                    |
+| r    | the value of the recipe that makes the item.            |
+| b    | byproduct, value reduced.                               |
 | !!   | pending recalc.                                         |
 
 ## Basic Resources
@@ -16,114 +18,117 @@
 | -------------- | ----- |
 | iron-ore       | 10    |
 | copper-ore     | 10    |
-| iron-ore(gb)   | 30    |
-| copper-ore(gb) | 30    |
+| iron-ore(gb)   | 15    |
+| copper-ore(gb) | 15    |
 | tungsten-ore   | 20    |
 | uranium-ore    | 20    |
-| holmium-ore    | \*400 |
+| holmium-ore    | b-400 |
 | scrap          | 5     |
-| null           | null  |
 | coal           | 10    |
 | stone          | 10    |
+| stone(vn)      | b-10  |
 | water(na)      | 0.1   |
 | water(aq)      | 0.2   |
+| ice(fu)        | 100   |
+| ice(sp)        | 50    |
+| ice(aq)        | 2     |
+| null           | null  |
 
 ## Intermediate Products
 
-| ItemID                | Cost  |
-| --------------------- | ----- |
-| iron-gear-wheel       | 20    |
-| iron-plate            | 10    |
-| iron-stick            | 5     |
-| steel-plate           | 50    |
-| copper-plate          | 10    |
-| copper-cable          | 5     |
-| engine-unit           | 90    |
-| explosives            | 15    |
-| electronic-circuit    | 25    |
-| advanced-circuit      | 100   |
-| processing-unit       | 710   |
-| quantum-processor     | 1800  |
-| low-density-structure | 375   |
-| stone-brick           | 20    |
-| sulfur                | 15    |
-| sulfur(gb)            | 60    |
-| sulfur(fg)            | 20    |
-| plastic-bar           | 15    |
-| plastic-bar(gb)       | 40    |
-| carbon                | 50    |
-| tungsten-carbide      | d60   |
-| tungsten-plate        | d80   |
-| molten-iron           | 1     |
-| molten-copper         | 1     |
-| ice(fu)               | 100   |
-| ice(sp)               | 50    |
-| ice(aq)               | 2     |
-| holmium-plate         | 170   |
-| holmium-solution      | 8.5   |
-| electrolyte           | 10    |
-| supercapacitor        | 1000  |
-| superconductor        | 200   |
-| rocket-part(base)     | 12800 |
-| rocket-part(sa)       | 1280  |
-| null                  | null  |
-| null                  | null  |
-| null                  | null  |
+| ItemID                | Cost          |
+| --------------------- | ------------- |
+| iron-gear-wheel       | 20            |
+| iron-plate            | 10            |
+| iron-stick            | 5             |
+| steel-plate           | 50            |
+| copper-plate          | 10            |
+| copper-cable          | 5             |
+| engine-unit           | 90            |
+| explosives            | 15            |
+| electronic-circuit    | 25            |
+| advanced-circuit      | 100           |
+| processing-unit       | 710           |
+| quantum-processor     | 1800          |
+| low-density-structure | 375           |
+| stone-brick           | 20            |
+| sulfur                | 15            |
+| sulfur(gb)            | i-18, r-25    |
+| sulfur(fg)            | 20            |
+| plastic-bar           | 15            |
+| plastic-bar(gb)       | 40            |
+| carbon                | 50            |
+| carbon(gb)            | i-40, r-50    |
+| carbon(vn)            | 30            |
+| tungsten-carbide      | 75            |
+| tungsten-plate        | i-60, r-90    |
+| molten-iron           | 1             |
+| molten-copper         | 1             |
+| holmium-plate         | 170           |
+| holmium-solution      | 8             |
+| electrolyte           | 10            |
+| supercapacitor        | i-680, r-1000 |
+| superconductor        | i-135, r-200  |
+| rocket-part(base)     | 12800         |
+| rocket-part(sa)       | 1280          |
+| null                  | null          |
+| null                  | null          |
+| null                  | null          |
 
 ## Placeable
 
-| ItemID                   | Cost  |
-| ------------------------ | ----- |
-| big-electric-pole        | 310   |
-| medium-electric-pole     | 130   |
-| inserter                 | 55    |
-| burner-inserter          | 30    |
-| fast-inserter            | 125   |
-| bulk-inserter            | 900   |
-| stack-inserter           | 2100  |
-| long-handed-inserter     | 85    |
-| assembling-machine-1     | 265   |
-| assembling-machine-2     | 540   |
-| assembling-machine-3     | 3580  |
-| boiler                   | 90    |
-| stone-furnace            | 50    |
-| steel-furnace            | 500   |
-| electric-furnace         | 1200  |
-| electric-engine-unit     | 170   |
-| oil-refinery             | 1500  |
-| solar-panel              | 675   |
-| beacon                   | 3050  |
-| radar                    | 325   |
-| small-lamp               | 50    |
-| chemical-plant           | 525   |
-| cryogenic-plant          | 23000 |
-| accumulator              | 270   |
-| nuclear-reactor          | 86000 |
-| heat-pipe                | 700   |
-| heat-exchanger           | 1600  |
-| burner-mining-drill      | 140   |
-| electric-mining-drill    | 275   |
-| big-mining-drill         | d2733 |
-| power-plant              | 3900  |
-| centrifuge               | 15700 |
-| pipe                     | 10    |
-| transport-belt           | 15    |
-| fast-transport-belt      | 115   |
-| express-transport-belt   | 365   |
-| turbo-transport-belt     | 865   |
-| underground-belt         | 88    |
-| fast-underground-belt    | 490   |
-| express-underground-belt | 1330  |
-| turbo-underground-belt   | 3180  |
-| splitter                 | 235   |
-| fast-splitter            | 685   |
-| express-splitter         | 2045  |
-| turbo-splitter           | 5015  |
-| concrete                 | 12    |
-| refined-concrete         | 35    |
-| train-stop               | 365   |
-| rail                     | 32    |
-| lab                      | 510   |
+| ItemID                   | Cost           |
+| ------------------------ | -------------- |
+| big-electric-pole        | 310            |
+| medium-electric-pole     | 130            |
+| inserter                 | 55             |
+| burner-inserter          | 30             |
+| fast-inserter            | 125            |
+| bulk-inserter            | 900            |
+| stack-inserter           | !!2100         |
+| long-handed-inserter     | 85             |
+| assembling-machine-1     | 265            |
+| assembling-machine-2     | 540            |
+| assembling-machine-3     | 3580           |
+| boiler                   | 90             |
+| stone-furnace            | 50             |
+| steel-furnace            | 500            |
+| electric-furnace         | 1200           |
+| electric-engine-unit     | 170            |
+| oil-refinery             | 1500           |
+| solar-panel              | 675            |
+| beacon                   | 3050           |
+| radar                    | 325            |
+| small-lamp               | 50             |
+| chemical-plant           | 525            |
+| cryogenic-plant          | 23000          |
+| accumulator              | 270            |
+| nuclear-reactor          | 86000          |
+| heat-pipe                | 700            |
+| heat-exchanger           | 1600           |
+| burner-mining-drill      | 140            |
+| electric-mining-drill    | 275            |
+| big-mining-drill         | i-2730, r-4100 |
+| foundry                  | i-5170, r-7760 |
+| centrifuge               | 15700          |
+| pipe                     | 10             |
+| transport-belt           | 15             |
+| fast-transport-belt      | 115            |
+| express-transport-belt   | 365            |
+| turbo-transport-belt     | 865            |
+| underground-belt         | 88             |
+| fast-underground-belt    | 490            |
+| express-underground-belt | 1330           |
+| turbo-underground-belt   | 3180           |
+| splitter                 | 235            |
+| fast-splitter            | 685            |
+| express-splitter         | 2050           |
+| turbo-splitter           | 5020           |
+| concrete                 | 12             |
+| refined-concrete         | 35             |
+| train-stop               | 365            |
+| rail                     | 32             |
+| lab                      | 510            |
 
 ## Military Items
 
@@ -165,20 +170,20 @@
 
 ## Science Packs
 
-| ItemID                       | Cost |
-| ---------------------------- | ---- |
-| automation-science-pack      | 30   |
-| logistic-science-pack        | 70   |
-| military-science-pack        | 210  |
-| chemical-science-pack        | 245  |
-| production-science-pack      | 935  |
-| utility-science-pack         | 990  |
-| space-science-pack(sa)       | 25   |
-| metallurgic-science-pack     | 680  |
-| electromagnetic-science-pack | null |
-| agricultural-science-pack    | null |
-| cryogenic-science-pack       | 190  |
-| null                         | null |
+| ItemID                       | Cost           |
+| ---------------------------- | -------------- |
+| automation-science-pack      | 30             |
+| logistic-science-pack        | 70             |
+| military-science-pack        | 210            |
+| chemical-science-pack        | 245            |
+| production-science-pack      | 935            |
+| utility-science-pack         | 990            |
+| space-science-pack(sa)       | 25             |
+| metallurgic-science-pack     | i-360, r-540   |
+| electromagnetic-science-pack | i-null, r-null |
+| agricultural-science-pack    | i-null, r-null |
+| cryogenic-science-pack       | null           |
+| promethium-science-pack      | null           |
 
 ## Vehicles and Transport
 
@@ -209,25 +214,26 @@
 
 ## Organic
 
-| ItemID        | Cost  |
-| ------------- | ----- |
-| jelly-nut     | 30    |
-| yumako        | 30    |
-| jelly         | 8     |
-| yumako-mash   | 15    |
-| bioflux       | 80    |
-| nutrients     | 10    |
-| raw-fish      | 900   |
-| pentapod-egg  | b200  |
-| spoilage      | 10    |
-| carbon-fiber  | 200!! |
-| landfill      | 500   |
-| biochamber    | 1180  |
-| yumako-seed   | +1200 |
-| jellynut-seed | +1200 |
-| null          | null  |
-| null          | null  |
-| null          | null  |
+| ItemID          | Cost            |
+| --------------- | --------------- |
+| jelly-nut       | 30              |
+| yumako          | 30              |
+| jelly           | i-6, r-8        |
+| yumako-mash     | i-10, r-15      |
+| bioflux         | i-60, r-60      |
+| nutrients       | 8               |
+| raw-fish        | i-530, r-800    |
+| pentapod-egg    | i-200, r-240    |
+| spoilage        | b-5             |
+| carbon-fiber    | i-120, r-140    |
+| landfill        | 500             |
+| biochamber      | i-690, r-1030   |
+| yumako-seed     | bi-800, br-1200 |
+| jellynut-seed   | bi-800, br-1200 |
+| iron-bacteria   | i-12, r-16      |
+| copper-bacteria | i-12, r-16      |
+| null            | null            |
+| null            | null            |
 
 ## Cryogenic
 

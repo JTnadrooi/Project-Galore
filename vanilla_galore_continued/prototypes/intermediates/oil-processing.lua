@@ -1,25 +1,5 @@
 vgal.data.extend {
     {
-        name = "petroleum-gas-coal-heavy-oil",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("heavy-oil"),
-            vgal.icon.get_in_fluid("petroleum-gas"),
-        },
-        category = "oil-processing",
-        energy_required = 2,
-        ingredients = {
-            { "coal", 2 }, -- ~12pg, 10
-        },
-        fluid_ingredients = {
-            { "petroleum-gas", 20 }, -- 20pg, 20
-        },
-        fluid_results = {
-            { "heavy-oil", 30 }, --30pg, 60
-        },
-        technology = "advanced-oil-processing",
-    },
-    {
         name = "steam-advanced-oil-processing",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -41,6 +21,26 @@ vgal.data.extend {
         },
         technology = "advanced-oil-processing",
         complementairy_recipe = "advanced-oil-processing",
+    },
+    {
+        name = "petroleum-gas-coal-heavy-oil",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("heavy-oil"),
+            vgal.icon.get_in_fluid("petroleum-gas"),
+        },
+        category = "oil-processing",
+        energy_required = 2,
+        ingredients = {
+            { "coal", 2 }, -- ~12pg, 10
+        },
+        fluid_ingredients = {
+            { "petroleum-gas", 20 }, -- 20pg, 20
+        },
+        fluid_results = {
+            { "heavy-oil", 30 }, --30pg, 60
+        },
+        technology = "advanced-oil-processing",
     },
     {
         name = "steam-heavy-oil-light-oil",

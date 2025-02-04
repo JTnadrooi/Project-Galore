@@ -11,6 +11,7 @@ require("prototypes.subgroups")
 require("prototypes.rocket-parts")
 require("prototypes.science-packs")
 require("prototypes.military")
+require("prototypes.equipment")
 require("prototypes.removed")
 
 require("prototypes.intermediates.intermediates")

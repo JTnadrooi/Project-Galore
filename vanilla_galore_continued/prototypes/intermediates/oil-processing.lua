@@ -30,7 +30,7 @@ vgal.data.extend {
             vgal.icon.get_in_fluid("petroleum-gas"),
         },
         category = "oil-processing",
-        energy_required = 2,
+        energy_required = 1.5,
         ingredients = {
             { "coal", 2 }, -- ~12pg, 10
         },
@@ -50,7 +50,7 @@ vgal.data.extend {
             vgal.icon.get_in("steam"),
         },
         category = "chemistry",
-        energy_required = 0.8,
+        energy_required = 1.2,
         fluid_ingredients = {
             { "heavy-oil", 50 },
             { "steam",     100 },
@@ -69,7 +69,7 @@ vgal.data.extend {
             vgal.icon.get_in("steam"),
         },
         category = "chemistry",
-        energy_required = 0.8,
+        energy_required = 1.2,
         fluid_ingredients = {
             { "light-oil", 40 },
             { "steam",     100 },

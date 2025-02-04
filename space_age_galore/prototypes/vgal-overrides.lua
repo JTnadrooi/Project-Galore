@@ -117,7 +117,7 @@ end
 --     }
 -- }
 
-data.raw["recipe"]["steam-advanced-oil-processing"].surface_conditions =
+data.raw["recipe"]["vgal-steam-advanced-oil-processing"].surface_conditions =
 {
     {
         property = "gravity",
@@ -125,7 +125,7 @@ data.raw["recipe"]["steam-advanced-oil-processing"].surface_conditions =
         max = 20
     }
 }
-data.raw["recipe"]["steam-heavy-oil-light-oil"].surface_conditions =
+data.raw["recipe"]["vgal-steam-heavy-oil-light-oil"].surface_conditions =
 {
     {
         property = "gravity",
@@ -133,7 +133,7 @@ data.raw["recipe"]["steam-heavy-oil-light-oil"].surface_conditions =
         max = 20
     }
 }
-data.raw["recipe"]["steam-light-oil-petroleum-gas"].surface_conditions =
+data.raw["recipe"]["vgal-steam-light-oil-petroleum-gas"].surface_conditions =
 {
     {
         property = "gravity",

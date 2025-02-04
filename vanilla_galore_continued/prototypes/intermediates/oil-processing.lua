@@ -52,8 +52,8 @@ vgal.data.extend {
         category = "chemistry",
         energy_required = 1.2,
         fluid_ingredients = {
-            { "heavy-oil", 50 },
             { "steam",     100 },
+            { "heavy-oil", 50 },
         },
         fluid_results = {
             { "light-oil", 40 },
@@ -71,8 +71,8 @@ vgal.data.extend {
         category = "chemistry",
         energy_required = 1.2,
         fluid_ingredients = {
-            { "light-oil", 40 },
             { "steam",     100 },
+            { "light-oil", 40 },
         },
         fluid_results = {
             { "petroleum-gas", 30 },

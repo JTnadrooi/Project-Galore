@@ -26,20 +26,26 @@ vgal.recipe.override_iron("burnt-spoilage", vgal.icon.register({
     vgal.icon.get_in("spoilage"),
 }))
 
-if settings.startup["vgal-ammonia-temp-override"] then
+if settings.startup["vgal-ammonia-temp-override"].value then
     data.raw["fluid"]["ammonia"].default_temperature = 15
     data.raw["fluid"]["ammonia"].max_temperature = 450
     data.raw["fluid"]["ammonia"].gas_temperature = -33
 end
-
-if settings.startup["vgal-disable-ice-productivity"].value == true then
+if settings.startup["vgal-ammoniacal-solution-temp-override"].value then
+    data.raw["fluid"]["ammoniacal-solution"].default_temperature = 15
+    data.raw["fluid"]["ammoniacal-solution"].max_temperature = 100
+end
+if settings.startup["vgal-disable-ice-productivity"].value then
     data.raw["recipe"]["ice-melting"].allow_productivity = false
 end
-
-data:extend({
-    {
-        type = "recipe-category",
-        name = "pressing-or-advanced-crafting"
-    },
-})
-table.insert(data.raw["assembling-machine"]["foundry"].crafting_categories, "pressing-or-advanced-crafting")
+if settings.startup["vgal-press-engine-unit"].value then
+    data.raw["recipe"]["engine-unit"].category = "pressing"
+    data.raw["recipe"]["vgal-low-density-structure-engine-unit"].category = "pressing"
+    data.raw["recipe"]["vgal-lubricant-engine-unit"].category = "pressing"
+end
+if settings.startup["vgal-press-barrel"].value then
+    data.raw["recipe"]["barrel"].category = "pressing"
+    data.raw["recipe"]["vgal-iron-plate-barrel"].category = "pressing"
+    data.raw["recipe"]["vgal-iron-plate-copper-plate-barrel"].category = "pressing"
+    data.raw["recipe"]["vgal-low-density-structure-barrel"].category = "pressing"
+end

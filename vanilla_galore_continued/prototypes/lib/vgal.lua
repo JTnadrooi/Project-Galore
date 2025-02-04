@@ -33,7 +33,6 @@ end
 vgal.groups = {
     { "rocket-parts",       "alternate-rocket-part" },
     { "alternate-science",  "alternate-science" },
-    { "organic-circuits",   "organic-circuit" },
     { "wood-recipes",       "wood-recipe" },
 
     { "convoluted-recipes", "convoluted" },
@@ -57,20 +56,6 @@ function vgal.data.extend(recipes)
         recipe.groups = recipe.groups or {}
         local exclude = false
         for _, group in ipairs(recipe.groups) do
-            -- if (not settings.startup["vgal-rocket-parts"].value and group == "alternate-rocket-part") or
-            --     (not settings.startup["vgal-analog-circuits"].value and group == "analog-circuit") or
-            --     (not settings.startup["vgal-wood-recipes"].value and group == "wood-recipe") or
-            --     (not settings.startup["vgal-alternate-science"].value and group == "alternate-science") then
-            --     exclude = true
-            --     break
-            -- end
-
-            -- for _, groupTuple in ipairs(vgal.groups) do
-            --     if (not settings.startup["vgal-" .. groupTuple[1]].value and group == groupTuple[2]) then
-            --         exclude = true
-            --         break
-            --     end
-            -- end
             if not vgal.enabled_groups[group] then
                 exclude = true
                 break

@@ -72,7 +72,7 @@ vgal_cryogenify("copper-cable-battery")
 
 vgal_organicify("petroleum-gas-rocket-fuel")
 
-data.raw["recipe"]["vgal-low-density-structure-engine-unit"].category = "pressing-or-advanced-crafting"
+data.raw["recipe"]["vgal-low-density-structure-engine-unit"].category = "pressing"
 data.raw["recipe"]["vgal-low-density-structure-barrel"].category = "pressing"
 
 local valid_suffixes = {

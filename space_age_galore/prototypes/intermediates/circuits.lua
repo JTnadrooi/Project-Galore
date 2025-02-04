@@ -40,7 +40,6 @@ vgal.data.extend
         results = {
             { "electronic-circuit", 1 } -- 25 * 1.5 = 37.5
         },
-        groups = { "organic-circuit" },
         surface_conditions =
         {
             {
@@ -72,7 +71,6 @@ vgal.data.extend
         results = {
             { "electronic-circuit", 2 } -- 50 * 1.5 = 75
         },
-        groups = { "organic-circuit" },
         surface_conditions =
         {
             {

@@ -18,14 +18,27 @@ data:extend {
         name = "vgal-ammonia-temp-override",
         setting_type = "startup",
         default_value = true,
-        order = "bc"
+        order = "bca"
     },
-
     {
         type = "bool-setting",
-        name = "vgal-organic-circuits",
+        name = "vgal-ammoniacal-solution-temp-override",
         setting_type = "startup",
         default_value = true,
-        order = "ab"
+        order = "bcb"
+    },
+    {
+        type = "bool-setting",
+        name = "vgal-press-engine-unit",
+        setting_type = "startup",
+        default_value = true,
+        order = "be"
+    },
+    {
+        type = "bool-setting",
+        name = "vgal-press-barrel",
+        setting_type = "startup",
+        default_value = true,
+        order = "bf"
     },
 }

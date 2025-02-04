@@ -37,7 +37,7 @@ vgal.data.extend
         results = {
             { "barrel", 2 }, -- 100
         },
-        category = "pressing",
+        category = "crafting",
     },
     {
         name = "tungsten-plate-engine-unit",
@@ -56,7 +56,7 @@ vgal.data.extend
         results = {
             { "engine-unit", 2 }, -- 180
         },
-        category = "pressing-or-advanced-crafting",
+        category = "advanced-crafting",
     },
     -- {
     --     name = "scrap-crushing",

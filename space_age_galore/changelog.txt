@@ -1,8 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.7
   Features:
-  Bugfixes:
-    -  
+    - More recipes added.
+  Balancing:
+    - "vgal-tungsten-carbide-heat-pipe" cost increased
+    - "vgal-molten-iron-molten-copper-space-platform-foundation" cost increased
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.6
   Bugfixes:

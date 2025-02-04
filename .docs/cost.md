@@ -76,62 +76,62 @@
 | rocket-part(sa)       | 1280          |
 | null                  | null          |
 | null                  | null          |
-| null                  | null          |
 
 ## Placeable
 
-| ItemID                   | Cost           |
-| ------------------------ | -------------- |
-| big-electric-pole        | 310            |
-| medium-electric-pole     | 130            |
-| inserter                 | 55             |
-| burner-inserter          | 30             |
-| fast-inserter            | 125            |
-| bulk-inserter            | 900            |
-| stack-inserter           | 1910           |
-| long-handed-inserter     | 85             |
-| assembling-machine-1     | 265            |
-| assembling-machine-2     | 540            |
-| assembling-machine-3     | 3580           |
-| boiler                   | 90             |
-| stone-furnace            | 50             |
-| steel-furnace            | 500            |
-| electric-furnace         | 1200           |
-| electric-engine-unit     | 170            |
-| oil-refinery             | 1500           |
-| solar-panel              | 675            |
-| beacon                   | 3050           |
-| radar                    | 325            |
-| small-lamp               | 50             |
-| chemical-plant           | 525            |
-| cryogenic-plant          | 23000          |
-| accumulator              | 270            |
-| nuclear-reactor          | 86000          |
-| heat-pipe                | 700            |
-| heat-exchanger           | 1600           |
-| burner-mining-drill      | 140            |
-| electric-mining-drill    | 275            |
-| big-mining-drill         | i-2730, r-4100 |
-| foundry                  | i-5170, r-7760 |
-| centrifuge               | 15700          |
-| pipe                     | 10             |
-| transport-belt           | 15             |
-| fast-transport-belt      | 115            |
-| express-transport-belt   | 365            |
-| turbo-transport-belt     | 865            |
-| underground-belt         | 88             |
-| fast-underground-belt    | 490            |
-| express-underground-belt | 1330           |
-| turbo-underground-belt   | 3180           |
-| splitter                 | 235            |
-| fast-splitter            | 685            |
-| express-splitter         | 2050           |
-| turbo-splitter           | 5020           |
-| concrete                 | 12             |
-| refined-concrete         | 35             |
-| train-stop               | 365            |
-| rail                     | 32             |
-| lab                      | 510            |
+| ItemID                    | Cost           |
+| ------------------------- | -------------- |
+| big-electric-pole         | 310            |
+| medium-electric-pole      | 130            |
+| inserter                  | 55             |
+| burner-inserter           | 30             |
+| fast-inserter             | 125            |
+| bulk-inserter             | 900            |
+| stack-inserter            | 1910           |
+| long-handed-inserter      | 85             |
+| assembling-machine-1      | 265            |
+| assembling-machine-2      | 540            |
+| assembling-machine-3      | 3580           |
+| boiler                    | 90             |
+| stone-furnace             | 50             |
+| steel-furnace             | 500            |
+| electric-furnace          | 1200           |
+| electric-engine-unit      | 170            |
+| oil-refinery              | 1500           |
+| solar-panel               | 675            |
+| beacon                    | 3050           |
+| radar                     | 325            |
+| small-lamp                | 50             |
+| chemical-plant            | 525            |
+| cryogenic-plant           | 23000          |
+| accumulator               | 270            |
+| nuclear-reactor           | 86000          |
+| heat-pipe                 | 700            |
+| heat-exchanger            | 1600           |
+| burner-mining-drill       | 140            |
+| electric-mining-drill     | 275            |
+| big-mining-drill          | i-2730, r-4100 |
+| foundry                   | i-5170, r-7760 |
+| centrifuge                | 15700          |
+| pipe                      | 10             |
+| transport-belt            | 15             |
+| fast-transport-belt       | 115            |
+| express-transport-belt    | 365            |
+| turbo-transport-belt      | 865            |
+| underground-belt          | 88             |
+| fast-underground-belt     | 490            |
+| express-underground-belt  | 1330           |
+| turbo-underground-belt    | 3180           |
+| splitter                  | 235            |
+| fast-splitter             | 685            |
+| express-splitter          | 2050           |
+| turbo-splitter            | 5020           |
+| concrete                  | 12             |
+| refined-concrete          | 35             |
+| train-stop                | 365            |
+| rail                      | 32             |
+| lab                       | 510            |
+| space-platform-foundation | 1100           |
 
 ## Military Items
 

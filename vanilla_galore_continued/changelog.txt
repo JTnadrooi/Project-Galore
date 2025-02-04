@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.5
   Features:
-    - More oil recipes, more science recipes. (Im not listing them all)
+    - More recipes added. (I'm not listing them all..)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.4
   Bugfixes:

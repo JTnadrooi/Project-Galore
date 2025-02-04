@@ -106,8 +106,8 @@ vgal.data.extend {
         },
         ingredients = {
             { "tungsten-carbide", 8 },  -- 480
-            { "stone-brick",      10 }, -- 200
             { "advanced-circuit", 4 },  -- 400
+            { "stone-brick",      10 }, -- 200
         },
         results = {
             { "electric-furnace", 1 }, -- 1200 * 1.5 = 1800
@@ -189,12 +189,30 @@ vgal.data.extend {
         technology = "foundry",
         fluid_ingredients = {
             { "molten-iron",   1000 },
-            { "molten-copper", 150 },
+            { "molten-copper", 200 },
         },
         results = {
-            { "space-platform-foundation", 1 }, -- x * 1.5 =
+            { "space-platform-foundation", 1 }, -- x * 1.5 = 1650
         },
         category = "metallurgy",
+    },
+    {
+        name = "low-density-structure-space-platform-foundation",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("space-platform-foundation"),
+            vgal.icon.get_in("low-density-structure"),
+        },
+        energy_required = 10,
+        technology = "rocket-silo",
+        ingredients = {
+            { "low-density-structure", 2 }, -- 750
+            { "steel-plate",           5 }, -- 250
+        },
+        results = {
+            { "space-platform-foundation", 1 }, -- 1100
+        },
+        category = "crafting",
     },
     {
         name = "tungsten-carbide-heat-pipe",
@@ -206,14 +224,14 @@ vgal.data.extend {
         energy_required = 1,
         technology = { "tungsten-carbide", "nuclear-power" }, -- rip to those who for some reasons go to gleba and vulcanus before nuclear power.
         fluid_ingredients = {
-            { "molten-iron",   150 },                         -- ~250 bc steel
-            { "molten-copper", 100 },
+            { "molten-iron",   250 },
+            { "molten-copper", 200 },
         },
         ingredients = {
-            { "tungsten-carbide", 2 }, -- 200
+            { "tungsten-carbide", 2 }, -- 150
         },
         results = {
-            { "heat-pipe", 1 }, -- 700
+            { "heat-pipe", 1 }, -- 700 * 1.5 = 1050
         },
         category = "metallurgy",
     },

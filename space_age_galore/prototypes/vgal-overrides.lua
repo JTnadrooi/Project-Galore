@@ -91,3 +91,53 @@ for _, recipe in pairs(data.raw["recipe"]) do
         end
     end
 end
+
+-- data.raw["recipe"]["steam-advanced-oil-processing"].surface_conditions =
+-- {
+--     {
+--         property = "pressure",
+--         min = 0,
+--         max = 2000
+--     }
+-- }
+-- data.raw["recipe"]["steam-heavy-oil-light-oil"].surface_conditions =
+-- {
+--     {
+--         property = "pressure",
+--         min = 0,
+--         max = 2000
+--     }
+-- }
+-- data.raw["recipe"]["steam-light-oil-petroleum-gas"].surface_conditions =
+-- {
+--     {
+--         property = "pressure",
+--         min = 0,
+--         max = 2000
+--     }
+-- }
+
+data.raw["recipe"]["steam-advanced-oil-processing"].surface_conditions =
+{
+    {
+        property = "gravity",
+        min = 0,
+        max = 20
+    }
+}
+data.raw["recipe"]["steam-heavy-oil-light-oil"].surface_conditions =
+{
+    {
+        property = "gravity",
+        min = 0,
+        max = 20
+    }
+}
+data.raw["recipe"]["steam-light-oil-petroleum-gas"].surface_conditions =
+{
+    {
+        property = "gravity",
+        min = 0,
+        max = 20
+    }
+}

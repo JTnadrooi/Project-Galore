@@ -20,6 +20,44 @@ vgal.data.extend {
         category = "crafting",
     },
     {
+        name = "advanced-circuit-laser-turret",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("laser-turret"),
+            vgal.icon.get_in("advanced-circuit"),
+        },
+        energy_required = 20,
+        technology = "laser-turret",
+        ingredients = {
+            { "low-density-structure", 2 },
+            { "battery",               10 },
+            { "advanced-circuit",      8 },
+        },
+        results = {
+            { "laser-turret", 1 },
+        },
+        category = "crafting",
+    },
+    {
+        name = "processing-unit-laser-turret",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("laser-turret"),
+            vgal.icon.get_in("processing-unit"),
+        },
+        energy_required = 25,
+        technology = { "laser-turret", "processing-unit" },
+        ingredients = {
+            { "low-density-structure", 2 },
+            { "battery",               10 },
+            { "processing-unit",       1 },
+        },
+        results = {
+            { "laser-turret", 1 },
+        },
+        category = "crafting",
+    },
+    {
         name = "steel-plate-accumulator",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -451,23 +489,4 @@ vgal.data.extend {
         },
         category = "crafting",
     },
-    -- {
-    --     name = "electric-engine-unit-pump",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("pump"),
-    --         vgal.icon.get_in("electric-engine-unit"),
-    --     },
-    --     energy_required = 4,
-    --     technology = { "pump", "electric-engine" },
-    --     ingredients = {
-    --         { "iron-plate",           1 },
-    --         { "iron-gear-wheel",      2 },
-    --         { "electric-engine-unit", 1 },
-    --     },
-    --     results = {
-    --         { "pump", 1 },
-    --     },
-    --     category = "crafting",
-    -- },
 }

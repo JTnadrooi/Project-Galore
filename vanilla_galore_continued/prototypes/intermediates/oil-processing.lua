@@ -9,9 +9,7 @@ vgal.data.extend {
         category = "oil-processing",
         energy_required = 2,
         fluid_ingredients = {
-            { "steam", 150, {
-                temperature = 500,
-            } },
+            { "steam",     150, { minimum_temperature = 500 } },
             { "crude-oil", 100 }
         },
         fluid_results = {
@@ -52,7 +50,7 @@ vgal.data.extend {
         category = "chemistry",
         energy_required = 1.2,
         fluid_ingredients = {
-            { "steam",     100 },
+            { "steam",     100, { minimum_temperature = 500 } },
             { "heavy-oil", 50 },
         },
         fluid_results = {
@@ -71,7 +69,7 @@ vgal.data.extend {
         category = "chemistry",
         energy_required = 1.2,
         fluid_ingredients = {
-            { "steam",     100 },
+            { "steam",     100, { minimum_temperature = 500 } },
             { "light-oil", 40 },
         },
         fluid_results = {

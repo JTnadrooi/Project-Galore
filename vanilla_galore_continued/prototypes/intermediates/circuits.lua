@@ -130,6 +130,27 @@ vgal.data.extend
         },
     },
     {
+        name = "sulfuric-acid-processing-unit",
+        prefix = "vgal",
+        category = "crafting-with-fluid",
+        icons = vgal.icon.register {
+            vgal.icon.get("processing-unit"),
+            vgal.icon.get_in("sulfuric-acid")
+        },
+        technology = "processing-unit",
+        energy_required = 10,
+        ingredients = {
+            { "electronic-circuit", 15 }, -- 150
+            { "advanced-circuit",   2 },  -- 400
+        },
+        fluid_ingredients = {
+            { "sulfuric-acid", 20 }, -- 30
+        },
+        results = {
+            { "processing-unit", 1 }, -- 710
+        },
+    },
+    {
         name = "low-density-structure-processing-unit",
         prefix = "vgal",
         category = "crafting-with-fluid",

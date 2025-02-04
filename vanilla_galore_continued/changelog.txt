@@ -1,7 +1,10 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.2.5
+Version: 1.0.0
   Features:
     - More recipes added. (I'm not listing them all..)
+  Balancing:
+    - "vgal-processing-unit-personal-roboport-equipment" ingredients changed.
+    - Utility science recipes overhauled.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.4
   Bugfixes:

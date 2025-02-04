@@ -39,6 +39,12 @@ local subgroups = {
     },
     -- INTERMEDIATES
     {
+        name = "oil",
+        tab = "intermediate-products",
+        order = "ab",
+        entries = {}
+    },
+    {
         name = "chemistry-products",
         tab = "intermediate-products",
         order = "cb",
@@ -180,3 +186,8 @@ vgal.subgroup.set_item_or_fluid("petroleum-gas", "fluid-recipes")
 vgal.subgroup.set_item_or_fluid("sulfuric-acid", "fluid-recipes")
 vgal.subgroup.set_item_or_fluid("lubricant", "fluid-recipes")
 vgal.subgroup.set_item_or_fluid("steam", "fluid-recipes")
+
+data.raw["recipe"]["heavy-oil-cracking"].subgroup = "vgal-oil"
+data.raw["recipe"]["light-oil-cracking"].subgroup = "vgal-oil"
+data.raw["recipe"]["advanced-oil-processing"].subgroup = "vgal-oil"
+data.raw["recipe"]["basic-oil-processing"].subgroup = "vgal-oil"

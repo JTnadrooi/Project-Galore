@@ -254,7 +254,7 @@ function vgal.data.trim(recipeName)
 end
 
 function vgal.any(anyName, includeRecipes)
-    local categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "item-with-entity-data",
+    local categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor", "item-with-entity-data",
         "rail-planner" }
     if includeRecipes then
         table.insert(categories, "recipe")

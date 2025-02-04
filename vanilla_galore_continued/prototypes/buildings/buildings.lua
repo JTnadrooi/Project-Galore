@@ -27,7 +27,7 @@ vgal.data.extend {
             vgal.icon.get_in("advanced-circuit"),
         },
         energy_required = 20,
-        technology = "laser-turret",
+        technology = { "laser-turret", "low-density-structure" },
         ingredients = {
             { "low-density-structure", 2 },
             { "battery",               10 },
@@ -46,7 +46,7 @@ vgal.data.extend {
             vgal.icon.get_in("processing-unit"),
         },
         energy_required = 25,
-        technology = { "laser-turret", "processing-unit" },
+        technology = { "laser-turret", "processing-unit", "low-density-structure" },
         ingredients = {
             { "low-density-structure", 2 },
             { "battery",               10 },

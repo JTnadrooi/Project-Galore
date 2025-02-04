@@ -3,8 +3,7 @@ vgal.data.extend {
         name = "steam-advanced-oil-processing",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("advanced-oil-processing", "recipe"),
-            vgal.icon.get_in("steam"),
+            vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/steam-advanced-oil-processing.png"),
         },
         category = "oil-processing",
         energy_required = 2,
@@ -19,6 +18,7 @@ vgal.data.extend {
         },
         technology = "advanced-oil-processing",
         complementairy_recipe = "advanced-oil-processing",
+        show_amount_in_title = false,
     },
     {
         name = "petroleum-gas-coal-heavy-oil",
@@ -39,6 +39,7 @@ vgal.data.extend {
             { "heavy-oil", 30 }, --30pg, 60
         },
         technology = "advanced-oil-processing",
+        show_amount_in_title = false,
     },
     {
         name = "steam-heavy-oil-light-oil",
@@ -58,6 +59,7 @@ vgal.data.extend {
         },
         technology = "advanced-oil-processing",
         complementairy_recipe = "heavy-oil-cracking",
+        show_amount_in_title = false,
     },
     {
         name = "steam-light-oil-petroleum-gas",
@@ -77,5 +79,23 @@ vgal.data.extend {
         },
         technology = "advanced-oil-processing",
         complementairy_recipe = "light-oil-cracking",
+    },
+    {
+        name = "steam-sulfur",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("sulfur"),
+            vgal.icon.get_in("steam"),
+        },
+        technology = "sulfur-processing",
+        category = "chemistry",
+        energy_required = 1,
+        fluid_ingredients = {
+            { "steam",         100, { minimum_temperature = 500 } },
+            { "petroleum-gas", 40 },
+        },
+        results = {
+            { "sulfur", 3 },
+        },
     },
 }

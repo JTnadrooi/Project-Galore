@@ -343,69 +343,6 @@ vgal.data.extend {
     },
     -- UTILITY
     {
-        name = "roboport-utility-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("utility-science-pack"),
-            vgal.icon.get_in("roboport"),
-            vgal.icon.get_in2("speed-module"),
-        },
-        category = "crafting",
-        energy_required = 72,
-        technology = { "utility-science-pack", "construction-robotics", "logistic-robotics" },
-        ingredients = {
-            { "speed-module", 5 },  -- 3125
-            { "plastic-bar",  30 }, -- 450
-            { "roboport",     1 },  -- 7650
-        },
-        results = {
-            { "utility-science-pack", 12 }, -- 11220
-        },
-        groups = { "alternate-science" },
-    },
-    {
-        name = "roboport-utility-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("utility-science-pack"),
-            vgal.icon.get_in("roboport"),
-            vgal.icon.get_in2("productivity-module"),
-        },
-        category = "crafting",
-        energy_required = 72,
-        technology = { "utility-science-pack", "construction-robotics", "logistic-robotics" },
-        ingredients = {
-            { "productivity-module", 5 },  -- 3125
-            { "plastic-bar",         30 }, -- 450
-            { "roboport",            1 },  -- 7650
-        },
-        results = {
-            { "utility-science-pack", 12 }, -- 11220
-        },
-        groups = { "alternate-science" },
-    },
-    {
-        name = "roboport-utility-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("utility-science-pack"),
-            vgal.icon.get_in("roboport"),
-            vgal.icon.get_in2("efficiency-module"),
-        },
-        category = "crafting",
-        energy_required = 72,
-        technology = { "utility-science-pack", "construction-robotics", "logistic-robotics" },
-        ingredients = {
-            { "efficiency-module", 5 },  -- 3125
-            { "plastic-bar",       30 }, -- 450
-            { "roboport",          1 },  -- 7650
-        },
-        results = {
-            { "utility-science-pack", 12 }, -- 11220
-        },
-        groups = { "alternate-science" },
-    },
-    {
         name = "refined-concrete-utility-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -418,7 +355,7 @@ vgal.data.extend {
         technology = "utility-science-pack",
         ingredients = {
             { "low-density-structure", 1 },
-            { "refined-concrete",      20 },
+            { "refined-concrete",      25 },
         },
         results = {
             { "utility-science-pack", 1 }, -- 990
@@ -438,7 +375,7 @@ vgal.data.extend {
         technology = "utility-science-pack",
         ingredients = {
             { "flying-robot-frame", 1 },
-            { "refined-concrete",   18 },
+            { "refined-concrete",   22 },
         },
         results = {
             { "utility-science-pack", 1 }, -- 990
@@ -458,10 +395,31 @@ vgal.data.extend {
         technology = "utility-science-pack",
         ingredients = {
             { "processing-unit",  1 },
-            { "refined-concrete", 15 },
+            { "refined-concrete", 20 },
         },
         results = {
             { "utility-science-pack", 1 }, -- 990
+        },
+        groups = { "alternate-science" },
+    },
+    {
+        name = "logistic-robot-construction-robot-utility-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("utility-science-pack"),
+            vgal.icon.get_in("logistic-robot"),
+            vgal.icon.get_in2("construction-robot"),
+        },
+        category = "crafting",
+        energy_required = 12,
+        technology = "utility-science-pack",
+        ingredients = {
+            { "logistic-robot",        1 }, -- 605
+            { "construction-robot",    1 }, -- 455
+            { "low-density-structure", 2 }, -- 750
+        },
+        results = {
+            { "utility-science-pack", 2 }, -- 990
         },
         groups = { "alternate-science" },
     },

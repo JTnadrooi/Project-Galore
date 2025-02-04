@@ -1,5 +1,5 @@
-require("prototypes.vgal-overrides")
-require("prototypes.overrides")
+require("prototypes.overrides.vgal-overrides")
+require("prototypes.overrides.overrides")
 
 require("prototypes.science-packs")
 require("prototypes.intermediates.chemical")
@@ -14,4 +14,4 @@ require("prototypes.subgroups")
 require("prototypes.mods.maraxsis")
 require("prototypes.mods.demolisher-scales")
 
-require("prototypes.sagal-overrides")
+require("prototypes.overrides.sagal-overrides")

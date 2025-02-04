@@ -154,12 +154,15 @@
 
 ## Robotics
 
-| ItemID             | Cost |
-| ------------------ | ---- |
-| flying-robot-frame | 405  |
-| logistic-robot     | 605  |
-| construction-robot | 455  |
-| roboport           | 7650 |
+| ItemID                 | Cost |
+| ---------------------- | ---- |
+| flying-robot-frame     | 405  |
+| logistic-robot         | 605  |
+| construction-robot     | 455  |
+| roboport               | 7650 |
+| steel-chest            | 400  |
+| passive-provider-chest | 575  |
+| storage-chest          | 575  |
 
 ## Nuclear
 

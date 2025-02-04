@@ -156,6 +156,69 @@ vgal.data.extend
         category = "rocket-building",
     },
     {
+        name = "roboport-speed-module-utility-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("utility-science-pack"),
+            vgal.icon.get_in("roboport"),
+            vgal.icon.get_in2("speed-module"),
+        },
+        category = "crafting",
+        energy_required = 72,
+        technology = { "utility-science-pack", "construction-robotics", "logistic-robotics" },
+        ingredients = {
+            { "speed-module", 5 },  -- 3125
+            { "plastic-bar",  30 }, -- 450
+            { "roboport",     1 },  -- 7650
+        },
+        results = {
+            { "utility-science-pack", 12 }, -- 11220
+        },
+        groups = { "alternate-science", "removed" },
+    },
+    {
+        name = "roboport-productivity-module-utility-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("utility-science-pack"),
+            vgal.icon.get_in("roboport"),
+            vgal.icon.get_in2("productivity-module"),
+        },
+        category = "crafting",
+        energy_required = 72,
+        technology = { "utility-science-pack", "construction-robotics", "logistic-robotics" },
+        ingredients = {
+            { "productivity-module", 5 },  -- 3125
+            { "plastic-bar",         30 }, -- 450
+            { "roboport",            1 },  -- 7650
+        },
+        results = {
+            { "utility-science-pack", 12 }, -- 11220
+        },
+        groups = { "alternate-science", "removed" },
+    },
+    {
+        name = "roboport-efficiency-module-utility-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("utility-science-pack"),
+            vgal.icon.get_in("roboport"),
+            vgal.icon.get_in2("efficiency-module"),
+        },
+        category = "crafting",
+        energy_required = 72,
+        technology = { "utility-science-pack", "construction-robotics", "logistic-robotics" },
+        ingredients = {
+            { "efficiency-module", 5 },  -- 3125
+            { "plastic-bar",       30 }, -- 450
+            { "roboport",          1 },  -- 7650
+        },
+        results = {
+            { "utility-science-pack", 12 }, -- 11220
+        },
+        groups = { "alternate-science", "removed" },
+    },
+    {
         name = "battery-engine-unit",
         prefix = "vgal",
         icons = vgal.icon.register {

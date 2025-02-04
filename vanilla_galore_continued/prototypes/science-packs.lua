@@ -376,8 +376,8 @@ vgal.data.extend {
         technology = { "utility-science-pack", "construction-robotics", "logistic-robotics" },
         ingredients = {
             { "productivity-module", 5 },  -- 3125
-            { "plastic-bar",  30 }, -- 450
-            { "roboport",     1 },  -- 7650
+            { "plastic-bar",         30 }, -- 450
+            { "roboport",            1 },  -- 7650
         },
         results = {
             { "utility-science-pack", 12 }, -- 11220
@@ -397,8 +397,8 @@ vgal.data.extend {
         technology = { "utility-science-pack", "construction-robotics", "logistic-robotics" },
         ingredients = {
             { "efficiency-module", 5 },  -- 3125
-            { "plastic-bar",  30 }, -- 450
-            { "roboport",     1 },  -- 7650
+            { "plastic-bar",       30 }, -- 450
+            { "roboport",          1 },  -- 7650
         },
         results = {
             { "utility-science-pack", 12 }, -- 11220
@@ -411,6 +411,7 @@ vgal.data.extend {
         icons = vgal.icon.register {
             vgal.icon.get("utility-science-pack"),
             vgal.icon.get_in("refined-concrete"),
+            vgal.icon.get_in2("low-density-structure"),
         },
         category = "crafting",
         energy_required = 6,
@@ -418,6 +419,46 @@ vgal.data.extend {
         ingredients = {
             { "low-density-structure", 1 },
             { "refined-concrete",      20 },
+        },
+        results = {
+            { "utility-science-pack", 1 }, -- 990
+        },
+        groups = { "alternate-science" },
+    },
+    {
+        name = "refined-concrete-flying-robot-frame-utility-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("utility-science-pack"),
+            vgal.icon.get_in("refined-concrete"),
+            vgal.icon.get_in2("flying-robot-frame"),
+        },
+        category = "crafting",
+        energy_required = 6,
+        technology = "utility-science-pack",
+        ingredients = {
+            { "flying-robot-frame", 1 },
+            { "refined-concrete",   18 },
+        },
+        results = {
+            { "utility-science-pack", 1 }, -- 990
+        },
+        groups = { "alternate-science" },
+    },
+    {
+        name = "refined-concrete-processing-unit-utility-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("utility-science-pack"),
+            vgal.icon.get_in("refined-concrete"),
+            vgal.icon.get_in2("processing-unit"),
+        },
+        category = "crafting",
+        energy_required = 6,
+        technology = "utility-science-pack",
+        ingredients = {
+            { "processing-unit",  1 },
+            { "refined-concrete", 15 },
         },
         results = {
             { "utility-science-pack", 1 }, -- 990

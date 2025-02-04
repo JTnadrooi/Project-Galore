@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.7
+  Features:
+  Bugfixes:
+    -  
+---------------------------------------------------------------------------------------------------
 Version: 0.2.6
   Bugfixes:
     -  HOTFIX: Crash when rocket part recipes are disabled, /THIS/ time caused by the maraxsis compat script not knowing when a recipe is disabled.

@@ -3,12 +3,25 @@
 vgal.recipe.toclean = vgal.recipe.toclean or {}
 
 function vgal.recipe.get_if_productivity(mainProduct)
-    local validProducts = { "coal", "iron-ore", "copper-ore", "uranium-ore", "stone", "ammonia" }
+    local recipe = data.raw["recipe"][mainProduct]
+    if recipe and recipe.allow_productivity then
+        return true
+    end
+    local validProducts = {
+        "coal",
+        "iron-ore",
+        "copper-ore",
+        "uranium-ore",
+        "stone",
+        "ammonia",
+        "light-oil",
+        "heavy-oil",
+        "petroleum-gas",
+    }
     for _, product in ipairs(validProducts) do
         if product == mainProduct then return true end
     end
-    local recipe = data.raw["recipe"][mainProduct]
-    return recipe and (recipe.allow_productivity or false)
+    return false
 end
 
 function vgal.recipe.get_ingredients(recipeName)

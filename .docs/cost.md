@@ -12,6 +12,9 @@
 | b    | byproduct, value reduced.                               |
 | !!   | pending recalc.                                         |
 
+> [!NOTE]
+> The "-" is between the `icon` and the `value` to make the copies easier, it has no meaning.
+
 ## Basic Resources
 
 | ItemID         | Cost  |
@@ -49,7 +52,7 @@
 | electronic-circuit    | 25            |
 | advanced-circuit      | 100           |
 | processing-unit       | 710           |
-| quantum-processor     | 1800          |
+| quantum-processor     | null          |
 | low-density-structure | 375           |
 | stone-brick           | 20            |
 | sulfur                | 15            |
@@ -64,7 +67,7 @@
 | tungsten-plate        | i-60, r-90    |
 | molten-iron           | 1             |
 | molten-copper         | 1             |
-| holmium-plate         | 170           |
+| holmium-plate         | i=120, r=160  |
 | holmium-solution      | 8             |
 | electrolyte           | 10            |
 | supercapacitor        | i-680, r-1000 |
@@ -85,7 +88,7 @@
 | burner-inserter          | 30             |
 | fast-inserter            | 125            |
 | bulk-inserter            | 900            |
-| stack-inserter           | !!2100         |
+| stack-inserter           | 1910           |
 | long-handed-inserter     | 85             |
 | assembling-machine-1     | 265            |
 | assembling-machine-2     | 540            |
@@ -181,8 +184,8 @@
 | space-science-pack(sa)       | 25             |
 | metallurgic-science-pack     | i-360, r-540   |
 | electromagnetic-science-pack | i-null, r-null |
-| agricultural-science-pack    | i-null, r-null |
-| cryogenic-science-pack       | null           |
+| agricultural-science-pack    | i-180, r-260   |
+| cryogenic-science-pack       | 175            |
 | promethium-science-pack      | null           |
 
 ## Vehicles and Transport
@@ -232,7 +235,7 @@
 | jellynut-seed   | bi-800, br-1200 |
 | iron-bacteria   | i-12, r-16      |
 | copper-bacteria | i-12, r-16      |
-| null            | null            |
+| biter-egg       | \*80            |
 | null            | null            |
 
 ## Cryogenic
@@ -242,7 +245,7 @@
 | ammoniacal-solution | 0.2  |
 | ammonia             | 0.5  |
 | lithium-brine       | 12   |
-| lithium             | 160  |
-| lithium-plate       | 160  |
+| lithium             | 150  |
+| lithium-plate       | 150  |
 | fluorine            | 4    |
 | fluoroketone-hot    | 8    |

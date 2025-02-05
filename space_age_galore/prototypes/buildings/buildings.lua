@@ -319,6 +319,29 @@ vgal.data.extend {
         },
         category = "crafting-with-fluid",
     },
+    {
+        name = "tungsten-plate-assembling-machine-3",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("assembling-machine-3"),
+            vgal.icon.get_in("tungsten-plate"),
+        },
+        energy_required = 1,
+        technology = { "automation-3", "tungsten-steel" },
+        ingredients = {
+            { "electric-engine-unit", 10 }, -- 1800
+            { "iron-gear-wheel",      10 }, -- 200
+            { "tungsten-plate",       5 },  -- 300
+            { "assembling-machine-2", 1 },  -- 540
+        },
+        fluid_ingredients = {
+            { "lubricant", 40 }, -- 80
+        },
+        results = {
+            { "assembling-machine-3", 1 }, -- 540
+        },
+        category = "crafting-with-fluid",
+    },
     -- {
     --     name = "tungsten-plate-assembling-machine-3",
     --     prefix = "vgal",

@@ -1,6 +1,6 @@
 {
     "name": "space_age_galore",
-    "version": "0.2.6",
+    "version": "0.2.7",
     "title": "Space Age Galore",
     "author": "JTnadrooi",
     "contact": "@jtnadrooi",
@@ -13,6 +13,6 @@
         "? maraxsis",
         "? DemolisherScales"
     ],
-    "description": "Adds over 140 unique and balanced alternate recipes to SPACE AGE!",
+    "description": "Adds over 160 unique and balanced alternate recipes to SPACE AGE!",
     "space_travel_required": true
 }

@@ -61,6 +61,27 @@ vgal.data.extend
         },
     },
     -- {
+    --     type = "recipe",
+    --     name = "holmium-ore-molten-copper-holmium-plate",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("holmium-plate"),
+    --         vgal.icon.get_in("holmium-ore"),
+    --     },
+    --     category = "metallurgy",
+    --     energy_required = 2,
+    --     technology = { "foundry", "holmium-processing" },
+    --     fluid_ingredients = {
+    --         { "molten-copper", 10 },
+    --     },
+    --     ingredients = {
+    --         { "holmium-ore", 1 },
+    --     },
+    --     results = {
+    --         { "holmium-plate", 2 },
+    --     },
+    -- },
+    -- {
     --     name = "metallic-asteroid-chunk-lava",
     --     prefix = "vgal",
     --     icons = vgal.icon.register {
@@ -151,7 +172,7 @@ vgal.data.extend
             vgal.icon.get_in("uranium-238"),
         },
         energy_required = 15,
-        technology = {"foundry", "uranium-processing"},
+        technology = { "foundry", "uranium-processing" },
         fluid_ingredients = {
             { "molten-copper", 150 },
             { "molten-iron",   80 },

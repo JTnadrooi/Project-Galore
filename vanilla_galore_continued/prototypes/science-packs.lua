@@ -93,11 +93,11 @@ vgal.data.extend {
         energy_required = 6,
         technology = "concrete",
         ingredients = {
-            { "concrete",    4 },
-            { "stone-brick", 1 },
+            { "concrete",    4 }, -- 48
+            { "stone-brick", 1 }, -- 20
         },
         results = {
-            { "logistic-science-pack", 1 },
+            { "logistic-science-pack", 1 }, -- 
         },
         groups = { "alternate-science" },
     },

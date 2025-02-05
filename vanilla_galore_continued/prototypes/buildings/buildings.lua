@@ -301,8 +301,8 @@ vgal.data.extend {
         energy_required = 1,
         technology = { "electric-engine", "automation-3" },
         ingredients = {
-            { "electric-engine-unit", 8 },  -- 1440
-            { "iron-gear-wheel",      25 }, -- 400
+            { "electric-engine-unit", 12 }, -- 2160
+            { "iron-gear-wheel",      25 }, -- 500
             { "assembling-machine-2", 1 },  -- 540
         },
         fluid_ingredients = {

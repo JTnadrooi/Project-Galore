@@ -10,6 +10,7 @@ Version: 1.0.0
     - "vgal-steam-concrete" time increased.
     - "vgal-steam-concrete" steam cost increased.
     - "fast-transport-belt-production-science-pack" concrete cost increased.
+    - "electric-engine-assembling-machine-3" electric-engine cost increased.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.4
   Bugfixes:

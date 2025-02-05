@@ -26,25 +26,32 @@ end
 --     return { "item-name." .. product }
 -- end
 
+-- function vgal.localise.get_lazy(product)
+--     -- vgal.log("LL_PRODUCT:" .. product) -- logs 'LL_PRODUCT:battery-equipment'
+
+--     if product:sub(-9) == "equipment" then
+--         return { "equipment-name." .. product }
+--     end
+
+--     local item = data.raw.item[product]
+--     if item then
+--         return { (item.place_result and "entity" or "item") .. "-name." .. product }
+--     end
+
+--     if data.raw.fluid[product] then
+--         return { "fluid-name." .. product }
+--     end
+
+--     if data.raw["item-with-entity-data"][product] then
+--         return { "entity-name." .. product }
+--     end
+
+--     return { "item-name." .. product }
+-- end
 function vgal.localise.get_lazy(product)
-    -- vgal.log("LL_PRODUCT:" .. product) -- logs 'LL_PRODUCT:battery-equipment'
-
-    if product:sub(-9) == "equipment" then
-        return { "equipment-name." .. product }
-    end
-
+    if product:sub(-9) == "equipment" then return { "equipment-name." .. product } end
     local item = data.raw.item[product]
-    if item then
-        return { (item.place_result and "entity" or "item") .. "-name." .. product }
-    end
-
-    if data.raw.fluid[product] then
-        return { "fluid-name." .. product }
-    end
-
-    if data.raw["item-with-entity-data"][product] then
-        return { "entity-name." .. product }
-    end
-
-    return { "item-name." .. product }
+    if item then return { (item.place_result and "entity" or "item") .. "-name." .. product } end
+    if data.raw.fluid[product] then return { "fluid-name." .. product } end
+    return { (data.raw["item-with-entity-data"][product] and "entity" or "item") .. "-name." .. product }
 end

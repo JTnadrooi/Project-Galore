@@ -489,4 +489,22 @@ vgal.data.extend {
         },
         category = "crafting",
     },
+    {
+        name = "steel-plate-boiler",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("boiler"),
+            vgal.icon.get_in("steel-plate"),
+        },
+        energy_required = 1,
+        technology = "steel-processing",
+        ingredients = {
+            { "steel-plate", 1 },
+            { "pipe",        2 },
+        },
+        results = {
+            { "boiler", 1 },
+        },
+        category = "crafting",
+    },
 }

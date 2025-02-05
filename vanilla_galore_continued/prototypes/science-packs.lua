@@ -301,26 +301,66 @@ vgal.data.extend {
         },
         groups = { "alternate-science" },
     },
-    -- {
-    --     name = "express-transport-belt-production-science-pack",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("production-science-pack"),
-    --         vgal.icon.get_in("express-transport-belt"),
-    --     },
-    --     category = "crafting",
-    --     energy_required = 12,
-    --     technology = "logistics-3",
-    --     ingredients = {
-    --         { "express-transport-belt", 4 }, -- 1460
-    --         { "rocket-fuel",            1 }, -- 200
-    --         { "advanced-circuit",       2 }, -- 200
-    --     },
-    --     results = {
-    --         { "production-science-pack", 2 }, -- 1,870
-    --     },
-    --     groups = { "alternate-science" },
-    -- },
+    {
+        name = "express-transport-belt-production-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("production-science-pack"),
+            vgal.icon.get_in("express-transport-belt"),
+        },
+        category = "crafting",
+        energy_required = 12,
+        technology = { "logistics-3", "rocket-fuel" },
+        ingredients = {
+            { "express-transport-belt", 4 }, -- 1460
+            { "rocket-fuel",            1 }, -- 200
+            { "advanced-circuit",       2 }, -- 200
+        },
+        results = {
+            { "production-science-pack", 2 }, -- 1870
+        },
+        groups = { "alternate-science" },
+    },
+    {
+        name = "productivity-module-2-production-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("production-science-pack"),
+            vgal.icon.get_in("productivity-module-2"),
+        },
+        category = "crafting",
+        energy_required = 60,
+        technology = { "productivity-module-2" },
+        ingredients = {
+            { "electric-furnace",      1 }, -- 1200
+            { "productivity-module-2", 1 }, -- 6550
+            { "bulk-inserter",         1 }, -- 900
+        },
+        results = {
+            { "production-science-pack", 10 }, -- 9350
+        },
+        groups = { "alternate-science" },
+    },
+    {
+        name = "beacon-production-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("production-science-pack"),
+            vgal.icon.get_in("productivity-module-2"),
+        },
+        category = "crafting",
+        energy_required = 20,
+        technology = { "productivity-module-2" },
+        ingredients = {
+            { "rail",         5 }, -- 160
+            { "mining-drill", 2 }, -- 550
+            { "beacon",       1 }, -- 3050
+        },
+        results = {
+            { "production-science-pack", 4 }, -- 3740
+        },
+        groups = { "alternate-science" },
+    },
     {
         name = "fast-transport-belt-production-science-pack",
         prefix = "vgal",
@@ -337,7 +377,7 @@ vgal.data.extend {
             { "processing-unit",     1 },  -- 710
         },
         results = {
-            { "production-science-pack", 2 }, -- 1,870
+            { "production-science-pack", 2 }, -- 1870
         },
         groups = { "alternate-science" },
     },
@@ -435,32 +475,32 @@ vgal.data.extend {
         technology = "utility-science-pack",
         ingredients = {
             { "uranium-fuel-cell", 2 }, -- 920
-            { "accumulator",       1 }, -- 270
+            { "accumulator",       2 }, -- 540
             { "processing-unit",   1 }, -- 710
         },
         results = {
             { "utility-science-pack", 2 }, -- 990
         },
-        groups = { "alternate-science" },
+        groups = { "alternate-science", "unsure" },
     },
-    {
-        name = "electric-engine-unit-utility-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("utility-science-pack"),
-            vgal.icon.get_in("uranium-fuel-cell"),
-        },
-        category = "crafting",
-        energy_required = 12,
-        technology = "utility-science-pack",
-        ingredients = {
-            { "uranium-fuel-cell", 2 }, -- 920
-            { "accumulator",       1 }, -- 270
-            { "processing-unit",   1 }, -- 710
-        },
-        results = {
-            { "utility-science-pack", 2 }, -- 990
-        },
-        groups = { "alternate-science" },
-    },
+    -- {
+    --     name = "electric-engine-unit-utility-science-pack",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("utility-science-pack"),
+    --         vgal.icon.get_in("uranium-fuel-cell"),
+    --     },
+    --     category = "crafting",
+    --     energy_required = 12,
+    --     technology = "utility-science-pack",
+    --     ingredients = {
+    --         { "uranium-fuel-cell", 2 }, -- 920
+    --         { "accumulator",       2 }, -- 540
+    --         { "processing-unit",   1 }, -- 710
+    --     },
+    --     results = {
+    --         { "utility-science-pack", 2 }, -- 990
+    --     },
+    --     groups = { "alternate-science" },
+    -- },
 }

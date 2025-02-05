@@ -132,6 +132,9 @@
 | rail                      | 32             |
 | lab                       | 510            |
 | space-platform-foundation | 1100           |
+| module-t1 (2.0)           | 625            |
+| module-t2 (2.0)           | 6550           |
+| module-t3 (2.0)           | 30250          |
 
 ## Military Items
 

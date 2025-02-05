@@ -293,4 +293,23 @@ vgal.data.extend
         },
         category = "crafting",
     },
+    {
+        name = "uranium-235-uranium-238",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("uranium-235"),
+            vgal.icon.get_out_to("uranium-238"),
+            vgal.icon.get_overlay("to"),
+        },
+        technology = "uranium-processing",
+        energy_required = 30,
+        ingredients = {
+            { "uranium-235", 1 },
+        },
+        results = {
+            { "uranium-238", 1 },
+        },
+        allow_productivity = false,
+        category = "centrifuging",
+    },
 }

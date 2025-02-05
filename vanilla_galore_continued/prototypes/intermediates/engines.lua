@@ -48,17 +48,55 @@ vgal.data.extend {
             vgal.icon.get_in("advanced-circuit"),
         },
         technology = "electric-engine",
-        energy_required = 20,
+        energy_required = 10,
         ingredients = {
-            { "engine-unit",      2 },
+            { "engine-unit",      1 },
             { "advanced-circuit", 1 },
         },
-        fluid_ingredients = {
-            { "lubricant", 25 }
+        results = {
+            { "electric-engine-unit", 1 },
+        },
+        category = "crafting",
+    },
+    {
+        name = "plastic-bar-electric-engine-unit",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("electric-engine-unit"),
+            vgal.icon.get_in("plastic-bar"),
+        },
+        technology = "electric-engine",
+        energy_required = 10,
+        ingredients = {
+            { "engine-unit",        1 },
+            { "electronic-circuit", 2 },
+            { "plastic-bar",        1 },
         },
         results = {
-            { "electric-engine-unit", 2 },
+            { "electric-engine-unit", 1 },
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
+    -- {
+    --     name = "plastic-bar-electric-engine-unit",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("electric-engine-unit"),
+    --         vgal.icon.get_in("plastic-bar"),
+    --     },
+    --     technology = "electric-engine",
+    --     energy_required = 10,
+    --     ingredients = {
+    --         { "electronic-circuit", 2 },  -- 50
+    --         { "copper-cable",       15 }, -- 75
+    --         { "plastic-bar",        2 },  -- 30
+    --     },
+    --     fluid_ingredients = {
+    --         { "lubricant", 10 } -- 20
+    --     },
+    --     results = {
+    --         { "electric-engine-unit", 1 }, -- 180
+    --     },
+    --     category = "crafting-with-fluid",
+    -- },
 }

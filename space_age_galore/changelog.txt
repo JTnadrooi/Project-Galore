@@ -4,6 +4,7 @@ Version: 0.2.7
     - More recipes added. (Tungsten assembling machines)
     - Simplified startup settings.
     - Pressing settings added.
+    - Vanilla Galore 1.0 support.
   Balancing:
     - "vgal-tungsten-carbide-heat-pipe" cost increased
     - "vgal-molten-iron-molten-copper-space-platform-foundation" cost increased

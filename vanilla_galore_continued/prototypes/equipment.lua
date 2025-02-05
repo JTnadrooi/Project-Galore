@@ -89,6 +89,7 @@ vgal.data.extend {
         results = {
             { "modular-armor", 1 },
         },
+        order = "ca",
         category = "crafting",
     },
     {
@@ -106,8 +107,9 @@ vgal.data.extend {
             { "electric-engine-unit",  15 },
         },
         results = {
-            { "modular-armor", 1 },
+            { "power-armor", 1 },
         },
+        order = "da",
         category = "crafting",
     },
     {

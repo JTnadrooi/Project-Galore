@@ -421,19 +421,20 @@ vgal.data.extend {
             vgal.icon.get("concrete"),
             vgal.icon.get_in("steam", "fluid"),
         },
-        energy_required = 2.5,
+        energy_required = 5,
         technology = "concrete",
         ingredients = {
             { "iron-stick",  5 },
             { "stone-brick", 4 },
         },
         fluid_ingredients = {
-            { "steam", 10 },
+            { "steam", 1000 },
         },
         results = {
             { "concrete", 10 },
         },
         category = "crafting-with-fluid",
+        show_amount_in_title = false,
     },
     {
         name = "advanced-circuit-lab",

@@ -31,7 +31,7 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         },
         energy_required = 2,
         ingredients = {
-            { "low-density-structure", 6 }, -- 2250
+            { "low-density-structure", 6 },  -- 2250
             { "uranium-fuel-cell",     10 }, -- 4600
             { "processing-unit",       10 }, -- 7100
         },
@@ -58,7 +58,7 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         results = {
             { "rocket-part", 1 }, -- 12800
         },
-        groups = { "alternate-rocket-part", "unsure" },
+        groups = { "alternate-rocket-part", "convoluted" },
         category = "rocket-building",
     },
 }

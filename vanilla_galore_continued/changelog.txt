@@ -4,7 +4,12 @@ Version: 1.0.0
     - More recipes added. (I'm not listing them all..)
   Balancing:
     - "vgal-processing-unit-personal-roboport-equipment" ingredients changed.
-    - Utility science recipes overhauled.
+    - "vgal-refined-concrete-utility-science-pack" renamed to "vgal-refined-concrete-low-density-structure-utility-science-pack".
+    - "vgal-refined-concrete-low-density-structure-utility-science-pack" concrete costs increased.
+    - "vgal-advanced-circuit-electric-engine-unit" removed lubricant costs but made the recipe more expensive overal.
+    - "vgal-steam-concrete" time increased.
+    - "vgal-steam-concrete" steam cost increased.
+    - "fast-transport-belt-production-science-pack" concrete cost increased.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.4
   Bugfixes:

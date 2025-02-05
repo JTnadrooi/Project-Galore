@@ -419,6 +419,46 @@ vgal.data.extend {
             { "low-density-structure", 2 }, -- 750
         },
         results = {
+            { "utility-science-pack", 2 }, -- 1980
+        },
+        groups = { "alternate-science" },
+    },
+    {
+        name = "uranium-fuel-cell-utility-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("utility-science-pack"),
+            vgal.icon.get_in("uranium-fuel-cell"),
+        },
+        category = "crafting",
+        energy_required = 12,
+        technology = "utility-science-pack",
+        ingredients = {
+            { "uranium-fuel-cell", 2 }, -- 920
+            { "accumulator",       1 }, -- 270
+            { "processing-unit",   1 }, -- 710
+        },
+        results = {
+            { "utility-science-pack", 2 }, -- 990
+        },
+        groups = { "alternate-science" },
+    },
+    {
+        name = "electric-engine-unit-utility-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("utility-science-pack"),
+            vgal.icon.get_in("uranium-fuel-cell"),
+        },
+        category = "crafting",
+        energy_required = 12,
+        technology = "utility-science-pack",
+        ingredients = {
+            { "uranium-fuel-cell", 2 }, -- 920
+            { "accumulator",       1 }, -- 270
+            { "processing-unit",   1 }, -- 710
+        },
+        results = {
             { "utility-science-pack", 2 }, -- 990
         },
         groups = { "alternate-science" },

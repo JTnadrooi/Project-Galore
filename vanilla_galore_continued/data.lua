@@ -7,6 +7,8 @@ if mods["space-age"] and not mods["space_age_galore"] then
     )
 end
 
+require("prototypes.overrides.overrides")
+
 require("prototypes.subgroups")
 require("prototypes.rocket-parts")
 require("prototypes.science-packs")
@@ -23,3 +25,5 @@ require("prototypes.intermediates.oil-processing")
 require("prototypes.buildings.belts")
 require("prototypes.buildings.inserters")
 require("prototypes.buildings.buildings")
+
+require("prototypes.overrides.vgal-post-overrides")

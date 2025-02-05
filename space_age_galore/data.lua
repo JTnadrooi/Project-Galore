@@ -14,4 +14,4 @@ require("prototypes.subgroups")
 require("prototypes.mods.maraxsis")
 require("prototypes.mods.demolisher-scales")
 
-require("prototypes.overrides.sagal-overrides")
+require("prototypes.overrides.sagal-post-overrides")

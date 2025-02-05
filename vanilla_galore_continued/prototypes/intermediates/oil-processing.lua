@@ -8,7 +8,7 @@ vgal.data.extend {
         category = "oil-processing",
         energy_required = 2,
         fluid_ingredients = {
-            { "steam",     150, { minimum_temperature = 500 } },
+            { "steam",     150 },
             { "crude-oil", 100 }
         },
         fluid_results = {
@@ -51,7 +51,7 @@ vgal.data.extend {
         category = "chemistry",
         energy_required = 1.2,
         fluid_ingredients = {
-            { "steam",     100, { minimum_temperature = 500 } },
+            { "steam",     100 },
             { "heavy-oil", 50 },
         },
         fluid_results = {
@@ -71,7 +71,7 @@ vgal.data.extend {
         category = "chemistry",
         energy_required = 1.2,
         fluid_ingredients = {
-            { "steam",     100, { minimum_temperature = 500 } },
+            { "steam",     100 },
             { "light-oil", 40 },
         },
         fluid_results = {
@@ -79,6 +79,7 @@ vgal.data.extend {
         },
         technology = "advanced-oil-processing",
         complementairy_recipe = "light-oil-cracking",
+        show_amount_in_title = false,
     },
     {
         name = "steam-sulfur",
@@ -91,7 +92,7 @@ vgal.data.extend {
         category = "chemistry",
         energy_required = 1,
         fluid_ingredients = {
-            { "steam",         100, { minimum_temperature = 500 } },
+            { "steam",         100 },
             { "petroleum-gas", 40 },
         },
         results = {

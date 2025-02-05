@@ -127,5 +127,6 @@ vgal.data.extend {
             { "battery-equipment", 1 },
         },
         category = "crafting",
+        -- localised_name = { "equipment-name.battery-equipment" }
     },
 }

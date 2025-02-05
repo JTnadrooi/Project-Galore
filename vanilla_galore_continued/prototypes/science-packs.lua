@@ -415,7 +415,7 @@ vgal.data.extend {
         technology = "utility-science-pack",
         ingredients = {
             { "flying-robot-frame", 1 },
-            { "refined-concrete",   22 },
+            { "refined-concrete",   20 },
         },
         results = {
             { "utility-science-pack", 1 }, -- 990

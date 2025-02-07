@@ -1,44 +1,12 @@
 data:extend {
-    {
-        type = "bool-setting",
-        name = "vgal-rocket-parts",
-        setting_type = "startup",
-        default_value = true,
-        order = "ab"
-    },
-    {
-        type = "bool-setting",
-        name = "vgal-sciences",
-        setting_type = "startup",
-        default_value = true,
-        order = "ad"
-    },
-    {
-        type = "bool-setting",
-        name = "vgal-wood-recipes",
-        setting_type = "startup",
-        default_value = true,
-        order = "ae"
-    },
-    {
-        type = "bool-setting",
-        name = "vgal-convoluted-recipes",
-        setting_type = "startup",
-        default_value = false,
-        order = "af"
-    },
-    {
-        type = "bool-setting",
-        name = "vgal-unsure-recipes",
-        setting_type = "startup",
-        default_value = false,
-        order = "aza"
-    },
-    {
-        type = "bool-setting",
-        name = "vgal-removed-recipes",
-        setting_type = "startup",
-        default_value = false,
-        order = "azb"
-    },
+    vgal.setting.new_bool("vgal-rocket-parts", "aa"),
+    vgal.setting.new_bool("vgal-sciences", "ab"),
+    vgal.setting.new_bool("vgal-wood-recipes", "ac"),
+    vgal.setting.new_bool("vgal-belts", "ad"),
+    vgal.setting.new_bool("vgal-equipment", "ae"),
+    vgal.setting.new_bool("vgal-buildings", "af"),
+
+    vgal.setting.new_bool("vgal-convoluted-recipes", "za", false),
+    vgal.setting.new_bool("vgal-unsure-recipes", "zb", false),
+    vgal.setting.new_bool("vgal-removed-recipes", "zc", false),
 }

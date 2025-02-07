@@ -13,6 +13,7 @@ vgal.fluid = vgal.fluid or {}
 vgal.entity = vgal.entity or {}
 vgal.localise = vgal.localise or {}
 vgal.build = vgal.build or {}
+vgal.setting = vgal.setting or {}
 
 require("classes")
 require("icon")
@@ -63,7 +64,7 @@ function vgal.data.extend(recipes, args)
         local hidden = false
         recipe.groups = recipe.groups or {}
         for _, argsGroup in ipairs(args.groups) do
-            table.insert(recipes.groups, argsGroup)
+            table.insert(recipe.groups, argsGroup)
         end
         for _, group in ipairs(recipe.groups) do
             if not vgal.enabled_groups[group] then

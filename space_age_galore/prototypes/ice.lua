@@ -30,7 +30,7 @@ vgal.data.extend
         results = {
             { "ice", 100 },
         },
-        groups = { "unsure" },
+        groups = { "vgal-unsure" },
         show_amount_in_title = false,
         allow_productivity = false,
     },

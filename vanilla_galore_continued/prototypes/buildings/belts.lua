@@ -1,4 +1,4 @@
-vgal.data.extend {
+vgal.data.extend({
     {
         name = "steel-plate-transport-belt",
         prefix = "vgal",
@@ -298,4 +298,6 @@ vgal.data.extend {
         },
         category = "crafting-with-fluid",
     },
-}
+}, {
+    groups = { "vgal-belts" }
+})

@@ -111,7 +111,7 @@ vgal.data.extend
         fluid_results = {
             { "water", 10 },
         },
-        groups = { "wood-recipe" },
+        groups = { "vgal-wood-recipes" },
         show_amount_in_title = false,
     },
     {
@@ -257,7 +257,7 @@ vgal.data.extend
         fluid_results = {
             { "holmium-solution", 250, }, -- 2125
         },
-        groups = { "unsure", "convoluted" },
+        groups = { "vgal-unsure", "vgal-convoluted" },
         productivity_technology = "scrap-recycling-productivity",
         show_amount_in_title = false,
     },
@@ -283,7 +283,7 @@ vgal.data.extend
         results = {
             { "rocket-fuel", 1 }, -- 200
         },
-        groups = { "unsure" },
+        groups = { "vgal-unsure" },
         surface_conditions =
         {
             {

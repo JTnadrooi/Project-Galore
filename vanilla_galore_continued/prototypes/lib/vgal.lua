@@ -31,13 +31,16 @@ function vgal.log(toLog)
 end
 
 vgal.groups = {
-    { "rocket-parts",       "alternate-rocket-part" },
-    { "alternate-science",  "alternate-science" },
-    { "wood-recipes",       "wood-recipe" },
+    { "rocket-parts",       "vgal-rocket-parts" },
+    { "sciences",           "vgal-science-packs" },
+    { "buildings",          "vgal-buildings" },
+    { "belts",              "vgal-belts" },
+    { "equipment",          "vgal-equipment" },
+    { "wood-recipes",       "vgal-wood-recipes" },
 
-    { "convoluted-recipes", "convoluted" },
-    { "unsure-recipes",     "unsure" },
-    { "removed-recipes",    "removed" },
+    { "convoluted-recipes", "vgal-convoluted" },
+    { "unsure-recipes",     "vgal-unsure" },
+    { "removed-recipes",    "vgal-removed" },
 }
 
 vgal.enabled_groups = {}
@@ -51,22 +54,29 @@ for _, groupTuple in ipairs(vgal.groups) do
 end
 ---Register a recipe to the vgal (Vanilla Galore) ecosystem.
 ---@param recipes vgal.VgalRecipe[]
-function vgal.data.extend(recipes)
+---@param args? vgal.RegisterArguments
+function vgal.data.extend(recipes, args)
+    args = args or {}
+    args.groups = args.groups or {}
+
     for _, recipe in ipairs(recipes) do
+        local hidden = false
         recipe.groups = recipe.groups or {}
-        local exclude = false
+        for _, argsGroup in ipairs(args.groups) do
+            table.insert(recipes.groups, argsGroup)
+        end
         for _, group in ipairs(recipe.groups) do
             if not vgal.enabled_groups[group] then
-                exclude = true
+                hidden = true
                 break
             end
         end
-        if exclude then goto continue end
 
         recipe.technologies = vgal.table.ensure(recipe.technology, recipe.technologies)
 
         if recipe.complementairy_recipe then
             local complementairy_recipe = data.raw["recipe"][recipe.complementairy_recipe]
+
             recipe.order = recipe.order or complementairy_recipe.order
             recipe.subgroup = recipe.subgroup or complementairy_recipe.subgroup
         end
@@ -75,6 +85,7 @@ function vgal.data.extend(recipes)
         -- if any needed fields are missing this fills them in.
         if recipe.dependent_recipe then
             local dependent_recipe = data.raw["recipe"][recipe.dependent_recipe]
+
             recipe.category = recipe.category or dependent_recipe.category
             recipe.results = recipe.results or dependent_recipe.results
             recipe.ingredients = recipe.ingredients or dependent_recipe.ingredients
@@ -98,6 +109,12 @@ function vgal.data.extend(recipes)
         recipe.ingredients = recipe.ingredients or {}
         recipe.results = recipe.results or {}
         recipe.module_allows = recipe.module_allows or {}
+
+        recipe.hidden = hidden
+        recipe.hidden_in_factoriopedia = hidden
+        recipe.hide_from_player_crafting = hidden
+        recipe.hide_from_signal_gui = hidden
+        recipe.hide_from_stats = hidden
 
         -- icon stuff
         if recipe.icon then
@@ -206,15 +223,16 @@ function vgal.data.extend(recipes)
                         tech.research_trigger = data.raw["technology"][preCollection[1]].research_trigger
                         tech.unit = nil
                     end
-                    data.raw.technology[techName].localised_name = { "?",
+                    tech.localised_name = { "?",
                         { "", "Galore Tech Node: ", { "recipe-name." .. recipe.name } },
                         { "", "Galore Tech Node: ", vgal.localise.get_lazy(recipe.main_product) },
                     }
-                    data.raw.technology[techName].localised_description = {
+                    tech.localised_description = {
                         "", { "recipe-description." .. recipe.name },
                     }
                     vgal.tech.add_recipe(techName, recipe.name)
-                    ---@diagnostic disable-next-line: param-type-mismatch
+                    tech.hidden = hidden
+                    tech.hidden_in_factoriopedia = hidden
                 end
             elseif type(recipe.technologies[1]) == "string" then
                 for _, techName in ipairs(recipe.technologies) do
@@ -254,7 +272,8 @@ function vgal.data.trim(recipeName)
 end
 
 function vgal.any(anyName, includeRecipes)
-    local categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor", "item-with-entity-data",
+    local categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
+        "item-with-entity-data",
         "rail-planner" }
     if includeRecipes then
         table.insert(categories, "recipe")

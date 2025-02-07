@@ -29,3 +29,7 @@ do
     ---@field groups? string[]
     ---@field productivity_technology? string|table
 end
+do
+    ---@class vgal.RegisterArguments
+    ---@field groups? string[]
+end

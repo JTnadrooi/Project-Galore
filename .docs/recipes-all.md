@@ -1,4 +1,4 @@
-All recipes as of version Vanilla Galore + Space Age Galore 0.2.1 ("convoluted" and "unsure" tags included.)
+All recipes as of version Vanilla Galore + Space Age Galore 0.2.1 ("vgal-convoluted" and "vgal-unsure" tags included.)
 _I removed the most of the tungsten- steel/carbide buildings recipes at the last minute so the modpage lists 10 recipes to many.. (‘’❛ ؂ - „)ᕗ_
 
 -   _`vgal-steel-automation-science-pack` and `vgal-wall-furnace-automation-science-pack` have their names fixed in 0.2.2._

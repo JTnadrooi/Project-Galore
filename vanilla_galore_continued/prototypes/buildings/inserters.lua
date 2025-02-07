@@ -1,4 +1,4 @@
-vgal.data.extend {
+vgal.data.extend({
     -- {
     --     name = "copper-plate-inserter",
     --     prefix = "vgal",
@@ -69,6 +69,8 @@ vgal.data.extend {
         results = {
             { "burner-inserter", 4 }, -- 120
         },
-        groups = {"convoluted"},
+        groups = { "vgal-convoluted" },
     },
-}
+}, {
+    groups = { "vgal-buildings" }
+})

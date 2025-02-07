@@ -18,7 +18,7 @@ vgal.data.extend
         results = {
             { "steel-plate", 2 } -- 100
         },
-        groups = { "unsure" },
+        groups = { "vgal-unsure" },
     },
     {
         type = "recipe",

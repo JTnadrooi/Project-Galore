@@ -99,7 +99,7 @@ vgal.data.extend
     --     results = {
     --         { "advanced-circuit", 1 } -- 100 * 1.5 = 150
     --     },
-    --     groups = { "organic-circuit", "unsure" },
+    --     groups = { "organic-circuit", "vgal-unsure" },
     --     surface_conditions =
     --     {
     --         {
@@ -132,7 +132,7 @@ vgal.data.extend
     --     results = {
     --         { "advanced-circuit", 1 } -- 100 * 1.5 = 150
     --     },
-    --     groups = { "organic-circuit", "unsure" },
+    --     groups = { "organic-circuit", "vgal-unsure" },
     --     surface_conditions =
     --     {
     --         {
@@ -163,7 +163,7 @@ vgal.data.extend
     --     results = {
     --         { "processing-unit", 1 } -- 710 * 1.5 = ~1000
     --     },
-    --     groups = { "organic-circuit", "unsure" }
+    --     groups = { "organic-circuit", "vgal-unsure" }
     -- },
     -- {
     --     type = "recipe",
@@ -188,6 +188,6 @@ vgal.data.extend
     --     results = {
     --         { "processing-unit", 1 } -- 710 * 1.5 = ~1000
     --     },
-    --     groups = { "organic-circuit", "unsure" },
+    --     groups = { "organic-circuit", "vgal-unsure" },
     -- },
 }

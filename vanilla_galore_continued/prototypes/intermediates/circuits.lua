@@ -46,7 +46,7 @@ vgal.data.extend
     --         { "processing-unit",    1, { probability = 0.1, show_details_in_recipe_tooltip = false } }, -- 70
     --     },                                                                                              -- 105
     --     category = "crafting-with-fluid",
-    --     groups = { "convoluted" },
+    --     groups = { "vgal-convoluted" },
     -- },
     {
         name = "wood-electronic-circuit",
@@ -65,7 +65,7 @@ vgal.data.extend
             { "electronic-circuit", 1 }
         },
         category = "crafting",
-        groups = { "wood-recipe" },
+        groups = { "vgal-wood-recipes" },
     },
     {
         name = "wood-heavy-oil-electronic-circuit",
@@ -88,7 +88,7 @@ vgal.data.extend
             { "electronic-circuit", 2 }
         },
         category = "crafting-with-fluid",
-        groups = { "wood-recipe" },
+        groups = { "vgal-wood-recipes" },
     },
     {
         name = "plastic-bar-electronic-circuit",

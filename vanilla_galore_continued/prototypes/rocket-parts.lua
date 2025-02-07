@@ -1,5 +1,4 @@
-vgal.data.extend -- just ignore the graphics of the rocket itself..
-{
+vgal.data.extend({
     {
         name = "engine-unit-rocket-part",
         prefix = "vgal",
@@ -18,7 +17,6 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         results = {
             { "rocket-part", 1 }, -- 12800
         },
-        groups = { "alternate-rocket-part" },
         category = "rocket-building",
     },
     {
@@ -38,7 +36,6 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         results = {
             { "rocket-part", 1 }, -- 12800
         },
-        groups = { "alternate-rocket-part" },
         category = "rocket-building",
     },
     {
@@ -58,7 +55,9 @@ vgal.data.extend -- just ignore the graphics of the rocket itself..
         results = {
             { "rocket-part", 1 }, -- 12800
         },
-        groups = { "alternate-rocket-part", "convoluted" },
+        groups = { "vgal-convoluted" },
         category = "rocket-building",
     },
-}
+}, {
+    groups = { "vgal-rocket-parts" }
+})

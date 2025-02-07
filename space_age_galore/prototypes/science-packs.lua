@@ -27,6 +27,6 @@ vgal.data.extend {
                 max = 0
             }
         },
-        groups = { "alternate-science", "unsure" },
+        groups = { "vgal-science-packs", "vgal-unsure" },
     },
 }

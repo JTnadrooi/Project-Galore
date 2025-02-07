@@ -1,4 +1,4 @@
-vgal.data.extend {
+vgal.data.extend({
     {
         name = "processing-unit-artillery-turret",
         prefix = "vgal",
@@ -508,4 +508,6 @@ vgal.data.extend {
         },
         category = "crafting",
     },
-}
+}, {
+    groups = { "vgal-buildings" }
+})

@@ -1,6 +1,6 @@
 data:extend {
     vgal.setting.new_bool("vgal-rocket-parts", "aa"),
-    vgal.setting.new_bool("vgal-sciences", "ab"),
+    vgal.setting.new_bool("vgal-science-packs", "ab"),
     vgal.setting.new_bool("vgal-wood-recipes", "ac"),
     vgal.setting.new_bool("vgal-belts", "ad"),
     vgal.setting.new_bool("vgal-equipment", "ae"),

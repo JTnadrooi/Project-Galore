@@ -134,37 +134,43 @@ local subgroups = {
         name = "automation-science-pack",
         tab = "intermediate-products",
         order = "y",
-        entries = { "automation-science-pack" }
+        entries = { "automation-science-pack" },
+        when = { "vgal-science-packs" },
     },
     {
         name = "logistic-science-pack",
         tab = "intermediate-products",
         order = "ya",
-        entries = { "logistic-science-pack" }
+        entries = { "logistic-science-pack" },
+        when = { "vgal-science-packs" },
     },
     {
         name = "military-science-pack",
         tab = "intermediate-products",
         order = "yb",
-        entries = { "military-science-pack" }
+        entries = { "military-science-pack" },
+        when = { "vgal-science-packs" },
     },
     {
         name = "chemical-science-pack",
         tab = "intermediate-products",
         order = "yc",
-        entries = { "chemical-science-pack" }
+        entries = { "chemical-science-pack" },
+        when = { "vgal-science-packs" },
     },
     {
         name = "production-science-pack",
         tab = "intermediate-products",
         order = "yd",
-        entries = { "production-science-pack" }
+        entries = { "production-science-pack" },
+        when = { "vgal-science-packs" },
     },
     {
         name = "utility-science-pack",
         tab = "intermediate-products",
         order = "ye",
-        entries = { "utility-science-pack" }
+        entries = { "utility-science-pack" },
+        when = { "vgal-science-packs" },
     },
 }
 
@@ -177,8 +183,21 @@ for _, value in ipairs(toClean) do
 end
 
 for _, value in ipairs(subgroups) do
+    for _, whenItem in ipairs(value.when or {}) do
+        if not settings.startup[whenItem].value then
+            goto continue
+        end
+    end
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
+    ::continue::
 end
+
+-- if not settings.startup["vgal-science-packs"].value then
+--     local packs = { "automation", "logistic", "military", "chemical", "production", "utility" }
+--     for _, pack in ipairs(packs) do
+--         data.raw["tool"][pack .. "-science-pack"].subgroup = "science-pack"
+--     end
+-- end
 
 vgal.subgroup.set_item_or_fluid("heavy-oil", "fluid-recipes")
 vgal.subgroup.set_item_or_fluid("light-oil", "fluid-recipes")

@@ -33,7 +33,7 @@ end
 
 vgal.groups = {
     { "rocket-parts",       "vgal-rocket-parts" },
-    { "sciences",           "vgal-science-packs" },
+    { "science-packs",      "vgal-science-packs" },
     { "buildings",          "vgal-buildings" },
     { "belts",              "vgal-belts" },
     { "equipment",          "vgal-equipment" },

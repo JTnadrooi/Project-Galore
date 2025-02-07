@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+  Features:
+    - More recipe groups added, all toggle-able through the settings!
+  Bugfixes:
+    - "Coal processing" => "Coal liquifaction" in locale.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
   Features:
     - More recipes added. (I'm not listing them all..)

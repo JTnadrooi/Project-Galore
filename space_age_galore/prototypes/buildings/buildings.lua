@@ -1,4 +1,4 @@
-vgal.data.extend {
+vgal.data.extend({
     {
         name = "tungsten-carbide-burner-mining-drill",
         prefix = "vgal",
@@ -364,4 +364,6 @@ vgal.data.extend {
     --     },
     --     category = "crafting-with-fluid",
     -- },
-}
+}, {
+    groups = { "vgal-buildings" }
+})

@@ -35,6 +35,7 @@ vgal.data.extend
         results = {
             { "barrel", 1 },
         },
+        groups = { "vgal-barrels" },
     },
     {
         name = "iron-plate-copper-plate-barrel",
@@ -54,6 +55,7 @@ vgal.data.extend
         results = {
             { "barrel", 1 },
         },
+        groups = { "vgal-barrels" },
     },
     {
         name = "low-density-structure-barrel",
@@ -72,6 +74,7 @@ vgal.data.extend
         results = {
             { "barrel", 15 },
         },
+        groups = { "vgal-barrels" },
     },
     {
         name = "steel-plate-iron-gear-wheel",

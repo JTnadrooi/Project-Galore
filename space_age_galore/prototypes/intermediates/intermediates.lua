@@ -38,6 +38,7 @@ vgal.data.extend
             { "barrel", 2 }, -- 100
         },
         category = "crafting",
+        groups = { "vgal-barrels" },
     },
     {
         name = "tungsten-plate-engine-unit",

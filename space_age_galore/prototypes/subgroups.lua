@@ -47,6 +47,13 @@ local subgroups = {
         order = "kb",
         entries = { "molten-iron", "molten-copper", "lava" }
     },
+    {
+        name = "belt-t4",
+        tab = "logistics",
+        order = "bad",
+        entries = { "turbo-transport-belt", "turbo-splitter", "turbo-underground-belt" },
+        when = { "vgal-belts" },
+    },
 }
 
 local toClean = {
@@ -80,8 +87,15 @@ for _, value in ipairs(toClean) do
 end
 
 for _, value in ipairs(subgroups) do
+    for _, whenItem in ipairs(value.when or {}) do
+        if not settings.startup[whenItem].value then
+            goto continue
+        end
+    end
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
+    ::continue::
 end
+
 data.raw["recipe"]["molten-iron-from-lava"].main_product = "molten-iron"
 data.raw["recipe"]["molten-copper-from-lava"].main_product = "molten-copper"
 data.raw["recipe"]["ammoniacal-solution-separation"].main_product = "ammonia"

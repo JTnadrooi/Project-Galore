@@ -37,6 +37,8 @@ vgal.groups = {
     { "buildings",          "vgal-buildings" },
     { "belts",              "vgal-belts" },
     { "equipment",          "vgal-equipment" },
+    { "barrels",            "vgal-barrels" },
+    { "military",           "vgal-military" },
     { "wood-recipes",       "vgal-wood-recipes" },
 
     { "convoluted-recipes", "vgal-convoluted" },

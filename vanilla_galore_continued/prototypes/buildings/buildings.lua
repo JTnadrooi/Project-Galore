@@ -18,6 +18,7 @@ vgal.data.extend({
             { "artillery-turret", 1 },
         },
         category = "crafting",
+        groups = { "vgal-military" },
     },
     {
         name = "advanced-circuit-laser-turret",
@@ -37,6 +38,7 @@ vgal.data.extend({
             { "laser-turret", 1 },
         },
         category = "crafting",
+        groups = { "vgal-military" },
     },
     {
         name = "processing-unit-laser-turret",
@@ -56,6 +58,7 @@ vgal.data.extend({
             { "laser-turret", 1 },
         },
         category = "crafting",
+        groups = { "vgal-military" },
     },
     {
         name = "steel-plate-accumulator",
@@ -247,6 +250,7 @@ vgal.data.extend({
             { "tank", 1 }, -- 6680
         },
         category = "crafting",
+        groups = { "vgal-military" },
     },
     -- ASSEMBLING MACHINES (expected beltmall config; electric-engine, steel-plate, advanced-circuit, iron-gear-wheel)
     {
@@ -505,6 +509,25 @@ vgal.data.extend({
         },
         results = {
             { "boiler", 1 },
+        },
+        category = "crafting",
+    },
+    {
+        name = "advanced-circuit-radar",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("radar"),
+            vgal.icon.get_in("advanced-circuit"),
+        },
+        energy_required = 1,
+        technology = { "radar", "advanced-circuit" },
+        ingredients = {
+            { "advanced-circuit", 1 },
+            { "iron-plate",       10 },
+            { "iron-gear-wheel",  5 },
+        },
+        results = {
+            { "radar", 1 },
         },
         category = "crafting",
     },

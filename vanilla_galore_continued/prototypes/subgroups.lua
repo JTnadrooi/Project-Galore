@@ -4,19 +4,22 @@ local subgroups = {
         name = "belt-t1",
         tab = "logistics",
         order = "baa",
-        entries = { "transport-belt", "splitter", "underground-belt" }
+        entries = { "transport-belt", "splitter", "underground-belt" },
+        when = { "vgal-belts" },
     },
     {
         name = "belt-t2",
         tab = "logistics",
         order = "bab",
-        entries = { "fast-transport-belt", "fast-splitter", "fast-underground-belt" }
+        entries = { "fast-transport-belt", "fast-splitter", "fast-underground-belt" },
+        when = { "vgal-belts" },
     },
     {
         name = "belt-t3",
         tab = "logistics",
         order = "bac",
-        entries = { "express-transport-belt", "express-splitter", "express-underground-belt" }
+        entries = { "express-transport-belt", "express-splitter", "express-underground-belt" },
+        when = { "vgal-belts" },
     },
     -- PRODUCTION
     {

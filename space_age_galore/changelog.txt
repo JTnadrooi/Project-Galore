@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.8
+  Features:
+    - More recipe groups added, all toggle-able through the settings!
+---------------------------------------------------------------------------------------------------
 Version: 0.2.7
   Features:
     - More recipes added. (Tungsten assembling machines)

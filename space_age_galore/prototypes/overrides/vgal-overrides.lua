@@ -116,15 +116,16 @@ end
 --         max = 2000
 --     }
 -- }
-
-local steam_oil_surface_conditions = {
-    {
-        property = "gravity",
-        min = 8,
-        max = 20
+if settings.startup["vgal-high-temp-oil-processing-surface-conditions"].value then
+    local steam_oil_surface_conditions = {
+        {
+            property = "gravity",
+            min = 8,
+            max = 20
+        }
     }
-}
-data.raw["recipe"]["vgal-steam-advanced-oil-processing"].surface_conditions = steam_oil_surface_conditions
-data.raw["recipe"]["vgal-steam-heavy-oil-light-oil"].surface_conditions = steam_oil_surface_conditions
-data.raw["recipe"]["vgal-steam-light-oil-petroleum-gas"].surface_conditions = steam_oil_surface_conditions
-data.raw["recipe"]["vgal-steam-sulfur"].surface_conditions = steam_oil_surface_conditions
+    data.raw["recipe"]["vgal-steam-advanced-oil-processing"].surface_conditions = steam_oil_surface_conditions
+    data.raw["recipe"]["vgal-steam-heavy-oil-light-oil"].surface_conditions = steam_oil_surface_conditions
+    data.raw["recipe"]["vgal-steam-light-oil-petroleum-gas"].surface_conditions = steam_oil_surface_conditions
+    data.raw["recipe"]["vgal-steam-sulfur"].surface_conditions = steam_oil_surface_conditions
+end

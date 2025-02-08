@@ -1,26 +1,25 @@
 vgal.data.extend
 {
-    -- {
-    --     type = "recipe",
-    --     name = "coal-steam-sulfur",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("sulfur"),
-    --         vgal.icon.get_in("coal"),
-    --     },
-    --     category = "chemistry",
-    --     energy_required = 6,
-    --     technology = "sulfur-processing",
-    --     ingredients = {
-    --         { "coal", 6 }
-    --     },
-    --     fluid_ingredients = {
-    --         { "steam", 200 },
-    --     },
-    --     results = {
-    --         { "sulfur", 2 }
-    --     },
-    -- },
+    {
+        type = "recipe",
+        name = "coal-sulfur",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/coal-sulfur.png"),
+        },
+        category = "chemistry",
+        energy_required = 6,
+        technology = "sulfur-processing",
+        ingredients = {
+            { "coal", 6 }
+        },
+        fluid_ingredients = {
+            { "steam", 200 },
+        },
+        results = {
+            { "sulfur", 2 }
+        },
+    },
     {
         type = "recipe",
         name = "plastic-bar-lubricant",

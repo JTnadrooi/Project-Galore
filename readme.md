@@ -5,7 +5,8 @@ A collection of mods focused on adding more recipes to the base game and Space A
 ## Current Installations
 
 -   **[Vanilla Galore](https://mods.factorio.com/mod/vanilla_galore_continued)** – _(The core of the project)_ Adds a large amount of new recipes to the vanilla game.
--   **[Space Age Galore](https://mods.factorio.com/mod/space_age_galore)** – Support for Space Age, and introduces another 50+ additional recipes.
+-   **[Space Age Galore](https://mods.factorio.com/mod/space_age_galore)** – Support for Space Age.
+-   **Angels Galore – (WIP)** An overhaul for Angels mods focused on alternate recipes.
 
 ## Suggestions
 

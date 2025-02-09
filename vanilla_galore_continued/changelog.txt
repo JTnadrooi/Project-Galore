@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.5
+  Balancing:
+    - Severly reduced steam costs in many recipes.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Features:
     - More recipe groups added, all toggle-able through the settings!

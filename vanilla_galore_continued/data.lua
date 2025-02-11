@@ -25,6 +25,7 @@ require("prototypes.intermediates.chemical")
 require("prototypes.intermediates.circuits")
 require("prototypes.intermediates.engines")
 require("prototypes.intermediates.oil-processing")
+require("prototypes.intermediates.nuclear")
 
 require("prototypes.buildings.belts")
 require("prototypes.buildings.inserters")

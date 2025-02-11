@@ -6,6 +6,6 @@
     "contact": "@jtnadrooi",
     "homepage": "https://github.com/JTnadrooi/Project-Galore",
     "factorio_version": "2.0",
-    "dependencies": ["base >= 2.0", "? space-age", "(?) James-Oil-Processing"],
+    "dependencies": ["base >= 2.0", "? space-age", "! James-Oil-Processing"],
     "description": "Adds over 110 unique and balanced alternate recipes to VANILLA!"
 }

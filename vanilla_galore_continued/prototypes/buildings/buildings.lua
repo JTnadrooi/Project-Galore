@@ -432,7 +432,7 @@ vgal.data.extend({
             { "stone-brick", 4 },
         },
         fluid_ingredients = {
-            { "steam", 1000 },
+            { "steam", 80 },
         },
         results = {
             { "concrete", 10 },

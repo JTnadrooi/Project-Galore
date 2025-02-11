@@ -1,12 +1,57 @@
 vgal.data.extend {
     {
+        name = "crude-oil-sulfur",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/crude-oil-sulfur.png"),
+        },
+        category = "oil-processing",
+        energy_required = 4,
+        fluid_ingredients = {
+            { "crude-oil", 100 }
+        },
+        results = {
+            { "sulfur", 1, { probability = 0.55 } }
+        },
+        fluid_results = {
+            { "petroleum-gas", 50 }
+        },
+        technology = "advanced-oil-processing",
+        complementairy_recipe = "advanced-oil-processing",
+        show_amount_in_title = false,
+    },
+    {
+        name = "steam-crude-oil-sulfur",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/crude-oil-sulfur.png"),
+            vgal.icon.get_in("steam"),
+            vgal.icon.get_in2("steam"),
+        },
+        category = "oil-processing",
+        energy_required = 3,
+        fluid_ingredients = {
+            { "steam",     40 },
+            { "crude-oil", 100 }
+        },
+        results = {
+            { "sulfur", nil, { amount_min = 1, amount_max = 2 } }
+        },
+        fluid_results = {
+            { "petroleum-gas", 55 }
+        },
+        technology = "advanced-oil-processing",
+        complementairy_recipe = "advanced-oil-processing",
+        show_amount_in_title = false,
+    },
+    {
         name = "steam-advanced-oil-processing",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/steam-advanced-oil-processing.png"),
         },
         category = "oil-processing",
-        energy_required = 2,
+        energy_required = 2.5,
         fluid_ingredients = {
             { "steam",     50 },
             { "crude-oil", 100 }

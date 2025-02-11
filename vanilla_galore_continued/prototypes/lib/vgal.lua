@@ -246,18 +246,19 @@ function vgal.data.extend(recipes, args)
                 error()
             end
         end
-        if recipe.productivity_technology ~= "" then
+        if recipe.productivity_technology ~= "" then -- so if "", no prod even when tech exists
             if data.raw["technology"][recipe.main_product .. "-productivity"] then
                 recipe.productivity_technology = recipe.main_product .. "-productivity"
             end
             if recipe.productivity_technology then
                 if type(recipe.productivity_technology) == "string" then
-                    vgal.tech.add_productivity_change(recipe.productivity_technology, recipe.name)
+                    vgal.tech.add_productivity_change(recipe.productivity_technology, recipe.name, nil, recipe.hidden)
                 else
                     vgal.tech.add_productivity_change(
                         recipe.productivity_technology[1],
                         recipe.name,
-                        recipe.productivity_technology[2]
+                        recipe.productivity_technology[2],
+                        recipe.hidden
                     )
                 end
             end

@@ -12,12 +12,12 @@ function vgal.tech.add_recipe(techName, recipeName)
         data.raw.technology[techName].effects,
         {
             type = "unlock-recipe",
-            recipe = recipeName
+            recipe = recipeName,
         }
     )
 end
 
-function vgal.tech.add_productivity_change(techName, recipeName, change)
+function vgal.tech.add_productivity_change(techName, recipeName, change, hidden)
     local tech = data.raw["technology"][techName]
     if tech then
         table.insert(
@@ -26,6 +26,7 @@ function vgal.tech.add_productivity_change(techName, recipeName, change)
                 type = "change-recipe-productivity",
                 recipe = recipeName,
                 change = change or 0.1,
+                hidden = hidden,
             }
         )
     end

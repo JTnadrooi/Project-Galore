@@ -69,6 +69,8 @@ vgal_electroplantify("steel-plate-accumulator")
 
 vgal_cryogenify("copper-cable-plastic-bar")
 vgal_cryogenify("copper-cable-battery")
+vgal_cryogenify("coal-sulfur")
+vgal_cryogenify("steam-sulfur")
 
 vgal_organicify("petroleum-gas-rocket-fuel")
 

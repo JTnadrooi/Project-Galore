@@ -1,7 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.5
+  Features:
+    - More nuclear recipes added.
+    - More oil processing recipes added.
   Balancing:
     - Severly reduced steam costs in many recipes.
+    - "vgal-steam-advanced-oil-processing" time taken increased by 25%
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Features:

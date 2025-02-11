@@ -11,7 +11,7 @@ vgal.data.extend {
             { "crude-oil", 100 }
         },
         results = {
-            { "sulfur", 1, { probability = 0.55 } }
+            { "sulfur", 1, { probability = 0.60 } }
         },
         fluid_results = {
             { "petroleum-gas", 50 }
@@ -94,9 +94,9 @@ vgal.data.extend {
             vgal.icon.get_in("steam"),
         },
         category = "chemistry",
-        energy_required = 1.2,
+        energy_required = 1,
         fluid_ingredients = {
-            { "steam",     30 },
+            { "steam",     15 },
             { "heavy-oil", 50 },
         },
         fluid_results = {
@@ -114,9 +114,9 @@ vgal.data.extend {
             vgal.icon.get_in("steam"),
         },
         category = "chemistry",
-        energy_required = 1.2,
+        energy_required = 1,
         fluid_ingredients = {
-            { "steam",     30 },
+            { "steam",     15 },
             { "light-oil", 40 },
         },
         fluid_results = {
@@ -137,7 +137,7 @@ vgal.data.extend {
         category = "chemistry",
         energy_required = 1,
         fluid_ingredients = {
-            { "steam",         30 },
+            { "steam",         20 },
             { "petroleum-gas", 40 },
         },
         results = {

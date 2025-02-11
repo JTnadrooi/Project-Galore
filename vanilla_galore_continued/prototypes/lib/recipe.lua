@@ -1,6 +1,5 @@
 ---@diagnostic disable: duplicate-set-field, param-type-mismatch
 
-vgal.recipe.toclean = vgal.recipe.toclean or {}
 
 function vgal.recipe.get_if_productivity(mainProduct)
     local recipe = data.raw["recipe"][mainProduct]
@@ -65,17 +64,18 @@ function vgal.recipe.normalize_dublicates(recipeName)
     end
 end
 
-function vgal.recipe.hide_and_queue(recipeName)
-    vgal.recipe.hide(recipeName)
-    vgal.recipe.queue_to_clean(recipeName)
-end
+-- function vgal.recipe.hide_and_queue(recipeName)
+--     vgal.recipe.hide(recipeName)
+--     vgal.recipe.queue_to_clean(recipeName)
+-- end
 
-function vgal.recipe.hide(recipeName)
-    data.raw["recipe"][recipeName].hidden = true
-end
-
-function vgal.recipe.unhide(recipeName)
-    data.raw["recipe"][recipeName].hidden = false
+function vgal.recipe.deep_hide(recipeName)
+    local recipe = data.raw["recipe"][recipeName]
+    recipe.hidden = true
+    recipe.hidden_in_factoriopedia = true
+    recipe.hide_from_player_crafting = true
+    recipe.hide_from_stats = true
+    recipe.hide_from_signal_gui = true
 end
 
 function vgal.recipe.copy(recipeName)
@@ -331,9 +331,9 @@ function vgal.recipe.add_ingredient(recipeName, ingredient)
     end
 end
 
-function vgal.recipe.queue_to_clean(recipeName)
-    table.insert(vgal.recipe.toclean, recipeName)
-end
+-- function vgal.recipe.queue_to_clean(recipeName)
+--     table.insert(vgal.toclean, recipeName)
+-- end
 
 function vgal.recipe.clear_icon_data(recipeName)
     local recipe = data.raw["recipe"][recipeName]

@@ -18,11 +18,12 @@ vgal.data.extend
             { "coal", 6 }
         },
         fluid_ingredients = {
-            { "steam", 200 },
+            { "steam", 80 },
         },
         results = {
             { "sulfur", 2 }
         },
+        show_amount_in_title = false,
     },
     {
         type = "recipe",

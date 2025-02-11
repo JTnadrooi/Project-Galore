@@ -30,32 +30,34 @@ local function vgal_organicify(recipeName)
         error(recipeName)
     end
 end
+data.raw.recipe["vgal-flying-robot-frame-rocket-part"].ingredients = vgal.build.table({
+    { "flying-robot-frame", 1 }, -- 405
+    { "processing-unit",    1 }, -- 710
+    { "battery",            2 }, -- 100
+})
+data.raw.recipe["vgal-engine-unit-rocket-part"].ingredients = vgal.build.table({
+    { "engine-unit",     4 }, -- 360
+    { "rocket-fuel",     2 }, -- 220
+    { "processing-unit", 1 }, -- 710
+})
+data.raw.recipe["vgal-uranium-fuel-cell-rocket-part"].ingredients = vgal.build.table({
+    { "low-density-structure", 1 }, --
+    { "uranium-fuel-cell",     1 }, --
+    { "processing-unit",       1 }, --
+})
+data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].ingredients = vgal.build.table({
+    { "rocket-fuel", 1 },
+    { "uranium-235", 1 },
+    { "carbon",      5 },
+})
+data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].icons = vgal.icon.register {
+    vgal.icon.get("nuclear-fuel"),
+    vgal.icon.get_in("carbon"),
+}
+data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
 
-if data.raw.recipe["vgal-flying-robot-frame-rocket-part"] then
-    data.raw.recipe["vgal-flying-robot-frame-rocket-part"].ingredients = vgal.build.table({
-        { "flying-robot-frame", 1 }, -- 405
-        { "processing-unit",    1 }, -- 710
-        { "battery",            2 }, -- 100
-    })
-end
-if data.raw.recipe["vgal-engine-unit-rocket-part"] then
-    data.raw.recipe["vgal-engine-unit-rocket-part"].ingredients = vgal.build.table({
-        { "engine-unit",     4 }, -- 360
-        { "rocket-fuel",     2 }, -- 220
-        { "processing-unit", 1 }, -- 710
-    })
-end
-if data.raw.recipe["vgal-uranium-fuel-cell-rocket-part"] then
-    data.raw.recipe["vgal-uranium-fuel-cell-rocket-part"].ingredients = vgal.build.table({
-        { "low-density-structure", 1 }, --
-        { "uranium-fuel-cell",     1 }, --
-        { "processing-unit",       1 }, --
-    })
-end
-if data.raw.recipe["vgal-heavy-oil-rocket-fuel"] then
-    data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
-end
-vgal.data.trim("vgal-processing-unit-artillery-turret")
+vgal.recipe.deep_hide("vgal-processing-unit-artillery-turret")
+vgal.recipe.deep_hide("vgal-steam-concrete")
 
 vgal_electroplantify("plastic-bar-electronic-circuit")
 vgal_electroplantify("plastic-bar-processing-unit")

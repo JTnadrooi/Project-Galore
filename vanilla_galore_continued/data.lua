@@ -1,13 +1,17 @@
 vgal = require("prototypes.lib.vgal")
 vgal.log("the *core-of-galore* has loaded.")
 
-if mods["space-age"] and not mods["space_age_galore"] then
-    error(
-        "\n\n\n\n\n[PLEASE READ]\nInstall or enable \"Space Age Galore\" for compatibility with the \"Space Age\" DLC.\n\n\n\n"
-    )
+local function throw_compat_error(neededGalore, with)
+    if mods[with[1]] and not mods[neededGalore[1]] then
+        error("\n\n\n\n\n[PLEASE READ]\nInstall or enable \"" ..
+            neededGalore[2] .. "\" for compatibility with " .. with[2] .. ".\n\n\n\n")
+    end
 end
 
-require("prototypes.overrides.overrides")
+throw_compat_error({ "space_age_galore", "Space Age Galore" }, { "space-age", "the \"Space Age\" DLC" })
+throw_compat_error({ "angels_galore", "Angels Galore" }, { "angelsrefining", "Angel's mods" })
+
+require("overrides.overrides")
 
 require("prototypes.subgroups")
 require("prototypes.rocket-parts")
@@ -26,4 +30,6 @@ require("prototypes.buildings.belts")
 require("prototypes.buildings.inserters")
 require("prototypes.buildings.buildings")
 
-require("prototypes.overrides.vgal-post-overrides")
+-- require("mods.james") sorry i gave up..
+
+require("overrides.vgal-post-overrides")

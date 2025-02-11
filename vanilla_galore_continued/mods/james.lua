@@ -1,0 +1,15 @@
+-- local recipes = {
+--     "vgal-heavy-oil-rocket-fuel",
+--     "vgal-wood-heavy-oil-electronic-circuit",
+--     "vgal-petroleum-gas-coal-heavy-oil",
+--     "vgal-heavy-oil-rail",
+-- }
+
+-- for _, recipeName in ipairs(recipes) do
+--     local recipeData = data.raw["recipe"][recipeName]
+--     -- recipeData.icons = vgal.icon.register({
+--     --     vgal.icon.get(recipeData.main_product)
+--     -- })
+--     recipeData.icons = nil
+--     recipeData.hidden = true
+-- end

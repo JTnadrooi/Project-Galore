@@ -5,7 +5,11 @@ vgal.data.extend
         name = "coal-sulfur",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/coal-sulfur.png"),
+            -- vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/coal-sulfur.png"),
+            -- vgal.icon.get_in_fluid("petroleum-gas"),
+            vgal.icon.get("coal"),
+            vgal.icon.get("sulfur"),
+            vgal.icon.get_overlay("reprocessing"),
         },
         category = "chemistry",
         energy_required = 6,

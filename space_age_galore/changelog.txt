@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.9
+  Features:
+    - Vanilla Galore 1.1.5 support.
+  Bugfixes:
+    - "James Oil" compat.. "fixed"
+---------------------------------------------------------------------------------------------------
 Version: 0.2.8
   Features:
     - More recipe groups added, all toggle-able through the settings!

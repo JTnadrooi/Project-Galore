@@ -5,6 +5,8 @@ Version: 1.1.5
   Balancing:
     - Severly reduced steam costs in many recipes.
     - "vgal-steam-advanced-oil-processing" time taken increased by 25%
+  Bugfixes:
+    - "James Oil" compat.. "fixed"
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Features:

@@ -15,7 +15,8 @@ local subgroups = {
         name = "crushing",
         tab = "intermediate-products",
         order = "bb",
-        entries = {}
+        entries = {},
+        when = { "vgal-crushing-recipes" },
     },
     {
         name = "scrap",
@@ -138,10 +139,17 @@ data.raw["recipe"]["casting-iron-gear-wheel"].subgroup = "vgal-intermediate-cast
 data.raw["recipe"]["casting-iron-stick"].subgroup = "vgal-intermediate-casting"
 data.raw["recipe"]["casting-copper-cable"].subgroup = "vgal-intermediate-casting"
 
-data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"
-data.raw["recipe"]["carbonic-asteroid-crushing"].subgroup = "vgal-crushing"
-data.raw["recipe"]["oxide-asteroid-crushing"].subgroup = "vgal-crushing"
+if settings.startup["vgal-crushing-recipes"].value then
+    data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"
+    data.raw["recipe"]["carbonic-asteroid-crushing"].subgroup = "vgal-crushing"
+    data.raw["recipe"]["oxide-asteroid-crushing"].subgroup = "vgal-crushing"
+
+    data.raw["recipe"]["advanced-metallic-asteroid-crushing"].subgroup = "vgal-crushing"
+    data.raw["recipe"]["advanced-carbonic-asteroid-crushing"].subgroup = "vgal-crushing"
+    data.raw["recipe"]["advanced-oxide-asteroid-crushing"].subgroup = "vgal-crushing"
+end
 data.raw["recipe"]["scrap-recycling"].subgroup = "vgal-scrap"
+
 
 -- data.raw["recipe"]["coal-liquefaction"].subgroup = "vgal-oil-fluids"
 -- data.raw["recipe"]["advanced-oil-processing"].subgroup = "vgal-oil-fluids"

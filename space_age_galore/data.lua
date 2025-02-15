@@ -3,6 +3,7 @@ require("overrides.overrides")
 
 require("prototypes.science-packs")
 require("prototypes.intermediates.chemical")
+require("prototypes.intermediates.crushing")
 require("prototypes.ice")
 require("prototypes.military")
 require("prototypes.intermediates.smelting")

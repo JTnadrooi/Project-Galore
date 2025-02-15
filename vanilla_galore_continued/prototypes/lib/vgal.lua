@@ -40,6 +40,7 @@ vgal.groups = {
     { "barrels",            "vgal-barrels" },
     { "military",           "vgal-military" },
     { "wood-recipes",       "vgal-wood-recipes" },
+    { "oil-recipes",        "vgal-oil-recipes" },
 
     { "convoluted-recipes", "vgal-convoluted" },
     { "unsure-recipes",     "vgal-unsure" },

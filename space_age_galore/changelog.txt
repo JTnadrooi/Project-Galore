@@ -4,6 +4,7 @@ Version: 0.2.9
     - Vanilla Galore 1.1.5 support.
   Bugfixes:
     - "James Oil" compat.. "fixed"
+    - Fixed recipes showing in prod technologies, even when not enabled.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.8
   Features:

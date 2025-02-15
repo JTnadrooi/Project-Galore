@@ -46,4 +46,22 @@ vgal.data.extend
             { "lubricant", 20 }, -- 40
         },
     },
+    {
+        name = "steam-sulfur",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("sulfur"),
+            vgal.icon.get_in("steam"),
+        },
+        technology = "sulfur-processing",
+        category = "chemistry",
+        energy_required = 1,
+        fluid_ingredients = {
+            { "steam",         20 },
+            { "petroleum-gas", 40 },
+        },
+        results = {
+            { "sulfur", 3 },
+        },
+    },
 }

@@ -6,8 +6,8 @@ vgal.data.extend({
             vgal.icon.get("crude-oil"),
             vgal.icon.get_in("ammonia"),
         },
-        category = "oil-processing",
-        energy_required = 3,
+        category = "organic",
+        energy_required = 4,
         fluid_ingredients = {
             { "ammonia", 10 }, -- 20
             { "water",   50 },
@@ -16,32 +16,29 @@ vgal.data.extend({
             { "carbon", 1 }, -- 40
         },
         fluid_results = {
-            { "crude-oil", 80 }, -- 40
+            { "crude-oil", 60 }, -- 30 * 1.5 = 45
         },
         technology = "bacteria-cultivation",
         show_amount_in_title = false,
     },
     {
-        name = "ammonia-light-oil",
+        name = "yumako-mash-light-oil",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("crude-oil"),
-            vgal.icon.get_in("ammonia"),
+            vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/yumako-mash-light-oil.png"),
         },
-        category = "oil-processing",
+        category = "organic",
         energy_required = 3,
         fluid_ingredients = {
-            { "ammonia", 10 }, -- 20
-            { "water",   50 },
         },
         ingredients = {
-            { "carbon", 1 }, -- 40
+            { "yumako-mash", 5 }, -- 50
         },
         fluid_results = {
-            { "crude-oil", 80 }, -- 40
+            { "light-oil", 40 }, -- 60 * 1.5 = 90
         },
-        technology = "bacteria-cultivation",
         show_amount_in_title = false,
+        technology = "bacteria-cultivation",
     },
 }, {
     groups = { "vgal-oil-recipes" }

@@ -9,6 +9,7 @@ require("prototypes.military")
 require("prototypes.intermediates.smelting")
 require("prototypes.intermediates.circuits")
 require("prototypes.intermediates.intermediates")
+require("prototypes.intermediates.oil-processing")
 require("prototypes.buildings.buildings")
 require("prototypes.subgroups")
 

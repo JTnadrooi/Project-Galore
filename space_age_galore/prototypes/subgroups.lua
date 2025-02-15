@@ -16,7 +16,7 @@ local subgroups = {
         tab = "intermediate-products",
         order = "bb",
         entries = {},
-        when = { "vgal-crushing-recipes" },
+        -- when = { "vgal-crushing-recipes" },
     },
     {
         name = "scrap",
@@ -90,7 +90,7 @@ end
 for _, value in ipairs(subgroups) do
     for _, whenItem in ipairs(value.when or {}) do
         if not settings.startup[whenItem].value then
-            goto continue
+            value.entries = {}
         end
     end
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)

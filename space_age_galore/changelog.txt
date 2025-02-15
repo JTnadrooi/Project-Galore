@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+  Features:
+    - More recipe groups added.
+    - "vgal-scrap-crushing" recipe added.
+  Bugfixes:
+    - "vgal-high-temp-oil-processing-surface-conditions" locale fixed
+    - Fixed recipes showing in prod technologies, even when not enabled.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.9
   Features:
     - Vanilla Galore 1.1.5 support.

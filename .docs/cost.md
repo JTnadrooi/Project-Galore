@@ -250,6 +250,7 @@
 | ------------------- | ---- |
 | ammoniacal-solution | 0.2  |
 | ammonia             | 0.5  |
+| ammonia(gb)         | 2    |
 | lithium-brine       | 12   |
 | lithium             | 150  |
 | lithium-plate       | 150  |

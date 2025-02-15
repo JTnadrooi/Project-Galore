@@ -41,6 +41,7 @@ vgal.groups = {
     { "military",           "vgal-military" },
     { "wood-recipes",       "vgal-wood-recipes" },
     { "oil-recipes",        "vgal-oil-recipes" },
+    { "crushing-recipes",   "vgal-crushing-recipes" },
 
     { "convoluted-recipes", "vgal-convoluted" },
     { "unsure-recipes",     "vgal-unsure" },

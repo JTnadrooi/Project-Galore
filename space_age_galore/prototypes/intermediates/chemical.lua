@@ -213,27 +213,27 @@ vgal.data.extend
             { "lubricant", 20 }, -- (1.5)=60
         },
     },
-    {
-        type = "recipe",
-        name = "carbon-lubricant", -- for vulcanus
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("lubricant"),
-            vgal.icon.get_in_fluid("carbon"),
-        },
-        category = "chemistry",
-        energy_required = 3,
-        technology = "space-platform",
-        fluid_ingredients = {
-            { "water", 30 },
-        },
-        ingredients = {
-            { "carbon", 4 }, -- 200
-        },
-        fluid_results = {
-            { "lubricant", 30 }, -- 60
-        },
-    },
+    -- {
+    --     type = "recipe",
+    --     name = "carbon-lubricant", -- for vulcanus
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("lubricant"),
+    --         vgal.icon.get_in_fluid("carbon"),
+    --     },
+    --     category = "chemistry",
+    --     energy_required = 3,
+    --     technology = "space-platform",
+    --     fluid_ingredients = {
+    --         { "water", 30 },
+    --     },
+    --     ingredients = {
+    --         { "carbon", 4 }, -- 200
+    --     },
+    --     fluid_results = {
+    --         { "lubricant", 30 }, -- 60
+    --     },
+    -- },
     {
         type = "recipe",
         name = "calcite-stone-holmium-solution",

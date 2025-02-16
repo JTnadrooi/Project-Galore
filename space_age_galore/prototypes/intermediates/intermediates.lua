@@ -60,27 +60,6 @@ vgal.data.extend
         category = "advanced-crafting",
     },
     {
-        name = "jelly-light-oil-solid-fuel",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("solid-fuel"),
-            vgal.icon.get_in("light-oil"),
-            vgal.icon.get_in2("jelly"),
-        },
-        energy_required = 6,
-        technology = "jellynut",
-        fluid_ingredients = {
-            { "light-oil", 5 }, -- 8
-        },
-        ingredients = {
-            { "jelly", 15 }, -- 90
-        },
-        results = {
-            { "solid-fuel", 4 }, -- 80 * 1.5 = 120
-        },
-        category = "organic",
-    },
-    {
         name = "jelly-crude-oil-solid-fuel",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -88,19 +67,40 @@ vgal.data.extend
             vgal.icon.get_in("crude-oil"),
             vgal.icon.get_in2("jelly"),
         },
-        energy_required = 6,
+        energy_required = 3,
         technology = "jellynut",
         fluid_ingredients = {
-            { "crude-oil", 10 }, -- 2
+            { "crude-oil", 5 }, -- 2
         },
         ingredients = {
-            { "jelly", 12 }, -- 72
+            { "jelly", 4 }, -- 24
         },
         results = {
-            { "solid-fuel", 4 }, -- 80 * 1.5 = 120
+            { "solid-fuel", 1 }, -- 20 * 1.5 = 30
         },
         category = "organic",
     },
+    -- { -- eventually, I will be able to calculate fulgora stuff..
+    --     name = "jelly-light-oil-superconductor",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("superconductor"),
+    --         vgal.icon.get_in("crude-oil"),
+    --         vgal.icon.get_in2("jelly"),
+    --     },
+    --     energy_required = 3,
+    --     technology = { "jellynut", "electromagnetic-plant" },
+    --     fluid_ingredients = {
+    --         { "light-oil", 5 }, -- 8
+    --     },
+    --     ingredients = {
+    --         { "jelly", 4 }, -- 24
+    --     },
+    --     results = {
+    --         { "solid-fuel", 1 }, -- 20 * 1.5 = 30
+    --     },
+    --     category = "organic",
+    -- },
     {
         name = "calcite-carbon-stone-brick", -- vu
         prefix = "vgal",

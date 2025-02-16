@@ -16,7 +16,7 @@ vgal.data.extend({
         fluid_results = {
             { "petroleum-gas", 50 }
         },
-        technology = "advanced-oil-processing",
+        technology = "sulfur-processing",
         complementairy_recipe = "advanced-oil-processing",
         show_amount_in_title = false,
     },
@@ -40,8 +40,8 @@ vgal.data.extend({
         fluid_results = {
             { "petroleum-gas", 55 }
         },
-        technology = "advanced-oil-processing",
-        complementairy_recipe = "advanced-oil-processing",
+        technology = "sulfur-processing",
+        complementairy_recipe = "basic-oil-processing",
         show_amount_in_title = false,
     },
     {

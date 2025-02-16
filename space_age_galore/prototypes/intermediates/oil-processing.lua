@@ -19,6 +19,8 @@ vgal.data.extend({
         fluid_results = {
             { "crude-oil", 60 }, -- 30 * 1.5 = 45
         },
+        subgroup = "vgal-oil",
+        order = "aaa",
         technology = "space-platform",
         show_amount_in_title = false,
     },

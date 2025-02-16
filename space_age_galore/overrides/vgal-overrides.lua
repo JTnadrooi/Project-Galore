@@ -70,7 +70,6 @@ vgal.recipe.deep_hide("vgal-steam-concrete")
 vgal_electroplantify("plastic-bar-electronic-circuit")
 vgal_electroplantify("plastic-bar-processing-unit")
 vgal_electroplantify("sulfuric-acid-advanced-circuit")
-vgal_electroplantify("sulfuric-acid-electronic-circuit")
 vgal_electroplantify("low-density-structure-processing-unit")
 
 vgal_electroplantify("processing-unit-substation")

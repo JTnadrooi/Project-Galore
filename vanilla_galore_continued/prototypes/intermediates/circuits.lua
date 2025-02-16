@@ -1,27 +1,27 @@
 vgal.data.extend
 {
-    {
-        name = "sulfuric-acid-electronic-circuit",
-        prefix = "vgal",
-        technology = "sulfur-processing",
-        icons = vgal.icon.register {
-            vgal.icon.get("electronic-circuit"),
-            vgal.icon.get_in("sulfuric-acid"),
-        },
-        energy_required = 2,
-        ingredients = {
-            { "copper-cable", 4 }, -- 40
-            { "iron-plate",   4 }, -- 40
-        },
-        fluid_ingredients = {
-            { "sulfuric-acid", 5 }, -- ~8
-        },
-        results = {
-            { "electronic-circuit", 4 } -- 100
-        },
-        category = "crafting-with-fluid",
-        groups = { "vgal-unsure" },
-    },
+    -- {
+    --     name = "sulfuric-acid-electronic-circuit",
+    --     prefix = "vgal",
+    --     technology = "sulfur-processing",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("electronic-circuit"),
+    --         vgal.icon.get_in("sulfuric-acid"),
+    --     },
+    --     energy_required = 2,
+    --     ingredients = {
+    --         { "copper-cable", 4 }, -- 40
+    --         { "iron-plate",   4 }, -- 40
+    --     },
+    --     fluid_ingredients = {
+    --         { "sulfuric-acid", 5 }, -- ~8
+    --     },
+    --     results = {
+    --         { "electronic-circuit", 4 } -- 100
+    --     },
+    --     category = "crafting-with-fluid",
+    --     groups = { "vgal-unsure" },
+    -- },
     {
         name = "sulfuric-acid-advanced-circuit",
         prefix = "vgal",

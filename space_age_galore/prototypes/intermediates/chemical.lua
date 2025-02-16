@@ -442,5 +442,14 @@ vgal.data.extend
         fluid_results = {
             { "ammonia", 10 } -- 20
         },
+        show_amount_in_title = false,
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 4000,
+                max = 4000,
+            }
+        },
     },
 }

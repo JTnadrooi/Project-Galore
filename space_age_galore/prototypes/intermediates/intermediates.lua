@@ -171,7 +171,7 @@ vgal.data.extend
         },
         category = "chemistry",
         energy_required = 10,
-        technology = "captivity",
+        technology = "explosives",
         fluid_ingredients = {
             { "ammonia", 10 } -- 20
         },

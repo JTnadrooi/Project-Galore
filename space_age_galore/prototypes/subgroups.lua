@@ -43,6 +43,12 @@ local subgroups = {
         entries = { "holmium-solution", "electrolyte" }
     },
     {
+        name = "ammonia",
+        tab = "intermediate-products",
+        order = "acc",
+        entries = { "ammonia", "ammoniacal-solution" }
+    },
+    {
         name = "intermediate-casting",
         tab = "intermediate-products",
         order = "ka",
@@ -59,6 +65,13 @@ local subgroups = {
         tab = "logistics",
         order = "bad",
         entries = { "turbo-transport-belt", "turbo-splitter", "turbo-underground-belt" },
+        when = { "vgal-belts" },
+    },
+    {
+        name = "soil",
+        tab = "logistics",
+        order = "x",
+        entries = { "artificial-yumako-soil", "artificial-jellynut-soil", "landfill", "foundation", "overgrowth-yumako-soil", "overgrowth-jellynut-soil", "ice-platform" },
         when = { "vgal-belts" },
     },
 }
@@ -117,8 +130,8 @@ vgal.subgroup.set_item_or_fluid("fluoroketone-cold", "fluid-recipes")
 vgal.subgroup.set_item_or_fluid("sulfuric-acid", "fluid-recipes")
 vgal.subgroup.set_item_or_fluid("fusion-plasma", "fluid-recipes")
 
-vgal.subgroup.set_item_or_fluid("ammonia", "fluid-recipes")
-vgal.subgroup.set_item_or_fluid("ammoniacal-solution", "fluid-recipes")
+-- vgal.subgroup.set_item_or_fluid("ammonia", "fluid-recipes")
+-- vgal.subgroup.set_item_or_fluid("ammoniacal-solution", "fluid-recipes")
 vgal.subgroup.set_item_or_fluid("fluorine", "fluid-recipes")
 -- vgal.subgroup.set_item_or_fluid("holmium-solution", "fluid-recipes")
 -- vgal.subgroup.set_item_or_fluid("electrolyte", "fluid-recipes")

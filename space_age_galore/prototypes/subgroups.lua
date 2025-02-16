@@ -37,6 +37,12 @@ local subgroups = {
         entries = { "heavy-oil", "light-oil", "petroleum-gas", "crude-oil" }
     },
     {
+        name = "fulgora-fluids",
+        tab = "intermediate-products",
+        order = "acb",
+        entries = { "holmium-solution", "electrolyte" }
+    },
+    {
         name = "intermediate-casting",
         tab = "intermediate-products",
         order = "ka",

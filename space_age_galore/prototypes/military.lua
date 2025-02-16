@@ -1,4 +1,4 @@
-vgal.data.extend {
+vgal.data.extend({
     {
         name = "tungsten-plate-piercing-rounds-magazine",
         prefix = "vgal",
@@ -75,4 +75,6 @@ vgal.data.extend {
         },
         category = "crafting",
     },
-}
+}, {
+    groups = { "vgal-military" }
+})

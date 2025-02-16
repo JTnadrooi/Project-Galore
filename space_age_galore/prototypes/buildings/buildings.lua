@@ -214,6 +214,50 @@ vgal.data.extend({
         },
         category = "crafting-with-fluid",
     },
+    {
+        name = "ammonia-artificial-jellynut-soil",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("artificial-jellynut-soil"),
+            vgal.icon.get_in("ammonia"),
+        },
+        energy_required = 2,
+        technology = "artificial-soil",
+        ingredients = {
+            { "jellynut-seed", 1 },
+            { "nutrients",     50 },
+            { "landfill",      5 },
+        },
+        fluid_ingredients = {
+            { "ammonia", 100 },
+        },
+        results = {
+            { "artificial-jellynut-soil", 10 },
+        },
+        category = "crafting-with-fluid",
+    },
+    {
+        name = "ammonia-artificial-yumako-soil",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("artificial-yumako-soil"),
+            vgal.icon.get_in("ammonia"),
+        },
+        energy_required = 2,
+        technology = "artificial-soil",
+        ingredients = {
+            { "yumako-seed", 1 },
+            { "nutrients",   50 },
+            { "landfill",      5 },
+        },
+        fluid_ingredients = {
+            { "ammonia", 100 },
+        },
+        results = {
+            { "artificial-yumako-soil", 10 },
+        },
+        category = "crafting-with-fluid",
+    },
     -- {
     --     name = "jelly-solar-panel",
     --     prefix = "vgal",

@@ -388,6 +388,13 @@ vgal.data.extend
             { "ammonia", 80 }, -- 160 * 1.5 = 240
         },
         show_amount_in_title = false,
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 10,
+            }
+        },
     },
     {
         type = "recipe",
@@ -409,6 +416,13 @@ vgal.data.extend
             { "ammonia", 50 }, -- 100 * 1.5 = 150
         },
         show_amount_in_title = false,
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 10,
+            }
+        },
     },
     {
         type = "recipe",
@@ -430,6 +444,13 @@ vgal.data.extend
             { "ammonia", 80 }, -- 160 * 1.5 = 240
         },
         show_amount_in_title = false,
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 10,
+            }
+        },
     },
     {
         type = "recipe",

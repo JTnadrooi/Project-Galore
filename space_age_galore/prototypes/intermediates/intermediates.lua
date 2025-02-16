@@ -205,4 +205,26 @@ vgal.data.extend
             { "battery", 5 }, -- 250
         },
     },
+    -- {
+    --     type = "recipe",
+    --     name = "ammonia-plastic-bar",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("plastic-bar"),
+    --         vgal.icon.get_in("ammonia"),
+    --     },
+    --     category = "chemistry-or-cryogenics",
+    --     energy_required = 10, -- fast
+    --     technology = "lithium-processing",
+    --     fluid_ingredients = {
+    --         { "ammonia", 10 }, -- 20
+    --     },
+    --     ingredients = {
+    --         { "lithium",      1 }, -- 150
+    --         { "copper-plate", 5 }, -- 50
+    --     },
+    --     results = {
+    --         { "battery", 5 }, -- 250
+    --     },
+    -- },
 }

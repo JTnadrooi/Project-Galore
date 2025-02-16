@@ -67,6 +67,7 @@ vgal.data.extend({
             { "yumako-seed", 1, { probability = 0.015 } },
         },
         show_amount_in_title = false,
+        main_product = "light-oil",
         technology = "bacteria-cultivation",
     },
 }, {

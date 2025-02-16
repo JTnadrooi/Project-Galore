@@ -30,6 +30,14 @@ local function vgal_organicify(recipeName)
         error(recipeName)
     end
 end
+local function vgal_organicify_chem(recipeName)
+    recipeName = "vgal-" .. recipeName
+    if data.raw["recipe"][recipeName] then
+        data.raw["recipe"][recipeName].category = "organic-or-chemistry"
+    else
+        error(recipeName)
+    end
+end
 data.raw.recipe["vgal-flying-robot-frame-rocket-part"].ingredients = vgal.build.table({
     { "flying-robot-frame", 1 }, -- 405
     { "processing-unit",    1 }, -- 710
@@ -76,6 +84,10 @@ vgal_cryogenify("coal-sulfur")
 vgal_cryogenify("steam-sulfur")
 
 vgal_organicify("petroleum-gas-rocket-fuel")
+
+vgal_organicify_chem("petroleum-gas-coal-heavy-oil")
+vgal_organicify_chem("steam-heavy-oil-light-oil")
+vgal_organicify_chem("steam-light-oil-petroleum-gas")
 
 data.raw["recipe"]["vgal-low-density-structure-engine-unit"].category = "pressing"
 data.raw["recipe"]["vgal-low-density-structure-barrel"].category = "pressing"

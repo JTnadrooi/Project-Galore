@@ -72,7 +72,7 @@ vgal.data.extend({
             vgal.icon.get("heavy-oil"),
             vgal.icon.get_in_fluid("petroleum-gas"),
         },
-        category = "oil-processing",
+        category = "chemistry",
         energy_required = 1.5,
         ingredients = {
             { "coal", 2 }, -- ~12pg, 10

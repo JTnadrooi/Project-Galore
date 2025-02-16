@@ -5,7 +5,8 @@ Version: 0.3.0
     - "vgal-scrap-crushing" recipe added.
   Bugfixes:
     - "vgal-high-temp-oil-processing-surface-conditions" locale fixed
-    - Fixed recipes showing in prod technologies, even when not enabled.
+    - Fixed steam cracking recipes not being able to be crafted in biochamber.
+    - Fixed "vgal-petroleum-gas-coal-heavy-oil" not being crafted in chemical plant.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.9
   Features:

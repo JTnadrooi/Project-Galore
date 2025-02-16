@@ -19,6 +19,7 @@ vgal.data.extend({
         },
         category = "crushing",
         subgroup = "vgal-crushing",
+        order = "ga",
         productivity_technology = "scrap-recycling-productivity",
         show_amount_in_title = false,
         groups = { "vgal-unsure" },
@@ -41,6 +42,7 @@ vgal.data.extend({
         },
         category = "crushing",
         subgroup = "vgal-crushing",
+        order = "gb",
         show_amount_in_title = false,
     },
     {
@@ -62,6 +64,7 @@ vgal.data.extend({
         },
         category = "crushing",
         subgroup = "vgal-crushing",
+        order = "gc",
         show_amount_in_title = false,
     },
 }, {

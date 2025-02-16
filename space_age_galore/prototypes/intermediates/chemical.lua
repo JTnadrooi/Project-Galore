@@ -89,6 +89,14 @@ vgal.data.extend
             { "stone", 30 }, -- 300
         },
         show_amount_in_title = false,
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000,
+            }
+        },
     },
     {
         type = "recipe",
@@ -447,8 +455,7 @@ vgal.data.extend
         {
             {
                 property = "pressure",
-                min = 4000,
-                max = 4000,
+                min = 10,
             }
         },
     },

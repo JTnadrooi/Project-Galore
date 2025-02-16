@@ -71,27 +71,6 @@ vgal.data.extend({
             }
         },
     },
-    -- {
-    --     name = "tungsten-carbide-steel-furnace",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("steel-furnace"),
-    --         vgal.icon.get_in("tungsten-carbide"),
-    --     },
-    --     energy_required = 3,
-    --     technology = { "tungsten-steel", "advanced-material-processing" },
-    --     fluid_ingredients = {
-    --         { "molten-iron", 150 }, -- 150
-    --     },
-    --     ingredients = {
-    --         { "tungsten-carbide", 2 }, -- 200
-    --         { "stone-brick",      5 }, -- 100
-    --     },
-    --     results = {
-    --         { "steel-furnace", 1 }, -- 500
-    --     },
-    --     category = "metallurgy",
-    -- },
     {
         name = "tungsten-carbide-electric-furnace",
         prefix = "vgal",
@@ -114,70 +93,6 @@ vgal.data.extend({
         },
         category = "metallurgy",
     },
-    -- {
-    --     name = "tungsten-carbide-oil-refinery",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("oil-refinery"),
-    --         vgal.icon.get_in("tungsten-carbide"),
-    --     },
-    --     energy_required = 8,
-    --     technology = "tungsten-steel",
-    --     fluid_ingredients = {
-    --         { "molten-iron", 600 },
-    --     },
-    --     ingredients = {
-    --         { "tungsten-carbide",   2 },  -- 200
-    --         { "stone-brick",        5 },  -- 100
-    --         { "electronic-circuit", 10 }, -- 250
-    --     },
-    --     results = {
-    --         { "oil-refinery", 1 }, -- 1500
-    --     },
-    --     category = "metallurgy",
-    -- },
-    -- {
-    --     name = "tungsten-carbide-heat-exchanger",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("heat-exchanger"),
-    --         vgal.icon.get_in("tungsten-carbide"),
-    --     },
-    --     energy_required = 1,
-    --     technology = { "tungsten-steel", "nuclear-power" }, -- again, rip to those who for some reasons go to gleba and vulcanus before nuclear power. (y'know space science once used shiny rocks right?)
-    --     fluid_ingredients = {
-    --         { "molten-iron",   400 },                       -- ~500 bc steel
-    --         { "molten-copper", 800 },
-    --     },
-    --     ingredients = {
-    --         { "tungsten-carbide", 2 }, -- 200
-    --     },
-    --     results = {
-    --         { "heat-exchanger", 1 }, -- 1600
-    --     },
-    --     category = "metallurgy",
-    -- },
-    -- {
-    --     name = "tungsten-carbide-boiler",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("boiler"),
-    --         vgal.icon.get_in("tungsten-carbide"),
-    --     },
-    --     energy_required = 1,
-    --     technology = "tungsten-steel",
-    --     fluid_ingredients = {
-    --         { "molten-iron", 20 },
-    --     },
-    --     ingredients = {
-    --         { "tungsten-carbide", 1 }, -- 100
-    --         { "stone-brick",      2 },
-    --     },
-    --     results = {
-    --         { "boiler", 2 }, -- 180
-    --     },
-    --     category = "metallurgy",
-    -- },
     {
         name = "molten-iron-molten-copper-space-platform-foundation",
         prefix = "vgal",
@@ -235,49 +150,6 @@ vgal.data.extend({
         },
         category = "metallurgy",
     },
-    -- {
-    --     name = "tungsten-carbide-power-plant",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("power-plant"),
-    --         vgal.icon.get_in("tungsten-carbide"),
-    --     },
-    --     energy_required = 2,
-    --     technology = "tungsten-steel",
-    --     fluid_ingredients = {
-    --         { "molten-iron", 100 },
-    --     },
-    --     ingredients = {
-    --         { "tungsten-carbide", 1 }, -- 100
-    --     },
-    --     results = {
-    --         { "power-plant", 1 }, -- 3900
-    --     },
-    --     category = "metallurgy",
-    -- },
-    -- {
-    --     name = "tungsten-carbide-nuclear-reactor",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("nuclear-reactor"),
-    --         vgal.icon.get_in("tungsten-carbide"),
-    --     },
-    --     energy_required = 15,
-    --     technology = { "tungsten-carbide", "nuclear-power" },
-    --     fluid_ingredients = {
-    --         { "molten-iron",   15000 },
-    --         { "molten-copper", 2500 },
-    --     },
-    --     ingredients = {
-    --         { "tungsten-carbide", 40 },
-    --         { "refined-concrete", 100 },
-    --         { "processing-unit",  70 },
-    --     },
-    --     results = {
-    --         { "nuclear-reactor", 1 },
-    --     },
-    --     category = "metallurgy",
-    -- },
     {
         name = "tungsten-plate-assembling-machine-1",
         prefix = "vgal",
@@ -342,28 +214,26 @@ vgal.data.extend({
         },
         category = "crafting-with-fluid",
     },
-    -- {
-    --     name = "tungsten-plate-assembling-machine-3",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("assembling-machine-3"),
-    --         vgal.icon.get_in("tungsten-plate"),
-    --     },
-    --     energy_required = 1,
-    --     technology = "tungsten-steel",
-    --     ingredients = {
-    --         { "tungsten-plate",       1 }, -- ~100
-    --         { "electric-engine-unit", 1 }, -- 180
-    --         { "assembling-machine-1", 1 }, -- 265
-    --     },
-    --     fluid_ingredients = {
-    --         { "lubricant", 10 }, -- 20
-    --     },
-    --     results = {
-    --         { "assembling-machine-3", 1 }, -- 540
-    --     },
-    --     category = "crafting-with-fluid",
-    -- },
+    {
+        name = "jelly-solar-panel",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("solar-panel"),
+            vgal.icon.get_in("jelly"),
+        },
+        energy_required = 16,
+        technology = { "solar-energy", "jellynut" },
+        ingredients = {
+            { "steel-plate",  10 }, -- 500
+            { "copper-plate", 6 },  -- 60
+            { "jelly",        40 }, -- 240
+        },
+        results = {
+            { "solar-panel", 1 }, -- 675 * 1.5 = 1010
+        },
+        category = "organic",
+        groups = { "vgal-unsure" },
+    },
 }, {
     groups = { "vgal-buildings" }
 })

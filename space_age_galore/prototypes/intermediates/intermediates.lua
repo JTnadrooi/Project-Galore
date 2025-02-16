@@ -117,6 +117,6 @@ vgal.data.extend
         results = {
             { "concrete", 10 }, -- ~100 * 1.5 = 150
         },
-        category = "crafting",
+        category = "crafting-with-fluid",
     },
 }

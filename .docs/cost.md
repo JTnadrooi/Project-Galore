@@ -59,6 +59,7 @@
 | sulfur                | 15            |
 | sulfur(gb)            | i-18, r-25    |
 | sulfur(fg)            | 20            |
+| battery               | 50            |
 | plastic-bar           | 15            |
 | plastic-bar(gb)       | 40            |
 | carbon                | 50            |

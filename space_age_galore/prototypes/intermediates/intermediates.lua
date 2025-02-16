@@ -183,4 +183,26 @@ vgal.data.extend
             { "explosives", 4 }, -- 60
         },
     },
+    {
+        type = "recipe",
+        name = "lithium-battery", -- will be used for alternate cryogenic science recipe but currently NO ONE (no one) will be using it.
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("battery"),
+            vgal.icon.get_in("lithium"),
+        },
+        category = "chemistry-or-cryogenics",
+        energy_required = 10, -- fast
+        technology = "lithium-processing",
+        fluid_ingredients = {
+            { "ammonia", 10 }, -- 20
+        },
+        ingredients = {
+            { "lithium", 1 }, -- 150
+            { "copper-plate", 5 }, -- 50
+        },
+        results = {
+            { "battery", 5 }, -- 250
+        },
+    },
 }

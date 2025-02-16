@@ -49,7 +49,6 @@ vgal.data.extend({
         name = "yumako-mash-light-oil",
         prefix = "vgal",
         icons = vgal.icon.register {
-            -- vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/yumako-mash-light-oil-egg.png"),
             vgal.icon.get_in_to("yumako-mash"),
             vgal.icon.get_out_to("light-oil"),
             vgal.icon.get_overlay("to"),

@@ -161,4 +161,46 @@ vgal.data.extend
         },
         category = "crafting-with-fluid",
     },
+    {
+        type = "recipe",
+        name = "ammonia-explosives", -- lets goo, less coal usage on gleba!
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("explosives"),
+            vgal.icon.get_in("ammonia"),
+        },
+        category = "chemistry",
+        energy_required = 10,
+        technology = "captivity",
+        fluid_ingredients = {
+            { "ammonia", 10 } -- 20
+        },
+        ingredients = {
+            { "coal",   1 }, -- 10 (but 210 on gleba)
+            { "sulfur", 2 }, -- 30
+        },
+        results = {
+            { "explosives", 4 }, -- 60
+        },
+    },
+    {
+        type = "recipe",
+        name = "water-coal-ammonia",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("ammonia"),
+        },
+        category = "chemistry",
+        energy_required = 1,
+        technology = "oil-processing",
+        fluid_ingredients = {
+            { "water", 10 }
+        },
+        ingredients = {
+            { "coal", 2 }, -- 20
+        },
+        fluid_results = {
+            { "ammonia", 10 } -- 20
+        },
+    },
 }

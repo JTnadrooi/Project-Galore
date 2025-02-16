@@ -28,6 +28,7 @@
 | holmium-ore    | b-400 |
 | scrap          | 5     |
 | coal           | 10    |
+| coal(gb)       | 210   |
 | stone          | 10    |
 | stone(vn)      | b-10  |
 | water(na)      | 0.1   |

@@ -423,4 +423,24 @@ vgal.data.extend
         },
         show_amount_in_title = false,
     },
+    {
+        type = "recipe",
+        name = "water-coal-ammonia",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("ammonia"),
+        },
+        category = "chemistry",
+        energy_required = 1,
+        technology = "oil-processing",
+        fluid_ingredients = {
+            { "water", 50 }, -- so pls dont use it on vulcanus ok?
+        },
+        ingredients = {
+            { "coal", 2 }, -- 20
+        },
+        fluid_results = {
+            { "ammonia", 10 } -- 20
+        },
+    },
 }

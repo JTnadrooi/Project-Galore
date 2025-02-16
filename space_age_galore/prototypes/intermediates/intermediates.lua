@@ -183,24 +183,4 @@ vgal.data.extend
             { "explosives", 4 }, -- 60
         },
     },
-    {
-        type = "recipe",
-        name = "water-coal-ammonia",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("ammonia"),
-        },
-        category = "chemistry",
-        energy_required = 1,
-        technology = "oil-processing",
-        fluid_ingredients = {
-            { "water", 10 }
-        },
-        ingredients = {
-            { "coal", 2 }, -- 20
-        },
-        fluid_results = {
-            { "ammonia", 10 } -- 20
-        },
-    },
 }

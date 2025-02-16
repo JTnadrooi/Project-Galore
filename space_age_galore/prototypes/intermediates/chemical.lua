@@ -86,7 +86,7 @@ vgal.data.extend
             { "bioflux",      1 }, -- 80
         },
         results = {
-            { "stone", 30 }, -- 300
+            { "stone", nil, { amount_min = 20, amount_max = 40 } }, -- 300
         },
         show_amount_in_title = false,
         surface_conditions =

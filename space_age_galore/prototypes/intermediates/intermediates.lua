@@ -78,4 +78,45 @@ vgal.data.extend
         },
         category = "metallurgy",
     },
+    {
+        name = "calcite-carbon-stone-brick", -- vu
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("stone-brick"),
+            vgal.icon.get_in("calcite"),
+        },
+        energy_required = 16,
+        technology = "calcite-processing",
+        ingredients = {
+            { "carbon",  1 }, -- 30
+            { "calcite", 2 }, -- 20
+            { "stone",   2 }, -- 20
+        },
+        results = {
+            { "stone-brick", 5 }, -- 100 * 1.5 = 150 (Alright I know this recipe is very efficient but.. on vulcanus stone is a byproduct - to some degree - so I think this is ok?)
+        },
+        category = "metallurgy",
+    },
+    {
+        name = "calcite-carbon-concrete", -- vu
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("concrete"),
+            vgal.icon.get_in("calcite"),
+        },
+        energy_required = 10,
+        technology = "calcite-processing",
+        fluid_ingredients = {
+            { "water", 100 },
+        },
+        ingredients = {
+            { "carbon",      1 }, -- 30
+            { "calcite",     2 }, -- 20
+            { "stone-brick", 2 }, -- 40
+        },
+        results = {
+            { "concrete", 10 }, -- ~100 * 1.5 = 150
+        },
+        category = "crafting",
+    },
 }

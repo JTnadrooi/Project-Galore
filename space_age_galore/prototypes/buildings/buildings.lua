@@ -214,26 +214,26 @@ vgal.data.extend({
         },
         category = "crafting-with-fluid",
     },
-    {
-        name = "jelly-solar-panel",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("solar-panel"),
-            vgal.icon.get_in("jelly"),
-        },
-        energy_required = 16,
-        technology = { "solar-energy", "jellynut" },
-        ingredients = {
-            { "steel-plate",  10 }, -- 500
-            { "copper-plate", 6 },  -- 60
-            { "jelly",        40 }, -- 240
-        },
-        results = {
-            { "solar-panel", 1 }, -- 675 * 1.5 = 1010
-        },
-        category = "organic",
-        groups = { "vgal-unsure" },
-    },
+    -- {
+    --     name = "jelly-solar-panel",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("solar-panel"),
+    --         vgal.icon.get_in("jelly"),
+    --     },
+    --     energy_required = 16,
+    --     technology = { "solar-energy", "jellynut" },
+    --     ingredients = {
+    --         { "steel-plate",  10 }, -- 500
+    --         { "copper-plate", 6 },  -- 60
+    --         { "jelly",        40 }, -- 240
+    --     },
+    --     results = {
+    --         { "solar-panel", 1 }, -- 675 * 1.5 = 1010
+    --     },
+    --     category = "organic",
+    --     groups = { "vgal-unsure" },
+    -- },
 }, {
     groups = { "vgal-buildings" }
 })

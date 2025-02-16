@@ -60,6 +60,48 @@ vgal.data.extend
         category = "advanced-crafting",
     },
     {
+        name = "jelly-light-oil-solid-fuel",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("solid-fuel"),
+            vgal.icon.get_in("light-oil"),
+            vgal.icon.get_in2("jelly"),
+        },
+        energy_required = 6,
+        technology = "jellynut",
+        fluid_ingredients = {
+            { "light-oil", 5 }, -- 8
+        },
+        ingredients = {
+            { "jelly", 15 }, -- 90
+        },
+        results = {
+            { "solid-fuel", 4 }, -- 80 * 1.5 = 120
+        },
+        category = "organic",
+    },
+    {
+        name = "jelly-crude-oil-solid-fuel",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("solid-fuel"),
+            vgal.icon.get_in("crude-oil"),
+            vgal.icon.get_in2("jelly"),
+        },
+        energy_required = 6,
+        technology = "jellynut",
+        fluid_ingredients = {
+            { "crude-oil", 10 }, -- 2
+        },
+        ingredients = {
+            { "jelly", 12 }, -- 72
+        },
+        results = {
+            { "solid-fuel", 4 }, -- 80 * 1.5 = 120
+        },
+        category = "organic",
+    },
+    {
         name = "calcite-carbon-stone-brick", -- vu
         prefix = "vgal",
         icons = vgal.icon.register {

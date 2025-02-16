@@ -192,6 +192,29 @@ vgal.data.extend
     },
     {
         type = "recipe",
+        name = "jelly-sulfur-lubricant",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("lubricant"),
+            vgal.icon.get_in_fluid("sulfur"),
+            vgal.icon.get_in_fluid2("jelly"),
+        },
+        category = "organic",
+        energy_required = 1,
+        technology = "jellynut",
+        fluid_ingredients = {
+            { "water", 30 },
+        },
+        ingredients = {
+            { "jelly",  12 }, -- 72
+            { "sulfur", 1 },  -- 15
+        },
+        fluid_results = {
+            { "lubricant", 20 }, -- (1.5)=60
+        },
+    },
+    {
+        type = "recipe",
         name = "carbon-lubricant", -- for vulcanus
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -376,6 +399,27 @@ vgal.data.extend
         },
         fluid_results = {
             { "ammonia", 50 }, -- 100 * 1.5 = 150
+        },
+        show_amount_in_title = false,
+    },
+    {
+        type = "recipe",
+        name = "biter-egg-ammonia",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("biter-egg"),
+            vgal.icon.get_out_to("ammonia"),
+            vgal.icon.get_overlay("to"),
+        },
+        category = "organic",
+        energy_required = 10,
+        technology = "captivity",
+        ingredients = {
+            { "biter-egg", 1 }, -- 80
+            { "nutrients", 8 }, -- 80
+        },
+        fluid_results = {
+            { "ammonia", 80 }, -- 160 * 1.5 = 240
         },
         show_amount_in_title = false,
     },

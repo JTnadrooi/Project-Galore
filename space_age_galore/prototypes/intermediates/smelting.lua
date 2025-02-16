@@ -60,6 +60,50 @@ vgal.data.extend
             { "molten-copper", 400 },
         },
     },
+    {
+        type = "recipe",
+        name = "ammonia-calcite-molten-iron",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("molten-iron"),
+            vgal.icon.get_in("ammonia"),
+        },
+        category = "metallurgy",
+        energy_required = 32,
+        technology = "foundry",
+        fluid_ingredients = {
+            { "ammonia", 80 }, -- 160
+        },
+        ingredients = {
+            { "iron-ore", 32 }, -- delta = 160
+            { "calcite",  1 },
+        },
+        fluid_results = {
+            { "molten-iron", 500 },
+        },
+    },
+    {
+        type = "recipe",
+        name = "sulfuric-acid-calcite-molten-copper",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("molten-copper"),
+            vgal.icon.get_in("sulfuric-acid"),
+        },
+        category = "metallurgy",
+        energy_required = 32,
+        technology = "foundry",
+        fluid_ingredients = {
+            { "sulfuric-acid", 80 }, -- 120
+        },
+        ingredients = {
+            { "copper-ore", 32 }, -- delta = 160
+            { "calcite",  1 },
+        },
+        fluid_results = {
+            { "molten-copper", 500 },
+        },
+    },
     -- {
     --     type = "recipe",
     --     name = "holmium-ore-molten-copper-holmium-plate",

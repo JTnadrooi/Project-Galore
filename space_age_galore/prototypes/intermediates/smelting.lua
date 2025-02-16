@@ -26,8 +26,7 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("molten-iron"),
-            vgal.icon.get_in("iron-ore"),
-            vgal.icon.get_in2("coal"),
+            vgal.icon.get_in("coal"),
         },
         category = "metallurgy",
         energy_required = 32,
@@ -46,8 +45,7 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("molten-copper"),
-            vgal.icon.get_in("copper-ore"),
-            vgal.icon.get_in2("coal"),
+            vgal.icon.get_in("coal"),
         },
         category = "metallurgy",
         energy_required = 32,
@@ -98,7 +96,7 @@ vgal.data.extend
         },
         ingredients = {
             { "copper-ore", 32 }, -- delta = 160
-            { "calcite",  1 },
+            { "calcite",    1 },
         },
         fluid_results = {
             { "molten-copper", 500 },

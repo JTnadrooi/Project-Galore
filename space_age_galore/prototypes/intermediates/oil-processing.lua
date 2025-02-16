@@ -55,8 +55,6 @@ vgal.data.extend({
         },
         category = "organic",
         energy_required = 3,
-        fluid_ingredients = {
-        },
         ingredients = {
             { "yumako-mash", 6 }, -- 60
         },

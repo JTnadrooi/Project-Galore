@@ -213,7 +213,9 @@
 | heavy-oil(fg)     | 0.1  |
 | light-oil         | 1.5  |
 | petroleum-gas     | 1    |
+| ammonia           | 2    |
 | lubricant         | 2    |
+| lubricant(gb)     | 18?? |
 | sulfuric-acid     | 1.5  |
 | solid-fuel        | 18   |
 | solid-fuel(aq)    | 10   |
@@ -251,8 +253,7 @@
 | ItemID              | Cost |
 | ------------------- | ---- |
 | ammoniacal-solution | 0.2  |
-| ammonia             | 0.5  |
-| ammonia(gb)         | 2    |
+| ammonia(aq)         | 0.5  |
 | lithium-brine       | 12   |
 | lithium             | 150  |
 | lithium-plate       | 150  |

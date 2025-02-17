@@ -64,13 +64,13 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("solid-fuel"),
-            vgal.icon.get_in("crude-oil"),
-            vgal.icon.get_in2("jelly"),
+            vgal.icon.get_in("jelly"),
+            -- vgal.icon.get_in2("crude-oil"),
         },
         energy_required = 3,
         technology = "jellynut",
         fluid_ingredients = {
-            { "crude-oil", 5 }, -- 2
+            { "crude-oil", 6 }, -- ~2
         },
         ingredients = {
             { "jelly", 4 }, -- 24
@@ -198,11 +198,51 @@ vgal.data.extend
             { "ammonia", 10 }, -- 20
         },
         ingredients = {
-            { "lithium", 1 }, -- 150
+            { "lithium",      1 }, -- 150
             { "copper-plate", 5 }, -- 50
         },
         results = {
             { "battery", 5 }, -- 250
+        },
+    },
+    {
+        type = "recipe",
+        name = "pentapod-egg-logistic-robot", -- woah!
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("logistic-robot"),
+            vgal.icon.get_in("pentapod-egg"),
+        },
+        category = "organic",
+        energy_required = 1,
+        technology = "biochamber",
+        ingredients = {
+            { "flying-robot-frame", 1 },
+            { "pentapod-egg",       1 },
+            { "electronic-circuit", 1 },
+        },
+        results = {
+            { "logistic-robot", 1 },
+        },
+    },
+    {
+        type = "recipe",
+        name = "pentapod-egg-construction-robot", -- woah!
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("construction-robot"),
+            vgal.icon.get_in("pentapod-egg"),
+        },
+        category = "organic",
+        energy_required = 1,
+        technology = "biochamber",
+        ingredients = {
+            { "flying-robot-frame", 1 },
+            { "pentapod-egg",       1 },
+            { "electronic-circuit", 1 },
+        },
+        results = {
+            { "construction-robot", 1 },
         },
     },
     -- {

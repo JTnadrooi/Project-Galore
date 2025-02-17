@@ -12,9 +12,9 @@ vgal.data.extend({
             { "scrap", 1 },
         },
         results = {
-            { "iron-ore",    1, { probability = 0.15, show_details_in_recipe_tooltip = false } },
-            { "copper-ore",  1, { probability = 0.20, show_details_in_recipe_tooltip = false } },
-            { "stone",       1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
+            { "iron-ore",    1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
+            { "copper-ore",  1, { probability = 0.04, show_details_in_recipe_tooltip = false } },
+            { "stone",       1, { probability = 0.05, show_details_in_recipe_tooltip = false } },
             { "holmium-ore", 1, { probability = 0.02, show_details_in_recipe_tooltip = false } },
         },
         category = "crushing",

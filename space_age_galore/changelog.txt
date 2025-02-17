@@ -1,8 +1,10 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.3.0
+Version: 1.0.0
   Features:
     - More recipe groups added.
-    - "vgal-scrap-crushing" recipe added.
+    - ALOT more recipes added, enough recipes to make it worthy of the name "version 1.0".
+  Balancing:
+    - "vgal-carbon-sulfur-lubricant" lubricant results reduced, carbon costs increased.
   Bugfixes:
     - "vgal-high-temp-oil-processing-surface-conditions" locale fixed
     - Fixed steam cracking recipes not being able to be crafted in biochamber.

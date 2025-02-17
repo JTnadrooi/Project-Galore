@@ -191,11 +191,11 @@ vgal.data.extend
             { "water", 30 },
         },
         ingredients = {
-            { "carbon", 1 }, -- 50
+            { "carbon", 2 }, -- 100
             { "sulfur", 1 }, -- 15
         },
         fluid_results = {
-            { "lubricant", 30 }, -- 60
+            { "lubricant", 20 }, -- 60
         },
     },
     {
@@ -242,6 +242,26 @@ vgal.data.extend
     --         { "lubricant", 30 }, -- 60
     --     },
     -- },
+    {
+        name = "heavy-oil-ammonia-sulfur",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("sulfur"),
+            vgal.icon.get_in("ammonia"),
+        },
+        category = "chemistry-or-cryogenics",
+        energy_required = 6,
+        fluid_ingredients = {
+            { "heavy-oil", 120 },
+            { "ammonia",   80 }, -- 160
+        },
+        results = {
+            { "sulfur", 6 }, --
+        },
+        technology = "planet-discovery-fulgora",
+        show_amount_in_title = false,
+        groups = { "vgal-convoluted" },
+    },
     {
         type = "recipe",
         name = "calcite-stone-holmium-solution",
@@ -396,6 +416,63 @@ vgal.data.extend
             }
         },
     },
+    {
+        name = "ice-solid-fuel-ammonia",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("ice"),
+            vgal.icon.get_out_to("ammonia"),
+            vgal.icon.get_overlay("to"),
+
+            vgal.icon.get_in2("solid-fuel"),
+        },
+        category = "chemistry",
+        energy_required = 2,
+        ingredients = {
+            { "solid-fuel", 1 },
+            { "ice",        3 },
+        },
+        fluid_results = {
+            { "ammonia", 20 },
+            { "water",   10, { ignored_by_productivity = 10, show_details_in_recipe_tooltip = false } },
+        },
+        technology = "planet-discovery-fulgora",
+        show_amount_in_title = false,
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 800,
+                max = 800
+            }
+        },
+        groups = { "vgal-convoluted" },
+    },
+    -- {
+    --     name = "crude-oil-ammonia",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get_in_to("crude-oil"),
+    --         vgal.icon.get_out_to("ammonia"),
+    --         vgal.icon.get_overlay("to"),
+    --     },
+    --     category = "chemistry",
+    --     energy_required = 2,
+    --     fluid_ingredients = {
+    --         { "crude-oil", 100 },
+    --     },
+    --     ingredients = {
+    --         { "solid-fuel", 6 }, --
+    --     },
+    --     fluid_results = {
+    --         { "ammonia", 20 },
+    --     },
+    --     results = {
+    --         { "carbon", 1, { probability = 0.25 } },
+    --     },
+    --     technology = "planet-discovery-fulgora",
+    --     show_amount_in_title = false,
+    -- },
     {
         type = "recipe",
         name = "copper-bacteria-ammonia",

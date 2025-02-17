@@ -2,6 +2,8 @@
 Version: 1.1.6
   Features:
     - Space Age Galore 1.0 support.
+  Bugfixes:
+    - Improved the unhiding of the rocket unit recipe.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.5
   Features:

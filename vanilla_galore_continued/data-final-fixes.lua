@@ -92,6 +92,9 @@ if settings.startup["vgal-rocket-parts"].value == true then
     data.raw.item["rocket-part"].hidden = false
     data.raw.recipe["rocket-part"].hidden = false
     data.raw.recipe["rocket-part"].hide_from_player_crafting = false
+    data.raw.recipe["rocket-part"].hidden_in_factoriopedia = false
+    data.raw.recipe["rocket-part"].hide_from_signal_gui = false
+    data.raw.recipe["rocket-part"].hide_from_stats = false
     data.raw["rocket-silo"]["rocket-silo"].fixed_recipe = nil
 end
 

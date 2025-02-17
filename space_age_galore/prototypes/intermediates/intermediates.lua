@@ -219,10 +219,10 @@ vgal.data.extend
         ingredients = {
             { "flying-robot-frame", 1 },
             { "pentapod-egg",       1 },
-            { "electronic-circuit", 1 },
+            { "advanced-circuit",   1 },
         },
         results = {
-            { "logistic-robot", 1 },
+            { "logistic-robot", 1 }, -- * 1.5
         },
     },
     {
@@ -242,7 +242,7 @@ vgal.data.extend
             { "electronic-circuit", 1 },
         },
         results = {
-            { "construction-robot", 1 },
+            { "construction-robot", 1 }, -- * 1.5
         },
     },
     -- {

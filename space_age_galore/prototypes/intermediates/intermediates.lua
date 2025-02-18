@@ -312,4 +312,26 @@ vgal.data.extend
             { "plastic-bar", 4 }, -- 60 (80gb)
         },
     },
+    {
+        type = "recipe",
+        name = "sulfur-ammonia-nutrients", -- for nauvis
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("nutrients"),
+            vgal.icon.get_in("sulfur"),
+            vgal.icon.get_in2("ammonia"),
+        },
+        category = "organic-or-assembling",
+        energy_required = 10,
+        technology = "space-platform",
+        fluid_ingredients = {
+            { "ammonia", 25 }, -- 50
+        },
+        ingredients = {
+            { "sulfur", 1 }, -- 15 (20gb)
+        },
+        results = {
+            { "nutrients", 6 }, -- 60
+        },
+    },
 }

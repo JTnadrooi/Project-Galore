@@ -169,7 +169,7 @@ vgal.data.extend
             vgal.icon.get("explosives"),
             vgal.icon.get_in("ammonia"),
         },
-        category = "chemistry",
+        category = "chemistry-or-cryogenics",
         energy_required = 10,
         technology = "explosives",
         fluid_ingredients = {
@@ -245,6 +245,51 @@ vgal.data.extend
             { "construction-robot", 1 }, -- * 1.5
         },
     },
+    {
+        type = "recipe",
+        name = "carbon-fiber-low-density-structure",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("low-density-structure"),
+            vgal.icon.get_in("carbon-fiber"),
+        },
+        category = "crafting",
+        energy_required = 15,
+        technology = "carbon-fiber",
+        ingredients = {
+            { "copper-cable", 4 }, -- 20
+            { "carbon-fiber", 1 }, -- 200
+            { "plastic-bar",  6 }, -- 120
+        },
+        results = {
+            { "low-density-structure", 1 },
+        },
+    },
+    {
+        type = "recipe",
+        name = "carbon-fiber-molten-copper-low-density-structure",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("low-density-structure"),
+            vgal.icon.get_in("carbon-fiber"),
+            vgal.icon.get_overlay("casting-copper"),
+        },
+        category = "metallurgy",
+        energy_required = 15,
+        technology = { "carbon-fiber", "foundry" },
+        fluid_ingredients = {
+            { "molten-copper", 40 },
+        },
+        ingredients = {
+            { "carbon-fiber", 1 }, -- 200
+            { "plastic-bar",  6 }, -- 120
+        },
+        results = {
+            { "low-density-structure", 1 },
+        },
+        subgroup = "vulcanus-processes",
+        order = "b-f-a",
+    },
     -- {
     --     type = "recipe",
     --     name = "ammonia-plastic-bar",
@@ -254,17 +299,16 @@ vgal.data.extend
     --         vgal.icon.get_in("ammonia"),
     --     },
     --     category = "chemistry-or-cryogenics",
-    --     energy_required = 10, -- fast
+    --     energy_required = 10,
     --     technology = "lithium-processing",
     --     fluid_ingredients = {
     --         { "ammonia", 10 }, -- 20
     --     },
     --     ingredients = {
-    --         { "lithium",      1 }, -- 150
-    --         { "copper-plate", 5 }, -- 50
+    --         { "carbon", 1 }, -- 150
     --     },
     --     results = {
-    --         { "battery", 5 }, -- 250
+    --         { "plastic-bar", 5 }, -- 250
     --     },
     -- },
 }

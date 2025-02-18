@@ -144,4 +144,5 @@ if settings.startup["vgal-high-temp-oil-processing-surface-conditions"].value th
     data.raw["recipe"]["vgal-steam-heavy-oil-light-oil"].surface_conditions = steam_oil_surface_conditions
     data.raw["recipe"]["vgal-steam-light-oil-petroleum-gas"].surface_conditions = steam_oil_surface_conditions
     data.raw["recipe"]["vgal-steam-sulfur"].surface_conditions = steam_oil_surface_conditions
+    data.raw["recipe"]["vgal-coal-sulfur"].surface_conditions = steam_oil_surface_conditions
 end

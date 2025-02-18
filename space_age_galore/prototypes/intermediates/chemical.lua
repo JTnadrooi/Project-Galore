@@ -242,26 +242,26 @@ vgal.data.extend
     --         { "lubricant", 30 }, -- 60
     --     },
     -- },
-    {
-        name = "heavy-oil-ammonia-sulfur",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("sulfur"),
-            vgal.icon.get_in("ammonia"),
-        },
-        category = "chemistry-or-cryogenics",
-        energy_required = 6,
-        fluid_ingredients = {
-            { "heavy-oil", 120 },
-            { "ammonia",   80 }, -- 160
-        },
-        results = {
-            { "sulfur", 6 }, --
-        },
-        technology = "planet-discovery-fulgora",
-        show_amount_in_title = false,
-        groups = { "vgal-convoluted" },
-    },
+    -- {
+    --     name = "heavy-oil-ammonia-sulfur",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("sulfur"),
+    --         vgal.icon.get_in("ammonia"),
+    --     },
+    --     category = "chemistry-or-cryogenics",
+    --     energy_required = 6,
+    --     fluid_ingredients = {
+    --         { "heavy-oil", 120 },
+    --         { "ammonia",   80 }, -- 160
+    --     },
+    --     results = {
+    --         { "sulfur", 6 }, --
+    --     },
+    --     technology = "planet-discovery-fulgora",
+    --     show_amount_in_title = false,
+    --     groups = { "vgal-convoluted" },
+    -- },
     {
         type = "recipe",
         name = "calcite-stone-holmium-solution",

@@ -225,7 +225,7 @@
 | solid-fuel(aq)    | 10   |
 | rocket-fuel       | 200  |
 | rocket-fuel(aq)   | 360  |
-| rocket-fuel(gb)   | 400  |
+| rocket-fuel(gb)   | 240  |
 | thruster-fuel     | 1    |
 | thruster-oxidizer | 0.5  |
 

@@ -200,28 +200,6 @@ vgal.data.extend
     },
     {
         type = "recipe",
-        name = "carbon-lubricant",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("lubricant"),
-            vgal.icon.get_in_fluid("carbon"),
-        },
-        category = "chemistry",
-        energy_required = 1,
-        technology = "space-platform",
-        fluid_ingredients = {
-            { "water", 30 },
-        },
-        ingredients = {
-            { "carbon", 3 }, -- 100
-        },
-        fluid_results = {
-            { "lubricant", 20 }, -- 60
-        },
-
-    },
-    {
-        type = "recipe",
         name = "jelly-sulfur-lubricant",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -469,6 +447,38 @@ vgal.data.extend
             }
         },
         groups = { "vgal-convoluted" },
+    },
+    {
+        name = "calcite-sulfuric-acid-ammonia",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("calcite"),
+            vgal.icon.get_out_to("ammonia"),
+            vgal.icon.get_overlay("to"),
+
+            vgal.icon.get_in2("sulfuric-acid"),
+        },
+        category = "chemistry",
+        energy_required = 2,
+        fluid_ingredients = {
+            { "sulfuric-acid", 50 },
+        },
+        ingredients = {
+            { "calcite", 2 },
+        },
+        fluid_results = {
+            { "ammonia", 20 },
+        },
+        technology = "calcite-processing",
+        show_amount_in_title = false,
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 4000,
+                max = 4000,
+            }
+        },
     },
     -- {
     --     name = "crude-oil-ammonia",

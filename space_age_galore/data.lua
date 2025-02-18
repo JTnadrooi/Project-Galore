@@ -6,6 +6,7 @@ require("prototypes.modules")
 require("prototypes.ice")
 require("prototypes.military")
 require("prototypes.rocket-parts")
+require("prototypes.removed")
 require("prototypes.subgroups")
 
 require("prototypes.intermediates.chemical")

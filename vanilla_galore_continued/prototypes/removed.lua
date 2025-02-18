@@ -1,5 +1,4 @@
-vgal.data.extend
-{
+vgal.data.extend({
     {
         name = "iron-gear-wheel-advanced-circuit", -- analog
         prefix = "vgal",
@@ -19,7 +18,6 @@ vgal.data.extend
             { "advanced-circuit", 3 }, -- 300
         },
         category = "crafting",
-        groups = { "vgal-removed" },
     },
     {
         name = "iron-gear-wheel-lubricant-advanced-circuit", -- analog
@@ -43,7 +41,6 @@ vgal.data.extend
             { "advanced-circuit", 3 } -- 300
         },
         category = "crafting-with-fluid",
-        groups = { "vgal-removed" },
     },
     {
         name = "iron-stick-engine-unit",
@@ -63,7 +60,6 @@ vgal.data.extend
             { "engine-unit", 1 },
         },
         category = "advanced-crafting",
-        groups = { "vgal-removed" },
     },
     {
         name = "iron-gear-wheel-lubricant-electronic-circuit", -- analog
@@ -86,7 +82,6 @@ vgal.data.extend
             { "electronic-circuit", 1 }
         },
         category = "crafting-with-fluid",
-        groups = { "vgal-removed" },
     },
     {
         name = "iron-gear-wheel-electronic-circuit",
@@ -110,7 +105,6 @@ vgal.data.extend
             { "electronic-circuit", 1 }
         },
         category = "crafting",
-        groups = { "vgal-removed" },
     },
     {
         name = "iron-gear-wheel-processing-unit", -- analog
@@ -133,7 +127,6 @@ vgal.data.extend
         results = {
             { "processing-unit", 1 }, -- 710
         },
-        groups = { "vgal-removed" },
     },
     {
         name = "solar-panel-rocket-part",
@@ -152,7 +145,7 @@ vgal.data.extend
         results = {
             { "rocket-part", 1 }, -- 12800
         },
-        groups = { "vgal-rocket-parts", "vgal-removed" },
+        groups = { "vgal-rocket-parts" },
         category = "rocket-building",
     },
     {
@@ -174,7 +167,7 @@ vgal.data.extend
         results = {
             { "utility-science-pack", 12 }, -- 11220
         },
-        groups = { "vgal-science-packs", "vgal-removed" },
+        groups = { "vgal-science-packs" },
     },
     {
         name = "roboport-productivity-module-utility-science-pack",
@@ -195,7 +188,7 @@ vgal.data.extend
         results = {
             { "utility-science-pack", 12 }, -- 11220
         },
-        groups = { "vgal-science-packs", "vgal-removed" },
+        groups = { "vgal-science-packs" },
     },
     {
         name = "roboport-efficiency-module-utility-science-pack",
@@ -216,7 +209,7 @@ vgal.data.extend
         results = {
             { "utility-science-pack", 12 }, -- 11220
         },
-        groups = { "vgal-science-packs", "vgal-removed" },
+        groups = { "vgal-science-packs" },
     },
     {
         name = "battery-engine-unit",
@@ -236,7 +229,6 @@ vgal.data.extend
             { "engine-unit", 1 },
         },
         category = "advanced-crafting",
-        groups = { "vgal-removed" },
     },
     {
         name = "plastic-bar-low-density-structure",
@@ -256,7 +248,6 @@ vgal.data.extend
         results = {
             { "low-density-structure", 1 }, -- 375
         },
-        groups = { "vgal-removed" },
     },
     {
         name = "heavy-oil-rocket-fuel",
@@ -284,8 +275,9 @@ vgal.data.extend
         },
         energy_required = 15,
         category = "crafting-with-fluid",
-        groups = { "vgal-removed" },
     },
-}
+}, {
+    groups = { "vgal-removed" },
+})
 
 -- analog circuits have been removed for being to far fetched and unbalanced.

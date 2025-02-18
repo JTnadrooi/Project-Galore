@@ -2,9 +2,10 @@
 Version: 1.0.0
   Features:
     - More recipe groups added.
-    - ALOT more recipes added, enough recipes to make it worthy of the name "version 1.0".
+    - ALOT more recipes added.
   Balancing:
     - "vgal-carbon-sulfur-lubricant" lubricant results reduced, carbon costs increased.
+    - "vgal-carbon-lubricant" lubricant results reduced, carbon costs increased.
   Bugfixes:
     - "vgal-high-temp-oil-processing-surface-conditions" locale fixed
     - Fixed steam cracking recipes not being able to be crafted in biochamber.

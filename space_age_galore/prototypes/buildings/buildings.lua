@@ -150,47 +150,49 @@ vgal.data.extend({
         },
         category = "metallurgy",
     },
-    -- {
-    --     name = "tungsten-plate-assembling-machine-1",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("assembling-machine-1"),
-    --         vgal.icon.get_in("tungsten-plate"),
-    --     },
-    --     energy_required = 1,
-    --     technology = "tungsten-steel",
-    --     ingredients = {
-    --         { "tungsten-plate",       1 }, -- 60
-    --         { "electric-engine-unit", 1 }, -- 180
-    --         { "electronic-circuit",   1 }, -- 25
-    --     },
-    --     results = {
-    --         { "assembling-machine-1", 1 }, -- 265
-    --     },
-    --     category = "crafting",
-    -- },
-    -- {
-    --     name = "tungsten-plate-assembling-machine-2",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("assembling-machine-2"),
-    --         vgal.icon.get_in("tungsten-plate"),
-    --     },
-    --     energy_required = 1,
-    --     technology = "tungsten-steel",
-    --     ingredients = {
-    --         { "tungsten-plate",       1 }, -- ~100
-    --         { "electric-engine-unit", 1 }, -- 180
-    --         { "assembling-machine-1", 1 }, -- 265
-    --     },
-    --     fluid_ingredients = {
-    --         { "lubricant", 10 }, -- 20
-    --     },
-    --     results = {
-    --         { "assembling-machine-2", 1 }, -- 540
-    --     },
-    --     category = "crafting-with-fluid",
-    -- },
+    {
+        name = "tungsten-plate-assembling-machine-1",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("assembling-machine-1"),
+            vgal.icon.get_in("tungsten-plate"),
+        },
+        energy_required = 1,
+        technology = "tungsten-steel",
+        ingredients = {
+            { "tungsten-plate",       1 }, -- 60
+            { "electric-engine-unit", 1 }, -- 180
+            { "electronic-circuit",   1 }, -- 25
+        },
+        results = {
+            { "assembling-machine-1", 1 }, -- 265
+        },
+        category = "crafting",
+        groups = { "vgal-convoluted" },
+    },
+    {
+        name = "tungsten-plate-assembling-machine-2",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("assembling-machine-2"),
+            vgal.icon.get_in("tungsten-plate"),
+        },
+        energy_required = 1,
+        technology = "tungsten-steel",
+        ingredients = {
+            { "tungsten-plate",       1 }, -- ~100
+            { "electric-engine-unit", 1 }, -- 180
+            { "assembling-machine-1", 1 }, -- 265
+        },
+        fluid_ingredients = {
+            { "lubricant", 10 }, -- 20
+        },
+        results = {
+            { "assembling-machine-2", 1 }, -- 540
+        },
+        category = "crafting-with-fluid",
+        groups = { "vgal-convoluted" },
+    },
     {
         name = "tungsten-plate-assembling-machine-3",
         prefix = "vgal",

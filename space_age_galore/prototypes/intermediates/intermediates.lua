@@ -283,14 +283,14 @@ vgal.data.extend
     },
     {
         type = "recipe",
-        name = "ammonia-plastic-bar", -- too OP for vulcanus
+        name = "ammonia-plastic-bar",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("plastic-bar"),
             vgal.icon.get_in("ammonia"),
         },
         category = "chemistry-or-cryogenics",
-        energy_required = 10,
+        energy_required = 4,
         technology = "space-platform",
         fluid_ingredients = {
             { "ammonia", 15 }, -- 30
@@ -299,7 +299,7 @@ vgal.data.extend
             { "carbon", 1 }, -- 50
         },
         results = {
-            { "plastic-bar", 4 }, -- 60 (80gb)
+            { "plastic-bar", 5 }, -- 75, 100gb
         },
     },
     {

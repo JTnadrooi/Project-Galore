@@ -170,6 +170,7 @@ vgal.data.extend
             vgal.icon.get_in("ammonia"),
         },
         category = "chemistry-or-cryogenics",
+        category = "chemistry-or-cryogenics",
         energy_required = 10,
         technology = "explosives",
         fluid_ingredients = {

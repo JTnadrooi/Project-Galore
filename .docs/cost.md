@@ -2,15 +2,15 @@
 
 ## Legend
 
-| Icon | Meaning                                                 |
-| ---- | ------------------------------------------------------- |
-| (X)  | aq(aquilo), fu, sp, gb, ~(average of all environments), |
-| null | null                                                    |
-| \*   | see notes.                                              |
-| i    | the value of the item as ingredient.                    |
-| r    | the value of the recipe that makes the item.            |
-| b    | byproduct, value reduced.                               |
-| !!   | pending recalc.                                         |
+| Icon | Meaning                                      |
+| ---- | -------------------------------------------- |
+| (X)  | aq(aquilo), fu, sp, gb, nv,                  |
+| null | null                                         |
+| \*   | see notes.                                   |
+| i    | the value of the item as ingredient.         |
+| r    | the value of the recipe that makes the item. |
+| b    | byproduct, value reduced.                    |
+| !!   | pending recalc.                              |
 
 > [!NOTE]
 > The "-" is between the `icon` and the `value` to make the copies easier, it has no meaning.
@@ -209,6 +209,7 @@
 | ItemID            | Cost |
 | ----------------- | ---- |
 | crude-oil         | 0.5  |
+| crude-oil(gb)     | 0.5  |
 | heavy-oil         | 2    |
 | heavy-oil(fg)     | 0.1  |
 | light-oil         | 1.5  |
@@ -235,6 +236,7 @@
 | yumako-mash     | i-10, r-15      |
 | bioflux         | i-60, r-60      |
 | nutrients       | 8               |
+| nutrients(nv)   | 4               |
 | raw-fish        | i-530, r-800    |
 | pentapod-egg    | i-200, r-240    |
 | spoilage        | b-5             |

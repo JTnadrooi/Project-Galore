@@ -218,6 +218,7 @@ vgal.data.extend
         fluid_results = {
             { "lubricant", 20 }, -- 60
         },
+
     },
     {
         type = "recipe",
@@ -230,7 +231,7 @@ vgal.data.extend
         },
         category = "organic",
         energy_required = 1,
-        technology = "jellynut",
+        technology = "bioflux-processing",
         fluid_ingredients = {
             { "water", 30 },
         },

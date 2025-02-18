@@ -170,7 +170,6 @@ vgal.data.extend
             vgal.icon.get_in("ammonia"),
         },
         category = "chemistry-or-cryogenics",
-        category = "chemistry-or-cryogenics",
         energy_required = 10,
         technology = "explosives",
         fluid_ingredients = {
@@ -225,6 +224,14 @@ vgal.data.extend
         results = {
             { "logistic-robot", 1 }, -- * 1.5
         },
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000
+            }
+        },
     },
     {
         type = "recipe",
@@ -244,6 +251,14 @@ vgal.data.extend
         },
         results = {
             { "construction-robot", 1 }, -- * 1.5
+        },
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000
+            }
         },
     },
     {
@@ -314,16 +329,46 @@ vgal.data.extend
     },
     {
         type = "recipe",
+        name = "pentapod-egg-plastic-bar",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("plastic-bar"),
+            vgal.icon.get_in("pentapod-egg"),
+        },
+        category = "organic",
+        energy_required = 10,
+        technology = "bioflux-processing",
+        fluid_ingredients = {
+            { "crude-oil", 20 }, -- 10
+        },
+        ingredients = {
+            { "pentapod-egg", 1 },  -- 200
+            { "coal",         1 },  -- 210
+            { "nutrients",    12 }, -- 120
+        },
+        results = {
+            { "plastic-bar", 20 }, -- 300 (400gb * 1.5 = 600)
+        },
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000
+            }
+        },
+    },
+    {
+        type = "recipe",
         name = "sulfur-ammonia-nutrients", -- for nauvis
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("nutrients"),
             vgal.icon.get_in("sulfur"),
-            vgal.icon.get_in2("ammonia"),
+            vgal.icon.get_overlay("nutrients"),
         },
         category = "organic-or-assembling",
         energy_required = 10,
-        technology = "space-platform",
+        technology = "agriculture",
         fluid_ingredients = {
             { "ammonia", 25 }, -- 50
         },
@@ -331,7 +376,7 @@ vgal.data.extend
             { "sulfur", 1 }, -- 15 (20gb)
         },
         results = {
-            { "nutrients", 6 }, -- 60
+            { "nutrients", 20 }, -- 200
         },
     },
 }

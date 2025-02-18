@@ -464,10 +464,11 @@ vgal.data.extend
             { "sulfuric-acid", 50 },
         },
         ingredients = {
-            { "calcite", 2 },
+            { "calcite", 2 }, -- 20
+            { "carbon",  1 }, -- 30
         },
         fluid_results = {
-            { "ammonia", 20 },
+            { "ammonia", 30 },
         },
         technology = "calcite-processing",
         show_amount_in_title = false,

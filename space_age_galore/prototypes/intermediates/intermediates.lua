@@ -59,27 +59,6 @@ vgal.data.extend
         },
         category = "advanced-crafting",
     },
-    {
-        name = "jelly-crude-oil-solid-fuel",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("solid-fuel"),
-            vgal.icon.get_in("jelly"),
-            -- vgal.icon.get_in2("crude-oil"),
-        },
-        energy_required = 3,
-        technology = "jellynut",
-        fluid_ingredients = {
-            { "crude-oil", 6 }, -- ~2
-        },
-        ingredients = {
-            { "jelly", 4 }, -- 24
-        },
-        results = {
-            { "solid-fuel", 1 }, -- 20 * 1.5 = 30
-        },
-        category = "organic",
-    },
     -- { -- eventually, I will be able to calculate fulgora stuff..
     --     name = "jelly-light-oil-superconductor",
     --     prefix = "vgal",
@@ -101,25 +80,6 @@ vgal.data.extend
     --     },
     --     category = "organic",
     -- },
-    {
-        name = "calcite-carbon-stone-brick", -- vu
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("stone-brick"),
-            vgal.icon.get_in("calcite"),
-        },
-        energy_required = 5,
-        technology = "calcite-processing",
-        ingredients = {
-            { "carbon",  1 }, -- 30
-            { "calcite", 2 }, -- 20
-            { "stone",   2 }, -- 20
-        },
-        results = {
-            { "stone-brick", 5 }, -- 100 * 1.5 = 150 (Alright I know this recipe is very efficient but.. on vulcanus stone is a byproduct - to some degree - so I think this is ok?)
-        },
-        category = "metallurgy",
-    },
     {
         name = "calcite-carbon-stone-brick", -- vu
         prefix = "vgal",
@@ -330,6 +290,35 @@ vgal.data.extend
                 property = "pressure",
                 min = 2000,
                 max = 2000
+            }
+        },
+    },
+    {
+        type = "recipe",
+        name = "pentapod-egg-bioflux-stone",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("pentapod-egg"),
+            vgal.icon.get_out_to("stone"),
+            vgal.icon.get_overlay("to"),
+        },
+        category = "organic",
+        energy_required = 45,
+        technology = "biochamber",
+        ingredients = {
+            { "pentapod-egg", 1 }, -- 300
+            { "bioflux",      1 }, -- 80
+        },
+        results = {
+            { "stone", nil, { amount_min = 20, amount_max = 40 } }, -- 300
+        },
+        show_amount_in_title = false,
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000,
             }
         },
     },

@@ -10,6 +10,7 @@ require("prototypes.removed")
 require("prototypes.subgroups")
 
 require("prototypes.intermediates.chemical")
+require("prototypes.intermediates.ammonia")
 require("prototypes.intermediates.crushing")
 require("prototypes.intermediates.smelting")
 require("prototypes.intermediates.circuits")

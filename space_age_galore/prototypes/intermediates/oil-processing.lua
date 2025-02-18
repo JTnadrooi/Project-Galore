@@ -24,52 +24,6 @@ vgal.data.extend({
         technology = "space-platform",
         show_amount_in_title = false,
     },
-    -- {
-    --     name = "lava-crude-oil",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("crude-oil"),
-    --         vgal.icon.get_in("lava"),
-    --     },
-    --     category = "chemistry-or-cryogenics",
-    --     energy_required = 4,
-    --     fluid_ingredients = {
-    --         { "lava", 1000 }, -- 20
-    --     },
-    --     ingredients = {
-    --         { "carbon", 1 }, -- 40
-    --     },
-    --     fluid_results = {
-    --         { "crude-oil", 60 }, -- 30 * 1.5 = 45
-    --     },
-    --     subgroup = "vgal-oil",
-    --     order = "aaa",
-    --     technology = "space-platform",
-    --     show_amount_in_title = false,
-    -- },
-    -- {
-    --     name = "ammonia-ice-crude-oil",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("crude-oil"),
-    --         vgal.icon.get_in("ammonia"),
-    --         vgal.icon.get_in2("ice"),
-    --     },
-    --     category = "chemistry-or-cryogenics",
-    --     energy_required = 4,
-    --     fluid_ingredients = {
-    --         { "ammonia", 10 }, -- 20
-    --     },
-    --     ingredients = {
-    --         { "carbon", 1 }, -- 40
-    --         { "ice",    2 },
-    --     },
-    --     fluid_results = {
-    --         { "crude-oil", 60 }, -- 30 * 1.5 = 45
-    --     },
-    --     technology = "bacteria-cultivation",
-    --     show_amount_in_title = false,
-    -- },
     {
         name = "yumako-mash-light-oil",
         prefix = "vgal",
@@ -93,6 +47,4 @@ vgal.data.extend({
         main_product = "light-oil",
         technology = "bacteria-cultivation",
     },
-}, {
-    groups = { "vgal-oil-recipes" }
 })

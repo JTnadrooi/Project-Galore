@@ -2,6 +2,8 @@
 
 A collection of mods focused on adding more recipes to the base game and Space Age.
 
+![gleba](media/gleba_galore.png)
+
 ## Current Installations
 
 -   **[Vanilla Galore](https://mods.factorio.com/mod/vanilla_galore_continued)** – _(The core of the project)_ Adds a large amount of new recipes to the vanilla game.

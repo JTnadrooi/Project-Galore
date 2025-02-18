@@ -581,7 +581,6 @@ vgal.data.extend
         fluid_results = {
             { "ammonia", 10 } -- 20
         },
-        show_amount_in_title = false,
         surface_conditions =
         {
             {

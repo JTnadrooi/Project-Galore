@@ -60,6 +60,36 @@ vgal.data.extend({
             }
         },
     },
+    {
+        name = "sulfur-petroleum-gas-agricultural-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("agricultural-science-pack"),
+            vgal.icon.get_in("sulfur"),
+        },
+        category = "organic",
+        energy_required = 4,
+        technology = "agricultural-science-pack",
+        ingredients = {
+            { "sulfur",     4 }, -- 80gb
+            { "solid-fuel", 5 }, -- 100
+        },
+        fluid_ingredients = {
+            { "petroleum-gas", 50 }, -- 50
+        },
+        results = {
+            { "agricultural-science-pack", 1 }, -- 200 * 1.5 = 300
+        },
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000
+            }
+        },
+        groups = { "vgal-unsure" }
+    },
 
     -- METALLURGIC
     {

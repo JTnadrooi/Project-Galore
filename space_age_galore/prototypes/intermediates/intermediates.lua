@@ -311,7 +311,7 @@ vgal.data.extend
             vgal.icon.get_in("pentapod-egg"),
         },
         category = "organic",
-        energy_required = 10,
+        energy_required = 20,
         technology = "bioflux-processing",
         fluid_ingredients = {
             { "crude-oil", 20 }, -- 10

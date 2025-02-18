@@ -290,25 +290,25 @@ vgal.data.extend
         subgroup = "vulcanus-processes",
         order = "b-f-a",
     },
-    -- {
-    --     type = "recipe",
-    --     name = "ammonia-plastic-bar",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("plastic-bar"),
-    --         vgal.icon.get_in("ammonia"),
-    --     },
-    --     category = "chemistry-or-cryogenics",
-    --     energy_required = 10,
-    --     technology = "lithium-processing",
-    --     fluid_ingredients = {
-    --         { "ammonia", 10 }, -- 20
-    --     },
-    --     ingredients = {
-    --         { "carbon", 1 }, -- 150
-    --     },
-    --     results = {
-    --         { "plastic-bar", 5 }, -- 250
-    --     },
-    -- },
+    {
+        type = "recipe",
+        name = "ammonia-plastic-bar",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("plastic-bar"),
+            vgal.icon.get_in("ammonia"),
+        },
+        category = "chemistry-or-cryogenics",
+        energy_required = 10,
+        technology = "lithium-processing",
+        fluid_ingredients = {
+            { "ammonia", 10 }, -- 20
+        },
+        ingredients = {
+            { "carbon", 1 }, -- 150
+        },
+        results = {
+            { "plastic-bar", 5 }, -- 250
+        },
+    },
 }

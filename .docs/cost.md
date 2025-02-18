@@ -33,6 +33,7 @@
 | stone(vn)      | b-10  |
 | water(na)      | 0.1   |
 | water(aq)      | 0.2   |
+| water(vn)      | 1?    |
 | ice(fu)        | 100   |
 | ice(sp)        | 50    |
 | ice(aq)        | 2     |
@@ -215,6 +216,8 @@
 | light-oil         | 1.5  |
 | petroleum-gas     | 1    |
 | ammonia           | 2    |
+| ammonia(vu)       | 5    |
+| ammonia(aq)       | 0.5  |
 | lubricant         | 2    |
 | lubricant(gb)     | 18?? |
 | sulfuric-acid     | 1.5  |
@@ -255,7 +258,6 @@
 | ItemID              | Cost |
 | ------------------- | ---- |
 | ammoniacal-solution | 0.2  |
-| ammonia(aq)         | 0.5  |
 | lithium-brine       | 12   |
 | lithium             | 150  |
 | lithium-plate       | 150  |

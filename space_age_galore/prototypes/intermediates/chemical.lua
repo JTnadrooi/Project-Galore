@@ -448,39 +448,6 @@ vgal.data.extend
         },
         groups = { "vgal-convoluted" },
     },
-    {
-        name = "calcite-sulfuric-acid-ammonia",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get_in_to("calcite"),
-            vgal.icon.get_out_to("ammonia"),
-            vgal.icon.get_overlay("to"),
-
-            vgal.icon.get_in2("sulfuric-acid"),
-        },
-        category = "chemistry",
-        energy_required = 2,
-        fluid_ingredients = {
-            { "sulfuric-acid", 50 },
-        },
-        ingredients = {
-            { "calcite", 2 }, -- 20
-            { "carbon",  1 }, -- 30
-        },
-        fluid_results = {
-            { "ammonia", 30 },
-        },
-        technology = "calcite-processing",
-        show_amount_in_title = false,
-        surface_conditions =
-        {
-            {
-                property = "pressure",
-                min = 4000,
-                max = 4000,
-            }
-        },
-    },
     -- {
     --     name = "crude-oil-ammonia",
     --     prefix = "vgal",
@@ -573,19 +540,53 @@ vgal.data.extend
         energy_required = 1,
         technology = "oil-processing",
         fluid_ingredients = {
-            { "water", 50 }, -- so pls dont use it on vulcanus ok?
+            { "water", 100 }, -- 1 (50vn)so pls dont use it on vulcanus ok?
         },
         ingredients = {
             { "coal", 2 }, -- 20
         },
         fluid_results = {
-            { "ammonia", 10 } -- 20
+            { "ammonia", 10 } -- 20 (50vn)
         },
         surface_conditions =
         {
             {
                 property = "pressure",
                 min = 10,
+                -- max = 3999,
+            }
+        },
+    },
+    {
+        name = "calcite-sulfuric-acid-ammonia",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("calcite"),
+            vgal.icon.get_out_to("ammonia"),
+            vgal.icon.get_overlay("to"),
+
+            vgal.icon.get_in2("sulfuric-acid"),
+        },
+        category = "chemistry",
+        energy_required = 2,
+        fluid_ingredients = {
+            { "sulfuric-acid", 50 },
+        },
+        ingredients = {
+            { "calcite", 2 }, -- 20
+            { "carbon",  5 }, -- 30
+        },
+        fluid_results = {
+            { "ammonia", 20 }, -- 100vu
+        },
+        technology = "calcite-processing",
+        show_amount_in_title = false,
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 4000,
+                max = 4000,
             }
         },
     },

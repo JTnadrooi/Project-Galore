@@ -283,32 +283,7 @@ vgal.data.extend
     },
     {
         type = "recipe",
-        name = "carbon-fiber-molten-copper-low-density-structure",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("low-density-structure"),
-            vgal.icon.get_in("carbon-fiber"),
-            vgal.icon.get_overlay("casting-copper"),
-        },
-        category = "metallurgy",
-        energy_required = 15,
-        technology = { "carbon-fiber", "foundry" },
-        fluid_ingredients = {
-            { "molten-copper", 40 },
-        },
-        ingredients = {
-            { "carbon-fiber", 1 }, -- 200
-            { "plastic-bar",  6 }, -- 120
-        },
-        results = {
-            { "low-density-structure", 1 },
-        },
-        subgroup = "vulcanus-processes",
-        order = "b-f-a",
-    },
-    {
-        type = "recipe",
-        name = "ammonia-plastic-bar",
+        name = "ammonia-plastic-bar", -- too OP for vulcanus
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("plastic-bar"),

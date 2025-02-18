@@ -2,14 +2,16 @@
 Version: 1.0.0
   Features:
     - More recipe groups added.
-    - ALOT more recipes added.
+    - ALOT more recipes added. (More than enough to make this version deserve the "1.0" title.)
   Balancing:
     - "vgal-carbon-sulfur-lubricant" lubricant results reduced, carbon costs increased.
     - "vgal-carbon-lubricant" lubricant results reduced, carbon costs increased.
   Bugfixes:
-    - "vgal-high-temp-oil-processing-surface-conditions" locale fixed
-    - Fixed steam cracking recipes not being able to be crafted in biochamber.
+    - Fixed "vgal-high-temp-oil-processing-surface-conditions" locale fixed
+    - Fixed Steam cracking recipes not being able to be crafted in biochamber.
     - Fixed "vgal-petroleum-gas-coal-heavy-oil" not being crafted in chemical plant.
+    - Added locale of casting low density structure recipes.
+    - Fixed amount not showing in title for multiple recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.9
   Features:

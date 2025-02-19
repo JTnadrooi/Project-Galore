@@ -37,6 +37,12 @@ local subgroups = {
         entries = { "heavy-oil", "light-oil", "petroleum-gas", "crude-oil" }
     },
     {
+        name = "oil-cracking",
+        tab = "intermediate-products",
+        order = "aca",
+        entries = {}
+    },
+    {
         name = "fulgora-fluids",
         tab = "intermediate-products",
         order = "acb",
@@ -157,6 +163,11 @@ data.raw["recipe"]["casting-steel"].subgroup = "vgal-intermediate-casting"
 data.raw["recipe"]["casting-iron-gear-wheel"].subgroup = "vgal-intermediate-casting"
 data.raw["recipe"]["casting-iron-stick"].subgroup = "vgal-intermediate-casting"
 data.raw["recipe"]["casting-copper-cable"].subgroup = "vgal-intermediate-casting"
+
+data.raw["recipe"]["vgal-steam-heavy-oil-light-oil"].subgroup = "vgal-oil-cracking"
+data.raw["recipe"]["vgal-steam-light-oil-petroleum-gas"].subgroup = "vgal-oil-cracking"
+data.raw["recipe"]["heavy-oil-cracking"].subgroup = "vgal-oil-cracking"
+data.raw["recipe"]["light-oil-cracking"].subgroup = "vgal-oil-cracking"
 
 if settings.startup["vgal-crushing-recipes"].value then
     data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"

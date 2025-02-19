@@ -306,11 +306,11 @@ vgal.data.extend
         energy_required = 45,
         technology = "biochamber",
         ingredients = {
-            { "pentapod-egg", 1 }, -- 300
-            { "bioflux",      1 }, -- 80
+            { "pentapod-egg", 1 }, -- 200
+            { "bioflux",      2 }, -- 120
         },
         results = {
-            { "stone", nil, { amount_min = 20, amount_max = 40 } }, -- 300
+            { "stone", nil, { amount_min = 10, amount_max = 30 } }, -- 200 * 1.5 = 300
         },
         show_amount_in_title = false,
         surface_conditions =
@@ -327,11 +327,12 @@ vgal.data.extend
         name = "sulfur-ammonia-nutrients", -- for nauvis
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get_in("sulfur"),
-            vgal.icon.get_overlay("nutrients"),
+            -- vgal.icon.get_in("sulfur"),
+            -- vgal.icon.get_overlay("nutrients"),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/sulfur-ammonia-nutrients.png"),
         },
         category = "organic-or-assembling",
-        energy_required = 10,
+        energy_required = 1,
         technology = "agriculture",
         fluid_ingredients = {
             { "ammonia", 25 }, -- 50
@@ -340,7 +341,7 @@ vgal.data.extend
             { "sulfur", 1 }, -- 15 (20gb)
         },
         results = {
-            { "nutrients", 20 }, -- 200
+            { "nutrients", 10 }, -- 100
         },
     },
 }

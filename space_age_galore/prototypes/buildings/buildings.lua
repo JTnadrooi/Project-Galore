@@ -160,9 +160,9 @@ vgal.data.extend({
         energy_required = 1,
         technology = "tungsten-steel",
         ingredients = {
-            { "tungsten-plate",       1 }, -- 60
-            { "electric-engine-unit", 1 }, -- 180
-            { "electronic-circuit",   1 }, -- 25
+            { "tungsten-plate",     1 },   -- 60
+            { "iron-gear-wheel",    4 },   -- 80
+            { "electronic-circuit", 1 }, -- 25
         },
         results = {
             { "assembling-machine-1", 1 }, -- 265
@@ -180,8 +180,8 @@ vgal.data.extend({
         energy_required = 1,
         technology = "tungsten-steel",
         ingredients = {
-            { "tungsten-plate",       1 }, -- ~100
-            { "electric-engine-unit", 1 }, -- 180
+            { "tungsten-plate",       2 }, -- 120
+            { "iron-gear-wheel",      5 }, -- 100
             { "assembling-machine-1", 1 }, -- 265
         },
         fluid_ingredients = {

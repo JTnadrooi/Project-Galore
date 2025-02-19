@@ -135,7 +135,6 @@ vgal.data.extend
             { "ammonia", 20 }, -- 100vu
         },
         technology = "calcite-processing",
-        show_amount_in_title = false,
         surface_conditions =
         {
             {
@@ -167,6 +166,7 @@ vgal.data.extend
         },
         technology = "planet-discovery-fulgora",
         show_amount_in_title = false,
+        localised_name = { "", "20 \xC3\x97 ", { "recipe-name.vgal-ice-solid-fuel-ammonia" } },
         surface_conditions =
         {
             {

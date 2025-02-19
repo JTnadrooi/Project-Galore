@@ -1,4 +1,18 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5 HOTFIX
+  Features:
+    - "vgal-spoilage-water-crude-oil" recipe added.
+    - Improved many icons.
+    - Improved many descriptions.
+    - Made recipe names containing the word "from" more inline with vanilla.
+    - Improved tungsten assembler recipes.
+  Balancing:
+    - "vgal-pentapod-egg-bioflux-stone" bioflux cost increased, result amount decreased by 33%.
+    - "vgal-ammonia-water-crude-oil" water cost decreased.
+    - "vgal-sulfur-ammonia-nutrients" result amount halved. (sorry)
+  Bugfixes:
+    - Fixed "vgal-sulfur-ammonia-nutrients" taking way to much time.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
   Features:
     - More recipe groups added.

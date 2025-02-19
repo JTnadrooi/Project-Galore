@@ -168,7 +168,7 @@ function vgal.data.extend(recipes, args)
         recipe.allow_productivity = (recipe.allow_productivity ~= nil) and recipe.allow_productivity or
             vgal.recipe.get_if_productivity(recipe.main_product)
 
-        recipe.localised_name = { "?",
+        recipe.localised_name = recipe.localised_name or { "?",
             { "", { "recipe-name." .. recipe.name } },
             { "", vgal.localise.get_lazy(recipe.main_product) },
         }

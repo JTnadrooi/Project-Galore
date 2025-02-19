@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.7
+  Features:
+    - Improved a few icons.
+  Balancing:
+    - "vgal-crude-oil-sulfur" time taken increased by one second.
+    - "vgal-petroleum-gas-coal-heavy-oil" time taken increased by half a second.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.6
   Features:
     - Space Age Galore 1.0 support.

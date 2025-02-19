@@ -3,15 +3,13 @@ vgal.data.extend({
         name = "ammonia-water-crude-oil",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("crude-oil"),
-            vgal.icon.get_in("ammonia"),
-            vgal.icon.get_in2("water"),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/ammonia-water-crude-oil.png"),
         },
         category = "organic-or-chemistry",
         energy_required = 4,
         fluid_ingredients = {
             { "ammonia", 10 }, -- 20
-            { "water",   50 },
+            { "water",   20 },
         },
         ingredients = {
             { "carbon", 1 }, -- 40
@@ -25,12 +23,29 @@ vgal.data.extend({
         show_amount_in_title = false,
     },
     {
+        name = "spoilage-crude-oil", -- the number one least efficient recipe in all of Galore. (2.5%)
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/spoilage-crude-oil.png"),
+        },
+        category = "organic",
+        energy_required = 5,
+        ingredients = {
+            { "spoilage", 20 }, -- 200
+        },
+        fluid_results = {
+            { "crude-oil", 10 }, -- 5
+        },
+        subgroup = "vgal-oil",
+        order = "aab",
+        technology = "agriculture",
+        show_amount_in_title = false,
+    },
+    {
         name = "yumako-mash-light-oil",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get_in_to("yumako-mash"),
-            vgal.icon.get_out_to("light-oil"),
-            vgal.icon.get_overlay("to"),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/yumako-mash-light-oil.png"),
         },
         category = "organic",
         energy_required = 3,
@@ -47,4 +62,27 @@ vgal.data.extend({
         main_product = "light-oil",
         technology = "bacteria-cultivation",
     },
+    -- {
+    --     name = "solid-fuel-calcite-stone-brick-jelly",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("jelly"),
+    --         vgal.icon.get_in("calcite"),
+    --     },
+    --     category = "oil-processing",
+    --     energy_required = 3,
+    --     ingredients = {
+    --         { "stone-brick", 2 }, -- 40
+    --         { "calcite",     1 }, -- 10
+    --         { "solid-fuel",  5 }, -- 75
+    --     },
+    --     fluid_ingredients = {
+    --         { "steam", 40 }, --
+    --     },
+    --     results = {
+    --         { "jelly", 5 }, -- 40
+    --     },
+    --     technology = "jellynut",
+    --     groups = { "vgal-convoluted", "vgal-unsure" },
+    -- },
 })

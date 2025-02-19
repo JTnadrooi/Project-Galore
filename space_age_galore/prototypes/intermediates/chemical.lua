@@ -342,7 +342,8 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("electrolyte"),
-            vgal.icon.get_in_fluid("plastic-bar"),
+            vgal.icon.get_in("light-oil"),
+            vgal.icon.get_in2("plastic-bar"),
         },
         category = "electromagnetics",
         energy_required = 10,
@@ -364,7 +365,8 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("electrolyte"),
-            vgal.icon.get_in_fluid("sulfuric-acid"),
+            vgal.icon.get_in("sulfuric-acid"),
+            vgal.icon.get_in2("stone"),
         },
         category = "electromagnetics",
         energy_required = 10,

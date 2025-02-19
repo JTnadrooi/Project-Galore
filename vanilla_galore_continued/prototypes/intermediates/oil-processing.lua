@@ -6,7 +6,7 @@ vgal.data.extend({
             vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/crude-oil-sulfur.png"),
         },
         category = "oil-processing",
-        energy_required = 4,
+        energy_required = 5,
         fluid_ingredients = {
             { "crude-oil", 100 }
         },
@@ -69,8 +69,9 @@ vgal.data.extend({
         name = "petroleum-gas-coal-heavy-oil",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("heavy-oil"),
-            vgal.icon.get_in_fluid("petroleum-gas"),
+            -- vgal.icon.get("heavy-oil"),
+            -- vgal.icon.get_in_fluid("petroleum-gas"),
+            vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/petroleum-gas-coal-heavy-oil.png"),
         },
         category = "chemistry",
         energy_required = 1.5,

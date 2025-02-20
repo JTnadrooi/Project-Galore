@@ -143,6 +143,7 @@ vgal.data.extend
                 max = 4000,
             }
         },
+        groups = { "vgal-convoluted" },
     },
     {
         name = "ice-solid-fuel-ammonia",

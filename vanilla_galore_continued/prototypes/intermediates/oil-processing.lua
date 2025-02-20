@@ -88,6 +88,29 @@ vgal.data.extend({
         show_amount_in_title = false,
     },
     {
+        name = "heavy-oil-light-oil-petroleum-gas",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            -- vgal.icon.get("heavy-oil"),
+            -- vgal.icon.get_in_fluid("petroleum-gas"),
+            vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/heavy-oil-light-oil-petroleum-gas.png"),
+        },
+        category = "oil-processing",
+        energy_required = 1,
+        fluid_ingredients = {
+            { "heavy-oil", 50 },
+            { "water",     30 },
+        },
+        fluid_results = {
+            { "heavy-oil",     10 },
+            { "light-oil",     20 },
+            { "petroleum-gas", 10 },
+        },
+        technology = "advanced-oil-processing",
+        groups = { "vgal-unsure" },
+        show_amount_in_title = false,
+    },
+    {
         name = "steam-heavy-oil-light-oil",
         prefix = "vgal",
         icons = vgal.icon.register {

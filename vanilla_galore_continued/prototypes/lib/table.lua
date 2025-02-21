@@ -139,6 +139,16 @@ function vgal.table.get_shorthand(inTable, newType)
     return transformed
 end
 
-function vgal.table.multiply()
-
+function vgal.table.get_multiplied(intTable, amount)
+    local newTable = {}
+    for key, value in pairs(intTable) do
+        newTable[key] = value
+    end
+    if newTable.amount then
+        newTable.amount = newTable.amount * amount
+    end
+    if newTable.probability then
+        newTable.amount = math.floor(newTable.amount * newTable.probability + 0.5)
+    end
+    return newTable
 end

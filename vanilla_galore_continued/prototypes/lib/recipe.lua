@@ -188,13 +188,13 @@ function vgal.recipe.copy_and_extend(recipeName, as)
     data:extend({ newRecipe })
 end
 
-function vgal.recipe.replace_ingredient(recipeName, oldIngredient, newIngredient)
+function vgal.recipe.replace_ingredient(recipeName, oldIngredientName, newIngredientName)
     local recipe = data.raw["recipe"][recipeName]
     local toalter = recipe.ingredients
     for _, ingredient in ipairs(toalter) do
-        if ingredient.name == oldIngredient then
+        if ingredient.name == oldIngredientName then
             if ingredient.name then
-                ingredient.name = newIngredient
+                ingredient.name = newIngredientName
             end
         end
     end
@@ -263,14 +263,7 @@ end
 
 function vgal.recipe.add_result(recipeName, newResult, recipeType)
     local recipe = data.raw["recipe"][recipeName]
-    vgal.recipe.normalise(recipeName)
-    if recipe.results then
-        table.insert(recipe.results, newResult)
-    else
-        if not recipeType then
-            error("can't add result to monoresulted recipe without a type. (recipeType = nil)")
-        end
-    end
+    table.insert(recipe.results, newResult)
 end
 
 function vgal.recipe.has_result(recipeName, result)
@@ -338,3 +331,44 @@ function vgal.recipe.clear_icon_data(recipeName)
     recipe.icons = nil
 end
 
+function vgal.recipe.get_main_product_amount(recipeName)
+    return vgal.recipe.get_result_amount(recipeName, data.raw["recipe"][recipeName].main_product)
+end
+
+function vgal.recipe.get_result_amount(recipeName, result)
+    local recipe = data.raw["recipe"][recipeName]
+    if recipe.main_product then
+        for _, product in ipairs(recipe.results) do
+            if product.name == result then
+                local amount = 1
+
+                if product.amount then
+                    amount = product.amount or 1
+                elseif product.amount_min and product.amount_max then
+                    amount = (product.amount_min + product.amount_max) / 2
+                end
+
+                if product.probability then
+                    amount = amount * product.probability
+                end
+
+                return amount
+            end
+        end
+    else
+        error("no source result found for recipe of name: " .. recipeName)
+    end
+end
+
+function vgal.recipe.get_ingredient_amount(recipeName, ingredient)
+    local recipe = data.raw["recipe"][recipeName]
+    if recipe.main_product then
+        for _, product in ipairs(recipe.ingredients) do
+            if product.name == ingredient then
+                return product.amount
+            end
+        end
+    else
+        error("no source ingredient [ " .. ingredient .." ] found for recipe of name: " .. recipeName)
+    end
+end

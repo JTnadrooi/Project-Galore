@@ -145,10 +145,10 @@ function vgal.table.get_multiplied(intTable, amount)
         newTable[key] = value
     end
     if newTable.amount then
-        newTable.amount = newTable.amount * amount
+        newTable.amount = math.max(1, math.floor(newTable.amount * amount + 0.5))
     end
     if newTable.probability then
-        newTable.amount = math.floor(newTable.amount * newTable.probability + 0.5)
+        newTable.probability = math.min(1, newTable.probability / amount)
     end
     return newTable
 end

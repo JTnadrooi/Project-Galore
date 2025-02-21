@@ -11,7 +11,6 @@ if mods["bzcarbon"] then
     vgal.recipe.replace_ingredient("vgal-petroleum-gas-coal-heavy-oil", "coal", "carbon-black")
     vgal.recipe.replace_ingredient("vgal-copper-cable-plastic-bar", "coal", "carbon-black")
 
-    -- vgal.recipe.all.link_ingredient({ type = "fluid", name = "organotins", amount = 2.5 }, "plastic-bar")
     vgal.recipe.all.link_ingredient({ type = "item", name = "graphite", amount = 1 }, "electronic-circuit", 0.5)
     -- vgal.recipe.all.link_ingredient({ type = "item", name = "graphite", amount = 1 }, "lubricant", 0.05)
     vgal.recipe.all.link_ingredient({ type = "item", name = "graphite", amount = 1 }, "battery")
@@ -33,9 +32,50 @@ end
 if mods["bzsilicon"] then
     vgal.recipe.all.link_ingredient({ type = "item", name = "silicon", amount = 1 }, "advanced-circuit")
     vgal.recipe.all.link_ingredient({ type = "item", name = "silicon", amount = 2 }, "processing-unit")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "silicon", amount = 2 }, "solar-panel")
 
     vgal.recipe.all.replace_ingredient("stone-brick", { type = "item", name = "silica", amount = 5 }, "concrete")
     vgal.recipe.all.replace_ingredient("copper-cable", { type = "item", name = "optical-fiber", amount = 1 }, "beacon")
     vgal.recipe.all.replace_ingredient("stone-brick", { type = "item", name = "crucible", amount = 1 },
         "electric-furnace", 0.1)
+end
+
+if mods["bzlead"] then
+    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-plate", amount = 5 }, "solar-panel")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 5 }, "solar-panel")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 }, "assembling-machine-1")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 }, "electric-furnace")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 }, "substation")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 }, "lab")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 8 }, "gun-turret")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 100 }, "centrifuge")
+
+    vgal.recipe.all.replace_ingredient("iron-plate", { type = "item", name = "lead-plate", amount = 1 }, "battery")
+    -- vgal.recipe.all.replace_ingredient("iron-plate", { type = "item", name = "lead-plate", amount = 1 }, "pipe")
+    vgal.recipe.all.replace_ingredient("iron-plate", { type = "item", name = "lead-plate", amount = 1 }, "sulfuric-acid")
+    vgal.recipe.all.replace_ingredient("iron-plate", { type = "item", name = "lead-plate", amount = 1 },
+        "uranium-fuel-cell")
+end
+
+if mods["bztin"] then
+    vgal.recipe.all.link_ingredient({ type = "item", name = "tin-plate", amount = 5 }, "lab")
+    vgal.recipe.all.link_ingredient({ type = "fluid", name = "organotins", amount = 2.5 }, "plastic-bar")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 5 }, "assembling-machine-2")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 1 }, "electronic-circuit", 0.5)
+    vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 1 }, "advanced-circuit", 1)
+    vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 2 }, "substation")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 2 }, "accumulator")
+    vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 20 }, "roboport")
+
+    vgal.recipe.all.replace_ingredient("iron-plate", { type = "item", name = "solder", amount = 1 }, "pipe-to-ground",
+        0.4)
+end
+
+if mods["bztitanium"] then
+    -- vgal.recipe.all.link_ingredient({ type = "item", name = "titanium-plate", amount = 5 }, "lab")
+
+    vgal.recipe.all.replace_ingredient("steel-plate", { type = "item", name = "titanium-plate", amount = 1 },
+        "low-density-structure")
+    vgal.recipe.all.replace_ingredient("steel-plate", { type = "item", name = "titanium-plate", amount = 1 },
+        "flying-robot-frame")
 end

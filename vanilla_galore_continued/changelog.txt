@@ -5,6 +5,7 @@ Version: 1.1.8 COMPAT GALORE
     - BZ mods support!
     - Added "vgal-heavy-oil-light-oil-petroleum-gas" recipe. (listed as unsure)
   Balancing:
+    - "vgal-advanced-circuit-flying-robot-frame" now requires steel like the rest of the frame recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.7
   Features:

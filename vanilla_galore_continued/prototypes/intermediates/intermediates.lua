@@ -267,7 +267,7 @@ vgal.data.extend
         energy_required = 20,
         ingredients = {
             { "electric-engine-unit", 1 },
-            { "iron-plate",           4 },
+            { "steel-plate",          1 },
             { "advanced-circuit",     1 },
             { "battery",              1 }, -- 50
         },

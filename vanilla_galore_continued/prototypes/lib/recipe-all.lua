@@ -22,10 +22,12 @@ function vgal.recipe.all.replace_ingredient(sourceIngredientName, newIngredient,
     multiplier = multiplier or 1
     for _, recipe in pairs(vgal.recipes) do
         if recipe.main_product == mainProductName then
-            vgal.recipe.add_ingredient(recipe.name,
-                vgal.table.get_multiplied(newIngredient,
-                    multiplier * vgal.recipe.get_ingredient_amount(recipe.name, sourceIngredientName)))
-            vgal.recipe.remove_ingredient(recipe.name, sourceIngredientName)
+            if vgal.recipe.has_ingredient(recipe.name, sourceIngredientName) then
+                vgal.recipe.add_ingredient(recipe.name,
+                    vgal.table.get_multiplied(newIngredient,
+                        multiplier * vgal.recipe.get_ingredient_amount(recipe.name, sourceIngredientName)))
+                vgal.recipe.remove_ingredient(recipe.name, sourceIngredientName)
+            end
         end
     end
 end

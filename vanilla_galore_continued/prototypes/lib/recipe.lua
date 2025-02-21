@@ -356,7 +356,7 @@ function vgal.recipe.get_result_amount(recipeName, result)
             end
         end
     else
-        error("no source result found for recipe of name: " .. recipeName)
+        error("no source result [ " .. result .. " ] found for recipe of name: " .. recipeName)
     end
 end
 
@@ -369,6 +369,6 @@ function vgal.recipe.get_ingredient_amount(recipeName, ingredient)
             end
         end
     else
-        error("no source ingredient [ " .. ingredient .." ] found for recipe of name: " .. recipeName)
+        error("no source ingredient [ " .. ingredient .. " ] found for recipe of name: " .. recipeName)
     end
 end

@@ -3,9 +3,11 @@ Version: 1.0.6
   Features:
     - James oil support! (inherited from Vanilla Galore 1.0.8)
     - BZ mods support! (inherited from Vanilla Galore 1.0.8)
+  Balancing:
+    - Made it so "vgal-yumako-mash-light-oil" can now be crafted in an assembling machine.
   Bugfixes:
     - Fixed the changelog listing the wrong recipe added.
-    - Fixed "vgal-yumako-mash-light-oil" recipe unlock not being in the right tech.
+    - Fixed "vgal-yumako-mash-light-oil" unlock not being in the right tech.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.5 HOTFIX
   Features:

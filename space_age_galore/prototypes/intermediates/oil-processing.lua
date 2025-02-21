@@ -60,7 +60,7 @@ vgal.data.extend({
         },
         show_amount_in_title = false,
         main_product = "light-oil",
-        technology = "bacteria-cultivation",
+        technology = "yumako",
     },
     -- {
     --     name = "solid-fuel-calcite-stone-brick-jelly",

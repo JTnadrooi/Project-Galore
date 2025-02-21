@@ -9,14 +9,14 @@
     "dependencies": [
         "base >= 2.0",
         "? space-age",
-        "? James-Oil-Processing",
         "? bzcarbon",
         "? bzlead",
         "? bzcarbon",
         "? bzsilicon",
         "? bztin",
         "? bztitanium",
-        "? bzzirconium"
+        "? bzzirconium",
+        "(?) James-Oil-Processing"
     ],
     "description": "Adds over 110 unique and balanced alternate recipes to VANILLA!"
 }

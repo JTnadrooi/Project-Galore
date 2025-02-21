@@ -17,3 +17,7 @@ data:extend {
     vgal.setting.new_bool("vgal-unsure-recipes", "zb", false),
     vgal.setting.new_bool("vgal-removed-recipes", "zc", false),
 }
+
+if mods["James-Oil-Processing"] then
+    data.raw["bool-setting"]["vgal-oil-recipes"].hidden = true
+end

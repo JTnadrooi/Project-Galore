@@ -1,9 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.6
   Features:
-    - "vgal-spoilage-crude-oil" recipe added.
+    - James oil support! (inherited from Vanilla Galore 1.0.8)
   Balancing:
-    - "vgal-pentapod-egg-bioflux-stone" bioflux cost increased, result amount decreased by 33%.
+    - "vg
   Bugfixes:
     - Fixed the changelog listing the wrong recipe added.
 ---------------------------------------------------------------------------------------------------

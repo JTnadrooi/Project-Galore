@@ -31,6 +31,6 @@ require("prototypes.buildings.belts")
 require("prototypes.buildings.inserters")
 require("prototypes.buildings.buildings")
 
--- require("mods.james") sorry i gave up..
+require("mods.james")
 
 require("overrides.vgal-post-overrides")

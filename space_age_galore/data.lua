@@ -20,6 +20,7 @@ require("prototypes.intermediates.oil-processing")
 require("prototypes.buildings.buildings")
 
 require("mods.maraxsis")
+require("mods.james")
 require("mods.demolisher-scales")
 
 require("overrides.sagal-post-overrides")

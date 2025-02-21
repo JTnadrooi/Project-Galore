@@ -25,6 +25,10 @@ require("tech")
 require("table")
 require("build")
 
+if mods["James-Oil-Processing"] then
+    settings.startup["vgal-oil-recipes"].value = false
+end
+
 function vgal.log(toLog)
     if settings.startup["vgal-log"].value then
         log("vgal.log-[" .. toLog .. "]")

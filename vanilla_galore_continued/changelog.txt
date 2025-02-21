@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.8
   Features:
-    - Added "vgal-heavy-oil-light-oil-petroleum-gas" recipe.
+    - Added "vgal-heavy-oil-light-oil-petroleum-gas" recipe. (listed as unsure)
+    - James oil support!
   Balancing:
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.7

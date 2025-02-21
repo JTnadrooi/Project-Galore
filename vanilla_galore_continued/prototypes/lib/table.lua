@@ -138,3 +138,7 @@ function vgal.table.get_shorthand(inTable, newType)
     end
     return transformed
 end
+
+function vgal.table.multiply()
+
+end

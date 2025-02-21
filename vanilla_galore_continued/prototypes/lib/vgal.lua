@@ -7,6 +7,7 @@ vgal.category = vgal.category or {}
 vgal.subgroup = vgal.subgroup or {}
 vgal.icon = vgal.icon or {}
 vgal.recipe = vgal.recipe or {}
+vgal.recipe.all = vgal.recipe.all or {}
 vgal.tech = vgal.tech or {}
 vgal.item = vgal.item or {}
 vgal.fluid = vgal.fluid or {}
@@ -20,6 +21,7 @@ require("icon")
 require("localise")
 require("math")
 require("recipe")
+require("recipe-all")
 require("subgroup")
 require("tech")
 require("table")
@@ -54,6 +56,7 @@ vgal.groups = {
 }
 
 vgal.enabled_groups = {}
+---@type vgal.VgalRecipe[]
 vgal.recipes = {}
 
 for _, groupTuple in ipairs(vgal.groups) do

@@ -11,3 +11,5 @@ if products or made_in then
         end
     end
 end
+
+require("mods.bz")

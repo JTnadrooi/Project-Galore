@@ -2,6 +2,7 @@
 Version: 1.0.6
   Features:
     - James oil support! (inherited from Vanilla Galore 1.0.8)
+    - BZ mods support! (inherited from Vanilla Galore 1.0.8)
   Balancing:
     - "vg
   Bugfixes:

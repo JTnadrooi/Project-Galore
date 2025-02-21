@@ -331,10 +331,6 @@ function vgal.recipe.add_ingredient(recipeName, ingredient)
     end
 end
 
--- function vgal.recipe.queue_to_clean(recipeName)
---     table.insert(vgal.toclean, recipeName)
--- end
-
 function vgal.recipe.clear_icon_data(recipeName)
     local recipe = data.raw["recipe"][recipeName]
     recipe.icon = nil
@@ -342,32 +338,3 @@ function vgal.recipe.clear_icon_data(recipeName)
     recipe.icons = nil
 end
 
--- function vgal.recipe.multiply_ingredients(recipeName, multiplier)
---     local recipe = data.raw["recipe"][recipeName]
---     if recipe and recipe.ingredients then
---         for _, item in ipairs(recipe.ingredients) do
---             item.amount = vgal.math.conserve_floor(item.amount * multiplier)
---         end
---     else
---         error("invalid recipe name and or composition")
---     end
--- end
-
--- function vgal.recipe.multiply_energy_required(recipeName, multiplier)
---     local recipe = data.raw["recipe"][recipeName]
---     recipe.energy_required = (recipe.energy_required or 1) * multiplier
--- end
-
--- function vgal.recipe.multiply_results(recipeName, multiplier)
---     local recipe = data.raw["recipe"][recipeName]
---     if recipe.results == nil then
---         error("can't perform function multiply_results on recipe without results.")
---     end
---     if recipe.results then
---         for _, item in ipairs(recipe.results) do
---             item.amount = vgal.math.conserve_floor(item.amount * multiplier)
---         end
---     else
---         recipe.result_count = vgal.math.conserve_floor((recipe.result_count or 1) * multiplier)
---     end
--- end

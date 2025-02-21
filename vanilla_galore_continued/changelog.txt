@@ -1,8 +1,9 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.1.8
+Version: 1.1.8 COMPAT GALORE
   Features:
-    - Added "vgal-heavy-oil-light-oil-petroleum-gas" recipe. (listed as unsure)
     - James oil support!
+    - BZ mods support!
+    - Added "vgal-heavy-oil-light-oil-petroleum-gas" recipe. (listed as unsure)
   Balancing:
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.7

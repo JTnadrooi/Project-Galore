@@ -372,3 +372,8 @@ function vgal.recipe.get_ingredient_amount(recipeName, ingredient)
         error("no source ingredient [ " .. ingredient .. " ] found for recipe of name: " .. recipeName)
     end
 end
+
+function vgal.recipe.multiply_results(recipeName, multiplier)
+    local recipe = data.raw["recipe"][recipeName]
+    recipe.results = vgal.table.get_multiplied(recipe.results, multiplier)
+end

@@ -139,13 +139,34 @@ function vgal.table.get_shorthand(inTable, newType)
     return transformed
 end
 
+-- function vgal.table.get_multiplied(intTable, amount)
+--     local newTable = {}
+--     for key, value in pairs(intTable) do
+--         newTable[key] = value
+--     end
+--     if newTable.amount then
+--         newTable.amount = math.max(1, math.floor(newTable.amount * amount + 0.5))
+--     end
+--     if newTable.probability then
+--         newTable.probability = math.min(1, newTable.probability / amount)
+--     end
+--     return newTable
+-- end
 function vgal.table.get_multiplied(intTable, amount)
     local newTable = {}
-    for key, value in pairs(intTable) do
-        newTable[key] = value
+    for k, v in pairs(intTable) do
+        if type(v) == "table" then
+            newTable[k] = vgal.table.get_multiplied(v, amount)
+        else
+            newTable[k] = v
+        end
     end
     if newTable.amount then
-        newTable.amount = math.max(1, math.floor(newTable.amount * amount + 0.5))
+        if newTable.type == "fluid" then
+            newTable.amount = math.max(1, newTable.amount * amount)
+        else
+            newTable.amount = math.max(1, math.floor(newTable.amount * amount + 0.5))
+        end
     end
     if newTable.probability then
         newTable.probability = math.min(1, newTable.probability / amount)

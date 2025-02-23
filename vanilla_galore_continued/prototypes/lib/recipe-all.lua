@@ -30,6 +30,15 @@ function vgal.recipe.all.multiply_results(mainProductName, multiplier) -- vgal o
     end
 end
 
+function vgal.recipe.all.multiply_ingredients(mainProductName, multiplier, ingredientName) -- vgal only
+    multiplier = multiplier or 1
+    for _, recipe in pairs(vgal.recipes) do
+        if recipe.main_product == mainProductName then
+            vgal.recipe.multiply_ingredients(recipe.name, multiplier, ingredientName)
+        end
+    end
+end
+
 function vgal.recipe.all.replace_ingredient(sourceIngredientName, newIngredient, mainProductName, multiplier) -- vgal only
     multiplier = multiplier or 1
     for _, recipe in pairs(vgal.recipes) do

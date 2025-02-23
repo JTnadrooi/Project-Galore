@@ -1,5 +1,12 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.1.8 COMPAT GALORE
+Version: 1.1.9
+  Features:
+    - Improved the vgal.recipes.all namespace.
+  Bugfixes:
+    - Fixed BZ support only working with specific settings.
+    - Fixed BZ support causing a very underpowered advanced circuits recipe.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.8
   Features:
     - James oil support!
     - BZ mods support!

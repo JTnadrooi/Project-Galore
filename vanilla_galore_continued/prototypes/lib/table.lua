@@ -152,24 +152,51 @@ end
 --     end
 --     return newTable
 -- end
-function vgal.table.get_multiplied(intTable, amount)
-    local newTable = {}
-    for k, v in pairs(intTable) do
-        if type(v) == "table" then
-            newTable[k] = vgal.table.get_multiplied(v, amount)
-        else
-            newTable[k] = v
+
+-- Multiply the "amount" field in a single entry based on its type.
+-- For type "item", the result is rounded (with a minimum value of 1).
+-- For type "fluid", the result is left as a float.
+local function process_entry(entry, multiplier, entryName)
+    -- If entryName is provided, only process if the entry's name matches.
+    if entryName and entry.name ~= entryName then
+        return entry -- Return unmodified if names don't match.
+    end
+
+    -- Make a shallow copy of the entry to avoid mutating the original.
+    local new_entry = {}
+    for k, v in pairs(entry) do
+        new_entry[k] = v
+    end
+
+    local multiplied = entry.amount * multiplier
+
+    if entry.type == "item" then
+        -- For items, round the amount to the nearest integer.
+        -- Ensure that even if the multiplication gives a value less than 1, it rounds to at least 1.
+        multiplied = math.floor(multiplied + 0.5)
+        if multiplied < 1 then
+            multiplied = 1
         end
     end
-    if newTable.amount then
-        if newTable.type == "fluid" then
-            newTable.amount = math.max(1, newTable.amount * amount)
-        else
-            newTable.amount = math.max(1, math.floor(newTable.amount * amount + 0.5))
+
+    new_entry.amount = multiplied
+    return new_entry
+end
+
+-- Main function: accepts either a single entry or an array of entries.
+-- multiplier: the factor to multiply the amount by.
+-- entryName (optional): if provided, only entries with this name will be multiplied.
+function vgal.table.get_multiplied(input, multiplier, entryName)
+    -- Check if the input is a single entry (has a "type" field).
+    if input.type then
+        return process_entry(input, multiplier, entryName)
+    elseif type(input) == "table" then
+        local result = {}
+        for i, entry in ipairs(input) do
+            result[i] = process_entry(entry, multiplier, entryName)
         end
+        return result
+    else
+        error("Invalid input: expected a table with a 'type' field or an array of such tables.")
     end
-    if newTable.probability then
-        newTable.probability = math.min(1, newTable.probability / amount)
-    end
-    return newTable
 end

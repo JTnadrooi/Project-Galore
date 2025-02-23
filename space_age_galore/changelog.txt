@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.7
+  Bugfixes:
+    - Fixed BZ support only working with specific settings.
+    - Fixed BZ support causing a very underpowered advanced circuits recipe.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.6
   Features:
     - James oil support! (inherited from Vanilla Galore 1.0.8)
@@ -9,7 +14,7 @@ Version: 1.0.6
     - Fixed the changelog listing the wrong recipe added.
     - Fixed "vgal-yumako-mash-light-oil" unlock not being in the right tech.
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.5 HOTFIX
+Version: 1.0.5
   Features:
     - "vgal-spoilage-crude-oil" recipe added.
     - Improved many icons.

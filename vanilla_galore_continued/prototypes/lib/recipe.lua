@@ -337,27 +337,24 @@ end
 
 function vgal.recipe.get_result_amount(recipeName, result)
     local recipe = data.raw["recipe"][recipeName]
-    if recipe.main_product then
-        for _, product in ipairs(recipe.results) do
-            if product.name == result then
-                local amount = 1
+    for _, product in ipairs(recipe.results) do
+        if product.name == result then
+            local amount = 1
 
-                if product.amount then
-                    amount = product.amount or 1
-                elseif product.amount_min and product.amount_max then
-                    amount = (product.amount_min + product.amount_max) / 2
-                end
-
-                if product.probability then
-                    amount = amount * product.probability
-                end
-
-                return amount
+            if product.amount then
+                amount = product.amount or 1
+            elseif product.amount_min and product.amount_max then
+                amount = (product.amount_min + product.amount_max) / 2
             end
+
+            if product.probability then
+                amount = amount * product.probability
+            end
+            -- log(amount .."retruned")
+            return amount
         end
-    else
-        error("no source result [ " .. result .. " ] found for recipe of name: " .. recipeName)
     end
+    error()
 end
 
 function vgal.recipe.get_ingredient_amount(recipeName, ingredient)
@@ -376,4 +373,9 @@ end
 function vgal.recipe.multiply_results(recipeName, multiplier)
     local recipe = data.raw["recipe"][recipeName]
     recipe.results = vgal.table.get_multiplied(recipe.results, multiplier)
+end
+
+function vgal.recipe.multiply_ingredients(recipeName, multiplier, ingredientName)
+    local recipe = data.raw["recipe"][recipeName]
+    recipe.ingredients = vgal.table.get_multiplied(recipe.ingredients, multiplier, ingredientName)
 end

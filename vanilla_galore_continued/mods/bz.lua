@@ -7,18 +7,22 @@ end
 if mods["bzcarbon"] then
     vgal.recipe.all.link_ingredient({ type = "item", name = "diamond", amount = 4 }, "assembling-machine-3")
     vgal.recipe.all.link_ingredient({ type = "item", name = "diamond", amount = 1 }, "low-density-structure")
-    vgal.recipe.all.link_result({ type = "item", name = "diamond", amount = 1, probability = 0.5 },
-        "low-density-structure")
 
-    vgal.recipe.add_result("vgal-crude-oil-sulfur", { type = "item", name = "carbon-black", amount = 1 })
-    vgal.recipe.add_result("vgal-steam-crude-oil-sulfur", { type = "item", name = "carbon-black", amount = 1 })
-    vgal.recipe.add_result("vgal-steam-advanced-oil-processing", { type = "item", name = "carbon-black", amount = 1 })
+    if settings.startup["bzcarbon-reuse"].value == "yes" then
+        vgal.recipe.all.link_result({ type = "item", name = "diamond", amount = 1, probability = 0.5 },
+            "low-density-structure")
+    end
 
-    vgal.recipe.replace_ingredient("vgal-petroleum-gas-coal-heavy-oil", "coal", "carbon-black")
-    vgal.recipe.replace_ingredient("vgal-copper-cable-plastic-bar", "coal", "carbon-black")
+    if settings.startup["bzcarbon-enable-carbon-black"].value == "yes" then
+        vgal.recipe.add_result("vgal-crude-oil-sulfur", { type = "item", name = "carbon-black", amount = 1 })
+        vgal.recipe.add_result("vgal-steam-crude-oil-sulfur", { type = "item", name = "carbon-black", amount = 1 })
+        vgal.recipe.add_result("vgal-steam-advanced-oil-processing", { type = "item", name = "carbon-black", amount = 1 })
+
+        vgal.recipe.replace_ingredient("vgal-petroleum-gas-coal-heavy-oil", "coal", "carbon-black")
+        vgal.recipe.all.replace_ingredient("coal", { type = "item", name = "carbon-black", amount = 1 }, "plastic-bar")
+    end
 
     vgal.recipe.all.link_ingredient({ type = "item", name = "graphite", amount = 1 }, "electronic-circuit", 0.5)
-    -- vgal.recipe.all.link_ingredient({ type = "item", name = "graphite", amount = 1 }, "lubricant", 0.05)
     vgal.recipe.all.link_ingredient({ type = "item", name = "graphite", amount = 1 }, "battery")
 
     data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].ingredients = vgal.build.table({
@@ -44,6 +48,8 @@ if mods["bzsilicon"] then
     vgal.recipe.all.link_ingredient({ type = "item", name = "silicon", amount = 2 }, "processing-unit")
     vgal.recipe.all.link_ingredient({ type = "item", name = "silicon", amount = 2 }, "solar-panel")
 
+    vgal.recipe.all.multiply_ingredients("advanced-circuit", 0.5, "electronic-circuit")
+
     vgal.recipe.all.replace_ingredient("stone-brick", { type = "item", name = "silica", amount = 5 }, "concrete")
     vgal.recipe.all.replace_ingredient("copper-cable", { type = "item", name = "optical-fiber", amount = 1 }, "beacon")
     if mods["bzcarbon"] then
@@ -54,12 +60,18 @@ end
 
 if mods["bzlead"] then
     vgal.recipe.all.link_ingredient({ type = "item", name = "lead-plate", amount = 5 }, "solar-panel")
-    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 }, "assembling-machine-1")
-    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 }, "electric-furnace")
-    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 }, "substation")
-    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 }, "lab")
-    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 8 }, "gun-turret")
-    vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 100 }, "centrifuge")
+
+
+    if settings.startup["bzlead-more-entities"].value == "yes" then
+        vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 },
+            "assembling-machine-1")
+        vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 }, "electric-furnace")
+        vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 }, "substation")
+        vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 4 }, "lab")
+        vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 8 }, "gun-turret")
+        vgal.recipe.all.link_ingredient({ type = "item", name = "lead-expansion-bolt", amount = 100 }, "centrifuge")
+    end
+
 
     vgal.recipe.all.replace_ingredient("iron-plate", { type = "item", name = "lead-plate", amount = 1 }, "battery")
     vgal.recipe.all.replace_ingredient("iron-plate", { type = "item", name = "lead-plate", amount = 1 }, "pipe")
@@ -74,7 +86,7 @@ if mods["bztin"] then
     vgal.recipe.all.link_ingredient({ type = "item", name = "tin-plate", amount = 5 }, "lab")
     vgal.recipe.all.link_ingredient({ type = "fluid", name = "organotins", amount = 2.5 }, "plastic-bar")
     vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 5 }, "assembling-machine-2")
-    vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 1 }, "electronic-circuit", 0.5)
+    vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 1 }, "electronic-circuit", 1)
     vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 1 }, "advanced-circuit", 1)
     vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 2 }, "substation")
     vgal.recipe.all.link_ingredient({ type = "item", name = "solder", amount = 2 }, "accumulator")

@@ -26,14 +26,17 @@ local function get_icon_item(keyName, iconSource)
     return vgal.any(keyName)
 end
 
+-- local function get_icon_size(object)
+--     local size = 32
+--     if object.icon_size then
+--         size = object.icon_size
+--     elseif object.size then
+--         size = object.size
+--     end
+--     return size
+-- end
 local function get_icon_size(object)
-    local size = 32
-    if object.icon_size then
-        size = object.icon_size
-    elseif object.size then
-        size = object.size
-    end
-    return size
+    return object.icon_size or 64
 end
 function vgal.icon.shift(icon, scale, shift)
     local icons = {}
@@ -41,7 +44,7 @@ function vgal.icon.shift(icon, scale, shift)
         local new_icon = util.table.deepcopy(icon2)
         if scale then
             local icon_size = get_icon_size(new_icon)
-            new_icon.scale = scale * (32 / icon_size)
+            new_icon.scale = scale  * (new_icon.scale or 1)
         end
         new_icon.shift = shift or icon.shift
         table.insert(icons, new_icon)
@@ -130,8 +133,9 @@ function vgal.icon.get(keyName, iconSource)
     if iconSource == "molecule" and mods["angelspetrochem"] then
         return {
             {
-                icon = "__angelspetrochem__/graphics/icons/molecules/" .. keyName .. ".png",
+                icon = "__angelspetrochemgraphics__/graphics/icons/molecules/" .. keyName .. ".png",
                 icon_size = 72,
+                -- scale = (72 / 64) * 1.8,
                 target = "core"
             }
         }

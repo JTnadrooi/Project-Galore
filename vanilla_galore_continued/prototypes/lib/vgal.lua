@@ -92,6 +92,7 @@ function vgal.data.extend(recipes, args)
 
             recipe.order = recipe.order or complementairy_recipe.order
             recipe.subgroup = recipe.subgroup or complementairy_recipe.subgroup
+            recipe.crafting_machine_tint = recipe.crafting_machine_tint or complementairy_recipe.crafting_machine_tint
         end
 
 
@@ -174,6 +175,9 @@ function vgal.data.extend(recipes, args)
 
         recipe.allow_productivity = (recipe.allow_productivity ~= nil) and recipe.allow_productivity or
             vgal.recipe.get_if_productivity(recipe.main_product)
+
+        recipe.crafting_machine_tint = vgal.recipe.get_prefered_tint(recipe)
+
 
         recipe.localised_name = recipe.localised_name or { "?",
             { "", { "recipe-name." .. recipe.name } },

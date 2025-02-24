@@ -21,6 +21,12 @@ vgal.data.extend({
         order = "aaa",
         technology = "space-platform",
         show_amount_in_title = false,
+        crafting_machine_tint = {
+            primary = { r = 0.0, g = 0.3, b = 1.0, a = 1.000 },
+            secondary = { r = 0.1, g = 0.5, b = 1.0, a = 1.000 },
+            tertiary = { r = 0.0, g = 0.2, b = 0.8, a = 1.000 },
+            quaternary = { r = 0.0, g = 0.1, b = 0.6, a = 1.000 },
+        },
     },
     {
         name = "spoilage-crude-oil", -- the number one least efficient recipe in all of Galore. (2.5%)

@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.8
+  Features:
+    - All recipes now should have proper crafting tints.
+  Bugfixes:
+    - Fixed the crude oil syntesis recipe not allowing productivity.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.7
   Bugfixes:
     - Fixed BZ support only working with specific settings.

@@ -6,6 +6,12 @@
     "contact": "@jtnadrooi",
     "homepage": "https://github.com/JTnadrooi/Project-Galore",
     "factorio_version": "2.0",
-    "dependencies": ["base >= 2.0", "vanilla_galore_continued"],
-    "description": "Adds over n unique and balanced alternate recipes to ANGEL'S MODS!"
+    "dependencies": [
+        "base >= 2.0",
+        "angelspetrochem",
+        "angelsrefining",
+        "angelssmelting",
+        "bioprocessing"
+    ],
+    "description": "An overhaul of Angels Mods foccussed on alternate recipes!"
 }

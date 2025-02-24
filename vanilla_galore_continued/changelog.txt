@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.10
+  Features:
+    - All recipes now should have proper crafting tints.
+  Bugfixes:
+    - Fixed a spelling error in the high temp oil recipes' name.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.9
   Features:
     - Improved the vgal.recipes.all namespace.

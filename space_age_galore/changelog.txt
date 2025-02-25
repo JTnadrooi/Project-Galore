@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.9
+  Features:
+    - Added circuits from tungsten carbide.
+    - Added more module recipes. (can be dissabled)
+---------------------------------------------------------------------------------------------------
 Version: 1.0.8
   Features:
     - All recipes now should have proper crafting tints.

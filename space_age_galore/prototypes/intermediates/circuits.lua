@@ -80,6 +80,53 @@ vgal.data.extend
             }
         },
     },
+    {
+        type = "recipe",
+        name = "tungsten-carbide-advanced-circuit",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("advanced-circuit"),
+            vgal.icon.get_in("tungsten-carbide"),
+        },
+        category = "electronics",
+        energy_required = 6,
+        technology = "tungsten-carbide",
+        fluid_ingredients = {
+            { "sulfuric-acid", 5 }, -- 10
+        },
+        ingredients = {
+            { "electronic-circuit", 1 }, -- 25
+            { "tungsten-carbide",   1 }, -- 75
+            { "tcopper-cable",      2 }, -- 10
+        },
+        results = {
+            { "advanced-circuit", 1 }, -- 100
+        },
+    },
+    {
+        type = "recipe",
+        name = "tungsten-carbide-processing-unit",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("processing-unit"),
+            vgal.icon.get_in("tungsten-carbide"),
+        },
+        category = "electronics",
+        energy_required = 10,
+        technology = "tungsten-carbide",
+        fluid_ingredients = {
+            { "sulfuric-acid", 10 }, -- 20
+        },
+        ingredients = {
+            { "electronic-circuit", 10 }, -- 250
+            { "advanced-circuit",   2 },  -- 200
+            { "tungsten-carbide",   2 },  -- 150
+        },
+        results = {
+            { "processing-unit", 1 } -- 710
+        },
+    },
+    -- region a
     -- {
     --     type = "recipe",
     --     name = "yumako-mash-advanced-circuit",
@@ -190,4 +237,5 @@ vgal.data.extend
     --     },
     --     groups = { "organic-circuit", "vgal-unsure" },
     -- },
+    -- regionend
 }

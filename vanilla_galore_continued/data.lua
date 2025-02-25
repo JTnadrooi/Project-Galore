@@ -1,4 +1,4 @@
-vgal = require("prototypes.lib.vgal")
+vgal = require("lib.vgal")
 vgal.log("the *core-of-galore* has loaded.")
 
 local function throw_compat_error(neededGalore, with)

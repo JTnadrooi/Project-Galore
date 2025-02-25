@@ -18,6 +18,7 @@ require("prototypes.intermediates.intermediates")
 require("prototypes.intermediates.oil-processing")
 
 require("prototypes.buildings.buildings")
+require("prototypes.buildings.belts")
 
 require("mods.maraxsis")
 require("mods.james")

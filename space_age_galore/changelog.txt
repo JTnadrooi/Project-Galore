@@ -1,8 +1,12 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.0.9
+Version: 1.1.0
   Features:
     - Added circuits from tungsten carbide.
     - Added more module recipes. (can be dissabled)
+    - Add partially plastic turbo belt recipes.
+    - Add partially LDS turbo belt recipes.
+  Balancing:
+    - Made it so bsemi-iological robots can now also be crafted in an assembling machine.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.8
   Features:
@@ -21,7 +25,7 @@ Version: 1.0.6
     - James oil support! (inherited from Vanilla Galore 1.0.8)
     - BZ mods support! (inherited from Vanilla Galore 1.0.8)
   Balancing:
-    - Made it so "vgal-yumako-mash-light-oil" can now be crafted in an assembling machine.
+    - Made it so "vgal-yumako-mash-light-oil" can now also be crafted in an assembling machine.
   Bugfixes:
     - Fixed the changelog listing the wrong recipe added.
     - Fixed "vgal-yumako-mash-light-oil" unlock not being in the right tech.

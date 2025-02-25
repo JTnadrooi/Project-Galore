@@ -78,7 +78,13 @@ local subgroups = {
         tab = "logistics",
         order = "x",
         entries = { "artificial-yumako-soil", "artificial-jellynut-soil", "landfill", "foundation", "overgrowth-yumako-soil", "overgrowth-jellynut-soil", "ice-platform" },
-        when = { "vgal-belts" },
+    },
+    {
+        name = "module-quality",
+        tab = "production",
+        order = "yd",
+        entries = { "quality-module", "quality-module-2", "quality-module-3" },
+        when = { "vgal-modules" },
     },
 }
 

@@ -97,7 +97,7 @@ vgal.data.extend
         ingredients = {
             { "electronic-circuit", 1 }, -- 25
             { "tungsten-carbide",   1 }, -- 75
-            { "tcopper-cable",      2 }, -- 10
+            { "copper-cable",       2 }, -- 10
         },
         results = {
             { "advanced-circuit", 1 }, -- 100

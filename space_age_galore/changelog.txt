@@ -5,6 +5,7 @@ Version: 1.1.0
     - Added more module recipes. (can be dissabled)
     - Add partially plastic turbo belt recipes.
     - Add partially LDS turbo belt recipes.
+    - Add added some miscellaneous recipes.
   Balancing:
     - Made it so bsemi-iological robots can now also be crafted in an assembling machine.
 ---------------------------------------------------------------------------------------------------

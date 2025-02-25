@@ -28,8 +28,8 @@ require("prototypes.intermediates.oil-processing")
 require("prototypes.intermediates.nuclear")
 
 require("prototypes.buildings.belts")
-require("prototypes.buildings.inserters")
 require("prototypes.buildings.buildings")
+require("prototypes.buildings.inserters")
 
 require("mods.james")
 

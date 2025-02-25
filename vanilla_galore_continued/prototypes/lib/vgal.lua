@@ -304,6 +304,21 @@ function vgal.any(anyName, includeRecipes)
     error("ANY of name '" .. anyName .. "' does not exist")
 end
 
+function vgal.any_get_source(anyName, includeRecipes)
+    local categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
+        "item-with-entity-data",
+        "rail-planner" }
+    if includeRecipes then
+        table.insert(categories, "recipe")
+    end
+    for _, category in ipairs(categories) do
+        if data.raw[category][anyName] then
+            return category
+        end
+    end
+    error("ANY_SOURCE of name '" .. anyName .. "' does not exist")
+end
+
 function vgal.data.finalise()
     local potential_singles = {}
     for _, tech in pairs(data.raw["technology"]) do

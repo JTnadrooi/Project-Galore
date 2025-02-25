@@ -16,11 +16,7 @@
         "? bztin",
         "? bztitanium",
         "? bzzirconium",
-        "(?) James-Oil-Processing",
-        "(?) angelspetrochem",
-        "(?) angelsrefining",
-        "(?) angelssmelting",
-        "(?) angelsbioprocessing"
+        "(?) James-Oil-Processing"
     ],
     "description": "Adds over 110 unique and balanced alternate recipes to VANILLA!"
 }

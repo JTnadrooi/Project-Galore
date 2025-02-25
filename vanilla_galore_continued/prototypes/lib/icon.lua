@@ -44,7 +44,7 @@ function vgal.icon.shift(icon, scale, shift)
         local new_icon = util.table.deepcopy(icon2)
         if scale then
             local icon_size = get_icon_size(new_icon)
-            new_icon.scale = scale  * (new_icon.scale or 1)
+            new_icon.scale = scale * (new_icon.scale or 1)
         end
         new_icon.shift = shift or icon.shift
         table.insert(icons, new_icon)
@@ -80,6 +80,7 @@ function vgal.icon.get_from_path(path, args)
 end
 
 function vgal.icon.get(keyName, iconSource)
+    iconSource = iconSource or vgal.any_get_source(keyName)
     if iconSource == "recipe" then
         local recipe = data.raw["recipe"][keyName]
         if recipe.icon then
@@ -149,23 +150,37 @@ function vgal.icon.get(keyName, iconSource)
     if (keyName == "sulfuric-acid") and iconSource == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("sulfuric-acid", "molecule")
     end
+    if (keyName == "copper-cable") and mods["angelssmelting"] then
+        return {
+            {
+                icon = "__angelspetrochemgraphics__/graphics/icons/molecules/" .. keyName .. ".png",
+                icon_size = 72,
+                -- scale = (72 / 64) * 1.8,
+                target = "core"
+            }
+        }
+    end
     local toret_item = get_icon_item(keyName, iconSource)
 
     vgal.log("getting icon: " .. toret_item.name)
 
-    local object = toret_item
     local toret = nil
-    if object then
-        if object.icon then
-            if object.icon == nil or object.icon == '' then
+    if toret_item then
+        if toret_item.icon then
+            if toret_item.icon == nil or toret_item.icon == '' then
                 error()
             end
-            toret = {
-                { icon = object.icon, target = "core" }
+            return {
+                {
+                    icon = toret_item.icon,
+                    target = "core",
+                    icon_size = toret_item.icon_size or 64,
+                    -- scale = (toret_item.icon_size or 64) / 32
+                }
             }
         end
-        if object.icons then
-            toret = util.table.deepcopy(object.icons)
+        if toret_item.icons then
+            return util.table.deepcopy(toret_item.icons)
         end
     end
     return toret
@@ -232,23 +247,23 @@ function vgal.icon.get_out_to(keyName, iconSource)
 end
 
 function vgal.icon.get_in(keyName, iconSource)
-    return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "in1")
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { -8, -8 })
 end
 
 function vgal.icon.get_in2(keyName, iconSource)
-    return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "in2")
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { 8, -8 })
 end
 
 function vgal.icon.get_out(keyName, iconSource)
-    return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "out1")
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { -8, 8 })
 end
 
 function vgal.icon.get_out2(keyName, iconSource)
-    return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "out2")
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { 8, 8 })
 end
 
 function vgal.icon.get_out3(keyName, iconSource)
-    return targeted_shift_icon(vgal.icon.get(keyName, iconSource), "out3")
+    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { 0, 8 })
 end
 
 function vgal.icon.get_bg(keyName, iconSource)

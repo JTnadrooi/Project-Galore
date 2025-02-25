@@ -137,7 +137,7 @@ vgal.data.extend({
         },
         category = "crafting",
         energy_required = 30,
-        technology = { "captivity", "biochamber" },
+        technology = "captivity",
         ingredients = {
             { "biter-egg",    2 }, -- 200
             { "pentapod-egg", 1 }, -- 700

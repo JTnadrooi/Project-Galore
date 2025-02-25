@@ -125,6 +125,27 @@ vgal.data.extend({
     -- CRYOGENIC
 
     -- PROMETHIUM
+
+    -- OTHER
+    {
+        name = "pentapod-egg-biter-egg-military-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("military-science-pack"),
+            vgal.icon.get_in("biter-egg"),
+            vgal.icon.get_in2("pentapod-egg"),
+        },
+        category = "crafting",
+        energy_required = 30,
+        technology = { "captivity", "biochamber" },
+        ingredients = {
+            { "biter-egg",    2 }, -- 200
+            { "pentapod-egg", 1 }, -- 700
+        },
+        results = {
+            { "military-science-pack", 6 }, -- 1260
+        },
+    },
 }, {
     groups = { "vgal-science-packs" }
 })

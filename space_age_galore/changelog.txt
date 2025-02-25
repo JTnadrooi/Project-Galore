@@ -2,6 +2,7 @@
 Version: 1.0.8
   Features:
     - All recipes now should have proper crafting tints.
+    - Added military science from both eggs recipe.
   Bugfixes:
     - Fixed the crude oil syntesis recipe not allowing productivity.
 ---------------------------------------------------------------------------------------------------

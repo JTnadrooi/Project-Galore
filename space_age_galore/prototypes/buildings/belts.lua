@@ -20,8 +20,9 @@ vgal.data.extend({
             { "turbo-transport-belt", 1 },
         },
         category = "metallurgy",
+        order = "abb",
         surface_conditions =
-        {
+        {   
             {
                 property = "pressure",
                 min = 4000,
@@ -50,6 +51,7 @@ vgal.data.extend({
             { "turbo-transport-belt", 2 },
         },
         category = "metallurgy",
+        order = "abc",
         surface_conditions =
         {
             {

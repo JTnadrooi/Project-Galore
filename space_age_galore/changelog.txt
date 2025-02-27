@@ -10,6 +10,7 @@ Version: 1.1.0
     - Made it so semi-biological robots can now also be crafted in an assembling machine.
   Bugfixes:
     - Fixed some circuit recipes not able to be crafted in the EM-plant.
+    - Fixed "vgal-yumako-mash-light-oil" being craftable by hand.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.8
   Features:

@@ -173,7 +173,7 @@ vgal.data.extend
             vgal.icon.get("logistic-robot"),
             vgal.icon.get_in("pentapod-egg"),
         },
-        category = "organic",
+        category = "organic-or-assembling",
         energy_required = 1,
         technology = "biochamber",
         ingredients = {
@@ -201,7 +201,7 @@ vgal.data.extend
             vgal.icon.get("construction-robot"),
             vgal.icon.get_in("pentapod-egg"),
         },
-        category = "organic",
+        category = "organic-or-assembling",
         energy_required = 1,
         technology = "biochamber",
         ingredients = {

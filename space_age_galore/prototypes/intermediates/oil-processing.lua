@@ -53,7 +53,7 @@ vgal.data.extend({
         icons = vgal.icon.register {
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/yumako-mash-light-oil.png"),
         },
-        category = "organic-or-hand-crafting",
+        category = "organic",
         energy_required = 3,
         ingredients = {
             { "yumako-mash", 6 }, -- 60

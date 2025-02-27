@@ -120,7 +120,7 @@ vgal.data.extend
         ingredients = {
             { "electronic-circuit", 15 }, -- 375
             { "advanced-circuit",   1 },  -- 100
-            { "tungsten-carbide",   2 },  -- 150
+            { "tungsten-carbide",   2 },  -- 140
         },
         results = {
             { "processing-unit", 1 } -- 710

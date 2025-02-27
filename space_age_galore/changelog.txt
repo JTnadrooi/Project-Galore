@@ -2,12 +2,14 @@
 Version: 1.1.0
   Features:
     - Added circuits from tungsten carbide.
-    - Added more module recipes. (can be dissabled)
-    - Add partially plastic turbo belt recipes.
-    - Add partially LDS turbo belt recipes.
-    - Add added some miscellaneous recipes.
+    - Added more module recipes. (can be dissabled in the Vanilla Galore settings)
+    - Added a partially plastic turbo belt recipe.
+    - Added a partially LDS turbo belt recipe.
+    - Added some miscellaneous recipes.
   Balancing:
-    - Made it so bsemi-iological robots can now also be crafted in an assembling machine.
+    - Made it so semi-biological robots can now also be crafted in an assembling machine.
+  Bugfixes:
+    - Fixed some circuit recipes not able to be crafted in the EM-plant.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.8
   Features:

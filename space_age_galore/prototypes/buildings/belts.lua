@@ -9,7 +9,7 @@ vgal.data.extend({
         energy_required = 1,
         technology = "turbo-transport-belt",
         ingredients = {
-            { "plastic-bar",            10 }, -- 150
+            { "plastic-bar",            8 }, -- 120
             { "tungsten-plate",         2 },  -- -180
             { "express-transport-belt", 1 },
         },

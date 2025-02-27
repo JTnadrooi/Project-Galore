@@ -112,6 +112,8 @@ local toClean = {
     "molten-copper-from-lava",
     "lithium",
     "acid-neutralisation",
+    "casting-pipe",
+    "casting-pipe-to-ground",
 }
 for _, value in ipairs(toClean) do
     data.raw["recipe"][value].order = nil

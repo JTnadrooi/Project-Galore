@@ -10,7 +10,7 @@ vgal.data.extend({
         technology = "turbo-transport-belt",
         ingredients = {
             { "plastic-bar",            8 }, -- 120
-            { "tungsten-plate",         2 },  -- -180
+            { "tungsten-plate",         2 }, -- -180
             { "express-transport-belt", 1 },
         },
         fluid_ingredients = {
@@ -22,7 +22,7 @@ vgal.data.extend({
         category = "metallurgy",
         order = "abb",
         surface_conditions =
-        {   
+        {
             {
                 property = "pressure",
                 min = 4000,
@@ -52,6 +52,67 @@ vgal.data.extend({
         },
         category = "metallurgy",
         order = "abc",
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 4000,
+                max = 4000
+            }
+        },
+    },
+    {
+        name = "low-density-structure-turbo-underground-belt",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("turbo-underground-belt"),
+            vgal.icon.get_in("low-density-structure"),
+        },
+        energy_required = 4,
+        technology = "turbo-transport-belt",
+        ingredients = {
+            { "low-density-structure",    5 },
+            { "tungsten-plate",           10 },
+            { "express-underground-belt", 2 },
+        },
+        fluid_ingredients = {
+            { "lubricant", 40 },
+        },
+        results = {
+            { "turbo-underground-belt", 2 },
+        },
+        category = "metallurgy",
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 4000,
+                max = 4000
+            }
+        },
+    },
+    {
+        name = "low-density-structure-turbo-splitter",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("turbo-splitter"),
+            vgal.icon.get_in("low-density-structure"),
+        },
+        energy_required = 4,
+        technology = "turbo-transport-belt",
+        ingredients = {
+            { "tungsten-plate",        6 },
+            { "low-density-structure", 1 },
+            { "processing-unit",       2 },
+            { "express-splitter",      1 },
+        },
+        fluid_ingredients = {
+            { "lubricant", 80 },
+        },
+        results = {
+            { "turbo-splitter", 1 },
+        },
+        category = "metallurgy",
         surface_conditions =
         {
             {

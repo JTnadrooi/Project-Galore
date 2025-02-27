@@ -6,6 +6,7 @@ Version: 1.1.0
     - Added a partially plastic turbo belt recipe.
     - Added a partially LDS turbo belt recipe.
     - Added some miscellaneous recipes.
+    - Removed "vgal-calcite-carbon-stone-brick" as crafting stone bricks in a foundry does not allign with the graphics. The calcite concrete recipe can stay as it is crafted in a assembler.
   Balancing:
     - Made it so semi-biological robots can now also be crafted in an assembling machine.
   Bugfixes:

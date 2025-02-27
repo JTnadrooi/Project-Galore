@@ -21,6 +21,13 @@ local subgroups = {
         entries = { "express-transport-belt", "express-splitter", "express-underground-belt" },
         when = { "vgal-belts" },
     },
+    {
+        name = "fluid-distribution",
+        tab = "logistics",
+        order = "da",
+        entries = { "pipe", "pipe-to-ground", "storage-tank", "pump" },
+        when = { "vgal-buildings" },
+    },
     -- PRODUCTION
     {
         name = "assembing-machine",

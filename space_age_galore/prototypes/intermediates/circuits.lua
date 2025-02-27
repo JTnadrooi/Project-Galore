@@ -92,11 +92,11 @@ vgal.data.extend
         energy_required = 6,
         technology = "tungsten-carbide",
         fluid_ingredients = {
-            { "sulfuric-acid", 5 }, -- 10
+            { "sulfuric-acid", 5 }, -- ~2 on vn
         },
         ingredients = {
             { "electronic-circuit", 1 }, -- 25
-            { "tungsten-carbide",   1 }, -- 75
+            { "tungsten-carbide",   1 }, -- 70
             { "copper-cable",       2 }, -- 10
         },
         results = {
@@ -115,11 +115,11 @@ vgal.data.extend
         energy_required = 10,
         technology = "tungsten-carbide",
         fluid_ingredients = {
-            { "sulfuric-acid", 10 }, -- 20
+            { "sulfuric-acid", 10 }, -- 5(vn)
         },
         ingredients = {
-            { "electronic-circuit", 10 }, -- 250
-            { "advanced-circuit",   2 },  -- 200
+            { "electronic-circuit", 15 }, -- 375
+            { "advanced-circuit",   1 },  -- 100
             { "tungsten-carbide",   2 },  -- 150
         },
         results = {

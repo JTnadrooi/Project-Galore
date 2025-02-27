@@ -66,7 +66,7 @@
 | carbon                | 50            |
 | carbon(gb)            | i-40, r-50    |
 | carbon(vn)            | 30            |
-| tungsten-carbide      | 75            |
+| tungsten-carbide      | 70            |
 | tungsten-plate        | i-60, r-90    |
 | molten-iron           | 1             |
 | molten-copper         | 1             |

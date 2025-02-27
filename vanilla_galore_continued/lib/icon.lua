@@ -150,16 +150,16 @@ function vgal.icon.get(keyName, iconSource)
     if (keyName == "sulfuric-acid") and iconSource == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("sulfuric-acid", "molecule")
     end
-    if (keyName == "copper-cable") and mods["angelssmelting"] then
-        return {
-            {
-                icon = "__angelspetrochemgraphics__/graphics/icons/molecules/" .. keyName .. ".png",
-                icon_size = 72,
-                -- scale = (72 / 64) * 1.8,
-                target = "core"
-            }
-        }
-    end
+    -- if (keyName == "copper-cable") and mods["angelssmelting"] then
+    --     return {
+    --         {
+    --             icon = "__angelspetrochemgraphics__/graphics/icons/molecules/" .. keyName .. ".png",
+    --             icon_size = 72,
+    --             -- scale = (72 / 64) * 1.8,
+    --             target = "core"
+    --         }
+    --     }
+    -- end
     local toret_item = get_icon_item(keyName, iconSource)
 
     vgal.log("getting icon: " .. toret_item.name)

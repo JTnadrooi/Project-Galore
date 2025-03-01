@@ -260,16 +260,14 @@ vgal.data.extend({
             vgal.icon.get("assembling-machine-1"),
             vgal.icon.get_in("electric-engine-unit"),
         },
-        energy_required = 5,
+        energy_required = 1,
         technology = "electric-engine",
         ingredients = {
-            { "steel-plate",          4 },  -- 200
-            { "electric-engine-unit", 1 },  -- 180
-            { "advanced-circuit",     4 },  -- 400
-            { "iron-gear-wheel",      15 }, -- 300
+            { "steel-plate",          1 }, -- 50
+            { "electric-engine-unit", 1 }, -- 180
         },
         results = {
-            { "assembling-machine-1", 5 }, -- 265*x
+            { "assembling-machine-1", 1 },
         },
         category = "crafting",
     },

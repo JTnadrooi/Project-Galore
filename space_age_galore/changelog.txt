@@ -2,6 +2,9 @@
 Version: 1.1.1
   Features:
     - Added more biter egg recipes, can be disabled. (You can now set the recipe in a captive spawner!)
+    - Added "
+  Bugfixes:
+    - Fixed the space platform casting recipe not having correct locale.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Features:

@@ -103,6 +103,26 @@ vgal.data.extend
         category = "crafting-with-fluid",
     },
     {
+        name = "holmium-ore-holmium-plate", -- fg/vn
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("holmium-plate"),
+            vgal.icon.get_in("molten-copper"),
+        },
+        energy_required = 2,
+        technology = { "foundry", "holmium-processing" },
+        fluid_ingredients = {
+            { "molten-copper", 15 },
+        },
+        ingredients = {
+            { "holmium-ore", 1 },
+        },
+        results = {
+            { "holmium-plate", 2 },
+        },
+        category = "metallurgy",
+    },
+    {
         type = "recipe",
         name = "ammonia-explosives", -- lets goo, less coal usage on gleba!
         prefix = "vgal",

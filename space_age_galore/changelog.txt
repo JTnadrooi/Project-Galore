@@ -2,7 +2,7 @@
 Version: 1.1.1
   Features:
     - Added more biter egg recipes, can be disabled. (You can now set the recipe in a captive spawner!)
-    - Added "
+    - Added "vgal-holmium-ore-holmium-plate" recipe.
   Bugfixes:
     - Fixed the space platform casting recipe not having correct locale.
 ---------------------------------------------------------------------------------------------------

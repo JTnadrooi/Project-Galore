@@ -41,21 +41,22 @@ function vgal.log(toLog)
 end
 
 vgal.groups = {
-    { "rocket-parts",       "vgal-rocket-parts" },
-    { "science-packs",      "vgal-science-packs" },
-    { "buildings",          "vgal-buildings" },
-    { "belts",              "vgal-belts" },
-    { "equipment",          "vgal-equipment" },
-    { "barrels",            "vgal-barrels" },
-    { "military",           "vgal-military" },
-    { "wood-recipes",       "vgal-wood-recipes" },
-    { "oil-recipes",        "vgal-oil-recipes" },
-    { "crushing-recipes",   "vgal-crushing-recipes" },
-    { "modules",            "vgal-modules" },
+    { "rocket-parts",            "vgal-rocket-parts" },
+    { "science-packs",           "vgal-science-packs" },
+    { "buildings",               "vgal-buildings" },
+    { "belts",                   "vgal-belts" },
+    { "equipment",               "vgal-equipment" },
+    { "barrels",                 "vgal-barrels" },
+    { "military",                "vgal-military" },
+    { "wood-recipes",            "vgal-wood-recipes" },
+    { "oil-recipes",             "vgal-oil-recipes" },
+    { "crushing-recipes",        "vgal-crushing-recipes" },
+    { "captive-spawner-recipes", "vgal-captive-spawner-recipes" },
+    { "modules",                 "vgal-modules" },
 
-    { "convoluted-recipes", "vgal-convoluted" },
-    { "unsure-recipes",     "vgal-unsure" },
-    { "removed-recipes",    "vgal-removed" },
+    { "convoluted-recipes",      "vgal-convoluted" },
+    { "unsure-recipes",          "vgal-unsure" },
+    { "removed-recipes",         "vgal-removed" },
 }
 
 vgal.enabled_groups = {}

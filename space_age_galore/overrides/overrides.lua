@@ -11,9 +11,7 @@ auto_barrel("lithium-brine")
 auto_barrel("thruster-oxidizer")
 auto_barrel("thruster-fuel")
 
-if settings.startup["vgal-crushing-recipes"].value then
-    data.raw["assembling-machine"]["crusher"].surface_conditions = nil
-end
+
 
 vgal.recipe.override_iron("solid-fuel-from-ammonia", vgal.icon.register({
     vgal.icon.get("solid-fuel"),

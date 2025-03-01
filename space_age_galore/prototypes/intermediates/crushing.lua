@@ -70,3 +70,7 @@ vgal.data.extend({
 }, {
     groups = { "vgal-crushing-recipes" }
 })
+
+if settings.startup["vgal-crushing-recipes"].value then
+    data.raw["assembling-machine"]["crusher"].surface_conditions = nil
+end

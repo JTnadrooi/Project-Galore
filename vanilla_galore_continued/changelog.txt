@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.12
+  Bugfixes:
+    - Fixed rocket silo not showing recipe icon.
+    - Fixed rocket part recipe showing in signal UI.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.11
   Bugfixes:
     - Add locale for module setting.

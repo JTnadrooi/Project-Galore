@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
   Features:
-    - Added more biter egg recipes. (You can now set the recipe in a captive spawner!)
+    - Added more biter egg recipes, can be disabled. (You can now set the recipe in a captive spawner!)
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Features:

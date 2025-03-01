@@ -1,5 +1,5 @@
-vgal = {}
-vgal.setting = {}
+vgal = vgal or {}
+vgal.setting = vgal.setting or {}
 
 function vgal.setting.new_bool(name, order, default_value)
     if default_value == nil then

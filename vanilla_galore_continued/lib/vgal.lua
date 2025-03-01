@@ -1,4 +1,4 @@
-vgal = {}
+vgal = vgal or {}
 
 vgal.data = vgal.data or {}
 vgal.table = vgal.table or {}
@@ -14,7 +14,10 @@ vgal.fluid = vgal.fluid or {}
 vgal.entity = vgal.entity or {}
 vgal.localise = vgal.localise or {}
 vgal.build = vgal.build or {}
-vgal.setting = vgal.setting or {}
+
+if vgal.setting ~= nil then
+    error()
+end
 
 require("classes")
 require("icon")

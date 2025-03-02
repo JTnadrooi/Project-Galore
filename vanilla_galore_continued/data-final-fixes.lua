@@ -86,8 +86,4 @@ local function create_with_barrel(recipeName, techName)
 end
 -- create_with_barrel("processing-unit", "processing-unit")
 -- create_with_barrel("electric-engine-unit", "electric-engine")
-
-
-
-
 vgal.data.finalise()

@@ -21,6 +21,7 @@ require("prototypes.equipment")
 require("prototypes.removed")
 
 require("prototypes.intermediates.intermediates")
+require("prototypes.intermediates.centrifuging")
 require("prototypes.intermediates.chemical")
 require("prototypes.intermediates.circuits")
 require("prototypes.intermediates.engines")

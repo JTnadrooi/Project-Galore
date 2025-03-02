@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.12
   Balancing:
-    - Made the "vgal-electric-engine-assembling-machine-1" recipe make more sense.
+    - Improved the "vgal-electric-engine-assembling-machine-1" recipe.
   Bugfixes:
     - Fixed rocket silo not showing recipe icon.
     - Fixed rocket part recipe showing in signal UI.

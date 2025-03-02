@@ -107,12 +107,13 @@ vgal.data.extend
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("holmium-plate"),
-            vgal.icon.get_in("molten-copper"),
+            -- vgal.icon.get_in("molten-copper"),
+            vgal.icon.get_overlay("casting-copper"),
         },
         energy_required = 2,
         technology = { "foundry", "holmium-processing" },
         fluid_ingredients = {
-            { "molten-copper", 15 },
+            { "molten-copper", 20 },
         },
         ingredients = {
             { "holmium-ore", 1 },

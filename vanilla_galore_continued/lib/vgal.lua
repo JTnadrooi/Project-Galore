@@ -25,6 +25,7 @@ require("localise")
 require("math")
 require("recipe")
 require("recipe-all")
+require("fluid")
 require("subgroup")
 require("tech")
 require("table")
@@ -180,7 +181,8 @@ function vgal.data.extend(recipes, args)
         recipe.allow_productivity = (recipe.allow_productivity ~= nil) and recipe.allow_productivity or
             vgal.recipe.get_if_productivity(recipe.main_product)
 
-        recipe.crafting_machine_tint = vgal.recipe.get_prefered_tint(recipe)
+        recipe.crafting_machine_tint = recipe.crafting_machine_tint
+            or vgal.recipe.get_prefered_tint(recipe)
 
 
         recipe.localised_name = recipe.localised_name or { "?",

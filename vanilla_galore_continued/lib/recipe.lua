@@ -393,31 +393,16 @@ vgal.recipe.TINT_CATALOG = {
         quaternary = { r = 0.05, g = 0.03, b = 0.01, a = 1.000 }
     },
 }
+vgal.recipe.TINT_CATALOG["black"] = vgal.recipe.TINT_CATALOG["crude-oil"]
 
 function vgal.recipe.get_prefered_tint(recipe)
-    local function get_fluid_as_tint(fluid)
-        local function to_rgba(color)
-            return {
-                r = color[1] or 1,
-                g = color[2] or 1,
-                b = color[3] or 1,
-                a = color[4] or 1,
-            }
-        end
-        return {
-            primary = to_rgba(fluid.base_color or { 1, 1, 1, 1 }),
-            secondary = to_rgba(fluid.flow_color or fluid.base_color or { 0.8, 0.8, 0.8, 1 }),
-            tertiary = to_rgba(fluid.base_color or { 1, 1, 1, 1 }),
-            quaternary = to_rgba(fluid.base_color or { 1, 1, 1, 1 }),
-        }
-    end
     local mainProductRecipe = data.raw.recipe[recipe.main_product]
     local mainFluidProduct = data.raw["fluid"][recipe.main_product]
     local tint = nil
 
     tint = tint or mainProductRecipe and mainProductRecipe.crafting_machine_tint
     tint = tint or vgal.recipe.TINT_CATALOG[recipe.main_product]
-    tint = tint or mainFluidProduct and get_fluid_as_tint(mainFluidProduct)
+    tint = tint or mainFluidProduct and vgal.fluid.get_tint(mainFluidProduct.name)
 
     return tint
 end

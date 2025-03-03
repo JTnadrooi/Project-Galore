@@ -9,6 +9,7 @@
     "dependencies": [
         "base >= 2.0",
         "? space-age",
+        "? centrifuge-tint",
         "? bzcarbon",
         "? bzlead",
         "? bzcarbon",

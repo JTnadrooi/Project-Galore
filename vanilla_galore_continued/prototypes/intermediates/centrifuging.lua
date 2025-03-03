@@ -29,7 +29,7 @@ local centrifuge_results = {
 }
 local alt_electric_engines = true
 for _, result in ipairs(centrifuge_results) do
-    local order = result == "iron-ore" and "d" or "e"
+    local order = result == "iron-ore" and "ra" or "rb"
     vgal.data.extend
     {
         {
@@ -82,7 +82,7 @@ for _, result in ipairs(centrifuge_results) do
             show_amount_in_title = false,
             crafting_machine_tint = vgal.recipe.TINT_CATALOG["black"],
             deep_hide = mods["space-age"],
-            order = order + "b",
+            order = order .. "b",
             groups = { "vgal-renewable-ores" },
         },
     }

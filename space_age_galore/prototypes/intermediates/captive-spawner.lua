@@ -38,6 +38,95 @@ vgal.data.extend({
         preserve_products_in_machine_output = true,
         result_is_always_fresh = true,
     },
+    {
+        name = "pentapod-egg-biter-egg-duel-biter-egg-preferred",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("biter-egg"),
+            vgal.icon.get_in("biter-egg"),
+            vgal.icon.get_in2("pentapod-egg"),
+        },
+        energy_required = 5,
+        technology = "captivity",
+        ingredients = {
+            { "petroleum-gas-barrel", 1 },
+            { "pentapod-egg",         1 },
+            { "biter-egg",            1 },
+        },
+        results = {
+            { "biter-egg",             1, { probability = 0.80 } },
+            { "pentapod-egg",          1, { probability = 0.20 } },
+            { "military-science-pack", 15 },
+            { "barrel",                1 },
+        },
+        category = "captive-spawner-process",
+        allow_productivity = false,
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 1000,
+                max = 1000
+            }
+        },
+        groups = { "vgal-silly-recipes" },
+    },
+    {
+        name = "pentapod-egg-biter-egg-duel-pentapod-egg-preferred",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("pentapod-egg"),
+            vgal.icon.get_in("biter-egg"),
+            vgal.icon.get_in2("pentapod-egg"),
+        },
+        energy_required = 5,
+        technology = "captivity",
+        ingredients = {
+            { "ammonia-barrel", 1 },
+            { "pentapod-egg",   1 },
+            { "biter-egg",      1 },
+        },
+        results = {
+            { "biter-egg",             1, { probability = 0.20 } },
+            { "pentapod-egg",          1, { probability = 0.80 } },
+            { "military-science-pack", 15 },
+            { "barrel",                1 },
+        },
+        category = "captive-spawner-process",
+        allow_productivity = false,
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 1000,
+                max = 1000
+            }
+        },
+        groups = { "vgal-silly-recipes" },
+    },
+    -- {
+    --     name = "pentapod-egg-biter-egg-duel-military-science-pack",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("military-science-pack"),
+    --         vgal.icon.get_in("biter-egg"),
+    --         vgal.icon.get_in("pentapod-egg"),
+    --     },
+    --     energy_required = 3.2,
+    --     technology = "captivity",
+    --     ingredients = {
+    --         { "pentapod-egg", 1 },
+    --         { "biter-egg",    1 },
+    --     },
+    --     results = {
+    --         { "biter-egg",    1, { probability = 0.20 } },
+    --         { "pentapod-egg", 1, { probability = 0.80 } },
+    --     },
+    --     category = "captive-spawner-process",
+    --     allow_productivity = false,
+    --     -- preserve_products_in_machine_output = true,
+    --     groups = { "vgal-funny" },
+    -- },
 }, {
     groups = { "vgal-captive-spawner-recipes" }
 })

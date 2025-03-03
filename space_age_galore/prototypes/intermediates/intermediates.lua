@@ -52,7 +52,7 @@ vgal.data.extend
         ingredients = {
             { "tungsten-plate",  1 }, -- 60
             { "iron-gear-wheel", 1 }, -- 20
-            { "iron-pipe",       1 }, -- 10
+            { "pipe",            1 }, -- 10
         },
         results = {
             { "engine-unit", 1 }, -- 90

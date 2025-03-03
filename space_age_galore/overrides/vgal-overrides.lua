@@ -64,8 +64,10 @@ data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].icons = vgal.icon.register
 }
 data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
 
-vgal.recipe.deep_hide("vgal-processing-unit-artillery-turret")
-vgal.recipe.deep_hide("vgal-steam-concrete")
+vgal.data.trim("vgal-processing-unit-artillery-turret")
+vgal.data.trim("vgal-steam-concrete")
+-- vgal.recipe.deep_hide("vgal-processing-unit-artillery-turret")
+-- vgal.recipe.deep_hide("vgal-steam-concrete")
 
 vgal.data.trim("vgal-water-copper-ore")
 vgal.data.trim("vgal-water-electric-engine-unit-copper-ore")

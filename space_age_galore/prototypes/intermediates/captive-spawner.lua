@@ -56,7 +56,7 @@ vgal.data.extend({
         results = {
             { "biter-egg",             1, { probability = 0.80 } },
             { "pentapod-egg",          1, { probability = 0.20 } },
-            { "military-science-pack", 15 },
+            { "military-science-pack", 25 },
             { "barrel",                1 },
         },
         category = "captive-spawner-process",
@@ -69,6 +69,7 @@ vgal.data.extend({
                 max = 1000
             }
         },
+        order = "ga",
         groups = { "vgal-silly-recipes" },
     },
     {
@@ -102,6 +103,7 @@ vgal.data.extend({
                 max = 1000
             }
         },
+        order = "gb",
         groups = { "vgal-silly-recipes" },
     },
     -- {

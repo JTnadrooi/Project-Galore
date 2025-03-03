@@ -41,6 +41,24 @@ vgal.data.extend
         groups = { "vgal-barrels" },
     },
     {
+        name = "lava-engine-unit",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("engine-unit"),
+            vgal.icon.get_in("lava"),
+        },
+        energy_required = 20,
+        technology = "foundry",
+        fluid_ingredients = {
+            { "lava", 250 }, -- 10
+        },
+        results = {
+            { "engine-unit", 1 }, -- 90
+            { "stone",       5 }, -- 10
+        },
+        category = "metallurgy",
+    },
+    {
         name = "tungsten-plate-engine-unit",
         prefix = "vgal",
         icons = vgal.icon.register {

@@ -51,6 +51,7 @@ vgal.groups = {
     { "military",                "vgal-military" },
     { "wood-recipes",            "vgal-wood-recipes" },
     { "oil-recipes",             "vgal-oil-recipes" },
+    { "vgal-renewable-ores",     "vgal-renewable-ores" },
     { "crushing-recipes",        "vgal-crushing-recipes" },
     { "captive-spawner-recipes", "vgal-captive-spawner-recipes" },
     { "modules",                 "vgal-modules" },

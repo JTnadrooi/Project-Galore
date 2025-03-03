@@ -50,12 +50,12 @@ vgal.data.extend
         energy_required = 5,
         technology = "tungsten-steel",
         ingredients = {
-            { "tungsten-plate",  1 }, -- 90
+            { "tungsten-plate",  1 }, -- 60
             { "iron-gear-wheel", 2 }, -- 20
             { "iron-plate",      2 }, -- 20
         },
         results = {
-            { "engine-unit", 2 }, -- 180
+            { "engine-unit", 1 }, -- 180
         },
         category = "advanced-crafting",
     },

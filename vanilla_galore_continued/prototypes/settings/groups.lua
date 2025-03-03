@@ -11,6 +11,7 @@ data:extend {
     -- vgal.setting.new_bool("vgal-circuits", "ah"),
     vgal.setting.new_bool("vgal-oil-recipes", "ai"),
     vgal.setting.new_bool("vgal-modules", "aj"),
+    vgal.setting.new_bool("vgal-renewable-ores", "ak"),
     -- vgal.setting.new_bool("vgal-intermediates", "ah"),
 
     vgal.setting.new_bool("vgal-convoluted-recipes", "za", false),

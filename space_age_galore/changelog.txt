@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.11
+  Features:
+    - Added compat with the Vanilla Galore 1.1.2 centrifuge recipes, they should be hidden in SA.
+  Balancing:
+    - The "vgal-spoilage-crude-oil" recipe can now only be crafted in the centrifuge. (The centrifuge has fluid ports now - huge thanks to Quezler for allowing me to use his graphics!)
+    - Improved the "vgal-tungsten-plate-engine-unit" recipe.
+  Bugfixes:
+    - Fixed the "vgal-tungsten-plate-engine-unit" recipe allowing one to create 2 engine units in 5 seconds.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
   Features:
     - Added more biter egg recipes, can be disabled. (You can now set the recipe in a captive spawner!)

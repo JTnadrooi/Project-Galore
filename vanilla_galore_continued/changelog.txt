@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+  Features:
+    - Added centrifuge recipes galore! (It has fluid ports now - huge thanks to Quezler for allowing me to use his graphics!)
+  Bugfixes:
+    - Fixed the "chests" subgroup. (It has been removed.)
+---------------------------------------------------------------------------------------------------
 Version: 1.1.12
   Balancing:
     - Improved the "vgal-electric-engine-assembling-machine-1" recipe.

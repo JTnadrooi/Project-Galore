@@ -54,10 +54,8 @@ for _, result in ipairs(centrifuge_results) do
             crafting_machine_tint = vgal.recipe.TINT_CATALOG["black"],
             deep_hide = mods["space-age"],
             order = order,
+            groups = { "vgal-renewable-ores" },
         },
-    }
-    vgal.data.extend
-    {
         {
             type = "recipe",
             name = "water-electric-engine-unit-" .. result, -- not in sa-gal
@@ -85,6 +83,7 @@ for _, result in ipairs(centrifuge_results) do
             crafting_machine_tint = vgal.recipe.TINT_CATALOG["black"],
             deep_hide = mods["space-age"],
             order = order + "b",
+            groups = { "vgal-renewable-ores" },
         },
     }
 end

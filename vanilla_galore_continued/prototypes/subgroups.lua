@@ -182,12 +182,12 @@ local subgroups = {
         entries = { "utility-science-pack" },
         when = { "vgal-science-packs" },
     },
-    {
-        name = "chests",
-        tab = "production",
-        order = "a",
-        entries = { "wooden-chest", "iron-chest", "steel-chest", "active-provider-chest", "passive-provider-chest", "storage-chest", "buffer-chest", "requester-chest" },
-    },
+    -- { 
+    --     name = "chests",
+    --     tab = "production",
+    --     order = "a",
+    --     entries = { "wooden-chest", "iron-chest", "steel-chest", "active-provider-chest", "passive-provider-chest", "storage-chest", "buffer-chest", "requester-chest" },
+    -- },
     {
         name = "module-speed",
         tab = "production",

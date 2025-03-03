@@ -2,8 +2,11 @@
 Version: 1.1.2
   Features:
     - Added centrifuge recipes galore! (It has fluid ports now - huge thanks to Quezler for allowing me to use his graphics!)
+    - Added a couple "silly" recipes to populate the new "silly" recipe group. They all default to hidden.
+    - Added multiple ways to get renewable ores. They also all default to hidden.
   Bugfixes:
     - Fixed the "chests" subgroup. (It has been removed.)
+    - Removed duplicate dependency.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.12
   Balancing:

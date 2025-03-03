@@ -1,6 +1,6 @@
 {
     "name": "space_age_galore",
-    "version": "1.1.1",
+    "version": "1.1.11",
     "title": "Space Age Galore",
     "author": "JTnadrooi",
     "contact": "@jtnadrooi",
@@ -11,16 +11,14 @@
         "space-age",
         "vanilla_galore_continued",
         "? maraxsis",
-        "? bzcarbon",
-        "? bzlead",
-        "? bzcarbon",
-        "? bzsilicon",
-        "? bztin",
-        "? bztitanium",
-        "? bzzirconium",
+        "(?) bzlead",
+        "(?) bzcarbon",
+        "(?) bzsilicon",
+        "(?) bztin",
+        "(?) bztitanium",
+        "(?) bzzirconium",
         "(?) James-Oil-Processing",
-        "(?) DemolisherScales",
-        "(?) James-Oil-Processing"
+        "(?) DemolisherScales"
     ],
     "description": "Adds over 180 unique and balanced alternate recipes to SPACE AGE!",
     "space_travel_required": true

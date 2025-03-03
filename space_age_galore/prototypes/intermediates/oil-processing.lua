@@ -53,20 +53,21 @@ vgal.data.extend({
         icons = vgal.icon.register {
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/yumako-mash-light-oil.png"),
         },
-        category = "organic",
-        energy_required = 3,
+        category = "centrifuging",
+        energy_required = 1,
         ingredients = {
             { "yumako-mash", 6 }, -- 60
         },
         fluid_results = {
-            { "light-oil", 40 }, -- 60 * 1.5 = 90
+            { "light-oil", 60 }, -- 60
         },
         results = {
             { "yumako-seed", 1, { probability = 0.015 } },
         },
         show_amount_in_title = false,
         main_product = "light-oil",
-        technology = "yumako",
+        technology = { "yumako", "uranium-processing" },
+        crafting_machine_tint = vgal.fluid.get_tint("light-oil"),
     },
     -- {
     --     name = "solid-fuel-calcite-stone-brick-jelly",

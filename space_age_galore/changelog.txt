@@ -2,8 +2,11 @@
 Version: 1.1.11
   Features:
     - Added compat with the Vanilla Galore 1.1.2 centrifuge recipes, they should be hidden in SA.
+    - Removed dependency boat. (BZ)
   Balancing:
-    - The "vgal-spoilage-crude-oil" recipe can now only be crafted in the centrifuge. (The centrifuge has fluid ports now - huge thanks to Quezler for allowing me to use his graphics!)
+    - The "vgal-yumako-mash-light-oil" recipe can now only be crafted in the centrifuge. Name changed accourdingly.
+    - "vgal-yumako-mash-light-oil" time taken reduced by ~70%.
+    - "vgal-yumako-mash-light-oil" results amount increased by 50% to account for the missing prod bonus of the centrifuge.
     - Improved the "vgal-tungsten-plate-engine-unit" recipe by a ridiculous degree. (improved != buffed)
   Bugfixes:
     - Fixed the "vgal-tungsten-plate-engine-unit" recipe allowing one to create 2 engine units in 5 seconds.

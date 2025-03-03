@@ -31,7 +31,7 @@ vgal.data.extend
         energy_required = 2,
         technology = "tungsten-steel",
         ingredients = {
-            { "tungsten-plate", 1 }, -- 80
+            { "tungsten-plate", 1 }, -- 60
             { "iron-plate",     2 }, -- 20
         },
         results = {
@@ -47,15 +47,15 @@ vgal.data.extend
             vgal.icon.get("engine-unit"),
             vgal.icon.get_in("tungsten-plate"),
         },
-        energy_required = 5,
+        energy_required = 8,
         technology = "tungsten-steel",
         ingredients = {
             { "tungsten-plate",  1 }, -- 60
-            { "iron-gear-wheel", 2 }, -- 20
-            { "iron-plate",      2 }, -- 20
+            { "iron-gear-wheel", 1 }, -- 20
+            { "iron-pipe",       1 }, -- 10
         },
         results = {
-            { "engine-unit", 1 }, -- 180
+            { "engine-unit", 1 }, -- 90
         },
         category = "advanced-crafting",
     },

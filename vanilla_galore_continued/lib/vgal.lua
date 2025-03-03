@@ -329,28 +329,32 @@ function vgal.any_get_source(anyName, includeRecipes)
 end
 
 function vgal.data.finalise()
-    local potential_singles = {}
+    -- local potential_singles = {}
     for _, tech in pairs(data.raw["technology"]) do
         if tech.effects and #tech.effects > 0 then
             local i = 1
             while i <= #tech.effects do
                 local effect = tech.effects[i]
-                local should_remove = false
+                -- local should_remove = false
                 for _, toclean in ipairs(vgal.tech.totrim) do
                     if effect.recipe == toclean then
                         should_remove = true
+                        effect.hidden = true
                         break
                     end
                 end
-                if should_remove then
-                    table.remove(tech.effects, i)
-                else
-                    i = i + 1
-                end
+                -- if should_remove then
+                --     -- table.remove(tech.effects, i)
+                --     tech.effects[i].hidden = true
+                -- else
+                -- end
+                i = i + 1
             end
         end
         if tech.effects and #tech.effects == 0 then
-            table.insert(potential_singles, tech.name)
+            -- table.insert(potential_singles, tech.name)
+            tech.hidden = true
+            tech.hidden_in_factoriopedia = true
         end
     end
 end

@@ -73,6 +73,7 @@ vgal.data.trim("vgal-water-copper-ore")
 vgal.data.trim("vgal-water-electric-engine-unit-copper-ore")
 vgal.data.trim("vgal-water-iron-ore")
 vgal.data.trim("vgal-water-electric-engine-unit-iron-ore")
+vgal.data.trim("vgal-crude-oil-coal")
 
 vgal_electroplantify("plastic-bar-electronic-circuit")
 vgal_electroplantify("plastic-bar-processing-unit")

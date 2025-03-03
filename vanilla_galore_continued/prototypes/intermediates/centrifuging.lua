@@ -75,9 +75,9 @@ for _, result in ipairs(centrifuge_results) do
                 { "electric-engine-unit", 1 }, -- 2
             },
             results = {
-                { result,                 nil, { amount_min = 3, amount_max = 5 } }, -- 40
-                { "stone",                1,   { probability = 0.25 } },             -- 2.5
-                { "electric-engine-unit", 1,   { probability = 0.98 } },             -- 0.02*180~=4
+                { result,                 nil, { amount_min = 3, amount_max = 5 } },                  -- 40
+                { "stone",                1,   { probability = 0.25 } },                              -- 2.5
+                { "electric-engine-unit", 1,   { probability = 0.98, ignored_by_productivity = 1 } }, -- 0.02*180~=4
             },
             show_amount_in_title = false,
             crafting_machine_tint = vgal.recipe.TINT_CATALOG["black"],

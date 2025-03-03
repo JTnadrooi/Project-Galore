@@ -293,8 +293,9 @@ end
 
 function vgal.data.trim(recipeName)
     vgal.tech.queue_to_clean(recipeName)
-    data.raw["recipe"][recipeName] = nil
-    vgal.recipes[recipeName] = nil
+    vgal.recipe.deep_hide(recipeName)
+    -- data.raw["recipe"][recipeName] = nil
+    -- vgal.recipes[recipeName] = nil
 end
 
 function vgal.any(anyName, includeRecipes)

@@ -29,6 +29,7 @@ local centrifuge_results = {
 }
 local alt_electric_engines = true
 for _, result in ipairs(centrifuge_results) do
+    local order = result == "iron-ore" and "d" or "e"
     vgal.data.extend
     {
         {
@@ -43,15 +44,16 @@ for _, result in ipairs(centrifuge_results) do
             energy_required = 4,
             technology = "uranium-processing",
             fluid_ingredients = {
-                { "water", 80 },
+                { "water", 40 },
             },
             results = {
                 { result,  nil, { amount_min = 1, amount_max = 2 } }, -- 15
-                { "stone", nil, { probability = 0.2 } }               -- 2
+                { "stone", 1,   { probability = 0.2 } }               -- 2
             },
             show_amount_in_title = false,
             crafting_machine_tint = vgal.recipe.TINT_CATALOG["black"],
-            deep_hide = mods["space-age"]
+            deep_hide = mods["space-age"],
+            order = order,
         },
     }
     vgal.data.extend
@@ -67,21 +69,22 @@ for _, result in ipairs(centrifuge_results) do
             },
             category = "centrifuging",
             energy_required = 4,
-            technology = {"uranium-processing", "electric-engine"},
+            technology = { "uranium-processing", "electric-engine" },
             fluid_ingredients = {
-                { "water", 120 },
+                { "water", 60 },
             },
             ingredients = {
                 { "electric-engine-unit", 1 }, -- 2
             },
             results = {
                 { result,                 nil, { amount_min = 3, amount_max = 5 } }, -- 40
-                { "stone",                nil, { probability = 0.25 } },             -- 2.5
-                { "electric-engine-unit", nil, { probability = 0.98 } },             -- 0.02*180~=4
+                { "stone",                1,   { probability = 0.25 } },             -- 2.5
+                { "electric-engine-unit", 1,   { probability = 0.98 } },             -- 0.02*180~=4
             },
             show_amount_in_title = false,
             crafting_machine_tint = vgal.recipe.TINT_CATALOG["black"],
-            deep_hide = mods["space-age"]
+            deep_hide = mods["space-age"],
+            order = order + "b",
         },
     }
 end

@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.22
   Features:
-    - Improved general locale
+    - Improved general locale.
     - Added more locale helpers to the included lib, I'll make the library seperate soon.
   Bugfixes:
     - Fixed the centrifuge icon being tintless even when "centrifuge-tint" isn't enabled.

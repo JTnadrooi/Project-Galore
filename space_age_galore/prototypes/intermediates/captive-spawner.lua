@@ -13,7 +13,7 @@ vgal.data.extend({
         },
         results = {
             { "biter-egg", 4 },
-            { "barrel",    1 },
+            { "barrel",    1, { probability = 0.90 } },
         },
         category = "captive-spawner-process",
         preserve_products_in_machine_output = true,
@@ -39,7 +39,7 @@ vgal.data.extend({
         result_is_always_fresh = true,
     },
     {
-        name = "pentapod-egg-biter-egg-duel-biter-egg-preferred",
+        name = "pentapod-egg-biter-egg-duel-biter-preferred",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("biter-egg"),
@@ -57,7 +57,7 @@ vgal.data.extend({
             { "biter-egg",             1, { probability = 0.80 } },
             { "pentapod-egg",          1, { probability = 0.20 } },
             { "military-science-pack", 25 },
-            { "barrel",                1 },
+            { "barrel",                1, { probability = 0.85 } },
         },
         category = "captive-spawner-process",
         allow_productivity = false,
@@ -73,7 +73,7 @@ vgal.data.extend({
         groups = { "vgal-silly-recipes" },
     },
     {
-        name = "pentapod-egg-biter-egg-duel-pentapod-egg-preferred",
+        name = "pentapod-egg-biter-egg-duel-pentapod-preferred",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("pentapod-egg"),
@@ -91,7 +91,7 @@ vgal.data.extend({
             { "biter-egg",             1, { probability = 0.20 } },
             { "pentapod-egg",          1, { probability = 0.80 } },
             { "military-science-pack", 15 },
-            { "barrel",                1 },
+            { "barrel",                1, { probability = 0.85 } },
         },
         category = "captive-spawner-process",
         allow_productivity = false,

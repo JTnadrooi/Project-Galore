@@ -12,7 +12,7 @@ vgal.tech = vgal.tech or {}
 vgal.item = vgal.item or {}
 vgal.fluid = vgal.fluid or {}
 vgal.entity = vgal.entity or {}
-vgal.localise = vgal.localise or {}
+vgal.locale = vgal.locale or {}
 vgal.build = vgal.build or {}
 
 if vgal.setting ~= nil then
@@ -94,9 +94,10 @@ function vgal.data.extend(recipes, args)
 
         recipe.technologies = vgal.table.ensure(recipe.technology, recipe.technologies)
 
+
+
         if recipe.complementairy_recipe then
             local complementairy_recipe = data.raw["recipe"][recipe.complementairy_recipe]
-
             recipe.order = recipe.order or complementairy_recipe.order
             recipe.subgroup = recipe.subgroup or complementairy_recipe.subgroup
             recipe.crafting_machine_tint = recipe.crafting_machine_tint or complementairy_recipe.crafting_machine_tint
@@ -184,14 +185,23 @@ function vgal.data.extend(recipes, args)
             vgal.recipe.get_if_productivity(recipe.main_product)
 
         recipe.crafting_machine_tint = recipe.crafting_machine_tint
-            or vgal.recipe.get_prefered_tint(recipe)
+            or vgal.recipe.get_preferred_crafting_machine_tint(recipe)
 
+        if recipe.locale_source then
+            recipe.localised_name_source = recipe.locale_source
+            recipe.localised_description_source = recipe.locale_source
+        end
+        if recipe.localised_name_source then
+            recipe.localised_name = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
+                [recipe.localised_name_source])
+        end
+        if recipe.localised_description_source then
+            recipe.localised_description = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
+                [recipe.localised_description_source])
+        end
+        recipe.localised_name = vgal.recipe.get_preferred_localised_name(recipe)
+        recipe.localised_description = vgal.recipe.get_preferred_localised_description(recipe)
 
-        recipe.localised_name = recipe.localised_name or { "?",
-            { "", { "recipe-name." .. recipe.name } },
-            { "", vgal.localise.get_lazy(recipe.main_product) },
-        }
-        recipe.localised_description = vgal.localise.get_from_group(recipe)
         recipe.type = "recipe"
         recipe.auto_recycle = false
         recipe.allow_decomposition = false
@@ -200,6 +210,8 @@ function vgal.data.extend(recipes, args)
         vgal.log("registering: " .. recipe.name)
 
         data:extend { recipe }
+        local dataRecipe
+
         vgal.recipes[recipe.name] = recipe
 
         if recipe.technologies then
@@ -250,7 +262,7 @@ function vgal.data.extend(recipes, args)
                     end
                     tech.localised_name = { "?",
                         { "", "Galore Tech Node: ", { "recipe-name." .. recipe.name } },
-                        { "", "Galore Tech Node: ", vgal.localise.get_lazy(recipe.main_product) },
+                        { "", "Galore Tech Node: ", vgal.locale.get_lazy(recipe.main_product) },
                     }
                     tech.localised_description = {
                         "", { "recipe-description." .. recipe.name },

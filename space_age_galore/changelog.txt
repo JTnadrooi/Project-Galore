@@ -3,7 +3,11 @@ Version: 1.1.12
   Features:
     - Improved general locale.
   Balancing:
-    - The "vgal-yumako-mash-light-oil" recipe can now only be crafted in the biochamber. Reverted from version 1.1.11, sorrry about that. 
+    - The "vgal-yumako-mash-light-oil" recipe can now only be crafted in the biochamber. Reverted from version 1.1.11, sorry about that. 
+    - "vgal-carbon-fiber-low-density-structure" carbon fiber cost doubled 1 -> 2
+    - "vgal-molten-copper-carbon-fiber-low-density-structure" carbon fiber cost doubled 1 -> 2
+  Bugfixes:
+    - Fixed certain recipes not being correctly grouped as "silly".
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.11
   Features:

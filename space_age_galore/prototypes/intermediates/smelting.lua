@@ -228,6 +228,8 @@ vgal.data.extend
         category = "metallurgy",
         subgroup = "vulcanus-processes",
         order = "b-f-a",
+        localised_name_source = "casting-low-density-structure",
+        localised_description_source = "vgal-uranium-238-low-density-structure",
     },
     {
         type = "recipe",
@@ -245,7 +247,7 @@ vgal.data.extend
             { "molten-copper", 40 },
         },
         ingredients = {
-            { "carbon-fiber", 1 }, -- 200
+            { "carbon-fiber", 2 }, -- 240
             { "plastic-bar",  6 }, -- 120
         },
         results = {
@@ -253,5 +255,7 @@ vgal.data.extend
         },
         subgroup = "vulcanus-processes",
         order = "b-f-a",
+        localised_name_source = "casting-low-density-structure",
+        localised_description_source = "vgal-carbon-fiber-low-density-structure",
     },
 }

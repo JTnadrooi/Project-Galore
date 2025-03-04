@@ -79,6 +79,7 @@ vgal.data.extend
                 max = 2000
             }
         },
+        locale_source = "vgal-jelly-electronic-circuit",
     },
     {
         type = "recipe",

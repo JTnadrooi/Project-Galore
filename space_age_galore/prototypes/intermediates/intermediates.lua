@@ -57,6 +57,7 @@ vgal.data.extend
             { "stone",       5 }, -- 10
         },
         category = "metallurgy",
+        groups = { "vgal-silly-recipes" }
     },
     {
         name = "tungsten-plate-engine-unit",
@@ -254,7 +255,7 @@ vgal.data.extend
         technology = "carbon-fiber",
         ingredients = {
             { "copper-cable", 4 }, -- 20
-            { "carbon-fiber", 1 }, -- 200
+            { "carbon-fiber", 2 }, -- 240
             { "plastic-bar",  6 }, -- 120
         },
         results = {

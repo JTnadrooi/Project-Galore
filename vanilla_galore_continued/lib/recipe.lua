@@ -395,7 +395,7 @@ vgal.recipe.TINT_CATALOG = {
 }
 vgal.recipe.TINT_CATALOG["black"] = vgal.recipe.TINT_CATALOG["crude-oil"]
 
-function vgal.recipe.get_prefered_tint(recipe)
+function vgal.recipe.get_preferred_crafting_machine_tint(recipe)
     local mainProductRecipe = data.raw.recipe[recipe.main_product]
     local mainFluidProduct = data.raw["fluid"][recipe.main_product]
     local tint = nil
@@ -405,4 +405,35 @@ function vgal.recipe.get_prefered_tint(recipe)
     tint = tint or mainFluidProduct and vgal.fluid.get_tint(mainFluidProduct.name)
 
     return tint
+end
+function vgal.recipe.get_preferred_main_product(recipe)
+    if recipe.main_product then
+        return recipe.main_product
+    end
+    if recipe.results and recipe.results[1] then
+        return recipe.results[1].name
+    end
+    if recipe.fluid_results and recipe.fluid_results[1] then
+        return recipe.fluid_results[1].name
+    end
+    error(recipe.name)
+end
+
+function vgal.recipe.get_preferred_localised_name(recipe)
+    if recipe then
+        return recipe.localised_name or { "?",
+            { "", { "recipe-name." .. recipe.name } },
+            { "", vgal.locale.get_lazy(vgal.recipe.get_preferred_main_product(recipe)) },
+        }
+    else
+        vgal.log("recipe not found for get_preferred.. localising: " + recipe.name)
+    end
+end
+
+function vgal.recipe.get_preferred_localised_description(recipe)
+    if recipe then
+        return recipe.localised_description or { "recipe-description." .. recipe.name }
+    else
+        vgal.log("recipe not found for get_preferred.. localising: " + recipe.name)
+    end
 end

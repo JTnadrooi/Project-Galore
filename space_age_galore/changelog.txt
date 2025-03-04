@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.12
+  Features:
+    - Cleaned up some locale.
+  Balancing:
+    - The "vgal-yumako-mash-light-oil" recipe can now only be crafted in the biochamber. Reverted from version 1.1.11. 
+---------------------------------------------------------------------------------------------------
 Version: 1.1.11
   Features:
     - Added compat with the Vanilla Galore 1.1.2 centrifuge recipes, they should be hidden in SA.

@@ -1,5 +1,14 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.1.2
+Version: 1.1.22
+  Bugfixes:
+    - Fixed the centrifuge icon being tintless even when "centrifuge-tint" isn't enabled.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.21
+  Bugfixes:
+    - Fixed the changelog version number.
+    - Made the centrifuge tint dependency optional.
+---------------------------------------------------------------------------------------------------
+Version: 1.1.20
   Features:
     - Added centrifuge recipes galore! (It has fluid ports now - huge thanks to Quezler for allowing me to use his graphics!)
     - Added a couple "silly" recipes to populate the new "silly" recipe group. They all default to hidden.

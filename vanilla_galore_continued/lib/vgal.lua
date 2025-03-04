@@ -42,26 +42,52 @@ function vgal.log(toLog)
 end
 
 vgal.groups = {
-    { "rocket-parts",            "vgal-rocket-parts" },
-    { "science-packs",           "vgal-science-packs" },
-    { "buildings",               "vgal-buildings" },
-    { "belts",                   "vgal-belts" },
-    { "equipment",               "vgal-equipment" },
-    { "barrels",                 "vgal-barrels" },
-    { "military",                "vgal-military" },
-    { "wood-recipes",            "vgal-wood-recipes" },
-    { "oil-recipes",             "vgal-oil-recipes" },
-    { "renewable-ores",          "vgal-renewable-ores" },
-    { "crushing-recipes",        "vgal-crushing-recipes" },
-    { "ice-recipes",             "vgal-ice-recipes" },
-    { "silly-recipes",           "vgal-silly-recipes" },
-    { "captive-spawner-recipes", "vgal-captive-spawner-recipes" },
-    { "modules",                 "vgal-modules" },
+    { "vgal-rocket-parts",            "vgal-rocket-parts" },
+    { "vgal-science-packs",           "vgal-science-packs" },
+    { "vgal-buildings",               "vgal-buildings" },
+    { "vgal-belts",                   "vgal-belts" },
+    { "vgal-equipment",               "vgal-equipment" },
+    { "vgal-barrels",                 "vgal-barrels" },
+    { "vgal-military",                "vgal-military" },
+    { "vgal-wood-recipes",            "vgal-wood-recipes" },
+    { "vgal-oil-recipes",             "vgal-oil-recipes" },
+    { "vgal-renewable-ores",          "vgal-renewable-ores" },
+    { "vgal-crushing-recipes",        "vgal-crushing-recipes" },
+    { "vgal-ice-recipes",             "vgal-ice-recipes" },
+    { "vgal-silly-recipes",           "vgal-silly-recipes" },
+    { "vgal-captive-spawner-recipes", "vgal-captive-spawner-recipes" },
+    { "vgal-modules",                 "vgal-modules" },
 
-    { "convoluted-recipes",      "vgal-convoluted" },
-    { "unsure-recipes",          "vgal-unsure" },
-    { "removed-recipes",         "vgal-removed" },
+    { "vgal-convoluted-recipes",      "vgal-convoluted" },
+    { "vgal-unsure-recipes",          "vgal-unsure" },
+    { "vgal-removed-recipes",         "vgal-removed" },
 }
+
+-- function vgal.()
+    
+-- end
+
+-- local vgalCoreGroups = {
+--     "vgal-rocket-parts",
+--     "vgal-science-packs",
+--     "vgal-buildings",
+--     "vgal-belts",
+--     "vgal-equipment",
+--     "vgal-barrels",
+--     "vgal-military",
+--     "vgal-wood-recipes",
+--     "vgal-oil-recipes",
+--     "vgal-renewable-ores",
+--     "vgal-crushing-recipes",
+--     "vgal-ice-recipes",
+--     "vgal-silly-recipes",
+--     "vgal-captive-spawner-recipes",
+--     "vgal-modules",
+-- }
+
+-- for _, value in ipairs(vgalCoreGroups) do
+
+-- end
 
 vgal.enabled_groups = {}
 ---@type vgal.VgalRecipe[]
@@ -69,7 +95,7 @@ vgal.recipes = {}
 
 for _, groupTuple in ipairs(vgal.groups) do
     local key = groupTuple[1]
-    if settings.startup["vgal-" .. key] and settings.startup["vgal-" .. key].value == true then
+    if settings.startup[key] and settings.startup[key].value == true then
         vgal.enabled_groups[groupTuple[2]] = true
     end
 end
@@ -94,8 +120,6 @@ function vgal.data.extend(recipes, args)
         end
 
         recipe.technologies = vgal.table.ensure(recipe.technology, recipe.technologies)
-
-
 
         if recipe.complementairy_recipe then
             local complementairy_recipe = data.raw["recipe"][recipe.complementairy_recipe]
@@ -158,21 +182,6 @@ function vgal.data.extend(recipes, args)
         if not recipe.energy_required then
             error()
         end
-
-        -- inline propetries
-        -- recipe.ingredients = vgal.table.get_shorthand(recipe.ingredients, "item")
-        -- recipe.results = vgal.table.get_shorthand(recipe.results, "item")
-        -- recipe.fluid_ingredients = vgal.table.get_shorthand(recipe.fluid_ingredients, "fluid")
-        -- recipe.fluid_results = vgal.table.get_shorthand(recipe.fluid_results, "fluid")
-
-        -- for _, value in pairs(recipe.fluid_ingredients) do
-        --     ---@diagnostic disable-next-line: undefined-field
-        --     table.insert(recipe.ingredients, { type = "fluid", name = value.name, amount = value.amount })
-        -- end
-        -- for _, value in pairs(recipe.fluid_results) do
-        --     ---@diagnostic disable-next-line: undefined-field
-        --     table.insert(recipe.results, { type = "fluid", name = value.name, amount = value.amount })
-        -- end
 
         recipe.ingredients = vgal.build.table(recipe.ingredients, recipe.fluid_ingredients)
         recipe.results = vgal.build.table(recipe.results, recipe.fluid_results)

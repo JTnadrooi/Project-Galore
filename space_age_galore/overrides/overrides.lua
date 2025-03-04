@@ -35,7 +35,7 @@ if settings.startup["vgal-ammoniacal-solution-temp-override"].value then
     data.raw["fluid"]["ammoniacal-solution"].default_temperature = 15
     data.raw["fluid"]["ammoniacal-solution"].max_temperature = 100
 end
-if settings.startup["vgal-disable-ice-productivity"].value then
+if settings.startup["vgal-ice-recipes"].value then
     data.raw["recipe"]["ice-melting"].allow_productivity = false
 end
 if settings.startup["vgal-press-engine-unit"].value then

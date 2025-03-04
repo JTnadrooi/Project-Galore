@@ -1,5 +1,3 @@
-if not settings.startup["vgal-disable-ice-productivity"].value == true then return end
-
 vgal.data.extend
 {
     {
@@ -30,7 +28,7 @@ vgal.data.extend
         results = {
             { "ice", 100 },
         },
-        groups = { "vgal-unsure" },
+        groups = { "vgal-unsure", "vgal-ice-recipes" },
         show_amount_in_title = false,
         allow_productivity = false,
     },
@@ -53,5 +51,6 @@ vgal.data.extend
         },
         show_amount_in_title = false,
         allow_productivity = false,
+        groups = { "vgal-ice-recipes" },
     },
 }

@@ -53,6 +53,7 @@ vgal.groups = {
     { "oil-recipes",             "vgal-oil-recipes" },
     { "renewable-ores",          "vgal-renewable-ores" },
     { "crushing-recipes",        "vgal-crushing-recipes" },
+    { "ice-recipes",             "vgal-ice-recipes" },
     { "silly-recipes",           "vgal-silly-recipes" },
     { "captive-spawner-recipes", "vgal-captive-spawner-recipes" },
     { "modules",                 "vgal-modules" },

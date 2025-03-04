@@ -39,6 +39,8 @@ _I have made sure none of the recipes are objectivelly better than others. No re
 
 This is a strenght of one massive recipe pack instead of many smaller ones. All recipes are interconnected.
 
+![crude-oil-gleba](https://github.com/JTnadrooi/Project-Galore/blob/main/media/flowchart_gleba_crude_oil.png?raw=true)
+
 ## Recommended mods
 
 -   [Age Of Production](https://mods.factorio.com/mod/Age-of-Production) by [AndreusAxolotl](https://mods.factorio.com/user/AndreusAxolotl); A great mod that makes it so many of the alternate recipes are made in brand new machines!

@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.12
   Features:
-    - Improved general locale.
+    - Improved general locale. (And alot of bugfixes)
   Balancing:
     - The "vgal-yumako-mash-light-oil" recipe can now only be crafted in the biochamber. Reverted from version 1.1.11, sorry about that. 
     - "vgal-carbon-fiber-low-density-structure" carbon fiber cost doubled; 1 -> 2.
@@ -13,6 +13,7 @@ Version: 1.1.12
     - "vgal-pentapod-egg-biter-egg-duel-biter-egg-preferred" fixed internal name -> ..biter-preferred.
     - "vgal-pentapod-egg-biter-egg-duel-pentapod-egg-preferred" fixed internal name -> ..pentapod-preferred.
     - Fixed certain recipes not being correctly grouped as "silly".
+    - Fixed alternate molten- iron/copper recipes being orderred differently.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.11
   Features:

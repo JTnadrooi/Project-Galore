@@ -38,6 +38,7 @@ vgal.data.extend
         fluid_results = {
             { "molten-iron", 400 },
         },
+        order = "bbab",
     },
     {
         type = "recipe",
@@ -57,6 +58,7 @@ vgal.data.extend
         fluid_results = {
             { "molten-copper", 400 },
         },
+        order = "bbab",
     },
     {
         type = "recipe",
@@ -79,6 +81,7 @@ vgal.data.extend
         fluid_results = {
             { "molten-iron", 500 },
         },
+        order = "bbac",
     },
     {
         type = "recipe",
@@ -101,6 +104,7 @@ vgal.data.extend
         fluid_results = {
             { "molten-copper", 500 },
         },
+        order = "bbac",
     },
     -- {
     --     type = "recipe",

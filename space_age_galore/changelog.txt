@@ -1,9 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.12
   Features:
-    - Cleaned up some locale.
+    - Improved general locale.
   Balancing:
-    - The "vgal-yumako-mash-light-oil" recipe can now only be crafted in the biochamber. Reverted from version 1.1.11. 
+    - The "vgal-yumako-mash-light-oil" recipe can now only be crafted in the biochamber. Reverted from version 1.1.11, sorrry about that. 
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.11
   Features:

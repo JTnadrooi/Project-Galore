@@ -66,7 +66,7 @@ vgal.data.extend
         },
         ingredients = {
             { "jelly",       1 }, -- 8
-            { "plastic-bar", 2 }, -- 30 (but a bit more on gleba)
+            { "plastic-bar", 2 }, -- 30
         },
         results = {
             { "electronic-circuit", 2 } -- 50 * 1.5 = 75

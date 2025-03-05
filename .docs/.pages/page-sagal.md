@@ -19,31 +19,33 @@ A large recipe pack that adds over 70 new recipes to the 110 already present in 
 
 ## Full feature list
 
-<sub>_(Im not listing every recipe but these are some of the more notable ones.)_</sub>
+Im not listing every recipe but these are some of the more notable ones.
 
 -   More recipes for molten iron/copper with varying efficiencies.
--   More bioprocessing recipes, even outside gleba. (Don't be scared, like every alternate recipe, they're _optional!_)
--   More uses for items/fluids like ammonia, holmium solution, carbon fiber, tungsten cabride, etc..
--   More oil processing recipes; Steam cracking, sulfur focusssed oil processing, oil centrifuging.
+-   More bioprocessing recipes, even outside gleba. (And like every alternate recipe, they're _optional!_)
+-   More uses for items/fluids like ammonia, holmium solution, carbon fiber, tungsten carbide, etc..
+-   More oil processing recipes; Steam cracking, sulfur focussed oil processing, oil centrifuging.
 -   Synthetic crude oil from ammonia, carbon and water.
 -   Ammonia from bioprocessing, for bioprocessing.
 -   More recipes for the centrifuge, it even has fluid ports now!
--   Multiple different ways of creating the planetairy sciences.
+-   Multiple different ways of creating the planetary sciences.
 -   Alternate rocket part recipes.
--   Biochemstry.
+-   Biochemistry.
 -   More module recipes.
 -   Organic circuits; They are cheaper but require spoilable materials.
 -   More casting recipes. (But none of the ones featured in popular "More casting" mods.)
 
-_I have made sure none of the recipes are objectivelly better than others. No recipes will become UI-clutter after other ones are unlocked as every recipes has their place, all of them._
+_I have made sure none of the recipes are objectivelly better than others. No recipes will become UI-clutter after other ones are unlocked as every recipe has their place, all of them._
 
-This is a strenght of one massive recipe pack instead of many smaller ones. All recipes are interconnected.
+This is a strength of one massive recipe pack instead of many smaller ones. All recipes are interconnected.
 
-![crude-oil-gleba](https://github.com/JTnadrooi/Project-Galore/blob/main/media/flowchart_gleba_crude_oil.png?raw=true)
+<!-- ![crude-oil-gleba](https://github.com/JTnadrooi/Project-Galore/blob/main/media/flowchart_gleba_crude_oil.png?raw=true) -->
+
+<img src="https://github.com/JTnadrooi/Project-Galore/blob/main/media/flowchart_gleba_crude_oil.png?raw=true" alt="crude-oil-gleba" width="400"/>
 
 ## Recommended mods
 
--   [Age Of Production](https://mods.factorio.com/mod/Age-of-Production) by [AndreusAxolotl](https://mods.factorio.com/user/AndreusAxolotl); A great mod that makes it so many of the alternate recipes are made in brand new machines!
+-   [Age Of Production](https://mods.factorio.com/mod/Age-of-Production) by [AndreusAxolotl](https://mods.factorio.com/user/AndreusAxolotl); A great mod that makes it so many of the alternate recipes are made in brand-new machines!
 
 ## Notes
 

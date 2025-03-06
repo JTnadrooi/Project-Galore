@@ -260,6 +260,8 @@ function vgal.data.extend(recipes, args)
                     })
                     local tech = data.raw["technology"][techName]
 
+                    tech.vgal_can_remove = true
+
                     local pureTrigger = true
                     for _, pre in ipairs(preCollection) do
                         if data.raw["technology"][pre].research_trigger == nil then
@@ -372,7 +374,8 @@ function vgal.data.finalise()
         end
     end
     for _, tech in pairs(data.raw["technology"]) do
-        if tech.effects and #tech.effects == 0 and (not required_techs[tech.name]) then
+        ---@diagnostic disable-next-line: undefined-field
+        if tech.effects and #tech.effects == 0 and tech.vgal_can_remove and (not required_techs[tech.name]) then
             tech.hidden = true
             tech.hidden_in_factoriopedia = true
         end

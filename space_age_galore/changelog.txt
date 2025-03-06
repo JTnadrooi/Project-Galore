@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.13
+  Features:
+    - SAGAL(Space Age-GALore) now adds recipe groups locally, instead of them also having to be registered in VGAL(Vanilla GALore).
+  Balancing:
+    - a
+  Bugfixes:
+    - Fixed the "carbon -> crude oil -> light-oil/petroleum-gas -> solid fuel -> carbon" loop being carbon positive. (They still used other ingredients but this being net positive in terms of carbon does not feel right.)
+    - Fixed a grammatical error in the changelog. (should -> so, v1.1.12)
+    - Fixed the "silly" military recipes raising a few questions. (Description improved)
+---------------------------------------------------------------------------------------------------
 Version: 1.1.12
   Features:
     - Improved general locale. (And alot of bugfixes)
@@ -7,7 +17,7 @@ Version: 1.1.12
     - The "vgal-yumako-mash-light-oil" recipe can now only be crafted in the biochamber. Reverted from version 1.1.11, sorry about that. 
     - "vgal-carbon-fiber-low-density-structure" carbon fiber cost doubled; 1 -> 2.
     - "vgal-molten-copper-carbon-fiber-low-density-structure" carbon fiber cost doubled; 1 -> 2.
-    - "vgal-petroleum-gas-barrel-biter-egg" chance of getting barrel back reduced; 100% -> 90%. (I didn't add the recipes that long ago should it should be fine..)
+    - "vgal-petroleum-gas-barrel-biter-egg" chance of getting barrel back reduced; 100% -> 90%. (I didn't add the recipes that long ago so it should be fine..)
     - "vgal-pentapod-egg-biter-egg-duel-biter-preferred" chance of getting barrel back reduced; 100% -> 85%.
     - "vgal-pentapod-egg-biter-egg-duel-pentapod-preferred" chance of getting barrel back reduced; 100% -> 85%.
   Bugfixes:

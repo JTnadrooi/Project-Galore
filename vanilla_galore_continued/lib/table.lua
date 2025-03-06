@@ -3,7 +3,10 @@
 --- @param value any The value to search for.
 --- @return boolean True if the table contains the value, false otherwise.
 function vgal.table.contains(table, value)
-    for _, value2 in ipairs(table) do
+    if table[value] then
+        return true
+    end
+    for _, value2 in pairs(table) do
         if value2 == value then
             return true
         end

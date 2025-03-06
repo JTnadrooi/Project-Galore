@@ -64,7 +64,7 @@ vgal.groups = {
 }
 
 -- function vgal.()
-    
+
 -- end
 
 -- local vgalCoreGroups = {
@@ -307,8 +307,6 @@ function vgal.data.extend(recipes, args)
                 end
             end
         end
-
-
         ::continue::
     end
 end
@@ -352,7 +350,11 @@ end
 
 function vgal.data.finalise()
     -- local potential_singles = {}
+    local required_techs = {}
     for _, tech in pairs(data.raw["technology"]) do
+        for _, p in ipairs(tech.prerequisites or {}) do
+            required_techs[p] = true
+        end
         if tech.effects and #tech.effects > 0 then
             local i = 1
             while i <= #tech.effects do
@@ -365,16 +367,12 @@ function vgal.data.finalise()
                         break
                     end
                 end
-                -- if should_remove then
-                --     -- table.remove(tech.effects, i)
-                --     tech.effects[i].hidden = true
-                -- else
-                -- end
                 i = i + 1
             end
         end
-        if tech.effects and #tech.effects == 0 then
-            -- table.insert(potential_singles, tech.name)
+    end
+    for _, tech in pairs(data.raw["technology"]) do
+        if tech.effects and #tech.effects == 0 and (not required_techs[tech.name]) then
             tech.hidden = true
             tech.hidden_in_factoriopedia = true
         end

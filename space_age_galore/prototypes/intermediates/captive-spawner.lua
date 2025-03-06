@@ -54,9 +54,9 @@ vgal.data.extend({
             { "biter-egg",            1 },
         },
         results = {
+            { "military-science-pack", 25 },
             { "biter-egg",             1, { probability = 0.80 } },
             { "pentapod-egg",          1, { probability = 0.20 } },
-            { "military-science-pack", 25 },
             { "barrel",                1, { probability = 0.85 } },
         },
         category = "captive-spawner-process",
@@ -88,9 +88,9 @@ vgal.data.extend({
             { "biter-egg",      1 },
         },
         results = {
+            { "military-science-pack", 15 },
             { "biter-egg",             1, { probability = 0.20 } },
             { "pentapod-egg",          1, { probability = 0.80 } },
-            { "military-science-pack", 15 },
             { "barrel",                1, { probability = 0.85 } },
         },
         category = "captive-spawner-process",

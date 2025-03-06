@@ -1,7 +1,5 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.13
-  Features:
-    - SAGAL(Space Age-GALore) now adds recipe groups locally, instead of them also having to be registered in VGAL(Vanilla GALore).
   Balancing:
     - "vgal-solid-fuel-carbon" removed, will be replaced by a biological counterpart.
     - "vgal-solid-fuel-sulfuric-acid-carbon" solid fuel cost increased 3 -> 20.
@@ -9,7 +7,7 @@ Version: 1.1.13
   Bugfixes:
     - Fixed the "carbon -> crude oil -> light-oil/petroleum-gas -> solid fuel -> carbon" loop being carbon positive. (They still used other ingredients but this being net positive in terms of carbon does not feel right.)
     - Fixed a grammatical error in the changelog. (should -> so, v1.1.12)
-    - Fixed the "silly" military recipes raising a few questions. (Description improved)
+    - Fixed the "silly" military recipes not being ordered correctly.
     - Fixed a game breaking bug that was VGALLIB hiding sertain techs, even when needed by other mods. (Listed here because of importance, actually all is done VGAL)
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.12

@@ -1,9 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.23
-  Features:
-    - Made it so recipe groups can now be added in subgalores.
   Bugfixes:
-    - Fixed a game breaking bug that was VGALLIB hiding sertain techs, even when needed by other mods.
+    - [HOTFIX] Fixed a game breaking bug that was VGALLIB hiding sertain techs, even when needed by other mods.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.22
   Features:

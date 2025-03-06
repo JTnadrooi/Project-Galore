@@ -39,6 +39,34 @@ vgal.data.extend({
         },
         category = "metallurgy",
     },
+    {
+        type = "recipe",
+        name = "solid-fuel-carbon",
+        prefix = "vgal",
+        -- icons = vgal.icon.register {
+        --     vgal.icon.get("carbon"),
+        --     vgal.icon.get_in("solid-fuel"),
+        --     vgal.icon.get_in2("steam"),
+        -- },
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("solid-fuel"),
+            vgal.icon.get_out_to("carbon"),
+            vgal.icon.get_overlay("to"),
+        },
+        category = "chemistry-or-cryogenics",
+        energy_required = 8,
+        technology = "space-platform",
+        fluid_ingredients = {
+            { "steam", 20 },
+        },
+        ingredients = {
+            { "solid-fuel", 5 }, -- 30
+        },
+        results = {
+            { "carbon", 1 }, -- 50
+        },
+        show_amount_in_title = false,
+    },
 }, {
     groups = { "vgal-removed" },
 })

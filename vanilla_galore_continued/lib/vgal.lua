@@ -351,7 +351,6 @@ function vgal.any_get_source(anyName, includeRecipes)
 end
 
 function vgal.data.finalise()
-    -- local potential_singles = {}
     local required_techs = {}
     for _, tech in pairs(data.raw["technology"]) do
         for _, p in ipairs(tech.prerequisites or {}) do
@@ -361,7 +360,6 @@ function vgal.data.finalise()
             local i = 1
             while i <= #tech.effects do
                 local effect = tech.effects[i]
-                -- local should_remove = false
                 for _, toclean in ipairs(vgal.tech.totrim) do
                     if effect.recipe == toclean then
                         should_remove = true

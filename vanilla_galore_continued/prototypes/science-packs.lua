@@ -145,7 +145,7 @@ vgal.data.extend({
         technology = { "electric-energy-accumulators", "chemical-science-pack" },
         ingredients = {
             { "accumulator", 1 }, -- 270
-            { "solid-fuel",  6 }, -- 108
+            { "solid-fuel",  6 }, -- 120
             { "sulfur",      6 }, -- 90
         },
         results = {
@@ -228,7 +228,7 @@ vgal.data.extend({
             { "chemical-science-pack", 3 }, -- 735
         },
     },
-    -- MILITAIRY
+    -- MILITARY
     {
         name = "gun-turret-military-science-pack",
         prefix = "vgal",

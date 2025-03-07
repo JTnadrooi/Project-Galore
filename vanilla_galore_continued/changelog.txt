@@ -1,7 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.24
+  Features:
+    - [LIB] Improved the custom extend function.
+  Balancing:
+    - "vgal-accumulator-chemical-science-pack" solid fuel cost increased 6 -> 12.
+  Bugfixes:
+    - a
+---------------------------------------------------------------------------------------------------
 Version: 1.1.23
   Bugfixes:
-    - [HOTFIX] Fixed a game breaking bug that was VGALLIB hiding sertain techs, even when needed by other mods.
+    - [HOTFIX] Fixed a game breaking bug that was VGALLIB hiding certain techs, even when needed by other mods.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.22
   Features:

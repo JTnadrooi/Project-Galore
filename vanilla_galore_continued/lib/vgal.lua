@@ -41,277 +41,267 @@ function vgal.log(toLog)
     end
 end
 
+---@type vgal.VgalRecipePrototype[]
+vgal.recipes = {}
+---@type vgal.VgalToggleGroupPrototype[]
 vgal.groups = {
-    { "vgal-rocket-parts",            "vgal-rocket-parts" },
-    { "vgal-science-packs",           "vgal-science-packs" },
-    { "vgal-buildings",               "vgal-buildings" },
-    { "vgal-belts",                   "vgal-belts" },
-    { "vgal-equipment",               "vgal-equipment" },
-    { "vgal-barrels",                 "vgal-barrels" },
-    { "vgal-military",                "vgal-military" },
-    { "vgal-wood-recipes",            "vgal-wood-recipes" },
-    { "vgal-oil-recipes",             "vgal-oil-recipes" },
-    { "vgal-renewable-ores",          "vgal-renewable-ores" },
-    { "vgal-crushing-recipes",        "vgal-crushing-recipes" },
-    { "vgal-ice-recipes",             "vgal-ice-recipes" },
-    { "vgal-silly-recipes",           "vgal-silly-recipes" },
-    { "vgal-captive-spawner-recipes", "vgal-captive-spawner-recipes" },
-    { "vgal-modules",                 "vgal-modules" },
+    -- { "vgal-rocket-parts",            "vgal-rocket-parts" },
+    -- { "vgal-science-packs",           "vgal-science-packs" },
+    -- { "vgal-buildings",               "vgal-buildings" },
+    -- { "vgal-belts",                   "vgal-belts" },
+    -- { "vgal-equipment",               "vgal-equipment" },
+    -- { "vgal-barrels",                 "vgal-barrels" },
+    -- { "vgal-military",                "vgal-military" },
+    -- { "vgal-wood-recipes",            "vgal-wood-recipes" },
+    -- { "vgal-oil-recipes",             "vgal-oil-recipes" },
+    -- { "vgal-renewable-ores",          "vgal-renewable-ores" },
+    -- { "vgal-crushing-recipes",        "vgal-crushing-recipes" },
+    -- { "vgal-ice-recipes",             "vgal-ice-recipes" },
+    -- { "vgal-silly-recipes",           "vgal-silly-recipes" },
+    -- { "vgal-captive-spawner-recipes", "vgal-captive-spawner-recipes" },
+    -- { "vgal-modules",                 "vgal-modules" },
 
-    { "vgal-convoluted-recipes",      "vgal-convoluted" },
-    { "vgal-unsure-recipes",          "vgal-unsure" },
-    { "vgal-removed-recipes",         "vgal-removed" },
+    -- { "vgal-convoluted-recipes",      "vgal-convoluted" },
+    -- { "vgal-unsure-recipes",          "vgal-unsure" },
+    -- { "vgal-removed-recipes",         "vgal-removed" },
 }
 
--- function vgal.()
 
+
+-- for _, groupTuple in ipairs(vgal.groups) do
+--     local key = groupTuple[1]
+--     if settings.startup[key] and settings.startup[key].value == true then
+--         vgal.enabled_groups[groupTuple[2]] = true
+--     end
 -- end
+---Register a entry to the vgal (Vanilla Galore) ecosystem.
+---@param entriesToExtend vgal.VgalRecipePrototype[]|vgal.VgalToggleGroupPrototype[]
+---@param fillInWith? vgal.VgalRecipePrototype|vgal.VgalToggleGroupPrototype
+function vgal.data.extend(entriesToExtend, fillInWith)
+    fillInWith = fillInWith or {}
 
--- local vgalCoreGroups = {
---     "vgal-rocket-parts",
---     "vgal-science-packs",
---     "vgal-buildings",
---     "vgal-belts",
---     "vgal-equipment",
---     "vgal-barrels",
---     "vgal-military",
---     "vgal-wood-recipes",
---     "vgal-oil-recipes",
---     "vgal-renewable-ores",
---     "vgal-crushing-recipes",
---     "vgal-ice-recipes",
---     "vgal-silly-recipes",
---     "vgal-captive-spawner-recipes",
---     "vgal-modules",
--- }
+    fillInWith.groups = vgal.table.ensure(fillInWith.group, fillInWith.groups)
 
--- for _, value in ipairs(vgalCoreGroups) do
+    for _, entry in ipairs(entriesToExtend) do
+        entry = vgal.table.fill_in_from(entry, fillInWith)
 
--- end
-
-vgal.enabled_groups = {}
----@type vgal.VgalRecipe[]
-vgal.recipes = {}
-
-for _, groupTuple in ipairs(vgal.groups) do
-    local key = groupTuple[1]
-    if settings.startup[key] and settings.startup[key].value == true then
-        vgal.enabled_groups[groupTuple[2]] = true
-    end
-end
----Register a recipe to the vgal (Vanilla Galore) ecosystem.
----@param itemsToExtend vgal.VgalRecipe[]
----@param args? table
-function vgal.data.extend(itemsToExtend, args)
-    args = args or {}
-
-    args.groups = vgal.table.ensure(args.group, args.groups)
-
-    for _, item in ipairs(itemsToExtend) do
-        item = vgal.table.deep_merge(item, args)
-        if item.type ~= "recipe" then
-            error(item.name)
-        end
-        local hidden = false
-        item.groups = vgal.table.ensure(item.group, item.groups)
-        for _, group in ipairs(item.groups) do
-            if not vgal.enabled_groups[group] then
-                hidden = true
-                break
+        if entry.type == "recipe" then
+            ---@cast entry vgal.VgalRecipePrototype
+            local hidden = false
+            entry.groups = vgal.table.ensure(entry.group, entry.groups)
+            for _, group in ipairs(entry.groups) do
+                if not vgal.groups[group].enabled then
+                    hidden = true
+                    break
+                end
             end
-        end
 
-        item.technologies = vgal.table.ensure(item.technology, item.technologies)
+            entry.technologies = vgal.table.ensure(entry.technology, entry.technologies)
 
-        if item.complementairy_recipe then
-            local complementairy_recipe = data.raw["recipe"][item.complementairy_recipe]
-            item.order = item.order or complementairy_recipe.order
-            item.subgroup = item.subgroup or complementairy_recipe.subgroup
-            item.crafting_machine_tint = item.crafting_machine_tint or complementairy_recipe.crafting_machine_tint
-        end
-
-
-        -- if any needed fields are missing this fills them in.
-        if item.dependent_recipe then
-            local dependent_recipe = data.raw["recipe"][item.dependent_recipe]
-
-            item.category = item.category or dependent_recipe.category
-            item.results = item.results or dependent_recipe.results
-            item.ingredients = item.ingredients or dependent_recipe.ingredients
-            item.icons = item.icons or dependent_recipe.icons
-            item.energy_required = item.energy_required or dependent_recipe.energy_required
-            item.main_product = item.main_product or dependent_recipe.main_product
-            item.order = item.order or dependent_recipe.order
-            item.subgroup = item.subgroup or dependent_recipe.subgroup
-        end
-
-        -- name components
-        item.tier = item.tier == 1 and nil or item.tier
-        item.name = vgal.build.name(item.prefix, item.name, item.tier)
-
-        -- tech kinda, real stuff happens later.
-        item.enabled = (item.enabled ~= nil) or not item.technologies
-
-        -- null stuff
-        item.fluid_ingredients = item.fluid_ingredients or {}
-        item.fluid_results = item.fluid_results or {}
-        item.ingredients = item.ingredients or {}
-        item.results = item.results or {}
-        item.module_allows = item.module_allows or {}
-
-        item.hidden = hidden
-        item.hidden_in_factoriopedia = hidden
-        item.hide_from_player_crafting = hidden
-        item.hide_from_signal_gui = hidden
-        item.hide_from_stats = hidden
-
-        -- icon stuff
-        if item.icon then
-            if item.icons then
-                error()
+            if entry.complementairy_recipe then
+                local complementairy_recipe = data.raw["recipe"][entry.complementairy_recipe]
+                entry.order = entry.order or complementairy_recipe.order
+                entry.subgroup = entry.subgroup or complementairy_recipe.subgroup
+                entry.crafting_machine_tint = entry.crafting_machine_tint or complementairy_recipe.crafting_machine_tint
             end
-            item.icons = {
-                {
-                    icon = item.icon,
-                    icon_size = item.icon_size or 32,
+
+            -- if any needed fields are missing this fills them in.
+            if entry.dependent_recipe then
+                local dependent_recipe = data.raw["recipe"][entry.dependent_recipe]
+
+                entry.category = entry.category or dependent_recipe.category
+                entry.results = entry.results or dependent_recipe.results
+                entry.ingredients = entry.ingredients or dependent_recipe.ingredients
+                entry.icons = entry.icons or dependent_recipe.icons
+                entry.energy_required = entry.energy_required or dependent_recipe.energy_required
+                entry.main_product = entry.main_product or dependent_recipe.main_product
+                entry.order = entry.order or dependent_recipe.order
+                entry.subgroup = entry.subgroup or dependent_recipe.subgroup
+            end
+
+            -- name components
+            entry.tier = entry.tier == 1 and nil or entry.tier
+            entry.name = vgal.build.name(entry.prefix, entry.name, entry.tier)
+
+            -- tech kinda, real stuff happens later.
+            entry.enabled = (entry.enabled ~= nil) or not entry.technologies
+
+            -- null stuff
+            entry.fluid_ingredients = entry.fluid_ingredients or {}
+            entry.fluid_results = entry.fluid_results or {}
+            entry.ingredients = entry.ingredients or {}
+            entry.results = entry.results or {}
+            entry.module_allows = entry.module_allows or {}
+
+            entry.hidden = hidden
+            entry.hidden_in_factoriopedia = hidden
+            entry.hide_from_player_crafting = hidden
+            entry.hide_from_signal_gui = hidden
+            entry.hide_from_stats = hidden
+
+            -- icon stuff
+            if entry.icon then
+                if entry.icons then
+                    error()
+                end
+                entry.icons = {
+                    {
+                        icon = entry.icon,
+                        icon_size = entry.icon_size or 32,
+                    }
                 }
-            }
-            item.icon = nil
-            item.icon_size = nil
-        end
+                entry.icon = nil
+                entry.icon_size = nil
+            end
 
-        -- validate
-        if not item.energy_required then
-            error()
-        end
-
-        item.ingredients = vgal.build.table(item.ingredients, item.fluid_ingredients)
-        item.results = vgal.build.table(item.results, item.fluid_results)
-
-        if not item.main_product then
-            ---@diagnostic disable-next-line: undefined-field
-            item.main_product = item.results[1].name
-        end
-
-        item.allow_productivity = (item.allow_productivity ~= nil) and item.allow_productivity or
-            vgal.recipe.get_if_productivity(item.main_product)
-
-        item.crafting_machine_tint = item.crafting_machine_tint
-            or vgal.recipe.get_preferred_crafting_machine_tint(item)
-
-        if item.locale_source then
-            item.localised_name_source = item.locale_source
-            item.localised_description_source = item.locale_source
-        end
-        if item.localised_name_source then
-            item.localised_name = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
-                [item.localised_name_source])
-        end
-        if item.localised_description_source then
-            item.localised_description = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
-                [item.localised_description_source])
-        end
-        item.localised_name = vgal.recipe.get_preferred_localised_name(item)
-        item.localised_description = vgal.recipe.get_preferred_localised_description(item)
-
-        item.type = "recipe"
-        item.auto_recycle = false
-        item.allow_decomposition = false
-        item.allow_as_intermediate = false
-
-        vgal.log("registering: " .. item.name)
-
-        data:extend { item }
-        local dataRecipe
-
-        vgal.recipes[item.name] = item
-
-        if item.technologies then
-            if type(item.technologies[1]) == "table" then
-                for i, preCollection in ipairs(item.technologies) do
-                    ---@cast preCollection table
-
-                    local techName = item.name .. "-node" .. i
-
-                    local eventualUnitsWorth = 0
-                    local eventualUnits = {}
-                    for _, prerequisite in ipairs(preCollection) do
-                        tech = data.raw["technology"][prerequisite]
-                        units = vgal.tech.extract_units(tech)
-                        unitsWorth = vgal.table.sum(units)
-                        if unitsWorth > eventualUnitsWorth then
-                            eventualUnits = units
-                            eventualUnitsWorth = unitsWorth
-                        end
-                    end
-
-                    data:extend({
-                        vgal.tech.create_empty(techName, 1, eventualUnits, #eventualUnits * 5,
-                            #eventualUnits >= 4 and 30 or 15, preCollection,
-                            "a", {
-                                {
-                                    icon = "__vanilla_galore_continued__/graphics/" .. "node.png",
-                                    icon_size = 256,
-                                },
-                                {
-                                    icon = item.icons[1].icon,
-                                    icon_size = item.icons[1].icon_size,
-                                    scale = 1.5,
-                                },
-                            })
-                    })
-                    local tech = data.raw["technology"][techName]
-
-                    tech.vgal_can_remove = true
-
-                    local pureTrigger = true
-                    for _, pre in ipairs(preCollection) do
-                        if data.raw["technology"][pre].research_trigger == nil then
-                            pureTrigger = false
-                        end
-                    end
-                    if pureTrigger then
-                        tech.research_trigger = data.raw["technology"][preCollection[1]].research_trigger
-                        tech.unit = nil
-                    end
-                    tech.localised_name = { "?",
-                        { "", "Galore Tech Node: ", { "recipe-name." .. item.name } },
-                        { "", "Galore Tech Node: ", vgal.locale.get_lazy(item.main_product) },
-                    }
-                    tech.localised_description = {
-                        "", { "recipe-description." .. item.name },
-                    }
-                    vgal.tech.add_recipe(techName, item.name)
-                    tech.hidden = hidden
-                    tech.hidden_in_factoriopedia = hidden
-                end
-            elseif type(item.technologies[1]) == "string" then
-                for _, techName in ipairs(item.technologies) do
-                    ---@cast techName string
-                    vgal.tech.add_recipe(techName, item.name)
-                end
-            else
+            -- validate
+            if not entry.energy_required then
                 error()
             end
-        end
-        if item.productivity_technology ~= "" then -- so if "", no prod even when tech exists
-            if data.raw["technology"][item.main_product .. "-productivity"] then
-                item.productivity_technology = item.main_product .. "-productivity"
+
+            entry.ingredients = vgal.build.table(entry.ingredients, entry.fluid_ingredients)
+            entry.results = vgal.build.table(entry.results, entry.fluid_results)
+
+            if not entry.main_product then
+                ---@diagnostic disable-next-line: undefined-field
+                entry.main_product = entry.results[1].name
             end
-            if item.productivity_technology then
-                if type(item.productivity_technology) == "string" then
-                    vgal.tech.add_productivity_change(item.productivity_technology, item.name, nil, item.hidden)
+
+            entry.allow_productivity = (entry.allow_productivity ~= nil) and entry.allow_productivity or
+                vgal.recipe.get_if_productivity(entry.main_product)
+
+            entry.crafting_machine_tint = entry.crafting_machine_tint
+                or vgal.recipe.get_preferred_crafting_machine_tint(entry)
+
+            if entry.locale_source then
+                entry.localised_name_source = entry.locale_source
+                entry.localised_description_source = entry.locale_source
+            end
+            if entry.localised_name_source then
+                entry.localised_name = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
+                    [entry.localised_name_source])
+            end
+            if entry.localised_description_source then
+                entry.localised_description = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
+                    [entry.localised_description_source])
+            end
+            entry.localised_name = vgal.recipe.get_preferred_localised_name(entry)
+            entry.localised_description = vgal.recipe.get_preferred_localised_description(entry)
+
+            entry.type = "recipe"
+            entry.auto_recycle = false
+            entry.allow_decomposition = false
+            entry.allow_as_intermediate = false
+
+            vgal.log("registering: " .. entry.name)
+
+            data:extend { entry }
+            vgal.recipes[entry.name] = entry
+
+            if entry.technologies then
+                if type(entry.technologies[1]) == "table" then
+                    for i, preCollection in ipairs(entry.technologies) do
+                        ---@cast preCollection table
+
+                        local techName = entry.name .. "-node" .. i
+
+                        local eventualUnitsWorth = 0
+                        local eventualUnits = {}
+                        for _, prerequisite in ipairs(preCollection) do
+                            tech = data.raw["technology"][prerequisite]
+                            units = vgal.tech.extract_units(tech)
+                            unitsWorth = vgal.table.sum(units)
+                            if unitsWorth > eventualUnitsWorth then
+                                eventualUnits = units
+                                eventualUnitsWorth = unitsWorth
+                            end
+                        end
+
+                        data:extend({
+                            vgal.tech.create_empty(techName, 1, eventualUnits, #eventualUnits * 5,
+                                #eventualUnits >= 4 and 30 or 15, preCollection,
+                                "a", {
+                                    {
+                                        icon = "__vanilla_galore_continued__/graphics/" .. "node.png",
+                                        icon_size = 256,
+                                    },
+                                    {
+                                        icon = entry.icons[1].icon,
+                                        icon_size = entry.icons[1].icon_size,
+                                        scale = 1.5,
+                                    },
+                                })
+                        })
+                        local tech = data.raw["technology"][techName]
+
+                        tech.vgal_can_remove = true
+
+                        local pureTrigger = true
+                        for _, pre in ipairs(preCollection) do
+                            if data.raw["technology"][pre].research_trigger == nil then
+                                pureTrigger = false
+                            end
+                        end
+                        if pureTrigger then
+                            tech.research_trigger = data.raw["technology"][preCollection[1]].research_trigger
+                            tech.unit = nil
+                        end
+                        tech.localised_name = { "?",
+                            { "", "Galore Tech Node: ", { "recipe-name." .. entry.name } },
+                            { "", "Galore Tech Node: ", vgal.locale.get_lazy(entry.main_product) },
+                        }
+                        tech.localised_description = {
+                            "", { "recipe-description." .. entry.name },
+                        }
+                        vgal.tech.add_recipe(techName, entry.name)
+                        tech.hidden = hidden
+                        tech.hidden_in_factoriopedia = hidden
+                    end
+                elseif type(entry.technologies[1]) == "string" then
+                    for _, techName in ipairs(entry.technologies) do
+                        ---@cast techName string
+                        vgal.tech.add_recipe(techName, entry.name)
+                    end
                 else
-                    vgal.tech.add_productivity_change(
-                        item.productivity_technology[1],
-                        item.name,
-                        item.productivity_technology[2],
-                        item.hidden
-                    )
+                    error()
                 end
             end
+            if entry.productivity_technology ~= "" then -- so if "", no prod even when tech exists
+                if data.raw["technology"][entry.main_product .. "-productivity"] then
+                    entry.productivity_technology = entry.main_product .. "-productivity"
+                end
+                if entry.productivity_technology then
+                    if type(entry.productivity_technology) == "string" then
+                        vgal.tech.add_productivity_change(entry.productivity_technology, entry.name, nil, entry.hidden)
+                    else
+                        vgal.tech.add_productivity_change(
+                            entry.productivity_technology[1],
+                            entry.name,
+                            entry.productivity_technology[2],
+                            entry.hidden
+                        )
+                    end
+                end
+            end
+        elseif entry.type == "toggle-group" then
+            ---@cast entry vgal.VgalToggleGroupPrototype
+            ---@
+
+            if entry.enabled == nil then
+                if entry.enabled_setting then
+                    ---@diagnostic disable-next-line: assign-type-mismatch
+                    entry.enabled = settings.startup[entry.enabled_setting].value
+                else
+                    ---@diagnostic disable-next-line: assign-type-mismatch
+                    entry.enabled = settings.startup[entry.name].value
+                end
+            end
+
+            -- entry.enabled = true
+            vgal.groups[entry.name] = entry
+        else
+            error(entry.name)
         end
-        ::continue::
     end
 end
 
@@ -381,5 +371,84 @@ function vgal.data.finalise()
         end
     end
 end
+
+vgal.data.extend({
+    {
+        type = "toggle-group",
+        name = "vgal-rocket-parts",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-science-packs",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-buildings",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-belts",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-equipment",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-barrels",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-military",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-wood-recipes",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-oil-recipes",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-renewable-ores",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-crushing-recipes",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-ice-recipes",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-silly-recipes",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-captive-spawner-recipes",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-modules",
+    },
+
+    {
+        type = "toggle-group",
+        name = "vgal-convoluted",
+        enabled_setting = "vgal-convoluted-recipes",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-unsure",
+        enabled_setting = "vgal-unsure-recipes",
+    },
+    {
+        type = "toggle-group",
+        name = "vgal-removed",
+        enabled_setting = "vgal-removed-recipes",
+    },
+})
 
 return vgal

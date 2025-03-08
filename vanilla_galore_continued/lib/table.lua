@@ -130,7 +130,7 @@ function vgal.table.merge(t1, t2)
     return result
 end
 
-function vgal.table.deep_merge(t1, t2)
+function vgal.table.fill_in_from(t1, t2)
     local function is_array(t)
         if type(t) ~= "table" then return false end
         local count = 0
@@ -150,7 +150,7 @@ function vgal.table.deep_merge(t1, t2)
             if is_array(v) and is_array(t2[k]) then
                 result[k] = vgal.table.merge(v, t2[k])
             else
-                result[k] = vgal.table.deep_merge(v, t2[k])
+                result[k] = vgal.table.fill_in_from(v, t2[k])
             end
         else
             result[k] = v

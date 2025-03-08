@@ -6,7 +6,7 @@ do
 end
 do
     ---A vgal recipe - to be registed.
-    ---@class vgal.VgalRecipe:data.RecipePrototype
+    ---@class vgal.VgalRecipePrototype:data.RecipePrototype
     ---Non optional empty fields get borrowed from this recipe. (except the name)
     ---@field dependent_recipe? string
     ---Non optional empty fields get borrowed from this recipe. (except the name)
@@ -30,4 +30,13 @@ do
     ---@field localised_name_source? string
     ---@field localised_description_source? string
     ---@field locale_source? string
+end
+
+do
+    ---A vgal toggle group, desides if certain prototypes are added or not.
+    ---@class vgal.VgalToggleGroupPrototype
+    ---@field type? string
+    ---@field name string
+    ---@field enabled? boolean
+    ---@field enabled_setting? string
 end

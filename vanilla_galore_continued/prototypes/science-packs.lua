@@ -144,9 +144,9 @@ vgal.data.extend({
         energy_required = 24,
         technology = { "electric-energy-accumulators", "chemical-science-pack" },
         ingredients = {
-            { "accumulator", 1 }, -- 270
-            { "solid-fuel",  6 }, -- 120
-            { "sulfur",      6 }, -- 90
+            { "accumulator", 1 },  -- 270
+            { "solid-fuel",  10 }, -- 200
+            { "sulfur",      6 },  -- 90
         },
         results = {
             { "chemical-science-pack", 2 }, -- 490

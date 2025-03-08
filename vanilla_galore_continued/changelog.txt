@@ -1,11 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.24
   Features:
-    - [LIB] Improved the custom extend function.
+    - [LIB] Improved the custom extend function; now support split toggle-group definitions.
   Balancing:
     - "vgal-accumulator-chemical-science-pack" solid fuel cost increased 6 -> 12.
-  Bugfixes:
-    - a
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.23
   Bugfixes:

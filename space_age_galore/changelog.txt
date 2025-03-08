@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.14
+  Features:
+    - Groups are now adding in this mod instead of having to be defined in VGAL(Vanilla Galore), makes tiny VGAL updates less frequent.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.13
   Balancing:
     - "vgal-solid-fuel-carbon" removed, will be replaced by a biological counterpart.

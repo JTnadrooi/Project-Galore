@@ -1,5 +1,4 @@
-vgal.data.extend
-{
+vgal.data.extend({
     {
         type = "recipe",
         name = "sulfuric-acid-sulfur",
@@ -354,4 +353,6 @@ vgal.data.extend
             { "electrolyte", 15 }, --
         },
     },
-}
+}, {
+    type = "recipe",
+})

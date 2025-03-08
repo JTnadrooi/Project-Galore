@@ -1,5 +1,4 @@
-vgal.data.extend
-{
+vgal.data.extend({
     {
         type = "recipe",
         name = "iron-bacteria-ammonia",
@@ -178,4 +177,6 @@ vgal.data.extend
         },
         groups = { "vgal-convoluted" },
     },
-}
+}, {
+    type = "recipe",
+})

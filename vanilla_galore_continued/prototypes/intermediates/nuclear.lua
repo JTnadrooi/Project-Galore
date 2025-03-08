@@ -1,4 +1,4 @@
-vgal.data.extend {
+vgal.data.extend({
     {
         name = "coal-uranium-235-nuclear-fuel",
         prefix = "vgal",
@@ -18,4 +18,7 @@ vgal.data.extend {
         },
         category = "advanced-crafting",
     },
-}
+}, {
+    type = "recipe",
+})
+

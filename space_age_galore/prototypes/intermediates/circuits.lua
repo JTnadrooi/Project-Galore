@@ -1,5 +1,4 @@
-vgal.data.extend
-{
+vgal.data.extend({
     {
         type = "recipe",
         name = "holmium-plate-electronic-circuit",
@@ -239,4 +238,6 @@ vgal.data.extend
     --     groups = { "organic-circuit", "vgal-unsure" },
     -- },
     -- regionend
-}
+}, {
+    type = "recipe",
+})

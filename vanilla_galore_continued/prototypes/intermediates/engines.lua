@@ -1,4 +1,4 @@
-vgal.data.extend {
+vgal.data.extend({
     {
         name = "low-density-structure-engine-unit",
         prefix = "vgal",
@@ -99,4 +99,7 @@ vgal.data.extend {
     --     },
     --     category = "crafting-with-fluid",
     -- },
-}
+}, {
+    type = "recipe",
+})
+

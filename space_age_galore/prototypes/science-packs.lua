@@ -147,5 +147,6 @@ vgal.data.extend({
         },
     },
 }, {
+    type = "recipe",
     groups = { "vgal-science-packs" }
 })

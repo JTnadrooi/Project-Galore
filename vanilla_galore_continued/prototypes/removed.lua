@@ -277,6 +277,7 @@ vgal.data.extend({
         category = "crafting-with-fluid",
     },
 }, {
+    type = "recipe",
     groups = { "vgal-removed" },
 })
 

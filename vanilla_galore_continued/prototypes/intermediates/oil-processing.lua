@@ -151,5 +151,6 @@ vgal.data.extend({
         show_amount_in_title = false,
     },
 }, {
+    type = "recipe",
     groups = { "vgal-oil-recipes" }
 })

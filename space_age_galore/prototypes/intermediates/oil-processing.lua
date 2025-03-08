@@ -91,4 +91,6 @@ vgal.data.extend({
     --     technology = "jellynut",
     --     groups = { "vgal-convoluted", "vgal-unsure" },
     -- },
+}, {
+    type = "recipe",
 })

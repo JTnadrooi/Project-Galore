@@ -157,5 +157,6 @@ vgal.data.extend({
         category = "electronics",
     },
 }, {
+    type = "recipe",
     groups = { "vgal-modules" }
 })

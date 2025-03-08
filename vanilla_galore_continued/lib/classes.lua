@@ -31,7 +31,3 @@ do
     ---@field localised_description_source? string
     ---@field locale_source? string
 end
-do
-    ---@class vgal.RegisterArguments
-    ---@field groups? string[]
-end

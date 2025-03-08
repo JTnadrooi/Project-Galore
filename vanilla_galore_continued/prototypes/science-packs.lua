@@ -463,5 +463,6 @@ vgal.data.extend({
     --     },
     -- },
 }, {
-    groups = { "vgal-science-packs" }
+    type = "recipe",
+    groups = { "vgal-science-packs" },
 })

@@ -1,5 +1,4 @@
-vgal.data.extend
-{
+vgal.data.extend({
     {
         type = "recipe",
         name = "coal-sulfur",
@@ -64,4 +63,6 @@ vgal.data.extend
             { "sulfur", 3 },
         },
     },
-}
+}, {
+    type = "recipe",
+})

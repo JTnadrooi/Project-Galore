@@ -59,6 +59,7 @@ vgal.data.extend({
         category = "rocket-building",
     },
 }, {
+    type = "recipe",
     groups = { "vgal-rocket-parts" }
 })
 

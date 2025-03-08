@@ -1,5 +1,4 @@
-vgal.data.extend
-{
+vgal.data.extend({
     {
         name = "uranium-238-low-density-structure",
         prefix = "vgal",
@@ -315,4 +314,7 @@ vgal.data.extend
         allow_productivity = false,
         category = "centrifuging",
     },
-}
+}, {
+    type = "recipe",
+})
+

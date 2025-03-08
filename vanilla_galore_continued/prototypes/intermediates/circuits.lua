@@ -1,5 +1,4 @@
-vgal.data.extend
-{
+vgal.data.extend({
     -- {
     --     name = "sulfuric-acid-electronic-circuit",
     --     prefix = "vgal",
@@ -194,4 +193,6 @@ vgal.data.extend
             { "processing-unit", 1 }, -- 710
         },
     },
-}
+}, {
+    type = "recipe",
+})

@@ -123,5 +123,6 @@ vgal.data.extend({
         },
     },
 }, {
+    type = "recipe",
     groups = { "vgal-belts" }
 })

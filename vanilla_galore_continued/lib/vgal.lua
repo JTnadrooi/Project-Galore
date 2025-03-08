@@ -100,136 +100,138 @@ for _, groupTuple in ipairs(vgal.groups) do
     end
 end
 ---Register a recipe to the vgal (Vanilla Galore) ecosystem.
----@param recipes vgal.VgalRecipe[]
----@param args? vgal.RegisterArguments
-function vgal.data.extend(recipes, args)
+---@param itemsToExtend vgal.VgalRecipe[]
+---@param args? table
+function vgal.data.extend(itemsToExtend, args)
     args = args or {}
-    args.groups = args.groups or {}
 
-    for _, recipe in ipairs(recipes) do
-        local hidden = false
-        recipe.groups = recipe.groups or {}
-        for _, argsGroup in ipairs(args.groups) do
-            table.insert(recipe.groups, argsGroup)
+    args.groups = vgal.table.ensure(args.group, args.groups)
+
+    for _, item in ipairs(itemsToExtend) do
+        item = vgal.table.deep_merge(item, args)
+        if item.type ~= "recipe" then
+            error(item.name)
         end
-        for _, group in ipairs(recipe.groups) do
+        local hidden = false
+        item.groups = vgal.table.ensure(item.group, item.groups)
+        for _, group in ipairs(item.groups) do
             if not vgal.enabled_groups[group] then
                 hidden = true
                 break
             end
         end
 
-        recipe.technologies = vgal.table.ensure(recipe.technology, recipe.technologies)
+        item.technologies = vgal.table.ensure(item.technology, item.technologies)
 
-        if recipe.complementairy_recipe then
-            local complementairy_recipe = data.raw["recipe"][recipe.complementairy_recipe]
-            recipe.order = recipe.order or complementairy_recipe.order
-            recipe.subgroup = recipe.subgroup or complementairy_recipe.subgroup
-            recipe.crafting_machine_tint = recipe.crafting_machine_tint or complementairy_recipe.crafting_machine_tint
+        if item.complementairy_recipe then
+            local complementairy_recipe = data.raw["recipe"][item.complementairy_recipe]
+            item.order = item.order or complementairy_recipe.order
+            item.subgroup = item.subgroup or complementairy_recipe.subgroup
+            item.crafting_machine_tint = item.crafting_machine_tint or complementairy_recipe.crafting_machine_tint
         end
 
 
         -- if any needed fields are missing this fills them in.
-        if recipe.dependent_recipe then
-            local dependent_recipe = data.raw["recipe"][recipe.dependent_recipe]
+        if item.dependent_recipe then
+            local dependent_recipe = data.raw["recipe"][item.dependent_recipe]
 
-            recipe.category = recipe.category or dependent_recipe.category
-            recipe.results = recipe.results or dependent_recipe.results
-            recipe.ingredients = recipe.ingredients or dependent_recipe.ingredients
-            recipe.icons = recipe.icons or dependent_recipe.icons
-            recipe.energy_required = recipe.energy_required or dependent_recipe.energy_required
-            recipe.main_product = recipe.main_product or dependent_recipe.main_product
-            recipe.order = recipe.order or dependent_recipe.order
-            recipe.subgroup = recipe.subgroup or dependent_recipe.subgroup
+            item.category = item.category or dependent_recipe.category
+            item.results = item.results or dependent_recipe.results
+            item.ingredients = item.ingredients or dependent_recipe.ingredients
+            item.icons = item.icons or dependent_recipe.icons
+            item.energy_required = item.energy_required or dependent_recipe.energy_required
+            item.main_product = item.main_product or dependent_recipe.main_product
+            item.order = item.order or dependent_recipe.order
+            item.subgroup = item.subgroup or dependent_recipe.subgroup
         end
 
         -- name components
-        recipe.tier = recipe.tier == 1 and nil or recipe.tier
-        recipe.name = vgal.build.name(recipe.prefix, recipe.name, recipe.tier)
+        item.tier = item.tier == 1 and nil or item.tier
+        item.name = vgal.build.name(item.prefix, item.name, item.tier)
 
         -- tech kinda, real stuff happens later.
-        recipe.enabled = (recipe.enabled ~= nil) or not recipe.technologies
+        item.enabled = (item.enabled ~= nil) or not item.technologies
 
         -- null stuff
-        recipe.fluid_ingredients = recipe.fluid_ingredients or {}
-        recipe.fluid_results = recipe.fluid_results or {}
-        recipe.ingredients = recipe.ingredients or {}
-        recipe.results = recipe.results or {}
-        recipe.module_allows = recipe.module_allows or {}
+        item.fluid_ingredients = item.fluid_ingredients or {}
+        item.fluid_results = item.fluid_results or {}
+        item.ingredients = item.ingredients or {}
+        item.results = item.results or {}
+        item.module_allows = item.module_allows or {}
 
-        recipe.hidden = hidden
-        recipe.hidden_in_factoriopedia = hidden
-        recipe.hide_from_player_crafting = hidden
-        recipe.hide_from_signal_gui = hidden
-        recipe.hide_from_stats = hidden
+        item.hidden = hidden
+        item.hidden_in_factoriopedia = hidden
+        item.hide_from_player_crafting = hidden
+        item.hide_from_signal_gui = hidden
+        item.hide_from_stats = hidden
 
         -- icon stuff
-        if recipe.icon then
-            if recipe.icons then
+        if item.icon then
+            if item.icons then
                 error()
             end
-            recipe.icons = {
+            item.icons = {
                 {
-                    icon = recipe.icon,
-                    icon_size = recipe.icon_size or 32,
+                    icon = item.icon,
+                    icon_size = item.icon_size or 32,
                 }
             }
-            recipe.icon = nil
-            recipe.icon_size = nil
+            item.icon = nil
+            item.icon_size = nil
         end
 
         -- validate
-        if not recipe.energy_required then
+        if not item.energy_required then
             error()
         end
 
-        recipe.ingredients = vgal.build.table(recipe.ingredients, recipe.fluid_ingredients)
-        recipe.results = vgal.build.table(recipe.results, recipe.fluid_results)
+        item.ingredients = vgal.build.table(item.ingredients, item.fluid_ingredients)
+        item.results = vgal.build.table(item.results, item.fluid_results)
 
-        if not recipe.main_product then
+        if not item.main_product then
             ---@diagnostic disable-next-line: undefined-field
-            recipe.main_product = recipe.results[1].name
+            item.main_product = item.results[1].name
         end
 
-        recipe.allow_productivity = (recipe.allow_productivity ~= nil) and recipe.allow_productivity or
-            vgal.recipe.get_if_productivity(recipe.main_product)
+        item.allow_productivity = (item.allow_productivity ~= nil) and item.allow_productivity or
+            vgal.recipe.get_if_productivity(item.main_product)
 
-        recipe.crafting_machine_tint = recipe.crafting_machine_tint
-            or vgal.recipe.get_preferred_crafting_machine_tint(recipe)
+        item.crafting_machine_tint = item.crafting_machine_tint
+            or vgal.recipe.get_preferred_crafting_machine_tint(item)
 
-        if recipe.locale_source then
-            recipe.localised_name_source = recipe.locale_source
-            recipe.localised_description_source = recipe.locale_source
+        if item.locale_source then
+            item.localised_name_source = item.locale_source
+            item.localised_description_source = item.locale_source
         end
-        if recipe.localised_name_source then
-            recipe.localised_name = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
-                [recipe.localised_name_source])
+        if item.localised_name_source then
+            item.localised_name = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
+                [item.localised_name_source])
         end
-        if recipe.localised_description_source then
-            recipe.localised_description = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
-                [recipe.localised_description_source])
+        if item.localised_description_source then
+            item.localised_description = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
+                [item.localised_description_source])
         end
-        recipe.localised_name = vgal.recipe.get_preferred_localised_name(recipe)
-        recipe.localised_description = vgal.recipe.get_preferred_localised_description(recipe)
+        item.localised_name = vgal.recipe.get_preferred_localised_name(item)
+        item.localised_description = vgal.recipe.get_preferred_localised_description(item)
 
-        recipe.type = "recipe"
-        recipe.auto_recycle = false
-        recipe.allow_decomposition = false
-        recipe.allow_as_intermediate = false
+        item.type = "recipe"
+        item.auto_recycle = false
+        item.allow_decomposition = false
+        item.allow_as_intermediate = false
 
-        vgal.log("registering: " .. recipe.name)
+        vgal.log("registering: " .. item.name)
 
-        data:extend { recipe }
+        data:extend { item }
         local dataRecipe
 
-        vgal.recipes[recipe.name] = recipe
+        vgal.recipes[item.name] = item
 
-        if recipe.technologies then
-            if type(recipe.technologies[1]) == "table" then
-                for i, preCollection in ipairs(recipe.technologies) do
+        if item.technologies then
+            if type(item.technologies[1]) == "table" then
+                for i, preCollection in ipairs(item.technologies) do
                     ---@cast preCollection table
 
-                    local techName = recipe.name .. "-node" .. i
+                    local techName = item.name .. "-node" .. i
 
                     local eventualUnitsWorth = 0
                     local eventualUnits = {}
@@ -252,8 +254,8 @@ function vgal.data.extend(recipes, args)
                                     icon_size = 256,
                                 },
                                 {
-                                    icon = recipe.icons[1].icon,
-                                    icon_size = recipe.icons[1].icon_size,
+                                    icon = item.icons[1].icon,
+                                    icon_size = item.icons[1].icon_size,
                                     scale = 1.5,
                                 },
                             })
@@ -273,38 +275,38 @@ function vgal.data.extend(recipes, args)
                         tech.unit = nil
                     end
                     tech.localised_name = { "?",
-                        { "", "Galore Tech Node: ", { "recipe-name." .. recipe.name } },
-                        { "", "Galore Tech Node: ", vgal.locale.get_lazy(recipe.main_product) },
+                        { "", "Galore Tech Node: ", { "recipe-name." .. item.name } },
+                        { "", "Galore Tech Node: ", vgal.locale.get_lazy(item.main_product) },
                     }
                     tech.localised_description = {
-                        "", { "recipe-description." .. recipe.name },
+                        "", { "recipe-description." .. item.name },
                     }
-                    vgal.tech.add_recipe(techName, recipe.name)
+                    vgal.tech.add_recipe(techName, item.name)
                     tech.hidden = hidden
                     tech.hidden_in_factoriopedia = hidden
                 end
-            elseif type(recipe.technologies[1]) == "string" then
-                for _, techName in ipairs(recipe.technologies) do
+            elseif type(item.technologies[1]) == "string" then
+                for _, techName in ipairs(item.technologies) do
                     ---@cast techName string
-                    vgal.tech.add_recipe(techName, recipe.name)
+                    vgal.tech.add_recipe(techName, item.name)
                 end
             else
                 error()
             end
         end
-        if recipe.productivity_technology ~= "" then -- so if "", no prod even when tech exists
-            if data.raw["technology"][recipe.main_product .. "-productivity"] then
-                recipe.productivity_technology = recipe.main_product .. "-productivity"
+        if item.productivity_technology ~= "" then -- so if "", no prod even when tech exists
+            if data.raw["technology"][item.main_product .. "-productivity"] then
+                item.productivity_technology = item.main_product .. "-productivity"
             end
-            if recipe.productivity_technology then
-                if type(recipe.productivity_technology) == "string" then
-                    vgal.tech.add_productivity_change(recipe.productivity_technology, recipe.name, nil, recipe.hidden)
+            if item.productivity_technology then
+                if type(item.productivity_technology) == "string" then
+                    vgal.tech.add_productivity_change(item.productivity_technology, item.name, nil, item.hidden)
                 else
                     vgal.tech.add_productivity_change(
-                        recipe.productivity_technology[1],
-                        recipe.name,
-                        recipe.productivity_technology[2],
-                        recipe.hidden
+                        item.productivity_technology[1],
+                        item.name,
+                        item.productivity_technology[2],
+                        item.hidden
                     )
                 end
             end

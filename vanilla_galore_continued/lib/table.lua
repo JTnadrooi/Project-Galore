@@ -93,9 +93,6 @@ end
 --- @param multiple table|nil A table of values.
 --- @return table A table wapping around the single value or the multiple.
 function vgal.table.ensure(single, multiple)
-    if single == nil and multiple == nil then
-        error("Both single and multiple are nil")
-    end
     if single then
         if multiple then
             error("'single' and 'multiple' cannot both be set at the same time.")
@@ -103,7 +100,7 @@ function vgal.table.ensure(single, multiple)
         return { single }
     end
     ---@cast multiple table
-    return multiple
+    return multiple or {}
 end
 
 --- Sums the values in a table.
@@ -118,10 +115,60 @@ function vgal.table.sum(table)
 end
 
 function vgal.table.merge(t1, t2)
-    for i = 1, #t2 do
-        t1[#t1 + 1] = t2[i]
+    local result = {}
+    t1 = t1 or {}
+    t2 = t2 or {}
+
+    for i = 1, #t1 do
+        result[#result + 1] = t1[i]
     end
-    return t1
+
+    for i = 1, #t2 do
+        result[#result + 1] = t2[i]
+    end
+
+    return result
+end
+
+function vgal.table.deep_merge(t1, t2)
+    local function is_array(t)
+        if type(t) ~= "table" then return false end
+        local count = 0
+        for k, _ in pairs(t) do
+            if type(k) ~= "number" then
+                return false
+            end
+            count = count + 1
+        end
+        return count == #t
+    end
+    local result = {}
+    t1 = t1 or {}
+    t2 = t2 or {}
+    for k, v in pairs(t1) do
+        if type(v) == "table" and type(t2[k]) == "table" then
+            if is_array(v) and is_array(t2[k]) then
+                result[k] = vgal.table.merge(v, t2[k])
+            else
+                result[k] = vgal.table.deep_merge(v, t2[k])
+            end
+        else
+            result[k] = v
+        end
+    end
+    for k, v in pairs(t2) do
+        if result[k] == nil then
+            result[k] = v
+        end
+    end
+    return result
+end
+
+function vgal.table.nil_if_empty(t1)
+    for _ in pairs(t1) do
+        return t1
+    end
+    return nil
 end
 
 function vgal.table.get_shorthand(inTable, newType)

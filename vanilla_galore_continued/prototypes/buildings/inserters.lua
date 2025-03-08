@@ -72,5 +72,6 @@ vgal.data.extend({
         groups = { "vgal-convoluted" },
     },
 }, {
+    type = "recipe",
     groups = { "vgal-buildings" }
 })

@@ -1,5 +1,4 @@
-vgal.data.extend
-{
+vgal.data.extend({
     {
         type = "recipe",
         name = "holmium-solution-copper-cable",
@@ -394,4 +393,7 @@ vgal.data.extend
             { "nutrients", 10 }, -- 100
         },
     },
-}
+}, {
+    type = "recipe",
+    groups = { "vgal-science-packs" },
+})

@@ -18,5 +18,6 @@ vgal.data.extend({
         category = "crafting",
     },
 }, {
+    type = "recipe",
     groups = { "vgal-military" }
 })

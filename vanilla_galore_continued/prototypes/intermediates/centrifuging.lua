@@ -1,12 +1,9 @@
-vgal.data.extend
-{
+vgal.data.extend({
     {
         type = "recipe",
         name = "crude-oil-coal", -- not in sa-gal
         prefix = "vgal",
         icons = vgal.icon.register {
-            -- vgal.icon.get("crude-oil"),
-            -- vgal.icon.get_overlay("circle"),
             vgal.icon.get("coal"),
             vgal.icon.get_in_fluid("crude-oil"),
         },
@@ -22,7 +19,9 @@ vgal.data.extend
         show_amount_in_title = false,
         crafting_machine_tint = vgal.recipe.TINT_CATALOG["crude-oil"],
     },
-}
+}, {
+    type = "recipe",
+})
 
 local centrifuge_results = {
     "copper-ore", "iron-ore"
@@ -30,10 +29,8 @@ local centrifuge_results = {
 local alt_electric_engines = true
 for _, result in ipairs(centrifuge_results) do
     local order = result == "iron-ore" and "ra" or "rb"
-    vgal.data.extend
-    {
+    vgal.data.extend({
         {
-            type = "recipe",
             name = "water-" .. result, -- not in sa-gal
             prefix = "vgal",
             icons = vgal.icon.register {
@@ -57,7 +54,6 @@ for _, result in ipairs(centrifuge_results) do
             groups = { "vgal-renewable-ores" },
         },
         {
-            type = "recipe",
             name = "water-electric-engine-unit-" .. result, -- not in sa-gal
             prefix = "vgal",
             icons = vgal.icon.register {
@@ -85,5 +81,7 @@ for _, result in ipairs(centrifuge_results) do
             order = order .. "b",
             groups = { "vgal-renewable-ores" },
         },
-    }
+    }, {
+        type = "recipe",
+    })
 end

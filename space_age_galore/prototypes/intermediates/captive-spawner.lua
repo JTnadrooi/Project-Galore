@@ -130,6 +130,7 @@ vgal.data.extend({
     --     groups = { "vgal-funny" },
     -- },
 }, {
+    type = "recipe",
     groups = { "vgal-captive-spawner-recipes" }
 })
 

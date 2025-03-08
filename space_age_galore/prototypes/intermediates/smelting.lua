@@ -1,5 +1,4 @@
-vgal.data.extend
-{
+vgal.data.extend({
     {
         type = "recipe",
         name = "carbon-steel-plate",
@@ -262,4 +261,7 @@ vgal.data.extend
         localised_name_source = "casting-low-density-structure",
         localised_description_source = "vgal-carbon-fiber-low-density-structure",
     },
-}
+}, {
+    type = "recipe",
+    groups = { "vgal-science-packs" },
+})

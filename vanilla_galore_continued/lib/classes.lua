@@ -36,7 +36,7 @@ do
     ---A vgal toggle group, desides if certain prototypes are added or not.
     ---@class vgal.VgalToggleGroupPrototype
     ---@field type? string
-    ---@field name string
+    ---@field name? string
     ---@field enabled? boolean
     ---@field enabled_setting? string
 end

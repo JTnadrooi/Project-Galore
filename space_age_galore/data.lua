@@ -1,13 +1,14 @@
 require("overrides.vgal-overrides")
 require("overrides.overrides")
 
+require("prototypes.toggle-groups")
+require("prototypes.subgroups")
 require("prototypes.science-packs")
 require("prototypes.modules")
 require("prototypes.ice")
 require("prototypes.military")
 require("prototypes.rocket-parts")
 require("prototypes.removed")
-require("prototypes.subgroups")
 
 require("prototypes.intermediates.intermediates")
 require("prototypes.intermediates.chemical")

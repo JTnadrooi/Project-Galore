@@ -13,6 +13,7 @@ throw_compat_error({ "angels_galore", "Angels Galore" }, { "angelsrefining", "An
 
 require("overrides.overrides")
 
+require("prototypes.toggle-groups")
 require("prototypes.subgroups")
 require("prototypes.rocket-parts")
 require("prototypes.science-packs")

@@ -151,6 +151,7 @@ vgal.data.extend({
         results = {
             { "chemical-science-pack", 2 }, -- 490
         },
+        groups = { "vgal-unsure" },
     },
     {
         name = "bulk-inserter-chemical-science-pack",

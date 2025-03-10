@@ -221,14 +221,19 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                             vgal.tech.create_empty(techName, 1, eventualUnits, #eventualUnits * 5,
                                 #eventualUnits >= 4 and 30 or 15, preCollection,
                                 "a", {
-                                    {
-                                        icon = "__vanilla_galore_continued__/graphics/" .. "node.png",
-                                        icon_size = 256,
-                                    },
+                                    -- {
+                                    --     icon = "__vanilla_galore_continued__/graphics/" .. "node.png",
+                                    --     icon_size = 256,
+                                    -- },
                                     {
                                         icon = entry.icons[1].icon,
                                         icon_size = entry.icons[1].icon_size,
-                                        scale = 1.5,
+                                        -- scale = 1.5,
+                                        scale = 2.2,
+                                    },
+                                    {
+                                        icon = "__vanilla_galore_continued__/graphics/" .. "node2.png",
+                                        icon_size = 256,
                                     },
                                 })
                         })
@@ -371,7 +376,5 @@ function vgal.data.finalise()
         end
     end
 end
-
-
 
 return vgal

@@ -148,7 +148,7 @@ vgal.data.extend({
         results = {
             { "battery", 1 },
         },
-        groups = { "vgal-silly" },
+        groups = { "vgal-silly-recipes" },
     },
     {
         name = "plastic-bar-repair-pack",

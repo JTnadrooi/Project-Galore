@@ -57,7 +57,7 @@ vgal.data.extend({
         fluid_results = {
             { "molten-copper", 400 },
         },
-        order = "bbab",
+        order = "bbbb",
     },
     {
         type = "recipe",
@@ -103,7 +103,7 @@ vgal.data.extend({
         fluid_results = {
             { "molten-copper", 500 },
         },
-        order = "bbac",
+        order = "bbbc",
     },
     -- {
     --     type = "recipe",

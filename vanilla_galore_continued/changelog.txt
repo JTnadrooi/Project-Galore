@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.30
+  Features:
+    - Overhauled technology graphics with help from Andreus.
+    - Added "vgal-barrel-battery" recipe, tagged as "silly".
+    - Added "vgal-barrel-battery" recipe, marked as "silly".
+  Balancing:
+    - "vgal-accumulator-chemical-science-pack" solid fuel cost increased 6 -> 12.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.24
   Features:
     - [LIB] Improved the custom extend function; now support split toggle-group definitions.

@@ -68,12 +68,12 @@ vgal.data.trim("vgal-processing-unit-artillery-turret")
 vgal.data.trim("vgal-steam-concrete")
 -- vgal.recipe.deep_hide("vgal-processing-unit-artillery-turret")
 -- vgal.recipe.deep_hide("vgal-steam-concrete")
-
 vgal.data.trim("vgal-water-copper-ore")
 vgal.data.trim("vgal-water-electric-engine-unit-copper-ore")
 vgal.data.trim("vgal-water-iron-ore")
 vgal.data.trim("vgal-water-electric-engine-unit-iron-ore")
 vgal.data.trim("vgal-crude-oil-coal")
+vgal.data.trim("vgal-sulfuric-acid-processing-unit")
 
 vgal_electroplantify("plastic-bar-electronic-circuit")
 vgal_electroplantify("plastic-bar-processing-unit")

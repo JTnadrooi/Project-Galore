@@ -3,7 +3,8 @@ Version: 1.1.30
   Features:
     - Overhauled technology graphics with help from Andreus.
     - Added "vgal-barrel-battery" recipe, tagged as "silly".
-    - Added "vgal-barrel-battery" recipe, marked as "silly".
+    - Added "vgal-burner-mining-drill-electric-mining-drill" recipe.
+    - Added "vgal-car-chemical-science-pack" recipe.
   Balancing:
     - "vgal-accumulator-chemical-science-pack" solid fuel cost increased 6 -> 12.
 ---------------------------------------------------------------------------------------------------

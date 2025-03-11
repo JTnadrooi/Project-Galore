@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.15
+  Balancing:
+    - "vgal-sulfuric-acid-processing-unit" is now hidden. It's still in VGAL though.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.14
   Features:
     - Groups are now adding in this mod instead of having to be defined in VGAL(Vanilla Galore), makes tiny VGAL updates less frequent.

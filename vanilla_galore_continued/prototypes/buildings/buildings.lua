@@ -358,6 +358,25 @@ vgal.data.extend({
         category = "crafting",
     },
     {
+        name = "burner-mining-drill-electric-mining-drill",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("electric-mining-drill"),
+            vgal.icon.get_in("burner-mining-drill"),
+        },
+        energy_required = 4,
+        technology = "electric-mining-drill",
+        ingredients = {
+            { "electronic-circuit",  2 },
+            { "iron-gear-wheel",     4 },
+            { "burner-mining-drill", 1 }, -- 140
+        },
+        results = {
+            { "electric-mining-drill", 1 }, -- 275
+        },
+        category = "crafting",
+    },
+    {
         name = "electric-engine-unit-electric-mining-drill",
         prefix = "vgal",
         icons = vgal.icon.register {

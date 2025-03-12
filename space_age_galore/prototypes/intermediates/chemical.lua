@@ -91,6 +91,29 @@ vgal.data.extend({
     },
     {
         type = "recipe",
+        name = "spoilage-sulfuric-acid-carbon",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("carbon"),
+            vgal.icon.get_in("spoilage"),
+            vgal.icon.get_in2("sulfuric-acid"),
+        },
+        category = "organic",
+        energy_required = 12,
+        technology = "biochamber",
+        fluid_ingredients = {
+            { "sulfuric-acid", 5 },
+        },
+        ingredients = {
+            { "spoilage", 3 },
+        },
+        results = {
+            { "carbon", 1 },
+        },
+        show_amount_in_title = false,
+    },
+    {
+        type = "recipe",
         name = "wood-carbon",
         prefix = "vgal",
         icons = vgal.icon.register {

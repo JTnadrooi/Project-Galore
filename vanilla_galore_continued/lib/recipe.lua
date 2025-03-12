@@ -16,6 +16,7 @@ function vgal.recipe.get_if_productivity(mainProduct)
         "light-oil",
         "heavy-oil",
         "petroleum-gas",
+        "solid-fuel",
         "ammonia",
         "crude-oil",
     }
@@ -406,6 +407,7 @@ function vgal.recipe.get_preferred_crafting_machine_tint(recipe)
 
     return tint
 end
+
 function vgal.recipe.get_preferred_main_product(recipe)
     if recipe.main_product then
         return recipe.main_product

@@ -1,12 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.31
+  Features:
+    - Overhauled technology graphics with help from Andreus.
+  Balancing:
+    - Hard removed "vgal-car-chemical-science-pack" recipe. (Science recipes should encourange automating something; one does not need 5182 cars.)
+---------------------------------------------------------------------------------------------------
 Version: 1.1.30
   Features:
     - Overhauled technology graphics with help from Andreus.
     - Added "vgal-barrel-battery" recipe, tagged as "silly".
     - Added "vgal-burner-mining-drill-electric-mining-drill" recipe.
     - Added "vgal-car-chemical-science-pack" recipe.
-  Balancing:
-    - "vgal-accumulator-chemical-science-pack" solid fuel cost increased 6 -> 12.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.24
   Features:

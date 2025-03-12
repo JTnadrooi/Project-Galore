@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.20
+  Features:
+    - a
+  Balancing:
+    - a
+  Bugfixes:
+    - a
+---------------------------------------------------------------------------------------------------
 Version: 1.1.15
   Balancing:
     - "vgal-sulfuric-acid-processing-unit" is now hidden. It's still in VGAL though.

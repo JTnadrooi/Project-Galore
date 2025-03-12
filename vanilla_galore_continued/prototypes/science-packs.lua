@@ -248,25 +248,26 @@ vgal.data.extend({
             { "chemical-science-pack", 3 }, -- 735
         },
     },
-    {
-        name = "car-chemical-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("chemical-science-pack"),
-            vgal.icon.get_in("car")
-        },
-        category = "crafting",
-        energy_required = 120,
-        technology = { "electric-energy-distribution-1", "automobilism", "chemical-science-pack" },
-        ingredients = {
-            { "car",               1 },  -- 1170
-            { "big-electric-pole", 2 },  -- 310n = 620
-            { "battery",           15 }, -- 50n = 750
-        },
-        results = {
-            { "chemical-science-pack", 10 }, -- 245n = 2450
-        },
-    },
+    -- {
+    --     name = "car-chemical-science-pack",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("chemical-science-pack"),
+    --         vgal.icon.get_in("car")
+    --     },
+    --     category = "crafting",
+    --     energy_required = 120,
+    --     technology = { "electric-energy-distribution-1", "automobilism", "chemical-science-pack" },
+    --     ingredients = {
+    --         { "car",               1 },  -- 1170
+    --         { "big-electric-pole", 2 },  -- 310n = 620
+    --         { "battery",           15 }, -- 50n = 750
+    --     },
+    --     results = {
+    --         { "chemical-science-pack", 10 }, -- 245n = 2450
+    --     },
+    --     groups = { "vgal-unsure" },
+    -- },
     -- MILITARY
     {
         name = "gun-turret-military-science-pack",

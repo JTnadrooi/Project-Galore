@@ -195,6 +195,7 @@ function vgal.data.extend(entriesToExtend, fillInWith)
 
             vgal.log("registering: " .. entry.name)
 
+            ---@diagnostic disable-next-line: assign-type-mismatch
             data:extend { entry }
             vgal.recipes[entry.name] = entry
 
@@ -252,8 +253,8 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                             tech.unit = nil
                         end
                         tech.localised_name = { "?",
-                            { "", "Galore Tech Node: ", { "recipe-name." .. entry.name } },
-                            { "", "Galore Tech Node: ", vgal.locale.get_lazy(entry.main_product) },
+                            { "", { "vgal-internal.tech-node" }, ": ", { "recipe-name." .. entry.name } },
+                            { "", { "vgal-internal.tech-node" }, ": ", vgal.locale.get_lazy(entry.main_product) },
                         }
                         tech.localised_description = {
                             "", { "recipe-description." .. entry.name },

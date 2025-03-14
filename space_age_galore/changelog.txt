@@ -2,10 +2,6 @@
 Version: 1.1.20
   Features:
     - Added "vgal-spoilage-sulfuric-acid-carbon" recipe.
-  Balancing:
-    - a
-  Bugfixes:
-    - Fixed solid fuel recipes not allowing productivity.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.15
   Balancing:

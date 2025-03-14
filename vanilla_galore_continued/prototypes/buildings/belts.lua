@@ -214,6 +214,7 @@ vgal.data.extend({
         results = {
             { "splitter", 6 }, -- 235x = 1410
         },
+        groups = { "vgal-convoluted" },
         category = "crafting",
     },
     {

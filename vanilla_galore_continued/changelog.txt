@@ -4,6 +4,7 @@ Version: 1.1.31
     - Overhauled technology graphics with help from Andreus.
   Balancing:
     - Hard removed "vgal-car-chemical-science-pack" recipe. (Science recipes should encourange automating something; one does not need 5182 cars.)
+    - Moved the "vgal-processing-unit-splitter" recipe to the "convoluted" recipe group.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.30
   Features:

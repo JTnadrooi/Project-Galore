@@ -141,8 +141,8 @@ vgal.data.extend({
         results = {
             { "splitter", 200 }, -- 47000
         },
-        groups = { "vgal-silly" },
-        category = "crafting",
+        groups = { "vgal-silly-recipes" },
+        category = "pressing",
     },
 }, {
     type = "recipe",

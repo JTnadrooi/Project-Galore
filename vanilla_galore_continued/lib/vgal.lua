@@ -349,29 +349,32 @@ function vgal.any_get_source(anyName, includeRecipes)
 end
 
 function vgal.data.finalise()
-    local required_techs = {}
+    local requiredTechs = {}
+    local toRemove = {}
     for _, tech in pairs(data.raw["technology"]) do
-        for _, p in ipairs(tech.prerequisites or {}) do
-            required_techs[p] = true
+        for _, p in ipairs(tech.prerequisites or {}) do -- create techs needed for others.
+            requiredTechs[p] = true
         end
-        if tech.effects and #tech.effects > 0 then
-            local i = 1
-            while i <= #tech.effects do
-                local effect = tech.effects[i]
+        if tech.effects and #tech.effects > 0 then -- if tech even has effects..
+            for _, effect in ipairs(tech.effects) do
                 for _, toclean in ipairs(vgal.tech.totrim) do
-                    if effect.recipe == toclean then
-                        should_remove = true
+                    if effect.recipe == toclean then -- for each toclean, check if its the effect.
                         effect.hidden = true
                         break
                     end
                 end
-                i = i + 1
+            end
+            toRemove[tech.name] = true
+            for _, effect in ipairs(tech.effects) do
+                if not effect.hidden then
+                    toRemove[tech.name] = nil
+                end
             end
         end
     end
     for _, tech in pairs(data.raw["technology"]) do
         ---@diagnostic disable-next-line: undefined-field
-        if tech.effects and tech.vgal_can_remove and (not required_techs[tech.name]) then
+        if toRemove[tech.name] and tech.vgal_can_remove and (not requiredTechs[tech.name]) then
             tech.hidden = true
             tech.hidden_in_factoriopedia = true
         end

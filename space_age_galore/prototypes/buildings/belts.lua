@@ -122,6 +122,28 @@ vgal.data.extend({
             }
         },
     },
+    {
+        name = "quantum-processor-splitter",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("splitter"),
+            vgal.icon.get_in("quantum-processor"),
+        },
+        energy_required = 120,
+        technology = "quantum-processor",
+        ingredients = {
+            { "low-density-structure", 40 },  --
+            { "superconductor",        35 },  -- 7000
+            { "radar",                 1 },   --
+            { "quantum-processor",     1 },   -- idk
+            { "transport-belt",        800 }, -- 12000
+        },
+        results = {
+            { "splitter", 200 }, -- 47000
+        },
+        groups = { "vgal-silly" },
+        category = "crafting",
+    },
 }, {
     type = "recipe",
     groups = { "vgal-belts" }

@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.32
+  Bugfixes:
+    - Fixed unneeded vgal techs not being properly hidden.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.31
   Balancing:
     - Hard removed "vgal-car-chemical-science-pack" recipe. (Science recipes should encourange automating something; one does not need 5182 cars.)

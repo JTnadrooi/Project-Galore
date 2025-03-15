@@ -371,7 +371,7 @@ function vgal.data.finalise()
     end
     for _, tech in pairs(data.raw["technology"]) do
         ---@diagnostic disable-next-line: undefined-field
-        if tech.effects and #tech.effects == 0 and tech.vgal_can_remove and (not required_techs[tech.name]) then
+        if tech.effects and tech.vgal_can_remove and (not required_techs[tech.name]) then
             tech.hidden = true
             tech.hidden_in_factoriopedia = true
         end

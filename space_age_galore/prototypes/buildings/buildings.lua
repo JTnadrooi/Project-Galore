@@ -6,16 +6,16 @@ vgal.data.extend({
             vgal.icon.get("burner-mining-drill"),
             vgal.icon.get_in("tungsten-carbide"),
         },
-        energy_required = 2,
+        energy_required = 1,
         technology = "tungsten-carbide",
         fluid_ingredients = {
-            { "molten-iron", 300 },
+            { "molten-iron", 100 },
         },
         ingredients = {
             { "tungsten-carbide", 1 }, -- 60
         },
         results = {
-            { "burner-mining-drill", 2 }, -- 280 * 1.5 = 420
+            { "burner-mining-drill", 1 }, -- 140 * 1.5 = 210
         },
         category = "metallurgy",
     },

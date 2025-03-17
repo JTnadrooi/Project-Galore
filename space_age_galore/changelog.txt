@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.22
+  Features:
+    - Improved recipe order.
+  Balancing:
+    - "vgal-tungsten-carbide-burner-mining-drill" molten iron cost divided by 3.
+    - "vgal-tungsten-carbide-burner-mining-drill" time cost divided by 2.
+    - "vgal-tungsten-carbide-burner-mining-drill" result divided by 2.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.21
   Features:
     - Added "vgal-quantum-processor-splitter" recipe, grouped as "silly".

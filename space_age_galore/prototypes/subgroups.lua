@@ -116,7 +116,7 @@ local toClean = {
     "casting-pipe-to-ground",
 }
 for _, value in ipairs(toClean) do
-    data.raw["recipe"][value].order = nil
+    -- data.raw["recipe"][value].order = nil
     data.raw["recipe"][value].subgroup = nil
 end
 

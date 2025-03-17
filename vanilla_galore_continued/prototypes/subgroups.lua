@@ -215,7 +215,7 @@ local toClean = {
     "solid-fuel-from-light-oil", "solid-fuel-from-heavy-oil", "solid-fuel-from-petroleum-gas", "nuclear-fuel"
 }
 for _, value in ipairs(toClean) do
-    data.raw["recipe"][value].order = nil
+    -- data.raw["recipe"][value].order = nil
     data.raw["recipe"][value].subgroup = nil
 end
 

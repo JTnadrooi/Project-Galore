@@ -116,7 +116,7 @@ local toClean = {
     "casting-pipe-to-ground",
 }
 for _, value in ipairs(toClean) do
-    -- data.raw["recipe"][value].order = nil
+    data.raw["recipe"][value].order = nil
     data.raw["recipe"][value].subgroup = nil
 end
 
@@ -187,6 +187,10 @@ if settings.startup["vgal-crushing-recipes"].value then
     data.raw["recipe"]["advanced-oxide-asteroid-crushing"].subgroup = "vgal-crushing"
 end
 data.raw["recipe"]["scrap-recycling"].subgroup = "vgal-scrap"
+
+for _, value in ipairs(toClean) do
+    vgal.subgroup.restore(value)
+end
 
 
 -- data.raw["recipe"]["coal-liquefaction"].subgroup = "vgal-oil-fluids"

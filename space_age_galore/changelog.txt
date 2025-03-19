@@ -2,10 +2,15 @@
 Version: 1.1.22
   Features:
     - Improved recipe order.
+    - Subgroups are now being readded after reordering. Should improve passive compactiblity.
   Balancing:
     - "vgal-tungsten-carbide-burner-mining-drill" molten iron cost divided by 3.
     - "vgal-tungsten-carbide-burner-mining-drill" time cost divided by 2.
     - "vgal-tungsten-carbide-burner-mining-drill" result divided by 2.
+  Bugfixes:
+    - Fixed the planetary science recipes being listed before the nauvis ones in both the tech tree and recipe UI.
+    - Fixed a startup error when combined with Reverse Factory.
+    - Fixed the "vgal-pentapod-egg-construction-robot" being unlockable without contruction bots needed to be unlocked first.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.21
   Features:

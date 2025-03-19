@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.35
+  Features:
+    - Improved recipe order.
+    - Subgroups are now being readded after reordering. Should improve passive compactiblity.
+  Bugfixes:
+    - Fixed a startup error when combined with Reverse Factory.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.32
   Bugfixes:
     - Fixed unneeded vgal techs not being properly hidden.

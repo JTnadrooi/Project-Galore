@@ -223,7 +223,7 @@ vgal.data.extend({
         },
         category = "organic-or-assembling",
         energy_required = 1,
-        technology = "biochamber",
+        technology = { "biochamber", "construction-robotics" },
         ingredients = {
             { "flying-robot-frame", 1 },
             { "pentapod-egg",       1 },

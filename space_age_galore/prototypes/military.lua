@@ -6,15 +6,14 @@ vgal.data.extend({
             vgal.icon.get("piercing-rounds-magazine", "ammo"),
             vgal.icon.get_in("tungsten-plate"),
         },
-        energy_required = 6,
+        energy_required = 3,
         technology = { "tungsten-steel", "military-2" },
         ingredients = {
-            { "tungsten-plate",   1 }, -- 90
-            { "copper-plate",     4 }, -- 40
-            { "firearm-magazine", 2 }, -- 80
+            { "tungsten-plate",   1 }, -- 60
+            { "firearm-magazine", 1 }, -- 40
         },
         results = {
-            { "piercing-rounds-magazine", 2 }, -- 280
+            { "piercing-rounds-magazine", 1 }, -- 140
         },
         category = "crafting",
     },
@@ -28,7 +27,7 @@ vgal.data.extend({
         energy_required = 6,
         technology = { "tungsten-steel", "tank" },
         ingredients = {
-            { "tungsten-plate", 1 }, -- 90
+            { "tungsten-plate", 1 }, -- 60
             { "plastic-bar",    1 }, -- 15
             { "explosives",     1 }, -- 15
         },
@@ -66,9 +65,8 @@ vgal.data.extend({
         energy_required = 8,
         technology = { "tungsten-steel", "military-4" },
         ingredients = {
-            { "tungsten-plate", 1 }, -- 90
-            { "copper-plate",   5 }, -- 50
-            { "shotgun-shell",  1 }, -- 40
+            { "tungsten-plate", 2 }, -- 120
+            { "shotgun-shell",  2 }, -- 80
         },
         results = {
             { "piercing-shotgun-shell", 1 }, -- 230

@@ -6,7 +6,7 @@ Version: 1.1.25
     - "vgal-tungsten-plate-piercing-rounds-magazine" time taken 6 -> 3
     - "vgal-tungsten-plate-piercing-shotgun-shell" tungsten plate cost 1 -> 2
     - "vgal-tungsten-plate-piercing-shotgun-shell" copper plate cost 5 -> 0
-    - "vgal-tungsten-plate-piercing-shotgun-shell" shotgun shell cost 1 -> 2
+    - "vgal-tungsten-plate-piercing-shotgun-shell" result amount 1 -> 2
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.22
   Features:

@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0 Space platforms GALORE!
   Features:
-    - Added "vgal-wood-carbon-fiber" recipe.
+    - Added "vgal-oxide-asteroid-chunk-leaching" recipe. 
+    - Asteroid crushing recipes are now back in the space tab.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.25
   Features:

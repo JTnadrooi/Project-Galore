@@ -376,6 +376,32 @@ vgal.data.extend({
             { "electrolyte", 15 }, --
         },
     },
+    -- SPACE
+    {
+        type = "recipe",
+        name = "oxide-asteroid-chunk-leaching",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/oxide-asteroid-chunk-leaching.png"),
+        },
+        category = "cryogenics",
+        energy_required = 10,
+        technology = "cryogenic-plant",
+        ingredients = {
+            { "oxide-asteroid-chunk", 1 }, -- 10
+        },
+        results = {
+            { "ice",                  2 },
+            { "calcite",              1, { probability = 0.5 } },
+            { "oxide-asteroid-chunk", 1, { probability = 0.1 } },
+        },
+        fluid_results = {
+            { "ammoniacal-solution", 50 },
+        },
+        subgroup = "space-crushing", -- not that it involves crushing though.
+        productivity_technology = "asteroid-productivity",
+        allow_productivity = true,
+    },
 }, {
     type = "recipe",
 })

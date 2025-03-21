@@ -41,44 +41,44 @@
 
 ## Intermediate Products
 
-| ItemID                | Cost          |
-| --------------------- | ------------- |
-| iron-gear-wheel       | 20            |
-| iron-plate            | 10            |
-| iron-stick            | 5             |
-| steel-plate           | 50            |
-| copper-plate          | 10            |
-| copper-cable          | 5             |
-| engine-unit           | 90            |
-| explosives            | 15            |
-| electronic-circuit    | 25            |
-| advanced-circuit      | 100           |
-| processing-unit       | 710           |
-| quantum-processor     | null          |
-| low-density-structure | 375           |
-| stone-brick           | 20            |
-| sulfur                | 15            |
-| sulfur(gb)            | i-18, r-25    |
-| sulfur(fg)            | 20            |
-| battery               | 50            |
-| plastic-bar           | 15            |
-| plastic-bar(gb)       | 20            |
-| carbon                | 50            |
-| carbon(gb)            | i-40, r-50    |
-| carbon(vn)            | 30            |
-| tungsten-carbide      | 70            |
-| tungsten-plate        | i-60, r-90    |
-| molten-iron           | 1             |
-| molten-copper         | 1             |
-| holmium-plate         | i=120, r=160  |
-| holmium-solution      | 8             |
-| electrolyte           | 10            |
-| supercapacitor        | i-680, r-1000 |
-| superconductor        | i-135, r-200  |
-| rocket-part(base)     | 12800         |
-| rocket-part(sa)       | 1280          |
-| null                  | null          |
-| null                  | null          |
+| ItemID                | Cost           |
+| --------------------- | -------------- |
+| iron-gear-wheel       | 20             |
+| iron-plate            | 10             |
+| iron-stick            | 5              |
+| steel-plate           | 50             |
+| copper-plate          | 10             |
+| copper-cable          | 5              |
+| engine-unit           | 90             |
+| explosives            | 15             |
+| electronic-circuit    | 25             |
+| advanced-circuit      | 100            |
+| processing-unit       | 710            |
+| quantum-processor     | null           |
+| low-density-structure | 375            |
+| stone-brick           | 20             |
+| sulfur                | 15             |
+| sulfur(gb)            | i-18, r-25     |
+| sulfur(fg)            | 20             |
+| battery               | 50             |
+| plastic-bar           | 15             |
+| plastic-bar(gb)       | 20             |
+| carbon                | 50             |
+| carbon(gb)            | i-40, r-50     |
+| carbon(vn)            | 30             |
+| tungsten-carbide      | 70             |
+| tungsten-plate        | i-60, r-90     |
+| molten-iron           | 1              |
+| molten-copper         | 1              |
+| holmium-plate         | i=120, r=160   |
+| holmium-solution      | 8              |
+| electrolyte           | 10             |
+| supercapacitor        | i-null, r-null |
+| superconductor        | i-null, r-null |
+| rocket-part(base)     | 12800          |
+| rocket-part(sa)       | 1280           |
+| null                  | null           |
+| null                  | null           |
 
 ## Placeable
 

@@ -1,5 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.25
+  Features:
+    - Added "vgal-wood-carbon-fiber" recipe, grouped as "silly".
   Balancing:
     - "vgal-tungsten-plate-piercing-rounds-magazine" copper plate cost 4 -> 0
     - "vgal-tungsten-plate-piercing-rounds-magazine" result amount 2 -> 1

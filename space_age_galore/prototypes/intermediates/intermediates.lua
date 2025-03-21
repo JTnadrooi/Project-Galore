@@ -165,6 +165,29 @@ vgal.data.extend({
     },
     {
         type = "recipe",
+        name = "wood-carbon-fiber",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("carbon-fiber"),
+            vgal.icon.get_in("wood"),
+        },
+        category = "chemistry-or-cryogenics",
+        energy_required = 10,
+        technology = "carbon-fiber",
+        fluid_ingredients = {
+            { "ammonia", 10 } -- 20
+        },
+        ingredients = {
+            { "carbon", 5 },  -- 250
+            { "wood",   20 }, -- 200
+        },
+        results = {
+            { "carbon-fiber", 1 }, -- 120
+        },
+        groups = { "vgal-silly-recipes" }
+    },
+    {
+        type = "recipe",
         name = "lithium-battery", -- will be used for alternate cryogenic science recipe but currently NO ONE (no one) will be using it.
         prefix = "vgal",
         icons = vgal.icon.register {

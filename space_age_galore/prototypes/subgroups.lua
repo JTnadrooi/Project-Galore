@@ -177,15 +177,15 @@ data.raw["recipe"]["vgal-steam-light-oil-petroleum-gas"].subgroup = "vgal-oil-cr
 data.raw["recipe"]["heavy-oil-cracking"].subgroup = "vgal-oil-cracking"
 data.raw["recipe"]["light-oil-cracking"].subgroup = "vgal-oil-cracking"
 
-if settings.startup["vgal-crushing-recipes"].value then
-    data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"
-    data.raw["recipe"]["carbonic-asteroid-crushing"].subgroup = "vgal-crushing"
-    data.raw["recipe"]["oxide-asteroid-crushing"].subgroup = "vgal-crushing"
+-- if settings.startup["vgal-crushing-recipes"].value then
+--     data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"
+--     data.raw["recipe"]["carbonic-asteroid-crushing"].subgroup = "vgal-crushing"
+--     data.raw["recipe"]["oxide-asteroid-crushing"].subgroup = "vgal-crushing"
 
-    data.raw["recipe"]["advanced-metallic-asteroid-crushing"].subgroup = "vgal-crushing"
-    data.raw["recipe"]["advanced-carbonic-asteroid-crushing"].subgroup = "vgal-crushing"
-    data.raw["recipe"]["advanced-oxide-asteroid-crushing"].subgroup = "vgal-crushing"
-end
+--     data.raw["recipe"]["advanced-metallic-asteroid-crushing"].subgroup = "vgal-crushing"
+--     data.raw["recipe"]["advanced-carbonic-asteroid-crushing"].subgroup = "vgal-crushing"
+--     data.raw["recipe"]["advanced-oxide-asteroid-crushing"].subgroup = "vgal-crushing"
+-- end
 data.raw["recipe"]["scrap-recycling"].subgroup = "vgal-scrap"
 
 for _, value in ipairs(toClean) do

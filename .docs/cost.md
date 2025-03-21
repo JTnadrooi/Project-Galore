@@ -74,7 +74,7 @@
 | holmium-solution      | 8              |
 | electrolyte           | 10             |
 | supercapacitor        | i-null, r-null |
-| superconductor        | i-null, r-null |
+| superconductor        | i-300?, r-null |
 | rocket-part(base)     | 12800          |
 | rocket-part(sa)       | 1280           |
 | null                  | null           |
@@ -106,7 +106,7 @@
 | radar                     | 325            |
 | small-lamp                | 50             |
 | chemical-plant            | 525            |
-| cryogenic-plant           | 23000          |
+| cryogenic-plant           | ???            |
 | accumulator               | 270            |
 | nuclear-reactor           | 86000          |
 | heat-pipe                 | 700            |
@@ -263,3 +263,4 @@
 | lithium-plate       | 150  |
 | fluorine            | 4    |
 | fluoroketone-hot    | 8    |
+| fluoroketone-cold   | 8    |

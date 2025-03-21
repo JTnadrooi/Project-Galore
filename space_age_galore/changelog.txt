@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0 Space platforms GALORE!
+  Features:
+    - Added "vgal-wood-carbon-fiber" recipe.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.25
   Features:
     - Added "vgal-wood-carbon-fiber" recipe, grouped as "silly".

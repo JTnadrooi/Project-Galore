@@ -4,6 +4,8 @@ A large recipe pack that adds over 70 new recipes to the 110 already present in 
 
 ![gleba](https://github.com/JTnadrooi/Project-Galore/blob/main/media/gleba_galore.png?raw=true)
 
+**MOD SPOTLIGHT [HERE](https://www.youtube.com/watch?v=xpqJSHA4Q5A&lc=Ugw0CpAURsOiowPeeEx4AaABAg)**
+
 ## This mod is for you if...
 
 -   You're looking for a recipe mod that introduces many balanced alternate recipes. _(All calculations are documented in the [GitHub repo](https://github.com/JTnadrooi/Project-Galore), both in the `docs\` folder and through in-script comments.)_
@@ -39,10 +41,6 @@ _I have made sure none of the recipes are objectivelly better than others. No re
 
 This is a strength of one massive recipe pack instead of many smaller ones. All recipes are interconnected.
 
-<!-- ![crude-oil-gleba](https://github.com/JTnadrooi/Project-Galore/blob/main/media/flowchart_gleba_crude_oil.png?raw=true) -->
-
-<img src="https://github.com/JTnadrooi/Project-Galore/blob/main/media/flowchart_gleba_crude_oil.png?raw=true" alt="crude-oil-gleba" width="400"/>
-
 ## Recommended mods
 
 -   [Age Of Production](https://mods.factorio.com/mod/Age-of-Production) by [AndreusAxolotl](https://mods.factorio.com/user/AndreusAxolotl); A great mod that makes it so many of the alternate recipes are made in brand-new machines!
@@ -59,8 +57,10 @@ _And lastly, if you have any (recipe) ideas, please create a discussion thread! 
 ## Special thanks
 
 -   [AndreusAxolotl](https://mods.factorio.com/user/AndreusAxolotl) - For making the [AOF](https://mods.factorio.com/mod/Age-of-Production) compat.
+-   [Factorio Mod Tips](https://www.youtube.com/@FactorioModTips) - For creating a [mod spotlight](https://www.youtube.com/watch?v=xpqJSHA4Q5A&lc=Ugw0CpAURsOiowPeeEx4AaABAg)!
 -   MMMiles! - For helping with solving some bugs.
 -   [Semenar](https://mods.factorio.com/user/Semenar) - For multiple recipes ideas.
 -   [Quezler](https://mods.factorio.com/user/Quezler) - For the centrifuge pipe graphics.
+-   CyberCider - For multiple recipe ideas.
 -   Xynariz - For helping with the BZ-Compat.
 -   And _you_, for playing :D

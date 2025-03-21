@@ -4,6 +4,8 @@ Adds **over 110** unique, well-balanced recipes to the base game, with the optio
 
 **SPACE AGE SUPPORT [HERE](https://mods.factorio.com/mod/space_age_galore)**
 
+**MOD SPOTLIGHT [HERE](https://www.youtube.com/watch?v=xpqJSHA4Q5A&lc=Ugw0CpAURsOiowPeeEx4AaABAg)**
+
 ## This mod is for you if...
 
 -   You're looking for a recipe mod that introduces many balanced alternate recipes. _(All calculations are documented in the [GitHub repo](https://github.com/JTnadrooi/Project-Galore), both in the `docs\` folder and through in-script comments.)_
@@ -23,10 +25,9 @@ Adds **over 110** unique, well-balanced recipes to the base game, with the optio
 
 ## Special thanks
 
--   [AndreusAxolotl](https://mods.factorio.com/user/AndreusAxolotl)
--   MMMiles!
--   [Semenar](https://mods.factorio.com/user/Semenar)
-
-_And lastly, if you have any recipe ideas, please create a discussion thread! New recipe suggestions are highly appreciated. (´∀`)b_
-
-Thanks for playing!
+-   [Factorio Mod Tips](https://www.youtube.com/@FactorioModTips) - For creating a [mod spotlight](https://www.youtube.com/watch?v=xpqJSHA4Q5A&lc=Ugw0CpAURsOiowPeeEx4AaABAg)!
+-   MMMiles! - For helping with solving some bugs.
+-   [Semenar](https://mods.factorio.com/user/Semenar) - For multiple recipes ideas.
+-   [Quezler](https://mods.factorio.com/user/Quezler) - For the centrifuge pipe graphics.
+-   Xynariz - For helping with the BZ-Compat.
+-   And _you_, for playing :D

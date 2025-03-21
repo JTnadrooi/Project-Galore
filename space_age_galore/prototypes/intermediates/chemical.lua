@@ -396,7 +396,7 @@ vgal.data.extend({
             { "oxide-asteroid-chunk", 1, { probability = 0.1 } },
         },
         fluid_results = {
-            { "ammoniacal-solution", 50 },
+            { "ammoniacal-solution", 20 },
         },
         subgroup = "space-crushing", -- not that it involves crushing though.
         productivity_technology = "asteroid-productivity",

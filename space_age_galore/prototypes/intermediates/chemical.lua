@@ -388,18 +388,40 @@ vgal.data.extend({
         energy_required = 10,
         technology = "cryogenic-plant",
         ingredients = {
-            { "oxide-asteroid-chunk", 1 }, -- 10
+            { "oxide-asteroid-chunk", 1 },
         },
         results = {
             { "ice",                  2 },
-            { "calcite",              1, { probability = 0.5 } },
-            { "oxide-asteroid-chunk", 1, { probability = 0.1 } },
+            { "calcite",              1, { probability = 0.05 } },
         },
         fluid_results = {
             { "ammoniacal-solution", 20 },
         },
         subgroup = "space-crushing", -- not that it involves crushing though.
         productivity_technology = "asteroid-productivity",
+        allow_productivity = true,
+    },
+    {
+        type = "recipe",
+        name = "fluorine-steam-thruster-oxidizer",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            -- vgal.icon.get("thruster-oxidizer"),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/fluorine-steam-thruster-oxidizer.png"),
+        },
+        category = "chemistry",
+        energy_required = 12,
+        technology = "planet-discovery-aquilo",
+        fluid_ingredients = {
+            { "fluorine", 5 },
+            { "steam",    1500 },
+        },
+        ingredients = {
+            { "calcite", 1 },
+        },
+        fluid_results = {
+            { "thruster-oxidizer", 3000 },
+        },
         allow_productivity = true,
     },
 }, {

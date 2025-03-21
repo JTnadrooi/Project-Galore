@@ -39,7 +39,7 @@ if mods["bzcarbon"] then
         vgal.recipe.deep_hide("ammonia-from-spoilage")
         vgal.recipe.replace_ingredient("vgal-carbon-sulfur-lubricant", "carbon", "graphite")
         vgal.recipe.all.link_ingredient({ type = "item", name = "activated-carbon", amount = 10 }, "supercapacitor")
-        vgal.recipe.all.link_ingredient({ type = "item", name = "polyacryonitrile", amount = 1 }, "carbon-fiber")
+        vgal.recipe.all.link_ingredient({ type = "item", name = "polyacrylonitrile", amount = 1 }, "carbon-fiber")
     end
 end
 

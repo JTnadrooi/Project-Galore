@@ -148,6 +148,7 @@
 | gate                     | 250   |
 | firearm-magazine         | 40    |
 | piercing-rounds-magazine | 140   |
+| railgun-ammo             | 130   |
 | gun-turret               | 500   |
 | flamethrower-turret      | 2350  |
 | artillery-turret(base)   | 6520  |

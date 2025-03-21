@@ -391,8 +391,8 @@ vgal.data.extend({
             { "oxide-asteroid-chunk", 1 },
         },
         results = {
-            { "ice",                  2 },
-            { "calcite",              1, { probability = 0.05 } },
+            { "ice",     2 },
+            { "calcite", 1, { probability = 0.05 } },
         },
         fluid_results = {
             { "ammoniacal-solution", 20 },
@@ -401,28 +401,86 @@ vgal.data.extend({
         productivity_technology = "asteroid-productivity",
         allow_productivity = true,
     },
+    -- {
+    --     type = "recipe",
+    --     name = "fluorine-steam-thruster-oxidizer",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         -- vgal.icon.get("thruster-oxidizer"),
+    --         vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/fluorine-steam-thruster-oxidizer.png"),
+    --     },
+    --     category = "chemistry",
+    --     energy_required = 12,
+    --     technology = "planet-discovery-aquilo",
+    --     fluid_ingredients = {
+    --         { "fluorine", 5 },
+    --         { "steam",    1500 },
+    --     },
+    --     ingredients = {
+    --         { "calcite", 1 },
+    --     },
+    --     fluid_results = {
+    --         { "thruster-oxidizer", 3000 },
+    --     },
+    --     allow_productivity = true,
+    -- },
     {
         type = "recipe",
-        name = "fluorine-steam-thruster-oxidizer",
+        name = "ammonia-thruster-oxidizer",
         prefix = "vgal",
         icons = vgal.icon.register {
-            -- vgal.icon.get("thruster-oxidizer"),
-            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/fluorine-steam-thruster-oxidizer.png"),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/ammonia-thruster-oxidizer.png"),
         },
         category = "chemistry",
         energy_required = 12,
         technology = "planet-discovery-aquilo",
         fluid_ingredients = {
-            { "fluorine", 5 },
-            { "steam",    1500 },
+            { "ammonia", 50 },
+        },
+        ingredients = {
+            { "iron-ore", 1 },
+        },
+        fluid_results = {
+            { "thruster-oxidizer", 2500 },
+        },
+        allow_productivity = true,
+        surface_conditions =
+        {
+            {
+                property = "gravity",
+                min = 0,
+                max = 0
+            }
+        },
+    },
+    {
+        type = "recipe",
+        name = "crude-oil-thruster-fuel",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/crude-oil-thruster-fuel.png"),
+        },
+        category = "chemistry",
+        energy_required = 12,
+        technology = "planet-discovery-aquilo",
+        fluid_ingredients = {
+            { "crude-oil", 50 },
         },
         ingredients = {
             { "calcite", 1 },
         },
         fluid_results = {
-            { "thruster-oxidizer", 3000 },
+            { "thruster-fuel", 3000 },
         },
         allow_productivity = true,
+        surface_conditions =
+        {
+            {
+                property = "gravity",
+                min = 0,
+                max = 0
+            }
+        },
     },
 }, {
     type = "recipe",

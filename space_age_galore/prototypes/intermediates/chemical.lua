@@ -419,7 +419,7 @@ vgal.data.extend({
         results = {
             { "iron-ore",                5 },
             { "tungsten-ore",            2 },
-            { "metallic-asteroid-chunk", { probability = 0.05 } },
+            { "metallic-asteroid-chunk", 1, { probability = 0.05 } },
         },
         subgroup = "space-crushing", -- not that it involves crushing though.
         productivity_technology = "asteroid-productivity",
@@ -536,6 +536,28 @@ vgal.data.extend({
                 min = 0,
                 max = 0
             }
+        },
+        show_amount_in_title = false,
+    },
+    {
+        type = "recipe",
+        name = "calcite-fluorine",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("fluorine"),
+            vgal.icon.get_in_fluid("calcite"),
+        },
+        category = "chemistry-or-cryogenics",
+        energy_required = 10,
+        technology = "cryogenic-plant",
+        fluid_ingredients = {
+            { "sulfuric-acid", 20 },
+        },
+        ingredients = {
+            { "calcite", 1 },
+        },
+        fluid_results = {
+            { "fluorine", 20 },
         },
         show_amount_in_title = false,
     },

@@ -83,9 +83,28 @@ vgal.data.extend({
         energy_required = 20,
         technology = "railgun",
         ingredients = {
-            { "plastic-bar", 8 },
-            { "steel-plate", 5 },
-            { "explosives",  2 },
+            { "plastic-bar",  5 },
+            { "copper-cable", 10 },
+            { "explosives",   2 },
+        },
+        results = {
+            { "railgun-ammo", 1 },
+        },
+        category = "crafting",
+    },
+    {
+        name = "battery-railgun-ammo",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("railgun-ammo"),
+            vgal.icon.get_in("battery"),
+        },
+        energy_required = 20,
+        technology = "railgun",
+        ingredients = {
+            { "battery",      1 },
+            { "copper-cable", 10 },
+            { "explosives",   1 },
         },
         results = {
             { "railgun-ammo", 1 },
@@ -115,7 +134,7 @@ vgal.data.extend({
             { "railgun-turret", 1 },
         },
         category = "crafting-with-fluid",
-        groups = { "vgal-silly-recipe" }
+        groups = { "vgal-silly-recipes" }
     },
 }, {
     type = "recipe",

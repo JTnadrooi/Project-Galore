@@ -83,8 +83,8 @@ vgal.data.extend({
         energy_required = 20,
         technology = "railgun",
         ingredients = {
-            { "plastic-bar",  5 },
-            { "copper-cable", 10 },
+            { "plastic-bar",  6 },
+            { "copper-cable", 5 },
             { "explosives",   2 },
         },
         results = {
@@ -103,7 +103,7 @@ vgal.data.extend({
         technology = "railgun",
         ingredients = {
             { "battery",      1 },
-            { "copper-cable", 10 },
+            { "copper-cable", 5 },
             { "explosives",   1 },
         },
         results = {

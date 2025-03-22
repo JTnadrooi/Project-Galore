@@ -73,6 +73,25 @@ vgal.data.extend({
         },
         category = "crafting",
     },
+    {
+        name = "plastic-bar-railgun-ammo",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("railgun-ammo"),
+            vgal.icon.get_in("plastic-bar"),
+        },
+        energy_required = 20,
+        technology = "railgun",
+        ingredients = {
+            { "plastic-bar", 8 },
+            { "steel-plate", 5 },
+            { "explosives",  2 },
+        },
+        results = {
+            { "railgun-ammo", 1 },
+        },
+        category = "crafting",
+    },
 }, {
     type = "recipe",
     groups = { "vgal-military" }

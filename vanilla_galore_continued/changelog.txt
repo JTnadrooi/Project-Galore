@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.37
+  Bugfixes:
+    - Fixed a missing qualty module science pack.
+    - Fixed the internal name of the "vgal-efficiency-module-chemical-science-pack" recipe.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.36
   Bugfixes:
     - Fixed a startup error when combined with bzcarbon.

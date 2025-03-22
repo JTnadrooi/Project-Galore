@@ -231,7 +231,7 @@ vgal.data.extend({
         },
     },
     {
-        name = "efficiency-chemical-science-pack",
+        name = "efficiency-module-chemical-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("chemical-science-pack"),

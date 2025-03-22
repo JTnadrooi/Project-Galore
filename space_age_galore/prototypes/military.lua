@@ -92,6 +92,31 @@ vgal.data.extend({
         },
         category = "crafting",
     },
+    {
+        name = "electronic-circuit-railgun-turret",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("railgun-turret"),
+            vgal.icon.get_in("electronic-circuit"),
+        },
+        energy_required = 20,
+        technology = "railgun",
+        fluid_ingredients = {
+            { "lubricant", 250 },
+        },
+        ingredients = {
+            { "electronic-circuit", 10000 },
+            { "steel-plate",        800 },
+            { "pipe",               50 },
+            { "copper-cable",       100 },
+            { "iron-gear-wheel",    1200 },
+        },
+        results = {
+            { "railgun-turret", 1 },
+        },
+        category = "crafting-with-fluid",
+        groups = { "vgal-silly-recipe" }
+    },
 }, {
     type = "recipe",
     groups = { "vgal-military" }

@@ -177,6 +177,8 @@ data.raw["recipe"]["vgal-steam-light-oil-petroleum-gas"].subgroup = "vgal-oil-cr
 data.raw["recipe"]["heavy-oil-cracking"].subgroup = "vgal-oil-cracking"
 data.raw["recipe"]["light-oil-cracking"].subgroup = "vgal-oil-cracking"
 
+data.raw["ammo"]["tesla-ammo"].order = "eb"
+
 -- if settings.startup["vgal-crushing-recipes"].value then
 --     data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"
 --     data.raw["recipe"]["carbonic-asteroid-crushing"].subgroup = "vgal-crushing"

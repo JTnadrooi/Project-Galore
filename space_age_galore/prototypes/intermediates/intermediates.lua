@@ -165,28 +165,6 @@ vgal.data.extend({
     },
     {
         type = "recipe",
-        name = "crude-oil-explosives", -- lets goo, less coal usage on gleba!
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("explosives"),
-            vgal.icon.get_in("crude-oil"),
-        },
-        category = "chemistry-or-cryogenics",
-        energy_required = 10,
-        technology = "explosives",
-        fluid_ingredients = {
-            { "ammonia",   50 }, -- 20 (like 10 coal on nauvis)
-            { "crude-oil", 10 }, -- 20
-        },
-        ingredients = {
-            { "sulfur", 1 },
-        },
-        results = {
-            { "explosives", 5 }, -- 60
-        },
-    },
-    {
-        type = "recipe",
         name = "wood-carbon-fiber",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -318,7 +296,7 @@ vgal.data.extend({
         energy_required = 4,
         technology = "space-platform",
         fluid_ingredients = {
-            { "ammonia", 15 }, -- 30
+            { "ammonia", 20 }, -- 30
         },
         ingredients = {
             { "carbon", 1 }, -- 50

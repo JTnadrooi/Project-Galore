@@ -391,11 +391,35 @@ vgal.data.extend({
             { "oxide-asteroid-chunk", 1 },
         },
         results = {
-            { "ice",     2 },
-            { "calcite", 1, { probability = 0.05 } },
+            { "ice",      2 },
+            { "calcite",  1, { probability = 0.05 } },
+            { "iron-ore", 1, { probability = 0.08 } },
         },
         fluid_results = {
             { "ammoniacal-solution", 20 },
+        },
+        subgroup = "space-crushing", -- not that it involves crushing though.
+        productivity_technology = "asteroid-productivity",
+        allow_productivity = true,
+    },
+    {
+        type = "recipe",
+        name = "metallic-asteroid-chunk-tungsten-ore",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("metallic-asteroid-chunk"),
+            -- vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/metallic-asteroid-chunk-leaching.png"),
+        },
+        category = "crushing",
+        energy_required = 10,
+        technology = "tungsten-carbide",
+        ingredients = {
+            { "metallic-asteroid-chunk", 1 },
+        },
+        results = {
+            { "iron-ore",                5 },
+            { "tungsten-ore",            2 },
+            { "metallic-asteroid-chunk", { probability = 0.05 } },
         },
         subgroup = "space-crushing", -- not that it involves crushing though.
         productivity_technology = "asteroid-productivity",
@@ -424,6 +448,37 @@ vgal.data.extend({
     --     },
     --     allow_productivity = true,
     -- },
+    {
+        type = "recipe",
+        name = "thruster-oxidizer-thruster-fuel-steam",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/thruster-oxidizer-thruster-fuel-steam.png"),
+        },
+        category = "chemistry",
+        energy_required = 2,
+        technology = "space-platform",
+        fluid_ingredients = {
+            { "thruster-oxidizer", 100 },
+            { "thruster-fuel",     100 },
+        },
+        ingredients = {
+            { "solid-fuel", 1 },
+        },
+        fluid_results = {
+            { "steam", 120, { temperature = 165 } },
+        },
+        surface_conditions =
+        {
+            {
+                property = "gravity",
+                min = 0,
+                max = 0
+            }
+        },
+        allow_productivity = false,
+        show_amount_in_title = false,
+    },
     {
         type = "recipe",
         name = "ammonia-thruster-oxidizer",

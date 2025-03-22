@@ -432,7 +432,7 @@ vgal.data.extend({
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/ammonia-thruster-oxidizer.png"),
         },
         category = "chemistry",
-        energy_required = 12,
+        energy_required = 10,
         technology = "planet-discovery-aquilo",
         fluid_ingredients = {
             { "ammonia", 50 },
@@ -441,7 +441,7 @@ vgal.data.extend({
             { "iron-ore", 1 },
         },
         fluid_results = {
-            { "thruster-oxidizer", 2500 },
+            { "thruster-oxidizer", 3000 },
         },
         allow_productivity = true,
         surface_conditions =

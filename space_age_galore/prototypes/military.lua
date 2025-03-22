@@ -110,7 +110,7 @@ vgal.data.extend({
             { "railgun-ammo", 1 },
         },
         category = "crafting",
-        groups = { "vgal-unsure-recipes" }
+        groups = { "vgal-unsure" },
     },
     {
         name = "electronic-circuit-railgun-turret",
@@ -135,7 +135,7 @@ vgal.data.extend({
             { "railgun-turret", 1 },
         },
         category = "crafting-with-fluid",
-        groups = { "vgal-silly-recipes" }
+        groups = { "vgal-silly" }
     },
 }, {
     type = "recipe",

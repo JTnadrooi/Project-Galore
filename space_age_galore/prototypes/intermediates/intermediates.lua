@@ -56,7 +56,7 @@ vgal.data.extend({
             { "stone",       5 }, -- 10
         },
         category = "metallurgy",
-        groups = { "vgal-silly-recipes" }
+        groups = { "vgal-silly" }
     },
     {
         name = "tungsten-plate-engine-unit",
@@ -206,7 +206,7 @@ vgal.data.extend({
         results = {
             { "carbon-fiber", 1 }, -- 120
         },
-        groups = { "vgal-silly-recipes" }
+        groups = { "vgal-silly" }
     },
     {
         type = "recipe",

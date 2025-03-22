@@ -41,7 +41,7 @@ vgal.data.extend({
     },
     {
         type = "toggle-group",
-        name = "vgal-silly-recipes",
+        name = "vgal-silly",
     },
     {
         type = "toggle-group",

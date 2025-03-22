@@ -17,7 +17,7 @@ data:extend {
     vgal.setting.new_bool("vgal-convoluted-recipes", "za", false),
     vgal.setting.new_bool("vgal-unsure-recipes", "zb", false),
     vgal.setting.new_bool("vgal-removed-recipes", "zc", false),
-    vgal.setting.new_bool("vgal-silly-recipes", "zd", false),
+    vgal.setting.new_bool("vgal-silly", "zd", false),
 }
 
 if mods["James-Oil-Processing"] then

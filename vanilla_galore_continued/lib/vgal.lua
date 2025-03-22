@@ -57,7 +57,7 @@ vgal.groups = {
     -- { "vgal-renewable-ores",          "vgal-renewable-ores" },
     -- { "vgal-crushing-recipes",        "vgal-crushing-recipes" },
     -- { "vgal-ice-recipes",             "vgal-ice-recipes" },
-    -- { "vgal-silly-recipes",           "vgal-silly-recipes" },
+    -- { "vgal-silly",           "vgal-silly" },
     -- { "vgal-captive-spawner-recipes", "vgal-captive-spawner-recipes" },
     -- { "vgal-modules",                 "vgal-modules" },
 
@@ -90,6 +90,9 @@ function vgal.data.extend(entriesToExtend, fillInWith)
             local hidden = false
             entry.groups = vgal.table.ensure(entry.group, entry.groups)
             for _, group in ipairs(entry.groups) do
+                if not vgal.groups[group] then
+                    error("group with name " .. group .. " does not exist")
+                end
                 if not vgal.groups[group].enabled then
                     hidden = true
                     break

@@ -70,7 +70,7 @@ vgal.data.extend({
             }
         },
         order = "ga",
-        groups = { "vgal-silly-recipes" },
+        groups = { "vgal-silly" },
     },
     {
         name = "pentapod-egg-biter-egg-duel-pentapod-preferred",
@@ -104,7 +104,7 @@ vgal.data.extend({
             }
         },
         order = "gb",
-        groups = { "vgal-silly-recipes" },
+        groups = { "vgal-silly" },
     },
     -- {
     --     name = "pentapod-egg-biter-egg-duel-military-science-pack",

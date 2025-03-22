@@ -517,7 +517,7 @@ vgal.data.extend({
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/crude-oil-thruster-fuel.png"),
         },
         category = "chemistry",
-        energy_required = 12,
+        energy_required = 10,
         technology = "planet-discovery-aquilo",
         fluid_ingredients = {
             { "crude-oil", 50 },

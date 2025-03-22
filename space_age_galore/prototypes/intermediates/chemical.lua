@@ -379,10 +379,10 @@ vgal.data.extend({
     -- SPACE
     {
         type = "recipe",
-        name = "oxide-asteroid-chunk-leaching",
+        name = "oxide-asteroid-chunk-ammoniacal-solution",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/oxide-asteroid-chunk-leaching.png"),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/oxide-asteroid-chunk-ammoniacal-solution.png"),
         },
         category = "cryogenics",
         energy_required = 10,
@@ -456,17 +456,17 @@ vgal.data.extend({
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/thruster-oxidizer-thruster-fuel-steam.png"),
         },
         category = "chemistry",
-        energy_required = 2,
+        energy_required = 5,
         technology = "space-platform",
         fluid_ingredients = {
-            { "thruster-oxidizer", 100 },
-            { "thruster-fuel",     100 },
+            { "thruster-oxidizer", 1000 },
+            { "thruster-fuel",     1000 },
         },
         ingredients = {
             { "solid-fuel", 1 },
         },
         fluid_results = {
-            { "steam", 120, { temperature = 165 } },
+            { "steam", 300, { temperature = 500 } },
         },
         surface_conditions =
         {

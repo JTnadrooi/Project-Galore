@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
   Features:
-    - Added "vgal-oxide-asteroid-chunk-leaching" recipe. 
+    - Added "vgal-oxide-asteroid-chunk-ammoniacal-solution" recipe. 
     - Added "vgal-crude-oil-thruster-fuel" recipe. 
     - Added "vgal-ammonia-thruster-oxidizer" recipe. 
     - Added "vgal-plastic-bar-railgun-ammo" recipe.

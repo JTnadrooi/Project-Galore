@@ -1,8 +1,14 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.2.0 Space platforms GALORE!
+Version: 1.2.0
   Features:
     - Added "vgal-oxide-asteroid-chunk-leaching" recipe. 
+    - Added "vgal-crude-oil-thruster-fuel" recipe. 
+    - Added "vgal-ammonia-thruster-oxidizer" recipe. 
+    - Added "vgal-plastic-bar-railgun-ammo" recipe.
+    - Added "vgal-batter-railgun-ammo" recipe, grouped as "unsure".
     - Asteroid crushing recipes are now back in the space tab.
+  Balancing:
+    - "vgal-ammonia-plastic-bar" ammonia cost 15 -> 20.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.25
   Features:

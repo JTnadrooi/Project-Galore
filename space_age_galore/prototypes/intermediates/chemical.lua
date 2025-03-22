@@ -452,6 +452,7 @@ vgal.data.extend({
                 max = 0
             }
         },
+        show_amount_in_title = false,
     },
     {
         type = "recipe",
@@ -481,6 +482,7 @@ vgal.data.extend({
                 max = 0
             }
         },
+        show_amount_in_title = false,
     },
 }, {
     type = "recipe",

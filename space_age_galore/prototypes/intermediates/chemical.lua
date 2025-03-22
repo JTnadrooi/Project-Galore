@@ -549,17 +549,15 @@ vgal.data.extend({
         },
         category = "chemistry-or-cryogenics",
         energy_required = 10,
-        technology = "cryogenic-plant",
-        fluid_ingredients = {
-            { "sulfuric-acid", 20 },
-        },
+        technology = "calcite-processing",
         ingredients = {
-            { "calcite", 1 },
+            { "calcite", 5 },
         },
         fluid_results = {
             { "fluorine", 20 },
         },
         show_amount_in_title = false,
+        allow_productivity = true,
     },
 }, {
     type = "recipe",

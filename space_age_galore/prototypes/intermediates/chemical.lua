@@ -478,6 +478,7 @@ vgal.data.extend({
         },
         allow_productivity = false,
         show_amount_in_title = false,
+        groups = { "vgal-unsure" },
     },
     {
         type = "recipe",
@@ -586,6 +587,29 @@ vgal.data.extend({
         show_amount_in_title = false,
         allow_productivity = true,
         groups = { "vgal-unsure" },
+    },
+    {
+        type = "recipe",
+        name = "fluorine-lithium-rocket-fuel", -- Lithium-Fluorine-Hydrogen tripropellant!
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("rocket-fuel"),
+            vgal.icon.get_in("lithium"),
+        },
+        category = "cryogenics",
+        energy_required = 5,
+        technology = "lithium-processing",
+        ingredients = {
+            { "lithium", 1 }, -- 150
+        },
+        fluid_ingredients = {
+            { "fluorine", 50 }, -- 200
+        },
+        results = {
+            { "rocket-fuel", 1 },
+        },
+        show_amount_in_title = false,
+        allow_productivity = true,
     },
 }, {
     type = "recipe",

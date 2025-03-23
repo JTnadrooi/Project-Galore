@@ -545,19 +545,47 @@ vgal.data.extend({
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("fluorine"),
-            vgal.icon.get_in_fluid("calcite"),
+            -- vgal.icon.get_in_fluid("calcite"),
+            -- vgal.icon.get_in_to("calcite"),
+            -- vgal.icon.get_out_to("fluorine"),
+            -- vgal.icon.get_overlay("to"),
         },
         category = "chemistry-or-cryogenics",
-        energy_required = 10,
+        energy_required = 2,
         technology = "calcite-processing",
         ingredients = {
-            { "calcite", 5 },
+            { "calcite", 2 },
         },
         fluid_results = {
             { "fluorine", 20 },
         },
         show_amount_in_title = false,
+        groups = { "vgal-unsure" },
+    },
+    {
+        type = "recipe",
+        name = "fluorine-tungsten-carbide",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("tungsten-carbide"),
+            vgal.icon.get_in("fluorine"),
+        },
+        category = "crafting-with-fluid",
+        energy_required = 5,
+        technology = "calcite-processing",
+        ingredients = {
+            { "tungsten-ore", 5 },
+            { "carbon",       5 },
+        },
+        fluid_ingredients = {
+            { "fluorine", 10 },
+        },
+        results = {
+            { "tungsten-carbide", 5 },
+        },
+        show_amount_in_title = false,
         allow_productivity = true,
+        groups = { "vgal-unsure" },
     },
 }, {
     type = "recipe",

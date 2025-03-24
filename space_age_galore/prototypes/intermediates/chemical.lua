@@ -604,7 +604,7 @@ vgal.data.extend({
             { "copper-plate", 1 }, --
         },
         fluid_ingredients = {
-            { "fluorine", 50 }, -- 200
+            { "fluorine", 30 }, -- 200
         },
         results = {
             { "rocket-fuel", 1 }, -- high ef-coefficient bc of the holmium.

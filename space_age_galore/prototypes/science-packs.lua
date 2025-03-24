@@ -100,7 +100,7 @@ vgal.data.extend({
             vgal.icon.get_in("big-mining-drill"),
         },
         category = "metallurgy",
-        energy_required = 8,
+        energy_required = 60,
         technology = "metallurgic-science-pack",
         ingredients = {
             { "big-mining-drill", 1 }, -- 2730

@@ -13,6 +13,8 @@ Version: 1.2.0
     - Added "vgal-electronic-circuit-railgun-turret" recipe, grouped as "silly".
   Balancing:
     - "vgal-ammonia-plastic-bar" ammonia cost 15 -> 20.
+  Bugfixes:
+    - Fixed the "vgal-big-mining-drill-calcite-metallurgic-science-pack" recipe outputting 1 science/s.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.25
   Features:

@@ -588,52 +588,52 @@ vgal.data.extend({
     --     allow_productivity = true,
     --     groups = { "vgal-unsure" },
     -- },
-    {
-        type = "recipe",
-        name = "fluorine-lithium-rocket-fuel", -- Lithium-Fluorine propellant!
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("rocket-fuel"),
-            vgal.icon.get_in("fluorine"),
-        },
-        category = "cryogenics",
-        energy_required = 10,
-        technology = "lithium-processing",
-        ingredients = {
-            { "lithium",      1 }, -- 150
-            { "copper-plate", 1 }, --
-        },
-        fluid_ingredients = {
-            { "fluorine", 30 }, -- 200
-        },
-        results = {
-            { "rocket-fuel", 1 }, -- high ef-coefficient bc of the holmium.
-        },
-        groups = { "vgal-unsure" },
-    },
-    {
-        type = "recipe",
-        name = "lithium-brine-solid-fuel",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("solid-fuel"),
-            vgal.icon.get_in("lithium-brine"),
-        },
-        category = "cryogenics",
-        energy_required = 8,
-        technology = "lithium-processing",
-        ingredients = {
-            { "copper-plate", 1 },
-            { "carbon",       2 },
-        },
-        fluid_ingredients = {
-            { "lithium-brine", 20 },
-        },
-        results = {
-            { "solid-fuel", 10 },
-        },
-        groups = { "vgal-unsure" },
-    },
+    -- {
+    --     type = "recipe",
+    --     name = "fluorine-lithium-rocket-fuel", -- Lithium-Fluorine propellant!
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("rocket-fuel"),
+    --         vgal.icon.get_in("fluorine"),
+    --     },
+    --     category = "cryogenics",
+    --     energy_required = 10,
+    --     technology = "lithium-processing",
+    --     ingredients = {
+    --         { "lithium",      1 }, -- 150
+    --         { "copper-plate", 1 }, --
+    --     },
+    --     fluid_ingredients = {
+    --         { "fluorine", 30 }, -- 200
+    --     },
+    --     results = {
+    --         { "rocket-fuel", 1 }, -- high ef-coefficient bc of the holmium.
+    --     },
+    --     groups = { "vgal-unsure" },
+    -- },
+    -- {
+    --     type = "recipe",
+    --     name = "lithium-brine-solid-fuel",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("solid-fuel"),
+    --         vgal.icon.get_in("lithium-brine"),
+    --     },
+    --     category = "cryogenics",
+    --     energy_required = 8,
+    --     technology = "lithium-processing",
+    --     ingredients = {
+    --         { "copper-plate", 1 },
+    --         { "carbon",       2 },
+    --     },
+    --     fluid_ingredients = {
+    --         { "lithium-brine", 20 },
+    --     },
+    --     results = {
+    --         { "solid-fuel", 10 },
+    --     },
+    --     groups = { "vgal-unsure" },
+    -- },
     {
         type = "recipe",
         name = "low-density-structure-ice-platform",

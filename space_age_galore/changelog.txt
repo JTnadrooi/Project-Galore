@@ -1,6 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
   Features:
+    - Asteroid crushing recipes are now back in the space tab.
     - Added "vgal-oxide-asteroid-chunk-ammoniacal-solution" recipe. 
     - Added "vgal-crude-oil-thruster-fuel" recipe. 
     - Added "vgal-ammonia-thruster-oxidizer" recipe. 
@@ -8,8 +9,8 @@ Version: 1.2.0
     - Added "vgal-battery-railgun-ammo" recipe, grouped as "unsure".
     - Added "vgal-lithium-brine-solid-fuel" recipe, grouped as "unsure".
     - Added "vgal-thruster-oxidizer-thruster-fuel-steam" recipe, grouped as "unsure".
+    - Added "vgal-metallic-asteroid-chunk-tungsten-ore" recipe, grouped as "unsure".
     - Added "vgal-electronic-circuit-railgun-turret" recipe, grouped as "silly".
-    - Asteroid crushing recipes are now back in the space tab.
   Balancing:
     - "vgal-ammonia-plastic-bar" ammonia cost 15 -> 20.
 ---------------------------------------------------------------------------------------------------

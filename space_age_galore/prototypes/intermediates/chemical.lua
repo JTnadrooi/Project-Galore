@@ -636,13 +636,13 @@ vgal.data.extend({
     },
     {
         type = "recipe",
-        name = "copper-cable-ice-platform",
+        name = "low-density-structure-ice-platform",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("ice-platform"),
-            vgal.icon.get_in("copper-cable"),
+            vgal.icon.get_in("low-density-structure"),
         },
-        category = "cryogenics",
+        category = "crafting-with-fluid",
         energy_required = 30,
         technology = "planet-discovery-aquilo",
         ingredients = {

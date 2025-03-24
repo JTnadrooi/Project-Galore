@@ -397,7 +397,7 @@ vgal.data.extend({
         fluid_results = {
             { "ammoniacal-solution", 20 },
         },
-        subgroup = "space-crushing", -- not that it involves crushing though.
+        complementairy_recipe = "advanced-oxide-asteroid-crushing",
         productivity_technology = "asteroid-productivity",
         allow_productivity = true,
     },
@@ -420,7 +420,7 @@ vgal.data.extend({
             { "tungsten-ore",            2 },
             { "metallic-asteroid-chunk", 1, { probability = 0.05 } },
         },
-        subgroup = "space-crushing", -- not that it involves crushing though.
+        complementairy_recipe = "advanced-metallic-asteroid-crushing",
         productivity_technology = "asteroid-productivity",
         allow_productivity = true,
         groups = { "vgal-unsure" },
@@ -499,6 +499,7 @@ vgal.data.extend({
         fluid_results = {
             { "thruster-oxidizer", 3000 },
         },
+        order = "bc",
         allow_productivity = true,
         surface_conditions =
         {
@@ -529,6 +530,7 @@ vgal.data.extend({
         fluid_results = {
             { "thruster-fuel", 3000 },
         },
+        order = "bc",
         allow_productivity = true,
         surface_conditions =
         {

@@ -5,8 +5,8 @@ Version: 1.2.0
     - Added "vgal-crude-oil-thruster-fuel" recipe. 
     - Added "vgal-ammonia-thruster-oxidizer" recipe. 
     - Added "vgal-plastic-bar-railgun-ammo" recipe.
-    - Added "vgal-batter-railgun-ammo" recipe, grouped as "unsure".
-    - Added "vgal-calcite-fluorine" recipe, grouped as "unsure".
+    - Added "vgal-battery-railgun-ammo" recipe, grouped as "unsure".
+    - Added "vgal-lithium-brine-solid-fuel" recipe, grouped as "unsure".
     - Added "vgal-thruster-oxidizer-thruster-fuel-steam" recipe, grouped as "unsure".
     - Added "vgal-electronic-circuit-railgun-turret" recipe, grouped as "silly".
     - Asteroid crushing recipes are now back in the space tab.

@@ -499,7 +499,7 @@ vgal.data.extend({
         fluid_results = {
             { "thruster-oxidizer", 3000 },
         },
-        order = "bc",
+        order = "cc",
         allow_productivity = true,
         surface_conditions =
         {

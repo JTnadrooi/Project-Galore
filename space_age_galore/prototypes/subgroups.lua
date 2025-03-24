@@ -184,9 +184,9 @@ data.raw["recipe"]["advanced-carbonic-asteroid-crushing"].order = "eb"
 data.raw["recipe"]["advanced-oxide-asteroid-crushing"].order = "ec"
 
 data.raw["recipe"]["thruster-fuel"].order = "ba"
-data.raw["recipe"]["thruster-oxidizer"].order = "ba"
 data.raw["recipe"]["advanced-thruster-fuel"].order = "bb"
-data.raw["recipe"]["advanced-thruster-oxidizer"].order = "bb"
+data.raw["recipe"]["thruster-oxidizer"].order = "ca"
+data.raw["recipe"]["advanced-thruster-oxidizer"].order = "cb"
 
 -- if settings.startup["vgal-crushing-recipes"].value then
 --     data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"

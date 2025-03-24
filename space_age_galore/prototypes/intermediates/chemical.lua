@@ -624,7 +624,7 @@ vgal.data.extend({
         technology = "lithium-processing",
         ingredients = {
             { "copper-plate", 1 },
-            { "carbon",       12 },
+            { "carbon",       2 },
         },
         fluid_ingredients = {
             { "lithium-brine", 20 },

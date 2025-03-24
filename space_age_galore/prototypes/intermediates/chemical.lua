@@ -406,8 +406,8 @@ vgal.data.extend({
         name = "metallic-asteroid-chunk-tungsten-ore",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("metallic-asteroid-chunk"),
-            -- vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/metallic-asteroid-chunk-leaching.png"),
+            -- vgal.icon.get("metallic-asteroid-chunk"),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/metallic-asteroid-chunk-tungsten-ore.png"),
         },
         category = "crushing",
         energy_required = 10,
@@ -630,7 +630,7 @@ vgal.data.extend({
             { "lithium-brine", 20 },
         },
         results = {
-            { "solid-fuel", 20 },
+            { "solid-fuel", 10 },
         },
         groups = { "vgal-unsure" },
     },
@@ -655,7 +655,6 @@ vgal.data.extend({
         results = {
             { "ice-platform", 1 },
         },
-        groups = { "vgal-unsure" },
     },
     -- {
     --     type = "recipe",

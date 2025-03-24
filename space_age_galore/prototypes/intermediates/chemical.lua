@@ -455,7 +455,7 @@ vgal.data.extend({
         icons = vgal.icon.register {
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/thruster-oxidizer-thruster-fuel-steam.png"),
         },
-        category = "chemistry",
+        category = "chemistry-or-cryogenics",
         energy_required = 5,
         technology = "space-platform",
         fluid_ingredients = {
@@ -487,9 +487,9 @@ vgal.data.extend({
         icons = vgal.icon.register {
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/ammonia-thruster-oxidizer.png"),
         },
-        category = "chemistry",
+        category = "cryogenics",
         energy_required = 10,
-        technology = "planet-discovery-aquilo",
+        technology = "cryogenic-plant",
         fluid_ingredients = {
             { "ammonia", 50 },
         },
@@ -517,9 +517,9 @@ vgal.data.extend({
         icons = vgal.icon.register {
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/crude-oil-thruster-fuel.png"),
         },
-        category = "chemistry",
+        category = "cryogenics",
         energy_required = 10,
-        technology = "planet-discovery-aquilo",
+        technology = "cryogenic-plant",
         fluid_ingredients = {
             { "crude-oil", 50 },
         },
@@ -540,77 +540,140 @@ vgal.data.extend({
         },
         show_amount_in_title = false,
     },
+    -- {
+    --     type = "recipe",
+    --     name = "calcite-fluorine",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("fluorine"),
+    --         -- vgal.icon.get_in_fluid("calcite"),
+    --         -- vgal.icon.get_in_to("calcite"),
+    --         -- vgal.icon.get_out_to("fluorine"),
+    --         -- vgal.icon.get_overlay("to"),
+    --     },
+    --     category = "chemistry-or-cryogenics",
+    --     energy_required = 2,
+    --     technology = "calcite-processing",
+    --     ingredients = {
+    --         { "calcite", 2 },
+    --     },
+    --     fluid_results = {
+    --         { "fluorine", 20 },
+    --     },
+    --     show_amount_in_title = false,
+    --     groups = { "vgal-unsure" },
+    -- },
+    -- {
+    --     type = "recipe",
+    --     name = "fluorine-tungsten-carbide",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("tungsten-carbide"),
+    --         vgal.icon.get_in("fluorine"),
+    --     },
+    --     category = "crafting-with-fluid",
+    --     energy_required = 5,
+    --     technology = "calcite-processing",
+    --     ingredients = {
+    --         { "tungsten-ore", 5 },
+    --         { "carbon",       5 },
+    --     },
+    --     fluid_ingredients = {
+    --         { "fluorine", 10 },
+    --     },
+    --     results = {
+    --         { "tungsten-carbide", 5 },
+    --     },
+    --     show_amount_in_title = false,
+    --     allow_productivity = true,
+    --     groups = { "vgal-unsure" },
+    -- },
+    -- {
+    --     type = "recipe",
+    --     name = "fluorine-lithium-rocket-fuel", -- Lithium-Fluorine propellant!
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("rocket-fuel"),
+    --         vgal.icon.get_in("fluorine"),
+    --     },
+    --     category = "cryogenics",
+    --     energy_required = 10,
+    --     technology = "lithium-processing",
+    --     ingredients = {
+    --         { "lithium",      1 }, -- 150
+    --         { "copper-plate", 1 }, --
+    --     },
+    --     fluid_ingredients = {
+    --         { "fluorine", 50 }, -- 200
+    --     },
+    --     results = {
+    --         { "rocket-fuel", 1 }, -- high ef-coefficient bc of the holmium.
+    --     },
+    -- },
     {
         type = "recipe",
-        name = "calcite-fluorine",
+        name = "lithium-brine-solid-fuel",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("fluorine"),
-            -- vgal.icon.get_in_fluid("calcite"),
-            -- vgal.icon.get_in_to("calcite"),
-            -- vgal.icon.get_out_to("fluorine"),
-            -- vgal.icon.get_overlay("to"),
-        },
-        category = "chemistry-or-cryogenics",
-        energy_required = 2,
-        technology = "calcite-processing",
-        ingredients = {
-            { "calcite", 2 },
-        },
-        fluid_results = {
-            { "fluorine", 20 },
-        },
-        show_amount_in_title = false,
-        groups = { "vgal-unsure" },
-    },
-    {
-        type = "recipe",
-        name = "fluorine-tungsten-carbide",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("tungsten-carbide"),
-            vgal.icon.get_in("fluorine"),
-        },
-        category = "crafting-with-fluid",
-        energy_required = 5,
-        technology = "calcite-processing",
-        ingredients = {
-            { "tungsten-ore", 5 },
-            { "carbon",       5 },
-        },
-        fluid_ingredients = {
-            { "fluorine", 10 },
-        },
-        results = {
-            { "tungsten-carbide", 5 },
-        },
-        show_amount_in_title = false,
-        allow_productivity = true,
-        groups = { "vgal-unsure" },
-    },
-    {
-        type = "recipe",
-        name = "fluorine-lithium-rocket-fuel", -- Lithium-Fluorine-Hydrogen tripropellant!
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("rocket-fuel"),
-            vgal.icon.get_in("lithium"),
+            vgal.icon.get("solid-fuel"),
+            vgal.icon.get_in("lithium-brine"),
         },
         category = "cryogenics",
-        energy_required = 5,
+        energy_required = 8,
         technology = "lithium-processing",
         ingredients = {
-            { "lithium", 1 }, -- 150
+            { "copper-plate", 1 },
         },
         fluid_ingredients = {
-            { "fluorine", 50 }, -- 200
+            { "lithium-brine", 20 },
+            { "water",         50 },
         },
         results = {
-            { "rocket-fuel", 1 },
+            { "solid-fuel", 20 },
         },
-        show_amount_in_title = false,
-        allow_productivity = true,
+        groups = { "vgal-unsure" }
     },
+    -- {
+    --     type = "recipe",
+    --     name = "crude-oil-carbon",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("carbon"),
+    --         vgal.icon.get_in("crude-oil"),
+    --     },
+    --     category = "cryogenics",
+    --     energy_required = 0.5,
+    --     technology = "lithium-processing",
+    --     fluid_ingredients = {
+    --         { "crude-oil", 80 },
+    --     },
+    --     results = {
+    --         { "carbon", 1, { probability = 0.25 } },
+    --     },
+    -- },
+    -- {
+    --     type = "recipe",
+    --     name = "fluorine-superconductor",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("superconductor"),
+    --         vgal.icon.get_in("fluorine"),
+    --     },
+    --     category = "cryogenics",
+    --     energy_required = 10,
+    --     technology = "lithium-processing",
+    --     ingredients = {
+    --         { "copper-plate", 2 }, --
+    --     },
+    --     fluid_ingredients = {
+    --         { "fluorine",  10 }, --
+    --         { "light-oil", 5 },  --
+    --     },
+    --     results = {
+    --         { "superconductor", 2 },
+    --     },
+    --     show_amount_in_title = false,
+    -- },
 }, {
     type = "recipe",
 })

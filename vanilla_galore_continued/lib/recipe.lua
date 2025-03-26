@@ -148,11 +148,7 @@ function vgal.recipe.vanillize_number(number, numberType, ingredientName)
     local number = number or 1
     if numberType == "fluid" then
         if number < 10 then
-            if string.find(ingredientName, "acid") and number < 5 then
-                return 5
-            else
-                return 10
-            end
+            return 5
         end
         if not math.fmod(number, 5) == 0 and number < 100 then
             number = math.floor(number / 10) * 10
@@ -170,7 +166,6 @@ function vgal.recipe.vanillize_number(number, numberType, ingredientName)
         if number == 11 then number = 10 end
         if number == 9 then number = 10 end
         if number == 7 then number = 8 end
-        if number == 3 then number = 4 end
     end
     if numberType == "time" then
         if number > 12 then
@@ -179,7 +174,6 @@ function vgal.recipe.vanillize_number(number, numberType, ingredientName)
             end
         end
         if number == 11 then number = 10 end
-        if number == 9 then number = 8 end
         if number == 7 then number = 8 end
     end
     return number

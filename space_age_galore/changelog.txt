@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.05
+  Features:
+    - Added improved locale for many recipes.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
   Features:
     - Asteroid crushing recipes are now back in the space tab.

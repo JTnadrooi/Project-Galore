@@ -235,7 +235,6 @@ vgal.data.extend({
         localised_description_source = "vgal-uranium-238-low-density-structure",
     },
     {
-        type = "recipe",
         name = "molten-copper-carbon-fiber-low-density-structure",
         prefix = "vgal",
         icons = vgal.icon.register {

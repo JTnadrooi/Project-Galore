@@ -2,6 +2,8 @@
 Version: 1.2.05
   Features:
     - Added improved locale.
+  Bugfixes:
+    - Fixed science order.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
   Features:

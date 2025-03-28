@@ -86,6 +86,33 @@ local subgroups = {
         entries = { "quality-module", "quality-module-2", "quality-module-3" },
         when = { "vgal-modules" },
     },
+
+    {
+        name = "space-science-pack",
+        tab = "intermediate-products",
+        order = "yf",
+        entries = { "space-science-pack" },
+        when = { "vgal-science-packs" },
+    },
+    {
+        name = "planetary-science-pack",
+        tab = "intermediate-products",
+        order = "yg",
+        entries =
+        {
+            "metallurgic-science-pack",
+            "electromagnetic-science-pack",
+            "agricultural-science-pack",
+        },
+        when = { "vgal-science-packs" },
+    },
+    {
+        name = "endgame-science-pack",
+        tab = "intermediate-products",
+        order = "yh",
+        entries = { "cryogenic-science-pack", "promethium-science-pack", },
+        when = { "vgal-science-packs" },
+    },
 }
 
 local toClean = {
@@ -127,7 +154,6 @@ for _, value in ipairs(subgroups) do
         end
     end
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
-    ::continue::
 end
 
 data.raw["recipe"]["molten-iron-from-lava"].main_product = "molten-iron"

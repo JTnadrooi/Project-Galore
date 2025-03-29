@@ -142,36 +142,36 @@ vgal.data.extend({
         },
         groups = { "vgal-unsure" },
     },
-    {
-        name = "biter-egg-agricultural-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("agricultural-science-pack"),
-            vgal.icon.get_in("biter-egg"),
-        },
-        category = "organic",
-        energy_required = 45,
-        technology = "carbon-fiber",
-        fluid_ingredients = {
-            { "light-oil", 20 },
-        },
-        ingredients = {
-            { "biter-egg",  1 }, -- 200
-            { "explosives", 8 }, -- 920
-        },
-        results = {
-            { "agricultural-science-pack", 10 }, -- 2000 * 1.5 = 3000
-        },
-        surface_conditions =
-        {
-            {
-                property = "pressure",
-                min = 2000,
-                max = 2000
-            }
-        },
-        groups = { "vgal-unsure" },
-    },
+    -- {
+    --     name = "biter-egg-agricultural-science-pack",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("agricultural-science-pack"),
+    --         vgal.icon.get_in("biter-egg"),
+    --     },
+    --     category = "organic",
+    --     energy_required = 45,
+    --     technology = "carbon-fiber",
+    --     fluid_ingredients = {
+    --         { "light-oil", 20 },
+    --     },
+    --     ingredients = {
+    --         { "biter-egg",  1 }, -- 200
+    --         { "explosives", 8 }, -- 920
+    --     },
+    --     results = {
+    --         { "agricultural-science-pack", 10 }, -- 2000 * 1.5 = 3000
+    --     },
+    --     surface_conditions =
+    --     {
+    --         {
+    --             property = "pressure",
+    --             min = 2000,
+    --             max = 2000
+    --         }
+    --     },
+    --     groups = { "vgal-unsure" },
+    -- },
     -- {
     --     name = "superconductor-agricultural-science-pack",
     --     prefix = "vgal",

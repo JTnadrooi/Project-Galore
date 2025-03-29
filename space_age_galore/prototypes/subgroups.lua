@@ -214,6 +214,9 @@ data.raw["recipe"]["advanced-thruster-fuel"].order = "bb"
 data.raw["recipe"]["thruster-oxidizer"].order = "ca"
 data.raw["recipe"]["advanced-thruster-oxidizer"].order = "cb"
 
+data.raw["recipe"]["burnt-spoilage"].order = "bfa"
+
+
 -- if settings.startup["vgal-crushing-recipes"].value then
 --     data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"
 --     data.raw["recipe"]["carbonic-asteroid-crushing"].subgroup = "vgal-crushing"

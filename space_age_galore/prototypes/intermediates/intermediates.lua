@@ -315,7 +315,7 @@ vgal.data.extend({
             vgal.icon.get_in("lithium-plate"),
         },
         category = "crafting",
-        energy_required = 15,
+        energy_required = 12,
         technology = "lithium-processing",
         ingredients = {
             { "carbon",        1 }, -- 50

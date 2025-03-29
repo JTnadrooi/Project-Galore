@@ -137,6 +137,44 @@ vgal.data.extend({
         category = "crafting-with-fluid",
         groups = { "vgal-silly" }
     },
+    {
+        name = "biter-egg-defender-capsule",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("defender-capsule"),
+            vgal.icon.get_in("biter-egg"),
+        },
+        energy_required = 6,
+        technology = { "defender", "captivity" },
+        ingredients = {
+            { "advanced-circuit",         1 }, -- 100
+            { "piercing-rounds-magazine", 2 }, -- 280
+            { "biter-egg",                1 }, -- 80
+        },
+        results = {
+            { "defender-capsule", 1 }, -- 560
+        },
+        category = "organic-or-assembling",
+    },
+    {
+        name = "pentapod-egg-defender-capsule",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("defender-capsule"),
+            vgal.icon.get_in("pentapod-egg"),
+        },
+        energy_required = 6,
+        technology = { "defender", "biochamber" },
+        ingredients = {
+            { "electronic-circuit",       1 }, -- 25
+            { "piercing-rounds-magazine", 2 }, -- 280
+            { "pentapod-egg",             1 }, -- 200
+        },
+        results = {
+            { "defender-capsule", 1 }, -- 560
+        },
+        category = "organic-or-assembling",
+    },
 }, {
     type = "recipe",
     groups = { "vgal-military" }

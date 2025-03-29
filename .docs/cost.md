@@ -159,6 +159,10 @@
 | shotgun-shell            | 40    |
 | piercing-shotgun-shell   | 230   |
 | nuke                     | 40860 |
+| defender-capsule         | 560   |
+| distractor-capsule       | 2540  |
+| destroyer-capsule (dlc)  | 11000 |
+| destroyer-capsule        | 10800 |
 
 ## Robotics
 

@@ -110,7 +110,7 @@ vgal.data.extend({
         results = {
             { "carbon", 1 },
         },
-        order = "bfa",
+        order = "bezb",
         show_amount_in_title = false,
     },
     {

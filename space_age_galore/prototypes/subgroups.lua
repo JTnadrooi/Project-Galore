@@ -214,7 +214,7 @@ data.raw["recipe"]["advanced-thruster-fuel"].order = "bb"
 data.raw["recipe"]["thruster-oxidizer"].order = "ca"
 data.raw["recipe"]["advanced-thruster-oxidizer"].order = "cb"
 
-data.raw["recipe"]["burnt-spoilage"].order = "bfa"
+data.raw["recipe"]["burnt-spoilage"].order = "beza" -- needed one below bf lol
 
 
 -- if settings.startup["vgal-crushing-recipes"].value then

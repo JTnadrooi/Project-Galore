@@ -3,6 +3,8 @@ Version: 1.2.05
   Features:
     - Added improved locale.
     - Removed "vgal-sulfur-petroleum-gas-agricultural-science-pack" recipe's "unsure" tag.
+    - Added recipe "vgal-lithium-plate-rocket-part".
+    - Added recipe "vgal-lithium-plate-rocket-part".
     - Added science recipe "vgal-electronic-circuit-agricultural-science-pack", tagged as unsure.
     - Added science recipe "vgal-biter-egg-agricultural-science-pack", tagged as unsure.
   Balancing:

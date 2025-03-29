@@ -135,7 +135,7 @@ vgal.data.extend({
             { "railgun-turret", 1 },
         },
         category = "crafting-with-fluid",
-        groups = { "vgal-silly" }
+        groups = { "vgal-silly" },
     },
     {
         name = "biter-egg-defender-capsule",
@@ -155,6 +155,7 @@ vgal.data.extend({
             { "defender-capsule", 1 }, -- 560
         },
         category = "organic-or-assembling",
+        groups = { "vgal-silly" },
     },
     {
         name = "pentapod-egg-defender-capsule",
@@ -174,6 +175,7 @@ vgal.data.extend({
             { "defender-capsule", 1 }, -- 560
         },
         category = "organic-or-assembling",
+        groups = { "vgal-silly" },
     },
 }, {
     type = "recipe",

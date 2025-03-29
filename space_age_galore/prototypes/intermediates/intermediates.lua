@@ -438,6 +438,28 @@ vgal.data.extend({
             { "nutrients", 10 }, -- 100
         },
     },
+    {
+        type = "recipe",
+        name = "lithium-brine-sulfur-ammonia-nutrients", -- for aquilo
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in("lithium-brine"),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/sulfur-ammonia-nutrients.png"),
+        },
+        category = "chemistry-or-cryogenics",
+        energy_required = 5,
+        technology = "lithium-processing",
+        fluid_ingredients = {
+            { "ammonia",       50 },
+            { "lithium-brine", 5 },
+        },
+        ingredients = {
+            { "sulfur", 1 }, -- 15 (20gb)
+        },
+        results = {
+            { "nutrients", 50 },
+        },
+    },
 }, {
     type = "recipe",
     groups = { "vgal-science-packs" },

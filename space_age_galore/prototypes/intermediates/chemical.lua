@@ -110,7 +110,7 @@ vgal.data.extend({
         results = {
             { "carbon", 1 },
         },
-        order = "bezb",
+        order = "b[chemistry]-f[carbon]-b",
         show_amount_in_title = false,
     },
     {
@@ -135,6 +135,7 @@ vgal.data.extend({
             { "water", 10 },
         },
         groups = { "vgal-wood-recipes" },
+        order = "b[chemistry]-f[carbon]-c",
         show_amount_in_title = false,
     },
     {
@@ -160,6 +161,7 @@ vgal.data.extend({
         results = {
             { "carbon", 1 }, -- 50
         },
+        order = "b[chemistry]-f[carbon]-c",
         show_amount_in_title = false,
     },
     {

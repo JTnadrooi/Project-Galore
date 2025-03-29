@@ -6,6 +6,7 @@ Version: 1.3.0
     - Added "vgal-lithium-plate-low-density-structure" recipe.
     - Added science recipe "vgal-electronic-circuit-agricultural-science-pack", tagged as unsure.
     - Added science recipe "vgal-biter-egg-agricultural-science-pack", tagged as unsure.
+    - Improved carbon recipe orders.
   Balancing:
     - "vgal-sulfur-petroleum-gas-agricultural-science-pack" solid fuel cost 5 -> 0.
     - "vgal-sulfur-petroleum-gas-agricultural-science-pack" nutrients cost 0 -> 15.

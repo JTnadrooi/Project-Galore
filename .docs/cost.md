@@ -51,6 +51,7 @@
 | copper-cable          | 5              |
 | engine-unit           | 90             |
 | explosives            | 15             |
+| explosives(gb)        | 115            |
 | electronic-circuit    | 25             |
 | advanced-circuit      | 100            |
 | processing-unit       | 710            |

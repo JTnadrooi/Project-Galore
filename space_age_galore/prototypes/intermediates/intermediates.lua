@@ -1,4 +1,26 @@
 vgal.data.extend({
+    -- {
+    --     type = "recipe",
+    --     name = "carbon-fiber-superconductor",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("superconductor"),
+    --         vgal.icon.get_in("carbon-fiber"),
+    --     },
+    --     category = "electromagnetics",
+    --     energy_required = 6,
+    --     technology = "carbon-fiber",
+    --     ingredients = {
+    --         { "carbon-fiber", 1 },
+    --         { "calcite",      1 },
+    --     },
+    --     fluid_ingredients = {
+    --         { "light-oil", 5 },
+    --     },
+    --     results = {
+    --         { "superconductor", 2 },
+    --     },
+    -- },
     {
         type = "recipe",
         name = "holmium-solution-copper-cable",

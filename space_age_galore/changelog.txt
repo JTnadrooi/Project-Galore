@@ -2,6 +2,13 @@
 Version: 1.2.05
   Features:
     - Added improved locale.
+    - Removed "vgal-sulfur-petroleum-gas-agricultural-science-pack" recipe's "unsure" tag.
+    - Added science recipe "vgal-electronic-circuit-agricultural-science-pack", tagged as unsure.
+    - Added science recipe "vgal-biter-egg-agricultural-science-pack", tagged as unsure.
+  Balancing:
+    - "vgal-sulfur-petroleum-gas-agricultural-science-pack" solid fuel cost 5 -> 0.
+    - "vgal-sulfur-petroleum-gas-agricultural-science-pack" nutrients cost 0 -> 15.
+    - "vgal-ammonia-agricultural-science-pack" bioflux cost 4 -> 3.
   Bugfixes:
     - Fixed science order.
 ---------------------------------------------------------------------------------------------------

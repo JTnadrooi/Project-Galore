@@ -43,7 +43,7 @@ vgal.data.extend({
         technology = "agricultural-science-pack",
         ingredients = {
             { "pentapod-egg", 1 }, -- 200
-            { "bioflux",      4 }, -- 240
+            { "bioflux",      3 }, -- 180
         },
         fluid_ingredients = {
             { "ammonia", 80 }, -- 160
@@ -71,8 +71,8 @@ vgal.data.extend({
         energy_required = 4,
         technology = "agricultural-science-pack",
         ingredients = {
-            { "sulfur",     4 }, -- 80gb
-            { "solid-fuel", 5 }, -- 100
+            { "sulfur",    4 },  -- 80gb
+            { "nutrients", 10 }, -- 100
         },
         fluid_ingredients = {
             { "petroleum-gas", 50 }, -- 50
@@ -88,8 +88,120 @@ vgal.data.extend({
                 max = 2000
             }
         },
-        groups = { "vgal-unsure" }
     },
+    -- {
+    --     name = "carbon-fiber-agricultural-science-pack",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("agricultural-science-pack"),
+    --         vgal.icon.get_in("carbon-fiber"),
+    --     },
+    --     category = "organic",
+    --     energy_required = 5,
+    --     technology = "carbon-fiber",
+    --     ingredients = {
+    --         { "carbon-fiber", 1 }, -- 120gb
+    --         { "bioflux",      3 }, -- 180
+    --     },
+    --     results = {
+    --         { "agricultural-science-pack", 1 }, -- 200 * 1.5 = 300
+    --     },
+    --     surface_conditions =
+    --     {
+    --         {
+    --             property = "pressure",
+    --             min = 2000,
+    --             max = 2000
+    --         }
+    --     },
+    -- },
+    {
+        name = "electronic-circuit-agricultural-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("agricultural-science-pack"),
+            vgal.icon.get_in("electronic-circuit"),
+        },
+        category = "organic",
+        energy_required = 4,
+        technology = "carbon-fiber",
+        ingredients = {
+            { "pentapod-egg",       1 }, -- 200
+            { "electronic-circuit", 4 }, -- 100
+        },
+        results = {
+            { "agricultural-science-pack", 1 }, -- 200 * 1.5 = 300
+        },
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000
+            }
+        },
+        groups = { "vgal-unsure" },
+    },
+    {
+        name = "biter-egg-agricultural-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("agricultural-science-pack"),
+            vgal.icon.get_in("biter-egg"),
+        },
+        category = "organic",
+        energy_required = 45,
+        technology = "carbon-fiber",
+        fluid_ingredients = {
+            { "light-oil", 20 },
+        },
+        ingredients = {
+            { "biter-egg",  1 }, -- 200
+            { "explosives", 8 }, -- 920
+        },
+        results = {
+            { "agricultural-science-pack", 10 }, -- 2000 * 1.5 = 3000
+        },
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000
+            }
+        },
+        groups = { "vgal-unsure" },
+    },
+    -- {
+    --     name = "superconductor-agricultural-science-pack",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("agricultural-science-pack"),
+    --         vgal.icon.get_in("superconductor"),
+    --     },
+    --     category = "organic",
+    --     energy_required = 4,
+    --     technology = "agricultural-science-pack",
+    --     ingredients = {
+    --         { "superconductor", 1 },  --
+    --         { "jelly",          12 }, --
+    --     },
+    --     fluid_ingredients = {
+    --         { "light-oil", 30 }, --
+    --     },
+    --     results = {
+    --         { "agricultural-science-pack", 1 }, -- 200 * 1.5 = 300
+    --     },
+    --     surface_conditions =
+    --     {
+    --         {
+    --             property = "pressure",
+    --             min = 2000,
+    --             max = 2000
+    --         }
+    --     },
+    --     groups = { "vgal-unsure" }
+    -- },
 
     -- METALLURGIC
     {

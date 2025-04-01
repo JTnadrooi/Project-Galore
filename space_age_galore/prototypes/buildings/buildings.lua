@@ -160,8 +160,8 @@ vgal.data.extend({
         energy_required = 1,
         technology = "tungsten-steel",
         ingredients = {
-            { "tungsten-plate",     1 },   -- 60
-            { "iron-gear-wheel",    4 },   -- 80
+            { "tungsten-plate",     1 }, -- 60
+            { "iron-gear-wheel",    4 }, -- 80
             { "electronic-circuit", 1 }, -- 25
         },
         results = {

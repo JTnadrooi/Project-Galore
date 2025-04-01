@@ -1,11 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.0
+  Features:
+    - a
+  Balancing:
+    - a
+  Bugfixes:
+    - Fixed changelog.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.0
   Features:
     - Added improved locale.
     - Removed "vgal-sulfur-petroleum-gas-agricultural-science-pack" recipe's "unsure" tag.
     - Added "vgal-lithium-plate-low-density-structure" recipe.
-    - Added "vgal-biter-egg-defender-capsule" recipe.
-    - Added "vgal-pentapod-egg-defender-capsule" recipe.
+    - Added "vgal-biter-egg-defender-capsule" recipe, tagged as silly.
+    - Added "vgal-pentapod-egg-defender-capsule" recipe, tagged as silly.
     - Added "vgal-electronic-circuit-agricultural-science-pack" recipe, tagged as unsure.
     - Improved carbon recipe orders.
   Balancing:

@@ -1,0 +1,11 @@
+{
+    "name": "galore_lib",
+    "version": "1.0.0",
+    "title": "GaloreLib",
+    "author": "JTnadrooi",
+    "contact": "@jtnadrooi",
+    "homepage": "https://github.com/JTnadrooi/Project-Galore",
+    "factorio_version": "2.0",
+    "dependencies": ["base >= 2.0"],
+    "description": "Makes adding recipes easy!"
+}

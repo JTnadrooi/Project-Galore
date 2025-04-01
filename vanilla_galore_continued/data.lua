@@ -1,6 +1,3 @@
-vgal = require("lib.vgal")
-vgal.log("the *core-of-galore* has loaded.")
-
 local function throw_compat_error(neededGalore, with)
     if mods[with[1]] and not mods[neededGalore[1]] then
         error("\n\n\n\n\n[PLEASE READ]\nInstall or enable \"" ..

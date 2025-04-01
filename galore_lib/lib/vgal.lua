@@ -236,7 +236,7 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                                         scale = 2.2,
                                     },
                                     {
-                                        icon = "__vanilla_galore_continued__/graphics/" .. "node2.png",
+                                        icon = "__vanilla_galore_continued__/graphics/" .. "node.png",
                                         icon_size = 256,
                                     },
                                 })

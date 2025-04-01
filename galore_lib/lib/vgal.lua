@@ -232,7 +232,7 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                                         scale = 2.2,
                                     },
                                     {
-                                        icon = "__galore_lib__/graphics/" .. "node.png",
+                                        icon = "__galore_lib__/graphics/node.png",
                                         icon_size = 256,
                                     },
                                 })

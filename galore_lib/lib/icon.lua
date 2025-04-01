@@ -64,7 +64,7 @@ function vgal.icon.get_tier_tint(tier)
 end
 
 function vgal.icon.get_overlay(overlay, args)
-    return vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/" .. overlay .. "-overlay.png", args)
+    return vgal.icon.get_from_path("__galore_lib__/graphics/icons/" .. overlay .. "-overlay.png", args)
 end
 
 function vgal.icon.get_from_path(path, args)
@@ -271,7 +271,7 @@ function vgal.icon.get_bg(keyName, iconSource)
 end
 
 function vgal.icon.get_none()
-    return vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/none.png")
+    return vgal.icon.get_from_path("__galore_lib__/graphics/icons/none.png")
 end
 
 function vgal.icon.get_in_bg(keyName, iconSource)

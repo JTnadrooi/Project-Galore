@@ -497,12 +497,12 @@ vgal.data.extend({
             { "holmium-ore",               1, { probability = 0.005, show_details_in_recipe_tooltip = false } },
         },
         category = "crushing",
-        subgroup = "space",
         order = "z",
         groups = { "vgal-unsure" },
         show_amount_in_title = false,
         allow_productivity = false,
         allow_quality = true,
+        complementairy_recipe = "advanced-metallic-asteroid-crushing",
     },
 }, {
     type = "recipe",

@@ -3,7 +3,7 @@ Version: 1.3.50
   Features:
     - Split the library at last.
     - Changed thumbnail.
-    - Added "vgal-promethium-asteroid-chunk-crushing" recipe.
+    - Added "vgal-promethium-asteroid-chunk-crushing" recipe, tagged as unsure.
   Balancing:
     - "vgal-scrap-crushing" holmium ore output probability 2% -> 1.5%.
   Bugfixes:

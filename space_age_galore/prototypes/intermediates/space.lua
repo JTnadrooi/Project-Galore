@@ -70,6 +70,53 @@ vgal.data.extend({
         allow_productivity = true,
         groups = { "vgal-unsure" },
     },
+    {
+        name = "metallic-asteroid-chunk-lava", -- should be used for stone, for the other recipes this isn't that good
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("lava"),
+            vgal.icon.get_in_fluid("metallic-asteroid-chunk"),
+            -- vgal.icon.get_in_fluid2("calcite"),
+        },
+        energy_required = 12,
+        technology = "foundry",
+        ingredients = {
+            { "metallic-asteroid-chunk", 1 },
+            { "calcite",                 1 },
+        },
+        fluid_results = {
+            { "lava", 100 }, -- 150 lava = 110 molten, ~ 3 v 5 stone...
+        },
+        category = "metallurgy",
+        complementairy_recipe = "advanced-metallic-asteroid-crushing",
+        productivity_technology = "asteroid-productivity",
+        allow_productivity = true,
+    },
+    -- {
+    --     name = "carbonic-asteroid-chunk-petroleum-gas", -- methane
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("petroleum-gas"),
+    --         vgal.icon.get_in_fluid("carbonic-asteroid-chunk"),
+    --         -- vgal.icon.get_in_fluid2("calcite"),
+    --     },
+    --     energy_required = 12,
+    --     technology = "cryogenic-plant",
+    --     category = "cryogenics",
+    --     ingredients = {
+    --         { "carbonic-asteroid-chunk", 1 },
+    --     },
+    --     results = {
+    --         { "carbon", 2 },
+    --         { "sulfur", 1, { probability = 0.05 } },
+    --     },
+    --     fluid_results = {
+    --         { "petroleum-gas", 50 },
+    --     },
+    --     complementairy_recipe = "advanced-metallic-asteroid-crushing",
+    --     productivity_technology = "asteroid-productivity",
+    --     allow_productivity = true,
+    -- },
     -- {
     --     type = "recipe",
     --     name = "fluorine-steam-thruster-oxidizer",
@@ -186,27 +233,6 @@ vgal.data.extend({
             }
         },
         show_amount_in_title = false,
-    },
-    {
-        name = "metallic-asteroid-chunk-lava", -- should be used for stone, for the other recipes this isn't that good
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("lava"),
-            vgal.icon.get_in_fluid("metallic-asteroid-chunk"),
-            -- vgal.icon.get_in_fluid2("calcite"),
-        },
-        energy_required = 12,
-        technology = "foundry",
-        ingredients = {
-            { "metallic-asteroid-chunk", 1 },
-        },
-        fluid_results = {
-            { "lava", 200 }, -- 150 molten (10 ore), ~12 stone
-        },
-        category = "metallurgy",
-        complementairy_recipe = "advanced-metallic-asteroid-crushing",
-        productivity_technology = "asteroid-productivity",
-        allow_productivity = true,
     },
 }, {
     type = "recipe",

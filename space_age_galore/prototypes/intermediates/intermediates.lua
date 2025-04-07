@@ -438,7 +438,7 @@ vgal.data.extend({
     -- },
     {
         type = "recipe",
-        name = "sulfur-ammonia-nutrients", -- for nauvis
+        name = "sulfur-ammonia-nutrients", -- for nauvis / aquilo
         prefix = "vgal",
         icons = vgal.icon.register {
             -- vgal.icon.get_in("sulfur"),

@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Features:
-    - Added vgal.icon.get_placeholder() function.
+    - Added vgal.icon.get_placeholder() function/graphics.
     - Updated desc.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0

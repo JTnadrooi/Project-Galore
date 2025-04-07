@@ -92,6 +92,70 @@ vgal.data.extend({
         productivity_technology = "asteroid-productivity",
         allow_productivity = true,
     },
+    {
+        type = "recipe",
+        name = "carbon-stone-thruster-fuel", -- ~ 80% less carbon usage, bit less water, 2x faster (adv is 4x faster)
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_placeholder(),
+        },
+        category = "chemistry",
+        energy_required = 5,
+        technology = "foundry",
+        fluid_ingredients = {
+            { "water", 40 },
+        },
+        ingredients = {
+            { "carbon", 2 },
+            { "stone",  1 },
+        },
+        fluid_results = {
+            { "thruster-fuel", 350 },
+        },
+        order = "bba",
+        allow_productivity = true,
+        surface_conditions =
+        {
+            {
+                property = "gravity",
+                min = 0,
+                max = 0
+            }
+        },
+        show_amount_in_title = false,
+    },
+    {
+        type = "recipe",
+        name = "iron-ore-stone-thruster-oxidizer", -- ~ 80% less iron usage, bit less water, 2x faster (adv is 4x faster)
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_placeholder(),
+        },
+        category = "chemistry",
+        energy_required = 5,
+        technology = "foundry",
+        fluid_ingredients = {
+            { "water", 40 },
+        },
+        ingredients = {
+            { "iron-ore", 2 },
+            { "stone",  1 },
+        },
+        fluid_results = {
+            { "thruster-oxidizer", 350 },
+        },
+        order = "cba",
+        allow_productivity = true,
+        surface_conditions =
+        {
+            {
+                property = "gravity",
+                min = 0,
+                max = 0
+            }
+        },
+        show_amount_in_title = false,
+    },
     -- {
     --     type = "recipe",
     --     name = "carbonic-asteroid-chunk-uranium-ore",

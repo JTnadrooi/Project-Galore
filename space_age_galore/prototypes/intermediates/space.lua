@@ -82,7 +82,6 @@ vgal.data.extend({
         technology = "foundry",
         ingredients = {
             { "metallic-asteroid-chunk", 1 },
-            { "calcite",                 1 },
         },
         fluid_results = {
             { "lava", 100 }, -- 150 lava = 110 molten, ~ 3 v 5 stone...
@@ -139,7 +138,7 @@ vgal.data.extend({
         },
         ingredients = {
             { "iron-ore", 2 },
-            { "stone",  1 },
+            { "stone",    1 },
         },
         fluid_results = {
             { "thruster-oxidizer", 350 },

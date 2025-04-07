@@ -92,6 +92,30 @@ vgal.data.extend({
         productivity_technology = "asteroid-productivity",
         allow_productivity = true,
     },
+    {
+        type = "recipe",
+        name = "carbonic-asteroid-chunk-uranium-ore",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            -- vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/carbonic-asteroid-chunk-uranium-ore.png"),
+            vgal.icon.get_placeholder(),
+        },
+        category = "crushing",
+        energy_required = 10,
+        technology = "cryogenic-plant",
+        ingredients = {
+            { "carbonic-asteroid-chunk", 1 },
+        },
+        results = {
+            { "carbon",                  5 },
+            { "uranium-ore",             2 },
+            { "carbonic-asteroid-chunk", 1, { probability = 0.05 } },
+        },
+        complementairy_recipe = "advanced-carbonic-asteroid-crushing",
+        productivity_technology = "asteroid-productivity",
+        allow_productivity = true,
+        groups = { "vgal-unsure" },
+    },
     -- {
     --     name = "carbonic-asteroid-chunk-petroleum-gas", -- methane
     --     prefix = "vgal",

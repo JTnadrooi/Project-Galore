@@ -1,9 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.0
   Features:
-    - Added "vgal-metallic-asteroid-chunk-lava" recipe.
+    - Added "vgal-metallic-asteroid-chunk-lava" recipe. (worse for iron, slighly better for copper, only source of stone in space. - uses calcite.))
   Balancing:
-    - a
+    - Removed "vgal-tungsten-plate-engine-unit" recipe.
   Bugfixes:
     - Fixed disabling science recipes causing all smelthing recipe to be hidden.
     - Fixed changelog spelling error (disabling is not with double s).

@@ -274,6 +274,10 @@ function vgal.icon.get_none()
     return vgal.icon.get_from_path("__galore_lib__/graphics/icons/none.png")
 end
 
+function vgal.icon.get_placeholder()
+    return vgal.icon.get_from_path("__galore_lib__/graphics/icons/placeholder.png")
+end
+
 function vgal.icon.get_in_bg(keyName, iconSource)
     return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.30, { -7, -7 })
 end

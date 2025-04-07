@@ -133,13 +133,3 @@ vgal.data.extend({
     type = "recipe",
     groups = { "vgal-captive-spawner-recipes" }
 })
-
-if settings.startup["vgal-captive-spawner-recipes"].value == true then
-    data.raw.item["biter-egg"].hidden = false
-    data.raw.recipe["biter-egg"].hidden = false
-    data.raw.recipe["biter-egg"].hide_from_player_crafting = false
-    data.raw.recipe["biter-egg"].hidden_in_factoriopedia = false
-    data.raw.recipe["biter-egg"].hide_from_stats = false
-    data.raw["assembling-machine"]["captive-biter-spawner"].fixed_recipe = nil
-    data.raw["assembling-machine"]["captive-biter-spawner"].show_recipe_icon = true
-end

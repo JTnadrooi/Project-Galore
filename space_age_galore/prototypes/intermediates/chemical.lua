@@ -379,172 +379,6 @@ vgal.data.extend({
             { "electrolyte", 15 }, --
         },
     },
-    -- SPACE
-    {
-        type = "recipe",
-        name = "oxide-asteroid-chunk-ammoniacal-solution",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/oxide-asteroid-chunk-ammoniacal-solution.png"),
-        },
-        category = "cryogenics",
-        energy_required = 10,
-        technology = "cryogenic-plant",
-        ingredients = {
-            { "oxide-asteroid-chunk", 1 },
-        },
-        results = {
-            { "ice",     2 },
-            { "calcite", 1, { probability = 0.05 } },
-        },
-        fluid_results = {
-            { "ammoniacal-solution", 20 },
-        },
-        complementairy_recipe = "advanced-oxide-asteroid-crushing",
-        productivity_technology = "asteroid-productivity",
-        allow_productivity = true,
-    },
-    {
-        type = "recipe",
-        name = "metallic-asteroid-chunk-tungsten-ore",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            -- vgal.icon.get("metallic-asteroid-chunk"),
-            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/metallic-asteroid-chunk-tungsten-ore.png"),
-        },
-        category = "crushing",
-        energy_required = 10,
-        technology = "tungsten-carbide",
-        ingredients = {
-            { "metallic-asteroid-chunk", 1 },
-        },
-        results = {
-            { "iron-ore",                5 },
-            { "tungsten-ore",            2 },
-            { "metallic-asteroid-chunk", 1, { probability = 0.05 } },
-        },
-        complementairy_recipe = "advanced-metallic-asteroid-crushing",
-        productivity_technology = "asteroid-productivity",
-        allow_productivity = true,
-        groups = { "vgal-unsure" },
-    },
-    -- {
-    --     type = "recipe",
-    --     name = "fluorine-steam-thruster-oxidizer",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         -- vgal.icon.get("thruster-oxidizer"),
-    --         vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/fluorine-steam-thruster-oxidizer.png"),
-    --     },
-    --     category = "chemistry",
-    --     energy_required = 12,
-    --     technology = "planet-discovery-aquilo",
-    --     fluid_ingredients = {
-    --         { "fluorine", 5 },
-    --         { "steam",    1500 },
-    --     },
-    --     ingredients = {
-    --         { "calcite", 1 },
-    --     },
-    --     fluid_results = {
-    --         { "thruster-oxidizer", 3000 },
-    --     },
-    --     allow_productivity = true,
-    -- },
-    {
-        type = "recipe",
-        name = "thruster-oxidizer-thruster-fuel-steam",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/thruster-oxidizer-thruster-fuel-steam.png"),
-        },
-        category = "chemistry-or-cryogenics",
-        energy_required = 5,
-        technology = "space-platform",
-        fluid_ingredients = {
-            { "thruster-oxidizer", 1000 },
-            { "thruster-fuel",     1000 },
-        },
-        ingredients = {
-            { "solid-fuel", 1 },
-        },
-        fluid_results = {
-            { "steam", 300, { temperature = 500 } },
-        },
-        surface_conditions =
-        {
-            {
-                property = "gravity",
-                min = 0,
-                max = 0
-            }
-        },
-        allow_productivity = false,
-        show_amount_in_title = false,
-        groups = { "vgal-unsure" },
-    },
-    {
-        type = "recipe",
-        name = "ammonia-thruster-oxidizer",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/ammonia-thruster-oxidizer.png"),
-        },
-        category = "cryogenics",
-        energy_required = 10,
-        technology = "cryogenic-plant",
-        fluid_ingredients = {
-            { "ammonia", 50 },
-        },
-        ingredients = {
-            { "iron-ore", 1 },
-        },
-        fluid_results = {
-            { "thruster-oxidizer", 3000 },
-        },
-        order = "cc",
-        allow_productivity = true,
-        surface_conditions =
-        {
-            {
-                property = "gravity",
-                min = 0,
-                max = 0
-            }
-        },
-        show_amount_in_title = false,
-    },
-    {
-        type = "recipe",
-        name = "crude-oil-thruster-fuel",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/crude-oil-thruster-fuel.png"),
-        },
-        category = "cryogenics",
-        energy_required = 10,
-        technology = "cryogenic-plant",
-        fluid_ingredients = {
-            { "crude-oil", 50 },
-        },
-        ingredients = {
-            { "calcite", 1 },
-        },
-        fluid_results = {
-            { "thruster-fuel", 3000 },
-        },
-        order = "bc",
-        allow_productivity = true,
-        surface_conditions =
-        {
-            {
-                property = "gravity",
-                min = 0,
-                max = 0
-            }
-        },
-        show_amount_in_title = false,
-    },
     -- {
     --     type = "recipe",
     --     name = "calcite-fluorine",
@@ -641,24 +475,24 @@ vgal.data.extend({
     -- },
     {
         type = "recipe",
-        name = "low-density-structure-ice-platform",
+        name = "lithium-battery", -- will be used for alternate cryogenic science recipe but currently NO ONE (no one) will be using it.
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("ice-platform"),
-            vgal.icon.get_in("low-density-structure"),
+            vgal.icon.get("battery"),
+            vgal.icon.get_in("lithium"),
         },
-        category = "crafting-with-fluid",
-        energy_required = 30,
-        technology = "planet-discovery-aquilo",
-        ingredients = {
-            { "low-density-structure", 1 },
-            { "ice",                   25 },
-        },
+        category = "chemistry-or-cryogenics",
+        energy_required = 10, -- fast
+        technology = "lithium-processing",
         fluid_ingredients = {
-            { "ammonia", 100 },
+            { "ammonia", 10 }, -- 20
+        },
+        ingredients = {
+            { "lithium",      1 }, -- 150
+            { "copper-plate", 5 }, -- 50
         },
         results = {
-            { "ice-platform", 1 },
+            { "battery", 5 }, -- 250
         },
     },
     -- {

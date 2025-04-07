@@ -18,6 +18,7 @@ require("prototypes.intermediates.smelting") -- after intermediates
 require("prototypes.intermediates.circuits")
 require("prototypes.intermediates.captive-spawner")
 require("prototypes.intermediates.oil-processing")
+require("prototypes.intermediates.space")
 
 require("prototypes.buildings.buildings")
 require("prototypes.buildings.belts")

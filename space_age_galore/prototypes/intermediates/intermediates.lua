@@ -210,28 +210,6 @@ vgal.data.extend({
     },
     {
         type = "recipe",
-        name = "lithium-battery", -- will be used for alternate cryogenic science recipe but currently NO ONE (no one) will be using it.
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("battery"),
-            vgal.icon.get_in("lithium"),
-        },
-        category = "chemistry-or-cryogenics",
-        energy_required = 10, -- fast
-        technology = "lithium-processing",
-        fluid_ingredients = {
-            { "ammonia", 10 }, -- 20
-        },
-        ingredients = {
-            { "lithium",      1 }, -- 150
-            { "copper-plate", 5 }, -- 50
-        },
-        results = {
-            { "battery", 5 }, -- 250
-        },
-    },
-    {
-        type = "recipe",
         name = "pentapod-egg-logistic-robot", -- woah!
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -328,7 +306,7 @@ vgal.data.extend({
     },
     {
         type = "recipe",
-        name = "ammonia-plastic-bar",
+        name = "ammonia-plastic-bar", -- can be done on aquilo, carbon comes from spoilage
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("plastic-bar"),
@@ -480,30 +458,6 @@ vgal.data.extend({
     --         { "nutrients", 50 },
     --     },
     -- },
-    {
-        name = "promethium-asteroid-chunk-crushing",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("promethium-asteroid-chunk"),
-            vgal.icon.get_overlay("crushing"),
-        },
-        energy_required = 1,
-        technology = "promethium-science-pack",
-        ingredients = {
-            { "promethium-asteroid-chunk", 1 },
-        },
-        results = {
-            { "promethium-asteroid-chunk", 1, { probability = 0.80 } },
-            { "holmium-ore",               1, { probability = 0.005 } },
-        },
-        category = "crushing",
-        order = "b-a-d",
-        groups = { "vgal-unsure" },
-        show_amount_in_title = false,
-        allow_productivity = false,
-        allow_quality = true,
-        complementairy_recipe = "advanced-metallic-asteroid-crushing",
-    },
 }, {
     type = "recipe",
 })

@@ -259,6 +259,28 @@ vgal.data.extend({
         },
         category = "crafting-with-fluid",
     },
+    {
+        type = "recipe",
+        name = "low-density-structure-ice-platform",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("ice-platform"),
+            vgal.icon.get_in("low-density-structure"),
+        },
+        category = "crafting-with-fluid",
+        energy_required = 30,
+        technology = "planet-discovery-aquilo",
+        ingredients = {
+            { "low-density-structure", 1 },
+            { "ice",                   25 },
+        },
+        fluid_ingredients = {
+            { "ammonia", 100 },
+        },
+        results = {
+            { "ice-platform", 1 },
+        },
+    },
 }, {
     type = "recipe",
     groups = { "vgal-buildings" }

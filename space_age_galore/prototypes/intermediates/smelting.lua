@@ -105,67 +105,6 @@ vgal.data.extend({
         },
         order = "bbbc",
     },
-    -- {
-    --     type = "recipe",
-    --     name = "holmium-ore-molten-copper-holmium-plate",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("holmium-plate"),
-    --         vgal.icon.get_in("holmium-ore"),
-    --     },
-    --     category = "metallurgy",
-    --     energy_required = 2,
-    --     technology = { "foundry", "holmium-processing" },
-    --     fluid_ingredients = {
-    --         { "molten-copper", 10 },
-    --     },
-    --     ingredients = {
-    --         { "holmium-ore", 1 },
-    --     },
-    --     results = {
-    --         { "holmium-plate", 2 },
-    --     },
-    -- },
-    -- {
-    --     name = "metallic-asteroid-chunk-lava",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("lava"),
-    --         vgal.icon.get_in_fluid("metallic-asteroid-chunk"),
-    --         vgal.icon.get_in_fluid2("calcite"),
-    --     },
-    --     energy_required = 4,
-    --     technology = "foundry",
-    --     ingredients = {
-    --         { "metallic-asteroid-chunk", 1 },
-    --         { "calcite",                 1 },
-    --     },
-    --     fluid_results = {
-    --         { "lava", 200 }, -- 100 molten = 10 ore (exluded the prod)
-    --     },
-    --     category = "metallurgy",
-    -- },
-    -- {
-    --     name = "metallic-asteroid-chunk-molten-iron-molten-copper",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("metallic-asteroid-chunk"),
-    --         vgal.icon.get_out("molten-copper"),
-    --         vgal.icon.get_out2("molten-iron"),
-    --         vgal.icon.get_in_fluid("calcite"),
-    --     },
-    --     energy_required = 6,
-    --     technology = "foundry",
-    --     ingredients = {
-    --         { "metallic-asteroid-chunk", 1 },
-    --         { "calcite",                 2 },
-    --     },
-    --     fluid_results = {
-    --         { "molten-copper", 30 },
-    --         { "molten-iron",   80 },
-    --     },
-    --     category = "metallurgy",
-    -- },
     {
         name = "molten-iron-rail",
         prefix = "vgal",
@@ -262,5 +201,4 @@ vgal.data.extend({
     },
 }, {
     type = "recipe",
-    groups = { "vgal-science-packs" },
 })

@@ -80,25 +80,6 @@ vgal.data.extend({
         category = "metallurgy",
         groups = { "vgal-silly" }
     },
-    {
-        name = "tungsten-plate-engine-unit",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("engine-unit"),
-            vgal.icon.get_in("tungsten-plate"),
-        },
-        energy_required = 8,
-        technology = "tungsten-steel",
-        ingredients = {
-            { "tungsten-plate",  1 }, -- 60
-            { "iron-gear-wheel", 1 }, -- 20
-            { "pipe",            1 }, -- 10
-        },
-        results = {
-            { "engine-unit", 1 }, -- 90
-        },
-        category = "advanced-crafting",
-    },
     -- { -- eventually, I will be able to calculate fulgora stuff..
     --     name = "jelly-light-oil-superconductor",
     --     prefix = "vgal",

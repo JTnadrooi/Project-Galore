@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.0
   Features:
-    - Added "vgal-metallic-asteroid-chunk-lava" recipe. (worse for iron, slighly better for copper, only source of stone in space. - uses calcite.))
+    - Added "vgal-metallic-asteroid-chunk-lava" recipe. (worse for iron, slighly better for copper, only source of stone in space. - uses calcite.)
+    - Added "vgal-iron-ore-stone-thruster-oxidizer" recipe.
+    - Added "vgal-carbon-stone-thruster-fuel" recipe.
   Balancing:
     - Removed "vgal-tungsten-plate-engine-unit" recipe.
   Bugfixes:

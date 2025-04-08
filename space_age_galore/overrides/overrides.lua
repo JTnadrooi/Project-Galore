@@ -62,3 +62,4 @@ if settings.startup["vgal-captive-spawner-recipes"].value == true then
     data.raw["assembling-machine"]["captive-biter-spawner"].fixed_recipe = nil
     data.raw["assembling-machine"]["captive-biter-spawner"].show_recipe_icon = true
 end
+

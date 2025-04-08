@@ -113,6 +113,12 @@ local subgroups = {
         entries = { "cryogenic-science-pack", "promethium-science-pack", },
         when = { "vgal-science-packs" },
     },
+    {
+        name = "space-advanced",
+        tab = "space",
+        order = "hb",
+        entries = {},
+    },
 }
 
 local toClean = {
@@ -216,6 +222,12 @@ data.raw["recipe"]["advanced-thruster-oxidizer"].order = "cb"
 
 data.raw["recipe"]["burnt-spoilage"].order = "b[chemistry]-f[carbon]-a"
 
+data.raw["recipe"]["advanced-metallic-asteroid-crushing"].order = "aa"
+data.raw["recipe"]["advanced-carbonic-asteroid-crushing"].order = "ab"
+data.raw["recipe"]["advanced-oxide-asteroid-crushing"].order = "ac"
+data.raw["recipe"]["advanced-metallic-asteroid-crushing"].subgroup = "vgal-space-advanced"
+data.raw["recipe"]["advanced-carbonic-asteroid-crushing"].subgroup = "vgal-space-advanced"
+data.raw["recipe"]["advanced-oxide-asteroid-crushing"].subgroup = "vgal-space-advanced"
 
 -- if settings.startup["vgal-crushing-recipes"].value then
 --     data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"

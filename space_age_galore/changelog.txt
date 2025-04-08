@@ -4,11 +4,14 @@ Version: 1.4.0
     - Added "vgal-metallic-asteroid-chunk-lava" recipe. (worse for iron, slighly better for copper, only source of stone in space.)
     - Added "vgal-iron-ore-stone-thruster-oxidizer" recipe.
     - Added "vgal-carbon-stone-thruster-fuel" recipe.
+    - Added "vgal-promethium-asteroid-chunk-reprocessing" recipe.
     - Added locale for alternative biter egg recipes.
   Balancing:
     - Removed "vgal-tungsten-plate-engine-unit" recipe.
+    - Removed "vgal-promethium-asteroid-chunk-crushing" unsure tag.
   Bugfixes:
     - Fixed disabling science recipes causing all smelthing recipe to be hidden.
+    - Fixed changelog spelling error (disabling is not with double s).
     - Fixed changelog spelling error (disabling is not with double s).
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.50

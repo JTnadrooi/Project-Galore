@@ -1,5 +1,4 @@
 data:extend {
-    vgal.setting.new_bool("vgal-log", "z"),
     vgal.setting.new_bool("vgal-always-show-products", "aa"),
     vgal.setting.new_bool("vgal-always-show-made-in", "aab"),
     {

@@ -40,7 +40,6 @@ vgal.data.extend({
             { "carbonic-asteroid-chunk",   1, { probability = 0.10 } },
         },
         category = "crushing",
-        groups = { "vgal-unsure" },
         show_amount_in_title = false,
         allow_productivity = false,
         complementairy_recipe = "oxide-asteroid-reprocessing",
@@ -120,8 +119,10 @@ vgal.data.extend({
         name = "metallic-asteroid-chunk-lava", -- should be used for stone, for the other recipes this isn't that good
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("lava"),
-            vgal.icon.get_in_fluid("metallic-asteroid-chunk"),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/metallic-asteroid-chunk-lava.png"),
+            -- vgal.icon.get("lava"),
+            -- vgal.icon.get("metallic-asteroid-chunk"),
+            -- vgal.icon.get_in_fluid("metallic-asteroid-chunk"),
             -- vgal.icon.get_in_fluid2("calcite"),
         },
         energy_required = 12,
@@ -130,9 +131,10 @@ vgal.data.extend({
             { "metallic-asteroid-chunk", 1 },
         },
         fluid_results = {
-            { "lava", 80 }, -- 120 lava = 90 molten, ~ 3 v 4 stone...
+            { "lava", 50 }, -- .. lava = .. molten, ~ .. stone
         },
         results = {
+            { "stone",                   2 },
             { "metallic-asteroid-chunk", 1, { probability = 0.05 } },
         },
         category = "metallurgy",
@@ -146,7 +148,7 @@ vgal.data.extend({
         name = "carbon-stone-thruster-fuel", -- ~ 80% less carbon usage, bit less water, 2x faster (adv is 4x faster)
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get_placeholder(),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/carbon-stone-thruster-fuel.png"),
         },
         category = "chemistry",
         energy_required = 5,
@@ -161,7 +163,7 @@ vgal.data.extend({
         fluid_results = {
             { "thruster-fuel", 350 },
         },
-        order = "bba",
+        order = "baa",
         allow_productivity = true,
         surface_conditions =
         {
@@ -178,7 +180,7 @@ vgal.data.extend({
         name = "iron-ore-stone-thruster-oxidizer", -- ~ 80% less iron usage, bit less water, 2x faster (adv is 4x faster)
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get_placeholder(),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/iron-ore-stone-thruster-oxidizer.png"),
         },
         category = "chemistry",
         energy_required = 5,
@@ -193,7 +195,7 @@ vgal.data.extend({
         fluid_results = {
             { "thruster-oxidizer", 350 },
         },
-        order = "cba",
+        order = "caa",
         allow_productivity = true,
         surface_conditions =
         {

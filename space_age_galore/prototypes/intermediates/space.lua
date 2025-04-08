@@ -70,28 +70,28 @@ vgal.data.extend({
         allow_productivity = true,
         groups = { "vgal-unsure" },
     },
-    {
-        type = "recipe",
-        name = "oxide-asteroid-chunk-stone",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get_placeholder(),
-        },
-        technology = "foundry",
-        energy_required = 4,
-        category = "crushing",
-        ingredients = {
-            { "oxide-asteroid-chunk", 1 },
-        },
-        results = {
-            { "ice",                  6 },
-            { "stone",                4 },
-            { "oxide-asteroid-chunk", 1, { probability = 0.05 } },
-        },
-        complementairy_recipe = "advanced-oxide-asteroid-crushing",
-        productivity_technology = "asteroid-productivity",
-        allow_productivity = true,
-    },
+    -- {
+    --     type = "recipe",
+    --     name = "oxide-asteroid-chunk-stone",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get_placeholder(),
+    --     },
+    --     technology = "foundry",
+    --     energy_required = 4,
+    --     category = "crushing",
+    --     ingredients = {
+    --         { "oxide-asteroid-chunk", 1 },
+    --     },
+    --     results = {
+    --         { "ice",                  6 },
+    --         { "stone",                4 },
+    --         { "oxide-asteroid-chunk", 1, { probability = 0.05 } },
+    --     },
+    --     complementairy_recipe = "advanced-oxide-asteroid-crushing",
+    --     productivity_technology = "asteroid-productivity",
+    --     allow_productivity = true,
+    -- },
     {
         name = "metallic-asteroid-chunk-lava", -- should be used for stone, for the other recipes this isn't that good
         prefix = "vgal",
@@ -106,7 +106,7 @@ vgal.data.extend({
             { "metallic-asteroid-chunk", 1 },
         },
         fluid_results = {
-            { "lava", 100 },                    -- 150 lava = 110 molten, ~ 3 v 5 stone...
+            { "lava", 80 }, -- 120 lava = 90 molten, ~ 3 v 4 stone...
         },
         results = {
             { "metallic-asteroid-chunk", 1, { probability = 0.05 } },
@@ -115,7 +115,6 @@ vgal.data.extend({
         complementairy_recipe = "advanced-metallic-asteroid-crushing",
         productivity_technology = "asteroid-productivity",
         allow_productivity = true,
-        groups = { "vgal-unsure" },
     },
     {
         type = "recipe",

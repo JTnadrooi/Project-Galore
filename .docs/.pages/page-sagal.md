@@ -2,7 +2,7 @@
 
 A large recipe pack that adds over 70 new recipes to the 110 already present in [Vanilla Galore](https://mods.factorio.com/mod/vanilla_galore_continued). This mod doesn't add new items, fluids, or buildings and can be safely added to a save at any time without causing issues.
 
-![gleba](https://github.com/JTnadrooi/Project-Galore/blob/main/media/gleba_galore.png?raw=true)
+![gleba](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/gleba_galore.png?raw=true)
 
 **MOD SPOTLIGHT [HERE](https://www.youtube.com/watch?v=xpqJSHA4Q5A&lc=Ugw0CpAURsOiowPeeEx4AaABAg)**
 

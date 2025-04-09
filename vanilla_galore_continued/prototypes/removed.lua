@@ -276,6 +276,25 @@ vgal.data.extend({
         energy_required = 15,
         category = "crafting-with-fluid",
     },
+    {
+        name = "uranium-238-low-density-structure",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("low-density-structure"),
+            vgal.icon.get_in("uranium-238"),
+        },
+        category = "crafting",
+        energy_required = 15,
+        technology = { "low-density-structure", "uranium-processing" },
+        ingredients = {
+            { "uranium-238",  1 },  -- 200
+            { "steel-plate",  1 },  -- 50
+            { "copper-plate", 10 }, -- 100
+        },
+        results = {
+            { "low-density-structure", 1 }, -- 375
+        },
+    },
 }, {
     type = "recipe",
     groups = { "vgal-removed" },

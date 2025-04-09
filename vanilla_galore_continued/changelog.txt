@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
   Balancing:
-    - aa
+    - Remove the "vgal-uranium-238-low-density-structure" recipe. (Reason; 1. I dislike the (nearly) nullifying the oil need of LDS, 2. Uranium-238 isn't very "low density"..)
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.40
   Features:

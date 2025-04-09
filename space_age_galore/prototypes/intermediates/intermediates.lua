@@ -137,8 +137,8 @@ vgal.data.extend({
             { "uranium-ore", 10 },
         },
         results = {
-            { "uranium-235", nil, { probability = 0.033 } }, -- ~5 times as much U235!!!
-            { "uranium-238", nil, { probability = 0.967 } },
+            { "uranium-235", 1, { probability = 0.033 } }, -- ~5 times as much U235!!!
+            { "uranium-238", 1, { probability = 0.967 } },
         },
         category = "centrifuging",
     },

@@ -105,22 +105,28 @@ vgal.data.extend({
         name = "carbon-uranium-ore",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("carbon"),
-            vgal.icon.get_overlay("reprocessing"),
+            -- vgal.icon.get("carbon"),
+            -- vgal.icon.get_overlay("reprocessing"),
+
+            vgal.icon.get_in_to("carbon"),
+            vgal.icon.get_out_to("uranium-ore"),
+            vgal.icon.get_overlay("to"),
         },
         energy_required = 10,
         technology = { "uranium-processing", "space-platform" },
-        fluid_ingredients = {
-            { "sulfuric-acid", 20 },
-        },
+        -- fluid_ingredients = {
+        --     { "sulfuric-acid", 20 },
+        -- },
         ingredients = {
             { "carbon", 15 },
         },
         results = {
-            { "uranium-ore", nil, { amount_min = 3, amount_max = 7 } }, -- avg; 5
+            { "uranium-ore", nil, { amount_min = 2, amount_max = 8 } }, -- avg; 5
             { "carbon",      nil, { amount_min = 1, amount_max = 4 } }, -- avg; 2.5
         },
         category = "centrifuging",
+        show_amount_in_title = false,
+        allow_productivity = true,
     },
     {
         name = "fluorine-uranium-ore-uranium-238-uranium-235",
@@ -131,7 +137,7 @@ vgal.data.extend({
         energy_required = 12,
         technology = { "kovarex-enrichment-process", "cryogenic-plant" },
         fluid_ingredients = {
-            { "fluorine", 50 },
+            { "fluorine", 40 },
         },
         ingredients = {
             { "uranium-ore", 10 },
@@ -141,6 +147,8 @@ vgal.data.extend({
             { "uranium-238", 1, { probability = 0.967 } },
         },
         category = "centrifuging",
+        show_amount_in_title = false,
+        allow_productivity = true,
     },
     {
         name = "calcite-carbon-concrete", -- vu

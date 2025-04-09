@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.1
   Features:
-    - Added "vgal-metallic-asteroid-chunk-lava" recipe.
+    - Added "vgal-fluorine-uranium-ore-uranium-238-uranium-235" recipe.
+    - Added "vgal-carbon-uranium-ore" recipe.
   Balancing:
     - Removed "vgal-molten-iron-molten-copper-uranium-238-low-density-structure" recipe. (Reason; see changelog VGAL)
 ---------------------------------------------------------------------------------------------------

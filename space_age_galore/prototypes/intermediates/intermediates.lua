@@ -102,11 +102,11 @@ vgal.data.extend({
     --     category = "organic",
     -- },
     {
-        name = "carbon-uranium-238-uranium-235",
+        name = "carbon-uranium-ore",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("uranium-ore"),
-            vgal.icon.get_in("carbon"),
+            vgal.icon.get("carbon"),
+            vgal.icon.get_overlay("reprocessing"),
         },
         energy_required = 10,
         technology = "centrifuging",
@@ -114,10 +114,32 @@ vgal.data.extend({
             { "sulfuric-acid", 20 },
         },
         ingredients = {
-            { "carbon", 1 }, -- 
+            { "carbon", 15 },
         },
         results = {
-            { "uranium-ore", 10 }, -- 200
+            { "uranium-ore", nil, { amount_min = 3, amount_max = 7 } }, -- avg; 5
+            { "carbon",      nil, { amount_min = 1, amount_max = 4 } }, -- avg; 2.5
+        },
+        category = "crafting-with-fluid",
+    },
+    {
+        name = "fluorine-uranium-ore-uranium-238-uranium-235",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("carbon"),
+            vgal.icon.get_overlay("reprocessing"),
+        },
+        energy_required = 10,
+        technology = "centrifuging",
+        fluid_ingredients = {
+            { "sulfuric-acid", 20 },
+        },
+        ingredients = {
+            { "carbon", 15 },
+        },
+        results = {
+            { "uranium-ore", nil, { amount_min = 3, amount_max = 7 } },
+            { "carbon",      nil, { amount_min = 1, amount_max = 4 } },
         },
         category = "crafting-with-fluid",
     },

@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.1
+  Features:
+    - Added "vgal-metallic-asteroid-chunk-lava" recipe.
+  Balancing:
+    - Removed "vgal-molten-iron-molten-copper-uranium-238-low-density-structure" recipe. (Reason; see changelog VGAL)
+---------------------------------------------------------------------------------------------------
 Version: 1.4.0
   Features:
     - Added "vgal-metallic-asteroid-chunk-lava" recipe. (worse for iron, slighly better for copper, only source of stone in space.)
@@ -11,7 +17,6 @@ Version: 1.4.0
     - Removed "vgal-promethium-asteroid-chunk-crushing" unsure tag.
   Bugfixes:
     - Fixed disabling science recipes causing all smelthing recipe to be hidden.
-    - Fixed changelog spelling error (disabling is not with double s).
     - Fixed changelog spelling error (disabling is not with double s).
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.50

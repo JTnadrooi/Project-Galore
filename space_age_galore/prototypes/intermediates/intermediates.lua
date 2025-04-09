@@ -102,6 +102,26 @@ vgal.data.extend({
     --     category = "organic",
     -- },
     {
+        name = "carbon-uranium-238-uranium-235",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("uranium-ore"),
+            vgal.icon.get_in("carbon"),
+        },
+        energy_required = 10,
+        technology = "centrifuging",
+        fluid_ingredients = {
+            { "sulfuric-acid", 20 },
+        },
+        ingredients = {
+            { "carbon", 1 }, -- 
+        },
+        results = {
+            { "uranium-ore", 10 }, -- 200
+        },
+        category = "crafting-with-fluid",
+    },
+    {
         name = "calcite-carbon-concrete", -- vu
         prefix = "vgal",
         icons = vgal.icon.register {

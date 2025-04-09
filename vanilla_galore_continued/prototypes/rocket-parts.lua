@@ -29,7 +29,7 @@ vgal.data.extend({
         },
         energy_required = 2,
         ingredients = {
-            { "low-density-structure", 6 },  -- 2250
+            { "low-density-structure", 10 },  -- 2250
             { "uranium-fuel-cell",     10 }, -- 4600
             { "processing-unit",       10 }, -- 7100
         },

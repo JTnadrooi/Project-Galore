@@ -295,6 +295,29 @@ vgal.data.extend({
             { "low-density-structure", 1 }, -- 375
         },
     },
+    {
+        name = "steel-plate-uranium-fuel-cell",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("uranium-fuel-cell"),
+            vgal.icon.get_in("sulfuric-acid", "fluid"),
+            vgal.icon.get_in2("steel-plate"),
+        },
+        technology = "nuclear-power",
+        ingredients = {
+            { "steel-plate", 2 },
+            { "uranium-235", 1 },
+            { "uranium-238", 25 },
+        },
+        fluid_ingredients = {
+            { "sulfuric-acid", 20 },
+        },
+        results = {
+            { "uranium-fuel-cell", 15 },
+        },
+        energy_required = 12,
+        category = "crafting-with-fluid",
+    },
 }, {
     type = "recipe",
     groups = { "vgal-removed" },

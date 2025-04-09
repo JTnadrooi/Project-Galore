@@ -149,31 +149,6 @@ vgal.data.extend({
         subgroup = "vulcanus-processes",
     },
     {
-        name = "molten-iron-molten-copper-uranium-238-low-density-structure",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("casting-low-density-structure", "recipe"),
-            vgal.icon.get_in("uranium-238"),
-        },
-        energy_required = 15,
-        technology = { "foundry", "uranium-processing" },
-        fluid_ingredients = {
-            { "molten-copper", 150 },
-            { "molten-iron",   80 },
-        },
-        ingredients = {
-            { "uranium-238", 1 },
-        },
-        results = {
-            { "low-density-structure", 1 },
-        },
-        category = "metallurgy",
-        subgroup = "vulcanus-processes",
-        order = "b-f-a",
-        localised_name_source = "casting-low-density-structure",
-        localised_description_source = "vgal-uranium-238-low-density-structure",
-    },
-    {
         name = "molten-copper-carbon-fiber-low-density-structure",
         prefix = "vgal",
         icons = vgal.icon.register {

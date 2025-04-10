@@ -67,7 +67,6 @@ vgal.data.extend({
         subgroup = "vgal-space-advanced",
         order = "ac",
         productivity_technology = "asteroid-productivity",
-        allow_productivity = true,
     },
     {
         type = "recipe",
@@ -90,7 +89,6 @@ vgal.data.extend({
         subgroup = "vgal-space-advanced",
         order = "aa",
         productivity_technology = "asteroid-productivity",
-        allow_productivity = true,
         groups = { "vgal-unsure" },
     },
     -- {
@@ -113,7 +111,6 @@ vgal.data.extend({
     --     },
     --     complementairy_recipe = "advanced-oxide-asteroid-crushing",
     --     productivity_technology = "asteroid-productivity",
-    --     allow_productivity = true,
     -- },
     {
         name = "metallic-asteroid-chunk-lava", -- should be used for stone, for the other recipes this isn't that good
@@ -139,9 +136,9 @@ vgal.data.extend({
         },
         category = "metallurgy",
         subgroup = "vgal-space-advanced",
+        main_product = "lava",
         order = "aa",
         productivity_technology = "asteroid-productivity",
-        allow_productivity = true,
     },
     {
         type = "recipe",
@@ -164,7 +161,6 @@ vgal.data.extend({
             { "thruster-fuel", 350 },
         },
         order = "baa",
-        allow_productivity = true,
         surface_conditions =
         {
             {
@@ -196,7 +192,6 @@ vgal.data.extend({
             { "thruster-oxidizer", 350 },
         },
         order = "caa",
-        allow_productivity = true,
         surface_conditions =
         {
             {
@@ -228,7 +223,6 @@ vgal.data.extend({
     --     },
     --     complementairy_recipe = "advanced-carbonic-asteroid-crushing",
     --     productivity_technology = "asteroid-productivity",
-    --     allow_productivity = true,
     --     groups = { "vgal-unsure" },
     -- },
     -- {
@@ -254,7 +248,6 @@ vgal.data.extend({
     --     },
     --     complementairy_recipe = "advanced-metallic-asteroid-crushing",
     --     productivity_technology = "asteroid-productivity",
-    --     allow_productivity = true,
     -- },
     -- {
     --     type = "recipe",
@@ -277,7 +270,6 @@ vgal.data.extend({
     --     fluid_results = {
     --         { "thruster-oxidizer", 3000 },
     --     },
-    --     allow_productivity = true,
     -- },
     {
         type = "recipe",
@@ -331,7 +323,6 @@ vgal.data.extend({
             { "thruster-oxidizer", 3000 },
         },
         order = "cc",
-        allow_productivity = true,
         surface_conditions =
         {
             {
@@ -362,7 +353,6 @@ vgal.data.extend({
             { "thruster-fuel", 3000 },
         },
         order = "bc",
-        allow_productivity = true,
         surface_conditions =
         {
             {

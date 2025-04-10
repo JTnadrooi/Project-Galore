@@ -424,7 +424,6 @@ vgal.data.extend({
     --         { "tungsten-carbide", 5 },
     --     },
     --     show_amount_in_title = false,
-    --     allow_productivity = true,
     --     groups = { "vgal-unsure" },
     -- },
     -- {

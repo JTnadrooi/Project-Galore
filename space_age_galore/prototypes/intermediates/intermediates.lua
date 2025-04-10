@@ -126,7 +126,6 @@ vgal.data.extend({
         },
         category = "centrifuging",
         show_amount_in_title = false,
-        allow_productivity = true,
     },
     {
         name = "fluorine-uranium-ore-uranium-238-uranium-235",
@@ -148,7 +147,6 @@ vgal.data.extend({
         },
         category = "centrifuging",
         show_amount_in_title = false,
-        allow_productivity = true,
     },
     {
         name = "calcite-carbon-concrete", -- vu

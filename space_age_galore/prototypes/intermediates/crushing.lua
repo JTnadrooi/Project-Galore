@@ -37,8 +37,8 @@ vgal.data.extend({
             { "stone", 5 },
         },
         results = {
-            { "stone",   1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
             { "calcite", 1, { probability = 0.12, show_details_in_recipe_tooltip = false } }, -- 42 stone = 1 calcite,
+            { "stone",   1, { probability = 0.10, show_details_in_recipe_tooltip = false } },
         },
         category = "crushing",
         subgroup = "vgal-crushing",

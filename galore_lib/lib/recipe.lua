@@ -6,24 +6,11 @@ function vgal.recipe.get_if_productivity(mainProduct)
     if recipe and recipe.allow_productivity then
         return true
     end
-    local validProducts = {
-        "coal",
-        "iron-ore",
-        "copper-ore",
-        "uranium-ore",
-        "stone",
-        "ammonia",
-        "light-oil",
-        "heavy-oil",
-        "petroleum-gas",
-        "solid-fuel",
-        "ammonia",
-        "crude-oil",
-    }
-    for _, product in ipairs(validProducts) do
-        if product == mainProduct then return true end
-    end
-    return false
+    return vgal.productivity_entries[mainProduct] == true
+end
+
+function vgal.recipe.add_productivity_entry(mainProduct)
+    vgal.productivity_entries[mainProduct] = true
 end
 
 function vgal.recipe.get_ingredients(recipeName)

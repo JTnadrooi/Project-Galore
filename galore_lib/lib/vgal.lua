@@ -44,28 +44,8 @@ end
 ---@type vgal.VgalRecipePrototype[]
 vgal.recipes = {}
 ---@type vgal.VgalToggleGroupPrototype[]
-vgal.groups = {
-    -- { "vgal-rocket-parts",            "vgal-rocket-parts" },
-    -- { "vgal-science-packs",           "vgal-science-packs" },
-    -- { "vgal-buildings",               "vgal-buildings" },
-    -- { "vgal-belts",                   "vgal-belts" },
-    -- { "vgal-equipment",               "vgal-equipment" },
-    -- { "vgal-barrels",                 "vgal-barrels" },
-    -- { "vgal-military",                "vgal-military" },
-    -- { "vgal-wood-recipes",            "vgal-wood-recipes" },
-    -- { "vgal-oil-recipes",             "vgal-oil-recipes" },
-    -- { "vgal-renewable-ores",          "vgal-renewable-ores" },
-    -- { "vgal-crushing-recipes",        "vgal-crushing-recipes" },
-    -- { "vgal-ice-recipes",             "vgal-ice-recipes" },
-    -- { "vgal-silly",           "vgal-silly" },
-    -- { "vgal-captive-spawner-recipes", "vgal-captive-spawner-recipes" },
-    -- { "vgal-modules",                 "vgal-modules" },
-
-    -- { "vgal-convoluted-recipes",      "vgal-convoluted" },
-    -- { "vgal-unsure-recipes",          "vgal-unsure" },
-    -- { "vgal-removed-recipes",         "vgal-removed" },
-}
-
+vgal.groups = {}
+vgal.productivity_entries = {}
 
 
 -- for _, groupTuple in ipairs(vgal.groups) do

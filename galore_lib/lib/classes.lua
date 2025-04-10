@@ -40,3 +40,11 @@ do
     ---@field enabled? boolean
     ---@field enabled_setting? string
 end
+
+-- do
+--     ---A vgal item/fluid catalogue entry
+--     ---@class vgal.VgalCatalogueEntry
+--     ---@field type? string
+--     ---@field name? string
+--     ---@field main_recipe? string|vgal.VgalRecipePrototype
+-- end

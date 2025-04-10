@@ -6,6 +6,9 @@ function vgal.recipe.get_if_productivity(mainProduct)
     if recipe and recipe.allow_productivity then
         return true
     end
+    if data.raw["fluid"][mainProduct] then
+        return true
+    end
     return vgal.productivity_entries[mainProduct] == true
 end
 

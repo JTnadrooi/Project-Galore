@@ -169,6 +169,7 @@ end
 function vgal.recipe.copy_and_extend(recipeName, as)
     local newRecipe = util.table.deepcopy(data.raw["recipe"][recipeName])
     newRecipe.name = as
+    ---@diagnostic disable-next-line: assign-type-mismatch
     data:extend({ newRecipe })
 end
 

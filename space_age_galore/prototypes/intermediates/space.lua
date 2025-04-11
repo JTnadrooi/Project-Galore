@@ -122,7 +122,7 @@ vgal.data.extend({
             -- vgal.icon.get_in_fluid("metallic-asteroid-chunk"),
             -- vgal.icon.get_in_fluid2("calcite"),
         },
-        energy_required = 12,
+        energy_required = 5,
         technology = "foundry",
         ingredients = {
             { "metallic-asteroid-chunk", 1 },

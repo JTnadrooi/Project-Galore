@@ -67,30 +67,6 @@ vgal.data.extend({
         order = "gc",
         show_amount_in_title = false,
     },
-    {
-        name = "promethium-asteroid-chunk-crushing",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("promethium-asteroid-chunk"),
-            vgal.icon.get_overlay("crushing"),
-        },
-        energy_required = 1,
-        technology = "promethium-science-pack",
-        ingredients = {
-            { "promethium-asteroid-chunk", 1 },
-        },
-        results = {
-            { "promethium-asteroid-chunk", 1, { probability = 0.80 } },
-            { "holmium-ore",               1, { probability = 0.005 } },
-        },
-        category = "crushing",
-        order = "b-a-d",
-        groups = { "vgal-unsure" },
-        show_amount_in_title = false,
-        allow_productivity = false,
-        allow_quality = true,
-        complementairy_recipe = "advanced-metallic-asteroid-crushing",
-    },
 }, {
     type = "recipe",
     groups = { "vgal-crushing-recipes" }

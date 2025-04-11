@@ -50,9 +50,10 @@ vgal.data.extend({
         name = "fluorine-kovarex-enrichment-process",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("kovarex-enrichment-process", "recipe"),
-            vgal.icon.get_overlay("plus"),
+            -- vgal.icon.get("kovarex-enrichment-process", "recipe"),
+            -- vgal.icon.get_overlay("plus"),
             -- vgal.icon.get_placeholder(),
+            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/fluorine-kovarex-enrichment-process.png"),
         },
         energy_required = 30,
         technology = { "kovarex-enrichment-process", "cryogenic-plant" },

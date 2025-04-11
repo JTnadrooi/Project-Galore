@@ -111,6 +111,25 @@ vgal.data.extend({
         localised_name_source = "casting-low-density-structure",
         localised_description_source = "vgal-uranium-238-low-density-structure",
     },
+    {
+        name = "tungsten-plate-barrel",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("barrel"),
+            vgal.icon.get_in("tungsten-plate"),
+        },
+        energy_required = 2,
+        technology = "tungsten-steel",
+        ingredients = {
+            { "tungsten-plate", 1 }, -- 60
+            { "iron-plate",     2 }, -- 20
+        },
+        results = {
+            { "barrel", 2 }, -- 100
+        },
+        category = "crafting",
+        groups = { "vgal-barrels" },
+    },
 }, {
     type = "recipe",
     groups = { "vgal-removed" },

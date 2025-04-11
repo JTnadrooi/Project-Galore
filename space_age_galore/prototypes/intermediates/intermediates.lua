@@ -43,25 +43,6 @@ vgal.data.extend({
         },
     },
     {
-        name = "tungsten-plate-barrel",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("barrel"),
-            vgal.icon.get_in("tungsten-plate"),
-        },
-        energy_required = 2,
-        technology = "tungsten-steel",
-        ingredients = {
-            { "tungsten-plate", 1 }, -- 60
-            { "iron-plate",     2 }, -- 20
-        },
-        results = {
-            { "barrel", 2 }, -- 100
-        },
-        category = "crafting",
-        groups = { "vgal-barrels" },
-    },
-    {
         name = "lava-engine-unit",
         prefix = "vgal",
         icons = vgal.icon.register {

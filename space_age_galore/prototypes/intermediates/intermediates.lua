@@ -134,9 +134,9 @@ vgal.data.extend({
             vgal.icon.get_placeholder(),
         },
         energy_required = 10,
-        technology = { "kovarex-enrichment-process", "cryogenic-plant" },
+        technology = { "uranium-processing", "cryogenic-plant" },
         fluid_ingredients = {
-            { "fluorine", 40 },
+            { "fluorine", 25 },
         },
         ingredients = {
             { "uranium-ore", 10 },

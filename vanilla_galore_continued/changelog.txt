@@ -5,6 +5,7 @@ Version: 1.2.0
     - Removed the "vgal-steel-plate-uranium-fuel-cell" recipe. (Reason(s); 1. It has no place in the catelogue, especially with the ..+LDS to U258 recipe, 2. This recipe is/was a nobrainer.)
     - "vgal-low-density-structure-uranium-fuel-cell" low density structure cost; 2 -> 1.
     - "vgal-low-density-structure-uranium-fuel-cell" sulfuric acid cost; 30 -> 20.
+    - "vgal-low-density-structure-uranium-fuel-cell" uranium-238 cost; 30 -> 29.
     - "vgal-low-density-structure-uranium-fuel-cell" uranium fuel cell result amount; 25 -> 15.
     - "vgal-uranium-fuel-cell-rocket-part" low density structure cost; 6 -> 10.
     - "vgal-uranium-235-uranium-238" output probability 100% -> 25%.

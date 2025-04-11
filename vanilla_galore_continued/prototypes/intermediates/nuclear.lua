@@ -49,7 +49,7 @@ vgal.data.extend({
         ingredients = {
             { "low-density-structure", 1 },
             { "uranium-235",           1 },
-            { "uranium-238",           30 },
+            { "uranium-238",           29 },
         },
         fluid_ingredients = {
             { "sulfuric-acid", 20 },

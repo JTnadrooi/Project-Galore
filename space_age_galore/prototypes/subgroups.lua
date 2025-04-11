@@ -233,6 +233,7 @@ data.raw["recipe"]["advanced-metallic-asteroid-crushing"].subgroup = "vgal-space
 data.raw["recipe"]["advanced-carbonic-asteroid-crushing"].subgroup = "vgal-space-advanced"
 data.raw["recipe"]["advanced-oxide-asteroid-crushing"].subgroup = "vgal-space-advanced"
 
+data.raw["recipe"]["simple-coal-liquefaction"].subgroup = "vgal-oil"
 -- if settings.startup["vgal-crushing-recipes"].value then
 --     data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"
 --     data.raw["recipe"]["carbonic-asteroid-crushing"].subgroup = "vgal-crushing"

@@ -248,6 +248,8 @@ data.raw["recipe"]["light-oil-cracking"].subgroup = "vgal-oil"
 data.raw["recipe"]["advanced-oil-processing"].subgroup = "vgal-oil"
 data.raw["recipe"]["basic-oil-processing"].subgroup = "vgal-oil"
 
+data.raw["recipe"]["coal-liquefaction"].subgroup = "vgal-oil"
+
 for _, value in ipairs(toClean) do
     vgal.subgroup.restore(value)
 end

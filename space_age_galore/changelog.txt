@@ -1,10 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.1
   Features:
+    - Moved simple coal liquifaction recipe to the "vgal-oil" subgroup.
+    - Moved the pentapod egg recipe to the same row as the biter eggs and bioflux.
     - Added "vgal-fluorine-kovarex-enrichment-process" recipe.
     - Added "vgal-carbon-uranium-ore" recipe.
     - Added "vgal-lithium-plate-uranium-fuel-cell" recipe.
-    - Moved the pentapod egg recipe to the same row as the biter eggs and bioflux.
   Balancing:
     - Removed "vgal-molten-iron-molten-copper-uranium-238-low-density-structure" recipe. (Reason; see changelog VGAL)
     - Removed "vgal-tungsten-plate-barrel" recipe.

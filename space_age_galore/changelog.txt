@@ -1,7 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.1
   Features:
-    - Added "vgal-fluorine-uranium-ore-uranium-238-uranium-235" recipe.
     - Added "vgal-fluorine-kovarex-enrichment-process" recipe.
     - Added "vgal-carbon-uranium-ore" recipe.
   Balancing:

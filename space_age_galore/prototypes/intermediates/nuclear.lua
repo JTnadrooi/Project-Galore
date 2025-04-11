@@ -25,27 +25,27 @@ vgal.data.extend({
         category = "centrifuging",
         show_amount_in_title = false,
     },
-    {
-        name = "fluorine-uranium-ore-uranium-238-uranium-235",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get_placeholder(),
-        },
-        energy_required = 10,
-        technology = { "uranium-processing", "cryogenic-plant" },
-        fluid_ingredients = {
-            { "fluorine", 25 },
-        },
-        ingredients = {
-            { "uranium-ore", 10 },
-        },
-        results = {
-            { "uranium-235", 1, { probability = 0.033 } }, -- ~5 times as much U235!!!
-            { "uranium-238", 1, { probability = 0.967 } },
-        },
-        category = "centrifuging",
-        show_amount_in_title = false,
-    },
+    -- {
+    --     name = "fluorine-uranium-ore-uranium-238-uranium-235",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get_placeholder(),
+    --     },
+    --     energy_required = 10,
+    --     technology = { "uranium-processing", "cryogenic-plant" },
+    --     fluid_ingredients = {
+    --         { "fluorine", 25 },
+    --     },
+    --     ingredients = {
+    --         { "uranium-ore", 10 },
+    --     },
+    --     results = {
+    --         { "uranium-235", 1, { probability = 0.056 } }, -- ~8 times as much U235!!!
+    --         { "uranium-238", 1, { probability = 0.944 } },
+    --     },
+    --     category = "centrifuging",
+    --     show_amount_in_title = false,
+    -- },
     {
         name = "fluorine-kovarex-enrichment-process",
         prefix = "vgal",

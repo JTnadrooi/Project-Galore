@@ -10,6 +10,7 @@ require("prototypes.military")
 require("prototypes.rocket-parts")
 
 require("prototypes.intermediates.intermediates")
+require("prototypes.intermediates.nuclear")
 require("prototypes.intermediates.chemical")
 require("prototypes.intermediates.ammonia")
 require("prototypes.intermediates.crushing")

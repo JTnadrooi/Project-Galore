@@ -3,6 +3,8 @@ Version: 1.2.0
   Features:
     - Removed the "vgal.recipe.catagory_from_array" function, its even mispelled.
     - Improved automatic prod detection.
+  Bugfixes:
+    - Fixed "vgal.VgalRecipePrototype.localised_description_source" not working correctly.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Features:

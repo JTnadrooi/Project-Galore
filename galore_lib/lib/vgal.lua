@@ -165,7 +165,7 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                     [entry.localised_name_source])
             end
             if entry.localised_description_source then
-                entry.localised_description = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
+                entry.localised_description = vgal.recipe.get_preferred_localised_description(data.raw["recipe"]
                     [entry.localised_description_source])
             end
             entry.localised_name = vgal.recipe.get_preferred_localised_name(entry)

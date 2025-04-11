@@ -131,8 +131,7 @@ vgal.data.extend({
             { "lava", 50 }, -- .. lava = .. molten, ~ .. stone
         },
         results = {
-            { "stone",                   2 },
-            { "metallic-asteroid-chunk", 1, { probability = 0.05 } },
+            { "stone", 2 },
         },
         category = "metallurgy",
         subgroup = "vgal-space-advanced",

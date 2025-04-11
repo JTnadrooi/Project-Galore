@@ -12,6 +12,7 @@ Version: 1.2.0
     - "vgal-coal-uranium-235-nuclear-fuel" time taken reduced 50s -> 45s.
   Bugfixes:
     - Fixed "vgal-coal-uranium-235-nuclear-fuel" being made in a assembler instead of a centrifuge.
+    - Added "vgal-heavy-oil-light-oil-petroleum-gas" locale.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.40
   Features:

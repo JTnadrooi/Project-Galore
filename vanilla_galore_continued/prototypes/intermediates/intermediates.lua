@@ -287,7 +287,7 @@ vgal.data.extend({
             { "uranium-235", 1 },
         },
         results = {
-            { "uranium-238", 1 },
+            { "uranium-238", 1, { probability = 0.25, } },
         },
         allow_productivity = false,
         category = "centrifuging",

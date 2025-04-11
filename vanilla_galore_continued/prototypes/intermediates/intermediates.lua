@@ -149,29 +149,6 @@ vgal.data.extend({
         },
     },
     {
-        name = "low-density-structure-uranium-fuel-cell",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("uranium-fuel-cell"),
-            vgal.icon.get_in("sulfuric-acid", "fluid"),
-            vgal.icon.get_in2("low-density-structure"),
-        },
-        technology = { "nuclear-power", "low-density-structure" },
-        ingredients = {
-            { "low-density-structure", 1 },
-            { "uranium-235",           1 },
-            { "uranium-238",           30 },
-        },
-        fluid_ingredients = {
-            { "sulfuric-acid", 20 },
-        },
-        results = {
-            { "uranium-fuel-cell", 15 },
-        },
-        energy_required = 25,
-        category = "crafting-with-fluid",
-    },
-    {
         name = "petroleum-gas-rocket-fuel",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -272,25 +249,6 @@ vgal.data.extend({
             { "flying-robot-frame", 5 }, -- 405x (5)
         },
         category = "crafting",
-    },
-    {
-        name = "uranium-235-uranium-238",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get_in_to("uranium-235"),
-            vgal.icon.get_out_to("uranium-238"),
-            vgal.icon.get_overlay("to"),
-        },
-        technology = "uranium-processing",
-        energy_required = 30,
-        ingredients = {
-            { "uranium-235", 1 },
-        },
-        results = {
-            { "uranium-238", 1, { probability = 0.25, } },
-        },
-        allow_productivity = false,
-        category = "centrifuging",
     },
 }, {
     type = "recipe",

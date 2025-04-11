@@ -366,35 +366,6 @@ vgal.data.extend({
             }
         },
     },
-    -- {
-    --     type = "recipe",
-    --     name = "copper-bacteria-uranium-235-iron-bacteria",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get_in_to("copper-bacteria"),
-    --         vgal.icon.get_out_to("iron-bacteria"),
-    --         vgal.icon.get_overlay("to"),
-    --     },
-    --     category = "organic",
-    --     energy_required = 45,
-    --     technology = "biochamber",
-    --     ingredients = {
-    --         { "pentapod-egg", 1 }, -- 200
-    --         { "bioflux",      2 }, -- 120
-    --     },
-    --     results = {
-    --         { "stone", nil, { amount_min = 10, amount_max = 30 } }, -- 200 * 1.5 = 300
-    --     },
-    --     show_amount_in_title = false,
-    --     surface_conditions =
-    --     {
-    --         {
-    --             property = "pressure",
-    --             min = 2000,
-    --             max = 2000,
-    --         }
-    --     },
-    -- },
     {
         type = "recipe",
         name = "sulfur-ammonia-nutrients", -- for nauvis / aquilo

@@ -6,6 +6,7 @@ Version: 1.4.1
     - Added "vgal-carbon-uranium-ore" recipe.
   Balancing:
     - Removed "vgal-molten-iron-molten-copper-uranium-238-low-density-structure" recipe. (Reason; see changelog VGAL)
+    - "vgal-promethium-asteroid-chunk-crushing" now allows productivity, although the prod only applies to the holmium ore result.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.0
   Features:

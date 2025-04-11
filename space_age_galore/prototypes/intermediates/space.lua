@@ -12,14 +12,14 @@ vgal.data.extend({
             { "promethium-asteroid-chunk", 1 },
         },
         results = {
-            { "promethium-asteroid-chunk", 1, { probability = 0.80 } },
             { "holmium-ore",               1, { probability = 0.005 } },
+            { "promethium-asteroid-chunk", 1, { probability = 0.80, ignored_by_productivity = 1 } },
         },
         category = "crushing",
         order = "b-a-d", -- hey
         show_amount_in_title = false,
-        allow_productivity = false,
         complementairy_recipe = "metallic-asteroid-crushing",
+        productivity_technology = "asteroid-productivity",
     },
     {
         name = "promethium-asteroid-chunk-reprocessing",

@@ -70,6 +70,7 @@ vgal.data.extend({
         },
         category = "centrifuging",
         show_amount_in_title = false,
+        allow_quality = false,
         order = "bcb",
     },
     {

@@ -168,6 +168,9 @@ data.raw["recipe"]["ammoniacal-solution-separation"].main_product = "ammonia"
 data.raw["recipe"]["ammoniacal-solution-separation"].subgroup = "vgal-water"
 data.raw["recipe"]["acid-neutralisation"].main_product = "steam"
 
+data.raw["item"]["pentapod-egg"].subgroup = "agriculture-products"
+data.raw["item"]["pentapod-egg"].order = "c-b"
+
 vgal.subgroup.set_item_or_fluid("fusion-power-cell", "uranium-processing")
 vgal.subgroup.set_item_or_fluid("lithium-plate", "vgal-smelting")
 vgal.subgroup.set_item_or_fluid("lithium", "raw-resource")

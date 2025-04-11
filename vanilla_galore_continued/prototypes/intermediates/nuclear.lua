@@ -7,7 +7,7 @@ vgal.data.extend({
             vgal.icon.get_in("coal"),
         },
         technology = "kovarex-enrichment-process",
-        energy_required = 50,
+        energy_required = 30,
         ingredients = {
             { "rocket-fuel", 1 },
             { "uranium-235", 1 },
@@ -16,7 +16,7 @@ vgal.data.extend({
         results = {
             { "nuclear-fuel", 1 },
         },
-        category = "advanced-crafting",
+        category = "centrifuging",
     },
     {
         name = "uranium-235-uranium-238",

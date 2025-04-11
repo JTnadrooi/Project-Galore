@@ -8,6 +8,9 @@ Version: 1.2.0
     - "vgal-low-density-structure-uranium-fuel-cell" uranium fuel cell result amount; 25 -> 15.
     - "vgal-uranium-fuel-cell-rocket-part" low density structure cost; 6 -> 10.
     - "vgal-uranium-235-uranium-238" output probability 100% -> 25%.
+    - "vgal-coal-uranium-235-nuclear-fuel" time taken reduced 50s -> 30s.
+  Bugfixes:
+    - Fixed "vgal-coal-uranium-235-nuclear-fuel" being made in a assembler instead of a centrifuge.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.40
   Features:

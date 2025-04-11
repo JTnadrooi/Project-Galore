@@ -72,6 +72,25 @@ vgal.data.extend({
         show_amount_in_title = false,
         order = "bcb",
     },
+    {
+        name = "lithium-plate-uranium-fuel-cell",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("uranium-fuel-cell"),
+            vgal.icon.get_in("lithium-plate"),
+        },
+        technology = { "nuclear-power", "lithium-processing" },
+        ingredients = {
+            { "lithium-plate", 1 },
+            { "uranium-235",   1 },
+            { "uranium-238",   19 },
+        },
+        results = {
+            { "uranium-fuel-cell", 15 },
+        },
+        energy_required = 15,
+        category = "crafting",
+    },
 }, {
     type = "recipe",
 })

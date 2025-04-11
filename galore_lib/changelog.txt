@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+  Features:
+    - Removed the "vgal.recipe.catagory_from_array" function, its even mispelled.
+    - Improved automatic prod detection.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Features:
     - Added vgal.icon.get_placeholder() function/graphics.

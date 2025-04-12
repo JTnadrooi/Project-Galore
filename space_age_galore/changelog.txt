@@ -12,6 +12,8 @@ Version: 1.4.1
     - "vgal-metallic-asteroid-chunk-lava" to longer has a small chance of returning the metallic asteroid.
     - "vgal-metallic-asteroid-chunk-lava" time taken 12 -> 5
     - "vgal-promethium-asteroid-chunk-crushing" now allows productivity, although the prod only applies to the holmium ore result.
+  Bugfixes:
+    - Fixed "scattered" -> "shattered".
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.0
   Features:

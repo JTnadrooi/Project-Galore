@@ -19,7 +19,7 @@ vgal.data.extend({
             { "carbon", 15 },
         },
         results = {
-            { "uranium-ore", nil, { amount_min = 2, amount_max = 8 } }, -- avg; 5
+            { "uranium-ore", nil, { amount_min = 1, amount_max = 4 } }, -- avg; 5
             { "carbon",      1,   { probability = 0.75 } },
         },
         category = "centrifuging",

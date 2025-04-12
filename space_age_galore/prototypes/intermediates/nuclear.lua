@@ -3,23 +3,17 @@ vgal.data.extend({
         name = "carbon-uranium-ore",
         prefix = "vgal",
         icons = vgal.icon.register {
-            -- vgal.icon.get("carbon"),
-            -- vgal.icon.get_overlay("reprocessing"),
-
             vgal.icon.get_in_to("carbon"),
             vgal.icon.get_out_to("uranium-ore"),
             vgal.icon.get_overlay("to"),
         },
         energy_required = 25,
         technology = { "uranium-processing", "space-platform" },
-        -- fluid_ingredients = {
-        --     { "sulfuric-acid", 20 },
-        -- },
         ingredients = {
             { "carbon", 15 },
         },
         results = {
-            { "uranium-ore", nil, { amount_min = 1, amount_max = 4 } }, -- avg; 5
+            { "uranium-ore", nil, { amount_min = 1, amount_max = 4 } }, -- avg; 2.3
             { "carbon",      1,   { probability = 0.75 } },
         },
         category = "centrifuging",

@@ -131,7 +131,6 @@ function vgal.tech.create_empty(techName, tier, units, unitCount, unitTime, prer
         name = techName,
         icons = icons or {
             {
-                -- icon = "__vanilla_galore__/graphics/tech/".."analog-electronics"..".png",
                 icon = vgal.tech.iconDirectory .. techName .. ".png",
                 icon_size = 400,
                 tint = nil,
@@ -148,42 +147,17 @@ function vgal.tech.create_empty(techName, tier, units, unitCount, unitTime, prer
     }
     if tier ~= 1 then
         toret.name = toret.name .. "-" .. tier
-        --if data.raw["technology"]["vgal-"..techName.."-"..(tier - 1)] or data.raw["technology"]["vgal-"..techName] then
         if tier == 2 then
             table.insert(prerequisites, techName)
         else
             table.insert(prerequisites, techName .. "-" .. (tier - 1))
         end
-        --end
     end
-    -- toret.icons[1].tint = vgal.get_tier_tint(tier)
     for _, value in ipairs(units) do
-        if type(value) ~= "string" then
-            if value == 1 then
-                value = "automation-science-pack"
-            end
-            if value == 2 then
-                value = "logistic-science-pack"
-            end
-            if value == 3 then
-                value = "chemical-science-pack"
-            end
-            if value == 4 then
-                value = "production-science-pack"
-            end
-            if value == 5 then
-                value = "utility-science-pack"
-            end
-            if value == 6 then
-                value = "space-science-pack"
-            end
-        end
         table.insert(toret.unit.ingredients, { value, 1 })
     end
     return toret
 end
-
---tech = vgal.tech.create_empty("vgal-cheap-iron-gear", 120, {1,2}, {"iron-gear", "electronics"})
 
 ---@param techName (string)
 function vgal.tech.deep_remove(techName)

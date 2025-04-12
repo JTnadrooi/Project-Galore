@@ -3,6 +3,7 @@ Version: 1.2.0
   Features:
     - Removed the "vgal.recipe.catagory_from_array" function, its even mispelled.
     - Improved automatic prod detection.
+    - vgal.tech.create_empty;units is no longer allowed to be an array of numbers.
   Bugfixes:
     - Fixed "vgal.VgalRecipePrototype.localised_description_source" not working correctly.
 ---------------------------------------------------------------------------------------------------

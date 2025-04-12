@@ -5,28 +5,28 @@ local subgroups = {
         tab = "logistics",
         order = "baa",
         entries = { "transport-belt", "splitter", "underground-belt" },
-        when = { "vgal-belts" },
+        when_settings = { "vgal-belts" },
     },
     {
         name = "belt-t2",
         tab = "logistics",
         order = "bab",
         entries = { "fast-transport-belt", "fast-splitter", "fast-underground-belt" },
-        when = { "vgal-belts" },
+        when_settings = { "vgal-belts" },
     },
     {
         name = "belt-t3",
         tab = "logistics",
         order = "bac",
         entries = { "express-transport-belt", "express-splitter", "express-underground-belt" },
-        when = { "vgal-belts" },
+        when_settings = { "vgal-belts" },
     },
     {
         name = "fluid-distribution",
         tab = "logistics",
         order = "da",
         entries = { "pipe", "pipe-to-ground", "storage-tank", "pump" },
-        when = { "vgal-buildings" },
+        when_settings = { "vgal-buildings" },
     },
     -- PRODUCTION
     {
@@ -145,42 +145,42 @@ local subgroups = {
         tab = "intermediate-products",
         order = "y",
         entries = { "automation-science-pack" },
-        when = { "vgal-science-packs" },
+        when_settings = { "vgal-science-packs" },
     },
     {
         name = "logistic-science-pack",
         tab = "intermediate-products",
         order = "ya",
         entries = { "logistic-science-pack" },
-        when = { "vgal-science-packs" },
+        when_settings = { "vgal-science-packs" },
     },
     {
         name = "military-science-pack",
         tab = "intermediate-products",
         order = "yb",
         entries = { "military-science-pack" },
-        when = { "vgal-science-packs" },
+        when_settings = { "vgal-science-packs" },
     },
     {
         name = "chemical-science-pack",
         tab = "intermediate-products",
         order = "yc",
         entries = { "chemical-science-pack" },
-        when = { "vgal-science-packs" },
+        when_settings = { "vgal-science-packs" },
     },
     {
         name = "production-science-pack",
         tab = "intermediate-products",
         order = "yd",
         entries = { "production-science-pack" },
-        when = { "vgal-science-packs" },
+        when_settings = { "vgal-science-packs" },
     },
     {
         name = "utility-science-pack",
         tab = "intermediate-products",
         order = "ye",
         entries = { "utility-science-pack" },
-        when = { "vgal-science-packs" },
+        when_settings = { "vgal-science-packs" },
     },
     -- {
     --     name = "chests",
@@ -193,21 +193,29 @@ local subgroups = {
         tab = "production",
         order = "ya",
         entries = { "speed-module", "speed-module-2", "speed-module-3" },
-        when = { "vgal-modules" },
+        when_settings = { "vgal-modules" },
     },
     {
         name = "module-efficiency",
         tab = "production",
         order = "yb",
         entries = { "efficiency-module", "efficiency-module-2", "efficiency-module-3" },
-        when = { "vgal-modules" },
+        when_settings = { "vgal-modules" },
     },
     {
         name = "module-productivity",
         tab = "production",
         order = "yc",
         entries = { "productivity-module", "productivity-module-2", "productivity-module-3" },
-        when = { "vgal-modules" },
+        when_settings = { "vgal-modules" },
+    },
+    {
+        name = "module-quality",
+        tab = "production",
+        order = "yd",
+        entries = { "quality-module", "quality-module-2", "quality-module-3" },
+        when_settings = { "vgal-modules" },
+        when = not not mods["quality"]
     },
 }
 
@@ -220,13 +228,18 @@ for _, value in ipairs(toClean) do
 end
 
 for _, value in ipairs(subgroups) do
-    for _, whenItem in ipairs(value.when or {}) do
+    if value.when == nil then
+        value.when = true
+    end
+    for _, whenItem in ipairs(value.when_settings or {}) do
         if not settings.startup[whenItem].value then
-            goto continue
+            value.entries = {}
         end
     end
+    if not value.when then
+        value.entries = {}
+    end
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
-    ::continue::
 end
 
 -- if not settings.startup["vgal-science-packs"].value then

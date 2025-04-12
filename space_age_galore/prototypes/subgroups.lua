@@ -16,7 +16,7 @@ local subgroups = {
         tab = "intermediate-products",
         order = "bb",
         entries = {},
-        -- when = { "vgal-crushing-recipes" },
+        -- when_settings = { "vgal-crushing-recipes" },
     },
     {
         name = "scrap",
@@ -71,7 +71,7 @@ local subgroups = {
         tab = "logistics",
         order = "bad",
         entries = { "turbo-transport-belt", "turbo-splitter", "turbo-underground-belt" },
-        when = { "vgal-belts" },
+        when_settings = { "vgal-belts" },
     },
     {
         name = "soil",
@@ -79,20 +79,13 @@ local subgroups = {
         order = "x",
         entries = { "artificial-yumako-soil", "artificial-jellynut-soil", "landfill", "foundation", "overgrowth-yumako-soil", "overgrowth-jellynut-soil", "ice-platform" },
     },
-    {
-        name = "module-quality",
-        tab = "production",
-        order = "yd",
-        entries = { "quality-module", "quality-module-2", "quality-module-3" },
-        when = { "vgal-modules" },
-    },
 
     {
         name = "space-science-pack",
         tab = "intermediate-products",
         order = "yf",
         entries = { "space-science-pack" },
-        when = { "vgal-science-packs" },
+        when_settings = { "vgal-science-packs" },
     },
     {
         name = "planetary-science-pack",
@@ -104,14 +97,14 @@ local subgroups = {
             "electromagnetic-science-pack",
             "agricultural-science-pack",
         },
-        when = { "vgal-science-packs" },
+        when_settings = { "vgal-science-packs" },
     },
     {
         name = "endgame-science-pack",
         tab = "intermediate-products",
         order = "yh",
         entries = { "cryogenic-science-pack", "promethium-science-pack", },
-        when = { "vgal-science-packs" },
+        when_settings = { "vgal-science-packs" },
     },
     {
         name = "space-advanced",
@@ -155,10 +148,16 @@ for _, value in ipairs(toClean) do
 end
 
 for _, value in ipairs(subgroups) do
-    for _, whenItem in ipairs(value.when or {}) do
+    if value.when == nil then
+        value.when = true
+    end
+    for _, whenItem in ipairs(value.when_settings or {}) do
         if not settings.startup[whenItem].value then
             value.entries = {}
         end
+    end
+    if not value.when then
+        value.entries = {}
     end
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
 end

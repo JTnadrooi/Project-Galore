@@ -5,6 +5,7 @@ Version: 1.2.0
     - Improved automatic prod detection.
     - vgal.tech.create_empty;units is no longer allowed to be an array of numbers.
     - vgal.tech.extract_units;now returns a string array.
+    - Added vgal.tech.get_units_worth function.
   Bugfixes:
     - Fixed "vgal.VgalRecipePrototype.localised_description_source" not working correctly.
 ---------------------------------------------------------------------------------------------------

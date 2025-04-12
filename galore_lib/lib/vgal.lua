@@ -192,9 +192,10 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                         local eventualUnitsWorth = 0
                         local eventualUnits = {}
                         for _, prerequisite in ipairs(preCollection) do
-                            tech = data.raw["technology"][prerequisite]
-                            units = vgal.tech.extract_units(tech)
-                            unitsWorth = vgal.table.sum(units)
+                            local tech = data.raw["technology"][prerequisite]
+
+                            local units = vgal.tech.extract_units(tech)
+                            local unitsWorth = vgal.tech.get_units_worth(units)
                             if unitsWorth > eventualUnitsWorth then
                                 eventualUnits = units
                                 eventualUnitsWorth = unitsWorth

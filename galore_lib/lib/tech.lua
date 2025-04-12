@@ -291,3 +291,25 @@ function vgal.tech.extract_units(tech)
     end
     return units
 end
+
+function vgal.tech.get_units_worth(units)
+    local values = {
+        ["automation-science-pack"] = 1,
+        ["logistic-science-pack"] = 2,
+        ["chemical-science-pack"] = 3,
+        ["space-science-pack"] = 4,
+        ["production-science-pack"] = 4,
+        ["utility-science-pack"] = 5,
+        ["metallurgic-science-pack"] = 5,
+        ["agricultural-science-pack"] = 5,
+        ["electromagnetic-science-pack"] = 5,
+        ["cryogenic-science-pack"] = 6,
+        ["promethium-science-pack"] = 7,
+    }
+
+    local worth = 0
+    for _, unit in ipairs(units) do
+        worth = worth + (values[unit] or 0)
+    end
+    return worth
+end

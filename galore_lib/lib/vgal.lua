@@ -209,7 +209,6 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                                     {
                                         icon = entry.icons[1].icon,
                                         icon_size = entry.icons[1].icon_size,
-                                        -- scale = 1.5,
                                         scale = 2.2,
                                     },
                                     {

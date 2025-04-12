@@ -272,22 +272,6 @@ function vgal.tech.extract_units(tech)
     end
     for _, value in ipairs(tech.unit.ingredients) do
         table.insert(units, value[1])
-        -- local name = value[1]:gsub("%-science%-pack", "")
-        -- if name == "automation" then
-        --     table.insert(units, 1)
-        -- end
-        -- if name == "logistic" then
-        --     table.insert(units, 2)
-        -- end
-        -- if name == "chemical" then
-        --     table.insert(units, 3)
-        -- end
-        -- if name == "production" then
-        --     table.insert(units, 4)
-        -- end
-        -- if name == "utility" then
-        --     table.insert(units, 5)
-        -- end
     end
     return units
 end
@@ -303,8 +287,8 @@ function vgal.tech.get_units_worth(units)
         ["metallurgic-science-pack"] = 5,
         ["agricultural-science-pack"] = 5,
         ["electromagnetic-science-pack"] = 5,
-        ["cryogenic-science-pack"] = 6,
-        ["promethium-science-pack"] = 7,
+        ["cryogenic-science-pack"] = 8,
+        ["promethium-science-pack"] = 10,
     }
 
     local worth = 0

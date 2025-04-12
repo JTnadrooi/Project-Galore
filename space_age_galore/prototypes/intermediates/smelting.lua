@@ -121,7 +121,7 @@ vgal.data.extend({
             { "stone", 3 },
         },
         results = {
-            { "rail", 6 }, -- 165molten iron
+            { "rail", 6 },
         },
         category = "metallurgy",
         subgroup = "vulcanus-processes",

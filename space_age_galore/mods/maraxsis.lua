@@ -5,8 +5,8 @@ local packFluids = {
     ["logistic-science-pack"] = { "maraxsis-brackish-water", 50 },
     ["military-science-pack"] = { "lava", 50 },
     ["chemical-science-pack"] = { "water", 50 },
-    ["production-science-pack"] = { "maraxsis-oxygen", 30 },
-    ["utility-science-pack"] = { "maraxsis-hydrogen", 60 },
+    ["production-science-pack"] = { "oxygen", 30 },
+    ["utility-science-pack"] = { "hydrogen", 60 },
 }
 local newRecipes = {}
 for _, recipe in pairs(vgal.recipes) do

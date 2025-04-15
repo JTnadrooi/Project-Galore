@@ -11,9 +11,11 @@ local packFluids = {
 local newRecipes = {}
 for _, recipe in pairs(vgal.recipes) do
     if recipe.name:match("%-science%-pack$") then
+        ---@diagnostic disable-next-line: undefined-field
         local resultPack = recipe.results[1].name
         local newRecipe = table.deepcopy(recipe)
         if packFluids[resultPack] then
+            ---@diagnostic disable-next-line: cast-type-mismatch
             ---@cast newRecipe data.RecipePrototype
             local resultAmount = newRecipe.results[1].amount
             table.insert(newRecipe.ingredients,

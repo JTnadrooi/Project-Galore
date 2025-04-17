@@ -32,5 +32,6 @@ require("prototypes.buildings.inserters")
 
 require("mods.james")
 require("mods.quality")
+require("mods.bobs")
 
 require("overrides.vgal-post-overrides")

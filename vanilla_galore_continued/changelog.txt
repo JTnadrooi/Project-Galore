@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+  Features:
+    - Added compat with the electronic assembling machines from bob's mods.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
   Features:
     - Moved coal liquifaction recipe to the "vgal-oil" subgroup.

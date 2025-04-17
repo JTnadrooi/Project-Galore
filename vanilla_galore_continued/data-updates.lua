@@ -13,3 +13,4 @@ if products or made_in then
 end
 
 require("mods.bz")
+require("mods.bobs")

@@ -1,7 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.2
+  Features:
+    - Improved compat with the electronic assembling machines from bob's mods.
   Bugfixes:
     - Fixed a rare(?) crash caused by the bob compat.
+    - Fixed bio circuits from Space Age Galore having the wrong category, caused by bobcompat.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.1
   Features:

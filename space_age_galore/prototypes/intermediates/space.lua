@@ -28,7 +28,7 @@ vgal.data.extend({
             vgal.icon.get("promethium-asteroid-chunk"),
             vgal.icon.get_overlay("reprocessing"),
         },
-        energy_required = 8,
+        energy_required = 2,
         technology = "promethium-science-pack",
         ingredients = {
             { "promethium-asteroid-chunk", 1 },

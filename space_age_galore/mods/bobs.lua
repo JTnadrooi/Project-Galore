@@ -1,3 +1,5 @@
 if not mods["bobassembly"] then return end
 
-data.raw.recipe["vgal-holmium-solution-copper-cable"].category = "bob-electronics"
+if settings.startup["bobmods-assembly-electronicmachines"].value then
+    data.raw.recipe["vgal-holmium-solution-copper-cable"].category = "bob-electronics"
+end

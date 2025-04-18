@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.2
+  Bugfixes:
+    - Fixed a rare(?) crash caused by the bob compat.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.1
   Features:
     - Added compat with the electronic assembling machines from bob's mods.

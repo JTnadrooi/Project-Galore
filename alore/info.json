@@ -1,0 +1,11 @@
+{
+    "name": "alore",
+    "version": "1.0.0",
+    "title": "Alore",
+    "author": "JTnadrooi",
+    "contact": "@jtnadrooi",
+    "homepage": "https://github.com/JTnadrooi/Project-Galore",
+    "factorio_version": "2.0",
+    "dependencies": ["base >= 2.0", "space_age_galore"],
+    "description": "Only Alore."
+}

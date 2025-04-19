@@ -4,6 +4,7 @@ Version: 1.4.4
     - Added Wolverine's Productivity Research compat.
   Balancing:
     - "vgal-promethium-asteroid-chunk-reprocessing" duration  8 -> 2.
+    - "vgal-molten-iron-refined-concrete" now allows productivity.
   Bugfixes:
     - Fixed a rare(?) crash caused by the bob compat.
 ---------------------------------------------------------------------------------------------------

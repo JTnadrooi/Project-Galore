@@ -147,6 +147,7 @@ vgal.data.extend({
         },
         category = "metallurgy",
         subgroup = "vulcanus-processes",
+        allow_productivity = true,
     },
     {
         name = "molten-copper-carbon-fiber-low-density-structure",

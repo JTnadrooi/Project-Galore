@@ -1,5 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.4
+  Features:
+    - Added Wolverine's Productivity Research compat.
   Balancing:
     - "vgal-promethium-asteroid-chunk-reprocessing" duration  8 -> 2.
   Bugfixes:

@@ -8,6 +8,7 @@ Version: 1.4.4
     - "vgal-lithium-plate-uranium-fuel-cell" uranium-fuel-cell result 15 -> 10.
     - "vgal-lithium-plate-uranium-fuel-cell" uranium-238 cost 19 -> 9.
     - "vgal-lithium-plate-uranium-fuel-cell" time taken 15 -> 8.
+    - "vgal-carbon-uranium-ore" doubled carbon returns. (75% -> 150% a.k.a 1-2)
   Bugfixes:
     - Fixed a rare(?) crash caused by the bob compat.
 ---------------------------------------------------------------------------------------------------

@@ -78,12 +78,12 @@ vgal.data.extend({
         ingredients = {
             { "lithium-plate", 1 },
             { "uranium-235",   1 },
-            { "uranium-238",   19 },
+            { "uranium-238",   9 },
         },
         results = {
-            { "uranium-fuel-cell", 15 },
+            { "uranium-fuel-cell", 10 },
         },
-        energy_required = 15,
+        energy_required = 8,
         category = "crafting",
     },
 }, {

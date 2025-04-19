@@ -245,6 +245,15 @@ function vgal.recipe.override_iron(recipeName, newIcons)
     end
 end
 
+function vgal.recipe.get_productivity_tech_name(mainProductName)
+    if data.raw["technology"][mainProductName .. "-productivity"] then
+        return mainProductName .. "-productivity"
+    elseif data.raw["technology"][mainProductName .. "-productivity-wolf"] then
+        return mainProductName .. "-productivity-wolf"
+    end
+    return nil
+end
+
 function vgal.recipe.catagory_from_array()
 
 end

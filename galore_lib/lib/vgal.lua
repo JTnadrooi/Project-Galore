@@ -252,9 +252,8 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                 end
             end
             if entry.productivity_technology ~= "" then -- so if "", no prod even when tech exists
-                if data.raw["technology"][entry.main_product .. "-productivity"] then
-                    entry.productivity_technology = entry.main_product .. "-productivity"
-                end
+                entry.productivity_technology = entry.productivity_technology or vgal.recipe.get_productivity_tech_name(
+                    entry.main_product)
                 if entry.productivity_technology then
                     if type(entry.productivity_technology) == "string" then
                         vgal.tech.add_productivity_change(entry.productivity_technology, entry.name, nil, entry.hidden)

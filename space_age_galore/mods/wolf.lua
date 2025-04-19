@@ -16,11 +16,18 @@ local handlers = {
     ["pentapod-egg"] = "egg",
     ["overgrowth-yumako-soil"] = "overgrowth-soil",
     ["overgrowth-jellynut-soil"] = "overgrowth-soil",
-    ["artifical-yumako-soil"] = "artifical-soil",
-    ["artifical-jellynut-soil"] = "artifical-soil",
+    ["artificial-yumako-soil"] = "artificial-soil",
+    ["artificial-jellynut-soil"] = "artificial-soil",
     ["yumako-mash"] = "yumako-jellynut",
     ["jelly"] = "yumako-jellynut",
     ["lithium-plate"] = "lithium",
+    ["uranium-ore"] = "uranium-processing",
+
+    ["nuclear-fuel"] = "kovarex-enrichment-process",
+    ["refined-concrete"] = "concrete",
+    ["engine-unit"] = "flying-robot-frame",
+    ["electric-engine-unit"] = "flying-robot-frame",
+    ["superconductor"] = "supercapacitor",
 }
 for _, recipe in pairs(vgal.recipes) do
     local techPreName = handlers[recipe.main_product]
@@ -30,8 +37,6 @@ for _, recipe in pairs(vgal.recipes) do
 end
 vgal.tech.add_productivity_change("kovarex-enrichment-process-productivity-wolf",
     "vgal-fluorine-kovarex-enrichment-process")
-vgal.tech.add_productivity_change("uranium-processing-productivity-wolf",
-    "vgal-carbon-uranium-ore")
 
 vgal.tech.add_productivity_change("thruster-productivity-wolf",
     "vgal-carbon-stone-thruster-fuel")

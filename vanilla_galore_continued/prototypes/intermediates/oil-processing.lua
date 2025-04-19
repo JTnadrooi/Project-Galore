@@ -19,6 +19,7 @@ vgal.data.extend({
         technology = "sulfur-processing",
         complementairy_recipe = "advanced-oil-processing",
         show_amount_in_title = false,
+        main_product = "petroleum-gas",
     },
     {
         name = "steam-crude-oil-sulfur",
@@ -43,6 +44,7 @@ vgal.data.extend({
         technology = "sulfur-processing",
         complementairy_recipe = "basic-oil-processing",
         show_amount_in_title = false,
+        main_product = "petroleum-gas",
     },
     {
         name = "steam-advanced-oil-processing",
@@ -64,6 +66,7 @@ vgal.data.extend({
         technology = "advanced-oil-processing",
         complementairy_recipe = "advanced-oil-processing",
         show_amount_in_title = false,
+        main_product = "petroleum-gas",
     },
     {
         name = "petroleum-gas-coal-heavy-oil",

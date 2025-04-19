@@ -4,7 +4,7 @@ A collection of mods focused on adding more recipes to the base game and Space A
 
 *2500 downloads!*
 
-![gleba](media/gleba_galore.png)
+![gleba](.media/gleba_galore.png)
 
 ## Current Installations
 

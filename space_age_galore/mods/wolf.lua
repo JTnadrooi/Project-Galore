@@ -20,7 +20,6 @@ local handlers = {
     ["artifical-jellynut-soil"] = "artifical-soil",
     ["yumako-mash"] = "yumako-jellynut",
     ["jelly"] = "yumako-jellynut",
-    ["lithium"] = "yumako-jellynut",
     ["lithium-plate"] = "lithium",
 }
 for _, recipe in pairs(vgal.recipes) do

@@ -3,7 +3,6 @@ Version: 1.3.0
   Features:
     - Added Wolverine's Productivity Research compat.
     - Added recipe reload command from VGAL.
-    - Added .. compat.
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
   Features:

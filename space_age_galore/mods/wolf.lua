@@ -14,10 +14,10 @@ local handlers = {
     ["fish"] = "wood-fish",
     ["biter-egg"] = "egg",
     ["pentapod-egg"] = "egg",
-    ["overgrowth-yumako"] = "overgrowth-soil",
-    ["overgrowth-jellynut"] = "overgrowth-soil",
-    ["artifical-yumako"] = "artifical-soil",
-    ["artifical-jellynut"] = "artifical-soil",
+    ["overgrowth-yumako-soil"] = "overgrowth-soil",
+    ["overgrowth-jellynut-soil"] = "overgrowth-soil",
+    ["artifical-yumako-soil"] = "artifical-soil",
+    ["artifical-jellynut-soil"] = "artifical-soil",
 }
 for _, recipe in pairs(vgal.recipes) do
     local techPreName = handlers[recipe.main_product]

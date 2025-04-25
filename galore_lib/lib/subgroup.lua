@@ -33,10 +33,20 @@ function vgal.subgroup.set_item_or_fluid(name, subgroupName)
     end
 end
 
-function vgal.subgroup.restore(recipeName)
+function vgal.subgroup.restore(recipeName, force)
     local recipe = data.raw["recipe"][recipeName]
     local mainProduct = vgal.recipe.get_preferred_main_product(recipe)
     local anyMP = vgal.any(mainProduct)
-    recipe.subgroup = recipe.subgroup or anyMP.subgroup
-    recipe.order = recipe.order or anyMP.order
+    if force then
+        recipe.subgroup = anyMP.subgroup
+        recipe.order = anyMP.order
+    else
+        recipe.subgroup = recipe.subgroup or anyMP.subgroup
+        recipe.order = recipe.order or anyMP.order
+    end
+end
+
+function vgal.subgroup.clean(recipeName)
+    data.raw["recipe"][recipeName].order = nil
+    data.raw["recipe"][recipeName].subgroup = nil
 end

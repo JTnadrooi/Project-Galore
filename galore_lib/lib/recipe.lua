@@ -367,10 +367,13 @@ function vgal.recipe.get_ingredient_amount(recipeName, ingredient)
     end
 end
 
-function vgal.recipe.multiply(recipeName, multiplier, entryName)
+function vgal.recipe.multiply(recipeName, multiplier, entryName, multiply_energy_required)
     local recipe = data.raw["recipe"][recipeName]
     recipe.results = vgal.table.get_multiplied(recipe.results, multiplier, entryName)
     recipe.ingredients = vgal.table.get_multiplied(recipe.ingredients, multiplier, entryName)
+    if multiply_energy_required then
+        recipe.energy_required = recipe.energy_required * multiplier
+    end
 end
 
 function vgal.recipe.multiply_results(recipeName, multiplier)

@@ -1,7 +1,6 @@
 vgal.data.trim("vgal-petroleum-gas-rocket-fuel")
 vgal.data.trim("vgal-plastic-bar-lubricant")
 
-
 data.raw["recipe"]["vgal-coal-uranium-235-nuclear-fuel"].order = "j"
 data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].ingredients = vgal.build.table({
     { "rocket-fuel",  1 },

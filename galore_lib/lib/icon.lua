@@ -187,10 +187,10 @@ local function targeted_shift_icon(icon, target, scaleOverride)
     local shift = {}
     local scale = 1
     if target then
-        scale = scaleOverride or 0.25
-        if target == "core" then
-            scale = icon.scale
-        end
+        scale = (scaleOverride or 0.25) * (64 / icon.icon_size)
+        -- if target == "core" then
+        --     scale = icon.scale
+        -- end
         if target == "in1" then
             shift = { -8, -8 }
         end

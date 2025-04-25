@@ -6,6 +6,11 @@
     "contact": "@jtnadrooi",
     "homepage": "https://github.com/JTnadrooi/Project-Galore",
     "factorio_version": "2.0",
-    "dependencies": ["base >= 2.0", "(?) space-age", "(?) wolfprod"],
+    "dependencies": [
+        "base >= 2.0",
+        "(?) space-age",
+        "(?) wolfprod",
+        "(?) reskins-angels"
+    ],
     "description": "The core library of all my mods! Will get proper documentation someday."
 }

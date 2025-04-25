@@ -1,0 +1,14 @@
+vgal.data.trim("vgal-petroleum-gas-rocket-fuel")
+vgal.data.trim("vgal-plastic-bar-lubricant")
+
+
+data.raw["recipe"]["vgal-coal-uranium-235-nuclear-fuel"].order = "j"
+data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].ingredients = vgal.build.table({
+    { "rocket-fuel",  1 },
+    { "uranium-235",  1 },
+    { "solid-carbon", 5 },
+})
+data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].icons = vgal.icon.register {
+    vgal.icon.get("nuclear-fuel"),
+    vgal.icon.get_in("solid-carbon"),
+}

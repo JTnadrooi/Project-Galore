@@ -8,9 +8,17 @@ data.raw.recipe["angels-copper-nugget-smelting"].energy_required = 6.4
 data.raw.recipe["angelsore1-crushed-smelting"].energy_required = 6.4
 data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
 
--- vgal.recipe.set_energy_required("molten-iron-smelting-1", 2)
--- vgal.recipe.set_energy_required("molten-copper-smelting", 2)
+data.raw.recipe["copper-plate"].energy_required = 9.6
+data.raw.recipe["iron-plate"].energy_required = 9.6
 
+data.raw.recipe["catalyst-metal-green"].ingredients = vgal.build.table({
+    { "catalyst-metal-carrier", 10 },
+    { "angels-ore3",            1 },
+})
+data.raw.recipe["catalyst-metal-red"].ingredients = vgal.build.table({
+    { "catalyst-metal-carrier", 10 },
+    { "angels-ore1",            1 },
+})
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")
 
@@ -33,16 +41,6 @@ data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
 -- vgal.recipe.clear_subgroup_and_order("angels-copper-pebbles")
 
 -- vgal.recipe.clear_subgroup_and_order("solid-mud-landfill")
-
-vgal.recipe.set_icons("iron-ore-processing", vgal.icon.register({
-    vgal.icon.get("processed-iron"),
-    vgal.icon.get_in("iron-ore"),
-}))
-vgal.recipe.set_icons("copper-ore-processing", vgal.icon.register({
-    vgal.icon.get("processed-copper"),
-    vgal.icon.get_in("copper-ore"),
-}))
-
 
 -- local function fix_coolant(recipeName)
 --     local recipe = data.raw["recipe"][recipeName]
@@ -86,13 +84,6 @@ vgal.recipe.set_icons("copper-ore-processing", vgal.icon.register({
 -- -- -- vgal.recipe.set_category("powder-nickel", "ore-refining-t1")
 -- -- vgal.recipe.multiply_results("angels-rod-stack-iron-converting", 1.5)
 
--- data.raw["offshore-pump"]["ground-water-pump"].fluid = "apm_sea_water"
--- data.raw["offshore-pump"]["sea-pump-placeable"].fluid = "apm_sea_water"
--- data.raw["offshore-pump"]["sea-pump-placeable"].fluid = "apm_sea_water"
--- data.raw["resource"]["sea-pump-resource"].localised_name = { "fluid-name.apm_sea_water" }
--- data.raw["resource"]["sea-pump-resource"].minable.results[1].name = "apm_sea_water"
--- data.raw["resource"]["sea-pump-resource"].minable.results[1].name = "apm_sea_water"
--- data.raw["mining-drill"]["sea-pump"].output_fluid_box.filter = "apm_sea_water"
 
 -- data.raw["recipe"]["iron-plate"] = {
 --     type = "recipe",
@@ -125,14 +116,6 @@ vgal.recipe.set_icons("copper-ore-processing", vgal.icon.register({
 --     { type = "item", name = "processed-copper", amount = 2 },
 -- })
 
--- vgal.recipe.set_ingredients("catalyst-metal-red", {
---     { type = "item", name = "catalyst-metal-carrier", amount = 10 },
---     { type = "item", name = "angels-ore1",            amount = 1 },
--- })
--- vgal.recipe.set_ingredients("catalyst-metal-green", {
---     { type = "item", name = "catalyst-metal-carrier", amount = 10 },
---     { type = "item", name = "angels-ore3",            amount = 1 },
--- })
 -- vgal.recipe.multiply_results("wood-pellets", 3)
 -- vgal.recipe.set_results("slag-processing-9", {
 --     { type = "item", name = "uranium-ore", amount = 2 },
@@ -159,13 +142,13 @@ vgal.recipe.set_icons("copper-ore-processing", vgal.icon.register({
 -- --     { type = "item", name = "catalyst-metal-carrier", amount = 10 },
 -- --     { type = "item", name = "graphite", amount = 1 },
 -- -- })
--- local plasticBuffCoefficient = 5
+local plasticBuffCoefficient = 5
 
--- vgal.recipe.multiply_results("liquid-plastic-1", plasticBuffCoefficient)
--- vgal.recipe.multiply_results("liquid-plastic-2", plasticBuffCoefficient)
--- vgal.recipe.multiply_results("liquid-plastic-3", plasticBuffCoefficient)
--- vgal.recipe.multiply_results("bio-plastic-1", plasticBuffCoefficient)
--- vgal.recipe.multiply_results("bio-plastic-2", plasticBuffCoefficient)
+vgal.recipe.multiply_results("liquid-plastic-1", plasticBuffCoefficient)
+vgal.recipe.multiply_results("liquid-plastic-2", plasticBuffCoefficient)
+vgal.recipe.multiply_results("liquid-plastic-3", plasticBuffCoefficient)
+vgal.recipe.multiply_results("bio-plastic-1", plasticBuffCoefficient)
+vgal.recipe.multiply_results("bio-plastic-2", plasticBuffCoefficient)
 
 -- vgal.recipe.bulkify("slag-processing-stone", 10)
 
@@ -201,7 +184,7 @@ vgal.recipe.set_icons("copper-ore-processing", vgal.icon.register({
 -- --     vgal.icon.get("solid-sand"),
 -- --     vgal.icon.get("water-purified", "fluid"),
 -- -- })
--- data.raw["assembling-machine"]["bio-refugium-puffer"].crafting_speed = 1
+data.raw["assembling-machine"]["bio-refugium-puffer"].crafting_speed = 1
 
 -- vgal.recipe.hide_and_queue("wood-charcoal")
 -- vgal.recipe.hide_and_queue("angels-clay-brick-raw")

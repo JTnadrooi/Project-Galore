@@ -1,46 +1,13 @@
--- local function get_icon_item(keyName, iconSource)
---     local function endsWith(str, suffix)
---         return str:sub(- #suffix) == suffix
---     end
---     if iconSource == nil or iconSource == "" then
---         iconSource = "item"
---     end
---     if endsWith(keyName, "-science-pack") then
---         iconSource = "tool"
---     end
---     if endsWith(keyName, "-module") then
---         iconSource = "module"
---     end
---     if endsWith(keyName, "-ammo") then
---         iconSource = "ammo"
---     end
---     vgal.log("getting icon item from; " .. "keyname: " .. keyName .. " iconSource: " .. iconSource)
---     local toret = data.raw[iconSource][keyName]
---     if not toret then
---         error("get_icon_item did not find a icon. keyname: " .. keyName .. " iconSource: " .. (iconSource or "nil"))
---     end
---     return toret
--- end
-
--- local function get_icon_size(object)
---     local size = 32
---     if object.icon_size then
---         size = object.icon_size
---     elseif object.size then
---         size = object.size
---     end
---     return size
--- end
-local function get_icon_size(object)
-    return object.icon_size or 64
-end
 function vgal.icon.shift(icon, scale, shift)
+    local function get_icon_size(object)
+        return object.icon_size or 64
+    end
     local icons = {}
     for _, icon2 in pairs(icon) do
         local new_icon = util.table.deepcopy(icon2)
         if scale then
             local icon_size = get_icon_size(new_icon)
-            new_icon.scale = scale * (new_icon.scale or 1)
+            new_icon.scale = (scale * (new_icon.scale or 1)) * (64 / get_icon_size(new_icon))
         end
         new_icon.shift = shift or icon.shift
         table.insert(icons, new_icon)

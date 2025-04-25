@@ -11,7 +11,8 @@
         "angelspetrochem",
         "angelsrefining",
         "angelssmelting",
-        "angelsbioprocessing"
+        "angelsbioprocessing",
+        "reskins-angels"
     ],
-    "description": "An overhaul of Angels Mods foccussed on alternate recipes!"
+    "description": "An overhaul of Angels Mods!"
 }

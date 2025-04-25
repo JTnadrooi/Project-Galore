@@ -19,6 +19,9 @@ data.raw.recipe["catalyst-metal-red"].ingredients = vgal.build.table({
     { "catalyst-metal-carrier", 10 },
     { "angels-ore1",            1 },
 })
+
+vgal.data.trim("catalyst-metal-blue")
+vgal.data.trim("catalyst-metal-yellow")
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")
 

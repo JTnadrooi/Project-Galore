@@ -6,7 +6,6 @@ function vgal.icon.shift(icon, scale, shift)
     for _, icon2 in pairs(icon) do
         local new_icon = util.table.deepcopy(icon2)
         if scale then
-            local icon_size = get_icon_size(new_icon)
             new_icon.scale = (scale * (new_icon.scale or 1)) * (64 / get_icon_size(new_icon))
         end
         new_icon.shift = shift or icon.shift

@@ -22,10 +22,6 @@
 --     return toret
 -- end
 
-local function get_icon_item(keyName, iconSource)
-    return vgal.any(keyName)
-end
-
 -- local function get_icon_size(object)
 --     local size = 32
 --     if object.icon_size then
@@ -160,7 +156,7 @@ function vgal.icon.get(keyName, iconSource)
     --         }
     --     }
     -- end
-    local toret_item = get_icon_item(keyName, iconSource)
+    local toret_item = vgal.any(keyName)
 
     vgal.log("getting icon: " .. toret_item.name)
 

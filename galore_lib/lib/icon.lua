@@ -96,7 +96,6 @@ function vgal.icon.get(keyName, iconSource)
                 {
                     icon = "__angelsrefining__/graphics/icons/sort-icon.png",
                     icon_size = 32,
-                    target = "core",
                 }
             }
         end
@@ -105,7 +104,6 @@ function vgal.icon.get(keyName, iconSource)
                 {
                     icon = "__angels_galore__/graphics/icons/electrolyzing-icon-2.png",
                     icon_size = 52,
-                    target = "core",
                 }
             }
         end
@@ -116,13 +114,11 @@ function vgal.icon.get(keyName, iconSource)
                     icon = "__angelsrefining__/graphics/icons/numerals/num-" .. tier .. "-outline.png",
                     icon_size = 64,
                     tint = { 0, 0, 0, 1 },
-                    target = "tier" .. tier
                 },
                 {
                     icon = "__angelsrefining__/graphics/icons/numerals/num-" .. tier .. ".png",
                     icon_size = 64,
                     tint = angelsmods.petrochem.number_tint, -- angelsmods.bioprocessing.number_tint
-                    target = "tier" .. tier
                 },
             }
         end
@@ -133,12 +129,11 @@ function vgal.icon.get(keyName, iconSource)
                 icon = "__angelspetrochemgraphics__/graphics/icons/molecules/" .. keyName .. ".png",
                 icon_size = 72,
                 -- scale = (72 / 64) * 1.8,
-                target = "core"
             }
         }
     end
     if iconSource == "gas-recipe" and mods["angelspetrochem"] then
-        return vgal.icon.set_target(angelsmods.functions.create_gas_recipe_icon(nil, keyName), "core1")
+        return angelsmods.functions.create_gas_recipe_icon(nil, keyName)
     end
     if (keyName == "petroleum-gas") and iconSource == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("methane", "molecule")
@@ -146,16 +141,6 @@ function vgal.icon.get(keyName, iconSource)
     if (keyName == "sulfuric-acid") and iconSource == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("sulfuric-acid", "molecule")
     end
-    -- if (keyName == "copper-cable") and mods["angelssmelting"] then
-    --     return {
-    --         {
-    --             icon = "__angelspetrochemgraphics__/graphics/icons/molecules/" .. keyName .. ".png",
-    --             icon_size = 72,
-    --             -- scale = (72 / 64) * 1.8,
-    --             target = "core"
-    --         }
-    --     }
-    -- end
     local toret_item = vgal.any(keyName)
 
     vgal.log("getting icon: " .. toret_item.name)
@@ -169,7 +154,6 @@ function vgal.icon.get(keyName, iconSource)
             return {
                 {
                     icon = toret_item.icon,
-                    target = "core",
                     icon_size = toret_item.icon_size or 64,
                     -- scale = (toret_item.icon_size or 64) / 32
                 }
@@ -183,11 +167,10 @@ function vgal.icon.get(keyName, iconSource)
 end
 
 local function targeted_shift_icon(icon, target, scaleOverride)
-    icon = vgal.icon.set_target(icon, target)
     local shift = {}
     local scale = 1
     if target then
-        scale = (scaleOverride or 0.25) * (64 / icon.icon_size)
+        scale = (scaleOverride or 0.25) * (64 / (icon.icon_size or 64))
         -- if target == "core" then
         --     scale = icon.scale
         -- end
@@ -212,20 +195,6 @@ local function targeted_shift_icon(icon, target, scaleOverride)
     end
     return vgal.icon.shift(icon, scale, shift)
 end
-function vgal.icon.set_target(icon, target)
-    local done = false
-    local toret = {}
-    for _, value in ipairs(icon) do
-        value.target = target
-        done = true
-        table.insert(toret, value)
-    end
-    if not done then
-        error()
-    end
-    return toret
-end
-
 function vgal.icon.get_in_fluid(keyName, iconSource)
     return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.35, { 0, -6.5 })
 end
@@ -282,33 +251,6 @@ function vgal.icon.get_in_bg2(keyName, iconSource)
     return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.30, { 7, -7 })
 end
 
-function vgal.icon.get_icon_target(icon, trim)
-    for _, value in ipairs(icon) do
-        if value.target then
-            if trim then
-                return value.target:sub(1, -2)
-            end
-            return value.target
-        end
-    end
-    error()
-end
-
-function vgal.icon.get_icon_target_index(icon)
-    local toret = nil
-    for _, value in ipairs(icon) do
-        if value.target then
-            toret = string.sub(value.target, -1)
-            if not (toret:find("%D")) then
-                return tonumber(toret)
-            else
-                return nil
-            end
-        end
-    end
-    error()
-end
-
 -- function tablelength(T)
 --     local count = 0
 --     for _ in ipairs(T) do count = count + 1 end
@@ -330,58 +272,43 @@ function vgal.icon.soft_merge(icons)
 end
 
 function vgal.icon.register(icons, composition)
-    if not composition then
-        composition = "default"
-    end
-    if composition == "default_small" then -- wip
-        local newIcons = {}
-        for _, iconTable in ipairs(icons) do
-            if vgal.icon.get_icon_target(iconTable, true) == "in" then
-                table.insert(newIcons, targeted_shift_icon(iconTable, vgal.icon.get_icon_target(iconTable), 0.3))
-            elseif vgal.icon.get_icon_target(iconTable, true) == "out" then
-                table.insert(newIcons, targeted_shift_icon(iconTable, vgal.icon.get_icon_target(iconTable), 0.3))
-            else
-                table.insert(newIcons, iconTable)
-            end
-        end
-        return vgal.icon.register(newIcons)
-    end
-    if composition == "angels_recipe" then
-        local newIcons = {}
-        local outIcons = {}
-        local inIcons = {}
-        for _, iconTable in ipairs(icons) do
-            if vgal.icon.get_icon_target(iconTable, true) == "in" then
-                table.insert(inIcons, iconTable)
-            elseif vgal.icon.get_icon_target(iconTable, true) == "out" then
-                table.insert(outIcons, iconTable)
-            else
-                table.insert(newIcons, iconTable)
-            end
-        end
-        local scalingConst = 0.3
-        if #outIcons == 2 then
-            vgal.icon.set_target(outIcons[2], "out3")
-        end
-        if #inIcons == 2 then
-            vgal.icon.set_target(inIcons[2], "in3")
-        end
-        if #inIcons == 1 then
-            vgal.icon.set_target(inIcons[1], "in3")
-        end
-        for index2, iconTable2 in ipairs(outIcons) do
-            local placeIndex = 0
-            placeIndex = vgal.icon.get_icon_target_index(iconTable2) or index2
-            table.insert(newIcons, vgal.icon.shift(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), 12 }))
-        end
-        for index2, iconTable2 in ipairs(inIcons) do
-            local placeIndex = 0
-            placeIndex = vgal.icon.get_icon_target_index(iconTable2) or index2
-            table.insert(newIcons,
-                vgal.icon.shift(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), -12 }))
-        end
-        return vgal.icon.register(newIcons)
-    end
+    composition = composition or "default"
+    -- if composition == "angels_recipe" then
+    --     local newIcons = {}
+    --     local outIcons = {}
+    --     local inIcons = {}
+    --     for _, iconTable in ipairs(icons) do
+    --         if vgal.icon.get_icon_target(iconTable, true) == "in" then
+    --             table.insert(inIcons, iconTable)
+    --         elseif vgal.icon.get_icon_target(iconTable, true) == "out" then
+    --             table.insert(outIcons, iconTable)
+    --         else
+    --             table.insert(newIcons, iconTable)
+    --         end
+    --     end
+    --     local scalingConst = 0.3
+    --     if #outIcons == 2 then
+    --         vgal.icon.set_target(outIcons[2], "out3")
+    --     end
+    --     if #inIcons == 2 then
+    --         vgal.icon.set_target(inIcons[2], "in3")
+    --     end
+    --     if #inIcons == 1 then
+    --         vgal.icon.set_target(inIcons[1], "in3")
+    --     end
+    --     for index2, iconTable2 in ipairs(outIcons) do
+    --         local placeIndex = 0
+    --         placeIndex = vgal.icon.get_icon_target_index(iconTable2) or index2
+    --         table.insert(newIcons, vgal.icon.shift(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), 12 }))
+    --     end
+    --     for index2, iconTable2 in ipairs(inIcons) do
+    --         local placeIndex = 0
+    --         placeIndex = vgal.icon.get_icon_target_index(iconTable2) or index2
+    --         table.insert(newIcons,
+    --             vgal.icon.shift(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), -12 }))
+    --     end
+    --     return vgal.icon.register(newIcons)
+    -- end
     if composition == "default" then
         return vgal.icon.soft_merge(icons)
     end

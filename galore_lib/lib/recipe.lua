@@ -354,16 +354,16 @@ function vgal.recipe.get_result_amount(recipeName, result)
     error()
 end
 
-function vgal.recipe.get_ingredient_amount(recipeName, ingredient)
+function vgal.recipe.get_ingredient_amount(recipeName, ingredient_name)
     local recipe = data.raw["recipe"][recipeName]
-    if recipe.main_product then
-        for _, product in ipairs(recipe.ingredients) do
-            if product.name == ingredient then
-                return product.amount
-            end
+    -- if recipe.main_product then
+    -- else
+    --     error("no source ingredient [ " .. ingredient .. " ] found for recipe of name: " .. recipeName)
+    -- end
+    for _, ingredient in ipairs(recipe.ingredients) do
+        if ingredient.name == ingredient_name then
+            return ingredient.amount
         end
-    else
-        error("no source ingredient [ " .. ingredient .. " ] found for recipe of name: " .. recipeName)
     end
 end
 

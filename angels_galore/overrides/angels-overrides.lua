@@ -90,16 +90,23 @@ local MODULE_COUNT_BLACKLIST = {
 }
 
 for building_name, max_tier in pairs(UNNEEDED_BUILDINGS) do
+    local max_categories = {}
+    local buildings = {}
     for i = 2, 5 do
         local building = data.raw["assembling-machine"][building_name .. "-" .. i]
-        if building and (not MODULE_COUNT_BLACKLIST[building_name]) then
-            building.module_slots = 1 + i
+        if building then
+            max_categories = building.crafting_categories
+            if not MODULE_COUNT_BLACKLIST[building_name] then
+                building.module_slots = 1 + i
+            end
         end
         if (i > max_tier) and building then
             vgal.data.deep_hide(building)
             vgal.data.deep_hide(data.raw["item"][building_name .. "-" .. i])
             vgal.data.trim(building_name .. "-" .. i)
             building.next_upgrade = nil
+        else
+            table.insert(buildings, building)
         end
     end
     local building_max = data.raw["assembling-machine"][building_name .. "-" .. max_tier] or
@@ -112,11 +119,15 @@ for building_name, max_tier in pairs(UNNEEDED_BUILDINGS) do
     local building_min = data.raw["assembling-machine"][building_name] or
         data.raw["assembling-machine"][building_name .. "-" .. max_tier]
     if building_min then
+        table.insert(buildings, building_min)
         if (not MODULE_COUNT_BLACKLIST[building_name]) then
             building_min.module_slots = 2
         end
     else
         error(building_name)
+    end
+    for _, b in ipairs(buildings) do
+        b.crafting_categories = max_categories
     end
 end
 --- final module slot fixes P2---
@@ -161,7 +172,6 @@ data.raw["assembling-machine"]["algae-farm-2"].crafting_speed = 2
 data.raw["assembling-machine"]["seed-extractor"].crafting_speed = 1
 
 data.raw["mining-drill"]["thermal-bore"].mining_speed = 1
-
 
 --- plastic buff ---
 local PLASTIC_MULTIPLIER = 5

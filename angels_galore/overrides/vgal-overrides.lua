@@ -21,6 +21,7 @@ data.raw.recipe["vgal-copper-cable-plastic-bar"].results = vgal.build.table({
 })
 data.raw.recipe["vgal-copper-cable-plastic-bar"].energy_required = 5
 data.raw.recipe["vgal-copper-cable-plastic-bar"].category = "crafting-with-fluid"
+data.raw.recipe["vgal-copper-cable-plastic-bar"].allow_productivity = false
 
 -- data.raw["item"]["plastic-bar"].order = "j"
 -- vgal.subgroup.restore("plastic-bar", true)

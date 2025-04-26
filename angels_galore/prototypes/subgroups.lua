@@ -6,6 +6,12 @@ local subgroups = {
     --     entries = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" },
     --     when_settings = { "vgal-modules" },
     -- },
+    -- {
+    --     name = "refining-machines",
+    --     tab = "production",
+    --     order = "yd",
+    --     entries = { "" },
+    -- },
 }
 
 local toClean = {

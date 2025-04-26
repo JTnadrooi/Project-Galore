@@ -20,6 +20,11 @@ for _, machine_name in ipairs(PROD_MACHINES) do
     if not machine then
         error(machine_name)
     end
+    for i = 2, 6 do
+        local machine_max_try = data.raw["assembling-machine"][machine_name .. "-" .. i] or
+            data.raw["furnace"][machine_name .. "-" .. i]
+        if machine_max_try then machine = machine_max_try end
+    end
     local categories = machine.crafting_categories or {}
     for _, category in ipairs(categories) do
         PROD_CATEGORIES[category] = true

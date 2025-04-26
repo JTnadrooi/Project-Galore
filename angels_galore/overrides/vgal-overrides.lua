@@ -14,12 +14,13 @@ data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].icons = vgal.icon.register
 data.raw.recipe["vgal-copper-cable-plastic-bar"].ingredients = vgal.build.table({
     { "copper-cable", 5 },
 }, {
-    { "liquid-plastic", 35 },
+    { "liquid-plastic", 30 },
 })
 data.raw.recipe["vgal-copper-cable-plastic-bar"].results = vgal.build.table({
     { "plastic-bar", 5 },
 })
 data.raw.recipe["vgal-copper-cable-plastic-bar"].energy_required = 5
+data.raw.recipe["vgal-copper-cable-plastic-bar"].category = "crafting-with-fluid"
 
 -- data.raw["item"]["plastic-bar"].order = "j"
 -- vgal.subgroup.restore("plastic-bar", true)

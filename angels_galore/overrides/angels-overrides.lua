@@ -126,11 +126,11 @@ for building_name, max_tier in pairs(UNNEEDED_BUILDINGS) do
     else
         error(building_name)
     end
-    for _, b in ipairs(buildings) do
-        b.crafting_categories = max_categories
+    for _, tier_building in ipairs(buildings) do
+        tier_building.crafting_categories = max_categories
     end
 end
---- final module slot fixes P2---
+--- final module slot fixes P2 ---
 data.raw["mining-drill"]["thermal-extractor"].module_slots = 4
 data.raw["assembling-machine"]["ore-sorting-facility"].module_slots = 3
 data.raw["assembling-machine"]["ore-sorting-facility-2"].module_slots = 4
@@ -180,6 +180,9 @@ vgal.recipe.multiply_results("liquid-plastic-2", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("liquid-plastic-3", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("bio-plastic-1", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("bio-plastic-2", PLASTIC_MULTIPLIER)
+
+--- misc ---
+vgal.data.trim("powder-silicon")
 
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")

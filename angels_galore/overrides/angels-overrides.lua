@@ -188,45 +188,11 @@ for _, bio_module in ipairs(BIO_MODULES) do
     vgal.data.deep_hide(data.raw["recipe"][bio_module])
 end
 
---- prod fixes ---
-local PROD_MACHINES = {
-    "bio-press", "bio-generator-temperate-1", "bio-generator-swamp-1", "bio-generator-desert-1",
-    "crop-farm", "temperate-farm", "swamp-farm", "desert-farm", "composter", "bio-processor", "nutrient-extractor",
-    "algae-farm",
-    "salination-plant", "induction-furnace", "casting-machine", "strand-casting-machine", "ore-sorting-facility",
-    "ore-crusher", "ore-floatation-cell", "ore-leaching-plant", "ore-refinery", "ore-powderizer", "filtration-unit",
-    "crystallizer", "ore-processing-machine", "pellet-press", "powder-mixer", "blast-furnace",
-    "washing-plant", "angels-chemical-furnace", "oil-refinery", -- chem furnace is removed but just to be sure..
-    "gas-refinery-small", "gas-refinery", "separator",
-}
-local PROD_CATEGORIES = {}
-for _, machine_name in ipairs(PROD_MACHINES) do
-    local machine = data.raw["assembling-machine"][machine_name] or data.raw["furnace"][machine_name]
-    if not machine then
-        error(machine_name)
-    end
-    local categories = machine.crafting_categories or {}
-    for _, category in ipairs(categories) do
-        PROD_CATEGORIES[category] = true
-    end
-    machine.allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" }
-end
-
-for _, recipe in pairs(data.raw["recipe"]) do
-    if PROD_CATEGORIES[recipe.category] then
-        if recipe.allow_productivity ~= false then
-            recipe.allow_productivity = true
-        end
-    end
-end
-
-local function allow_prod(recipe_name)
-    data.raw["recipe"][recipe_name].allow_productivity = true
-end
 
 
 --- misc ---
 vgal.data.trim("powder-silicon")
+vgal.data.trim("solid-salt-from-saline")
 data.raw["recipe"]["anode-copper-smelting"].category = "blast-smelting" -- bc the chem furnace is removed.
 
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")

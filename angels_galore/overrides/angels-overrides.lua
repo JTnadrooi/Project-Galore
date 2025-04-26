@@ -26,11 +26,11 @@ vgal.data.trim("catalyst-metal-yellow")
 local UNNEEDED_ORES = { "2", "4" }
 local UNNEEDED_ORES_STATES = { "crushed", "crystal", "chunk", "pure" }
 for _, ore in ipairs(UNNEEDED_ORES) do
-    vgal.data.deep_hide("angels-ore" .. ore)
+    vgal.data.deep_hide(data.raw["item"]["angels-ore" .. ore])
     for _, state in ipairs(UNNEEDED_ORES_STATES) do
         vgal.data.trim("angelsore" .. ore .. "-" .. state .. "-processing")
         vgal.data.trim("angelsore" .. ore .. "-" .. state)
-        vgal.data.deep_hide("angels-ore" .. ore .. "-" .. state)
+        vgal.data.deep_hide(data.raw["item"]["angels-ore" .. ore .. "-" .. state])
     end
 end
 
@@ -45,29 +45,59 @@ data.raw.recipe["catalyst-metal-red"].ingredients = vgal.build.table({
 
 --- building removal ---
 local UNNEEDED_BUILDINGS = {
-    ["oil-refinery"] = { 2 },
-    ["liquifier"] = { 3 },
-    ["electrolyzer"] = { 3 },
-    ["chemical-plant"] = { 3 },
-    ["separator"] = { 3 },
-    ["gas-refinery-small"] = { 2 },
-    ["gas-refinery"] = { 2 },
-    ["air-filter"] = { 2 },
+    ["oil-refinery"] = 1,
+    ["steam-cracker"] = 1,
+    ["liquifier"] = 2,
+    ["angels-electrolyser"] = 2,
+    ["angels-chemical-plant"] = 2,
+    ["separator"] = 2,
+    ["gas-refinery-small"] = 1,
+    ["gas-refinery"] = 1,
+    ["angels-air-filter"] = 1,
 
-    ["hydro-plant"] = { 2 },
-    ["washing-plant"] = { 2 },
-    ["electric-boiler"] = { 3 },
-    ["salination-plant"] = { 2 },
+    ["hydro-plant"] = 1,
+    ["washing-plant"] = 1,
+    ["angels-electric-boiler"] = 2,
+    ["salination-plant"] = 1,
 
-    ["algae-farm"] = { 3 },
+    ["algae-farm"] = 2,
 
-    ["induction-furnace"] = { 2 },
-    ["casting-machine"] = { 2 },
-    ["strand-casting-machine"] = { 2 },
+    ["induction-furnace"] = 1,
+    ["casting-machine"] = 1,
+    ["strand-casting-machine"] = 1,
+
+    ["ore-sorting-facility"] = 2,
+    ["ore-crusher"] = 1,
+    ["ore-floatation-cell"] = 1,
+    ["ore-refinery"] = 1,
+    ["ore-powderizer"] = 1, -- z..
+    ["filtration-unit"] = 1,
+    ["crystallizer"] = 1,   -- z 2..
+
+    ["ore-processing-machine"] = 1,
+    ["pellet-press"] = 1,
+    ["powder-mixer"] = 1,
+    ["blast-furnace"] = 1,
+    ["angels-chemical-furnace"] = 1,
 }
 
-for key, value in pairs(UNNEEDED_BUILDINGS) do
-    
+for building, max_tier in pairs(UNNEEDED_BUILDINGS) do
+    for i = 1, 4, 1 do
+        local building_data = data.raw["assembling-machine"][building .. "-" .. i]
+        if (i > max_tier) and building_data then
+            vgal.data.deep_hide(building_data)
+            vgal.data.deep_hide(data.raw["item"][building .. "-" .. i])
+            vgal.data.trim(building .. "-" .. i)
+            -- vgal.data.deep_hide(data.raw["recipe"][building .. "-" .. i])
+            building_data.next_upgrade = nil
+        end
+    end
+    local key = data.raw["assembling-machine"][building .. "-" .. max_tier] or data.raw["assembling-machine"][building]
+    if key then
+        key.next_upgrade = nil
+    else
+        error(building)
+    end
 end
 
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")

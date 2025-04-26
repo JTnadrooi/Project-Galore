@@ -296,8 +296,7 @@ function vgal.data.trim(recipeName)
     -- vgal.recipes[recipeName] = nil
 end
 
-function vgal.data.deep_hide(any_name)
-    local entry = vgal.any(any_name)
+function vgal.data.deep_hide(entry)
     entry.hidden = true
     entry.hidden_in_factoriopedia = true
     entry.hide_from_signal_gui = true

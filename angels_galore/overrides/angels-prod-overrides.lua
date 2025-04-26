@@ -1,4 +1,9 @@
 --- prod fixes ---
+
+local function allow_prod(recipe_name)
+    data.raw["recipe"][recipe_name].allow_productivity = true
+end
+
 local PROD_MACHINES = {
     "bio-press", "bio-generator-temperate-1", "bio-generator-swamp-1", "bio-generator-desert-1",
     "crop-farm", "temperate-farm", "swamp-farm", "desert-farm", "composter", "bio-processor", "nutrient-extractor",
@@ -25,7 +30,7 @@ end
 for _, recipe in pairs(data.raw["recipe"]) do
     if PROD_CATEGORIES[recipe.category] then
         if recipe.allow_productivity ~= false then
-            recipe.allow_productivity = true
+            allow_prod(recipe.name)
         end
     end
 end
@@ -40,9 +45,6 @@ vgal.recipe.add_productivity_entry("crystal-slurry")
 vgal.recipe.add_productivity_entry("slag-slurry")
 vgal.recipe.add_productivity_entry("concrete")
 
-local function allow_prod(recipe_name)
-    data.raw["recipe"][recipe_name].allow_productivity = true
-end
 
 allow_prod("rocket-fuel-capsule")
 allow_prod("rocket-oxidizer-capsule")
@@ -67,6 +69,9 @@ allow_prod("steam-cracking-fuel-oil")
 allow_prod("pellet-coke")
 allow_prod("carbon-separation-1")
 allow_prod("carbon-separation-2")
+allow_prod("liquid-plastic-1")
+allow_prod("liquid-plastic-2")
+allow_prod("liquid-plastic-3")
 
 allow_prod("solid-fuel-methane")
 allow_prod("solid-fuel-naphtha")
@@ -142,7 +147,22 @@ allow_prod("stone-crushed-dissolution")
 
 allow_prod("angels-clay-brick-raw")
 
---- smelthing ---
+--- casting ---
+
+allow_prod("angelsore1-crushed-smelting")
+allow_prod("angelsore3-crushed-smelting")
+
+local METALS = { "copper", "iron" }
+for _, metal in ipairs(METALS) do
+    allow_prod("angels-" .. metal .. "-pebbles-smelting")
+    allow_prod("angels-" .. metal .. "-nugget-smelting")
+    allow_prod(metal .. "-plate")
+    allow_prod("angels-plate-" .. metal)
+    -- allow_prod("roll-" .. metal .. "-casting")
+    -- allow_prod("roll-" .. metal .. "-casting-fast")
+    -- allow_prod("angels-wire-coil-" .. metal .. "-casting")
+    -- allow_prod("angels-wire-coil-" .. metal .. "-casting-fast")
+end
 
 allow_prod("concrete-mixture-1")
 allow_prod("concrete-mixture-2")

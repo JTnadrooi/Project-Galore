@@ -89,22 +89,26 @@ local MODULE_COUNT_BLACKLIST = {
     ["angels-electric-boiler"] = true,
 }
 
-for building, max_tier in pairs(UNNEEDED_BUILDINGS) do
-    for i = 1, 5, 1 do
-        local building_data = data.raw["assembling-machine"][building .. "-" .. i]
-        if (i > max_tier) and building_data then
-            vgal.data.deep_hide(building_data)
-            vgal.data.deep_hide(data.raw["item"][building .. "-" .. i])
-            vgal.data.trim(building .. "-" .. i)
-            -- vgal.data.deep_hide(data.raw["recipe"][building .. "-" .. i])
-            building_data.next_upgrade = nil
+for building_name, max_tier in pairs(UNNEEDED_BUILDINGS) do
+    for i = 2, 5 do
+        local building = data.raw["assembling-machine"][building_name .. "-" .. i]
+        if building and (not MODULE_COUNT_BLACKLIST[building_name]) then
+            building.module_slots = 1 + i
+        end
+        if (i > max_tier) and building then
+            vgal.data.deep_hide(building)
+            vgal.data.deep_hide(data.raw["item"][building_name .. "-" .. i])
+            vgal.data.trim(building_name .. "-" .. i)
+            building.next_upgrade = nil
         end
     end
-    local key = data.raw["assembling-machine"][building .. "-" .. max_tier] or data.raw["assembling-machine"][building]
-    if key then
-        key.next_upgrade = nil
+    local building = data.raw["assembling-machine"][building_name .. "-" .. max_tier] or
+        data.raw["assembling-machine"][building_name]
+    if building then
+        building.next_upgrade = nil
+        building.module_slots = 2
     else
-        error(building)
+        error(building_name)
     end
 end
 
@@ -131,6 +135,7 @@ data.raw["assembling-machine"]["ore-powderizer"].crafting_speed = 2
 data.raw["assembling-machine"]["crystallizer"].crafting_speed = 1
 data.raw["assembling-machine"]["ore-sorting-facility"].crafting_speed = 1
 data.raw["assembling-machine"]["ore-sorting-facility-2"].crafting_speed = 2
+data.raw["assembling-machine"]["ore-sorting-facility"].crafting_speed = 1
 
 data.raw["assembling-machine"]["bio-refugium-fish"].crafting_speed = 1
 data.raw["assembling-machine"]["bio-refugium-puffer"].crafting_speed = 1
@@ -140,13 +145,10 @@ data.raw["assembling-machine"]["seed-extractor"].crafting_speed = 1
 
 data.raw["mining-drill"]["thermal-bore"].mining_speed = 1
 
---- module slot fixes ---
--- data.raw["assembling-machine"]["oil-refinery"].module_slots = 2
--- data.raw["assembling-machine"]["liquifier"].module_slots = 2
--- data.raw["assembling-machine"]["liquifier-2"].module_slots = 3
--- data.raw["assembling-machine"]["angels-electrolyser-2"].module_slots = 3
--- data.raw["assembling-machine"]["angels-chemical-plant"].module_slots = 2
--- data.raw["assembling-machine"]["angels-chemical-plant-2"].module_slots = 3
+--- final module slot fixes P2---
+data.raw["mining-drill"]["thermal-extractor"].module_slots = 4
+data.raw["assembling-machine"]["ore-sorting-facility-2"].module_slots = 4
+data.raw["assembling-machine"]["strand-casting-machine"].module_slots = 3
 
 --- plastic buff ---
 local PLASTIC_MULTIPLIER = 5

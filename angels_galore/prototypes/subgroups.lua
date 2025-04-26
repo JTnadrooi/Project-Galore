@@ -1,11 +1,11 @@
 local subgroups = {
-    {
-        name = "module-angels-bio-yield",
-        tab = "production",
-        order = "yd",
-        entries = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" },
-        when_settings = { "vgal-modules" },
-    },
+    -- {
+    --     name = "module-angels-bio-yield",
+    --     tab = "production",
+    --     order = "yd",
+    --     entries = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" },
+    --     when_settings = { "vgal-modules" },
+    -- },
 }
 
 local toClean = {

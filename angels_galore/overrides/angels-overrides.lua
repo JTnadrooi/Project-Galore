@@ -71,16 +71,16 @@ local UNNEEDED_BUILDINGS = {
     ["ore-crusher"] = 1,
     ["ore-floatation-cell"] = 1,
     ["ore-leaching-plant"] = 1,
+    ["ore-processing-machine"] = 1,
     ["ore-refinery"] = 1,
     ["ore-powderizer"] = 1, -- z..
     ["filtration-unit"] = 1,
     ["crystallizer"] = 1,   -- z 2..
 
-    ["ore-processing-machine"] = 1,
     ["pellet-press"] = 1,
     ["powder-mixer"] = 1,
     ["blast-furnace"] = 1,
-    ["angels-chemical-furnace"] = 1,
+    ["angels-chemical-furnace"] = 1, -- this removes it for some reason, but its ok bc it only has one recipe which I migrate later.
 }
 
 local MODULE_COUNT_BLACKLIST = {
@@ -181,8 +181,45 @@ vgal.recipe.multiply_results("liquid-plastic-3", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("bio-plastic-1", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("bio-plastic-2", PLASTIC_MULTIPLIER)
 
+--- funny yellow module removal ---
+local BIO_MODULES = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
+for _, bio_module in ipairs(BIO_MODULES) do
+    vgal.data.deep_hide(data.raw["module"][bio_module])
+    vgal.data.deep_hide(data.raw["recipe"][bio_module])
+end
+
+--- prod fixes ---
+local PROD_MACHINES = {
+    "bio-press", "bio-generator-template-1", "bio-generator-swamp-1", "bio-generator-desert-1",
+    "salination-plant", "induction-furnace", "casting-machine", "strand-casting-machine", "ore-sorting-facility",
+    "ore-crusher", "ore-floatation-cell", "ore-leaching-plant", "ore-refinery", "ore-powderizer", "filtration-unit",
+    "crystallizer", "ore-processing-machine", "pellet-press", "powder-mixer", "blast-furnace",
+    "washing-plant", "angels-chemical-furnace", -- chem furnace is removed but just to be sure..
+}
+local PROD_CATEGORIES = {}
+for _, machine_name in ipairs(PROD_MACHINES) do
+    local categories = data.raw["assembling-machine"][machine_name].crafting_categories or {}
+    for _, category in ipairs(categories) do
+        PROD_CATEGORIES[category] = true
+    end
+end
+
+for _, recipe in pairs(data.raw["recipe"]) do
+    if PROD_CATEGORIES[recipe.category] then
+        if recipe.allow_productivity ~= false then
+            recipe.allow_productivity = true
+        end
+    end
+end
+
+local function allow_prod(recipe_name)
+    data.raw["recipe"][recipe_name].allow_productivity = true
+end
+
+
 --- misc ---
 vgal.data.trim("powder-silicon")
+data.raw["recipe"]["anode-copper-smelting"].category = "blast-smelting" -- bc the chem furnace is removed.
 
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")

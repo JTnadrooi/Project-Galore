@@ -50,6 +50,7 @@ local UNNEEDED_BUILDINGS = {
     ["liquifier"] = 2,
     ["angels-electrolyser"] = 2,
     ["angels-chemical-plant"] = 2,
+    ["advanced-chemical-plant"] = 2,
     ["separator"] = 2,
     ["gas-refinery-small"] = 1,
     ["gas-refinery"] = 1,
@@ -82,8 +83,14 @@ local UNNEEDED_BUILDINGS = {
     ["angels-chemical-furnace"] = 1,
 }
 
+local MODULE_COUNT_BLACKLIST = {
+    ["angels-air-filter"] = true,
+    ["oil-refinery"] = true,
+    ["angels-electric-boiler"] = true,
+}
+
 for building, max_tier in pairs(UNNEEDED_BUILDINGS) do
-    for i = 1, 4, 1 do
+    for i = 1, 5, 1 do
         local building_data = data.raw["assembling-machine"][building .. "-" .. i]
         if (i > max_tier) and building_data then
             vgal.data.deep_hide(building_data)
@@ -100,6 +107,54 @@ for building, max_tier in pairs(UNNEEDED_BUILDINGS) do
         error(building)
     end
 end
+
+--- crafting speed fixes ---
+data.raw["assembling-machine"]["oil-refinery"].crafting_speed = 2
+data.raw["assembling-machine"]["liquifier"].crafting_speed = 1
+data.raw["assembling-machine"]["liquifier-2"].crafting_speed = 2
+data.raw["assembling-machine"]["angels-chemical-plant"].crafting_speed = 1
+data.raw["assembling-machine"]["angels-chemical-plant-2"].crafting_speed = 2
+data.raw["assembling-machine"]["advanced-chemical-plant"].crafting_speed = 1
+data.raw["assembling-machine"]["advanced-chemical-plant-2"].crafting_speed = 2
+data.raw["assembling-machine"]["gas-refinery-small"].crafting_speed = 1
+data.raw["assembling-machine"]["gas-refinery"].crafting_speed = 2
+data.raw["assembling-machine"]["separator-2"].crafting_speed = 2
+
+data.raw["assembling-machine"]["washing-plant"].crafting_speed = 2
+data.raw["assembling-machine"]["angels-electric-boiler-2"].crafting_speed = 2
+
+data.raw["assembling-machine"]["ore-floatation-cell"].crafting_speed = 1
+data.raw["assembling-machine"]["ore-leaching-plant"].crafting_speed = 1
+data.raw["assembling-machine"]["ore-refinery"].crafting_speed = 1
+data.raw["assembling-machine"]["ore-crusher"].crafting_speed = 2
+data.raw["assembling-machine"]["ore-powderizer"].crafting_speed = 2
+data.raw["assembling-machine"]["crystallizer"].crafting_speed = 1
+data.raw["assembling-machine"]["ore-sorting-facility"].crafting_speed = 1
+data.raw["assembling-machine"]["ore-sorting-facility-2"].crafting_speed = 2
+
+data.raw["assembling-machine"]["bio-refugium-fish"].crafting_speed = 1
+data.raw["assembling-machine"]["bio-refugium-puffer"].crafting_speed = 1
+data.raw["assembling-machine"]["algae-farm"].crafting_speed = 1
+data.raw["assembling-machine"]["algae-farm-2"].crafting_speed = 2
+data.raw["assembling-machine"]["seed-extractor"].crafting_speed = 1
+
+data.raw["mining-drill"]["thermal-bore"].mining_speed = 1
+
+--- module slot fixes ---
+-- data.raw["assembling-machine"]["oil-refinery"].module_slots = 2
+-- data.raw["assembling-machine"]["liquifier"].module_slots = 2
+-- data.raw["assembling-machine"]["liquifier-2"].module_slots = 3
+-- data.raw["assembling-machine"]["angels-electrolyser-2"].module_slots = 3
+-- data.raw["assembling-machine"]["angels-chemical-plant"].module_slots = 2
+-- data.raw["assembling-machine"]["angels-chemical-plant-2"].module_slots = 3
+
+--- plastic buff ---
+local PLASTIC_MULTIPLIER = 5
+vgal.recipe.multiply_results("liquid-plastic-1", PLASTIC_MULTIPLIER)
+vgal.recipe.multiply_results("liquid-plastic-2", PLASTIC_MULTIPLIER)
+vgal.recipe.multiply_results("liquid-plastic-3", PLASTIC_MULTIPLIER)
+vgal.recipe.multiply_results("bio-plastic-1", PLASTIC_MULTIPLIER)
+vgal.recipe.multiply_results("bio-plastic-2", PLASTIC_MULTIPLIER)
 
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")
@@ -224,13 +279,6 @@ end
 -- --     { type = "item", name = "catalyst-metal-carrier", amount = 10 },
 -- --     { type = "item", name = "graphite", amount = 1 },
 -- -- })
-local plasticBuffCoefficient = 5
-
-vgal.recipe.multiply_results("liquid-plastic-1", plasticBuffCoefficient)
-vgal.recipe.multiply_results("liquid-plastic-2", plasticBuffCoefficient)
-vgal.recipe.multiply_results("liquid-plastic-3", plasticBuffCoefficient)
-vgal.recipe.multiply_results("bio-plastic-1", plasticBuffCoefficient)
-vgal.recipe.multiply_results("bio-plastic-2", plasticBuffCoefficient)
 
 -- vgal.recipe.bulkify("slag-processing-stone", 10)
 
@@ -266,7 +314,6 @@ vgal.recipe.multiply_results("bio-plastic-2", plasticBuffCoefficient)
 -- --     vgal.icon.get("solid-sand"),
 -- --     vgal.icon.get("water-purified", "fluid"),
 -- -- })
-data.raw["assembling-machine"]["bio-refugium-puffer"].crafting_speed = 1
 
 -- vgal.recipe.hide_and_queue("wood-charcoal")
 -- vgal.recipe.hide_and_queue("angels-clay-brick-raw")

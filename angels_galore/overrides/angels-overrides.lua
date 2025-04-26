@@ -69,6 +69,7 @@ local UNNEEDED_BUILDINGS = {
     ["ore-sorting-facility"] = 2,
     ["ore-crusher"] = 1,
     ["ore-floatation-cell"] = 1,
+    ["ore-leaching-plant"] = 1,
     ["ore-refinery"] = 1,
     ["ore-powderizer"] = 1, -- z..
     ["filtration-unit"] = 1,

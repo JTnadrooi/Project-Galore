@@ -16,8 +16,10 @@ data.raw.recipe["vgal-copper-cable-plastic-bar"].ingredients = vgal.build.table(
 }, {
     { "liquid-plastic", 35 },
 })
+data.raw.recipe["vgal-copper-cable-plastic-bar"].results = vgal.build.table({
+    { "plastic-bar", 5 },
+})
+data.raw.recipe["vgal-copper-cable-plastic-bar"].energy_required = 5
 
-vgal.subgroup.clean("solid-plastic")
-vgal.recipe.multiply("solid-plastic", 1.25)
 -- data.raw["item"]["plastic-bar"].order = "j"
 -- vgal.subgroup.restore("plastic-bar", true)

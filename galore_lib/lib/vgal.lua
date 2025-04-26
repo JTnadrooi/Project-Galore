@@ -296,6 +296,13 @@ function vgal.data.trim(recipeName)
     -- vgal.recipes[recipeName] = nil
 end
 
+function vgal.data.deep_hide(any_name)
+    local entry = vgal.any(any_name)
+    entry.hidden = true
+    entry.hidden_in_factoriopedia = true
+    entry.hide_from_signal_gui = true
+end
+
 function vgal.any(anyName, includeRecipes)
     local categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
         "item-with-entity-data",

@@ -1,6 +1,8 @@
 -- vgal.recipe.unhide("thermal-water-purification")
 -- vgal.tech.add_recipe("vgal-hydrochloric-intermediates", "thermal-water-purification")
 
+
+--- time normalising ---
 data.raw.recipe["angels-iron-pebbles-smelting"].energy_required = 6.4
 data.raw.recipe["angels-iron-nugget-smelting"].energy_required = 6.4
 data.raw.recipe["angels-copper-pebbles-smelting"].energy_required = 6.4
@@ -11,6 +13,27 @@ data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
 data.raw.recipe["copper-plate"].energy_required = 9.6
 data.raw.recipe["iron-plate"].energy_required = 9.6
 
+--- plastic buff ---
+vgal.subgroup.clean("solid-plastic")
+vgal.recipe.multiply("solid-plastic", 1.25)
+
+--- ore removal ---
+vgal.recipe.all.replace_ingredient("catalyst-metal-yellow", { type = "item", name = "catalyst-metal-red", amount = 1 })
+vgal.recipe.all.replace_ingredient("catalyst-metal-blue", { type = "item", name = "catalyst-metal-green", amount = 1 })
+vgal.data.trim("catalyst-metal-blue")
+vgal.data.trim("catalyst-metal-yellow")
+
+local UNNEEDED_ORES = { "2", "4" }
+local UNNEEDED_ORES_STATES = { "crushed", "crystal", "chunk", "pure" }
+for _, ore in ipairs(UNNEEDED_ORES) do
+    vgal.data.deep_hide("angels-ore" .. ore)
+    for _, state in ipairs(UNNEEDED_ORES_STATES) do
+        vgal.data.trim("angelsore" .. ore .. "-" .. state .. "-processing")
+        vgal.data.trim("angelsore" .. ore .. "-" .. state)
+        vgal.data.deep_hide("angels-ore" .. ore .. "-" .. state)
+    end
+end
+
 data.raw.recipe["catalyst-metal-green"].ingredients = vgal.build.table({
     { "catalyst-metal-carrier", 10 },
     { "angels-ore3",            1 },
@@ -20,8 +43,33 @@ data.raw.recipe["catalyst-metal-red"].ingredients = vgal.build.table({
     { "angels-ore1",            1 },
 })
 
-vgal.data.trim("catalyst-metal-blue")
-vgal.data.trim("catalyst-metal-yellow")
+--- building removal ---
+local UNNEEDED_BUILDINGS = {
+    ["oil-refinery"] = { 2 },
+    ["liquifier"] = { 3 },
+    ["electrolyzer"] = { 3 },
+    ["chemical-plant"] = { 3 },
+    ["separator"] = { 3 },
+    ["gas-refinery-small"] = { 2 },
+    ["gas-refinery"] = { 2 },
+    ["air-filter"] = { 2 },
+
+    ["hydro-plant"] = { 2 },
+    ["washing-plant"] = { 2 },
+    ["electric-boiler"] = { 3 },
+    ["salination-plant"] = { 2 },
+
+    ["algae-farm"] = { 3 },
+
+    ["induction-furnace"] = { 2 },
+    ["casting-machine"] = { 2 },
+    ["strand-casting-machine"] = { 2 },
+}
+
+for key, value in pairs(UNNEEDED_BUILDINGS) do
+    
+end
+
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")
 

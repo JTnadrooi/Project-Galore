@@ -102,15 +102,32 @@ for building_name, max_tier in pairs(UNNEEDED_BUILDINGS) do
             building.next_upgrade = nil
         end
     end
-    local building = data.raw["assembling-machine"][building_name .. "-" .. max_tier] or
+    local building_max = data.raw["assembling-machine"][building_name .. "-" .. max_tier] or
         data.raw["assembling-machine"][building_name]
-    if building then
-        building.next_upgrade = nil
-        building.module_slots = 2
+    if building_max then
+        building_max.next_upgrade = nil
+    else
+        error(building_name)
+    end
+    local building_min = data.raw["assembling-machine"][building_name] or
+        data.raw["assembling-machine"][building_name .. "-" .. max_tier]
+    if building_min then
+        if (not MODULE_COUNT_BLACKLIST[building_name]) then
+            building_min.module_slots = 2
+        end
     else
         error(building_name)
     end
 end
+--- final module slot fixes P2---
+data.raw["mining-drill"]["thermal-extractor"].module_slots = 4
+data.raw["assembling-machine"]["ore-sorting-facility"].module_slots = 3
+data.raw["assembling-machine"]["ore-sorting-facility-2"].module_slots = 4
+data.raw["assembling-machine"]["strand-casting-machine"].module_slots = 3
+data.raw["assembling-machine"]["gas-refinery"].module_slots = 4
+data.raw["assembling-machine"]["advanced-chemical-plant"].module_slots = 3
+data.raw["assembling-machine"]["advanced-chemical-plant-2"].module_slots = 4
+data.raw["assembling-machine"]["ore-powderizer"].module_slots = 3
 
 --- crafting speed fixes ---
 data.raw["assembling-machine"]["oil-refinery"].crafting_speed = 2
@@ -145,10 +162,6 @@ data.raw["assembling-machine"]["seed-extractor"].crafting_speed = 1
 
 data.raw["mining-drill"]["thermal-bore"].mining_speed = 1
 
---- final module slot fixes P2---
-data.raw["mining-drill"]["thermal-extractor"].module_slots = 4
-data.raw["assembling-machine"]["ore-sorting-facility-2"].module_slots = 4
-data.raw["assembling-machine"]["strand-casting-machine"].module_slots = 3
 
 --- plastic buff ---
 local PLASTIC_MULTIPLIER = 5

@@ -1,0 +1,9 @@
+-   [v] Remove the extra ores.
+-   [ ] Reorder everything.
+-   [ ] Add/Fix VGAL Angels icon creator wrapper.
+-   [v] Make it so VGAL works.
+-   [v] Disable certain VGAL recipes.
+-   [v] Increase prod bonus allowance.
+-   [v] Remove some catalysts.
+-   [ ] Normalize building recipes.
+-   [ ] Override industry settings.

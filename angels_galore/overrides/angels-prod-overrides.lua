@@ -12,7 +12,7 @@ vgal.recipe.add_catalyst_entry("liquid-polluted-fish-atmosphere")
 vgal.recipe.add_catalyst_entry("solid-saw")
 vgal.recipe.add_catalyst_entry("solid-crystal-tipped-saw")
 vgal.recipe.add_catalyst_entry("solid-crystal-full-saw")
-vgal.recipe.add_catalyst_entry("solid-crystal-full-saw")
+vgal.recipe.add_catalyst_entry("bio-puffer-egg-shell")
 
 vgal.recipe.add_catalyst_entry("raw-fish")
 for fish_index = 1, 3 do vgal.recipe.add_catalyst_entry("angels-fish-" .. fish_index .. "-raw") end
@@ -26,7 +26,8 @@ end
 local PROD_MACHINES = {
     "bio-press", "bio-generator-temperate-1", "bio-generator-swamp-1", "bio-generator-desert-1",
     "crop-farm", "temperate-farm", "swamp-farm", "desert-farm", "composter", "bio-processor", "nutrient-extractor",
-    "algae-farm", "bio-refugium-puffer", "bio-refugium-fish", "bio-butchery", "bio-arboretum-1", "seed-extractor",
+    "algae-farm", "bio-refugium-puffer", "bio-refugium-fish", "bio-butchery", "bio-hatchery", "bio-arboretum-1",
+    "seed-extractor",
     "salination-plant", "induction-furnace", "casting-machine", "strand-casting-machine", "ore-sorting-facility",
     "ore-crusher", "ore-floatation-cell", "ore-leaching-plant", "ore-refinery", "ore-powderizer", "filtration-unit",
     "crystallizer", "ore-processing-machine", "pellet-press", "powder-mixer", "blast-furnace",
@@ -46,7 +47,7 @@ for _, machine_name in ipairs(PROD_MACHINES) do
     end
     local categories = machine.crafting_categories or {}
     for _, category in ipairs(categories) do
-        PROD_CATEGORIES[category] = true
+        PROD_CATEGORIES[category] = machine_name
     end
     machine.allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" }
 end
@@ -54,10 +55,17 @@ end
 for _, recipe in pairs(data.raw["recipe"]) do
     if PROD_CATEGORIES[recipe.category] then
         if recipe.allow_productivity ~= false then
-            vgal.recipe.smart_allow_productivity(recipe.name)
+            if PROD_CATEGORIES[recipe.category] == "bio-hatchery" then
+                vgal.recipe.smart_allow_productivity(recipe.name, true)
+                vgal.recipe.smart_disallow_productivity(recipe.name, "bio-puffer-egg-shell")
+            else
+                vgal.recipe.smart_allow_productivity(recipe.name)
+            end
         end
     end
 end
+
+
 
 -- vgal.recipe.add_productivity_entry("liquid-plastic")
 -- vgal.recipe.add_productivity_entry("rocket-booster")
@@ -154,11 +162,8 @@ vgal.recipe.smart_allow_productivity("wood-sawing-1")
 vgal.recipe.smart_allow_productivity("wood-sawing-2")
 vgal.recipe.smart_allow_productivity("wood-sawing-3")
 
-for fish_index = 0, 3 do
-    -- vgal.recipe.add_catalyst_entry("angels-fish-" .. fish_index .. "-raw")
-    vgal.recipe.smart_allow_productivity("fish-keeping-" .. fish_index)
-    vgal.recipe.smart_allow_productivity("fish-breeding-" .. fish_index)
-    vgal.recipe.smart_allow_productivity("fish-breeding-" .. fish_index)
+for puffer_index = 1, 5 do
+    vgal.recipe.add_catalyst_entry("bio-puffer-" .. puffer_index)
 end
 
 --- fauna ---

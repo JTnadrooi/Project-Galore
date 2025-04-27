@@ -20,7 +20,7 @@ function vgal.recipe.add_catalyst_entry(entry_name)
     vgal.catalyst_entries[entry_name] = true
 end
 
-function vgal.recipe.smart_allow_productivity(recipe_name, dumb_mode)
+function vgal.recipe.smart_allow_productivity(recipe_name, ignore_catalysts, skip_entry_register)
     local recipe = data.raw["recipe"][recipe_name]
     local all_catalysts = true
     for _, result in ipairs(recipe.results) do
@@ -29,20 +29,22 @@ function vgal.recipe.smart_allow_productivity(recipe_name, dumb_mode)
             break
         end
     end
+    if ignore_catalysts then
+        all_catalysts = false
+    end
     if (all_catalysts and #recipe.results == 1) then
         recipe.allow_productivity = true
-        dumb_mode = true
+        ignore_catalysts = true
     end
     if not all_catalysts then recipe.allow_productivity = true end
 
-    if not dumb_mode then
-        for _, result in ipairs(recipe.results) do
-            if vgal.catalyst_entries[result.name] then
-                vgal.recipe.smart_disallow_productivity(recipe_name, result.name)
-            end
-            if not vgal.recipe.get_if_productivity(result.name) then
-                vgal.recipe.add_productivity_entry(result.name)
-            end
+
+    for _, result in ipairs(recipe.results) do
+        if (not ignore_catalysts) and vgal.catalyst_entries[result.name] then
+            vgal.recipe.smart_disallow_productivity(recipe_name, result.name)
+        end
+        if (not skip_entry_register) and not vgal.recipe.get_if_productivity(result.name) then
+            vgal.recipe.add_productivity_entry(result.name)
         end
     end
 
@@ -51,10 +53,15 @@ end
 
 function vgal.recipe.smart_disallow_productivity(recipe_name, result_name)
     local recipe = data.raw["recipe"][recipe_name]
+    local done = false
     for _, result in ipairs(recipe.results) do
         if result.name == result_name then
             result.ignored_by_productivity = 15000
+            done = true
         end
+    end
+    if not done then
+        error(recipe_name .. ", searched for " .. result_name)
     end
 end
 

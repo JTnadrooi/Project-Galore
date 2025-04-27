@@ -1,7 +1,7 @@
 local SUBGROUP_DOMAINS = {
-    { "resource-refining", "angels-smelting", "angels-casting" },
-    { "petrochem-refining", "water-treatment" },
+    { "petrochem-refining",    "water-treatment" },
     { "bio-processing-nauvis", "bio-processing-vegetables", },
+    { "resource-refining",     "angels-smelting",           "angels-casting" },
 }
 for _, subgroup in pairs(data.raw["item-subgroup"]) do
     for _, domain in ipairs(SUBGROUP_DOMAINS) do
@@ -12,3 +12,5 @@ for _, subgroup in pairs(data.raw["item-subgroup"]) do
         end
     end
 end
+
+-- rest in done in subgroups.lua

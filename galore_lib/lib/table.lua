@@ -251,7 +251,7 @@ function vgal.table.get_multiplied(input, multiplier, entryName)
     end
 end
 
-function nipairs(...)
+function vgal.table.nipairs(...)
     local lists = { ... }
     local indices = {}
     for i = 1, #lists do indices[i] = 0 end

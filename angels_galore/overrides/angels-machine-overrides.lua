@@ -121,9 +121,9 @@ data.raw["assembling-machine"]["ore-refinery"].crafting_speed = 1
 data.raw["assembling-machine"]["ore-crusher"].crafting_speed = 2
 data.raw["assembling-machine"]["ore-powderizer"].crafting_speed = 2
 data.raw["assembling-machine"]["crystallizer"].crafting_speed = 1
+data.raw["assembling-machine"]["angels-electrolyser-2"].crafting_speed = 2
 data.raw["assembling-machine"]["ore-sorting-facility"].crafting_speed = 1
 data.raw["assembling-machine"]["ore-sorting-facility-2"].crafting_speed = 2
-data.raw["assembling-machine"]["ore-sorting-facility"].crafting_speed = 1
 
 data.raw["assembling-machine"]["bio-refugium-fish"].crafting_speed = 1
 data.raw["assembling-machine"]["bio-refugium-puffer"].crafting_speed = 1

@@ -1,16 +1,37 @@
---- prod fixes ---
-
 vgal.recipe.add_catalyst_entry("angels-electrode-used")
 vgal.recipe.add_catalyst_entry("liquid-coolant-used")
+vgal.recipe.add_catalyst_entry("liquid-coolant")
+vgal.recipe.add_catalyst_entry("filter-ceramic-used")
+vgal.recipe.add_catalyst_entry("filter-frame")
+vgal.recipe.add_catalyst_entry("filter-frame")
 vgal.recipe.add_catalyst_entry("catalyst-metal-carrier")
 vgal.recipe.add_catalyst_entry("water-yellow-waste")
 vgal.recipe.add_catalyst_entry("water-greenyellow-waste")
 vgal.recipe.add_catalyst_entry("water-green-waste")
+vgal.recipe.add_catalyst_entry("liquid-polluted-fish-atmosphere")
+vgal.recipe.add_catalyst_entry("raw-fish")
+vgal.recipe.add_catalyst_entry("solid-saw")
+vgal.recipe.add_catalyst_entry("solid-crystal-tipped-saw")
+vgal.recipe.add_catalyst_entry("solid-crystal-full-saw")
+vgal.recipe.add_catalyst_entry("solid-crystal-full-saw")
+
+for fish_index = 1, 3 do
+    vgal.recipe.add_catalyst_entry("angels-fish-" .. fish_index .. "-raw")
+end
+for puffer_index = 1, 5 do
+    vgal.recipe.add_catalyst_entry("bio-puffer-" .. puffer_index)
+end
+local ENVIRONMENTS = { "temperate", "swamp", "desert" }
+for i = 3, 5 do
+    for _, environment in ipairs(ENVIRONMENTS) do
+        vgal.recipe.add_catalyst_entry(environment .. "-" .. i .. "-" .. "seed-dormant")
+    end
+end
 
 local PROD_MACHINES = {
     "bio-press", "bio-generator-temperate-1", "bio-generator-swamp-1", "bio-generator-desert-1",
     "crop-farm", "temperate-farm", "swamp-farm", "desert-farm", "composter", "bio-processor", "nutrient-extractor",
-    "algae-farm",
+    "algae-farm", "bio-refugium-puffer", "bio-refugium-fish", "bio-butchery", "bio-arboretum-1", "seed-extractor",
     "salination-plant", "induction-furnace", "casting-machine", "strand-casting-machine", "ore-sorting-facility",
     "ore-crusher", "ore-floatation-cell", "ore-leaching-plant", "ore-refinery", "ore-powderizer", "filtration-unit",
     "crystallizer", "ore-processing-machine", "pellet-press", "powder-mixer", "blast-furnace",
@@ -124,11 +145,22 @@ vgal.recipe.smart_allow_productivity("solid-crystal-tipped-saw")
 vgal.recipe.smart_allow_productivity("solid-crystal-full-saw")
 vgal.recipe.smart_allow_productivity("alien-goo")
 vgal.recipe.smart_allow_productivity("liquid-polluted-fish-atmosphere")
+vgal.recipe.smart_allow_productivity("liquid-fish-atmosphere")
 vgal.recipe.smart_allow_productivity("solid-sodium-carbonate") -- hmm
 vgal.recipe.smart_allow_productivity("solid-calcium-carbonate")
 vgal.recipe.smart_allow_productivity("gas-methanol-from-wood")
 vgal.recipe.smart_allow_productivity("carbon-from-charcoal")
 vgal.recipe.smart_allow_productivity("algae-brown-burning-wash")
+vgal.recipe.smart_allow_productivity("wood-sawing-1")
+vgal.recipe.smart_allow_productivity("wood-sawing-2")
+vgal.recipe.smart_allow_productivity("wood-sawing-3")
+
+for fish_index = 0, 3 do
+    -- vgal.recipe.add_catalyst_entry("angels-fish-" .. fish_index .. "-raw")
+    vgal.recipe.smart_allow_productivity("fish-keeping-" .. fish_index)
+    vgal.recipe.smart_allow_productivity("fish-breeding-" .. fish_index)
+    vgal.recipe.smart_allow_productivity("fish-breeding-" .. fish_index)
+end
 
 --- fauna ---
 

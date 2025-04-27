@@ -9,7 +9,7 @@
 -   [v] normalise crafting times. (angel's smelthing)
 -   [ ] hide barreling from player crafting.
 -   [ ] normalise building recipes.
--   [v] override angels_industry settings.
+-   [ ] override angels_industry settings.
 -   [ ] overhault dormant seed refreshing recipes. (add prod to seed extractor, de-bulkify recipes)
 -   [ ] (?) nerf the polluted water yield of the fish recipes.
 -   [ ] add shards to module recipes.

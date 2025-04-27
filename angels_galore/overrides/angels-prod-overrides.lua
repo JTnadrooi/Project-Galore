@@ -80,7 +80,6 @@ vgal.recipe.smart_allow_productivity("rocket-fuel-capsule")
 vgal.recipe.smart_allow_productivity("rocket-oxidizer-capsule")
 vgal.recipe.smart_allow_productivity("rocket-booster-1")
 vgal.recipe.smart_allow_productivity("rocket-booster-2")
-vgal.recipe.smart_allow_productivity("rocket-fuel-capsule")
 vgal.recipe.smart_allow_productivity("solid-nitroglycerin")
 vgal.recipe.smart_allow_productivity("solid-trinitrotoluene")
 vgal.recipe.smart_allow_productivity("angels-electrode")
@@ -89,6 +88,7 @@ vgal.recipe.smart_allow_productivity("coal-cracking-1")
 vgal.recipe.smart_allow_productivity("coal-cracking-2") -- w
 vgal.recipe.smart_allow_productivity("coal-cracking-3")
 
+vgal.recipe.smart_allow_productivity("filter-frame")
 vgal.recipe.smart_allow_productivity("coal-crushed")
 vgal.recipe.smart_allow_productivity("solid-coke")
 vgal.recipe.smart_allow_productivity("solid-coke-sulfur")
@@ -120,6 +120,8 @@ vgal.recipe.smart_allow_productivity("coolant")
 vgal.recipe.smart_allow_productivity("water-saline")
 vgal.recipe.smart_allow_productivity("solid-salt-dissolving")
 vgal.recipe.smart_allow_productivity("solid-salt")
+vgal.recipe.smart_allow_productivity("slag-processing-stone")
+vgal.recipe.smart_allow_productivity("stone-crushing")
 
 --- bio ---
 

@@ -92,6 +92,7 @@ data.raw["assembling-machine"]["strand-casting-machine"].module_slots = 3
 data.raw["assembling-machine"]["gas-refinery"].module_slots = 4
 data.raw["assembling-machine"]["advanced-chemical-plant"].module_slots = 3
 data.raw["assembling-machine"]["advanced-chemical-plant-2"].module_slots = 4
+data.raw["assembling-machine"]["salination-plant"].module_slots = 4
 data.raw["assembling-machine"]["ore-powderizer"].module_slots = 3
 
 --- crafting speed fixes ---

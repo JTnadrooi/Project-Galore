@@ -2,67 +2,9 @@
 -- vgal.tech.add_recipe("vgal-hydrochloric-intermediates", "thermal-water-purification")
 
 
---- time normalising ---
-data.raw.recipe["angels-iron-pebbles-smelting"].energy_required = 6.4
-data.raw.recipe["angels-iron-nugget-smelting"].energy_required = 6.4
-data.raw.recipe["angels-copper-pebbles-smelting"].energy_required = 6.4
-data.raw.recipe["angels-copper-nugget-smelting"].energy_required = 6.4
-data.raw.recipe["angelsore1-crushed-smelting"].energy_required = 6.4
-data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
-
-data.raw.recipe["copper-plate"].energy_required = 9.6
-data.raw.recipe["iron-plate"].energy_required = 9.6
-
---- plastic buff ---
-vgal.subgroup.clean("solid-plastic")
-vgal.recipe.multiply("solid-plastic", 1.25)
-
---- ore removal ---
-vgal.recipe.all.replace_ingredient("catalyst-metal-yellow", { type = "item", name = "catalyst-metal-red", amount = 1 })
-vgal.recipe.all.replace_ingredient("catalyst-metal-blue", { type = "item", name = "catalyst-metal-green", amount = 1 })
-vgal.data.trim("catalyst-metal-blue")
-vgal.data.trim("catalyst-metal-yellow")
-
-local UNNEEDED_ORES = { "2", "4" }
-local UNNEEDED_ORES_STATES = { "crushed", "crystal", "chunk", "pure" }
-for _, ore in ipairs(UNNEEDED_ORES) do
-    vgal.data.deep_hide(data.raw["item"]["angels-ore" .. ore])
-    for _, state in ipairs(UNNEEDED_ORES_STATES) do
-        vgal.data.trim("angelsore" .. ore .. "-" .. state .. "-processing")
-        vgal.data.trim("angelsore" .. ore .. "-" .. state)
-        vgal.data.deep_hide(data.raw["item"]["angels-ore" .. ore .. "-" .. state])
-    end
-end
-
-data.raw.recipe["catalyst-metal-green"].ingredients = vgal.build.table({
-    { "catalyst-metal-carrier", 10 },
-    { "angels-ore3",            1 },
-})
-data.raw.recipe["catalyst-metal-red"].ingredients = vgal.build.table({
-    { "catalyst-metal-carrier", 10 },
-    { "angels-ore1",            1 },
-})
 
 
---- plastic buff ---
-local PLASTIC_MULTIPLIER = 5
-vgal.recipe.multiply_results("liquid-plastic-1", PLASTIC_MULTIPLIER)
-vgal.recipe.multiply_results("liquid-plastic-2", PLASTIC_MULTIPLIER)
-vgal.recipe.multiply_results("liquid-plastic-3", PLASTIC_MULTIPLIER)
-vgal.recipe.multiply_results("bio-plastic-1", PLASTIC_MULTIPLIER)
-vgal.recipe.multiply_results("bio-plastic-2", PLASTIC_MULTIPLIER)
 
---- funny yellow module removal ---
-local BIO_MODULES = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
-for _, bio_module in ipairs(BIO_MODULES) do
-    vgal.data.deep_hide(data.raw["module"][bio_module])
-    vgal.data.deep_hide(data.raw["recipe"][bio_module])
-end
-
---- misc ---
-vgal.data.trim("powder-silicon")
-vgal.data.trim("solid-salt-from-saline")
-data.raw["recipe"]["anode-copper-smelting"].category = "blast-smelting" -- bc the chem furnace is removed.
 
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")

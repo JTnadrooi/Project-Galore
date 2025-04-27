@@ -20,17 +20,33 @@ function vgal.recipe.add_catalyst_entry(entry_name)
     vgal.catalyst_entries[entry_name] = true
 end
 
-function vgal.recipe.smart_allow_productivity(recipe_name)
+function vgal.recipe.smart_allow_productivity(recipe_name, dumb_mode)
     local recipe = data.raw["recipe"][recipe_name]
-    recipe.allow_productivity = true
-    for i, result in ipairs(recipe.results) do
-        if vgal.catalyst_entries[result.name] and (#recipe.results > 1) then
-            vgal.recipe.smart_disallow_productivity(recipe_name, result.name)
-        end
-        if not vgal.recipe.get_if_productivity(result.name) then
-            vgal.recipe.add_productivity_entry(result.name)
+    local all_catalysts = true
+    for _, result in ipairs(recipe.results) do
+        if not vgal.catalyst_entries[result.name] then
+            all_catalysts = false
+            break
         end
     end
+    if (all_catalysts and #recipe.results == 1) then
+        recipe.allow_productivity = true
+        dumb_mode = true
+    end
+    if not all_catalysts then recipe.allow_productivity = true end
+
+    if not dumb_mode then
+        for _, result in ipairs(recipe.results) do
+            if vgal.catalyst_entries[result.name] then
+                vgal.recipe.smart_disallow_productivity(recipe_name, result.name)
+            end
+            if not vgal.recipe.get_if_productivity(result.name) then
+                vgal.recipe.add_productivity_entry(result.name)
+            end
+        end
+    end
+
+    return recipe.allow_productivity
 end
 
 function vgal.recipe.smart_disallow_productivity(recipe_name, result_name)

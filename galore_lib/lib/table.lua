@@ -256,11 +256,11 @@ function vgal.table.nipairs(...)
     local indices = {}
     for i = 1, #lists do indices[i] = 0 end
     return function()
-        local n = #lists                      -- advance last index
+        local n = #lists                      -- advance last index.
         indices[n] = indices[n] + 1
-        for i = n, 1, -1 do                   -- carry over if needed
+        for i = n, 1, -1 do                   -- carry over if needed.
             if lists[i][indices[i]] == nil then
-                if i == 1 then return nil end -- fully finished
+                if i == 1 then return nil end -- fully finished.
                 indices[i] = 1
                 indices[i - 1] = indices[i - 1] + 1
             end

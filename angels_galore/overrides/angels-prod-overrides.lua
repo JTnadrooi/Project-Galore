@@ -1,8 +1,8 @@
 --- prod fixes ---
 
-local function allow_prod(recipe_name)
-    data.raw["recipe"][recipe_name].allow_productivity = true
-end
+vgal.recipe.add_catalyst_entry("angels-electrode-used")
+vgal.recipe.add_catalyst_entry("liquid-coolant-used")
+vgal.recipe.add_catalyst_entry("catalyst-metal-carrier")
 
 local PROD_MACHINES = {
     "bio-press", "bio-generator-temperate-1", "bio-generator-swamp-1", "bio-generator-desert-1",
@@ -20,7 +20,7 @@ for _, machine_name in ipairs(PROD_MACHINES) do
     if not machine then
         error(machine_name)
     end
-    for i = 2, 6 do
+    for i = 2, 6 do -- bc categories only get fixed in update subphase.
         local machine_max_try = data.raw["assembling-machine"][machine_name .. "-" .. i] or
             data.raw["furnace"][machine_name .. "-" .. i]
         if machine_max_try then machine = machine_max_try end
@@ -35,7 +35,7 @@ end
 for _, recipe in pairs(data.raw["recipe"]) do
     if PROD_CATEGORIES[recipe.category] then
         if recipe.allow_productivity ~= false then
-            allow_prod(recipe.name)
+            vgal.recipe.smart_allow_productivity(recipe.name)
         end
     end
 end
@@ -51,125 +51,125 @@ vgal.recipe.add_productivity_entry("slag-slurry")
 vgal.recipe.add_productivity_entry("concrete")
 
 
-allow_prod("rocket-fuel-capsule")
-allow_prod("rocket-oxidizer-capsule")
-allow_prod("rocket-booster-1")
-allow_prod("rocket-booster-2")
-allow_prod("rocket-fuel-capsule")
-allow_prod("solid-nitroglycerin")
-allow_prod("solid-trinitrotoluene")
-allow_prod("angels-electrode")
+vgal.recipe.smart_allow_productivity("rocket-fuel-capsule")
+vgal.recipe.smart_allow_productivity("rocket-oxidizer-capsule")
+vgal.recipe.smart_allow_productivity("rocket-booster-1")
+vgal.recipe.smart_allow_productivity("rocket-booster-2")
+vgal.recipe.smart_allow_productivity("rocket-fuel-capsule")
+vgal.recipe.smart_allow_productivity("solid-nitroglycerin")
+vgal.recipe.smart_allow_productivity("solid-trinitrotoluene")
+vgal.recipe.smart_allow_productivity("angels-electrode")
 
-allow_prod("coal-cracking-1")
-allow_prod("coal-cracking-2") -- w
-allow_prod("coal-cracking-3")
+vgal.recipe.smart_allow_productivity("coal-cracking-1")
+vgal.recipe.smart_allow_productivity("coal-cracking-2") -- w
+vgal.recipe.smart_allow_productivity("coal-cracking-3")
 
-allow_prod("coal-crushed")
-allow_prod("solid-coke")
-allow_prod("solid-coke-sulfur")
-allow_prod("coke-purification")
-allow_prod("coke-purification-2")
-allow_prod("mineral-oil-lubricant")
-allow_prod("steam-cracking-fuel-oil")
-allow_prod("pellet-coke")
-allow_prod("carbon-separation-1")
-allow_prod("carbon-separation-2")
-allow_prod("liquid-plastic-1")
-allow_prod("liquid-plastic-2")
-allow_prod("liquid-plastic-3")
+vgal.recipe.smart_allow_productivity("coal-crushed")
+vgal.recipe.smart_allow_productivity("solid-coke")
+vgal.recipe.smart_allow_productivity("solid-coke-sulfur")
+vgal.recipe.smart_allow_productivity("coke-purification")
+vgal.recipe.smart_allow_productivity("coke-purification-2")
+vgal.recipe.smart_allow_productivity("mineral-oil-lubricant")
+vgal.recipe.smart_allow_productivity("steam-cracking-fuel-oil")
+vgal.recipe.smart_allow_productivity("pellet-coke")
+vgal.recipe.smart_allow_productivity("carbon-separation-1")
+vgal.recipe.smart_allow_productivity("carbon-separation-2")
+vgal.recipe.smart_allow_productivity("liquid-plastic-1")
+vgal.recipe.smart_allow_productivity("liquid-plastic-2")
+vgal.recipe.smart_allow_productivity("liquid-plastic-3")
 
-allow_prod("solid-fuel-methane")
-allow_prod("solid-fuel-naphtha")
-allow_prod("solid-fuel-fuel-oil")
-allow_prod("solid-fuel-synthesis")
-allow_prod("solid-fuel-hydrazine")
-allow_prod("catalyst-metal-carrier")
+vgal.recipe.smart_allow_productivity("solid-fuel-methane")
+vgal.recipe.smart_allow_productivity("solid-fuel-naphtha")
+vgal.recipe.smart_allow_productivity("solid-fuel-fuel-oil")
+vgal.recipe.smart_allow_productivity("solid-fuel-synthesis")
+vgal.recipe.smart_allow_productivity("solid-fuel-hydrazine")
+vgal.recipe.smart_allow_productivity("catalyst-metal-carrier")
 
-allow_prod("gas-acid-catalyst") -- w
-allow_prod("solid-ammonium-nitrate")
-allow_prod("solid-ammonium-perchlorate")
-
---- new section ---
-
-allow_prod("coolant")
-allow_prod("water-saline")
-allow_prod("solid-salt-dissolving")
-allow_prod("solid-salt")
+vgal.recipe.smart_allow_productivity("gas-acid-catalyst") -- w
+vgal.recipe.smart_allow_productivity("solid-ammonium-nitrate")
+vgal.recipe.smart_allow_productivity("solid-ammonium-perchlorate")
 
 --- new section ---
 
-allow_prod("cellulose-fiber-algae")
-allow_prod("cellulose-fiber-raw-wood")
-allow_prod("paste-cellulose")
-allow_prod("gas-ammonia-from-blue-fiber")
-allow_prod("wood-pellets")
-allow_prod("wood-bricks")
-allow_prod("gas-carbon-dioxide-from-wood")
-allow_prod("wood-charcoal")
-allow_prod("solid-soil")
-allow_prod("solid-soil-alternative")
-allow_prod("solid-fertilizer")
-allow_prod("solid-alienated-fertilizer")
-allow_prod("solid-saw")
-allow_prod("solid-crystal-tipped-saw")
-allow_prod("solid-crystal-full-saw")
-allow_prod("alien-goo")
-allow_prod("solid-sodium-carbonate") -- hmm
-allow_prod("solid-calcium-carbonate")
+vgal.recipe.smart_allow_productivity("coolant")
+vgal.recipe.smart_allow_productivity("water-saline")
+vgal.recipe.smart_allow_productivity("solid-salt-dissolving")
+vgal.recipe.smart_allow_productivity("solid-salt")
 
 --- new section ---
 
-allow_prod("gas-puffer-atmosphere")
-allow_prod("biter-small-eggsperiment")
-allow_prod("biter-medium-eggsperiment")
-allow_prod("biter-big-eggsperiment")
-allow_prod("alien-processed-meat")
-allow_prod("petri-dish")
-allow_prod("crystal-enhancer")
-allow_prod("crystal-grindstone")
+vgal.recipe.smart_allow_productivity("cellulose-fiber-algae")
+vgal.recipe.smart_allow_productivity("cellulose-fiber-raw-wood")
+vgal.recipe.smart_allow_productivity("paste-cellulose")
+vgal.recipe.smart_allow_productivity("gas-ammonia-from-blue-fiber")
+vgal.recipe.smart_allow_productivity("wood-pellets")
+vgal.recipe.smart_allow_productivity("wood-bricks")
+vgal.recipe.smart_allow_productivity("gas-carbon-dioxide-from-wood")
+vgal.recipe.smart_allow_productivity("wood-charcoal")
+vgal.recipe.smart_allow_productivity("solid-soil")
+vgal.recipe.smart_allow_productivity("solid-soil-alternative")
+vgal.recipe.smart_allow_productivity("solid-fertilizer")
+vgal.recipe.smart_allow_productivity("solid-alienated-fertilizer")
+vgal.recipe.smart_allow_productivity("solid-saw")
+vgal.recipe.smart_allow_productivity("solid-crystal-tipped-saw")
+vgal.recipe.smart_allow_productivity("solid-crystal-full-saw")
+vgal.recipe.smart_allow_productivity("alien-goo")
+vgal.recipe.smart_allow_productivity("solid-sodium-carbonate") -- hmm
+vgal.recipe.smart_allow_productivity("solid-calcium-carbonate")
 
 --- new section ---
 
-allow_prod("fermentation-corn")
-allow_prod("fermentation-fruit")
-allow_prod("aerobic-fermentation")
-allow_prod("anaerobic-fermentation")
+vgal.recipe.smart_allow_productivity("gas-puffer-atmosphere")
+vgal.recipe.smart_allow_productivity("biter-small-eggsperiment")
+vgal.recipe.smart_allow_productivity("biter-medium-eggsperiment")
+vgal.recipe.smart_allow_productivity("biter-big-eggsperiment")
+vgal.recipe.smart_allow_productivity("alien-processed-meat")
+vgal.recipe.smart_allow_productivity("petri-dish")
+vgal.recipe.smart_allow_productivity("crystal-enhancer")
+vgal.recipe.smart_allow_productivity("crystal-grindstone")
 
 --- new section ---
 
-allow_prod("geode-blue-liquify")
-allow_prod("geode-purple-liquify")
-allow_prod("geode-yellow-liquify")
-allow_prod("geode-lightgreen-liquify")
-allow_prod("geode-cyan-liquify")
-allow_prod("geode-red-liquify")
-allow_prod("crystal-dust-liquify")
-allow_prod("crystal-powder-slurry")
-allow_prod("slag-processing-dissolution")
-allow_prod("stone-crushed-dissolution")
+vgal.recipe.smart_allow_productivity("fermentation-corn")
+vgal.recipe.smart_allow_productivity("fermentation-fruit")
+vgal.recipe.smart_allow_productivity("aerobic-fermentation")
+vgal.recipe.smart_allow_productivity("anaerobic-fermentation")
+
+--- new section ---
+
+vgal.recipe.smart_allow_productivity("geode-blue-liquify")
+vgal.recipe.smart_allow_productivity("geode-purple-liquify")
+vgal.recipe.smart_allow_productivity("geode-yellow-liquify")
+vgal.recipe.smart_allow_productivity("geode-lightgreen-liquify")
+vgal.recipe.smart_allow_productivity("geode-cyan-liquify")
+vgal.recipe.smart_allow_productivity("geode-red-liquify")
+vgal.recipe.smart_allow_productivity("crystal-dust-liquify")
+vgal.recipe.smart_allow_productivity("crystal-powder-slurry")
+vgal.recipe.smart_allow_productivity("slag-processing-dissolution")
+vgal.recipe.smart_allow_productivity("stone-crushed-dissolution")
 
 --- metallugy ---
 
-allow_prod("angels-clay-brick-raw")
+vgal.recipe.smart_allow_productivity("angels-clay-brick-raw")
 
 --- casting ---
 
-allow_prod("angelsore1-crushed-smelting")
-allow_prod("angelsore3-crushed-smelting")
+vgal.recipe.smart_allow_productivity("angelsore1-crushed-smelting")
+vgal.recipe.smart_allow_productivity("angelsore3-crushed-smelting")
 
 local METALS = { "copper", "iron" }
 for _, metal in ipairs(METALS) do
-    allow_prod("angels-" .. metal .. "-pebbles-smelting")
-    allow_prod("angels-" .. metal .. "-nugget-smelting")
-    allow_prod(metal .. "-plate")
-    allow_prod("angels-plate-" .. metal)
-    -- allow_prod("roll-" .. metal .. "-casting")
-    -- allow_prod("roll-" .. metal .. "-casting-fast")
-    -- allow_prod("angels-wire-coil-" .. metal .. "-casting")
-    -- allow_prod("angels-wire-coil-" .. metal .. "-casting-fast")
+    vgal.recipe.smart_allow_productivity("angels-" .. metal .. "-pebbles-smelting")
+    vgal.recipe.smart_allow_productivity("angels-" .. metal .. "-nugget-smelting")
+    vgal.recipe.smart_allow_productivity(metal .. "-plate")
+    vgal.recipe.smart_allow_productivity("angels-plate-" .. metal)
+    -- vgal.recipe.smart_allow_productivity("roll-" .. metal .. "-casting")
+    -- vgal.recipe.smart_allow_productivity("roll-" .. metal .. "-casting-fast")
+    -- vgal.recipe.smart_allow_productivity("angels-wire-coil-" .. metal .. "-casting")
+    -- vgal.recipe.smart_allow_productivity("angels-wire-coil-" .. metal .. "-casting-fast")
 end
 
-allow_prod("concrete-mixture-1")
-allow_prod("concrete-mixture-2")
-allow_prod("angels-reinforced-concrete-brick")
-allow_prod("angels-concrete-brick")
+vgal.recipe.smart_allow_productivity("concrete-mixture-1")
+vgal.recipe.smart_allow_productivity("concrete-mixture-2")
+vgal.recipe.smart_allow_productivity("angels-reinforced-concrete-brick")
+vgal.recipe.smart_allow_productivity("angels-concrete-brick")

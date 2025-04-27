@@ -12,8 +12,34 @@ function vgal.recipe.get_if_productivity(mainProduct)
     return vgal.productivity_entries[mainProduct] == true
 end
 
-function vgal.recipe.add_productivity_entry(mainProduct)
-    vgal.productivity_entries[mainProduct] = true
+function vgal.recipe.add_productivity_entry(entry_name)
+    vgal.productivity_entries[entry_name] = true
+end
+
+function vgal.recipe.add_catalyst_entry(entry_name)
+    vgal.catalyst_entries[entry_name] = true
+end
+
+function vgal.recipe.smart_allow_productivity(recipe_name)
+    local recipe = data.raw["recipe"][recipe_name]
+    recipe.allow_productivity = true
+    for i, result in ipairs(recipe.results) do
+        if vgal.catalyst_entries[result.name] and (#recipe.results > 1) then
+            vgal.recipe.smart_disallow_productivity(recipe_name, result.name)
+        end
+        if not vgal.recipe.get_if_productivity(result.name) then
+            vgal.recipe.add_productivity_entry(result.name)
+        end
+    end
+end
+
+function vgal.recipe.smart_disallow_productivity(recipe_name, result_name)
+    local recipe = data.raw["recipe"][recipe_name]
+    for _, result in ipairs(recipe.results) do
+        if result.name == result_name then
+            result.ignored_by_productivity = 15000
+        end
+    end
 end
 
 function vgal.recipe.get_ingredients(recipeName)

@@ -46,6 +46,7 @@ vgal.recipes = {}
 ---@type vgal.VgalToggleGroupPrototype[]
 vgal.groups = {}
 vgal.productivity_entries = {}
+vgal.catalyst_entries = {}
 
 
 -- for _, groupTuple in ipairs(vgal.groups) do

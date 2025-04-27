@@ -102,6 +102,8 @@ vgal.recipe.smart_allow_productivity("carbon-separation-2")
 vgal.recipe.smart_allow_productivity("liquid-plastic-1")
 vgal.recipe.smart_allow_productivity("liquid-plastic-2")
 vgal.recipe.smart_allow_productivity("liquid-plastic-3")
+vgal.recipe.smart_allow_productivity("bio-plastic-1")
+vgal.recipe.smart_allow_productivity("bio-plastic-2")
 
 vgal.recipe.smart_allow_productivity("solid-fuel-methane")
 vgal.recipe.smart_allow_productivity("solid-fuel-naphtha")

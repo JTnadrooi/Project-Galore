@@ -95,6 +95,12 @@ data.raw["assembling-machine"]["advanced-chemical-plant-2"].module_slots = 4
 data.raw["assembling-machine"]["salination-plant"].module_slots = 4
 data.raw["assembling-machine"]["ore-powderizer"].module_slots = 3
 
+data.raw["assembling-machine"]["crop-farm"].module_slots = 1
+local ENVIRONMENTS = { "temperate", "swamp", "desert" }
+for _, environment in ipairs(ENVIRONMENTS) do
+    data.raw["assembling-machine"][environment .. "-farm"].module_slots = 3
+end
+
 --- crafting speed fixes ---
 data.raw["assembling-machine"]["oil-refinery"].crafting_speed = 2
 data.raw["assembling-machine"]["liquifier"].crafting_speed = 1

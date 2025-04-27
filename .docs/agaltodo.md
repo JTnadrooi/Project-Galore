@@ -1,6 +1,6 @@
 -   [v] remove the extra ores.
 -   [ ] reorder everything.
--   [ ] merge tabs.
+-   [v] merge tabs.
 -   [ ] add/fix VGAL angels icon creator wrapper.
 -   [v] make it so VGAL loads.
 -   [v] disable certain VGAL recipes.

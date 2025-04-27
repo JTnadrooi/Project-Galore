@@ -123,7 +123,7 @@ vgal.recipe.smart_allow_productivity("water-saline")
 vgal.recipe.smart_allow_productivity("solid-salt-dissolving")
 vgal.recipe.smart_allow_productivity("solid-salt")
 vgal.recipe.smart_allow_productivity("slag-processing-stone")
-vgal.recipe.smart_allow_productivity("stone-crushing")
+vgal.recipe.smart_allow_productivity("stone-crushed")
 
 --- bio ---
 

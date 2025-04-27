@@ -1,12 +1,12 @@
--   [v] remove the extra ores.
+-   [x] remove the extra ores.
 -   [ ] reorder everything.
--   [v] merge tabs.
+-   [x] merge tabs.
 -   [ ] add/fix VGAL angels icon creator wrapper.
--   [v] make it so VGAL loads.
--   [v] disable certain VGAL recipes.
--   [v] increase prod bonus allowance.
--   [v] remove some catalysts related to removed ores.
--   [v] normalise crafting times. (angel's smelthing)
+-   [x] make it so VGAL loads.
+-   [x] disable certain VGAL recipes.
+-   [x] increase prod bonus allowance.
+-   [x] remove some catalysts related to removed ores.
+-   [x] normalise crafting times. (angel's smelthing)
 -   [ ] hide barreling from player crafting.
 -   [ ] normalise building recipes.
 -   [ ] override angels_industry settings.

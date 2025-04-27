@@ -18,10 +18,9 @@ vgal.recipe.all.replace_ingredient("catalyst-metal-blue", { type = "item", name 
 vgal.data.trim("catalyst-metal-blue")
 vgal.data.trim("catalyst-metal-yellow")
 local UNNEEDED_ORES = { "2", "4" }
-local UNNEEDED_ORES_STATES = { "crushed", "crystal", "chunk", "pure" }
 for _, ore in ipairs(UNNEEDED_ORES) do
     vgal.data.deep_hide(data.raw["item"]["angels-ore" .. ore])
-    for _, state in ipairs(UNNEEDED_ORES_STATES) do
+    for _, state in ipairs(agal.constants.ORE_STATES) do
         vgal.data.trim("angelsore" .. ore .. "-" .. state .. "-processing")
         vgal.data.trim("angelsore" .. ore .. "-" .. state)
         vgal.data.deep_hide(data.raw["item"]["angels-ore" .. ore .. "-" .. state])

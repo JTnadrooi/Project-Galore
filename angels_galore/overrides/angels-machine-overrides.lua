@@ -96,8 +96,7 @@ data.raw["assembling-machine"]["salination-plant"].module_slots = 4
 data.raw["assembling-machine"]["ore-powderizer"].module_slots = 3
 
 data.raw["assembling-machine"]["crop-farm"].module_slots = 1
-local ENVIRONMENTS = { "temperate", "swamp", "desert" }
-for _, environment in ipairs(ENVIRONMENTS) do
+for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     data.raw["assembling-machine"][environment .. "-farm"].module_slots = 3
 end
 

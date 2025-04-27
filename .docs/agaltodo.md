@@ -17,5 +17,6 @@
 -   [ ] remove unneeded technologies.
 -   [ ] remove seed generation machine bloat.
 -   [ ] overhaul/normalise water washing recipes.
+-   [ ] fix the using of reskinned icons.
 -   [ ] normalise cooling tower steam temps.
 -   [ ] spoilage.

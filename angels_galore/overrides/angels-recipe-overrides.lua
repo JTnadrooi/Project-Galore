@@ -36,15 +36,6 @@ data.raw.recipe["catalyst-metal-red"].ingredients = vgal.build.table({
     { "angels-ore1",            1 },
 })
 
-data.raw.recipe["angelsore-crystal-mix1-processing"].ingredients = vgal.build.table({
-    { "angels-ore1-crystal", 2 },
-    { "angels-ore3-crystal", 2 },
-})
-data.raw.recipe["angelsore-pure-mix1-processing"].ingredients = vgal.build.table({
-    { "angels-ore1-pure", 2 },
-    { "angels-ore3-pure", 2 },
-})
-
 --- plastic buff ---
 local PLASTIC_MULTIPLIER = 5
 vgal.recipe.multiply_results("liquid-plastic-1", PLASTIC_MULTIPLIER)

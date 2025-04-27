@@ -2,7 +2,14 @@
 -- vgal.tech.add_recipe("vgal-hydrochloric-intermediates", "thermal-water-purification")
 
 
-
+data.raw.recipe["angelsore-crystal-mix1-processing"].ingredients = vgal.build.table({
+    { "angels-ore1-crystal", 2 },
+    { "angels-ore3-crystal", 2 },
+})
+data.raw.recipe["angelsore-pure-mix1-processing"].ingredients = vgal.build.table({
+    { "angels-ore1-pure", 2 },
+    { "angels-ore3-pure", 2 },
+})
 
 
 

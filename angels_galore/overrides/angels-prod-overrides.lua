@@ -135,6 +135,8 @@ vgal.recipe.smart_allow_productivity("fermentation-fruit")
 vgal.recipe.smart_allow_productivity("aerobic-fermentation")
 vgal.recipe.smart_allow_productivity("anaerobic-fermentation")
 
+vgal.recipe.smart_allow_productivity("blue-fiber-algae")
+vgal.recipe.smart_allow_productivity("red-fiber-algae")
 vgal.recipe.smart_allow_productivity("cellulose-fiber-algae")
 vgal.recipe.smart_allow_productivity("cellulose-fiber-raw-wood")
 vgal.recipe.smart_allow_productivity("paste-cellulose")

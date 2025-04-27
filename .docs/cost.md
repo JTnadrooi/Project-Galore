@@ -13,7 +13,7 @@
 | !!   | pending recalc.                              |
 
 > [!NOTE]
-> The "-" is between the `icon` and the `value` to make the copies easier, it has no meaning.
+> The "-" is between the `icon` and the `value` to make the copying easier, it has no meaning.
 
 ## Basic Resources
 

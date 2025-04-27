@@ -251,6 +251,19 @@ function vgal.table.get_multiplied(input, multiplier, entryName)
     end
 end
 
+--- Universal nested iterator over multiple arrays (tables).
+--- Allows looping over all combinations of multiple lists, like nested `for` loops.
+--- Returns unpacked values from each list for destructuring in `for` loops.
+--- Example usage:
+--- ```lua
+--- for ore_index, ore_state in universal_ipairs(ore_indexes, ore_states) do
+---     print(ore_index, ore_state)
+--- end
+--- ```
+--- Supports any number of lists.
+--- Stops iteration when the first list is fully exhausted.
+--- @param ... table List(s) of arrays to iterate over (tables with sequential integer keys).
+--- @return function Iterator function compatible with Lua's `for` loop.
 function vgal.table.nipairs(...)
     local lists = { ... }
     local indices = {}

@@ -1,4 +1,4 @@
--   [ ] remove the extra ores.
+-   [v] remove the extra ores.
 -   [ ] reorder everything, less tabs.
 -   [ ] add/fix VGAL angels icon creator wrapper.
 -   [v] make it so VGAL loads.
@@ -8,13 +8,13 @@
 -   [v] normalise crafting times. (angel's smelthing)
 -   [ ] hide barreling from player crafting.
 -   [ ] normalise building recipes.
--   [ ] override angels_industry settings.
+-   [v] override angels_industry settings.
 -   [ ] overhault dormant seed refreshing recipes. (add prod to seed extractor, de-bulkify recipes)
 -   [ ] (?) nerf the polluted water yield of the fish recipes.
 -   [ ] add shards to module recipes.
 -   [ ] replace tier icons with VGAL-like icons.
 -   [ ] remove unneeded technologies.
--   [ ] reduce seed generation machine bloat.
+-   [ ] remove seed generation machine bloat.
 -   [ ] overhaul/normalise water washing recipes.
 -   [ ] normalise cooling tower steam temps.
 -   [ ] spoilage.

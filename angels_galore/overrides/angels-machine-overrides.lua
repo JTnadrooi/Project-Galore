@@ -94,6 +94,8 @@ data.raw["assembling-machine"]["advanced-chemical-plant"].module_slots = 3
 data.raw["assembling-machine"]["advanced-chemical-plant-2"].module_slots = 4
 data.raw["assembling-machine"]["salination-plant"].module_slots = 4
 data.raw["assembling-machine"]["ore-powderizer"].module_slots = 3
+data.raw["assembling-machine"]["angels-electric-boiler"].module_slots = 1
+data.raw["assembling-machine"]["angels-electric-boiler-2"].module_slots = 3
 
 data.raw["assembling-machine"]["crop-farm"].module_slots = 1
 for _, environment in ipairs(agal.constants.ENVIRONMENTS) do

@@ -13,10 +13,12 @@ function vgal.recipe.get_if_productivity(mainProduct)
 end
 
 function vgal.recipe.add_productivity_entry(entry_name)
+    vgal.any(entry_name)
     vgal.productivity_entries[entry_name] = true
 end
 
 function vgal.recipe.add_catalyst_entry(entry_name)
+    vgal.any(entry_name)
     vgal.catalyst_entries[entry_name] = true
 end
 

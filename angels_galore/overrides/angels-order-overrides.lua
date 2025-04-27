@@ -8,6 +8,7 @@ for _, subgroup in pairs(data.raw["item-subgroup"]) do
         for i, group in ipairs(domain) do
             if (i ~= 1) and subgroup.group == group then
                 subgroup.group = domain[1]
+                subgroup.order = (i == 1 and "" or ({ "unused", "x-", "y-" })[i]) .. subgroup.order
             end
         end
     end

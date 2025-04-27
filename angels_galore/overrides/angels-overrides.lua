@@ -10,6 +10,17 @@ data.raw.recipe["angelsore-pure-mix1-processing"].ingredients = vgal.build.table
     { "angels-ore1-pure", 2 },
     { "angels-ore3-pure", 2 },
 })
+--- upgrade kit removal ---
+for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
+    vgal.recipe.deep_hide(environment .. "-upgrade")
+    local building_recipe = data.raw["recipe"][environment .. "-farm"]
+    for i, ingredient in ipairs(building_recipe.ingredients) do
+        if ingredient.name == (environment .. "-upgrade") then
+            table.remove(building_recipe.ingredients, i)
+            break
+        end
+    end
+end
 
 
 

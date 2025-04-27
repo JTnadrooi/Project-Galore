@@ -9,21 +9,20 @@ vgal.recipe.add_catalyst_entry("water-yellow-waste")
 vgal.recipe.add_catalyst_entry("water-greenyellow-waste")
 vgal.recipe.add_catalyst_entry("water-green-waste")
 vgal.recipe.add_catalyst_entry("liquid-polluted-fish-atmosphere")
-vgal.recipe.add_catalyst_entry("raw-fish")
 vgal.recipe.add_catalyst_entry("solid-saw")
 vgal.recipe.add_catalyst_entry("solid-crystal-tipped-saw")
 vgal.recipe.add_catalyst_entry("solid-crystal-full-saw")
 vgal.recipe.add_catalyst_entry("solid-crystal-full-saw")
 
+vgal.recipe.add_catalyst_entry("raw-fish")
 for fish_index = 1, 3 do
     vgal.recipe.add_catalyst_entry("angels-fish-" .. fish_index .. "-raw")
 end
 for puffer_index = 1, 5 do
     vgal.recipe.add_catalyst_entry("bio-puffer-" .. puffer_index)
 end
-local ENVIRONMENTS = { "temperate", "swamp", "desert" }
 for i = 3, 5 do
-    for _, environment in ipairs(ENVIRONMENTS) do
+    for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
         vgal.recipe.add_catalyst_entry(environment .. "-" .. i .. "-" .. "seed-dormant")
     end
 end

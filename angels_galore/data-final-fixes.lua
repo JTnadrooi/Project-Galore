@@ -1,7 +1,7 @@
 require("overrides.angels-order-overrides")
 require("overrides.angels-overrides-final-fixes")
 
-local PREFIXES = { "angels-", "ore-", "strand-casting", "water-treatment", "powder-metallugy", "slag-processing" } -- Add any other prefixes here
+local PREFIXES = { "angels-", "ore-", "strand-casting", "water-treatment", "powder-metallugy", "slag-processing" }
 local function has_any_visible_effect(tech)
     if not tech.effects then return false end
     for _, eff in pairs(tech.effects) do

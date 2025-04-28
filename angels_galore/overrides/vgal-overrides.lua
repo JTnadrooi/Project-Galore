@@ -23,5 +23,10 @@ data.raw.recipe["vgal-copper-cable-plastic-bar"].energy_required = 5
 data.raw.recipe["vgal-copper-cable-plastic-bar"].category = "crafting-with-fluid"
 data.raw.recipe["vgal-copper-cable-plastic-bar"].allow_productivity = false
 
+data.raw["recipe"]["vgal-steel-plate-iron-stick"].icons = vgal.icon.register {
+    vgal.icon.get("iron-stick"),
+    vgal.icon.get_in("steel-plate"),
+}
+
 -- data.raw["item"]["plastic-bar"].order = "j"
 -- vgal.subgroup.restore("plastic-bar", true)

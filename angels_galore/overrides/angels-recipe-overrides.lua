@@ -51,11 +51,12 @@ for _, bio_module in ipairs(BIO_MODULES) do
     vgal.recipe.deep_hide(bio_module)
 end
 
+--- reinforced concrete removal ---
+vgal.data.trim("angels-reinforced-concrete-brick")
+vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
+    { type = "item", name = "angels-concrete-brick", amount = 1 })
 
 --- misc ---
 vgal.data.trim("powder-silicon")
 vgal.data.trim("solid-salt-from-saline")
-vgal.data.trim("angels-reinforced-concrete-brick")
-vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
-    { type = "item", name = "angels-concrete-brick", amount = 1 })
 data.raw["recipe"]["anode-copper-smelting"].category = "blast-smelting" -- bc the chem furnace is removed.

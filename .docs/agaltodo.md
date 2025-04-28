@@ -1,5 +1,5 @@
 -   [x] remove the extra ores.
--   [ ] remove large empty subgroup lists
+-   [x] remove large empty subgroup lists
 -   [x] merge tabs.
 -   [ ] add/fix VGAL angels icon creator wrapper.
 -   [x] make it so VGAL loads.

@@ -25,7 +25,7 @@ for name, tech in pairs(data.raw.technology) do
 end
 
 -- rewire prerequisites on remaining techs.
-for name, tech in pairs(data.raw.technology) do
+for _, tech in pairs(data.raw.technology) do
     if tech.prerequisites then
         local new_prereqs = {}
 

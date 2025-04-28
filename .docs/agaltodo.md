@@ -1,5 +1,5 @@
 -   [x] remove the extra ores.
--   [ ] reorder everything.
+-   [ ] remove large empty subgroup lists
 -   [x] merge tabs.
 -   [ ] add/fix VGAL angels icon creator wrapper.
 -   [x] make it so VGAL loads.
@@ -19,4 +19,4 @@
 -   [ ] overhaul/normalise water washing recipes.
 -   [ ] fix the using of reskinned icons.
 -   [ ] normalise cooling tower steam temps.
--   [ ] spoilage.
+-   [ ] spoilage. (optional setting)

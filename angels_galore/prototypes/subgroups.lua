@@ -26,6 +26,47 @@ local subgroups = {
         },
         reorder_entries = true,
     },
+    {
+        name = "angels-white-water-machines",
+        tab = "petrochem-refining",
+        order = "y-za",
+        entries = {
+            "hydro-plant", "salination-plant", "cooling-tower", "clarifier", "angels-flare-stack",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "angels-water-machines",
+        tab = "petrochem-refining",
+        order = "y-zb",
+        entries = {
+            "offshore-pump", "ground-water-pump", "seafloor-pump", "sea-pump", "washing-plant",
+            "angels-electrolyser", "angels-electrolyser-2", "angels-electric-boiler", "angels-electric-boiler-2",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "angels-chemistry-machines",
+        tab = "petrochem-refining",
+        order = "y-zc",
+        entries = {
+            "angels-air-filter",
+            "liquifier", "liquifier-2",
+            "angels-chemical-plant", "angels-chemical-plant-2",
+            "advanced-chemical-plant", "advanced-chemical-plant-2",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "angels-petrochem-machines",
+        tab = "petrochem-refining",
+        order = "y-zd",
+        entries = {
+            "oil-refinery", "gas-refinery-small", "gas-refinery",
+            "separator", "separator-2", "steam-cracker",
+        },
+        reorder_entries = true,
+    },
 }
 
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do

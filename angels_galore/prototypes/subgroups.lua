@@ -6,6 +6,26 @@ local subgroups = {
         entries = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" },
         when_settings = { "vgal-modules" },
     },
+    {
+        name = "angels-smelthing-machines",
+        tab = "resource-refining",
+        order = "y-ze",
+        entries = {
+            "blast-furnace", "induction-furnace", "casting-machine", "strand-casting-machine", "ore-processing-machine",
+            "pellet-press", "powder-mixer", "ore-powderizer",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "angels-ore-machines",
+        tab = "resource-refining",
+        order = "y-zf",
+        entries = {
+            "burner-ore-crusher", "ore-crusher", "ore-sorting-facility", "ore-sorting-facility-2",
+            "ore-floatation-cell", "ore-leaching-plant", "ore-refinery",
+        },
+        reorder_entries = true,
+    },
 }
 
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
@@ -35,23 +55,6 @@ end
 
 data.raw["item-subgroup"]["geode-processing-1"].order = "e-aa"
 
--- local ore1_subgroup = {
---     name = "angels-ore1",
---     tab = "production",
---     order = "b[processing]-a",
---     entries = { "angels-ore1", },
--- }
--- local ore3_subgroup = {
---     name = "angels-ore3",
---     tab = "production",
---     order = "b[processing]-a",
---     entries = { "angels-ore3", },
--- }
-
-for _, ore_index, ore_state in vgal.table.nipairs(agal.constants.ORE_INDEXES, agal.constants.ORE_STATES) do
-    local ore = "angelsore" .. ore_index .. "-" .. ore_state
-end
-
 local toClean = {
 }
 for _, value in ipairs(toClean) do
@@ -70,6 +73,11 @@ for _, value in ipairs(subgroups) do
     end
     if not value.when then
         value.entries = {}
+    end
+    if value.reorder_entries then
+        for entry_index, entry_name in ipairs(value.entries) do
+            vgal.any(entry_name).order = string.sub("abcdefghijklmnopqrstuvwxyz", entry_index, entry_index)
+        end
     end
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
 end

@@ -14,4 +14,6 @@ for _, subgroup in pairs(data.raw["item-subgroup"]) do
     end
 end
 
+data.raw["item-subgroup"]["geode-processing-1"].order = "e-aa"
+
 -- rest in done in subgroups.lua

@@ -94,7 +94,6 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     )
 end
 
-data.raw["item-subgroup"]["geode-processing-1"].order = "e-aa"
 
 local toClean = {
 }

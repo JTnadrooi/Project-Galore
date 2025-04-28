@@ -19,5 +19,6 @@
 -   [ ] remove seed generation machine bloat.
 -   [ ] overhaul/normalise water washing recipes.
 -   [ ] fix the using of reskinned icons.
+-   [ ] remove alien samples. (or make it at least not used for research)
 -   [ ] normalise cooling tower steam temps.
 -   [ ] spoilage. (optional setting)

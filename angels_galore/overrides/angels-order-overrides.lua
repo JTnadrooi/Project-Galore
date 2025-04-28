@@ -2,6 +2,7 @@ local SUBGROUP_DOMAINS = {
     { "petrochem-refining",    "water-treatment" },
     { "bio-processing-nauvis", "bio-processing-vegetables", },
     { "resource-refining",     "angels-smelting",           "angels-casting" },
+    { "logistics",            "angels-fluid-control", },
 }
 for _, subgroup in pairs(data.raw["item-subgroup"]) do
     for _, domain in ipairs(SUBGROUP_DOMAINS) do
@@ -18,6 +19,9 @@ data.raw["item-subgroup"]["geode-processing-1"].order = "e-aa"
 data.raw["item-subgroup"]["angels-copper-casting"].order = "y-ec"
 data.raw["item-subgroup"]["angels-iron-casting"].order = "y-fc"
 data.raw["item-subgroup"]["angels-steel-casting"].order = "y-g"
+
+data.raw["item-subgroup"]["angels-fluid-tanks"].order = "db"
+data.raw["item-subgroup"]["angels-fluid-control"].order = "dc"
 
 local subgroups_to_clean = {
     ["angels-copper"] = true,

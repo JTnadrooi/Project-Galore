@@ -90,6 +90,7 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
             tab = "resource-refining",
             order = "b[processing]-" .. order_post,
             entries = vgal.table.merge({ "angels-ore1" }, ore_entries),
+            reorder_entries = true,
         }
     )
 end

@@ -8,14 +8,13 @@
 -   [x] remove some catalysts related to removed ores.
 -   [x] normalise crafting times. (angel's smelthing)
 -   [x] hide barreling from player crafting.
--   [x] remove unneeded technologies.
 -   [ ] normalise building recipes.
 -   [ ] override angels_industry settings.
 -   [ ] overhault dormant seed refreshing recipes. (add prod to seed extractor, de-bulkify recipes)
 -   [ ] (?) nerf the polluted water yield of the fish recipes.
 -   [ ] add shards to module recipes.
 -   [ ] replace tier icons with VGAL-like icons.
--   [ ] remove unneeded technologies.
+-   [x] remove unneeded technologies.
 -   [ ] remove seed generation machine bloat.
 -   [ ] overhaul/normalise water washing recipes.
 -   [ ] fix the using of reskinned icons.

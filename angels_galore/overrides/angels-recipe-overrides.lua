@@ -55,4 +55,7 @@ end
 --- misc ---
 vgal.data.trim("powder-silicon")
 vgal.data.trim("solid-salt-from-saline")
+vgal.data.trim("angels-reinforced-concrete-brick")
+vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
+    { type = "item", name = "angels-concrete-brick", amount = 1 })
 data.raw["recipe"]["anode-copper-smelting"].category = "blast-smelting" -- bc the chem furnace is removed.

@@ -1,4 +1,5 @@
 require("constants")
+require("overrides.angels-order-overrides")
 require("prototypes.subgroups")
 require("overrides.angels-prod-overrides")
 require("overrides.angels-recipe-overrides")

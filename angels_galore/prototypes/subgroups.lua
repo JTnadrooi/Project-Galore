@@ -67,19 +67,6 @@ local subgroups = {
         },
         reorder_entries = true,
     }, -- the oil refinery doesn't listen here, is fixed in update phase.
-    {
-        name = "angels-copper-processing",
-        tab = "resource-refining",
-        order = "y-ea",
-        entries = { "processed-copper", "pellet-copper", "anode-copper", "ingot-copper", },
-        reorder_entries = true,
-    },
-    {
-        name = "angels-copper-casting",
-        tab = "resource-refining",
-        order = "y-eb",
-        entries = { "liquid-molten-copper", "angels-roll-copper", "angels-wire-coil-copper", },
-    },
     -- {
     --     name = "angels-copper-casting-2",
     --     tab = "resource-refining",
@@ -87,6 +74,34 @@ local subgroups = {
     --     entries = { "copper-plate", "copper-cable", },
     -- }, -- both don't listen so i just repurpose the "angels-casting" subgroup.
 }
+
+for _, metal in ipairs(vgal.constants.METALS) do
+    local mid_order = (metal == "copper") and "e" or "f"
+    local processing_entries = {
+        "processed-" .. metal,
+        "pellet-" .. metal,
+    }
+    if metal == "copper" then table.insert(processing_entries, "anode-" .. metal) end
+    table.insert(processing_entries, "ingot-" .. metal)
+    table.insert(subgroups, {
+        name = "angels-" .. metal .. "-processing",
+        tab = "resource-refining",
+        order = "y-" .. mid_order .. "a",
+        entries = processing_entries,
+        reorder_entries = true,
+    })
+    local casting_entries = {
+        "liquid-molten-" .. metal,
+        "angels-roll-" .. metal,
+    }
+    if metal == "copper" then table.insert(casting_entries, "angels-wire-coil-" .. metal) end
+    table.insert(subgroups, {
+        name = "angels-" .. metal .. "-casting",
+        tab = "resource-refining",
+        order = "y-" .. mid_order .. "b",
+        entries = casting_entries,
+    })
+end
 
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     local ore_entries = {}

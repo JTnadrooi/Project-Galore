@@ -1,5 +1,6 @@
 vgal = vgal or {}
 
+vgal.constants = vgal.constants or {}
 vgal.data = vgal.data or {}
 vgal.table = vgal.table or {}
 vgal.math = vgal.math or {}

@@ -16,10 +16,13 @@ end
 
 data.raw["item-subgroup"]["geode-processing-1"].order = "e-aa"
 data.raw["item-subgroup"]["angels-copper-casting"].order = "y-ec"
+data.raw["item-subgroup"]["angels-iron-casting"].order = "y-fc"
 
 local subgroups_to_clean = {
     ["angels-copper"] = true,
     ["angels-copper-casting"] = true,
+    ["angels-iron"] = true,
+    ["angels-iron-casting"] = true,
 }
 
 -- for _, item in pairs(data.raw["item"]) do

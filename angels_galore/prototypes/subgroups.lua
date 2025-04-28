@@ -71,12 +71,19 @@ local subgroups = {
 
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     local ore_entries = {}
-    for _, ore_state in ipairs(agal.constants.ORE_STATES) do
+    data.raw["item"]["angels-ore" .. ore_index].order = "a"
+    for ore_state_index, ore_state in ipairs(agal.constants.ORE_STATES) do
         local ore = "angels-ore" .. ore_index .. "-" .. ore_state
         table.insert(ore_entries, ore)
+
+        data.raw["item"][ore].order = "a-" ..
+            vgal.subgroup.order_from_number(ore_state_index)
+
         vgal.subgroup.clean("angelsore" .. ore_index .. "-" .. ore_state)
         data.raw["recipe"]["angelsore" .. ore_index .. "-" .. ore_state .. "-processing"].subgroup = "vgal-angels-ore" ..
             ore_index
+        data.raw["recipe"]["angelsore" .. ore_index .. "-" .. ore_state .. "-processing"].order = "b-" ..
+            vgal.subgroup.order_from_number(ore_state_index)
     end
     local order_post
     if ore_index == 3 then
@@ -90,7 +97,6 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
             tab = "resource-refining",
             order = "b[processing]-" .. order_post,
             entries = vgal.table.merge({ "angels-ore1" }, ore_entries),
-            reorder_entries = true,
         }
     )
 end

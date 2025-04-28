@@ -56,7 +56,7 @@ local subgroups = {
             "advanced-chemical-plant", "advanced-chemical-plant-2",
         },
         reorder_entries = true,
-    },
+    }, -- the liquifiers don't listen here, is fixed in update phase
     {
         name = "angels-petrochem-machines",
         tab = "petrochem-refining",
@@ -66,7 +66,7 @@ local subgroups = {
             "separator", "separator-2", "steam-cracker",
         },
         reorder_entries = true,
-    },
+    }, -- the oil refinery doesn't listen here, is fixed in update phase
 }
 
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do

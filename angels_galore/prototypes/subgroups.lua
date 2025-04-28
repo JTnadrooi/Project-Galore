@@ -56,7 +56,7 @@ local subgroups = {
             "advanced-chemical-plant", "advanced-chemical-plant-2",
         },
         reorder_entries = true,
-    }, -- the liquifiers don't listen here, is fixed in update phase
+    }, -- the liquifiers don't listen here, is fixed in update phase.
     {
         name = "angels-petrochem-machines",
         tab = "petrochem-refining",
@@ -66,7 +66,26 @@ local subgroups = {
             "separator", "separator-2", "steam-cracker",
         },
         reorder_entries = true,
-    }, -- the oil refinery doesn't listen here, is fixed in update phase
+    }, -- the oil refinery doesn't listen here, is fixed in update phase.
+    {
+        name = "angels-copper-processing",
+        tab = "resource-refining",
+        order = "y-ea",
+        entries = { "processed-copper", "pellet-copper", "anode-copper", "ingot-copper", },
+        reorder_entries = true,
+    },
+    {
+        name = "angels-copper-casting",
+        tab = "resource-refining",
+        order = "y-eb",
+        entries = { "liquid-molten-copper", "angels-roll-copper", "angels-wire-coil-copper", },
+    },
+    -- {
+    --     name = "angels-copper-casting-2",
+    --     tab = "resource-refining",
+    --     order = "y-ec",
+    --     entries = { "copper-plate", "copper-cable", },
+    -- }, -- both don't listen so i just repurpose the "angels-casting" subgroup.
 }
 
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
@@ -102,9 +121,9 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
 end
 
 
-local toClean = {
+local to_clean = {
 }
-for _, value in ipairs(toClean) do
+for _, value in ipairs(to_clean) do
     data.raw["recipe"][value].order = nil
     data.raw["recipe"][value].subgroup = nil
 end

@@ -7,7 +7,8 @@
 -   [x] increase prod bonus allowance.
 -   [x] remove some catalysts related to removed ores.
 -   [x] normalise crafting times. (angel's smelthing)
--   [ ] hide barreling from player crafting.
+-   [x] hide barreling from player crafting.
+-   [x] remove unneeded technologies.
 -   [ ] normalise building recipes.
 -   [ ] override angels_industry settings.
 -   [ ] overhault dormant seed refreshing recipes. (add prod to seed extractor, de-bulkify recipes)

@@ -25,6 +25,8 @@ local subgroups_to_clean = {
     ["angels-iron"] = true,
     ["angels-iron-casting"] = true,
     ["angels-steel-casting"] = true,
+    ["angels-stone"] = true,
+    ["angels-stone-casting"] = true,
 }
 
 -- for _, item in pairs(data.raw["item"]) do

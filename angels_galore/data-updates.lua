@@ -9,3 +9,6 @@ vgal.subgroup.set_item_or_fluid("liquifier", "vgal-angels-chemistry-machines")
 data.raw["item"]["liquifier"].order = "b"
 vgal.subgroup.set_item_or_fluid("liquifier-2", "vgal-angels-chemistry-machines")
 data.raw["item"]["liquifier-2"].order = "c"
+vgal.subgroup.set_item_or_fluid("stone-brick", "vgal-angels-cement-concrete")
+data.raw["item"]["stone-brick"].order = "c"
+data.raw["recipe"]["stone-brick"].order = nil

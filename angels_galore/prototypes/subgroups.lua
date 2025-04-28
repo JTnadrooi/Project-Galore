@@ -73,16 +73,16 @@ local subgroups = {
     --     order = "y-ec",
     --     entries = { "copper-plate", "copper-cable", },
     -- }, -- both don't listen so i just repurpose the "angels-casting" subgroup.
-    -- {
-    --     name = "angels-steel-processing",
-    --     tab = "resource-refining",
-    --     order = "y-ga",
-    --     entries = {
-    --         "oil-refinery", "gas-refinery-small", "gas-refinery",
-    --         "separator", "separator-2", "steam-cracker",
-    --     },
-    --     reorder_entries = true,
-    -- },
+    {
+        name = "angels-cement-concrete",
+        tab = "resource-refining",
+        order = "x-nb",
+        entries = {
+            "solid-lime", "solid-cement", "stone-brick", "clay-brick-raw", "clay-brick", "concrete-brick", -- reinforced one is removed
+            "bio-tile",
+        },
+        reorder_entries = true,
+    }, -- stone-brick doesn't listen here, is fixed in update phase.
 }
 
 for _, metal in ipairs(vgal.constants.METALS) do

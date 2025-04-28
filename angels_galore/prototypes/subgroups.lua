@@ -73,6 +73,16 @@ local subgroups = {
     --     order = "y-ec",
     --     entries = { "copper-plate", "copper-cable", },
     -- }, -- both don't listen so i just repurpose the "angels-casting" subgroup.
+    -- {
+    --     name = "angels-steel-processing",
+    --     tab = "resource-refining",
+    --     order = "y-ga",
+    --     entries = {
+    --         "oil-refinery", "gas-refinery-small", "gas-refinery",
+    --         "separator", "separator-2", "steam-cracker",
+    --     },
+    --     reorder_entries = true,
+    -- },
 }
 
 for _, metal in ipairs(vgal.constants.METALS) do
@@ -162,3 +172,6 @@ for _, value in ipairs(subgroups) do
     end
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
 end
+
+data.raw["item"]["ingot-steel"].subgroup = "angels-steel-casting"
+data.raw["item"]["ingot-steel"].order = "ib"

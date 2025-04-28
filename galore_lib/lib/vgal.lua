@@ -19,6 +19,7 @@ if vgal.setting ~= nil then
     error()
 end
 
+require("constants")
 require("classes")
 require("icon")
 require("localise")

@@ -33,6 +33,13 @@ function vgal.subgroup.set_item_or_fluid(name, subgroupName)
     end
 end
 
+function vgal.subgroup.order_from_number(number)
+    if number > 26 then
+        error(number .. " is more than 26.")
+    end
+    return string.sub("abcdefghijklmnopqrstuvwxyz", number, number)
+end
+
 function vgal.subgroup.restore(recipeName, force)
     local recipe = data.raw["recipe"][recipeName]
     local mainProduct = vgal.recipe.get_preferred_main_product(recipe)

@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.3
+  Features:
+    - Compat with Galorelib 1.4.0
+---------------------------------------------------------------------------------------------------
 Version: 1.2.2
   Features:
     - Improved compat with the electronic assembling machines from bob's mods.

@@ -138,6 +138,25 @@ vgal.data.extend({
         groups = { "vgal-silly" },
     },
     {
+        name = "pistol-rail-railgun-turret",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("railgun-turret"),
+            vgal.icon.get_in("pistol"),
+        },
+        energy_required = 20,
+        technology = "railgun",
+        ingredients = {
+            { "rail",   15000 },
+            { "pistol", 1 },
+        },
+        results = {
+            { "railgun-turret", 1 },
+        },
+        category = "crafting",
+        groups = { "vgal-silly" },
+    },
+    {
         name = "biter-egg-defender-capsule",
         prefix = "vgal",
         icons = vgal.icon.register {

@@ -83,6 +83,16 @@ local subgroups = {
         },
         reorder_entries = true,
     }, -- stone-brick doesn't listen here, is fixed in update phase.
+    {
+        name = "angels-solid-concrete",
+        tab = "resource-refining",
+        order = "y-nb",
+        entries = {
+            "concrete", "hazard-concrete",
+            "refined-concrete", "refined-concrete",
+        },
+        reorder_entries = true,
+    }, -- all of these.. they don't.. they don't listen.
 }
 
 for _, metal in ipairs(vgal.constants.METALS) do

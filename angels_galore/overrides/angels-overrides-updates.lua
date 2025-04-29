@@ -22,6 +22,13 @@ for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     end
 end
 
+for index, value in ipairs({
+    "concrete", "hazard-concrete",
+    "refined-concrete", "refined-hazard-concrete",
+}) do
+    data.raw["item"][value].order = vgal.subgroup.order_from_number(index)
+    data.raw["item"][value].subgroup = "vgal-angels-solid-concrete"
+end
 
 
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")

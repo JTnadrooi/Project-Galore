@@ -93,6 +93,27 @@ vgal.data.extend({
         category = "crafting",
     },
     {
+        name = "molten-iron-molten-copper-railgun-ammo",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("railgun-ammo"),
+            vgal.icon.get_overlay("casting-iron-copper"),
+        },
+        energy_required = 25,
+        technology = "railgun",
+        fluid_ingredients = {
+            { "molten-iron",   200 },
+            { "molten-copper", 60 },
+        },
+        ingredients = {
+            { "explosives", 3 },
+        },
+        results = {
+            { "railgun-ammo", 1 }, -- 330
+        },
+        category = "metallugy",
+    },
+    {
         name = "holmium-plate-railgun-ammo",
         prefix = "vgal",
         icons = vgal.icon.register {

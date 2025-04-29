@@ -65,3 +65,20 @@ end
 for name, _ in pairs(to_remove) do
     data.raw.technology[name] = nil
 end
+
+--- clean subgroups bc anywhere else this code is just a suggestion ---
+local subgroups_to_clean = {
+    ["angels-copper"] = true,
+    ["angels-copper-casting"] = true,
+    ["angels-iron"] = true,
+    ["angels-iron-casting"] = true,
+    ["angels-steel-casting"] = true,
+    ["angels-stone"] = true,
+    ["angels-stone-casting"] = true,
+}
+for _, recipe in pairs(data.raw["recipe"]) do
+    if subgroups_to_clean[recipe.subgroup] then
+        recipe.order = nil
+        recipe.subgroup = nil
+    end
+end

@@ -229,7 +229,7 @@ end
 
 function vgal.recipe.replace_ingredient(recipeName, oldIngredientName, newIngredientName)
     local recipe = data.raw["recipe"][recipeName]
-    local toalter = recipe.ingredients
+    local toalter = recipe.ingredients or {}
     for _, ingredient in ipairs(toalter) do
         if ingredient.name == oldIngredientName then
             if ingredient.name then
@@ -241,10 +241,10 @@ end
 
 function vgal.recipe.remove_ingredient(recipeName, ingredientName)
     local recipe = data.raw["recipe"][recipeName]
-    local toalter = recipe.ingredients
-    for i, ingredient in ipairs(toalter) do
+    for i, ingredient in ipairs(recipe.ingredients or {}) do
         if ingredient.name == ingredientName then
-            table.remove(toalter, i)
+            table.remove(recipe.ingredients, i)
+            break
         end
     end
 end

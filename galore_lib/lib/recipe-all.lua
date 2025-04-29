@@ -43,7 +43,8 @@ function vgal.recipe.all.multiply_ingredients(mainProductName, multiplier, ingre
     end
 end
 
-function vgal.recipe.all.replace_ingredient(sourceIngredientName, newIngredient, mainProductName, multiplier, search_table)
+function vgal.recipe.all.replace_ingredient(sourceIngredientName, newIngredient, mainProductName, multiplier,
+                                            search_table)
     search_table = search_table or data.raw["recipe"]
     multiplier = multiplier or 1
     for _, recipe in pairs(search_table) do
@@ -54,6 +55,24 @@ function vgal.recipe.all.replace_ingredient(sourceIngredientName, newIngredient,
                         multiplier * vgal.recipe.get_ingredient_amount(recipe.name, sourceIngredientName)))
                 vgal.recipe.remove_ingredient(recipe.name, sourceIngredientName)
             end
+        end
+    end
+end
+
+function vgal.recipe.all.remove_ingredient(ingredient_name, main_product_name, search_table)
+    search_table = search_table or data.raw["recipe"]
+    for _, recipe in pairs(search_table) do
+        if (main_product_name == nil) or recipe.main_product == main_product_name then
+            vgal.recipe.remove_ingredient(recipe.name, ingredient_name)
+        end
+    end
+end
+
+function vgal.recipe.all.remove_result(result_name, main_product_name, search_table)
+    search_table = search_table or data.raw["recipe"]
+    for _, recipe in pairs(search_table) do
+        if (main_product_name == nil) or recipe.main_product == main_product_name then
+            vgal.recipe.remove_result(recipe.name, result_name)
         end
     end
 end

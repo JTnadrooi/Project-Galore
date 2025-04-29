@@ -45,3 +45,5 @@ for _, tech_name in ipairs(alien_sample_tech_names) do
         tech.unit.count = multiplier * 150
     end
 end
+
+vgal.data.deep_hide(data.raw["item"]["token-bio"])

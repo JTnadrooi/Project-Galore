@@ -10,6 +10,8 @@ Version: 1.5.0
     - "vgal-promethium-asteroid-chunk-crushing" holmium ore chance result 0.5% -> 1.5%
     - Removed "vgal-plastic-bar-railgun-ammo".
     - Removed "vgal-battery-railgun-ammo".
+  Bugfixes:
+    - Fixed "molten-iron-molten-copper-space-platform-foundation" not having the proper casting overlay.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.4
   Features:

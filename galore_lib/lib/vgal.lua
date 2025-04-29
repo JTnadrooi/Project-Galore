@@ -308,7 +308,7 @@ end
 function vgal.any(anyName, includeRecipes)
     local categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
         "item-with-entity-data",
-        "rail-planner" }
+        "rail-planner", "gun" }
     if includeRecipes then
         table.insert(categories, "recipe")
     end
@@ -323,7 +323,7 @@ end
 function vgal.any_get_source(anyName, includeRecipes)
     local categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
         "item-with-entity-data",
-        "rail-planner" }
+        "rail-planner", "gun" }
     if includeRecipes then
         table.insert(categories, "recipe")
     end

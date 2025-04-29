@@ -12,7 +12,7 @@ vgal.data.extend({
             { "promethium-asteroid-chunk", 1 },
         },
         results = {
-            { "holmium-ore",               1, { probability = 0.005 } },
+            { "holmium-ore",               1, { probability = 0.015 } },
             { "promethium-asteroid-chunk", 1, { probability = 0.80, ignored_by_productivity = 1 } },
         },
         category = "crushing",

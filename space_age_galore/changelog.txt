@@ -2,11 +2,14 @@
 Version: 1.5.0
   Features:
     - Added "vgal-pistol-rail-railgun-turret" recipe, tagged as silly.
-    - removed "vgal-superconductor-railgun-ammo" unsure tag.
+    - Added "vgal-molten-iron-molten-copper-railgun-ammo" recipe, tagged as unsure.
+    - Added "vgal-holmium-plate-railgun-ammo" recipe.
+    - Added "vgal-superconductor-railgun-ammo" recipe, tagged as unsure.
+    - Added tooltips for unsure, silly and convoluted recipes groups hinting toward where you can find a list of all unsure, silly and convoluted recipes.
   Balancing:
     - "vgal-promethium-asteroid-chunk-crushing" holmium ore chance result 0.5% -> 1.5%
-    - removed "vgal-plastic-bar-railgun-ammo".
-    - "vgal-battery-railgun-ammo" has been overhauled and renamed to "vgal-superconductor-railgun-ammo".
+    - Removed "vgal-plastic-bar-railgun-ammo".
+    - Removed "vgal-battery-railgun-ammo".
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.4
   Features:

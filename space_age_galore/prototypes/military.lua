@@ -111,7 +111,8 @@ vgal.data.extend({
         results = {
             { "railgun-ammo", 1 }, -- 330
         },
-        category = "metallugy",
+        category = "metallurgy",
+        groups = { "vgal-unsure" },
     },
     {
         name = "holmium-plate-railgun-ammo",
@@ -139,7 +140,6 @@ vgal.data.extend({
         --     { "fluoroketone-hot", 5, { temperature = 180, ignored_by_stats = 5, ignored_by_productivity = 5 } },
         -- },
         category = "crafting-with-fluid",
-        groups = { "vgal-unsure" },
     },
     -- {
     --     name = "tungsten-carbide-railgun-ammo",

@@ -13,7 +13,7 @@
         "angelsrefining",
         "angelssmelting",
         "angelsbioprocessing",
-        "! angelsindustries",
+        "? angelsindustries",
         "(?) reskins-angels"
     ],
     "description": "An overhaul of Angels Mods!"

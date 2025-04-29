@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.0
+  Features:
+  Balancing:
+    - "vgal-promethium-asteroid-chunk-crushing" holmium ore chance result 0.5% -> 1.5%
+---------------------------------------------------------------------------------------------------
 Version: 1.4.4
   Features:
     - Added compat with Wolverine's Productivity Research.

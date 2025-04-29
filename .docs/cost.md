@@ -75,7 +75,7 @@
 | holmium-solution      | 8              |
 | electrolyte           | 10             |
 | supercapacitor        | i-null, r-null |
-| superconductor        | i-300?, r-null |
+| superconductor        | i-60, r-80     |
 | rocket-part(base)     | 12800          |
 | rocket-part(sa)       | 1280           |
 | null                  | null           |

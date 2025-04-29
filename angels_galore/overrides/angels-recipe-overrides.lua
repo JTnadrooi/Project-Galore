@@ -60,3 +60,12 @@ vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
 vgal.data.trim("powder-silicon")
 vgal.data.trim("solid-salt-from-saline")
 data.raw["recipe"]["anode-copper-smelting"].category = "blast-smelting" -- bc the chem furnace is removed.
+
+--- remove the alien tokens things ---
+vgal.recipe.all.remove_ingredient("token-bio")
+vgal.recipe.all.remove_result("token-bio")
+
+for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
+    vgal.recipe.deep_hide(environment .. "-garden-b")
+    vgal.recipe.deep_hide(environment .. "-garden-cultivating-a")
+end

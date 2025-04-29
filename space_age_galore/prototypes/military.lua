@@ -74,25 +74,6 @@ vgal.data.extend({
         category = "crafting",
     },
     {
-        name = "plastic-bar-railgun-ammo",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("railgun-ammo"),
-            vgal.icon.get_in("plastic-bar"),
-        },
-        energy_required = 20,
-        technology = "railgun",
-        ingredients = {
-            { "plastic-bar",  6 },
-            { "copper-cable", 5 },
-            { "explosives",   2 },
-        },
-        results = {
-            { "railgun-ammo", 1 },
-        },
-        category = "crafting",
-    },
-    {
         name = "battery-railgun-ammo",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -102,16 +83,63 @@ vgal.data.extend({
         energy_required = 20,
         technology = "railgun",
         ingredients = {
-            { "battery",      1 },
-            { "copper-cable", 5 },
-            { "explosives",   1 },
+            { "battery",        1 }, -- 50
+            { "superconductor", 1 }, -- 60
+            { "tungsten-plate", 1 }, -- 60
         },
         results = {
-            { "railgun-ammo", 1 },
+            { "railgun-ammo", 1 }, -- 330
         },
         category = "crafting",
+    },
+    {
+        name = "holmium-plate-railgun-ammo",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("railgun-ammo"),
+            vgal.icon.get_in("holmium-plate"),
+        },
+        energy_required = 25,
+        technology = "railgun",
+        ingredients = {
+            { "holmium-plate", 1 },
+            { "carbon",        5 },
+        },
+        -- fluid_ingredients = {
+        --     { "fluoroketone-cold", 5, { ignored_by_stats = 5, } },
+        -- },
+        fluid_ingredients = {
+            { "ammonia", 50 },
+        },
+        results = {
+            { "railgun-ammo", 1 }, -- 330
+        },
+        -- fluid_results = {
+        --     { "fluoroketone-hot", 5, { temperature = 180, ignored_by_stats = 5, ignored_by_productivity = 5 } },
+        -- },
+        category = "crafting-with-fluid",
         groups = { "vgal-unsure" },
     },
+    -- {
+    --     name = "tungsten-carbide-railgun-ammo",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("railgun-ammo"),
+    --         vgal.icon.get_in("tungsten-carbide"),
+    --     },
+    --     energy_required = 24,
+    --     technology = "railgun",
+    --     ingredients = {
+    --         { "tungsten-carbide", 3 },
+    --         { "copper-cable",     10 },
+    --         { "explosives",       1 },
+    --     },
+    --     results = {
+    --         { "railgun-ammo", 1 }, -- 130
+    --     },
+    --     category = "crafting",
+    --     groups = { "vgal-unsure" },
+    -- },
     {
         name = "electronic-circuit-railgun-turret",
         prefix = "vgal",

@@ -74,11 +74,11 @@ vgal.data.extend({
         category = "crafting",
     },
     {
-        name = "battery-railgun-ammo",
+        name = "superconductor-railgun-ammo",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("railgun-ammo"),
-            vgal.icon.get_in("battery"),
+            vgal.icon.get_in("superconductor"),
         },
         energy_required = 20,
         technology = "railgun",

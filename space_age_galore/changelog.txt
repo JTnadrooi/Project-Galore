@@ -1,6 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.0
   Features:
+    - Added "vgal-pistol-rail-railgun-turret" recipe, tagged as silly.
   Balancing:
     - "vgal-promethium-asteroid-chunk-crushing" holmium ore chance result 0.5% -> 1.5%
 ---------------------------------------------------------------------------------------------------

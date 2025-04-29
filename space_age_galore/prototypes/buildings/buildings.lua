@@ -98,7 +98,7 @@ vgal.data.extend({
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("space-platform-foundation"),
-            vgal.icon.get_overlay("casting-iron"),
+            vgal.icon.get_overlay("casting-iron-copper"),
         },
         energy_required = 12,
         technology = "foundry",

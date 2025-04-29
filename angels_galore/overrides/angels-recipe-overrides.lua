@@ -69,3 +69,7 @@ for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     vgal.recipe.deep_hide(environment .. "-garden-b")
     vgal.recipe.deep_hide(environment .. "-garden-cultivating-a")
 end
+
+data.raw.recipe["bio-tile"].results = vgal.build.table({
+    { "bio-tile", 2 },
+})

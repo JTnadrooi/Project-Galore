@@ -82,3 +82,4 @@ for _, recipe in pairs(data.raw["recipe"]) do
         recipe.subgroup = nil
     end
 end
+

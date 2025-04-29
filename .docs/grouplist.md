@@ -1,4 +1,14 @@
-# Vanilla Galore
+# Galore Group List
+
+A list of the `vgal-unsure`, `vgal-convoluted`, and `vgal-silly` recipe groups and their entries is maintained here.
+
+Because not all recipes have custom localized names, internal names are used instead. These follow the format: `<(item/fluid)-name(s)>-<result>`, There is never more than one result.
+
+For example; `thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel` produces `rocket-fuel`. All preceding terms are ingredients.
+
+I will not make a list for the other recipe groups, as their descriptions describe the expected entries clearly enough.
+
+## Vanilla Galore
 
 ### Unsure
 
@@ -16,7 +26,7 @@
 -   "processing-unit-splitter"
 -   "engine-unit-burner-inserter"
 
-# Space Age Galore
+## Space Age Galore
 
 ### Unsure
 
@@ -53,3 +63,11 @@
 -   "calcite-sulfuric-acid-ammonia"
 -   "ice-solid-fuel-ammonia"
 -   "scrap-sulfuric-acid-holmium-solution"
+
+## Angel's Galore
+
+### Unsure
+
+### Silly
+
+### Convoluted

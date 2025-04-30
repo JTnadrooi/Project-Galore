@@ -23,4 +23,5 @@
 -   [x] remove alien samples. (or make it at least not used for research)
 -   [ ] spoilage. (optional setting)
 -   [ ] remove bio modules.
+-   [x] increase research speed.
 -   [ ] move lvl1 ore processing to 2 row tech.

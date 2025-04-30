@@ -190,6 +190,36 @@ function vgal.tech.remove_miltary(techName)
     vgal.tech.remove_ingredient(techName, "military-science-pack")
 end
 
+function vgal.tech.merge(tech_name_from, tech_name_to)
+    local tech_from = data.raw["technology"][tech_name_from]
+    local tech_to = data.raw["technology"][tech_name_to]
+    for _, eff in ipairs(tech_from.effects) do
+        table.insert(tech_to.effects, eff)
+    end
+    data.raw["technology"][tech_name_from] = nil
+end
+
+-- function vgal.tech.move_recipe(tech_name_from, recipe_name, tech_name_to)
+--     local tech_from = data.raw["technology"][tech_name_from]
+--     local tech_to = data.raw["technology"][tech_name_to]
+--     tech_to.effects = tech_to.effects or {}
+--     local moved = false
+--     for i = #tech_from.effects, 1, -1 do
+--         local effect = tech_from.effects[i]
+--         if (effect.type == "recipe") and effect.recipe == recipe_name then
+--             table.insert(tech_to.effects, effect)
+--             table.remove(tech_from.effects, i)
+--             moved = true
+--         end
+--     end
+--     if not moved then
+--         error("no effect of type '" .. recipe_name .. "' found in '" .. tech_name_from .. "'.")
+--     end
+--     if not next(tech_from.effects) then
+--         data.raw["technology"][tech_name_from] = nil
+--     end
+-- end
+
 ---@param techName (string)
 function vgal.tech.remove_ingredient(techName, sciencePackName)
     if data.raw["technology"][techName] then

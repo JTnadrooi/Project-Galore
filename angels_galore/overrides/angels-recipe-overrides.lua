@@ -1,13 +1,3 @@
---- time normalising ---
-data.raw.recipe["angels-iron-pebbles-smelting"].energy_required = 6.4
-data.raw.recipe["angels-iron-nugget-smelting"].energy_required = 6.4
-data.raw.recipe["angels-copper-pebbles-smelting"].energy_required = 6.4
-data.raw.recipe["angels-copper-nugget-smelting"].energy_required = 6.4
-data.raw.recipe["angelsore1-crushed-smelting"].energy_required = 6.4
-data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
-
-data.raw.recipe["copper-plate"].energy_required = 9.6
-data.raw.recipe["iron-plate"].energy_required = 9.6
 --- plastic buff ---
 vgal.subgroup.clean("solid-plastic")
 vgal.recipe.multiply("solid-plastic", 1.25)
@@ -73,3 +63,15 @@ end
 data.raw.recipe["bio-tile"].results = vgal.build.table({
     { "bio-tile", 2 },
 })
+
+--- casting recipe tweaks ---
+for _, metal in ipairs(vgal.constants.METALS) do
+    data.raw.recipe["angels-" .. metal .. "-pebbles-smelting"].energy_required = 6.4
+    data.raw.recipe["angels-" .. metal .. "-nugget-smelting"].energy_required = 6.4
+
+    data.raw.recipe[metal .. "-plate"].energy_required = 9.6
+    data.raw.recipe["angels-plate-" .. metal].energy_required = 1
+    vgal.recipe.multiply("angels-plate-" .. metal, 1.25)
+end
+data.raw.recipe["angelsore1-crushed-smelting"].energy_required = 6.4
+data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4

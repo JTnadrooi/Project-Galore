@@ -107,7 +107,7 @@ end
 --- @param value any The value to remove from the table.
 --- @param list table The table to remove the value from.
 --- @return table The table after removing the value.
-function vgal.table.remove(value, list)
+function vgal.table.remove(list, value)
     assert(type(list) == "table", "'list' must be a table.")
     for i = #list, 1, -1 do
         if list[i] == value then

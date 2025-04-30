@@ -33,6 +33,9 @@ end
 --- tech ---
 data.raw["technology"]["ore-crushing"].prerequisites = { "automation" }
 
+--- lab inputs ---
+vgal.table.remove(data.raw["lab"]["lab"].inputs, "token-bio")
+
 
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")

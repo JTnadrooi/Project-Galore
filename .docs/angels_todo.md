@@ -19,9 +19,12 @@
 -   [ ] remove seed generation machine bloat.
 -   [ ] overhaul/normalise water washing recipes.
 -   [ ] gem overhaul.
+    -   [ ] remove gem result from ore processing.
 -   [x] fix the using of reskinned icons.
 -   [x] remove alien samples. (or make it at least not used for research)
 -   [ ] spoilage. (optional setting)
 -   [ ] remove bio modules.
 -   [x] increase research speed.
--   [ ] move lvl1 ore processing to 2 row tech.
+-   [ ] tech fixes.
+    -   [x] move lvl1 ore processing to 2 row tech.
+    -   [ ] move flarestack to basic chem

@@ -48,7 +48,7 @@ vgal.recipe.multiply_results("bio-plastic-2", PLASTIC_MULTIPLIER)
 local BIO_MODULES = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
 for _, bio_module in ipairs(BIO_MODULES) do
     vgal.data.deep_hide(data.raw["module"][bio_module])
-    vgal.recipe.deep_hide(bio_module)
+    vgal.data.trim(bio_module)
 end
 
 --- reinforced concrete removal ---

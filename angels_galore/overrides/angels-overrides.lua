@@ -42,8 +42,8 @@ for _, tech_name in ipairs(alien_sample_tech_names) do
         end
     end
     if multiplier ~= 1 then
-        tech.unit.count = multiplier * 150
+        tech.unit.count = multiplier * 40
     end
 end
 
-vgal.data.deep_hide(data.raw["item"]["token-bio"])
+vgal.data.deep_hide(data.raw["tool"]["token-bio"])

@@ -32,6 +32,8 @@ end
 
 --- tech ---
 data.raw["technology"]["ore-crushing"].prerequisites = { "automation" }
+vgal.tech.merge("angels-flare-stack", "basic-chemistry")
+table.insert(data.raw["technology"]["water-treatment"].prerequisites, "water-washing-1")
 
 --- lab inputs ---
 vgal.table.remove(data.raw["lab"]["lab"].inputs, "token-bio")

@@ -30,6 +30,9 @@ for index, value in ipairs({
     data.raw["item"][value].subgroup = "vgal-angels-solid-concrete"
 end
 
+--- tech ---
+data.raw["technology"]["ore-crushing"].prerequisites = { "automation" }
+
 
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")

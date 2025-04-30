@@ -47,3 +47,6 @@ for _, tech_name in ipairs(alien_sample_tech_names) do
 end
 
 vgal.data.deep_hide(data.raw["tool"]["token-bio"])
+
+--- tech ---
+data.raw["technology"]["basic-chemistry"].unit.count = 40

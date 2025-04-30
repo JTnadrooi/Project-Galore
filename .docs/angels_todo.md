@@ -1,6 +1,7 @@
 -   [x] remove the extra ores.
 -   [x] remove large empty subgroup lists
 -   [x] merge tabs.
+-   [ ] merge tabs (industries).
 -   [ ] add/fix VGAL angels icon creator wrapper.
 -   [x] make it so VGAL loads.
 -   [x] disable certain VGAL recipes.
@@ -9,15 +10,17 @@
 -   [x] normalise crafting times. (angel's smelthing)
 -   [x] hide barreling from player crafting.
 -   [ ] normalise building recipes.
--   [ ] override angels_industry settings.
+-   [ ] override angels industry settings.
 -   [ ] overhault dormant seed refreshing recipes. (add prod to seed extractor, de-bulkify recipes)
--   [ ] (?) nerf the polluted water yield of the fish recipes.
+-   [ ] (?) nerf the polluted water yield of some fish recipes.
 -   [ ] add shards to module recipes.
 -   [ ] replace tier icons with VGAL-like icons.
 -   [x] remove unneeded technologies.
 -   [ ] remove seed generation machine bloat.
 -   [ ] overhaul/normalise water washing recipes.
+-   [ ] gem overhaul.
 -   [x] fix the using of reskinned icons.
--   [ ] remove alien samples. (or make it at least not used for research)
--   [ ] normalise cooling tower steam temps.
+-   [x] remove alien samples. (or make it at least not used for research)
 -   [ ] spoilage. (optional setting)
+-   [ ] remove bio modules.
+-   [ ] move lvl1 ore processing to 2 row tech.

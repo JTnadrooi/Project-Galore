@@ -10,6 +10,8 @@
 -   [x] normalise crafting times. (angel's smelthing)
 -   [x] hide barreling from player crafting.
 -   [ ] normalise building recipes.
+-   [ ] remove bricks.
+    -   [x] remove reinforced bricks.
 -   [ ] override angels industry settings.
 -   [ ] overhault dormant seed refreshing recipes. (add prod to seed extractor, de-bulkify recipes)
 -   [ ] (?) nerf the polluted water yield of some fish recipes.
@@ -18,6 +20,7 @@
 -   [x] remove unneeded technologies.
 -   [ ] remove seed generation machine bloat.
 -   [ ] overhaul/normalise water washing recipes.
+-   [ ] make the rocket fuel recipe chain a bit less.. direct?
 -   [ ] gem overhaul.
     -   [ ] remove gem result from ore processing.
 -   [x] fix the using of reskinned icons.
@@ -25,6 +28,10 @@
 -   [ ] spoilage. (optional setting)
 -   [x] remove bio modules.
 -   [x] increase research speed.
+-   [ ] increase crushed coal/coke fuel value.
+-   [ ] increase inserter stack size.
 -   [ ] tech fixes.
     -   [x] move lvl1 ore processing to 2 row tech.
     -   [ ] move flarestack to basic chem
+    -   [ ] proper prerequisites.
+-   [ ] add recipes GALORE.

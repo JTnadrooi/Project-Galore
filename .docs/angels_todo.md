@@ -25,7 +25,6 @@
 -   [ ] spoilage. (optional setting)
 -   [x] remove bio modules.
 -   [x] increase research speed.
--   [ ] add 2x2 assembling machine.
 -   [ ] tech fixes.
     -   [x] move lvl1 ore processing to 2 row tech.
     -   [ ] move flarestack to basic chem

@@ -38,6 +38,16 @@ table.insert(data.raw["technology"]["water-treatment"].prerequisites, "water-was
 --- lab inputs ---
 vgal.table.remove(data.raw["lab"]["lab"].inputs, "token-bio")
 
+--- catalysts ---
+
+data.raw.recipe["catalyst-metal-green"].ingredients = vgal.build.table({
+    { "catalyst-metal-carrier", 10 },
+    { "angels-ore3",            1 },
+})
+data.raw.recipe["catalyst-metal-red"].ingredients = vgal.build.table({
+    { "catalyst-metal-carrier", 10 },
+    { "angels-ore1",            1 },
+})
 
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")

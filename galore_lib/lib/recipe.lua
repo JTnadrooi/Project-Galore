@@ -432,13 +432,41 @@ function vgal.recipe.multiply_results(recipeName, multiplier)
     recipe.results = vgal.table.get_multiplied(recipe.results, multiplier)
 end
 
-function vgal.recipe.set_result_amount(recipeName, amount)
-    local recipe = data.raw["recipe"][recipeName]
-    for _, result in ipairs(recipe.results) do
-        result.amount = amount
-        result.amount_max = nil
-        result.amount_min = nil
-        result.probability = nil
+function vgal.recipe.set_result_amount(recipe_name, amount, result_name)
+    local recipe = data.raw["recipe"][recipe_name]
+    for i = #recipe.results, 1, -1 do
+        local result = recipe.results[i]
+        if (result_name == nil) or result.name == result_name then
+            if amount == 0 then
+                if not result_name then
+                    error(result_name)
+                end
+                table.remove(recipe.results, i)
+            else
+                result.amount = amount
+                result.amount_max = nil
+                result.amount_min = nil
+                result.probability = nil
+            end
+        end
+    end
+end
+
+function vgal.recipe.set_ingredient_amount(recipe_name, amount, ingredient_name)
+    local recipe = data.raw["recipe"][recipe_name]
+    for i = #recipe.ingredients, 1, -1 do
+        local ingredient = recipe.ingredients[i]
+        local name = ingredient.name
+        if (ingredient_name == nil) or name == ingredient_name then
+            if amount == 0 then
+                if not ingredient_name then
+                    error(ingredient_name)
+                end
+                table.remove(recipe.ingredients, i)
+            else
+                ingredient.amount = amount
+            end
+        end
     end
 end
 

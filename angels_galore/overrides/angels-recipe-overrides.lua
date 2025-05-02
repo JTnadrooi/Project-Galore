@@ -25,12 +25,6 @@ for _, bio_module in ipairs(BIO_MODULES) do
     vgal.data.trim(bio_module)
 end
 
-
---- misc ---
-vgal.data.trim("powder-silicon")
-vgal.data.trim("solid-salt-from-saline")
-data.raw["recipe"]["anode-copper-smelting"].category = "blast-smelting" -- bc the chem furnace is removed.
-
 --- remove the alien tokens things ---
 vgal.recipe.all.remove_ingredient("token-bio")
 vgal.recipe.all.remove_result("token-bio")
@@ -40,9 +34,6 @@ for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     vgal.recipe.deep_hide(environment .. "-garden-cultivating-a")
 end
 
-data.raw.recipe["bio-tile"].results = vgal.build.table({
-    { "bio-tile", 2 },
-})
 
 --- casting recipe tweaks ---
 for _, metal in ipairs(vgal.constants.METALS) do
@@ -73,3 +64,16 @@ vgal.recipe.set_result_amount("bio-plastic-2", 150)
 vgal.data.trim("liquid-cellulose-acetate")
 vgal.data.deep_hide(data.raw["fluid"]["liquid-cellulose-acetate"])
 vgal.recipe.replace_ingredient("bio-plastic-1", "liquid-cellulose-acetate", "liquid-cellulose-acetate-mixture")
+
+--- misc normalising ---
+-- data.raw.recipe["bio-tile"].results = vgal.build.table({
+--     { "bio-tile", 2 },
+-- })
+
+vgal.recipe.set_result_amount("bio-tile", 2)
+vgal.recipe.set_result_amount("alien-goo", 10)
+
+--- misc ---
+vgal.data.trim("powder-silicon")
+vgal.data.trim("solid-salt-from-saline")
+data.raw["recipe"]["anode-copper-smelting"].category = "blast-smelting" -- bc the chem furnace is removed.

@@ -72,5 +72,5 @@ local PLASTIC_MULTIPLIER = 5
 vgal.recipe.multiply_results("liquid-plastic-1", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("liquid-plastic-2", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("liquid-plastic-3", PLASTIC_MULTIPLIER)
-vgal.recipe.set_result_amount("bio-plastic-1", PLASTIC_MULTIPLIER)
-vgal.recipe.multiply_results("bio-plastic-2", PLASTIC_MULTIPLIER)
+vgal.recipe.set_result_amount("bio-plastic-1", 80)
+vgal.recipe.set_result_amount("bio-plastic-2", 150)

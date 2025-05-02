@@ -41,10 +41,14 @@ for _, bio_module in ipairs(BIO_MODULES) do
     vgal.data.trim(bio_module)
 end
 
---- reinforced concrete removal ---
+--- brick removal (clay/reinforced) ---
 vgal.data.trim("angels-reinforced-concrete-brick")
+vgal.data.trim("angels-clay-brick")
+vgal.data.trim("angels-clay-brick-raw")
 vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
     { type = "item", name = "angels-concrete-brick", amount = 1 })
+vgal.recipe.all.replace_ingredient("angels-clay-brick",
+    { type = "item", name = "stone-brick", amount = 1 })
 
 --- misc ---
 vgal.data.trim("powder-silicon")

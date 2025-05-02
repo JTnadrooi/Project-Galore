@@ -193,7 +193,7 @@ vgal.recipe.smart_allow_productivity("slag-processing-dissolution")
 vgal.recipe.smart_allow_productivity("stone-crushed-dissolution")
 vgal.recipe.smart_allow_productivity("concrete-mixture-1")
 vgal.recipe.smart_allow_productivity("concrete-mixture-2")
-vgal.recipe.smart_allow_productivity("angels-reinforced-concrete-brick")
+-- vgal.recipe.smart_allow_productivity("angels-reinforced-concrete-brick")
 vgal.recipe.smart_allow_productivity("angels-concrete-brick")
 
 --- metallugy ---

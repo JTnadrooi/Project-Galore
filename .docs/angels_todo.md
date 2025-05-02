@@ -10,7 +10,7 @@
 -   [x] normalise crafting times. (angel's smelthing)
 -   [x] hide barreling from player crafting.
 -   [ ] normalise building recipes.
--   [ ] remove bricks.
+-   [x] remove bricks.
     -   [x] remove reinforced bricks.
 -   [ ] override angels industry settings.
 -   [ ] overhault dormant seed refreshing recipes. (add prod to seed extractor, de-bulkify recipes)

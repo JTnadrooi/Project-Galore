@@ -65,12 +65,12 @@ data.raw.recipe["angelsore1-crushed-smelting"].energy_required = 6.4
 data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
 
 --- recipe buffs ---
-vgal.recipe.set_result_count("ingot-iron-smelting", 8)
+vgal.recipe.set_result_amount("ingot-iron-smelting", 8)
 
 --- plastic buff ---
 local PLASTIC_MULTIPLIER = 5
 vgal.recipe.multiply_results("liquid-plastic-1", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("liquid-plastic-2", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("liquid-plastic-3", PLASTIC_MULTIPLIER)
-vgal.recipe.multiply_results("bio-plastic-1", PLASTIC_MULTIPLIER)
+vgal.recipe.set_result_amount("bio-plastic-1", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("bio-plastic-2", PLASTIC_MULTIPLIER)

@@ -436,6 +436,9 @@ function vgal.recipe.set_result_amount(recipeName, amount)
     local recipe = data.raw["recipe"][recipeName]
     for _, result in ipairs(recipe.results) do
         result.amount = amount
+        result.amount_max = nil
+        result.amount_min = nil
+        result.probability = nil
     end
 end
 

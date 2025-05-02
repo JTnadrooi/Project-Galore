@@ -78,7 +78,7 @@ local subgroups = {
         tab = "resource-refining",
         order = "x-nb",
         entries = {
-            "solid-lime", "solid-cement", "stone-brick", "clay-brick-raw", "clay-brick", "concrete-brick", -- reinforced one is removed
+            "solid-lime", "solid-cement", "stone-brick", "concrete-brick",  -- reinforced and clay removed
             "bio-tile",
         },
         reorder_entries = true,

@@ -49,6 +49,15 @@ data.raw.recipe["catalyst-metal-red"].ingredients = vgal.build.table({
     { "angels-ore1",            1 },
 })
 
+--- brick removal (clay/reinforced) ---
+vgal.data.trim("angels-reinforced-concrete-brick")
+vgal.data.trim("angels-clay-brick")
+vgal.data.trim("angels-clay-brick-raw")
+vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
+    { type = "item", name = "angels-concrete-brick", amount = 1 })
+vgal.recipe.all.replace_ingredient("clay-brick",
+    { type = "item", name = "stone-brick", amount = 1 })
+
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")
 

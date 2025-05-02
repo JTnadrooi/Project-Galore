@@ -198,7 +198,7 @@ vgal.recipe.smart_allow_productivity("angels-concrete-brick")
 
 --- metallugy ---
 
-vgal.recipe.smart_allow_productivity("angels-clay-brick-raw")
+-- vgal.recipe.smart_allow_productivity("angels-clay-brick-raw")
 vgal.recipe.smart_allow_productivity("angelsore1-crushed-smelting")
 vgal.recipe.smart_allow_productivity("angelsore3-crushed-smelting")
 local METALS = { "copper", "iron" }

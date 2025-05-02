@@ -432,6 +432,13 @@ function vgal.recipe.multiply_results(recipeName, multiplier)
     recipe.results = vgal.table.get_multiplied(recipe.results, multiplier)
 end
 
+function vgal.recipe.set_result_count(recipeName, amount)
+    local recipe = data.raw["recipe"][recipeName]
+    for _, result in ipairs(recipe.results) do
+        result.amount = amount
+    end
+end
+
 function vgal.recipe.multiply_ingredients(recipeName, multiplier, ingredientName)
     local recipe = data.raw["recipe"][recipeName]
     recipe.ingredients = vgal.table.get_multiplied(recipe.ingredients, multiplier, ingredientName)

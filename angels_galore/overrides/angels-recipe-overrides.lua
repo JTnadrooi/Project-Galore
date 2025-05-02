@@ -17,22 +17,6 @@ for _, ore in ipairs(UNNEEDED_ORES) do
     end
 end
 
-data.raw.recipe["catalyst-metal-green"].ingredients = vgal.build.table({
-    { "catalyst-metal-carrier", 10 },
-    { "angels-ore3",            1 },
-})
-data.raw.recipe["catalyst-metal-red"].ingredients = vgal.build.table({
-    { "catalyst-metal-carrier", 10 },
-    { "angels-ore1",            1 },
-})
-
---- plastic buff ---
-local PLASTIC_MULTIPLIER = 5
-vgal.recipe.multiply_results("liquid-plastic-1", PLASTIC_MULTIPLIER)
-vgal.recipe.multiply_results("liquid-plastic-2", PLASTIC_MULTIPLIER)
-vgal.recipe.multiply_results("liquid-plastic-3", PLASTIC_MULTIPLIER)
-vgal.recipe.multiply_results("bio-plastic-1", PLASTIC_MULTIPLIER)
-vgal.recipe.multiply_results("bio-plastic-2", PLASTIC_MULTIPLIER)
 
 --- funny yellow module removal ---
 local BIO_MODULES = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
@@ -79,3 +63,14 @@ for _, metal in ipairs(vgal.constants.METALS) do
 end
 data.raw.recipe["angelsore1-crushed-smelting"].energy_required = 6.4
 data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
+
+--- recipe buffs ---
+vgal.recipe.set_result_count("ingot-iron-smelting", 8)
+
+--- plastic buff ---
+local PLASTIC_MULTIPLIER = 5
+vgal.recipe.multiply_results("liquid-plastic-1", PLASTIC_MULTIPLIER)
+vgal.recipe.multiply_results("liquid-plastic-2", PLASTIC_MULTIPLIER)
+vgal.recipe.multiply_results("liquid-plastic-3", PLASTIC_MULTIPLIER)
+vgal.recipe.multiply_results("bio-plastic-1", PLASTIC_MULTIPLIER)
+vgal.recipe.multiply_results("bio-plastic-2", PLASTIC_MULTIPLIER)

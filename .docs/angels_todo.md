@@ -29,7 +29,10 @@
 -   [x] remove bio modules.
 -   [x] increase research speed.
 -   [ ] increase crushed coal/coke fuel value.
--   [ ] increase inserter stack size.
+-   [x] increase inserter stack size.
+-   [x] remove most t1+ machines.
+-   [ ] add mod slots to more machines.
+-   [ ] balance material costs with vanilla material costs.
 -   [ ] tech fixes.
     -   [x] move lvl1 ore processing to 2 row tech.
     -   [ ] move flarestack to basic chem

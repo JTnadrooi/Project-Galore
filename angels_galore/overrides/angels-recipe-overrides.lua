@@ -74,3 +74,10 @@ vgal.recipe.multiply_results("liquid-plastic-2", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("liquid-plastic-3", PLASTIC_MULTIPLIER)
 vgal.recipe.set_result_amount("bio-plastic-1", 80)
 vgal.recipe.set_result_amount("bio-plastic-2", 150)
+
+--- chain simplifications ---
+
+-- bio plastic
+vgal.data.trim("liquid-cellulose-acetate")
+vgal.data.deep_hide(data.raw["fluid"]["liquid-cellulose-acetate"])
+vgal.recipe.replace_ingredient("bio-plastic-1", "liquid-cellulose-acetate", "liquid-cellulose-acetate-mixture")

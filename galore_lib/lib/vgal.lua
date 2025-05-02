@@ -303,6 +303,9 @@ function vgal.data.deep_hide(entry)
     entry.hidden = true
     entry.hidden_in_factoriopedia = true
     entry.hide_from_signal_gui = true
+    if entry.type == "fluid" then
+        entry.auto_barrel = false
+    end
 end
 
 function vgal.any(anyName, includeRecipes)

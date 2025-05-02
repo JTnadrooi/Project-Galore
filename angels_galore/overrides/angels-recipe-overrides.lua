@@ -77,3 +77,5 @@ vgal.recipe.set_result_amount("alien-goo", 10)
 vgal.data.trim("powder-silicon")
 vgal.data.trim("solid-salt-from-saline")
 data.raw["recipe"]["anode-copper-smelting"].category = "blast-smelting" -- bc the chem furnace is removed.
+data.raw["recipe"]["solid-soil"].energy_required = 1.5
+data.raw["recipe"]["solid-soil-alternative"].energy_required = 1.5

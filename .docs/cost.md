@@ -192,7 +192,7 @@
 | ---------------------------- | -------------- |
 | automation-science-pack      | 30             |
 | logistic-science-pack        | 70             |
-| military-science-pack        | 180            |
+| military-science-pack        | 210            |
 | chemical-science-pack        | 245            |
 | production-science-pack      | 935            |
 | utility-science-pack         | 990            |

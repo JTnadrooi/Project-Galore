@@ -284,7 +284,7 @@ vgal.data.extend({
             { "gun-turret", 1 }, -- 500
         },
         results = {
-            { "military-science-pack", 3 }, -- 240x =
+            { "military-science-pack", 3 }, -- 630
         },
     },
     {
@@ -299,11 +299,11 @@ vgal.data.extend({
         technology = { "military-science-pack", "flamethrower" },
         ingredients = {
             { "explosives",               2 }, -- 60
-            { "piercing-rounds-magazine", 6 }, -- 840
+            { "piercing-rounds-magazine", 6 }, -- 450
             { "flamethrower-turret",      1 }, -- 2350
         },
         results = {
-            { "military-science-pack", 18 }, -- 240x =
+            { "military-science-pack", 15 }, -- 3150
         },
     },
     -- PRODUCTION

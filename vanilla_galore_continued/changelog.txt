@@ -3,7 +3,7 @@ Version: 1.2.4
   Features:
     - Accounted for piercing round recipe changes.
   Balancing:
-    -  
+    - "flamethrower-turret-military-science-pack" military-science-pack yield 18 -> 15. 
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.3
   Features:

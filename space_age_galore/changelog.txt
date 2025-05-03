@@ -2,6 +2,7 @@
 Version: 1.5.1
   Features:
     - Accounted for piercing round recipe changes.
+    - Made it so ineffective Vanilla Galore settings get hidden.
   Balancing:
     - "vgal-tungsten-plate-piercing-rounds-magazine" piercing-rounds-magazine yield 1 -> 2.
     - "vgal-tungsten-plate-piercing-rounds-magazine" firearm-magazine cost 1 -> 2.
@@ -10,7 +11,7 @@ Version: 1.5.1
     - "vgal-biter-egg-defender-capsule" piercing-rounds-magazine cost 2 -> 1.
   Bugfixes:
     - Fixed changelog not showing in modbrowser. (Thanks RockPaperKatana!)
-    - Fixed mistag of recipes from update 1.5.0.
+    - Fixed mistagging/misgrouping of recipes from update 1.5.0. ("vgal-superconductor-railgun-ammo" and "vgal-holmium-plate-railgun-ammo" had their tags switched.)
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.0
   Features:

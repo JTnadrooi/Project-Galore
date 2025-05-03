@@ -248,14 +248,14 @@ vgal.data.extend({
             vgal.icon.get_in2("pentapod-egg"),
         },
         category = "crafting",
-        energy_required = 30,
+        energy_required = 40,
         technology = "captivity",
         ingredients = {
             { "biter-egg",    2 }, -- 200
             { "pentapod-egg", 1 }, -- 700
         },
         results = {
-            { "military-science-pack", 6 }, -- 1260
+            { "military-science-pack", 8 }, -- 1080
         },
     },
 }, {

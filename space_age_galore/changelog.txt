@@ -283,20 +283,20 @@ Version: 0.2.7
     - Pressing settings added.
     - Vanilla Galore 1.0 support.
   Balancing:
-    - "vgal-tungsten-carbide-heat-pipe" cost increased
-    - "vgal-molten-iron-molten-copper-space-platform-foundation" cost increased
+    - "vgal-tungsten-carbide-heat-pipe" cost increased.
+    - "vgal-molten-iron-molten-copper-space-platform-foundation" cost increased.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.6
   Bugfixes:
-    -  HOTFIX: Crash when rocket part recipes are disabled, /THIS/ time caused by the maraxsis compat script not knowing when a recipe is disabled.
+    - HOTFIX: Crash when rocket part recipes are disabled, /THIS/ time caused by the maraxsis compat script not knowing when a recipe is disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.5
   Bugfixes:
-    -  HOTFIX: Crash when rocket part recipes are disabled, this time caused by the "vgal-unsure" recipe-group.
+    - HOTFIX: Crash when rocket part recipes are disabled, this time caused by the "vgal-unsure" recipe-group.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.4
   Bugfixes:
-    -  HOTFIX: Crash when rocket part recipes are disabled
+    - HOTFIX: Crash when rocket part recipes are disabled.
   Balancing:
     - "vgal-flying-robot-frame-rocket-part" cost reduced
 ---------------------------------------------------------------------------------------------------

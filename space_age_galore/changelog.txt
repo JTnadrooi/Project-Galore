@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.1
+  Features:
+    - Accounted for piercing round recipe changes.
+  Balancing:
+    - "pentapod-egg-biter-egg-military-science-pack" duration 30 -> 40.
+    - "pentapod-egg-biter-egg-military-science-pack" military-science-pack yield 6 -> 8.
+  Bugfixes:
+    - Fixed changelog not showing in modbrowser. (Thanks RockPaperKatana!)
+---------------------------------------------------------------------------------------------------
 Version: 1.5.0
   Features:
     - Added "vgal-gun-turret-rail-railgun-turret" recipe, tagged as silly.

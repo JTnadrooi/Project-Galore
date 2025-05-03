@@ -6,10 +6,10 @@ vgal.data.extend({
             vgal.icon.get("grenade", "capsule"),
             vgal.icon.get_in("explosives"),
         },
-        energy_required = 5,
+        energy_required = 6,
         technology = { "explosives", "military-2" },
         ingredients = {
-            { "explosives", 4 }, -- 60
+            { "explosives", 3 }, -- 45
             { "iron-plate", 1 }, -- 70
         },
         results = {

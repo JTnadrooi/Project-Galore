@@ -148,7 +148,7 @@
 | stone-wall               | 100   |
 | gate                     | 250   |
 | firearm-magazine         | 40    |
-| piercing-rounds-magazine | 140   |
+| piercing-rounds-magazine | 75    |
 | railgun-ammo             | 330   |
 | gun-turret               | 500   |
 | flamethrower-turret      | 2350  |

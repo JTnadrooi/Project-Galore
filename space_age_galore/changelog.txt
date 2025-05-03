@@ -3,8 +3,6 @@ Version: 1.5.1
   Features:
     - Accounted for piercing round recipe changes.
   Balancing:
-    - "vgal-pentapod-egg-biter-egg-military-science-pack" duration 30 -> 40.
-    - "vgal-pentapod-egg-biter-egg-military-science-pack" military-science-pack yield 6 -> 8.
     - "vgal-tungsten-plate-piercing-rounds-magazine" piercing-rounds-magazine yield 1 -> 2.
     - "vgal-tungsten-plate-piercing-rounds-magazine" firearm-magazine cost 1 -> 2.
     - "vgal-tungsten-plate-piercing-rounds-magazine" duration 3 -> 6.

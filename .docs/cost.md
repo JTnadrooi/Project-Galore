@@ -161,8 +161,8 @@
 | nuke                     | 40860 |
 | defender-capsule         | 360   |
 | distractor-capsule       | 1740  |
-| destroyer-capsule (dlc)  | 11000 |
-| destroyer-capsule        | 10800 |
+| destroyer-capsule (dlc)  | 7900  |
+| destroyer-capsule        | 7600  |
 
 ## Robotics
 

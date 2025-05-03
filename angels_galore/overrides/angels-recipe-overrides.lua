@@ -85,6 +85,11 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-crystal", 5, "sulfuric-acid")
 end
 
+for _, metal in ipairs(vgal.constants.METALS) do
+    vgal.recipe.multiply(metal .. "-ore-processing", 1.5)
+    -- data.raw["recipe"]["angelsore" .. ore_index .. "-chunk"].energy_required = 0.75
+end
+
 --- misc normalising ---
 -- data.raw.recipe["bio-tile"].results = vgal.build.table({
 --     { "bio-tile", 2 },

@@ -32,7 +32,7 @@ I will not make a list for the other recipe groups, as their descriptions descri
 
 -   "water-fluoroketone-cold-ice"
 -   "molten-iron-molten-copper-railgun-ammo"
--   "holmium-plate-railgun-ammo"
+-   "superconductor-railgun-ammo"
 -   "uranium-235-space-science-pack"
 -   "electronic-circuit-agricultural-science-pack"
 -   "scrap-sulfuric-acid-holmium-solution"

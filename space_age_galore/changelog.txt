@@ -8,10 +8,11 @@ Version: 1.5.1
     - "vgal-tungsten-plate-piercing-rounds-magazine" piercing-rounds-magazine yield 1 -> 2.
     - "vgal-tungsten-plate-piercing-rounds-magazine" firearm-magazine cost 1 -> 2.
     - "vgal-tungsten-plate-piercing-rounds-magazine" duration 3 -> 6.
-    - "vgal-pentapod-egg-defender-capsule" piercing-rounds-magazine cost 2 -> 1
-    - "vgal-biter-egg-defender-capsule" piercing-rounds-magazine cost 2 -> 1
+    - "vgal-pentapod-egg-defender-capsule" piercing-rounds-magazine cost 2 -> 1.
+    - "vgal-biter-egg-defender-capsule" piercing-rounds-magazine cost 2 -> 1.
   Bugfixes:
     - Fixed changelog not showing in modbrowser. (Thanks RockPaperKatana!)
+    - Fixed mistag of recipes from update 1.5.0.
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.0
   Features:

@@ -38,6 +38,9 @@ Note: With "normalise" I mean make it so the recipe's ingredients/results don't 
 -   [ ] increase crushed coal/coke fuel value.
 -   [x] increase inserter stack size.
 -   [x] remove most t1+ machines.
+-   [ ] unhide angels-industries nuclear overhaul.
+-   [ ] remove pure ores. 
+-   [ ] make the refined ores less dense.
 -   [ ] add mod slots to more machines.
     -   [x] tiered machines.
     -   [ ] misc (air filter, etc).

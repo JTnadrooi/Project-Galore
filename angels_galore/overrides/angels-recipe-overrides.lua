@@ -68,15 +68,19 @@ vgal.recipe.replace_ingredient("bio-plastic-1", "liquid-cellulose-acetate", "liq
 --- refining durations ---
 
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
+    -- chunk
     data.raw["recipe"]["angelsore" .. ore_index .. "-chunk"].energy_required = 1.6
     vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-chunk", 6, "angels-ore" .. ore_index .. "-crushed")
-    vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-chunk", 6, "angels-ore" .. ore_index .. "-chunk")
+    vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-chunk", 4, "angels-ore" .. ore_index .. "-chunk")
     if ore_index == 1 then
         vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-chunk", 0, "geode-blue")
     else
         vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-chunk", 0, "geode-yellow")
     end
+    vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-chunk-processing", 4,
+        "angels-ore" .. ore_index .. "-chunk")
 
+    -- crystal
     vgal.recipe.multiply("angelsore" .. ore_index .. "-crystal", 2.5)
     vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-crystal", 5, "sulfuric-acid")
 end

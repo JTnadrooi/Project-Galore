@@ -236,7 +236,7 @@ vgal.data.extend({
         technology = { "defender", "captivity" },
         ingredients = {
             { "advanced-circuit",         1 }, -- 100
-            { "piercing-rounds-magazine", 2 }, -- 75
+            { "piercing-rounds-magazine", 1 }, -- 75
             { "biter-egg",                1 }, -- 80
         },
         results = {
@@ -256,11 +256,11 @@ vgal.data.extend({
         technology = { "defender", "biochamber" },
         ingredients = {
             { "electronic-circuit",       1 }, -- 25
-            { "piercing-rounds-magazine", 2 }, -- 280
+            { "piercing-rounds-magazine", 1 }, -- 75
             { "pentapod-egg",             1 }, -- 200
         },
         results = {
-            { "defender-capsule", 1 }, -- 560
+            { "defender-capsule", 1 }, -- 360
         },
         category = "organic-or-assembling",
         groups = { "vgal-silly" },

@@ -159,8 +159,8 @@
 | shotgun-shell            | 40    |
 | piercing-shotgun-shell   | 230   |
 | nuke                     | 40860 |
-| defender-capsule         | 560   |
-| distractor-capsule       | 2540  |
+| defender-capsule         | 360   |
+| distractor-capsule       | 1740  |
 | destroyer-capsule (dlc)  | 11000 |
 | destroyer-capsule        | 10800 |
 
@@ -192,7 +192,7 @@
 | ---------------------------- | -------------- |
 | automation-science-pack      | 30             |
 | logistic-science-pack        | 70             |
-| military-science-pack        | 210            |
+| military-science-pack        | 180            |
 | chemical-science-pack        | 245            |
 | production-science-pack      | 935            |
 | utility-science-pack         | 990            |

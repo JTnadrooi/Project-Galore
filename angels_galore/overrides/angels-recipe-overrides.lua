@@ -72,6 +72,8 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     data.raw["recipe"]["angelsore" .. ore_index .. "-chunk"].energy_required = 1.6
     vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-chunk", 6, "angels-ore" .. ore_index .. "-crushed")
     vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-chunk", 4, "angels-ore" .. ore_index .. "-chunk")
+
+    -- chunk geode removal
     if ore_index == 1 then
         vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-chunk", 0, "geode-blue")
     else
@@ -81,15 +83,21 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
         "angels-ore" .. ore_index .. "-chunk")
 
     -- crystal
-    vgal.recipe.multiply("angelsore" .. ore_index .. "-crystal", 2.5)
     vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-crystal", 5, "sulfuric-acid")
+    vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-crystal", 5, "angels-ore" .. ore_index .. "-chunk")
+    vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-crystal", 4, "angels-ore" .. ore_index .. "-crystal")
 end
 
 for _, metal in ipairs(vgal.constants.METALS) do
     vgal.recipe.multiply(metal .. "-ore-processing", 1.5)
-    -- data.raw["recipe"]["angelsore" .. ore_index .. "-chunk"].energy_required = 0.75
-end
 
+    -- data.raw["recipe"]["angelsore" .. ore_index .. "-chunk"].energy_required = 0.75
+    data.raw["recipe"]["roll-" .. metal .. "-casting"].energy_required = 1
+end
+data.raw["recipe"]["angels-wire-coil-copper-casting"].energy_required = 2
+data.raw["recipe"]["angels-wire-coil-copper-casting-fast"].energy_required = 1
+vgal.recipe.multiply("angels-wire-coil-copper-casting", 2)
+vgal.recipe.multiply("angels-wire-coil-copper-casting-fast", 2)
 --- misc normalising ---
 -- data.raw.recipe["bio-tile"].results = vgal.build.table({
 --     { "bio-tile", 2 },

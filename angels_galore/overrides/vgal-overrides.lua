@@ -28,5 +28,7 @@ data.raw["recipe"]["vgal-steel-plate-iron-stick"].icons = vgal.icon.register {
     vgal.icon.get_in("steel-plate"),
 }
 
+-- vgal.data.trim()
+
 -- data.raw["item"]["plastic-bar"].order = "j"
 -- vgal.subgroup.restore("plastic-bar", true)

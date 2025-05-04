@@ -12,7 +12,7 @@ local UNNEEDED_BUILDINGS = {
 
     ["hydro-plant"] = 1,
     ["washing-plant"] = 1,
-    ["angels-electric-boiler"] = 2,
+    ["angels-electric-boiler"] = 1,
     ["salination-plant"] = 1,
 
     ["algae-farm"] = 2,
@@ -115,7 +115,7 @@ data.raw["assembling-machine"]["gas-refinery"].crafting_speed = 2
 data.raw["assembling-machine"]["separator-2"].crafting_speed = 2
 
 data.raw["assembling-machine"]["washing-plant"].crafting_speed = 2
-data.raw["assembling-machine"]["angels-electric-boiler-2"].crafting_speed = 2
+-- data.raw["assembling-machine"]["angels-electric-boiler-2"].crafting_speed = 2
 
 data.raw["assembling-machine"]["ore-floatation-cell"].crafting_speed = 1
 data.raw["assembling-machine"]["ore-leaching-plant"].crafting_speed = 1

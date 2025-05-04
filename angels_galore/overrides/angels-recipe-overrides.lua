@@ -109,10 +109,6 @@ vgal.recipe.multiply("angels-wire-coil-copper-casting-fast", 2)
 
 -- misc worth fixes --
 
-vgal.recipe.set_ingredient_amount("angelsore-pure-mix1-processing", 1)
-vgal.recipe.multiply("angelsore1-pure-mix1-processing", 2, nil, true)
-vgal.recipe.set_ingredient_amount("angelsore-crystal-mix1-processing", 1)
-
 -- normalising ---
 
 vgal.recipe.set_result_amount("bio-tile", 2)

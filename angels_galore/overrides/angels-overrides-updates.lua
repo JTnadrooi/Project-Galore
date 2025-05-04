@@ -10,6 +10,11 @@ data.raw.recipe["angelsore-pure-mix1-processing"].ingredients = vgal.build.table
     { "angels-ore1-pure", 2 },
     { "angels-ore3-pure", 2 },
 })
+
+vgal.recipe.set_ingredient_amount("angelsore-pure-mix1-processing", 1)
+vgal.recipe.multiply("angelsore-pure-mix1-processing", 2, nil, true)
+vgal.recipe.set_ingredient_amount("angelsore-crystal-mix1-processing", 1)
+
 --- upgrade kit removal ---
 for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     vgal.recipe.deep_hide(environment .. "-upgrade")

@@ -86,13 +86,13 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
 
     -- pure
     -- vgal.recipe.add_ingredient("angelsore" .. ore_index .. "-pure", 5, "liquid-hydrochloric-acid")
-    -- vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-pure", 4, "angels-ore" .. ore_index .. "-crystal")
-    data.raw["recipe"]["angelsore" .. ore_index .. "-pure"].energy_required = 25
-    data.raw["recipe"]["angelsore" .. ore_index .. "-pure"].ingredients = vgal.build.table({
-        { "angels-ore" .. ore_index .. "-crystal", 50 },
-        { "alien-bacteria",                        1 },
-    })
-    vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-pure", 25, "angels-ore" .. ore_index .. "-pure")
+    vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-pure", 4, "angels-ore" .. ore_index .. "-crystal")
+    -- data.raw["recipe"]["angelsore" .. ore_index .. "-pure"].energy_required = 25
+    -- data.raw["recipe"]["angelsore" .. ore_index .. "-pure"].ingredients = vgal.build.table({
+    --     { "angels-ore" .. ore_index .. "-crystal", 50 },
+    --     { "alien-bacteria",                        1 },
+    -- })
+    vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-pure", 2, "angels-ore" .. ore_index .. "-pure")
 
     -- processing
     vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-chunk-processing", 4,

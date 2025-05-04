@@ -50,3 +50,4 @@ vgal.data.deep_hide(data.raw["tool"]["token-bio"])
 
 --- tech ---
 data.raw["technology"]["basic-chemistry"].unit.count = 40
+-- vgal.tech.add_prerequisite("ore-refining", "bio-processing-alien-1")

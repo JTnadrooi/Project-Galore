@@ -99,7 +99,7 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
         "angels-ore" .. ore_index .. "-chunk")
     vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-crystal-processing", 4,
         "angels-ore" .. ore_index .. "-crystal")
-    vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-pure-processing", 3, -- should be 2.25
+    vgal.recipe.set_ingredient_amount("angelsore" .. ore_index .. "-pure-processing", 2, -- should be 2.25
         "angels-ore" .. ore_index .. "-pure")
 end
 

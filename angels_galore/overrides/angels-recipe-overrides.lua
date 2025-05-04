@@ -65,8 +65,7 @@ vgal.data.trim("liquid-cellulose-acetate")
 vgal.data.deep_hide(data.raw["fluid"]["liquid-cellulose-acetate"])
 vgal.recipe.replace_ingredient("bio-plastic-1", "liquid-cellulose-acetate", "liquid-cellulose-acetate-mixture")
 
---- refining durations ---
-
+--- refining durations (see docs/ore-density) ---
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     -- chunk
     data.raw["recipe"]["angelsore" .. ore_index .. "-chunk"].energy_required = 1.6

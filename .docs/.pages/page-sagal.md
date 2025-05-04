@@ -1,6 +1,6 @@
 # Space Age Galore
 
-A large recipe pack that adds over 70 new recipes to the 110 already present in [Vanilla Galore](https://mods.factorio.com/mod/vanilla_galore_continued). This mod doesn't add new items, fluids, or buildings and can be safely added to a save at any time without causing issues.
+A large recipe pack that adds over 90 new recipes to the 110 already present in [Vanilla Galore](https://mods.factorio.com/mod/vanilla_galore_continued). This mod doesn't add new items, fluids, or buildings and can be safely added to a save at any time without causing issues.
 
 ![gleba](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/gleba_galore.png?raw=true)
 
@@ -43,7 +43,8 @@ This is a strength of one massive recipe pack instead of many smaller ones. All 
 
 ## Recommended mods
 
--   [Age Of Production](https://mods.factorio.com/mod/Age-of-Production) by [AndreusAxolotl](https://mods.factorio.com/user/AndreusAxolotl); A great mod that makes it so many of the alternate recipes are made in brand-new machines!
+-   [Age Of Production](https://mods.factorio.com/mod/Age-of-Production) by [AndreusAxolotl](https://mods.factorio.com/user/AndreusAxolotl); Makes it so many of the alternate recipes are made in _brand-new machines_!
+-   [Space Age Galore Galore](https://mods.factorio.com/mod/galore-squared) by [engineer-in-a-box](https://mods.factorio.com/user/engineer-in-a-box); A addon that adds _even more recipes_!
 
 ## Notes
 

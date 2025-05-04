@@ -44,7 +44,7 @@ function vgal.icon.shift(icon, scale, shift)
         if new_icon.scale then
             new_icon.scale = scale * new_icon.scale
         else
-            new_icon.scale = scale * ((64 / 2) / new_icon.icon_size)
+            new_icon.scale = scale * vgal.icon.get_auto_scale(new_icon)
         end
         new_icon.shift = shift or new_icon.shift
         table.insert(icons, new_icon)

@@ -1,13 +1,52 @@
+-- function vgal.icon.shift(icon, scale, shift)
+--     scale = scale or 1
+--     local icons = {}
+--     if #icon == 1 then
+--         icon[1].scale = 1
+--     end
+--     for _, icon2 in ipairs(icon) do
+--         local new_icon = util.table.deepcopy(icon2)
+--         new_icon.scale = (scale * (new_icon.scale or 1)) * (64 / (new_icon.icon_size or 64))
+--         new_icon.shift = shift or new_icon.shift
+--         table.insert(icons, new_icon)
+--     end
+--     return icons
+-- end
+
+function vgal.icon.get_auto_scale(t1_icon)
+    return t1_icon.scale or ((64 / 2) / t1_icon.icon_size)
+end
+
+function vgal.icon.normalise_composite_scales(icon)
+    local sizes = {}
+    for i, icon2 in ipairs(icon) do
+        sizes[i] = vgal.icon.get_auto_scale(icon2)
+    end
+    local normed = vgal.table.normalise(sizes)
+    local scaled_icons = {}
+    for i, icon2 in ipairs(icon) do
+        local copy = util.table.deepcopy(icon2)
+        copy.scale = normed[i]
+        scaled_icons[i] = copy
+    end
+    for _, scaled_icon in ipairs(scaled_icons) do
+        scaled_icon.scale = scaled_icon.scale * (64 / scaled_icon.icon_size)
+    end
+    return scaled_icons
+end
+
 function vgal.icon.shift(icon, scale, shift)
     scale = scale or 1
     local icons = {}
-    if #icon == 1 then
-        icon[1].scale = 1
-    end
-    for _, icon2 in pairs(icon) do
+    local icon_normalised = vgal.icon.normalise_composite_scales(icon) -- copies
+    for _, icon2 in ipairs(icon_normalised) do
         local new_icon = util.table.deepcopy(icon2)
-        new_icon.scale = (scale * (new_icon.scale or 1)) * (64 / (new_icon.icon_size or 64))
-        new_icon.shift = shift or icon.shift
+        if new_icon.scale then
+            new_icon.scale = scale * new_icon.scale
+        else
+            new_icon.scale = scale * ((64 / 2) / new_icon.icon_size)
+        end
+        new_icon.shift = shift or new_icon.shift
         table.insert(icons, new_icon)
     end
     return icons
@@ -52,7 +91,7 @@ function vgal.icon.get(keyName, iconSource)
                 }
             }
         else
-            return recipe.icons
+            return util.table.deepcopy(recipe.icons)
         end
     end
     if iconSource == "raw" then
@@ -103,6 +142,12 @@ function vgal.icon.get(keyName, iconSource)
     if (keyName == "petroleum-gas") and iconSource == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("methane", "molecule")
     end
+    -- if (keyName == "light-oil") and iconSource == "fluid" and mods["angelspetrochem"] then
+    --     return vgal.icon.get("liquid-fuel-oil")
+    -- end
+    -- if (keyName == "heavy-oil") and iconSource == "fluid" and mods["angelspetrochem"] then
+    --     return vgal.icon.get("liquid-naphtha")
+    -- end
     if (keyName == "sulfuric-acid") and iconSource == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("sulfuric-acid", "molecule")
     end
@@ -120,46 +165,64 @@ function vgal.icon.get(keyName, iconSource)
                 {
                     icon = toret_item.icon,
                     icon_size = toret_item.icon_size or 64,
-                    -- scale = (toret_item.icon_size or 64) / 32
                 }
             }
         end
         if toret_item.icons then
-            return util.table.deepcopy(toret_item.icons)
+            local icons = util.table.deepcopy(toret_item.icons)
+            -- local all_same = true
+
+            -- local last_scale
+            -- for _, icon in ipairs(icons) do
+            --     if last_scale == nil then
+            --         last_scale = (icon.scale or 1)
+            --     elseif (icon.scale or 1) ~= last_scale then
+            --         all_same = false
+            --         break
+            --     end
+            -- end
+
+            -- if all_same then
+            --     for _, icon in ipairs(icons) do
+            --         icon.scale = 1
+            --     end
+            -- end
+
+            return icons
         end
     end
     return toret
 end
 
-local function targeted_shift_icon(icon, target, scaleOverride)
-    local shift = {}
-    local scale = 1
-    if target then
-        scale = (scaleOverride or 0.25) * (64 / (icon.icon_size or 64))
-        -- if target == "core" then
-        --     scale = icon.scale
-        -- end
-        if target == "in1" then
-            shift = { -8, -8 }
-        end
-        if target == "in2" then
-            shift = { 8, -8 }
-        end
-        if target == "in3" then
-            shift = { 0, -8 }
-        end
-        if target == "out1" then
-            shift = { -8, 8 }
-        end
-        if target == "out2" then
-            shift = { 8, 8 }
-        end
-        if target == "out3" then
-            shift = { 0, 8 }
-        end
-    end
-    return vgal.icon.shift(icon, scale, shift)
-end
+-- local function targeted_shift_icon(icon, target, scaleOverride)
+--     local shift = {}
+--     local scale = 1
+--     if target then
+--         scale = (scaleOverride or 0.25) * (64 / (icon.icon_size or 64))
+--         -- if target == "core" then
+--         --     scale = icon.scale
+--         -- end
+--         if target == "in1" then
+--             shift = { -8, -8 }
+--         end
+--         if target == "in2" then
+--             shift = { 8, -8 }
+--         end
+--         if target == "in3" then
+--             shift = { 0, -8 }
+--         end
+--         if target == "out1" then
+--             shift = { -8, 8 }
+--         end
+--         if target == "out2" then
+--             shift = { 8, 8 }
+--         end
+--         if target == "out3" then
+--             shift = { 0, 8 }
+--         end
+--     end
+--     return vgal.icon.shift(icon, scale, shift)
+-- end
 function vgal.icon.get_in_fluid(keyName, iconSource)
     return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.35, { 0, -6.5 })
 end
@@ -215,12 +278,6 @@ end
 function vgal.icon.get_in_bg2(keyName, iconSource)
     return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.30, { 7, -7 })
 end
-
--- function tablelength(T)
---     local count = 0
---     for _ in ipairs(T) do count = count + 1 end
---     return count
--- end
 
 function vgal.icon.soft_merge(icons)
     local new_icons = {}

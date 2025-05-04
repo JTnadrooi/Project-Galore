@@ -297,3 +297,23 @@ function vgal.table.nipairs(...)
         return table.unpack(results)
     end
 end
+
+function vgal.table.normalise(arr)
+    local max = -math.huge
+    for _, v in ipairs(arr) do
+        if v > max then max = v end
+    end
+    if max == 0 or max == -math.huge then
+        local copy = {}
+        for i, v in ipairs(arr) do
+            copy[i] = v
+        end
+        return copy
+    end
+    local factor = 1 / max
+    local scaled = {}
+    for i, v in ipairs(arr) do
+        scaled[i] = v * factor
+    end
+    return scaled
+end

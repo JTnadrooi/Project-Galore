@@ -9,7 +9,7 @@ local packFluids = {
     ["utility-science-pack"] = { "hydrogen", 60 },
 }
 local newRecipes = {}
-for _, recipe in pairs(vgal.recipes) do
+for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
     if recipe.name:match("%-science%-pack$") then
         ---@diagnostic disable-next-line: undefined-field
         local resultPack = recipe.results[1].name

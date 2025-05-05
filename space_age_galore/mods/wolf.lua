@@ -29,7 +29,7 @@ local handlers = {
     ["electric-engine-unit"] = "flying-robot-frame",
     ["superconductor"] = "supercapacitor",
 }
-for _, recipe in pairs(vgal.recipes) do
+for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
     local techPreName = handlers[recipe.main_product]
     if techPreName then
         vgal.tech.add_productivity_change(techPreName .. "-productivity-wolf", recipe.name)

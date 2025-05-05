@@ -45,8 +45,6 @@ function vgal.log(toLog)
     end
 end
 
----@type vgal.VgalRecipePrototype[]
-vgal.recipes = {}
 ---@type vgal.VgalToggleGroupPrototype[]
 vgal.groups = {}
 vgal.productivity_entries = {}
@@ -55,8 +53,19 @@ vgal.catalyst_entries = {}
 function vgal.data.domain_pairs(domain_name, prototype_type)
     local dom = vgal.data.DOMAINS[domain_name]
     if not dom then error("domain " .. domain_name .. " does not exist") end
-    if not data.raw[prototype_type] then error("type " .. prototype_type .. " does not exist") end
+    if not prototype_type then
+        error("prototype_type cannot be nil")
+    end
+    if not data.raw[prototype_type] then
+        error("type " .. tostring(prototype_type) .. " does not exist")
+    end
+    if type(dom) ~= "table" then
+        error("internal error: expected domain table, got " .. tostring(dom))
+    end
     local function iter(t, last_key)
+        if type(t) ~= "table" then
+            error("internal error: expected domain table, got " .. tostring(t) .. ", last key: " .. tostring(last_key))
+        end
         local key, entry = next(t, last_key)
         while key do
             if entry
@@ -67,7 +76,6 @@ function vgal.data.domain_pairs(domain_name, prototype_type)
             end
             key, entry = next(t, key)
         end
-        return nil
     end
 
     return iter, dom, nil
@@ -221,8 +229,6 @@ function vgal.data.extend(entries, fill_in_with)
 
             ---@diagnostic disable-next-line: assign-type-mismatch
             data:extend { entry }
-            vgal.recipes[entry.name] = entry
-
             if entry.technologies then
                 if type(entry.technologies[1]) == "table" then
                     for i, prer_collection in ipairs(entry.technologies) do

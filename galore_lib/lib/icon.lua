@@ -142,12 +142,12 @@ function vgal.icon.get(keyName, iconSource)
     if (keyName == "petroleum-gas") and iconSource == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("methane", "molecule")
     end
-    -- if (keyName == "light-oil") and iconSource == "fluid" and mods["angelspetrochem"] then
-    --     return vgal.icon.get("liquid-fuel-oil")
-    -- end
-    -- if (keyName == "heavy-oil") and iconSource == "fluid" and mods["angelspetrochem"] then
-    --     return vgal.icon.get("liquid-naphtha")
-    -- end
+    if (keyName == "light-oil") and iconSource == "fluid" and mods["angelspetrochem"] then
+        return vgal.icon.get("liquid-fuel-oil")
+    end
+    if (keyName == "heavy-oil") and iconSource == "fluid" and mods["angelspetrochem"] then
+        return vgal.icon.get("liquid-naphtha")
+    end
     if (keyName == "sulfuric-acid") and iconSource == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("sulfuric-acid", "molecule")
     end

@@ -35,17 +35,6 @@ for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
 end
 
 
---- casting recipe tweaks ---
-for _, metal in ipairs(vgal.constants.METALS) do
-    data.raw.recipe["angels-" .. metal .. "-pebbles-smelting"].energy_required = 6.4
-    data.raw.recipe["angels-" .. metal .. "-nugget-smelting"].energy_required = 6.4
-
-    data.raw.recipe[metal .. "-plate"].energy_required = 9.6
-    data.raw.recipe["angels-plate-" .. metal].energy_required = 1
-    vgal.recipe.multiply("angels-plate-" .. metal, 1.25)
-end
-data.raw.recipe["angelsore1-crushed-smelting"].energy_required = 6.4
-data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
 
 --- recipe buffs ---
 vgal.recipe.set_result_amount("ingot-iron-smelting", 8)

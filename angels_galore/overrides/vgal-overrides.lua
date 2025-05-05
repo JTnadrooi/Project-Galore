@@ -27,10 +27,10 @@ data.raw["recipe"]["vgal-steel-plate-iron-stick"].icons = vgal.icon.register {
     vgal.icon.get("iron-stick"),
     vgal.icon.get_in("steel-plate"),
 }
-data.raw["recipe"]["vgal-heavy-oil-rail"].icons = vgal.icon.register {
-    vgal.icon.get("rail"),
-    vgal.icon.get_in("liquid-naphtha"),
-}
+-- data.raw["recipe"]["vgal-heavy-oil-rail"].icons = vgal.icon.register {
+--     vgal.icon.get("rail"),
+--     vgal.icon.get_in("liquid-naphtha"),
+-- }
 
 -- vgal.data.trim()
 

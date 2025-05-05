@@ -62,6 +62,18 @@ vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
     { type = "item", name = "angels-concrete-brick", amount = 1 })
 vgal.recipe.all.replace_ingredient("clay-brick",
     { type = "item", name = "stone-brick", amount = 1 })
+    
+--- casting recipe tweaks ---
+for _, metal in ipairs(vgal.constants.METALS) do
+    data.raw.recipe["angels-" .. metal .. "-pebbles-smelting"].energy_required = 6.4
+    data.raw.recipe["angels-" .. metal .. "-nugget-smelting"].energy_required = 6.4
+
+    data.raw.recipe[metal .. "-plate"].energy_required = 9.6
+    data.raw.recipe["angels-plate-" .. metal].energy_required = 1
+    vgal.recipe.multiply("angels-plate-" .. metal, 1.25)
+end
+data.raw.recipe["angelsore1-crushed-smelting"].energy_required = 6.4
+data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
 
 -- vgal.item.set_subgroup("angels-iron-pebbles", "vgal-iron-variants")
 -- vgal.item.set_subgroup("angels-copper-pebbles", "vgal-copper-variants")

@@ -53,18 +53,20 @@ vgal.productivity_entries = {}
 vgal.catalyst_entries = {}
 
 function vgal.data.domain_pairs(domain_name, prototype_type)
-    local domain_tbl = vgal.data.DOMAINS[domain_name]
-    if not domain_tbl then
-        error(domain_name)
+    if not vgal.data.domain_exists(domain_name) then
+        error()
     end
-    local function iter(tbl, last_key)
-        local key, item = next(tbl, last_key)
-        while key ~= nil and (item == nil or item.type ~= prototype_type) do
-            key, item = next(tbl, key)
-        end
-        return key, item
+
+    local function theseok(_, _, v)
+        return data.raw[prototype_type][v.name]
     end
-    return iter, domain_tbl, nil
+    return function(t, key)
+        local value
+        repeat
+            key, value = next(t, key)
+        until key == nil or theseok(t, key, value)
+        return key, value
+    end, vgal.data.DOMAINS[domain_name], nil
 end
 
 function vgal.data.create_domain(domain_name)
@@ -80,12 +82,6 @@ function vgal.data.domain_exists(domain_name)
     return not not vgal.data.DOMAINS[domain_name]
 end
 
--- for _, groupTuple in ipairs(vgal.groups) do
---     local key = groupTuple[1]
---     if settings.startup[key] and settings.startup[key].value == true then
---         vgal.enabled_groups[groupTuple[2]] = true
---     end
--- end
 ---Register a entry to the vgal (Vanilla Galore) ecosystem.
 ---@param entries vgal.VgalRecipePrototype[]|vgal.VgalToggleGroupPrototype[]
 ---@param fill_in_with? vgal.VgalRecipePrototype|vgal.VgalToggleGroupPrototype

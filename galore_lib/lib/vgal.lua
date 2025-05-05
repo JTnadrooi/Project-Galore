@@ -87,15 +87,15 @@ end
 --     end
 -- end
 ---Register a entry to the vgal (Vanilla Galore) ecosystem.
----@param entriesToExtend vgal.VgalRecipePrototype[]|vgal.VgalToggleGroupPrototype[]
----@param fillInWith? vgal.VgalRecipePrototype|vgal.VgalToggleGroupPrototype
-function vgal.data.extend(entriesToExtend, fillInWith)
-    fillInWith = fillInWith or {}
+---@param entries vgal.VgalRecipePrototype[]|vgal.VgalToggleGroupPrototype[]
+---@param fill_in_with? vgal.VgalRecipePrototype|vgal.VgalToggleGroupPrototype
+function vgal.data.extend(entries, fill_in_with)
+    fill_in_with = fill_in_with or {}
 
-    fillInWith.groups = vgal.table.ensure(fillInWith.group, fillInWith.groups)
+    fill_in_with.groups = vgal.table.ensure(fill_in_with.group, fill_in_with.groups)
 
-    for _, entry in ipairs(entriesToExtend) do
-        entry = vgal.table.fill_in_from(entry, fillInWith)
+    for _, entry in ipairs(entries) do
+        entry = vgal.table.fill_in_from(entry, fill_in_with)
 
         if not vgal.data.domain_exists(entry.prefix) then
             vgal.data.create_domain(entry.prefix)
@@ -211,7 +211,6 @@ function vgal.data.extend(entriesToExtend, fillInWith)
             entry.localised_name = vgal.recipe.get_preferred_localised_name(entry)
             entry.localised_description = vgal.recipe.get_preferred_localised_description(entry)
 
-            entry.type = "recipe"
             entry.auto_recycle = false
             entry.allow_decomposition = false
             entry.allow_as_intermediate = false
@@ -224,27 +223,27 @@ function vgal.data.extend(entriesToExtend, fillInWith)
 
             if entry.technologies then
                 if type(entry.technologies[1]) == "table" then
-                    for i, preCollection in ipairs(entry.technologies) do
-                        ---@cast preCollection table
+                    for i, prer_collection in ipairs(entry.technologies) do
+                        ---@cast prer_collection table
 
                         local tech_name = entry.name .. "-node" .. i
 
-                        local eventualUnitsWorth = 0
-                        local eventualUnits = {}
-                        for _, prerequisite in ipairs(preCollection) do
+                        local eventual_units_worth = 0
+                        local eventual_units = {}
+                        for _, prerequisite in ipairs(prer_collection) do
                             local tech = data.raw["technology"][prerequisite]
 
                             local units = vgal.tech.extract_units(tech)
-                            local unitsWorth = vgal.tech.get_units_worth(units)
-                            if unitsWorth > eventualUnitsWorth then
-                                eventualUnits = units
-                                eventualUnitsWorth = unitsWorth
+                            local units_worth = vgal.tech.get_units_worth(units)
+                            if units_worth > eventual_units_worth then
+                                eventual_units = units
+                                eventual_units_worth = units_worth
                             end
                         end
 
                         data:extend({
-                            vgal.tech.create_empty(tech_name, 1, eventualUnits, #eventualUnits * 5,
-                                #eventualUnits >= 4 and 30 or 15, preCollection,
+                            vgal.tech.create_empty(tech_name, 1, eventual_units, #eventual_units * 5,
+                                #eventual_units >= 4 and 30 or 15, prer_collection,
                                 "a", {
                                     {
                                         icon = entry.icons[1].icon,
@@ -261,14 +260,14 @@ function vgal.data.extend(entriesToExtend, fillInWith)
 
                         tech.vgal_can_remove = true
 
-                        local pureTrigger = true
-                        for _, pre in ipairs(preCollection) do
+                        local pure_trigger = true
+                        for _, pre in ipairs(prer_collection) do
                             if data.raw["technology"][pre].research_trigger == nil then
-                                pureTrigger = false
+                                pure_trigger = false
                             end
                         end
-                        if pureTrigger then
-                            tech.research_trigger = data.raw["technology"][preCollection[1]].research_trigger
+                        if pure_trigger then
+                            tech.research_trigger = data.raw["technology"][prer_collection[1]].research_trigger
                             tech.unit = nil
                         end
                         tech.localised_name = { "?",

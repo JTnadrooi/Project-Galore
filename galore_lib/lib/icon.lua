@@ -79,10 +79,10 @@ function vgal.icon.get_from_path(path, args)
     return toret
 end
 
-function vgal.icon.get(keyName, iconSource)
-    iconSource = iconSource or vgal.any_get_source(keyName)
-    if iconSource == "recipe" then
-        local recipe = data.raw["recipe"][keyName]
+function vgal.icon.get(key_name, icon_source)
+    icon_source = icon_source or vgal.any_get_source(key_name)
+    if icon_source == "recipe" then
+        local recipe = data.raw["recipe"][key_name]
         if recipe.icon then
             return {
                 {
@@ -94,8 +94,8 @@ function vgal.icon.get(keyName, iconSource)
             return util.table.deepcopy(recipe.icons)
         end
     end
-    if iconSource == "raw" then
-        if keyName == "angels_sorting" then
+    if icon_source == "raw" then
+        if key_name == "angels_sorting" then
             return {
                 {
                     icon = "__angelsrefining__/graphics/icons/sort-icon.png",
@@ -103,7 +103,7 @@ function vgal.icon.get(keyName, iconSource)
                 }
             }
         end
-        if keyName == "angels_electrolyzing" then
+        if key_name == "angels_electrolyzing" then
             return {
                 {
                     icon = "__angels_galore__/graphics/icons/electrolyzing-icon-2.png",
@@ -111,8 +111,8 @@ function vgal.icon.get(keyName, iconSource)
                 }
             }
         end
-        if string.find(keyName, "tier") then
-            local tier = string.sub(keyName, -1)
+        if string.find(key_name, "tier") then
+            local tier = string.sub(key_name, -1)
             return {
                 {
                     icon = "__angelsrefining__/graphics/icons/numerals/num-" .. tier .. "-outline.png",
@@ -127,31 +127,31 @@ function vgal.icon.get(keyName, iconSource)
             }
         end
     end
-    if iconSource == "molecule" and mods["angelspetrochem"] then
+    if icon_source == "molecule" and mods["angelspetrochem"] then
         return {
             {
-                icon = "__angelspetrochemgraphics__/graphics/icons/molecules/" .. keyName .. ".png",
+                icon = "__angelspetrochemgraphics__/graphics/icons/molecules/" .. key_name .. ".png",
                 icon_size = 72,
                 -- scale = (72 / 64) * 1.8,
             }
         }
     end
-    if iconSource == "gas-recipe" and mods["angelspetrochem"] then
-        return angelsmods.functions.create_gas_recipe_icon(nil, keyName)
+    if icon_source == "gas-recipe" and mods["angelspetrochem"] then
+        return angelsmods.functions.create_gas_recipe_icon(nil, key_name)
     end
-    if (keyName == "petroleum-gas") and iconSource == "fluid" and mods["angelspetrochem"] then
+    if (key_name == "petroleum-gas") and icon_source == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("methane", "molecule")
     end
-    if (keyName == "light-oil") and iconSource == "fluid" and mods["angelspetrochem"] then
+    if (key_name == "light-oil") and icon_source == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("liquid-fuel-oil")
     end
-    if (keyName == "heavy-oil") and iconSource == "fluid" and mods["angelspetrochem"] then
+    if (key_name == "heavy-oil") and icon_source == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("liquid-naphtha")
     end
-    if (keyName == "sulfuric-acid") and iconSource == "fluid" and mods["angelspetrochem"] then
+    if (key_name == "sulfuric-acid") and icon_source == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("sulfuric-acid", "molecule")
     end
-    local toret_item = vgal.any(keyName)
+    local toret_item = vgal.any(key_name)
 
     vgal.log("getting icon: " .. toret_item.name)
 
@@ -223,44 +223,44 @@ end
 --     end
 --     return vgal.icon.shift(icon, scale, shift)
 -- end
-function vgal.icon.get_in_fluid(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.35, { 0, -6.5 })
+function vgal.icon.get_in_fluid(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.35, { 0, -6.5 })
 end
 
-function vgal.icon.get_in_fluid2(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { 0, -5 })
+function vgal.icon.get_in_fluid2(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 0, -5 })
 end
 
-function vgal.icon.get_in_to(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.38, { -6.5, -6.5 })
+function vgal.icon.get_in_to(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.38, { -6.5, -6.5 })
 end
 
-function vgal.icon.get_out_to(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.35, { 5.5, 6.5 })
+function vgal.icon.get_out_to(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.35, { 5.5, 6.5 })
 end
 
-function vgal.icon.get_in(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { -8, -8 })
+function vgal.icon.get_in(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { -8, -8 })
 end
 
-function vgal.icon.get_in2(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { 8, -8 })
+function vgal.icon.get_in2(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 8, -8 })
 end
 
-function vgal.icon.get_out(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { -8, 8 })
+function vgal.icon.get_out(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { -8, 8 })
 end
 
-function vgal.icon.get_out2(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { 8, 8 })
+function vgal.icon.get_out2(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 8, 8 })
 end
 
-function vgal.icon.get_out3(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.25, { 0, 8 })
+function vgal.icon.get_out3(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 0, 8 })
 end
 
-function vgal.icon.get_bg(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 1, { 0, 1.2 })
+function vgal.icon.get_bg(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 1, { 0, 1.2 })
 end
 
 function vgal.icon.get_none()
@@ -271,12 +271,12 @@ function vgal.icon.get_placeholder()
     return vgal.icon.get_from_path("__galore_lib__/graphics/placeholder.png")
 end
 
-function vgal.icon.get_in_bg(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.30, { -7, -7 })
+function vgal.icon.get_in_bg(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.30, { -7, -7 })
 end
 
-function vgal.icon.get_in_bg2(keyName, iconSource)
-    return vgal.icon.shift(vgal.icon.get(keyName, iconSource), 0.30, { 7, -7 })
+function vgal.icon.get_in_bg2(key_name, icon_source)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.30, { 7, -7 })
 end
 
 function vgal.icon.soft_merge(icons)

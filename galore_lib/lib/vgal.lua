@@ -16,6 +16,8 @@ vgal.entity = vgal.entity or {}
 vgal.locale = vgal.locale or {}
 vgal.build = vgal.build or {}
 
+vgal.data.DOMAINS = {}
+
 if vgal.setting ~= nil then
     error()
 end
@@ -50,6 +52,33 @@ vgal.groups = {}
 vgal.productivity_entries = {}
 vgal.catalyst_entries = {}
 
+function vgal.data.domain_pairs(domain_name, prototype_type)
+    local domain_tbl = vgal.data.DOMAINS[domain_name]
+    if not domain_tbl then
+        error(domain_name)
+    end
+    local function iter(tbl, last_key)
+        local key, item = next(tbl, last_key)
+        while key ~= nil and (item == nil or item.type ~= prototype_type) do
+            key, item = next(tbl, key)
+        end
+        return key, item
+    end
+    return iter, domain_tbl, nil
+end
+
+function vgal.data.create_domain(domain_name)
+    if vgal.data.domain_exists(domain_name) then
+        error()
+    else
+        vgal.log("creating domain: " .. domain_name)
+        vgal.data.DOMAINS[domain_name] = {}
+    end
+end
+
+function vgal.data.domain_exists(domain_name)
+    return not not vgal.data.DOMAINS[domain_name]
+end
 
 -- for _, groupTuple in ipairs(vgal.groups) do
 --     local key = groupTuple[1]
@@ -67,6 +96,14 @@ function vgal.data.extend(entriesToExtend, fillInWith)
 
     for _, entry in ipairs(entriesToExtend) do
         entry = vgal.table.fill_in_from(entry, fillInWith)
+
+        if not vgal.data.domain_exists(entry.prefix) then
+            vgal.data.create_domain(entry.prefix)
+        end
+        vgal.data.DOMAINS[entry.prefix][entry.name] = {
+            type = entry.type,
+            name = entry.name,
+        }
 
         if entry.type == "recipe" then
             ---@cast entry vgal.VgalRecipePrototype

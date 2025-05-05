@@ -48,7 +48,7 @@ function vgal.recipe.all.multiply_results(main_product_name, multiplier, domain_
     end
 end
 
-function vgal.recipe.all.multiply_ingredients(main_product_name, multiplier, ingredient_name, domain_name) -- vgal only
+function vgal.recipe.all.multiply_ingredients(main_product_name, multiplier, ingredient_name, domain_name)
     multiplier = multiplier or 1
     local iterator, dom, start_key
     if domain_name then

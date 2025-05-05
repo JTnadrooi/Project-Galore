@@ -53,20 +53,27 @@ vgal.productivity_entries = {}
 vgal.catalyst_entries = {}
 
 function vgal.data.domain_pairs(domain_name, prototype_type)
-    if not vgal.data.domain_exists(domain_name) then
-        error()
+    local dom = vgal.data.DOMAINS[domain_name]
+    if not dom then
+        error("domain " .. tostring(domain_name) .. " does not exist")
     end
 
-    local function theseok(_, _, v)
-        return data.raw[prototype_type][v.name]
+    local function iter(t, last_key)
+        local key, entry = next(t, last_key)
+        while key do
+            if entry
+                and entry.type == prototype_type
+                and data.raw[prototype_type]
+                and data.raw[prototype_type][entry.name]
+            then
+                return key, data.raw[prototype_type][entry.name]
+            end
+            key, entry = next(t, key)
+        end
+        return nil
     end
-    return function(t, key)
-        local value
-        repeat
-            key, value = next(t, key)
-        until key == nil or theseok(t, key, value)
-        return key, value
-    end, vgal.data.DOMAINS[domain_name], nil
+
+    return iter, dom, nil
 end
 
 function vgal.data.create_domain(domain_name)
@@ -93,13 +100,15 @@ function vgal.data.extend(entries, fill_in_with)
     for _, entry in ipairs(entries) do
         entry = vgal.table.fill_in_from(entry, fill_in_with)
 
-        if not vgal.data.domain_exists(entry.prefix) then
-            vgal.data.create_domain(entry.prefix)
+        if entry.prefix then
+            if not vgal.data.domain_exists(entry.prefix) then
+                vgal.data.create_domain(entry.prefix)
+            end
+            vgal.data.DOMAINS[entry.prefix][vgal.build.name(entry.prefix, entry.name, entry.tier)] = {
+                type = entry.type,
+                name = vgal.build.name(entry.prefix, entry.name, entry.tier),
+            }
         end
-        vgal.data.DOMAINS[entry.prefix][entry.name] = {
-            type = entry.type,
-            name = entry.name,
-        }
 
         if entry.type == "recipe" then
             ---@cast entry vgal.VgalRecipePrototype

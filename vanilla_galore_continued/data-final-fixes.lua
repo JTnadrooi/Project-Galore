@@ -86,4 +86,12 @@ local function create_with_barrel(recipe_name, tech_name)
 end
 -- create_with_barrel("processing-unit", "processing-unit")
 -- create_with_barrel("electric-engine-unit", "electric-engine")
+
 vgal.data.finalise()
+
+-- for key, value in vgal.data.domain_pairs("vgal", "recipe") do
+--     log(key .. " - KEYRECIPEEE- " .. value.name)
+-- end
+
+-- log(serpent.block(vgal.data.DOMAINS))
+

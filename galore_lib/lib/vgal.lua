@@ -54,10 +54,7 @@ vgal.catalyst_entries = {}
 
 function vgal.data.domain_pairs(domain_name, prototype_type)
     local dom = vgal.data.DOMAINS[domain_name]
-    if not dom then
-        error("domain " .. tostring(domain_name) .. " does not exist")
-    end
-
+    if not dom then error("domain " .. domain_name .. " does not exist") end
     local function iter(t, last_key)
         local key, entry = next(t, last_key)
         while key do

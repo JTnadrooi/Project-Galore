@@ -1,4 +1,4 @@
-function vgal.fluid.get_tint(fluidName)
+function vgal.fluid.get_tint(fluid_name)
     local function to_rgba(color)
         return {
             r = color[1] or 1,
@@ -7,7 +7,7 @@ function vgal.fluid.get_tint(fluidName)
             a = color[4] or 1,
         }
     end
-    local fluid = data.raw["fluid"][fluidName]
+    local fluid = data.raw["fluid"][fluid_name]
     return {
         primary = to_rgba(fluid.base_color or { 1, 1, 1, 1 }),
         secondary = to_rgba(fluid.flow_color or fluid.base_color or { 0.8, 0.8, 0.8, 1 }),

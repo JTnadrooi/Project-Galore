@@ -62,7 +62,7 @@ vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
     { type = "item", name = "angels-concrete-brick", amount = 1 })
 vgal.recipe.all.replace_ingredient("clay-brick",
     { type = "item", name = "stone-brick", amount = 1 })
-    
+
 --- casting recipe tweaks ---
 for _, metal in ipairs(vgal.constants.METALS) do
     data.raw.recipe["angels-" .. metal .. "-pebbles-smelting"].energy_required = 6.4
@@ -98,8 +98,8 @@ data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
 
 -- vgal.recipe.clear_subgroup_and_order("solid-mud-landfill")
 
--- local function fix_coolant(recipeName)
---     local recipe = data.raw["recipe"][recipeName]
+-- local function fix_coolant(recipe_name)
+--     local recipe = data.raw["recipe"][recipe_name]
 --     local cAmount = 0
 --     for _, value in ipairs(recipe.ingredients) do
 --         vgal.recipe.normalize_table_value(value)

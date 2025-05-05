@@ -1,5 +1,5 @@
-local function create_with_barrel(recipeName, techName)
-    local recipe = data.raw.recipe[recipeName]
+local function create_with_barrel(recipe_name, tech_name)
+    local recipe = data.raw.recipe[recipe_name]
     if not recipe or not recipe.ingredients then
         return
     end
@@ -30,16 +30,16 @@ local function create_with_barrel(recipeName, techName)
 
     local newRecipe = {
         type = "recipe",
-        name = recipeName .. "-from-barreled",
+        name = recipe_name .. "-from-barreled",
         category = recipe.category or "crafting",
-        main_result = recipeName,
-        order = vgal.any(recipeName, true).order,
-        subgroup = vgal.any(recipeName, true).subgroup,
+        main_result = recipe_name,
+        order = vgal.any(recipe_name, true).order,
+        subgroup = vgal.any(recipe_name, true).subgroup,
         enabled = recipe.enabled or false,
         icons = vgal.icon.register {
-            vgal.icon.get(recipeName),
+            vgal.icon.get(recipe_name),
         },
-        localised_name = { "", { "item-name." .. recipeName }, " from barrel" },
+        localised_name = { "", { "item-name." .. recipe_name }, " from barrel" },
         energy_required = (recipe.energy_required or 1) * multiplier,
         ingredients = {},
         results = {},
@@ -63,7 +63,7 @@ local function create_with_barrel(recipeName, techName)
         })
     end
 
-    for _, result in ipairs(recipe.results or { { type = "item", name = recipeName, amount = 1 } }) do
+    for _, result in ipairs(recipe.results or { { type = "item", name = recipe_name, amount = 1 } }) do
         table.insert(newRecipe.results, {
             type = result.type,
             name = result.name,
@@ -82,7 +82,7 @@ local function create_with_barrel(recipeName, techName)
 
     data:extend({ newRecipe })
 
-    vgal.tech.add_recipe(techName, newRecipe.name)
+    vgal.tech.add_recipe(tech_name, newRecipe.name)
 end
 -- create_with_barrel("processing-unit", "processing-unit")
 -- create_with_barrel("electric-engine-unit", "electric-engine")

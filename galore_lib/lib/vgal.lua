@@ -190,7 +190,7 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                     for i, preCollection in ipairs(entry.technologies) do
                         ---@cast preCollection table
 
-                        local techName = entry.name .. "-node" .. i
+                        local tech_name = entry.name .. "-node" .. i
 
                         local eventualUnitsWorth = 0
                         local eventualUnits = {}
@@ -206,7 +206,7 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                         end
 
                         data:extend({
-                            vgal.tech.create_empty(techName, 1, eventualUnits, #eventualUnits * 5,
+                            vgal.tech.create_empty(tech_name, 1, eventualUnits, #eventualUnits * 5,
                                 #eventualUnits >= 4 and 30 or 15, preCollection,
                                 "a", {
                                     {
@@ -220,7 +220,7 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                                     },
                                 })
                         })
-                        local tech = data.raw["technology"][techName]
+                        local tech = data.raw["technology"][tech_name]
 
                         tech.vgal_can_remove = true
 
@@ -241,14 +241,14 @@ function vgal.data.extend(entriesToExtend, fillInWith)
                         tech.localised_description = {
                             "", { "recipe-description." .. entry.name },
                         }
-                        vgal.tech.add_recipe(techName, entry.name)
+                        vgal.tech.add_recipe(tech_name, entry.name)
                         tech.hidden = hidden
                         tech.hidden_in_factoriopedia = hidden
                     end
                 elseif type(entry.technologies[1]) == "string" then
-                    for _, techName in ipairs(entry.technologies) do
-                        ---@cast techName string
-                        vgal.tech.add_recipe(techName, entry.name)
+                    for _, tech_name in ipairs(entry.technologies) do
+                        ---@cast tech_name string
+                        vgal.tech.add_recipe(tech_name, entry.name)
                     end
                 else
                     error()
@@ -292,11 +292,11 @@ function vgal.data.extend(entriesToExtend, fillInWith)
     end
 end
 
-function vgal.data.trim(recipeName)
-    vgal.tech.queue_to_clean(recipeName)
-    vgal.recipe.deep_hide(recipeName)
-    -- data.raw["recipe"][recipeName] = nil
-    -- vgal.recipes[recipeName] = nil
+function vgal.data.trim(recipe_name)
+    vgal.tech.queue_to_clean(recipe_name)
+    vgal.recipe.deep_hide(recipe_name)
+    -- data.raw["recipe"][recipe_name] = nil
+    -- vgal.recipes[recipe_name] = nil
 end
 
 function vgal.data.deep_hide(entry)

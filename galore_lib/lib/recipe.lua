@@ -1,15 +1,15 @@
 ---@diagnostic disable: duplicate-set-field, param-type-mismatch
 
 
-function vgal.recipe.get_if_productivity(mainProduct)
-    local recipe = data.raw["recipe"][mainProduct]
+function vgal.recipe.get_if_productivity(main_product)
+    local recipe = data.raw["recipe"][main_product]
     if recipe and recipe.allow_productivity then
         return true
     end
-    if data.raw["fluid"][mainProduct] then
+    if data.raw["fluid"][main_product] then
         return true
     end
-    return vgal.productivity_entries[mainProduct] == true
+    return vgal.productivity_entries[main_product] == true
 end
 
 function vgal.recipe.add_productivity_entry(entry_name)
@@ -67,54 +67,54 @@ function vgal.recipe.smart_disallow_productivity(recipe_name, result_name)
     end
 end
 
-function vgal.recipe.get_ingredients(recipeName)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.get_ingredients(recipe_name)
+    local recipe = data.raw["recipe"][recipe_name]
     return recipe.ingredients or {}
 end
 
-function vgal.recipe.normalize_dublicates(recipeName)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.normalize_dublicates(recipe_name)
+    local recipe = data.raw["recipe"][recipe_name]
     local mem = {}
-    local hasval = false
+    local has_value = false
     if recipe.ingredients then
         for _, ingredient in ipairs(recipe.ingredients) do
-            hasval = false
-            for _, memVal in ipairs(mem) do
-                if memVal.name == ingredient.name then
-                    hasval = true
-                    memVal.amount = ingredient.amount + memVal.amount
+            has_value = false
+            for _, memory_value in ipairs(mem) do
+                if memory_value.name == ingredient.name then
+                    has_value = true
+                    memory_value.amount = ingredient.amount + memory_value.amount
                 end
             end
-            if not hasval then
+            if not has_value then
                 table.insert(mem, ingredient)
             end
         end
     end
     mem = {}
-    hasval = false
+    has_value = false
     if recipe.results then
         for _, result in ipairs(recipe.results) do
-            hasval = false
+            has_value = false
             for _, memVal in ipairs(mem) do
                 if memVal.name == result.name then
-                    hasval = true
+                    has_value = true
                     memVal.amount = result.amount + memVal.amount
                 end
             end
-            if not hasval then
+            if not has_value then
                 table.insert(mem, result)
             end
         end
     end
 end
 
--- function vgal.recipe.hide_and_queue(recipeName)
---     vgal.recipe.hide(recipeName)
---     vgal.recipe.queue_to_clean(recipeName)
+-- function vgal.recipe.hide_and_queue(recipe_name)
+--     vgal.recipe.hide(recipe_name)
+--     vgal.recipe.queue_to_clean(recipe_name)
 -- end
 
-function vgal.recipe.deep_hide(recipeName)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.deep_hide(recipe_name)
+    local recipe = data.raw["recipe"][recipe_name]
     recipe.hidden = true
     recipe.hidden_in_factoriopedia = true
     recipe.hide_from_player_crafting = true
@@ -122,12 +122,12 @@ function vgal.recipe.deep_hide(recipeName)
     recipe.hide_from_signal_gui = true
 end
 
-function vgal.recipe.copy(recipeName)
-    return util.table.deepcopy(data.raw["recipe"][recipeName])
+function vgal.recipe.copy(recipe_name)
+    return util.table.deepcopy(data.raw["recipe"][recipe_name])
 end
 
-function vgal.recipe.force_get_icons(recipeName)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.force_get_icons(recipe_name)
+    local recipe = data.raw["recipe"][recipe_name]
     if recipe.icons then
         return recipe.icons
     end
@@ -150,15 +150,15 @@ function vgal.recipe.force_get_icons(recipeName)
     error("")
 end
 
-function vgal.recipe.overlay_tier(recipeName, tier)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.overlay_tier(recipe_name, tier)
+    local recipe = data.raw["recipe"][recipe_name]
     recipe.icons = vgal.icon.register({ vgal.recipe.force_get_icons(recipe.name), vgal.icon.get("tier" .. tier, "raw") })
 end
 
-function vgal.recipe.replace_category(recipeName, old, new, force)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.replace_category(recipe_name, old, new, force)
+    local recipe = data.raw["recipe"][recipe_name]
     if (not force) and new == "crafting" then
-        if vgal.recipe.has_fluid_ingredient(recipeName) then
+        if vgal.recipe.has_fluid_ingredient(recipe_name) then
             new = "crafting-with-fluid"
         end
     end
@@ -167,10 +167,10 @@ function vgal.recipe.replace_category(recipeName, old, new, force)
     end
 end
 
-function vgal.recipe.has_fluid_ingredient(recipeName)
-    local recipe = data.raw["recipe"][recipeName]
-    local toalter = recipe.ingredients
-    for _, ingredient in ipairs(toalter) do
+function vgal.recipe.has_fluid_ingredient(recipe_name)
+    local recipe = data.raw["recipe"][recipe_name]
+    local to_alter = recipe.ingredients
+    for _, ingredient in ipairs(to_alter) do
         if ingredient.type == "fluid" then
             return true
         end
@@ -178,16 +178,15 @@ function vgal.recipe.has_fluid_ingredient(recipeName)
     return false
 end
 
-function vgal.recipe.replace_item(recipeName, old, new)
-    vgal.recipe.replace_ingredient(recipeName, old, new)
-    vgal.recipe.replace_result(recipeName, old, new)
+function vgal.recipe.replace_item(recipe_name, old, new)
+    vgal.recipe.replace_ingredient(recipe_name, old, new)
+    vgal.recipe.replace_result(recipe_name, old, new)
 end
 
-function vgal.recipe.vanillize_number(number, numberType, ingredientName)
-    numberType = numberType or "item"
-    ingredientName = ingredientName or numberType
-    local number = number or 1
-    if numberType == "fluid" then
+function vgal.recipe.vanillize_number(number, number_type, ingredient_name)
+    number_type = number_type or "item"
+    ingredient_name = ingredient_name or number_type
+    if number_type == "fluid" then
         if number < 10 then
             return 5
         end
@@ -198,7 +197,7 @@ function vgal.recipe.vanillize_number(number, numberType, ingredientName)
             number = math.floor(number / 10) * 10
         end
     end
-    if numberType == "item" then
+    if number_type == "item" then
         if number > 12 then
             if not math.fmod(number, 5) == 0 then
                 number = math.floor(number / 2) * 2
@@ -208,7 +207,7 @@ function vgal.recipe.vanillize_number(number, numberType, ingredientName)
         if number == 9 then number = 10 end
         if number == 7 then number = 8 end
     end
-    if numberType == "time" then
+    if number_type == "time" then
         if number > 12 then
             if not math.fmod(number, 5) == 0 then
                 number = math.floor(number / 2) * 2
@@ -220,62 +219,62 @@ function vgal.recipe.vanillize_number(number, numberType, ingredientName)
     return number
 end
 
-function vgal.recipe.copy_and_extend(recipeName, as)
-    local newRecipe = util.table.deepcopy(data.raw["recipe"][recipeName])
+function vgal.recipe.copy_and_extend(recipe_name, as)
+    local newRecipe = util.table.deepcopy(data.raw["recipe"][recipe_name])
     newRecipe.name = as
     ---@diagnostic disable-next-line: assign-type-mismatch
     data:extend({ newRecipe })
 end
 
-function vgal.recipe.replace_ingredient(recipeName, oldIngredientName, newIngredientName)
-    local recipe = data.raw["recipe"][recipeName]
-    local toalter = recipe.ingredients or {}
-    for _, ingredient in ipairs(toalter) do
-        if ingredient.name == oldIngredientName then
+function vgal.recipe.replace_ingredient(recipe_name, oldingredient_name, newingredient_name)
+    local recipe = data.raw["recipe"][recipe_name]
+    local to_alter = recipe.ingredients or {}
+    for _, ingredient in ipairs(to_alter) do
+        if ingredient.name == oldingredient_name then
             if ingredient.name then
-                ingredient.name = newIngredientName
+                ingredient.name = newingredient_name
             end
         end
     end
 end
 
-function vgal.recipe.remove_ingredient(recipeName, ingredientName)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.remove_ingredient(recipe_name, ingredient_name)
+    local recipe = data.raw["recipe"][recipe_name]
     for i, ingredient in ipairs(recipe.ingredients or {}) do
-        if ingredient.name == ingredientName then
+        if ingredient.name == ingredient_name then
             table.remove(recipe.ingredients, i)
             break
         end
     end
 end
 
-function vgal.recipe.remove_result(recipeName, resultName)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.remove_result(recipe_name, resultName)
+    local recipe = data.raw["recipe"][recipe_name]
     if recipe.main_product == resultName then
         recipe.main_product = nil
     end
     if recipe.results then
-        local toalter = recipe.results
-        for i, result in ipairs(toalter) do
+        local to_alter = recipe.results
+        for i, result in ipairs(to_alter) do
             if result.name == resultName then
-                table.remove(toalter, i)
+                table.remove(to_alter, i)
             end
         end
     end
 end
 
-function vgal.recipe.remove_item(recipeName, ingredientName)
-    vgal.recipe.remove_ingredient(recipeName, ingredientName)
-    vgal.recipe.remove_result(recipeName, ingredientName)
+function vgal.recipe.remove_item(recipe_name, ingredient_name)
+    vgal.recipe.remove_ingredient(recipe_name, ingredient_name)
+    vgal.recipe.remove_result(recipe_name, ingredient_name)
 end
 
-function vgal.recipe.replace_result(recipeName, oldResult, newResult)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.replace_result(recipe_name, oldResult, newResult)
+    local recipe = data.raw["recipe"][recipe_name]
     if recipe.main_product == oldResult then
         recipe.main_product = newResult
     end
-    local toalter = recipe.results
-    for _, result in ipairs(toalter) do
+    local to_alter = recipe.results
+    for _, result in ipairs(to_alter) do
         if result.name == oldResult then
             if result.name then
                 result.name = newResult
@@ -287,8 +286,8 @@ function vgal.recipe.replace_result(recipeName, oldResult, newResult)
     end
 end
 
-function vgal.recipe.override_iron(recipeName, newIcons)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.override_iron(recipe_name, newIcons)
+    local recipe = data.raw["recipe"][recipe_name]
     if recipe then
         recipe.icons = newIcons
         recipe.icon = nil
@@ -296,11 +295,11 @@ function vgal.recipe.override_iron(recipeName, newIcons)
     end
 end
 
-function vgal.recipe.get_productivity_tech_name(mainProductName)
-    if data.raw["technology"][mainProductName .. "-productivity"] then
-        return mainProductName .. "-productivity"
-    elseif data.raw["technology"][mainProductName .. "-productivity-wolf"] then
-        return mainProductName .. "-productivity-wolf"
+function vgal.recipe.get_productivity_tech_name(main_product_name)
+    if data.raw["technology"][main_product_name .. "-productivity"] then
+        return main_product_name .. "-productivity"
+    elseif data.raw["technology"][main_product_name .. "-productivity-wolf"] then
+        return main_product_name .. "-productivity-wolf"
     end
     return nil
 end
@@ -309,15 +308,15 @@ function vgal.recipe.catagory_from_array()
 
 end
 
-function vgal.recipe.add_result(recipeName, newResult, recipeType)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.add_result(recipe_name, newResult, recipeType)
+    local recipe = data.raw["recipe"][recipe_name]
     table.insert(recipe.results, newResult)
 end
 
-function vgal.recipe.has_result(recipeName, result)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.has_result(recipe_name, result)
+    local recipe = data.raw["recipe"][recipe_name]
     if recipe and recipe.results then
-        for _, item in ipairs(vgal.recipe.get_results(recipeName)) do
+        for _, item in ipairs(vgal.recipe.get_results(recipe_name)) do
             if item.name == result then
                 return true
             end
@@ -329,31 +328,31 @@ function vgal.recipe.has_result(recipeName, result)
     return false
 end
 
-function vgal.recipe.has_ingredient(recipeName, ingredientName)
-    if not ingredientName then
+function vgal.recipe.has_ingredient(recipe_name, ingredient_name)
+    if not ingredient_name then
         error()
     end
-    for _, item in ipairs(vgal.recipe.get_ingredients(recipeName)) do
-        if item.name == ingredientName then
+    for _, item in ipairs(vgal.recipe.get_ingredients(recipe_name)) do
+        if item.name == ingredient_name then
             return true
         end
     end
     return false
 end
 
-function vgal.recipe.has_item(recipeName, itemName)
-    return vgal.recipe.has_ingredient(recipeName, itemName) or vgal.recipe.has_result(recipeName, itemName)
+function vgal.recipe.has_item(recipe_name, itemName)
+    return vgal.recipe.has_ingredient(recipe_name, itemName) or vgal.recipe.has_result(recipe_name, itemName)
 end
 
-function vgal.recipe.add_ingredients(recipeName, ingredients)
+function vgal.recipe.add_ingredients(recipe_name, ingredients)
     for _, ingredient in ipairs(ingredients) do
-        vgal.recipe.add_ingredient(recipeName, ingredient)
+        vgal.recipe.add_ingredient(recipe_name, ingredient)
     end
 end
 
-function vgal.recipe.increment_results(recipeName, amount)
+function vgal.recipe.increment_results(recipe_name, amount)
     amount = amount or 1
-    local recipe = data.raw["recipe"][recipeName]
+    local recipe = data.raw["recipe"][recipe_name]
     if recipe.results then
         for _, result in ipairs(recipe.results) do
             result.amount = (result.amount or 1) + amount
@@ -361,8 +360,8 @@ function vgal.recipe.increment_results(recipeName, amount)
     end
 end
 
-function vgal.recipe.add_ingredient(recipeName, ingredient)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.add_ingredient(recipe_name, ingredient)
+    local recipe = data.raw["recipe"][recipe_name]
     if recipe.ingredients then
         table.insert(recipe.ingredients, ingredient)
     else
@@ -372,19 +371,19 @@ function vgal.recipe.add_ingredient(recipeName, ingredient)
     end
 end
 
-function vgal.recipe.clear_icon_data(recipeName)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.clear_icon_data(recipe_name)
+    local recipe = data.raw["recipe"][recipe_name]
     recipe.icon = nil
     recipe.icon_size = nil
     recipe.icons = nil
 end
 
-function vgal.recipe.get_main_product_amount(recipeName)
-    return vgal.recipe.get_result_amount(recipeName, data.raw["recipe"][recipeName].main_product)
+function vgal.recipe.get_main_product_amount(recipe_name)
+    return vgal.recipe.get_result_amount(recipe_name, data.raw["recipe"][recipe_name].main_product)
 end
 
-function vgal.recipe.get_result_amount(recipeName, result)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.get_result_amount(recipe_name, result)
+    local recipe = data.raw["recipe"][recipe_name]
     for _, product in ipairs(recipe.results) do
         if product.name == result then
             local amount = 1
@@ -405,11 +404,11 @@ function vgal.recipe.get_result_amount(recipeName, result)
     error()
 end
 
-function vgal.recipe.get_ingredient_amount(recipeName, ingredient_name)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.get_ingredient_amount(recipe_name, ingredient_name)
+    local recipe = data.raw["recipe"][recipe_name]
     -- if recipe.main_product then
     -- else
-    --     error("no source ingredient [ " .. ingredient .. " ] found for recipe of name: " .. recipeName)
+    --     error("no source ingredient [ " .. ingredient .. " ] found for recipe of name: " .. recipe_name)
     -- end
     for _, ingredient in ipairs(recipe.ingredients) do
         if ingredient.name == ingredient_name then
@@ -418,17 +417,17 @@ function vgal.recipe.get_ingredient_amount(recipeName, ingredient_name)
     end
 end
 
-function vgal.recipe.multiply(recipeName, multiplier, entryName, multiply_energy_required)
-    local recipe = data.raw["recipe"][recipeName]
-    recipe.results = vgal.table.get_multiplied(recipe.results, multiplier, entryName)
-    recipe.ingredients = vgal.table.get_multiplied(recipe.ingredients, multiplier, entryName)
+function vgal.recipe.multiply(recipe_name, multiplier, entry_name, multiply_energy_required)
+    local recipe = data.raw["recipe"][recipe_name]
+    recipe.results = vgal.table.get_multiplied(recipe.results, multiplier, entry_name)
+    recipe.ingredients = vgal.table.get_multiplied(recipe.ingredients, multiplier, entry_name)
     if multiply_energy_required then
         recipe.energy_required = recipe.energy_required * multiplier
     end
 end
 
-function vgal.recipe.multiply_results(recipeName, multiplier)
-    local recipe = data.raw["recipe"][recipeName]
+function vgal.recipe.multiply_results(recipe_name, multiplier)
+    local recipe = data.raw["recipe"][recipe_name]
     recipe.results = vgal.table.get_multiplied(recipe.results, multiplier)
 end
 
@@ -470,9 +469,9 @@ function vgal.recipe.set_ingredient_amount(recipe_name, amount, ingredient_name)
     end
 end
 
-function vgal.recipe.multiply_ingredients(recipeName, multiplier, ingredientName)
-    local recipe = data.raw["recipe"][recipeName]
-    recipe.ingredients = vgal.table.get_multiplied(recipe.ingredients, multiplier, ingredientName)
+function vgal.recipe.multiply_ingredients(recipe_name, multiplier, ingredient_name)
+    local recipe = data.raw["recipe"][recipe_name]
+    recipe.ingredients = vgal.table.get_multiplied(recipe.ingredients, multiplier, ingredient_name)
 end
 
 vgal.recipe.TINT_CATALOG = {
@@ -489,11 +488,11 @@ vgal.recipe.TINT_CATALOG = {
 vgal.recipe.TINT_CATALOG["black"] = vgal.recipe.TINT_CATALOG["crude-oil"]
 
 function vgal.recipe.get_preferred_crafting_machine_tint(recipe)
-    local mainProductRecipe = data.raw.recipe[recipe.main_product]
+    local main_productRecipe = data.raw.recipe[recipe.main_product]
     local mainFluidProduct = data.raw["fluid"][recipe.main_product]
     local tint = nil
 
-    tint = tint or mainProductRecipe and mainProductRecipe.crafting_machine_tint
+    tint = tint or main_productRecipe and main_productRecipe.crafting_machine_tint
     tint = tint or vgal.recipe.TINT_CATALOG[recipe.main_product]
     tint = tint or mainFluidProduct and vgal.fluid.get_tint(mainFluidProduct.name)
 

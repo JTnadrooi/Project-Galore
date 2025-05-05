@@ -1,5 +1,5 @@
-function vgal.math.conserve_floor(inputNum)
-    local toret = math.floor(inputNum)
+function vgal.math.conserve_floor(input_number)
+    local toret = math.floor(input_number)
     if toret == 0 then
         return 1
     else

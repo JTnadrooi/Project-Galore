@@ -1,41 +1,41 @@
-local function vgal_electroplantify(recipeName)
-    recipeName = "vgal-" .. recipeName
-    if data.raw["recipe"][recipeName] then
-        data.raw["recipe"][recipeName].category = "electronics"
+local function vgal_electroplantify(recipe_name)
+    recipe_name = "vgal-" .. recipe_name
+    if data.raw["recipe"][recipe_name] then
+        data.raw["recipe"][recipe_name].category = "electronics"
     else
-        error(recipeName)
+        error(recipe_name)
     end
 end
-local function vgal_foundryfy(recipeName)
-    recipeName = "vgal-" .. recipeName
-    if data.raw["recipe"][recipeName] then
-        data.raw["recipe"][recipeName].category = "metallurgy-or-assembling"
+local function vgal_foundryfy(recipe_name)
+    recipe_name = "vgal-" .. recipe_name
+    if data.raw["recipe"][recipe_name] then
+        data.raw["recipe"][recipe_name].category = "metallurgy-or-assembling"
     else
-        error(recipeName)
+        error(recipe_name)
     end
 end
-local function vgal_cryogenify(recipeName)
-    recipeName = "vgal-" .. recipeName
-    if data.raw["recipe"][recipeName] then
-        data.raw["recipe"][recipeName].category = "chemistry-or-cryogenics"
+local function vgal_cryogenify(recipe_name)
+    recipe_name = "vgal-" .. recipe_name
+    if data.raw["recipe"][recipe_name] then
+        data.raw["recipe"][recipe_name].category = "chemistry-or-cryogenics"
     else
-        error(recipeName)
+        error(recipe_name)
     end
 end
-local function vgal_organicify(recipeName)
-    recipeName = "vgal-" .. recipeName
-    if data.raw["recipe"][recipeName] then
-        data.raw["recipe"][recipeName].category = "organic-or-assembling"
+local function vgal_organicify(recipe_name)
+    recipe_name = "vgal-" .. recipe_name
+    if data.raw["recipe"][recipe_name] then
+        data.raw["recipe"][recipe_name].category = "organic-or-assembling"
     else
-        error(recipeName)
+        error(recipe_name)
     end
 end
-local function vgal_organicify_chem(recipeName)
-    recipeName = "vgal-" .. recipeName
-    if data.raw["recipe"][recipeName] then
-        data.raw["recipe"][recipeName].category = "organic-or-chemistry"
+local function vgal_organicify_chem(recipe_name)
+    recipe_name = "vgal-" .. recipe_name
+    if data.raw["recipe"][recipe_name] then
+        data.raw["recipe"][recipe_name].category = "organic-or-chemistry"
     else
-        error(recipeName)
+        error(recipe_name)
     end
 end
 data.raw.recipe["vgal-flying-robot-frame-rocket-part"].ingredients = vgal.build.table({

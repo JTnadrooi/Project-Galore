@@ -220,9 +220,9 @@ end
 -- Multiply the "amount" field in a single entry based on its type.
 -- For type "item", the result is rounded (with a minimum value of 1).
 -- For type "fluid", the result is left as a float.
-local function process_entry(entry, multiplier, entryName)
-    -- If entryName is provided, only process if the entry's name matches.
-    if entryName and entry.name ~= entryName then
+local function process_entry(entry, multiplier, entry_name)
+    -- If entry_name is provided, only process if the entry's name matches.
+    if entry_name and entry.name ~= entry_name then
         return entry -- Return unmodified if names don't match.
     end
 
@@ -249,15 +249,15 @@ end
 
 -- Main function: accepts either a single entry or an array of entries.
 -- multiplier: the factor to multiply the amount by.
--- entryName (optional): if provided, only entries with this name will be multiplied.
-function vgal.table.get_multiplied(input, multiplier, entryName)
+-- entry_name (optional): if provided, only entries with this name will be multiplied.
+function vgal.table.get_multiplied(input, multiplier, entry_name)
     -- Check if the input is a single entry (has a "type" field).
     if input.type then
-        return process_entry(input, multiplier, entryName)
+        return process_entry(input, multiplier, entry_name)
     elseif type(input) == "table" then
         local result = {}
         for i, entry in ipairs(input) do
-            result[i] = process_entry(entry, multiplier, entryName)
+            result[i] = process_entry(entry, multiplier, entry_name)
         end
         return result
     else

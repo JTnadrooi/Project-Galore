@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.0
+  Features:
+    - Removed "vgal.recipes".
+    - Added domain logic.
+---------------------------------------------------------------------------------------------------
 Version: 1.4.0
   Features:
     - Added/improved way to many functions to list here.

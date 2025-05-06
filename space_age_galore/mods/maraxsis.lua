@@ -1,6 +1,6 @@
 if not mods["maraxsis"] then return end
 
-local packFluids = {
+local pack_fluids = {
     ["automation-science-pack"] = { "maraxsis-saline-water", 50 },
     ["logistic-science-pack"] = { "maraxsis-brackish-water", 50 },
     ["military-science-pack"] = { "lava", 50 },
@@ -8,35 +8,37 @@ local packFluids = {
     ["production-science-pack"] = { "oxygen", 30 },
     ["utility-science-pack"] = { "hydrogen", 60 },
 }
-local newRecipes = {}
+local new_recipes = {}
 for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
+    ---@diagnostic disable-next-line: param-type-mismatch
     if recipe.name:match("%-science%-pack$") then
         ---@diagnostic disable-next-line: undefined-field
-        local resultPack = recipe.results[1].name
-        local newRecipe = table.deepcopy(recipe)
-        if packFluids[resultPack] then
+        local result_pack = recipe.results[1].name
+        ---@diagnostic disable-next-line: assign-type-mismatch
+        local new_recipe = table.deepcopy(recipe)
+        if pack_fluids[result_pack] then
             ---@diagnostic disable-next-line: cast-type-mismatch
-            ---@cast newRecipe data.RecipePrototype
-            local resultAmount = newRecipe.results[1].amount
-            table.insert(newRecipe.ingredients,
-                { type = "fluid", name = packFluids[resultPack][1], amount = packFluids[resultPack][2] * resultAmount })
+            ---@cast new_recipe data.RecipePrototype
+            local result_amount = new_recipe.results[1].amount
+            table.insert(new_recipe.ingredients,
+                { type = "fluid", name = pack_fluids[result_pack][1], amount = pack_fluids[result_pack][2] * result_amount })
 
-            newRecipe.results[1].amount = resultAmount * 2 -- double amounts
-            newRecipe.category = "maraxsis-hydro-plant"
-            newRecipe.surface_conditions = { {
+            new_recipe.results[1].amount = result_amount * 2 -- double amounts
+            new_recipe.category = "maraxsis-hydro-plant"
+            new_recipe.surface_conditions = { {
                 property = "pressure",
                 min = 400000,
                 max = 400000,
             } }
-            newRecipe.order = "y"
-            local fluid = data.raw["fluid"][packFluids[resultPack][1]]
-            table.insert(newRecipe.icons,
+            new_recipe.order = "y"
+            local fluid = data.raw["fluid"][pack_fluids[result_pack][1]]
+            table.insert(new_recipe.icons,
                 { icon = fluid.icon, icon_size = fluid.icon_size, scale = 0.4, shift = { 6, 6 } })
 
-            newRecipe.name = "vgal-maraxsis-deepsea-research-" .. string.sub(newRecipe.name, 6)
-            table.insert(newRecipes, newRecipe)
+            new_recipe.name = "vgal-maraxsis-deepsea-research-" .. string.sub(new_recipe.name, 6)
+            table.insert(new_recipes, new_recipe)
             table.insert(data.raw["technology"]["maraxsis-deepsea-research"].effects,
-                { type = "unlock-recipe", recipe = newRecipe.name })
+                { type = "unlock-recipe", recipe = new_recipe.name })
         end
     elseif recipe.main_product == "electric-engine-unit" or recipe.main_product == "engine-unit" then
         recipe.category = "maraxsis-hydro-plant-or-advanced-crafting"
@@ -51,8 +53,8 @@ for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
     end
 end
 
-data:extend(newRecipes)
-for key, _ in pairs(packFluids) do
+data:extend(new_recipes)
+for key, _ in pairs(pack_fluids) do
     local recipe = data.raw["recipe"]["maraxsis-deepsea-research-" .. key]
     recipe.subgroup = "vgal-" .. key
     recipe.order = "x"

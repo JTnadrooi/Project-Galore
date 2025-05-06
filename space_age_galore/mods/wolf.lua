@@ -30,9 +30,9 @@ local handlers = {
     ["superconductor"] = "supercapacitor",
 }
 for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
-    local techPreName = handlers[recipe.main_product]
-    if techPreName then
-        vgal.tech.add_productivity_change(techPreName .. "-productivity-wolf", recipe.name)
+    local tech_pre_name = handlers[recipe.main_product]
+    if tech_pre_name then
+        vgal.tech.add_productivity_change(tech_pre_name .. "-productivity-wolf", recipe.name)
     end
 end
 vgal.tech.add_productivity_change("kovarex-enrichment-process-productivity-wolf",

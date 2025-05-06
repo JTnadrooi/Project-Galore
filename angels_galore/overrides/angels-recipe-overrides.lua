@@ -96,6 +96,12 @@ data.raw["recipe"]["angels-wire-coil-copper-casting-fast"].energy_required = 1
 vgal.recipe.multiply("angels-wire-coil-copper-casting", 2)
 vgal.recipe.multiply("angels-wire-coil-copper-casting-fast", 2)
 
+--- uranium ---
+data.raw.recipe["slag-processing-9"].ingredients = vgal.build.table({
+    { "uranium-ore", 1, { probability = 0.8 } },
+})
+
+
 -- misc worth fixes --
 
 -- normalising ---

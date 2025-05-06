@@ -4,6 +4,7 @@ Version: 1.5.0
     - Removed "vgal.recipes".
     - Added domain logic.
     - Updated overlay casting graphics.
+    - Improved performance.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.0
   Features:

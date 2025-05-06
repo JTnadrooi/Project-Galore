@@ -33,7 +33,6 @@ vgal.data.trim("vgal-water-electric-engine-unit-iron-ore")
 vgal.data.trim("vgal-crude-oil-coal")
 vgal.data.trim("vgal-sulfuric-acid-processing-unit")
 
-
 data.raw["recipe"]["vgal-plastic-bar-electronic-circuit"].category = "electronics"
 data.raw["recipe"]["vgal-plastic-bar-processing-unit"].category = "electronics"
 data.raw["recipe"]["vgal-sulfuric-acid-processing-unit"].category = "electronics"
@@ -67,6 +66,7 @@ local valid_suffixes = {
 
 for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
     for _, suffix in ipairs(valid_suffixes) do
+        ---@diagnostic disable-next-line: param-type-mismatch
         if recipe.name:sub(- #suffix) == suffix then
             recipe.category = "pressing"
             break

@@ -106,13 +106,11 @@ local valid_suffixes = {
     "underground-belt"
 }
 
-for _, recipe in pairs(data.raw["recipe"]) do
-    if recipe.name and recipe.name:sub(1, #("vgal-")) == "vgal-" then
-        for _, suffix in ipairs(valid_suffixes) do
-            if recipe.name:sub(- #suffix) == suffix then
-                recipe.category = "pressing"
-                break
-            end
+for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
+    for _, suffix in ipairs(valid_suffixes) do
+        if recipe.name:sub(- #suffix) == suffix then
+            recipe.category = "pressing"
+            break
         end
     end
 end

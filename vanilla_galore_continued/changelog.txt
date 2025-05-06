@@ -2,6 +2,7 @@
 Version: 1.2.4
   Features:
     - Accounted for piercing round recipe changes.
+    - Improved loading time.
   Balancing:
     - "vgal-flamethrower-turret-military-science-pack" military-science-pack yield 18 -> 15. 
     - "vgal-explosives-grenade" explosives cost 4 -> 3.

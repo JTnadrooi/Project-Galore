@@ -3,6 +3,7 @@ Version: 1.5.1
   Features:
     - Accounted for piercing round recipe changes.
     - Made it so ineffective Vanilla Galore settings get hidden.
+    - Improved loading time.
   Balancing:
     - "vgal-tungsten-plate-piercing-rounds-magazine" piercing-rounds-magazine yield 1 -> 2.
     - "vgal-tungsten-plate-piercing-rounds-magazine" firearm-magazine cost 1 -> 2.

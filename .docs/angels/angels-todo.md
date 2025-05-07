@@ -54,12 +54,11 @@ Note:
     -   [ ] move fruit processing recipes to later.
     -   [ ] proper prerequisites.
 -   [ ] remove "direct" gasses/fluids.
-    -   [ ] remove formaldehyde.
+    -   [x] remove formaldehyde.
     -   [ ] remove polyethylene. (maybe, probably not as its just too crucial of a production step)
     -   [x] remove cellulose acetate.
     -   [x] remove epichlorohydrin.
     -   [x] remove allyl chloride.
-    -   [ ] remove perchloride acid.
     -   [ ] remove nitrogen monoxide.
     -   [ ] remove dinitrogen tetroxide.
     -   [ ] remove sodium hypochloride.

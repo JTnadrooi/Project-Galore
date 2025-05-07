@@ -308,7 +308,7 @@ function vgal.recipe.catagory_from_array()
 
 end
 
-function vgal.recipe.add_result(recipe_name, newResult, recipeType)
+function vgal.recipe.add_result(recipe_name, newResult)
     local recipe = data.raw["recipe"][recipe_name]
     table.insert(recipe.results, newResult)
 end

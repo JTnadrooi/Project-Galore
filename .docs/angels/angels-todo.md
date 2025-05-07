@@ -2,7 +2,10 @@
 
 A full list of tweaks.
 
-Note: With "normalise" I mean make it so the recipe's ingredients/results don't have amounts like 9, 7 or 84, chances like "50% 3" or "0 to 1". This is just personal preference.
+Note:
+
+-   With "normalise" I mean make it so the recipe's ingredients/results don't have amounts like 9, 7 or 84, chances like "50% 3" or "0 to 1". This is just personal preference.
+-   With "direct" fluids/items I mean that they only get used for one thing and are made fairly easily (Usually just gas + catalyst or a bit of steam). I do not like these entries and remove most of them. Again, personal preference.
 
 -   [x] remove the extra ores.
 -   [x] remove large empty subgroup lists
@@ -39,16 +42,27 @@ Note: With "normalise" I mean make it so the recipe's ingredients/results don't 
 -   [x] increase inserter stack size.
 -   [x] remove most t1+ machines.
 -   [ ] unhide angels-industries nuclear overhaul.
--   [ ] remove pure ores. 
--   [ ] make the refined ores less dense.
+-   [ ] (?) remove pure ores.
+-   [x] make the refined ores less dense.
 -   [ ] add mod slots to more machines.
     -   [x] tiered machines.
     -   [ ] misc (air filter, etc).
 -   [ ] balance material costs with vanilla material costs.
 -   [ ] tech fixes.
     -   [x] move lvl1 ore processing to 2 row tech.
-    -   [ ] move flarestack to basic chem.
+    -   [x] move flarestack to basic chem.
     -   [ ] move fruit processing recipes to later.
     -   [ ] proper prerequisites.
+-   [ ] remove "direct" gasses/fluids.
+    -   [ ] remove formaldehyde.
+    -   [ ] remove polyethylene. (maybe, probably not as its just too crucial of a production step)
+    -   [x] remove cellulose acetate.
+    -   [ ] remove epichlorohydrin.
+    -   [ ] remove allyl chloride.
+    -   [ ] remove perchloride acid.
+    -   [ ] remove nitrogen monoxide.
+    -   [ ] remove dinitrogen tetroxide.
+    -   [ ] remove sodium hypochloride.
+    -   [ ] remove monochloramine.
 -   [ ] add recipes GALORE.
     -   [ ] add alternate ways to aquire gardens.

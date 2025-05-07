@@ -57,8 +57,8 @@ Note:
     -   [ ] remove formaldehyde.
     -   [ ] remove polyethylene. (maybe, probably not as its just too crucial of a production step)
     -   [x] remove cellulose acetate.
-    -   [ ] remove epichlorohydrin.
-    -   [ ] remove allyl chloride.
+    -   [x] remove epichlorohydrin.
+    -   [x] remove allyl chloride.
     -   [ ] remove perchloride acid.
     -   [ ] remove nitrogen monoxide.
     -   [ ] remove dinitrogen tetroxide.

@@ -47,7 +47,7 @@ vgal.recipe.multiply_results("liquid-plastic-3", PLASTIC_MULTIPLIER)
 vgal.recipe.set_result_amount("bio-plastic-1", 80)
 vgal.recipe.set_result_amount("bio-plastic-2", 150)
 
---- chain simplifications ---
+--- direct fluid removal ---
 
 -- bio plastic - liquid-cellulose-acetate
 vgal.data.trim("liquid-cellulose-acetate")
@@ -58,6 +58,30 @@ vgal.recipe.replace_ingredient("bio-plastic-1", "liquid-cellulose-acetate", "liq
 vgal.data.trim("gas-formaldehyde-catalyst")
 vgal.data.deep_hide(data.raw["fluid"]["gas-formaldehyde"])
 vgal.recipe.replace_ingredient("liquid-plastic-3", "gas-formaldehyde", "gas-methanol")
+
+-- chloride variations
+data.raw.recipe["liquid-glycerol"].ingredients = vgal.build.table({}, {
+    { "gas-propene",    25 },
+    { "water-purified", 100 },
+    { "gas-chlorine",   50 },
+})
+data.raw.recipe["liquid-glycerol"].results = vgal.build.table({}, {
+    { "liquid-glycerol",       25 },
+    { "gas-hydrogen-chloride", 100 },
+})
+vgal.data.trim("gas-epichlorhydrin")
+vgal.data.deep_hide(data.raw["fluid"]["gas-epichlorhydrin"])
+vgal.data.trim("gas-allylchlorid")
+vgal.data.deep_hide(data.raw["fluid"]["gas-allylchlorid"])
+
+-- vgal.data.trim("gas-formaldehyde-catalyst")
+-- vgal.data.deep_hide(data.raw["fluid"]["gas-formaldehyde"])
+-- vgal.recipe.replace_ingredient("liquid-plastic-3", "gas-formaldehyde", "gas-methanol")
+
+
+-- gas-allylchlorid
+
+-- gas-epichlorhydrin
 
 --- refining durations (see docs/ore-density) ---
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do

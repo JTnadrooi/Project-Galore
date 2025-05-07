@@ -102,6 +102,11 @@ data.raw.recipe["rocket-oxidizer-capsule"].energy_required = 5
 -- })
 vgal.recipe.set_result_amount("rocket-oxidizer-capsule", 1)
 
+--- uranium ---
+data.raw.recipe["slag-processing-9"].results = vgal.build.table({
+    { "uranium-ore", 1, { probability = 0.8 } },
+})
+
 -- data.raw.recipe["gas-dimethylhydrazine"].ingredients = vgal.build.table({
 --     { "solid-sodium-hypochlorite", 5 },
 -- }, {

@@ -74,14 +74,54 @@ vgal.data.deep_hide(data.raw["fluid"]["gas-epichlorhydrin"])
 vgal.data.trim("gas-allylchlorid")
 vgal.data.deep_hide(data.raw["fluid"]["gas-allylchlorid"])
 
--- vgal.data.trim("gas-formaldehyde-catalyst")
--- vgal.data.deep_hide(data.raw["fluid"]["gas-formaldehyde"])
--- vgal.recipe.replace_ingredient("liquid-plastic-3", "gas-formaldehyde", "gas-methanol")
+-- rocket
 
+data.raw.recipe["gas-hydrazine"].ingredients = vgal.build.table({
+    -- { "catalyst-metal-green",      1 },
+    { "solid-sodium-hypochlorite", 5 },
+}, {
+    { "gas-ammonia", 250 },
+})
+vgal.recipe.remove_result("gas-hydrazine", "catalyst-metal-carrier")
+vgal.data.deep_hide(data.raw["fluid"]["gas-monochloramine"])
+vgal.data.trim("gas-monochloramine")
 
--- gas-allylchlorid
+-- fuel
+data.raw.recipe["rocket-fuel-capsule"].energy_required = 5
+data.raw.recipe["rocket-fuel-capsule"].ingredients = vgal.build.table({
+    { "solid-fuel", 1 },
+}, {
+    { "gas-dimethylhydrazine", 10 },
+})
+vgal.recipe.set_result_amount("rocket-fuel-capsule", 1)
 
--- gas-epichlorhydrin
+-- ox
+data.raw.recipe["rocket-oxidizer-capsule"].energy_required = 5
+-- data.raw.recipe["rocket-oxidizer-capsule"].ingredients = vgal.build.table({}, {
+--     { "liquid-nitric-acid",    10 },
+-- })
+vgal.recipe.set_result_amount("rocket-oxidizer-capsule", 1)
+
+-- data.raw.recipe["gas-dimethylhydrazine"].ingredients = vgal.build.table({
+--     { "solid-sodium-hypochlorite", 5 },
+-- }, {
+--     { "gas-ammonia",  150 },
+--     { "gas-methanol", 50 },
+-- })
+-- vgal.recipe.set_result_amount("gas-dimethylhydrazine", 50, "water-purified")
+
+-- vgal.data.trim("gas-methylamine")
+-- vgal.data.deep_hide(data.raw["fluid"]["gas-methylamine"])
+-- vgal.data.trim("gas-dimethylamine")
+-- vgal.data.deep_hide(data.raw["fluid"]["gas-dimethylamine"])
+
+-- vgal.recipe.set_ingredient_amount("gas-methylamine", 100, "gas-methanol")
+-- vgal.recipe.replace_ingredient("gas-dimethylhydrazine", "gas-dimethylamine", "gas-methylamine")
+-- vgal.data.trim("gas-dimethylamine")
+-- vgal.data.deep_hide(data.raw["fluid"]["gas-dimethylamine"])
+
+--- rocket overhaul
+
 
 --- refining durations (see docs/ore-density) ---
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do

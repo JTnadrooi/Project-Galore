@@ -79,3 +79,6 @@ data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
 data.raw.recipe["slag-processing-9"].ingredients = vgal.build.table({
     { "uranium-ore", 1, { probability = 0.8 } },
 })
+
+--- rocket fuel ---
+vgal.recipe.set_ingredient_amount("rocket-fuel", 1)

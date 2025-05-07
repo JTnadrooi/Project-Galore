@@ -49,10 +49,15 @@ vgal.recipe.set_result_amount("bio-plastic-2", 150)
 
 --- chain simplifications ---
 
--- bio plastic
+-- bio plastic - liquid-cellulose-acetate
 vgal.data.trim("liquid-cellulose-acetate")
 vgal.data.deep_hide(data.raw["fluid"]["liquid-cellulose-acetate"])
 vgal.recipe.replace_ingredient("bio-plastic-1", "liquid-cellulose-acetate", "liquid-cellulose-acetate-mixture")
+
+-- plastic 3 - gas-formaldehyde
+vgal.data.trim("gas-formaldehyde-catalyst")
+vgal.data.deep_hide(data.raw["fluid"]["gas-formaldehyde"])
+vgal.recipe.replace_ingredient("liquid-plastic-3", "gas-formaldehyde", "gas-methanol")
 
 --- refining durations (see docs/ore-density) ---
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do

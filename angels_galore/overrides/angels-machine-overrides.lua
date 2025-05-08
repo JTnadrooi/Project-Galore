@@ -136,6 +136,7 @@ data.raw["assembling-machine"]["seed-extractor"].crafting_speed = 1
 data.raw["mining-drill"]["thermal-bore"].mining_speed = 1
 
 --- add prod ---
+data.raw["assembling-machine"]["seed-extractor"].effect_receiver = { base_effect = { productivity = 0.10 } }
 for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     data.raw["assembling-machine"][environment .. "-farm"].effect_receiver = { base_effect = { productivity = 0.5 } }
 end

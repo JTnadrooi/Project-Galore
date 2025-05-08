@@ -14,7 +14,7 @@
 -- end
 
 function vgal.icon.get_auto_scale(t1_icon)
-    return t1_icon.scale or ((64 / 2) / t1_icon.icon_size)
+    return t1_icon.scale or ((64 / 2) / (t1_icon.icon_size or 64))
 end
 
 function vgal.icon.normalise_composite_scales(icon)
@@ -30,7 +30,7 @@ function vgal.icon.normalise_composite_scales(icon)
         scaled_icons[i] = copy
     end
     for _, scaled_icon in ipairs(scaled_icons) do
-        scaled_icon.scale = scaled_icon.scale * (64 / scaled_icon.icon_size)
+        scaled_icon.scale = scaled_icon.scale * (64 / (scaled_icon.icon_size or 64))
     end
     return scaled_icons
 end

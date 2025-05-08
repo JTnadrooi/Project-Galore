@@ -82,3 +82,6 @@ data.raw.recipe["slag-processing-9"].results = vgal.build.table({
 
 --- rocket fuel ---
 vgal.recipe.set_ingredient_amount("rocket-fuel", 1)
+
+--- trees ---
+vgal.recipe.replace_ingredient("bio-generator-temperate-1", "temperate-tree", "solid-tree")

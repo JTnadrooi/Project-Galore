@@ -107,6 +107,12 @@ data.raw.recipe["slag-processing-9"].results = vgal.build.table({
     { "uranium-ore", 1, { probability = 0.8 } },
 })
 
+--- trees ---
+vgal.data.trim("tree-arboretum-0")
+vgal.data.deep_hide(data.raw["item"]["temperate-tree"])
+vgal.data.deep_hide(data.raw["item"]["swamp-tree"])
+vgal.data.deep_hide(data.raw["item"]["desert-tree"])
+
 -- data.raw.recipe["gas-dimethylhydrazine"].ingredients = vgal.build.table({
 --     { "solid-sodium-hypochlorite", 5 },
 -- }, {

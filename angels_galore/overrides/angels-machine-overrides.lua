@@ -139,3 +139,11 @@ data.raw["mining-drill"]["thermal-bore"].mining_speed = 1
 for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     data.raw["assembling-machine"][environment .. "-farm"].effect_receiver = { base_effect = { productivity = 0.5 } }
 end
+
+--- remove seed generator bloat ---
+vgal.data.deep_hide(data.raw["assembling-machine"]["bio-generator-swamp-1"])
+vgal.data.deep_hide(data.raw["item"]["bio-generator-swamp-1"])
+vgal.data.trim("bio-generator-swamp-1")
+vgal.data.deep_hide(data.raw["assembling-machine"]["bio-generator-desert-1"])
+vgal.data.deep_hide(data.raw["item"]["bio-generator-desert-1"])
+vgal.data.trim("bio-generator-desert-1")

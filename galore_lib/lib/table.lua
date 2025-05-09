@@ -185,22 +185,26 @@ function vgal.table.nil_if_empty(t1)
     return nil
 end
 
-function vgal.table.get_shorthand(inTable, newType)
+function vgal.table.get_shorthand(in_table, new_type)
     local transformed = {}
-    for _, item in ipairs(inTable) do
-        local newEntry = {
-            type = newType,
-            name = item[1],
-            amount = item[2]
-        }
-        if type(item[3]) == "table" then
-            for k, v in pairs(item[3]) do
-                newEntry[k] = v
-            end
-        end
-        table.insert(transformed, newEntry)
+    for _, item in ipairs(in_table) do
+        table.insert(transformed, vgal.table.get_single_shorthand(item, new_type))
     end
     return transformed
+end
+
+function vgal.table.get_single_shorthand(in_value, new_type)
+    local new_entry = {
+        type = new_type,
+        name = in_value[1],
+        amount = in_value[2]
+    }
+    if type(in_value[3]) == "table" then
+        for k, v in pairs(in_value[3]) do
+            new_entry[k] = v
+        end
+    end
+    return new_entry
 end
 
 -- function vgal.table.get_multiplied(intTable, amount)

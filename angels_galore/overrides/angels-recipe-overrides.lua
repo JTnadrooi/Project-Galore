@@ -168,6 +168,8 @@ end
 
 for _, metal in ipairs(vgal.constants.METALS) do
     vgal.recipe.multiply(metal .. "-ore-processing", 1.5)
+    vgal.recipe.add_result(metal .. "-ore-processing",
+        vgal.table.get_single_shorthand({ "slag", 1, { probability = 0.5 } }, "item"))
     data.raw["recipe"]["roll-" .. metal .. "-casting"].energy_required = 1
 end
 

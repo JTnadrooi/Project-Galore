@@ -310,6 +310,9 @@ end
 
 function vgal.recipe.add_result(recipe_name, newResult)
     local recipe = data.raw["recipe"][recipe_name]
+    if not recipe.main_product then
+        recipe.main_product = vgal.recipe.get_preferred_main_product(recipe)
+    end
     table.insert(recipe.results, newResult)
 end
 

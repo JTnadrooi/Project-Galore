@@ -24,15 +24,13 @@ Note:
 -   [ ] override angels industry settings.
 -   [ ] overhault dormant seed refreshing recipes. (add prod to seed extractor, de-bulkify recipes)
 -   [ ] (?) nerf the polluted water yield of some fish recipes.
--   [ ] add shards to module recipes.
 -   [ ] replace tier icons with VGAL-like icons.
 -   [x] remove unneeded technologies.
--   [ ] remove seed generation machine bloat.
+-   [x] remove seed generation machine bloat.
 -   [ ] overhaul/normalise water washing recipes.
-    -   [ ] normalise them.
--   [ ] make the rocket fuel recipe chain a bit less.. direct?
+-   [x] overhaul rocket fuel crafting.
 -   [ ] gem overhaul.
-    -   [ ] remove gem result from ore processing.
+    -   [x] remove gem result from ore processing.
 -   [x] fix the using of reskinned icons.
 -   [x] remove alien samples. (or make it at least not used for research)
 -   [ ] spoilage. (optional setting)
@@ -63,5 +61,7 @@ Note:
     -   [ ] remove dinitrogen tetroxide.
     -   [ ] remove sodium hypochloride.
     -   [ ] remove monochloramine.
+-   [ ] diverify mining results of naturally spawning entities.
 -   [ ] add recipes GALORE.
     -   [ ] add alternate ways to aquire gardens.
+    -   [ ] add shard module recipes.

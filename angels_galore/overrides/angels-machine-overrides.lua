@@ -132,6 +132,7 @@ data.raw["assembling-machine"]["bio-refugium-puffer"].crafting_speed = 1
 data.raw["assembling-machine"]["algae-farm"].crafting_speed = 1
 data.raw["assembling-machine"]["algae-farm-2"].crafting_speed = 2
 data.raw["assembling-machine"]["seed-extractor"].crafting_speed = 1
+data.raw["assembling-machine"]["bio-generator-temperate-1"].crafting_speed = 1
 
 data.raw["mining-drill"]["thermal-bore"].mining_speed = 1
 

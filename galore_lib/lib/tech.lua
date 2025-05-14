@@ -199,6 +199,18 @@ function vgal.tech.merge(tech_name_from, tech_name_to)
     data.raw["technology"][tech_name_from] = nil
 end
 
+function vgal.tech.move_recipe(tech_name_from, tech_name_to, recipe_name)
+    local tech_from = data.raw["technology"][tech_name_from]
+    local tech_to = data.raw["technology"][tech_name_to]
+    for i, eff in ipairs(tech_from.effects) do
+        if eff.recipe == recipe_name then
+            table.insert(tech_to.effects, eff)
+            table.remove(tech_from.effects, i)
+            break
+        end
+    end
+end
+
 -- function vgal.tech.move_recipe(tech_name_from, recipe_name, tech_name_to)
 --     local tech_from = data.raw["technology"][tech_name_from]
 --     local tech_to = data.raw["technology"][tech_name_to]

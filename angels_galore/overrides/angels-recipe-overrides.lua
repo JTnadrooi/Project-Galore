@@ -178,8 +178,6 @@ data.raw["recipe"]["angels-wire-coil-copper-casting-fast"].energy_required = 1
 vgal.recipe.multiply("angels-wire-coil-copper-casting", 2)
 vgal.recipe.multiply("angels-wire-coil-copper-casting-fast", 2)
 
-
-
 -- misc worth fixes --
 
 -- normalising ---

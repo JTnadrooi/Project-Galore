@@ -246,13 +246,11 @@ data.raw["recipe"]["angels-electrolyser"].ingredients = vgal.build.table({
     { "pipe",               10 },
     { "iron-plate",         25 },
     { "electronic-circuit", 5 },
-    { "copper-plate",       10 },
 })
 data.raw["recipe"]["angels-electrolyser-2"].ingredients = vgal.build.table({
     { "angels-electrolyser", 1 },
     { "steel-plate",         20 },
     { "electronic-circuit",  10 },
-    { "copper-plate",        25 },
 })
 data.raw["recipe"]["angels-electric-boiler"].ingredients = vgal.build.table({
     { "boiler",             1 },

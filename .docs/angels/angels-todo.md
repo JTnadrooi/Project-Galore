@@ -62,6 +62,8 @@ Note:
     -   [ ] remove sodium hypochloride.
     -   [ ] remove monochloramine.
 -   [ ] diverify mining results of naturally spawning entities.
+-   [ ] add hoggers..?
+    -   [ ] generalise refugiums.
 -   [ ] add recipes GALORE.
     -   [ ] add alternate ways to aquire gardens.
     -   [ ] add shard module recipes.

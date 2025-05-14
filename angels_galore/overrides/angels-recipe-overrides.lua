@@ -183,8 +183,15 @@ vgal.recipe.multiply("crystal-powder-slurry", 10)
 -- vgal.recipe.set_ingredient_amount("")
 -- misc worth fixes --
 
--- normalising ---
+--- crafting speed restores ---
+data.raw["recipe"]["molten-copper-smelting"].energy_required = 1
+data.raw["recipe"]["molten-steel-smelting-1"].energy_required = 1
+data.raw["recipe"]["molten-iron-smelting-1"].energy_required = 1
 
+data.raw["recipe"]["air-separation"].energy_required = 1
+data.raw["recipe"]["angels-air-filtering"].energy_required = 1
+
+--- normalising ---
 vgal.recipe.set_result_amount("bio-tile", 2)
 vgal.recipe.set_result_amount("alien-goo", 10)
 

@@ -396,12 +396,11 @@ data.raw["recipe"]["algae-farm"].ingredients = vgal.build.table({
     { "electronic-circuit", 5 },
     { "pipe",               10 },
 })
--- data.raw["recipe"]["algae-farm-2"].ingredients = vgal.build.table({ -- remove
---     { "stone-brick",        10 },
---     { "iron-plate",         15 },
---     { "electronic-circuit", 5 },
---     { "algae-farm",         1 },
--- })
+data.raw["recipe"]["algae-farm-2"].ingredients = vgal.build.table({
+    { "steel-plate",        15 },
+    { "electronic-circuit", 5 },
+    { "algae-farm",         1 },
+})
 data.raw["recipe"]["bio-generator-temperate-1"].ingredients = vgal.build.table({
     { "stone-brick",        10 },
     { "iron-plate",         15 },

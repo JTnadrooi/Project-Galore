@@ -178,6 +178,9 @@ data.raw["recipe"]["angels-wire-coil-copper-casting-fast"].energy_required = 1
 vgal.recipe.multiply("angels-wire-coil-copper-casting", 2)
 vgal.recipe.multiply("angels-wire-coil-copper-casting-fast", 2)
 
+--- crystal overhaul/restore ---
+vgal.recipe.multiply("crystal-powder-slurry", 10)
+-- vgal.recipe.set_ingredient_amount("")
 -- misc worth fixes --
 
 -- normalising ---

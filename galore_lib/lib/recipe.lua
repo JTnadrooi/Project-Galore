@@ -17,6 +17,15 @@ function vgal.recipe.add_productivity_entry(entry_name)
     vgal.productivity_entries[entry_name] = true
 end
 
+function vgal.recipe.unhide(recipe_name)
+    local recipe = data.raw["recipe"][recipe_name]
+    recipe.hidden = false
+    recipe.hidden_in_factoriopedia = false
+    recipe.hide_from_player_crafting = false
+    recipe.hide_from_signal_gui = false
+    recipe.hide_from_stats = false
+end
+
 function vgal.recipe.add_catalyst_entry(entry_name)
     vgal.any(entry_name)
     vgal.catalyst_entries[entry_name] = true

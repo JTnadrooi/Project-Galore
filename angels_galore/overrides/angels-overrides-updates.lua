@@ -441,3 +441,8 @@ data.raw["recipe"]["bio-refugium-biter"].ingredients = vgal.build.table({
     { "pipe",            30 },
     { "processing-unit", 5 },
 })
+
+--- algae fix ---
+table.insert(data.raw["technology"]["bio-processing-green"].unit.ingredients, { "logistic-science-pack", 1 })
+table.insert(data.raw["technology"]["bio-processing-green"].prerequisites, "bio-nutrient-paste")
+vgal.tech.move_recipe("bio-processing-green", "water-treatment", "water-mineralized")

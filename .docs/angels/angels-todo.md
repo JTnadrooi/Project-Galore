@@ -18,7 +18,7 @@ Note:
 -   [x] remove some catalysts related to removed ores.
 -   [x] normalise crafting times. (angel's smelthing)
 -   [x] hide barreling from player crafting.
--   [ ] normalise building recipes.
+-   [x] normalise building recipes.
 -   [x] remove bricks.
     -   [x] remove reinforced bricks.
 -   [ ] override angels industry settings.

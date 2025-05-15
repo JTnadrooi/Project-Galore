@@ -12,3 +12,5 @@ data.raw["underground-belt"]["express-underground-belt"].max_distance = 12
 for _, inserter in pairs(data.raw["inserter"]) do
     inserter.stack_size_bonus = (inserter.stack_size_bonus or 0) + 2
 end
+
+require("prototypes.ore-processing")

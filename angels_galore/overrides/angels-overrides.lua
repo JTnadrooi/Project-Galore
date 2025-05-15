@@ -51,3 +51,13 @@ vgal.data.deep_hide(data.raw["tool"]["token-bio"])
 --- tech ---
 data.raw["technology"]["basic-chemistry"].unit.count = 40
 -- vgal.tech.add_prerequisite("ore-refining", "bio-processing-alien-1")
+
+--- fuel ---
+data.raw["item"]["coal-crushed"].fuel_value = "2.5MJ"
+data.raw["item"]["solid-coke"].fuel_value = "3.5MJ"
+data.raw["item"]["pellet-coke"].fuel_value = "18MJ"
+data.raw["item"]["solid-fuel"].fuel_value = "12MJ" -- angels changes it
+data.raw["item"]["red-cellulose-fiber"].fuel_category = "chemical"
+data.raw["item"]["red-cellulose-fiber"].fuel_value = "0.25MJ"
+data.raw["item"]["blue-cellulose-fiber"].fuel_category = "chemical"
+data.raw["item"]["blue-cellulose-fiber"].fuel_value = "3MJ"

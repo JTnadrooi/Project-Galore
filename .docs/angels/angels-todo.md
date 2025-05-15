@@ -36,7 +36,7 @@ Note:
 -   [ ] spoilage. (optional setting)
 -   [x] remove bio modules.
 -   [x] increase research speed.
--   [ ] increase crushed coal/coke fuel value.
+-   [x] increase crushed coal/coke fuel value.
 -   [x] increase inserter stack size.
 -   [x] remove most t1+ machines.
 -   [ ] unhide angels-industries nuclear overhaul.

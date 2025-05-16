@@ -75,6 +75,9 @@ end
 data.raw.recipe["angelsore1-crushed-smelting"].energy_required = 6.4
 data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
 
+data.raw.recipe["angels-plate-steel"].energy_required = 1
+vgal.recipe.multiply("angels-plate-steel", 1.25)
+
 --- uranium ---
 data.raw.recipe["slag-processing-9"].results = vgal.build.table({
     { "uranium-ore", 1, { probability = 0.8 } },

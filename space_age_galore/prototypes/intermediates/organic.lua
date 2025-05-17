@@ -100,7 +100,15 @@ vgal.data.extend({
         show_amount_in_title = false,
         result_is_always_fresh = true,
         groups = { "vgal-unsure" },
-        order = "ab"
+        order = "ab",
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000,
+            }
+        },
     },
     {
         type = "recipe",
@@ -152,7 +160,15 @@ vgal.data.extend({
         show_amount_in_title = false,
         result_is_always_fresh = true,
         groups = { "vgal-unsure" },
-        order = "bb"
+        order = "bb",
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000,
+            }
+        },
     },
 }, {
     type = "recipe",

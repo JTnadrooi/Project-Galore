@@ -200,8 +200,9 @@ function vgal.data.extend(entries, fill_in_with)
                 entry.main_product = entry.results[1].name
             end
 
-            entry.allow_productivity = (entry.allow_productivity ~= nil) and entry.allow_productivity or
-                vgal.recipe.get_if_productivity(entry.main_product)
+            if entry.allow_productivity == nil then
+                entry.allow_productivity = vgal.recipe.get_if_productivity(entry.main_product)
+            end
 
             entry.crafting_machine_tint = entry.crafting_machine_tint
                 or vgal.recipe.get_preferred_crafting_machine_tint(entry)

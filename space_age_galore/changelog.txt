@@ -3,7 +3,7 @@ Version: 1.5.2
   Features:
     - Accounted for piercing round recipe changes.
   Bugfixes:
-    - Fixed ice recipes allowing productivity.
+    - Fixed ice recipes somehow allowing productivity.
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.1
   Features:

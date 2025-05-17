@@ -262,7 +262,7 @@ vgal.data.extend({
             vgal.icon.get("bioflux"),
             vgal.icon.get_in("raw-fish"),
         },
-        category = "organics",
+        category = "organic",
         energy_required = 6,
         technology = "planet-discovery-aquilo",
         fluid_ingredients = {

@@ -137,7 +137,7 @@ vgal.data.extend({
         show_amount_in_title = false,
         result_is_always_fresh = true,
         groups = { "vgal-unsure" },
-        order = "bc",
+        order = "ac",
     },
     {
         type = "recipe",

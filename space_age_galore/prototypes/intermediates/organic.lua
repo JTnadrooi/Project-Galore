@@ -50,6 +50,102 @@ vgal.data.extend({
             }
         },
     },
+    {
+        type = "recipe",
+        name = "iron-bacteria-copper-bacteria",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("iron-bacteria"),
+            vgal.icon.get_out_to("copper-bacteria"),
+            vgal.icon.get_overlay("to"),
+        },
+        category = "organic",
+        energy_required = 60,
+        technology = { "bacteria-cultivation", "uranium-processing" },
+        ingredients = {
+            { "iron-bacteria", 1 },
+            { "uranium-235",   1, { ignored_by_stats = 1 } },
+        },
+        results = {
+            { "copper-bacteria", 1 },
+            { "uranium-235",     1, { probability = 0.5, ignored_by_stats = 1 } },
+            { "uranium-238",     1, { probability = 0.5 } },
+        },
+        allow_productivity = false,
+        show_amount_in_title = false,
+    },
+    {
+        type = "recipe",
+        name = "uranium-235-copper-bacteria",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("copper-bacteria-cultivation", "recipe"),
+            vgal.icon.get_in("uranium-235"),
+        },
+        category = "organic",
+        energy_required = 4,
+        technology = { "bacteria-cultivation", "uranium-processing" },
+        ingredients = {
+            { "copper-bacteria", 1, { ignored_by_stats = 1 } },
+            { "bioflux",         1 },
+            { "uranium-235",     1, { ignored_by_stats = 1 } },
+        },
+        results = {
+            { "copper-bacteria", 15, { ignored_by_stats = 1 } },
+            { "uranium-235",     1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1 } },
+            { "uranium-238",     1,  { probability = 0.02, ignored_by_productivity = 1 } },
+        },
+        show_amount_in_title = false,
+        groups = { "vgal-unsure" },
+    },
+    {
+        type = "recipe",
+        name = "copper-bacteria-iron-bacteria",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("copper-bacteria"),
+            vgal.icon.get_out_to("iron-bacteria"),
+            vgal.icon.get_overlay("to"),
+        },
+        category = "organic",
+        energy_required = 60,
+        technology = { "bacteria-cultivation", "uranium-processing" },
+        ingredients = {
+            { "copper-bacteria", 1 },
+            { "uranium-235",     1, { ignored_by_stats = 1 } },
+        },
+        results = {
+            { "iron-bacteria", 1 },
+            { "uranium-235",   1, { probability = 0.5, ignored_by_stats = 1 } },
+            { "uranium-238",   1, { probability = 0.5 } },
+        },
+        allow_productivity = false,
+        show_amount_in_title = false,
+    },
+    {
+        type = "recipe",
+        name = "uranium-235-iron-bacteria",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("iron-bacteria-cultivation", "recipe"),
+            vgal.icon.get_in("uranium-235"),
+        },
+        category = "organic",
+        energy_required = 4,
+        technology = { "bacteria-cultivation", "uranium-processing" },
+        ingredients = {
+            { "iron-bacteria", 1, { ignored_by_stats = 1 } },
+            { "bioflux",       1 },
+            { "uranium-235",   1, { ignored_by_stats = 1 } },
+        },
+        results = {
+            { "iron-bacteria", 15, { ignored_by_stats = 1 } },
+            { "uranium-235",   1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1 } },
+            { "uranium-238",   1,  { probability = 0.02, ignored_by_productivity = 1 } },
+        },
+        show_amount_in_title = false,
+        groups = { "vgal-unsure" },
+    },
 }, {
     type = "recipe",
 })

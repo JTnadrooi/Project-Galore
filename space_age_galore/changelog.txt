@@ -1,7 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.2
   Features:
-    - Accounted for piercing round recipe changes.
+    - Added "copper-bacteria-iron-bacteria" recipe, tagged as unsure.
+    - Added "iron-bacteria-copper-bacteria" recipe, tagged as unsure.
+    - Added "uranium-235-iron-bacteria" recipe, tagged as unsure.
+    - Added "uranium-235-copper-bacteria" recipe, tagged as unsure.
   Bugfixes:
     - Fixed ice recipes somehow allowing productivity.
 ---------------------------------------------------------------------------------------------------

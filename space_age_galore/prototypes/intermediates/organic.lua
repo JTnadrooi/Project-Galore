@@ -247,7 +247,7 @@ vgal.data.extend({
             { "nutrients", 20 }, -- 160
         },
         results = {
-            { "bioflux", 2 },
+            { "bioflux", 5 },
         },
         fluid_results = {
             { "fluoroketone-hot", 15, { temperature = 180 } },

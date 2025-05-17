@@ -8,7 +8,7 @@ Version: 1.5.2
     - Added "vgal-ammoniacal-solution-copper-bacteria" recipe, tagged as unsure.
     - Added "vgal-ammoniacal-solution-iron-bacteria" recipe, tagged as unsure.
     - Added "vgal-raw-fish-bioflux" recipe, tagged as unsure.
-    - Added "vgal-raw-fish-bioflux" recipe, tagged as unsure.
+    - Added "vgal-ammoniacal-solution-raw-fish" recipe, tagged as unsure.
   Bugfixes:
     - Fixed ice recipes somehow allowing productivity.
     - Fixed "vgal-water-fluoroketone-cold-ice" missing hot fluoroketone temp.

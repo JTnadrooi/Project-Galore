@@ -254,6 +254,29 @@ vgal.data.extend({
         },
         groups = { "vgal-unsure" },
     },
+    {
+        type = "recipe",
+        name = "ammoniacal-solution-raw-fish",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("bioflux"),
+            vgal.icon.get_in("raw-fish"),
+        },
+        category = "organics",
+        energy_required = 6,
+        technology = "planet-discovery-aquilo",
+        fluid_ingredients = {
+            { "ammoniacal-solution", 100 },
+        },
+        ingredients = {
+            { "nutrients", 30 },
+            { "raw-fish",  2 },
+        },
+        results = {
+            { "raw-fish", 3 },
+        },
+        groups = { "vgal-unsure" },
+    },
 }, {
     type = "recipe",
 })

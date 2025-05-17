@@ -228,6 +228,32 @@ vgal.data.extend({
         groups = { "vgal-unsure" },
         order = "bc",
     },
+    {
+        type = "recipe",
+        name = "raw-fish-bioflux",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("bioflux"),
+            vgal.icon.get_in("raw-fish"),
+        },
+        category = "cryogenics",
+        energy_required = 8,
+        technology = "cryogenic-plant",
+        fluid_ingredients = {
+            { "fluoroketone-cold", 20 },
+        },
+        ingredients = {
+            { "raw-fish",  1 },  -- 530
+            { "nutrients", 20 }, -- 160
+        },
+        results = {
+            { "bioflux", 2 },
+        },
+        fluid_results = {
+            { "fluoroketone-hot", 15, { temperature = 180 } },
+        },
+        groups = { "vgal-unsure" },
+    },
 }, {
     type = "recipe",
 })

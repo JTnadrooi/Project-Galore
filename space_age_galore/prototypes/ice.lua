@@ -16,13 +16,7 @@ vgal.data.extend({
             { "water",             2000 },
         },
         fluid_results = {
-            {
-                "fluoroketone-hot",
-                14,
-                -- {
-                --     temperature = 180,
-                -- },
-            },
+            { "fluoroketone-hot", 14, { temperature = 180 } },
         },
         results = {
             { "ice", 100 },

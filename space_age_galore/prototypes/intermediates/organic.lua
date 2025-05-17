@@ -68,8 +68,8 @@ vgal.data.extend({
         },
         results = {
             { "iron-bacteria", 1 },
-            { "uranium-235",   1, { probability = 0.6, ignored_by_stats = 1 } },
-            { "uranium-238",   1, { probability = 0.4 } },
+            { "uranium-235",   1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
+            { "uranium-238",   1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
         },
         allow_productivity = false,
         show_amount_in_title = false,
@@ -94,8 +94,8 @@ vgal.data.extend({
         },
         results = {
             { "iron-bacteria", 15, { ignored_by_stats = 1 } },
-            { "uranium-235",   1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1 } },
-            { "uranium-238",   1,  { probability = 0.02, ignored_by_productivity = 1 } },
+            { "uranium-235",   1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
+            { "uranium-238",   1,  { probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
         },
         show_amount_in_title = false,
         result_is_always_fresh = true,
@@ -157,8 +157,8 @@ vgal.data.extend({
         },
         results = {
             { "copper-bacteria", 1 },
-            { "uranium-235",     1, { probability = 0.6, ignored_by_stats = 1 } },
-            { "uranium-238",     1, { probability = 0.4 } },
+            { "uranium-235",     1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
+            { "uranium-238",     1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
         },
         allow_productivity = false,
         show_amount_in_title = false,
@@ -183,8 +183,8 @@ vgal.data.extend({
         },
         results = {
             { "copper-bacteria", 15, { ignored_by_stats = 1 } },
-            { "uranium-235",     1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1 } },
-            { "uranium-238",     1,  { probability = 0.02, ignored_by_productivity = 1 } },
+            { "uranium-235",     1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
+            { "uranium-238",     1,  { probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
         },
         show_amount_in_title = false,
         result_is_always_fresh = true,

@@ -127,28 +127,6 @@ vgal.data.extend({
     },
     {
         type = "recipe",
-        name = "ammonia-explosives", -- lets goo, less coal usage on gleba (and in space)!
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("explosives"),
-            vgal.icon.get_in("ammonia"),
-        },
-        category = "chemistry-or-cryogenics",
-        energy_required = 10,
-        technology = "explosives",
-        fluid_ingredients = {
-            { "ammonia", 10 } -- 20
-        },
-        ingredients = {
-            { "coal",   1 }, -- 10 (but 210 on gleba)
-            { "sulfur", 2 }, -- 30
-        },
-        results = {
-            { "explosives", 4 }, -- 60
-        },
-    },
-    {
-        type = "recipe",
         name = "wood-carbon-fiber",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -247,6 +225,32 @@ vgal.data.extend({
         },
     },
     {
+        name = "molten-copper-carbon-fiber-low-density-structure",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("low-density-structure"),
+            vgal.icon.get_in("carbon-fiber"),
+            vgal.icon.get_overlay("casting-copper"),
+        },
+        category = "metallurgy",
+        energy_required = 15,
+        technology = { "carbon-fiber", "foundry" },
+        fluid_ingredients = {
+            { "molten-copper", 40 },
+        },
+        ingredients = {
+            { "carbon-fiber", 2 }, -- 240
+            { "plastic-bar",  6 }, -- 120
+        },
+        results = {
+            { "low-density-structure", 1 },
+        },
+        subgroup = "vulcanus-processes",
+        order = "b-f-a",
+        localised_name_source = "casting-low-density-structure",
+        localised_description_source = "vgal-carbon-fiber-low-density-structure",
+    },
+    {
         type = "recipe",
         name = "lithium-plate-low-density-structure",
         prefix = "vgal",
@@ -266,109 +270,7 @@ vgal.data.extend({
             { "low-density-structure", 1 },
         },
     },
-    {
-        type = "recipe",
-        name = "ammonia-plastic-bar", -- can be done on aquilo, carbon comes from spoilage
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("ammonia"),
-        },
-        category = "chemistry-or-cryogenics",
-        energy_required = 4,
-        technology = "space-platform",
-        fluid_ingredients = {
-            { "ammonia", 20 }, -- 30
-        },
-        ingredients = {
-            { "carbon", 1 }, -- 50
-        },
-        results = {
-            { "plastic-bar", 5 }, -- 75, 100gb
-        },
-    },
-    {
-        type = "recipe",
-        name = "pentapod-egg-plastic-bar",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("pentapod-egg"),
-        },
-        category = "organic",
-        energy_required = 20,
-        technology = "bioflux-processing",
-        fluid_ingredients = {
-            { "crude-oil", 20 }, -- 10
-        },
-        ingredients = {
-            { "pentapod-egg", 1 },  -- 200
-            { "coal",         1 },  -- 210
-            { "nutrients",    12 }, -- 120
-        },
-        results = {
-            { "plastic-bar", 20 }, -- 300 (400gb * 1.5 = 600)
-        },
-        surface_conditions =
-        {
-            {
-                property = "pressure",
-                min = 2000,
-                max = 2000
-            }
-        },
-    },
-    {
-        type = "recipe",
-        name = "pentapod-egg-bioflux-stone",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get_in_to("pentapod-egg"),
-            vgal.icon.get_out_to("stone"),
-            vgal.icon.get_overlay("to"),
-        },
-        category = "organic",
-        energy_required = 45,
-        technology = "biochamber",
-        ingredients = {
-            { "pentapod-egg", 1 }, -- 200
-            { "bioflux",      2 }, -- 120
-        },
-        results = {
-            { "stone", nil, { amount_min = 10, amount_max = 30 } }, -- 200 * 1.5 = 300
-        },
-        show_amount_in_title = false,
-        surface_conditions =
-        {
-            {
-                property = "pressure",
-                min = 2000,
-                max = 2000,
-            }
-        },
-    },
-    {
-        type = "recipe",
-        name = "sulfur-ammonia-nutrients", -- for nauvis / aquilo
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            -- vgal.icon.get_in("sulfur"),
-            -- vgal.icon.get_overlay("nutrients"),
-            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/sulfur-ammonia-nutrients.png"),
-        },
-        category = "organic-or-assembling",
-        energy_required = 1,
-        technology = "agriculture",
-        fluid_ingredients = {
-            { "ammonia", 25 }, -- 50
-        },
-        ingredients = {
-            { "sulfur", 1 }, -- 15 (20gb)
-        },
-        results = {
-            { "nutrients", 10 }, -- 100
-        },
-    },
+
     -- {
     --     type = "recipe",
     --     name = "lithium-brine-sulfur-ammonia-nutrients", -- for aquilo

@@ -494,24 +494,28 @@ vgal.data.extend({
             { "battery", 5 }, -- 250
         },
     },
-    -- {
-    --     type = "recipe",
-    --     name = "crude-oil-carbon",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("carbon"),
-    --         vgal.icon.get_in("crude-oil"),
-    --     },
-    --     category = "cryogenics",
-    --     energy_required = 0.5,
-    --     technology = "lithium-processing",
-    --     fluid_ingredients = {
-    --         { "crude-oil", 80 },
-    --     },
-    --     results = {
-    --         { "carbon", 1, { probability = 0.25 } },
-    --     },
-    -- },
+    {
+        type = "recipe",
+        name = "ammonia-explosives", -- lets goo, less coal usage on gleba (and in space)!
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("explosives"),
+            vgal.icon.get_in("ammonia"),
+        },
+        category = "chemistry-or-cryogenics",
+        energy_required = 10,
+        technology = "explosives",
+        fluid_ingredients = {
+            { "ammonia", 10 } -- 20
+        },
+        ingredients = {
+            { "coal",   1 }, -- 10 (but 210 on gleba)
+            { "sulfur", 2 }, -- 30
+        },
+        results = {
+            { "explosives", 4 }, -- 60
+        },
+    },
     -- {
     --     type = "recipe",
     --     name = "fluorine-superconductor",
@@ -535,6 +539,58 @@ vgal.data.extend({
     --     },
     --     show_amount_in_title = false,
     -- },
+    {
+        type = "recipe",
+        name = "ammonia-plastic-bar", -- can be done on aquilo, carbon comes from spoilage
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("plastic-bar"),
+            vgal.icon.get_in("ammonia"),
+        },
+        category = "chemistry-or-cryogenics",
+        energy_required = 4,
+        technology = "space-platform",
+        fluid_ingredients = {
+            { "ammonia", 20 }, -- 30
+        },
+        ingredients = {
+            { "carbon", 1 }, -- 50
+        },
+        results = {
+            { "plastic-bar", 5 }, -- 75, 100gb
+        },
+    },
+    {
+        type = "recipe",
+        name = "pentapod-egg-plastic-bar",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("plastic-bar"),
+            vgal.icon.get_in("pentapod-egg"),
+        },
+        category = "organic",
+        energy_required = 20,
+        technology = "bioflux-processing",
+        fluid_ingredients = {
+            { "crude-oil", 20 }, -- 10
+        },
+        ingredients = {
+            { "pentapod-egg", 1 },  -- 200
+            { "coal",         1 },  -- 210
+            { "nutrients",    12 }, -- 120
+        },
+        results = {
+            { "plastic-bar", 20 }, -- 300 (400gb * 1.5 = 600)
+        },
+        surface_conditions =
+        {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000
+            }
+        },
+    },
 }, {
     type = "recipe",
 })

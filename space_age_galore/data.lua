@@ -19,11 +19,13 @@ require("prototypes.intermediates.circuits")
 require("prototypes.intermediates.captive-spawner")
 require("prototypes.intermediates.oil-processing")
 require("prototypes.intermediates.space")
+require("prototypes.intermediates.organic")
 
 require("prototypes.removed")
 
 require("prototypes.buildings.buildings")
 require("prototypes.buildings.belts")
+require("prototypes.buildings.tiles")
 
 require("mods.maraxsis")
 require("mods.james")

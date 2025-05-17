@@ -112,6 +112,35 @@ vgal.data.extend({
     },
     {
         type = "recipe",
+        name = "ammoniacal-solution-iron-bacteria",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("iron-bacteria-cultivation", "recipe"),
+            vgal.icon.get_in("ammoniacal-solution"),
+        },
+        category = "organic",
+        energy_required = 8,
+        technology = "planet-discovery-aquilo",
+        fluid_ingredients = {
+            { "ammoniacal-solution", 50 },
+        },
+        ingredients = {
+            { "iron-bacteria", 1, { ignored_by_stats = 1 } },
+            { "bioflux",       1 },
+        },
+        results = {
+            { "iron-bacteria", 8, { ignored_by_stats = 1 } },
+        },
+        fluid_results = {
+            { "ammonia", 20 },
+        },
+        show_amount_in_title = false,
+        result_is_always_fresh = true,
+        groups = { "vgal-unsure" },
+        order = "bc",
+    },
+    {
+        type = "recipe",
         name = "iron-bacteria-copper-bacteria",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -169,6 +198,35 @@ vgal.data.extend({
                 max = 2000,
             }
         },
+    },
+    {
+        type = "recipe",
+        name = "ammoniacal-solution-copper-bacteria",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("copper-bacteria-cultivation", "recipe"),
+            vgal.icon.get_in("ammoniacal-solution"),
+        },
+        category = "organic",
+        energy_required = 8,
+        technology = "planet-discovery-aquilo",
+        fluid_ingredients = {
+            { "ammoniacal-solution", 50 },
+        },
+        ingredients = {
+            { "copper-bacteria", 1, { ignored_by_stats = 1 } },
+            { "bioflux",         1 },
+        },
+        results = {
+            { "copper-bacteria", 8, { ignored_by_stats = 1 } },
+        },
+        fluid_results = {
+            { "ammonia", 20 },
+        },
+        show_amount_in_title = false,
+        result_is_always_fresh = true,
+        groups = { "vgal-unsure" },
+        order = "bc",
     },
 }, {
     type = "recipe",

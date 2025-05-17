@@ -1,10 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.2
   Features:
-    - Added "copper-bacteria-iron-bacteria" recipe, tagged as unsure.
-    - Added "iron-bacteria-copper-bacteria" recipe, tagged as unsure.
-    - Added "uranium-235-iron-bacteria" recipe, tagged as unsure.
-    - Added "uranium-235-copper-bacteria" recipe, tagged as unsure.
+    - Added "vgal-copper-bacteria-iron-bacteria" recipe.
+    - Added "vgal-iron-bacteria-copper-bacteria" recipe.
+    - Added "vgal-uranium-235-iron-bacteria" recipe, tagged as unsure.
+    - Added "vgal-uranium-235-copper-bacteria" recipe, tagged as unsure.
+    - Added "vgal-ammoniacal-solution-copper-bacteria" recipe, tagged as unsure.
+    - Added "vgal-ammoniacal-solution-iron-bacteria" recipe, tagged as unsure.
   Bugfixes:
     - Fixed ice recipes somehow allowing productivity.
 ---------------------------------------------------------------------------------------------------

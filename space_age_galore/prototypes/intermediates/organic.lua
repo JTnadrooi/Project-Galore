@@ -68,11 +68,12 @@ vgal.data.extend({
         },
         results = {
             { "copper-bacteria", 1 },
-            { "uranium-235",     1, { probability = 0.5, ignored_by_stats = 1 } },
-            { "uranium-238",     1, { probability = 0.5 } },
+            { "uranium-235",     1, { probability = 0.6, ignored_by_stats = 1 } },
+            { "uranium-238",     1, { probability = 0.4 } },
         },
         allow_productivity = false,
         show_amount_in_title = false,
+        order = "bxb"
     },
     {
         type = "recipe",
@@ -97,6 +98,7 @@ vgal.data.extend({
         },
         show_amount_in_title = false,
         groups = { "vgal-unsure" },
+        order = "bb"
     },
     {
         type = "recipe",
@@ -116,11 +118,12 @@ vgal.data.extend({
         },
         results = {
             { "iron-bacteria", 1 },
-            { "uranium-235",   1, { probability = 0.5, ignored_by_stats = 1 } },
-            { "uranium-238",   1, { probability = 0.5 } },
+            { "uranium-235",   1, { probability = 0.6, ignored_by_stats = 1 } },
+            { "uranium-238",   1, { probability = 0.4 } },
         },
         allow_productivity = false,
         show_amount_in_title = false,
+        order = "axb"
     },
     {
         type = "recipe",
@@ -145,6 +148,7 @@ vgal.data.extend({
         },
         show_amount_in_title = false,
         groups = { "vgal-unsure" },
+        order = "ab"
     },
 }, {
     type = "recipe",

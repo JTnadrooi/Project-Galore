@@ -6,9 +6,15 @@ local subgroups = {
         entries = { "quantum-processor" }
     },
     {
-        name = "nutrients",
+        name = "bacteria",
         tab = "intermediate-products",
         order = "ma",
+        entries = { "iron-bacteria", "copper-bacteria" }
+    },
+    {
+        name = "nutrients",
+        tab = "intermediate-products",
+        order = "mb",
         entries = { "nutrients" }
     },
     {
@@ -124,6 +130,8 @@ local toClean = {
     "nutrients-from-spoilage",
     "nutrients-from-yumako-mash",
     "nutrients-from-bioflux",
+    "iron-bacteria-cultivation",
+    "copper-bacteria-cultivation",
     "rocket-fuel-from-jelly",
     "bioplastic",
     "biosulfur",
@@ -170,6 +178,11 @@ data.raw["recipe"]["acid-neutralisation"].main_product = "steam"
 
 data.raw["item"]["pentapod-egg"].subgroup = "agriculture-products"
 data.raw["item"]["pentapod-egg"].order = "c-b"
+
+data.raw["recipe"]["iron-bacteria-cultivation"].order = "aa"
+data.raw["recipe"]["copper-bacteria-cultivation"].order = "ba"
+data.raw["recipe"]["iron-bacteria"].order = "axa"
+data.raw["recipe"]["copper-bacteria"].order = "bxa"
 
 vgal.subgroup.set_item_or_fluid("fusion-power-cell", "uranium-processing")
 vgal.subgroup.set_item_or_fluid("lithium-plate", "vgal-smelting")

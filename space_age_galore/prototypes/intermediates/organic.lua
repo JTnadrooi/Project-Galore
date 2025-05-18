@@ -52,181 +52,6 @@ vgal.data.extend({
     },
     {
         type = "recipe",
-        name = "copper-bacteria-iron-bacteria",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get_in_to("copper-bacteria"),
-            vgal.icon.get_out_to("iron-bacteria"),
-            vgal.icon.get_overlay("to"),
-        },
-        category = "organic",
-        energy_required = 60,
-        technology = { "bacteria-cultivation", "uranium-processing" },
-        ingredients = {
-            { "copper-bacteria", 1 },
-            { "uranium-235",     1, { ignored_by_stats = 1 } },
-        },
-        results = {
-            { "iron-bacteria", 1 },
-            { "uranium-235",   1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
-            { "uranium-238",   1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
-        },
-        allow_productivity = false,
-        show_amount_in_title = false,
-        result_is_always_fresh = true,
-        order = "axb"
-    },
-    {
-        type = "recipe",
-        name = "uranium-235-iron-bacteria",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("iron-bacteria-cultivation", "recipe"),
-            vgal.icon.get_in("uranium-235"),
-        },
-        category = "organic",
-        energy_required = 4,
-        technology = { "bacteria-cultivation", "uranium-processing" },
-        ingredients = {
-            { "iron-bacteria", 1, { ignored_by_stats = 1 } },
-            { "bioflux",       1 },
-            { "uranium-235",   1, { ignored_by_stats = 1 } },
-        },
-        results = {
-            { "iron-bacteria", 15, { ignored_by_stats = 1 } },
-            { "uranium-235",   1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
-            { "uranium-238",   1,  { probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
-        },
-        show_amount_in_title = false,
-        result_is_always_fresh = true,
-        groups = { "vgal-unsure" },
-        order = "ab",
-        surface_conditions =
-        {
-            {
-                property = "pressure",
-                min = 2000,
-                max = 2000,
-            }
-        },
-    },
-    {
-        type = "recipe",
-        name = "ammoniacal-solution-iron-bacteria",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("iron-bacteria-cultivation", "recipe"),
-            vgal.icon.get_in("ammoniacal-solution"),
-        },
-        category = "organic",
-        energy_required = 8,
-        technology = "planet-discovery-aquilo",
-        fluid_ingredients = {
-            { "ammoniacal-solution", 50 },
-        },
-        ingredients = {
-            { "iron-bacteria", 1, { ignored_by_stats = 1 } },
-            { "bioflux",       1 },
-        },
-        results = {
-            { "iron-bacteria", 8, { ignored_by_stats = 1 } },
-        },
-        fluid_results = {
-            { "ammonia", 20 },
-        },
-        show_amount_in_title = false,
-        result_is_always_fresh = true,
-        groups = { "vgal-unsure" },
-        order = "ac",
-    },
-    {
-        type = "recipe",
-        name = "iron-bacteria-copper-bacteria",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get_in_to("iron-bacteria"),
-            vgal.icon.get_out_to("copper-bacteria"),
-            vgal.icon.get_overlay("to"),
-        },
-        category = "organic",
-        energy_required = 60,
-        technology = { "bacteria-cultivation", "uranium-processing" },
-        ingredients = {
-            { "iron-bacteria", 1 },
-            { "uranium-235",   1, { ignored_by_stats = 1 } },
-        },
-        results = {
-            { "copper-bacteria", 1 },
-            { "uranium-235",     1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
-            { "uranium-238",     1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
-        },
-        allow_productivity = false,
-        show_amount_in_title = false,
-        result_is_always_fresh = true,
-        order = "bxb"
-    },
-    {
-        type = "recipe",
-        name = "uranium-235-copper-bacteria",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("copper-bacteria-cultivation", "recipe"),
-            vgal.icon.get_in("uranium-235"),
-        },
-        category = "organic",
-        energy_required = 4,
-        technology = { "bacteria-cultivation", "uranium-processing" },
-        ingredients = {
-            { "copper-bacteria", 1, { ignored_by_stats = 1 } },
-            { "bioflux",         1 },
-            { "uranium-235",     1, { ignored_by_stats = 1 } },
-        },
-        results = {
-            { "copper-bacteria", 15, { ignored_by_stats = 1 } },
-            { "uranium-235",     1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
-            { "uranium-238",     1,  { probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
-        },
-        show_amount_in_title = false,
-        result_is_always_fresh = true,
-        groups = { "vgal-unsure" },
-        order = "bb",
-        surface_conditions =
-        {
-            {
-                property = "pressure",
-                min = 2000,
-                max = 2000,
-            }
-        },
-    },
-    {
-        type = "recipe",
-        name = "ammoniacal-solution-copper-bacteria",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("copper-bacteria-cultivation", "recipe"),
-            vgal.icon.get_in("ammoniacal-solution"),
-        },
-        category = "organic",
-        energy_required = 8,
-        technology = "planet-discovery-aquilo",
-        fluid_ingredients = {
-            { "ammoniacal-solution", 50 },
-        },
-        ingredients = {
-            { "copper-bacteria", 1, { ignored_by_stats = 1 } },
-            { "bioflux",         1 },
-        },
-        results = {
-            { "copper-bacteria", 8, { ignored_by_stats = 1 } },
-        },
-        show_amount_in_title = false,
-        result_is_always_fresh = true,
-        groups = { "vgal-unsure" },
-        order = "bc",
-    },
-    {
-        type = "recipe",
         name = "raw-fish-bioflux",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -277,3 +102,99 @@ vgal.data.extend({
 }, {
     type = "recipe",
 })
+
+for _, metal in ipairs(vgal.constants.METALS) do
+    local bacteria = metal .. "-bacteria"
+    local other_bacteria = (metal == "iron" and "copper" or "iron") .. "-bacteria"
+    local order_base = metal == "iron" and "a" or "b"
+    vgal.data.extend({
+        {
+            type = "recipe",
+            name = other_bacteria .. "-" .. bacteria,
+            prefix = "vgal",
+            icons = vgal.icon.register {
+                vgal.icon.get_in_to(other_bacteria),
+                vgal.icon.get_out_to(bacteria),
+                vgal.icon.get_overlay("to"),
+            },
+            category = "organic",
+            energy_required = 60,
+            technology = { "bacteria-cultivation", "uranium-processing" },
+            ingredients = {
+                { other_bacteria, 1 },
+                { "uranium-235",  1, { ignored_by_stats = 1 } },
+            },
+            results = {
+                { bacteria,      1 },
+                { "uranium-235", 1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
+                { "uranium-238", 1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
+            },
+            allow_productivity = false,
+            show_amount_in_title = false,
+            result_is_always_fresh = true,
+            order = order_base .. "xb"
+        },
+        {
+            type = "recipe",
+            name = "uranium-235-" .. bacteria,
+            prefix = "vgal",
+            icons = vgal.icon.register {
+                vgal.icon.get("iron-bacteria-cultivation", "recipe"),
+                vgal.icon.get_in("uranium-235"),
+            },
+            category = "organic",
+            energy_required = 4,
+            technology = { "bacteria-cultivation", "uranium-processing" },
+            ingredients = {
+                { bacteria,      1, { ignored_by_stats = 1 } },
+                { "bioflux",     1 },
+                { "uranium-235", 1, { ignored_by_stats = 1 } },
+            },
+            results = {
+                { bacteria,      15, { ignored_by_stats = 1 } },
+                { "uranium-235", 1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
+                { "uranium-238", 1,  { probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
+            },
+            show_amount_in_title = false,
+            result_is_always_fresh = true,
+            groups = { "vgal-unsure" },
+            order = order_base .. "b",
+            surface_conditions =
+            {
+                {
+                    property = "pressure",
+                    min = 2000,
+                    max = 2000,
+                }
+            },
+        },
+        {
+            type = "recipe",
+            name = "ammoniacal-solution-" .. bacteria,
+            prefix = "vgal",
+            icons = vgal.icon.register {
+                vgal.icon.get("iron-bacteria-cultivation", "recipe"),
+                vgal.icon.get_in("ammoniacal-solution"),
+            },
+            category = "organic",
+            energy_required = 8,
+            technology = "planet-discovery-aquilo",
+            fluid_ingredients = {
+                { "ammoniacal-solution", 50 },
+            },
+            ingredients = {
+                { bacteria,  1, { ignored_by_stats = 1 } },
+                { "bioflux", 1 },
+            },
+            results = {
+                { bacteria, 8, { ignored_by_stats = 1 } },
+            },
+            show_amount_in_title = false,
+            result_is_always_fresh = true,
+            groups = { "vgal-unsure" },
+            order = order_base .. "c",
+        },
+    }, {
+        type = "recipe",
+    })
+end

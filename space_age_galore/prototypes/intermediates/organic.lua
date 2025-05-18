@@ -146,14 +146,14 @@ for _, metal in ipairs(vgal.constants.METALS) do
             energy_required = 4,
             technology = { "bacteria-cultivation", "uranium-processing" },
             ingredients = {
-                { bacteria,      1, { ignored_by_stats = 1 } },
-                { "bioflux",     1 },
-                { "uranium-235", 1, { ignored_by_stats = 1 } },
+                { bacteria,      1, { ignored_by_stats = 1 } }, -- 12
+                { "bioflux",     1 },                           -- 60
+                { "uranium-235", 1, { ignored_by_stats = 1 } }, -- 700
             },
             results = {
-                { bacteria,      15, { ignored_by_stats = 1 } },
-                { "uranium-235", 1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
-                { "uranium-238", 1,  { probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },
+                { bacteria,      15, { ignored_by_stats = 1 } },                                                                                          -- 180
+                { "uranium-235", 1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } }, -- 686
+                { "uranium-238", 1,  { probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },                       -- 4
             },
             show_amount_in_title = false,
             result_is_always_fresh = true,

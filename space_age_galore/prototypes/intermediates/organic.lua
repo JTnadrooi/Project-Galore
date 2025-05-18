@@ -95,7 +95,7 @@ vgal.data.extend({
             { "raw-fish",  2 },
         },
         results = {
-            { "raw-fish", nil, { amount_min = 1, amount_max = 6 } },
+            { "raw-fish", nil, { amount_min = 1, amount_max = 6, ignored_by_stats = 2, ignored_by_productivity = 2 } },
         },
         show_amount_in_title = false,
     },

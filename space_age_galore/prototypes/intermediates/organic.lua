@@ -220,9 +220,6 @@ vgal.data.extend({
         results = {
             { "copper-bacteria", 8, { ignored_by_stats = 1 } },
         },
-        fluid_results = {
-            { "ammonia", 20 },
-        },
         show_amount_in_title = false,
         result_is_always_fresh = true,
         groups = { "vgal-unsure" },
@@ -259,8 +256,8 @@ vgal.data.extend({
         name = "ammoniacal-solution-raw-fish",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("bioflux"),
-            vgal.icon.get_in("raw-fish"),
+            vgal.icon.get("fish-breeding", "recipe"),
+            vgal.icon.get_in_fluid("ammoniacal-solution"),
         },
         category = "organic",
         energy_required = 6,

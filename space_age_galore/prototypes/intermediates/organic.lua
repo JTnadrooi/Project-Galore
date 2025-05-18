@@ -75,7 +75,6 @@ vgal.data.extend({
             { "fluoroketone-hot", 15, { temperature = 180 } },
         },
         localised_name = { "", "5 \xC3\x97 ", { "recipe-name.vgal-raw-fish-bioflux" } },
-        groups = { "vgal-unsure" },
     },
     {
         type = "recipe",
@@ -98,7 +97,6 @@ vgal.data.extend({
         results = {
             { "raw-fish", 3 },
         },
-        groups = { "vgal-unsure" },
         show_amount_in_title = false,
     },
 }, {

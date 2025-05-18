@@ -99,6 +99,99 @@ vgal.data.extend({
         },
         show_amount_in_title = false,
     },
+    {
+        type = "recipe",
+        name = "spoilage-sulfuric-acid-carbon",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("carbon"),
+            vgal.icon.get_in("spoilage"),
+            vgal.icon.get_in2("sulfuric-acid"),
+        },
+        category = "organic",
+        energy_required = 12,
+        technology = "biochamber",
+        fluid_ingredients = {
+            { "sulfuric-acid", 5 },
+        },
+        ingredients = {
+            { "spoilage", 3 },
+        },
+        results = {
+            { "carbon", 1 },
+        },
+        order = "b[chemistry]-f[carbon]-b",
+        show_amount_in_title = false,
+    },
+    {
+        type = "recipe",
+        name = "wood-carbon",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_in_to("wood"),
+            vgal.icon.get_out_to("carbon"),
+            vgal.icon.get_overlay("to"),
+        },
+        category = "organic",
+        energy_required = 8,
+        technology = "biochamber",
+        ingredients = {
+            { "wood", 6 },
+        },
+        results = {
+            { "carbon", 1 }, -- 50 * 1.5 = 75
+        },
+        fluid_results = {
+            { "water", 10 },
+        },
+        groups = { "vgal-wood-recipes" },
+        order = "b[chemistry]-f[carbon]-c",
+        show_amount_in_title = false,
+    },
+    {
+        type = "recipe",
+        name = "jelly-sulfur-lubricant",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("lubricant"),
+            vgal.icon.get_in_fluid("sulfur"),
+            vgal.icon.get_in_fluid2("jelly"),
+        },
+        category = "organic",
+        energy_required = 1,
+        technology = "bioflux-processing",
+        fluid_ingredients = {
+            { "water", 30 },
+        },
+        ingredients = {
+            { "jelly",  12 }, -- 72
+            { "sulfur", 1 },  -- 15
+        },
+        fluid_results = {
+            { "lubricant", 20 }, -- (1.5)=60
+        },
+    },
+    {
+        name = "jelly-crude-oil-solid-fuel",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("solid-fuel"),
+            vgal.icon.get_in("jelly"),
+            -- vgal.icon.get_in2("crude-oil"),
+        },
+        energy_required = 3,
+        technology = "jellynut",
+        fluid_ingredients = {
+            { "crude-oil", 6 }, -- ~2
+        },
+        ingredients = {
+            { "jelly", 4 }, -- 24
+        },
+        results = {
+            { "solid-fuel", 1 }, -- 20 * 1.5 = 30
+        },
+        category = "organic",
+    },
 }, {
     type = "recipe",
 })

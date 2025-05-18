@@ -140,7 +140,7 @@ for _, metal in ipairs(vgal.constants.METALS) do
             prefix = "vgal",
             icons = vgal.icon.register {
                 vgal.icon.get(bacteria .. "-cultivation", "recipe"),
-                vgal.icon.get_in("uranium-235"),
+                vgal.icon.get_in_fluid("uranium-235"),
             },
             category = "organic",
             energy_required = 8,
@@ -174,7 +174,7 @@ for _, metal in ipairs(vgal.constants.METALS) do
             prefix = "vgal",
             icons = vgal.icon.register {
                 vgal.icon.get(bacteria .. "-cultivation", "recipe"),
-                vgal.icon.get_in("ammoniacal-solution"),
+                vgal.icon.get_in_fluid("ammoniacal-solution"),
             },
             category = "organic",
             energy_required = 8,

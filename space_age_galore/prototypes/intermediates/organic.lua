@@ -98,6 +98,7 @@ vgal.data.extend({
             { "raw-fish", 3 },
         },
         groups = { "vgal-unsure" },
+        show_amount_in_title = false,
     },
 }, {
     type = "recipe",

@@ -19,6 +19,26 @@ vgal.data.extend({
         category = "centrifuging",
         show_amount_in_title = false,
     },
+    {
+        type = "recipe",
+        name = "depleted-uranium-fuel-cell-fusion-power-cell",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("fusion-power-cell"),
+            vgal.icon.get_in("depleted-uranium-fuel-cell"),
+        },
+        category = "cryogenics",
+        energy_required = 20,
+        technology = "fusion-reactor",
+        ingredients = {
+            { "depleted-uranium-fuel-cell", 1 },
+            { "lithium-plate",              2 }, -- 300
+            { "carbon",                     1 }, -- 50
+        },
+        results = {
+            { "fusion-power-cell", 1 }, -- 1200
+        },
+    },
     -- {
     --     name = "fluorine-uranium-ore-uranium-238-uranium-235",
     --     prefix = "vgal",

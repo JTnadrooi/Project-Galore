@@ -5,6 +5,7 @@ Version: 1.5.2
     - Added "vgal-iron-bacteria-copper-bacteria" recipe.
     - Added "vgal-raw-fish-bioflux" recipe.
     - Added "vgal-ammoniacal-solution-raw-fish" recipe.
+    - Added "vgal-depleted-uranium-fuel-cell-fusion-power-cell" recipe.
     - Added "vgal-uranium-235-iron-bacteria" recipe, tagged as unsure.
     - Added "vgal-uranium-235-copper-bacteria" recipe, tagged as unsure.
     - Added "vgal-ammoniacal-solution-copper-bacteria" recipe, tagged as unsure.

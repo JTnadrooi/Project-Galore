@@ -143,7 +143,7 @@ for _, metal in ipairs(vgal.constants.METALS) do
                 vgal.icon.get_in("uranium-235"),
             },
             category = "organic",
-            energy_required = 4,
+            energy_required = 8,
             technology = { "bacteria-cultivation", "uranium-processing" },
             ingredients = {
                 { bacteria,      1, { ignored_by_stats = 1 } }, -- 12

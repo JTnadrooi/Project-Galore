@@ -41,6 +41,10 @@ I will not make a list for the other recipe groups, as their descriptions descri
 -   "carbon-steel-plate"
 -   "metallic-asteroid-chunk-tungsten-ore"
 -   "thruster-oxidizer-thruster-fuel-steam"
+-   "uranium-235-iron-bacteria"
+-   "uranium-235-copper-bacteria"
+-   "ammoniacal-solution-iron-bacteria"
+-   "ammoniacal-solution-copper-bacteria"
 
 ### Silly
 

@@ -52,7 +52,7 @@ vgal.data.extend({
         energy_required = 30,
         technology = { "kovarex-enrichment-process", "cryogenic-plant" },
         fluid_ingredients = {
-            { "fluorine", 50 },
+            { "fluorine", 25 },
         },
         ingredients = {
             { "uranium-235", 10, { ignored_by_stats = 10 } },

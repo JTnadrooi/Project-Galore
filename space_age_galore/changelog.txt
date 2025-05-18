@@ -9,6 +9,9 @@ Version: 1.5.2
     - Added "vgal-uranium-235-copper-bacteria" recipe, tagged as unsure.
     - Added "vgal-ammoniacal-solution-copper-bacteria" recipe, tagged as unsure.
     - Added "vgal-ammoniacal-solution-iron-bacteria" recipe, tagged as unsure.
+    - (Internal) Improved file ordering.
+  Balancing:
+    - "vgal-fluorine-kovarex-enrichment-process" fluorine cost 50 -> 25.
   Bugfixes:
     - Fixed ice recipes somehow allowing productivity.
     - Fixed "vgal-water-fluoroketone-cold-ice" missing hot fluoroketone temp.

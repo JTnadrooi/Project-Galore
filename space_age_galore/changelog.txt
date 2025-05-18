@@ -14,7 +14,8 @@ Version: 1.5.2
     - "vgal-fluorine-kovarex-enrichment-process" fluorine cost 50 -> 25.
   Bugfixes:
     - Fixed ice recipes somehow allowing productivity.
-    - Fixed "vgal-water-fluoroketone-cold-ice" missing hot fluoroketone temp.
+    - Fixed "vgal-water-fluoroketone-cold-ice" missing hot fluoroketone temperature.
+    - Fixed "vgal-carbon-uranium-ore" ignoring min and max amount.
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.1
   Features:

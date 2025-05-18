@@ -13,8 +13,8 @@ vgal.data.extend({
             { "carbon", 15 },
         },
         results = {
-            { "uranium-ore", 1, { amount_min = 1, amount_max = 4 } }, -- avg; 2.5
-            { "carbon",      1, { amount_min = 1, amount_max = 2 } },
+            { "uranium-ore", nil, { amount_min = 1, amount_max = 4 } }, -- avg; 2.5
+            { "carbon",      nil, { amount_min = 1, amount_max = 2 } },
         },
         category = "centrifuging",
         show_amount_in_title = false,

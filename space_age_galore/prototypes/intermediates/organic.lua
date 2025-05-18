@@ -151,7 +151,7 @@ for _, metal in ipairs(vgal.constants.METALS) do
                 { "uranium-235", 1, { ignored_by_stats = 1 } }, -- 700
             },
             results = {
-                { bacteria,      15, { ignored_by_stats = 1 } },                                                                                          -- 180
+                { bacteria,      10, { ignored_by_stats = 1 } },                                                                                          -- r180
                 { "uranium-235", 1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } }, -- 686
                 { "uranium-238", 1,  { probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },                       -- 4
             },

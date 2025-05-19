@@ -17,7 +17,6 @@ do
     ---@field technology? string|table
     ---The array technologies this recipe will be added to as unlock.
     ---@field technologies? string[]|table[]
-    ---The recipe prefix. "vgal-" for (Vanilla) Galore recipes
     ---@field prefix? string
     ---@field ingredients? ItemKeyPrototype[]|table
     ---@field fluid_ingredients? ItemKeyPrototype[]|table
@@ -30,10 +29,12 @@ do
     ---@field localised_name_source? string
     ---@field localised_description_source? string
     ---@field locale_source? string
+    ---Yup.
+    ---@field categories? string[]
 end
 
 do
-    ---A vgal toggle group, desides if certain prototypes are added or not.
+    ---A vgal toggle group, desides if certain prototypes are hidden or not.
     ---@class vgal.VgalToggleGroupPrototype
     ---@field type? string
     ---@field name? string

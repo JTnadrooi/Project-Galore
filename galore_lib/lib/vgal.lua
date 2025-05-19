@@ -232,14 +232,14 @@ function vgal.data.extend(entries, fill_in_with)
             data:extend { entry }
             if entry.technologies then
                 if type(entry.technologies[1]) == "table" then
-                    for i, prer_collection in ipairs(entry.technologies) do
-                        ---@cast prer_collection table
+                    for i, prerequisite_collection in ipairs(entry.technologies) do
+                        ---@cast prerequisite_collection table
 
                         local tech_name = entry.name .. "-node" .. i
 
                         local eventual_units_worth = 0
                         local eventual_units = {}
-                        for _, prerequisite in ipairs(prer_collection) do
+                        for _, prerequisite in ipairs(prerequisite_collection) do
                             local tech = data.raw["technology"][prerequisite]
 
                             local units = vgal.tech.extract_units(tech)
@@ -252,7 +252,7 @@ function vgal.data.extend(entries, fill_in_with)
 
                         data:extend({
                             vgal.tech.create_empty(tech_name, 1, eventual_units, #eventual_units * 5,
-                                #eventual_units >= 4 and 30 or 15, prer_collection,
+                                #eventual_units >= 4 and 30 or 15, prerequisite_collection,
                                 "a", {
                                     {
                                         icon = entry.icons[1].icon,
@@ -270,13 +270,13 @@ function vgal.data.extend(entries, fill_in_with)
                         tech.vgal_can_remove = true
 
                         local pure_trigger = true
-                        for _, pre in ipairs(prer_collection) do
+                        for _, pre in ipairs(prerequisite_collection) do
                             if data.raw["technology"][pre].research_trigger == nil then
                                 pure_trigger = false
                             end
                         end
                         if pure_trigger then
-                            tech.research_trigger = data.raw["technology"][prer_collection[1]].research_trigger
+                            tech.research_trigger = data.raw["technology"][prerequisite_collection[1]].research_trigger
                             tech.unit = nil
                         end
                         tech.localised_name = { "?",
@@ -353,63 +353,51 @@ function vgal.data.deep_hide(entry)
     end
 end
 
-function vgal.any(anyName, includeRecipes)
-    local categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
-        "item-with-entity-data",
-        "rail-planner", "gun" }
-    if includeRecipes then
-        table.insert(categories, "recipe")
-    end
-    for _, category in ipairs(categories) do
-        if data.raw[category][anyName] then
-            return data.raw[category][anyName]
+function vgal.any(any_name)
+    for _, category in ipairs(vgal.constants.RECIPE_ENTRY_CATEGORIES) do
+        if data.raw[category][any_name] then
+            return data.raw[category][any_name]
         end
     end
-    error("ANY of name '" .. anyName .. "' does not exist")
+    error("ANY of name '" .. any_name .. "' does not exist")
 end
 
-function vgal.any_get_source(anyName, includeRecipes)
-    local categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
-        "item-with-entity-data",
-        "rail-planner", "gun" }
-    if includeRecipes then
-        table.insert(categories, "recipe")
-    end
-    for _, category in ipairs(categories) do
-        if data.raw[category][anyName] then
+function vgal.any_get_source(any_name)
+    for _, category in ipairs(vgal.constants.RECIPE_ENTRY_CATEGORIES) do
+        if data.raw[category][any_name] then
             return category
         end
     end
-    error("ANY_SOURCE of name '" .. anyName .. "' does not exist")
+    error("ANY_SOURCE of name '" .. any_name .. "' does not exist")
 end
 
 function vgal.data.finalise()
-    local requiredTechs = {}
-    local toRemove = {}
+    local required_techs = {}
+    local to_remove = {}
     for _, tech in pairs(data.raw["technology"]) do
         for _, p in ipairs(tech.prerequisites or {}) do -- create techs needed for others.
-            requiredTechs[p] = true
+            required_techs[p] = true
         end
         if tech.effects and #tech.effects > 0 then -- if tech even has effects..
             for _, effect in ipairs(tech.effects) do
-                for _, toclean in ipairs(vgal.tech.totrim) do
-                    if effect.recipe == toclean then -- for each toclean, check if its the effect.
+                for _, to_clean in ipairs(vgal.tech.totrim) do
+                    if effect.recipe == to_clean then -- for each toclean, check if its the effect.
                         effect.hidden = true
                         break
                     end
                 end
             end
-            toRemove[tech.name] = true
+            to_remove[tech.name] = true
             for _, effect in ipairs(tech.effects) do
                 if not effect.hidden then
-                    toRemove[tech.name] = nil
+                    to_remove[tech.name] = nil
                 end
             end
         end
     end
     for _, tech in pairs(data.raw["technology"]) do
         ---@diagnostic disable-next-line: undefined-field
-        if toRemove[tech.name] and tech.vgal_can_remove and (not requiredTechs[tech.name]) then
+        if to_remove[tech.name] and tech.vgal_can_remove and (not required_techs[tech.name]) then
             tech.hidden = true
             tech.hidden_in_factoriopedia = true
         end

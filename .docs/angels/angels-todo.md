@@ -7,16 +7,16 @@ Note:
 -   With "normalise" I mean make it so the recipe's ingredients/results don't have amounts like 9, 7 or 84, chances like "50% 3" or "0 to 1". This is just personal preference.
 -   With "direct" fluids/items I mean that they only get used for one thing and are made fairly easily (Usually just gas + catalyst or a bit of steam). I do not like these entries and remove most of them. Again, personal preference.
 
--   [x] remove the extra ores.
--   [x] remove large empty subgroup lists
--   [x] merge tabs.
+-   [x] remove the double ores.
+-   [x] remove large empty subgroup lists.
+-   [x] reduce tab count.
 -   [ ] merge tabs (industries).
 -   [ ] add/fix VGAL angels icon creator wrapper.
 -   [x] make it so VGAL loads.
 -   [x] disable certain VGAL recipes.
 -   [x] increase prod bonus allowance.
--   [x] remove some catalysts related to removed ores.
--   [x] normalise crafting times. (angel's smelthing)
+-   [x] remove catalysts related to removed ores.
+-   [x] normalise crafting times. (angel's smelting)
 -   [x] hide barreling from player crafting.
 -   [x] normalise building recipes.
 -   [x] remove bricks.
@@ -46,6 +46,10 @@ Note:
     -   [x] tiered machines.
     -   [ ] misc (air filter, etc).
 -   [ ] balance material costs with vanilla material costs.
+    -   [x] plastic.
+    -   [ ] sulfuric acid.
+    -   [ ] solid fuel.
+    -   [ ] solid fuel.
 -   [ ] tech fixes.
     -   [x] move lvl1 ore processing to 2 row tech.
     -   [x] move flarestack to basic chem.

@@ -49,7 +49,7 @@ Note:
     -   [x] plastic.
     -   [ ] sulfuric acid.
     -   [ ] solid fuel.
-    -   [ ] solid fuel.
+    -   [ ] explosives.
 -   [ ] tech fixes.
     -   [x] move lvl1 ore processing to 2 row tech.
     -   [x] move flarestack to basic chem.

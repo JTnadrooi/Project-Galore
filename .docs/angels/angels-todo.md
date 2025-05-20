@@ -22,7 +22,7 @@ Note:
 -   [x] remove bricks.
     -   [x] remove reinforced bricks.
 -   [ ] override angels industry settings.
--   [ ] overhault dormant seed refreshing recipes. (add prod to seed extractor, de-bulkify recipes)
+-   [ ] (?) overhault dormant seed refreshing recipes. (add prod to seed extractor, de-bulkify recipes)
 -   [ ] (?) nerf the polluted water yield of some fish recipes.
 -   [ ] replace tier icons with VGAL-like icons.
 -   [x] remove unneeded technologies.
@@ -30,7 +30,8 @@ Note:
 -   [ ] overhaul/normalise water washing recipes.
 -   [x] overhaul rocket fuel crafting.
 -   [ ] gem overhaul.
-    -   [x] remove gem result from ore processing.
+    -   [x] remove gem result from ore crystal processing.
+    -   [ ] (?) add gem result to ore pure processing.
 -   [x] fix the using of reskinned icons.
 -   [x] remove alien samples. (or make it at least not used for research)
 -   [ ] spoilage. (optional setting)
@@ -45,9 +46,9 @@ Note:
 -   [ ] add mod slots to more machines.
     -   [x] tiered machines.
     -   [ ] misc (air filter, etc).
--   [ ] balance material costs with vanilla material costs.
+-   [ ] balance material costs with vanilla material costs. (Although eveything DID get more expensive bc of refining)
     -   [x] plastic.
-    -   [ ] sulfuric acid.
+    -   [ ] (?) sulfur.
     -   [ ] solid fuel.
     -   [ ] explosives.
 -   [ ] tech fixes.

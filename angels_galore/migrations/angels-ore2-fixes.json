@@ -1,0 +1,22 @@
+{
+    "item": [
+        ["angels-ore4", "angels-ore3"],
+        ["angels-ore4-crushed", "angels-ore3-crushed"],
+        ["angels-ore4-chunk", "angels-ore3-chunk"],
+        ["angels-ore4-crystal", "angels-ore3-crystal"],
+        ["angels-ore4-pure", "angels-ore3-pure"]
+    ],
+    "entity": [["angels-ore4", "angels-ore3"]],
+    "recipe": [
+        ["angelsore4-crushed-hand", "angelsore3-crushed-hand"],
+        ["angelsore4-crushed", "angelsore3-crushed"],
+        ["angelsore4-chunk", "angelsore3-chunk"],
+        ["angelsore4-crystal", "angelsore3-crystal"],
+        ["angelsore4-pure", "angelsore3-pure"],
+
+        ["angelsore4-crushed-processing", "angelsore3-crushed-processing"],
+        ["angelsore4-chunk-processing", "angelsore3-chunk-processing"],
+        ["angelsore4-crystal-processing", "angelsore3-crystal-processing"],
+        ["angelsore4-pure-processing", "angelsore3-pure-processing"]
+    ]
+}

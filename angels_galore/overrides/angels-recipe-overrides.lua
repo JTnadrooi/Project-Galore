@@ -7,8 +7,7 @@ vgal.recipe.all.replace_ingredient("catalyst-metal-yellow", { type = "item", nam
 vgal.recipe.all.replace_ingredient("catalyst-metal-blue", { type = "item", name = "catalyst-metal-green", amount = 1 })
 vgal.data.trim("catalyst-metal-blue")
 vgal.data.trim("catalyst-metal-yellow")
-local UNNEEDED_ORES = { "2", "4" }
-for _, ore in ipairs(UNNEEDED_ORES) do
+for _, ore in ipairs(agal.constants.REMOVED_ORE_INDEXES) do
     vgal.data.deep_hide(data.raw["item"]["angels-ore" .. ore])
     for _, state in ipairs(agal.constants.ORE_STATES) do
         vgal.data.trim("angelsore" .. ore .. "-" .. state .. "-processing")
@@ -142,8 +141,8 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-chunk", 4, "angels-ore" .. ore_index .. "-chunk")
 
     -- chunk geode removal
-    if ore_index == 1 then
-        vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-chunk", 0, "geode-blue")
+    if ore_index == 2 then
+        vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-chunk", 0, "geode-purple")
     else
         vgal.recipe.set_result_amount("angelsore" .. ore_index .. "-chunk", 0, "geode-yellow")
     end

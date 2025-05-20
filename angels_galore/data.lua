@@ -13,4 +13,5 @@ for _, inserter in pairs(data.raw["inserter"]) do
     inserter.stack_size_bonus = (inserter.stack_size_bonus or 0) + 2
 end
 
+require("prototypes.imitations")
 require("prototypes.metal-both")

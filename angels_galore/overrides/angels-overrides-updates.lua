@@ -3,13 +3,22 @@
 
 
 data.raw.recipe["angelsore-crystal-mix1-processing"].ingredients = vgal.build.table({
-    { "angels-ore1-crystal", 2 },
+    { "angels-ore2-crystal", 2 },
     { "angels-ore3-crystal", 2 },
 })
 data.raw.recipe["angelsore-pure-mix1-processing"].ingredients = vgal.build.table({
-    { "angels-ore1-pure", 2 },
+    { "angels-ore2-pure", 2 },
     { "angels-ore3-pure", 2 },
 })
+data.raw.recipe["catalyst-metal-green"].ingredients = vgal.build.table({
+    { "catalyst-metal-carrier", 10 },
+    { "angels-ore3",            1 },
+})
+data.raw.recipe["catalyst-metal-red"].ingredients = vgal.build.table({
+    { "catalyst-metal-carrier", 10 },
+    { "angels-ore2",            1 },
+})
+
 
 vgal.recipe.set_ingredient_amount("angelsore-pure-mix1-processing", 1)
 vgal.recipe.multiply("angelsore-pure-mix1-processing", 2, nil, true)
@@ -43,17 +52,6 @@ table.insert(data.raw["technology"]["water-treatment"].prerequisites, "water-was
 --- lab inputs ---
 vgal.table.remove(data.raw["lab"]["lab"].inputs, "token-bio")
 
---- catalysts ---
-
-data.raw.recipe["catalyst-metal-green"].ingredients = vgal.build.table({
-    { "catalyst-metal-carrier", 10 },
-    { "angels-ore3",            1 },
-})
-data.raw.recipe["catalyst-metal-red"].ingredients = vgal.build.table({
-    { "catalyst-metal-carrier", 10 },
-    { "angels-ore1",            1 },
-})
-
 --- brick removal (clay/reinforced) ---
 vgal.data.trim("angels-reinforced-concrete-brick")
 vgal.data.trim("angels-clay-brick")
@@ -72,8 +70,10 @@ for _, metal in ipairs(vgal.constants.METALS) do
     data.raw.recipe["angels-plate-" .. metal].energy_required = 1
     vgal.recipe.multiply("angels-plate-" .. metal, 1.25)
 end
-data.raw.recipe["angelsore1-crushed-smelting"].energy_required = 6.4
-data.raw.recipe["angelsore3-crushed-smelting"].energy_required = 6.4
+
+-- for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
+--     data.raw.recipe["angelsore" .. ore_index .. "-crushed-smelting"].energy_required = 6.4
+-- end
 
 data.raw.recipe["angels-plate-steel"].energy_required = 1
 vgal.recipe.multiply("angels-plate-steel", 1.25)

@@ -55,7 +55,6 @@ Note:
     -   [x] move lvl1 ore processing to 2 row tech.
     -   [x] move flarestack to basic chem.
     -   [ ] move fruit processing recipes to later.
-    -   [ ] proper prerequisites.
 -   [ ] remove "direct" gasses/fluids.
     -   [x] remove formaldehyde.
     -   [ ] remove polyethylene. (maybe, probably not as its just too crucial of a production step)
@@ -67,6 +66,7 @@ Note:
     -   [ ] remove sodium hypochloride.
     -   [ ] remove monochloramine.
 -   [ ] diverify mining results of naturally spawning entities.
+-   [x] remove manual recipes. (using the additional_categories property.. :drool:)
 -   [ ] add hoggers..?
     -   [ ] generalise refugiums.
 -   [ ] add recipes GALORE.

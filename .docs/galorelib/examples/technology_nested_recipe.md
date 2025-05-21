@@ -1,4 +1,4 @@
-## Nested technologies
+## TechnologyPrototype Nested Recipe(s)
 
 An example showcasing the nested recipe feature, in addition to some of the new recipe/tech properties.
 
@@ -53,3 +53,10 @@ vgal.data.extend({
     }
 ) -- all the vgal-exclusive properties get saved within the prototype's _vgal property.
 ```
+
+### result
+
+A technology named "test-example-technology" with as only recipe unlock "test-carbon-uranium-ore-2".
+
+The icon of "test-carbon-uranium-ore-2";
+![icon](.media/galore_lib/test-carbon-uranium-ore-2_icon.png)

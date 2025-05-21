@@ -13,3 +13,7 @@ data.raw.recipe["garden-cultivating"].icons = vgal.icon.register({
     vgal.icon.get_out2("desert-garden"),
     vgal.icon.get_out3("swamp-garden"),
 })
+data.raw["recipe"]["angelsore2-crushed-smelting"].icons = vgal.icon.register({
+    vgal.icon.get("iron-plate"),
+    vgal.icon.get_in("angels-ore2-crushed"),
+})

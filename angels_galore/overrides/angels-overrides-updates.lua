@@ -71,9 +71,9 @@ for _, metal in ipairs(vgal.constants.METALS) do
     vgal.recipe.multiply("angels-plate-" .. metal, 1.25)
 end
 
--- for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
---     data.raw.recipe["angelsore" .. ore_index .. "-crushed-smelting"].energy_required = 6.4
--- end
+for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
+    data.raw.recipe["angelsore" .. ore_index .. "-crushed-smelting"].energy_required = 6.4
+end
 
 data.raw.recipe["angels-plate-steel"].energy_required = 1
 vgal.recipe.multiply("angels-plate-steel", 1.25)
@@ -447,3 +447,8 @@ data.raw["recipe"]["bio-refugium-biter"].ingredients = vgal.build.table({
 table.insert(data.raw["technology"]["bio-processing-green"].unit.ingredients, { "logistic-science-pack", 1 })
 table.insert(data.raw["technology"]["bio-processing-green"].prerequisites, "bio-nutrient-paste")
 vgal.tech.move_recipe("bio-processing-green", "water-treatment", "water-mineralized")
+
+--- misc ---
+data.raw["recipe"]["angelsore2-crushed-smelting"].order = data.raw["recipe"]["angelsore1-crushed-smelting"].order;
+data.raw["recipe"]["angelsore2-crushed-smelting"].subgroup = data.raw["recipe"]["angelsore1-crushed-smelting"].subgroup;
+data.raw["resource"]["angels-ore2"].minable.mining_time = 1

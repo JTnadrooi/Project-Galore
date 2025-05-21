@@ -1,4 +1,4 @@
-## TechnologyPrototype Nested Recipe(s)
+## `vgal.TechnologyPrototype` Nested Recipe(s)
 
 An example showcasing the nested recipe feature, in addition to some of the new recipe/tech properties.
 

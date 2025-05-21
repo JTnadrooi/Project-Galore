@@ -1,6 +1,6 @@
 ## Nested technologies
 
-An example showcasing the nested recipe feature, in addition to some of the new recipe properties.
+An example showcasing the nested recipe feature, in addition to some of the new recipe/tech properties.
 
 ```lua
 vgal.data.extend({

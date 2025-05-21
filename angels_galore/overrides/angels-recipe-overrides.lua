@@ -181,11 +181,11 @@ vgal.recipe.multiply("angels-wire-coil-copper-casting-fast", 2)
 --- remove hand recipes ---
 vgal.data.trim("angelsore1-crushed-hand")
 vgal.data.trim("angelsore3-crushed-hand")
+-- table.insert(data.raw["recipe"]["angelsore1-crushed-hand"].additional_categories,)
 
 --- remove residual removed ore recipe ---
 vgal.data.trim("angelsore1-crushed-smelting")
 
--- table.insert(data.raw["recipe"]["angelsore1-crushed-hand"].additional_categories,)
 
 --- crystal overhaul/restore ---
 vgal.recipe.multiply("crystal-powder-slurry", 10)

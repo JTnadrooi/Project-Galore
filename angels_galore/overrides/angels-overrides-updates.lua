@@ -447,7 +447,9 @@ data.raw["recipe"]["bio-refugium-biter"].ingredients = vgal.build.table({
 table.insert(data.raw["technology"]["bio-processing-green"].unit.ingredients, { "logistic-science-pack", 1 })
 table.insert(data.raw["technology"]["bio-processing-green"].prerequisites, "bio-nutrient-paste")
 vgal.tech.move_recipe("bio-processing-green", "water-treatment", "water-mineralized")
-
+--- align ore processing ---
+vgal.recipe.replace_ingredient("angelsore2-crystal", "liquid-hydrofluoric-acid", "liquid-sulfuric-acid")
+vgal.recipe.replace_result("angelsore2-chunk", "water-greenyellow-waste", "water-yellow-waste")
 --- misc ---
 data.raw["recipe"]["angelsore2-crushed-smelting"].order = data.raw["recipe"]["angelsore1-crushed-smelting"].order;
 data.raw["recipe"]["angelsore2-crushed-smelting"].subgroup = data.raw["recipe"]["angelsore1-crushed-smelting"].subgroup;

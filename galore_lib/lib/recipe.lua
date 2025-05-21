@@ -123,12 +123,7 @@ end
 -- end
 
 function vgal.recipe.deep_hide(recipe_name)
-    local recipe = data.raw["recipe"][recipe_name]
-    recipe.hidden = true
-    recipe.hidden_in_factoriopedia = true
-    recipe.hide_from_player_crafting = true
-    recipe.hide_from_stats = true
-    recipe.hide_from_signal_gui = true
+    vgal.data.deep_hide(data.raw["recipe"][recipe_name])
 end
 
 function vgal.recipe.copy(recipe_name)

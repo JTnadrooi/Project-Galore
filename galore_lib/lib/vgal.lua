@@ -351,6 +351,12 @@ function vgal.data.deep_hide(entry)
     if entry.type == "fluid" then
         entry.auto_barrel = false
     end
+    if entry.type == "recipe" then
+        entry.auto_barrel = false
+        entry.hide_from_stats = true
+        entry.hide_from_player_crafting = true
+        entry.enabled = false
+    end
 end
 
 function vgal.any(any_name)

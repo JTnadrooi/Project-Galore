@@ -7,7 +7,7 @@ local subgroups = {
         when_settings = { "vgal-modules" },
     },
     {
-        name = "angels-smelthing-machines",
+        name = "angels-smelting-machines",
         tab = "resource-refining",
         order = "y-ze",
         entries = {

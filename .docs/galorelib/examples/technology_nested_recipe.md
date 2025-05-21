@@ -54,9 +54,10 @@ vgal.data.extend({
 ) -- all the vgal-exclusive properties get saved within the prototype's _vgal property.
 ```
 
-### result
+### Result
 
 A technology named "test-example-technology" with as only recipe unlock "test-carbon-uranium-ore-2".
 
 The icon of "test-carbon-uranium-ore-2";
-![icon](.media/galore_lib/test-carbon-uranium-ore-2_icon.png)
+
+![icon](/.media/galore_lib/test-carbon-uranium-ore-2_icon.png)

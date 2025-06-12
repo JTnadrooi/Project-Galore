@@ -190,6 +190,7 @@ vgal.data.trim("angelsore1-crushed-smelting")
 --- crystal overhaul/restore ---
 vgal.recipe.multiply("crystal-powder-slurry", 10)
 
+
 -- misc worth fixes --
 
 --- crafting speed restores ---

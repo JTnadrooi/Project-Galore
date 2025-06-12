@@ -442,7 +442,11 @@ data.raw["recipe"]["bio-refugium-biter"].ingredients = vgal.build.table({
     { "pipe",            30 },
     { "processing-unit", 5 },
 })
-
+--- ore restore.. kinda ---
+for _, ore_state in ipairs(agal.constants.ORE_STATES) do
+    data.raw["recipe"]["angelsore2-" .. ore_state .. "-processing"].results =
+        table.deepcopy(data.raw["recipe"]["angelsore1-" .. ore_state .. "-processing"].results)
+end
 --- algae fix ---
 table.insert(data.raw["technology"]["bio-processing-green"].unit.ingredients, { "logistic-science-pack", 1 })
 table.insert(data.raw["technology"]["bio-processing-green"].prerequisites, "bio-nutrient-paste")

@@ -1,23 +1,23 @@
-for _, metal in ipairs(vgal.constants.METALS) do
-    vgal.data.extend({
-        {
-            name = "angels-" .. metal .. "-nugget-angels-" .. metal .. "-pebbles",
-            prefix = "vgal",
-            icons = vgal.icon.register {
-                vgal.icon.get("angels-" .. metal .. "-pebbles"),
-                vgal.icon.get_in("angels-" .. metal .. "-nugget"),
-            },
-            energy_required = 1.5,
-            technology = "advanced-ore-refining-1",
-            ingredients = {
-                { "angels-" .. metal .. "-nugget", 3 },
-            },
-            results = {
-                { "angels-" .. metal .. "-pebbles", 6 },
-            },
-            category = "ore-refining-t1",
-        },
-    }, {
-        type = "recipe",
-    })
-end
+-- for _, metal in ipairs(vgal.constants.METALS) do
+--     vgal.data.extend({
+--         {
+--             name = "angels-" .. metal .. "-nugget-angels-" .. metal .. "-pebbles",
+--             prefix = "vgal",
+--             icons = vgal.icon.register {
+--                 vgal.icon.get("angels-" .. metal .. "-pebbles"),
+--                 vgal.icon.get_in("angels-" .. metal .. "-nugget"),
+--             },
+--             energy_required = 1.5,
+--             technology = "advanced-ore-refining-1",
+--             ingredients = {
+--                 { "angels-" .. metal .. "-nugget", 3 },
+--             },
+--             results = {
+--                 { "angels-" .. metal .. "-pebbles", 6 },
+--             },
+--             category = "ore-refining-t1",
+--         },
+--     }, {
+--         type = "recipe",
+--     })
+-- end

@@ -225,7 +225,34 @@ for _, metal in ipairs(vgal.constants.METALS) do
             allow_productivity = false,
             show_amount_in_title = false,
             result_is_always_fresh = true,
-            order = order_base .. "xb"
+            order = order_base .. "xba",
+            groups = { "vgal-removed" }, -- I'm sorry for that one player using this for q5, I forgot about the internal prod boost..
+        },
+        {
+            type = "recipe",
+            name = other_bacteria .. "-" .. bacteria .. "-centrifuging",
+            prefix = "vgal",
+            icons = vgal.icon.register {
+                vgal.icon.get_in_to(other_bacteria),
+                vgal.icon.get_out_to(bacteria),
+                vgal.icon.get_overlay("to"),
+            },
+            category = "centrifuging",
+            energy_required = 30,
+            technology = { "bacteria-cultivation", "uranium-processing" },
+            ingredients = {
+                { other_bacteria, 1 },
+                { "uranium-235",  1, { ignored_by_stats = 1 } },
+            },
+            results = {
+                { bacteria,      1 },
+                { "uranium-235", 1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
+                { "uranium-238", 1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
+            },
+            allow_productivity = false,
+            show_amount_in_title = false,
+            result_is_always_fresh = true,
+            order = order_base .. "xbb",
         },
         {
             type = "recipe",

@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.3
+  Balancing:
+    - Removed "vgal-copper-bacteria-iron-bacteria" recipe. (I'm sorry for that one player using this for q5, I forgot about the internal prod boost..)
+    - Removed "vgal-iron-bacteria-copper-bacteria" recipe.
+    - Added "vgal-copper-bacteria-iron-bacteria-centrifuging" recipe.
+    - Added "vgal-iron-bacteria-copper-bacteria-centrifuging" recipe.
+---------------------------------------------------------------------------------------------------
 Version: 1.5.2
   Features:
     - Added "vgal-copper-bacteria-iron-bacteria" recipe.

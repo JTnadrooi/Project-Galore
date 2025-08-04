@@ -1,7 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.3
   Features:
-    - Added "bioprocessing-tab" mod compat.
     - Added "vgal-depleted-uranium-fuel-cell-fusion-power-cell" recipe.
     - Added "vgal-copper-bacteria-iron-bacteria-centrifuging" recipe.
     - Added "vgal-iron-bacteria-copper-bacteria-centrifuging" recipe.
@@ -10,7 +9,8 @@ Version: 1.5.3
     - Removed "vgal-iron-bacteria-copper-bacteria" recipe. - HAS REPLACEMENT
     - Made it so "vgal-water-coal-ammonia" can be crafted in a biochamber as well as a chemical plant.
   Bugfixes:
-    - Renamed "vgal-oxide-asteroid-chunk-ammoniacal-solution" (Oxide asteroid chunk leaching) to "Oxide asteroid leaching"
+    - Renamed "vgal-oxide-asteroid-chunk-ammoniacal-solution" (Oxide asteroid chunk leaching) to "Oxide asteroid leaching".
+    - Fixed compat with bob assembling.
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.2
   Features:

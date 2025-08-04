@@ -19,7 +19,8 @@ end
 
 function vgal.tech.add_productivity_change(tech_name, recipe_name, change, hidden)
     local tech = data.raw["technology"][tech_name]
-    if tech and tech.effects then
+    if tech then
+        tech.effects = tech.effects or {}
         table.insert(
             tech.effects,
             {

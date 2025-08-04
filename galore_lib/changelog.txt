@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.1
+  Bugfixes:
+    - Fixed crashes related to automatic productivity tech scanning. (Thanks Nicholas!)
+---------------------------------------------------------------------------------------------------
 Version: 1.6.0
   Bugfixes:
     - Fixed productivity evaluation bug.

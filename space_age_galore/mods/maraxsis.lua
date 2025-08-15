@@ -1,4 +1,9 @@
 if not mods["maraxsis"] then return end
+if data.raw["technology"]["maraxsis-deepsea-research"] then
+    vgal.log("maraxsis-deepsea-research tech not found.")
+    return
+end
+
 
 local pack_fluids = {
     ["automation-science-pack"] = { "maraxsis-saline-water", 50 },
@@ -21,8 +26,12 @@ for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
             ---@cast new_recipe data.RecipePrototype
             local result_amount = new_recipe.results[1].amount
             table.insert(new_recipe.ingredients,
-                { type = "fluid", name = pack_fluids[result_pack][1], amount = pack_fluids[result_pack][2] *
-                result_amount })
+                {
+                    type = "fluid",
+                    name = pack_fluids[result_pack][1],
+                    amount = pack_fluids[result_pack][2] *
+                        result_amount
+                })
 
             new_recipe.results[1].amount = result_amount * 2 -- double amounts
             new_recipe.category = "maraxsis-hydro-plant"
@@ -38,11 +47,8 @@ for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
 
             new_recipe.name = "vgal-maraxsis-deepsea-research-" .. string.sub(new_recipe.name, 6)
             table.insert(new_recipes, new_recipe)
-            if data.raw["technology"]["maraxsis-deepsea-research"] then
-                table.insert(data.raw["technology"]["maraxsis-deepsea-research"].effects,
-                    { type = "unlock-recipe", recipe = new_recipe.name })
-            end
-            vgal.log("maraxsis-deepsea-research tech not found.")
+            table.insert(data.raw["technology"]["maraxsis-deepsea-research"].effects,
+                { type = "unlock-recipe", recipe = new_recipe.name })
         end
     elseif recipe.main_product == "electric-engine-unit" or recipe.main_product == "engine-unit" then
         recipe.category = "maraxsis-hydro-plant-or-advanced-crafting"

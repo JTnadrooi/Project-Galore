@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.5.4
   Features:
-    - Added primitive Cerys support.
+    - Added Cerys support.
   Bugfixes:
     - Fixed Ammoniacal fish breeding not outputting fresh results.
     - Reduced startup-crash-prone-ness when playing with many planet mods.

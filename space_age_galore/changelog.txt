@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.5.4
+  Features:
+    - Added primitive Cerys support.
+  Bugfixes:
+    - Fixed Ammoniacal fish breeding not outputting fresh results.
+    - Reduced startup-crash-prone-ness when playing with many planet mods.
+---------------------------------------------------------------------------------------------------
 Version: 1.5.3
   Features:
     - Added "vgal-depleted-uranium-fuel-cell-fusion-power-cell" recipe.

@@ -1,5 +1,5 @@
 if not mods["maraxsis"] then return end
-if data.raw["technology"]["maraxsis-deepsea-research"] then
+if not data.raw["technology"]["maraxsis-deepsea-research"] then
     vgal.log("maraxsis-deepsea-research tech not found; skipping maraxsis compat logic")
     return
 end

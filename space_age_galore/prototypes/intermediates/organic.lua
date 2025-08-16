@@ -85,6 +85,7 @@ vgal.data.extend({
             vgal.icon.get_in_fluid("ammoniacal-solution"),
         },
         category = "organic",
+        reset_freshness_on_craft = true,
         energy_required = 6,
         technology = "planet-discovery-aquilo",
         fluid_ingredients = {

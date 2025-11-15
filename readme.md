@@ -2,8 +2,6 @@
 
 A collection of mods focused on adding more recipes to the base game and Space Age.
 
-_2500 downloads!_
-
 ![gleba](.media/gleba_galore.png)
 
 ## Current Installations

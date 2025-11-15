@@ -1,10 +1,6 @@
-.vscode/
 .ignore/
-.scripts/
-.vscode
-.scripts
+.vscode/settings.json
 galore_suite/
 .notes
-thumbnails/
 .VSCodeCounter/
 .img/

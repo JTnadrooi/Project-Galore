@@ -1,5 +1,5 @@
 # Array of mod folders
-$MOD_FOLDERS = @("space_age_galore", "vanilla_galore_continued", "galore_suite")
+$MOD_FOLDERS = @("space_age_galore", "angels_galore", "vanilla_galore_continued", "galore_lib")
 
 # Get the username from the environment variable
 $USER_NAME = [System.Environment]::GetEnvironmentVariable("USERPROFILE").Split("\")[-1]

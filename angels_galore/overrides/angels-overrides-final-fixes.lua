@@ -70,7 +70,8 @@ end
 
 -- actually remove the unwanted techs.
 for name, _ in pairs(to_remove) do
-    data.raw.technology[name] = nil
+    -- data.raw.technology[name] = nil
+    -- log("blah blah blah " .. name)
 end
 
 --- clean subgroups bc anywhere else this code is just a suggestion ---

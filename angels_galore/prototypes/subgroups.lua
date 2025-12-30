@@ -8,84 +8,88 @@ local subgroups = {
     },
     {
         name = "angels-smelting-machines",
-        tab = "resource-refining",
+        tab = "angels-resource-refining",
         order = "y-ze",
         entries = {
-            "blast-furnace", "induction-furnace", "casting-machine", "strand-casting-machine", "ore-processing-machine",
-            "pellet-press", "powder-mixer", "ore-powderizer",
+            "angels-blast-furnace", "angels-induction-furnace", "angels-casting-machine", "angels-strand-casting-machine",
+            "angels-ore-processing-machine",
+            "angels-pellet-press", "angels-powder-mixer", "angels-ore-powderizer",
         },
         reorder_entries = true,
     },
     {
         name = "angels-ore-machines",
-        tab = "resource-refining",
+        tab = "angels-resource-refining",
         order = "y-zf",
         entries = {
-            "burner-ore-crusher", "ore-crusher", "ore-sorting-facility", "ore-sorting-facility-2",
-            "ore-floatation-cell", "ore-leaching-plant", "ore-refinery",
+            "angels-burner-ore-crusher", "angels-ore-crusher", "angels-ore-sorting-facility",
+            "angels-ore-sorting-facility-2",
+            "angels-ore-floatation-cell", "angels-ore-leaching-plant", "angels-ore-refinery",
         },
         reorder_entries = true,
     },
     {
         name = "angels-white-water-machines",
-        tab = "petrochem-refining",
+        tab = "angels-petrochem-refining",
         order = "y-za",
         entries = {
-            "hydro-plant", "salination-plant", "cooling-tower", "clarifier", "angels-flare-stack",
+            "angels-hydro-plant", "angels-salination-plant", "angels-cooling-tower", "angels-clarifier",
+            "angels-flare-stack",
         },
         reorder_entries = true,
     },
     {
         name = "angels-water-machines",
-        tab = "petrochem-refining",
+        tab = "angels-petrochem-refining",
         order = "y-zb",
         entries = {
-            "offshore-pump", "ground-water-pump", "seafloor-pump", "sea-pump", "washing-plant",
+            "offshore-pump", "angels-ground-water-pump", "angels-seafloor-pump", "angels-sea-pump",
+            "angels-washing-plant",
             "angels-electrolyser", "angels-electrolyser-2", "angels-electric-boiler", "angels-electric-boiler-2",
         },
         reorder_entries = true,
     },
     {
         name = "angels-chemistry-machines",
-        tab = "petrochem-refining",
+        tab = "angels-petrochem-refining",
         order = "y-zc",
         entries = {
             "angels-air-filter",
-            "liquifier", "liquifier-2",
-            "angels-chemical-plant", "angels-chemical-plant-2",
-            "advanced-chemical-plant", "advanced-chemical-plant-2",
+            "angels-liquifier", "angels-liquifier-2",
+            "chemical-plant", "angels-chemical-plant-2",
+            "angels-advanced-chemical-plant", "angels-advanced-chemical-plant-2",
         },
         reorder_entries = true,
     }, -- the liquifiers don't listen here, is fixed in update phase.
     {
         name = "angels-petrochem-machines",
-        tab = "petrochem-refining",
+        tab = "angels-petrochem-refining",
         order = "y-zd",
         entries = {
-            "oil-refinery", "gas-refinery-small", "gas-refinery",
-            "separator", "separator-2", "steam-cracker",
+            "oil-refinery", "angels-gas-refinery-small", "angels-gas-refinery",
+            "angels-separator", "angels-separator-2", "angels-steam-cracker",
         },
         reorder_entries = true,
     }, -- the oil refinery doesn't listen here, is fixed in update phase.
     -- {
     --     name = "angels-copper-casting-2",
-    --     tab = "resource-refining",
+    --     tab = "angels-resource-refining",
     --     order = "y-ec",
     --     entries = { "copper-plate", "copper-cable", },
     -- }, -- both don't listen so i just repurpose the "angels-casting" subgroup.
     {
         name = "angels-cement-concrete",
-        tab = "resource-refining",
+        tab = "angels-resource-refining",
         order = "x-nb",
         entries = {
-            "solid-lime", "solid-cement", "stone-brick", "concrete-brick", -- reinforced and clay removed
-            "bio-tile",
+            "angels-solid-lime", "angels-solid-cement", "stone-brick", "angels-concrete-brick", -- reinforced and clay removed
+            "angels-bio-tile",
         },
         reorder_entries = true,
     }, -- stone-brick doesn't listen here, is fixed in update phase.
     {
         name = "angels-solid-concrete",
-        tab = "resource-refining",
+        tab = "angels-resource-refining",
         order = "y-nb",
         entries = {
             "concrete", "hazard-concrete",
@@ -98,26 +102,26 @@ local subgroups = {
 for _, metal in ipairs(vgal.constants.METALS) do
     local mid_order = (metal == "copper") and "e" or "f"
     local processing_entries = {
-        "processed-" .. metal,
-        "pellet-" .. metal,
+        "angels-processed-" .. metal,
+        "angels-pellet-" .. metal,
     }
-    if metal == "copper" then table.insert(processing_entries, "anode-" .. metal) end
-    table.insert(processing_entries, "ingot-" .. metal)
+    if metal == "copper" then table.insert(processing_entries, "angels-anode-" .. metal) end
+    table.insert(processing_entries, "angels-ingot-" .. metal)
     table.insert(subgroups, {
         name = "angels-" .. metal .. "-processing",
-        tab = "resource-refining",
+        tab = "angels-resource-refining",
         order = "y-" .. mid_order .. "a",
         entries = processing_entries,
         reorder_entries = true,
     })
     local casting_entries = {
-        "liquid-molten-" .. metal,
+        "angels-liquid-molten-" .. metal,
         "angels-roll-" .. metal,
     }
     if metal == "copper" then table.insert(casting_entries, "angels-wire-coil-" .. metal) end
     table.insert(subgroups, {
         name = "angels-" .. metal .. "-casting",
-        tab = "resource-refining",
+        tab = "angels-resource-refining",
         order = "y-" .. mid_order .. "b",
         entries = casting_entries,
     })
@@ -133,10 +137,10 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
         data.raw["item"][ore].order = "a-" ..
             vgal.subgroup.order_from_number(ore_state_index)
 
-        vgal.subgroup.clean("angelsore" .. ore_index .. "-" .. ore_state)
-        data.raw["recipe"]["angelsore" .. ore_index .. "-" .. ore_state .. "-processing"].subgroup = "vgal-angels-ore" ..
+        vgal.subgroup.clean("angels-ore" .. ore_index .. "-" .. ore_state)
+        data.raw["recipe"]["angels-ore" .. ore_index .. "-" .. ore_state .. "-processing"].subgroup = "vgal-angels-ore" ..
             ore_index
-        data.raw["recipe"]["angelsore" .. ore_index .. "-" .. ore_state .. "-processing"].order = "b-" ..
+        data.raw["recipe"]["angels-ore" .. ore_index .. "-" .. ore_state .. "-processing"].order = "b-" ..
             vgal.subgroup.order_from_number(ore_state_index)
     end
     local order_post
@@ -148,7 +152,7 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     table.insert(subgroups,
         {
             name = "angels-ore" .. ore_index,
-            tab = "resource-refining",
+            tab = "angels-resource-refining",
             order = "b[processing]-" .. order_post,
             entries = vgal.table.merge({ "angels-ore" .. ore_index }, ore_entries),
         }
@@ -183,5 +187,5 @@ for _, value in ipairs(subgroups) do
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
 end
 
-data.raw["item"]["ingot-steel"].subgroup = "angels-steel-casting"
-data.raw["item"]["ingot-steel"].order = "ib"
+data.raw["item"]["angels-ingot-steel"].subgroup = "angels-steel-casting"
+data.raw["item"]["angels-ingot-steel"].order = "ib"

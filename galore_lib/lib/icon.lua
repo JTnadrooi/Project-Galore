@@ -146,7 +146,7 @@ function vgal.icon.get(key_name, icon_source)
         return vgal.icon.get("liquid-fuel-oil")
     end
     if (key_name == "heavy-oil") and icon_source == "fluid" and mods["angelspetrochem"] then
-        return vgal.icon.get("liquid-naphtha")
+        return vgal.icon.get("angels-liquid-naphtha")
     end
     if (key_name == "sulfuric-acid") and icon_source == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("sulfuric-acid", "molecule")

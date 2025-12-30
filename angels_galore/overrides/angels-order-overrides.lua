@@ -1,21 +1,33 @@
 local SUBGROUP_DOMAINS = {
-    { "petrochem-refining",    "water-treatment" },
-    { "bio-processing-nauvis", "bio-processing-vegetables", },
-    { "resource-refining",     "angels-smelting",           "angels-casting" },
-    { "logistics",             "angels-fluid-control", },
+    { "angels-petrochem-refining",    "angels-water-treatment" },
+    { "angels-bio-processing-nauvis", "angels-bio-processing-vegetables", },
+    { "angels-resource-refining",     "angels-smelting",                  "angels-casting" },
+    { "logistics",                    "angels-fluid-control", },
 }
-for _, subgroup in pairs(data.raw["item-subgroup"]) do
-    for _, domain in ipairs(SUBGROUP_DOMAINS) do
-        for i, group in ipairs(domain) do
+for _, domain in ipairs(SUBGROUP_DOMAINS) do
+    for i, group in ipairs(domain) do
+        for _, subgroup in pairs(data.raw["item-subgroup"]) do
             if (i ~= 1) and subgroup.group == group then
                 subgroup.group = domain[1]
-                subgroup.order = (i == 1 and "" or ({ "unused", "x-", "y-" })[i]) .. subgroup.order
+                local prefix = ""
+                if i == 2 then
+                    prefix = "x-"
+                elseif i == 3 then
+                    prefix = "y-"
+                end
+                subgroup.order = prefix .. subgroup.order
             end
+        end
+        if not data.raw["item-group"][group] then
+            error("No group with name '" .. group .. "'found.")
         end
     end
 end
 
-data.raw["item-subgroup"]["geode-processing-1"].order = "e-aa"
+for _, subgroup in pairs(data.raw["item-subgroup"]) do
+end
+
+data.raw["item-subgroup"]["angels-geode-processing-1"].order = "e-aa"
 data.raw["item-subgroup"]["angels-copper-casting"].order = "y-ec"
 data.raw["item-subgroup"]["angels-iron-casting"].order = "y-fc"
 data.raw["item-subgroup"]["angels-steel-casting"].order = "y-g"

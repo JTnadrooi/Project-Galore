@@ -14,3 +14,4 @@ end
 
 require("mods.bz")
 require("mods.bobs")
+require("mods.science-tab")

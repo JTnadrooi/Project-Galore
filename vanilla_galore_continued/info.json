@@ -1,6 +1,6 @@
 {
     "name": "vanilla_galore_continued",
-    "version": "1.2.5",
+    "version": "1.2.6",
     "title": "Vanilla Galore Continued",
     "author": "JTnadrooi",
     "contact": "@jtnadrooi",
@@ -19,6 +19,7 @@
         "(?) bztitanium",
         "(?) bzzirconium",
         "(?) James-Oil-Processing",
+        "(?) science-tab",
         "(?) reskins-angels"
     ],
     "description": "Adds over 110 unique and balanced alternate recipes to VANILLA!"

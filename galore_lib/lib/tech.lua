@@ -34,6 +34,9 @@ function vgal.tech.add_productivity_change(tech_name, recipe_name, change, hidde
 end
 
 function vgal.tech.queue_to_clean(recipe_name)
+    if (not data.raw["recipe"][recipe_name]) then error("Recipe " .. recipe_name .. " not found.") end
+
+
     table.insert(vgal.tech.totrim, recipe_name)
 end
 

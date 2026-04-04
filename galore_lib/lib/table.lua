@@ -302,6 +302,19 @@ function vgal.table.nipairs(...)
     end
 end
 
+function vgal.table.iter_two(a, b)
+    local i = 0
+    local n = #a
+    return function()
+        i = i + 1
+        if i <= n then
+            return a[i]
+        else
+            return b[i - n]
+        end
+    end
+end
+
 function vgal.table.normalise(arr)
     local max = -math.huge
     for _, v in ipairs(arr) do

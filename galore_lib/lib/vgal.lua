@@ -41,7 +41,7 @@ end
 
 function vgal.log(toLog)
     if settings.startup["vgal-log"].value then
-        log("vgal.log-[" .. toLog .. "]")
+        log("vgal.log-[" .. tostring(toLog) .. "]")
     end
 end
 
@@ -267,7 +267,7 @@ function vgal.data.extend(entries, fill_in_with)
                         })
                         local tech = data.raw["technology"][tech_name]
 
-                        tech.vgal_can_remove = true
+                        tech.__vgal_can_remove = true
 
                         local pure_trigger = true
                         for _, pre in ipairs(prerequisite_collection) do
@@ -378,36 +378,67 @@ function vgal.any_get_source(any_name)
     error("ANY_SOURCE of name '" .. any_name .. "' does not exist")
 end
 
-function vgal.data.finalise()
+local function remove_empty_vgal_techs()
     local required_techs = {}
-    local to_remove = {}
+    local removable_techs = {}
+
     for _, tech in pairs(data.raw["technology"]) do
-        for _, p in ipairs(tech.prerequisites or {}) do -- create techs needed for others.
+        for _, p in ipairs(tech.prerequisites or {}) do -- techs used as prerequisites will not be removed.
             required_techs[p] = true
         end
-        if tech.effects and #tech.effects > 0 then -- if tech even has effects..
-            for _, effect in ipairs(tech.effects) do
-                for _, to_clean in ipairs(vgal.tech.totrim) do
-                    if effect.recipe == to_clean then -- for each toclean, check if its the effect.
-                        effect.hidden = true
-                        break
-                    end
-                end
-            end
-            to_remove[tech.name] = true
-            for _, effect in ipairs(tech.effects) do
-                if not effect.hidden then
-                    to_remove[tech.name] = nil
+
+        for _, effect in ipairs(tech.effects or {}) do
+            for _, recipe_name in ipairs(vgal.tech.recipes_to_remove_from_techs) do
+                if effect.recipe == recipe_name then -- for each toclean, check if its the effect.
+                    effect.hidden = true
+                    break
                 end
             end
         end
-    end
-    for _, tech in pairs(data.raw["technology"]) do
+
+        removable_techs[tech.name] = true
+
+        for _, effect in ipairs(tech.effects or {}) do
+            if not effect.hidden then
+                removable_techs[tech.name] = nil
+            end
+        end
+
         ---@diagnostic disable-next-line: undefined-field
-        if to_remove[tech.name] and tech.vgal_can_remove and (not required_techs[tech.name]) then
-            vgal.data.deep_hide(tech)
+        if not tech.__vgal_can_remove then
+            removable_techs[tech.name] = nil
+        end
+
+        if required_techs[tech.name] then
+            removable_techs[tech.name] = nil
         end
     end
+
+    for _, tech in pairs(removable_techs) do
+        vgal.data.deep_hide(tech)
+    end
+end
+
+-- removes techs in the techs_to_splice table and bypasses its prerequisites for other techs
+local function splice_and_flatten_techs()
+    for _, tech in pairs(data.raw["technology"]) do
+        ::fix_prerequisites::
+        for _, prerequisite in ipairs(tech.prerequisites or {}) do
+            if vgal.tech.techs_to_splice[prerequisite] then
+                tech.prerequisites = vgal.tech.techs_to_splice[prerequisite].prerequisites
+                goto fix_prerequisites
+            end
+        end
+    end
+
+    for tech_name, _ in pairs(vgal.tech.techs_to_splice) do
+        vgal.tech.deep_hide(tech_name)
+    end
+end
+
+function vgal.data.finalise()
+    remove_empty_vgal_techs()
+    splice_and_flatten_techs()
 end
 
 return vgal

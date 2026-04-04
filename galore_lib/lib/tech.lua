@@ -1,6 +1,7 @@
 ---@diagnostic disable: param-type-mismatch
 
-vgal.tech.totrim = vgal.tech.totrim or {}
+vgal.tech.recipes_to_remove_from_techs = vgal.tech.recipes_to_remove_from_techs or {} -- array
+vgal.tech.techs_to_splice = vgal.tech.techs_to_splice or {}                           -- table
 
 ---@param tech_name (string)
 ---@param recipe_name (string)
@@ -37,7 +38,7 @@ function vgal.tech.queue_to_clean(recipe_name)
     if (not data.raw["recipe"][recipe_name]) then error("Recipe " .. recipe_name .. " not found.") end
 
 
-    table.insert(vgal.tech.totrim, recipe_name)
+    table.insert(vgal.tech.recipes_to_remove_from_techs, recipe_name)
 end
 
 function vgal.tech.remove_prerequisite(tech_name, prerequisite)

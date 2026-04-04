@@ -75,17 +75,7 @@ vgal.recipe.set_ingredient_amount("rocket-fuel", 1)
 --- trees ---
 vgal.recipe.replace_ingredient("angels-bio-generator-temperate-1", "angels-temperate-tree", "angels-solid-tree")
 
---- building overrides ---
--- local function angels_building_normalise(building_name)
---     local recipe = data.raw["recipe"][building_name]
---     local to_build = {}
-
---     for _, ingredient in ipairs(recipe.ingredients) do
-
---     end
--- end
-
---- normalize recipes ---
+--- normalize building recipes ---
 data.raw["recipe"]["angels-blast-furnace"].ingredients = vgal.build.table({
     { "iron-plate",         10 },
     { "electronic-circuit", 5 },
@@ -429,20 +419,21 @@ data.raw["recipe"]["angels-bio-refugium-biter"].ingredients = vgal.build.table({
     { "pipe",                  30 },
     { "processing-unit",       5 },
 })
+
 --- ore restore.. kinda ---
 for _, ore_state in ipairs(agal.constants.ORE_STATES) do
     data.raw["recipe"]["angels-ore2-" .. ore_state .. "-processing"].results =
         table.deepcopy(data.raw["recipe"]["angels-ore1-" .. ore_state .. "-processing"].results)
 end
+
 --- algae fix ---
 table.insert(data.raw["technology"]["angels-bio-processing-green"].unit.ingredients, { "logistic-science-pack", 1 })
 table.insert(data.raw["technology"]["angels-bio-processing-green"].prerequisites, "angels-bio-nutrient-paste")
 vgal.tech.move_recipe("angels-bio-processing-green", "angels-water-treatment", "angels-water-mineralized")
+
 --- align ore processing ---
 vgal.recipe.replace_ingredient("angels-ore2-crystal", "angels-liquid-hydrofluoric-acid", "angels-liquid-sulfuric-acid")
 vgal.recipe.replace_result("angels-ore2-chunk", "angels-water-greenyellow-waste", "angels-water-yellow-waste")
---- misc ---
--- data.raw["recipe"]["angels-ore2-crushed-smelting"].order = data.raw["recipe"]["angels-ore1-crushed-smelting"].order;
--- data.raw["recipe"]["angels-ore2-crushed-smelting"].subgroup = data.raw["recipe"]["angels-ore1-crushed-smelting"]
---     .subgroup;
+
+--- align mining time
 data.raw["resource"]["angels-ore2"].minable.mining_time = 1

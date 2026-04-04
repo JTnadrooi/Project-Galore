@@ -2,7 +2,6 @@
 vgal.subgroup.clean("angels-solid-plastic")
 vgal.recipe.multiply("angels-solid-plastic", 1.25)
 
-
 --- remove the alien tokens things ---
 vgal.recipe.all.remove_ingredient("angels-token-bio")
 vgal.recipe.all.remove_result("angels-token-bio")
@@ -73,9 +72,6 @@ vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)
 
 -- ox
 data.raw.recipe["angels-rocket-oxidizer-capsule"].energy_required = 5
--- data.raw.recipe["rocket-oxidizer-capsule"].ingredients = vgal.build.table({}, {
---     { "liquid-nitric-acid",    10 },
--- })
 vgal.recipe.set_result_amount("angels-rocket-oxidizer-capsule", 1)
 
 --- uranium ---
@@ -83,7 +79,7 @@ vgal.recipe.set_result_amount("angels-rocket-oxidizer-capsule", 1)
 --     { "uranium-ore", 1, { probability = 0.8 } },
 -- })
 
---- trees ---
+--- remove extra trees ---
 vgal.data.trim("angels-tree-arboretum-0")
 vgal.data.deep_hide(data.raw["item"]["angels-temperate-tree"])
 vgal.data.deep_hide(data.raw["item"]["angels-swamp-tree"])
@@ -107,10 +103,8 @@ vgal.data.deep_hide(data.raw["item"]["angels-desert-tree"])
 -- vgal.data.trim("gas-dimethylamine")
 -- vgal.data.deep_hide(data.raw["fluid"]["gas-dimethylamine"])
 
---- rocket overhaul
 
-
---- refining durations (see docs/ore-density) ---
+--- ores (see docs/ore-density) ---
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     -- chunk
     data.raw["recipe"]["angels-ore" .. ore_index .. "-chunk"].energy_required = 1.6
@@ -158,12 +152,9 @@ vgal.recipe.multiply("angels-wire-coil-copper-2", 2)
 --- remove hand recipes ---
 vgal.data.trim("angels-ore1-crushed-hand")
 vgal.data.trim("angels-ore3-crushed-hand")
--- table.insert(data.raw["recipe"]["angels-ore1-crushed-hand"].additional_categories,)
 
 --- crystal overhaul/restore ---
 vgal.recipe.multiply("angels-crystal-powder-slurry", 10)
-
--- misc worth fixes --
 
 --- crafting speed restores ---
 data.raw["recipe"]["angels-liquid-molten-copper"].energy_required = 1

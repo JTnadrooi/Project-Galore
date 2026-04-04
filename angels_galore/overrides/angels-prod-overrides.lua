@@ -208,12 +208,7 @@ vgal.recipe.smart_allow_productivity("angels-liquid-concrete-2")
 vgal.recipe.smart_allow_productivity("angels-concrete-brick")
 
 --- metallugy ---
-
--- vgal.recipe.smart_allow_productivity("angels-clay-brick-raw")
-for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
-    -- vgal.recipe.smart_allow_productivity("angels-ore" .. ore_index .. "-crushed-smelting")
-end
-for _, metal in ipairs({ "copper", "iron" }) do
+for _, metal in ipairs(vgal.constants.METALS) do
     vgal.recipe.smart_allow_productivity("angels-" .. metal .. "-pebbles-smelting")
     vgal.recipe.smart_allow_productivity("angels-" .. metal .. "-nugget-smelting")
     vgal.recipe.smart_allow_productivity(metal .. "-plate")

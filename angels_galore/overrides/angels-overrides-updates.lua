@@ -1,15 +1,6 @@
 -- vgal.recipe.unhide("thermal-water-purification")
 -- vgal.tech.add_recipe("vgal-hydrochloric-intermediates", "thermal-water-purification")
 
-
-data.raw.recipe["angels-ore-crystal-mix1-processing"].ingredients = vgal.build.table({
-    { "angels-ore2-crystal", 2 },
-    { "angels-ore3-crystal", 2 },
-})
-data.raw.recipe["angels-ore-pure-mix1-processing"].ingredients = vgal.build.table({
-    { "angels-ore2-pure", 2 },
-    { "angels-ore3-pure", 2 },
-})
 data.raw.recipe["angels-catalyst-metal-green"].ingredients = vgal.build.table({
     { "angels-catalyst-metal-carrier", 10 },
     { "angels-ore3",                   1 },
@@ -18,11 +9,6 @@ data.raw.recipe["angels-catalyst-metal-red"].ingredients = vgal.build.table({
     { "angels-catalyst-metal-carrier", 10 },
     { "angels-ore2",                   1 },
 })
-
-
-vgal.recipe.set_ingredient_amount("angels-ore-pure-mix1-processing", 1)
-vgal.recipe.multiply("angels-ore-pure-mix1-processing", 2, nil, true)
-vgal.recipe.set_ingredient_amount("angels-ore-crystal-mix1-processing", 1)
 
 --- upgrade kit removal ---
 for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
@@ -99,6 +85,7 @@ vgal.recipe.replace_ingredient("angels-bio-generator-temperate-1", "angels-tempe
 --     end
 -- end
 
+--- normalize recipes ---
 data.raw["recipe"]["angels-blast-furnace"].ingredients = vgal.build.table({
     { "iron-plate",         10 },
     { "electronic-circuit", 5 },

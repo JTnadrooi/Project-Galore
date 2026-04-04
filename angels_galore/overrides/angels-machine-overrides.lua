@@ -1,3 +1,5 @@
+--- purge some of the machine tiers ---
+
 -- non angel entries must be before "angels-" prefixed ones.
 -- <Name> = <Max Level>
 local UNNEEDED_BUILDINGS = {
@@ -31,9 +33,9 @@ local UNNEEDED_BUILDINGS = {
     ["angels-ore-leaching-plant"] = 1,
     ["angels-ore-processing-machine"] = 1,
     ["angels-ore-refinery"] = 1,
-    ["angels-ore-powderizer"] = 1, -- z..
+    ["angels-powderizer"] = 1,   -- z..
     ["angels-filtration-unit"] = 1,
-    ["angels-crystallizer"] = 1,   -- z 2..
+    ["angels-crystallizer"] = 1, -- z 2..
 
     ["angels-pellet-press"] = 1,
     ["angels-powder-mixer"] = 1,
@@ -122,7 +124,7 @@ data.raw["assembling-machine"]["angels-gas-refinery"].module_slots = 4
 data.raw["assembling-machine"]["angels-advanced-chemical-plant"].module_slots = 3
 data.raw["assembling-machine"]["angels-advanced-chemical-plant-2"].module_slots = 4
 data.raw["assembling-machine"]["angels-salination-plant"].module_slots = 4
-data.raw["assembling-machine"]["angels-ore-powderizer"].module_slots = 3
+data.raw["assembling-machine"]["angels-powderizer"].module_slots = 3
 data.raw["assembling-machine"]["angels-electric-boiler"].module_slots = 0
 data.raw["assembling-machine"]["angels-electric-boiler-2"].module_slots = 0
 
@@ -150,7 +152,7 @@ data.raw["assembling-machine"]["angels-ore-floatation-cell"].crafting_speed = 1
 data.raw["assembling-machine"]["angels-ore-leaching-plant"].crafting_speed = 1
 data.raw["assembling-machine"]["angels-ore-refinery"].crafting_speed = 1
 data.raw["assembling-machine"]["angels-ore-crusher"].crafting_speed = 2
-data.raw["assembling-machine"]["angels-ore-powderizer"].crafting_speed = 2
+data.raw["assembling-machine"]["angels-powderizer"].crafting_speed = 2
 data.raw["assembling-machine"]["angels-crystallizer"].crafting_speed = 1
 data.raw["assembling-machine"]["angels-electrolyser-2"].crafting_speed = 2
 data.raw["assembling-machine"]["angels-ore-sorting-facility"].crafting_speed = 1
@@ -166,7 +168,7 @@ data.raw["assembling-machine"]["angels-bio-arboretum-1"].crafting_speed = 1
 
 data.raw["mining-drill"]["angels-thermal-bore"].mining_speed = 1
 
--- add prod.
+-- add builtin prod, both to mimic space age as to make the farming a bit less painfull.
 for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     data.raw["assembling-machine"][environment .. "-farm"].effect_receiver = { base_effect = { productivity = 0.5 } }
 end

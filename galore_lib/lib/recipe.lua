@@ -123,6 +123,8 @@ end
 -- end
 
 function vgal.recipe.deep_hide(recipe_name)
+    if (not data.raw["recipe"][recipe_name]) then error("Recipe " .. recipe_name .. " not found.") end
+
     vgal.data.deep_hide(data.raw["recipe"][recipe_name])
 end
 

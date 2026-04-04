@@ -1,3 +1,4 @@
+--- register catalysts --- (catalysts don't work with productivity)
 vgal.recipe.add_catalyst_entry("angels-electrode-used")
 vgal.recipe.add_catalyst_entry("angels-liquid-coolant-used")
 vgal.recipe.add_catalyst_entry("angels-liquid-coolant")
@@ -23,6 +24,7 @@ for i = 3, 5 do
     end
 end
 
+-- machines that can benefit from productivity, no corrections needed (well except for the angels-bio-hatchery stuff).
 local PROD_MACHINES = {
     "angels-bio-press", "angels-bio-generator-temperate-1", "angels-bio-generator-swamp-1",
     "angels-bio-generator-desert-1",
@@ -36,14 +38,18 @@ local PROD_MACHINES = {
     "angels-salination-plant", "angels-induction-furnace", "angels-casting-machine", "angels-strand-casting-machine",
     "angels-ore-sorting-facility",
     "angels-ore-crusher", "angels-ore-floatation-cell", "angels-ore-leaching-plant", "angels-ore-refinery",
-    "angels-ore-powderizer",
+    "angels-powderizer",
     "angels-filtration-unit",
     "angels-crystallizer", "angels-ore-processing-machine", "angels-pellet-press", "angels-powder-mixer",
     "angels-blast-furnace",
     "angels-washing-plant", "angels-chemical-furnace", "oil-refinery", -- chem furnace is removed but just to be sure..
     "angels-gas-refinery-small", "angels-gas-refinery", "angels-separator",
 }
+
+-- will be filled with crafting categories that should benefit from productivity.
 local PROD_CATEGORIES = {}
+
+-- make sure machines allow productivity.
 for _, machine_name in ipairs(PROD_MACHINES) do
     local machine = data.raw["assembling-machine"][machine_name] or data.raw["furnace"][machine_name]
     if not machine then
@@ -74,8 +80,6 @@ for _, recipe in pairs(data.raw["recipe"]) do
     end
 end
 
-
-
 -- vgal.recipe.add_productivity_entry("liquid-plastic")
 -- vgal.recipe.add_productivity_entry("rocket-booster")
 -- vgal.recipe.add_productivity_entry("solid-carbon")
@@ -86,8 +90,9 @@ end
 -- vgal.recipe.add_productivity_entry("slag-slurry")
 -- vgal.recipe.add_productivity_entry("concrete")
 
---- chemistry ---
+--- allow productivity edge cases ---
 
+--- chemistry ---
 vgal.recipe.smart_allow_productivity("angels-rocket-fuel-capsule")
 vgal.recipe.smart_allow_productivity("angels-rocket-oxidizer-capsule")
 vgal.recipe.smart_allow_productivity("angels-rocket-booster")
@@ -129,7 +134,6 @@ vgal.recipe.smart_allow_productivity("angels-solid-ammonium-nitrate")
 vgal.recipe.smart_allow_productivity("angels-solid-ammonium-perchlorate")
 
 --- water ---
-
 vgal.recipe.smart_allow_productivity("angels-liquid-coolant")
 vgal.recipe.smart_allow_productivity("angels-water-saline")
 vgal.recipe.smart_allow_productivity("angels-solid-salt-dissolving")
@@ -137,7 +141,6 @@ vgal.recipe.smart_allow_productivity("angels-solid-salt")
 vgal.recipe.smart_allow_productivity("angels-stone-crushed")
 
 --- bio ---
-
 vgal.recipe.smart_allow_productivity("angels-fermentation-corn")
 vgal.recipe.smart_allow_productivity("angels-fermentation-fruit")
 vgal.recipe.smart_allow_productivity("angels-liquid-acetic-acid")
@@ -178,7 +181,6 @@ for puffer_index = 1, 5 do
 end
 
 --- fauna ---
-
 vgal.recipe.smart_allow_productivity("angels-gas-puffer-atmosphere")
 vgal.recipe.smart_allow_productivity("angels-biter-small-egg")
 vgal.recipe.smart_allow_productivity("angels-biter-medium-egg")
@@ -211,8 +213,7 @@ vgal.recipe.smart_allow_productivity("angels-concrete-brick")
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     -- vgal.recipe.smart_allow_productivity("angels-ore" .. ore_index .. "-crushed-smelting")
 end
-local METALS = { "copper", "iron" }
-for _, metal in ipairs(METALS) do
+for _, metal in ipairs({ "copper", "iron" }) do
     vgal.recipe.smart_allow_productivity("angels-" .. metal .. "-pebbles-smelting")
     vgal.recipe.smart_allow_productivity("angels-" .. metal .. "-nugget-smelting")
     vgal.recipe.smart_allow_productivity(metal .. "-plate")

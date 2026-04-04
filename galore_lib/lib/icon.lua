@@ -98,7 +98,7 @@ function vgal.icon.get(key_name, icon_source)
         if key_name == "angels_sorting" then
             return {
                 {
-                    icon = "__angelsrefining__/graphics/icons/sort-icon.png",
+                    icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
                     icon_size = 32,
                 }
             }

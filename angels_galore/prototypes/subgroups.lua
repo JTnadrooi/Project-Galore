@@ -13,7 +13,7 @@ local subgroups = {
         entries = {
             "angels-blast-furnace", "angels-induction-furnace", "angels-casting-machine", "angels-strand-casting-machine",
             "angels-ore-processing-machine",
-            "angels-pellet-press", "angels-powder-mixer", "angels-ore-powderizer",
+            "angels-pellet-press", "angels-powder-mixer", "angels-powderizer",
         },
         reorder_entries = true,
     },

@@ -2,29 +2,6 @@
 vgal.subgroup.clean("angels-solid-plastic")
 vgal.recipe.multiply("angels-solid-plastic", 1.25)
 
---- ore removal ---
-vgal.recipe.all.replace_ingredient("angels-catalyst-metal-yellow",
-    { type = "item", name = "angels-catalyst-metal-red", amount = 1 })
-vgal.recipe.all.replace_ingredient("angels-catalyst-metal-blue",
-    { type = "item", name = "angels-catalyst-metal-green", amount = 1 })
-vgal.data.trim("angels-catalyst-metal-blue")
-vgal.data.trim("angels-catalyst-metal-yellow")
-for _, ore in ipairs(agal.constants.REMOVED_ORE_INDEXES) do
-    vgal.data.deep_hide(data.raw["item"]["angels-ore" .. ore])
-    for _, state in ipairs(agal.constants.ORE_STATES) do
-        vgal.data.trim("angels-ore" .. ore .. "-" .. state .. "-processing")
-        vgal.data.trim("angels-ore" .. ore .. "-" .. state)
-        vgal.data.deep_hide(data.raw["item"]["angels-ore" .. ore .. "-" .. state])
-    end
-end
-
-
---- funny yellow module removal ---
-local BIO_MODULES = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
-for _, bio_module in ipairs(BIO_MODULES) do
-    vgal.data.deep_hide(data.raw["module"][bio_module])
-    vgal.data.trim(bio_module)
-end
 
 --- remove the alien tokens things ---
 vgal.recipe.all.remove_ingredient("angels-token-bio")
@@ -34,8 +11,6 @@ for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     vgal.recipe.deep_hide(environment .. "-garden-b")
     vgal.recipe.deep_hide(environment .. "-garden-cultivating-a")
 end
-
-
 
 --- recipe buffs ---
 vgal.recipe.set_result_amount("angels-ingot-iron", 8)
@@ -48,7 +23,7 @@ vgal.recipe.multiply_results("angels-liquid-plastic-3", PLASTIC_MULTIPLIER)
 vgal.recipe.set_result_amount("angels-bio-plastic", 80)
 vgal.recipe.set_result_amount("angels-bio-plastic-2", 150)
 
---- direct fluid removal ---
+--- direct fluid removal --- (direct fluids: fluids used for like one purpose)
 
 -- bio plastic - liquid-cellulose-acetate
 vgal.data.trim("angels-liquid-cellulose-acetate")
@@ -71,13 +46,12 @@ data.raw.recipe["angels-liquid-glycerol"].results = vgal.build.table({}, {
     { "angels-liquid-glycerol",       25 },
     { "angels-gas-hydrogen-chloride", 100 },
 })
-vgal.data.trim("angels-gas-epichlorhydrin")
-vgal.data.deep_hide(data.raw["fluid"]["angels-gas-epichlorhydrin"])
+vgal.data.trim("angels-gas-epichlorohydrin")
+vgal.data.deep_hide(data.raw["fluid"]["angels-gas-epichlorohydrin"])
 vgal.data.trim("angels-gas-allylchlorid")
 vgal.data.deep_hide(data.raw["fluid"]["angels-gas-allylchlorid"])
 
--- rocket
-
+-- rocket - forgor what the gas was
 data.raw.recipe["angels-gas-hydrazine"].ingredients = vgal.build.table({
     -- { "catalyst-metal-green",      1 },
     { "angels-solid-sodium-hypochlorite", 5 },
@@ -88,7 +62,7 @@ vgal.recipe.remove_result("angels-gas-hydrazine", "angels-catalyst-metal-carrier
 vgal.data.deep_hide(data.raw["fluid"]["angels-gas-monochloramine"])
 vgal.data.trim("angels-gas-monochloramine")
 
--- fuel
+-- fuel - same here
 data.raw.recipe["angels-rocket-fuel-capsule"].energy_required = 5
 data.raw.recipe["angels-rocket-fuel-capsule"].ingredients = vgal.build.table({
     { "solid-fuel", 1 },
@@ -186,13 +160,8 @@ vgal.data.trim("angels-ore1-crushed-hand")
 vgal.data.trim("angels-ore3-crushed-hand")
 -- table.insert(data.raw["recipe"]["angels-ore1-crushed-hand"].additional_categories,)
 
---- remove residual removed ore recipe ---
-vgal.data.trim("angels-ore1-crushed-smelting")
-
-
 --- crystal overhaul/restore ---
 vgal.recipe.multiply("angels-crystal-powder-slurry", 10)
-
 
 -- misc worth fixes --
 

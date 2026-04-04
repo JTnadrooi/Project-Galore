@@ -1,10 +1,16 @@
 require("prototypes.imitations")
+
 require("constants")
 require("overrides.angels-order-overrides")
+
 require("prototypes.subgroups")
+
 require("overrides.angels-prod-overrides")
 require("overrides.angels-recipe-overrides")
+require("overrides.angels-purge")
 require("overrides.angels-overrides")
+
+require("prototypes.sorting")
 
 data.raw["underground-belt"]["underground-belt"].max_distance = 8
 data.raw["underground-belt"]["fast-underground-belt"].max_distance = 10

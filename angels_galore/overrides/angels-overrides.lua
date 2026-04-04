@@ -1,5 +1,4 @@
---- ore removal ---
-
+--- ore gen removal ---
 for _, ore in pairs(agal.constants.REMOVED_ORE_INDEXES) do
     data.raw["resource"][ore] = nil
     data.raw["autoplace-control"][ore] = nil
@@ -15,8 +14,7 @@ for _, preset in pairs(data.raw["map-gen-presets"].default) do
     end
 end
 
---- wipe alien samples of the planet ---
-
+--- wipe alien samples of the planet !! ---
 local alien_sample_tech_names = {}
 for _, tech in pairs(data.raw.technology) do
     if tech.unit and tech.unit.ingredients then

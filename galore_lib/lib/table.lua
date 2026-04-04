@@ -302,16 +302,23 @@ function vgal.table.nipairs(...)
     end
 end
 
-function vgal.table.iter_two(a, b)
-    local i = 0
-    local n = #a
+function vgal.table.iter_all(...)
+    local tables = { ... }
+    local indices = {}
+    for i = 1, #tables do
+        indices[i] = 1
+    end
+
     return function()
-        i = i + 1
-        if i <= n then
-            return a[i]
-        else
-            return b[i - n]
+        for i = 1, #tables do
+            local idx = indices[i]
+            local t = tables[i]
+            if idx <= #t then
+                indices[i] = idx + 1
+                return t[idx]
+            end
         end
+        return nil
     end
 end
 

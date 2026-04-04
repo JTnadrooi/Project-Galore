@@ -177,12 +177,10 @@ end
 
 ---@param tech_name (string)
 function vgal.tech.deep_hide(tech_name)
-    if data.raw["technology"][tech_name] then
-        if data.raw["technology"][tech_name].effects then
-            for _, effect in pairs(data.raw["technology"][tech_name].effects) do
-                if effect.recipe then
-                    data.raw["recipe"][effect.recipe].hidden = true
-                end
+    if data.raw["technology"][tech_name].effects then
+        for _, effect in pairs(data.raw["technology"][tech_name].effects) do
+            if effect.recipe then
+                vgal.recipe.deep_hide(effect.recipe)
             end
         end
     end

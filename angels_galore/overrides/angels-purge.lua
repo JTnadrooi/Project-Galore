@@ -36,7 +36,7 @@ for _, ore in ipairs(agal.constants.REMOVED_ALT_ORE_INDEXES) do
     vgal.data.trim("angels-ore" .. ore .. "-anode-sludge")
 end
 
--- remove mix recipes (I will have my own ones)
+-- remove mix recipes. (I will have my own ones)
 for i = 1, 6 do
     for _, state in ipairs(agal.constants.ORE_STATES) do
         local recipe = data.raw["recipe"]["angels-ore-" .. state .. "-mix" .. i .. "-processing"]
@@ -47,16 +47,25 @@ for i = 1, 6 do
     end
 end
 
--- remove mineral sludge to ores recipes (I will have my own ones)
+-- remove mineral sludge to ores recipes. (I will have my own ones)
 vgal.recipe.deep_hide("angels-slag-processing-1")
 vgal.recipe.deep_hide("angels-slag-processing-2")
 vgal.recipe.deep_hide("angels-slag-processing-3")
 
+for _, ore_index in ipairs(agal.constants.REMOVED_ORE_INDEXES) do
+    vgal.data.deep_hide(data.raw["resource"]["angels-ore" .. ore_index])
+end
 
-
-
-
-
+-- remove extra molten metal recipes
+for _, metal in ipairs({ "iron", "steel" }) do -- copper doesn't have any extra smelting recipes
+    for i = 2, 6 do
+        local recipe = data.raw["recipe"]["angels-liquid-molten-" .. metal .. "-" .. i]
+        if recipe then
+            vgal.recipe.deep_hide(recipe.name)
+            vgal.data.trim(recipe.name)
+        end
+    end
+end
 
 --- funny yellow module removal ---
 local BIO_MODULES = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }

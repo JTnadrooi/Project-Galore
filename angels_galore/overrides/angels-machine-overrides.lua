@@ -41,6 +41,7 @@ local UNNEEDED_BUILDINGS = {
     ["angels-powder-mixer"] = 1,
     ["angels-blast-furnace"] = 1,
     ["angels-chemical-furnace"] = 1, -- this removes it for some reason, but its ok bc it only has one recipe which I migrate later.
+    ["angels-sintering-oven"] = 0,   -- removes it ofc.
 }
 
 local MODULE_COUNT_BLACKLIST = {
@@ -168,15 +169,25 @@ data.raw["assembling-machine"]["angels-bio-arboretum-1"].crafting_speed = 1
 
 data.raw["mining-drill"]["angels-thermal-bore"].mining_speed = 1
 
--- add builtin prod, both to mimic space age as to make the farming a bit less painfull.
+-- add builtin prod, both to mimic space age as to make the farming a bit easier.
 for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     data.raw["assembling-machine"][environment .. "-farm"].effect_receiver = { base_effect = { productivity = 0.5 } }
 end
 
--- remove seed generator bloat.
+-- remove seed generators.
 vgal.data.deep_hide(data.raw["assembling-machine"]["angels-bio-generator-swamp-1"])
 vgal.data.deep_hide(data.raw["item"]["angels-bio-generator-swamp-1"])
 vgal.data.trim("angels-bio-generator-swamp-1")
+
 vgal.data.deep_hide(data.raw["assembling-machine"]["angels-bio-generator-desert-1"])
 vgal.data.deep_hide(data.raw["item"]["angels-bio-generator-desert-1"])
 vgal.data.trim("angels-bio-generator-desert-1")
+
+-- remove sintering ovens
+-- for i = 1, 5 do
+--     if data.raw["assembling-machine"]["angels-sintering-oven-" .. i] then
+--         vgal.data.deep_hide(data.raw["assembling-machine"]["angels-sintering-oven-" .. i])
+--         vgal.data.deep_hide(data.raw["item"]["angels-sintering-oven-" .. i])
+--         vgal.data.trim("angels-sintering-oven-" .. i)
+--     end
+-- end

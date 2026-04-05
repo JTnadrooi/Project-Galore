@@ -1,3 +1,5 @@
+-- no subgroup prototypes will be created here, thats done in "subgroups.lua".
+
 local SUBGROUP_DOMAINS = {
     { "angels-petrochem-refining",    "angels-water-treatment" },
     { "angels-bio-processing-nauvis", "angels-bio-processing-vegetables", },
@@ -24,9 +26,6 @@ for _, domain in ipairs(SUBGROUP_DOMAINS) do
     end
 end
 
-for _, subgroup in pairs(data.raw["item-subgroup"]) do
-end
-
 data.raw["item-subgroup"]["angels-geode-processing-1"].order = "e-aa"
 data.raw["item-subgroup"]["angels-copper-casting"].order = "y-ec"
 data.raw["item-subgroup"]["angels-iron-casting"].order = "y-fc"
@@ -35,4 +34,10 @@ data.raw["item-subgroup"]["angels-steel-casting"].order = "y-g"
 data.raw["item-subgroup"]["angels-fluid-tanks"].order = "db"
 data.raw["item-subgroup"]["angels-fluid-control"].order = "dc"
 
--- rest in done in subgroups.lua
+data.raw["item"]["angels-ingot-steel"].subgroup = "angels-steel-casting"
+data.raw["item"]["angels-ingot-steel"].order = "ib"
+
+for _, metal in ipairs(vgal.constants.METALS) do
+    data.raw["item"]["angels-" .. metal .. "-pebbles"].subgroup = "angels-" .. metal
+    data.raw["item"]["angels-" .. metal .. "-pebbles"].order = "c"
+end

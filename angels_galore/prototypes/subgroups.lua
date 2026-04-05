@@ -160,14 +160,6 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     )
 end
 
-
-local to_clean = {
-}
-for _, value in ipairs(to_clean) do
-    data.raw["recipe"][value].order = nil
-    data.raw["recipe"][value].subgroup = nil
-end
-
 for _, value in ipairs(subgroups) do
     if value.when == nil then
         value.when = true
@@ -188,10 +180,3 @@ for _, value in ipairs(subgroups) do
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
 end
 
-data.raw["item"]["angels-ingot-steel"].subgroup = "angels-steel-casting"
-data.raw["item"]["angels-ingot-steel"].order = "ib"
-
-for _, metal in ipairs(vgal.constants.METALS) do
-    data.raw["item"]["angels-" .. metal .. "-pebbles"].subgroup = "angels-" .. metal
-    data.raw["item"]["angels-" .. metal .. "-pebbles"].order = "c"
-end

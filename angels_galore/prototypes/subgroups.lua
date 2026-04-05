@@ -100,14 +100,25 @@ local subgroups = {
     }, -- all of these.. they don't.. they don't listen.
 }
 
-for _, metal in ipairs(vgal.constants.METALS) do
+for metal in vgal.table.iter_all(vgal.constants.METALS, { "steel" }) do
     local mid_order = (metal == "copper") and "e" or "f"
+    if metal == "steel" then
+        mid_order = "g"
+    end
+
     local processing_entries = {
         "angels-processed-" .. metal,
         "angels-pellet-" .. metal,
     }
     if metal == "copper" then table.insert(processing_entries, "angels-anode-" .. metal) end
     table.insert(processing_entries, "angels-ingot-" .. metal)
+
+    if metal == "steel" then
+        processing_entries = {
+            "angels-ingot-steel",
+        }
+    end
+
     table.insert(subgroups, {
         name = "angels-" .. metal .. "-processing",
         tab = "angels-resource-refining",
@@ -179,4 +190,3 @@ for _, value in ipairs(subgroups) do
     end
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
 end
-

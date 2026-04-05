@@ -29,7 +29,7 @@ end
 data.raw["item-subgroup"]["angels-geode-processing-1"].order = "e-aa"
 data.raw["item-subgroup"]["angels-copper-casting"].order = "y-ec"
 data.raw["item-subgroup"]["angels-iron-casting"].order = "y-fc"
-data.raw["item-subgroup"]["angels-steel-casting"].order = "y-g"
+data.raw["item-subgroup"]["angels-steel-casting"].order = "y-gc"
 
 data.raw["item-subgroup"]["angels-fluid-tanks"].order = "db"
 data.raw["item-subgroup"]["angels-fluid-control"].order = "dc"

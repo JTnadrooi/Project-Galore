@@ -31,6 +31,8 @@ data.raw["item-subgroup"]["angels-copper-casting"].order = "y-ec"
 data.raw["item-subgroup"]["angels-iron-casting"].order = "y-fc"
 data.raw["item-subgroup"]["angels-steel-casting"].order = "y-gc"
 
+data.raw["item-subgroup"]["angels-stone-casting"].order = "y-nb"
+
 data.raw["item-subgroup"]["angels-fluid-tanks"].order = "db"
 data.raw["item-subgroup"]["angels-fluid-control"].order = "dc"
 

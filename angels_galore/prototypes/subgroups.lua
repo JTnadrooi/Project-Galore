@@ -81,7 +81,7 @@ local subgroups = {
     {
         name = "angels-cement-concrete",
         tab = "angels-resource-refining",
-        order = "x-nb",
+        order = "y-na",
         entries = {
             "angels-solid-lime", "angels-solid-cement", "stone-brick", "angels-concrete-brick", -- reinforced and clay removed
             "angels-bio-tile",
@@ -91,7 +91,7 @@ local subgroups = {
     {
         name = "angels-solid-concrete",
         tab = "angels-resource-refining",
-        order = "y-nb",
+        order = "y-nc",
         entries = {
             "concrete", "hazard-concrete",
             "refined-concrete", "refined-concrete",

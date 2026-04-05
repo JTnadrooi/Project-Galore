@@ -58,10 +58,6 @@ data.raw["recipe"]["angels-plate-steel"].icons = vgal.icon.register({
     vgal.icon.get("steel-plate"),
     vgal.icon.get_in("angels-liquid-molten-steel"),
 })
-data.raw["recipe"]["angels-roll-steel-2"].icons = vgal.icon.register({
-    vgal.icon.get("steel-plate"),
-    vgal.icon.get_in("angels-roll-steel"),
-})
 -- data.raw["recipe"]["solid-coke"].icons = vgal.icon.register({
 --     vgal.icon.get("solid-coke"),
 -- })

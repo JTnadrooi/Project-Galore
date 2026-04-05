@@ -18,6 +18,30 @@ function vgal.tech.add_recipe(tech_name, recipe_name)
     )
 end
 
+---@param tech_name string
+---@param old_recipe string
+---@param new_recipe string
+function vgal.tech.replace_recipe(tech_name, old_recipe, new_recipe)
+    if tech_name == "" or not data.raw.technology[tech_name] then
+        error("technology with name: " .. tech_name .. " does not exist")
+    end
+
+    local effects = data.raw.technology[tech_name].effects
+    local replaced = false
+
+    for _, effect in ipairs(effects) do
+        if effect.type == "unlock-recipe" and effect.recipe == old_recipe then
+            effect.recipe = new_recipe
+            replaced = true
+            break
+        end
+    end
+
+    if not replaced then
+        error("No effect with recipe: " .. old_recipe .. " found in technology: " .. tech_name)
+    end
+end
+
 function vgal.tech.add_productivity_change(tech_name, recipe_name, change, hidden)
     local tech = data.raw["technology"][tech_name]
     if tech then

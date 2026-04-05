@@ -40,8 +40,8 @@ local UNNEEDED_BUILDINGS = {
     ["angels-pellet-press"] = 1,
     ["angels-powder-mixer"] = 1,
     ["angels-blast-furnace"] = 1,
-    ["angels-chemical-furnace"] = 1, -- this removes it for some reason, but its ok bc it only has one recipe which I migrate later.
-    ["angels-sintering-oven"] = 0,   -- removes it ofc.
+    ["angels-chemical-furnace"] = 1,
+    ["angels-sintering-oven"] = 0, -- removes it.
 }
 
 local MODULE_COUNT_BLACKLIST = {

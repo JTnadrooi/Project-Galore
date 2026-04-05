@@ -103,6 +103,15 @@ function vgal.icon.get(key_name, icon_source)
                 }
             }
         end
+        if key_name == "angels_crushing" then
+            return {
+                {
+                    icon = "__angelsrefininggraphics__/graphics/icons/ore-crusher.png",
+                    icon_size = 64,
+                    scale = 0.5,
+                }
+            }
+        end
         if key_name == "angels_electrolyzing" then
             return {
                 {
@@ -150,6 +159,14 @@ function vgal.icon.get(key_name, icon_source)
     end
     if (key_name == "sulfuric-acid") and icon_source == "fluid" and mods["angelspetrochem"] then
         return vgal.icon.get("sulfuric-acid", "molecule")
+    end
+    if (key_name == "iron-plate") and icon_source == "item" and mods["reskins-angels"] then
+        return {
+            {
+                icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-iron.png",
+                icon_size = 64,
+            }
+        }
     end
     local toret_item = vgal.any(key_name)
 

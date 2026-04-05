@@ -446,9 +446,6 @@ function vgal.recipe.set_result_amount(recipe_name, amount, result_name)
         local result = recipe.results[i]
         if (result_name == nil) or result.name == result_name then
             if amount == 0 then
-                if not result_name then
-                    error(result_name)
-                end
                 table.remove(recipe.results, i)
             else
                 result.amount = amount
@@ -462,19 +459,27 @@ end
 
 function vgal.recipe.set_ingredient_amount(recipe_name, amount, ingredient_name)
     local recipe = data.raw["recipe"][recipe_name]
+    if not recipe then
+        error("Recipe '" .. recipe_name .. "' not found")
+    end
+
+    local found = false
+
     for i = #recipe.ingredients, 1, -1 do
         local ingredient = recipe.ingredients[i]
         local name = ingredient.name
         if (ingredient_name == nil) or name == ingredient_name then
+            found = true
             if amount == 0 then
-                if not ingredient_name then
-                    error(ingredient_name)
-                end
                 table.remove(recipe.ingredients, i)
             else
                 ingredient.amount = amount
             end
         end
+    end
+
+    if ingredient_name ~= nil and not found then
+        error("Ingredient '" .. ingredient_name .. "' not found in recipe '" .. recipe_name .. "'.")
     end
 end
 

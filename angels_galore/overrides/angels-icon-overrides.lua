@@ -21,31 +21,35 @@ data.raw.recipe["angels-garden-cultivating"].icons = vgal.icon.register({
 --     })
 -- end
 for _, metal in ipairs(vgal.constants.METALS) do
-    data.raw["recipe"]["angels-" .. metal .. "-nugget-smelting"].icons = vgal.icon.register({
-        vgal.icon.get(metal .. "-plate"),
-        vgal.icon.get_in("angels-" .. metal .. "-nugget"),
-    })
-    data.raw["recipe"]["angels-" .. metal .. "-pebbles-smelting"].icons = vgal.icon.register({
-        vgal.icon.get(metal .. "-plate"),
-        vgal.icon.get_in("angels-" .. metal .. "-pebbles"),
-    })
+    local ore_index = (metal == "copper") and 2 or 3
+    local nugget = "angels-" .. metal .. "-nugget"
+    local slag = "angels-" .. metal .. "-slag"
+    local pebbles = "angels-" .. metal .. "-pebbles"
+    local ore = metal .. "-ore"
+    local base_ore = "angels-ore" .. ore_index
+    local plate = metal .. "-plate"
+
     data.raw["recipe"]["angels-plate-" .. metal].icons = vgal.icon.register({
         vgal.icon.get(metal .. "-plate"),
         vgal.icon.get_in("angels-liquid-molten-" .. metal),
     })
-    data.raw["recipe"]["angels-roll-" .. metal .. "-2"].icons = vgal.icon.register({
-        vgal.icon.get(metal .. "-plate"),
-        vgal.icon.get_in("angels-roll-" .. metal),
-    })
+    -- data.raw["recipe"]["angels-roll-" .. metal .. "-2"].icons = vgal.icon.register({
+    --     vgal.icon.get("angels-roll-" .. metal),
+    --     vgal.icon.get_in("angels-liquid-coolant"),
+    -- })
+    -- data.raw["recipe"]["angels-roll-" .. metal].icons = vgal.icon.register({
+    --     vgal.icon.get("angels-roll-" .. metal),
+    --     vgal.icon.get_in("angels-liquid-coolant"),
+    -- })
     data.raw["recipe"][metal .. "-plate"].icons = vgal.icon.register({
         vgal.icon.get(metal .. "-plate"),
-        vgal.icon.get_in(metal .. "-ore"),
+        vgal.icon.get_in(base_ore),
     })
 end
-data.raw["recipe"]["angels-wire-coil-copper-2"].icons = vgal.icon.register({
-    vgal.icon.get("copper-cable"),
-    vgal.icon.get_in("angels-wire-coil-copper"),
-})
+-- data.raw["recipe"]["angels-wire-coil-copper-2"].icons = vgal.icon.register({
+--     vgal.icon.get("angels-wire-coil-copper"),
+--     vgal.icon.get_in("angels-liquid-coolant"),
+-- })
 data.raw["recipe"]["copper-cable"].icons = vgal.icon.register({
     vgal.icon.get("copper-cable"),
     vgal.icon.get_in("copper-plate"),

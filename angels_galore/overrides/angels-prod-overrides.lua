@@ -42,7 +42,7 @@ local PROD_MACHINES = {
     "angels-filtration-unit",
     "angels-crystallizer", "angels-ore-processing-machine", "angels-pellet-press", "angels-powder-mixer",
     "angels-blast-furnace",
-    "angels-washing-plant", "angels-chemical-furnace", "oil-refinery", -- chem furnace is removed but just to be sure..
+    "angels-washing-plant", "oil-refinery", "angels-chemical-furnace",
     "angels-gas-refinery-small", "angels-gas-refinery", "angels-separator",
 }
 

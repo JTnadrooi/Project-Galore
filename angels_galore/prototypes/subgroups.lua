@@ -11,7 +11,8 @@ local subgroups = {
         tab = "angels-resource-refining",
         order = "y-ze",
         entries = {
-            "angels-blast-furnace", "angels-induction-furnace", "angels-casting-machine", "angels-strand-casting-machine",
+            "angels-blast-furnace", "angels-chemical-furnace", "angels-induction-furnace", "angels-casting-machine",
+            "angels-strand-casting-machine",
             "angels-ore-processing-machine",
             "angels-pellet-press", "angels-powder-mixer", "angels-powderizer",
         },
@@ -189,3 +190,8 @@ end
 
 data.raw["item"]["angels-ingot-steel"].subgroup = "angels-steel-casting"
 data.raw["item"]["angels-ingot-steel"].order = "ib"
+
+for _, metal in ipairs(vgal.constants.METALS) do
+    data.raw["item"]["angels-" .. metal .. "-pebbles"].subgroup = "angels-" .. metal
+    data.raw["item"]["angels-" .. metal .. "-pebbles"].order = "c"
+end

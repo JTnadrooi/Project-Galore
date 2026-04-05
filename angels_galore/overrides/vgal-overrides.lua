@@ -3,6 +3,8 @@ vgal.data.trim("vgal-petroleum-gas-rocket-fuel")
 vgal.data.trim("vgal-plastic-bar-lubricant")
 vgal.data.trim("vgal-coal-sulfur")
 vgal.data.trim("vgal-steam-sulfur")
+vgal.data.trim("vgal-steam-concrete")
+vgal.data.trim("vgal-iron-stick-concrete")
 
 -- update savable recipes
 data.raw["recipe"]["vgal-coal-uranium-235-nuclear-fuel"].order = "j"

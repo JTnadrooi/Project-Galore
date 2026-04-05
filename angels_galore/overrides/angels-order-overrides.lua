@@ -43,3 +43,11 @@ for _, metal in ipairs(vgal.constants.METALS) do
     data.raw["item"]["angels-" .. metal .. "-pebbles"].subgroup = "angels-" .. metal
     data.raw["item"]["angels-" .. metal .. "-pebbles"].order = "c"
 end
+
+for index, value in ipairs({
+    "concrete", "hazard-concrete",
+    "refined-concrete", "refined-hazard-concrete",
+}) do
+    data.raw["item"][value].order = vgal.subgroup.order_from_number(index)
+    data.raw["item"][value].subgroup = "vgal-angels-solid-concrete"
+end

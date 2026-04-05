@@ -19,14 +19,6 @@ for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     end
 end
 
-for index, value in ipairs({
-    "concrete", "hazard-concrete",
-    "refined-concrete", "refined-hazard-concrete",
-}) do
-    data.raw["item"][value].order = vgal.subgroup.order_from_number(index)
-    data.raw["item"][value].subgroup = "vgal-angels-solid-concrete"
-end
-
 --- brick removal (clay/reinforced) ---
 vgal.data.trim("angels-reinforced-concrete-brick")
 vgal.data.trim("angels-clay-brick")
@@ -529,14 +521,24 @@ data.raw["recipe"]["angels-liquid-molten-iron"].energy_required = 1
 data.raw["recipe"]["angels-air-separation"].energy_required = 1
 data.raw["recipe"]["angels-gas-compressed-air"].energy_required = 1
 
---- normalising ---
+--- remove persentaged results ---
 vgal.recipe.set_result_amount("angels-bio-tile", 2)
 vgal.recipe.set_result_amount("angels-alien-goo", 10)
 
-
--- soil crafting speed tweaks.
+--- soil crafting speed tweaks ---
 data.raw["recipe"]["angels-solid-soil"].energy_required = 1.5
 data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 1.5
+
+-- commented-bc: the molten concrete recipe gets unlocked way to late.
+-- --- concrete fixes (the vanilla recipe is kinda OP) ---
+-- data.raw["recipe"]["concrete"].ingredients = vgal.table.build({}, {
+--     { "angels-liquid-molten-concrete", 100 }
+-- })
+
+-- vgal.data.trim("angels-concrete")
+
+vgal.recipe.multiply("angels-concrete", 1.25)
+data.raw["recipe"]["angels-concrete"].energy_required = 5
 
 -- misc balancing.
 data.raw["recipe"]["angels-gas-methanol-from-wood"].energy_required = 3

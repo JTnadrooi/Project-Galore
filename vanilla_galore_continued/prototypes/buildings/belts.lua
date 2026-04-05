@@ -237,25 +237,6 @@ vgal.data.extend({
         category = "crafting",
     },
     {
-        name = "processing-unit-fast-splitter",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("fast-splitter"),
-            vgal.icon.get_in("processing-unit"),
-        },
-        energy_required = 8,
-        technology = { "processing-unit", "logistics-2" },
-        ingredients = {
-            { "steel-plate",     3 }, -- 200
-            { "processing-unit", 1 }, -- 710
-            { "splitter",        2 }, -- 235*2
-        },
-        results = {
-            { "fast-splitter", 2 }, -- 685*2
-        },
-        category = "crafting",
-    },
-    {
         name = "advanced-circuit-express-splitter",
         prefix = "vgal",
         icons = vgal.icon.register {

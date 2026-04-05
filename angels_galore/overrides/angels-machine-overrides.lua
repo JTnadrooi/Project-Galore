@@ -41,7 +41,8 @@ local UNNEEDED_BUILDINGS = {
     ["angels-powder-mixer"] = 1,
     ["angels-blast-furnace"] = 1,
     ["angels-chemical-furnace"] = 1,
-    ["angels-sintering-oven"] = 0, -- removes it.
+    ["angels-sintering-oven"] = 0,        -- removes it.
+    ["angels-electro-whinning-cell"] = 0, -- removes it. (whinning?)
 }
 
 local MODULE_COUNT_BLACKLIST = {
@@ -113,6 +114,12 @@ for building_name, max_tier in pairs(UNNEEDED_BUILDINGS) do
 
     if is_partial_angels then
         partial_angels_category_buffer[building_name] = max_categories
+    end
+
+    if max_tier == 0 then
+        vgal.data.deep_hide(data.raw["assembling-machine"][building_name])
+        vgal.data.deep_hide(data.raw["item"][building_name])
+        vgal.data.trim(building_name)
     end
 end
 

@@ -52,10 +52,6 @@ vgal.recipe.deep_hide("angels-slag-processing-1")
 vgal.recipe.deep_hide("angels-slag-processing-2")
 vgal.recipe.deep_hide("angels-slag-processing-3")
 
-for _, ore_index in ipairs(agal.constants.REMOVED_ORE_INDEXES) do
-    vgal.data.deep_hide(data.raw["resource"]["angels-ore" .. ore_index])
-end
-
 -- remove extra molten metal recipes
 for _, metal in ipairs({ "iron", "steel" }) do -- copper doesn't have any extra smelting recipes
     for i = 2, 6 do

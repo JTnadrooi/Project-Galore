@@ -1,4 +1,4 @@
---- wipe alien samples of the planet !! ---
+--- wipe alien samples of the planet ---
 local alien_sample_tech_names = {}
 for _, tech in pairs(data.raw.technology) do
     if tech.unit and tech.unit.ingredients then
@@ -37,6 +37,14 @@ table.insert(data.raw["technology"]["angels-bio-processing-green"].unit.ingredie
 table.insert(data.raw["technology"]["angels-bio-processing-green"].prerequisites, "angels-bio-nutrient-paste")
 vgal.tech.move_recipe("angels-bio-processing-green", "angels-water-treatment", "angels-water-mineralized")
 vgal.tech.replace_recipe("angels-ore-crushing", "angels-ore4-crushed", "angels-ore3-crushed")
+
+-- make crushing recipes early early game.
+for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
+    vgal.tech.remove_recipe("angels-ore-crushing", "angels-ore" .. ore_index .. "-crushed")
+    data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].enabled = true
+    data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].additional_categories = { "angels-manual-crafting" }
+end
+
 
 for _, metal in ipairs(vgal.constants.METALS) do
     data.raw["recipe"][metal .. "-plate"].enabled = true

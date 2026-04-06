@@ -1,3 +1,5 @@
+require("overrides.loot-overrides")
+
 require("overrides.angels-order-overrides")
 require("overrides.angels-overrides")
 require("overrides.angels-recipe-overrides")

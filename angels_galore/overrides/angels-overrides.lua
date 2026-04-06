@@ -45,7 +45,6 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].additional_categories = { "angels-manual-crafting" }
 end
 
-
 for _, metal in ipairs(vgal.constants.METALS) do
     data.raw["recipe"][metal .. "-plate"].enabled = true
 end
@@ -53,8 +52,6 @@ end
 --- align ores (ore2 is normally a tier 2 ore)
 data.raw["resource"]["angels-ore2"].minable.mining_time = data.raw["resource"]["angels-ore3"].minable.mining_time
 data.raw["resource"]["angels-ore2"].autoplace = data.raw["resource"]["angels-ore1"].autoplace
-
-
 
 --- fuel ---
 data.raw["item"]["angels-coal-crushed"].fuel_value = "2.5MJ"
@@ -68,6 +65,7 @@ data.raw["item"]["angels-blue-cellulose-fiber"].fuel_value = "3MJ"
 
 --- remove bio token lab input ---
 vgal.table.remove(data.raw["lab"]["lab"].inputs, "angels-token-bio")
+
 
 
 

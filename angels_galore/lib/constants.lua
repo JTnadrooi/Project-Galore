@@ -1,4 +1,12 @@
 agal.constants = agal.constants or {}
+agal.constants.GEODES = { -- sorted from most to least valuable
+    "angels-geode-cyan",
+    "angels-geode-lightgreen",
+    "angels-geode-yellow",
+    "angels-geode-purple",
+    "angels-geode-red",
+    "angels-geode-blue",
+}
 agal.constants.ENVIRONMENTS = { "angels-temperate", "angels-swamp", "angels-desert" }
 agal.constants.ORE_STATES = { "crushed", "chunk", "crystal", "pure" }
 agal.constants.ALT_ORE_STATES = { "crushed", "powder", "dust", "crystal" } -- see ore8 and 9, they have a dust states.

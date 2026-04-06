@@ -1,5 +1,3 @@
-
-
 --- wipe alien samples of the planet !! ---
 local alien_sample_tech_names = {}
 for _, tech in pairs(data.raw.technology) do
@@ -44,8 +42,11 @@ for _, metal in ipairs(vgal.constants.METALS) do
     data.raw["recipe"][metal .. "-plate"].enabled = true
 end
 
---- align mining time
-data.raw["resource"]["angels-ore2"].minable.mining_time = 1
+--- align ores (ore2 is normally a tier 2 ore)
+data.raw["resource"]["angels-ore2"].minable.mining_time = data.raw["resource"]["angels-ore3"].minable.mining_time
+data.raw["resource"]["angels-ore2"].autoplace = data.raw["resource"]["angels-ore1"].autoplace
+
+
 
 --- fuel ---
 data.raw["item"]["angels-coal-crushed"].fuel_value = "2.5MJ"
@@ -57,8 +58,10 @@ data.raw["item"]["angels-red-cellulose-fiber"].fuel_value = "0.25MJ"
 data.raw["item"]["angels-blue-cellulose-fiber"].fuel_category = "chemical"
 data.raw["item"]["angels-blue-cellulose-fiber"].fuel_value = "3MJ"
 
---- lab inputs ---
+--- remove bio token lab input ---
 vgal.table.remove(data.raw["lab"]["lab"].inputs, "angels-token-bio")
+
+
 
 -- vgal.recipe.unhide("thermal-water-purification")
 -- vgal.tech.add_recipe("vgal-hydrochloric-intermediates", "thermal-water-purification")

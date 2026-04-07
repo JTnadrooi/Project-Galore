@@ -419,9 +419,6 @@ for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
     vgal.recipe.deep_hide(environment .. "-garden-cultivating-a")
 end
 
---- recipe buffs ---
-vgal.recipe.set_result_amount("angels-ingot-iron", 8)
-
 --- plastic buff ---
 local PLASTIC_MULTIPLIER = 5
 vgal.recipe.multiply_results("angels-liquid-plastic", PLASTIC_MULTIPLIER)

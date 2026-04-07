@@ -237,9 +237,7 @@ function vgal.recipe.replace_ingredient(recipe_name, oldingredient_name, newingr
     local to_alter = recipe.ingredients or {}
     for _, ingredient in ipairs(to_alter) do
         if ingredient.name == oldingredient_name then
-            if ingredient.name then
-                ingredient.name = newingredient_name
-            end
+            ingredient.name = newingredient_name
         end
     end
 end

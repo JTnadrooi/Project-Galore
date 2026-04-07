@@ -544,3 +544,14 @@ data.raw["recipe"]["angels-concrete"].energy_required = 5
 data.raw["recipe"]["angels-gas-methanol-from-wood"].energy_required = 3
 data.raw["recipe"]["angels-ingot-copper-3"].energy_required = 3
 vgal.data.trim("angels-solid-salt-from-saline") -- bc of productivity
+
+-- make crushing recipes early early game.
+for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
+    vgal.tech.remove_recipe("angels-ore-crushing", "angels-ore" .. ore_index .. "-crushed")
+    data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].enabled = true
+    data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].additional_categories = { "angels-manual-crafting" }
+end
+
+for _, metal in ipairs(vgal.constants.METALS) do
+    data.raw["recipe"][metal .. "-plate"].enabled = true
+end

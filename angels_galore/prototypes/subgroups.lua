@@ -139,34 +139,28 @@ for metal in vgal.table.iter_all(vgal.constants.METALS, { agal.constants.METAL_S
     })
 end
 
-for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
+for _, metal in pairs(vgal.constants.METALS) do
+    data.raw["item"][metal.base_ore].order = "a"
+
     local ore_entries = {}
-    data.raw["item"]["angels-ore" .. ore_index].order = "a"
-    for ore_state_index, ore_state in ipairs(agal.constants.ORE_STATES) do
-        local ore = "angels-ore" .. ore_index .. "-" .. ore_state
-        table.insert(ore_entries, ore)
+    for ore_state_index, ore_state in ipairs(metal.ore_states) do
+        table.insert(ore_entries, metal[ore_state])
 
-        data.raw["item"][ore].order = "a-" ..
+        data.raw["item"][metal[ore_state]].order = "a-" ..
             vgal.subgroup.order_from_number(ore_state_index)
 
-        vgal.subgroup.clean("angels-ore" .. ore_index .. "-" .. ore_state)
-        data.raw["recipe"]["angels-ore" .. ore_index .. "-" .. ore_state .. "-processing"].subgroup = "vgal-angels-ore" ..
-            ore_index
-        data.raw["recipe"]["angels-ore" .. ore_index .. "-" .. ore_state .. "-processing"].order = "b-" ..
+        vgal.subgroup.clean(metal[ore_state])
+        data.raw["recipe"][metal[ore_state] .. "-processing"].subgroup = "vgal-angels-ore" .. metal.ore_index
+        data.raw["recipe"][metal[ore_state] .. "-processing"].order = "b-" ..
             vgal.subgroup.order_from_number(ore_state_index)
     end
-    local order_post
-    if ore_index == 3 then
-        order_post = "b"
-    else
-        order_post = "a"
-    end
+
     table.insert(subgroups,
         {
-            name = "angels-ore" .. ore_index,
+            name = metal.base_ore,
             tab = "angels-resource-refining",
-            order = "b[processing]-" .. order_post,
-            entries = vgal.table.merge({ "angels-ore" .. ore_index }, ore_entries),
+            order = "b[processing]-" .. (metal.name == "copper") and "a" or "b",
+            entries = vgal.table.merge({ metal.base_ore }, ore_entries),
         }
     )
 end

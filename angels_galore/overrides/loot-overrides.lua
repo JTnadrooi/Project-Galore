@@ -25,7 +25,7 @@ local WRECK_SIZES = {
             { "copper-plate",    nil, { amount_min = 1, amount_max = 5 } },
 
             { "iron-gear-wheel", nil, { amount_min = 0, amount_max = 8 } },
-            { "copper-wire",     nil, { amount_min = 2, amount_max = 8 } },
+            { "copper-cable",    nil, { amount_min = 2, amount_max = 8 } },
         }
     },
 }

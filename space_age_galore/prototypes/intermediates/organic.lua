@@ -197,18 +197,17 @@ vgal.data.extend({
     type = "recipe",
 })
 
-for _, metal in ipairs(vgal.constants.METALS) do
-    local bacteria = metal .. "-bacteria"
-    local other_bacteria = (metal == "iron" and "copper" or "iron") .. "-bacteria"
-    local order_base = metal == "iron" and "a" or "b"
+for _, metal in pairs(vgal.constants.METALS) do
+    local other_bacteria = (metal.name == "iron" and "copper" or "iron") .. "-bacteria"
+    local order_base = metal.name == "iron" and "a" or "b"
     vgal.data.extend({
         {
             type = "recipe",
-            name = other_bacteria .. "-" .. bacteria,
+            name = other_bacteria .. "-" .. metal.bacteria,
             prefix = "vgal",
             icons = vgal.icon.register {
                 vgal.icon.get_in_to(other_bacteria),
-                vgal.icon.get_out_to(bacteria),
+                vgal.icon.get_out_to(metal.bacteria),
                 vgal.icon.get_overlay("to"),
             },
             category = "organic",
@@ -219,9 +218,9 @@ for _, metal in ipairs(vgal.constants.METALS) do
                 { "uranium-235",  1, { ignored_by_stats = 1 } },
             },
             results = {
-                { bacteria,      1 },
-                { "uranium-235", 1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
-                { "uranium-238", 1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
+                { metal.bacteria, 1 },
+                { "uranium-235",  1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
+                { "uranium-238",  1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
             },
             allow_productivity = false,
             show_amount_in_title = false,
@@ -231,11 +230,11 @@ for _, metal in ipairs(vgal.constants.METALS) do
         },
         {
             type = "recipe",
-            name = other_bacteria .. "-" .. bacteria .. "-centrifuging",
+            name = other_bacteria .. "-" .. metal.bacteria .. "-centrifuging",
             prefix = "vgal",
             icons = vgal.icon.register {
                 vgal.icon.get_in_to(other_bacteria),
-                vgal.icon.get_out_to(bacteria),
+                vgal.icon.get_out_to(metal.bacteria),
                 vgal.icon.get_overlay("to"),
             },
             category = "centrifuging",
@@ -246,9 +245,9 @@ for _, metal in ipairs(vgal.constants.METALS) do
                 { "uranium-235",  1, { ignored_by_stats = 1 } },
             },
             results = {
-                { bacteria,      1 },
-                { "uranium-235", 1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
-                { "uranium-238", 1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
+                { metal.bacteria, 1 },
+                { "uranium-235",  1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
+                { "uranium-238",  1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
             },
             allow_productivity = false,
             show_amount_in_title = false,
@@ -257,24 +256,24 @@ for _, metal in ipairs(vgal.constants.METALS) do
         },
         {
             type = "recipe",
-            name = "uranium-235-" .. bacteria,
+            name = "uranium-235-" .. metal.bacteria,
             prefix = "vgal",
             icons = vgal.icon.register {
-                vgal.icon.get(bacteria .. "-cultivation", "recipe"),
+                vgal.icon.get(metal.bacteria .. "-cultivation", "recipe"),
                 vgal.icon.get_in_fluid("uranium-235"),
             },
             category = "organic",
             energy_required = 8,
             technology = { "bacteria-cultivation", "uranium-processing" },
             ingredients = {
-                { bacteria,      1, { ignored_by_stats = 1 } }, -- 12
-                { "bioflux",     1 },                           -- 60
-                { "uranium-235", 1, { ignored_by_stats = 1 } }, -- 700
+                { metal.bacteria, 1, { ignored_by_stats = 1 } }, -- 12
+                { "bioflux",      1 },                           -- 60
+                { "uranium-235",  1, { ignored_by_stats = 1 } }, -- 700
             },
             results = {
-                { bacteria,      10, { ignored_by_stats = 1 } },                                                                                          -- r180
-                { "uranium-235", 1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } }, -- 686
-                { "uranium-238", 1,  { probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },                       -- 4
+                { metal.bacteria, 10, { ignored_by_stats = 1 } },                                                                                          -- r180
+                { "uranium-235",  1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } }, -- 686
+                { "uranium-238",  1,  { probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },                       -- 4
             },
             show_amount_in_title = false,
             result_is_always_fresh = true,
@@ -291,10 +290,10 @@ for _, metal in ipairs(vgal.constants.METALS) do
         },
         {
             type = "recipe",
-            name = "ammoniacal-solution-" .. bacteria,
+            name = "ammoniacal-solution-" .. metal.bacteria,
             prefix = "vgal",
             icons = vgal.icon.register {
-                vgal.icon.get(bacteria .. "-cultivation", "recipe"),
+                vgal.icon.get(metal.bacteria .. "-cultivation", "recipe"),
                 vgal.icon.get_in_fluid("ammoniacal-solution"),
             },
             category = "organic",
@@ -304,11 +303,11 @@ for _, metal in ipairs(vgal.constants.METALS) do
                 { "ammoniacal-solution", 50 },
             },
             ingredients = {
-                { bacteria,  1, { ignored_by_stats = 1 } },
-                { "bioflux", 1 },
+                { metal.bacteria, 1, { ignored_by_stats = 1 } },
+                { "bioflux",      1 },
             },
             results = {
-                { bacteria, 8, { ignored_by_stats = 1 } },
+                { metal.bacteria, 8, { ignored_by_stats = 1 } },
             },
             show_amount_in_title = false,
             result_is_always_fresh = true,

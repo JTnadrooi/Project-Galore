@@ -24,3 +24,10 @@ agal.constants.REMOVED_METALS = {                 -- I guess silicon is a metall
     "tungsten",
     "chrome",
 }
+agal.constants.METAL_STEEL = {
+    name = "steel",
+    plate = "steel-plate",
+    molten = "angels-liquid-molten-steel",
+    ingot = "angels-ingot-steel",
+    roll = "angels-roll-steel",
+}

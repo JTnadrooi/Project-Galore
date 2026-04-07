@@ -208,11 +208,11 @@ vgal.recipe.smart_allow_productivity("angels-liquid-concrete-2")
 vgal.recipe.smart_allow_productivity("angels-concrete-brick")
 
 --- metallugy ---
-for _, metal in ipairs(vgal.constants.METALS) do
-    vgal.recipe.smart_allow_productivity("angels-" .. metal .. "-pebbles-smelting")
-    vgal.recipe.smart_allow_productivity("angels-" .. metal .. "-nugget-smelting")
-    vgal.recipe.smart_allow_productivity(metal .. "-plate")
-    vgal.recipe.smart_allow_productivity("angels-plate-" .. metal)
+for _, metal in pairs(vgal.constants.METALS) do
+    vgal.recipe.smart_allow_productivity(metal.pebbles .. "-smelting")
+    vgal.recipe.smart_allow_productivity(metal.nugget .. "-smelting")
+    vgal.recipe.smart_allow_productivity(metal.plate)
+    vgal.recipe.smart_allow_productivity(metal.angels_plate_recipe_name)
     -- vgal.recipe.smart_allow_productivity("roll-" .. metal .. "-casting")
     -- vgal.recipe.smart_allow_productivity("roll-" .. metal .. "-casting-fast")
     -- vgal.recipe.smart_allow_productivity("angels-wire-coil-" .. metal .. "-casting")

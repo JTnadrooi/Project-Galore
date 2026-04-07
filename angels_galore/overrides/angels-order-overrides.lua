@@ -39,9 +39,9 @@ data.raw["item-subgroup"]["angels-fluid-control"].order = "dc"
 data.raw["item"]["angels-ingot-steel"].subgroup = "angels-steel-casting"
 data.raw["item"]["angels-ingot-steel"].order = "ib"
 
-for _, metal in ipairs(vgal.constants.METALS) do
-    data.raw["item"]["angels-" .. metal .. "-pebbles"].subgroup = "angels-" .. metal
-    data.raw["item"]["angels-" .. metal .. "-pebbles"].order = "c"
+for _, metal in pairs(vgal.constants.METALS) do
+    data.raw["item"][metal.pebbles].subgroup = "angels-" .. metal.name
+    data.raw["item"][metal.pebbles].order = "c"
 end
 
 for index, value in ipairs({
@@ -61,3 +61,5 @@ data.raw["item"]["angels-liquifier-2"].order = "c"
 vgal.subgroup.set_item_or_fluid("stone-brick", "vgal-angels-cement-concrete")
 data.raw["item"]["stone-brick"].order = "c"
 data.raw["recipe"]["stone-brick"].order = nil
+
+vgal.subgroup.clean("angels-solid-plastic")

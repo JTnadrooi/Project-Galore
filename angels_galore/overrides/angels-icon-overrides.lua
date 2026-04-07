@@ -20,18 +20,10 @@ data.raw.recipe["angels-garden-cultivating"].icons = vgal.icon.register({
 --         vgal.icon.get_in("angels-ore" .. ore_index .. "-crushed"),
 --     })
 -- end
-for _, metal in ipairs(vgal.constants.METALS) do
-    local ore_index = (metal == "copper") and 2 or 3
-    local nugget = "angels-" .. metal .. "-nugget"
-    local slag = "angels-" .. metal .. "-slag"
-    local pebbles = "angels-" .. metal .. "-pebbles"
-    local ore = metal .. "-ore"
-    local base_ore = "angels-ore" .. ore_index
-    local plate = metal .. "-plate"
-
-    data.raw["recipe"]["angels-plate-" .. metal].icons = vgal.icon.register({
-        vgal.icon.get(metal .. "-plate"),
-        vgal.icon.get_in("angels-liquid-molten-" .. metal),
+for _, metal in pairs(vgal.constants.METALS) do
+    data.raw["recipe"][metal.angels_plate_recipe_name].icons = vgal.icon.register({
+        vgal.icon.get(metal.plate),
+        vgal.icon.get_in(metal.molten),
     })
     -- data.raw["recipe"]["angels-roll-" .. metal .. "-2"].icons = vgal.icon.register({
     --     vgal.icon.get("angels-roll-" .. metal),
@@ -41,9 +33,9 @@ for _, metal in ipairs(vgal.constants.METALS) do
     --     vgal.icon.get("angels-roll-" .. metal),
     --     vgal.icon.get_in("angels-liquid-coolant"),
     -- })
-    data.raw["recipe"][metal .. "-plate"].icons = vgal.icon.register({
-        vgal.icon.get(metal .. "-plate"),
-        vgal.icon.get_in(base_ore),
+    data.raw["recipe"][metal.plate].icons = vgal.icon.register({
+        vgal.icon.get(metal.plate),
+        vgal.icon.get_in(metal.base_ore),
     })
 end
 -- data.raw["recipe"]["angels-wire-coil-copper-2"].icons = vgal.icon.register({

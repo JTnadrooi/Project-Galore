@@ -100,39 +100,39 @@ local subgroups = {
     }, -- all of these.. they don't.. they don't listen.
 }
 
-for metal in vgal.table.iter_all(vgal.constants.METALS, { "steel" }) do
-    local mid_order = (metal == "copper") and "e" or "f"
-    if metal == "steel" then
+for metal in vgal.table.iter_all(vgal.constants.METALS, { agal.constants.METAL_STEEL }) do
+    local mid_order = (metal.name == "copper") and "e" or "f"
+    if metal.name == "steel" then
         mid_order = "g"
     end
 
     local processing_entries = {
-        "angels-processed-" .. metal,
-        "angels-pellet-" .. metal,
+        metal.processed,
+        metal.pellet,
     }
-    if metal == "copper" then table.insert(processing_entries, "angels-anode-" .. metal) end
-    table.insert(processing_entries, "angels-ingot-" .. metal)
+    if metal.name == "copper" then table.insert(processing_entries, "angels-anode-" .. metal.name) end
+    table.insert(processing_entries, metal.ingot)
 
-    if metal == "steel" then
+    if metal.name == "steel" then
         processing_entries = {
             "angels-ingot-steel",
         }
     end
 
     table.insert(subgroups, {
-        name = "angels-" .. metal .. "-processing",
+        name = "angels-" .. metal.name .. "-processing",
         tab = "angels-resource-refining",
         order = "y-" .. mid_order .. "a",
         entries = processing_entries,
         reorder_entries = true,
     })
     local casting_entries = {
-        "angels-liquid-molten-" .. metal,
-        "angels-roll-" .. metal,
+        metal.molten,
+        metal.roll,
     }
-    if metal == "copper" then table.insert(casting_entries, "angels-wire-coil-" .. metal) end
+    if metal.name == "copper" then table.insert(casting_entries, "angels-wire-coil-" .. metal.name) end
     table.insert(subgroups, {
-        name = "angels-" .. metal .. "-casting",
+        name = "angels-" .. metal.name .. "-casting",
         tab = "angels-resource-refining",
         order = "y-" .. mid_order .. "b",
         entries = casting_entries,

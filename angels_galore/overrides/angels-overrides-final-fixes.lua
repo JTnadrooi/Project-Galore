@@ -38,14 +38,14 @@ local function unhide(name)
 end
 
 -- unhide nuggets and pebbles
-for _, metal in ipairs(vgal.constants.METALS) do
-    unhide("angels-" .. metal .. "-pebbles")
+for _, metal in pairs(vgal.constants.METALS) do
+    unhide(metal.pebbles)
     -- unhide("angels-" .. metal .. "-pebbles-smelting")
-    unhide("angels-" .. metal .. "-nugget")
+    unhide(metal.nugget)
     -- unhide("angels-" .. metal .. "-nugget-smelting")
-    unhide("angels-" .. metal .. "-slag")
+    unhide(metal.slag)
     -- unhide("angels-" .. metal .. "-slag-smelting")
-    unhide(metal .. "-plate")
+    unhide(metal.plate)
 end
 
 -- prepare recipe for next loop. (the recipe amount will not apply otherwise)
@@ -130,13 +130,9 @@ data.raw["recipe"]["angels-ore2-pure-processing"].results = vgal.build.table({
     { "angels-copper-slag",    1 },
 })
 
-for _, metal in ipairs(vgal.constants.METALS) do
-    local ore_index = (metal == "copper") and 2 or 3
-    local base_ore = "angels-ore" .. ore_index
-    local plate = metal .. "-plate"
-
-    data.raw["recipe"][plate].ingredients = vgal.build.table({
-        { base_ore .. "-crushed", 3 }
+for _, metal in pairs(vgal.constants.METALS) do
+    data.raw["recipe"][metal.plate].ingredients = vgal.build.table({
+        { metal.crushed, 3 }
     })
 end
 

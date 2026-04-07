@@ -1,3 +1,5 @@
+require("lib.sagal")
+
 require("overrides.vgal-overrides")
 require("overrides.overrides")
 

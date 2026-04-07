@@ -29,13 +29,13 @@ vgal.recipe.all.replace_ingredient("clay-brick",
     { type = "item", name = "stone-brick", amount = 1 })
 
 --- casting recipe tweaks ---
-for _, metal in ipairs(vgal.constants.METALS) do
-    data.raw.recipe["angels-" .. metal .. "-pebbles-smelting"].energy_required = 6.4
-    data.raw.recipe["angels-" .. metal .. "-nugget-smelting"].energy_required = 6.4
+for _, metal in pairs(vgal.constants.METALS) do
+    data.raw.recipe[metal.pebbles .. "-smelting"].energy_required = 6.4
+    data.raw.recipe[metal.nugget .. "-smelting"].energy_required = 6.4
 
-    data.raw.recipe[metal .. "-plate"].energy_required = 9.6
-    data.raw.recipe["angels-plate-" .. metal].energy_required = 1
-    vgal.recipe.multiply("angels-plate-" .. metal, 1.25)
+    data.raw.recipe[metal.plate].energy_required = 9.6
+    data.raw.recipe[metal.angels_plate_recipe_name].energy_required = 1
+    vgal.recipe.multiply(metal.angels_plate_recipe_name, 1.25)
 end
 
 -- for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
@@ -408,7 +408,6 @@ vgal.recipe.replace_ingredient("angels-ore2-crystal", "angels-liquid-hydrofluori
 vgal.recipe.replace_result("angels-ore2-chunk", "angels-water-greenyellow-waste", "angels-water-yellow-waste")
 
 --- plastic buff ---
-vgal.subgroup.clean("angels-solid-plastic")
 vgal.recipe.multiply("angels-solid-plastic", 1.25)
 
 --- remove the alien tokens things ---
@@ -494,11 +493,11 @@ vgal.data.deep_hide(data.raw["item"]["angels-temperate-tree"])
 vgal.data.deep_hide(data.raw["item"]["angels-swamp-tree"])
 vgal.data.deep_hide(data.raw["item"]["angels-desert-tree"])
 
-for _, metal in ipairs(vgal.constants.METALS) do
-    vgal.recipe.multiply("angels-processed-" .. metal, 1.5)
-    vgal.recipe.add_result("angels-processed-" .. metal,
+for _, metal in pairs(vgal.constants.METALS) do
+    vgal.recipe.multiply(metal.processed, 1.5)
+    vgal.recipe.add_result(metal.processed,
         vgal.table.get_single_shorthand({ "angels-slag", 1, { probability = 0.5 } }, "item"))
-    data.raw["recipe"]["angels-roll-" .. metal].energy_required = 1
+    data.raw["recipe"][metal.roll].energy_required = 1
 end
 
 data.raw["recipe"]["angels-wire-coil-copper"].energy_required = 2
@@ -552,6 +551,6 @@ for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].additional_categories = { "angels-manual-crafting" }
 end
 
-for _, metal in ipairs(vgal.constants.METALS) do
-    data.raw["recipe"][metal .. "-plate"].enabled = true
+for _, metal in pairs(vgal.constants.METALS) do
+    data.raw["recipe"][metal.plate].enabled = true
 end

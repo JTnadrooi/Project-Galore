@@ -53,9 +53,9 @@ vgal.recipe.deep_hide("angels-slag-processing-2")
 vgal.recipe.deep_hide("angels-slag-processing-3")
 
 -- remove extra molten metal recipes
-for _, metal in ipairs({ "iron", "steel" }) do -- copper doesn't have any extra smelting recipes
+for _, metal_name in ipairs({ "iron", "steel" }) do -- copper doesn't have any extra smelting recipes
     for i = 2, 6 do
-        local recipe = data.raw["recipe"]["angels-liquid-molten-" .. metal .. "-" .. i]
+        local recipe = data.raw["recipe"]["angels-liquid-molten-" .. metal_name .. "-" .. i]
         if recipe then
             vgal.recipe.deep_hide(recipe.name)
             vgal.data.trim(recipe.name)
@@ -67,9 +67,9 @@ end
 
 -- techs first.
 for i = 1, 4 do
-    for _, metal in ipairs(agal.constants.REMOVED_METALS) do
+    for _, metal_name in ipairs(agal.constants.REMOVED_METALS) do
         for _, suffix in ipairs({ "smelting", "casting" }) do
-            local tech = data.raw["technology"]["angels-" .. metal .. "-" .. suffix .. "-" .. i]
+            local tech = data.raw["technology"]["angels-" .. metal_name .. "-" .. suffix .. "-" .. i]
 
             if tech then
                 vgal.tech.techs_to_splice[tech.name] = tech
@@ -93,25 +93,25 @@ local function dh_item(name)
     end
 end
 
-for _, metal in ipairs(agal.constants.REMOVED_METALS) do
-    dh_fluid("angels-liquid-molten-" .. metal)
-    dh_fluid("angels-liquid-" .. metal .. "-tetrachloride")
-    dh_fluid("angels-gas-" .. metal .. "-hexafluoride")
+for _, metal_name in ipairs(agal.constants.REMOVED_METALS) do
+    dh_fluid("angels-liquid-molten-" .. metal_name)
+    dh_fluid("angels-liquid-" .. metal_name .. "-tetrachloride")
+    dh_fluid("angels-gas-" .. metal_name .. "-hexafluoride")
 
-    dh_item("angels-" .. metal .. "-ore")
-    dh_item("angels-processed-" .. metal)
-    dh_item("angels-cathode-" .. metal)
-    dh_item("angels-pellet-" .. metal)
-    dh_item("angels-solid-" .. metal .. "-hydroxide")
-    dh_item("angels-solid-" .. metal .. "-oxide")
-    dh_item("angels-ingot-" .. metal)
-    dh_item("angels-powder-" .. metal)
-    dh_item("angels-solid-" .. metal .. "-carbonyl")
-    dh_item("angels-sponge-" .. metal)
-    dh_item("angels-casting-powder-" .. metal)
+    dh_item("angels-" .. metal_name .. "-ore")
+    dh_item("angels-processed-" .. metal_name)
+    dh_item("angels-cathode-" .. metal_name)
+    dh_item("angels-pellet-" .. metal_name)
+    dh_item("angels-solid-" .. metal_name .. "-hydroxide")
+    dh_item("angels-solid-" .. metal_name .. "-oxide")
+    dh_item("angels-ingot-" .. metal_name)
+    dh_item("angels-powder-" .. metal_name)
+    dh_item("angels-solid-" .. metal_name .. "-carbonyl")
+    dh_item("angels-sponge-" .. metal_name)
+    dh_item("angels-casting-powder-" .. metal_name)
 
-    dh_item("angels-roll-" .. metal)
-    dh_item("angels-plate-" .. metal)
+    dh_item("angels-roll-" .. metal_name)
+    dh_item("angels-plate-" .. metal_name)
 end
 
 -- misfits

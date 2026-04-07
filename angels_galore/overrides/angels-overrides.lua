@@ -3,7 +3,7 @@ local alien_sample_tech_names = {}
 for _, tech in pairs(data.raw.technology) do
     if tech.unit and tech.unit.ingredients then
         for i, ingredient in ipairs(tech.unit.ingredients) do
-            if ingredient[1] == "token-bio" then
+            if ingredient[1] == "angels-token-bio" then
                 table.remove(tech.unit.ingredients, i)
                 table.insert(alien_sample_tech_names, tech.name)
                 break;

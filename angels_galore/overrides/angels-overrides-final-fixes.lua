@@ -130,6 +130,17 @@ data.raw["recipe"]["angels-ore2-pure-processing"].results = vgal.build.table({
     { "angels-copper-slag",    1 },
 })
 
+for _, metal in ipairs(vgal.constants.METALS) do
+    local ore_index = (metal == "copper") and 2 or 3
+    local base_ore = "angels-ore" .. ore_index
+    local plate = metal .. "-plate"
+
+    data.raw["recipe"][plate].ingredients = vgal.build.table({
+        { base_ore .. "-crushed", 3 }
+    })
+end
+
+
 --- ore gen removal ---
 for _, ore_index in pairs(agal.constants.REMOVED_ORE_INDEXES) do
     local ore = "angels-ore" .. ore_index

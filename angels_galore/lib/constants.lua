@@ -1,3 +1,5 @@
+agal = agal or {} -- to make it loadable in settings phase.
+
 agal.constants = agal.constants or {}
 agal.constants.GEODES = { -- sorted from most to least valuable
     "angels-geode-cyan",

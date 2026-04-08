@@ -15,15 +15,23 @@ function vgal.setting.new_bool(name, order, default_value)
 end
 
 function vgal.setting.new_string(name, order, default_value)
+    local allow_blank = false
+
     if default_value == nil then
         default_value = ""
     end
+
+    if default_value == "" then
+        allow_blank = true
+    end
+
     return {
         type = "string-setting",
         name = name,
         setting_type = "startup",
         default_value = default_value,
-        order = order
+        order = order,
+        allow_blank = allow_blank,
     }
 end
 

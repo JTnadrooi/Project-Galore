@@ -396,7 +396,7 @@ local function remove_empty_vgal_techs()
             end
         end
 
-        removable_techs[tech.name] = true
+        removable_techs[tech.name] = tech
 
         for _, effect in ipairs(tech.effects or {}) do
             if not effect.hidden then

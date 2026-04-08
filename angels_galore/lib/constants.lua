@@ -14,7 +14,7 @@ agal.constants.FLUID_ALT_ORE_STATES = { "sludge", "slime", "solution" }    -- se
 agal.constants.ORE_INDEXES = { 2, 3 }
 agal.constants.REMOVED_ORE_INDEXES = { 1, 4, 5, 6 }
 agal.constants.REMOVED_ALT_ORE_INDEXES = { 8, 9 } -- these ores are kinda different. (they have slightly different ore states, and dont generate)
-agal.constants.REMOVED_METALS = {                 -- I guess silicon is a metalloid but im not calling this "REMOVED_METALS_AND_SILICON"
+agal.constants.REMOVED_METAL_NAMES = {            -- I guess silicon is a metalloid but im not calling this "REMOVED_METALS_AND_SILICON"
     "manganese",
     "aluminium",
     "nickel",

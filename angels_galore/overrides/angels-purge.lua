@@ -67,7 +67,7 @@ end
 
 -- techs first.
 for i = 1, 4 do
-    for _, metal_name in ipairs(agal.constants.REMOVED_METALS) do
+    for _, metal_name in ipairs(agal.constants.REMOVED_METAL_NAMES) do
         for _, suffix in ipairs({ "smelting", "casting" }) do
             local tech = data.raw["technology"]["angels-" .. metal_name .. "-" .. suffix .. "-" .. i]
 
@@ -93,7 +93,7 @@ local function dh_item(name)
     end
 end
 
-for _, metal_name in ipairs(agal.constants.REMOVED_METALS) do
+for _, metal_name in ipairs(agal.constants.REMOVED_METAL_NAMES) do
     dh_fluid("angels-liquid-molten-" .. metal_name)
     dh_fluid("angels-liquid-" .. metal_name .. "-tetrachloride")
     dh_fluid("angels-gas-" .. metal_name .. "-hexafluoride")

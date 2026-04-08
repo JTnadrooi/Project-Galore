@@ -11,5 +11,7 @@ data:extend {
         },
         order = "aac"
     },
-    vgal.setting.new_bool("vgal-high-temp-oil-processing-temp-coal-liquefaction", "aad")
+    vgal.setting.new_bool("vgal-high-temp-oil-processing-temp-coal-liquefaction", "aad"),
+    vgal.setting.new_string("vgal-custom-disabled-recipes", "aba"), -- only overrides groups.
+    vgal.setting.new_string("vgal-custom-enabled-recipes", "abb"),  -- only overrides groups.
 }

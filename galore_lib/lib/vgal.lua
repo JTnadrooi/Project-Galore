@@ -46,6 +46,35 @@ vgal.groups = {}
 vgal.productivity_entries = {}
 vgal.catalyst_entries = {}
 
+vgal.group_overrides = {}
+if mods["vanilla_galore_continued"] then
+    local function split(inputstr, sep)
+        if sep == nil then
+            sep = "%s"
+        end
+        local t = {}
+        for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
+            table.insert(t, str)
+        end
+        return t
+    end
+
+    local disable_entries = split(settings.startup["vgal-custom-disabled-recipes"].value)
+    local enable_entries = split(settings.startup["vgal-custom-enabled-recipes"].value)
+
+    for _, disable_entry in ipairs(disable_entries) do
+        vgal.group_overrides[disable_entry] = {
+            hidden = true
+        }
+    end
+
+    for _, enable_entry in ipairs(enable_entries) do
+        vgal.group_overrides[enable_entry] = {
+            hidden = false
+        }
+    end
+end
+
 function vgal.data.domain_pairs(domain_name, prototype_type)
     local dom = vgal.data.DOMAINS[domain_name]
     if not dom then error("domain " .. domain_name .. " does not exist") end
@@ -113,17 +142,6 @@ function vgal.data.extend(entries, fill_in_with)
 
         if entry.type == "recipe" then
             ---@cast entry vgal.VgalRecipePrototype
-            local hidden = false
-            entry.groups = vgal.table.ensure(entry.group, entry.groups)
-            for _, group in ipairs(entry.groups) do
-                if not vgal.groups[group] then
-                    error("group with name " .. group .. " does not exist")
-                end
-                if not vgal.groups[group].enabled then
-                    hidden = true
-                    break
-                end
-            end
 
             entry.technologies = vgal.table.ensure(entry.technology, entry.technologies)
 
@@ -161,6 +179,23 @@ function vgal.data.extend(entries, fill_in_with)
             entry.ingredients = entry.ingredients or {}
             entry.results = entry.results or {}
             entry.module_allows = entry.module_allows or {}
+            entry.groups = vgal.table.ensure(entry.group, entry.groups)
+
+            local hidden = false
+            for _, group in ipairs(entry.groups) do
+                if not vgal.groups[group] then
+                    error("group with name " .. group .. " does not exist")
+                end
+
+                if not vgal.groups[group].enabled then
+                    hidden = true
+                    break
+                end
+            end
+
+            if vgal.group_overrides[entry.name] then
+                hidden = vgal.group_overrides[entry.name].hidden
+            end
 
             if hidden then
                 vgal.data.deep_hide(entry)
@@ -432,6 +467,12 @@ end
 function vgal.data.finalise()
     remove_empty_vgal_techs()
     splice_and_flatten_techs()
+
+    for recipe_name, _ in pairs(vgal.group_overrides) do
+        if not data.raw["recipe"][recipe_name] then
+            error("Recipe '" .. recipe_name .. "' not found in enable/disable override settings.")
+        end
+    end
 end
 
 return vgal

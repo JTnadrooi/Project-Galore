@@ -337,6 +337,25 @@ vgal.data.extend({
         },
         category = "crafting",
     },
+    {
+        name = "plastic-bar-electric-engine-unit",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("electric-engine-unit"),
+            vgal.icon.get_in("plastic-bar"),
+        },
+        technology = "electric-engine",
+        energy_required = 10,
+        ingredients = {
+            { "engine-unit",        1 },
+            { "electronic-circuit", 2 },
+            { "plastic-bar",        1 },
+        },
+        results = {
+            { "electric-engine-unit", 1 },
+        },
+        category = "crafting",
+    },
 }, {
     type = "recipe",
     groups = { "vgal-removed" },

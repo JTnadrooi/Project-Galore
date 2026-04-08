@@ -159,7 +159,7 @@ for _, metal in pairs(vgal.constants.METALS) do
         {
             name = metal.base_ore,
             tab = "angels-resource-refining",
-            order = "b[processing]-" .. (metal.name == "copper") and "a" or "b",
+            order = "b[processing]-" .. ((metal.name == "copper") and "a" or "b"),
             entries = vgal.table.merge({ metal.base_ore }, ore_entries),
         }
     )

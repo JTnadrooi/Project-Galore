@@ -35,10 +35,6 @@ require("tech")
 require("table")
 require("build")
 
-if mods["James-Oil-Processing"] then
-    settings.startup["vgal-oil-recipes"].value = false
-end
-
 function vgal.log(toLog)
     if settings.startup["vgal-log"].value then
         log("vgal.log-[" .. tostring(toLog) .. "]")
@@ -166,11 +162,9 @@ function vgal.data.extend(entries, fill_in_with)
             entry.results = entry.results or {}
             entry.module_allows = entry.module_allows or {}
 
-            entry.hidden = hidden
-            entry.hidden_in_factoriopedia = hidden
-            entry.hide_from_player_crafting = hidden
-            entry.hide_from_signal_gui = hidden
-            entry.hide_from_stats = hidden
+            if hidden then
+                vgal.data.deep_hide(entry)
+            end
 
             -- icon stuff
             if entry.icon then
@@ -317,7 +311,6 @@ function vgal.data.extend(entries, fill_in_with)
             end
         elseif entry.type == "toggle-group" then
             ---@cast entry vgal.VgalToggleGroupPrototype
-            ---@
 
             if entry.enabled == nil then
                 if entry.enabled_setting then

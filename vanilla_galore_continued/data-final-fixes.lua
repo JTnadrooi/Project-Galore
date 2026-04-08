@@ -1,1 +1,0 @@
-vgal.data.finalise()

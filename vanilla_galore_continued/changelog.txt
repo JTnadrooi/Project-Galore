@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+  Features:
+    - Added input fields for (un)hiding custom recipe lists.
+  Balancing:
+    - Removed the "vgal-processing-unit-fast-splitter" recipe. (Reason(s); 1. One circuit to two splitters does not make sense)
+    - Removed the "vgal-plastic-bar-electric-engine-unit" recipe. (Reason(s); 1. Make the lubricant from plastic instead.)
+---------------------------------------------------------------------------------------------------
 Version: 1.2.6
   Bugfixes:
     - Added science-tab compat.

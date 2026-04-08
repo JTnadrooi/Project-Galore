@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.7.0
+  Bugfixes:
+    - Improved constant data tables.
+    - Improved tech fix scan.
+    - Changed icon to follow the new style.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.1
   Bugfixes:
     - Fixed crashes related to automatic productivity tech scanning. (Thanks Nicholas!)

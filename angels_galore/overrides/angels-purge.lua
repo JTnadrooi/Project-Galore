@@ -127,14 +127,22 @@ vgal.data.deep_hide(data.raw["item"]["angels-solid-chromate"])
 vgal.data.deep_hide(data.raw["item"]["angels-solid-dichromate"])
 vgal.data.deep_hide(data.raw["item"]["angels-solid-ammonium-paratungstate"])
 vgal.data.deep_hide(data.raw["item"]["angels-silver-ore"]) -- this is the only mention of silver anywhere.
--- vgal.data.deep_hide(data.raw["item"]["angels-thorium-ore"]) -- this is the only mention of thorium anywhere.
+-- vgal.data.deep_hide(data.raw["item"]["angels-thorium-ore"]) -- this is the only mention of thorium anywhere. | commentedbc: not sure.
 
 -- specifics (fluids)
 vgal.data.deep_hide(data.raw["fluid"]["angels-liquid-trichlorosilane"])
 vgal.data.deep_hide(data.raw["fluid"]["angels-gas-silane"])
 vgal.data.deep_hide(data.raw["fluid"]["angels-liquid-tungstic-acid"])
 
---- remove empty techs --- (can't do this in final-fixes bc of galorelib, but this should work)
+--- funny yellow module removal ---
+local BIO_MODULES = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
+for _, bio_module in ipairs(BIO_MODULES) do
+    vgal.data.deep_hide(data.raw["module"][bio_module])
+    vgal.data.deep_hide(data.raw["technology"][bio_module])
+    vgal.data.trim(bio_module)
+end
+
+--- mark empty techs for splicing --- (can't do this in final-fixes bc of galorelib, but this should work)
 local function startsWith(str, prefix)
     return string.sub(str, 1, #prefix) == prefix
 end
@@ -160,11 +168,4 @@ for _, tech in pairs(data.raw["technology"]) do
             vgal.tech.techs_to_splice[tech.name] = tech
         end
     end
-end
-
---- funny yellow module removal ---
-local BIO_MODULES = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
-for _, bio_module in ipairs(BIO_MODULES) do
-    vgal.data.deep_hide(data.raw["module"][bio_module])
-    vgal.data.trim(bio_module)
 end

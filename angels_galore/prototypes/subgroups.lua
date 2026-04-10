@@ -98,6 +98,15 @@ local subgroups = {
         },
         reorder_entries = true,
     }, -- all of these.. they don't.. they don't listen.
+
+    --- SCIENCE ---
+    {
+        name = "agricultural-science-pack",
+        tab = "intermediate-products",
+        order = "ybb",
+        entries = { "vgal-agricultural-science-pack" },
+        when_settings = { "vgal-science-packs" },
+    },
 }
 
 for metal in vgal.table.iter_all(vgal.constants.METALS, { agal.constants.METAL_STEEL }) do

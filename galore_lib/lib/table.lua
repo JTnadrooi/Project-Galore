@@ -341,3 +341,22 @@ function vgal.table.normalise(arr)
     end
     return scaled
 end
+
+function vgal.table.from_array(arr, key_name)
+    key_name = key_name or "name"
+
+    local result = {}
+    for _, value in ipairs(arr) do
+        result[value] = {
+            [key_name] = value
+        }
+    end
+
+    return result
+end
+
+-- function vgal.table.as_keyed_entry(value, key_name)
+--     key_name = key_name or "name"
+
+--     return {}
+-- end

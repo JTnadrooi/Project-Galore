@@ -38,6 +38,16 @@ table.insert(data.raw["technology"]["angels-bio-processing-green"].prerequisites
 vgal.tech.move_recipe("angels-bio-processing-green", "angels-water-treatment", "angels-water-mineralized")
 vgal.tech.replace_recipe("angels-ore-crushing", "angels-ore4-crushed", "angels-ore3-crushed")
 
+vgal.table.remove(data.raw["technology"]["modules"].prerequisites, "angels-bio-processing-crystal-splinter-1")
+for _, module in pairs(vgal.constants.MODULES) do
+    for tier, tiered_name in ipairs(module.tiers) do
+        if tier == 2 then
+            vgal.table.remove(data.raw["technology"][tiered_name].prerequisites, "angels-bio-processing-crystal-shard-1")
+        elseif tier == 3 then
+            vgal.table.remove(data.raw["technology"][tiered_name].prerequisites, "angels-bio-processing-crystal-full")
+        end
+    end
+end
 
 --- align ores (ore2 is normally a tier 2 ore)
 data.raw["resource"]["angels-ore2"].minable.mining_time = data.raw["resource"]["angels-ore3"].minable.mining_time

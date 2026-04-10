@@ -551,3 +551,29 @@ end
 for _, metal in pairs(vgal.constants.METALS) do
     data.raw["recipe"][metal.plate].enabled = true
 end
+
+-- restore module recipes as they dont require bioprocessing anymore.
+for _, module in ipairs(vgal.constants.MODULES) do
+    for tier, tiered_name in ipairs(module.tiers) do
+        local recipe = data.raw.recipe[tiered_name]
+
+        if tier == 1 then
+            recipe.ingredients = vgal.build.table({
+                { "electronic-circuit", 5 },
+                { "advanced-circuit",   5 },
+            })
+        elseif tier == 2 then
+            recipe.ingredients = vgal.build.table({
+                { module.tiers[1],    4 },
+                { "advanced-circuit", 5 },
+                { "processing-unit",  5 },
+            })
+        elseif tier == 3 then
+            recipe.ingredients = vgal.build.table({
+                { module.tiers[2],    4 },
+                { "advanced-circuit", 5 },
+                { "processing-unit",  5 },
+            })
+        end
+    end
+end

@@ -1,16 +1,42 @@
-vgal.constants.METALS = { -- gets extended in the other galore entries.
-    ["iron"] = {
-        name = "iron"
+vgal.constants.METALS = {
+    iron = {
+        name = "iron",
+        ore = "iron-ore",
+        plate = "iron-plate",
     },
-    ["copper"] = {
+    copper = {
         name = "copper",
+        ore = "copper-ore",
+        plate = "copper-plate",
     },
 }
 
-for _, metal in pairs(vgal.constants.METALS) do
-    metal.ore = metal.name .. "-ore"
-    metal.plate = metal.name .. "-plate"
-end
+vgal.constants.MODULES = {
+    ["productivity-module"] = {
+        name = "productivity-module",
+        tiers = {
+            "productivity-module",
+            "productivity-module-2",
+            "productivity-module-3",
+        },
+    },
+    ["speed-module"] = {
+        name = "speed-module",
+        tiers = {
+            "speed-module",
+            "speed-module-2",
+            "speed-module-3",
+        },
+    },
+    ["efficiency-module"] = {
+        name = "efficiency-module",
+        tiers = {
+            "efficiency-module",
+            "efficiency-module-2",
+            "efficiency-module-3",
+        },
+    },
+}
 
 vgal.constants.RECIPE_ENTRY_CATEGORIES = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
     "item-with-entity-data",

@@ -379,6 +379,12 @@ function vgal.data.deep_hide(entry)
 
     if entry.type == "fluid" then
         entry.auto_barrel = false
+        if mods["angels_galore"] then
+            local void_recipe = data.raw["recipe"]["angels-chemical-void-" .. entry.name]
+            if void_recipe then
+                vgal.data.deep_hide(void_recipe)
+            end
+        end
     end
 
     if entry.type == "recipe" then

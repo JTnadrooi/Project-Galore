@@ -61,7 +61,6 @@ end
 function vgal.tech.queue_to_clean(recipe_name)
     if (not data.raw["recipe"][recipe_name]) then error("Recipe " .. recipe_name .. " not found.") end
 
-
     table.insert(vgal.tech.recipes_to_remove_from_techs, recipe_name)
 end
 

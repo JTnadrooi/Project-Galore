@@ -483,9 +483,10 @@ vgal.recipe.multiply("angels-concrete", 1.25)
 data.raw["recipe"]["angels-concrete"].energy_required = 5
 
 -- misc balancing.
-data.raw["recipe"]["angels-gas-methanol-from-wood"].energy_required = 3
+-- data.raw["recipe"]["angels-gas-methanol-from-wood"].energy_required = 3
 data.raw["recipe"]["angels-ingot-copper-3"].energy_required = 3
 vgal.data.trim("angels-solid-salt-from-saline") -- bc of productivity
+data.raw["recipe"]["angels-solid-mud-landfill"].energy_required = 0.5
 
 -- make crushing recipes early early game.
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do

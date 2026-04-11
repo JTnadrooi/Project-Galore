@@ -38,6 +38,12 @@ table.insert(data.raw["technology"]["angels-bio-processing-green"].prerequisites
 vgal.tech.move_recipe("angels-bio-processing-green", "angels-water-treatment", "angels-water-mineralized")
 vgal.tech.replace_recipe("angels-ore-crushing", "angels-ore4-crushed", "angels-ore3-crushed")
 
+-- add agricultural science.
+data.raw["technology"]["angels-bio-farm-1"].prerequisites = { "vgal-agricultural-science-pack" }
+-- data.raw["technology"]["angels-bio-arboretum-1"].prerequisites = { "vgal-agricultural-science-pack" } -- commentedbc: Just like black science, im leaving some techs open. This one fits.
+
+
+-- remove bio related stuff from modules.
 vgal.table.remove(data.raw["technology"]["modules"].prerequisites, "angels-bio-processing-crystal-splinter-1")
 for _, module in pairs(vgal.constants.MODULES) do
     for tier, tiered_name in ipairs(module.tiers) do

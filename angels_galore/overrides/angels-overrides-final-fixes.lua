@@ -220,3 +220,90 @@ for _, ore_index in pairs(agal.constants.REMOVED_ORE_INDEXES) do
         end
     end
 end
+
+--- tech fixes ---
+-- Add vgal-agricultural-science-pack as unit to technologies that require the "vgal-agricultural-science-pack" tech.
+local cache = {}
+
+local function has_prerequisite_recursive(tech_name, target, visited)
+    if cache[tech_name] ~= nil then
+        return cache[tech_name]
+    end
+
+    visited = visited or {}
+    if visited[tech_name] then
+        return false
+    end
+    visited[tech_name] = true
+
+    local tech = data.raw["technology"][tech_name]
+    if not tech or not tech.prerequisites then
+        cache[tech_name] = false
+        return false
+    end
+
+    for _, prereq_name in pairs(tech.prerequisites) do
+        if prereq_name == target or has_prerequisite_recursive(prereq_name, target, visited) then
+            cache[tech_name] = true
+            return true
+        end
+    end
+
+    cache[tech_name] = false
+    return false
+end
+
+for tech_name, tech in pairs(data.raw["technology"]) do
+    if has_prerequisite_recursive(tech_name, "vgal-agricultural-science-pack") then
+        if tech.unit and tech.unit.ingredients then
+            table.insert(tech.unit.ingredients, { "vgal-agricultural-science-pack", 1 })
+        end
+    end
+end
+
+-- Add angels-stone-smelting-2 as prerequisite to technologies that unlock buildings that require concrete bricks.
+
+--- LOGCACHE::
+-- vgal.log("listlist")
+
+-- for _, tech in pairs(data.raw["technology"]) do
+--     local uses_concrete_brick = false
+
+--     for _, effect in ipairs(tech.effects or {}) do
+--         if effect.type == "unlock-recipe" then
+--             local recipe = data.raw["recipe"][effect.recipe]
+
+--             if recipe.ingredients and (not recipe.hidden) then
+--                 for _, ingredient in ipairs(recipe.ingredients) do
+--                     if ingredient.name == "angels-concrete-brick" then
+--                         uses_concrete_brick = true
+--                     end
+--                 end
+--             end
+--         end
+--     end
+
+--     if (not has_prerequisite_recursive(tech.name, "angels-stone-smelting-2")) and uses_concrete_brick and (not tech.hidden) then
+--         vgal.log(tech.name)
+--     end
+-- end
+
+-- vgal.log("listlist-end")
+
+--- LOGCACHE RESULT::
+local techs_that_need_stone_smelting = {
+    "angels-ore-leaching",
+    "angels-ore-refining",
+    "angels-water-treatment-3",
+    "angels-thorium-power",
+    "angels-advanced-gas-processing",
+    "angels-advanced-chemistry-2",
+    "angels-advanced-chemistry-4",
+    "angels-ore-processing-2",
+    "angels-bio-refugium-hatchery"
+}
+
+for _, tech_name in ipairs(techs_that_need_stone_smelting) do
+    local tech = data.raw["technology"][tech_name]
+    table.insert(tech.prerequisites, "angels-stone-smelting-2")
+end

@@ -136,6 +136,64 @@ for _, metal in pairs(vgal.constants.METALS) do
     })
 end
 
+-- fix prerequisite techs.
+do
+    for _, environment in ipairs({ "desert", "swamp", "temperate" }) do
+        data.raw["technology"]["angels-bio-" .. environment .. "-farm"].prerequisites = {
+            "angels-bio-" .. environment .. "-farming-1",
+            "chemical-science-pack"
+        }
+        data.raw["technology"]["angels-bio-" .. environment .. "-farming-2"].prerequisites = {
+            "angels-bio-" .. environment .. "-farm",
+            "angels-geode-processing-1",
+        }
+    end
+
+    vgal.tech.add_prerequisite("angels-water-treatment-3", "chemical-science-pack")
+    vgal.tech.add_prerequisite("angels-bio-processing-blue", "chemical-science-pack")
+    vgal.tech.add_prerequisite("angels-bio-refugium-hatchery", "chemical-science-pack")
+    vgal.tech.add_prerequisite("angels-slag-processing-2", "chemical-science-pack")
+    vgal.tech.add_prerequisite("angels-ore-processing-2", "chemical-science-pack")
+    vgal.tech.add_prerequisite("angels-stone-smelting-2", "chemical-science-pack")
+    vgal.tech.add_prerequisite("angels-copper-casting-3", "chemical-science-pack")
+    vgal.tech.add_prerequisite("angels-iron-casting-3", "chemical-science-pack")
+    vgal.tech.add_prerequisite("angels-steel-smelting-3", "chemical-science-pack")
+
+    vgal.tech.add_prerequisite("angels-advanced-chemistry-2", "chemical-science-pack")
+    vgal.tech.add_prerequisite("angels-advanced-chemistry-2", "angels-advanced-chemistry-1")
+
+    vgal.tech.add_prerequisite("angels-advanced-chemistry-4", "production-science-pack")
+    vgal.tech.add_prerequisite("angels-advanced-chemistry-4", "angels-advanced-chemistry-3")
+
+    vgal.tech.add_prerequisite("angels-advanced-chemistry-5", "utility-science-pack")
+    vgal.tech.add_prerequisite("angels-advanced-chemistry-5", "angels-advanced-chemistry-4")
+
+    data.raw["technology"]["angels-bio-refugium-biter-1"].prerequisites = {
+        "processing-unit",
+        "angels-bio-nutrient-paste",
+        "angels-bio-farm-alien",
+        "production-science-pack"
+    }
+
+    data.raw["technology"]["angels-slag-processing-3"].prerequisites = {
+        "angels-slag-processing-2",
+        "production-science-pack"
+    }
+
+    data.raw["technology"]["angels-water-chemistry-1"].prerequisites = {
+        "angels-sulfur-processing-3",
+        "production-science-pack"
+    }
+
+    -- restore automation 3 to be same as vanilla.
+    data.raw["technology"]["automation-3"].prerequisites = {
+        "electric-engine",
+        "speed-module",
+        "production-science-pack"
+    }
+
+    -- angels stone smelting 3 is a COMEBACKAT
+end
 
 --- ore gen removal ---
 for _, ore_index in pairs(agal.constants.REMOVED_ORE_INDEXES) do

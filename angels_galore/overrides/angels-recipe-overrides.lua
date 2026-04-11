@@ -433,73 +433,13 @@ vgal.recipe.multiply_results("angels-liquid-plastic-3", PLASTIC_MULTIPLIER)
 vgal.recipe.set_result_amount("angels-bio-plastic", 80)
 vgal.recipe.set_result_amount("angels-bio-plastic-2", 150)
 
---- direct fluid removal --- (direct fluids: fluids used for like one purpose)
-
--- bio plastic - liquid-cellulose-acetate
-vgal.data.trim("angels-liquid-cellulose-acetate")
-vgal.data.deep_hide(data.raw["fluid"]["angels-liquid-cellulose-acetate"])
-vgal.recipe.replace_ingredient("angels-liquid-plastic-bio-1", "angels-liquid-cellulose-acetate",
-    "angels-liquid-cellulose-acetate-mixture")
-
--- plastic 3 - gas-formaldehyde
-vgal.data.trim("angels-gas-formaldehyde")
-vgal.data.deep_hide(data.raw["fluid"]["angels-gas-formaldehyde"])
-vgal.recipe.replace_ingredient("angels-liquid-plastic-3", "angels-gas-formaldehyde", "angels-gas-methanol")
-
--- chloride variations
-data.raw.recipe["angels-liquid-glycerol"].ingredients = vgal.build.table({}, {
-    { "angels-gas-propene",    25 },
-    { "angels-water-purified", 100 },
-    { "angels-gas-chlorine",   50 },
-})
-data.raw.recipe["angels-liquid-glycerol"].results = vgal.build.table({}, {
-    { "angels-liquid-glycerol",       25 },
-    { "angels-gas-hydrogen-chloride", 100 },
-})
-vgal.data.trim("angels-gas-epichlorohydrin")
-vgal.data.deep_hide(data.raw["fluid"]["angels-gas-epichlorohydrin"])
-vgal.data.trim("angels-gas-allylchlorid")
-vgal.data.deep_hide(data.raw["fluid"]["angels-gas-allylchlorid"])
-
--- rocket - forgor what the gas was
-data.raw.recipe["angels-gas-hydrazine"].ingredients = vgal.build.table({
-    -- { "catalyst-metal-green",      1 },
-    { "angels-solid-sodium-hypochlorite", 5 },
-}, {
-    { "angels-gas-ammonia", 250 },
-})
-vgal.recipe.remove_result("angels-gas-hydrazine", "angels-catalyst-metal-carrier")
-vgal.data.deep_hide(data.raw["fluid"]["angels-gas-monochloramine"])
-vgal.data.trim("angels-gas-monochloramine")
-
--- fuel - same here
-data.raw.recipe["angels-rocket-fuel-capsule"].energy_required = 5
-data.raw.recipe["angels-rocket-fuel-capsule"].ingredients = vgal.build.table({
-    { "solid-fuel", 1 },
-}, {
-    { "angels-gas-dimethylhydrazine", 10 },
-})
-vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)
-
--- ox
-data.raw.recipe["angels-rocket-oxidizer-capsule"].energy_required = 5
-vgal.recipe.set_result_amount("angels-rocket-oxidizer-capsule", 1)
-
---- uranium ---
--- data.raw.recipe["angels-slag-processing-9"].results = vgal.build.table({
---     { "uranium-ore", 1, { probability = 0.8 } },
--- })
-
---- remove extra trees ---
-vgal.data.trim("angels-tree-arboretum-0")
-vgal.data.deep_hide(data.raw["item"]["angels-temperate-tree"])
-vgal.data.deep_hide(data.raw["item"]["angels-swamp-tree"])
-vgal.data.deep_hide(data.raw["item"]["angels-desert-tree"])
-
+-- add slag result to processing recipes.
 for _, metal in pairs(vgal.constants.METALS) do
     vgal.recipe.multiply(metal.processed, 1.5)
     vgal.recipe.add_result(metal.processed,
         vgal.table.get_single_shorthand({ "angels-slag", 1, { probability = 0.5 } }, "item"))
+
+    -- make roll casting faster.
     data.raw["recipe"][metal.roll].energy_required = 1
 end
 

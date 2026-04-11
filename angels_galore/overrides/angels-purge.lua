@@ -142,8 +142,72 @@ for _, bio_module in ipairs(BIO_MODULES) do
     vgal.data.trim(bio_module)
 end
 
+--- removal of direct fluids --- (direct fluids: fluids used for like one purpose)
+
+-- bio plastic - liquid-cellulose-acetate
+vgal.data.trim("angels-liquid-cellulose-acetate")
+vgal.data.deep_hide(data.raw["fluid"]["angels-liquid-cellulose-acetate"])
+vgal.recipe.replace_ingredient("angels-liquid-plastic-bio-1", "angels-liquid-cellulose-acetate",
+    "angels-liquid-cellulose-acetate-mixture")
+
+-- plastic 3 - gas-formaldehyde
+vgal.data.trim("angels-gas-formaldehyde")
+vgal.data.deep_hide(data.raw["fluid"]["angels-gas-formaldehyde"])
+vgal.recipe.replace_ingredient("angels-liquid-plastic-3", "angels-gas-formaldehyde", "angels-gas-methanol")
+
+-- chloride variations
+data.raw.recipe["angels-liquid-glycerol"].ingredients = vgal.build.table({}, {
+    { "angels-gas-propene",    25 },
+    { "angels-water-purified", 100 },
+    { "angels-gas-chlorine",   50 },
+})
+data.raw.recipe["angels-liquid-glycerol"].results = vgal.build.table({}, {
+    { "angels-liquid-glycerol",       25 },
+    { "angels-gas-hydrogen-chloride", 100 },
+})
+vgal.data.trim("angels-gas-epichlorohydrin")
+vgal.data.deep_hide(data.raw["fluid"]["angels-gas-epichlorohydrin"])
+vgal.data.trim("angels-gas-allylchlorid")
+vgal.data.deep_hide(data.raw["fluid"]["angels-gas-allylchlorid"])
+
+-- data.raw.recipe["angels-gas-hydrazine"].ingredients = vgal.build.table({
+--     -- { "catalyst-metal-green",      1 },
+--     { "angels-solid-sodium-hypochlorite", 5 },
+-- }, {
+--     { "angels-gas-ammonia", 250 },
+-- })
+-- vgal.recipe.remove_result("angels-gas-hydrazine", "angels-catalyst-metal-carrier")
+-- vgal.data.deep_hide(data.raw["fluid"]["angels-gas-monochloramine"])
+-- vgal.data.trim("angels-gas-monochloramine")
+
+-- data.raw.recipe["angels-rocket-fuel-capsule"].ingredients = vgal.build.table({
+--     { "solid-fuel", 1 },
+-- }, {
+--     { "angels-gas-dimethylhydrazine", 10 },
+-- })
+-- vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)
+
+-- fix results and energy_required.
+data.raw.recipe["angels-rocket-oxidizer-capsule"].energy_required = 5
+vgal.recipe.set_result_amount("angels-rocket-oxidizer-capsule", 1)
+
+data.raw.recipe["angels-rocket-fuel-capsule"].energy_required = 5
+vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)
+
+--- uranium ---
+-- data.raw.recipe["angels-slag-processing-9"].results = vgal.build.table({
+--     { "uranium-ore", 1, { probability = 0.8 } },
+-- })
+
+--- remove extra trees ---
+vgal.data.trim("angels-tree-arboretum-0")
+vgal.data.deep_hide(data.raw["item"]["angels-temperate-tree"])
+vgal.data.deep_hide(data.raw["item"]["angels-swamp-tree"])
+vgal.data.deep_hide(data.raw["item"]["angels-desert-tree"])
+-- (TODO: remove autoplace as well)
+
 --- mark empty techs for splicing --- (can't do this in final-fixes bc of galorelib, but this should work)
--- AND remove hidden effects
+-- AND remove hidden effects, I could use queue_to_clean... hmm...
 local function startsWith(str, prefix)
     return string.sub(str, 1, #prefix) == prefix
 end

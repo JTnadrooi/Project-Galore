@@ -29,7 +29,7 @@ data:extend({
         localised_description = { "technology-description.vgal-agricultural-science-pack" },
         icon = "__angels_galore__/graphics/technology/agricultural-science-pack.png",
         icon_size = 256,
-        effects = {},  -- recipe gets added on vgal.data.extend.
+        effects = {}, -- recipe gets added on vgal.data.extend.
         prerequisites = { "angels-composting" },
         unit =
         {
@@ -61,3 +61,7 @@ vgal.data.extend({
 }, {
     type = "recipe",
 })
+
+for _, lab in pairs(data.raw["lab"]) do
+    table.insert(lab.inputs, "vgal-agricultural-science-pack")
+end

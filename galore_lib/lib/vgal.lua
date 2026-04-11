@@ -453,7 +453,7 @@ local function splice_and_flatten_techs()
         ::fix_prerequisites::
         for _, prerequisite in ipairs(tech.prerequisites or {}) do
             if vgal.tech.techs_to_splice[prerequisite] then
-                tech.prerequisites = vgal.tech.techs_to_splice[prerequisite].prerequisites
+                tech.prerequisites = table.deepcopy(vgal.tech.techs_to_splice[prerequisite].prerequisites)
                 goto fix_prerequisites
             end
         end

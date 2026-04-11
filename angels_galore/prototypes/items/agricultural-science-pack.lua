@@ -30,11 +30,11 @@ data:extend({
         icon = "__angels_galore__/graphics/technology/agricultural-science-pack.png",
         icon_size = 256,
         effects = {}, -- recipe gets added on vgal.data.extend.
-        prerequisites = { "angels-composting" },
+        prerequisites = { "angels-composting", "logistic-science-pack" },
         unit =
         {
             count = 60,
-            ingredients = { { "automation-science-pack", 1 } },
+            ingredients = { { "automation-science-pack", 1 }, { "logistic-science-pack", 1 } },
             time = 10
         }
     },

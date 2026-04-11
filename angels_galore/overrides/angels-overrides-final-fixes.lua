@@ -51,10 +51,10 @@ end
 -- prepare recipe for next loop. (the recipe amount will not apply otherwise)
 vgal.recipe.replace_ingredient("angels-ore2-crystal", "angels-liquid-hydrofluoric-acid", "angels-liquid-sulfuric-acid")
 
---- ores (see docs/ore-density) ---
+--- ores, both time normalizing as ore density (see docs/ore-density) ---
 for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
     -- chunk
-    data.raw["recipe"]["angels-ore" .. ore_index .. "-chunk"].energy_required = 1.6
+    data.raw["recipe"]["angels-ore" .. ore_index .. "-chunk"].energy_required = 3.2
     vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-chunk", 6, "angels-ore" .. ore_index .. "-crushed")
     vgal.recipe.set_result_amount("angels-ore" .. ore_index .. "-chunk", 4, "angels-ore" .. ore_index .. "-chunk")
     vgal.recipe.set_result_amount("angels-ore" .. ore_index .. "-chunk", 50, "angels-water-yellow-waste")

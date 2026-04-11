@@ -432,7 +432,7 @@ vgal.recipe.set_result_amount("angels-bio-plastic-2", 150)
 -- bio plastic - liquid-cellulose-acetate
 vgal.data.trim("angels-liquid-cellulose-acetate")
 vgal.data.deep_hide(data.raw["fluid"]["angels-liquid-cellulose-acetate"])
-vgal.recipe.replace_ingredient("angels-bio-plastic", "angels-liquid-cellulose-acetate",
+vgal.recipe.replace_ingredient("angels-liquid-plastic-bio-1", "angels-liquid-cellulose-acetate",
     "angels-liquid-cellulose-acetate-mixture")
 
 -- plastic 3 - gas-formaldehyde

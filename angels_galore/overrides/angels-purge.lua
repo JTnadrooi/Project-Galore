@@ -143,24 +143,26 @@ for _, bio_module in ipairs(BIO_MODULES) do
 end
 
 --- mark empty techs for splicing --- (can't do this in final-fixes bc of galorelib, but this should work)
+-- AND remove hidden effects
 local function startsWith(str, prefix)
     return string.sub(str, 1, #prefix) == prefix
 end
 
 for _, tech in pairs(data.raw["technology"]) do
-    if startsWith(tech.name, "angels") and (not startsWith(tech.name, "angels-hidden")) and tech.effects then
+    if startsWith(tech.name, "angels")
+        and not startsWith(tech.name, "angels-hidden")
+        and tech.effects then
         local tech_is_without_relevant_effects = true
-        for _, effect in pairs(tech.effects) do -- techs without effects stay.
-            if not effect.hidden then
-                if effect.type == "unlock-recipe" then
-                    if not data.raw["recipe"][effect.recipe].hidden then
-                        tech_is_without_relevant_effects = false
-                        break
-                    end
-                else
-                    tech_is_without_relevant_effects = false
-                    break
-                end
+
+        for i = #tech.effects, 1, -1 do
+            local effect = tech.effects[i]
+
+            local is_hidden_recipe_unlock = effect.type == "unlock-recipe" and data.raw["recipe"][effect.recipe].hidden
+
+            if effect.hidden or is_hidden_recipe_unlock then
+                table.remove(tech.effects, i)
+            else
+                tech_is_without_relevant_effects = false
             end
         end
 

@@ -46,6 +46,9 @@ vgal.tech.replace_recipe("angels-ore-crushing", "angels-ore4-crushed", "angels-o
 data.raw["technology"]["angels-bio-farm-1"].prerequisites = { "vgal-agricultural-science-pack" }
 -- data.raw["technology"]["angels-bio-arboretum-1"].prerequisites = { "vgal-agricultural-science-pack" } -- commentedbc: Just like black science, im leaving some techs open. This one fits.
 
+-- remove cement 3. it only adds alternate recipes but as those arent really alternates and more upgrades, Im gonna remove them instead of editing them.
+vgal.tech.deep_hide("angels-stone-smelting-3")
+vgal.tech.techs_to_splice["angels-stone-smelting-3"] = data.raw["technology"]["angels-stone-smelting-3"]
 
 -- remove bio related stuff from modules.
 vgal.table.remove(data.raw["technology"]["modules"].prerequisites, "angels-bio-processing-crystal-splinter-1")
@@ -72,10 +75,6 @@ data.raw["item"]["angels-red-cellulose-fiber"].fuel_category = "chemical"
 data.raw["item"]["angels-red-cellulose-fiber"].fuel_value = "0.25MJ"
 data.raw["item"]["angels-blue-cellulose-fiber"].fuel_category = "chemical"
 data.raw["item"]["angels-blue-cellulose-fiber"].fuel_value = "3MJ"
-
-
-
-
 
 -- vgal.recipe.unhide("thermal-water-purification")
 -- vgal.tech.add_recipe("vgal-hydrochloric-intermediates", "thermal-water-purification")

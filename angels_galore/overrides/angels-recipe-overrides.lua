@@ -395,6 +395,12 @@ do
         { "pipe",                  30 },
         { "processing-unit",       5 },
     })
+    data.raw["recipe"]["angels-burner-reactor"].ingredients = vgal.build.table({
+        { "angels-concrete-brick", 500 },
+        { "processing-unit",       500 },
+        { "steel-plate",           350 },
+        { "copper-plate",          400 },
+    })
 end
 
 --- use ore2 for more distinct color, but copy rest ---

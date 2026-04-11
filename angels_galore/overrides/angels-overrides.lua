@@ -28,6 +28,10 @@ end
 
 vgal.data.deep_hide(data.raw["tool"]["angels-token-bio"])
 
+for _, lab in pairs(data.raw["lab"]) do
+    vgal.table.remove(lab.inputs, "angels-token-bio")
+end
+
 --- tech ---
 data.raw["technology"]["angels-basic-chemistry"].unit.count = 40
 data.raw["technology"]["angels-ore-crushing"].prerequisites = { "automation" }
@@ -69,8 +73,6 @@ data.raw["item"]["angels-red-cellulose-fiber"].fuel_value = "0.25MJ"
 data.raw["item"]["angels-blue-cellulose-fiber"].fuel_category = "chemical"
 data.raw["item"]["angels-blue-cellulose-fiber"].fuel_value = "3MJ"
 
---- remove bio token lab input ---
-vgal.table.remove(data.raw["lab"]["lab"].inputs, "angels-token-bio")
 
 
 

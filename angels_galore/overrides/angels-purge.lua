@@ -194,17 +194,19 @@ vgal.recipe.set_result_amount("angels-rocket-oxidizer-capsule", 1)
 data.raw.recipe["angels-rocket-fuel-capsule"].energy_required = 5
 vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)
 
---- uranium ---
--- data.raw.recipe["angels-slag-processing-9"].results = vgal.build.table({
---     { "uranium-ore", 1, { probability = 0.8 } },
--- })
-
 --- remove extra trees ---
 vgal.data.trim("angels-tree-arboretum-0")
 vgal.data.deep_hide(data.raw["item"]["angels-temperate-tree"])
 vgal.data.deep_hide(data.raw["item"]["angels-swamp-tree"])
 vgal.data.deep_hide(data.raw["item"]["angels-desert-tree"])
--- (TODO: remove autoplace as well)
+
+for _, environment in ipairs({ "temperate", "swamp", "desert" }) do
+    local tree = data.raw["tree"]["angels-" .. environment .. "-tree"]
+    tree.autoplace = {
+        probability_expression = "0"
+    }
+    vgal.data.deep_hide(tree)
+end
 
 --- mark empty techs for splicing --- (can't do this in final-fixes bc of galorelib, but this should work)
 -- AND remove hidden effects, I could use queue_to_clean... hmm...

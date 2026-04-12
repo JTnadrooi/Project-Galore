@@ -35,7 +35,13 @@ function vgal.setting.new_string(name, order, default_value)
     }
 end
 
-function vgal.setting.hide_and_force(name, forced_value)
-    data.raw["bool-setting"][name].hidden = true
-    data.raw["bool-setting"][name].forced_value = forced_value
+function vgal.setting.hide_and_force(setting_name, forced_value)
+    local setting = data.raw["bool-setting"][setting_name]
+    
+    if not setting then
+        error("Bool setting '" .. setting_name .. "' not found")
+    end
+
+    setting.hidden = true
+    setting.forced_value = forced_value
 end

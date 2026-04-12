@@ -7,11 +7,12 @@ function vgal.fluid.get_tint(fluid_name)
             a = color[4] or 1,
         }
     end
-    local fluid = data.raw["fluid"][fluid_name]
+
+    local fluid = vgal.throw.if_fluid_not_found(fluid_name)
     return {
-        primary = to_rgba(fluid.base_color or { 1, 1, 1, 1 }),
+        primary = to_rgba(fluid.base_color),
         secondary = to_rgba(fluid.flow_color or fluid.base_color or { 0.8, 0.8, 0.8, 1 }),
-        tertiary = to_rgba(fluid.base_color or { 1, 1, 1, 1 }),
-        quaternary = to_rgba(fluid.base_color or { 1, 1, 1, 1 }),
+        tertiary = to_rgba(fluid.base_color),
+        quaternary = to_rgba(fluid.base_color),
     }
 end

@@ -13,6 +13,11 @@
 --     return icons
 -- end
 
+vgal.icon.directory = {
+    base = "__vanilla_galore__/graphics/",
+    tech = "__vanilla_galore__/graphics/tech/"
+}
+
 function vgal.icon.get_auto_scale(t1_icon)
     return t1_icon.scale or ((64 / 2) / (t1_icon.icon_size or 64))
 end
@@ -80,7 +85,7 @@ function vgal.icon.get_from_path(path, args)
 end
 
 function vgal.icon.get(key_name, icon_source)
-    icon_source = icon_source or vgal.any_get_source(key_name)
+    icon_source = icon_source or vgal.get_recipeable(key_name).type
     if icon_source == "recipe" then
         local recipe = data.raw["recipe"][key_name]
         if recipe.icon then
@@ -168,47 +173,28 @@ function vgal.icon.get(key_name, icon_source)
             }
         }
     end
-    local toret_item = vgal.any(key_name)
+    local associated_item_prototype = vgal.get_recipeable(key_name)
 
-    vgal.log("getting icon: " .. toret_item.name)
+    vgal.log("getting icon: " .. associated_item_prototype.name)
 
-    local toret = nil
-    if toret_item then
-        if toret_item.icon then
-            if toret_item.icon == nil or toret_item.icon == '' then
+    if associated_item_prototype then
+        if associated_item_prototype.icon then
+            if associated_item_prototype.icon == nil or associated_item_prototype.icon == '' then
                 error()
             end
             return {
                 {
-                    icon = toret_item.icon,
-                    icon_size = toret_item.icon_size or 64,
+                    icon = associated_item_prototype.icon,
+                    icon_size = associated_item_prototype.icon_size or 64,
                 }
             }
         end
-        if toret_item.icons then
-            local icons = util.table.deepcopy(toret_item.icons)
-            -- local all_same = true
-
-            -- local last_scale
-            -- for _, icon in ipairs(icons) do
-            --     if last_scale == nil then
-            --         last_scale = (icon.scale or 1)
-            --     elseif (icon.scale or 1) ~= last_scale then
-            --         all_same = false
-            --         break
-            --     end
-            -- end
-
-            -- if all_same then
-            --     for _, icon in ipairs(icons) do
-            --         icon.scale = 1
-            --     end
-            -- end
-
+        if associated_item_prototype.icons then
+            local icons = util.table.deepcopy(associated_item_prototype.icons)
             return icons
         end
     end
-    return toret
+    error()
 end
 
 -- local function targeted_shift_icon(icon, target, scaleOverride)

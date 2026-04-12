@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.0.0
+  Features:
+    - Added error handling.
+    - Improved performance.
+---------------------------------------------------------------------------------------------------
 Version: 1.7.0
-  Bugfixes:
+  Features:
     - Improved constant data tables.
     - Improved tech fix scan.
     - Changed icon to follow the new style.

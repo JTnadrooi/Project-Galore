@@ -199,7 +199,7 @@ end
 for _, ore_index in pairs(agal.constants.REMOVED_ORE_INDEXES) do
     local ore = "angels-ore" .. ore_index
 
-    vgal.data.deep_hide(data.raw["resource"][ore])
+    vgal.data.deephide(data.raw["resource"][ore])
     data.raw["autoplace-control"][ore] = nil
     data.raw["planet"]["nauvis"].map_gen_settings.autoplace_controls[ore] = nil
     data.raw["planet"]["nauvis"].map_gen_settings.autoplace_settings.entity.settings[ore] = nil

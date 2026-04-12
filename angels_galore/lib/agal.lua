@@ -27,3 +27,8 @@ if (vgal and vgal.constants and vgal.constants.METALS) then -- for when loading 
         metal.ore_states = table.deepcopy(agal.constants.ORE_STATES)
     end
 end
+
+vgal.table.extend_single(vgal.tech.units, {
+    name = "vgal-agricultural-science-pack",
+    value = 2,
+})

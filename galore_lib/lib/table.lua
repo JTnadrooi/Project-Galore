@@ -130,7 +130,7 @@ end
 
 function vgal.table.merge(t1, t2)
     local result = {}
-    t1 = t1 or {}
+    t1 = t1 or error("Table 1 cannot be nil.")
     t2 = t2 or {}
 
     for i = 1, #t1 do
@@ -156,9 +156,12 @@ function vgal.table.fill_in_from(t1, t2)
         end
         return count == #t
     end
+
     local result = {}
-    t1 = t1 or {}
+
+    t1 = t1 or error("Table 1 cannot be nil.")
     t2 = t2 or {}
+
     for k, v in pairs(t1) do
         if type(v) == "table" and type(t2[k]) == "table" then
             if is_array(v) and is_array(t2[k]) then
@@ -185,41 +188,27 @@ function vgal.table.nil_if_empty(t1)
     return nil
 end
 
-function vgal.table.get_shorthand(in_table, new_type)
+function vgal.table.get_shorthand(long_form_table, entry_type)
     local transformed = {}
-    for _, item in ipairs(in_table) do
-        table.insert(transformed, vgal.table.get_single_shorthand(item, new_type))
+    for _, item in ipairs(long_form_table) do
+        table.insert(transformed, vgal.table.get_single_shorthand(item, entry_type))
     end
     return transformed
 end
 
-function vgal.table.get_single_shorthand(in_value, new_type)
+function vgal.table.get_single_shorthand(entry, entry_type)
     local new_entry = {
-        type = new_type,
-        name = in_value[1],
-        amount = in_value[2]
+        type = entry_type,
+        name = entry[1],
+        amount = entry[2]
     }
-    if type(in_value[3]) == "table" then
-        for k, v in pairs(in_value[3]) do
+    if type(entry[3]) == "table" then
+        for k, v in pairs(entry[3]) do
             new_entry[k] = v
         end
     end
     return new_entry
 end
-
--- function vgal.table.get_multiplied(intTable, amount)
---     local newTable = {}
---     for key, value in pairs(intTable) do
---         newTable[key] = value
---     end
---     if newTable.amount then
---         newTable.amount = math.max(1, math.floor(newTable.amount * amount + 0.5))
---     end
---     if newTable.probability then
---         newTable.probability = math.min(1, newTable.probability / amount)
---     end
---     return newTable
--- end
 
 -- Multiply the "amount" field in a single entry based on its type.
 -- For type "item", the result is rounded (with a minimum value of 1).
@@ -266,39 +255,6 @@ function vgal.table.get_multiplied(input, multiplier, entry_name)
         return result
     else
         error("Invalid input: expected a table with a 'type' field or an array of such tables.")
-    end
-end
-
---- Universal nested iterator over multiple arrays (tables).
---- Allows looping over all combinations of multiple lists, like nested `for` loops.
---- Returns unpacked values from each list for destructuring in `for` loops.
---- Example usage:
---- ```lua
---- for ore_index, ore_state in universal_ipairs(ore_indexes, ore_states) do
----     print(ore_index, ore_state)
---- end
---- ```
---- Supports any number of lists.
---- Stops iteration when the first list is fully exhausted.
---- @param ... table List(s) of arrays to iterate over (tables with sequential integer keys).
---- @return function Iterator function compatible with Lua's `for` loop.
-function vgal.table.nipairs(...)
-    local lists = { ... }
-    local indices = {}
-    for i = 1, #lists do indices[i] = 0 end
-    return function()
-        local n = #lists                      -- advance last index.
-        indices[n] = indices[n] + 1
-        for i = n, 1, -1 do                   -- carry over if needed.
-            if lists[i][indices[i]] == nil then
-                if i == 1 then return nil end -- fully finished.
-                indices[i] = 1
-                indices[i - 1] = indices[i - 1] + 1
-            end
-        end
-        local results = {}
-        for i = 1, n do results[i] = lists[i][indices[i]] end
-        return table.unpack(results)
     end
 end
 
@@ -355,8 +311,20 @@ function vgal.table.from_array(arr, key_name)
     return result
 end
 
--- function vgal.table.as_keyed_entry(value, key_name)
---     key_name = key_name or "name"
+function vgal.table.extend_single(target_table, entry, key_name)
+    key_name = key_name or "name"
 
---     return {}
--- end
+    target_table[entry[key_name]] = entry
+end
+
+function vgal.table.remove_duplicates(target_array)
+    local seen = {}
+    local result = {}
+    for _, value in ipairs(target_array) do
+        if not seen[value] then
+            seen[value] = true
+            table.insert(result, value)
+        end
+    end
+    return result
+end

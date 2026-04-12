@@ -38,6 +38,9 @@ vgal.constants.MODULES = {
     },
 }
 
-vgal.constants.RECIPE_ENTRY_CATEGORIES = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
+vgal.constants.RECIPEABLE_CATEGORIES = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
     "item-with-entity-data",
     "rail-planner", "gun" }
+
+-- commentedbc: this list is huge.
+-- vgal.constants.ENTITYABLE_CATEGORIES = { "entity-with-owner", "simple-entity", "container" }

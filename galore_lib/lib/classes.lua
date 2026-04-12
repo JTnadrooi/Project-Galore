@@ -29,8 +29,6 @@ do
     ---@field localised_name_source? string
     ---@field localised_description_source? string
     ---@field locale_source? string
-    ---Yup.
-    ---@field categories? string[]
 end
 
 do

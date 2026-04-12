@@ -184,34 +184,34 @@ data.raw["recipe"]["copper-bacteria-cultivation"].order = "ba"
 data.raw["recipe"]["iron-bacteria"].order = "axa"
 data.raw["recipe"]["copper-bacteria"].order = "bxa"
 
-vgal.subgroup.set_item_or_fluid("fusion-power-cell", "uranium-processing")
-vgal.subgroup.set_item_or_fluid("lithium-plate", "vgal-smelting")
-vgal.subgroup.set_item_or_fluid("lithium", "raw-resource")
-vgal.subgroup.set_item_or_fluid("fluoroketone-hot", "fluid-recipes")
-vgal.subgroup.set_item_or_fluid("fluoroketone-cold", "fluid-recipes")
-vgal.subgroup.set_item_or_fluid("sulfuric-acid", "fluid-recipes")
-vgal.subgroup.set_item_or_fluid("fusion-plasma", "fluid-recipes")
+vgal.subgroup.set_for("fusion-power-cell", "uranium-processing")
+vgal.subgroup.set_for("lithium-plate", "vgal-smelting")
+vgal.subgroup.set_for("lithium", "raw-resource")
+vgal.subgroup.set_for("fluoroketone-hot", "fluid-recipes")
+vgal.subgroup.set_for("fluoroketone-cold", "fluid-recipes")
+vgal.subgroup.set_for("sulfuric-acid", "fluid-recipes")
+vgal.subgroup.set_for("fusion-plasma", "fluid-recipes")
 
 -- vgal.subgroup.set_item_or_fluid("ammonia", "fluid-recipes")
 -- vgal.subgroup.set_item_or_fluid("ammoniacal-solution", "fluid-recipes")
-vgal.subgroup.set_item_or_fluid("fluorine", "fluid-recipes")
+vgal.subgroup.set_for("fluorine", "fluid-recipes")
 -- vgal.subgroup.set_item_or_fluid("holmium-solution", "fluid-recipes")
 -- vgal.subgroup.set_item_or_fluid("electrolyte", "fluid-recipes")
-vgal.subgroup.set_item_or_fluid("lithium-brine", "fluid-recipes")
-vgal.subgroup.set_item_or_fluid("thruster-oxidizer", "space-processing")
-vgal.subgroup.set_item_or_fluid("thruster-fuel", "space-processing")
+vgal.subgroup.set_for("lithium-brine", "fluid-recipes")
+vgal.subgroup.set_for("thruster-oxidizer", "space-processing")
+vgal.subgroup.set_for("thruster-fuel", "space-processing")
 
-vgal.subgroup.set_item_or_fluid("carbon-fiber", "intermediate-product")
-vgal.subgroup.set_item_or_fluid("raw-fish", "agriculture-processes")
-vgal.subgroup.set_item_or_fluid("wood", "agriculture-processes")
-vgal.subgroup.set_item_or_fluid("tree-seed", "agriculture-processes")
+vgal.subgroup.set_for("carbon-fiber", "intermediate-product")
+vgal.subgroup.set_for("raw-fish", "agriculture-processes")
+vgal.subgroup.set_for("wood", "agriculture-processes")
+vgal.subgroup.set_for("tree-seed", "agriculture-processes")
 
-vgal.subgroup.set_item_or_fluid("supercapacitor", "intermediate-product")
-vgal.subgroup.set_item_or_fluid("superconductor", "vgal-chemistry-products")
-vgal.subgroup.set_item_or_fluid("holmium-plate", "vgal-smelting")
+vgal.subgroup.set_for("supercapacitor", "intermediate-product")
+vgal.subgroup.set_for("superconductor", "vgal-chemistry-products")
+vgal.subgroup.set_for("holmium-plate", "vgal-smelting")
 
-vgal.subgroup.set_item_or_fluid("tungsten-plate", "vgal-smelting")
-vgal.subgroup.set_item_or_fluid("tungsten-carbide", "vgal-chemistry-products")
+vgal.subgroup.set_for("tungsten-plate", "vgal-smelting")
+vgal.subgroup.set_for("tungsten-carbide", "vgal-chemistry-products")
 
 data.raw["recipe"]["casting-iron"].subgroup = "vgal-intermediate-casting"
 data.raw["recipe"]["casting-copper"].subgroup = "vgal-intermediate-casting"

@@ -40,7 +40,7 @@ if mods["bzcarbon"] then
     }
 
     if mods["space-age"] then
-        vgal.recipe.deep_hide("ammonia-from-spoilage")
+        vgal.recipe.deephide("ammonia-from-spoilage")
         vgal.recipe.replace_ingredient("vgal-carbon-sulfur-lubricant", "carbon", "graphite")
         vgal.recipe.all.link_ingredient({ type = "item", name = "activated-carbon", amount = 10 }, "supercapacitor", 1,
             "vgal")
@@ -100,7 +100,7 @@ if mods["bzlead"] then
     vgal.recipe.all.replace_ingredient("iron-plate", { type = "item", name = "lead-plate", amount = 1 },
         "uranium-fuel-cell", 1, "vgal")
 
-    vgal.recipe.deep_hide("vgal-steel-plate-uranium-fuel-cell")
+    vgal.recipe.deephide("vgal-steel-plate-uranium-fuel-cell")
 end
 
 if mods["bztin"] then

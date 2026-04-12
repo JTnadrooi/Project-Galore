@@ -69,8 +69,8 @@ for building_name, max_tier in pairs(UNNEEDED_BUILDINGS) do
             end
         end
         if (i > max_tier) and building then
-            vgal.data.deep_hide(building)
-            vgal.data.deep_hide(data.raw["item"][building_name .. "-" .. i])
+            vgal.data.deephide(building)
+            vgal.data.deephide(data.raw["item"][building_name .. "-" .. i])
             vgal.data.trim(building_name .. "-" .. i)
             building.next_upgrade = nil
         else
@@ -117,8 +117,8 @@ for building_name, max_tier in pairs(UNNEEDED_BUILDINGS) do
     end
 
     if max_tier == 0 then
-        vgal.data.deep_hide(data.raw["assembling-machine"][building_name])
-        vgal.data.deep_hide(data.raw["item"][building_name])
+        vgal.data.deephide(data.raw["assembling-machine"][building_name])
+        vgal.data.deephide(data.raw["item"][building_name])
         vgal.data.trim(building_name)
     end
 end
@@ -182,12 +182,12 @@ for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
 end
 
 -- remove seed generators.
-vgal.data.deep_hide(data.raw["assembling-machine"]["angels-bio-generator-swamp-1"])
-vgal.data.deep_hide(data.raw["item"]["angels-bio-generator-swamp-1"])
+vgal.data.deephide(data.raw["assembling-machine"]["angels-bio-generator-swamp-1"])
+vgal.data.deephide(data.raw["item"]["angels-bio-generator-swamp-1"])
 vgal.data.trim("angels-bio-generator-swamp-1")
 
-vgal.data.deep_hide(data.raw["assembling-machine"]["angels-bio-generator-desert-1"])
-vgal.data.deep_hide(data.raw["item"]["angels-bio-generator-desert-1"])
+vgal.data.deephide(data.raw["assembling-machine"]["angels-bio-generator-desert-1"])
+vgal.data.deephide(data.raw["item"]["angels-bio-generator-desert-1"])
 vgal.data.trim("angels-bio-generator-desert-1")
 
 -- remove sintering ovens

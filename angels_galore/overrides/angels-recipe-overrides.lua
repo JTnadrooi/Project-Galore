@@ -9,7 +9,7 @@ data.raw.recipe["angels-catalyst-metal-blue"].ingredients = vgal.build.table({
 
 --- upgrade kit removal ---
 for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
-    vgal.recipe.deep_hide(environment .. "-upgrade")
+    vgal.recipe.deephide(environment .. "-upgrade")
     local building_recipe = data.raw["recipe"][environment .. "-farm"]
     for i, ingredient in ipairs(building_recipe.ingredients) do
         if ingredient.name == (environment .. "-upgrade") then
@@ -421,8 +421,8 @@ vgal.recipe.all.remove_ingredient("angels-token-bio")
 vgal.recipe.all.remove_result("angels-token-bio")
 
 for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
-    vgal.recipe.deep_hide(environment .. "-garden-b")
-    vgal.recipe.deep_hide(environment .. "-garden-cultivating-a")
+    vgal.recipe.deephide(environment .. "-garden-b")
+    vgal.recipe.deephide(environment .. "-garden-cultivating-a")
 end
 
 --- plastic buff ---

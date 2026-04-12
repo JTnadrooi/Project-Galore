@@ -158,7 +158,7 @@ for _, metal in pairs(vgal.constants.METALS) do
         data.raw["item"][metal[ore_state]].order = "a-" ..
             vgal.subgroup.order_from_number(ore_state_index)
 
-        vgal.subgroup.clean(metal[ore_state])
+        vgal.subgroup.clean_recipe(metal[ore_state])
         data.raw["recipe"][metal[ore_state] .. "-processing"].subgroup = "vgal-angels-ore" .. metal.ore_index
         data.raw["recipe"][metal[ore_state] .. "-processing"].order = "b-" ..
             vgal.subgroup.order_from_number(ore_state_index)
@@ -188,7 +188,7 @@ for _, value in ipairs(subgroups) do
     end
     if value.reorder_entries then
         for entry_index, entry_name in ipairs(value.entries) do
-            vgal.any(entry_name).order = string.sub("abcdefghijklmnopqrstuvwxyz", entry_index, entry_index)
+            vgal.get_recipeable(entry_name).order = string.sub("abcdefghijklmnopqrstuvwxyz", entry_index, entry_index)
         end
     end
     vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)

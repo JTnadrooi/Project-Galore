@@ -2,15 +2,43 @@
 
 vgal.tech.recipes_to_remove_from_techs = vgal.tech.recipes_to_remove_from_techs or {} -- array
 vgal.tech.techs_to_splice = vgal.tech.techs_to_splice or {}                           -- table
+vgal.tech.units = {
+    ["automation-science-pack"] = {
+        name = "automation-science-pack",
+        value = 1,
+    },
+    ["logistic-science-pack"] = {
+        name = "logistic-science-pack",
+        value = 2,
+    },
+    ["military-science-pack"] = {
+        name = "military-science-pack",
+        value = 2,
+    },
+    ["chemical-science-pack"] = {
+        name = "chemical-science-pack",
+        value = 3,
+    },
+    ["production-science-pack"] = {
+        name = "production-science-pack",
+        value = 4,
+    },
+    ["utility-science-pack"] = {
+        name = "utility-science-pack",
+        value = 5,
+    },
+    ["space-science-pack"] = {
+        name = "space-science-pack",
+        value = 6,
+    },
+}
 
 ---@param tech_name (string)
 ---@param recipe_name (string)
 function vgal.tech.add_recipe(tech_name, recipe_name)
-    if tech_name ~= "" and not data.raw.technology[tech_name] then
-        error("technology with name: " .. tech_name .. "does not exist")
-    end
+    local tech = vgal.throw.if_tech_not_found(tech_name)
     table.insert(
-        data.raw.technology[tech_name].effects,
+        tech.effects,
         {
             type = "unlock-recipe",
             recipe = recipe_name,
@@ -22,11 +50,9 @@ end
 ---@param old_recipe string
 ---@param new_recipe string
 function vgal.tech.replace_recipe(tech_name, old_recipe, new_recipe)
-    if tech_name == "" or not data.raw.technology[tech_name] then
-        error("technology with name: " .. tech_name .. " does not exist")
-    end
+    local tech = vgal.throw.if_tech_not_found(tech_name)
 
-    local effects = data.raw.technology[tech_name].effects
+    local effects = tech.effects
     local replaced = false
 
     for _, effect in ipairs(effects) do
@@ -43,7 +69,7 @@ function vgal.tech.replace_recipe(tech_name, old_recipe, new_recipe)
 end
 
 function vgal.tech.add_productivity_change(tech_name, recipe_name, change, hidden)
-    local tech = data.raw["technology"][tech_name]
+    local tech = vgal.throw.if_tech_not_found(tech_name)
     if tech then
         tech.effects = tech.effects or {}
         table.insert(
@@ -59,107 +85,60 @@ function vgal.tech.add_productivity_change(tech_name, recipe_name, change, hidde
 end
 
 function vgal.tech.queue_to_clean(recipe_name)
-    if (not data.raw["recipe"][recipe_name]) then error("Recipe " .. recipe_name .. " not found.") end
+    vgal.throw.if_recipe_not_found(recipe_name)
 
     table.insert(vgal.tech.recipes_to_remove_from_techs, recipe_name)
 end
 
 function vgal.tech.remove_prerequisite(tech_name, prerequisite)
-    local tech = data.raw["technology"][tech_name]
+    local tech = vgal.throw.if_tech_not_found(tech_name)
     for i, pre in ipairs(tech.prerequisites) do
         if pre == prerequisite then
             table.remove(tech.prerequisites, i)
             return
         end
     end
-    error()
-end
-
-function vgal.tech.multiply_unit_count(tech_name, amount, rounding_number)
-    rounding_number = rounding_number or 1
-    if rounding_number < 1 then
-        rounding_number = 1
-    end
-    if data.raw["technology"][tech_name].unit.count_formula then
-        return
-    end
-    data.raw["technology"][tech_name].unit.count = math.floor(((data.raw["technology"][tech_name].unit.count or 1) * amount) /
-        rounding_number) * rounding_number
-    if data.raw["technology"][tech_name].unit.count < 1 then
-        data.raw["technology"][tech_name].unit.count = 1
-    end
-end
-
-function vgal.tech.is_modded(tech_name, modtag)
-    if data.raw["technology"][tech_name].icon then
-        return string.find(data.raw["technology"][tech_name].icon, modtag)
-    else
-        return false
-    end
-end
-
----@param tech_name (string)
---- Removes prerequisites.
-function vgal.tech.set_as_initial(tech_name)
-    data.raw["technology"][tech_name].prerequisites = {}
+    error("Prerequisite'" .. prerequisite .. "'not found in " .. tech_name)
 end
 
 ---@param tech_name (string)
 ---@param recipe_name (string)
 --- Ensures a recipe is not in the effects of the technology.
 function vgal.tech.remove_recipe(tech_name, recipe_name)
-    if not data.raw.technology[tech_name] then
-        error("tech to remove recipe from not found")
-    end
-    for index, ingredient in ipairs(data.raw.technology[tech_name].effects) do
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+    for index, ingredient in ipairs(tech.effects) do
         if ingredient.type == "unlock-recipe" and ingredient.recipe == recipe_name then
-            table.remove(data.raw.technology[tech_name].effects, index)
+            table.remove(tech.effects, index)
             break
         end
     end
 end
 
 ---@param tech_name (string)
----@param othertech_name (string)
+---@param prerequisite (string)
 --- Add a prerequisite to a technology.
-function vgal.tech.add_prerequisite(tech_name, othertech_name)
-    table.insert(data.raw.technology[tech_name].prerequisites, othertech_name)
+function vgal.tech.add_prerequisite(tech_name, prerequisite)
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+    table.insert(tech.prerequisites, prerequisite)
 end
 
----@param tech_name (string)
---- Shallowly (?) remove a technology from the game. The game will throw an error if this function is misused. I recommend shallow-ly hiding the tech instead.
-function vgal.tech.shallow_remove(tech_name)
-    data.raw["technology"][tech_name] = nil
-end
-
----@param tech_name (string)
-function vgal.tech.shallow_remove_chain(tech_name)
-    vgal.tech.shallow_remove(tech_name)
-    for index, _ in ipairs({ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }) do
-        vgal.tech.shallow_remove(tech_name .. "-" .. index)
-    end
-end
-
-vgal.tech.iconDirectory = "__vanilla_galore__/graphics/tech/"
-function vgal.tech.set_icon_directory(directoryName)
-    vgal.tech.iconDirectory = directoryName
-end
-
-function vgal.tech.create_empty(tech_name, tier, units, unitCount, unitTime, prerequisites, order, icons)
+function vgal.tech.create_empty(tech_name, tier, units, unit_count, unit_time, prerequisites, order, icons)
     tier = tier or 1
-    if not unitTime then
-        if unitCount > 120 then
-            unitTime = 60
+
+    if not unit_time then
+        if unit_count > 120 then
+            unit_time = 60
         else
-            unitTime = 30
+            unit_time = 30
         end
     end
-    local toret = {
+
+    local result = {
         type = "technology",
         name = tech_name,
         icons = icons or {
             {
-                icon = vgal.tech.iconDirectory .. tech_name .. ".png",
+                icon = vgal.icon.directory.tech .. tech_name .. ".png",
                 icon_size = 400,
                 tint = nil,
             }
@@ -167,48 +146,42 @@ function vgal.tech.create_empty(tech_name, tier, units, unitCount, unitTime, pre
         effects = {},
         prerequisites = prerequisites,
         unit = {
-            count = unitCount,
+            count = unit_count,
             ingredients = {},
-            time = unitTime
+            time = unit_time
         },
         order = order or "c"
     }
+
     if tier ~= 1 then
-        toret.name = toret.name .. "-" .. tier
+        result.name = result.name .. "-" .. tier
         if tier == 2 then
             table.insert(prerequisites, tech_name)
         else
             table.insert(prerequisites, tech_name .. "-" .. (tier - 1))
         end
     end
-    for _, value in ipairs(units) do
-        table.insert(toret.unit.ingredients, { value, 1 })
-    end
-    return toret
-end
 
----@param tech_name (string)
-function vgal.tech.deep_remove(tech_name)
-    if data.raw["technology"][tech_name] then
-        if data.raw["technology"][tech_name].effects then
-            for _, effect in pairs(data.raw["technology"][tech_name].effects) do
-                data.raw["recipe"][effect.recipe] = nil
-            end
-        end
+    for _, unit in ipairs(units) do
+        table.insert(result.unit.ingredients, { unit, 1 })
     end
-    data.raw["technology"][tech_name] = nil
+
+    return result
 end
 
 ---@param tech_name (string)
 function vgal.tech.deep_hide(tech_name)
-    if data.raw["technology"][tech_name].effects then
-        for _, effect in pairs(data.raw["technology"][tech_name].effects) do
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    if tech.effects then
+        for _, effect in pairs(tech.effects) do
             if effect.recipe then
-                vgal.recipe.deep_hide(effect.recipe)
+                vgal.recipe.deephide(effect.recipe)
             end
         end
     end
-    data.raw["technology"][tech_name].hidden = true
+
+    vgal.data.deephide(tech)
 end
 
 ---@param tech_name (string)
@@ -217,108 +190,58 @@ function vgal.tech.remove_miltary(tech_name)
 end
 
 function vgal.tech.merge(tech_name_from, tech_name_to)
-    local tech_from = data.raw["technology"][tech_name_from]
-    local tech_to = data.raw["technology"][tech_name_to]
+    local tech_from = vgal.throw.if_tech_not_found(tech_name_from)
+    local tech_to = vgal.throw.if_tech_not_found(tech_name_to)
+
     for _, eff in ipairs(tech_from.effects) do
         table.insert(tech_to.effects, eff)
     end
-    data.raw["technology"][tech_name_from] = nil
+
+    tech_from.effects = {}
+    vgal.data.deephide(tech_from)
 end
 
 function vgal.tech.move_recipe(tech_name_from, tech_name_to, recipe_name)
-    local tech_from = data.raw["technology"][tech_name_from]
-    local tech_to = data.raw["technology"][tech_name_to]
+    local tech_from = vgal.throw.if_tech_not_found(tech_name_from)
+    local tech_to = vgal.throw.if_tech_not_found(tech_name_to)
+
     for i, eff in ipairs(tech_from.effects) do
-        if eff.recipe == recipe_name then
+        if eff.type == "unlock-recipe" and eff.recipe == recipe_name then
             table.insert(tech_to.effects, eff)
             table.remove(tech_from.effects, i)
-            break
+            return
         end
     end
 end
 
--- function vgal.tech.move_recipe(tech_name_from, recipe_name, tech_name_to)
---     local tech_from = data.raw["technology"][tech_name_from]
---     local tech_to = data.raw["technology"][tech_name_to]
---     tech_to.effects = tech_to.effects or {}
---     local moved = false
---     for i = #tech_from.effects, 1, -1 do
---         local effect = tech_from.effects[i]
---         if (effect.type == "recipe") and effect.recipe == recipe_name then
---             table.insert(tech_to.effects, effect)
---             table.remove(tech_from.effects, i)
---             moved = true
---         end
---     end
---     if not moved then
---         error("no effect of type '" .. recipe_name .. "' found in '" .. tech_name_from .. "'.")
---     end
---     if not next(tech_from.effects) then
---         data.raw["technology"][tech_name_from] = nil
---     end
--- end
-
 ---@param tech_name (string)
 function vgal.tech.remove_ingredient(tech_name, unit_name)
-    if data.raw["technology"][tech_name] then
-        if data.raw["technology"][tech_name].unit.ingredients then
-            for i, ingredient in ipairs(data.raw["technology"][tech_name].unit.ingredients) do
-                if ingredient[1] == unit_name then
-                    table.remove(data.raw["technology"][tech_name].unit.ingredients, i)
-                end
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    if tech.unit.ingredients then
+        for i, ingredient in ipairs(tech.unit.ingredients) do
+            if ingredient[1] == unit_name then
+                table.remove(tech.unit.ingredients, i)
+                return
             end
         end
     end
 end
 
 function vgal.tech.add_ingredient(tech_name, unit_name)
-    if data.raw["technology"][tech_name] then
-        for _, value in ipairs(data.raw["technology"][tech_name].unit.ingredients) do
-            if value[1] == unit_name then
-                return
-            end
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    for _, value in ipairs(tech.unit.ingredients) do
+        if value[1] == unit_name then
+            return
         end
-        table.insert(data.raw["technology"][tech_name].unit.ingredients, { unit_name, 1 })
     end
+    table.insert(tech.unit.ingredients, { unit_name, 1 })
 end
 
 ---@param tech_name (string)
-function vgal.tech.deep_remove_chain(tech_name)
-    vgal.tech.deep_remove(tech_name)
-    for index, _ in ipairs({ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }) do
-        vgal.tech.deep_remove(tech_name .. "-" .. index)
-    end
-end
-
----@param tech_name (string)
-function vgal.tech.hide(tech_name)
-    data.raw["technology"][tech_name].hidden = true
-end
-
----@param tech_name (string)
-function vgal.tech.hide_chain(tech_name)
-    vgal.tech.hide(tech_name)
-    for index, _ in ipairs({ 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 }) do
-        if data.raw["technology"][tech_name .. "-" .. index] then
-            vgal.tech.hide(tech_name .. "-" .. index)
-        end
-    end
-end
-
-function vgal.tech.vgal_tech_clean()
-    for _, tech in pairs(data.raw["technology"]) do
-        if tech.prerequisites then
-            local new_prerequisites = {}
-            for _, prerequisite in pairs(tech.prerequisites) do
-                if ((not data.raw["technology"][prerequisite]) or data.raw["technology"][prerequisite].hidden == true) and prerequisite then
-                    -- well
-                else
-                    table.insert(new_prerequisites, prerequisite)
-                end
-            end
-            tech.prerequisites = new_prerequisites
-        end
-    end
+function vgal.tech.deephide(tech_name)
+    vgal.data.deephide(data.raw["technology"][tech_name])
 end
 
 ---@param tech data.TechnologyPrototype
@@ -334,23 +257,15 @@ function vgal.tech.extract_units(tech)
 end
 
 function vgal.tech.get_units_worth(units)
-    local values = {
-        ["automation-science-pack"] = 1,
-        ["logistic-science-pack"] = 2,
-        ["chemical-science-pack"] = 3,
-        ["space-science-pack"] = 4,
-        ["production-science-pack"] = 4,
-        ["utility-science-pack"] = 5,
-        ["metallurgic-science-pack"] = 5,
-        ["agricultural-science-pack"] = 5,
-        ["electromagnetic-science-pack"] = 5,
-        ["cryogenic-science-pack"] = 8,
-        ["promethium-science-pack"] = 10,
-    }
-
     local worth = 0
+
     for _, unit in ipairs(units) do
-        worth = worth + (values[unit] or 0)
+        local unit_data = vgal.tech.units[unit]
+        if unit_data then
+            worth = worth + vgal.tech.units[unit].value
+        end
+        worth = worth + 1
     end
+
     return worth
 end

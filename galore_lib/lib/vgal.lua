@@ -1,5 +1,6 @@
 vgal = vgal or {}
 
+vgal.throw = vgal.throw or {}
 vgal.constants = vgal.constants or {}
 vgal.data = vgal.data or {}
 vgal.table = vgal.table or {}
@@ -23,6 +24,7 @@ if vgal.setting ~= nil then
 end
 
 require("constants")
+require("throw")
 require("classes")
 require("icon")
 require("localise")
@@ -182,8 +184,6 @@ function vgal.data.extend(entries, fill_in_with)
                 error()
             end
 
-            -- entry.enabled = (entry.enabled ~= nil) or not entry.technologies
-
             -- null stuff
             entry.fluid_ingredients = entry.fluid_ingredients or {}
             entry.fluid_results = entry.fluid_results or {}
@@ -195,7 +195,8 @@ function vgal.data.extend(entries, fill_in_with)
             local hidden = false
             for _, group in ipairs(entry.groups) do
                 if not vgal.groups[group] then
-                    error("group with name " .. group .. " does not exist")
+                    error("Group with name " .. group .. " does not exist, recipe " ..
+                        entry.name .. " tries to register to it.")
                 end
 
                 if not vgal.groups[group].enabled then
@@ -209,13 +210,13 @@ function vgal.data.extend(entries, fill_in_with)
             end
 
             if hidden then
-                vgal.data.deep_hide(entry)
+                vgal.data.deephide(entry)
             end
 
             -- icon stuff
             if entry.icon then
                 if entry.icons then
-                    error()
+                    error("Cannot have both icon and icons set for " .. entry.name)
                 end
                 entry.icons = {
                     {
@@ -227,9 +228,9 @@ function vgal.data.extend(entries, fill_in_with)
                 entry.icon_size = nil
             end
 
-            -- validate
+            -- validate.
             if not entry.energy_required then
-                error()
+                error("Missing energy_required for " .. entry.name)
             end
 
             entry.ingredients = vgal.build.table(entry.ingredients, entry.fluid_ingredients)
@@ -270,29 +271,48 @@ function vgal.data.extend(entries, fill_in_with)
 
             ---@diagnostic disable-next-line: assign-type-mismatch
             data:extend { entry }
-            if type(entry.technologies[1]) == "table" then
-                for i, prerequisite_collection in ipairs(entry.technologies) do
-                    ---@cast prerequisite_collection table
+            for i, tech_entry in ipairs(entry.technologies) do
+                local t_type = type(tech_entry)
+
+                if t_type == "table" then
+                    ---@cast tech_entry table
 
                     local tech_name = entry.name .. "-node" .. i
 
-                    local eventual_units_worth = 0
-                    local eventual_units = {}
-                    for _, prerequisite in ipairs(prerequisite_collection) do
-                        local tech = data.raw["technology"][prerequisite]
-
-                        local units = vgal.tech.extract_units(tech)
-                        local units_worth = vgal.tech.get_units_worth(units)
-                        if units_worth > eventual_units_worth then
-                            eventual_units = units
-                            eventual_units_worth = units_worth
+                    -- get most expensive prerequisite.
+                    local units = {}
+                    for _, prerequisite in ipairs(tech_entry) do
+                        local tech = vgal.throw.if_tech_not_found(prerequisite)
+                        for _, unit in ipairs(vgal.tech.extract_units(tech)) do
+                            table.insert(units, unit)
                         end
                     end
 
+                    units = vgal.table.remove_duplicates(units)
+
+                    -- commentedbc: algorithm above should be simpler and better.
+                    -- local eventual_units_worth = 0
+                    -- local eventual_units = {}
+                    -- for _, prerequisite in ipairs(tech_entry) do
+                    --     local tech = vgal.throw.if_tech_not_found(prerequisite)
+                    --     local units = vgal.tech.extract_units(tech)
+                    --     local units_worth = vgal.tech.get_units_worth(units)
+                    --     if units_worth > eventual_units_worth then
+                    --         eventual_units = units
+                    --         eventual_units_worth = units_worth
+                    --     end
+                    -- end
+
                     data:extend({
-                        vgal.tech.create_empty(tech_name, 1, eventual_units, #eventual_units * 5,
-                            #eventual_units >= 4 and 30 or 15, prerequisite_collection,
-                            "a", {
+                        vgal.tech.create_empty(
+                            tech_name,
+                            1,
+                            units,
+                            #units * 5,
+                            #units >= 4 and 30 or 15,
+                            tech_entry,
+                            "a",
+                            {
                                 {
                                     icon = entry.icons[1].icon,
                                     icon_size = entry.icons[1].icon_size,
@@ -302,43 +322,43 @@ function vgal.data.extend(entries, fill_in_with)
                                     icon = "__galore_lib__/graphics/node.png",
                                     icon_size = 256,
                                 },
-                            })
+                            }
+                        )
                     })
-                    local tech = data.raw["technology"][tech_name]
 
+                    local tech = data.raw["technology"][tech_name]
                     tech.__vgal_can_remove = true
 
                     local pure_trigger = true
-                    for _, pre in ipairs(prerequisite_collection) do
+                    for _, pre in ipairs(tech_entry) do
                         if data.raw["technology"][pre].research_trigger == nil then
                             pure_trigger = false
                         end
                     end
                     if pure_trigger then
-                        tech.research_trigger = data.raw["technology"][prerequisite_collection[1]].research_trigger
+                        tech.research_trigger = data.raw["technology"][tech_entry[1]].research_trigger
                         tech.unit = nil
                     end
+
                     tech.localised_name = { "?",
                         { "", { "vgal-internal.tech-node" }, ": ", { "recipe-name." .. entry.name } },
-                        { "", { "vgal-internal.tech-node" }, ": ", vgal.locale.get_lazy(entry.main_product) },
+                        { "", { "vgal-internal.tech-node" }, ": ", vgal.locale.guess_key(entry.main_product) },
                     }
                     tech.localised_description = {
                         "", { "recipe-description." .. entry.name },
                     }
+
                     vgal.tech.add_recipe(tech_name, entry.name)
                     tech.hidden = hidden
                     tech.hidden_in_factoriopedia = hidden
+                elseif t_type == "string" then
+                    ---@cast tech_entry string
+                    vgal.tech.add_recipe(tech_entry, entry.name)
+                else
+                    error("Invalid prototype technologies entry: " .. serpent.block(tech_entry))
                 end
-            elseif type(entry.technologies[1]) == "string" then
-                for _, tech_name in ipairs(entry.technologies) do
-                    ---@cast tech_name string
-                    vgal.tech.add_recipe(tech_name, entry.name)
-                end
-            elseif #entry.technologies == 0 then
-
-            else
-                error()
             end
+
             if entry.productivity_technology ~= "" then -- so if "", no prod even when tech exists
                 entry.productivity_technology = entry.productivity_technology or vgal.recipe.get_productivity_tech_name(
                     entry.main_product)
@@ -368,60 +388,58 @@ function vgal.data.extend(entries, fill_in_with)
                 end
             end
 
-            -- entry.enabled = true
             vgal.groups[entry.name] = entry
         else
-            error(entry.name)
+            error("Invalid prototype type " .. entry.type .. " for " .. entry.name)
         end
     end
 end
 
 function vgal.data.trim(recipe_name)
     vgal.tech.queue_to_clean(recipe_name)
-    vgal.recipe.deep_hide(recipe_name)
-    -- data.raw["recipe"][recipe_name] = nil
-    -- vgal.recipes[recipe_name] = nil
+    vgal.recipe.deephide(recipe_name)
 end
 
-function vgal.data.deep_hide(entry)
-    entry.hidden = true
-    entry.hidden_in_factoriopedia = true
-    entry.hide_from_signal_gui = true
+function vgal.data.deephide(prototype)
+    prototype.hidden = true
+    prototype.hidden_in_factoriopedia = true
+    prototype.hide_from_signal_gui = true
 
-    if entry.type == "fluid" then
-        entry.auto_barrel = false
+    if prototype.type == "fluid" then
+        prototype.auto_barrel = false
         if mods["angels_galore"] then
-            local void_recipe = data.raw["recipe"]["angels-chemical-void-" .. entry.name]
+            local void_recipe = data.raw["recipe"]["angels-chemical-void-" .. prototype.name]
             if void_recipe then
-                vgal.data.deep_hide(void_recipe)
+                vgal.data.deephide(void_recipe)
             end
         end
     end
 
-    if entry.type == "recipe" then
-        entry.hide_from_stats = true
-        entry.hide_from_player_crafting = true
-        entry.enabled = false
+    if prototype.type == "recipe" then
+        prototype.hide_from_stats = true
+        prototype.hide_from_player_crafting = true
+        prototype.enabled = false
     end
 end
 
-function vgal.any(any_name)
-    for _, category in ipairs(vgal.constants.RECIPE_ENTRY_CATEGORIES) do
-        if data.raw[category][any_name] then
-            return data.raw[category][any_name]
+function vgal.get_recipeable(prototype_name)
+    for _, category in ipairs(vgal.constants.RECIPEABLE_CATEGORIES) do
+        if data.raw[category][prototype_name] then
+            return data.raw[category][prototype_name]
         end
     end
-    error("ANY of name '" .. any_name .. "' does not exist")
+    error("Recipeable of name '" .. prototype_name .. "' not found.")
 end
 
-function vgal.any_get_source(any_name)
-    for _, category in ipairs(vgal.constants.RECIPE_ENTRY_CATEGORIES) do
-        if data.raw[category][any_name] then
-            return category
-        end
-    end
-    error("ANY_SOURCE of name '" .. any_name .. "' does not exist")
-end
+-- commentedbc: see vgal.constants.ENTITYABLE_CATEGORIES comment
+-- function vgal.get_entityable(prototype_name)
+--     for _, category in ipairs(vgal.constants.ENTITYABLE_CATEGORIES) do
+--         if data.raw[category][prototype_name] then
+--             return data.raw[category][prototype_name]
+--         end
+--     end
+--     error("Entityable of name '" .. prototype_name .. "' not found.")
+-- end
 
 local function remove_empty_vgal_techs()
     local required_techs = {}
@@ -460,7 +478,7 @@ local function remove_empty_vgal_techs()
     end
 
     for _, tech in pairs(removable_techs) do
-        vgal.data.deep_hide(tech)
+        vgal.data.deephide(tech)
     end
 end
 

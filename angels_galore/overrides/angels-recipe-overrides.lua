@@ -430,8 +430,8 @@ local PLASTIC_MULTIPLIER = 5
 vgal.recipe.multiply_results("angels-liquid-plastic", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("angels-liquid-plastic-2", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("angels-liquid-plastic-3", PLASTIC_MULTIPLIER)
-vgal.recipe.set_result_amount("angels-bio-plastic", 80)
-vgal.recipe.set_result_amount("angels-bio-plastic-2", 150)
+vgal.recipe.set_result_amount("angels-liquid-plastic-bio-1", 80)
+vgal.recipe.set_result_amount("angels-liquid-plastic-bio-2", 150)
 
 -- add slag result to processing recipes.
 for _, metal in pairs(vgal.constants.METALS) do

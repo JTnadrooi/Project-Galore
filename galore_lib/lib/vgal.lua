@@ -175,7 +175,14 @@ function vgal.data.extend(entries, fill_in_with)
             entry.name = vgal.build.name(entry.prefix, entry.name, entry.tier)
 
             -- tech kinda, real stuff happens later.
-            entry.enabled = (entry.enabled ~= nil) or not entry.technologies
+            if entry.enabled ~= nil and #entry.technologies > 0 then
+                error()
+            end
+            if entry.enabled == nil and #entry.technologies == 0 then
+                error()
+            end
+
+            -- entry.enabled = (entry.enabled ~= nil) or not entry.technologies
 
             -- null stuff
             entry.fluid_ingredients = entry.fluid_ingredients or {}
@@ -263,74 +270,74 @@ function vgal.data.extend(entries, fill_in_with)
 
             ---@diagnostic disable-next-line: assign-type-mismatch
             data:extend { entry }
-            if entry.technologies then
-                if type(entry.technologies[1]) == "table" then
-                    for i, prerequisite_collection in ipairs(entry.technologies) do
-                        ---@cast prerequisite_collection table
+            if type(entry.technologies[1]) == "table" then
+                for i, prerequisite_collection in ipairs(entry.technologies) do
+                    ---@cast prerequisite_collection table
 
-                        local tech_name = entry.name .. "-node" .. i
+                    local tech_name = entry.name .. "-node" .. i
 
-                        local eventual_units_worth = 0
-                        local eventual_units = {}
-                        for _, prerequisite in ipairs(prerequisite_collection) do
-                            local tech = data.raw["technology"][prerequisite]
+                    local eventual_units_worth = 0
+                    local eventual_units = {}
+                    for _, prerequisite in ipairs(prerequisite_collection) do
+                        local tech = data.raw["technology"][prerequisite]
 
-                            local units = vgal.tech.extract_units(tech)
-                            local units_worth = vgal.tech.get_units_worth(units)
-                            if units_worth > eventual_units_worth then
-                                eventual_units = units
-                                eventual_units_worth = units_worth
-                            end
+                        local units = vgal.tech.extract_units(tech)
+                        local units_worth = vgal.tech.get_units_worth(units)
+                        if units_worth > eventual_units_worth then
+                            eventual_units = units
+                            eventual_units_worth = units_worth
                         end
-
-                        data:extend({
-                            vgal.tech.create_empty(tech_name, 1, eventual_units, #eventual_units * 5,
-                                #eventual_units >= 4 and 30 or 15, prerequisite_collection,
-                                "a", {
-                                    {
-                                        icon = entry.icons[1].icon,
-                                        icon_size = entry.icons[1].icon_size,
-                                        scale = 2.2,
-                                    },
-                                    {
-                                        icon = "__galore_lib__/graphics/node.png",
-                                        icon_size = 256,
-                                    },
-                                })
-                        })
-                        local tech = data.raw["technology"][tech_name]
-
-                        tech.__vgal_can_remove = true
-
-                        local pure_trigger = true
-                        for _, pre in ipairs(prerequisite_collection) do
-                            if data.raw["technology"][pre].research_trigger == nil then
-                                pure_trigger = false
-                            end
-                        end
-                        if pure_trigger then
-                            tech.research_trigger = data.raw["technology"][prerequisite_collection[1]].research_trigger
-                            tech.unit = nil
-                        end
-                        tech.localised_name = { "?",
-                            { "", { "vgal-internal.tech-node" }, ": ", { "recipe-name." .. entry.name } },
-                            { "", { "vgal-internal.tech-node" }, ": ", vgal.locale.get_lazy(entry.main_product) },
-                        }
-                        tech.localised_description = {
-                            "", { "recipe-description." .. entry.name },
-                        }
-                        vgal.tech.add_recipe(tech_name, entry.name)
-                        tech.hidden = hidden
-                        tech.hidden_in_factoriopedia = hidden
                     end
-                elseif type(entry.technologies[1]) == "string" then
-                    for _, tech_name in ipairs(entry.technologies) do
-                        ---@cast tech_name string
-                        vgal.tech.add_recipe(tech_name, entry.name)
+
+                    data:extend({
+                        vgal.tech.create_empty(tech_name, 1, eventual_units, #eventual_units * 5,
+                            #eventual_units >= 4 and 30 or 15, prerequisite_collection,
+                            "a", {
+                                {
+                                    icon = entry.icons[1].icon,
+                                    icon_size = entry.icons[1].icon_size,
+                                    scale = 2.2,
+                                },
+                                {
+                                    icon = "__galore_lib__/graphics/node.png",
+                                    icon_size = 256,
+                                },
+                            })
+                    })
+                    local tech = data.raw["technology"][tech_name]
+
+                    tech.__vgal_can_remove = true
+
+                    local pure_trigger = true
+                    for _, pre in ipairs(prerequisite_collection) do
+                        if data.raw["technology"][pre].research_trigger == nil then
+                            pure_trigger = false
+                        end
                     end
-                else
-                    error()
+                    if pure_trigger then
+                        tech.research_trigger = data.raw["technology"][prerequisite_collection[1]].research_trigger
+                        tech.unit = nil
+                    end
+                    tech.localised_name = { "?",
+                        { "", { "vgal-internal.tech-node" }, ": ", { "recipe-name." .. entry.name } },
+                        { "", { "vgal-internal.tech-node" }, ": ", vgal.locale.get_lazy(entry.main_product) },
+                    }
+                    tech.localised_description = {
+                        "", { "recipe-description." .. entry.name },
+                    }
+                    vgal.tech.add_recipe(tech_name, entry.name)
+                    tech.hidden = hidden
+                    tech.hidden_in_factoriopedia = hidden
                 end
+            elseif type(entry.technologies[1]) == "string" then
+                for _, tech_name in ipairs(entry.technologies) do
+                    ---@cast tech_name string
+                    vgal.tech.add_recipe(tech_name, entry.name)
+                end
+            elseif #entry.technologies == 0 then
+
+            else
+                error()
             end
             if entry.productivity_technology ~= "" then -- so if "", no prod even when tech exists
                 entry.productivity_technology = entry.productivity_technology or vgal.recipe.get_productivity_tech_name(

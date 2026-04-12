@@ -41,6 +41,10 @@ function vgal.log(toLog)
     end
 end
 
+function vgal.log_block(toLog)
+    vgal.log(serpent.block(toLog) or error("Cannot log nil."))
+end
+
 ---@type vgal.VgalToggleGroupPrototype[]
 vgal.groups = {}
 vgal.productivity_entries = {}

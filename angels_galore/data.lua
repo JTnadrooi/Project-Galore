@@ -6,3 +6,4 @@ require("prototypes.subgroups")
 
 require("prototypes.metal-both")
 require("prototypes.sorting")
+require("prototypes.resources")

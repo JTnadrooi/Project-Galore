@@ -476,7 +476,6 @@ data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 1.5
 -- data.raw["recipe"]["concrete"].ingredients = vgal.table.build({}, {
 --     { "angels-liquid-molten-concrete", 100 }
 -- })
-
 -- vgal.data.trim("angels-concrete")
 
 vgal.recipe.multiply("angels-concrete", 1.25)
@@ -524,3 +523,15 @@ for _, module in ipairs(vgal.constants.MODULES) do
         end
     end
 end
+
+--- remove the stone uncrushing recipe + handle consequences ---
+
+for _, metal in pairs(vgal.constants.METALS) do
+    data.raw["recipe"][metal.crushed].results = vgal.build.table({
+        { metal.crushed,          2 },
+        { "angels-stone-crushed", 1, { probability = 0.5 } },
+        { "stone",                1, { probability = 0.25 } },
+    })
+end
+
+vgal.data.trim("angels-stone-from-crushed-stone")

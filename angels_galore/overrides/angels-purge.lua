@@ -1,13 +1,13 @@
 --- ore removal ---
 
 -- (actual)catalyst fixes
-vgal.recipe.all.replace_ingredient("angels-catalyst-metal-yellow",
-    { type = "item", name = "angels-catalyst-metal-red", amount = 1 })
-vgal.recipe.all.replace_ingredient("angels-catalyst-metal-blue",
-    { type = "item", name = "angels-catalyst-metal-green", amount = 1 })
+vgal.data.trim("angels-catalyst-metal-red")
+vgal.recipe.all.replace_ingredient("angels-catalyst-metal-red",
+    { type = "item", name = "angels-catalyst-metal-yellow", amount = 1 })
 
-vgal.data.trim("angels-catalyst-metal-blue")
-vgal.data.trim("angels-catalyst-metal-yellow")
+vgal.data.trim("angels-catalyst-metal-green")
+vgal.recipe.all.replace_ingredient("angels-catalyst-metal-green",
+    { type = "item", name = "angels-catalyst-metal-blue", amount = 1 })
 
 -- remove the NORMAL ores and their processing recipes
 for _, ore in ipairs(agal.constants.REMOVED_ORE_INDEXES) do
@@ -171,12 +171,10 @@ vgal.data.trim("angels-gas-allylchlorid")
 vgal.data.deep_hide(data.raw["fluid"]["angels-gas-allylchlorid"])
 
 -- data.raw.recipe["angels-gas-hydrazine"].ingredients = vgal.build.table({
---     -- { "catalyst-metal-green",      1 },
 --     { "angels-solid-sodium-hypochlorite", 5 },
 -- }, {
 --     { "angels-gas-ammonia", 250 },
 -- })
--- vgal.recipe.remove_result("angels-gas-hydrazine", "angels-catalyst-metal-carrier")
 -- vgal.data.deep_hide(data.raw["fluid"]["angels-gas-monochloramine"])
 -- vgal.data.trim("angels-gas-monochloramine")
 
@@ -186,6 +184,8 @@ vgal.data.deep_hide(data.raw["fluid"]["angels-gas-allylchlorid"])
 --     { "angels-gas-dimethylhydrazine", 10 },
 -- })
 -- vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)
+
+
 
 -- fix results and energy_required.
 data.raw.recipe["angels-rocket-oxidizer-capsule"].energy_required = 5

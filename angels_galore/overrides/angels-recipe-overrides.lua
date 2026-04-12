@@ -1,10 +1,10 @@
-data.raw.recipe["angels-catalyst-metal-green"].ingredients = vgal.build.table({
-    { "angels-catalyst-metal-carrier", 10 },
-    { "angels-ore3",                   1 },
-})
-data.raw.recipe["angels-catalyst-metal-red"].ingredients = vgal.build.table({
+data.raw.recipe["angels-catalyst-metal-yellow"].ingredients = vgal.build.table({
     { "angels-catalyst-metal-carrier", 10 },
     { "angels-ore2",                   1 },
+})
+data.raw.recipe["angels-catalyst-metal-blue"].ingredients = vgal.build.table({
+    { "angels-catalyst-metal-carrier", 10 },
+    { "angels-ore3",                   1 },
 })
 
 --- upgrade kit removal ---

@@ -37,17 +37,20 @@ for _, size in pairs(WRECK_SIZES) do
             data.raw["simple-entity-with-owner"][entity_name]
 
         if entity then
-            data.raw[entity.type][entity.name] = nil
-            entity.type = "simple-entity"
-            data:extend({ entity })
+            local copy = table.deepcopy(entity)
 
-            entity.minable =
+            copy.type = "simple-entity"
+
+            copy.minable =
             {
                 mining_time = size.mining_time,
                 results = vgal.build.table(size.results),
             }
-            entity.flags = { "placeable-neutral", "placeable-off-grid" }
-            entity.hidden = false
+            copy.flags = { "placeable-neutral", "placeable-off-grid" }
+            copy.hidden = false
+            copy.name = "vgal-" .. copy.name
+
+            data:extend({ copy })
         end
     end
 end

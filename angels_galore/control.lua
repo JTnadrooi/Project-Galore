@@ -11,24 +11,30 @@ end)
 
 function fix_crash_site()
     for _, surface in pairs(game.surfaces) do -- just in case I forget to fix it when I eventually add space age support and someone starts on another surface.. just in case...
+        function process_entity(entity_name)
+            local new_name = "vgal-" .. entity_name
+            local entities = surface.find_entities_filtered { position = { 0, 0 }, radius = 200, name = entity_name }
+            for _, ent in pairs(entities) do
+                local position = ent.position
+                ent.destroy()
+                surface.create_entity {
+                    name = new_name,
+                    position = position
+                }
+            end
+        end
+
         for _, size in pairs({ "small", "medium", "big" }) do
             for i = 1, 6 do
                 local original_name = "crash-site-spaceship-wreck-" .. size .. "-" .. i
-                local new_name = "vgal-" .. original_name
 
                 if prototypes.entity[original_name] then
-                    local entities = surface.find_entities_filtered { position = { 0, 0 }, radius = 200, name = original_name }
-                    for _, ent in pairs(entities) do
-                        local position = ent.position
-                        ent.destroy()
-                        surface.create_entity {
-                            name = new_name,
-                            position = position
-                        }
-                    end
+                    process_entity(original_name)
                 end
             end
         end
+
+        process_entity("crash-site-spaceship")
     end
     game.print("All crash site wrecks replaced with vgal versions.")
 end

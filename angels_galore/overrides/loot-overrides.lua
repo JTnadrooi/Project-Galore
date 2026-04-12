@@ -41,6 +41,10 @@ for _, size in pairs(WRECK_SIZES) do
 
             copy.type = "simple-entity"
 
+            -- commentedbc: not needed, add and it breaks
+            -- copy.localised_name = { "entity-name." .. entity.name }
+            -- copy.localised_description = { "entity-description." .. entity.name }
+
             copy.minable =
             {
                 mining_time = size.mining_time,
@@ -54,6 +58,37 @@ for _, size in pairs(WRECK_SIZES) do
         end
     end
 end
+
+do
+    local entity = data.raw["container"]["crash-site-spaceship"]
+    local copy = table.deepcopy(entity)
+
+    copy.type = "simple-entity"
+
+    copy.localised_name = { "entity-name." .. entity.name }
+    copy.localised_description = { "entity-description." .. entity.name }
+
+    copy.minable =
+    {
+        mining_time = 2,
+        results = vgal.build.table({
+            { "steel-plate",      nil, { amount_min = 6, amount_max = 20 } },
+            { "iron-plate",       nil, { amount_min = 12, amount_max = 40 } },
+
+            { "iron-gear-wheel",  nil, { amount_min = 8, amount_max = 20 } },
+            { "copper-cable",     nil, { amount_min = 2, amount_max = 8 } },
+            { "firearm-magazine", nil, { amount_min = 6, amount_max = 10 } },
+
+            { "rocket-fuel",      2 },
+        }),
+    }
+    copy.flags = { "placeable-neutral", "placeable-off-grid" }
+    copy.hidden = false
+    copy.name = "vgal-" .. copy.name
+
+    data:extend({ copy })
+end
+
 
 --- tree loot --- (add seeds)
 for _, tree in pairs(data.raw["tree"]) do

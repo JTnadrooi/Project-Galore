@@ -1,6 +1,8 @@
-script.on_event(defines.events.on_tick, function(event) -- on_init doesn't work.
-    fix_crash_site()
-    script.on_event(defines.events.on_tick, nil)
+script.on_init(function()
+    script.on_event(defines.events.on_tick, function(event) -- just on_init doesn't work.
+        fix_crash_site()
+        script.on_event(defines.events.on_tick, nil)
+    end)
 end)
 
 commands.add_command("vgal-fix-crash-site", "Replaces crash site entities with the vgal versions.", function()

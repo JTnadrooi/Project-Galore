@@ -1,3 +1,5 @@
+vgal.subgroup = vgal.subgroup or {}
+
 function vgal.subgroup.new(name, entries, tab, order)
     data:extend({
         {

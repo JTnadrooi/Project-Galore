@@ -1,21 +1,6 @@
 vgal = vgal or {}
 
-vgal.throw = vgal.throw or {}
-vgal.constants = vgal.constants or {}
 vgal.data = vgal.data or {}
-vgal.table = vgal.table or {}
-vgal.math = vgal.math or {}
-vgal.category = vgal.category or {}
-vgal.subgroup = vgal.subgroup or {}
-vgal.icon = vgal.icon or {}
-vgal.recipe = vgal.recipe or {}
-vgal.recipe.all = vgal.recipe.all or {}
-vgal.tech = vgal.tech or {}
-vgal.item = vgal.item or {}
-vgal.fluid = vgal.fluid or {}
-vgal.entity = vgal.entity or {}
-vgal.locale = vgal.locale or {}
-vgal.build = vgal.build or {}
 
 vgal.data.DOMAINS = {}
 
@@ -27,7 +12,7 @@ require("constants")
 require("throw")
 require("classes")
 require("icon")
-require("localise")
+require("locale")
 require("math")
 require("recipe")
 require("recipe-all")

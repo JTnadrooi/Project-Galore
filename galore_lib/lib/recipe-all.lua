@@ -1,3 +1,5 @@
+vgal.recipe.all = vgal.recipe.all or {}
+
 function vgal.recipe.all.link_ingredient(ingredient, main_product_name, multiplier, domain_name)
     multiplier = multiplier or 1
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do

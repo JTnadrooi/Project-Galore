@@ -1,3 +1,5 @@
+vgal.constants = vgal.constants or {}
+
 vgal.constants.METALS = {
     iron = {
         name = "iron",
@@ -42,5 +44,5 @@ vgal.constants.RECIPEABLE_CATEGORIES = { "item", "fluid", "tool", "ammo", "capsu
     "item-with-entity-data",
     "rail-planner", "gun" }
 
--- commentedbc: this list is huge.
+-- commentedbc: this list would be huge.
 -- vgal.constants.ENTITYABLE_CATEGORIES = { "entity-with-owner", "simple-entity", "container" }

@@ -1,3 +1,5 @@
+vgal.icon = vgal.icon or {}
+
 -- function vgal.icon.shift(icon, scale, shift)
 --     scale = scale or 1
 --     local icons = {}

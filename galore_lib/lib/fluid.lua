@@ -1,3 +1,5 @@
+vgal.fluid = vgal.fluid or {}
+
 function vgal.fluid.get_tint(fluid_name)
     local function to_rgba(color)
         return {

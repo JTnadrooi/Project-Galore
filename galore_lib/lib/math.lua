@@ -1,3 +1,5 @@
+vgal.math = vgal.math or {}
+
 function vgal.math.conserve_floor(input_number)
     local toret = math.floor(input_number)
     if toret == 0 then

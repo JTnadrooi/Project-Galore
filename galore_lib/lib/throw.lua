@@ -1,3 +1,5 @@
+vgal.throw = vgal.throw or {}
+
 function vgal.throw.if_recipe_not_found(recipe_name)
     local recipe = data.raw["recipe"][recipe_name]
     if not recipe then

@@ -1,3 +1,5 @@
+vgal.build = vgal.build or {}
+
 function vgal.build.name(prefix, name, tier)
     tier = tier == 1 and nil or tier
     return (prefix and (prefix .. "-") or "") .. name .. (tier and ("-" .. tier) or "")

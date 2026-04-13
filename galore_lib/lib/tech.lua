@@ -1,4 +1,5 @@
 ---@diagnostic disable: param-type-mismatch
+vgal.tech = vgal.tech or {}
 
 vgal.tech.recipes_to_remove_from_techs = vgal.tech.recipes_to_remove_from_techs or {} -- array
 vgal.tech.techs_to_splice = vgal.tech.techs_to_splice or {}                           -- table

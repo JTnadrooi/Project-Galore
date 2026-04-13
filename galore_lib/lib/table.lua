@@ -1,3 +1,5 @@
+vgal.table = vgal.table or {}
+
 --- Checks if a table contains a specific value.
 --- @param table table The table to search.
 --- @param value any The value to search for.

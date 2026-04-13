@@ -1,3 +1,5 @@
+vgal.locale = vgal.locale or {}
+
 function vgal.locale.guess_key(item_name)
     if item_name:sub(-9) == "equipment" then return { "equipment-name." .. item_name } end
 

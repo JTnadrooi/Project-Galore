@@ -1,15 +1,10 @@
-script.on_init(function()
-    script.on_event(defines.events.on_tick, function(event) -- just on_init doesn't work.
-        fix_crash_site()
-        script.on_event(defines.events.on_tick, nil)
-    end)
-end)
+local function update_disco_science()
+    if remote.interfaces["DiscoScience"] and remote.interfaces["DiscoScience"]["setIngredientColor"] then
+        remote.call("DiscoScience", "setIngredientColor", "vgal-agricultural-science-pack", { r = 230, g = 247, b = 112 })
+    end
+end
 
-commands.add_command("vgal-fix-crash-site", "Replaces crash site entities with the vgal versions.", function()
-    fix_crash_site()
-end)
-
-function fix_crash_site()
+local function fix_crash_site()
     for _, surface in pairs(game.surfaces) do -- just in case I forget to fix it when I eventually add space age support and someone starts on another surface.. just in case...
         function process_entity(entity_name)
             local new_name = "vgal-" .. entity_name
@@ -38,3 +33,20 @@ function fix_crash_site()
     end
     game.print("All crash site wrecks replaced with vgal versions.")
 end
+
+script.on_configuration_changed(function()
+    update_disco_science()
+end)
+
+script.on_init(function()
+    script.on_event(defines.events.on_tick, function(event) -- just on_init doesn't work.
+        fix_crash_site()
+        script.on_event(defines.events.on_tick, nil)
+    end)
+
+    update_disco_science()
+end)
+
+commands.add_command("vgal-fix-crash-site", "Replaces crash site entities with the vgal versions.", function()
+    fix_crash_site()
+end)

@@ -8,6 +8,7 @@ data:extend({
         localised_description = { "item-description.science-pack" },
         icon = "__angels_galore__/graphics/icons/agricultural-science-pack.png",
         subgroup = "science-pack", -- may get changed in subgroups
+        color = { r = 230, g = 247, b = 112 },
         order = "cb",
         inventory_move_sound = item_sounds.science_inventory_move,
         pick_sound = item_sounds.science_inventory_pickup,

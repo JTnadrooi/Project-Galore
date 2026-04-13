@@ -1,5 +1,4 @@
 agal = agal or {}
-agal.build = agal.build or {}
 
 require("defines")
 

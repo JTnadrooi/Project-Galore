@@ -47,7 +47,7 @@ data.raw["technology"]["angels-bio-farm-1"].prerequisites = { "vgal-agricultural
 -- data.raw["technology"]["angels-bio-arboretum-1"].prerequisites = { "vgal-agricultural-science-pack" } -- commentedbc: Just like black science, im leaving some techs open. This one fits.
 
 -- remove cement 3. it only adds alternate recipes but as those arent really alternates and more upgrades, Im gonna remove them instead of editing them.
-vgal.tech.deep_hide("angels-stone-smelting-3")
+vgal.tech.deephide("angels-stone-smelting-3")
 vgal.tech.techs_to_splice["angels-stone-smelting-3"] = data.raw["technology"]["angels-stone-smelting-3"]
 
 -- remove bio related stuff from modules.

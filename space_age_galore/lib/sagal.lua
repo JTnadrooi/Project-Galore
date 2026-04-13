@@ -3,7 +3,7 @@ for _, metal in pairs(vgal.defines.metals) do
     metal.molten = "molten-" .. metal.name
 end
 
-vgal.defines["quality-module"] = {
+vgal.defines.modules["quality-module"] = {
     name = "quality-module",
     tiers = { "quality-module", "quality-module-2", "quality-module-3" }
 }

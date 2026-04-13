@@ -69,6 +69,10 @@ function vgal.tech.replace_recipe(tech_name, old_recipe, new_recipe)
     end
 end
 
+---@param tech_name string
+---@param recipe_name string
+---@param change number?
+---@param hidden boolean?
 function vgal.tech.add_productivity_change(tech_name, recipe_name, change, hidden)
     local tech = vgal.throw.if_tech_not_found(tech_name)
     if tech then
@@ -85,12 +89,15 @@ function vgal.tech.add_productivity_change(tech_name, recipe_name, change, hidde
     end
 end
 
+---@param recipe_name string
 function vgal.tech.queue_to_clean(recipe_name)
     vgal.throw.if_recipe_not_found(recipe_name)
 
     table.insert(vgal.tech.recipes_to_remove_from_techs, recipe_name)
 end
 
+---@param tech_name string
+---@param prerequisite string
 function vgal.tech.remove_prerequisite(tech_name, prerequisite)
     local tech = vgal.throw.if_tech_not_found(tech_name)
     for i, pre in ipairs(tech.prerequisites) do
@@ -102,10 +109,12 @@ function vgal.tech.remove_prerequisite(tech_name, prerequisite)
     error("Prerequisite'" .. prerequisite .. "'not found in " .. tech_name)
 end
 
----@param tech_name (string)
----@param recipe_name (string)
---- Ensures a recipe is not in the effects of the technology.
+---Ensures a recipe is not in the effects of the technology.
+---@param tech_name string
+---@param recipe_name string
 function vgal.tech.remove_recipe(tech_name, recipe_name)
+    vgal.throw.if_param_nil(recipe_name, "recipe_name")
+
     local tech = vgal.throw.if_tech_not_found(tech_name)
     for index, ingredient in ipairs(tech.effects) do
         if ingredient.type == "unlock-recipe" and ingredient.recipe == recipe_name then
@@ -115,9 +124,8 @@ function vgal.tech.remove_recipe(tech_name, recipe_name)
     end
 end
 
----@param tech_name (string)
----@param prerequisite (string)
---- Add a prerequisite to a technology.
+---@param tech_name string
+---@param prerequisite string
 function vgal.tech.add_prerequisite(tech_name, prerequisite)
     local tech = vgal.throw.if_tech_not_found(tech_name)
     table.insert(tech.prerequisites, prerequisite)
@@ -168,21 +176,6 @@ function vgal.tech.create_empty(tech_name, tier, units, unit_count, unit_time, p
     end
 
     return result
-end
-
----@param tech_name (string)
-function vgal.tech.deep_hide(tech_name)
-    local tech = vgal.throw.if_tech_not_found(tech_name)
-
-    if tech.effects then
-        for _, effect in pairs(tech.effects) do
-            if effect.recipe then
-                vgal.recipe.deephide(effect.recipe)
-            end
-        end
-    end
-
-    vgal.data.deephide(tech)
 end
 
 ---@param tech_name (string)
@@ -242,7 +235,17 @@ end
 
 ---@param tech_name (string)
 function vgal.tech.deephide(tech_name)
-    vgal.data.deephide(data.raw["technology"][tech_name])
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    if tech.effects then
+        for _, effect in pairs(tech.effects) do
+            if effect.recipe then
+                vgal.recipe.deephide(effect.recipe)
+            end
+        end
+    end
+
+    vgal.data.deephide(tech)
 end
 
 ---@param tech data.TechnologyPrototype

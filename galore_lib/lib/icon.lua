@@ -20,6 +20,8 @@ vgal.icon.directory = {
     tech = "__vanilla_galore__/graphics/tech/"
 }
 
+---@param t1_icon data.IconData
+---@return number
 function vgal.icon.get_auto_scale(t1_icon)
     return t1_icon.scale or ((64 / 2) / (t1_icon.icon_size or 64))
 end
@@ -29,7 +31,7 @@ function vgal.icon.normalise_composite_scales(icon)
     for i, icon2 in ipairs(icon) do
         sizes[i] = vgal.icon.get_auto_scale(icon2)
     end
-    local normed = vgal.table.normalise(sizes)
+    local normed = vgal.table.normalise_array(sizes)
     local scaled_icons = {}
     for i, icon2 in ipairs(icon) do
         local copy = util.table.deepcopy(icon2)
@@ -59,6 +61,8 @@ function vgal.icon.shift(icon, scale, shift)
     return icons
 end
 
+---@param tier number
+---@return data.Color
 function vgal.icon.get_tier_tint(tier)
     local tints = {
         { a = 1, b = 88 / 255,  g = 204 / 255, r = 119 / 255 }, -- #58cc77
@@ -86,6 +90,9 @@ function vgal.icon.get_from_path(path, args)
     return toret
 end
 
+---@param key_name string
+---@param icon_source string? The domain of the icon. This is often a prototype type name but other values are allowed.
+---@return data.IconData[]?
 function vgal.icon.get(key_name, icon_source)
     icon_source = icon_source or vgal.get_recipeable(key_name).type
     if icon_source == "recipe" then
@@ -228,62 +235,103 @@ end
 --     end
 --     return vgal.icon.shift(icon, scale, shift)
 -- end
+
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_in_fluid(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.35, { 0, -6.5 })
 end
 
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_in_fluid2(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 0, -5 })
 end
 
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_in_to(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.38, { -6.5, -6.5 })
 end
 
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_out_to(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.35, { 5.5, 6.5 })
 end
 
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_in(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { -8, -8 })
 end
 
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_in2(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 8, -8 })
 end
 
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_out(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { -8, 8 })
 end
 
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_out2(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 8, 8 })
 end
 
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_out3(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 0, 8 })
 end
 
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_bg(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 1, { 0, 1.2 })
 end
 
+---@return data.IconData[]
 function vgal.icon.get_none()
     return vgal.icon.get_from_path("__galore_lib__/graphics/none.png")
 end
 
+---@return data.IconData[]
 function vgal.icon.get_placeholder()
     return vgal.icon.get_from_path("__galore_lib__/graphics/placeholder.png")
 end
 
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_in_bg(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.30, { -7, -7 })
 end
 
+---@param key_name string
+---@param icon_source string?
+---@return data.IconData[]
 function vgal.icon.get_in_bg2(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.30, { 7, -7 })
 end
 
+---@param icons data.IconData[]
+---@return data.IconData[]
 function vgal.icon.soft_merge(icons)
     local new_icons = {}
     for _, icon in pairs(icons) do
@@ -298,6 +346,9 @@ function vgal.icon.soft_merge(icons)
     return new_icons
 end
 
+---@param icons data.IconData[][]
+---@param composition string?
+---@return data.IconData[]
 function vgal.icon.register(icons, composition)
     composition = composition or "default"
     -- if composition == "angels_recipe" then

@@ -119,7 +119,7 @@ function vgal.data.extend(entries, fill_in_with)
     fill_in_with.groups = vgal.table.ensure(fill_in_with.group, fill_in_with.groups)
 
     for _, entry in ipairs(entries) do
-        entry = vgal.table.fill_in_from(entry, fill_in_with)
+        entry = vgal.table.deep_merge_with_priority(entry, fill_in_with)
 
         if entry.prefix then
             if not vgal.data.domain_exists(entry.prefix) then
@@ -327,7 +327,7 @@ function vgal.data.extend(entries, fill_in_with)
 
                     tech.localised_name = { "?",
                         { "", { "vgal-internal.tech-node" }, ": ", { "recipe-name." .. entry.name } },
-                        { "", { "vgal-internal.tech-node" }, ": ", vgal.locale.guess_key(entry.main_product) },
+                        { "", { "vgal-internal.tech-node" }, ": ", vgal.locale.guess_locale(entry.main_product) },
                     }
                     tech.localised_description = {
                         "", { "recipe-description." .. entry.name },
@@ -349,7 +349,9 @@ function vgal.data.extend(entries, fill_in_with)
                     entry.main_product)
                 if entry.productivity_technology then
                     if type(entry.productivity_technology) == "string" then
-                        vgal.tech.add_productivity_change(entry.productivity_technology, entry.name, nil, entry.hidden)
+                        ---@type string
+                        vgal.tech.add_productivity_change(entry.productivity_technology --[[@as string]], entry.name, nil,
+                            entry.hidden)
                     else
                         vgal.tech.add_productivity_change(
                             entry.productivity_technology[1],
@@ -408,6 +410,8 @@ function vgal.data.deephide(prototype)
 end
 
 function vgal.get_recipeable(prototype_name)
+    vgal.throw.if_param_nil(prototype_name, "prototype_name")
+
     for _, category in ipairs(vgal.defines.recipeable_categories) do
         if data.raw[category][prototype_name] then
             return data.raw[category][prototype_name]
@@ -480,7 +484,7 @@ local function splice_and_flatten_techs()
     end
 
     for tech_name, _ in pairs(vgal.tech.techs_to_splice) do
-        vgal.tech.deep_hide(tech_name)
+        vgal.tech.deephide(tech_name)
     end
 end
 

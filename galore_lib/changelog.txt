@@ -3,6 +3,7 @@ Version: 2.0.0
   Features:
     - Added error handling.
     - Improved performance.
+    - Added type docs.
 ---------------------------------------------------------------------------------------------------
 Version: 1.7.0
   Features:

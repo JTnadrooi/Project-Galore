@@ -432,8 +432,7 @@ vgal.recipe.set_result_amount("angels-liquid-plastic-bio-2", 150)
 -- add slag result to processing recipes.
 for _, metal in pairs(vgal.defines.metals) do
     vgal.recipe.multiply(metal.processed, 1.5)
-    vgal.recipe.add_result(metal.processed,
-        vgal.table.get_single_shorthand({ "angels-slag", 1, { probability = 0.5 } }, "item"))
+    vgal.recipe.add_result(metal.processed, vgal.table.to_longform({ "angels-slag", 1, { probability = 0.5 } }, "item"))
 
     -- make roll casting faster.
     data.raw["recipe"][metal.roll].energy_required = 1

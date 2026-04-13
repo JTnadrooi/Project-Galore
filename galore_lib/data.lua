@@ -18,4 +18,5 @@ if mods["space-age"] then
     vgal.recipe.add_productivity_entry("calcite")
     vgal.recipe.add_productivity_entry("scrap")
 end
+
 vgal.log("galorelib variables set.")

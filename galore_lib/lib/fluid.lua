@@ -1,6 +1,8 @@
 vgal.fluid = vgal.fluid or {}
 
-function vgal.fluid.get_tint(fluid_name)
+---@param fluid_name string
+---@return data.RecipeTints
+function vgal.fluid.get_recipe_tint(fluid_name)
     local function to_rgba(color)
         return {
             r = color[1] or 1,

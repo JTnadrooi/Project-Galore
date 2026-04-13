@@ -1,18 +1,20 @@
 vgal.defines = vgal.defines or {}
 
+---@type table<string, table>
 vgal.defines.metals = {
-    iron = {
+    ["iron"] = {
         name = "iron",
         ore = "iron-ore",
         plate = "iron-plate",
     },
-    copper = {
+    ["copper"] = {
         name = "copper",
         ore = "copper-ore",
         plate = "copper-plate",
     },
 }
 
+---@type table<string, table>
 vgal.defines.modules = {
     ["productivity-module"] = {
         name = "productivity-module",
@@ -40,6 +42,7 @@ vgal.defines.modules = {
     },
 }
 
+---@type string[]
 vgal.defines.recipeable_categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
     "item-with-entity-data",
     "rail-planner", "gun" }
@@ -47,6 +50,7 @@ vgal.defines.recipeable_categories = { "item", "fluid", "tool", "ammo", "capsule
 -- commentedbc: this list would be huge.
 -- vgal.defines.entityable_categories = { "entity-with-owner", "simple-entity", "container" }
 
+---@type table<string, data.RecipeTints>
 vgal.defines.tints = {
     ["light-oil"] = data.raw["recipe"]["light-oil-cracking"].crafting_machine_tint,
     ["heavy-oil"] = data.raw["recipe"]["heavy-oil-cracking"].crafting_machine_tint,

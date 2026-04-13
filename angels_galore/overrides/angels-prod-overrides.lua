@@ -25,7 +25,7 @@ for i = 3, 5 do
 end
 
 -- machines that can benefit from productivity, no corrections needed (well except for the angels-bio-hatchery stuff).
-local PROD_MACHINES = {
+local productivity_machines = {
     "angels-bio-press", "angels-bio-generator-temperate-1", "angels-bio-generator-swamp-1",
     "angels-bio-generator-desert-1",
     "angels-crop-farm", "angels-temperate-farm", "angels-swamp-farm", "angels-desert-farm", "angels-composter",
@@ -47,10 +47,10 @@ local PROD_MACHINES = {
 }
 
 -- will be filled with crafting categories that should benefit from productivity.
-local PROD_CATEGORIES = {}
+local productivity_categories = {}
 
 -- make sure machines allow productivity.
-for _, machine_name in ipairs(PROD_MACHINES) do
+for _, machine_name in ipairs(productivity_machines) do
     local machine = data.raw["assembling-machine"][machine_name] or data.raw["furnace"][machine_name]
     if not machine then
         error(machine_name)
@@ -62,15 +62,15 @@ for _, machine_name in ipairs(PROD_MACHINES) do
     end
     local categories = machine.crafting_categories or {}
     for _, category in ipairs(categories) do
-        PROD_CATEGORIES[category] = machine_name
+        productivity_categories[category] = machine_name
     end
     machine.allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" }
 end
 
 for _, recipe in pairs(data.raw["recipe"]) do
-    if PROD_CATEGORIES[recipe.category] then
+    if productivity_categories[recipe.category] then
         if recipe.allow_productivity ~= false then
-            if PROD_CATEGORIES[recipe.category] == "angels-bio-hatchery" then
+            if productivity_categories[recipe.category] == "angels-bio-hatchery" then
                 vgal.recipe.smart_allow_productivity(recipe.name, true)
                 vgal.recipe.smart_disallow_productivity(recipe.name, "angels-bio-puffer-egg-shell")
             else

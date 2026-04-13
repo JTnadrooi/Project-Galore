@@ -1,6 +1,9 @@
 vgal = vgal or {}
 vgal.setting = vgal.setting or {}
 
+---@param name string
+---@param order data.Order
+---@param default_value boolean
 function vgal.setting.new_bool(name, order, default_value)
     if default_value == nil then
         default_value = true
@@ -14,6 +17,9 @@ function vgal.setting.new_bool(name, order, default_value)
     }
 end
 
+---@param name string
+---@param order data.Order
+---@param default_value string
 function vgal.setting.new_string(name, order, default_value)
     local allow_blank = false
 
@@ -35,9 +41,11 @@ function vgal.setting.new_string(name, order, default_value)
     }
 end
 
+---@param setting_name string
+---@param forced_value string|boolean|number
 function vgal.setting.hide_and_force(setting_name, forced_value)
     local setting = data.raw["bool-setting"][setting_name]
-    
+
     if not setting then
         error("Bool setting '" .. setting_name .. "' not found")
     end

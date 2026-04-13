@@ -1,11 +1,15 @@
 vgal.subgroup = vgal.subgroup or {}
 
-function vgal.subgroup.new(name, entries, tab, order)
+---@param name string
+---@param entries string[]
+---@param group string
+---@param order data.Order
+function vgal.subgroup.new(name, entries, group, order)
     data:extend({
         {
             type = "item-subgroup",
             name = name,
-            group = tab,
+            group = group,
             order = order,
         }
     })
@@ -14,6 +18,8 @@ function vgal.subgroup.new(name, entries, tab, order)
     end
 end
 
+---@param name string
+---@param subgroup_name string
 function vgal.subgroup.set_for(name, subgroup_name)
     local recipeable = vgal.get_recipeable(name)
     recipeable.subgroup = subgroup_name
@@ -24,6 +30,8 @@ function vgal.subgroup.set_for(name, subgroup_name)
     end
 end
 
+---@param number integer
+---@return data.Order
 function vgal.subgroup.order_from_number(number)
     if number > 26 then
         error(number .. " is more than 26.")
@@ -31,6 +39,8 @@ function vgal.subgroup.order_from_number(number)
     return string.sub("abcdefghijklmnopqrstuvwxyz", number, number)
 end
 
+---@param recipe_name string
+---@param force boolean?
 function vgal.subgroup.restore(recipe_name, force)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
     local main_product = vgal.recipe.get_preferred_main_product(recipe)
@@ -46,6 +56,7 @@ function vgal.subgroup.restore(recipe_name, force)
     end
 end
 
+---@param recipe_name string
 function vgal.subgroup.clean_recipe(recipe_name)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
 
@@ -53,6 +64,7 @@ function vgal.subgroup.clean_recipe(recipe_name)
     recipe.subgroup = nil
 end
 
+---@param prototype data.PrototypeBase
 function vgal.subgroup.clean(prototype)
     prototype.order = nil
     prototype.subgroup = nil

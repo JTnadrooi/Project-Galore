@@ -1,11 +1,17 @@
+---@diagnostic disable: param-type-mismatch
 vgal.recipe.all = vgal.recipe.all or {}
 
+---@param ingredient data.IngredientPrototype
+---@param main_product_name string
+---@param multiplier number?
+---@param domain_name string?
 function vgal.recipe.all.link_ingredient(ingredient, main_product_name, multiplier, domain_name)
     multiplier = multiplier or 1
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do
         if (main_product_name == nil) or recipe.main_product == main_product_name then
             vgal.recipe.add_ingredient(recipe.name,
-                vgal.table.get_multiplied(ingredient, multiplier * vgal.recipe.get_main_product_amount(recipe.name)))
+                vgal.table.get_multiplied(ingredient, multiplier * vgal.recipe.get_main_product_amount(recipe.name))
+            )
             if recipe.category == "crafting" and ingredient.type == "fluid" then
                 recipe.category = "crafting-with-fluid"
             end
@@ -13,16 +19,24 @@ function vgal.recipe.all.link_ingredient(ingredient, main_product_name, multipli
     end
 end
 
+---@param result data.ProductPrototype
+---@param main_product_name string
+---@param multiplier number
+---@param domain_name string?
 function vgal.recipe.all.link_result(result, main_product_name, multiplier, domain_name)
     multiplier = multiplier or 1
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do
         if (main_product_name == nil) or recipe.main_product == main_product_name then
             vgal.recipe.add_result(recipe.name,
-                vgal.table.get_multiplied(result, multiplier * vgal.recipe.get_main_product_amount(recipe.name)))
+                vgal.table.get_multiplied(result, multiplier * vgal.recipe.get_main_product_amount(recipe.name))
+            )
         end
     end
 end
 
+---@param main_product_name string
+---@param multiplier number
+---@param domain_name string?
 function vgal.recipe.all.multiply_results(main_product_name, multiplier, domain_name)
     multiplier = multiplier or 1
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do
@@ -32,6 +46,10 @@ function vgal.recipe.all.multiply_results(main_product_name, multiplier, domain_
     end
 end
 
+---@param main_product_name string
+---@param multiplier number
+---@param ingredient_name string
+---@param domain_name string?
 function vgal.recipe.all.multiply_ingredients(main_product_name, multiplier, ingredient_name, domain_name)
     multiplier = multiplier or 1
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do
@@ -41,14 +59,19 @@ function vgal.recipe.all.multiply_ingredients(main_product_name, multiplier, ing
     end
 end
 
-function vgal.recipe.all.replace_ingredient(source_ingredient_name, newIngredient, main_product_name, multiplier,
+---@param source_ingredient_name string
+---@param new_ingredient data.IngredientPrototype
+---@param main_product_name string?
+---@param multiplier number?
+---@param domain_name string?
+function vgal.recipe.all.replace_ingredient(source_ingredient_name, new_ingredient, main_product_name, multiplier,
                                             domain_name)
     multiplier = multiplier or 1
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do
         if (main_product_name == nil) or recipe.main_product == main_product_name then
             if vgal.recipe.has_ingredient(recipe.name, source_ingredient_name) then
                 vgal.recipe.add_ingredient(recipe.name,
-                    vgal.table.get_multiplied(newIngredient,
+                    vgal.table.get_multiplied(new_ingredient,
                         multiplier * vgal.recipe.get_ingredient_amount(recipe.name, source_ingredient_name)))
                 vgal.recipe.remove_ingredient(recipe.name, source_ingredient_name)
             end
@@ -56,6 +79,9 @@ function vgal.recipe.all.replace_ingredient(source_ingredient_name, newIngredien
     end
 end
 
+---@param ingredient_name string
+---@param main_product_name string?
+---@param domain_name string?
 function vgal.recipe.all.remove_ingredient(ingredient_name, main_product_name, domain_name)
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do
         if (main_product_name == nil) or recipe.main_product == main_product_name then
@@ -64,6 +90,9 @@ function vgal.recipe.all.remove_ingredient(ingredient_name, main_product_name, d
     end
 end
 
+---@param result_name string
+---@param main_product_name string?
+---@param domain_name string?
 function vgal.recipe.all.remove_result(result_name, main_product_name, domain_name)
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do
         if (main_product_name == nil) or recipe.main_product == main_product_name then

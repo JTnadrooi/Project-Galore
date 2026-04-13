@@ -8,7 +8,7 @@ data.raw.recipe["angels-catalyst-metal-blue"].ingredients = vgal.build.table({
 })
 
 --- upgrade kit removal ---
-for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
+for _, environment in ipairs(agal.defines.environments) do
     vgal.recipe.deephide(environment .. "-upgrade")
     local building_recipe = data.raw["recipe"][environment .. "-farm"]
     for i, ingredient in ipairs(building_recipe.ingredients) do
@@ -29,7 +29,7 @@ vgal.recipe.all.replace_ingredient("clay-brick",
     { type = "item", name = "stone-brick", amount = 1 })
 
 --- casting recipe tweaks ---
-for _, metal in pairs(vgal.constants.METALS) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw.recipe[metal.pebbles .. "-smelting"].energy_required = 6.4
     data.raw.recipe[metal.nugget .. "-smelting"].energy_required = 6.4
 
@@ -37,10 +37,6 @@ for _, metal in pairs(vgal.constants.METALS) do
     data.raw.recipe[metal.angels_plate_recipe_name].energy_required = 1
     vgal.recipe.multiply(metal.angels_plate_recipe_name, 1.25)
 end
-
--- for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
---     data.raw.recipe["angels-ore" .. ore_index .. "-crushed-smelting"].energy_required = 6.4
--- end
 
 data.raw.recipe["angels-plate-steel"].energy_required = 1
 vgal.recipe.multiply("angels-plate-steel", 1.25)
@@ -404,7 +400,7 @@ do
 end
 
 --- use ore2 for more distinct color, but copy rest ---
-for _, ore_state in ipairs(agal.constants.ORE_STATES) do
+for _, ore_state in ipairs(agal.defines.ore_states) do
     data.raw["recipe"]["angels-ore2-" .. ore_state .. "-processing"].results =
         table.deepcopy(data.raw["recipe"]["angels-ore1-" .. ore_state .. "-processing"].results)
 end
@@ -420,7 +416,7 @@ vgal.recipe.multiply("angels-solid-plastic", 1.25)
 vgal.recipe.all.remove_ingredient("angels-token-bio")
 vgal.recipe.all.remove_result("angels-token-bio")
 
-for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
+for _, environment in ipairs(agal.defines.environments) do
     vgal.recipe.deephide(environment .. "-garden-b")
     vgal.recipe.deephide(environment .. "-garden-cultivating-a")
 end
@@ -434,7 +430,7 @@ vgal.recipe.set_result_amount("angels-liquid-plastic-bio-1", 80)
 vgal.recipe.set_result_amount("angels-liquid-plastic-bio-2", 150)
 
 -- add slag result to processing recipes.
-for _, metal in pairs(vgal.constants.METALS) do
+for _, metal in pairs(vgal.defines.metals) do
     vgal.recipe.multiply(metal.processed, 1.5)
     vgal.recipe.add_result(metal.processed,
         vgal.table.get_single_shorthand({ "angels-slag", 1, { probability = 0.5 } }, "item"))
@@ -488,18 +484,18 @@ vgal.data.trim("angels-solid-salt-from-saline") -- bc of productivity
 data.raw["recipe"]["angels-solid-mud-landfill"].energy_required = 0.5
 
 -- make crushing recipes early early game.
-for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
+for _, ore_index in ipairs(agal.defines.ore_indexes) do
     vgal.tech.remove_recipe("angels-ore-crushing", "angels-ore" .. ore_index .. "-crushed")
     data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].enabled = true
     data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].additional_categories = { "angels-manual-crafting" }
 end
 
-for _, metal in pairs(vgal.constants.METALS) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.plate].enabled = true
 end
 
 -- restore module recipes as they dont require bioprocessing anymore.
-for _, module in ipairs(vgal.constants.MODULES) do
+for _, module in ipairs(vgal.defines.modules) do
     for tier, tiered_name in ipairs(module.tiers) do
         local recipe = data.raw.recipe[tiered_name]
 
@@ -526,7 +522,7 @@ end
 
 --- remove the stone uncrushing recipe + handle consequences ---
 
-for _, metal in pairs(vgal.constants.METALS) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.crushed].results = vgal.build.table({
         { metal.crushed,          2 },
         { "angels-stone-crushed", 1, { probability = 0.5 } },

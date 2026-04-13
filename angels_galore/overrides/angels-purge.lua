@@ -10,10 +10,10 @@ vgal.recipe.all.replace_ingredient("angels-catalyst-metal-green",
     { type = "item", name = "angels-catalyst-metal-blue", amount = 1 })
 
 -- remove the NORMAL ores and their processing recipes
-for _, ore in ipairs(agal.constants.REMOVED_ORE_INDEXES) do
+for _, ore in ipairs(agal.defines.removed_ore_indexes) do
     vgal.data.deephide(data.raw["item"]["angels-ore" .. ore])
 
-    for _, state in ipairs(agal.constants.ORE_STATES) do
+    for _, state in ipairs(agal.defines.ore_states) do
         vgal.data.trim("angels-ore" .. ore .. "-" .. state .. "-processing")
         vgal.data.trim("angels-ore" .. ore .. "-" .. state)
         vgal.data.deephide(data.raw["item"]["angels-ore" .. ore .. "-" .. state])
@@ -21,14 +21,14 @@ for _, ore in ipairs(agal.constants.REMOVED_ORE_INDEXES) do
 end
 
 -- remove the ALT ores and their processing recipes
-for _, ore in ipairs(agal.constants.REMOVED_ALT_ORE_INDEXES) do
-    for _, state in ipairs(agal.constants.ALT_ORE_STATES) do
+for _, ore in ipairs(agal.defines.removed_alt_ore_indexes) do
+    for _, state in ipairs(agal.defines.alt_ore_states) do
         vgal.data.trim("angels-ore" .. ore .. "-" .. state .. "-processing")
         vgal.data.trim("angels-ore" .. ore .. "-" .. state)
         vgal.data.deephide(data.raw["item"]["angels-ore" .. ore .. "-" .. state])
     end
 
-    for _, state in ipairs(agal.constants.FLUID_ALT_ORE_STATES) do
+    for _, state in ipairs(agal.defines.fluid_alt_ore_states) do
         vgal.data.trim("angels-ore" .. ore .. "-" .. state)
         vgal.data.deephide(data.raw["fluid"]["angels-ore" .. ore .. "-" .. state])
     end
@@ -38,7 +38,7 @@ end
 
 -- remove mix recipes. (I will have my own ones)
 for i = 1, 6 do
-    for _, state in ipairs(agal.constants.ORE_STATES) do
+    for _, state in ipairs(agal.defines.ore_states) do
         local recipe = data.raw["recipe"]["angels-ore-" .. state .. "-mix" .. i .. "-processing"]
 
         if recipe then
@@ -67,7 +67,7 @@ end
 
 -- techs first.
 for i = 1, 4 do
-    for _, metal_name in ipairs(agal.constants.REMOVED_METAL_NAMES) do
+    for _, metal_name in ipairs(agal.defines.removed_metal_names) do
         for _, suffix in ipairs({ "smelting", "casting" }) do
             local tech = data.raw["technology"]["angels-" .. metal_name .. "-" .. suffix .. "-" .. i]
 
@@ -93,7 +93,7 @@ local function dh_item(name)
     end
 end
 
-for _, metal_name in ipairs(agal.constants.REMOVED_METAL_NAMES) do
+for _, metal_name in ipairs(agal.defines.removed_metal_names) do
     dh_fluid("angels-liquid-molten-" .. metal_name)
     dh_fluid("angels-liquid-" .. metal_name .. "-tetrachloride")
     dh_fluid("angels-gas-" .. metal_name .. "-hexafluoride")

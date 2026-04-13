@@ -15,7 +15,7 @@ data.raw.recipe["angels-solid-soil-alternative"].icons = vgal.icon.register({
     vgal.icon.get_in("angels-solid-sand"),
 })
 
-for _, metal in pairs(vgal.constants.METALS) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.angels_plate_recipe_name].icons = vgal.icon.register({
         vgal.icon.get(metal.plate),
         vgal.icon.get_in(metal.molten),

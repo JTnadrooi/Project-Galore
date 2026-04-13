@@ -1,10 +1,10 @@
 agal = agal or {}
 agal.build = agal.build or {}
 
-require("constants")
+require("defines")
 
-if (vgal and vgal.constants and vgal.constants.METALS) then -- for when loading constants in settings
-    for _, metal in pairs(vgal.constants.METALS) do
+if (vgal and vgal.defines and vgal.defines.metals) then -- for when loading defines in settings
+    for _, metal in pairs(vgal.defines.metals) do
         metal.ore_index = (metal.name == "copper") and 2 or 3
         metal.ore = metal.name .. "-ore"
         metal.base_ore = "angels-ore" .. metal.ore_index
@@ -20,11 +20,11 @@ if (vgal and vgal.constants and vgal.constants.METALS) then -- for when loading 
         metal.roll = "angels-roll-" .. metal.name
         metal.angels_plate_recipe_name = "angels-plate-" .. metal.name
 
-        for _, ore_state in ipairs(agal.constants.ORE_STATES) do
+        for _, ore_state in ipairs(agal.defines.ore_states) do
             metal[ore_state] = "angels-ore" .. metal.ore_index .. "-" .. ore_state
         end
 
-        metal.ore_states = table.deepcopy(agal.constants.ORE_STATES)
+        metal.ore_states = table.deepcopy(agal.defines.ore_states)
     end
 end
 

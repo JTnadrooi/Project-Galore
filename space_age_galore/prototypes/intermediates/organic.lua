@@ -197,7 +197,7 @@ vgal.data.extend({
     type = "recipe",
 })
 
-for _, metal in pairs(vgal.constants.METALS) do
+for _, metal in pairs(vgal.defines.metals) do
     local other_bacteria = (metal.name == "iron" and "copper" or "iron") .. "-bacteria"
     local order_base = metal.name == "iron" and "a" or "b"
     vgal.data.extend({

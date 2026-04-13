@@ -8,7 +8,7 @@ if vgal.setting ~= nil then
     error()
 end
 
-require("constants")
+require("defines")
 require("throw")
 require("classes")
 require("icon")
@@ -408,7 +408,7 @@ function vgal.data.deephide(prototype)
 end
 
 function vgal.get_recipeable(prototype_name)
-    for _, category in ipairs(vgal.constants.RECIPEABLE_CATEGORIES) do
+    for _, category in ipairs(vgal.defines.recipeable_categories) do
         if data.raw[category][prototype_name] then
             return data.raw[category][prototype_name]
         end
@@ -416,9 +416,9 @@ function vgal.get_recipeable(prototype_name)
     error("Recipeable of name '" .. prototype_name .. "' not found.")
 end
 
--- commentedbc: see vgal.constants.ENTITYABLE_CATEGORIES comment
+-- commentedbc: see vgal.defines.entityable_categories comment
 -- function vgal.get_entityable(prototype_name)
---     for _, category in ipairs(vgal.constants.ENTITYABLE_CATEGORIES) do
+--     for _, category in ipairs(vgal.defines.entityable_categories) do
 --         if data.raw[category][prototype_name] then
 --             return data.raw[category][prototype_name]
 --         end

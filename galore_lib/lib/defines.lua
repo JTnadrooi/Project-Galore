@@ -1,6 +1,6 @@
-vgal.constants = vgal.constants or {}
+vgal.defines = vgal.defines or {}
 
-vgal.constants.METALS = {
+vgal.defines.metals = {
     iron = {
         name = "iron",
         ore = "iron-ore",
@@ -13,7 +13,7 @@ vgal.constants.METALS = {
     },
 }
 
-vgal.constants.MODULES = {
+vgal.defines.modules = {
     ["productivity-module"] = {
         name = "productivity-module",
         tiers = {
@@ -40,9 +40,9 @@ vgal.constants.MODULES = {
     },
 }
 
-vgal.constants.RECIPEABLE_CATEGORIES = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
+vgal.defines.recipeable_categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
     "item-with-entity-data",
     "rail-planner", "gun" }
 
 -- commentedbc: this list would be huge.
--- vgal.constants.ENTITYABLE_CATEGORIES = { "entity-with-owner", "simple-entity", "container" }
+-- vgal.defines.entityable_categories = { "entity-with-owner", "simple-entity", "container" }

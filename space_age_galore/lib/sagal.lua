@@ -1,9 +1,9 @@
-for _, metal in pairs(vgal.constants.METALS) do
+for _, metal in pairs(vgal.defines.metals) do
     metal.bacteria = metal.name .. "-bacteria"
     metal.molten = "molten-" .. metal.name
 end
 
-vgal.constants["quality-module"] = {
+vgal.defines["quality-module"] = {
     name = "quality-module",
     tiers = { "quality-module", "quality-module-2", "quality-module-3" }
 }

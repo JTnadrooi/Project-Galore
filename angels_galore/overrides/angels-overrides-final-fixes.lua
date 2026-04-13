@@ -38,7 +38,7 @@ local function unhide(name)
 end
 
 -- unhide nuggets and pebbles
-for _, metal in pairs(vgal.constants.METALS) do
+for _, metal in pairs(vgal.defines.metals) do
     unhide(metal.pebbles)
     -- unhide("angels-" .. metal .. "-pebbles-smelting")
     unhide(metal.nugget)
@@ -52,7 +52,7 @@ end
 vgal.recipe.replace_ingredient("angels-ore2-crystal", "angels-liquid-hydrofluoric-acid", "angels-liquid-sulfuric-acid")
 
 --- ores, both time normalizing as ore density (see docs/ore-density) ---
-for _, ore_index in ipairs(agal.constants.ORE_INDEXES) do
+for _, ore_index in ipairs(agal.defines.ore_indexes) do
     -- chunk
     data.raw["recipe"]["angels-ore" .. ore_index .. "-chunk"].energy_required = 3.2
     vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-chunk", 6, "angels-ore" .. ore_index .. "-crushed")
@@ -130,7 +130,7 @@ data.raw["recipe"]["angels-ore2-pure-processing"].results = vgal.build.table({
     { "angels-copper-slag",    1 },
 })
 
-for _, metal in pairs(vgal.constants.METALS) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.plate].ingredients = vgal.build.table({
         { metal.crushed, 3 }
     })
@@ -196,7 +196,7 @@ do
 end
 
 --- ore gen removal ---
-for _, ore_index in pairs(agal.constants.REMOVED_ORE_INDEXES) do
+for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
     local ore = "angels-ore" .. ore_index
 
     vgal.data.deephide(data.raw["resource"][ore])

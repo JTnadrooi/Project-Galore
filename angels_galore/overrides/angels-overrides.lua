@@ -52,7 +52,7 @@ vgal.tech.techs_to_splice["angels-stone-smelting-3"] = data.raw["technology"]["a
 
 -- remove bio related stuff from modules.
 vgal.table.remove(data.raw["technology"]["modules"].prerequisites, "angels-bio-processing-crystal-splinter-1")
-for _, module in pairs(vgal.constants.MODULES) do
+for _, module in pairs(vgal.defines.modules) do
     for tier, tiered_name in ipairs(module.tiers) do
         if tier == 2 then
             vgal.table.remove(data.raw["technology"][tiered_name].prerequisites, "angels-bio-processing-crystal-shard-1")

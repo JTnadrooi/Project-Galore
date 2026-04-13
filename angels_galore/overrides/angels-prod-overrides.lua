@@ -19,7 +19,7 @@ vgal.recipe.add_catalyst_entry("raw-fish")
 for fish_index = 1, 3 do vgal.recipe.add_catalyst_entry("angels-alien-fish-" .. fish_index .. "-raw") end
 for puffer_index = 1, 5 do vgal.recipe.add_catalyst_entry("angels-bio-puffer-" .. puffer_index) end
 for i = 3, 5 do
-    for _, environment in ipairs(agal.constants.ENVIRONMENTS) do
+    for _, environment in ipairs(agal.defines.environments) do
         vgal.recipe.add_catalyst_entry(environment .. "-" .. i .. "-" .. "seed-dormant")
     end
 end
@@ -208,7 +208,7 @@ vgal.recipe.smart_allow_productivity("angels-liquid-concrete-2")
 vgal.recipe.smart_allow_productivity("angels-concrete-brick")
 
 --- metallugy ---
-for _, metal in pairs(vgal.constants.METALS) do
+for _, metal in pairs(vgal.defines.metals) do
     vgal.recipe.smart_allow_productivity(metal.pebbles .. "-smelting")
     vgal.recipe.smart_allow_productivity(metal.nugget .. "-smelting")
     vgal.recipe.smart_allow_productivity(metal.plate)

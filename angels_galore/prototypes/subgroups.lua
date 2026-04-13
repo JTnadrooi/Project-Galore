@@ -109,7 +109,7 @@ local subgroups = {
     },
 }
 
-for metal in vgal.table.iter_all(vgal.constants.METALS, { agal.constants.METAL_STEEL }) do
+for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel }) do
     local mid_order = (metal.name == "copper") and "e" or "f"
     if metal.name == "steel" then
         mid_order = "g"
@@ -148,7 +148,7 @@ for metal in vgal.table.iter_all(vgal.constants.METALS, { agal.constants.METAL_S
     })
 end
 
-for _, metal in pairs(vgal.constants.METALS) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["item"][metal.base_ore].order = "a"
 
     local ore_entries = {}

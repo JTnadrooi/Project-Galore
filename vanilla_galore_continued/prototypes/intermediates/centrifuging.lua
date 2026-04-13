@@ -17,7 +17,7 @@ vgal.data.extend({
             { "coal", nil, { amount_min = 2, amount_max = 4 } } -- 20
         },
         show_amount_in_title = false,
-        crafting_machine_tint = vgal.recipe.TINT_CATALOG["crude-oil"],
+        crafting_machine_tint = vgal.defines.tints["crude-oil"],
     },
 }, {
     type = "recipe",
@@ -48,7 +48,7 @@ for _, result in ipairs(centrifuge_results) do
                 { "stone", 1,   { probability = 0.2 } }               -- 2
             },
             show_amount_in_title = false,
-            crafting_machine_tint = vgal.recipe.TINT_CATALOG["black"],
+            crafting_machine_tint = vgal.defines.tints["black"],
             deep_hide = mods["space-age"],
             order = order,
             groups = { "vgal-renewable-ores" },
@@ -76,7 +76,7 @@ for _, result in ipairs(centrifuge_results) do
                 { "electric-engine-unit", 1,   { probability = 0.98, ignored_by_productivity = 1 } }, -- 0.02*180~=4
             },
             show_amount_in_title = false,
-            crafting_machine_tint = vgal.recipe.TINT_CATALOG["black"],
+            crafting_machine_tint = vgal.defines.tints["black"],
             deep_hide = mods["space-age"],
             order = order .. "b",
             groups = { "vgal-renewable-ores" },

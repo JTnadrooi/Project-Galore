@@ -396,27 +396,14 @@ function vgal.recipe.multiply_ingredients(recipe_name, multiplier, ingredient_na
     recipe.ingredients = vgal.table.get_multiplied(recipe.ingredients, multiplier, ingredient_name)
 end
 
-vgal.recipe.TINT_CATALOG = {
-    ["light-oil"] = data.raw["recipe"]["light-oil-cracking"].crafting_machine_tint,
-    ["heavy-oil"] = data.raw["recipe"]["heavy-oil-cracking"].crafting_machine_tint,
-    ["petroleum-gas"] = data.raw["recipe"]["plastic-bar"].crafting_machine_tint,
-    ["crude-oil"] = {
-        primary = { r = 0.1, g = 0.05, b = 0.02, a = 1.000 },
-        secondary = { r = 0.15, g = 0.1, b = 0.05, a = 1.000 },
-        tertiary = { r = 0.2, g = 0.15, b = 0.1, a = 1.000 },
-        quaternary = { r = 0.05, g = 0.03, b = 0.01, a = 1.000 }
-    },
-}
-vgal.recipe.TINT_CATALOG["black"] = vgal.recipe.TINT_CATALOG["crude-oil"]
-
 function vgal.recipe.get_preferred_crafting_machine_tint(recipe)
     local main_productRecipe = data.raw.recipe[recipe.main_product]
     local mainFluidProduct = data.raw["fluid"][recipe.main_product]
     local tint = nil
 
     tint = tint or main_productRecipe and main_productRecipe.crafting_machine_tint
-    tint = tint or vgal.recipe.TINT_CATALOG[recipe.main_product]
-    tint = tint or mainFluidProduct and vgal.fluid.get_tint(mainFluidProduct.name)
+    tint = tint or vgal.defines.tints[recipe.main_product]
+    tint = tint or mainFluidProduct and vgal.fluid.get_recipe_tint(mainFluidProduct.name)
 
     return tint
 end
@@ -437,7 +424,7 @@ end
 function vgal.recipe.get_preferred_localised_name(recipe)
     return recipe.localised_name or { "?",
         { "", { "recipe-name." .. recipe.name } },
-        { "", vgal.locale.guess_key(vgal.recipe.get_preferred_main_product(recipe)) },
+        { "", vgal.locale.guess_locale(vgal.recipe.get_preferred_main_product(recipe)) },
     }
 end
 

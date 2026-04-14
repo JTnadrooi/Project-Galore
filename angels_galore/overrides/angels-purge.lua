@@ -209,6 +209,11 @@ for _, environment in ipairs({ "temperate", "swamp", "desert" }) do
     vgal.data.deephide(tree)
 end
 
+-- remove copper wire coil (copper wire recipe gets reordered during final fixes)
+vgal.data.trim("angels-wire-coil-copper")
+vgal.data.trim("angels-wire-coil-copper-2")
+vgal.data.trim("angels-wire-copper-2")
+
 -- mark empty techs for splicing (can't do this in final-fixes bc of galorelib, but this should work)
 -- AND remove hidden effects, I could use queue_to_clean... hmm...
 local function startsWith(str, prefix)

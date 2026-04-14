@@ -72,6 +72,38 @@ local subgroups = {
         },
         reorder_entries = true,
     }, -- the oil refinery doesn't listen here, is fixed in final fixes phase.
+    {
+        name = "angels-farming-machines",
+        tab = "production",
+        order = "y-zg",
+        entries = {
+            "angels-algae-farm", "angels-algae-farm-2",
+            "angels-crop-farm",
+            "angels-temperate-farm",
+            "angels-swamp-farm",
+            "angels-desert-farm",
+            "angels-bio-refugium-fish",
+            "angels-bio-refugium-puffer",
+            "angels-bio-refugium-biter",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "angels-bio-machines",
+        tab = "production",
+        order = "y-zh",
+        entries = {
+            "angels-bio-generator-temperate-1", "angels-bio-arboretum-1",
+            "angels-seed-extractor",
+            "angels-composter",
+            "angels-bio-processor",
+            "angels-bio-press",
+            "angels-nutrient-extractor",
+            "angels-bio-hatchery",
+            "angels-bio-butchery",
+        },
+        reorder_entries = true,
+    },
     -- {
     --     name = "angels-copper-casting-2",
     --     tab = "angels-resource-refining",

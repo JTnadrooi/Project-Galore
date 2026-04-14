@@ -20,20 +20,22 @@ vgal.icon.directory = {
     tech = "__vanilla_galore__/graphics/tech/"
 }
 
----@param t1_icon data.IconData
+---@param icon data.IconData
 ---@return number
-function vgal.icon.get_auto_scale(t1_icon)
-    return t1_icon.scale or ((64 / 2) / (t1_icon.icon_size or 64))
+function vgal.icon.get_auto_scale(icon)
+    return icon.scale or ((64 / 2) / (icon.icon_size or 64))
 end
 
-function vgal.icon.normalise_composite_scales(icon)
+---@param composite_icon data.IconData[]
+---@return data.IconData[]
+function vgal.icon.normalise_composite_scales(composite_icon)
     local sizes = {}
-    for i, icon2 in ipairs(icon) do
+    for i, icon2 in ipairs(composite_icon) do
         sizes[i] = vgal.icon.get_auto_scale(icon2)
     end
     local normed = vgal.table.normalise_array(sizes)
     local scaled_icons = {}
-    for i, icon2 in ipairs(icon) do
+    for i, icon2 in ipairs(composite_icon) do
         local copy = util.table.deepcopy(icon2)
         copy.scale = normed[i]
         scaled_icons[i] = copy
@@ -44,10 +46,14 @@ function vgal.icon.normalise_composite_scales(icon)
     return scaled_icons
 end
 
-function vgal.icon.shift(icon, scale, shift)
+---@param composite_icon data.IconData[]
+---@param scale number?
+---@param shift data.Vector.struct|{[1]: number, [2]: number}
+---@return data.IconData[]
+function vgal.icon.shift(composite_icon, scale, shift)
     scale = scale or 1
     local icons = {}
-    local icon_normalised = vgal.icon.normalise_composite_scales(icon) -- copies
+    local icon_normalised = vgal.icon.normalise_composite_scales(composite_icon) -- copies
     for _, icon2 in ipairs(icon_normalised) do
         local new_icon = util.table.deepcopy(icon2)
         if new_icon.scale then
@@ -61,7 +67,7 @@ function vgal.icon.shift(icon, scale, shift)
     return icons
 end
 
----@param tier number
+---@param tier integer
 ---@return data.Color
 function vgal.icon.get_tier_tint(tier)
     local tints = {
@@ -74,17 +80,23 @@ function vgal.icon.get_tier_tint(tier)
     return tints[tier] or { a = 1, b = 0.5, g = 0.5, r = 0.5 }
 end
 
-function vgal.icon.get_overlay(overlay, args)
-    return vgal.icon.get_from_path("__galore_lib__/graphics/overlays/" .. overlay .. "-overlay.png", args)
+---@param overlay string
+---@param metadata table?
+---@return data.IconData[]
+function vgal.icon.get_overlay(overlay, metadata)
+    return vgal.icon.get_from_path("__galore_lib__/graphics/overlays/" .. overlay .. "-overlay.png", metadata)
 end
 
-function vgal.icon.get_from_path(path, args)
+---@param path data.FileName
+---@param metadata table?
+---@return data.IconData[]
+function vgal.icon.get_from_path(path, metadata)
     local toret = {
         {
             icon = path,
         }
     }
-    for key, value in pairs(args or {}) do
+    for key, value in pairs(metadata or {}) do
         toret[1][key] = value
     end
     return toret
@@ -92,7 +104,7 @@ end
 
 ---@param key_name string
 ---@param icon_source string? The domain of the icon. This is often a prototype type name but other values are allowed.
----@return data.IconData[]?
+---@return data.IconData[]
 function vgal.icon.get(key_name, icon_source)
     icon_source = icon_source or vgal.get_recipeable(key_name).type
     if icon_source == "recipe" then
@@ -105,7 +117,9 @@ function vgal.icon.get(key_name, icon_source)
                 }
             }
         else
-            return util.table.deepcopy(recipe.icons)
+            return util.table.deepcopy(recipe.icons or
+                error("Cannot get icon from invalid prototype with icons. Key: " ..
+                    key_name .. ", Source: " .. icon_source))
         end
     end
     if icon_source == "raw" then
@@ -330,26 +344,22 @@ function vgal.icon.get_in_bg2(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.30, { 7, -7 })
 end
 
----@param icons data.IconData[]
+---@param composite_icons data.IconData[][]
 ---@return data.IconData[]
-function vgal.icon.soft_merge(icons)
+function vgal.icon.from_composite(composite_icons)
     local new_icons = {}
-    for _, icon in pairs(icons) do
-        if type(icon) == "table" then
-            for _, icon2 in pairs(icon) do
-                table.insert(new_icons, icon2)
-            end
-        else
+    for _, composite_icon in ipairs(composite_icons) do
+        for _, icon in ipairs(composite_icon) do
             table.insert(new_icons, icon)
         end
     end
     return new_icons
 end
 
----@param icons data.IconData[][]
----@param composition string?
+---@param composite_icons data.IconData[][]
+---@param composition ("default")?
 ---@return data.IconData[]
-function vgal.icon.register(icons, composition)
+function vgal.icon.register(composite_icons, composition)
     composition = composition or "default"
     -- if composition == "angels_recipe" then
     --     local newIcons = {}
@@ -388,7 +398,7 @@ function vgal.icon.register(icons, composition)
     --     return vgal.icon.register(newIcons)
     -- end
     if composition == "default" then
-        return vgal.icon.soft_merge(icons)
+        return vgal.icon.from_composite(composite_icons)
     end
     error("unrecognised composition")
 end

@@ -191,28 +191,28 @@ local subgroups = {
     {
         name = "module-speed",
         tab = "production",
-        order = "ya",
+        order = "fb-a",
         entries = { "speed-module", "speed-module-2", "speed-module-3" },
         when_settings = { "vgal-modules" },
     },
     {
         name = "module-efficiency",
         tab = "production",
-        order = "yb",
+        order = "fb-b",
         entries = { "efficiency-module", "efficiency-module-2", "efficiency-module-3" },
         when_settings = { "vgal-modules" },
     },
     {
         name = "module-productivity",
         tab = "production",
-        order = "yc",
+        order = "fb-c",
         entries = { "productivity-module", "productivity-module-2", "productivity-module-3" },
         when_settings = { "vgal-modules" },
     },
     {
         name = "module-quality",
         tab = "production",
-        order = "yd",
+        order = "fb-d",
         entries = { "quality-module", "quality-module-2", "quality-module-3" },
         when_settings = { "vgal-modules" },
         when = not not mods["quality"]

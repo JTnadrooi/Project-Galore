@@ -27,6 +27,8 @@ vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
     { type = "item", name = "angels-concrete-brick", amount = 1 })
 vgal.recipe.all.replace_ingredient("clay-brick",
     { type = "item", name = "stone-brick", amount = 1 })
+vgal.data.deephide(data.raw["item"]["angels-solid-clay"])
+vgal.data.trim("angels-solid-clay")
 
 -- casting recipe tweaks
 for _, metal in pairs(vgal.defines.metals) do

@@ -1,10 +1,11 @@
 -- no subgroup prototypes will be created here, thats done in "subgroups.lua".
 
 local SUBGROUP_DOMAINS = {
-    { "angels-petrochem-refining",    "angels-water-treatment" },
-    { "angels-bio-processing-nauvis", "angels-bio-processing-vegetables", },
-    { "angels-resource-refining",     "angels-smelting",                  "angels-casting" },
-    { "logistics",                    "angels-fluid-control", },
+    -- { "angels-petrochem-refining",    "angels-water-treatment" },
+    -- { "angels-bio-processing-nauvis", "angels-bio-processing-vegetables", },
+    -- { "angels-resource-refining",     "angels-smelting",                  "angels-casting" },
+    { "angels-smelting", "angels-casting" },
+    { "logistics",       "angels-fluid-control", },
 }
 for _, domain in ipairs(SUBGROUP_DOMAINS) do
     for i, group in ipairs(domain) do

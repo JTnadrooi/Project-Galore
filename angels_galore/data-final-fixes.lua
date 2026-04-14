@@ -13,11 +13,11 @@ require("overrides.angels-overrides-final-fixes")
 -- end
 
 -- because this doesnt listen in subgroups and im not putting that in final fixes
-data.raw["item"]["chemical-plant"].subgroup = "vgal-angels-chemistry-machines"
+data.raw["item"]["chemical-plant"].subgroup = "vgal-chemistry-machines"
 data.raw["item"]["chemical-plant"].order = "d"
-data.raw["item"]["oil-refinery"].subgroup = "vgal-angels-petrochem-machines"
+data.raw["item"]["oil-refinery"].subgroup = "vgal-petrochem-machines"
 data.raw["item"]["oil-refinery"].order = "a"
-data.raw["item"]["offshore-pump"].subgroup = "vgal-angels-water-machines"
+data.raw["item"]["offshore-pump"].subgroup = "vgal-water-machines"
 data.raw["item"]["offshore-pump"].order = "a"
 data.raw["item"]["uranium-fuel-cell"].subgroup = "vgal-nuclear-cells"
 data.raw["item"]["uranium-fuel-cell"].order = "a"
@@ -29,23 +29,23 @@ data.raw["item"]["uranium-235"].subgroup = "vgal-nuclear-rocks"
 data.raw["item"]["uranium-235"].order = "b"
 data.raw["item"]["stone"].subgroup = "vgal-stone"
 data.raw["item"]["stone"].order = "a"
-data.raw["item"]["landfill"].subgroup = "vgal-angels-solid-concrete"
+data.raw["item"]["landfill"].subgroup = "vgal-solid-concrete"
 data.raw["item"]["landfill"].order = "a"
 data.raw["item"]["copper-cable"].subgroup = "vgal-basic-intermediate-products"
 data.raw["item"]["copper-cable"].order = "p"
 
 for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel }) do
-    data.raw["item"][metal.plate].subgroup = "vgal-angels-" .. metal.name .. "-casting"
+    data.raw["item"][metal.plate].subgroup = "vgal-" .. metal.name .. "-casting"
     data.raw["item"][metal.plate].order = "c"
 
     if metal.name ~= "steel" then
-        data.raw["item"][metal.ore].subgroup = "vgal-angels-" .. metal.name .. "-sorting-results"
+        data.raw["item"][metal.ore].subgroup = "vgal-" .. metal.name .. "-sorting-results"
         data.raw["item"][metal.ore].order = "a"
-        data.raw["item"][metal.pebbles].subgroup = "vgal-angels-" .. metal.name .. "-sorting-results"
+        data.raw["item"][metal.pebbles].subgroup = "vgal-" .. metal.name .. "-sorting-results"
         data.raw["item"][metal.pebbles].order = "b"
-        data.raw["item"][metal.nugget].subgroup = "vgal-angels-" .. metal.name .. "-sorting-results"
+        data.raw["item"][metal.nugget].subgroup = "vgal-" .. metal.name .. "-sorting-results"
         data.raw["item"][metal.nugget].order = "c"
-        data.raw["item"][metal.slag].subgroup = "vgal-angels-" .. metal.name .. "-sorting-results"
+        data.raw["item"][metal.slag].subgroup = "vgal-" .. metal.name .. "-sorting-results"
         data.raw["item"][metal.slag].order = "d"
     end
 end

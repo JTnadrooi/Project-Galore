@@ -7,7 +7,7 @@ local subgroups = {
         when_settings = { "vgal-modules" },
     },
     {
-        name = "angels-smelting-machines",
+        name = "smelting-machines",
         tab = "production",
         order = "y-ze",
         entries = {
@@ -19,7 +19,7 @@ local subgroups = {
         reorder_entries = true,
     },
     {
-        name = "angels-ore-machines",
+        name = "ore-machines",
         tab = "production",
         order = "y-zf",
         entries = {
@@ -32,7 +32,7 @@ local subgroups = {
         reorder_entries = true,
     },
     {
-        name = "angels-white-water-machines",
+        name = "white-water-machines",
         tab = "production",
         order = "y-za",
         entries = {
@@ -42,7 +42,7 @@ local subgroups = {
         reorder_entries = true,
     },
     {
-        name = "angels-water-machines",
+        name = "water-machines",
         tab = "production",
         order = "y-zb",
         entries = {
@@ -54,7 +54,7 @@ local subgroups = {
         reorder_entries = true,
     },
     {
-        name = "angels-chemistry-machines",
+        name = "chemistry-machines",
         tab = "production",
         order = "y-zc",
         entries = {
@@ -66,7 +66,7 @@ local subgroups = {
         reorder_entries = true,
     }, -- the liquifiers don't listen here, is fixed in update phase.
     {
-        name = "angels-petrochem-machines",
+        name = "petrochem-machines",
         tab = "production",
         order = "y-zd",
         entries = {
@@ -76,7 +76,7 @@ local subgroups = {
         reorder_entries = true,
     }, -- the oil refinery doesn't listen here, is fixed in final fixes phase.
     {
-        name = "angels-farming-machines",
+        name = "farming-machines",
         tab = "production",
         order = "y-zg",
         entries = {
@@ -92,7 +92,7 @@ local subgroups = {
         reorder_entries = true,
     },
     {
-        name = "angels-bio-machines",
+        name = "bio-machines",
         tab = "production",
         order = "y-zh",
         entries = {
@@ -114,7 +114,7 @@ local subgroups = {
     --     entries = { "copper-plate", "copper-cable", },
     -- }, -- commentedbc: both don't listen so i just repurpose the "angels-casting" subgroup.
     {
-        name = "angels-cement-concrete",
+        name = "cement-concrete",
         tab = "angels-smelting",
         order = "y-na",
         entries = {
@@ -124,7 +124,7 @@ local subgroups = {
         reorder_entries = true,
     }, -- stone-brick doesn't listen here, is fixed in update phase.
     {
-        name = "angels-solid-concrete",
+        name = "solid-concrete",
         tab = "angels-smelting",
         order = "y-nc",
         entries = {
@@ -278,7 +278,7 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel
 
     if metal.name ~= "steel" then
         table.insert(subgroups, {
-            name = "angels-" .. metal.name .. "-sorting-results",
+            name = metal.name .. "-sorting-results",
             tab = "angels-smelting",
             order = "b-" .. base_order .. "a",
             entries = { metal.ore, metal.pebbles, metal.nugget, metal.slag },
@@ -288,7 +288,7 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel
 
 
     table.insert(subgroups, {
-        name = "angels-" .. metal.name .. "-processing",
+        name = metal.name .. "-processing",
         tab = "angels-smelting",
         order = "b-" .. base_order .. "b",
         entries = processing_entries,
@@ -296,7 +296,7 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel
     })
 
     table.insert(subgroups, {
-        name = "angels-" .. metal.name .. "-casting",
+        name = metal.name .. "-casting",
         tab = "angels-smelting",
         order = "b-" .. base_order .. "c",
         entries = { metal.molten, metal.roll, metal.plate },

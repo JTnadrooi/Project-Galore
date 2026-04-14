@@ -47,14 +47,14 @@ for index, value in ipairs({
     "refined-concrete", "refined-hazard-concrete",
 }) do
     data.raw["item"][value].order = vgal.subgroup.order_from_number(index)
-    data.raw["item"][value].subgroup = "vgal-angels-solid-concrete"
+    data.raw["item"][value].subgroup = "vgal-solid-concrete"
 end
 
-vgal.subgroup.set_for("angels-liquifier", "vgal-angels-chemistry-machines")
+vgal.subgroup.set_for("angels-liquifier", "vgal-chemistry-machines")
 data.raw["item"]["angels-liquifier"].order = "b"
-vgal.subgroup.set_for("angels-liquifier-2", "vgal-angels-chemistry-machines")
+vgal.subgroup.set_for("angels-liquifier-2", "vgal-chemistry-machines")
 data.raw["item"]["angels-liquifier-2"].order = "c"
-vgal.subgroup.set_for("stone-brick", "vgal-angels-cement-concrete")
+vgal.subgroup.set_for("stone-brick", "vgal-cement-concrete")
 data.raw["item"]["stone-brick"].order = "c"
 data.raw["recipe"]["stone-brick"].order = nil
 

@@ -65,6 +65,12 @@ do
         { "iron-gear-wheel",    20 },
         { "stone-brick",        15 },
     })
+    data.raw["recipe"]["angels-chemical-furnace"].ingredients = vgal.build.table({
+        { "iron-plate",         10 },
+        { "electronic-circuit", 5 },
+        { "stone-brick",        15 },
+        { "pipe",               20 },
+    })
     data.raw["recipe"]["angels-casting-machine"].ingredients = vgal.build.table({
         { "iron-gear-wheel", 15 },
         { "pipe",            10 },

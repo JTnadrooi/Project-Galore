@@ -66,3 +66,4 @@ vgal.subgroup.clean_recipe("angels-solid-plastic")
 
 data.raw["recipe"]["angels-americium-regeneration"].main_product = "angels-plutonium-239"
 data.raw["recipe"]["angels-plutonium-breeding"].main_product = "angels-plutonium-239"
+data.raw["recipe"]["angels-electrode-used"].main_product = "angels-electrode"

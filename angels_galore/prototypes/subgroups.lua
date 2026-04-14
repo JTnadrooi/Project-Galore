@@ -112,21 +112,21 @@ local subgroups = {
     -- }, -- commentedbc: both don't listen so i just repurpose the "angels-casting" subgroup.
     {
         name = "angels-cement-concrete",
-        tab = "angels-resource-refining",
+        tab = "angels-smelting",
         order = "y-na",
         entries = {
-            "angels-solid-lime", "angels-solid-cement", "stone-brick", "angels-concrete-brick", -- reinforced and clay removed
+            "angels-liquid-concrete", "angels-solid-lime", "angels-solid-cement", "stone-brick", "angels-concrete-brick", -- reinforced and clay removed
             "angels-bio-tile",
         },
         reorder_entries = true,
     }, -- stone-brick doesn't listen here, is fixed in update phase.
     {
         name = "angels-solid-concrete",
-        tab = "angels-resource-refining",
+        tab = "angels-smelting",
         order = "y-nc",
         entries = {
-            "concrete", "hazard-concrete",
-            "refined-concrete", "refined-concrete",
+            "landfill", "concrete", "hazard-concrete",
+            "refined-concrete", "refined-concrete", "angels-solid-limestone",
         },
         reorder_entries = true,
     }, -- all of these.. they don't.. they don't listen.
@@ -177,7 +177,7 @@ local subgroups = {
             "angels-plutonium-239",
             "angels-americium-241",
         },
-        recipes_that_need_clearing = {
+        recipes_that_need_cleaning = {
             "angels-plutonium-synthesis",
             "angels-americium-regeneration",
             "angels-plutonium-breeding",
@@ -194,6 +194,52 @@ local subgroups = {
             "angels-mixed-oxide-cell",
             "angels-deuterium-fuel-cell",
             "angels-thorium-fuel-cell",
+        },
+        reorder_entries = true,
+    },
+
+    -- MISC
+    {
+        name = "stone",
+        tab = "angels-smelting",
+        order = "y-yd",
+        entries = {
+            "stone",
+            "angels-stone-crushed",
+            "angels-solid-sand",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "recipe-items",
+        tab = "intermediate-products",
+        order = "ca",
+        entries = {
+            "angels-solid-saw",
+            "angels-solid-crystal-tipped-saw",
+            "angels-solid-crystal-full-saw",
+            "angels-milling-drum",
+            "angels-milling-drum-lubricated",
+            "angels-electrode",
+            "angels-electrode-used",
+            "angels-catalyst-metal-carrier",
+            "angels-catalyst-metal-blue",
+            "angels-catalyst-metal-yellow",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "recipe-items-filters",
+        tab = "intermediate-products",
+        order = "cab",
+        entries = {
+            "angels-filter-frame",
+            "angels-filter-coal",
+            "angels-filter-ceramic",
+            "angels-filter-lime",
+        },
+        recipes_that_need_cleaning = {
+            "angels-filter-ceramic-refurbish",
         },
         reorder_entries = true,
     },
@@ -296,7 +342,7 @@ for _, subgroup in ipairs(subgroups) do
         end
     end
 
-    for _, recipe_name in ipairs(subgroup.recipes_that_need_clearing or {}) do
+    for _, recipe_name in ipairs(subgroup.recipes_that_need_cleaning or {}) do
         vgal.subgroup.clean_recipe(recipe_name)
     end
 end

@@ -25,6 +25,12 @@ data.raw["item"]["uranium-238"].subgroup = "vgal-nuclear-rocks"
 data.raw["item"]["uranium-238"].order = "a"
 data.raw["item"]["uranium-235"].subgroup = "vgal-nuclear-rocks"
 data.raw["item"]["uranium-235"].order = "b"
+data.raw["item"]["stone"].subgroup = "vgal-stone"
+data.raw["item"]["stone"].order = "a"
+data.raw["item"]["landfill"].subgroup = "vgal-angels-solid-concrete"
+data.raw["item"]["landfill"].order = "a"
+
+data.raw["item"]["concrete"].order = "b"
 
 data.raw["recipe"]["nuclear-fuel-reprocessing"].subgroup = "vgal-nuclear-reprocessing"
 data.raw["recipe"]["nuclear-fuel-reprocessing"].order = "a"
@@ -33,3 +39,5 @@ data.raw["recipe"]["uranium-processing"].subgroup = "vgal-nuclear-processing"
 data.raw["recipe"]["uranium-processing"].order = "a"
 
 vgal.subgroup.clean_recipe("uranium-fuel-cell")
+vgal.subgroup.clean_recipe("landfill")
+vgal.subgroup.clean_recipe("angels-solid-mud-landfill")

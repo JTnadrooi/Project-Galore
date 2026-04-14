@@ -8,7 +8,7 @@ local subgroups = {
     },
     {
         name = "angels-smelting-machines",
-        tab = "angels-resource-refining",
+        tab = "production",
         order = "y-ze",
         entries = {
             "angels-blast-furnace", "angels-chemical-furnace", "angels-induction-furnace", "angels-casting-machine",
@@ -20,7 +20,7 @@ local subgroups = {
     },
     {
         name = "angels-ore-machines",
-        tab = "angels-resource-refining",
+        tab = "production",
         order = "y-zf",
         entries = {
             "angels-burner-ore-crusher", "angels-ore-crusher", "angels-ore-sorting-facility",
@@ -31,7 +31,7 @@ local subgroups = {
     },
     {
         name = "angels-white-water-machines",
-        tab = "angels-petrochem-refining",
+        tab = "production",
         order = "y-za",
         entries = {
             "angels-hydro-plant", "angels-salination-plant", "angels-cooling-tower", "angels-clarifier",
@@ -41,18 +41,18 @@ local subgroups = {
     },
     {
         name = "angels-water-machines",
-        tab = "angels-petrochem-refining",
+        tab = "production",
         order = "y-zb",
         entries = {
             "offshore-pump", "angels-ground-water-pump", "angels-seafloor-pump", "angels-sea-pump",
             "angels-washing-plant",
             "angels-electrolyser", "angels-electrolyser-2", "angels-electric-boiler", "angels-electric-boiler-2",
-        },
+        }, -- vanilla items dont listen, fixed in final fixes.
         reorder_entries = true,
     },
     {
         name = "angels-chemistry-machines",
-        tab = "angels-petrochem-refining",
+        tab = "production",
         order = "y-zc",
         entries = {
             "angels-air-filter",
@@ -64,20 +64,20 @@ local subgroups = {
     }, -- the liquifiers don't listen here, is fixed in update phase.
     {
         name = "angels-petrochem-machines",
-        tab = "angels-petrochem-refining",
+        tab = "production",
         order = "y-zd",
         entries = {
             "oil-refinery", "angels-gas-refinery-small", "angels-gas-refinery",
             "angels-separator", "angels-separator-2", "angels-steam-cracker",
         },
         reorder_entries = true,
-    }, -- the oil refinery doesn't listen here, is fixed in update phase.
+    }, -- the oil refinery doesn't listen here, is fixed in final fixes phase.
     -- {
     --     name = "angels-copper-casting-2",
     --     tab = "angels-resource-refining",
     --     order = "y-ec",
     --     entries = { "copper-plate", "copper-cable", },
-    -- }, -- both don't listen so i just repurpose the "angels-casting" subgroup.
+    -- }, -- commentedbc: both don't listen so i just repurpose the "angels-casting" subgroup.
     {
         name = "angels-cement-concrete",
         tab = "angels-resource-refining",
@@ -99,7 +99,7 @@ local subgroups = {
         reorder_entries = true,
     }, -- all of these.. they don't.. they don't listen.
 
-    --- SCIENCE ---
+    -- SCIENCE
     {
         name = "agricultural-science-pack",
         tab = "intermediate-products",

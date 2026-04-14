@@ -249,41 +249,42 @@ local subgroups = {
 }
 
 for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel }) do
-    local mid_order = (metal.name == "copper") and "e" or "f"
-    if metal.name == "steel" then
-        mid_order = "g"
+    local base_order = ({
+        ["copper"] = "a",
+        ["iron"] = "b",
+        ["steel"] = "c",
+    })[metal.name] or error(serpent.block(metal))
+    local processing_entries = ({
+        ["copper"] = { metal.processed, metal.pellet, "angels-anode-copper", metal.ingot, },
+        ["iron"] = { metal.processed, metal.pellet, metal.ingot, },
+        ["steel"] = { metal.ingot },
+    })[metal.name] or error(serpent.block(metal))
+
+    if metal.name ~= "steel" then
+        table.insert(subgroups, {
+            name = "angels-" .. metal.name .. "-sorting-results",
+            tab = "angels-smelting",
+            order = "b-" .. base_order .. "a",
+            entries = { metal.ore, metal.pebbles, metal.nugget, metal.slag },
+            reorder_entries = true,
+        })
     end
 
-    local processing_entries = {
-        metal.processed,
-        metal.pellet,
-    }
-    if metal.name == "copper" then table.insert(processing_entries, "angels-anode-" .. metal.name) end
-    table.insert(processing_entries, metal.ingot)
-
-    if metal.name == "steel" then
-        processing_entries = {
-            "angels-ingot-steel",
-        }
-    end
 
     table.insert(subgroups, {
         name = "angels-" .. metal.name .. "-processing",
-        tab = "angels-resource-refining",
-        order = "y-" .. mid_order .. "a",
+        tab = "angels-smelting",
+        order = "b-" .. base_order .. "b",
         entries = processing_entries,
         reorder_entries = true,
     })
-    local casting_entries = {
-        metal.molten,
-        metal.roll,
-    }
-    if metal.name == "copper" then table.insert(casting_entries, "angels-wire-coil-" .. metal.name) end
+
     table.insert(subgroups, {
         name = "angels-" .. metal.name .. "-casting",
         tab = "angels-smelting",
-        order = "y-" .. mid_order .. "b",
-        entries = casting_entries,
+        order = "b-" .. base_order .. "c",
+        entries = { metal.molten, metal.roll, metal.plate },
+        reorder_entries = true,
     })
 end
 
@@ -312,6 +313,8 @@ for _, metal in pairs(vgal.defines.metals) do
         }
     )
 end
+
+vgal.log_block(subgroups)
 
 for _, subgroup in ipairs(subgroups) do
     if subgroup.when == nil then

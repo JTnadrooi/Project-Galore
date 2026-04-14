@@ -29,8 +29,27 @@ data.raw["item"]["stone"].subgroup = "vgal-stone"
 data.raw["item"]["stone"].order = "a"
 data.raw["item"]["landfill"].subgroup = "vgal-angels-solid-concrete"
 data.raw["item"]["landfill"].order = "a"
+data.raw["item"]["copper-cable"].subgroup = "vgal-basic-intermediate-products"
+data.raw["item"]["copper-cable"].order = "p"
+
+for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel }) do
+    data.raw["item"][metal.plate].subgroup = "vgal-angels-" .. metal.name .. "-casting"
+    data.raw["item"][metal.plate].order = "c"
+
+    if metal.name ~= "steel" then
+        data.raw["item"][metal.ore].subgroup = "vgal-angels-" .. metal.name .. "-sorting-results"
+        data.raw["item"][metal.ore].order = "a"
+        data.raw["item"][metal.pebbles].subgroup = "vgal-angels-" .. metal.name .. "-sorting-results"
+        data.raw["item"][metal.pebbles].order = "b"
+        data.raw["item"][metal.nugget].subgroup = "vgal-angels-" .. metal.name .. "-sorting-results"
+        data.raw["item"][metal.nugget].order = "c"
+        data.raw["item"][metal.slag].subgroup = "vgal-angels-" .. metal.name .. "-sorting-results"
+        data.raw["item"][metal.slag].order = "d"
+    end
+end
 
 data.raw["item"]["concrete"].order = "b"
+
 
 data.raw["recipe"]["nuclear-fuel-reprocessing"].subgroup = "vgal-nuclear-reprocessing"
 data.raw["recipe"]["nuclear-fuel-reprocessing"].order = "a"

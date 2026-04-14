@@ -176,9 +176,13 @@ local subgroups = {
         entries = {
             "uranium-238",
             "uranium-235",
+            "angels-uranium-234",
+            "angels-curium-245",
+            "angels-thorium-232",
             "angels-neptunium-240",
             "angels-plutonium-239",
             "angels-americium-241",
+            "angels-muon-fusion-catalyst",
         },
         recipes_that_need_cleaning = {
             "angels-plutonium-synthesis",
@@ -197,6 +201,18 @@ local subgroups = {
             "angels-mixed-oxide-cell",
             "angels-deuterium-fuel-cell",
             "angels-thorium-fuel-cell",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "nuclear-depleted-cells",
+        tab = "angels-resource-refining",
+        order = "y-ye",
+        entries = {
+            "depleted-uranium-fuel-cell",
+            "angels-depleted-mixed-oxide-cell",
+            "angels-depleted-deuterium-fuel-cell",
+            "angels-depleted-thorium-fuel-cell",
         },
         reorder_entries = true,
     },

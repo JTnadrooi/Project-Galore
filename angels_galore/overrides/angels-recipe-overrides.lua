@@ -145,6 +145,11 @@ do
         { "iron-gear-wheel", 10 },
         { "steel-plate",     6 },
     })
+    data.raw["recipe"]["angels-powderizer"].ingredients = vgal.build.table({
+        { "stone-brick",     10 },
+        { "iron-gear-wheel", 5 },
+        { "steel-plate",     5 },
+    })
 
     -- PETRO
     data.raw["recipe"]["angels-hydro-plant"].ingredients = vgal.build.table({

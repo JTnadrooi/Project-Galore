@@ -118,7 +118,7 @@ local subgroups = {
         tab = "angels-smelting",
         order = "y-na",
         entries = {
-            "angels-liquid-concrete", "angels-solid-lime", "angels-solid-cement", "stone-brick", "angels-concrete-brick", -- reinforced and clay removed
+            "angels-liquid-concrete", "angels-solid-cement", "stone-brick", "angels-concrete-brick", -- reinforced and clay removed
             "angels-bio-tile",
         },
         reorder_entries = true,
@@ -129,7 +129,7 @@ local subgroups = {
         order = "y-nc",
         entries = {
             "landfill", "concrete", "hazard-concrete",
-            "refined-concrete", "refined-concrete", "angels-solid-limestone",
+            "refined-concrete", "refined-concrete", "angels-solid-limestone", "angels-solid-lime",
         },
         reorder_entries = true,
     }, -- all of these.. they don't.. they don't listen.

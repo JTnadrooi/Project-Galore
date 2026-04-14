@@ -232,7 +232,7 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel
     if metal.name == "copper" then table.insert(casting_entries, "angels-wire-coil-" .. metal.name) end
     table.insert(subgroups, {
         name = "angels-" .. metal.name .. "-casting",
-        tab = "angels-resource-refining",
+        tab = "angels-smelting",
         order = "y-" .. mid_order .. "b",
         entries = casting_entries,
     })

@@ -22,19 +22,25 @@ require("tech")
 require("table")
 require("build")
 
+---@param toLog number|string
 function vgal.log(toLog)
     if settings.startup["vgal-log"].value then
         log("vgal.log-[" .. tostring(toLog) .. "]")
     end
 end
 
+---@param toLog table
 function vgal.log_block(toLog)
     vgal.log(serpent.block(toLog) or error("Cannot log nil."))
 end
 
 ---@type vgal.VgalToggleGroupPrototype[]
 vgal.groups = {}
+
+---@type table<string, boolean>
 vgal.productivity_entries = {}
+
+---@type table<string, boolean>
 vgal.catalyst_entries = {}
 
 vgal.group_overrides = {}
@@ -382,11 +388,13 @@ function vgal.data.extend(entries, fill_in_with)
     end
 end
 
+---@param recipe_name string
 function vgal.data.trim(recipe_name)
     vgal.tech.queue_to_clean(recipe_name)
     vgal.recipe.deephide(recipe_name)
 end
 
+---@param prototype data.PrototypeBase
 function vgal.data.deephide(prototype)
     prototype.hidden = true
     prototype.hidden_in_factoriopedia = true
@@ -409,12 +417,19 @@ function vgal.data.deephide(prototype)
     end
 end
 
+---@class vgal.PrototypeWithIcons : data.PrototypeBase
+---@field icons data.IconData[]
+---@field icon data.FileName
+---@field icon_size data.SpriteSizeType
+
+---@param prototype_name string
+---@return vgal.PrototypeWithIcons
 function vgal.get_recipeable(prototype_name)
     vgal.throw.if_param_nil(prototype_name, "prototype_name")
 
     for _, category in ipairs(vgal.defines.recipeable_categories) do
         if data.raw[category][prototype_name] then
-            return data.raw[category][prototype_name]
+            return data.raw[category][prototype_name] --[[@as vgal.PrototypeWithIcons]]
         end
     end
     error("Recipeable of name '" .. prototype_name .. "' not found.")

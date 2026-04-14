@@ -306,22 +306,29 @@ function vgal.table.get_multiplied(input, multiplier, entry_name)
     end
 end
 
----@param ... any[][]
+---@param ... table[]|any[][]
 ---@return function
 function vgal.table.iter_all(...)
     local tables = { ... }
-    local indices = {}
-    for i = 1, #tables do
-        indices[i] = 1
+    local iterators = {}
+
+    -- Create an iterator state for each table
+    for i, t in ipairs(tables) do
+        iterators[i] = { iter = pairs(t), t = t, key = nil }
     end
 
+    local current = 1
+
     return function()
-        for i = 1, #tables do
-            local idx = indices[i]
-            local t = tables[i]
-            if idx <= #t then
-                indices[i] = idx + 1
-                return t[idx]
+        while current <= #iterators do
+            local state = iterators[current]
+            local iter, t, key = state.iter, state.t, state.key
+            local k, v = iter(t, key)
+            if k ~= nil then
+                state.key = k
+                return v
+            else
+                current = current + 1
             end
         end
         return nil

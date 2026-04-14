@@ -1,11 +1,11 @@
---- barrel hiding ---
+-- hide barrel recipes from player crafting.
 for _, recipe in pairs(data.raw["recipe"]) do
     if recipe.category == "barreling-pump" then
         recipe.hide_from_player_crafting = true
     end
 end
 
---- clean subgroups bc anywhere else this code is just a suggestion ---
+-- clean subgroups bc anywhere else this code is just a suggestion.
 local subgroups_to_clean = {
     ["angels-copper"] = true,
     ["angels-copper-casting"] = true,
@@ -22,7 +22,7 @@ for _, recipe in pairs(data.raw["recipe"]) do
     end
 end
 
---- restore refining recipes ---
+-- restore refining recipes.
 local function unhide(name)
     local recipe = data.raw["recipe"][name]
     if recipe then
@@ -37,7 +37,7 @@ local function unhide(name)
     end
 end
 
--- unhide nuggets and pebbles
+-- unhide nuggets and pebbles.
 for _, metal in pairs(vgal.defines.metals) do
     unhide(metal.pebbles)
     -- unhide("angels-" .. metal .. "-pebbles-smelting")
@@ -51,7 +51,7 @@ end
 -- prepare recipe for next loop. (the recipe amount will not apply otherwise)
 vgal.recipe.replace_ingredient("angels-ore2-crystal", "angels-liquid-hydrofluoric-acid", "angels-liquid-sulfuric-acid")
 
---- ores, both time normalizing as ore density (see docs/ore-density) ---
+-- fix ores, both time normalizing as ore density (see docs/ore-density)
 for _, ore_index in ipairs(agal.defines.ore_indexes) do
     -- chunk
     data.raw["recipe"]["angels-ore" .. ore_index .. "-chunk"].energy_required = 3.2
@@ -84,7 +84,7 @@ for _, ore_index in ipairs(agal.defines.ore_indexes) do
         "angels-ore" .. ore_index .. "-pure")
 end
 
---- restore processing recipes ---
+-- restore processing recipes.
 data.raw["recipe"]["angels-ore3-crushed-processing"].results = vgal.build.table({
     { "iron-ore",            1 },
     { "angels-iron-nugget",  1 },
@@ -195,7 +195,7 @@ do
     -- angels stone smelting 3 is a COMEBACKAT
 end
 
---- ore gen removal ---
+-- remove ore gen of removed ores.
 for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
     local ore = "angels-ore" .. ore_index
 
@@ -209,8 +209,6 @@ for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
             if key == "name" or key == "type" then
                 goto continue
             end
-            --- @type MapGenPreset
-            value = value -- for docs.
 
             if value.basic_settings and value.basic_settings.autoplace_controls then
                 value.basic_settings.autoplace_controls[ore] = nil
@@ -221,7 +219,7 @@ for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
     end
 end
 
---- tech fixes ---
+-- TECH FIXES
 -- Add vgal-agricultural-science-pack as unit to technologies that require the "vgal-agricultural-science-pack" tech.
 local cache = {}
 
@@ -263,7 +261,7 @@ end
 
 -- Add angels-stone-smelting-2 as prerequisite to technologies that unlock buildings that require concrete bricks.
 
---- LOGCACHE::
+-- LOGCACHE::
 -- vgal.log("listlist")
 
 -- for _, tech in pairs(data.raw["technology"]) do
@@ -290,7 +288,7 @@ end
 
 -- vgal.log("listlist-end")
 
---- LOGCACHE RESULT::
+-- LOGCACHE RESULT::
 local techs_that_need_stone_smelting = {
     "angels-ore-leaching",
     "angels-ore-refining",

@@ -1,4 +1,4 @@
---- ore removal ---
+-- remove removed ores
 
 -- (actual)catalyst fixes
 vgal.data.trim("angels-catalyst-metal-red")
@@ -63,8 +63,7 @@ for _, metal_name in ipairs({ "iron", "steel" }) do -- copper doesn't have any e
     end
 end
 
---- remove removed ore smelting techs, items and fluids ---
-
+-- remove removed ore smelting techs, items and fluids.
 -- techs first.
 for i = 1, 4 do
     for _, metal_name in ipairs(agal.defines.removed_metal_names) do
@@ -78,7 +77,7 @@ for i = 1, 4 do
     end
 end
 
--- remove extra angels smelting items and fluids
+-- remove extra angels smelting items and fluids.
 local function dh_fluid(name)
     local fluid = data.raw["fluid"][name]
     if fluid then
@@ -134,7 +133,7 @@ vgal.data.deephide(data.raw["fluid"]["angels-liquid-trichlorosilane"])
 vgal.data.deephide(data.raw["fluid"]["angels-gas-silane"])
 vgal.data.deephide(data.raw["fluid"]["angels-liquid-tungstic-acid"])
 
---- funny yellow module removal ---
+-- remove yellow modules (COMEBACKAT)
 local BIO_MODULES = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
 for _, bio_module in ipairs(BIO_MODULES) do
     vgal.data.deephide(data.raw["module"][bio_module])
@@ -142,7 +141,7 @@ for _, bio_module in ipairs(BIO_MODULES) do
     vgal.data.trim(bio_module)
 end
 
---- removal of direct fluids --- (direct fluids: fluids used for like one purpose)
+-- removal of direct fluids (direct fluids: fluids used for like one purpose)
 
 -- bio plastic - liquid-cellulose-acetate
 vgal.data.trim("angels-liquid-cellulose-acetate")
@@ -194,11 +193,13 @@ vgal.recipe.set_result_amount("angels-rocket-oxidizer-capsule", 1)
 data.raw.recipe["angels-rocket-fuel-capsule"].energy_required = 5
 vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)
 
---- remove extra trees ---
+-- remove extra trees
 vgal.data.trim("angels-tree-arboretum-0")
 vgal.data.deephide(data.raw["item"]["angels-temperate-tree"])
 vgal.data.deephide(data.raw["item"]["angels-swamp-tree"])
 vgal.data.deephide(data.raw["item"]["angels-desert-tree"])
+
+vgal.recipe.replace_ingredient("angels-bio-generator-temperate-1", "angels-temperate-tree", "angels-solid-tree")
 
 for _, environment in ipairs({ "temperate", "swamp", "desert" }) do
     local tree = data.raw["tree"]["angels-" .. environment .. "-tree"]
@@ -208,7 +209,7 @@ for _, environment in ipairs({ "temperate", "swamp", "desert" }) do
     vgal.data.deephide(tree)
 end
 
---- mark empty techs for splicing --- (can't do this in final-fixes bc of galorelib, but this should work)
+-- mark empty techs for splicing (can't do this in final-fixes bc of galorelib, but this should work)
 -- AND remove hidden effects, I could use queue_to_clean... hmm...
 local function startsWith(str, prefix)
     return string.sub(str, 1, #prefix) == prefix

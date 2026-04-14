@@ -1,4 +1,4 @@
---- register catalysts --- (catalysts don't work with productivity)
+-- register catalysts (catalysts don't work with productivity)
 vgal.recipe.add_catalyst_entry("angels-electrode-used")
 vgal.recipe.add_catalyst_entry("angels-liquid-coolant-used")
 vgal.recipe.add_catalyst_entry("angels-liquid-coolant")
@@ -90,9 +90,9 @@ end
 -- vgal.recipe.add_productivity_entry("slag-slurry")
 -- vgal.recipe.add_productivity_entry("concrete")
 
---- allow productivity edge cases ---
+-- allow productivity edge cases.
 
---- chemistry ---
+-- CHEM
 vgal.recipe.smart_allow_productivity("angels-rocket-fuel-capsule")
 vgal.recipe.smart_allow_productivity("angels-rocket-oxidizer-capsule")
 vgal.recipe.smart_allow_productivity("angels-rocket-booster")
@@ -133,14 +133,14 @@ vgal.recipe.smart_allow_productivity("angels-gas-acid-catalyst") -- w
 vgal.recipe.smart_allow_productivity("angels-solid-ammonium-nitrate")
 vgal.recipe.smart_allow_productivity("angels-solid-ammonium-perchlorate")
 
---- water ---
+-- WATER
 vgal.recipe.smart_allow_productivity("angels-liquid-coolant")
 vgal.recipe.smart_allow_productivity("angels-water-saline")
 vgal.recipe.smart_allow_productivity("angels-solid-salt-dissolving")
 vgal.recipe.smart_allow_productivity("angels-solid-salt")
 vgal.recipe.smart_allow_productivity("angels-stone-crushed")
 
---- bio ---
+-- BIO
 vgal.recipe.smart_allow_productivity("angels-fermentation-corn")
 vgal.recipe.smart_allow_productivity("angels-fermentation-fruit")
 vgal.recipe.smart_allow_productivity("angels-liquid-acetic-acid")
@@ -180,7 +180,7 @@ for puffer_index = 1, 5 do
     vgal.recipe.add_catalyst_entry("angels-bio-puffer-" .. puffer_index)
 end
 
---- fauna ---
+-- FAUNA
 vgal.recipe.smart_allow_productivity("angels-gas-puffer-atmosphere")
 vgal.recipe.smart_allow_productivity("angels-biter-small-egg")
 vgal.recipe.smart_allow_productivity("angels-biter-medium-egg")
@@ -190,8 +190,7 @@ vgal.recipe.smart_allow_productivity("angels-petri-dish")
 vgal.recipe.smart_allow_productivity("angels-crystal-enhancer")
 vgal.recipe.smart_allow_productivity("angels-crystal-grindstone")
 
---- minerals ---
-
+-- MINERALS
 vgal.recipe.smart_allow_productivity("angels-geode-blue-liquify")
 vgal.recipe.smart_allow_productivity("angels-geode-purple-liquify")
 vgal.recipe.smart_allow_productivity("angels-geode-yellow-liquify")
@@ -207,7 +206,7 @@ vgal.recipe.smart_allow_productivity("angels-liquid-concrete-2")
 -- vgal.recipe.smart_allow_productivity("angels-reinforced-concrete-brick")
 vgal.recipe.smart_allow_productivity("angels-concrete-brick")
 
---- metallugy ---
+-- METALLURGY
 for _, metal in pairs(vgal.defines.metals) do
     vgal.recipe.smart_allow_productivity(metal.pebbles .. "-smelting")
     vgal.recipe.smart_allow_productivity(metal.nugget .. "-smelting")

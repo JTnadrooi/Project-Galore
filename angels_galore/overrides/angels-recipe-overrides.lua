@@ -7,7 +7,7 @@ data.raw.recipe["angels-catalyst-metal-blue"].ingredients = vgal.build.table({
     { "angels-ore3",                   1 },
 })
 
---- upgrade kit removal ---
+-- upgrade kit removal.
 for _, environment in ipairs(agal.defines.environments) do
     vgal.recipe.deephide(environment .. "-upgrade")
     local building_recipe = data.raw["recipe"][environment .. "-farm"]
@@ -19,7 +19,7 @@ for _, environment in ipairs(agal.defines.environments) do
     end
 end
 
---- brick removal (clay/reinforced) ---
+-- brick removal (clay/reinforced)
 vgal.data.trim("angels-reinforced-concrete-brick")
 vgal.data.trim("angels-clay-brick")
 vgal.data.trim("angels-clay-brick-raw")
@@ -28,7 +28,7 @@ vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
 vgal.recipe.all.replace_ingredient("clay-brick",
     { type = "item", name = "stone-brick", amount = 1 })
 
---- casting recipe tweaks ---
+-- casting recipe tweaks
 for _, metal in pairs(vgal.defines.metals) do
     data.raw.recipe[metal.pebbles .. "-smelting"].energy_required = 6.4
     data.raw.recipe[metal.nugget .. "-smelting"].energy_required = 6.4
@@ -41,18 +41,15 @@ end
 data.raw.recipe["angels-plate-steel"].energy_required = 1
 vgal.recipe.multiply("angels-plate-steel", 1.25)
 
---- uranium ---
+-- add uranium source
 -- data.raw.recipe["slag-processing-9"].results = vgal.build.table({
 --     { "uranium-ore", 1, { probability = 0.8 } },
 -- })
 
---- rocket fuel ---
+-- buff rocket fuel recipe
 vgal.recipe.set_ingredient_amount("rocket-fuel", 1)
 
---- trees ---
-vgal.recipe.replace_ingredient("angels-bio-generator-temperate-1", "angels-temperate-tree", "angels-solid-tree")
-
---- normalize building recipes ---
+-- normalize building recipes
 do
     data.raw["recipe"]["angels-blast-furnace"].ingredients = vgal.build.table({
         { "iron-plate",         10 },
@@ -399,20 +396,17 @@ do
     })
 end
 
---- use ore2 for more distinct color, but copy rest ---
+-- use ore2 for more distinct color, but copy rest
 for _, ore_state in ipairs(agal.defines.ore_states) do
     data.raw["recipe"]["angels-ore2-" .. ore_state .. "-processing"].results =
         table.deepcopy(data.raw["recipe"]["angels-ore1-" .. ore_state .. "-processing"].results)
 end
 
---- align ore processing ---
+-- align ore processing
 vgal.recipe.replace_ingredient("angels-ore2-crystal", "angels-liquid-hydrofluoric-acid", "angels-liquid-sulfuric-acid")
 vgal.recipe.replace_result("angels-ore2-chunk", "angels-water-greenyellow-waste", "angels-water-yellow-waste")
 
---- plastic buff ---
-vgal.recipe.multiply("angels-solid-plastic", 1.25)
-
---- remove the alien tokens things ---
+-- remove the alien tokens things
 vgal.recipe.all.remove_ingredient("angels-token-bio")
 vgal.recipe.all.remove_result("angels-token-bio")
 
@@ -421,7 +415,9 @@ for _, environment in ipairs(agal.defines.environments) do
     vgal.recipe.deephide(environment .. "-garden-cultivating-a")
 end
 
---- plastic buff ---
+-- buff plastic
+vgal.recipe.multiply("angels-solid-plastic", 1.25)
+
 local PLASTIC_MULTIPLIER = 5
 vgal.recipe.multiply_results("angels-liquid-plastic", PLASTIC_MULTIPLIER)
 vgal.recipe.multiply_results("angels-liquid-plastic-2", PLASTIC_MULTIPLIER)
@@ -443,14 +439,14 @@ data.raw["recipe"]["angels-wire-coil-copper-2"].energy_required = 1
 vgal.recipe.multiply("angels-wire-coil-copper", 2)
 vgal.recipe.multiply("angels-wire-coil-copper-2", 2)
 
---- remove hand recipes ---
+-- remove hand recipes
 vgal.data.trim("angels-ore1-crushed-hand")
 vgal.data.trim("angels-ore3-crushed-hand")
 
---- crystal overhaul/restore ---
+-- crystal overhaul/restore
 vgal.recipe.multiply("angels-crystal-powder-slurry", 10)
 
---- crafting speed restores ---
+-- crafting speed restores
 data.raw["recipe"]["angels-liquid-molten-copper"].energy_required = 1
 data.raw["recipe"]["angels-liquid-molten-steel"].energy_required = 1
 data.raw["recipe"]["angels-liquid-molten-iron"].energy_required = 1
@@ -458,16 +454,16 @@ data.raw["recipe"]["angels-liquid-molten-iron"].energy_required = 1
 data.raw["recipe"]["angels-air-separation"].energy_required = 1
 data.raw["recipe"]["angels-gas-compressed-air"].energy_required = 1
 
---- remove persentaged results ---
+-- remove persentaged results
 vgal.recipe.set_result_amount("angels-bio-tile", 2)
 vgal.recipe.set_result_amount("angels-alien-goo", 10)
 
---- soil crafting speed tweaks ---
+-- soil crafting speed tweaks
 data.raw["recipe"]["angels-solid-soil"].energy_required = 1.5
 data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 1.5
 
 -- commented-bc: the molten concrete recipe gets unlocked way to late.
--- --- concrete fixes (the vanilla recipe is kinda OP) ---
+-- -- concrete fixes (the vanilla recipe is kinda OP)
 -- data.raw["recipe"]["concrete"].ingredients = vgal.table.build({}, {
 --     { "angels-liquid-molten-concrete", 100 }
 -- })
@@ -519,8 +515,7 @@ for _, module in ipairs(vgal.defines.modules) do
     end
 end
 
---- remove the stone uncrushing recipe + handle consequences ---
-
+-- remove the stone uncrushing recipe + handle consequences
 for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.crushed].results = vgal.build.table({
         { metal.crushed,          2 },

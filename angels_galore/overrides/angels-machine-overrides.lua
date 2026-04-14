@@ -1,4 +1,4 @@
---- purge some of the machine tiers ---
+-- PURGE EXTRA MACHINE TIERS
 
 -- non angel entries must be before "angels-" prefixed ones.
 -- <Name> = <Max Level>
@@ -141,7 +141,7 @@ for _, environment in ipairs(agal.defines.environments) do
     data.raw["assembling-machine"][environment .. "-farm"].module_slots = 3
 end
 
---- crafting speed fixes.
+-- CRAFTING SPEED NORMALIZATION.
 data.raw["assembling-machine"]["oil-refinery"].crafting_speed = 2
 data.raw["assembling-machine"]["angels-liquifier"].crafting_speed = 1
 data.raw["assembling-machine"]["angels-liquifier-2"].crafting_speed = 2

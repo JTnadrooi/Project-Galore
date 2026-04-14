@@ -1,4 +1,4 @@
---- wreck loot ---
+-- Add wreck loot
 local WRECK_SIZES = {
     ["small"] = {
         name = "small",
@@ -90,7 +90,7 @@ do
 end
 
 
---- tree loot --- (add seeds)
+-- add tree loot (add seeds)
 for _, tree in pairs(data.raw["tree"]) do
     if (not (string.find(tree.name, "dry") or string.find(tree.name, "dead") or string.find(tree.name, "trunk"))) and tree.minable then
         local results = vgal.build.table({
@@ -114,7 +114,7 @@ for _, tree in pairs(data.raw["tree"]) do
     end
 end
 
---- crystal rock loot --- (add geodes)
+-- add crystal rock loot (add geodes)
 do
     local crystal_rock_results = {
         { "stone",               nil, { amount_min = 10, amount_max = 15 } },

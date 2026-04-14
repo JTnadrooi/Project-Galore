@@ -1,4 +1,4 @@
---- wipe alien samples of the planet ---
+-- wipe alien samples of the planet
 local alien_sample_tech_names = {}
 for _, tech in pairs(data.raw.technology) do
     if tech.unit and tech.unit.ingredients then
@@ -32,7 +32,7 @@ for _, lab in pairs(data.raw["lab"]) do
     vgal.table.remove(lab.inputs, "angels-token-bio")
 end
 
---- tech ---
+-- TECH FIXES
 data.raw["technology"]["angels-basic-chemistry"].unit.count = 40
 data.raw["technology"]["angels-ore-crushing"].prerequisites = { "automation" }
 vgal.tech.merge("angels-flare-stack", "angels-basic-chemistry")
@@ -62,11 +62,11 @@ for _, module in pairs(vgal.defines.modules) do
     end
 end
 
---- align ores (ore2 is normally a tier 2 ore)
+-- align ores (ore2 is normally a tier 2 ore)
 data.raw["resource"]["angels-ore2"].minable.mining_time = data.raw["resource"]["angels-ore3"].minable.mining_time
 data.raw["resource"]["angels-ore2"].autoplace = data.raw["resource"]["angels-ore1"].autoplace
 
---- fuel ---
+-- fuel tweaks
 data.raw["item"]["angels-coal-crushed"].fuel_value = "2.5MJ"
 data.raw["item"]["angels-solid-coke"].fuel_value = "3.5MJ"
 data.raw["item"]["angels-pellet-coke"].fuel_value = "18MJ"

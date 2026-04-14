@@ -11,3 +11,9 @@ require("overrides.angels-overrides-final-fixes")
 --         tech.unit.time = 5
 --     end
 -- end
+
+-- because this doesnt listen in subgroups and im not putting that in final fixes
+data.raw["item"]["chemical-plant"].subgroup = "vgal-angels-chemistry-machines"
+data.raw["item"]["chemical-plant"].order = "d"
+data.raw["item"]["oil-refinery"].subgroup = "vgal-angels-petrochem-machines"
+data.raw["item"]["oil-refinery"].order = "a"

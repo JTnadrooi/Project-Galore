@@ -29,15 +29,13 @@ vgal.data.extend({
         energy_required = 1.2,
         technology = "angels-stone-smelting-1",
         ingredients = {
-            { "angels-stone-crushed",           2 },
-            { "angels-milling-drum-lubricated", 1 },
+            { "angels-stone-crushed", 2 },
         },
         results = {
-            { "angels-solid-sand",   3 },
-            { "angels-milling-drum", 1 },
+            { "angels-solid-sand", 3 },
         },
         allow_productivity = false,
-        category = "angels-powderizing-1",
+        category = "angels-ore-refining-t1",
     },
     {
         name = "angels-stone-crushed-stone",

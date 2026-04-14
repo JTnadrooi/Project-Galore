@@ -52,8 +52,6 @@ for index, value in ipairs({
     data.raw["item"][value].subgroup = "vgal-angels-solid-concrete"
 end
 
-vgal.subgroup.set_for("oil-refinery", "vgal-angels-petrochem-machines")
-data.raw["item"]["oil-refinery"].order = "a"
 vgal.subgroup.set_for("angels-liquifier", "vgal-angels-chemistry-machines")
 data.raw["item"]["angels-liquifier"].order = "b"
 vgal.subgroup.set_for("angels-liquifier-2", "vgal-angels-chemistry-machines")

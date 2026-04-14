@@ -130,7 +130,23 @@ do
         { "steel-plate",        20 },
         { "electronic-circuit", 6 },
     })
-    -- petro
+    data.raw["recipe"]["angels-ore-processing-machine"].ingredients = vgal.build.table({
+        { "stone-brick",     15 },
+        { "iron-gear-wheel", 20 },
+        { "steel-plate",     10 },
+    })
+    data.raw["recipe"]["angels-pellet-press"].ingredients = vgal.build.table({
+        { "angels-concrete-brick", 12 },
+        { "iron-gear-wheel",       30 },
+        { "steel-plate",           12 },
+    })
+    data.raw["recipe"]["angels-powder-mixer"].ingredients = vgal.build.table({
+        { "stone-brick",     8 },
+        { "iron-gear-wheel", 10 },
+        { "steel-plate",     6 },
+    })
+
+    -- PETRO
     data.raw["recipe"]["angels-hydro-plant"].ingredients = vgal.build.table({
         { "pipe",               25 },
         { "iron-plate",         15 },
@@ -279,7 +295,14 @@ do
         { "steel-plate",           12 },
         { "advanced-circuit",      5 },
     })
-    -- bio
+    data.raw["recipe"]["angels-steam-cracker"].ingredients = vgal.build.table({
+        { "pipe",               10 },
+        { "iron-gear-wheel",    20 },
+        { "steel-plate",        25 },
+        { "electronic-circuit", 10 },
+    })
+
+    -- BIO
     data.raw["recipe"]["angels-crop-farm"].ingredients = vgal.build.table({
         { "stone-brick",        10 },
         { "steel-plate",        10 },
@@ -388,6 +411,8 @@ do
         { "pipe",                  30 },
         { "processing-unit",       5 },
     })
+
+    -- NUCLEAR
     data.raw["recipe"]["angels-burner-reactor"].ingredients = vgal.build.table({
         { "angels-concrete-brick", 500 },
         { "processing-unit",       500 },

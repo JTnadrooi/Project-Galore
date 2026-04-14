@@ -557,3 +557,4 @@ for _, metal in pairs(vgal.defines.metals) do
 end
 
 vgal.data.trim("angels-stone-from-crushed-stone")
+vgal.data.trim("angels-water-viscous-mud")

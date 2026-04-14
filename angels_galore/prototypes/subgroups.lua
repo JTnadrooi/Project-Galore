@@ -26,6 +26,8 @@ local subgroups = {
             "angels-burner-ore-crusher", "angels-ore-crusher", "angels-ore-sorting-facility",
             "angels-ore-sorting-facility-2",
             "angels-ore-floatation-cell", "angels-ore-leaching-plant", "angels-ore-refinery",
+            "angels-filtration-unit",
+            "angels-crystallizer",
         },
         reorder_entries = true,
     },
@@ -44,7 +46,8 @@ local subgroups = {
         tab = "production",
         order = "y-zb",
         entries = {
-            "offshore-pump", "angels-ground-water-pump", "angels-seafloor-pump", "angels-sea-pump",
+            "offshore-pump", "angels-ground-water-pump",
+            "angels-seafloor-pump", "angels-sea-pump", "angels-thermal-bore", "angels-thermal-extractor",
             "angels-washing-plant",
             "angels-electrolyser", "angels-electrolyser-2", "angels-electric-boiler", "angels-electric-boiler-2",
         }, -- vanilla items dont listen, fixed in final fixes.

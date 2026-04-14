@@ -107,6 +107,64 @@ local subgroups = {
         entries = { "vgal-agricultural-science-pack" },
         when_settings = { "vgal-science-packs" },
     },
+
+    -- NUCLEAR
+    {
+        name = "nuclear-processing",
+        tab = "angels-resource-refining",
+        order = --[[america]] "y-ya",
+        recipes = {
+            "uranium-processing",
+            "angels-thorium-processing",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "nuclear-reprocessing",
+        tab = "angels-resource-refining",
+        order = "y-yb",
+        recipes = {
+            "nuclear-fuel-reprocessing",
+            "angels-advanced-uranium-reprocessing",
+            "angels-mixed-oxide-reprocessing",
+            "angels-advanced-mixed-oxide-reprocessing",
+            "angels-thorium-fuel-cell-reprocessing",
+            "angels-advanced-thorium-fuel-cell-reprocessing",
+            "angels-deuterium-fuel-cell-reprocessing",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "nuclear-rocks",
+        tab = "angels-resource-refining",
+        order = "y-yc",
+        entries = {
+            "uranium-238",
+            "uranium-235",
+            "angels-neptunium-240",
+            "angels-plutonium-239",
+            "angels-americium-241",
+        },
+        recipes_that_need_clearing = {
+            "angels-plutonium-synthesis",
+            "angels-americium-regeneration",
+            "angels-plutonium-breeding",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "nuclear-cells",
+        tab = "angels-resource-refining",
+        order = "y-yd",
+        entries = {
+            "uranium-fuel-cell",
+            "angels-uranium-fuel-cell",
+            "angels-mixed-oxide-cell",
+            "angels-deuterium-fuel-cell",
+            "angels-thorium-fuel-cell",
+        },
+        reorder_entries = true,
+    },
 }
 
 for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel }) do
@@ -174,22 +232,39 @@ for _, metal in pairs(vgal.defines.metals) do
     )
 end
 
-for _, value in ipairs(subgroups) do
-    if value.when == nil then
-        value.when = true
+for _, subgroup in ipairs(subgroups) do
+    if subgroup.when == nil then
+        subgroup.when = true
     end
-    for _, whenItem in ipairs(value.when_settings or {}) do
+
+    for _, whenItem in ipairs(subgroup.when_settings or {}) do
         if not settings.startup[whenItem].value then
-            value.entries = {}
+            subgroup.entries = {}
         end
     end
-    if not value.when then
-        value.entries = {}
+
+    if not subgroup.when then
+        subgroup.entries = {}
     end
-    if value.reorder_entries then
-        for entry_index, entry_name in ipairs(value.entries) do
-            vgal.get_recipeable(entry_name).order = string.sub("abcdefghijklmnopqrstuvwxyz", entry_index, entry_index)
+
+    if subgroup.reorder_entries then
+        for i, entry_name in ipairs(subgroup.entries or {}) do
+            vgal.get_recipeable(entry_name).order = vgal.subgroup.order_from_number(i)
         end
     end
-    vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
+
+    vgal.subgroup.new("vgal-" .. subgroup.name, subgroup.entries or {}, subgroup.tab, subgroup.order)
+
+    for i, recipe_name in ipairs(subgroup.recipes or {}) do
+        local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+        recipe.subgroup = "vgal-" .. subgroup.name
+
+        if subgroup.reorder_entries then
+            recipe.order = vgal.subgroup.order_from_number(i)
+        end
+    end
+
+    for _, recipe_name in ipairs(subgroup.recipes_that_need_clearing or {}) do
+        vgal.subgroup.clean_recipe(recipe_name)
+    end
 end

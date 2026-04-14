@@ -61,3 +61,7 @@ data.raw["item"]["stone-brick"].order = "c"
 data.raw["recipe"]["stone-brick"].order = nil
 
 vgal.subgroup.clean_recipe("angels-solid-plastic")
+
+
+data.raw["recipe"]["angels-americium-regeneration"].main_product = "angels-plutonium-239"
+data.raw["recipe"]["angels-plutonium-breeding"].main_product = "angels-plutonium-239"

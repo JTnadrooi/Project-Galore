@@ -503,11 +503,12 @@ data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 1.5
 -- })
 -- vgal.data.trim("angels-concrete")
 
+-- minor angels-concrete tweak.
 vgal.recipe.multiply("angels-concrete", 1.25)
 data.raw["recipe"]["angels-concrete"].energy_required = 5
 
 -- misc balancing.
--- data.raw["recipe"]["angels-gas-methanol-from-wood"].energy_required = 3
+data.raw["recipe"]["angels-gas-methanol-from-wood"].show_amount_in_title = false
 data.raw["recipe"]["angels-ingot-copper-3"].energy_required = 3
 vgal.data.trim("angels-solid-salt-from-saline") -- bc of productivity
 data.raw["recipe"]["angels-solid-mud-landfill"].energy_required = 0.5
@@ -560,3 +561,19 @@ end
 
 vgal.data.trim("angels-stone-from-crushed-stone")
 vgal.data.trim("angels-water-viscous-mud")
+
+-- remove slag sources that aren't smelting (nuclear can stay though, I see slag being generated from that.)
+-- just electrolyzing as the alt angels sorting is not with us rn
+vgal.recipe.remove_result("angels-dirt-water-separation", "angels-slag")
+vgal.recipe.remove_result("angels-dirt-water-separation-2", "angels-slag")
+
+vgal.recipe.add_result("angels-dirt-water-separation", { "angels-solid-sand", 1 })
+vgal.recipe.add_result("angels-dirt-water-separation-2", { "angels-solid-sand", 1 })
+
+-- add slag to smelting, more stuff added -> more slag
+
+vgal.recipe.add_result("angels-anode-copper", { "angels-slag", 1 })
+vgal.recipe.add_result("angels-ingot-copper-2", { "angels-slag", 1 })
+
+vgal.recipe.add_result("angels-ingot-iron-2", { "angels-slag", 1 })
+vgal.recipe.add_result("angels-ingot-iron-3", { "angels-slag", nil, { amount_min = 1, amount_max = 2 } })

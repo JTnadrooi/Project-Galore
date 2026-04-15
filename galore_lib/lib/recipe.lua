@@ -524,3 +524,14 @@ function vgal.recipe.get_domain_or_all_pairs(domain_name)
     end -- THIS CANNOT BE DONE DIFFERENTLY.
     return iterator, dom, start_key
 end
+
+function vgal.recipe.use_recipe_locale(recipe_name, keep_show_amount_in_title)
+    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+
+    recipe.localised_name = { "recipe-name." .. recipe.name }
+    recipe.localised_description = { "recipe-description." .. recipe.name }
+
+    if not keep_show_amount_in_title then
+        recipe.show_amount_in_title = false
+    end
+end

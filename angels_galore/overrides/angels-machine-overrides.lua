@@ -176,10 +176,11 @@ data.raw["assembling-machine"]["angels-bio-arboretum-1"].crafting_speed = 1
 
 data.raw["mining-drill"]["angels-thermal-bore"].mining_speed = 1
 
--- add builtin prod, both to mimic space age as to make the farming a bit easier.
-for _, environment in ipairs(agal.defines.environments) do
-    data.raw["assembling-machine"][environment .. "-farm"].effect_receiver = { base_effect = { productivity = 0.5 } }
-end
+-- commentedbc: its not needed, although compost cust
+-- -- add builtin prod, both to mimic space age as to make the farming a bit easier.
+-- for _, environment in ipairs(agal.defines.environments) do
+--     data.raw["assembling-machine"][environment .. "-farm"].effect_receiver = { base_effect = { productivity = 0.5 } }
+-- end
 
 -- remove seed generators.
 vgal.data.deephide(data.raw["assembling-machine"]["angels-bio-generator-swamp-1"])

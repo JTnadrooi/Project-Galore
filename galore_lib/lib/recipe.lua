@@ -219,10 +219,9 @@ function vgal.recipe.remove_result(recipe_name, result_name)
         recipe.main_product = nil
     end
     if recipe.results then
-        local to_alter = recipe.results
-        for i, result in ipairs(to_alter) do
-            if result.name == result_name then
-                table.remove(to_alter, i)
+        for i = #recipe.results, 1, -1 do
+            if recipe.results[i].name == result_name then
+                table.remove(recipe.results, i)
             end
         end
     end
@@ -288,7 +287,7 @@ function vgal.recipe.add_result(recipe_name, new_result, result_type)
         if vgal.table.is_array(new_result) then
             table.insert(recipe.results, vgal.table.to_longform(new_result, result_type))
         else
-    table.insert(recipe.results, new_result)
+            table.insert(recipe.results, new_result)
         end
     end
 end

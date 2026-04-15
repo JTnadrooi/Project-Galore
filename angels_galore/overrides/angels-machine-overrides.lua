@@ -125,8 +125,8 @@ end
 
 -- more specific module slot fixes.
 data.raw["mining-drill"]["angels-thermal-extractor"].module_slots = 4
-data.raw["assembling-machine"]["angels-ore-sorting-facility"].module_slots = 3
-data.raw["assembling-machine"]["angels-ore-sorting-facility-2"].module_slots = 4
+data.raw["assembling-machine"]["angels-ore-sorting-facility"].module_slots = 2
+data.raw["assembling-machine"]["angels-ore-sorting-facility-2"].module_slots = 3
 data.raw["assembling-machine"]["angels-strand-casting-machine"].module_slots = 3
 data.raw["assembling-machine"]["angels-gas-refinery"].module_slots = 4
 data.raw["assembling-machine"]["angels-advanced-chemical-plant"].module_slots = 3

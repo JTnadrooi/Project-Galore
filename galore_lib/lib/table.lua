@@ -134,14 +134,16 @@ end
 ---@param t table|any[]
 function vgal.table.is_array(t)
     if type(t) ~= "table" then return false end
-    local count = 0
+    local max_index = 0
     for k, _ in pairs(t) do
         if type(k) ~= "number" then
             return false
         end
-        count = count + 1
+        if k > max_index then
+            max_index = k
+        end
     end
-    return count == #t
+    return max_index > 0
 end
 
 -- NOT LINQ::
@@ -213,10 +215,10 @@ end
 ---1. A single entry: `{name, amount[, extra_table]}`
 ---2. An array of entries: `{ {name, amount[, extra]}, ... }`
 ---
----@param entries vgal.ShorthandRecipeEntry | vgal.ShorthandRecipeEntry[]
+---@param data vgal.ShorthandRecipeEntry | vgal.ShorthandRecipeEntry[]
 ---@param entry_type string The type to assign to each longform entry.
 ---@return data.ProductPrototype[]|data.IngredientPrototype[]
-function vgal.table.to_longform(entries, entry_type)
+function vgal.table.to_longform(data, entry_type)
     local function to_single(entry)
         local new_entry = {
             type = entry_type,
@@ -231,20 +233,20 @@ function vgal.table.to_longform(entries, entry_type)
         return new_entry
     end
 
-    if next(entries) == nil then
+    if next(data) == nil then
         return {}
     end
 
-    if #entries > 0 and type(entries[1]) == "table" and entries[1][1] ~= nil then
+    if type(data[1]) == "table" and data[1][1] ~= nil then
         local transformed = {}
 
-        for _, item in ipairs(entries) do
+        for _, item in ipairs(data) do
             table.insert(transformed, to_single(item))
         end
 
         return transformed
     else
-        return to_single(entries)
+        return to_single(data)
     end
 end
 

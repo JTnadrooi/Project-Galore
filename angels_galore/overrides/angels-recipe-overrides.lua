@@ -473,11 +473,6 @@ vgal.recipe.set_result_amount("angels-liquid-plastic-bio-2", 150)
 --     data.raw["recipe"][metal.roll].energy_required = 1
 -- end
 
-data.raw["recipe"]["angels-wire-coil-copper"].energy_required = 2
-data.raw["recipe"]["angels-wire-coil-copper-2"].energy_required = 1
-vgal.recipe.multiply("angels-wire-coil-copper", 2)
-vgal.recipe.multiply("angels-wire-coil-copper-2", 2)
-
 -- remove hand recipes
 vgal.data.trim("angels-ore1-crushed-hand")
 vgal.data.trim("angels-ore3-crushed-hand")

@@ -463,14 +463,15 @@ vgal.recipe.multiply_results("angels-liquid-plastic-3", PLASTIC_MULTIPLIER)
 vgal.recipe.set_result_amount("angels-liquid-plastic-bio-1", 80)
 vgal.recipe.set_result_amount("angels-liquid-plastic-bio-2", 150)
 
--- add slag result to processing recipes.
-for _, metal in pairs(vgal.defines.metals) do
-    vgal.recipe.multiply(metal.processed, 1.5)
-    vgal.recipe.add_result(metal.processed, vgal.table.to_longform({ "angels-slag", 1, { probability = 0.5 } }, "item"))
+-- commentedbc: its a pain, and slag should be the result from smelting, not processing
+-- -- add slag result to processing recipes.
+-- for _, metal in pairs(vgal.defines.metals) do
+--     vgal.recipe.multiply(metal.processed, 1.5)
+--     vgal.recipe.add_result(metal.processed, vgal.table.to_longform({ "angels-slag", 1, { probability = 0.5 } }, "item"))
 
-    -- make roll casting faster.
-    data.raw["recipe"][metal.roll].energy_required = 1
-end
+--     -- make roll casting faster.
+--     data.raw["recipe"][metal.roll].energy_required = 1
+-- end
 
 data.raw["recipe"]["angels-wire-coil-copper"].energy_required = 2
 data.raw["recipe"]["angels-wire-coil-copper-2"].energy_required = 1

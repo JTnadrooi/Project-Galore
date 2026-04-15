@@ -269,8 +269,11 @@ function vgal.recipe.get_productivity_tech_name(main_product)
 end
 
 ---@param recipe_name string
----@param new_result data.ProductPrototype
-function vgal.recipe.add_result(recipe_name, new_result)
+---@param new_result data.ProductPrototype|string|vgal.ShorthandRecipeEntry
+---@param result_type "item"|"fluid"|nil Sets the result type. Only used when new_result is a string or shorthand recipe entry.
+function vgal.recipe.add_result(recipe_name, new_result, result_type)
+    result_type = result_type or "item"
+
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
     if not recipe.main_product then
         recipe.main_product = vgal.recipe.get_preferred_main_product(recipe)
@@ -278,7 +281,16 @@ function vgal.recipe.add_result(recipe_name, new_result)
 
     recipe.results = recipe.results or {}
 
+    if type(new_result) == "string" then
+        table.insert(recipe.results, { type = result_type, new_result, 1 })
+        return
+    elseif type(new_result) == "table" then
+        if vgal.table.is_array(new_result) then
+            table.insert(recipe.results, vgal.table.to_longform(new_result, result_type))
+        else
     table.insert(recipe.results, new_result)
+        end
+    end
 end
 
 ---@param recipe_name string

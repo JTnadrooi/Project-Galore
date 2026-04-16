@@ -6,7 +6,7 @@ local function throw_compat_error(neededGalore, with)
 end
 
 throw_compat_error({ "space_age_galore", "Space Age Galore" }, { "space-age", "the \"Space Age\" DLC" })
-throw_compat_error({ "angels_galore", "Angels Galore" }, { "angelsrefining", "Angel's mods" })
+throw_compat_error({ "angels_galore", "Angels Galore" }, { "angelsbioprocessing", "Angel's mods" })
 
 require("overrides.overrides")
 

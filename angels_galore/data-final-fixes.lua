@@ -51,7 +51,9 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel
 end
 
 data.raw["item"]["concrete"].order = "b"
-
+data.raw["item"]["hazard-concrete"].order = "c"
+data.raw["item"]["refined-concrete"].order = "d"
+data.raw["item"]["refined-hazard-concrete"].order = "e"
 
 data.raw["recipe"]["nuclear-fuel-reprocessing"].subgroup = "vgal-nuclear-reprocessing"
 data.raw["recipe"]["nuclear-fuel-reprocessing"].order = "a"

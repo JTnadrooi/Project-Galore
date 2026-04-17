@@ -541,9 +541,13 @@ vgal.recipe.add_result("angels-dirt-water-separation", { "angels-solid-sand", 1 
 vgal.recipe.add_result("angels-dirt-water-separation-2", { "angels-solid-sand", 1 })
 
 -- add slag to smelting, more stuff added -> more slag
-
 vgal.recipe.add_result("angels-anode-copper", { "angels-slag", 1 })
 vgal.recipe.add_result("angels-ingot-copper-2", { "angels-slag", 1 })
 
 vgal.recipe.add_result("angels-ingot-iron-2", { "angels-slag", 1 })
 vgal.recipe.add_result("angels-ingot-iron-3", { "angels-slag", nil, { amount_min = 1, amount_max = 2 } })
+
+-- add clay requirement to pellet pressing
+for _, metal in pairs(vgal.defines.metals) do
+    vgal.recipe.add_ingredient(metal.pellet, { "angels-solid-clay", 1 })
+end

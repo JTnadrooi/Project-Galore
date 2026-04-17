@@ -229,6 +229,7 @@ local subgroups = {
             "stone",
             "angels-stone-crushed",
             "angels-solid-sand",
+            "angels-solid-clay",
         },
         reorder_entries = true,
     },

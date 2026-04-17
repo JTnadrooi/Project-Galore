@@ -210,3 +210,7 @@ vgal.data.trim("angels-sea-pump")
 vgal.data.deephide(data.raw["mining-drill"]["angels-thermal-extractor"])
 vgal.data.deephide(data.raw["item"]["angels-thermal-extractor"])
 vgal.data.trim("angels-thermal-extractor")
+
+-- increase thermal water extrator (t1) electricity usage
+-- og: 90kw, but still, this is only like 4 radars.
+data.raw["mining-drill"]["angels-thermal-bore"].energy_usage = "1200kW"

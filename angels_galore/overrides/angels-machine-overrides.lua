@@ -199,3 +199,14 @@ vgal.data.trim("angels-bio-generator-desert-1")
 --         vgal.data.trim("angels-sintering-oven-" .. i)
 --     end
 -- end
+
+-- remove t2 offshore pump: sea pump (not viscous mud pump)
+vgal.data.deephide(data.raw["mining-drill"]["angels-sea-pump"])
+vgal.data.deephide(data.raw["offshore-pump"]["angels-sea-pump-placeable"])
+vgal.data.deephide(data.raw["item"]["angels-sea-pump"])
+vgal.data.trim("angels-sea-pump")
+
+-- remove t2 thermal water extractor
+vgal.data.deephide(data.raw["mining-drill"]["angels-thermal-extractor"])
+vgal.data.deephide(data.raw["item"]["angels-thermal-extractor"])
+vgal.data.trim("angels-thermal-extractor")

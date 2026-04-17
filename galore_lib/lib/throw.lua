@@ -46,3 +46,7 @@ function vgal.throw.if_param_nil(param_value, param_name)
         end
     end
 end
+
+function vgal.throw.not_implemented()
+    error("Function not implemented.")
+end

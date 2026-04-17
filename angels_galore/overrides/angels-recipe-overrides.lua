@@ -1,34 +1,4 @@
-data.raw.recipe["angels-catalyst-metal-yellow"].ingredients = vgal.build.table({
-    { "angels-catalyst-metal-carrier", 10 },
-    { "angels-ore2",                   1 },
-})
-data.raw.recipe["angels-catalyst-metal-blue"].ingredients = vgal.build.table({
-    { "angels-catalyst-metal-carrier", 10 },
-    { "angels-ore3",                   1 },
-})
 
--- upgrade kit removal.
-for _, environment in ipairs(agal.defines.environments) do
-    vgal.recipe.deephide(environment .. "-upgrade")
-    local building_recipe = data.raw["recipe"][environment .. "-farm"]
-    for i, ingredient in ipairs(building_recipe.ingredients) do
-        if ingredient.name == (environment .. "-upgrade") then
-            table.remove(building_recipe.ingredients, i)
-            break
-        end
-    end
-end
-
--- brick removal (clay/reinforced)
-vgal.data.trim("angels-reinforced-concrete-brick")
-vgal.data.trim("angels-clay-brick")
-vgal.data.trim("angels-clay-brick-raw")
-vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
-    { type = "item", name = "angels-concrete-brick", amount = 1 })
-vgal.recipe.all.replace_ingredient("clay-brick",
-    { type = "item", name = "stone-brick", amount = 1 })
-vgal.data.deephide(data.raw["item"]["angels-solid-clay"])
-vgal.data.trim("angels-solid-clay")
 
 -- casting recipe tweaks
 for _, metal in pairs(vgal.defines.metals) do

@@ -206,10 +206,12 @@ vgal.data.deephide(data.raw["offshore-pump"]["angels-sea-pump-placeable"])
 vgal.data.deephide(data.raw["item"]["angels-sea-pump"])
 vgal.data.trim("angels-sea-pump")
 
--- remove t2 thermal water extractor
+-- remove t2 thermal water extractor (and copy locale)
 vgal.data.deephide(data.raw["mining-drill"]["angels-thermal-extractor"])
 vgal.data.deephide(data.raw["item"]["angels-thermal-extractor"])
 vgal.data.trim("angels-thermal-extractor")
+data.raw["mining-drill"]["angels-thermal-bore"].localised_description = { "entity-description.angels-thermal-extractor" }
+data.raw["item"]["angels-thermal-bore"].localised_description = { "entity-description.angels-thermal-extractor" }
 
 -- increase thermal water extrator (t1) electricity usage
 -- og: 90kw, but still, this is only like 4 radars.

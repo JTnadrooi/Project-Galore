@@ -131,6 +131,9 @@ local subgroups = {
             "landfill", "concrete", "hazard-concrete",
             "refined-concrete", "refined-concrete", "angels-solid-limestone", "angels-solid-lime",
         },
+        recipes_that_need_cleaning = {
+            "angels-concrete",
+        },
         reorder_entries = true,
     }, -- all of these.. they don't.. they don't listen.
 

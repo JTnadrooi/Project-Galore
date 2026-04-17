@@ -64,6 +64,7 @@ data.raw["recipe"]["angels-americium-regeneration"].main_product = "angels-pluto
 data.raw["recipe"]["angels-plutonium-breeding"].main_product = "angels-plutonium-239"
 data.raw["recipe"]["angels-electrode-used"].main_product = "angels-electrode"
 
-
 data.raw["recipe"]["angels-solid-geodes"].order = "-z"
 data.raw["recipe"]["angels-solid-geodes"].subgroup = "angels-geode-processing-2"
+
+data.raw["recipe"]["angels-concrete"].order = "bb"

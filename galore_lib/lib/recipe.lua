@@ -340,6 +340,28 @@ function vgal.recipe.add_ingredient(recipe_name, ingredient)
 end
 
 ---@param recipe_name string
+---@param new_ingredient data.IngredientPrototype|string|vgal.ShorthandRecipeEntry
+---@param ingredient_type "item"|"fluid"|nil Sets the ingredient type. Only used when new_ingredient is a string or shorthand recipe entry.
+function vgal.recipe.add_ingredient(recipe_name, new_ingredient, ingredient_type)
+    ingredient_type = ingredient_type or "item"
+
+    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+
+    recipe.ingredients = recipe.ingredients or {}
+
+    if type(new_ingredient) == "string" then
+        table.insert(recipe.ingredients, { type = ingredient_type, new_ingredient, 1 })
+        return
+    elseif type(new_ingredient) == "table" then
+        if vgal.table.is_array(new_ingredient) then
+            table.insert(recipe.ingredients, vgal.table.to_longform(new_ingredient, ingredient_type))
+        else
+            table.insert(recipe.ingredients, new_ingredient)
+        end
+    end
+end
+
+---@param recipe_name string
 function vgal.recipe.clear_icons(recipe_name)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
     recipe.icon = nil

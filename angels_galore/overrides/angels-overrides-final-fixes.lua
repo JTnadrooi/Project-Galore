@@ -17,8 +17,7 @@ local subgroups_to_clean = {
 }
 for _, recipe in pairs(data.raw["recipe"]) do
     if subgroups_to_clean[recipe.subgroup] then
-        recipe.order = nil
-        recipe.subgroup = nil
+        vgal.subgroup.clean(recipe)
     end
 end
 

@@ -555,3 +555,10 @@ end
 -- commentedbc: just one machine for 1 yellow belt seems a bit to fast
 -- -- increase stone to mineral water speed (og: 1)
 -- data.raw["recipe"]["angels-water-mineralized"].energy_required = 0.5
+
+-- make angels-stone-crushed recipe default stone crushing recipe (from stone)
+data.raw["recipe"]["angels-stone-crushed"].ingredients = vgal.build.table({
+    { "stone", 2 },
+})
+data.raw["recipe"]["angels-stone-crushed"].enabled = true
+vgal.tech.remove_recipe("angels-ore-crushing", "angels-stone-crushed")

@@ -1,27 +1,24 @@
 vgal.data.extend({
     {
-        name = "stone-angels-stone-crushed",
+        name = "angels-slag-angels-stone-crushed", -- the default "angels-stone-crushed" recipe now requires stone
         prefix = "vgal",
-        show_amount_in_title = false,
         icons = vgal.icon.register {
             vgal.icon.get("angels-stone-crushed"),
-            -- vgal.icon.get_in("stone"),
+            vgal.icon.get_in("angels-slag"),
         },
         energy_required = 1,
-        enabled = true,
+        technology = "angels-ore-crushing",
         ingredients = {
-            { "stone", 2 },
+            { "angels-slag", 1 },
         },
         results = {
             { "angels-stone-crushed", 2 },
         },
-        allow_productivity = false,
         category = "angels-ore-refining-t1",
     },
     {
         name = "angels-stone-crushed-angels-solid-sand",
         prefix = "vgal",
-        show_amount_in_title = false,
         icons = vgal.icon.register {
             vgal.icon.get("angels-solid-sand"),
             vgal.icon.get_in("angels-stone-crushed"),
@@ -34,13 +31,11 @@ vgal.data.extend({
         results = {
             { "angels-solid-sand", 3 },
         },
-        allow_productivity = false,
         category = "angels-ore-refining-t1",
     },
     {
         name = "angels-stone-crushed-stone",
         prefix = "vgal",
-        show_amount_in_title = false,
         icons = vgal.icon.register {
             vgal.icon.get("stone"),
             -- vgal.icon.get_in("angels-stone-crushed"),
@@ -59,7 +54,6 @@ vgal.data.extend({
     {
         name = "angels-solid-sand-angels-solid-mud",
         prefix = "vgal",
-        show_amount_in_title = false,
         icons = vgal.icon.register {
             vgal.icon.get("angels-solid-mud"),
             -- vgal.icon.get_in("angels-solid-sand"),

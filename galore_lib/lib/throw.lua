@@ -37,7 +37,7 @@ function vgal.throw.if_fluid_not_found(fluid_name)
     return fluid
 end
 
----@param param_value any
+---@param param_value any?
 ---@param param_name string
 function vgal.throw.if_param_nil(param_value, param_name)
     if param_value == nil then

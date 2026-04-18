@@ -1,5 +1,3 @@
-
-
 -- casting recipe tweaks
 for _, metal in pairs(vgal.defines.metals) do
     data.raw.recipe[metal.pebbles .. "-smelting"].energy_required = 6.4
@@ -521,6 +519,8 @@ for _, module in ipairs(vgal.defines.modules) do
 end
 
 -- remove the stone uncrushing recipe + handle consequences
+vgal.data.trim("angels-stone-from-crushed-stone")
+
 for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.crushed].results = vgal.build.table({
         { metal.crushed,          2 },
@@ -529,7 +529,7 @@ for _, metal in pairs(vgal.defines.metals) do
     })
 end
 
-vgal.data.trim("angels-stone-from-crushed-stone")
+-- remove vsicous water recipe as it will break with prod
 vgal.data.trim("angels-water-viscous-mud")
 
 -- remove slag sources that aren't smelting (nuclear can stay though, I see slag being generated from that.)
@@ -551,3 +551,7 @@ vgal.recipe.add_result("angels-ingot-iron-3", { "angels-slag", nil, { amount_min
 for _, metal in pairs(vgal.defines.metals) do
     vgal.recipe.add_ingredient(metal.pellet, { "angels-solid-clay", 1 })
 end
+
+-- commentedbc: just one machine for 1 yellow belt seems a bit to fast
+-- -- increase stone to mineral water speed (og: 1)
+-- data.raw["recipe"]["angels-water-mineralized"].energy_required = 0.5

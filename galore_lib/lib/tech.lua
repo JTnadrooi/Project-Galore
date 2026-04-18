@@ -273,3 +273,49 @@ function vgal.tech.get_units_worth(units)
 
     return worth
 end
+
+---@return data.TechnologyUnit
+function vgal.tech.get_default_unit()
+    return { time = 30, ingredients = {} }
+end
+
+---@param tech_name string
+---@param unit_name string
+---@param unit_count integer?
+function vgal.tech.add_unit(tech_name, unit_name, unit_count)
+    unit_count = unit_count or 1
+
+    if not data.raw["tool"][unit_name] then
+        error("Tool prototype not found: " .. unit_name)
+    end
+
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    if tech.research_trigger then
+        tech.research_trigger = nil
+        tech.unit = vgal.tech.get_default_unit()
+    end
+
+    -- commentedbc: I want to know when something is wrong asap
+    -- tech.unit.ingredients = tech.unit.ingredients or {} -- it would be corrupt but whatever, safety
+
+    table.insert(tech.unit.ingredients, { unit_name, unit_count })
+end
+
+---@param tech_name string
+---@param unit_count integer
+function vgal.tech.set_unit_count(tech_name, unit_count)
+    vgal.throw.if_param_nil(unit_count, "unit_count")
+
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    if tech.research_trigger then
+        error("Cannot set unit count for trigger tech: " .. tech_name)
+    end
+
+    for _, ingredient in ipairs(tech.unit.ingredients) do
+        ingredient[2] = 1
+    end
+
+    tech.unit.count = unit_count
+end

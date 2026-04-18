@@ -400,6 +400,23 @@ do
         { "steel-plate",           350 },
         { "copper-plate",          400 },
     })
+
+    -- STORAGE
+    data.raw["recipe"]["angels-storage-tank-1"].ingredients = vgal.build.table({
+        { "pipe",        50 },
+        { "steel-plate", 15 },
+        { "stone-brick", 12 },
+    })
+    data.raw["recipe"]["angels-storage-tank-2"].ingredients = vgal.build.table({
+        { "pipe",        30 },
+        { "steel-plate", 12 },
+        { "stone-brick", 10 },
+    })
+    data.raw["recipe"]["angels-storage-tank-3"].ingredients = vgal.build.table({
+        { "iron-plate",  10 },
+        { "steel-plate", 5 },
+        { "stone-brick", 5 },
+    })
 end
 
 -- use ore2 for more distinct color, but copy rest

@@ -9,6 +9,10 @@ data.raw.recipe["angels-catalyst-metal-blue"].ingredients = vgal.build.table({
     { "angels-ore3",                   1 },
 })
 
+-- also fix their tech localtions
+vgal.tech.move_recipe("angels-advanced-chemistry-5", "angels-basic-chemistry-3", "angels-catalyst-metal-yellow")
+vgal.tech.move_recipe("angels-advanced-chemistry-3", "angels-basic-chemistry-3", "angels-catalyst-metal-blue")
+
 -- upgrade kit removal.
 for _, environment in ipairs(agal.defines.environments) do
     vgal.recipe.deephide(environment .. "-upgrade")

@@ -51,8 +51,8 @@ vgal.data.extend({
         energy_required = 5,
         technology = "vgal-agricultural-science-pack",
         ingredients = {
-            { "angels-cellulose-fiber", 2 },
-            { "angels-solid-soil",      1 },
+            { "angels-cellulose-fiber",  2 },
+            { "angels-solid-fertilizer", 1 },
         },
         results = {
             { "vgal-agricultural-science-pack", 1 },

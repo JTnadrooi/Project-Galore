@@ -56,6 +56,28 @@ vgal.data.extend({
         allow_productivity = false,
         category = "smelting",
     },
+    {
+        name = "angels-solid-sand-angels-solid-mud",
+        prefix = "vgal",
+        show_amount_in_title = false,
+        icons = vgal.icon.register {
+            vgal.icon.get("angels-solid-mud"),
+            -- vgal.icon.get_in("angels-solid-sand"),
+        },
+        energy_required = 2,
+        technology = "angels-stone-smelting-1",
+        ingredients = {
+            { "angels-solid-sand", 5 },
+            { "angels-solid-clay", 1 },
+        },
+        fluid_ingredients = {
+            { "angels-water-mineralized", 20 },
+        },
+        results = {
+            { "angels-solid-mud", 5 },
+        },
+        category = "crafting-with-fluid",
+    },
 }, {
     type = "recipe",
 })

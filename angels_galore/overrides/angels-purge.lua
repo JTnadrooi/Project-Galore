@@ -232,6 +232,11 @@ vgal.data.deephide(data.raw["item"]["angels-temperate-tree"])
 vgal.data.deephide(data.raw["item"]["angels-swamp-tree"])
 vgal.data.deephide(data.raw["item"]["angels-desert-tree"])
 
+-- remove farm upgrade items
+for _, environment in ipairs(agal.defines.environments) do
+    vgal.data.deephide(data.raw["item"][environment .. "-upgrade"])
+end
+
 vgal.recipe.replace_ingredient("angels-bio-generator-temperate-1", "angels-temperate-tree", "angels-solid-tree")
 
 for _, environment in ipairs({ "temperate", "swamp", "desert" }) do

@@ -70,7 +70,7 @@ vgal.data.extend({
         results = {
             { "angels-solid-mud", 5 },
         },
-        category = "crafting-with-fluid",
+        category = "angels-liquifying",
     },
 }, {
     type = "recipe",

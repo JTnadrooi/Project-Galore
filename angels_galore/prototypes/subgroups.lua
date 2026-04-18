@@ -228,8 +228,17 @@ local subgroups = {
         entries = {
             "stone",
             "angels-stone-crushed",
-            "angels-solid-sand",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "sediments",
+        tab = "angels-smelting",
+        order = "y-ye",
+        entries = {
+            "angels-solid-mud",
             "angels-solid-clay",
+            "angels-solid-sand",
         },
         reorder_entries = true,
     },

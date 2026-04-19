@@ -219,7 +219,7 @@ for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
 end
 
 -- TECH FIXES
--- Add vgal-agricultural-science-pack as unit to technologies that require the "vgal-agricultural-science-pack" tech.
+-- Add vgal-biologic-science-pack as unit to technologies that require the "vgal-biologic-science-pack" tech.
 local cache = {}
 
 local function has_prerequisite_recursive(tech_name, target, visited)
@@ -251,9 +251,9 @@ local function has_prerequisite_recursive(tech_name, target, visited)
 end
 
 for tech_name, tech in pairs(data.raw["technology"]) do
-    if has_prerequisite_recursive(tech_name, "vgal-agricultural-science-pack") then
+    if has_prerequisite_recursive(tech_name, "vgal-biologic-science-pack") then
         if tech.unit and tech.unit.ingredients then
-            table.insert(tech.unit.ingredients, { "vgal-agricultural-science-pack", 1 })
+            table.insert(tech.unit.ingredients, { "vgal-biologic-science-pack", 1 })
         end
     end
 end

@@ -4,9 +4,9 @@ local item_tints = require("__base__.prototypes.item-tints")
 data:extend({
     {
         type = "tool",
-        name = "vgal-agricultural-science-pack",
+        name = "vgal-biologic-science-pack",
         localised_description = { "item-description.science-pack" },
-        icon = "__angels_galore__/graphics/icons/agricultural-science-pack.png",
+        icon = "__angels_galore__/graphics/icons/biologic-science-pack.png",
         subgroup = "science-pack", -- may get changed in subgroups
         color = { r = 230, g = 247, b = 112 },
         order = "cb",
@@ -25,10 +25,10 @@ data:extend({
     },
     {
         type = "technology",
-        name = "vgal-agricultural-science-pack",
-        localised_name = { "technology-name.vgal-agricultural-science-pack" },
-        localised_description = { "technology-description.vgal-agricultural-science-pack" },
-        icon = "__angels_galore__/graphics/technology/agricultural-science-pack.png",
+        name = "vgal-biologic-science-pack",
+        localised_name = { "technology-name.vgal-biologic-science-pack" },
+        localised_description = { "technology-description.vgal-biologic-science-pack" },
+        icon = "__angels_galore__/graphics/technology/biologic-science-pack.png",
         icon_size = 256,
         effects = {}, -- recipe gets added on vgal.data.extend.
         prerequisites = { "angels-composting", "logistic-science-pack" },
@@ -43,19 +43,19 @@ data:extend({
 
 vgal.data.extend({
     {
-        name = "agricultural-science-pack",
+        name = "biologic-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("vgal-agricultural-science-pack"),
+            vgal.icon.get("vgal-biologic-science-pack"),
         },
         energy_required = 5,
-        technology = "vgal-agricultural-science-pack",
+        technology = "vgal-biologic-science-pack",
         ingredients = {
             { "angels-cellulose-fiber",  2 },
             { "angels-solid-fertilizer", 1 },
         },
         results = {
-            { "vgal-agricultural-science-pack", 1 },
+            { "vgal-biologic-science-pack", 1 },
         },
         category = "crafting",
     },
@@ -64,5 +64,5 @@ vgal.data.extend({
 })
 
 for _, lab in pairs(data.raw["lab"]) do
-    table.insert(lab.inputs, "vgal-agricultural-science-pack")
+    table.insert(lab.inputs, "vgal-biologic-science-pack")
 end

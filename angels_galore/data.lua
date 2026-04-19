@@ -1,6 +1,6 @@
 require("lib.agal")
 
-require("prototypes.items.agricultural-science-pack")
+require("prototypes.items.biologic-science-pack")
 
 require("prototypes.subgroups")
 

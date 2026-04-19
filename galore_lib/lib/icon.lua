@@ -165,6 +165,16 @@ function vgal.icon.get(key_name, icon_source)
         end
     end
     if icon_source == "molecule" and mods["angelspetrochem"] then
+        if key_name == "acetic-acid" or key_name == "acetic-anhydride" or key_name == "celluslose-acetate" or key_name == "ethanol" or key_name == "propionic-acid" then
+            return {
+                {
+                    icon = "__angelsbioprocessinggraphics__/graphics/icons/molecule-" .. key_name .. ".png",
+                    icon_size = 72,
+                    -- scale = (72 / 64) * 1.8,
+                }
+            }
+        end
+
         return {
             {
                 icon = "__angelspetrochemgraphics__/graphics/icons/molecules/" .. key_name .. ".png",

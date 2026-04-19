@@ -490,7 +490,7 @@ data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 2
 -- })
 -- vgal.data.trim("angels-concrete")
 
--- minor angels-concrete tweak.
+-- minor angels-concrete tweak
 vgal.recipe.multiply("angels-concrete", 1.25)
 data.raw["recipe"]["angels-concrete"].energy_required = 5
 

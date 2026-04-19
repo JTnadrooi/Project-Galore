@@ -230,6 +230,16 @@ vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
 vgal.recipe.all.replace_ingredient("clay-brick",
     { type = "item", name = "stone-brick", amount = 1 })
 
+-- remove liquid plastic as well as liquid plastic recipes (replaced by vgal)
+-- why? they dont fit well with the plastic buff needed to equalize with vgal/sagal
+vgal.data.deephide(data.raw["fluid"]["angels-liquid-plastic"])
+vgal.data.trim("angels-solid-plastic")
+vgal.data.trim("angels-liquid-plastic")
+vgal.data.trim("angels-liquid-plastic-2")
+vgal.data.trim("angels-liquid-plastic-3")
+vgal.data.trim("angels-liquid-plastic-bio-1")
+vgal.data.trim("angels-liquid-plastic-bio-2")
+
 -- remove extra trees
 vgal.data.trim("angels-tree-arboretum-0")
 vgal.data.deephide(data.raw["item"]["angels-temperate-tree"])

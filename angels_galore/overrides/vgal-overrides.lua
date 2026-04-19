@@ -5,6 +5,7 @@ vgal.data.trim("vgal-coal-sulfur")
 vgal.data.trim("vgal-steam-sulfur")
 vgal.data.trim("vgal-steam-concrete")
 vgal.data.trim("vgal-iron-stick-concrete")
+vgal.data.trim("vgal-copper-cable-plastic-bar")
 
 -- update savable recipes
 data.raw["recipe"]["vgal-coal-uranium-235-nuclear-fuel"].order = "j"
@@ -18,20 +19,6 @@ data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].icons = vgal.icon.register
     vgal.icon.get("nuclear-fuel"),
     vgal.icon.get_in("angels-solid-carbon"),
 }
-
-data.raw.recipe["vgal-copper-cable-plastic-bar"].ingredients = vgal.build.table({
-    { "copper-cable", 5 },
-}, {
-    { "angels-liquid-plastic", 30 },
-})
-
-data.raw.recipe["vgal-copper-cable-plastic-bar"].results = vgal.build.table({
-    { "plastic-bar", 5 },
-})
-
-data.raw.recipe["vgal-copper-cable-plastic-bar"].energy_required = 5
-data.raw.recipe["vgal-copper-cable-plastic-bar"].category = "crafting-with-fluid"
-data.raw.recipe["vgal-copper-cable-plastic-bar"].allow_productivity = false
 
 data.raw["recipe"]["vgal-steel-plate-iron-stick"].icons = vgal.icon.register {
     vgal.icon.get("iron-stick"),

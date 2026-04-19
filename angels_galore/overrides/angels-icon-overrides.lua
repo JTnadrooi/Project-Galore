@@ -18,7 +18,6 @@ data.raw.recipe["angels-solid-soil-alternative"].icons = vgal.icon.register({
 for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.angels_plate_recipe_name].icons = vgal.icon.register({
         vgal.icon.get(metal.plate),
-        vgal.icon.get_in(metal.molten),
     })
     data.raw["recipe"][metal.plate].icons = vgal.icon.register({
         vgal.icon.get(metal.plate),
@@ -26,7 +25,6 @@ for _, metal in pairs(vgal.defines.metals) do
     })
     data.raw.recipe[metal.processed].icons = vgal.icon.register({
         vgal.icon.get(metal.processed),
-        vgal.icon.get_in(metal.ore),
     })
 end
 
@@ -38,4 +36,8 @@ data.raw["recipe"]["copper-cable"].icons = vgal.icon.register({
 data.raw["recipe"]["angels-plate-steel"].icons = vgal.icon.register({
     vgal.icon.get("steel-plate"),
     vgal.icon.get_in("angels-liquid-molten-steel"),
+})
+
+data.raw["recipe"]["angels-stone-crushed"].icons = vgal.icon.register({
+    vgal.icon.get("angels-stone-crushed"),
 })

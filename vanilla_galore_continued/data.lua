@@ -1,5 +1,5 @@
 vgal.throw.error_if_missing_galore({ "space_age_galore", "Space Age Galore" }, { "space-age", "the \"Space Age\" DLC" })
-vgal.throw.error_if_missing_galore({ "angels_galore", "Angels Galore" }, { "angelsbioprocessing", "Angel's mods" })
+vgal.throw.error_if_missing_galore({ "angels_galore", "Angel's Galore" }, { "angelsbioprocessing", "Angel's mods" })
 
 require("overrides.overrides")
 

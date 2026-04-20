@@ -494,7 +494,22 @@ data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 2
 vgal.recipe.multiply("angels-concrete", 1.25)
 data.raw["recipe"]["angels-concrete"].energy_required = 5
 
--- misc balancing.
+-- reduce crafting times as galore severelly reduces some machine speeds
+-- liquifier
+data.raw["recipe"]["angels-gas-methanol-from-wood"].energy_required = 5
+data.raw["recipe"]["angels-gas-ammonia-from-blue-fiber"].energy_required = 5
+data.raw["recipe"]["angels-solid-coke-sulfur"].energy_required = 2
+data.raw["recipe"]["angels-gas-carbon-monoxide"].energy_required = 0.5
+
+-- gas refinery
+-- all are half duration
+data.raw["recipe"]["angels-gas-refining"].energy_required = 3
+data.raw["recipe"]["angels-gas-fractioning"].energy_required = 3
+data.raw["recipe"]["angels-nutrients-refining-1"].energy_required = 2
+data.raw["recipe"]["angels-nutrients-refining-2"].energy_required = 2
+data.raw["recipe"]["angels-nutrients-refining-3"].energy_required = 2
+
+-- show_amount_in_title overrides (might move to locale overrides.lua)
 data.raw["recipe"]["angels-gas-methanol-from-wood"].show_amount_in_title = false
 data.raw["recipe"]["angels-ingot-copper-3"].energy_required = 3
 vgal.data.trim("angels-solid-salt-from-saline") -- bc of productivity

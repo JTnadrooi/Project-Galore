@@ -14,3 +14,5 @@ data.raw["pipe-to-ground"]["pipe-to-ground"].fluid_box.pipe_connections[2].max_u
 for _, inserter in pairs(data.raw["inserter"]) do
     inserter.stack_size_bonus = (inserter.stack_size_bonus or 0) + 2
 end
+
+vgal.recipe.replace_ingredient("explosives", "water", "angels-water-purified")

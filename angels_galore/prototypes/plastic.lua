@@ -15,6 +15,7 @@ vgal.data.extend({
             { "plastic-bar", 5 },
         },
         category = "angels-liquifying",
+        order = "aa"
     },
     {
         name = "angels-liquid-naphtha-plastic-bar",
@@ -33,6 +34,7 @@ vgal.data.extend({
             { "plastic-bar", 10 },
         },
         category = "chemistry",
+        order = "ab"
     },
     {
         name = "angels-liquid-phenol-plastic-bar",
@@ -51,9 +53,10 @@ vgal.data.extend({
             { "plastic-bar", 6 },
         },
         category = "chemistry",
+        order = "ac"
     },
     {
-        name = "angels-liquid-cellulose-acetate-mixture",
+        name = "angels-liquid-cellulose-acetate-mixture-plastic-bar",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("plastic-bar"),
@@ -69,9 +72,10 @@ vgal.data.extend({
             { "plastic-bar", 8 },
         },
         category = "chemistry",
+        order = "ba"
     },
     {
-        name = "angels-liquid-propionic-acid",
+        name = "angels-liquid-propionic-acid-plastic-bar",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("plastic-bar"),
@@ -91,6 +95,7 @@ vgal.data.extend({
             { "plastic-bar", 12 },
         },
         category = "chemistry",
+        order = "bb"
     },
 }, {
     type = "recipe",

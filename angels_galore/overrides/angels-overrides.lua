@@ -84,6 +84,7 @@ data.raw["item"]["angels-red-cellulose-fiber"].fuel_category = "chemical"
 data.raw["item"]["angels-red-cellulose-fiber"].fuel_value = "0.25MJ"
 data.raw["item"]["angels-blue-cellulose-fiber"].fuel_category = "chemical"
 data.raw["item"]["angels-blue-cellulose-fiber"].fuel_value = "3MJ"
+data.raw["item"]["angels-cellulose-fiber"].fuel_value = "0.5MJ" -- from 1
 
 -- vgal.recipe.unhide("thermal-water-purification")
 -- vgal.tech.add_recipe("vgal-hydrochloric-intermediates", "thermal-water-purification")

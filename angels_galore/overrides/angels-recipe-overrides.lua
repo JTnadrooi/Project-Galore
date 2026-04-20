@@ -511,9 +511,13 @@ data.raw["recipe"]["angels-nutrients-refining-3"].energy_required = 2
 
 -- show_amount_in_title overrides (might move to locale overrides.lua)
 data.raw["recipe"]["angels-gas-methanol-from-wood"].show_amount_in_title = false
+
+-- misc balancing.
 data.raw["recipe"]["angels-ingot-copper-3"].energy_required = 3
-vgal.data.trim("angels-solid-salt-from-saline") -- bc of productivity
-data.raw["recipe"]["angels-solid-mud-landfill"].energy_required = 0.5
+vgal.data.trim("angels-solid-salt-from-saline")                       -- bc of productivity
+data.raw["recipe"]["angels-solid-mud-landfill"].energy_required = 0.5 -- to make it inline with vanilla landfill
+vgal.recipe.set_result_amount("angels-cellulose-fiber-raw-wood", 6)   -- cellulose fiber fuel value has been reduced as well
+vgal.recipe.set_ingredient_amount("angels-wood-pellets", 8)           -- from 12. 1.5 coal != 9 cellulose fiber worth
 
 -- make crushing recipes early early game.
 for _, ore_index in ipairs(agal.defines.ore_indexes) do

@@ -48,10 +48,11 @@ end
 
 ---@param composite_icon data.IconData[]
 ---@param scale number?
----@param shift data.Vector.struct|{[1]: number, [2]: number}
+---@param shift data.Vector.struct|{[1]: number, [2]: number}?
 ---@return data.IconData[]
 function vgal.icon.shift(composite_icon, scale, shift)
     scale = scale or 1
+    shift = shift or { 0, 0 }
     local icons = {}
     local icon_normalised = vgal.icon.normalise_composite_scales(composite_icon) -- copies
     for _, icon2 in ipairs(icon_normalised) do

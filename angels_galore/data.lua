@@ -1,5 +1,8 @@
 require("lib.agal")
 
+vgal.throw.error_if_missing_galore({ "angels_space_age_galore", "Angel's+Space Age Galore" },
+    { "space_age_galore", "Space Age Galore" })
+
 require("prototypes.items.biologic-science-pack")
 
 require("prototypes.subgroups")

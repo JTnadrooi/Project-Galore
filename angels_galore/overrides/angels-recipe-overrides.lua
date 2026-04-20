@@ -291,28 +291,25 @@ do
         { "electronic-circuit", 2 },
     })
     data.raw["recipe"]["angels-temperate-farm"].ingredients = vgal.build.table({
-        { "angels-concrete-brick", 10 },
-        { "angels-solid-soil",     20 },
-        { "advanced-circuit",      2 },
-        { "angels-crop-farm",      1 },
+        { "angels-concrete-brick",             10 },
+        { "angels-solid-soil",                 20 },
+        { "angels-solid-alienated-fertilizer", 1 },
+        { "advanced-circuit",                  2 },
+        { "angels-crop-farm",                  1 },
     })
     data.raw["recipe"]["angels-desert-farm"].ingredients = vgal.build.table({
-        { "angels-concrete-brick", 10 },
-        { "angels-solid-sand",     20 },
-        { "advanced-circuit",      2 },
-        { "angels-crop-farm",      1 },
+        { "angels-concrete-brick",             10 },
+        { "angels-solid-sand",                 20 },
+        { "angels-solid-alienated-fertilizer", 1 },
+        { "advanced-circuit",                  2 },
+        { "angels-crop-farm",                  1 },
     })
     data.raw["recipe"]["angels-swamp-farm"].ingredients = vgal.build.table({
-        { "angels-concrete-brick", 10 },
-        { "angels-solid-mud",      20 },
-        { "advanced-circuit",      2 },
-        { "angels-crop-farm",      1 },
-    })
-    data.raw["recipe"]["angels-swamp-farm"].ingredients = vgal.build.table({
-        { "angels-concrete-brick", 10 },
-        { "angels-solid-mud",      20 },
-        { "advanced-circuit",      2 },
-        { "angels-crop-farm",      1 },
+        { "angels-concrete-brick",             10 },
+        { "angels-solid-mud",                  20 },
+        { "angels-solid-alienated-fertilizer", 1 },
+        { "advanced-circuit",                  2 },
+        { "angels-crop-farm",                  1 },
     })
     data.raw["recipe"]["angels-seed-extractor"].ingredients = vgal.build.table({
         { "iron-gear-wheel",    10 },

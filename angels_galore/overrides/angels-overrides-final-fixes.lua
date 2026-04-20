@@ -140,6 +140,7 @@ do
     for _, environment in ipairs({ "desert", "swamp", "temperate" }) do
         data.raw["technology"]["angels-bio-" .. environment .. "-farm"].prerequisites = {
             "angels-bio-" .. environment .. "-farming-1",
+            "angels-bio-farm-alien",
             "chemical-science-pack"
         }
         data.raw["technology"]["angels-bio-" .. environment .. "-farming-2"].prerequisites = {

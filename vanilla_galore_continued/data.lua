@@ -1,12 +1,5 @@
-local function throw_compat_error(neededGalore, with)
-    if mods[with[1]] and not mods[neededGalore[1]] then
-        error("\n\n\n\n\n[PLEASE READ]\nInstall or enable \"" ..
-            neededGalore[2] .. "\" for compatibility with " .. with[2] .. ".\n\n\n\n")
-    end
-end
-
-throw_compat_error({ "space_age_galore", "Space Age Galore" }, { "space-age", "the \"Space Age\" DLC" })
-throw_compat_error({ "angels_galore", "Angels Galore" }, { "angelsbioprocessing", "Angel's mods" })
+vgal.throw.error_if_missing_galore({ "space_age_galore", "Space Age Galore" }, { "space-age", "the \"Space Age\" DLC" })
+vgal.throw.error_if_missing_galore({ "angels_galore", "Angels Galore" }, { "angelsbioprocessing", "Angel's mods" })
 
 require("overrides.overrides")
 

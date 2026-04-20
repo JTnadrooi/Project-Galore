@@ -50,3 +50,12 @@ end
 function vgal.throw.not_implemented()
     error("Function not implemented.")
 end
+
+---@param needed_galore {[1]: string, [2]: string}
+---@param with {[1]: string, [2]: string}
+function vgal.throw.error_if_missing_galore(needed_galore, with)
+    if mods[with[1]] and not mods[needed_galore[1]] then
+        error("\n\n\n\n\n[PLEASE READ]\nInstall or enable \"" ..
+            needed_galore[2] .. "\" for compatibility with " .. with[2] .. ".\n\n\n\n")
+    end
+end

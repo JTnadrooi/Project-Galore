@@ -118,7 +118,7 @@ local subgroups = {
         tab = "angels-smelting",
         order = "y-na",
         entries = {
-            "angels-liquid-concrete", "angels-solid-cement", "stone-brick", "angels-concrete-brick", -- reinforced and clay removed
+            "angels-liquid-concrete", "angels-solid-lime", "angels-solid-cement", "stone-brick", "angels-concrete-brick", -- reinforced and clay removed
             "angels-bio-tile",
         },
         reorder_entries = true,
@@ -129,7 +129,7 @@ local subgroups = {
         order = "y-nc",
         entries = {
             "landfill", "concrete", "hazard-concrete",
-            "refined-concrete", "refined-concrete", "angels-solid-limestone", "angels-solid-lime",
+            "refined-concrete", "refined-concrete", "angels-solid-limestone",
         },
         recipes_that_need_cleaning = {
             "angels-concrete",
@@ -227,6 +227,7 @@ local subgroups = {
         order = "y-yd",
         entries = {
             "stone",
+            "angels-slag",
             "angels-stone-crushed",
         },
         reorder_entries = true,
@@ -238,6 +239,7 @@ local subgroups = {
         entries = {
             "angels-solid-mud",
             "angels-solid-clay",
+            "angels-solid-limestone",
             "angels-solid-sand",
         },
         reorder_entries = true,

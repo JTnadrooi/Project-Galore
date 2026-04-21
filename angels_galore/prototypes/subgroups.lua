@@ -136,7 +136,7 @@ local subgroups = {
         name = "agricultural-science-pack",
         tab = "intermediate-products",
         order = "ybb",
-        entries = { "vgal-biologic-science-pack" },
+        entries = { "vgal-biological-science-pack" },
         when_settings = { "vgal-science-packs" },
     },
 

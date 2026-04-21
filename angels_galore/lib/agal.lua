@@ -28,6 +28,6 @@ if (vgal and vgal.defines and vgal.defines.metals) then -- for when loading defi
 end
 
 vgal.table.extend_single(vgal.tech.units, {
-    name = "vgal-biologic-science-pack",
+    name = "vgal-biological-science-pack",
     value = 2,
 })

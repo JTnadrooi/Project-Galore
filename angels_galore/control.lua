@@ -1,6 +1,6 @@
 local function update_disco_science()
     if remote.interfaces["DiscoScience"] and remote.interfaces["DiscoScience"]["setIngredientColor"] then
-        remote.call("DiscoScience", "setIngredientColor", "vgal-biologic-science-pack", { r = 230, g = 247, b = 112 })
+        remote.call("DiscoScience", "setIngredientColor", "vgal-biological-science-pack", { r = 230, g = 247, b = 112 })
     end
 end
 

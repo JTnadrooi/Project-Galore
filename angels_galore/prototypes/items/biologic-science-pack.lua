@@ -4,7 +4,7 @@ local item_tints = require("__base__.prototypes.item-tints")
 data:extend({
     {
         type = "tool",
-        name = "vgal-biologic-science-pack",
+        name = "vgal-biological-science-pack",
         localised_description = { "item-description.science-pack" },
         icon = "__angels_galore__/graphics/icons/biologic-science-pack.png",
         subgroup = "science-pack", -- may get changed in subgroups
@@ -25,9 +25,9 @@ data:extend({
     },
     {
         type = "technology",
-        name = "vgal-biologic-science-pack",
-        localised_name = { "technology-name.vgal-biologic-science-pack" },
-        localised_description = { "technology-description.vgal-biologic-science-pack" },
+        name = "vgal-biological-science-pack",
+        localised_name = { "technology-name.vgal-biological-science-pack" },
+        localised_description = { "technology-description.vgal-biological-science-pack" },
         icon = "__angels_galore__/graphics/technology/biologic-science-pack.png",
         icon_size = 256,
         effects = {}, -- recipe gets added on vgal.data.extend.
@@ -46,16 +46,16 @@ vgal.data.extend({
         name = "biologic-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("vgal-biologic-science-pack"),
+            vgal.icon.get("vgal-biological-science-pack"),
         },
         energy_required = 5,
-        technology = "vgal-biologic-science-pack",
+        technology = "vgal-biological-science-pack",
         ingredients = {
             { "angels-cellulose-fiber",  2 },
             { "angels-solid-fertilizer", 1 },
         },
         results = {
-            { "vgal-biologic-science-pack", 1 },
+            { "vgal-biological-science-pack", 1 },
         },
         category = "crafting",
     },
@@ -64,5 +64,5 @@ vgal.data.extend({
 })
 
 for _, lab in pairs(data.raw["lab"]) do
-    table.insert(lab.inputs, "vgal-biologic-science-pack")
+    table.insert(lab.inputs, "vgal-biological-science-pack")
 end

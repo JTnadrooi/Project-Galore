@@ -1,4 +1,4 @@
--- the base vgal-biologic-science-pack recipe is in agricultural-science-pack.lua
+-- the base vgal-biological-science-pack recipe is in agricultural-science-pack.lua
 
 vgal.data.extend({
 }, {

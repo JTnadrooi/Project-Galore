@@ -48,8 +48,7 @@ for _, metal in pairs(vgal.defines.metals) do
                 -- vgal.icon.get("angels_crushing", "raw"),
                 -- vgal.icon.get_out(metal .. "-ore"),
 
-                vgal.icon.get("angels_crushing", "raw"),
-                vgal.icon.get_out2(metal.pebbles),
+                vgal.icon.get(metal.pebbles),
             },
             energy_required = 1,
             technology = "angels-ore-crushing",

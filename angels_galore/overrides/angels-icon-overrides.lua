@@ -52,7 +52,11 @@ for _, metal in pairs(vgal.defines.metals) do
     })
 end
 
+use_main_icon("angels-coal-crushed")
+use_main_icon("angels-ore2-crushed")
+use_main_icon("angels-ore3-crushed")
 use_main_icon("angels-stone-crushed")
+
 use_main_icon("angels-cellulose-fiber")
 use_main_icon("angels-solid-cement")
 use_main_icon("copper-cable")

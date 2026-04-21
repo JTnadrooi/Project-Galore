@@ -356,6 +356,28 @@ vgal.data.extend({
         },
         category = "crafting",
     },
+    {
+        name = "advanced-circuit-express-splitter",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("express-splitter"),
+            vgal.icon.get_in("advanced-circuit"),
+        },
+        energy_required = 4,
+        technology = { "logistics-3" },
+        ingredients = {
+            { "steel-plate",      2 },
+            { "advanced-circuit", 10 },
+            { "fast-splitter",    1 },
+        },
+        fluid_ingredients = {
+            { "lubricant", 80 },
+        },
+        results = {
+            { "express-splitter", 1 }
+        },
+        category = "crafting-with-fluid",
+    },
 }, {
     type = "recipe",
     groups = { "vgal-removed" },

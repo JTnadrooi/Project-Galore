@@ -527,7 +527,7 @@ for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.plate].enabled = true
 end
 
--- restore module recipes as they dont require bioprocessing anymore.
+-- restore module recipes as they dont require bioprocessing anymore
 for _, module in pairs(vgal.defines.modules) do
     for tier, tiered_name in ipairs(module.tiers) do
         local recipe = data.raw.recipe[tiered_name]
@@ -552,6 +552,9 @@ for _, module in pairs(vgal.defines.modules) do
         end
     end
 end
+
+-- restore beacon recipes as it doesn't require bioprocessing anymore
+vgal.recipe.remove_ingredient("beacon", "angels-crystal-full-harmonic")
 
 -- remove the stone uncrushing recipe + handle consequences
 vgal.data.trim("angels-stone-from-crushed-stone")

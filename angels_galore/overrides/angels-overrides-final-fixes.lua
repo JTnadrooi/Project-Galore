@@ -175,6 +175,12 @@ do
         "production-science-pack"
     }
 
+    data.raw["technology"]["angels-bio-processing-crystal-full"].prerequisites = {
+        "angels-bio-refugium-biter-3",
+    }
+
+    vgal.tech.remove_prerequisite("effect-transmission", "angels-bio-processing-crystal-full")
+
     data.raw["technology"]["angels-slag-processing-3"].prerequisites = {
         "angels-slag-processing-2",
         "production-science-pack"

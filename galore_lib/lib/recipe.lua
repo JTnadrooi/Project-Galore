@@ -331,15 +331,6 @@ function vgal.recipe.has_item(recipe_name, recipeable_name)
 end
 
 ---@param recipe_name string
----@param ingredient data.IngredientPrototype
-function vgal.recipe.add_ingredient(recipe_name, ingredient)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
-
-    recipe.ingredients = recipe.ingredients or {}
-    table.insert(recipe.ingredients, ingredient)
-end
-
----@param recipe_name string
 ---@param new_ingredient data.IngredientPrototype|string|vgal.ShorthandRecipeEntry
 ---@param ingredient_type "item"|"fluid"|nil Sets the ingredient type. Only used when new_ingredient is a string or shorthand recipe entry.
 function vgal.recipe.add_ingredient(recipe_name, new_ingredient, ingredient_type)

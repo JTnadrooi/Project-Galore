@@ -600,3 +600,17 @@ data.raw["recipe"]["angels-stone-crushed"].ingredients = vgal.build.table({
 })
 data.raw["recipe"]["angels-stone-crushed"].enabled = true
 vgal.tech.remove_recipe("angels-ore-crushing", "angels-stone-crushed")
+
+local function fix_mud_in_washing_recipe(recipe_name)
+    -- local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+
+    vgal.recipe.remove_result(recipe_name, "angels-solid-mud")
+    -- vgal.recipe.add_result(recipe_name, { type = "item", name = "angels-solid-mud", amount_min = 1, amount_max = 2 })
+    vgal.recipe.add_result(recipe_name, { type = "item", name = "angels-solid-mud", amount = 1, probability = 0.75 })
+end
+
+fix_mud_in_washing_recipe("angels-water-heavy-mud")
+fix_mud_in_washing_recipe("angels-water-concentrated-mud")
+fix_mud_in_washing_recipe("angels-water-light-mud")
+fix_mud_in_washing_recipe("angels-water-thin-mud")
+fix_mud_in_washing_recipe("angels-water-saline")

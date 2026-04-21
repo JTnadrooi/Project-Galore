@@ -528,7 +528,7 @@ for _, metal in pairs(vgal.defines.metals) do
 end
 
 -- restore module recipes as they dont require bioprocessing anymore.
-for _, module in ipairs(vgal.defines.modules) do
+for _, module in pairs(vgal.defines.modules) do
     for tier, tiered_name in ipairs(module.tiers) do
         local recipe = data.raw.recipe[tiered_name]
 

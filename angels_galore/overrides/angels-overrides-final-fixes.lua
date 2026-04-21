@@ -192,6 +192,23 @@ do
         "production-science-pack"
     }
 
+    -- fix roll casting tech prerequisites
+    local funky_tech_names = {
+        ["iron"] = { "-smelting-1", "-casting-2", "-casting-3" },
+        ["copper"] = { "-smelting-1", "-casting-2", "-casting-3" },
+        ["steel"] = { "-smelting-1", "-smelting-2", "-smelting-3" },
+    }
+    for material, tech_postfixes in pairs(funky_tech_names) do
+        data.raw["technology"]["angels-" .. material .. tech_postfixes[2]].prerequisites = {
+            "angels-" .. material .. tech_postfixes[1],
+            "angels-strand-casting-1",
+        }
+        data.raw["technology"]["angels-" .. material .. tech_postfixes[3]].prerequisites = {
+            "angels-" .. material .. tech_postfixes[2],
+            "angels-coolant-1",
+        }
+    end
+
     -- angels stone smelting 3 is a COMEBACKAT
 end
 

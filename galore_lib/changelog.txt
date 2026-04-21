@@ -4,6 +4,7 @@ Version: 2.0.0
     - Added error handling.
     - Improved performance.
     - Added type docs.
+    - Added helper functions galore. (as needed by Angel's Galore.)
 ---------------------------------------------------------------------------------------------------
 Version: 1.7.0
   Features:

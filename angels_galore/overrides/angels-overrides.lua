@@ -32,7 +32,7 @@ for _, lab in pairs(data.raw["lab"]) do
     vgal.table.remove(lab.inputs, "angels-token-bio")
 end
 
--- TECH FIXES
+-- TECH FIXES (alot of this is done in final fixes too)
 data.raw["technology"]["angels-basic-chemistry"].unit.count = 40
 data.raw["technology"]["angels-ore-crushing"].prerequisites = { "automation" }
 vgal.tech.merge("angels-flare-stack", "angels-basic-chemistry")

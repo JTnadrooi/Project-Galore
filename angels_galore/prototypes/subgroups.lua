@@ -107,12 +107,6 @@ local subgroups = {
         },
         reorder_entries = true,
     },
-    -- {
-    --     name = "angels-copper-casting-2",
-    --     tab = "angels-resource-refining",
-    --     order = "y-ec",
-    --     entries = { "copper-plate", "copper-cable", },
-    -- }, -- commentedbc: both don't listen so i just repurpose the "angels-casting" subgroup.
     {
         name = "cement-concrete",
         tab = "angels-smelting",

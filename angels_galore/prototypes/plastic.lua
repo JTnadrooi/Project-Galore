@@ -1,3 +1,4 @@
+-- to make costs align with vanilla (one plastic bar should be around as much "worth" as 1.5 plates) plastic bar recipes have been buffed
 vgal.data.extend({
     {
         name = "angels-gas-propene-plastic-bar",
@@ -6,13 +7,13 @@ vgal.data.extend({
             vgal.icon.get("plastic-bar"),
             vgal.icon.get_in("propene", "molecule"),
         },
-        energy_required = 2,
+        energy_required = 4, -- 2
         technology = "angels-plastic-1",
         fluid_ingredients = {
-            { "angels-gas-propene", 40 },
+            { "angels-gas-propene", 80 },
         },
         results = {
-            { "plastic-bar", 5 },
+            { "plastic-bar", 5 }, -- 5
         },
         category = "angels-liquifying",
         order = "aa"
@@ -31,7 +32,7 @@ vgal.data.extend({
             { "angels-liquid-polyethylene", 20 },
         },
         results = {
-            { "plastic-bar", 10 },
+            { "plastic-bar", 5 },
         },
         category = "chemistry",
         order = "ab"
@@ -50,13 +51,13 @@ vgal.data.extend({
             { "angels-gas-methanol",  15 },
         },
         results = {
-            { "plastic-bar", 6 },
+            { "plastic-bar", 3 },
         },
         category = "chemistry",
         order = "ac"
     },
     {
-        name = "angels-liquid-cellulose-acetate-mixture-plastic-bar",
+        name = "angels-liquid-cellulose-acetate-mixture-plastic-bar", -- bio 1
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("plastic-bar"),
@@ -69,13 +70,13 @@ vgal.data.extend({
             { "angels-gas-acetone",                      25 },
         },
         results = {
-            { "plastic-bar", 8 },
+            { "plastic-bar", 4 },
         },
         category = "chemistry",
         order = "ba"
     },
     {
-        name = "angels-liquid-propionic-acid-plastic-bar",
+        name = "angels-liquid-propionic-acid-plastic-bar", -- bio 2
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("plastic-bar"),
@@ -92,7 +93,7 @@ vgal.data.extend({
             { "angels-liquid-acetic-acid",    20 },
         },
         results = {
-            { "plastic-bar", 12 },
+            { "plastic-bar", 6 },
         },
         category = "chemistry",
         order = "bb"

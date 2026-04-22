@@ -614,3 +614,8 @@ fix_mud_in_washing_recipe("angels-water-concentrated-mud")
 fix_mud_in_washing_recipe("angels-water-light-mud")
 fix_mud_in_washing_recipe("angels-water-thin-mud")
 fix_mud_in_washing_recipe("angels-water-saline")
+
+-- add leafs (?!) to tree sawing recipes
+-- vgal.recipe.add_result("angels-wood-sawing-1", { "angels-solid-leafs", 1 }) -- commentedbc: nuh uh, you only get net positive nutrient stuff if u use fancy saws
+vgal.recipe.add_result("angels-wood-sawing-2", { "angels-solid-leafs", nil, { amount_min = 0, amount_max = 3 } })
+vgal.recipe.add_result("angels-wood-sawing-3", { "angels-solid-leafs", nil, { amount_min = 2, amount_max = 4 } })

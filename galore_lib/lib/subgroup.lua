@@ -60,8 +60,7 @@ end
 function vgal.subgroup.clean_recipe(recipe_name)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
 
-    recipe.order = nil
-    recipe.subgroup = nil
+    vgal.subgroup.clean(recipe)
 end
 
 ---@param prototype data.PrototypeBase

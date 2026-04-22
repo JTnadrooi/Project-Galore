@@ -22,12 +22,26 @@ data.raw.recipe["angels-water-saline-from-water"].icons = vgal.icon.register({
     vgal.icon.get("angels-water-saline"),
 })
 
+data.raw.recipe["angels-solid-sulfur"].icons = vgal.icon.register({
+    vgal.icon.get("sulfur"),
+})
+
 data.raw.recipe["angels-solid-salt-dissolving"].icons = vgal.icon.register({
     vgal.icon.get("angels-water-saline"),
     vgal.icon.get_in("angels-solid-salt"),
 })
 
 use_main_icon("angels-solid-salt")
+
+use_main_icon("angels-solid-sodium")
+data.raw.recipe["angels-solid-salt-separation"].icons = vgal.icon.register({
+    vgal.icon.get("angels-solid-sodium"),
+    vgal.icon.get_in("angels-solid-salt"),
+})
+data.raw.recipe["angels-solid-sodium-sulfate-separation"].icons = vgal.icon.register({
+    vgal.icon.get("angels-solid-sodium"),
+    vgal.icon.get_in("angels-solid-sodium-sulfate"),
+})
 
 data.raw.recipe["angels-coolant-used-filtration-1"].icons = vgal.icon.register({
     vgal.icon.get("angels-liquid-coolant"),
@@ -38,6 +52,18 @@ data.raw.recipe["angels-coolant-used-filtration-2"].icons = vgal.icon.register({
     vgal.icon.get("angels-liquid-coolant"),
     vgal.icon.get_in("angels-filter-ceramic"),
 })
+
+data.raw.recipe["angels-carbon-from-charcoal"].icons = vgal.icon.register({
+    vgal.icon.get("angels-solid-carbon"),
+    vgal.icon.get_in("angels-wood-charcoal"),
+})
+
+data.raw.recipe["angels-liquid-aqueous-sodium-hydroxide-reverse"].icons = vgal.icon.register({
+    vgal.icon.get("angels-solid-sodium-hydroxide"),
+    vgal.icon.get_in("angels-liquid-aqueous-sodium-hydroxide"),
+})
+
+use_main_icon("angels-solid-sodium-hydroxide")
 
 for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.angels_plate_recipe_name].icons = vgal.icon.register({
@@ -61,6 +87,8 @@ use_main_icon("angels-cellulose-fiber")
 use_main_icon("angels-solid-cement")
 use_main_icon("copper-cable")
 use_main_icon("angels-solid-soil")
+
+-- TIER ICON FIXES
 
 -- fix explosives recipe tier icons
 use_main_icon("explosives")

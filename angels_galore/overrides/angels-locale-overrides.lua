@@ -15,3 +15,6 @@ end
 
 data.raw["recipe"]["angels-cellulose-fiber"].show_amount_in_title = false
 vgal.recipe.use_recipe_locale("angels-cellulose-fiber")
+
+data.raw["recipe"]["angels-solid-sulfur"].show_amount_in_title = true
+data.raw["recipe"]["angels-solid-sulfur"].localised_name = nil

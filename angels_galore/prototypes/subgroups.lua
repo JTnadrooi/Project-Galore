@@ -214,6 +214,131 @@ local subgroups = {
         reorder_entries = true,
     },
 
+    -- CHEM
+    {
+        name = "carbon",
+        tab = "angels-petrochem-refining",
+        order = "aab",
+        entries = {
+            "angels-solid-carbon",
+            "angels-gas-carbon-monoxide",
+            "angels-gas-carbon-dioxide",
+        },
+        recipes_that_need_cleaning = {
+            "angels-water-gas-shift-1",
+            "angels-water-gas-shift-2",
+            "angels-carbon-from-charcoal",
+            "angels-gas-carbon-dioxide-from-wood",
+            "angels-coke-purification-2",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "fuel-t2",
+        tab = "angels-petrochem-refining",
+        order = "abb",
+        entries = {
+            "nuclear-fuel",
+            "angels-nuclear-fuel",
+            "angels-nuclear-fuel-2",
+        },
+        recipes_that_need_cleaning = {
+            "vgal-coal-uranium-235-nuclear-fuel",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "petrochem-square-solids",
+        tab = "angels-petrochem-refining",
+        order = "i-aa",
+        entries = {
+            "angels-solid-calcium-chloride",
+            "angels-solid-calcium-carbonate",
+            "angels-solid-sodium-hypochlorite",
+            "angels-solid-sodium-perchlorate",
+            "angels-solid-ammonium-nitrate", -- keeplast
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "petrochem-round-solids",
+        tab = "angels-petrochem-refining",
+        order = "i-ab",
+        entries = {
+            "angels-solid-salt",
+            "angels-solid-sodium-carbonate",
+            "angels-solid-sodium-hydroxide",
+            "angels-solid-sodium-sulfate",
+            "angels-solid-sodium-chlorate",
+            "angels-solid-ammonium-perchlorate", -- keeplast
+        },
+        recipes_that_need_cleaning = {
+            "angels-liquid-aqueous-sodium-hydroxide-reverse",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "petrochem-other-solids",
+        tab = "angels-petrochem-refining",
+        order = "i-ac",
+        entries = {
+            "sulfur",
+            "angels-fluorite-ore",
+            "angels-solid-sodium",
+            "angels-paste-cellulose",
+        },
+        recipes_that_need_cleaning = {
+            "angels-solid-sodium-sulfate-separation",
+            "angels-solid-salt-separation",
+            "angels-solid-sulfur",
+        },
+        reorder_entries = true,
+    },
+    {
+        name = "fluorite",
+        tab = "angels-petrochem-refining",
+        order = "db",
+        entries = {
+            "angels-gas-hydrogen-fluoride",
+            "angels-liquid-hydrofluoric-acid",
+        },
+        recipes_that_need_cleaning = {
+            "angels-hydrogen-fluoride-dissolving",
+        },
+        reorder_entries = true,
+    },
+    -- {
+    --     name = "petrochem-round-other",
+    --     tab = "angels-petrochem-refining",
+    --     order = "iab",
+    --     entries = {
+    --         "angels-solid-sodium-salt",
+    --         "angels-solid-sodium-carbonate",
+    --         "angels-solid-sodium-hydroxide",
+    --         "angels-solid-sodium-sulfate",
+    --         "angels-solid-sodium-chlorate",
+    --         "angels-solid-ammonium-perchlorate", -- keeplast
+    --     },
+    --     recipes_that_need_cleaning = {
+    --         "angels-solid-sodium-hydroxide-reverse",
+    --     },
+    --     reorder_entries = true,
+    -- },
+    {
+        name = "explosives",
+        tab = "angels-petrochem-refining",
+        order = "x",
+        entries = {
+            "explosives",
+            "cliff-explosives",
+        },
+        recipes_that_need_cleaning = {
+            "angels-solid-nitroglycerin",
+            "angels-solid-trinitrotoluene",
+        },
+        reorder_entries = true,
+    },
+
     -- BIO
     {
         name = "bio-fuel",

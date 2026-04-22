@@ -64,8 +64,23 @@ vgal.subgroup.clean_recipe("angels-solid-plastic")
 data.raw["recipe"]["angels-americium-regeneration"].main_product = "angels-plutonium-239"
 data.raw["recipe"]["angels-plutonium-breeding"].main_product = "angels-plutonium-239"
 data.raw["recipe"]["angels-electrode-used"].main_product = "angels-electrode"
+data.raw["recipe"]["angels-coke-purification-2"].main_product = "angels-solid-carbon"
+data.raw["recipe"]["angels-water-gas-shift-1"].main_product = "angels-gas-carbon-dioxide"
+data.raw["recipe"]["angels-water-gas-shift-2"].main_product = "angels-gas-carbon-monoxide"
+data.raw["recipe"]["angels-solid-salt-separation"].main_product = "angels-solid-sodium"
 
 data.raw["recipe"]["angels-solid-geodes"].order = "-z"
 data.raw["recipe"]["angels-solid-geodes"].subgroup = "angels-geode-processing-2"
 
 data.raw["recipe"]["angels-concrete"].order = "bb"
+
+data.raw["recipe"]["angels-solid-nitroglycerin"].order = "ab"
+data.raw["recipe"]["angels-solid-trinitrotoluene"].order = "ac"
+
+data.raw["recipe"]["angels-solid-salt-separation"].order = "cb"
+data.raw["recipe"]["angels-solid-sodium-sulfate-separation"].order = "cc"
+
+data.raw["recipe"]["angels-coke-purification-2"].order = "ab"
+data.raw["recipe"]["angels-carbon-from-charcoal"].order = "ac"
+
+data.raw["recipe"]["angels-liquid-aqueous-sodium-hydroxide-reverse"].order = "cb"

@@ -14,3 +14,4 @@ for _, metal in pairs(vgal.defines.metals) do
 end
 
 data.raw["recipe"]["angels-cellulose-fiber"].show_amount_in_title = false
+vgal.recipe.use_recipe_locale("angels-cellulose-fiber")

@@ -23,7 +23,7 @@ vgal.data.extend({
             vgal.icon.get("angels-solid-sand"),
             vgal.icon.get_in("angels-stone-crushed"),
         },
-        energy_required = 1.2,
+        energy_required = 1,
         technology = "angels-stone-smelting-1",
         ingredients = {
             { "angels-stone-crushed", 2 },

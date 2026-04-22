@@ -14,3 +14,12 @@ function vgal.locale.guess_locale(prototype_name)
 
     return { (data.raw["item-with-entity-data"][prototype_name] and "entity" or "item") .. "-name." .. prototype_name }
 end
+
+---@param recipeable_name string
+---@param locale_domain "name"|"description"|string?
+---@return data.LocalisedString
+function vgal.locale.get_backup_locale_for_recipeable(recipeable_name, locale_domain)
+    locale_domain = locale_domain or "name"
+
+    return { "?", { "item-" .. locale_domain .. "." .. recipeable_name }, { "entity-" .. locale_domain .. "." .. recipeable_name }, { "fluid-" .. locale_domain .. "." .. recipeable_name } }
+end

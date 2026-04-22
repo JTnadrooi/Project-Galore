@@ -541,8 +541,12 @@ end
 function vgal.recipe.use_recipe_locale(recipe_name, keep_show_amount_in_title)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
 
-    recipe.localised_name = { "recipe-name." .. recipe.name }
-    recipe.localised_description = { "recipe-description." .. recipe.name }
+    recipe.localised_name = { "?", { "recipe-name." .. recipe.name }, vgal.locale
+        .get_backup_locale_for_recipeable(
+            recipe.name, "name") }
+    recipe.localised_description = { "?", { "recipe-description." .. recipe.name }, vgal.locale
+        .get_backup_locale_for_recipeable(
+            recipe.name, "description") }
 
     if not keep_show_amount_in_title then
         recipe.show_amount_in_title = false

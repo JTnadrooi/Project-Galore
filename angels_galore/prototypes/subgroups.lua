@@ -214,6 +214,24 @@ local subgroups = {
         reorder_entries = true,
     },
 
+    -- BIO
+    {
+        name = "bio-fuel",
+        tab = "angels-bio-processing-nauvis",
+        order = "eb",
+        entries = {
+            "angels-cellulose-fiber",
+            "angels-wood-pellets",
+            "angels-wood-bricks",
+            "angels-wood-charcoal",
+        },
+        recipes_that_need_cleaning = {
+            "angels-cellulose-fiber",
+            "angels-cellulose-fiber-raw-wood",
+        },
+        reorder_entries = true,
+    },
+
     -- MISC
     {
         name = "stone",

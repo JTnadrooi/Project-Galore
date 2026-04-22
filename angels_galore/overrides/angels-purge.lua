@@ -27,10 +27,12 @@ end
 
 -- (actual)catalyst fixes
 vgal.data.trim("angels-catalyst-metal-red")
+vgal.data.deephide(data.raw["item"]["angels-catalyst-metal-red"])
 vgal.recipe.all.replace_ingredient("angels-catalyst-metal-red",
     { type = "item", name = "angels-catalyst-metal-yellow", amount = 1 })
 
 vgal.data.trim("angels-catalyst-metal-green")
+vgal.data.deephide(data.raw["item"]["angels-catalyst-metal-green"])
 vgal.recipe.all.replace_ingredient("angels-catalyst-metal-green",
     { type = "item", name = "angels-catalyst-metal-blue", amount = 1 })
 

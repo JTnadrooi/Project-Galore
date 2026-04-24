@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.1
+  Features:
+    - Updated for GaloreLib 2.0
+    - Improved "vgal-promethium-asteroid-chunk-crushing" description.
+  Bugfixes:
+    - Fixed main ammonia recipe being ordered after the alternatives.
+    - Fixed "vgal-spoilage-crude-oil" not showing amount in title.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.0
   Features:
     - Updated for GaloreLib 1.7

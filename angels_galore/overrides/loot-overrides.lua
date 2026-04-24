@@ -4,28 +4,36 @@ local WRECK_SIZES = {
         name = "small",
         mining_time = 0.75,
         results = {
-            { "steel-plate", 1,   { probability = 0.25 } },
-            { "iron-plate",  nil, { amount_min = 0, amount_max = 2 } },
+            { "steel-plate",       1,   { probability = 0.25 } },
+            { "iron-plate",        nil, { amount_min = 0, amount_max = 2 } },
+
+            { "angels-solid-sand", 1,   { probability = 0.5 } },
         }
     },
     ["medium"] = {
         name = "medium",
         mining_time = 1,
         results = {
-            { "steel-plate", nil, { amount_min = 0, amount_max = 3 } },
-            { "iron-plate",  nil, { amount_min = 0, amount_max = 5 } },
+            { "steel-plate",       nil, { amount_min = 0, amount_max = 3 } },
+            { "iron-plate",        nil, { amount_min = 0, amount_max = 5 } },
+
+            { "stone",             nil, { amount_min = 2, amount_max = 4 } },
+            { "angels-solid-sand", nil, { amount_min = 1, amount_max = 2 } },
         }
     },
     ["big"] = {
         name = "big",
         mining_time = 1.5,
         results = {
-            { "steel-plate",     nil, { amount_min = 0, amount_max = 6 } },
-            { "iron-plate",      nil, { amount_min = 0, amount_max = 10 } },
-            { "copper-plate",    nil, { amount_min = 1, amount_max = 5 } },
+            { "steel-plate",       nil, { amount_min = 0, amount_max = 6 } },
+            { "iron-plate",        nil, { amount_min = 0, amount_max = 10 } },
+            { "copper-plate",      nil, { amount_min = 1, amount_max = 5 } },
 
-            { "iron-gear-wheel", nil, { amount_min = 0, amount_max = 8 } },
-            { "copper-cable",    nil, { amount_min = 2, amount_max = 8 } },
+            { "iron-gear-wheel",   nil, { amount_min = 0, amount_max = 8 } },
+            { "copper-cable",      nil, { amount_min = 2, amount_max = 8 } },
+
+            { "stone",             nil, { amount_min = 2, amount_max = 8 } },
+            { "angels-solid-sand", nil, { amount_min = 1, amount_max = 5 } },
         }
     },
 }

@@ -570,13 +570,14 @@ end
 -- remove vsicous water recipe as it will break with prod
 vgal.data.trim("angels-water-viscous-mud")
 
--- remove slag sources that aren't smelting (nuclear can stay though, I see slag being generated from that.)
--- just electrolyzing as the alt angels sorting is not with us rn
-vgal.recipe.remove_result("angels-dirt-water-separation", "angels-slag")
-vgal.recipe.remove_result("angels-dirt-water-separation-2", "angels-slag")
+-- commentedbc: need stone on demand
+-- -- remove slag sources that aren't smelting (nuclear can stay though, I see slag being generated from that.)
+-- -- just electrolyzing as the alt angels sorting is not with us rn
+-- vgal.recipe.remove_result("angels-dirt-water-separation", "angels-slag")
+-- vgal.recipe.remove_result("angels-dirt-water-separation-2", "angels-slag")
 
-vgal.recipe.add_result("angels-dirt-water-separation", { "angels-solid-sand", 1 })
-vgal.recipe.add_result("angels-dirt-water-separation-2", { "angels-solid-sand", 1 })
+-- vgal.recipe.add_result("angels-dirt-water-separation", { "angels-solid-sand", 1 })
+-- vgal.recipe.add_result("angels-dirt-water-separation-2", { "angels-solid-sand", 1 })
 
 -- add slag to smelting, more stuff added -> more slag
 vgal.recipe.add_result("angels-anode-copper", { "angels-slag", 1 })

@@ -32,7 +32,7 @@ local handlers = {
 for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
     local tech_pre_name = handlers[recipe.main_product]
     if tech_pre_name then
-        vgal.tech.add_productivity_change(tech_pre_name .. "-productivity-wolf", recipe.name)
+        vgal.tech.add_productivity_change(tech_pre_name .. "-productivity-wolf", recipe.name --[[@as string]])
     end
 end
 vgal.tech.add_productivity_change("kovarex-enrichment-process-productivity-wolf",

@@ -10,7 +10,7 @@ for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
         for i = 1, 10 do
             local tech_key = tech_pre_name .. i
             if data.raw["technology"][tech_key] then
-                vgal.tech.add_productivity_change(tech_key, recipe.name)
+                vgal.tech.add_productivity_change(tech_key, recipe.name --[[@as string]])
             else
                 break
             end

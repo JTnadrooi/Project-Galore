@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.6
   Bugfixes:
-    - (Galore Library) Fixed all techs being unlocked by default. (Thanks Samario!)
+    - (Galore Library) Fixed all recipes added by vgal.data.extend being unlocked by default. (Thanks Samario!)
     - Removed unnecessary tech nodes.
     - Added technode for "vgal-plastic-bar-fast-transport-belt" as fast transport belt unlock isn't guaranteed at plastic unlock.
 ---------------------------------------------------------------------------------------------------

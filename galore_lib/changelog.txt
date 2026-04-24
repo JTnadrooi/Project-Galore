@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.1
   Bugfixes:
-    - Fixed all techs being unlocked by default. (Thanks Samario!)
+    - Fixed all recipes added by vgal.data.extend being unlocked by default. (Thanks Samario!)
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
   Features:

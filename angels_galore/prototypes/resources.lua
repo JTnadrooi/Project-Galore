@@ -72,6 +72,26 @@ vgal.data.extend({
     --     },
     --     category = "angels-liquifying",
     -- },
+    {
+        name = "agal-hand-mining", -- I am aware the prefix gets added anyways
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get_placeholder(),
+            -- vgal.icon.get_out("stone"),
+            -- vgal.icon.get_out2("angels-solid-sand"),
+            -- vgal.icon.get_out3("angels-solid-limestone"),
+        },
+        energy_required = 10,
+        ingredients = {},
+        results = {
+            { "stone",                  nil, { amount_min = 1, amount_max = 3 } },
+            { "angels-solid-sand",      nil, { amount_min = 2, amount_max = 6 } },
+            { "angels-solid-limestone", 1,   { probability = 0.25 } },
+        },
+        enabled = true,
+        show_amount_in_title = false,
+        category = "angels-manual-crafting",
+    },
 }, {
     type = "recipe",
 })

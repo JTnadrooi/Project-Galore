@@ -444,19 +444,18 @@ end
 --     end
 --     error("Entityable of name '" .. prototype_name .. "' not found.")
 -- end
-
 local function remove_empty_vgal_techs()
     local required_techs = {}
     local removable_techs = {}
 
     for _, tech in pairs(data.raw["technology"]) do
-        for _, p in ipairs(tech.prerequisites or {}) do -- techs used as prerequisites will not be removed.
+        for _, p in ipairs(tech.prerequisites or {}) do -- techs used as prerequisites will not be removed
             required_techs[p] = true
         end
 
         for _, effect in ipairs(tech.effects or {}) do
             for _, recipe_name in ipairs(vgal.tech.recipes_to_remove_from_techs) do
-                if effect.recipe == recipe_name then -- for each toclean, check if its the effect.
+                if effect.recipe == recipe_name then -- for each toclean, check if its the effect
                     effect.hidden = true
                     break
                 end
@@ -490,11 +489,35 @@ end
 local function splice_and_flatten_techs()
     for _, tech in pairs(data.raw["technology"]) do
         ::fix_prerequisites::
-        for _, prerequisite in ipairs(tech.prerequisites or {}) do
+        local modified = false
+        for i, prerequisite in ipairs(tech.prerequisites or {}) do
             if vgal.tech.techs_to_splice[prerequisite] then
-                tech.prerequisites = table.deepcopy(vgal.tech.techs_to_splice[prerequisite].prerequisites)
-                goto fix_prerequisites
+                -- Get the prerequisites to add
+                local new_prereqs = vgal.tech.techs_to_splice[prerequisite].prerequisites or {}
+
+                -- Remove the current prerequisite (the one being spliced)
+                table.remove(tech.prerequisites, i)
+
+                -- Add new prerequisites without duplicates
+                for _, new_prereq in ipairs(new_prereqs) do
+                    local already_exists = false
+                    for _, existing_prereq in ipairs(tech.prerequisites) do
+                        if existing_prereq == new_prereq then
+                            already_exists = true
+                            break
+                        end
+                    end
+                    if not already_exists then
+                        table.insert(tech.prerequisites, new_prereq)
+                    end
+                end
+
+                modified = true
+                break
             end
+        end
+        if modified then
+            goto fix_prerequisites
         end
     end
 

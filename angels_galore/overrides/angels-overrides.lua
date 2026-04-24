@@ -42,8 +42,6 @@ table.insert(data.raw["technology"]["angels-bio-processing-green"].prerequisites
 vgal.tech.move_recipe("angels-bio-processing-green", "angels-water-treatment", "angels-water-mineralized")
 vgal.tech.replace_recipe("angels-ore-crushing", "angels-ore4-crushed", "angels-ore3-crushed")
 
--- add agricultural science.
-data.raw["technology"]["angels-bio-farm-1"].prerequisites = { "vgal-biological-science-pack" }
 -- data.raw["technology"]["angels-bio-arboretum-1"].prerequisites = { "vgal-biological-science-pack" } -- commentedbc: Just like black science, im leaving some techs open. This one fits.
 
 -- remove cement 3. it only adds alternate recipes but as those arent really alternates and more upgrades, Im gonna remove them instead of editing them.

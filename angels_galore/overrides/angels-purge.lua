@@ -267,33 +267,3 @@ end
 vgal.data.trim("angels-wire-coil-copper")
 vgal.data.trim("angels-wire-coil-copper-2")
 vgal.data.trim("angels-wire-copper-2")
-
--- mark empty techs for splicing (can't do this in final-fixes bc of galorelib, but this should work)
--- AND remove hidden effects, I could use queue_to_clean... hmm...
-local function startsWith(str, prefix)
-    return string.sub(str, 1, #prefix) == prefix
-end
-
-for _, tech in pairs(data.raw["technology"]) do
-    if startsWith(tech.name, "angels")
-        and not startsWith(tech.name, "angels-hidden")
-        and tech.effects then
-        local tech_is_without_relevant_effects = true
-
-        for i = #tech.effects, 1, -1 do
-            local effect = tech.effects[i]
-
-            local is_hidden_recipe_unlock = effect.type == "unlock-recipe" and data.raw["recipe"][effect.recipe].hidden
-
-            if effect.hidden or is_hidden_recipe_unlock then
-                table.remove(tech.effects, i)
-            else
-                tech_is_without_relevant_effects = false
-            end
-        end
-
-        if tech_is_without_relevant_effects then
-            vgal.tech.techs_to_splice[tech.name] = tech
-        end
-    end
-end

@@ -3,7 +3,7 @@ vgal.setting = vgal.setting or {}
 
 ---@param name string
 ---@param order data.Order
----@param default_value boolean
+---@param default_value boolean?
 function vgal.setting.new_bool(name, order, default_value)
     if default_value == nil then
         default_value = true
@@ -19,7 +19,7 @@ end
 
 ---@param name string
 ---@param order data.Order
----@param default_value string
+---@param default_value string?
 function vgal.setting.new_string(name, order, default_value)
     local allow_blank = false
 

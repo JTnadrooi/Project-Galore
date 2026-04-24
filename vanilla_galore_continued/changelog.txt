@@ -10,6 +10,7 @@ Version: 1.3.5
     - Fixed "seperated" (instead of separated) spelling error.
     - Fixed Angel's Galore compat error throwing even if bioprocessing wasn't enabled.
     - Fixed Angel's Galore compat error spelling Angel's Galore as "Angels Galore".
+    - Fixed some Space Age Galore locale being located in the locale files. (Moved to SAGAL)
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.0
   Features:

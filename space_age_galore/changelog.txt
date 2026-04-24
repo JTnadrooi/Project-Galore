@@ -6,6 +6,7 @@ Version: 1.6.1
   Bugfixes:
     - Fixed main ammonia recipe being ordered after the alternatives.
     - Fixed "vgal-spoilage-crude-oil" not showing amount in title.
+    - Fixed some locale being located in the locale files of Vanilla Galore.
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.0
   Features:

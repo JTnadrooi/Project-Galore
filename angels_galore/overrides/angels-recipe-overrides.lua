@@ -556,16 +556,17 @@ end
 -- restore beacon recipes as it doesn't require bioprocessing anymore
 vgal.recipe.remove_ingredient("beacon", "angels-crystal-full-harmonic")
 
--- remove the stone uncrushing recipe + handle consequences
+-- remove the stone uncrushing recipe
 vgal.data.trim("angels-stone-from-crushed-stone")
 
-for _, metal in pairs(vgal.defines.metals) do
-    data.raw["recipe"][metal.crushed].results = vgal.build.table({
-        { metal.crushed,          2 },
-        { "angels-stone-crushed", 1, { probability = 0.5 } },
-        { "stone",                1, { probability = 0.25 } },
-    })
-end
+-- commentedbc: stone as byproduct is repetitive with how you already have slag and crushed stone to deal with
+-- for _, metal in pairs(vgal.defines.metals) do
+--     data.raw["recipe"][metal.crushed].results = vgal.build.table({
+--         { metal.crushed,          2 },
+--         { "angels-stone-crushed", 1, { probability = 0.5 } },
+--         { "stone",                1, { probability = 0.25 } },
+--     })
+-- end
 
 -- remove vsicous water recipe as it will break with prod
 vgal.data.trim("angels-water-viscous-mud")

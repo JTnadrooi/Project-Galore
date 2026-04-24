@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.6
+  Bugfixes:
+    - (Galore Library) Fixed all techs being unlocked by default. (Thanks Samario!)
+    - Removed unnecessary tech nodes.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.5
   Features:
     - Renamed "Galore Tech Node" to "Galore tech node".

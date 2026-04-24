@@ -180,6 +180,11 @@ function vgal.data.extend(entries, fill_in_with)
                 error()
             end
 
+            if entry.enabled == nil then
+                entry.enabled = not not (#entry.technologies == 0)
+            end
+
+
             -- null stuff
             entry.fluid_ingredients = entry.fluid_ingredients or {}
             entry.fluid_results = entry.fluid_results or {}

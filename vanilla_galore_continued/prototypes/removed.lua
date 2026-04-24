@@ -364,7 +364,7 @@ vgal.data.extend({
             vgal.icon.get_in("advanced-circuit"),
         },
         energy_required = 4,
-        technology = { "logistics-3" },
+        technology = "logistics-3",
         ingredients = {
             { "steel-plate",      2 },
             { "advanced-circuit", 10 },

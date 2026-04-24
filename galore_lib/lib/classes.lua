@@ -40,3 +40,16 @@ do
     ---@field [2] number? The amount of the ingredient or nil if other amount values are set at index 3.
     ---@field [3] { probability?: number, amount_min?: integer, amount_max?: integer }?
 end
+
+do
+    ---@class vgal.SubgroupOverrideCollection
+    ---@field name string
+    ---@field order data.Order
+    ---@field group string
+    ---@field entries string[]?
+    ---@field recipe_entries string[]?
+    ---@field cleaning_entries (string|{[1]: string, [2]: string})[]?
+    ---@field when boolean?
+    ---@field when_settings string[]?
+    ---@field should_reorder_entries boolean?
+end

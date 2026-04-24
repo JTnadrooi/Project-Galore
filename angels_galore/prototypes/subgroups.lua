@@ -1,14 +1,15 @@
+---@type vgal.SubgroupOverrideCollection[]
 local subgroups = {
     { -- not in use
         name = "module-angels-bio-yield",
-        tab = "production",
+        group = "production",
         order = "yd",
         entries = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" },
         when_settings = { "vgal-modules" },
     },
     {
         name = "smelting-machines",
-        tab = "production",
+        group = "production",
         order = "y-ze",
         entries = {
             "angels-blast-furnace", "angels-chemical-furnace", "angels-induction-furnace", "angels-casting-machine",
@@ -16,11 +17,11 @@ local subgroups = {
             "angels-ore-processing-machine",
             "angels-pellet-press", "angels-powder-mixer", "angels-powderizer",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "ore-machines",
-        tab = "production",
+        group = "production",
         order = "y-zf",
         entries = {
             "angels-burner-ore-crusher", "angels-ore-crusher", "angels-ore-sorting-facility",
@@ -29,21 +30,21 @@ local subgroups = {
             "angels-filtration-unit",
             "angels-crystallizer",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "white-water-machines",
-        tab = "production",
+        group = "production",
         order = "y-za",
         entries = {
             "angels-hydro-plant", "angels-salination-plant", "angels-cooling-tower", "angels-clarifier",
             "angels-flare-stack",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "water-machines",
-        tab = "production",
+        group = "production",
         order = "y-zb",
         entries = {
             "offshore-pump", "angels-ground-water-pump",
@@ -51,11 +52,11 @@ local subgroups = {
             "angels-washing-plant",
             "angels-electrolyser", "angels-electrolyser-2", "angels-electric-boiler", "angels-electric-boiler-2",
         }, -- vanilla items dont listen, fixed in final fixes.
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "chemistry-machines",
-        tab = "production",
+        group = "production",
         order = "y-zc",
         entries = {
             "angels-air-filter",
@@ -63,21 +64,21 @@ local subgroups = {
             "chemical-plant", "angels-chemical-plant-2",
             "angels-advanced-chemical-plant", "angels-advanced-chemical-plant-2",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     }, -- the liquifiers don't listen here, is fixed in update phase.
     {
         name = "petrochem-machines",
-        tab = "production",
+        group = "production",
         order = "y-zd",
         entries = {
             "oil-refinery", "angels-gas-refinery-small", "angels-gas-refinery",
             "angels-separator", "angels-separator-2", "angels-steam-cracker",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     }, -- the oil refinery doesn't listen here, is fixed in final fixes phase.
     {
         name = "farming-machines",
-        tab = "production",
+        group = "production",
         order = "y-zg",
         entries = {
             "angels-algae-farm", "angels-algae-farm-2",
@@ -89,11 +90,11 @@ local subgroups = {
             "angels-bio-refugium-puffer",
             "angels-bio-refugium-biter",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "bio-machines",
-        tab = "production",
+        group = "production",
         order = "y-zh",
         entries = {
             "angels-bio-generator-temperate-1", "angels-bio-arboretum-1",
@@ -105,36 +106,36 @@ local subgroups = {
             "angels-bio-hatchery",
             "angels-bio-butchery",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "cement-concrete",
-        tab = "angels-smelting",
+        group = "angels-smelting",
         order = "y-na",
         entries = {
             "angels-liquid-concrete", "angels-solid-lime", "angels-solid-cement", "stone-brick", "angels-concrete-brick", -- reinforced and clay removed
             "angels-bio-tile",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     }, -- stone-brick doesn't listen here, is fixed in update phase.
     {
         name = "solid-concrete",
-        tab = "angels-smelting",
+        group = "angels-smelting",
         order = "y-nc",
         entries = {
             "landfill", "concrete", "hazard-concrete",
             "refined-concrete", "refined-concrete", "angels-solid-limestone",
         },
-        recipes_that_need_cleaning = {
+        cleaning_entries = {
             "angels-concrete",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     }, -- all of these.. they don't.. they don't listen.
 
     -- SCIENCE
     {
         name = "agricultural-science-pack",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "ybb",
         entries = { "vgal-biological-science-pack" },
         when_settings = { "vgal-science-packs" },
@@ -143,19 +144,19 @@ local subgroups = {
     -- NUCLEAR
     {
         name = "nuclear-processing",
-        tab = "angels-resource-refining",
+        group = "angels-resource-refining",
         order = --[[america]] "y-ya",
-        recipes = {
+        recipe_entries = {
             "uranium-processing",
             "angels-thorium-processing",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "nuclear-reprocessing",
-        tab = "angels-resource-refining",
+        group = "angels-resource-refining",
         order = "y-yb",
-        recipes = {
+        recipe_entries = {
             "nuclear-fuel-reprocessing",
             "angels-advanced-uranium-reprocessing",
             "angels-mixed-oxide-reprocessing",
@@ -164,11 +165,11 @@ local subgroups = {
             "angels-advanced-thorium-fuel-cell-reprocessing",
             "angels-deuterium-fuel-cell-reprocessing",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "nuclear-rocks",
-        tab = "angels-resource-refining",
+        group = "angels-resource-refining",
         order = "y-yc",
         entries = {
             "uranium-238",
@@ -181,16 +182,16 @@ local subgroups = {
             "angels-americium-241",
             "angels-muon-fusion-catalyst",
         },
-        recipes_that_need_cleaning = {
+        cleaning_entries = {
             "angels-plutonium-synthesis",
-            "angels-americium-regeneration",
-            "angels-plutonium-breeding",
+            { "angels-americium-regeneration", "angels-plutonium-239" },
+            { "angels-plutonium-breeding",     "angels-plutonium-239" },
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "nuclear-cells",
-        tab = "angels-resource-refining",
+        group = "angels-resource-refining",
         order = "y-yd",
         entries = {
             "uranium-fuel-cell",
@@ -199,11 +200,11 @@ local subgroups = {
             "angels-deuterium-fuel-cell",
             "angels-thorium-fuel-cell",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "nuclear-depleted-cells",
-        tab = "angels-resource-refining",
+        group = "angels-resource-refining",
         order = "y-ye",
         entries = {
             "depleted-uranium-fuel-cell",
@@ -211,45 +212,45 @@ local subgroups = {
             "angels-depleted-deuterium-fuel-cell",
             "angels-depleted-thorium-fuel-cell",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
 
     -- CHEM
     {
         name = "carbon",
-        tab = "angels-petrochem-refining",
+        group = "angels-petrochem-refining",
         order = "aab",
         entries = {
             "angels-solid-carbon",
             "angels-gas-carbon-monoxide",
             "angels-gas-carbon-dioxide",
         },
-        recipes_that_need_cleaning = {
-            "angels-water-gas-shift-1",
-            "angels-water-gas-shift-2",
+        cleaning_entries = {
+            { "angels-water-gas-shift-1", "angels-gas-carbon-dioxide" },
+            { "angels-water-gas-shift-2", "angels-gas-carbon-monoxide" },
             "angels-carbon-from-charcoal",
             "angels-gas-carbon-dioxide-from-wood",
-            "angels-coke-purification-2",
+            { "angels-coke-purification-2", "angels-solid-carbon" },
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "fuel-t2",
-        tab = "angels-petrochem-refining",
+        group = "angels-petrochem-refining",
         order = "abb",
         entries = {
             "nuclear-fuel",
             "angels-nuclear-fuel",
             "angels-nuclear-fuel-2",
         },
-        recipes_that_need_cleaning = {
+        cleaning_entries = {
             "vgal-coal-uranium-235-nuclear-fuel",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "petrochem-square-solids",
-        tab = "angels-petrochem-refining",
+        group = "angels-petrochem-refining",
         order = "i-aa",
         entries = {
             "angels-solid-calcium-chloride",
@@ -258,11 +259,11 @@ local subgroups = {
             "angels-solid-sodium-perchlorate",
             "angels-solid-ammonium-nitrate", -- keeplast
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "petrochem-round-solids",
-        tab = "angels-petrochem-refining",
+        group = "angels-petrochem-refining",
         order = "i-ab",
         entries = {
             "angels-solid-salt",
@@ -272,14 +273,14 @@ local subgroups = {
             "angels-solid-sodium-chlorate",
             "angels-solid-ammonium-perchlorate", -- keeplast
         },
-        recipes_that_need_cleaning = {
+        cleaning_entries = {
             "angels-liquid-aqueous-sodium-hydroxide-reverse",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "petrochem-other-solids",
-        tab = "angels-petrochem-refining",
+        group = "angels-petrochem-refining",
         order = "i-ac",
         entries = {
             "sulfur",
@@ -287,29 +288,29 @@ local subgroups = {
             "angels-solid-sodium",
             "angels-paste-cellulose",
         },
-        recipes_that_need_cleaning = {
+        cleaning_entries = {
             "angels-solid-sodium-sulfate-separation",
-            "angels-solid-salt-separation",
+            { "angels-solid-salt-separation", "angels-solid-sodium" },
             "angels-solid-sulfur",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "fluorite",
-        tab = "angels-petrochem-refining",
+        group = "angels-petrochem-refining",
         order = "db",
         entries = {
             "angels-gas-hydrogen-fluoride",
             "angels-liquid-hydrofluoric-acid",
         },
-        recipes_that_need_cleaning = {
+        cleaning_entries = {
             "angels-hydrogen-fluoride-dissolving",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     -- {
     --     name = "petrochem-round-other",
-    --     tab = "angels-petrochem-refining",
+    --     group = "angels-petrochem-refining",
     --     order = "iab",
     --     entries = {
     --         "angels-solid-sodium-salt",
@@ -319,30 +320,30 @@ local subgroups = {
     --         "angels-solid-sodium-chlorate",
     --         "angels-solid-ammonium-perchlorate", -- keeplast
     --     },
-    --     recipes_that_need_cleaning = {
+    --     cleaning_entries = {
     --         "angels-solid-sodium-hydroxide-reverse",
     --     },
-    --     reorder_entries = true,
+    --     should_reorder_entries = true,
     -- },
     {
         name = "explosives",
-        tab = "angels-petrochem-refining",
+        group = "angels-petrochem-refining",
         order = "x",
         entries = {
             "explosives",
             "cliff-explosives",
         },
-        recipes_that_need_cleaning = {
+        cleaning_entries = {
             "angels-solid-nitroglycerin",
             "angels-solid-trinitrotoluene",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
 
     -- BIO
     {
         name = "bio-fuel",
-        tab = "angels-bio-processing-nauvis",
+        group = "angels-bio-processing-nauvis",
         order = "eb",
         entries = {
             "angels-cellulose-fiber",
@@ -350,28 +351,28 @@ local subgroups = {
             "angels-wood-bricks",
             "angels-wood-charcoal",
         },
-        recipes_that_need_cleaning = {
+        cleaning_entries = {
             "angels-cellulose-fiber",
             "angels-cellulose-fiber-raw-wood",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
 
     -- MISC
     {
         name = "stone",
-        tab = "angels-smelting",
+        group = "angels-smelting",
         order = "y-yd",
         entries = {
             "stone",
             "angels-slag",
             "angels-stone-crushed",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "sediments",
-        tab = "angels-smelting",
+        group = "angels-smelting",
         order = "y-ye",
         entries = {
             "angels-solid-mud",
@@ -379,11 +380,11 @@ local subgroups = {
             "angels-solid-limestone",
             "angels-solid-sand",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "recipe-items",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "ca",
         entries = {
             "angels-solid-saw",
@@ -397,11 +398,11 @@ local subgroups = {
             "angels-catalyst-metal-blue",
             "angels-catalyst-metal-yellow",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
     {
         name = "recipe-items-filters",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "cab",
         entries = {
             "angels-filter-frame",
@@ -409,10 +410,10 @@ local subgroups = {
             "angels-filter-ceramic",
             "angels-filter-lime",
         },
-        recipes_that_need_cleaning = {
+        cleaning_entries = {
             "angels-filter-ceramic-refurbish",
         },
-        reorder_entries = true,
+        should_reorder_entries = true,
     },
 }
 
@@ -431,28 +432,28 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel
     if metal.name ~= "steel" then
         table.insert(subgroups, {
             name = metal.name .. "-sorting-results",
-            tab = "angels-smelting",
+            group = "angels-smelting",
             order = "b-" .. base_order .. "a",
             entries = { metal.ore, metal.pebbles, metal.nugget, metal.slag },
-            reorder_entries = true,
+            should_reorder_entries = true,
         })
     end
 
 
     table.insert(subgroups, {
         name = metal.name .. "-processing",
-        tab = "angels-smelting",
+        group = "angels-smelting",
         order = "b-" .. base_order .. "b",
         entries = processing_entries,
-        reorder_entries = true,
+        should_reorder_entries = true,
     })
 
     table.insert(subgroups, {
         name = metal.name .. "-casting",
-        tab = "angels-smelting",
+        group = "angels-smelting",
         order = "b-" .. base_order .. "c",
         entries = { metal.molten, metal.roll, metal.plate },
-        reorder_entries = true,
+        should_reorder_entries = true,
     })
 end
 
@@ -475,7 +476,7 @@ for _, metal in pairs(vgal.defines.metals) do
     table.insert(subgroups,
         {
             name = metal.base_ore,
-            tab = "angels-resource-refining",
+            group = "angels-resource-refining",
             order = "b[processing]-" .. ((metal.name == "copper") and "a" or "b"),
             entries = vgal.table.merge_array({ metal.base_ore }, ore_entries),
         }
@@ -499,24 +500,33 @@ for _, subgroup in ipairs(subgroups) do
         subgroup.entries = {}
     end
 
-    if subgroup.reorder_entries then
+    if subgroup.should_reorder_entries then
         for i, entry_name in ipairs(subgroup.entries or {}) do
             vgal.get_recipeable(entry_name).order = vgal.subgroup.order_from_number(i)
         end
     end
 
-    vgal.subgroup.new("vgal-" .. subgroup.name, subgroup.entries or {}, subgroup.tab, subgroup.order)
+    vgal.subgroup.new("vgal-" .. subgroup.name, subgroup.entries or {}, subgroup.group, subgroup.order)
 
-    for i, recipe_name in ipairs(subgroup.recipes or {}) do
+    for i, recipe_name in ipairs(subgroup.recipe_entries or {}) do
         local recipe = vgal.throw.if_recipe_not_found(recipe_name)
         recipe.subgroup = "vgal-" .. subgroup.name
 
-        if subgroup.reorder_entries then
+        if subgroup.should_reorder_entries then
             recipe.order = vgal.subgroup.order_from_number(i)
         end
     end
 
-    for _, recipe_name in ipairs(subgroup.recipes_that_need_cleaning or {}) do
-        vgal.subgroup.clean_recipe(recipe_name)
+    for _, cleaning_entry in ipairs(subgroup.cleaning_entries or {}) do
+        if cleaning_entry[1] then
+            ---@cast cleaning_entry {[1]: string, [2]: string}
+
+            vgal.subgroup.clean_recipe(cleaning_entry[1])
+            data.raw["recipe"][cleaning_entry[1]].main_product = cleaning_entry[2]
+        else
+            ---@cast cleaning_entry string
+
+            vgal.subgroup.clean_recipe(cleaning_entry --[[@as string]])
+        end
     end
 end

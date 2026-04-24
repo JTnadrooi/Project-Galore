@@ -102,6 +102,7 @@ vgal.data.extend({
         fluid_results = {
             { "ammonia", 10 } -- 20 (50vn)
         },
+        order = "b-e-bb",
         surface_conditions =
         {
             {

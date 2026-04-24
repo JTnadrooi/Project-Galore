@@ -62,7 +62,7 @@ vgal.data.extend({
             vgal.icon.get_in("plastic-bar"),
         },
         energy_required = 1,
-        technology = "plastics",
+        technology = { "plastics", "logistics-2" },
         ingredients = {
             { "plastic-bar",     3 },
             { "iron-gear-wheel", 1 },

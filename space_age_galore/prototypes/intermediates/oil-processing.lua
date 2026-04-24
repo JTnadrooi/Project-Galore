@@ -45,7 +45,6 @@ vgal.data.extend({
         subgroup = "vgal-oil",
         order = "aab",
         technology = "agriculture",
-        show_amount_in_title = false,
     },
     {
         name = "yumako-mash-light-oil",

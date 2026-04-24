@@ -199,6 +199,8 @@ function vgal.tech.move_recipe(tech_name_from, tech_name_to, recipe_name)
     local tech_from = vgal.throw.if_tech_not_found(tech_name_from)
     local tech_to = vgal.throw.if_tech_not_found(tech_name_to)
 
+    vgal.throw.if_recipe_not_found(recipe_name)
+
     for i, eff in ipairs(tech_from.effects) do
         if eff.type == "unlock-recipe" and eff.recipe == recipe_name then
             table.insert(tech_to.effects, eff)

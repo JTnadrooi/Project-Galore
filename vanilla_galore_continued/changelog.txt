@@ -4,6 +4,7 @@ Version: 1.3.5
     - Renamed "Galore Tech Node" to "Galore tech node".
     - Updated for GaloreLib 2.0.
     - Improved "vgal-engine-unit-rocket-part" description.
+    - Improved locale file structure.
   Balancing:
     - Removed the "vgal-advanced-circuit-express-splitter" recipe. (Reason(s); 1. The vanilla recipe is almost identical. 2. The vanilla recipe already uses adv circuits, so there is no point except for the steel/gear swap. 3. UI allignment fix.)
   Bugfixes:

@@ -527,7 +527,7 @@ function vgal.recipe.get_preferred_localised_description(recipe)
     return recipe.localised_description or { "recipe-description." .. recipe.name }
 end
 
----@param domain_name string
+---@param domain_name string?
 function vgal.recipe.get_domain_or_all_pairs(domain_name)
     local iterator, dom, start_key
     if domain_name then

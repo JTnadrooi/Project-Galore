@@ -128,6 +128,9 @@ end
 ---@param prerequisite string
 function vgal.tech.add_prerequisite(tech_name, prerequisite)
     local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    tech.prerequisites = tech.prerequisites or {}
+
     table.insert(tech.prerequisites, prerequisite)
 end
 

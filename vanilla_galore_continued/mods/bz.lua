@@ -46,6 +46,7 @@ if mods["bzcarbon"] then
             "vgal")
         vgal.recipe.all.link_ingredient({ type = "item", name = "polyacrylonitrile", amount = 1 }, "carbon-fiber", 1,
             "vgal")
+        vgal.recipe.all.link_ingredient({ type = "item", name = "diamond", amount = 10 }, "big-mining-drill", 1, "vgal")
     end
 end
 

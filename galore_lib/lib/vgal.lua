@@ -72,6 +72,11 @@ if mods["vanilla_galore_continued"] then
     end
 end
 
+---@param domain_name string
+---@param prototype_type string
+---@return function
+---@return table<string, data.PrototypeBase>
+---@return nil
 function vgal.data.domain_pairs(domain_name, prototype_type)
     local dom = vgal.data.DOMAINS[domain_name]
     if not dom then error("domain " .. domain_name .. " does not exist") end

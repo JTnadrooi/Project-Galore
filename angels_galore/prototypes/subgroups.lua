@@ -1,6 +1,6 @@
 ---@type vgal.SubgroupOverrideCollection[]
 local subgroups = {
-    { -- not in use
+    { -- not in use, module has been removed
         name = "module-angels-bio-yield",
         group = "production",
         order = "yd",
@@ -296,7 +296,7 @@ local subgroups = {
         should_reorder_entries = true,
     },
     {
-        name = "fluorite",
+        name = "fluoride",
         group = "angels-petrochem-refining",
         order = "db",
         entries = {
@@ -496,8 +496,6 @@ for _, metal in pairs(vgal.defines.metals) do
         }
     )
 end
-
-vgal.log_block(subgroups)
 
 for _, subgroup in ipairs(subgroups) do
     if subgroup.when == nil then

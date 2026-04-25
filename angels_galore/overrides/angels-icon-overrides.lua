@@ -6,6 +6,34 @@ local function use_main_icon(recipe_name)
     })
 end
 
+
+
+-- distinguish recipe icons with updated order
+-- carbon gasses
+data.raw["recipe"]["angels-water-gas-shift-2"].icons = angelsmods.functions.create_gas_recipe_icon(
+    {
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 72 },
+    },
+    "CCOc", {
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 72, },
+    }
+)
+data.raw["recipe"]["angels-gas-carbon-dioxide-from-wood"].icons = angelsmods.functions.create_gas_recipe_icon(
+    {
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 72 },
+    },
+    "COcOc", { "angels-wood-pellets" }
+)
+data.raw["recipe"]["angels-water-gas-shift-1"].icons = angelsmods.functions.create_gas_recipe_icon(
+    {
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 72 },
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png",       72 },
+    },
+    "COcOc", { "steam", { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 72 }, }
+)
+
+
+-- misc distinguish
 data.raw["recipe"]["angels-gas-methanol-from-wood"].icons = angelsmods.functions.create_gas_recipe_icon(
     {
         { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 72 },
@@ -20,7 +48,7 @@ data.raw["recipe"]["angels-gas-ammonia-from-blue-fiber"].icons = angelsmods.func
     "NHH", { "angels-blue-cellulose-fiber", }
 )
 
-data.raw["recipe"]["angels-liquid-acetic-acid"].icons = angelsmods.functions.create_gas_recipe_icon(
+data.raw["recipe"]["angels-liquid-acetic-acid"].icons = angelsmods.functions.create_liquid_recipe_icon(
     {
         { "__angelsbioprocessinggraphics__/graphics/icons/molecule-acetic-acid.png", 72 },
     },
@@ -34,6 +62,81 @@ data.raw["recipe"]["angels-gas-ethanol"].icons = angelsmods.functions.create_gas
     "COH", { "angels-liquid-fermentation-raw", }
 )
 
+-- fix steam cracking icons
+for recipe_name, product_name in pairs({
+    ["angels-steam-cracking-methane"] = "methanol",
+    ["angels-steam-cracking-butane"] = "benzene",
+    ["angels-gas-ethylene"] = "ethylene",
+    ["angels-gas-propene"] = "propene",
+    ["angels-catalyst-steam-cracking-naphtha"] = "propene",
+}) do
+    data.raw["recipe"][recipe_name].icons = angelsmods.functions.create_gas_recipe_icon(
+        {
+            { "__angelspetrochemgraphics__/graphics/icons/molecules/" .. product_name .. ".png", 72 },
+        },
+        "CHH", { "steam", }
+    )
+end
+
+-- fix syngas recipe icons
+for _, product_name in ipairs({
+    "naphtha",
+    "mineral-oil",
+    "fuel-oil",
+}) do
+    data.raw["recipe"]["angels-steam-cracking-" .. product_name].icons = angelsmods.functions.create_gas_recipe_icon({
+        "angels-gas-synthesis",
+    }, { { 210, 120, 210 }, { 175, 100, 175 }, { 140, 080, 140 } }, { "angels-liquid-" .. product_name, })
+end
+
+-- fix polyethelene icon
+data.raw["recipe"]["angels-liquid-polyethylene"].icons = angelsmods.functions.create_liquid_recipe_icon(
+    {
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/polyethylene.png", 72 },
+    },
+    "CHH"
+)
+
+-- fix steam-cracking-methane icon
+data.raw["recipe"]["angels-steam-cracking-methane"].icons = angelsmods.functions.create_gas_recipe_icon(
+    {
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 72 },
+    },
+    "COH", { "steam", }
+)
+
+-- add some more input icons to make it more fit for its subgroup
+data.raw["recipe"]["angels-condensates-refining"].icons = angelsmods.functions.create_gas_recipe_icon(
+    {
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/methane.png", 72 },
+        "angels-solid-coke",
+        "angels-liquid-naphtha",
+    },
+    "CHH",
+    {
+        "angels-liquid-condensates",
+    }
+)
+
+-- fix fluid/gas recipe icons not being other type
+data.raw["recipe"]["angels-liquid-phenol"].icons = angelsmods.functions.create_liquid_recipe_icon(
+    {
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/phenol.png", 72 },
+    },
+    "COH"
+)
+
+-- toluene fixes
+data.raw.recipe["angels-liquid-toluene-from-benzene"].icons = vgal.icon.register({
+    vgal.icon.get("angels-liquid-toluene"),
+    vgal.icon.get_in("benzene", "molecule"),
+})
+data.raw.recipe["angels-liquid-toluene"].icons = vgal.icon.register({
+    vgal.icon.get("angels-liquid-toluene"),
+    vgal.icon.get_in("angels-liquid-naphtha"),
+})
+
+-- other
 data.raw.recipe["angels-garden-cultivating"].icons = vgal.icon.register({
     vgal.icon.get("angels-paste-cellulose"),
     vgal.icon.get_out("angels-temperate-garden"),

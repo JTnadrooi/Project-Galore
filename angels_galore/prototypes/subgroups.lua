@@ -215,7 +215,7 @@ local subgroups = {
         should_reorder_entries = true,
     },
 
-    -- CHEM
+    -- CHEM (angels-petrochem-refining)
     {
         name = "carbon",
         group = "angels-petrochem-refining",
@@ -245,6 +245,84 @@ local subgroups = {
         },
         cleaning_entries = {
             "vgal-coal-uranium-235-nuclear-fuel",
+        },
+        should_reorder_entries = true,
+    },
+    {
+        name = "NHH",
+        group = "angels-petrochem-refining",
+        order = "cab",
+        entries = {
+            "angels-gas-ammonia",
+            "angels-gas-hydrazine",
+            "angels-liquid-nitric-acid", -- misfit
+        },
+        cleaning_entries = {
+            { "angels-steam-cracking-butane", "angels-gas-benzene" },
+            "angels-gas-ammonia-from-blue-fiber",
+            "angels-sodium-nitrate-acid-processing",
+        },
+        should_reorder_entries = true,
+    },
+    {
+        name = "CH-gas",
+        group = "angels-petrochem-refining",
+        order = "fa",
+        entries = {
+            "angels-gas-ethylene",
+            "angels-gas-methane",
+            "angels-gas-ethane",
+            "angels-gas-butane",
+            "angels-gas-propene",
+            "angels-gas-benzene",
+        },
+        cleaning_entries = {
+            "angels-ethanol-to-ethylene-synthesis",
+            { "angels-catalyst-steam-cracking-naphtha", "angels-gas-propene" },
+            { "angels-steam-cracking-butane",           "angels-gas-benzene" },
+        },
+        should_reorder_entries = true,
+    },
+    {
+        name = "CH-liquid",
+        group = "angels-petrochem-refining",
+        order = "fab",
+        entries = {
+            "angels-liquid-polyethylene",
+        },
+        cleaning_entries = {
+        },
+        should_reorder_entries = true,
+    },
+    {
+        name = "COH-gas",
+        group = "angels-petrochem-refining",
+        order = "fb",
+        entries = {
+            "angels-gas-methanol",
+            "angels-gas-acetone",
+            "angels-gas-ethanol",
+        },
+        cleaning_entries = {
+            "angels-gas-methanol-from-wood",
+            { "angels-steam-cracking-methane", "angels-gas-methanol" },
+            { "angels-cumene-process",         "angels-gas-acetone" },
+        },
+        should_reorder_entries = true,
+    },
+    {
+        name = "COH-liquid",
+        group = "angels-petrochem-refining",
+        order = "fbb",
+        entries = {
+            "angels-liquid-phenol",
+            "angels-liquid-glycerol",
+            "angels-liquid-acetic-acid",
+            "angels-liquid-acetic-anhydride",
+            "angels-liquid-propionic-acid",
+        },
+        cleaning_entries = {
+            "angels-liquid-acetic-acid-catalyst",
         },
         should_reorder_entries = true,
     },
@@ -308,23 +386,6 @@ local subgroups = {
         },
         should_reorder_entries = true,
     },
-    -- {
-    --     name = "petrochem-round-other",
-    --     group = "angels-petrochem-refining",
-    --     order = "iab",
-    --     entries = {
-    --         "angels-solid-sodium-salt",
-    --         "angels-solid-sodium-carbonate",
-    --         "angels-solid-sodium-hydroxide",
-    --         "angels-solid-sodium-sulfate",
-    --         "angels-solid-sodium-chlorate",
-    --         "angels-solid-ammonium-perchlorate", -- keeplast
-    --     },
-    --     cleaning_entries = {
-    --         "angels-solid-sodium-hydroxide-reverse",
-    --     },
-    --     should_reorder_entries = true,
-    -- },
     {
         name = "explosives",
         group = "angels-petrochem-refining",

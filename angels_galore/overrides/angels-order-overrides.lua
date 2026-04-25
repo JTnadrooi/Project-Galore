@@ -78,3 +78,10 @@ data.raw["recipe"]["angels-coke-purification-2"].order = "ab"
 data.raw["recipe"]["angels-carbon-from-charcoal"].order = "ac"
 
 data.raw["recipe"]["angels-liquid-aqueous-sodium-hydroxide-reverse"].order = "cb"
+
+data.raw["recipe"]["angels-steam-cracking-naphtha"].order = "bb"
+data.raw["recipe"]["angels-steam-cracking-mineral-oil"].order = "bc"
+data.raw["recipe"]["angels-steam-cracking-fuel-oil"].order = "bd"
+data.raw["recipe"]["angels-steam-cracking-naphtha"].subgroup = "angels-petrochem-carbon-synthesis"
+data.raw["recipe"]["angels-steam-cracking-mineral-oil"].subgroup = "angels-petrochem-carbon-synthesis"
+data.raw["recipe"]["angels-steam-cracking-fuel-oil"].subgroup = "angels-petrochem-carbon-synthesis"

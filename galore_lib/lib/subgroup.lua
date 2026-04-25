@@ -27,6 +27,10 @@ function vgal.subgroup.set_for(name, subgroup_name)
     local recipe = data.raw["recipe"][name]
     if recipe then
         vgal.subgroup.clean(recipe)
+        -- if recipe.results and (#recipe.results > 1) then
+        --     recipe.main_product = name
+        -- end
+        recipe.main_product = name
     end
 end
 

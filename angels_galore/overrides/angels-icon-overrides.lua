@@ -6,6 +6,34 @@ local function use_main_icon(recipe_name)
     })
 end
 
+data.raw["recipe"]["angels-gas-methanol-from-wood"].icons = angelsmods.functions.create_gas_recipe_icon(
+    {
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 72 },
+    },
+    "COH", { "angels-cellulose-fiber", }
+)
+
+data.raw["recipe"]["angels-gas-ammonia-from-blue-fiber"].icons = angelsmods.functions.create_gas_recipe_icon(
+    {
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 72 },
+    },
+    "NHH", { "angels-blue-cellulose-fiber", }
+)
+
+data.raw["recipe"]["angels-liquid-acetic-acid"].icons = angelsmods.functions.create_gas_recipe_icon(
+    {
+        { "__angelsbioprocessinggraphics__/graphics/icons/molecule-acetic-acid.png", 72 },
+    },
+    "COH", { "angels-liquid-fermentation-raw", }
+)
+
+data.raw["recipe"]["angels-gas-ethanol"].icons = angelsmods.functions.create_gas_recipe_icon(
+    {
+        { "__angelsbioprocessinggraphics__/graphics/icons/molecule-ethanol.png", 72 },
+    },
+    "COH", { "angels-liquid-fermentation-raw", }
+)
+
 data.raw.recipe["angels-garden-cultivating"].icons = vgal.icon.register({
     vgal.icon.get("angels-paste-cellulose"),
     vgal.icon.get_out("angels-temperate-garden"),
@@ -64,6 +92,15 @@ data.raw.recipe["angels-liquid-aqueous-sodium-hydroxide-reverse"].icons = vgal.i
 })
 
 use_main_icon("angels-solid-sodium-hydroxide")
+
+data.raw.recipe["angels-fermentation-corn"].icons = vgal.icon.register({
+    vgal.icon.get("angels-liquid-fermentation-raw"),
+})
+
+data.raw.recipe["angels-fermentation-fruit"].icons = vgal.icon.register({
+    vgal.icon.get("angels-liquid-fermentation-raw"),
+    vgal.icon.get_in("angels-solid-fruit"),
+})
 
 for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.angels_plate_recipe_name].icons = vgal.icon.register({

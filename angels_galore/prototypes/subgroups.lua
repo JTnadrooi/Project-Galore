@@ -357,6 +357,20 @@ local subgroups = {
         },
         should_reorder_entries = true,
     },
+    {
+        name = "bio-chemistry",
+        group = "angels-bio-processing-vegetables",
+        order = "f",
+        entries = {
+            "angels-liquid-fermentation-raw",
+            "angels-liquid-cellulose-acetate-mixture",
+        },
+        cleaning_entries = {
+            "angels-fermentation-corn",
+            "angels-fermentation-fruit",
+        },
+        should_reorder_entries = true,
+    },
 
     -- MISC
     {

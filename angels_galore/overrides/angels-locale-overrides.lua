@@ -18,3 +18,30 @@ vgal.recipe.use_recipe_locale("angels-cellulose-fiber")
 
 data.raw["recipe"]["angels-solid-sulfur"].show_amount_in_title = true
 data.raw["recipe"]["angels-solid-sulfur"].localised_name = nil
+
+for _, metal in pairs(vgal.defines.metals) do
+    for _, ore_state in ipairs(agal.defines.ore_states) do
+        -- commentedbc: ugly
+        -- local previous = nil
+        -- if ore_state == "crushed" then
+        --     previous = "angels-ore" .. metal.ore_index
+        -- elseif ore_state == "chunk" then
+        --     previous = "angels-ore" .. metal.ore_index .. "-crushed"
+        -- elseif ore_state == "crystal" then
+        --     previous = "angels-ore" .. metal.ore_index .. "-chunk"
+        -- elseif ore_state == "pure" then
+        --     previous = "angels-ore" .. metal.ore_index .. "-crystal"
+        -- end
+
+        data.raw["recipe"][metal[ore_state]].localised_name =
+        { "?",
+            {
+                "",
+                { "agal-internal.ore-" .. metal.ore_index },
+                " ",
+                { "agal-internal.act-" .. ore_state },
+            },
+            { "item-name." .. metal[ore_state] },
+        }
+    end
+end

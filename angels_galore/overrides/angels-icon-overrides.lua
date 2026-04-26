@@ -212,10 +212,27 @@ for _, nutrientable in ipairs(agal.defines.nutrientables) do
     })
 end
 
+data.raw.recipe["angels-fish-pulp-nutrients"].icons = vgal.icon.register({
+    vgal.icon.get("angels-liquid-nutrient-pulp"),
+    vgal.icon.get_in("angels-fish-pulp"),
+})
+
 for _, vegetable_oilable in ipairs({ "nuts", "pips", "beans" }) do
     data.raw.recipe["angels-liquid-raw-vegetable-oil-" .. vegetable_oilable].icons = vgal.icon.register({
         vgal.icon.get("angels-liquid-raw-vegetable-oil"),
         vgal.icon.get_in("angels-solid-" .. vegetable_oilable),
+    })
+end
+
+data.raw.recipe["angels-fish-pressing-0"].icons = vgal.icon.register({
+    vgal.icon.get("angels-liquid-raw-fish-oil"),
+    vgal.icon.get_in("raw-fish"),
+})
+
+for i = 1, 3 do
+    data.raw.recipe["angels-fish-pressing-" .. i].icons = vgal.icon.register({
+        vgal.icon.get("angels-liquid-raw-fish-oil"),
+        vgal.icon.get_in("angels-alien-fish-" .. i .. "-raw"),
     })
 end
 

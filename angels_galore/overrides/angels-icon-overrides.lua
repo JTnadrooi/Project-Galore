@@ -205,6 +205,13 @@ data.raw.recipe["angels-fermentation-fruit"].icons = vgal.icon.register({
     vgal.icon.get_in("angels-solid-fruit"),
 })
 
+for _, nutrientable in ipairs(agal.defines.nutrientables) do
+    data.raw.recipe[nutrientable .. "-nutrients"].icons = vgal.icon.register({
+        vgal.icon.get("angels-liquid-nutrient-pulp"),
+        vgal.icon.get_in(nutrientable),
+    })
+end
+
 for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.angels_plate_recipe_name].icons = vgal.icon.register({
         vgal.icon.get(metal.plate),

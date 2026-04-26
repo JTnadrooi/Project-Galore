@@ -12,6 +12,15 @@ agal.defines.geodes = { -- sorted from most to least valuable
     "angels-geode-blue",
 }
 
+agal.defines.nutrientables = {
+    "angels-solid-pips",
+    "angels-solid-beans",
+    "angels-solid-leafs",
+    "angels-solid-fruit",
+    "angels-solid-nuts",
+    "angels-solid-corn",
+}
+
 ---@type string[]
 agal.defines.environments = { "angels-temperate", "angels-swamp", "angels-desert" }
 

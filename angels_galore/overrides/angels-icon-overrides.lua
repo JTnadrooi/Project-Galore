@@ -212,6 +212,13 @@ for _, nutrientable in ipairs(agal.defines.nutrientables) do
     })
 end
 
+for _, vegetable_oilable in ipairs({ "nuts", "pips", "beans" }) do
+    data.raw.recipe["angels-liquid-raw-vegetable-oil-" .. vegetable_oilable].icons = vgal.icon.register({
+        vgal.icon.get("angels-liquid-raw-vegetable-oil"),
+        vgal.icon.get_in("angels-solid-" .. vegetable_oilable),
+    })
+end
+
 for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.angels_plate_recipe_name].icons = vgal.icon.register({
         vgal.icon.get(metal.plate),

@@ -353,6 +353,7 @@ local subgroups = {
         },
         cleaning_entries = {
             "angels-liquid-aqueous-sodium-hydroxide-reverse",
+            "angels-algae-brown-burning-wash",
         },
         should_reorder_entries = true,
     },

@@ -85,3 +85,5 @@ data.raw["recipe"]["angels-steam-cracking-fuel-oil"].order = "bd"
 data.raw["recipe"]["angels-steam-cracking-naphtha"].subgroup = "angels-petrochem-carbon-synthesis"
 data.raw["recipe"]["angels-steam-cracking-mineral-oil"].subgroup = "angels-petrochem-carbon-synthesis"
 data.raw["recipe"]["angels-steam-cracking-fuel-oil"].subgroup = "angels-petrochem-carbon-synthesis"
+
+data.raw["recipe"]["angels-algae-brown-burning-wash"].order = "bb"

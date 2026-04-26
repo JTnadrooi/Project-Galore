@@ -174,6 +174,11 @@ data.raw.recipe["angels-solid-sodium-sulfate-separation"].icons = vgal.icon.regi
     vgal.icon.get_in("angels-solid-sodium-sulfate"),
 })
 
+data.raw["recipe"]["angels-algae-brown-burning-wash"].icons = vgal.icon.register({
+    vgal.icon.get("angels-solid-sodium-carbonate"),
+    vgal.icon.get_in("angels-algae-brown"),
+})
+
 data.raw.recipe["angels-coolant-used-filtration-1"].icons = vgal.icon.register({
     vgal.icon.get("angels-liquid-coolant"),
     vgal.icon.get_in("angels-filter-coal"),

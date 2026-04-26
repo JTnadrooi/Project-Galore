@@ -621,3 +621,17 @@ fix_mud_in_washing_recipe("angels-water-saline")
 -- vgal.recipe.add_result("angels-wood-sawing-1", { "angels-solid-leafs", 1 }) -- commentedbc: nuh uh, you only get net positive nutrient stuff if u use fancy saws
 vgal.recipe.add_result("angels-wood-sawing-2", { "angels-solid-leafs", nil, { amount_min = 0, amount_max = 3 } })
 vgal.recipe.add_result("angels-wood-sawing-3", { "angels-solid-leafs", nil, { amount_min = 2, amount_max = 4 } })
+
+-- make default calcium carbonate recipe the limestone one
+data.raw["recipe"]["angels-solid-calcium-carbonate"].ingredients = vgal.build.table({
+    { "angels-solid-lime", 1 },
+}, {
+    { "angels-gas-carbon-dioxide", 20 }, -- more that creating lime ouputs, lossy process (can be fixed with prod tho.. I'm allowing it)
+})
+data.raw["recipe"]["angels-solid-calcium-carbonate"].results = vgal.build.table({
+    { "angels-solid-calcium-carbonate", 1 },
+})
+data.raw["recipe"]["angels-solid-calcium-carbonate"].energy_required = 2
+vgal.tech.move_recipe("angels-bio-processing-red", "angels-stone-smelting-1", "angels-solid-calcium-carbonate")
+
+--

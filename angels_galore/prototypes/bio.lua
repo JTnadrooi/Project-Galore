@@ -1,4 +1,3 @@
--- to make costs align with vanilla (one plastic bar should be around as much "worth" as 1.5 plates) plastic bar recipes have been buffed
 vgal.data.extend({
     {
         name = "angels-solid-leafs-angels-cellulose-fiber",

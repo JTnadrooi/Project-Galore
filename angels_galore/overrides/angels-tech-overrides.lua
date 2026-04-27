@@ -1,5 +1,29 @@
--- fixes and alterations are mixed
+-- TECH FIXES (alot of this is done in final fixes too)
+data.raw["technology"]["angels-basic-chemistry"].unit.count = 40
+data.raw["technology"]["angels-ore-crushing"].prerequisites = { "automation" }
+vgal.tech.merge("angels-flare-stack", "angels-basic-chemistry")
+table.insert(data.raw["technology"]["angels-water-treatment"].prerequisites, "angels-water-washing-1")
+table.insert(data.raw["technology"]["angels-bio-processing-green"].unit.ingredients, { "logistic-science-pack", 1 })
+table.insert(data.raw["technology"]["angels-bio-processing-green"].prerequisites, "angels-bio-nutrient-paste")
+vgal.tech.move_recipe("angels-bio-processing-green", "angels-water-treatment", "angels-water-mineralized")
+vgal.tech.replace_recipe("angels-ore-crushing", "angels-ore4-crushed", "angels-ore3-crushed")
 
+-- data.raw["technology"]["angels-bio-arboretum-1"].prerequisites = { "vgal-biological-science-pack" } -- commentedbc: Just like black science, im leaving some techs open. This one fits.
+
+-- remove cement 3. it only adds alternate recipes but as those arent really alternates and more upgrades, Im gonna remove them instead of editing them.
+vgal.tech.deephide("angels-stone-smelting-3")
+vgal.tech.techs_to_splice["angels-stone-smelting-3"] = data.raw["technology"]["angels-stone-smelting-3"]
+
+-- move fertilizer to unlock before agri science and remove farming 2 tech (it only had the fertilizer recipe)
+vgal.tech.move_recipe("angels-bio-farm-2", "angels-composting", "angels-solid-fertilizer")
+vgal.tech.deephide("angels-bio-farm-2")
+vgal.tech.add_prerequisite("angels-composting", "angels-nitrogen-processing-2")
+vgal.tech.add_unit("angels-composting", "logistic-science-pack")
+vgal.tech.set_unit_count("angels-composting", 50)
+vgal.tech.add_unit("angels-bio-arboretum-1", "logistic-science-pack")
+vgal.tech.set_unit_count("angels-bio-arboretum-1", 50)
+
+-- fix farm prerequisites
 for _, environment in ipairs({ "desert", "swamp", "temperate" }) do
     data.raw["technology"]["angels-bio-" .. environment .. "-farm"].prerequisites = {
         "angels-bio-" .. environment .. "-farming-1",
@@ -21,7 +45,6 @@ end
 -- vgal.tech.add_prerequisite("angels-copper-casting-3", "chemical-science-pack")
 -- vgal.tech.add_prerequisite("angels-iron-casting-3", "chemical-science-pack")
 -- vgal.tech.add_prerequisite("angels-steel-smelting-3", "chemical-science-pack")
-
 
 -- data.raw["technology"]["angels-plastic-3"].prerequisites = { "angels-plastic-2", "angels-advanced-chemistry-4" }
 data.raw["technology"]["angels-nitrogen-processing-4"].prerequisites =

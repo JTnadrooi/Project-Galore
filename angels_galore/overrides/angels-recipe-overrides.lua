@@ -487,9 +487,6 @@ data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 2
 -- })
 -- vgal.data.trim("angels-concrete")
 
--- minor angels-concrete tweak
-vgal.recipe.multiply("angels-concrete", 1.25)
-data.raw["recipe"]["angels-concrete"].energy_required = 5
 
 -- reduce crafting times as galore severelly reduces some machine speeds
 -- liquifier
@@ -651,9 +648,34 @@ data.raw["recipe"]["angels-alien-bacteria"].energy_required = 5 -- prev 3
 -- vgal.recipe.set_result_amount("angels-alien-bacteria", 1)
 
 -- nerf alt alien bacteria recipe, even with the other recipe buff its still way to OP
-vgal.recipe.set_result_amount("angels-sorting-swamp-5", 1, "angels-alien-bacteria") -- prev 4
+vgal.recipe.set_result_amount("angels-sorting-swamp-5", 1, "angels-alien-bacteria")
+
+-- alien goo recipe tweak
+vgal.recipe.multiply("angels-alien-goo", 5)
+data.raw["recipe"]["angels-alien-goo"].energy_required = 5
 
 -- increase alien goo needed recipes, as its cheaper now
 -- has the side effect of nicer numbers
 vgal.recipe.set_ingredient_amount("angels-solid-alienated-fertilizer", 10, "angels-alien-goo") -- prev 5
 vgal.recipe.set_ingredient_amount("angels-bio-alien-processed-meat", 5, "angels-alien-goo")    -- prev 2
+
+-- fix cement/concrete recipes
+data.raw["recipe"]["angels-solid-cement"].ingredients = vgal.build.table({
+    { "angels-stone-crushed", 1 },
+    { "angels-solid-lime",    1 },
+})
+data.raw["recipe"]["angels-solid-cement"].energy_required = 1 -- prev 4 (no one is gonna pave their base if u have to place 1000(~40) powdermixers for like a t1 belt of concrete)
+data.raw["recipe"]["concrete"].ingredients = vgal.build.table({
+    { "angels-iron-pebbles", 1 },
+    { "stone-brick",         5 },
+}, {
+    { "water", 100 },
+})
+vgal.recipe.multiply("angels-concrete-brick", 1.25)
+data.raw["recipe"]["angels-concrete-brick"].energy_required = 5
+vgal.recipe.multiply("angels-concrete", 1.25)
+data.raw["recipe"]["angels-concrete"].energy_required = 5
+
+-- buff concrete recipe so its a more.. more? better way to making solid concrete than the vanilla recipe
+vgal.recipe.set_result_amount("angels-liquid-concrete", 150)
+vgal.recipe.set_ingredient_amount("angels-liquid-concrete", 150, "water")

@@ -112,6 +112,10 @@ vgal.tech.remove_recipe("angels-powder-metallurgy-2", "angels-powderizer")
 -- move garden processing tech more into farming tree part
 vgal.tech.remove_prerequisite("angels-gardens", "angels-stone-smelting-1")
 
+-- fix hatching tech
+vgal.tech.add_prerequisite("angels-bio-refugium-hatchery", "vgal-biological-science-pack")
+-- vgal.tech.remove_prerequisite("angels-bio-refugium-hatchery", "angels-chlorine-processing-1")
+
 -- remove ore gen of removed ores.
 for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
     local ore = "angels-ore" .. ore_index

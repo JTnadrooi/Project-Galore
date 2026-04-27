@@ -83,6 +83,9 @@ for material, tech_postfixes in pairs(funky_tech_names) do
     }
 end
 
+-- powderizer already unlocked elsewhere, unlock here not needed anymore
+vgal.tech.remove_recipe("angels-powder-metallurgy-2", "angels-powderizer")
+
 -- angels stone smelting 3 is a COMEBACKAT
 
 -- remove ore gen of removed ores.

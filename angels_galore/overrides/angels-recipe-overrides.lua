@@ -634,4 +634,26 @@ data.raw["recipe"]["angels-solid-calcium-carbonate"].results = vgal.build.table(
 data.raw["recipe"]["angels-solid-calcium-carbonate"].energy_required = 2
 vgal.tech.move_recipe("angels-bio-processing-red", "angels-stone-smelting-1", "angels-solid-calcium-carbonate")
 
---
+-- normalize alien spores recipe
+data.raw["recipe"]["angels-alien-spores"].results = vgal.build.table({
+}, {
+    { "angels-alien-spores",       20 }, -- prev way more (75)
+    { "angels-water-yellow-waste", 80 },
+})
+-- compensate bacteria recipe a bit (and remove hydrochloric acid ingredient)
+data.raw["recipe"]["angels-alien-bacteria"].ingredients = vgal.build.table({
+    { "angels-solid-calcium-carbonate", 1 },
+}, {
+    { "angels-alien-spores", 10 },                              -- prev 50
+    { "angels-water-saline", 50 },                              -- a bit more streamlined with how you could be using it from brown algae already for the calcium carbonate
+})
+data.raw["recipe"]["angels-alien-bacteria"].energy_required = 5 -- prev 3
+-- vgal.recipe.set_result_amount("angels-alien-bacteria", 1)
+
+-- nerf alt alien bacteria recipe, even with the other recipe buff its still way to OP
+vgal.recipe.set_result_amount("angels-sorting-swamp-5", 1, "angels-alien-bacteria") -- prev 4
+
+-- increase alien goo needed recipes, as its cheaper now
+-- has the side effect of nicer numbers
+vgal.recipe.set_ingredient_amount("angels-solid-alienated-fertilizer", 10, "angels-alien-goo") -- prev 5
+vgal.recipe.set_ingredient_amount("angels-bio-alien-processed-meat", 5, "angels-alien-goo")    -- prev 2

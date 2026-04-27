@@ -227,6 +227,9 @@ for _, tech_name in ipairs(techs_that_need_stone_smelting) do
 end
 
 -- SPLICE TECHS
+-- so not everything requires chlorine...
+data.raw["technology"]["angels-aluminium-smelting-1"].prerequisites = {}
+
 
 -- mark empty techs for splicing (can't do this in final-fixes bc of galorelib, but this should work)
 -- AND remove hidden effects, I could use queue_to_clean... hmm...

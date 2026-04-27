@@ -128,6 +128,7 @@ local subgroups = {
         },
         cleaning_entries = {
             "angels-concrete",
+            "angels-solid-mud-landfill",
         },
         should_reorder_entries = true,
     }, -- all of these.. they don't.. they don't listen.

@@ -142,6 +142,11 @@ data.raw.recipe["angels-garden-cultivating"].icons = vgal.icon.register({
     vgal.icon.get_out3("angels-swamp-garden"),
 })
 
+data.raw["recipe"]["angels-solid-mud-landfill"].icons = vgal.icon.register({
+    vgal.icon.get("landfill"),
+    vgal.icon.get_in("angels-solid-mud"),
+})
+
 data.raw.recipe["angels-solid-soil-alternative"].icons = vgal.icon.register({
     vgal.icon.get("angels-solid-soil"),
     vgal.icon.get_in("angels-solid-sand"),

@@ -74,4 +74,3 @@ data.raw["recipe"]["uranium-processing"].order = "a"
 
 vgal.subgroup.clean_recipe("uranium-fuel-cell")
 vgal.subgroup.clean_recipe("landfill")
-vgal.subgroup.clean_recipe("angels-solid-mud-landfill")

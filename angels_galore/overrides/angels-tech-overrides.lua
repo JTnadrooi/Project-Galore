@@ -109,7 +109,8 @@ end
 -- powderizer already unlocked elsewhere, unlock here not needed anymore
 vgal.tech.remove_recipe("angels-powder-metallurgy-2", "angels-powderizer")
 
--- angels stone smelting 3 is a COMEBACKAT
+-- move garden processing tech more into farming tree part
+vgal.tech.remove_prerequisite("angels-gardens", "angels-stone-smelting-1")
 
 -- remove ore gen of removed ores.
 for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
@@ -137,7 +138,7 @@ end
 
 -- BIO SCIENCE
 -- add initial
-data.raw["technology"]["angels-bio-farm-1"].prerequisites = { "vgal-biological-science-pack" }
+data.raw["technology"]["angels-bio-farm-1"].prerequisites = { "vgal-biological-science-pack", "angels-gardens" }
 vgal.tech.add_prerequisite("angels-bio-processing-paste", "vgal-biological-science-pack")
 
 -- Add vgal-biological-science-pack as unit to technologies that require the "vgal-biological-science-pack" tech.

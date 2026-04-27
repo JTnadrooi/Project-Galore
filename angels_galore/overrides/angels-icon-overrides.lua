@@ -6,8 +6,6 @@ local function use_main_icon(recipe_name)
     })
 end
 
-
-
 -- distinguish recipe icons with updated order
 -- carbon gasses
 data.raw["recipe"]["angels-water-gas-shift-2"].icons = angelsmods.functions.create_gas_recipe_icon(
@@ -398,3 +396,9 @@ data.raw["recipe"]["angels-ingot-iron-3"].icons = vgal.icon.register({
     vgal.icon.get("angels-ingot-iron"),
     vgal.icon.get_in("angels-pellet-iron"),
 })
+
+-- fix molten metal and liquid concrete tier icons
+-- molten metals
+use_main_icon("angels-liquid-molten-iron")
+use_main_icon("angels-liquid-molten-steel")
+use_main_icon("angels-liquid-concrete")

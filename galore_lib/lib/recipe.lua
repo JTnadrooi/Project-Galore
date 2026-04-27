@@ -442,10 +442,8 @@ function vgal.recipe.set_result_amount(recipe_name, amount, result_name)
             if amount == 0 then
                 table.remove(recipe.results, i)
             else
-                result.amount = amount
-                result.amount_max = nil
-                result.amount_min = nil
-                result.probability = nil
+                result.amount, result.probability, result.amount_min, result.amount_max = vgal.recipe
+                    .get_normalized_return_amounts(amount)
             end
         end
     end
@@ -550,5 +548,32 @@ function vgal.recipe.use_recipe_locale(recipe_name, keep_show_amount_in_title)
 
     if not keep_show_amount_in_title then
         recipe.show_amount_in_title = false
+    end
+end
+
+---@param raw_amount number
+---@param deviation number?
+---@return integer? amount
+---@return number? probablity
+---@return integer? min_amount
+---@return integer? max_amount
+function vgal.recipe.get_normalized_return_amounts(raw_amount, deviation)
+    if raw_amount == math.floor(raw_amount) then
+        return raw_amount, nil, nil, nil
+    end
+
+    deviation = deviation or tonumber("1" .. string.rep("0", #tostring(raw_amount) - 1))
+
+    if raw_amount < 1 then
+        return 1, raw_amount, nil, nil
+    else
+        if deviation < 0 then
+            error("Deviation cannot be less than 0.")
+        end
+
+        local amount_min = math.floor(raw_amount - deviation)
+        local amount_max = math.ceil(raw_amount + deviation)
+
+        return nil, nil, amount_min, amount_max
     end
 end

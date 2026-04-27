@@ -324,3 +324,10 @@ function vgal.tech.set_unit_count(tech_name, unit_count)
 
     tech.unit.count = unit_count
 end
+
+function vgal.tech.use_tech_locale(tech_name)
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    tech.localised_name = { "technology-name." .. tech.name }
+    tech.localised_description = { "technology-description." .. tech.name }
+end

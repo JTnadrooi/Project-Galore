@@ -45,3 +45,6 @@ for _, metal in pairs(vgal.defines.metals) do
         }
     end
 end
+
+vgal.tech.use_tech_locale("angels-stone-smelting-1")
+vgal.tech.use_tech_locale("angels-stone-smelting-2")

@@ -106,7 +106,8 @@ function vgal.tech.remove_prerequisite(tech_name, prerequisite)
             return
         end
     end
-    error("Prerequisite'" .. prerequisite .. "'not found in " .. tech_name)
+    error("Prerequisite '" .. prerequisite .. "' not found in " .. tech_name ..
+        ", prerequisites: " .. serpent.block(tech.prerequisites))
 end
 
 ---Ensures a recipe is not in the effects of the technology.

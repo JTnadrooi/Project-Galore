@@ -679,3 +679,11 @@ data.raw["recipe"]["angels-concrete"].energy_required = 5
 -- buff concrete recipe so its a more.. more? better way to making solid concrete than the vanilla recipe
 vgal.recipe.set_result_amount("angels-liquid-concrete", 150)
 vgal.recipe.set_ingredient_amount("angels-liquid-concrete", 150, "water")
+
+-- add gem result to ore pure processing
+-- (you get way less crystal/ore than in angels (from chunks))
+vgal.recipe.add_result("angels-ore2-pure", "angels-geode-yellow")
+vgal.recipe.add_result("angels-ore2-pure", { "angels-geode-lightgreen", 1, { probability = 0.08 } })
+
+vgal.recipe.add_result("angels-ore3-pure", "angels-geode-blue")
+vgal.recipe.add_result("angels-ore3-pure", { "angels-geode-cyan", 1, { probability = 0.12 } })

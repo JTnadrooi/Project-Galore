@@ -697,15 +697,11 @@ end
 
 -- garden overhaul (supported by token removal)
 for _, environment in pairs(agal.defines.environments) do
+    -- remove garden duplication recipe
     vgal.data.trim(environment.garden)
 
+    -- add alt seeds recipe
     local seed_recipe = data.raw["recipe"][environment.garden .. "-a"]
-
-    -- local alt_seeds_ingredients = ({
-    --     ["angels-temperate"] = { { type = "fluid", name = "water", amount = 3000 } },
-    --     ["angels-swamp"] = { { type = "fluid", name = "angels-water-viscous-mud", amount = 3000 } },
-    --     ["angels-desert"] = { { type = "fluid", name = "angels-water-saline", amount = 3000 } },
-    -- })[environment]
     local alt_seeds_ingredients = { { type = "item", name = "angels-filter-ceramic", amount = 1 } }
 
     local alt_seeds_results = table.deepcopy(seed_recipe.results)
@@ -752,4 +748,13 @@ for _, environment in pairs(agal.defines.environments) do
     }, {
         type = "recipe",
     })
+
+    -- buff garden to seeds recipe, so it returns all seeds and is slightly faster
+    -- also allow it to be done by the player for some reason
+    local recipe = data.raw["recipe"][environment.garden .. "-a"]
+    for _, result in ipairs(recipe.results) do
+        result.probability = nil
+    end
+    recipe.energy_required = 100
+    recipe.additional_categories = { "angels-manual-crafting" }
 end

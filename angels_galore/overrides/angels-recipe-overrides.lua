@@ -696,6 +696,10 @@ for _, color in ipairs({ "blue", "red", "green" }) do
 end
 
 -- garden overhaul (supported by token removal)
+-- remove the garden from nothin' recipe
+vgal.data.trim("angels-garden-cultivating")
+
+-- for each environment logic
 for _, environment in pairs(agal.defines.environments) do
     -- remove garden duplication recipe
     vgal.data.trim(environment.garden)

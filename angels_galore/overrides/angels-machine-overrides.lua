@@ -165,6 +165,7 @@ data.raw["assembling-machine"]["angels-crystallizer"].crafting_speed = 1
 data.raw["assembling-machine"]["angels-electrolyser-2"].crafting_speed = 2
 data.raw["assembling-machine"]["angels-ore-sorting-facility"].crafting_speed = 1
 data.raw["assembling-machine"]["angels-ore-sorting-facility-2"].crafting_speed = 2
+data.raw["assembling-machine"]["angels-filtration-unit"].crafting_speed = 1
 
 data.raw["assembling-machine"]["angels-bio-refugium-fish"].crafting_speed = 1
 data.raw["assembling-machine"]["angels-bio-refugium-puffer"].crafting_speed = 1

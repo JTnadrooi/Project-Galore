@@ -722,13 +722,24 @@ for _, environment in pairs(agal.defines.environments) do
         alt_seeds_order = "cc"
     end
 
+    local alt_seeds_icons = angelsmods.functions.create_gas_recipe_icon(
+        {
+            environment.seeds[1],
+            environment.seeds[2],
+            environment.seeds[3],
+        },
+        { { 180, 180, 225 }, { 150, 150, 187 }, { 120, 120, 150 } },
+        {
+            environment.seeds[4],
+            environment.seeds[5],
+        }
+    )
+
     vgal.data.extend({
         {
             name = environment.name .. "-seeds",
             prefix = "vgal",
-            icons = vgal.icon.register {
-                vgal.icon.get_placeholder()
-            },
+            icons = alt_seeds_icons,
             energy_required = 300,
             technology = "angels-gardens",
             raw_ingredients = alt_seeds_ingredients,

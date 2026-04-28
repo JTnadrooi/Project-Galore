@@ -220,8 +220,8 @@ function vgal.data.extend(entries, fill_in_with)
                 error("Missing energy_required for " .. entry.name)
             end
 
-            entry.ingredients = vgal.build.table(entry.ingredients, entry.fluid_ingredients)
-            entry.results = vgal.build.table(entry.results, entry.fluid_results)
+            entry.ingredients = entry.raw_ingredients or vgal.build.table(entry.ingredients, entry.fluid_ingredients)
+            entry.results = entry.raw_results or vgal.build.table(entry.results, entry.fluid_results)
 
             if not entry.main_product then
                 ---@diagnostic disable-next-line: undefined-field

@@ -12,8 +12,10 @@ do
     ---@field prefix? string
     ---@field ingredients? vgal.ShorthandRecipeEntry[]
     ---@field fluid_ingredients? vgal.ShorthandRecipeEntry[]
+    ---@field raw_ingredients? data.IngredientPrototype[]
     ---@field results? vgal.ShorthandRecipeEntry[]
     ---@field fluid_results? vgal.ShorthandRecipeEntry[]
+    ---@field raw_results? data.ProductPrototype[]
     ---@field type? string
     ---@field group? string
     ---@field groups? string[]

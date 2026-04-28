@@ -44,6 +44,13 @@ for _, module in pairs(vgal.defines.modules) do
     end
 end
 
+-- make gardens only drop the garden itself
+for _, environment in pairs(agal.defines.environments) do
+    data.raw["tree"][environment.garden].minable.results = {
+        { type = "item", name = environment.garden, amount = 1 },
+    }
+end
+
 -- align ores (ore2 is normally a tier 2 ore)
 data.raw["resource"]["angels-ore2"].minable.mining_time = data.raw["resource"]["angels-ore3"].minable.mining_time
 data.raw["resource"]["angels-ore2"].autoplace = data.raw["resource"]["angels-ore1"].autoplace

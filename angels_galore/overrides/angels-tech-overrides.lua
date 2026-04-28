@@ -140,6 +140,9 @@ for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
     end
 end
 
+-- add "angels-filter-ceramic" to alien farm tech as the new alt seed recipes need it
+vgal.tech.add_recipe("angels-bio-farm-alien", "angels-filter-ceramic")
+
 -- BIO SCIENCE
 -- add initial
 data.raw["technology"]["angels-gardens"].prerequisites = { "vgal-biological-science-pack" }

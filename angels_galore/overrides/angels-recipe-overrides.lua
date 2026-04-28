@@ -694,3 +694,51 @@ for _, color in ipairs({ "blue", "red", "green" }) do
         vgal.recipe.set_ingredient_amount("angels-crystal-" .. tier .. "-" .. color, 5, "angels-crystal-slurry")
     end
 end
+
+-- garden overhaul (supported by token removal)
+for _, environment in pairs(agal.defines.environments) do
+    vgal.data.trim(environment.garden)
+
+    local seed_recipe = data.raw["recipe"][environment.garden .. "-a"]
+
+    -- local alt_seeds_ingredients = ({
+    --     ["angels-temperate"] = { { type = "fluid", name = "water", amount = 3000 } },
+    --     ["angels-swamp"] = { { type = "fluid", name = "angels-water-viscous-mud", amount = 3000 } },
+    --     ["angels-desert"] = { { type = "fluid", name = "angels-water-saline", amount = 3000 } },
+    -- })[environment]
+    local alt_seeds_ingredients = { { type = "item", name = "angels-filter-ceramic", amount = 1 } }
+
+    local alt_seeds_results = table.deepcopy(seed_recipe.results)
+    ---@diagnostic disable-next-line: param-type-mismatch
+    table.insert(alt_seeds_results,
+        { type = "item", name = "angels-filter-ceramic-used", amount = 1, ignored_by_productivity = 1 } --[[@as data.ItemProductPrototype]])
+
+    local alt_seeds_order = nil
+    if environment.name == "temperate" then
+        alt_seeds_order = "ca"
+    elseif environment.name == "swamp" then
+        alt_seeds_order = "cb"
+    else -- desert
+        alt_seeds_order = "cc"
+    end
+
+    vgal.data.extend({
+        {
+            name = environment.name .. "-seeds",
+            prefix = "vgal",
+            icons = vgal.icon.register {
+                vgal.icon.get_placeholder()
+            },
+            energy_required = 300,
+            technology = "angels-gardens",
+            raw_ingredients = alt_seeds_ingredients,
+            raw_results = alt_seeds_results,
+            show_amount_in_title = false,
+            order = alt_seeds_order,
+            subgroup = "angels-farming-gardens",
+            category = "angels-petrochem-air-filtering",
+        }
+    }, {
+        type = "recipe",
+    })
+end

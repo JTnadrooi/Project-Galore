@@ -21,25 +21,46 @@ agal.defines.nutrientables = {
     "angels-solid-corn",
 }
 
----@type table<string, {name: string, order: data.Order, farm: string, garden: string}>
+---@type table<string, {name: string, order: data.Order, farm: string, garden: string, seeds: string[]}>
 agal.defines.environments = {
     ["temperate"] = {
         name = "temperate",
         order = "a",
         farm = "angels-temperate-farm",
         garden = "angels-temperate-garden",
+        seeds = {
+            "angels-temperate-1-seed",
+            "angels-temperate-2-seed",
+            "angels-temperate-3-seed",
+            "angels-temperate-4-seed",
+            "angels-temperate-5-seed",
+        }
     },
     ["swamp"] = {
         name = "swamp",
         order = "b",
         farm = "angels-swamp-farm",
         garden = "angels-swamp-garden",
+        seeds = {
+            "angels-swamp-1-seed",
+            "angels-swamp-2-seed",
+            "angels-swamp-3-seed",
+            "angels-swamp-4-seed",
+            "angels-swamp-5-seed",
+        }
     },
     ["desert"] = {
         name = "desert",
         order = "c",
         farm = "angels-desert-farm",
         garden = "angels-desert-garden",
+        seeds = {
+            "angels-desert-1-seed",
+            "angels-desert-2-seed",
+            "angels-desert-3-seed",
+            "angels-desert-4-seed",
+            "angels-desert-5-seed",
+        }
     },
 }
 

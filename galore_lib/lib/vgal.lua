@@ -154,20 +154,6 @@ function vgal.data.extend(entries, fill_in_with)
                 entry.crafting_machine_tint = entry.crafting_machine_tint or complementairy_recipe.crafting_machine_tint
             end
 
-            -- if any needed fields are missing this fills them in.
-            if entry.dependent_recipe then
-                local dependent_recipe = data.raw["recipe"][entry.dependent_recipe]
-
-                entry.category = entry.category or dependent_recipe.category
-                entry.results = entry.results or dependent_recipe.results
-                entry.ingredients = entry.ingredients or dependent_recipe.ingredients
-                entry.icons = entry.icons or dependent_recipe.icons
-                entry.energy_required = entry.energy_required or dependent_recipe.energy_required
-                entry.main_product = entry.main_product or dependent_recipe.main_product
-                entry.order = entry.order or dependent_recipe.order
-                entry.subgroup = entry.subgroup or dependent_recipe.subgroup
-            end
-
             -- name components
             entry.tier = entry.tier == 1 and nil or entry.tier
             entry.name = vgal.build.name(entry.prefix, entry.name, entry.tier)

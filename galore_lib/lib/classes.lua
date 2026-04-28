@@ -1,9 +1,7 @@
 do
     ---A vgal recipe - to be registed.
     ---@class vgal.VgalRecipePrototype:data.RecipePrototype
-    ---Non optional empty fields get borrowed from this recipe. (except the name)
-    ---@field dependent_recipe? string
-    ---Non optional empty fields get borrowed from this recipe. (except the name)
+    ---Non optional empty fields get borrowed from this recipe.
     ---@field complementairy_recipe? string
     ---Used in the recipe and technology name.
     ---@field tier? number

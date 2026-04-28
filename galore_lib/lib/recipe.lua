@@ -188,20 +188,26 @@ end
 ---@param recipe_name string
 ---@param old_ingredient_name string
 ---@param new_ingredient_name string
-function vgal.recipe.replace_ingredient(recipe_name, old_ingredient_name, new_ingredient_name)
+---@param no_throw bool?
+function vgal.recipe.replace_ingredient(recipe_name, old_ingredient_name, new_ingredient_name, no_throw)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
-    local to_alter = recipe.ingredients or {}
-    for _, ingredient in ipairs(to_alter) do
+    for _, ingredient in ipairs(recipe.ingredients or {}) do
         if ingredient.name == old_ingredient_name then
             ingredient.name = new_ingredient_name
             return
         end
     end
+    if (not no_throw) then
+        error("Ingredient '" ..
+            old_ingredient_name ..
+            "' not found in recipe '" .. recipe_name .. "', ingredients: " .. serpent.block(recipe.ingredients))
+    end
 end
 
 ---@param recipe_name string
 ---@param ingredient_name string
-function vgal.recipe.remove_ingredient(recipe_name, ingredient_name)
+---@param no_throw bool?
+function vgal.recipe.remove_ingredient(recipe_name, ingredient_name, no_throw)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
     for i, ingredient in ipairs(recipe.ingredients or {}) do
         if ingredient.name == ingredient_name then
@@ -209,12 +215,19 @@ function vgal.recipe.remove_ingredient(recipe_name, ingredient_name)
             return
         end
     end
+    if (not no_throw) then
+        error("Ingredient '" ..
+            ingredient_name ..
+            "' not found in recipe '" .. recipe_name .. "', ingredients: " .. serpent.block(recipe.ingredients))
+    end
 end
 
 ---@param recipe_name string
 ---@param result_name string
-function vgal.recipe.remove_result(recipe_name, result_name)
+---@param no_throw bool?
+function vgal.recipe.remove_result(recipe_name, result_name, no_throw)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+    local found = false -- for multiple same results
     if recipe.main_product == result_name then
         recipe.main_product = nil
     end
@@ -222,16 +235,24 @@ function vgal.recipe.remove_result(recipe_name, result_name)
         for i = #recipe.results, 1, -1 do
             if recipe.results[i].name == result_name then
                 table.remove(recipe.results, i)
+                found = true
             end
         end
+    end
+    if (not no_throw) and (not found) then
+        error("Result '" ..
+            result_name ..
+            "' not found in recipe '" .. recipe_name .. "', results: " .. serpent.block(recipe.results))
     end
 end
 
 ---@param recipe_name string
 ---@param old_result_name string
 ---@param new_result_name string
-function vgal.recipe.replace_result(recipe_name, old_result_name, new_result_name)
+---@param no_throw bool?
+function vgal.recipe.replace_result(recipe_name, old_result_name, new_result_name, no_throw)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+    local found = false -- for multiple same results
     if recipe.main_product == old_result_name then
         recipe.main_product = new_result_name
     end
@@ -239,9 +260,14 @@ function vgal.recipe.replace_result(recipe_name, old_result_name, new_result_nam
         if result.name == old_result_name then
             if result.name then
                 result.name = new_result_name
-                return
+                found = true
             end
         end
+    end
+    if (not no_throw) and (not found) then
+        error("Result '" ..
+            old_result_name ..
+            "' not found in recipe '" .. recipe_name .. "', results: " .. serpent.block(recipe.results))
     end
 end
 

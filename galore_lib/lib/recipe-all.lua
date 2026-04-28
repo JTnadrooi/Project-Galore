@@ -73,7 +73,7 @@ function vgal.recipe.all.replace_ingredient(source_ingredient_name, new_ingredie
                 vgal.recipe.add_ingredient(recipe.name,
                     vgal.table.get_multiplied(new_ingredient,
                         multiplier * vgal.recipe.get_ingredient_amount(recipe.name, source_ingredient_name)))
-                vgal.recipe.remove_ingredient(recipe.name, source_ingredient_name)
+                vgal.recipe.remove_ingredient(recipe.name, source_ingredient_name, true)
             end
         end
     end
@@ -85,7 +85,7 @@ end
 function vgal.recipe.all.remove_ingredient(ingredient_name, main_product_name, domain_name)
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do
         if (main_product_name == nil) or recipe.main_product == main_product_name then
-            vgal.recipe.remove_ingredient(recipe.name, ingredient_name)
+            vgal.recipe.remove_ingredient(recipe.name, ingredient_name, true)
         end
     end
 end
@@ -96,7 +96,7 @@ end
 function vgal.recipe.all.remove_result(result_name, main_product_name, domain_name)
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do
         if (main_product_name == nil) or recipe.main_product == main_product_name then
-            vgal.recipe.remove_result(recipe.name, result_name)
+            vgal.recipe.remove_result(recipe.name, result_name, true)
         end
     end
 end

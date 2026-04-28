@@ -137,8 +137,8 @@ data.raw["assembling-machine"]["angels-electric-boiler"].module_slots = 0
 data.raw["assembling-machine"]["angels-electric-boiler-2"].module_slots = 0
 
 data.raw["assembling-machine"]["angels-crop-farm"].module_slots = 1
-for _, environment in ipairs(agal.defines.environments) do
-    data.raw["assembling-machine"][environment .. "-farm"].module_slots = 3
+for _, environment in pairs(agal.defines.environments) do
+    data.raw["assembling-machine"][environment.farm].module_slots = 3
 end
 
 -- CRAFTING SPEED NORMALIZATION.

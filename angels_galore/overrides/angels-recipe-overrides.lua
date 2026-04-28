@@ -430,9 +430,9 @@ vgal.recipe.replace_result("angels-ore2-chunk", "angels-water-greenyellow-waste"
 vgal.recipe.all.remove_ingredient("angels-token-bio")
 vgal.recipe.all.remove_result("angels-token-bio")
 
-for _, environment in ipairs(agal.defines.environments) do
-    vgal.recipe.deephide(environment .. "-garden-b")
-    vgal.recipe.deephide(environment .. "-garden-cultivating-a")
+for _, environment in pairs(agal.defines.environments) do
+    vgal.recipe.deephide(environment.garden .. "-b")
+    vgal.recipe.deephide(environment.garden .. "-cultivating-a")
 end
 
 -- buff plastic

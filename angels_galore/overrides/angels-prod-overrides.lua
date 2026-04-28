@@ -19,8 +19,8 @@ vgal.recipe.add_catalyst_entry("raw-fish")
 for fish_index = 1, 3 do vgal.recipe.add_catalyst_entry("angels-alien-fish-" .. fish_index .. "-raw") end
 for puffer_index = 1, 5 do vgal.recipe.add_catalyst_entry("angels-bio-puffer-" .. puffer_index) end
 for i = 3, 5 do
-    for _, environment in ipairs(agal.defines.environments) do
-        vgal.recipe.add_catalyst_entry(environment .. "-" .. i .. "-" .. "seed-dormant")
+    for _, environment in pairs(agal.defines.environments) do
+        vgal.recipe.add_catalyst_entry("angels-" .. environment.name .. "-" .. i .. "-" .. "seed-dormant")
     end
 end
 

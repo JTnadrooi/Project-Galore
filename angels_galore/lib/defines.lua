@@ -21,8 +21,27 @@ agal.defines.nutrientables = {
     "angels-solid-corn",
 }
 
----@type string[]
-agal.defines.environments = { "angels-temperate", "angels-swamp", "angels-desert" }
+---@type table<string, {name: string, order: data.Order, farm: string, garden: string}>
+agal.defines.environments = {
+    ["temperate"] = {
+        name = "temperate",
+        order = "a",
+        farm = "angels-temperate-farm",
+        garden = "angels-temperate-garden",
+    },
+    ["swamp"] = {
+        name = "swamp",
+        order = "b",
+        farm = "angels-swamp-farm",
+        garden = "angels-swamp-garden",
+    },
+    ["desert"] = {
+        name = "desert",
+        order = "c",
+        farm = "angels-desert-farm",
+        garden = "angels-desert-garden",
+    },
+}
 
 ---@type string[]
 agal.defines.ore_states = { "crushed", "chunk", "crystal", "pure" }

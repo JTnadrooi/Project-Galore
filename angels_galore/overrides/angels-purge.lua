@@ -14,12 +14,12 @@ vgal.tech.move_recipe("angels-advanced-chemistry-5", "angels-basic-chemistry-3",
 vgal.tech.move_recipe("angels-advanced-chemistry-3", "angels-basic-chemistry-3", "angels-catalyst-metal-blue")
 
 -- upgrade kit removal.
-for _, environment in ipairs(agal.defines.environments) do
-    vgal.recipe.deephide(environment .. "-upgrade")
-    vgal.data.deephide(data.raw["item"][environment .. "-upgrade"])
-    local building_recipe = data.raw["recipe"][environment .. "-farm"]
+for _, environment in pairs(agal.defines.environments) do
+    vgal.recipe.deephide("angels-" .. environment.name .. "-upgrade")
+    vgal.data.deephide(data.raw["item"]["angels-" .. environment.name .. "-upgrade"])
+    local building_recipe = data.raw["recipe"][environment.farm]
     for i, ingredient in ipairs(building_recipe.ingredients) do
-        if ingredient.name == (environment .. "-upgrade") then
+        if ingredient.name == ("angels-" .. environment.name .. "-upgrade") then
             table.remove(building_recipe.ingredients, i)
             break
         end

@@ -142,7 +142,8 @@ end
 
 -- BIO SCIENCE
 -- add initial
-data.raw["technology"]["angels-bio-farm-1"].prerequisites = { "vgal-biological-science-pack", "angels-gardens" }
+data.raw["technology"]["angels-gardens"].prerequisites = { "vgal-biological-science-pack" }
+data.raw["technology"]["angels-bio-farm-1"].prerequisites = { "angels-gardens" }
 vgal.tech.add_prerequisite("angels-bio-processing-paste", "vgal-biological-science-pack")
 
 -- Add vgal-biological-science-pack as unit to technologies that require the "vgal-biological-science-pack" tech.

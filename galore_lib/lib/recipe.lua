@@ -281,7 +281,7 @@ function vgal.recipe.add_result(recipe_name, new_result, result_type)
     recipe.results = recipe.results or {}
 
     if type(new_result) == "string" then
-        table.insert(recipe.results, { type = result_type, new_result, 1 })
+        table.insert(recipe.results, { type = result_type, name = new_result, amount = 1 })
         return
     elseif type(new_result) == "table" then
         if vgal.table.is_array(new_result) then
@@ -341,7 +341,7 @@ function vgal.recipe.add_ingredient(recipe_name, new_ingredient, ingredient_type
     recipe.ingredients = recipe.ingredients or {}
 
     if type(new_ingredient) == "string" then
-        table.insert(recipe.ingredients, { type = ingredient_type, new_ingredient, 1 })
+        table.insert(recipe.ingredients, { type = ingredient_type, name = new_ingredient, amount = 1 })
         return
     elseif type(new_ingredient) == "table" then
         if vgal.table.is_array(new_ingredient) then

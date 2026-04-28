@@ -687,3 +687,10 @@ vgal.recipe.add_result("angels-ore2-pure", { "angels-geode-lightgreen", 1, { pro
 
 vgal.recipe.add_result("angels-ore3-pure", "angels-geode-blue")
 vgal.recipe.add_result("angels-ore3-pure", { "angels-geode-cyan", 1, { probability = 0.12 } })
+
+-- normalize recipes using crystal slurry
+for _, color in ipairs({ "blue", "red", "green" }) do
+    for _, tier in ipairs({ "splinter", "shard", "full" }) do
+        vgal.recipe.set_ingredient_amount("angels-crystal-" .. tier .. "-" .. color, 5, "angels-crystal-slurry")
+    end
+end

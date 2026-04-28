@@ -16,6 +16,7 @@ vgal.tech.move_recipe("angels-advanced-chemistry-3", "angels-basic-chemistry-3",
 -- upgrade kit removal.
 for _, environment in ipairs(agal.defines.environments) do
     vgal.recipe.deephide(environment .. "-upgrade")
+    vgal.data.deephide(data.raw["item"][environment .. "-upgrade"])
     local building_recipe = data.raw["recipe"][environment .. "-farm"]
     for i, ingredient in ipairs(building_recipe.ingredients) do
         if ingredient.name == (environment .. "-upgrade") then
@@ -247,11 +248,6 @@ vgal.data.trim("angels-tree-arboretum-0")
 vgal.data.deephide(data.raw["item"]["angels-temperate-tree"])
 vgal.data.deephide(data.raw["item"]["angels-swamp-tree"])
 vgal.data.deephide(data.raw["item"]["angels-desert-tree"])
-
--- remove farm upgrade items
-for _, environment in ipairs(agal.defines.environments) do
-    vgal.data.deephide(data.raw["item"][environment .. "-upgrade"])
-end
 
 vgal.recipe.replace_ingredient("angels-bio-generator-temperate-1", "angels-temperate-tree", "angels-solid-tree")
 

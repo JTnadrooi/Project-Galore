@@ -116,6 +116,11 @@ vgal.tech.remove_prerequisite("angels-gardens", "angels-stone-smelting-1")
 vgal.tech.add_prerequisite("angels-bio-refugium-hatchery", "vgal-biological-science-pack")
 -- vgal.tech.remove_prerequisite("angels-bio-refugium-hatchery", "angels-chlorine-processing-1")
 
+-- move coal processing 3 back the pellet press is needed for it.
+vgal.tech.add_prerequisite("angels-coal-processing-3", "angels-ore-processing-2")
+vgal.tech.add_unit("angels-coal-processing-3", "chemical-science-pack")
+
+
 -- remove ore gen of removed ores.
 for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
     local ore = "angels-ore" .. ore_index

@@ -883,3 +883,6 @@ data.raw["recipe"]["angels-air-separation"].results = vgal.build.table({}, {
     { "angels-gas-oxygen",   20 },
     { "angels-gas-nitrogen", 80 },
 })
+
+-- press coke pellet in pellet press
+data.raw["recipe"]["angels-pellet-coke"].category = "angels-pellet-pressing"

@@ -24,7 +24,7 @@
 | iron-ore(gb)   | 15    |
 | copper-ore(gb) | 15    |
 | tungsten-ore   | 20    |
-| uranium-ore    | 20    |
+| uranium-ore    | 22    |
 | holmium-ore    | b-400 |
 | scrap          | 5     |
 | coal           | 10    |

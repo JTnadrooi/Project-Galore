@@ -102,3 +102,47 @@ agal.defines.metal_steel = {
     ingot = "angels-ingot-steel",
     roll = "angels-roll-steel",
 }
+
+---@type table<string, integer>
+agal.defines.machine_max_tiers = {
+    ["angels-oil-refinery"] = 1,
+    ["oil-refinery"] = 1,
+    ["angels-steam-cracker"] = 1,
+    ["angels-liquifier"] = 1,
+    ["angels-electrolyser"] = 1,
+    ["angels-chemical-plant"] = 1,
+    ["chemical-plant"] = 1,
+    ["angels-advanced-chemical-plant"] = 1,
+    ["angels-separator"] = 1,
+    ["angels-gas-refinery-small"] = 1,
+    ["angels-gas-refinery"] = 1,
+    ["angels-air-filter"] = 1,
+
+    ["angels-hydro-plant"] = 1,
+    ["angels-washing-plant"] = 1,
+    ["angels-electric-boiler"] = 1,
+    ["angels-salination-plant"] = 1,
+
+    ["angels-algae-farm"] = 2,
+
+    ["angels-induction-furnace"] = 1,
+    ["angels-casting-machine"] = 1,
+    ["angels-strand-casting-machine"] = 1,
+
+    ["angels-ore-sorting-facility"] = 2,
+    ["angels-ore-crusher"] = 1,
+    ["angels-ore-floatation-cell"] = 1,
+    ["angels-ore-leaching-plant"] = 1,
+    ["angels-ore-processing-machine"] = 1,
+    ["angels-ore-refinery"] = 1,
+    ["angels-powderizer"] = 1,
+    ["angels-filtration-unit"] = 1,
+    ["angels-crystallizer"] = 1,
+
+    ["angels-pellet-press"] = 1,
+    ["angels-powder-mixer"] = 1,
+    ["angels-blast-furnace"] = 1,
+    ["angels-chemical-furnace"] = 1,
+    ["angels-sintering-oven"] = 0,        -- removes it.
+    ["angels-electro-whinning-cell"] = 0, -- removes it.
+}

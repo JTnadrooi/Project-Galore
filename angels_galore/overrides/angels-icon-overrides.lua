@@ -412,3 +412,36 @@ data.raw["recipe"]["angels-ingot-iron-3"].icons = vgal.icon.register({
 use_main_icon("angels-liquid-molten-iron")
 use_main_icon("angels-liquid-molten-steel")
 use_main_icon("angels-liquid-concrete")
+
+-- fix non-reskins tier numerals on machines that only have one tier now
+-- the reskins thing can just be fixed by enforcing a setting
+if not mods["reskins-angels"] then
+    local function fix_icon(item_prototype)
+        if item_prototype.icons then
+            for i = #item_prototype.icons, 1, -1 do
+                local icon = item_prototype.icons[i]
+                if icon.icon:match("graphics/icons/numerals") then
+                    table.remove(item_prototype.icons, i)
+                else
+                    icon.scale = nil
+                end
+            end
+        end
+    end
+
+    for machine_name, max_tier in pairs(agal.defines.machine_max_tiers) do
+        if machine_name == "angels-oil-refinery" or machine_name == "angels-chemical-plant" then
+            goto continue
+        end
+
+        if max_tier == 1 then
+            local machine_item = data.raw["item"][machine_name] or error(machine_name)
+
+            fix_icon(machine_item)
+        end
+        ::continue::
+    end
+
+    -- gotta do this as its not included in the machine max tiers table
+    fix_icon(data.raw["item"]["angels-thermal-bore"])
+end

@@ -73,7 +73,7 @@ vgal.data.extend({
     --     category = "angels-liquifying",
     -- },
     {
-        name = "agal-hand-mining", -- I am aware the prefix gets added anyways
+        name = "agal-hand-mining", -- I am aware the vgal prefix gets added anyways
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get_placeholder(),

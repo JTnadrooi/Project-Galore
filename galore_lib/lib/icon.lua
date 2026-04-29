@@ -196,9 +196,6 @@ function vgal.icon.get(key_name, icon_source)
             }
         }
     end
-    if icon_source == "gas-recipe" and mods["angelspetrochem"] then
-        return angelsmods.functions.create_gas_recipe_icon(nil, key_name)
-    end
 
     local override = vgal.icon.overrides[key_name]
     if override and override[icon_source] then

@@ -43,7 +43,7 @@ data:extend({
 
 vgal.data.extend({
     {
-        name = "biologic-science-pack",
+        name = "biological-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("vgal-biological-science-pack"),

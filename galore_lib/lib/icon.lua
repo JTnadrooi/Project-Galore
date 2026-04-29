@@ -1,5 +1,8 @@
 vgal.icon = vgal.icon or {}
 
+---@type table<string, table<string, vgal.IconOverride>>
+vgal.icon.overrides = vgal.icon.overrides or {}
+
 -- function vgal.icon.shift(icon, scale, shift)
 --     scale = scale or 1
 --     local icons = {}
@@ -24,6 +27,16 @@ vgal.icon.directory = {
 ---@return number
 function vgal.icon.get_auto_scale(icon)
     return icon.scale or ((64 / 2) / (icon.icon_size or 64))
+end
+
+---@param override vgal.IconOverride
+function vgal.icon.add_override(override)
+    vgal.icon.overrides[override.name] = vgal.icon.overrides[override.name] or {}
+    vgal.icon.overrides[override.name][override.source] = override
+
+    if (not override.composite_icon_override) == (not override.composite_icon_override_function) then
+        error("Invalid overide: " .. serpent.block(override))
+    end
 end
 
 ---@param composite_icon data.IconData[]
@@ -81,7 +94,6 @@ function vgal.icon.get_tier_tint(tier)
     return tints[tier] or { a = 1, b = 0.5, g = 0.5, r = 0.5 }
 end
 
----@param overlay string
 ---@param metadata table?
 ---@return data.IconData[]
 function vgal.icon.get_overlay(overlay, metadata)
@@ -187,26 +199,12 @@ function vgal.icon.get(key_name, icon_source)
     if icon_source == "gas-recipe" and mods["angelspetrochem"] then
         return angelsmods.functions.create_gas_recipe_icon(nil, key_name)
     end
-    if (key_name == "petroleum-gas") and icon_source == "fluid" and mods["angelspetrochem"] then
-        return vgal.icon.get("methane", "molecule")
+
+    local override = vgal.icon.overrides[key_name]
+    if override and override[icon_source] then
+        return override[icon_source].composite_icon_override or override[icon_source].composite_icon_override_function()
     end
-    if (key_name == "light-oil") and icon_source == "fluid" and mods["angelspetrochem"] then
-        return vgal.icon.get("liquid-fuel-oil")
-    end
-    if (key_name == "heavy-oil") and icon_source == "fluid" and mods["angelspetrochem"] then
-        return vgal.icon.get("angels-liquid-naphtha")
-    end
-    if (key_name == "sulfuric-acid") and icon_source == "fluid" and mods["angelspetrochem"] then
-        return vgal.icon.get("sulfuric-acid", "molecule")
-    end
-    if (key_name == "iron-plate") and icon_source == "item" and mods["reskins-angels"] then
-        return {
-            {
-                icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-iron.png",
-                icon_size = 64,
-            }
-        }
-    end
+
     local associated_item_prototype = vgal.get_recipeable(key_name)
 
     vgal.log("getting icon: " .. associated_item_prototype.name)
@@ -412,4 +410,111 @@ function vgal.icon.register(composite_icons, composition)
         return vgal.icon.from_composite(composite_icons)
     end
     error("unrecognised composition")
+end
+
+-- OVERRIDE LOGIC
+
+if mods["angels_galore"] then
+    vgal.icon.add_override({
+        name = "petroleum-gas",
+        source = "fluid",
+        composite_icon_override_function = function()
+            return vgal.icon.get("methane", "molecule")
+        end
+    })
+    vgal.icon.add_override({
+        name = "light-oil",
+        source = "fluid",
+        composite_icon_override_function = function()
+            return vgal.icon.get("angels-liquid-fuel-oil")
+        end
+    })
+    vgal.icon.add_override({
+        name = "heavy-oil",
+        source = "fluid",
+        composite_icon_override_function = function()
+            return vgal.icon.get("angels-liquid-naphtha")
+        end
+    })
+    vgal.icon.add_override({
+        name = "sulfuric-acid",
+        source = "fluid",
+        composite_icon_override_function = function()
+            return vgal.icon.get("sulfuric-acid", "molecule")
+        end
+    })
+
+    if mods["reskins-angels"] then
+        vgal.icon.add_override({
+            name = "iron-plate",
+            source = "item",
+            composite_icon_override = {
+                {
+                    icon = "__reskins-angels__/graphics/icons/smelting/plates/angels-plate-iron.png",
+                    icon_size = 64,
+                }
+            }
+        })
+    else
+        vgal.icon.add_override({
+            name = "iron-plate",
+            source = "item",
+            composite_icon_override = {
+                {
+                    icon = "__angelssmeltinggraphics__/graphics/icons/plate-iron.png",
+                    icon_size = 32,
+                }
+            }
+        })
+        vgal.icon.add_override({
+            name = "copper-plate",
+            source = "item",
+            composite_icon_override = {
+                {
+                    icon = "__angelssmeltinggraphics__/graphics/icons/plate-copper.png",
+                    icon_size = 32,
+                }
+            }
+        })
+        vgal.icon.add_override({
+            name = "copper-cable",
+            source = "item",
+            composite_icon_override = {
+                {
+                    icon = "__angelssmeltinggraphics__/graphics/icons/wire-copper.png",
+                    icon_size = 32,
+                }
+            }
+        })
+        vgal.icon.add_override({
+            name = "sulfur",
+            source = "item",
+            composite_icon_override = {
+                {
+                    icon = "__angelspetrochemgraphics__/graphics/icons/solid-sulfur.png",
+                    icon_size = 32,
+                }
+            }
+        })
+        vgal.icon.add_override({
+            name = "steel-plate",
+            source = "item",
+            composite_icon_override = {
+                {
+                    icon = "__angelssmeltinggraphics__/graphics/icons/plate-steel.png",
+                    icon_size = 32,
+                }
+            }
+        })
+        vgal.icon.add_override({
+            name = "iron-stick",
+            source = "item",
+            composite_icon_override = {
+                {
+                    icon = "__angelssmeltinggraphics__/graphics/icons/rod-iron.png",
+                    icon_size = 32,
+                }
+            }
+        })
+    end
 end

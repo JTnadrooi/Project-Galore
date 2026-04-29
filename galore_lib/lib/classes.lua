@@ -53,3 +53,11 @@ do
     ---@field when_settings string[]?
     ---@field should_reorder_entries boolean?
 end
+
+do
+    ---@class vgal.IconOverride
+    ---@field name string
+    ---@field source string
+    ---@field composite_icon_override data.IconData[]?
+    ---@field composite_icon_override_function (fun(): data.IconData[])?
+end

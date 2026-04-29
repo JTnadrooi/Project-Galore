@@ -445,3 +445,6 @@ if not mods["reskins-angels"] then
     fix_icon(data.raw["item"]["angels-thermal-bore"])
     fix_icon(data.raw["mining-drill"]["angels-thermal-bore"])
 end
+
+data.raw["item"]["rocket-fuel"].icon = "__base__/graphics/icons/rocket-fuel.png"
+data.raw["item"]["rocket-fuel"].icon_size = nil

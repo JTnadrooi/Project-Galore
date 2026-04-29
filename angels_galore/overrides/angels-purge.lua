@@ -174,13 +174,12 @@ end
 -- bio plastic - liquid-cellulose-acetate
 vgal.data.trim("angels-liquid-cellulose-acetate")
 vgal.data.deephide(data.raw["fluid"]["angels-liquid-cellulose-acetate"])
-vgal.recipe.replace_ingredient("angels-liquid-plastic-bio-1", "angels-liquid-cellulose-acetate",
-    "angels-liquid-cellulose-acetate-mixture")
+-- plastic recipe is just created with new ingredient (mixture)
 
 -- plastic 3 - gas-formaldehyde
 vgal.data.trim("angels-gas-formaldehyde")
 vgal.data.deephide(data.raw["fluid"]["angels-gas-formaldehyde"])
-vgal.recipe.replace_ingredient("angels-liquid-plastic-3", "angels-gas-formaldehyde", "angels-gas-methanol")
+-- plastic recipe is just created with new ingredient (methanol)
 
 -- chloride variations
 data.raw.recipe["angels-liquid-glycerol"].ingredients = vgal.build.table({}, {
@@ -197,29 +196,56 @@ vgal.data.deephide(data.raw["fluid"]["angels-gas-epichlorohydrin"])
 vgal.data.trim("angels-gas-allylchlorid")
 vgal.data.deephide(data.raw["fluid"]["angels-gas-allylchlorid"])
 
--- data.raw.recipe["angels-gas-hydrazine"].ingredients = vgal.build.table({
---     { "angels-solid-sodium-hypochlorite", 5 },
--- }, {
---     { "angels-gas-ammonia", 250 },
--- })
--- vgal.data.deep_hide(data.raw["fluid"]["angels-gas-monochloramine"])
--- vgal.data.trim("angels-gas-monochloramine")
+-- rocket fuel changes (from top of crafting tree to bottom)
+-- rocket fuel ox capsule is removed, fuel capsule isn't
+data.raw.recipe["rocket-fuel"].ingredients = vgal.build.table({
+    { "angels-rocket-fuel-capsule", 1 }
+}, {
+    { "angels-liquid-nitric-acid", 25 },
+})
 
--- data.raw.recipe["angels-rocket-fuel-capsule"].ingredients = vgal.build.table({
---     { "solid-fuel", 1 },
--- }, {
---     { "angels-gas-dimethylhydrazine", 10 },
--- })
--- vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)
-
-
-
--- fix results and energy_required.
-data.raw.recipe["angels-rocket-oxidizer-capsule"].energy_required = 5
-vgal.recipe.set_result_amount("angels-rocket-oxidizer-capsule", 1)
-
+-- fuel crafting chain branch fixes
+data.raw.recipe["angels-rocket-fuel-capsule"].ingredients = vgal.build.table({
+    { "plastic-bar", 1 },
+}, {
+    { "angels-gas-hydrazine", 20 },
+})
 data.raw.recipe["angels-rocket-fuel-capsule"].energy_required = 5
 vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)
+
+vgal.data.deephide(data.raw["fluid"]["angels-gas-dimethylamine"])
+vgal.data.trim("angels-gas-dimethylamine")
+
+vgal.data.deephide(data.raw["fluid"]["angels-gas-dimethylhydrazine"])
+vgal.data.trim("angels-gas-dimethylhydrazine")
+
+vgal.data.deephide(data.raw["fluid"]["angels-gas-methylamine"])
+vgal.data.trim("angels-gas-methylamine")
+
+-- ox crafting chain branch fixes
+vgal.data.deephide(data.raw["item"]["angels-rocket-oxidizer-capsule"])
+vgal.data.trim("angels-rocket-oxidizer-capsule")
+
+vgal.data.deephide(data.raw["fluid"]["angels-gas-dinitrogen-tetroxide"])
+vgal.data.trim("angels-gas-dinitrogen-tetroxide")
+
+data.raw.recipe["angels-gas-nitrogen-dioxide"].ingredients = vgal.build.table({
+    { "angels-catalyst-metal-blue", 1 }
+}, {
+    { "angels-gas-ammonia", 40 }, -- 20h
+    { "angels-gas-oxygen",  60 }, -- 60ox
+})
+
+data.raw.recipe["angels-gas-nitrogen-dioxide"].results = vgal.build.table({
+    { "angels-catalyst-metal-carrier", 1 }
+}, {
+    { "angels-gas-nitrogen-dioxide", 100 },
+    { "angels-water-purified",       30 }, -- 60h = 100h2o so 20h = 33h2o (angels chemistry, I think I did it correctly)
+})
+data.raw.recipe["angels-gas-nitrogen-dioxide"].main_product = "angels-gas-nitrogen-dioxide"
+
+vgal.data.deephide(data.raw["fluid"]["angels-gas-nitrogen-monoxide"])
+vgal.data.trim("angels-gas-nitrogen-monoxide")
 
 -- brick removal (clay/reinforced)
 vgal.data.deephide(data.raw["item"]["angels-reinforced-concrete-brick"])

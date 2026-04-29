@@ -19,6 +19,10 @@ vgal.recipe.multiply("angels-plate-steel", 1.25)
 -- buff rocket fuel recipe
 vgal.recipe.set_ingredient_amount("rocket-fuel", 1)
 
+vgal.recipe.replace_ingredient("nuclear-fuel", "rocket-fuel", "angels-rocket-fuel-capsule")
+vgal.recipe.replace_ingredient("angels-nuclear-fuel", "rocket-fuel", "angels-rocket-fuel-capsule")
+vgal.recipe.replace_ingredient("angels-nuclear-fuel-2", "rocket-fuel", "angels-rocket-fuel-capsule")
+
 -- normalize building recipes
 do
     data.raw["recipe"]["angels-blast-furnace"].ingredients = vgal.build.table({
@@ -886,3 +890,5 @@ data.raw["recipe"]["angels-air-separation"].results = vgal.build.table({}, {
 
 -- press coke pellet in pellet press
 data.raw["recipe"]["angels-pellet-coke"].category = "angels-pellet-pressing"
+
+--

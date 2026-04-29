@@ -240,6 +240,7 @@ local subgroups = {
         group = "angels-petrochem-refining",
         order = "abb",
         entries = {
+            "rocket-fuel",
             "nuclear-fuel",
             "angels-nuclear-fuel",
             "angels-nuclear-fuel-2",

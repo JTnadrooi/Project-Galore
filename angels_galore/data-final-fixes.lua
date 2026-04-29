@@ -27,9 +27,12 @@ data.raw["item"]["uranium-238"].order = "a"
 data.raw["item"]["uranium-235"].subgroup = "vgal-nuclear-rocks"
 data.raw["item"]["uranium-235"].order = "b"
 data.raw["item"]["nuclear-fuel"].subgroup = "vgal-fuel-t2"
-data.raw["item"]["nuclear-fuel"].order = "a"
+data.raw["item"]["nuclear-fuel"].order = "b"
 vgal.subgroup.clean_recipe("nuclear-fuel")
 vgal.subgroup.clean_recipe("vgal-coal-uranium-235-nuclear-fuel")
+data.raw["item"]["rocket-fuel"].subgroup = "vgal-fuel-t2"
+data.raw["item"]["rocket-fuel"].order = "a"
+vgal.subgroup.clean_recipe("rocket-fuel")
 data.raw["item"]["explosives"].subgroup = "vgal-explosives"
 data.raw["item"]["explosives"].order = "a"
 data.raw["capsule"]["cliff-explosives"].subgroup = "vgal-explosives"

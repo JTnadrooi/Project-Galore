@@ -11,9 +11,9 @@ vgal.data.trim("vgal-crude-oil-coal")
 -- update savable recipes
 data.raw["recipe"]["vgal-coal-uranium-235-nuclear-fuel"].order = "j"
 data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].ingredients = vgal.build.table({
-    { "rocket-fuel",         1 },
-    { "uranium-235",         1 },
-    { "angels-solid-carbon", 5 },
+    { "angels-rocket-fuel-capsule", 1 },
+    { "uranium-235",                1 },
+    { "angels-solid-carbon",        5 },
 })
 
 data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].icons = vgal.icon.register {

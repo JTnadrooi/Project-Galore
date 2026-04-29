@@ -416,12 +416,12 @@ use_main_icon("angels-liquid-concrete")
 -- fix non-reskins tier numerals on machines that only have one tier now
 -- the reskins thing can just be fixed by enforcing a setting
 if not mods["reskins-angels"] then
-    local function fix_icon(item_prototype)
-        if item_prototype.icons then
-            for i = #item_prototype.icons, 1, -1 do
-                local icon = item_prototype.icons[i]
+    local function fix_icon(prototype)
+        if prototype.icons then
+            for i = #prototype.icons, 1, -1 do
+                local icon = prototype.icons[i]
                 if icon.icon:match("graphics/icons/numerals") then
-                    table.remove(item_prototype.icons, i)
+                    table.remove(prototype.icons, i)
                 else
                     icon.scale = nil
                 end
@@ -435,13 +435,13 @@ if not mods["reskins-angels"] then
         end
 
         if max_tier == 1 then
-            local machine_item = data.raw["item"][machine_name] or error(machine_name)
-
-            fix_icon(machine_item)
+            fix_icon(data.raw["item"][machine_name] or error(machine_name))
+            fix_icon(data.raw["assembling-machine"][machine_name] or error(machine_name))
         end
         ::continue::
     end
 
     -- gotta do this as its not included in the machine max tiers table
     fix_icon(data.raw["item"]["angels-thermal-bore"])
+    fix_icon(data.raw["mining-drill"]["angels-thermal-bore"])
 end

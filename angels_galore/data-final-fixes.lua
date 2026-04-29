@@ -43,7 +43,9 @@ data.raw["item"]["stone"].order = "a"
 data.raw["item"]["landfill"].subgroup = "vgal-solid-concrete"
 data.raw["item"]["landfill"].order = "a"
 data.raw["item"]["copper-cable"].subgroup = "vgal-basic-intermediate-products"
-data.raw["item"]["copper-cable"].order = "p"
+data.raw["item"]["copper-cable"].order = "b"
+data.raw["item"]["iron-stick"].subgroup = "vgal-basic-intermediate-products"
+data.raw["item"]["iron-stick"].order = "c"
 
 for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel }) do
     data.raw["item"][metal.plate].subgroup = "vgal-" .. metal.name .. "-casting"

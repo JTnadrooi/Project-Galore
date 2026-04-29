@@ -877,3 +877,9 @@ end
 
 -- fix ceramic filter recipe
 vgal.recipe.replace_ingredient("angels-filter-ceramic", "angels-solid-aluminium-oxide", "angels-solid-lime")
+
+-- tweak atmospheric separation recipe (it will also work better with space age this way, gleba will have the higher ox yield one)
+data.raw["recipe"]["angels-air-separation"].results = vgal.build.table({}, {
+    { "angels-gas-oxygen",   20 },
+    { "angels-gas-nitrogen", 80 },
+})

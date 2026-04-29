@@ -891,4 +891,13 @@ data.raw["recipe"]["angels-air-separation"].results = vgal.build.table({}, {
 -- press coke pellet in pellet press
 data.raw["recipe"]["angels-pellet-coke"].category = "angels-pellet-pressing"
 
---
+-- buff sodium carbonate from algae recipe so it can compete with the other recipes
+data.raw["recipe"]["angels-algae-brown-burning-wash"].ingredients = vgal.build.table({
+    { "angels-algae-brown", 6 },
+}, {
+    { "angels-water-purified", 20 },
+})
+data.raw["recipe"]["angels-algae-brown-burning-wash"].energy_required = 3
+-- data.raw["recipe"]["angels-algae-brown-burning-wash"].results = vgal.build.table({
+--     { "angels-algae-brown", 10 },
+-- })

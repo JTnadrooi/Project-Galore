@@ -41,25 +41,6 @@ for _, metal in pairs(vgal.defines.metals) do
             },
             category = "angels-ore-sorting",
         },
-        {
-            name = metal.ore .. "-" .. metal.pebbles,
-            prefix = "vgal",
-            icons = vgal.icon.register {
-                -- vgal.icon.get("angels_crushing", "raw"),
-                -- vgal.icon.get_out(metal .. "-ore"),
-
-                vgal.icon.get(metal.pebbles),
-            },
-            energy_required = 1,
-            technology = "angels-ore-crushing",
-            ingredients = {
-                { metal.ore, 2 },
-            },
-            results = {
-                { metal.pebbles, 4 },
-            },
-            category = "angels-ore-refining-t1",
-        },
 
         --- plate recipes
         -- { -- its better to change the default ...-plate recipes instead, for factoriopedia purposes.

@@ -257,6 +257,7 @@ local subgroups = {
         entries = {
             "angels-gas-ammonia",
             "angels-gas-hydrazine",
+            "angels-gas-monochloramine", -- misfit
             "angels-liquid-nitric-acid", -- misfit
         },
         cleaning_entries = {

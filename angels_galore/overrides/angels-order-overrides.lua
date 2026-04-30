@@ -59,8 +59,6 @@ vgal.subgroup.set_for("stone-brick", "vgal-cement-concrete")
 data.raw["item"]["stone-brick"].order = "c"
 data.raw["recipe"]["stone-brick"].order = nil
 
-vgal.subgroup.clean_recipe("angels-solid-plastic")
-
 data.raw["recipe"]["angels-electrode-used"].main_product = "angels-electrode"
 
 data.raw["recipe"]["angels-solid-geodes"].order = "-z"
@@ -89,3 +87,7 @@ data.raw["recipe"]["angels-steam-cracking-fuel-oil"].subgroup = "angels-petroche
 data.raw["recipe"]["angels-algae-brown-burning-wash"].order = "bb"
 
 data.raw["recipe"]["angels-solid-mud-landfill"].order = "ab"
+
+data.raw["fluid"]["angels-liquid-perchloric-acid"].order = "gb"
+data.raw["fluid"]["angels-liquid-perchloric-acid"].subgroup = "angels-petrochem-chlorine"
+vgal.subgroup.clean_recipe("angels-liquid-perchloric-acid")

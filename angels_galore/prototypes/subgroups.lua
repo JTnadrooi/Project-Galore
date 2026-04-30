@@ -511,8 +511,8 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel
     if metal.name ~= "steel" then
         table.insert(subgroups, {
             name = metal.name .. "-sorting-results",
-            group = "angels-smelting",
-            order = "b-" .. base_order .. "a",
+            group = "angels-resource-refining",
+            order = "b-" .. ((metal.name == "copper") and "a" or "b") .. "b",
             entries = { metal.ore, metal.pebbles, metal.nugget, metal.slag },
             should_reorder_entries = true,
         })
@@ -556,7 +556,7 @@ for _, metal in pairs(vgal.defines.metals) do
         {
             name = metal.base_ore,
             group = "angels-resource-refining",
-            order = "b[processing]-" .. ((metal.name == "copper") and "a" or "b"),
+            order = "b-" .. ((metal.name == "copper") and "a" or "b"),
             entries = vgal.table.merge_array({ metal.base_ore }, ore_entries),
         }
     )

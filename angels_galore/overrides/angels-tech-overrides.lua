@@ -193,56 +193,9 @@ for tech_name, tech in pairs(data.raw["technology"]) do
     end
 end
 
--- add angels-stone-smelting-2 as prerequisite to technologies that unlock buildings that require concrete bricks
-
--- LOGCACHE::
--- vgal.log("listlist")
-
--- for _, tech in pairs(data.raw["technology"]) do
---     local uses_concrete_brick = false
-
---     for _, effect in ipairs(tech.effects or {}) do
---         if effect.type == "unlock-recipe" then
---             local recipe = data.raw["recipe"][effect.recipe]
-
---             if recipe.ingredients and (not recipe.hidden) then
---                 for _, ingredient in ipairs(recipe.ingredients) do
---                     if ingredient.name == "angels-concrete-brick" then
---                         uses_concrete_brick = true
---                     end
---                 end
---             end
---         end
---     end
-
---     if (not has_prerequisite_recursive(tech.name, "angels-stone-smelting-2")) and uses_concrete_brick and (not tech.hidden) then
---         vgal.log(tech.name)
---     end
--- end
-
--- vgal.log("listlist-end")
-
--- LOGCACHE RESULT::
-local techs_that_need_stone_smelting = {
-    -- "angels-ore-leaching",
-    -- "angels-ore-refining",
-    -- "angels-water-treatment-3",
-    -- "angels-thorium-power",
-    -- "angels-ore-processing-2",
-    -- "angels-bio-refugium-hatchery"
-}
-
-for _, tech_name in ipairs(techs_that_need_stone_smelting) do
-    local tech = data.raw["technology"][tech_name]
-
-    vgal.tech.add_prerequisite(tech_name, "angels-stone-smelting-2")
-    table.insert(tech.prerequisites, "angels-stone-smelting-2")
-end
-
 -- SPLICE TECHS
--- so not everything requires chlorine...
+-- pre splice fix so not everything requires chlorine...
 data.raw["technology"]["angels-aluminium-smelting-1"].prerequisites = {}
-
 
 -- mark empty techs for splicing (can't do this in final-fixes bc of galorelib, but this should work)
 -- AND remove hidden effects, I could use queue_to_clean... hmm...

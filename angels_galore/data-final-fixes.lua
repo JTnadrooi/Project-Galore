@@ -83,3 +83,17 @@ vgal.subgroup.clean_recipe("landfill")
 -- fix crystal refining prerequisites with the updated recipes (both sulfuric acid)
 -- do this any earlier and petrochem will override bleh
 data.raw["technology"]["angels-ore-leaching"].prerequisites = { "angels-ore-powderizer", "angels-slag-processing-2" }
+
+-- fix rocket fuel tech (also doesnt listen if in updates)
+data.raw["technology"]["rocket-fuel"].prerequisites = {
+    "angels-advanced-oil-processing",
+    "flammables",
+    "angels-nitrogen-processing-3",
+}
+vgal.tech.remove_unit("rocket-fuel", "production-science-pack")
+vgal.tech.remove_unit("rocket-fuel", "utility-science-pack")
+
+data.raw["technology"]["angels-nuclear-fuel"].prerequisites = {
+    "angels-thorium-power",
+    "rocket-fuel",
+}

@@ -309,6 +309,26 @@ function vgal.tech.add_unit(tech_name, unit_name, unit_count)
 end
 
 ---@param tech_name string
+---@param unit_name string
+function vgal.tech.remove_unit(tech_name, unit_name)
+    if not data.raw["tool"][unit_name] then
+        error("Tool prototype not found: " .. unit_name)
+    end
+
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    if not tech.unit or not tech.unit.ingredients then
+        return
+    end
+
+    for i = #tech.unit.ingredients, 1, -1 do
+        if tech.unit.ingredients[i][1] == unit_name then
+            table.remove(tech.unit.ingredients, i)
+        end
+    end
+end
+
+---@param tech_name string
 ---@param unit_count integer
 function vgal.tech.set_unit_count(tech_name, unit_count)
     vgal.throw.if_param_nil(unit_count, "unit_count")

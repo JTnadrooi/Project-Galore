@@ -79,3 +79,7 @@ data.raw["recipe"]["uranium-processing"].order = "a"
 
 vgal.subgroup.clean_recipe("uranium-fuel-cell")
 vgal.subgroup.clean_recipe("landfill")
+
+-- fix crystal refining prerequisites with the updated recipes (both sulfuric acid)
+-- do this any earlier and petrochem will override bleh
+data.raw["technology"]["angels-ore-leaching"].prerequisites = { "angels-ore-powderizer", "angels-slag-processing-2" }

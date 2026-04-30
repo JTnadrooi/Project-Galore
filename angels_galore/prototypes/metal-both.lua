@@ -41,25 +41,6 @@ for _, metal in pairs(vgal.defines.metals) do
             },
             category = "angels-ore-sorting",
         },
-
-        --- plate recipes
-        -- { -- its better to change the default ...-plate recipes instead, for factoriopedia purposes.
-        --     name = base_ore .. "-" .. plate,
-        --     prefix = "vgal",
-        --     icons = vgal.icon.register {
-        --         vgal.icon.get(plate),
-        --         vgal.icon.get_in(base_ore),
-        --     },
-        --     energy_required = 9.6,
-        --     technology = "angels-ore-crushing",
-        --     ingredients = {
-        --         { base_ore, 3 },
-        --     },
-        --     results = {
-        --         { plate, 2 },
-        --     },
-        --     category = "smelting",
-        -- },
         {
             name = metal.pebbles .. "-" .. metal.plate,
             prefix = "vgal",
@@ -93,6 +74,23 @@ for _, metal in pairs(vgal.defines.metals) do
                 { metal.plate, 3 },
             },
             category = "smelting",
+        },
+        {
+            name = "angels-mineral-sludge-" .. metal.pebbles,
+            prefix = "vgal",
+            icons = angelsmods.functions.create_liquid_recipe_icon({
+                metal.pebbles,
+            }, { { 202, 099, 017 }, { 097, 052, 020 }, { 097, 052, 020 } }),
+            energy_required = 1,
+            technology = "angels-slag-processing-1",
+            fluid_ingredients = {
+                { "angels-mineral-sludge", 25 }
+            },
+            results = {
+                { metal.pebbles, 1, { probability = 0.8 } },
+            },
+            category = "angels-crystallizing",
+            show_amount_in_title = false
         },
     }, {
         type = "recipe",

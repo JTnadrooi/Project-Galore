@@ -143,10 +143,14 @@ local subgroups = {
     },
 
     -- NUCLEAR
-    {
+    { -- this gets changed a bit in final fixes
         name = "nuclear-processing",
         group = "angels-resource-refining",
         order = --[[america]] "y-ya",
+        entries = {
+            "uranium-ore",
+            "angels-thorium-ore",
+        },
         recipe_entries = {
             "uranium-processing",
             "angels-thorium-processing",

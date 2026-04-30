@@ -74,8 +74,13 @@ data.raw["item"]["refined-hazard-concrete"].order = "e"
 data.raw["recipe"]["nuclear-fuel-reprocessing"].subgroup = "vgal-nuclear-reprocessing"
 data.raw["recipe"]["nuclear-fuel-reprocessing"].order = "a"
 
+data.raw["item"]["uranium-ore"].subgroup = "vgal-nuclear-processing"
+data.raw["item"]["uranium-ore"].order = "a"
+data.raw["item"]["angels-thorium-ore"].subgroup = "vgal-nuclear-processing"
+data.raw["item"]["angels-thorium-ore"].order = "b"
 data.raw["recipe"]["uranium-processing"].subgroup = "vgal-nuclear-processing"
-data.raw["recipe"]["uranium-processing"].order = "a"
+data.raw["recipe"]["uranium-processing"].order = "ab"
+data.raw["recipe"]["angels-thorium-processing"].order = "bb"
 
 vgal.subgroup.clean_recipe("uranium-fuel-cell")
 vgal.subgroup.clean_recipe("landfill")

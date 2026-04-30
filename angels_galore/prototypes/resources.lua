@@ -73,7 +73,7 @@ vgal.data.extend({
     --     category = "angels-liquifying",
     -- },
     {
-        name = "agal-hand-mining", -- I am aware the vgal prefix gets added anyways
+        name = "agal-hand-mining", -- the vgal prefix gets added anyways
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get_placeholder(),
@@ -91,6 +91,60 @@ vgal.data.extend({
         enabled = true,
         show_amount_in_title = false,
         category = "angels-manual-crafting",
+    },
+    {
+        name = "angels-ore2-crystal-angels-ore3-crystal-uranium-ore",
+        prefix = "vgal",
+        icons = {
+            {
+                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
+                icon_size = 32,
+            },
+            {
+                icon = "__base__/graphics/icons/uranium-ore.png",
+                icon_size = 64,
+                scale = 0.25,
+                shift = { 10, 10 },
+            },
+        },
+        technology = "uranium-mining",
+        energy_required = 2,
+        ingredients = {
+            { "angels-ore2-crystal",      1 },
+            { "angels-ore3-crystal",      1 },
+            { "angels-catalysator-brown", 1 },
+        },
+        results = {
+            { "uranium-ore", 4 }
+        },
+        category = "angels-ore-sorting",
+    },
+    {
+        name = "angels-ore2-pure-angels-ore3-pure-angels-thorium-ore",
+        prefix = "vgal",
+        icons = {
+            {
+                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
+                icon_size = 32,
+            },
+            {
+                icon = "__angelspetrochemgraphics__/graphics/icons/ore-thorium.png",
+                icon_size = 64,
+                scale = 0.25,
+                shift = { 10, 10 },
+            },
+        },
+        technology = "angels-thorium-power",
+        energy_required = 2,
+        ingredients = {
+            { "angels-ore2-pure",         1 },
+            { "angels-ore3-pure",         1 },
+            { "angels-catalysator-brown", 1 },
+        },
+        results = {
+            { "angels-thorium-ore", 4 }
+        },
+        category = "angels-ore-sorting",
     },
 }, {
     type = "recipe",

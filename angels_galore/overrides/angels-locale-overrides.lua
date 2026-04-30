@@ -49,6 +49,8 @@ end
 vgal.tech.use_tech_locale("angels-stone-smelting-1")
 vgal.tech.use_tech_locale("angels-stone-smelting-2")
 
+vgal.tech.use_tech_locale("uranium-mining")
+
 -- prevent oopsie locale
 data.raw["recipe"]["angels-iron-pebbles"].localised_name = nil
 data.raw["recipe"]["angels-copper-pebbles"].localised_name = nil

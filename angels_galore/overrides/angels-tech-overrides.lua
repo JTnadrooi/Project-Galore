@@ -149,6 +149,8 @@ end
 vgal.tech.add_recipe("angels-ore-crushing", "angels-iron-pebbles")
 vgal.tech.add_recipe("angels-ore-crushing", "angels-copper-pebbles")
 
+-- add crystal prereq to uranium mining as the sorting recipe is there
+vgal.tech.add_prerequisite("uranium-mining", "angels-ore-leaching")
 
 -- add "angels-filter-ceramic" to alien farm tech as the new alt seed recipes need it
 vgal.tech.add_recipe("angels-bio-farm-alien", "angels-filter-ceramic")

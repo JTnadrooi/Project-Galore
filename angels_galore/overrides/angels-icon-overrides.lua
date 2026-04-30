@@ -448,3 +448,8 @@ fix_icon(data.raw["mining-drill"]["angels-thermal-bore"])
 -- restore rocket fuel icon
 data.raw["item"]["rocket-fuel"].icon = "__base__/graphics/icons/rocket-fuel.png"
 data.raw["item"]["rocket-fuel"].icon_size = nil
+
+-- fix uranium mining icon to be more sorting like
+data.raw["technology"]["uranium-mining"].icons = data.raw["technology"]["angels-advanced-ore-refining-4"].icons
+data.raw["technology"]["uranium-mining"].icon = data.raw["technology"]["angels-advanced-ore-refining-4"].icon
+data.raw["technology"]["uranium-mining"].icon_size = data.raw["technology"]["angels-advanced-ore-refining-4"].icon_size

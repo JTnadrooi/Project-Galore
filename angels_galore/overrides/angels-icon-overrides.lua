@@ -413,38 +413,38 @@ use_main_icon("angels-liquid-molten-iron")
 use_main_icon("angels-liquid-molten-steel")
 use_main_icon("angels-liquid-concrete")
 
--- fix non-reskins tier numerals on machines that only have one tier now
--- the reskins thing can just be fixed by enforcing a setting
-if not mods["reskins-angels"] then
-    local function fix_icon(prototype)
-        if prototype.icons then
-            for i = #prototype.icons, 1, -1 do
-                local icon = prototype.icons[i]
-                if icon.icon:match("graphics/icons/numerals") then
-                    table.remove(prototype.icons, i)
-                else
-                    icon.scale = nil
-                end
+-- fix tier numerals on machines that only have one tier now
+local tier_match_string = mods["reskins-angels"] and "icons/tiers" or "graphics/icons/numerals"
+
+local function fix_icon(prototype)
+    if prototype.icons then
+        for i = #prototype.icons, 1, -1 do
+            local icon = prototype.icons[i]
+            if icon.icon:match(tier_match_string) then
+                table.remove(prototype.icons, i)
+            else
+                icon.scale = nil
             end
         end
     end
-
-    for machine_name, max_tier in pairs(agal.defines.machine_max_tiers) do
-        if machine_name == "angels-oil-refinery" or machine_name == "angels-chemical-plant" then
-            goto continue
-        end
-
-        if max_tier == 1 then
-            fix_icon(data.raw["item"][machine_name] or error(machine_name))
-            fix_icon(data.raw["assembling-machine"][machine_name] or error(machine_name))
-        end
-        ::continue::
-    end
-
-    -- gotta do this as its not included in the machine max tiers table
-    fix_icon(data.raw["item"]["angels-thermal-bore"])
-    fix_icon(data.raw["mining-drill"]["angels-thermal-bore"])
 end
 
+for machine_name, max_tier in pairs(agal.defines.machine_max_tiers) do
+    if machine_name == "angels-oil-refinery" or machine_name == "angels-chemical-plant" then
+        goto continue
+    end
+
+    if max_tier == 1 then
+        fix_icon(data.raw["item"][machine_name] or error(machine_name))
+        fix_icon(data.raw["assembling-machine"][machine_name] or error(machine_name))
+    end
+    ::continue::
+end
+
+-- gotta do this as its not included in the machine max tiers table
+fix_icon(data.raw["item"]["angels-thermal-bore"])
+fix_icon(data.raw["mining-drill"]["angels-thermal-bore"])
+
+-- restore rocket fuel icon
 data.raw["item"]["rocket-fuel"].icon = "__base__/graphics/icons/rocket-fuel.png"
 data.raw["item"]["rocket-fuel"].icon_size = nil

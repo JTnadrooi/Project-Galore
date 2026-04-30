@@ -270,6 +270,18 @@ vgal.data.trim("angels-liquid-plastic-3")
 vgal.data.trim("angels-liquid-plastic-bio-1")
 vgal.data.trim("angels-liquid-plastic-bio-2")
 
+-- remove rocket boosters
+vgal.data.trim("angels-rocket-booster")
+vgal.data.trim("angels-rocket-booster-2")
+vgal.data.deephide(data.raw["item"]["angels-rocket-booster"])
+data.raw.recipe["rocket"].ingredients = vgal.build.table({
+    { "explosives", 1 },
+    { "iron-plate", 2 },
+})
+vgal.recipe.remove_ingredient("atomic-bomb", "angels-rocket-booster")
+vgal.recipe.remove_ingredient("angels-atomic-bomb", "angels-rocket-booster")
+vgal.recipe.remove_ingredient("angels-atomic-bomb-2", "angels-rocket-booster")
+
 -- remove extra trees
 vgal.data.trim("angels-tree-arboretum-0")
 vgal.data.deephide(data.raw["item"]["angels-temperate-tree"])

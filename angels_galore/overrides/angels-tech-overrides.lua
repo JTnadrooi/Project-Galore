@@ -155,6 +155,17 @@ vgal.tech.add_prerequisite("uranium-mining", "angels-ore-leaching")
 -- add "angels-filter-ceramic" to alien farm tech as the new alt seed recipes need it
 vgal.tech.add_recipe("angels-bio-farm-alien", "angels-filter-ceramic")
 
+-- move recipes so rocket boosteer techs are removed
+vgal.tech.move_recipe("angels-rocket-booster-1", "angels-nitrogen-processing-2", "angels-solid-ammonium-nitrate")
+vgal.tech.move_recipe("angels-rocket-booster-2", "angels-chlorine-processing-4", "angels-solid-ammonium-perchlorate")
+vgal.tech.add_prerequisite("angels-chlorine-processing-4", "angels-nitrogen-processing-2")
+
+-- fix techs that depended on it
+vgal.tech.remove_prerequisite("rocketry", "angels-rocket-booster-1")
+
+-- fix nuke tech prerequisites
+vgal.tech.add_prerequisite("atomic-bomb", "angels-fusion-power-1")
+
 -- BIO SCIENCE
 -- add initial
 data.raw["technology"]["angels-gardens"].prerequisites = { "vgal-biological-science-pack" }

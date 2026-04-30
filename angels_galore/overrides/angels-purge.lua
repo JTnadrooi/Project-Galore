@@ -246,6 +246,7 @@ data.raw.recipe["angels-gas-nitrogen-dioxide"].main_product = "angels-gas-nitrog
 
 vgal.data.deephide(data.raw["fluid"]["angels-gas-nitrogen-monoxide"])
 vgal.data.trim("angels-gas-nitrogen-monoxide")
+vgal.data.trim("angels-solid-sodium-nitrate-processing")
 
 -- brick removal (clay/reinforced)
 vgal.data.deephide(data.raw["item"]["angels-reinforced-concrete-brick"])

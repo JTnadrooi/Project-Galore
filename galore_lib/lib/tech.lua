@@ -266,13 +266,22 @@ function vgal.tech.extract_units(tech)
     return units
 end
 
+---@param units string[]|({[1]:string, [2]: integer})[]
+---@return integer
 function vgal.tech.get_units_worth(units)
     local worth = 0
 
     for _, unit in ipairs(units) do
-        local unit_data = vgal.tech.units[unit]
+        local unit_name
+        if type(unit) == "table" then
+            unit_name = unit[1]
+        else
+            unit_name = unit
+        end
+
+        local unit_data = vgal.tech.units[unit_name]
         if unit_data then
-            worth = worth + vgal.tech.units[unit].value
+            worth = worth + vgal.tech.units[unit_name].value
         end
         worth = worth + 1
     end

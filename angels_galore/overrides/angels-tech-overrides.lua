@@ -1,5 +1,4 @@
 -- TECH FIXES (alot of this is done in final fixes too)
-data.raw["technology"]["angels-basic-chemistry"].unit.count = 40
 data.raw["technology"]["angels-ore-crushing"].prerequisites = { "automation" }
 vgal.tech.merge("angels-flare-stack", "angels-basic-chemistry")
 table.insert(data.raw["technology"]["angels-water-treatment"].prerequisites, "angels-water-washing-1")
@@ -19,9 +18,7 @@ vgal.tech.move_recipe("angels-bio-farm-2", "angels-composting", "angels-solid-fe
 vgal.tech.deephide("angels-bio-farm-2")
 vgal.tech.add_prerequisite("angels-composting", "angels-nitrogen-processing-2")
 vgal.tech.add_unit("angels-composting", "logistic-science-pack")
-vgal.tech.set_unit_count("angels-composting", 50)
 vgal.tech.add_unit("angels-bio-arboretum-1", "logistic-science-pack")
-vgal.tech.set_unit_count("angels-bio-arboretum-1", 50)
 
 -- fix farm prerequisites
 for _, environment in ipairs({ "desert", "swamp", "temperate" }) do
@@ -244,3 +241,136 @@ for _, tech in pairs(data.raw["technology"]) do
         end
     end
 end
+
+-- fix tech costs
+-- only affects angels techs
+local function get_previous_tech_name(tech_name)
+    local base_name, number = tech_name:match("^(.-)-(%d+)$")
+
+    if base_name and number then
+        local num = tonumber(number)
+        if num and num > 1 then
+            if num == 2 then
+                local prev_tier_tech = data.raw["technology"][base_name] or data.raw["technology"]
+                    [base_name .. "-" .. 1]
+                if prev_tier_tech then
+                    return prev_tier_tech.name
+                end
+            else
+                local prev_tier_tech = data.raw["technology"][base_name .. "-" .. (num - 1)]
+                if prev_tier_tech then
+                    return prev_tier_tech.name
+                end
+            end
+        end
+    end
+
+    return nil
+end
+
+local techs_with_tier = {}
+local tech_adjustments = {}
+
+for _, tech in pairs(data.raw["technology"]) do
+    if startsWith(tech.name, "angels") and tech.unit and tech.unit.ingredients and tech.unit.count and not tech.hidden and not vgal.tech.techs_to_splice[tech.name] then
+        local is_icon_tech = false
+        for _, icon in ipairs(tech.icons or {}) do
+            if icon.icon:match("gas/gas") then
+                is_icon_tech = true
+                goto gas_check_continue
+            end
+        end
+        if tech.icon and tech.icon:match("coolant") then
+            is_icon_tech = true
+        end
+        ::gas_check_continue::
+
+        local recipe_count = 0
+        for _, effect in ipairs(tech.effects) do
+            if not effect.hidden and effect.type == "unlock-recipe" then
+                recipe_count = recipe_count + 1
+            end
+        end
+
+        local new_tech_count = tech.unit.count
+
+        if is_icon_tech then
+            new_tech_count = math.max(25 * #tech.unit.ingredients, 20)
+
+            if #tech.unit.ingredients > 3 then
+                new_tech_count = new_tech_count + 20
+            end
+            if #tech.unit.ingredients > 4 then
+                new_tech_count = new_tech_count + 25
+            end
+        else
+            new_tech_count = new_tech_count + math.abs(tech.unit.count - 30) * #tech.unit.ingredients
+
+            new_tech_count = new_tech_count + math.min(#(tech.prerequisites or {}), 5) * 5
+
+            if recipe_count < 10 then
+                new_tech_count = new_tech_count + recipe_count * 15
+            end
+
+            if recipe_count < 2 then
+                new_tech_count = new_tech_count * 0.75
+                new_tech_count = math.floor((new_tech_count + 5) / 10) * 10
+            end
+        end
+
+        tech_adjustments[tech.name] = {
+            new_count = new_tech_count,
+            ingredients_count = #tech.unit.ingredients
+        }
+    end
+end
+
+for name, adjustment in pairs(tech_adjustments) do
+    local tier = 0
+    local base_name, number = name:match("^(.-)-(%d+)$")
+    if base_name and number then
+        tier = tonumber(number) --[[@as integer]]
+        techs_with_tier[#techs_with_tier + 1] = {
+            name = name,
+            tier = tier,
+            base_name = base_name,
+            adjustment = adjustment
+        }
+    else
+        techs_with_tier[#techs_with_tier + 1] = {
+            name = name,
+            tier = 1,
+            base_name = name,
+            adjustment = adjustment
+        }
+    end
+end
+
+table.sort(techs_with_tier, function(a, b)
+    return a.tier > b.tier
+end)
+
+for _, tech_info in ipairs(techs_with_tier) do
+    local name = tech_info.name
+    local adjustment = tech_info.adjustment
+    local previous_tech_name = get_previous_tech_name(name)
+
+    if previous_tech_name and tech_adjustments[previous_tech_name] then
+        local previous_adjustment = tech_adjustments[previous_tech_name]
+
+        if previous_adjustment.new_count > adjustment.new_count - 10 then
+            previous_adjustment.new_count = adjustment.new_count - 5 * adjustment.ingredients_count - 10
+            if previous_adjustment.new_count < 1 then
+                previous_adjustment.new_count = 1
+            end
+        end
+    end
+end
+
+for name, adjustment in pairs(tech_adjustments) do
+    data.raw["technology"][name].unit.count = adjustment.new_count
+end
+
+-- manual tech cost fixes
+vgal.tech.set_unit_count("angels-coal-cracking", 200) -- (normally gets icon treatment) same as vanilla, also fitting for something so usefull
+vgal.tech.set_unit_count("angels-nuclear-fuel", 1500)

@@ -21,3 +21,6 @@ for _, recipe in pairs(data.raw["recipe"]) do
     end
 end
 vgal.recipe.replace_ingredient("angels-ore2-crystal", "angels-liquid-hydrofluoric-acid", "angels-liquid-sulfuric-acid")
+
+-- does not listen in update phase, is intended to be after tech unit algorithm
+vgal.tech.set_unit_count("rocket-fuel", 300) -- (doesn't get covered by algorithm) also same as vanilla, way more than 50 units

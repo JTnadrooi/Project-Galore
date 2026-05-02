@@ -274,6 +274,9 @@ local tech_adjustments = {}
 for _, tech in pairs(data.raw["technology"]) do
     if startsWith(tech.name, "angels") and tech.unit and tech.unit.ingredients and tech.unit.count and not tech.hidden and not vgal.tech.techs_to_splice[tech.name] then
         local is_icon_tech = false
+        local ingredient_count = #tech.unit.ingredients
+        local highest_value_unit = vgal.tech.get_highest_value_unit(tech.name)
+
         for _, icon in ipairs(tech.icons or {}) do
             if icon.icon:match("gas/gas") then
                 is_icon_tech = true
@@ -295,16 +298,22 @@ for _, tech in pairs(data.raw["technology"]) do
         local new_tech_count = tech.unit.count
 
         if is_icon_tech then
-            new_tech_count = math.max(25 * #tech.unit.ingredients, 20)
+            new_tech_count = math.max(25 * ingredient_count, 20)
 
-            if #tech.unit.ingredients > 3 then
+            if ingredient_count > 3 then
                 new_tech_count = new_tech_count + 20
             end
-            if #tech.unit.ingredients > 4 then
+            if ingredient_count > 4 then
                 new_tech_count = new_tech_count + 25
             end
         else
-            new_tech_count = new_tech_count + math.abs(tech.unit.count - 30) * #tech.unit.ingredients
+            new_tech_count = new_tech_count + math.abs(tech.unit.count - 30) * ingredient_count
+
+            if highest_value_unit == "automation-science-pack" then
+                new_tech_count = math.min(25, new_tech_count * 0.4)
+            elseif highest_value_unit == "logistic-science-pack" or highest_value_unit == "vgal-biological-science-pack" then
+                new_tech_count = math.min(40, new_tech_count * 0.6)
+            end
 
             new_tech_count = new_tech_count + math.min(#(tech.prerequisites or {}), 5) * 5
 
@@ -314,13 +323,14 @@ for _, tech in pairs(data.raw["technology"]) do
 
             if recipe_count < 2 then
                 new_tech_count = new_tech_count * 0.75
-                new_tech_count = math.floor((new_tech_count + 5) / 10) * 10
             end
+
+            new_tech_count = math.floor((new_tech_count + 5) / 5) * 5
         end
 
         tech_adjustments[tech.name] = {
             new_count = new_tech_count,
-            ingredients_count = #tech.unit.ingredients
+            ingredients_count = ingredient_count
         }
     end
 end

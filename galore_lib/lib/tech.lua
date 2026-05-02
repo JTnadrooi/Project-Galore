@@ -361,3 +361,30 @@ function vgal.tech.use_tech_locale(tech_name)
     tech.localised_name = { "technology-name." .. tech.name }
     tech.localised_description = { "technology-description." .. tech.name }
 end
+
+---@param tech_name string
+---@return string
+function vgal.tech.get_highest_value_unit(tech_name)
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    if not tech.unit or not tech.unit.ingredients then
+        error("Invalid tech ingredients, no unit ingredients.")
+    end
+
+    local highest_value_unit = { nil, 0 }
+    for _, unit in ipairs(tech.unit.ingredients) do
+        local unit_store = vgal.tech.units[unit[1]]
+
+        local value = unit_store and unit_store.value or 0
+
+        if value > highest_value_unit[2] then
+            highest_value_unit = { unit[1], value }
+        end
+    end
+
+    if not highest_value_unit[1] then
+        error("Invalid tech ingredients, no units found in unit storage table.")
+    end
+
+    return highest_value_unit[1]
+end

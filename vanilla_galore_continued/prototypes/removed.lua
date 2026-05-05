@@ -397,6 +397,24 @@ vgal.data.extend({
             { "battery", 1 },
         },
     },
+    {
+        name = "iron-plate-barrel",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("barrel"),
+            vgal.icon.get_in("iron-plate"),
+        },
+        category = "crafting",
+        energy_required = 2,
+        technology = "fluid-handling",
+        ingredients = {
+            { "iron-plate", 10 },
+        },
+        results = {
+            { "barrel", 1 },
+        },
+        groups = { "vgal-barrels" },
+    },
 }, {
     type = "recipe",
     groups = { "vgal-removed" },

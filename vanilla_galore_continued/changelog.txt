@@ -3,6 +3,7 @@ Version: 1.3.7
   Balancing:
     - "vgal-plastic-bar-electronic-circuit" copper wire cost; 2 -> 1
     - Remove silly-tagged recipe "vgal-barrel-battery"
+    - Halved "vgal-plastic-bar-repair-pack" plastic cost and normalized recipe.
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.6
   Bugfixes:

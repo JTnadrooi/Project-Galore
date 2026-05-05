@@ -119,13 +119,13 @@ vgal.data.extend({
             vgal.icon.get_in("plastic-bar"),
         },
         technology = "plastics",
-        energy_required = 2,
+        energy_required = 1,
         ingredients = {
-            { "electronic-circuit", 2 },
-            { "plastic-bar",        4 }
+            { "electronic-circuit", 1 },
+            { "plastic-bar",        1 }
         },
         results = {
-            { "repair-pack", 2 },
+            { "repair-pack", 1 },
         },
     },
     {

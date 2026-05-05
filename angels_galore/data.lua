@@ -6,6 +6,7 @@ vgal.throw.error_if_missing_galore({ "angels_space_age_galore", "Angel's+Space A
 require("prototypes.items.biological-science-pack")
 
 require("prototypes.subgroups")
+require("prototypes.voids")
 
 require("prototypes.metal-both")
 require("prototypes.sorting")

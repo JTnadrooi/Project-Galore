@@ -301,3 +301,6 @@ end
 vgal.data.trim("angels-wire-coil-copper")
 vgal.data.trim("angels-wire-coil-copper-2")
 vgal.data.trim("angels-wire-copper-2")
+
+-- remove thermal water to sludge recipes (and tech)
+vgal.tech.deephide("angels-thermal-water-processing")

@@ -4,6 +4,7 @@ Version: 1.6.2
     - Renamed "Nadrooi uranium reprocessing" (vgal-depleted-uranium-fuel-cell-fusion-power-cell) to "Nadrooi valorization process"
   Bugfixes:
     - Fixed "vgal-molten-copper-carbon-fiber-low-density-structure" being ordered before the vanilla casting lds recipe.
+    - Fixed "copper wire" mentions in recipe descriptions instead of copper cable.
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.1
   Features:

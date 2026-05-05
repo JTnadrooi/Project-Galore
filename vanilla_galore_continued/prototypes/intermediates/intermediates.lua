@@ -112,26 +112,6 @@ vgal.data.extend({
         },
     },
     {
-        name = "barrel-battery",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("battery"),
-            vgal.icon.get_in("barrel"),
-        },
-        category = "crafting",
-        energy_required = 2,
-        technology = "battery",
-        ingredients = {
-            { "copper-plate",         1 },
-            { "iron-plate",           2 },
-            { "sulfuric-acid-barrel", 1 },
-        },
-        results = {
-            { "battery", 1 },
-        },
-        groups = { "vgal-silly" },
-    },
-    {
         name = "plastic-bar-repair-pack",
         prefix = "vgal",
         icons = vgal.icon.register {

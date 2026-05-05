@@ -29,6 +29,12 @@ local subgroups = {
         entries = { "pipe", "pipe-to-ground", "storage-tank", "pump" },
         when_settings = { "vgal-buildings" },
     },
+    {
+        name = "rolling-stock",
+        group = "logistics",
+        order = "eb",
+        entries = { "locomotive", "cargo-wagon", "fluid-wagon", "artillery-wagon" },
+    },
     -- PRODUCTION
     {
         name = "assembing-machine",

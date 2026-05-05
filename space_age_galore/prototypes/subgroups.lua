@@ -1,101 +1,109 @@
+---@type vgal.SubgroupOverrideCollection[]
 local subgroups = {
     {
         name = "circuits-t4",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "gcd",
         entries = { "quantum-processor" }
     },
     {
         name = "bacteria",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "ma",
         entries = { "iron-bacteria", "copper-bacteria" }
     },
     {
         name = "nutrients",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "mb",
-        entries = { "nutrients" }
+        entries = { "nutrients" },
+        cleaning_entries = {
+            "nutrients-from-fish",
+            "nutrients-from-biter-egg",
+            "nutrients-from-spoilage",
+            "nutrients-from-yumako-mash",
+            "nutrients-from-bioflux",
+        }
     },
     {
         name = "crushing",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "bb",
         entries = {},
         -- when_settings = { "vgal-crushing-recipes" },
     },
     {
         name = "scrap",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "bc",
         entries = { "scrap" }
     },
     {
         name = "water",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "ab",
         entries = { "ice", "water", "steam" }
     },
     {
         name = "oil-fluids",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "ac",
         entries = { "heavy-oil", "light-oil", "petroleum-gas", "crude-oil" }
     },
     {
         name = "oil-cracking",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "aca",
         entries = {}
     },
     {
         name = "fulgora-fluids",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "acb",
         entries = { "holmium-solution", "electrolyte" }
     },
     {
         name = "ammonia",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "acc",
         entries = { "ammonia", "ammoniacal-solution" }
     },
     {
         name = "intermediate-casting",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "ka",
         entries = {}
     },
     {
         name = "molten-metals",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "kb",
         entries = { "molten-iron", "molten-copper", "lava" }
     },
     {
         name = "belt-t4",
-        tab = "logistics",
+        group = "logistics",
         order = "bad",
         entries = { "turbo-transport-belt", "turbo-splitter", "turbo-underground-belt" },
         when_settings = { "vgal-belts" },
     },
     {
         name = "soil",
-        tab = "logistics",
+        group = "logistics",
         order = "x",
         entries = { "artificial-yumako-soil", "artificial-jellynut-soil", "landfill", "foundation", "overgrowth-yumako-soil", "overgrowth-jellynut-soil", "ice-platform" },
     },
 
     {
         name = "space-science-pack",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "yf",
         entries = { "space-science-pack" },
         when_settings = { "vgal-science-packs" },
     },
     {
         name = "planetary-science-pack",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "yg",
         entries =
         {
@@ -107,14 +115,14 @@ local subgroups = {
     },
     {
         name = "endgame-science-pack",
-        tab = "intermediate-products",
+        group = "intermediate-products",
         order = "yh",
         entries = { "cryogenic-science-pack", "promethium-science-pack", },
         when_settings = { "vgal-science-packs" },
     },
     {
         name = "space-advanced",
-        tab = "space",
+        group = "space",
         order = "hb",
         entries = {},
     },
@@ -125,11 +133,6 @@ local toClean = {
     "ammoniacal-solution-separation",
     "solid-fuel-from-ammonia",
     "ammonia-rocket-fuel",
-    "nutrients-from-fish",
-    "nutrients-from-biter-egg",
-    "nutrients-from-spoilage",
-    "nutrients-from-yumako-mash",
-    "nutrients-from-bioflux",
     "iron-bacteria-cultivation",
     "copper-bacteria-cultivation",
     "rocket-fuel-from-jelly",
@@ -150,25 +153,12 @@ local toClean = {
     "casting-pipe-to-ground",
     "pentapod-egg",
 }
+
 for _, value in ipairs(toClean) do
-    data.raw["recipe"][value].order = nil
-    data.raw["recipe"][value].subgroup = nil
+    vgal.subgroup.clean_recipe(value)
 end
 
-for _, value in ipairs(subgroups) do
-    if value.when == nil then
-        value.when = true
-    end
-    for _, whenItem in ipairs(value.when_settings or {}) do
-        if not settings.startup[whenItem].value then
-            value.entries = {}
-        end
-    end
-    if not value.when then
-        value.entries = {}
-    end
-    vgal.subgroup.new("vgal-" .. value.name, value.entries, value.tab, value.order)
-end
+vgal.subgroup.process_override_subgroups(subgroups)
 
 data.raw["recipe"]["molten-iron-from-lava"].main_product = "molten-iron"
 data.raw["recipe"]["molten-copper-from-lava"].main_product = "molten-copper"
@@ -192,11 +182,7 @@ vgal.subgroup.set_for("fluoroketone-cold", "fluid-recipes")
 vgal.subgroup.set_for("sulfuric-acid", "fluid-recipes")
 vgal.subgroup.set_for("fusion-plasma", "fluid-recipes")
 
--- vgal.subgroup.set_item_or_fluid("ammonia", "fluid-recipes")
--- vgal.subgroup.set_item_or_fluid("ammoniacal-solution", "fluid-recipes")
 vgal.subgroup.set_for("fluorine", "fluid-recipes")
--- vgal.subgroup.set_item_or_fluid("holmium-solution", "fluid-recipes")
--- vgal.subgroup.set_item_or_fluid("electrolyte", "fluid-recipes")
 vgal.subgroup.set_for("lithium-brine", "fluid-recipes")
 vgal.subgroup.set_for("thruster-oxidizer", "space-processing")
 vgal.subgroup.set_for("thruster-fuel", "space-processing")
@@ -246,26 +232,9 @@ data.raw["recipe"]["advanced-carbonic-asteroid-crushing"].subgroup = "vgal-space
 data.raw["recipe"]["advanced-oxide-asteroid-crushing"].subgroup = "vgal-space-advanced"
 
 data.raw["recipe"]["simple-coal-liquefaction"].subgroup = "vgal-oil"
--- if settings.startup["vgal-crushing-recipes"].value then
---     data.raw["recipe"]["metallic-asteroid-crushing"].subgroup = "vgal-crushing"
---     data.raw["recipe"]["carbonic-asteroid-crushing"].subgroup = "vgal-crushing"
---     data.raw["recipe"]["oxide-asteroid-crushing"].subgroup = "vgal-crushing"
-
---     data.raw["recipe"]["advanced-metallic-asteroid-crushing"].subgroup = "vgal-crushing"
---     data.raw["recipe"]["advanced-carbonic-asteroid-crushing"].subgroup = "vgal-crushing"
---     data.raw["recipe"]["advanced-oxide-asteroid-crushing"].subgroup = "vgal-crushing"
--- end
 data.raw["recipe"]["scrap-recycling"].subgroup = "vgal-scrap"
 
+-- restore clean/cleared properties with updated order and subgroup for compat reasons
 for _, value in ipairs(toClean) do
     vgal.subgroup.restore(value)
 end
-
-
--- data.raw["recipe"]["coal-liquefaction"].subgroup = "vgal-oil-fluids"
--- data.raw["recipe"]["advanced-oil-processing"].subgroup = "vgal-oil-fluids"
--- data.raw["recipe"]["basic-oil-processing"].subgroup = "vgal-oil-fluids"
--- data.raw["recipe"]["heavy-oil-cracking"].subgroup = "vgal-oil-fluids"
--- data.raw["recipe"]["light-oil-cracking"].subgroup = "vgal-oil-fluids"
--- data.raw["recipe"]["simple-coal-liquefaction"].subgroup = "vgal-oil-fluids"
--- data.raw["recipe"]["coal-liquefaction"].subgroup = "vgal-oil-fluids"

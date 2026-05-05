@@ -566,48 +566,4 @@ for _, metal in pairs(vgal.defines.metals) do
     )
 end
 
-for _, subgroup in ipairs(subgroups) do
-    if subgroup.when == nil then
-        subgroup.when = true
-    end
-
-    for _, whenItem in ipairs(subgroup.when_settings or {}) do
-        if not settings.startup[whenItem].value then
-            subgroup.entries = {}
-        end
-    end
-
-    if not subgroup.when then
-        subgroup.entries = {}
-    end
-
-    if subgroup.should_reorder_entries then
-        for i, entry_name in ipairs(subgroup.entries or {}) do
-            vgal.get_recipeable(entry_name).order = vgal.subgroup.order_from_number(i)
-        end
-    end
-
-    vgal.subgroup.new("vgal-" .. subgroup.name, subgroup.entries or {}, subgroup.group, subgroup.order)
-
-    for i, recipe_name in ipairs(subgroup.recipe_entries or {}) do
-        local recipe = vgal.throw.if_recipe_not_found(recipe_name)
-        recipe.subgroup = "vgal-" .. subgroup.name
-
-        if subgroup.should_reorder_entries then
-            recipe.order = vgal.subgroup.order_from_number(i)
-        end
-    end
-
-    for _, cleaning_entry in ipairs(subgroup.cleaning_entries or {}) do
-        if cleaning_entry[1] then
-            ---@cast cleaning_entry {[1]: string, [2]: string}
-
-            vgal.subgroup.clean_recipe(cleaning_entry[1])
-            data.raw["recipe"][cleaning_entry[1]].main_product = cleaning_entry[2]
-        else
-            ---@cast cleaning_entry string
-
-            vgal.subgroup.clean_recipe(cleaning_entry --[[@as string]])
-        end
-    end
-end
+vgal.subgroup.process_override_subgroups(subgroups)

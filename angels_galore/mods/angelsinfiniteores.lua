@@ -46,3 +46,8 @@ end
 
 -- fix acid needed to mine ore2 (jiv)
 data.raw["resource"]["infinite-angels-ore2"].minable.required_fluid = "angels-liquid-sulfuric-acid"
+
+-- fix locale listing removed ores
+for _, metal in pairs(vgal.defines.metals) do
+    data.raw["resource"]["infinite-" .. metal.base_ore].localised_description = { "item-description." .. metal.base_ore }
+end

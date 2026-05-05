@@ -5,6 +5,7 @@ for _, metal in pairs(vgal.defines.metals) do
 
     -- remove sorting descs referencing removes ores
     data.raw["item"][metal.base_ore].localised_description = { "item-description." .. metal.base_ore }
+    data.raw["resource"][metal.base_ore].localised_description = { "item-description." .. metal.base_ore }
     for _, state in ipairs(metal.ore_states) do
         data.raw["item"][metal.base_ore .. "-" .. state].localised_description =
         {

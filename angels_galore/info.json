@@ -13,7 +13,12 @@
         "angelsrefining",
         "angelssmelting",
         "angelsbioprocessing",
-        "? angelsindustries",
+        "? angelsaddons-mobility",
+        "? angelsaddons-storage",
+        "? angelsaddons-cab",
+        "? angelsaddons-bots",
+        "? angelsinfiniteores",
+        "? quality",
         "(?) reskins-angels",
         "(?) DiscoScience"
     ],

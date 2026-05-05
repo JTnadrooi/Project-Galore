@@ -898,3 +898,5 @@ data.raw["recipe"]["angels-algae-brown-burning-wash"].ingredients = vgal.build.t
     { "angels-water-purified", 20 },
 })
 data.raw["recipe"]["angels-algae-brown-burning-wash"].energy_required = 3
+
+-- vgal.tech.deephide("angels-thermal-water-processing")

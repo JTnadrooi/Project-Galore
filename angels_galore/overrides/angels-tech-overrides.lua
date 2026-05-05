@@ -117,31 +117,6 @@ vgal.tech.add_prerequisite("angels-bio-refugium-hatchery", "vgal-biological-scie
 vgal.tech.add_prerequisite("angels-coal-processing-3", "angels-ore-processing-2")
 vgal.tech.add_unit("angels-coal-processing-3", "chemical-science-pack")
 
-
--- remove ore gen of removed ores.
-for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
-    local ore = "angels-ore" .. ore_index
-
-    vgal.data.deephide(data.raw["resource"][ore])
-    data.raw["autoplace-control"][ore] = nil
-    data.raw["planet"]["nauvis"].map_gen_settings.autoplace_controls[ore] = nil
-    data.raw["planet"]["nauvis"].map_gen_settings.autoplace_settings.entity.settings[ore] = nil
-
-    for _, map_gen_preset in pairs(data.raw["map-gen-presets"]) do
-        for key, value in pairs(map_gen_preset) do
-            if key == "name" or key == "type" then
-                goto continue
-            end
-
-            if value.basic_settings and value.basic_settings.autoplace_controls then
-                value.basic_settings.autoplace_controls[ore] = nil
-            end
-
-            ::continue::
-        end
-    end
-end
-
 -- add angels pebble recipes
 vgal.tech.add_recipe("angels-ore-crushing", "angels-iron-pebbles")
 vgal.tech.add_recipe("angels-ore-crushing", "angels-copper-pebbles")

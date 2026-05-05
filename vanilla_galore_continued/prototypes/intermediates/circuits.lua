@@ -122,7 +122,7 @@ vgal.data.extend({
         energy_required = 0.5,
         ingredients = {
             { "plastic-bar",  1 }, -- 15
-            { "copper-cable", 2 }, -- 10
+            { "copper-cable", 1 }, -- 5
         },
         results = {
             { "electronic-circuit", 1 }, -- 25

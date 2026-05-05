@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.7
+  Balancing:
+    - "vgal-plastic-bar-electronic-circuit" copper wire cost; 2 -> 1
+---------------------------------------------------------------------------------------------------
 Version: 1.3.6
   Bugfixes:
     - (Galore Library) Fixed all recipes added by vgal.data.extend being unlocked by default. (Thanks Samario!)

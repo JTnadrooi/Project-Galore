@@ -93,3 +93,6 @@ data.raw["fluid"]["angels-liquid-perchloric-acid"].subgroup = "angels-petrochem-
 vgal.subgroup.clean_recipe("angels-liquid-perchloric-acid")
 
 data.raw["recipe"]["angels-plutonium-breeding"].order = "gb"
+
+data.raw["item"]["steam-turbine"].order = "e"
+data.raw["item"]["steam-turbine"].subgroup = "angels-power-nuclear"

@@ -14,7 +14,6 @@ vgal.data.extend({
         results = {
             { "angels-cellulose-fiber", 2 },
         },
-        show_amount_in_title = false,
         category = "crafting",
     }
 }, {

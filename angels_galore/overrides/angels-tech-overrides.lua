@@ -135,6 +135,9 @@ vgal.tech.remove_prerequisite("rocketry", "angels-rocket-booster-1")
 -- fix nuke tech prerequisites
 vgal.tech.add_prerequisite("atomic-bomb", "angels-fusion-power-1")
 
+-- move coolant 2 filtering recipe to earlier (this removed coolant 2 tech as its empty now)
+vgal.tech.move_recipe("angels-coolant-2", "angels-coolant-1", "angels-coolant-used-filtration-2")
+
 -- BIO SCIENCE
 -- add initial
 data.raw["technology"]["angels-gardens"].prerequisites = { "vgal-biological-science-pack" }

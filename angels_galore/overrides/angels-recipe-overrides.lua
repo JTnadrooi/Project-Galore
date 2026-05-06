@@ -822,12 +822,12 @@ for _, environment in pairs(agal.defines.environments) do
 
     -- add alt seeds recipe
     local seed_recipe = data.raw["recipe"][environment.garden .. "-a"]
-    local alt_seeds_ingredients = { { type = "item", name = "angels-filter-ceramic", amount = 1 } }
+    local alt_seeds_ingredients = { { type = "item", name = "angels-filter-coal", amount = 1 } }
 
     local alt_seeds_results = table.deepcopy(seed_recipe.results)
     ---@diagnostic disable-next-line: param-type-mismatch
     table.insert(alt_seeds_results,
-        { type = "item", name = "angels-filter-ceramic-used", amount = 1, ignored_by_productivity = 1 } --[[@as data.ItemProductPrototype]])
+        { type = "item", name = "angels-filter-frame", amount = 1, ignored_by_productivity = 1 } --[[@as data.ItemProductPrototype]])
 
     local alt_seeds_order = nil
     if environment.name == "temperate" then
@@ -880,7 +880,7 @@ for _, environment in pairs(agal.defines.environments) do
 end
 
 -- fix ceramic filter recipe
-vgal.recipe.replace_ingredient("angels-filter-ceramic", "angels-solid-aluminium-oxide", "angels-solid-lime")
+vgal.recipe.replace_ingredient("angels-filter-ceramic", "angels-solid-aluminium-oxide", "angels-solid-clay")
 
 -- tweak atmospheric separation recipe (it will also work better with space age this way, gleba will have the higher ox yield one)
 data.raw["recipe"]["angels-air-separation"].results = vgal.build.table({}, {

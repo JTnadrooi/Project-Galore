@@ -413,6 +413,17 @@ use_main_icon("angels-liquid-molten-iron")
 use_main_icon("angels-liquid-molten-steel")
 use_main_icon("angels-liquid-concrete")
 
+-- fix atomic bomb tier irons
+use_main_icon("atomic-bomb")
+data.raw["recipe"]["angels-atomic-bomb"].icons = vgal.icon.register({
+    vgal.icon.get("atomic-bomb"),
+    vgal.icon.get_in("angels-plutonium-239"),
+})
+data.raw["recipe"]["angels-atomic-bomb-2"].icons = vgal.icon.register({
+    vgal.icon.get("atomic-bomb"),
+    vgal.icon.get_in("angels-muon-fusion-catalyst"),
+})
+
 -- fix tier numerals on machines that only have one tier now
 local tier_match_string = mods["reskins-angels"] and "icons/tiers" or "graphics/icons/numerals"
 

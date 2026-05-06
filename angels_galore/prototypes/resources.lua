@@ -146,6 +146,74 @@ vgal.data.extend({
         },
         category = "angels-ore-sorting",
     },
+    {
+        name = "angels-solid-limestone-angels-fluorite-ore",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("angels-fluorite-ore"),
+        },
+        energy_required = 3,
+        technology = "angels-stone-smelting-1",
+        ingredients = {
+            { "angels-solid-limestone",        4 },
+            { "angels-solid-sodium-carbonate", 1 },
+        },
+        fluid_ingredients = {
+            { "angels-water-purified", 50 },
+        },
+        results = {
+            { "angels-fluorite-ore", 1 },
+        },
+        fluid_results = {
+            { "angels-water-mineralized", 50, { ignored_by_productivity = 50 } },
+        },
+        category = "angels-ore-refining-t2",
+    },
+    {
+        name = "angels-thermal-water-angels-water-saline",
+        prefix = "vgal",
+        -- icons = angelsmods.functions.create_liquid_recipe_icon({
+        --     { "__angelspetrochemgraphics__/graphics/icons/ore-fluorite.png", 32 },
+        --     "angels-water-saline",
+        -- }, "WsFF"),
+        icons = vgal.icon.register {
+            vgal.icon.get("angels-fluorite-ore"),
+        },
+        energy_required = 1,
+        technology = "angels-thermal-water-extraction",
+        ingredients = {
+            { "angels-solid-calcium-chloride", 1 },
+        },
+        fluid_ingredients = {
+            { "angels-thermal-water", 100 },
+        },
+        results = {
+            { "angels-fluorite-ore", 1 },
+        },
+        fluid_results = {
+            { "angels-water-saline", 50, { ignored_by_productivity = 50 } },
+        },
+        category = "angels-water-treatment",
+    },
+    -- {
+    --     name = "angels-thermal-water-angels-fluorite-ore",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("angels-fluorite-ore"),
+    --     },
+    --     energy_required = 1,
+    --     technology = "angels-thermal-water-extraction",
+    --     fluid_ingredients = {
+    --         { "angels-thermal-water", 100 },
+    --     },
+    --     ingredients = {
+    --         { "angels-solid-calcium-chloride", 1 },
+    --     },
+    --     results = {
+    --         { "angels-fluorite-ore", 1 },
+    --     },
+    --     category = "angels-crystallizing",
+    -- },
 }, {
     type = "recipe",
 })

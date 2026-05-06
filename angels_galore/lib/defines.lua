@@ -21,6 +21,10 @@ agal.defines.nutrientables = {
     "angels-solid-corn",
 }
 
+agal.defines.colors = {
+
+}
+
 ---@type table<string, {name: string, order: data.Order, farm: string, garden: string, seeds: string[]}>
 agal.defines.environments = {
     ["temperate"] = {

@@ -1,7 +1,7 @@
 for _, metal in pairs(vgal.defines.metals) do
     -- vgal.recipe.use_recipe_locale(metal.ingot)
-    vgal.recipe.use_recipe_locale(metal.ingot .. "-2")
-    vgal.recipe.use_recipe_locale(metal.ingot .. "-3")
+    vgal.recipe.use_recipe_locale(metal.ingot .. "-2", false) -- show amount in title gets faked
+    vgal.recipe.use_recipe_locale(metal.ingot .. "-3", false)
 
     -- remove sorting descs referencing removes ores
     data.raw["item"][metal.base_ore].localised_description = { "item-description." .. metal.base_ore }
@@ -14,11 +14,12 @@ for _, metal in pairs(vgal.defines.metals) do
     end
 end
 
-data.raw["recipe"]["angels-cellulose-fiber"].show_amount_in_title = false
-vgal.recipe.use_recipe_locale("angels-cellulose-fiber")
+vgal.recipe.use_recipe_locale("angels-cellulose-fiber", true)
 
 data.raw["recipe"]["angels-solid-sulfur"].show_amount_in_title = true
 data.raw["recipe"]["angels-solid-sulfur"].localised_name = nil
+
+data.raw["recipe"]["angels-cellulose-fiber-raw-wood"].show_amount_in_title = true
 
 for _, metal in pairs(vgal.defines.metals) do
     for _, ore_state in ipairs(agal.defines.ore_states) do

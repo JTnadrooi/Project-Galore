@@ -562,7 +562,9 @@ function vgal.recipe.get_domain_or_all_pairs(domain_name)
     return iterator, dom, start_key
 end
 
-function vgal.recipe.use_recipe_locale(recipe_name, keep_show_amount_in_title)
+---@param recipe_name string
+---@param show_amount_in_title boolean
+function vgal.recipe.use_recipe_locale(recipe_name, show_amount_in_title)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
 
     recipe.localised_name = { "?", { "recipe-name." .. recipe.name }, vgal.locale
@@ -571,10 +573,7 @@ function vgal.recipe.use_recipe_locale(recipe_name, keep_show_amount_in_title)
     recipe.localised_description = { "?", { "recipe-description." .. recipe.name }, vgal.locale
         .get_backup_locale_for_recipeable(
             recipe.name, "description") }
-
-    if not keep_show_amount_in_title then
-        recipe.show_amount_in_title = false
-    end
+    recipe.show_amount_in_title = show_amount_in_title
 end
 
 ---@param raw_amount number

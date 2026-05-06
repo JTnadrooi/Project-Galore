@@ -30,7 +30,6 @@ data.raw["recipe"]["angels-water-gas-shift-1"].icons = angelsmods.functions.crea
     "COcOc", { "steam", { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 72 }, }
 )
 
-
 -- misc distinguish
 data.raw["recipe"]["angels-gas-methanol-from-wood"].icons = angelsmods.functions.create_gas_recipe_icon(
     {
@@ -145,6 +144,20 @@ data.raw.recipe["angels-garden-cultivating"].icons = vgal.icon.register({
     vgal.icon.get_out("angels-temperate-garden"),
     vgal.icon.get_out2("angels-desert-garden"),
     vgal.icon.get_out3("angels-swamp-garden"),
+})
+
+-- data.raw.recipe["angels-sulfur-air-scrubbing"].icons = vgal.icon.register({
+--     vgal.icon.get("angels-filter-lime-used"),
+-- })
+
+data.raw.recipe["angels-filter-lime-used-cleaning"].icons = vgal.icon.register({
+    vgal.icon.get("angels-filter-frame"),
+    vgal.icon.get_in("angels-filter-lime-used"),
+})
+
+data.raw.recipe["angels-filter-ceramic-refurbish"].icons = vgal.icon.register({
+    vgal.icon.get("angels-filter-ceramic"),
+    vgal.icon.get_in("angels-filter-ceramic-used"),
 })
 
 data.raw["recipe"]["angels-solid-mud-landfill"].icons = vgal.icon.register({

@@ -96,3 +96,8 @@ data.raw["recipe"]["angels-plutonium-breeding"].order = "gb"
 
 data.raw["item"]["steam-turbine"].order = "e"
 data.raw["item"]["steam-turbine"].subgroup = "angels-power-nuclear"
+
+-- data.raw.recipe["angels-sulfur-air-scrubbing"].main_product = "angels-filter-lime-used"
+-- vgal.subgroup.clean_recipe("angels-sulfur-air-scrubbing")
+data.raw.recipe["angels-filter-lime-used-cleaning"].main_product = "angels-filter-frame"
+vgal.subgroup.clean_recipe("angels-filter-lime-used-cleaning")

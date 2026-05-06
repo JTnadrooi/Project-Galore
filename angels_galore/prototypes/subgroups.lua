@@ -491,10 +491,13 @@ local subgroups = {
             "angels-filter-frame",
             "angels-filter-coal",
             "angels-filter-ceramic",
+            -- "angels-filter-ceramic-used",
             "angels-filter-lime",
+            -- "angels-filter-lime-used",
         },
         cleaning_entries = {
             "angels-filter-ceramic-refurbish",
+            "angels-filter-lime-used-cleaning",
         },
         should_reorder_entries = true,
     },

@@ -93,58 +93,38 @@ vgal.data.extend({
         category = "angels-manual-crafting",
     },
     {
-        name = "angels-ore2-crystal-angels-ore3-crystal-uranium-ore",
+        name = "angels-thermal-water-uranium-ore",
         prefix = "vgal",
-        icons = {
-            {
-                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
-                icon_size = 32,
-            },
-            {
-                icon = "__base__/graphics/icons/uranium-ore.png",
-                icon_size = 64,
-                scale = 0.25,
-                shift = { 10, 10 },
-            },
-        },
+        icons = vgal.icon.get("uranium-ore"),
         technology = "uranium-mining",
-        energy_required = 2,
+        energy_required = 6,
         ingredients = {
-            { "angels-ore2-crystal",      1 },
-            { "angels-ore3-crystal",      1 },
             { "angels-catalysator-brown", 1 },
+        },
+        fluid_ingredients = {
+            { "angels-thermal-water", 50 },
         },
         results = {
             { "uranium-ore", 4 }
         },
-        category = "angels-ore-sorting",
+        category = "angels-crystallizing",
     },
     {
-        name = "angels-ore2-pure-angels-ore3-pure-angels-thorium-ore",
+        name = "angels-thermal-water-angels-thorium-ore",
         prefix = "vgal",
-        icons = {
-            {
-                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
-                icon_size = 32,
-            },
-            {
-                icon = "__angelspetrochemgraphics__/graphics/icons/ore-thorium.png",
-                icon_size = 64,
-                scale = 0.25,
-                shift = { 10, 10 },
-            },
-        },
+        icons = vgal.icon.get("angels-thorium-ore"),
         technology = "angels-thorium-power",
-        energy_required = 2,
+        energy_required = 10,
         ingredients = {
-            { "angels-ore2-pure",         1 },
-            { "angels-ore3-pure",         1 },
-            { "angels-catalysator-brown", 1 },
+            { "angels-catalysator-green", 1 },
+        },
+        fluid_ingredients = {
+            { "angels-thermal-water", 50 },
         },
         results = {
             { "angels-thorium-ore", 4 }
         },
-        category = "angels-ore-sorting",
+        category = "angels-crystallizing",
     },
     {
         name = "angels-solid-limestone-angels-fluorite-ore",

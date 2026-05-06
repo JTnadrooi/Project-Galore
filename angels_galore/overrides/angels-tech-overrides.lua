@@ -127,7 +127,7 @@ vgal.tech.add_prerequisite("uranium-mining", "angels-ore-leaching")
 -- add "angels-filter-ceramic" to alien farm tech as the new alt seed recipes need it
 vgal.tech.add_recipe("angels-bio-farm-alien", "angels-filter-ceramic")
 
--- move recipes so rocket boosteer techs are removed
+-- move recipes so rocket booster techs get removed
 vgal.tech.move_recipe("angels-rocket-booster-1", "angels-nitrogen-processing-2", "angels-solid-ammonium-nitrate")
 vgal.tech.move_recipe("angels-rocket-booster-2", "angels-chlorine-processing-4", "angels-solid-ammonium-perchlorate")
 vgal.tech.add_prerequisite("angels-chlorine-processing-4", "angels-nitrogen-processing-2")
@@ -250,6 +250,7 @@ for _, tech in pairs(data.raw["technology"]) do
     if startsWith(tech.name, "angels") and tech.unit and tech.unit.ingredients and tech.unit.count and not tech.hidden and not vgal.tech.techs_to_splice[tech.name] then
         local is_icon_tech = false
         local ingredient_count = #tech.unit.ingredients
+        local unit_time = tech.unit.time
         local highest_value_unit = vgal.tech.get_highest_value_unit(tech.name)
 
         for _, icon in ipairs(tech.icons or {}) do
@@ -307,6 +308,14 @@ for _, tech in pairs(data.raw["technology"]) do
             new_count = new_tech_count,
             ingredients_count = ingredient_count
         }
+
+        -- some unit time stuff im glueing to this loop
+        local new_tech_time = unit_time
+
+        -- looking at thorium (60s) and deuterium (120s) tech rn
+        new_tech_time = math.min(60, new_tech_time)
+
+        tech.unit.time = new_tech_time
     end
 end
 

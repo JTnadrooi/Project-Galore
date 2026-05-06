@@ -138,6 +138,19 @@ vgal.tech.add_prerequisite("atomic-bomb", "angels-fusion-power-1")
 -- move coolant 2 filtering recipe to earlier (this removed coolant 2 tech as its empty now)
 vgal.tech.move_recipe("angels-coolant-2", "angels-coolant-1", "angels-coolant-used-filtration-2")
 
+-- fix stuff around new fluorite obtaining method
+vgal.tech.add_prerequisite("angels-thermal-water-extraction", "angels-chlorine-processing-2")
+vgal.tech.add_prerequisite("angels-bio-refugium-puffer-1", "angels-thermal-water-extraction")
+
+-- move sodium carbonate recipe 1 tier sooner
+vgal.tech.move_recipe("angels-sodium-processing-2", "angels-sodium-processing-1", "angels-solid-sodium-carbonate")
+
+-- move all fluorite acid/gas recipes to thermal water tech
+vgal.tech.move_recipe("angels-sulfur-processing-1", "angels-thermal-water-extraction", "angels-liquid-hydrofluoric-acid")
+vgal.tech.move_recipe("angels-sulfur-processing-1", "angels-thermal-water-extraction", "angels-gas-hydrogen-fluoride")
+vgal.tech.move_recipe("angels-sulfur-processing-2", "angels-thermal-water-extraction",
+    "angels-hydrogen-fluoride-dissolving")
+
 -- BIO SCIENCE
 -- add initial
 data.raw["technology"]["angels-gardens"].prerequisites = { "vgal-biological-science-pack" }

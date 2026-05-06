@@ -153,7 +153,7 @@ vgal.data.extend({
             vgal.icon.get("angels-fluorite-ore"),
         },
         energy_required = 3,
-        technology = "angels-stone-smelting-1",
+        technology = { "angels-thermal-water-extraction", "angels-sodium-processing-1" },
         ingredients = {
             { "angels-solid-limestone",        4 },
             { "angels-solid-sodium-carbonate", 1 },
@@ -179,7 +179,7 @@ vgal.data.extend({
         icons = vgal.icon.register {
             vgal.icon.get("angels-fluorite-ore"),
         },
-        energy_required = 1,
+        energy_required = 2,
         technology = "angels-thermal-water-extraction",
         ingredients = {
             { "angels-solid-calcium-chloride", 1 },

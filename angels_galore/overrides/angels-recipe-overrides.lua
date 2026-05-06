@@ -899,4 +899,12 @@ data.raw["recipe"]["angels-algae-brown-burning-wash"].ingredients = vgal.build.t
 })
 data.raw["recipe"]["angels-algae-brown-burning-wash"].energy_required = 3
 
--- vgal.tech.deephide("angels-thermal-water-processing")
+-- make filter recipes faster
+data.raw["recipe"]["angels-liquid-raw-vegetable-oil-filtering-1"].energy_required = 2
+data.raw["recipe"]["angels-liquid-raw-vegetable-oil-filtering-2"].energy_required = 2
+data.raw["recipe"]["angels-liquid-raw-fish-oil-filtering-1"].energy_required = 2
+data.raw["recipe"]["angels-liquid-raw-fish-oil-filtering-2"].energy_required = 2
+
+-- -- buff explosive recipes
+-- vgal.recipe.set_result_amount("angels-solid-nitroglycerin", 10, "explosives")
+-- vgal.recipe.set_result_amount("angels-solid-trinitrotoluene", 8, "explosives")

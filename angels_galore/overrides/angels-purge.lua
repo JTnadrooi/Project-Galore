@@ -209,7 +209,7 @@ data.raw.recipe["rocket-fuel"].ingredients = vgal.build.table({
 data.raw.recipe["angels-rocket-fuel-capsule"].ingredients = vgal.build.table({
     { "plastic-bar", 1 },
 }, {
-    { "angels-gas-hydrazine", 20 },
+    { "angels-gas-hydrazine", 50 },
 })
 data.raw.recipe["angels-rocket-fuel-capsule"].energy_required = 5
 vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)

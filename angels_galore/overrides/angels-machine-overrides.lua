@@ -157,3 +157,8 @@ data.raw["item"]["angels-thermal-bore"].localised_description = { "entity-descri
 -- increase thermal water extrator (t1) electricity usage
 -- og: 90kw, but still, this is only like 4 radars
 data.raw["mining-drill"]["angels-thermal-bore"].energy_usage = "1200kW"
+
+-- increase ore-upgrading machines electricity usage
+-- you need less of them with how ore upgrading speeds have been increased
+data.raw["assembling-machine"]["angels-ore-refinery"].energy_usage = "1650kW"      -- og: 310kw
+data.raw["assembling-machine"]["angels-ore-leaching-plant"].energy_usage = "543kW" -- og: 207kw

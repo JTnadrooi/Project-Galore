@@ -457,38 +457,33 @@ vgal.recipe.replace_result("angels-ore2-chunk", "angels-water-greenyellow-waste"
 
 -- the acid change is done in final fixes, it doesn't work otherwise
 
--- fix ores, both time normalizing as ore density (see docs/ore-density)
+-- fix ores
 for _, ore_index in ipairs(agal.defines.ore_indexes) do
-    -- chunk
-    data.raw["recipe"]["angels-ore" .. ore_index .. "-chunk"].energy_required = 3.2
-    vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-chunk", 6, "angels-ore" .. ore_index .. "-crushed")
-    vgal.recipe.set_result_amount("angels-ore" .. ore_index .. "-chunk", 4, "angels-ore" .. ore_index .. "-chunk")
-    vgal.recipe.set_result_amount("angels-ore" .. ore_index .. "-chunk", 50, "angels-water-yellow-waste")
+    data.raw["recipe"]["angels-ore" .. ore_index .. "-chunk"].energy_required = 1
+    data.raw["recipe"]["angels-ore" .. ore_index .. "-crystal"].energy_required = 0.5
+    data.raw["recipe"]["angels-ore" .. ore_index .. "-pure"].energy_required = 1
 
-    -- chunk geode removal
+    vgal.recipe.set_result_amount("angels-ore" .. ore_index .. "-chunk", 25, "angels-water-yellow-waste")
+    vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-chunk", 25, "angels-water-purified")
+    vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-crystal", 10, "angels-liquid-sulfuric-acid")
+
     if ore_index == 2 then
         vgal.recipe.set_result_amount("angels-ore" .. ore_index .. "-chunk", 0, "angels-geode-purple")
     else
         vgal.recipe.set_result_amount("angels-ore" .. ore_index .. "-chunk", 0, "angels-geode-yellow")
     end
 
-    -- crystal
-    vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-crystal", 5, "angels-liquid-sulfuric-acid")
-    vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-crystal", 5, "angels-ore" .. ore_index .. "-chunk")
-    vgal.recipe.set_result_amount("angels-ore" .. ore_index .. "-crystal", 4, "angels-ore" .. ore_index .. "-crystal")
-
-    -- pure
-    vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-pure", 4, "angels-ore" .. ore_index .. "-crystal")
-    vgal.recipe.set_result_amount("angels-ore" .. ore_index .. "-pure", 2, "angels-ore" .. ore_index .. "-pure")
-
-    -- processing
-    vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-chunk-processing", 4,
-        "angels-ore" .. ore_index .. "-chunk")
-    vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-crystal-processing", 4,
-        "angels-ore" .. ore_index .. "-crystal")
-    vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-pure-processing", 2, -- should be 2.25
+    vgal.recipe.set_ingredient_amount("angels-ore" .. ore_index .. "-pure-processing", 8, -- og 9
         "angels-ore" .. ore_index .. "-pure")
 end
+
+-- add gem result to ore pure processing
+-- (you get way less crystal/ore than in angels (from chunks))
+vgal.recipe.add_result("angels-ore2-pure", "angels-geode-yellow")
+vgal.recipe.add_result("angels-ore2-pure", { "angels-geode-lightgreen", 1, { probability = 0.08 } })
+
+vgal.recipe.add_result("angels-ore3-pure", "angels-geode-blue")
+vgal.recipe.add_result("angels-ore3-pure", { "angels-geode-cyan", 1, { probability = 0.12 } })
 
 -- restore processing recipes.
 data.raw["recipe"]["angels-ore3-crushed-processing"].results = vgal.build.table({
@@ -795,14 +790,6 @@ data.raw["recipe"]["angels-concrete"].energy_required = 5
 -- buff concrete recipe so its a more.. more? better way to making solid concrete than the vanilla recipe
 vgal.recipe.set_result_amount("angels-liquid-concrete", 150)
 vgal.recipe.set_ingredient_amount("angels-liquid-concrete", 150, "water")
-
--- add gem result to ore pure processing
--- (you get way less crystal/ore than in angels (from chunks))
-vgal.recipe.add_result("angels-ore2-pure", "angels-geode-yellow")
-vgal.recipe.add_result("angels-ore2-pure", { "angels-geode-lightgreen", 1, { probability = 0.08 } })
-
-vgal.recipe.add_result("angels-ore3-pure", "angels-geode-blue")
-vgal.recipe.add_result("angels-ore3-pure", { "angels-geode-cyan", 1, { probability = 0.12 } })
 
 -- normalize recipes using crystal slurry
 for _, color in ipairs({ "blue", "red", "green" }) do

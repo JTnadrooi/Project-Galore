@@ -93,39 +93,103 @@ vgal.data.extend({
         category = "angels-manual-crafting",
     },
     {
-        name = "angels-thermal-water-uranium-ore",
+        name = "angels-ore2-crystal-angels-ore3-crystal-uranium-ore",
         prefix = "vgal",
-        icons = vgal.icon.get("uranium-ore"),
-        technology = "uranium-mining",
-        energy_required = 6,
-        ingredients = {
-            { "angels-catalysator-brown", 1 },
+        icons = {
+            {
+                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
+                icon_size = 32,
+            },
+            {
+                icon = "__base__/graphics/icons/uranium-ore.png",
+                icon_size = 64,
+                scale = 0.25,
+                shift = { 10, 10 },
+            },
         },
-        fluid_ingredients = {
-            { "angels-thermal-water", 50 },
+        technology = "uranium-mining",
+        energy_required = 2,
+        ingredients = {
+            { "angels-ore2-crystal",      1 },
+            { "angels-ore3-crystal",      1 },
+            { "angels-catalysator-brown", 1 },
         },
         results = {
             { "uranium-ore", 4 }
         },
-        category = "angels-crystallizing",
+        category = "angels-ore-sorting",
     },
     {
-        name = "angels-thermal-water-angels-thorium-ore",
+        name = "angels-ore2-pure-angels-ore3-pure-angels-thorium-ore",
         prefix = "vgal",
-        icons = vgal.icon.get("angels-thorium-ore"),
-        technology = "angels-thorium-power",
-        energy_required = 10,
-        ingredients = {
-            { "angels-catalysator-green", 1 },
+        icons = {
+            {
+                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
+                icon_size = 32,
+            },
+            {
+                icon = "__angelspetrochemgraphics__/graphics/icons/ore-thorium.png",
+                icon_size = 64,
+                scale = 0.25,
+                shift = { 10, 10 },
+            },
         },
-        fluid_ingredients = {
-            { "angels-thermal-water", 50 },
+        technology = "angels-thorium-power",
+        energy_required = 2,
+        ingredients = {
+            { "angels-ore2-pure",          1 },
+            { "angels-ore3-pure",          1 },
+            { "angels-catalysator-orange", 1 },
         },
         results = {
             { "angels-thorium-ore", 4 }
         },
-        category = "angels-crystallizing",
+        category = "angels-ore-sorting",
     },
+    -- {
+    --     name = "angels-liquid-aqueous-sodium-hydroxide-angels-thorium-ore",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("angels-thorium-ore"),
+    --         vgal.icon.get_in("angels-liquid-aqueous-sodium-hydroxide"),
+    --     },
+    --     technology = { "angels-thorium-power", "angels-sodium-processing-1" },
+    --     energy_required = 2,
+    --     ingredients = {
+    --         -- { "angels-catalysator-green", 1 },
+    --         { "angels-solid-sand", 5 },
+    --     },
+    --     fluid_ingredients = {
+    --         { "angels-liquid-aqueous-sodium-hydroxide", 10 },
+    --     },
+    --     results = {
+    --         { "angels-thorium-ore", 2 }
+    --     },
+    --     -- category = "angels-crystallizing",
+    --     category = "angels-ore-refining-t3",
+    -- },
+    -- {
+    --     name = "angels-gas-chlorine-angels-thorium-ore",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("angels-thorium-ore"),
+    --         vgal.icon.get_in("angels-gas-chlorine"),
+    --     },
+    --     technology = "angels-thorium-power",
+    --     energy_required = 2,
+    --     ingredients = {
+    --         -- { "angels-catalysator-green", 1 },
+    --         { "angels-solid-sand", 5 },
+    --     },
+    --     fluid_ingredients = {
+    --         { "angels-gas-chlorine", 50 },
+    --     },
+    --     results = {
+    --         { "angels-thorium-ore",            1 },
+    --         { "angels-solid-calcium-chloride", 1, { probability = 0.4 } }
+    --     },
+    --     category = "angels-chemical-smelting",
+    -- },
     {
         name = "angels-solid-limestone-angels-fluorite-ore",
         prefix = "vgal",

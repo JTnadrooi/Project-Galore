@@ -909,3 +909,12 @@ data.raw["recipe"]["angels-gas-puffer-atmosphere"].energy_required = 5 -- og: 30
 -- -- buff explosive recipes
 -- vgal.recipe.set_result_amount("angels-solid-nitroglycerin", 10, "explosives")
 -- vgal.recipe.set_result_amount("angels-solid-trinitrotoluene", 8, "explosives")
+
+-- solid fuel fixes
+vgal.recipe.set_result_amount("angels-solid-fuel-methane", 4)
+vgal.recipe.set_result_amount("angels-solid-fuel-naphtha", 4)
+vgal.recipe.set_result_amount("angels-solid-fuel-fuel-oil", 4)
+vgal.recipe.set_result_amount("angels-solid-fuel-synthesis", 4)
+-- vgal.recipe.set_result_amount("angels-solid-fuel-hydrazine", 5)
+
+vgal.data.trim("angels-solid-fuel-hydrazine") -- It could not be saved with the how new rocket fuel recipe is way better

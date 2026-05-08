@@ -151,6 +151,11 @@ vgal.tech.move_recipe("angels-sulfur-processing-1", "angels-thermal-water-extrac
 vgal.tech.move_recipe("angels-sulfur-processing-2", "angels-thermal-water-extraction",
     "angels-hydrogen-fluoride-dissolving")
 
+-- remove military science from explosives alt techs
+vgal.tech.remove_unit("angels-explosives-1", "military-science-pack")
+vgal.tech.remove_unit("angels-explosives-2", "military-science-pack")
+vgal.tech.remove_prerequisite("angels-explosives-1", "military-science-pack")
+
 -- BIO SCIENCE
 -- add initial
 data.raw["technology"]["angels-gardens"].prerequisites = { "vgal-biological-science-pack" }

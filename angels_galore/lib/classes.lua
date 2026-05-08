@@ -17,4 +17,5 @@ do
     ---@field chunk string
     ---@field crystal string
     ---@field pure string
+    ---@field solution string
 end

@@ -18,6 +18,8 @@ if (vgal and vgal.defines and vgal.defines.metals) then -- for when loading defi
         metal.pellet = "angels-pellet-" .. metal.name
         metal.roll = "angels-roll-" .. metal.name
         metal.angels_plate_recipe_name = "angels-plate-" .. metal.name
+        metal.solution = (metal.name == "copper") and "angels-liquid-cupric-chloride-solution" or
+            "angels-liquid-ferric-chloride-solution"
 
         for _, ore_state in ipairs(agal.defines.ore_states) do
             metal[ore_state] = "angels-ore" .. metal.ore_index .. "-" .. ore_state

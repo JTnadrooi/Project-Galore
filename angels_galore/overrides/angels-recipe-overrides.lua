@@ -926,5 +926,17 @@ data.raw["recipe"]["angels-fish-pressing-3"].energy_required = 2
 -- nerf saline water recipes
 -- also helps nerf desert plants
 -- 100% chance I will add "better" alternative recipes tho
-vgal.recipe.set_result_amount("angels-water-saline-from-water", 100)
-vgal.recipe.set_result_amount("angels-solid-salt", 1)
+vgal.recipe.set_result_amount("angels-water-saline-from-water", 250)
+vgal.recipe.set_result_amount("angels-solid-salt", 2)
+
+for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+    data.raw.recipe[metal.solution].energy_required = 1
+    data.raw.recipe[metal.solution].ingredients = vgal.build.table({
+        { metal.pebbles, 6 },
+    }, {
+        { "angels-water-purified", 60 },
+        { "angels-gas-chlorine",   15 },
+    })
+    vgal.recipe.set_result_amount(metal.solution, 60)
+    data.raw.recipe[metal.solution].category = "chemistry"
+end

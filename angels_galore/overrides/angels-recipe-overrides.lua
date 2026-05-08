@@ -922,3 +922,9 @@ data.raw["recipe"]["angels-fish-pressing-0"].energy_required = 6
 data.raw["recipe"]["angels-fish-pressing-1"].energy_required = 4
 data.raw["recipe"]["angels-fish-pressing-2"].energy_required = 3
 data.raw["recipe"]["angels-fish-pressing-3"].energy_required = 2
+
+-- nerf saline water recipes
+-- also helps nerf desert plants
+-- 100% chance I will add "better" alternative recipes tho
+vgal.recipe.set_result_amount("angels-water-saline-from-water", 100)
+vgal.recipe.set_result_amount("angels-solid-salt", 1)

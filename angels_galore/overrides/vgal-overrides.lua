@@ -11,3 +11,7 @@ vgal.data.trim("vgal-crude-oil-coal")
 -- trim out-of-placeified recipes
 vgal.data.trim("vgal-coal-uranium-235-nuclear-fuel")
 vgal.data.trim("vgal-low-density-structure-uranium-fuel-cell")
+
+-- wood circuits too OP
+vgal.data.trim("vgal-wood-electronic-circuit")
+vgal.data.trim("vgal-wood-heavy-oil-electronic-circuit")

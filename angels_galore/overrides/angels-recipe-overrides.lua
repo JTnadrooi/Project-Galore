@@ -910,11 +910,17 @@ data.raw["recipe"]["angels-gas-puffer-atmosphere"].energy_required = 5 -- og: 30
 -- vgal.recipe.set_result_amount("angels-solid-nitroglycerin", 10, "explosives")
 -- vgal.recipe.set_result_amount("angels-solid-trinitrotoluene", 8, "explosives")
 
--- solid fuel fixes
+-- solid fuel cost fixes
 vgal.recipe.set_result_amount("angels-solid-fuel-methane", 4)
 vgal.recipe.set_result_amount("angels-solid-fuel-naphtha", 4)
 vgal.recipe.set_result_amount("angels-solid-fuel-fuel-oil", 4)
 vgal.recipe.set_result_amount("angels-solid-fuel-synthesis", 4)
 -- vgal.recipe.set_result_amount("angels-solid-fuel-hydrazine", 5)
 
-vgal.data.trim("angels-solid-fuel-hydrazine") -- It could not be saved with the how new rocket fuel recipe is way better
+vgal.data.trim("angels-solid-fuel-hydrazine") -- It could not be saved with the how new rocket fuel recipe is a way better use of hydrazine and unlocks at about the same time
+
+-- make fish to oil recipes faster
+data.raw["recipe"]["angels-fish-pressing-0"].energy_required = 6
+data.raw["recipe"]["angels-fish-pressing-1"].energy_required = 4
+data.raw["recipe"]["angels-fish-pressing-2"].energy_required = 3
+data.raw["recipe"]["angels-fish-pressing-3"].energy_required = 2

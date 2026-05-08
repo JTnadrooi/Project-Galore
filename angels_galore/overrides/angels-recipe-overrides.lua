@@ -461,29 +461,33 @@ vgal.recipe.replace_result("angels-ore2-chunk", "angels-water-greenyellow-waste"
 for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
     data.raw["recipe"][metal.chunk].energy_required = 1
     data.raw["recipe"][metal.crystal].energy_required = 0.5
-    data.raw["recipe"][metal.pure].energy_required = 1
+    data.raw["recipe"][metal.pure].energy_required = 0.5
 
     -- sulfur tweaks
     vgal.recipe.set_result_amount(metal.chunk, 25, "angels-water-yellow-waste")
     vgal.recipe.set_ingredient_amount(metal.chunk, 25, "angels-water-purified")
     vgal.recipe.set_ingredient_amount(metal.crystal, 10, "angels-liquid-sulfuric-acid")
 
-    if metal.ore_index == 2 then
+    -- geode tweaks
+    if metal.name == "copper" then
         vgal.recipe.remove_result(metal.chunk, "angels-geode-purple")
+        vgal.recipe.add_result(metal.pure, "angels-geode-yellow")
+        vgal.recipe.add_result(metal.pure, { "angels-crystal-dust", 1, { probability = 0.20 } })
     else
         vgal.recipe.remove_result(metal.chunk, "angels-geode-yellow")
+        vgal.recipe.add_result(metal.pure, "angels-geode-blue")
+        vgal.recipe.add_result(metal.pure, { "angels-crystal-dust", 1, { probability = 0.25 } })
     end
 
-    vgal.recipe.set_ingredient_amount(metal.pure .. "-processing", 8, metal.pure) -- og 9
+    -- tiny buff
+    vgal.recipe.set_ingredient_amount(metal.pure .. "-processing", 8, metal.pure) -- og: 9
+
+    -- make it so the sorting recipes take longer the higher tier they are
+    -- except pure
+    data.raw["recipe"][metal.chunk .. "-processing"].energy_required = 2   -- og: 1.5
+    data.raw["recipe"][metal.crystal .. "-processing"].energy_required = 3 -- og: 2
+    data.raw["recipe"][metal.pure .. "-processing"].energy_required = 3    -- og: 2
 end
-
--- add gem result to ore pure processing
--- (you get way less crystal/ore than in angels (from chunks))
-vgal.recipe.add_result("angels-ore2-pure", "angels-geode-yellow")
-vgal.recipe.add_result("angels-ore2-pure", { "angels-geode-lightgreen", 1, { probability = 0.08 } })
-
-vgal.recipe.add_result("angels-ore3-pure", "angels-geode-blue")
-vgal.recipe.add_result("angels-ore3-pure", { "angels-geode-cyan", 1, { probability = 0.12 } })
 
 -- restore processing recipes.
 data.raw["recipe"]["angels-ore3-crushed-processing"].results = vgal.build.table({

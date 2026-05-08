@@ -38,7 +38,7 @@ data.raw["item-subgroup"]["angels-stone-casting"].order = "y-nb"
 data.raw["item-subgroup"]["angels-fluid-tanks"].order = "db"
 data.raw["item-subgroup"]["angels-fluid-control"].order = "dc"
 
-for _, metal in pairs(vgal.defines.metals) do
+for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
     data.raw["item"][metal.pebbles].subgroup = "angels-" .. metal.name
     data.raw["item"][metal.pebbles].order = "c"
 end

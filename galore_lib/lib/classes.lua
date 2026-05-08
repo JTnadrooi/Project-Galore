@@ -61,3 +61,10 @@ do
     ---@field composite_icon_override data.IconData[]?
     ---@field composite_icon_override_function (fun(): data.IconData[])?
 end
+
+do
+    ---@class vgal.Metal
+    ---@field name string
+    ---@field ore string
+    ---@field plate string
+end

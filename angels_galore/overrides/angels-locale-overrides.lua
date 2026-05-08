@@ -1,4 +1,4 @@
-for _, metal in pairs(vgal.defines.metals) do
+for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
     -- vgal.recipe.use_recipe_locale(metal.ingot)
     vgal.recipe.use_recipe_locale(metal.ingot .. "-2", false) -- show amount in title gets faked
     vgal.recipe.use_recipe_locale(metal.ingot .. "-3", false)
@@ -21,7 +21,7 @@ data.raw["recipe"]["angels-solid-sulfur"].localised_name = nil
 
 data.raw["recipe"]["angels-cellulose-fiber-raw-wood"].show_amount_in_title = true
 
-for _, metal in pairs(vgal.defines.metals) do
+for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
     for _, ore_state in ipairs(agal.defines.ore_states) do
         -- commentedbc: ugly
         -- local previous = nil

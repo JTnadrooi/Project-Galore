@@ -543,7 +543,7 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel
     })
 end
 
-for _, metal in pairs(vgal.defines.metals) do
+for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
     data.raw["item"][metal.base_ore].order = "a"
 
     local ore_entries = {}

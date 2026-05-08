@@ -3,7 +3,7 @@ agal = agal or {}
 require("defines")
 
 if (vgal and vgal.defines and vgal.defines.metals) then -- for when loading defines in settings
-    for _, metal in pairs(vgal.defines.metals) do
+    for _, metal in pairs(vgal.defines.metals --[[@as table<string, vgal.Metal>]]) do
         metal.ore_index = (metal.name == "copper") and 2 or 3
         metal.ore = metal.name .. "-ore"
         metal.base_ore = "angels-ore" .. metal.ore_index

@@ -262,7 +262,7 @@ for i = 1, 3 do
     })
 end
 
-for _, metal in pairs(vgal.defines.metals) do
+for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
     data.raw["recipe"][metal.angels_plate_recipe_name].icons = vgal.icon.register({
         vgal.icon.get(metal.plate),
     })

@@ -1,4 +1,4 @@
-for _, metal in pairs(vgal.defines.metals) do
+for _, metal in pairs(vgal.defines.metals --[[@as table<string, vgal.Metal>]]) do
     metal.bacteria = metal.name .. "-bacteria"
     metal.molten = "molten-" .. metal.name
 end

@@ -207,7 +207,7 @@ vgal.recipe.smart_allow_productivity("angels-liquid-concrete-2")
 vgal.recipe.smart_allow_productivity("angels-concrete-brick")
 
 -- METALLURGY
-for _, metal in pairs(vgal.defines.metals) do
+for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
     vgal.recipe.smart_allow_productivity(metal.pebbles .. "-smelting")
     vgal.recipe.smart_allow_productivity(metal.nugget .. "-smelting")
     vgal.recipe.smart_allow_productivity(metal.plate)

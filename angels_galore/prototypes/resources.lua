@@ -110,17 +110,18 @@ vgal.data.extend({
         technology = "uranium-mining",
         energy_required = 2,
         ingredients = {
-            { "angels-ore2-crystal",      1 },
-            { "angels-ore3-crystal",      1 },
+            { "angels-ore3-crystal",      3 },
             { "angels-catalysator-brown", 1 },
         },
         results = {
-            { "uranium-ore", 4 }
+            { "uranium-ore",         5 },
+            { "angels-iron-pebbles", 3 },
+            -- { "angels-stone-crushed", 2 },
         },
         category = "angels-ore-sorting",
     },
     {
-        name = "angels-ore2-pure-angels-ore3-pure-angels-thorium-ore",
+        name = "angels-ore2-crystal-angels-ore3-crystal-angels-thorium-ore",
         prefix = "vgal",
         icons = {
             {
@@ -137,12 +138,14 @@ vgal.data.extend({
         technology = "angels-thorium-power",
         energy_required = 2,
         ingredients = {
-            { "angels-ore2-pure",          1 },
-            { "angels-ore3-pure",          1 },
-            { "angels-catalysator-orange", 1 },
+            { "angels-ore2-crystal",      3 },
+            { "angels-catalysator-green", 1 },
         },
         results = {
-            { "angels-thorium-ore", 4 }
+            { "angels-thorium-ore",    5 },
+            { "angels-copper-pebbles", 1 },
+            { "angels-copper-nugget",  1 },
+            -- { "angels-stone-crushed", 2 },
         },
         category = "angels-ore-sorting",
     },

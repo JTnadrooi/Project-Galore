@@ -4,20 +4,14 @@ for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) d
     data.raw.recipe[metal.nugget .. "-smelting"].energy_required = 6.4
 
     data.raw.recipe[metal.plate].energy_required = 9.6
-    data.raw.recipe[metal.angels_plate_recipe_name].energy_required = 1
+    data.raw.recipe[metal.angels_plate_recipe_name].energy_required = 2
     vgal.recipe.multiply(metal.angels_plate_recipe_name, 1.25)
+
+    data.raw.recipe[metal.roll].energy_required = 1
 end
 
-data.raw.recipe["angels-plate-steel"].energy_required = 1
+data.raw.recipe["angels-plate-steel"].energy_required = 2
 vgal.recipe.multiply("angels-plate-steel", 1.25)
-
--- add uranium source
--- data.raw.recipe["slag-processing-9"].results = vgal.build.table({
---     { "uranium-ore", 1, { probability = 0.8 } },
--- })
-
--- buff rocket fuel recipe
-vgal.recipe.set_ingredient_amount("rocket-fuel", 1)
 
 vgal.recipe.replace_ingredient("nuclear-fuel", "rocket-fuel", "angels-rocket-fuel-capsule")
 vgal.recipe.replace_ingredient("angels-nuclear-fuel", "rocket-fuel", "angels-rocket-fuel-capsule")

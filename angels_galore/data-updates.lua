@@ -12,6 +12,8 @@ require("overrides.angels-purge")
 require("overrides.angels-prod-overrides")
 require("overrides.angels-tech-overrides")
 
+require("overrides.angels-tips-overrides")
+
 require("overrides.angels-locale-overrides")
 
 require("mods.angelsaddons")

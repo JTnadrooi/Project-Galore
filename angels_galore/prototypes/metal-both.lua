@@ -30,7 +30,7 @@ for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) d
                 vgal.icon.get_in(metal.slag),
                 vgal.icon.get_out2(metal.ore),
             },
-            energy_required = 1,
+            energy_required = 1.5, -- og; 1 but changed for ratio reasons
             technology = "angels-ore-leaching",
             ingredients = {
                 { metal.pebbles, 3 },

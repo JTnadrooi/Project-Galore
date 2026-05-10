@@ -930,6 +930,7 @@ data.raw["recipe"]["angels-fish-pressing-3"].energy_required = 2
 vgal.recipe.set_result_amount("angels-water-saline-from-water", 250)
 vgal.recipe.set_result_amount("angels-solid-salt", 2)
 
+-- make metal solution recipes more suitable for voiding
 for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
     data.raw.recipe[metal.solution].energy_required = 1
     data.raw.recipe[metal.solution].ingredients = vgal.build.table({
@@ -941,3 +942,11 @@ for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) d
     vgal.recipe.set_result_amount(metal.solution, 60)
     data.raw.recipe[metal.solution].category = "chemistry"
 end
+
+-- make slag from crushed stone use slightly less sulfuric acid
+vgal.recipe.set_ingredient_amount("angels-stone-crushed-dissolution", 10, "angels-liquid-sulfuric-acid")
+
+-- make sulfuric acid chain recipes faster
+-- done to compensate overral slower chem/liquifier speeds
+data.raw["recipe"]["angels-liquid-sulfuric-acid"].energy_required = 1 -- og; 2
+data.raw["recipe"]["angels-gas-sulfur-dioxide"].energy_required = 1   -- og; 2

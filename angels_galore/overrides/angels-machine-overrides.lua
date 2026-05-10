@@ -151,14 +151,23 @@ vgal.data.trim("angels-sea-pump")
 vgal.data.deephide(data.raw["mining-drill"]["angels-thermal-extractor"])
 vgal.data.deephide(data.raw["item"]["angels-thermal-extractor"])
 vgal.data.trim("angels-thermal-extractor")
-data.raw["mining-drill"]["angels-thermal-bore"].localised_description = { "entity-description.angels-thermal-extractor" }
-data.raw["item"]["angels-thermal-bore"].localised_description = { "entity-description.angels-thermal-extractor" }
+data.raw["mining-drill"]["angels-thermal-bore"].localised_description      = {
+    "entity-description.angels-thermal-extractor",
+}
+data.raw["item"]["angels-thermal-bore"].localised_description              = {
+    "entity-description.angels-thermal-extractor",
+}
 
 -- increase thermal water extrator (t1) electricity usage
 -- og: 90kw, but still, this is only like 4 radars
-data.raw["mining-drill"]["angels-thermal-bore"].energy_usage = "1206kW"
+data.raw["mining-drill"]["angels-thermal-bore"].energy_usage               = "1206kW"
 
 -- increase ore-upgrading machines electricity usage
 -- you need less of them with how ore upgrading speeds have been increased
-data.raw["assembling-machine"]["angels-ore-refinery"].energy_usage = "2452kW"      -- og: 310kw
-data.raw["assembling-machine"]["angels-ore-leaching-plant"].energy_usage = "543kW" -- og: 207kw
+data.raw["assembling-machine"]["angels-ore-refinery"].energy_usage         = "2452kW" -- og: 310kw
+data.raw["assembling-machine"]["angels-ore-leaching-plant"].energy_usage   = "543kW"  -- og: 207kw
+
+data.raw["assembling-machine"]["angels-bio-refugium-puffer"].working_sound = {
+    sound = { filename = "__angelspetrochemgraphics__/sound/separator.ogg", volume = 0.65 },
+    idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
+}

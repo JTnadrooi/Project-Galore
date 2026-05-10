@@ -93,7 +93,7 @@ vgal.data.extend({
         category = "angels-manual-crafting",
     },
     {
-        name = "angels-ore2-crystal-angels-ore3-crystal-uranium-ore",
+        name = "angels-ore2-crystal-uranium-ore",
         prefix = "vgal",
         icons = {
             {
@@ -110,18 +110,18 @@ vgal.data.extend({
         technology = "uranium-mining",
         energy_required = 2,
         ingredients = {
-            { "angels-ore3-crystal",      3 },
+            { "angels-ore2-crystal",      3 },
             { "angels-catalysator-brown", 1 },
         },
         results = {
-            { "uranium-ore",         5 },
-            { "angels-iron-pebbles", 3 },
+            { "uranium-ore",           5 },
+            { "angels-copper-pebbles", 3 },
             -- { "angels-stone-crushed", 2 },
         },
         category = "angels-ore-sorting",
     },
     {
-        name = "angels-ore2-crystal-angels-ore3-crystal-angels-thorium-ore",
+        name = "angels-ore3-crystal-angels-thorium-ore",
         prefix = "vgal",
         icons = {
             {
@@ -138,13 +138,70 @@ vgal.data.extend({
         technology = "angels-thorium-power",
         energy_required = 2,
         ingredients = {
-            { "angels-ore2-crystal",      3 },
+            { "angels-ore3-crystal",      3 },
             { "angels-catalysator-green", 1 },
         },
         results = {
-            { "angels-thorium-ore",    5 },
-            { "angels-copper-pebbles", 1 },
-            { "angels-copper-nugget",  1 },
+            { "angels-thorium-ore",  5 },
+            { "angels-iron-pebbles", 1 },
+            { "angels-iron-nugget",  1 },
+            -- { "angels-stone-crushed", 2 },
+        },
+        category = "angels-ore-sorting",
+    },
+    {
+        name = "angels-ore2-pure-uranium-ore",
+        prefix = "vgal",
+        icons = {
+            {
+                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
+                icon_size = 32,
+            },
+            {
+                icon = "__base__/graphics/icons/uranium-ore.png",
+                icon_size = 64,
+                scale = 0.25,
+                shift = { 10, 10 },
+            },
+        },
+        technology = { "uranium-mining", "angels-ore-refining" },
+        energy_required = 2,
+        ingredients = {
+            { "angels-ore2-pure",         3 },
+            { "angels-catalysator-brown", 1 },
+        },
+        results = {
+            { "uranium-ore",           6 },
+            { "angels-copper-pebbles", 4 },
+            -- { "angels-stone-crushed", 2 },
+        },
+        category = "angels-ore-sorting",
+    },
+    {
+        name = "angels-ore3-pure-angels-thorium-ore",
+        prefix = "vgal",
+        icons = {
+            {
+                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
+                icon_size = 32,
+            },
+            {
+                icon = "__angelspetrochemgraphics__/graphics/icons/ore-thorium.png",
+                icon_size = 64,
+                scale = 0.25,
+                shift = { 10, 10 },
+            },
+        },
+        technology = { "angels-thorium-power", "angels-ore-refining" },
+        energy_required = 2,
+        ingredients = {
+            { "angels-ore3-pure",         3 },
+            { "angels-catalysator-green", 1 },
+        },
+        results = {
+            { "angels-thorium-ore",  6 },
+            { "angels-iron-pebbles", 2 },
+            { "angels-iron-nugget",  1 },
             -- { "angels-stone-crushed", 2 },
         },
         category = "angels-ore-sorting",
@@ -193,55 +250,55 @@ vgal.data.extend({
     --     },
     --     category = "angels-chemical-smelting",
     -- },
-    {
-        name = "angels-solid-limestone-angels-fluorite-ore",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("angels-fluorite-ore"),
-        },
-        energy_required = 3,
-        technology = { "angels-thermal-water-extraction", "angels-sodium-processing-1" },
-        ingredients = {
-            { "angels-solid-limestone",        4 },
-            { "angels-solid-sodium-carbonate", 1 },
-        },
-        fluid_ingredients = {
-            { "angels-water-purified", 50 },
-        },
-        results = {
-            { "angels-fluorite-ore", 1 },
-        },
-        fluid_results = {
-            { "angels-water-mineralized", 50, { ignored_by_productivity = 50 } },
-        },
-        category = "angels-ore-refining-t2",
-    },
-    {
-        name = "angels-thermal-water-angels-water-saline",
-        prefix = "vgal",
-        -- icons = angelsmods.functions.create_liquid_recipe_icon({
-        --     { "__angelspetrochemgraphics__/graphics/icons/ore-fluorite.png", 32 },
-        --     "angels-water-saline",
-        -- }, "WsFF"),
-        icons = vgal.icon.register {
-            vgal.icon.get("angels-fluorite-ore"),
-        },
-        energy_required = 2,
-        technology = "angels-thermal-water-extraction",
-        ingredients = {
-            { "angels-solid-calcium-chloride", 1 },
-        },
-        fluid_ingredients = {
-            { "angels-thermal-water", 100 },
-        },
-        results = {
-            { "angels-fluorite-ore", 1 },
-        },
-        fluid_results = {
-            { "angels-water-saline", 50, { ignored_by_productivity = 50 } },
-        },
-        category = "angels-water-treatment",
-    },
+    -- {
+    --     name = "angels-solid-limestone-angels-fluorite-ore",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("angels-fluorite-ore"),
+    --     },
+    --     energy_required = 3,
+    --     technology = { "angels-thermal-water-extraction", "angels-sodium-processing-1" },
+    --     ingredients = {
+    --         { "angels-solid-limestone",        4 },
+    --         { "angels-solid-sodium-carbonate", 1 },
+    --     },
+    --     fluid_ingredients = {
+    --         { "angels-water-purified", 50 },
+    --     },
+    --     results = {
+    --         { "angels-fluorite-ore", 1 },
+    --     },
+    --     fluid_results = {
+    --         { "angels-water-mineralized", 50, { ignored_by_productivity = 50 } },
+    --     },
+    --     category = "angels-ore-refining-t2",
+    -- },
+    -- {
+    --     name = "angels-thermal-water-angels-water-saline",
+    --     prefix = "vgal",
+    --     -- icons = angelsmods.functions.create_liquid_recipe_icon({
+    --     --     { "__angelspetrochemgraphics__/graphics/icons/ore-fluorite.png", 32 },
+    --     --     "angels-water-saline",
+    --     -- }, "WsFF"),
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("angels-fluorite-ore"),
+    --     },
+    --     energy_required = 2,
+    --     technology = "angels-thermal-water-extraction",
+    --     ingredients = {
+    --         { "angels-solid-calcium-chloride", 2 },
+    --     },
+    --     fluid_ingredients = {
+    --         { "angels-thermal-water", 100 },
+    --     },
+    --     results = {
+    --         { "angels-fluorite-ore", 1 },
+    --     },
+    --     fluid_results = {
+    --         { "angels-water-saline", 50, { ignored_by_productivity = 50 } },
+    --     },
+    --     category = "angels-water-treatment",
+    -- },
     -- {
     --     name = "angels-thermal-water-angels-fluorite-ore",
     --     prefix = "vgal",

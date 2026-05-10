@@ -19,6 +19,13 @@ if mods["angelsaddons-cab"] then
 
     data.raw["item"]["angels-cab-energy-interface-mk1"].order = "x"
     data.raw["item"]["angels-cab-energy-interface-mk1"].subgroup = "angels-vehicle-equipment"
+end
 
-    
+if mods["angelsaddons-storage"] then
+    for _, removed_ore_index in ipairs(agal.defines.removed_ore_indexes) do
+        local silo_name = "angels-silo-ore" .. removed_ore_index
+        vgal.data.trim(silo_name)
+        vgal.data.deephide(data.raw["item"][silo_name])
+        vgal.data.deephide(data.raw["container"][silo_name])
+    end
 end

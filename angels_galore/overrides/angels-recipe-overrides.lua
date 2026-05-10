@@ -891,7 +891,8 @@ data.raw["recipe"]["angels-liquid-raw-fish-oil-filtering-1"].energy_required = 2
 data.raw["recipe"]["angels-liquid-raw-fish-oil-filtering-2"].energy_required = 2
 
 -- make puffer atm faster
-data.raw["recipe"]["angels-gas-puffer-atmosphere"].energy_required = 5 -- og: 30
+-- also helps with machine buffers as puffers get going
+data.raw["recipe"]["angels-gas-puffer-atmosphere"].energy_required = 4 -- og: 30
 
 -- commentedbc: wrong, the buff above fixes most issues
 -- buff waste puffing

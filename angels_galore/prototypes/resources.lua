@@ -191,7 +191,7 @@ vgal.data.extend({
                 shift = { 10, 10 },
             },
         },
-        technology = { "angels-thorium-power", "angels-ore-refining" },
+        technology = "angels-thorium-power",
         energy_required = 2,
         ingredients = {
             { "angels-ore2-pure",         3 },

@@ -13,14 +13,15 @@
         "angelsrefining",
         "angelssmelting",
         "angelsbioprocessing",
+        "? reskins-angels",
         "? angelsaddons-mobility",
         "? angelsaddons-storage",
         "? angelsaddons-cab",
         "? angelsaddons-bots",
         "? angelsinfiniteores",
         "? quality",
-        "(?) reskins-angels",
+        "! bobores",
         "(?) DiscoScience"
     ],
-    "description": "An overhaul of Angels Mods!"
+    "description": "An overhaul based on Angel's mods focused on recipes GALORE!"
 }

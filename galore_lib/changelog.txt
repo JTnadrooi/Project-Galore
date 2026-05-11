@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.0
+  Features:
+    - Added more functions and improved order/subgroup handling.
+---------------------------------------------------------------------------------------------------
 Version: 2.0.1
   Bugfixes:
     - Fixed all recipes added by vgal.data.extend being unlocked by default. (Thanks Samario!)

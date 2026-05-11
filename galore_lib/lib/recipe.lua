@@ -563,7 +563,7 @@ function vgal.recipe.get_domain_or_all_pairs(domain_name)
 end
 
 ---@param recipe_name string
----@param show_amount_in_title boolean
+---@param show_amount_in_title boolean?
 function vgal.recipe.use_recipe_locale(recipe_name, show_amount_in_title)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
 
@@ -573,7 +573,10 @@ function vgal.recipe.use_recipe_locale(recipe_name, show_amount_in_title)
     recipe.localised_description = { "?", { "recipe-description." .. recipe.name }, vgal.locale
         .get_backup_locale_for_recipeable(
             recipe.name, "description") }
-    recipe.show_amount_in_title = show_amount_in_title
+
+    if show_amount_in_title ~= nil then
+        recipe.show_amount_in_title = show_amount_in_title
+    end
 end
 
 ---@param raw_amount number

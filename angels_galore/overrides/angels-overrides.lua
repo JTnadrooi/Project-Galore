@@ -74,10 +74,12 @@ for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
     end
 end
 
--- align ores (ore2 is normally a tier 2 ore)
--- copying mining time doesnt work for some reason
-data.raw["resource"]["angels-ore2"].minable.mining_time = 1
-data.raw["resource"]["angels-ore3"].minable.mining_time = 1
+-- fix ore mining speeds
+for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+    data.raw["resource"][metal.base_ore].minable.mining_time = 1
+end
+
+-- steal autoplace
 data.raw["resource"]["angels-ore2"].autoplace = table.deepcopy(data.raw["resource"]["angels-ore1"].autoplace)
 
 -- make raw meat consumable (not too far fetched with how the engineer already eats raw fish but yea don't do this)

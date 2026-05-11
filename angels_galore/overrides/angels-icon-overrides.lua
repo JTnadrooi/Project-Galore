@@ -224,6 +224,7 @@ use_main_icon("angels-solid-sodium-hydroxide")
 
 data.raw.recipe["angels-fermentation-corn"].icons = vgal.icon.register({
     vgal.icon.get("angels-liquid-fermentation-raw"),
+    vgal.icon.get_in("angels-solid-corn"),
 })
 
 data.raw.recipe["angels-fermentation-fruit"].icons = vgal.icon.register({

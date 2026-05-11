@@ -951,3 +951,18 @@ data.raw["recipe"]["angels-copper-pebbles"].localised_name = nil
 -- prevent tiered locale
 data.raw["technology"]["angels-fusion-power-1"].localised_name = nil
 data.raw["technology"]["angels-fusion-power-1"].localised_description = nil
+
+-- use new "from" locale
+vgal.recipe.use_recipe_locale("angels-solid-beans-nutrients")
+vgal.recipe.use_recipe_locale("angels-solid-corn-nutrients")
+vgal.recipe.use_recipe_locale("angels-solid-leafs-nutrients")
+vgal.recipe.use_recipe_locale("angels-solid-nuts-nutrients")
+vgal.recipe.use_recipe_locale("angels-solid-pips-nutrients")
+vgal.recipe.use_recipe_locale("angels-solid-fruit-nutrients")
+
+vgal.recipe.use_recipe_locale("angels-liquid-raw-vegetable-oil-nuts")
+vgal.recipe.use_recipe_locale("angels-liquid-raw-vegetable-oil-pips")
+vgal.recipe.use_recipe_locale("angels-liquid-raw-vegetable-oil-beans")
+
+vgal.recipe.use_recipe_locale("angels-fermentation-corn")
+vgal.recipe.use_recipe_locale("angels-fermentation-fruit")

@@ -19,7 +19,7 @@ Angel's Galore is an overhaul based on Angel's mods that focuses on open-ended p
 -   Lots of chemistry and bioprocessing with many byproducts and differing levels of complexity, it's your choice what recipes you use.
 -   Intricate ore refining and smelting processes to increase yield (and maybe extract some secondary resources?).
 -   A nuclear power overhaul that adds _5 extra fuel cells_ and _20+ different fuel reprocessing/radioactive material processing recipes_.
--   A huge collection (4000+ lines) of changes for Angel's mods focused on making sure no recipe is always better than another. _Every method of production will be useful for something, you decide what production chain is best for your factory._
+-   A huge collection (4000+ codelines) of changes for Angel's mods focused on making sure no recipe is always better than another. _Every method of production will be useful for something, you decide what production chain is best for your factory._
 
 (This list will definitely expand. As of writing this, the mod is still brand new.)
 

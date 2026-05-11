@@ -28,14 +28,14 @@ Angel's Galore is an overhaul based on Angel's mods that focuses on open-ended p
 -   [Angel's Infinite Ores](https://mods.factorio.com/mod/angelsinfiniteores) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Adds tiny infinite ore patches in the center of non-starter ore patches.
 -   [Angel's Addons - Robot Logistics](https://mods.factorio.com/mod/angelsaddons-bots) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Adds new early bots and roboport variants. Also contains logistic/construction extenders.
 -   [Angel's Addons - Storage Options](https://mods.factorio.com/mod/angelsaddons-storage) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Adds larger chests.
--   [Angel's Addons - C.A.B.](https://mods.factorio.com/mod/angelsaddons-cab) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Adds some a mobile base type vehicle.
+-   [Angel's Addons - C.A.B.](https://mods.factorio.com/mod/angelsaddons-cab) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Adds a mobile base type vehicle.
 -   [Angel's Addons - Mass Transit](https://mods.factorio.com/mod/angelsaddons-mobility) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Add new higher tier train types themed for petrochem of smelting.
 -   [Proper Tier Doubling](https://mods.factorio.com/mod/proper_tier_doubling_port) by [JTnadrooi](https://mods.factorio.com/user/JTnadrooi); Adds proper tier doubling for vanilla buildings and belts.
 
 ## Notes
 
 -   Difficulty is similar to (2.0) Full Angels (without Bob's mods).
--   Some items/fluid have no or a single use. As of writing this, Angel's Galore only adds a handful of recipes. This will certainly change when more recipes are added, but for this initial release I wanted to focus on the Angel's changes first.
+-   Some items/fluid have no or a single use. This will certainly change as more recipes are added, but for this initial release I wanted to focus on the Angel's changes first.
 -   This mod is not compatible with Space Age (Galore). I'm working on full integration (Angel's+Space Age Galore) but this will take time.
 -   If you have any (recipe) suggestions, feedback, or found any bugs, feel free to create a discussion thread or contact me on Discord! (@jtnadrooi)
 
@@ -43,4 +43,5 @@ Angel's Galore is an overhaul based on Angel's mods that focuses on open-ended p
 
 -   [Arch666Angel](https://mods.factorio.com/user/Arch666Angel) - For creating Angel's mods.
 -   [KiwiHawk](https://mods.factorio.com/user/kiwihawk) and [lovely_santa](https://mods.factorio.com/user/lovely_santa) - For updating and maintaining Angel's mods.
+-   [LandronSC](https://www.youtube.com/@landronsc) - For playtesing.
 -   And _you_, for playing :D

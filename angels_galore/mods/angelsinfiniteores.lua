@@ -1,7 +1,6 @@
 if not mods["angelsinfiniteores"] then return end
 
 -- undo uranium tech changes and move fluid mining to electric mining drill
-
 vgal.tech.add_unit("uranium-mining", "chemical-science-pack")
 vgal.tech.remove_prerequisite("uranium-mining", "electric-mining-drill")
 
@@ -49,5 +48,6 @@ data.raw["resource"]["infinite-angels-ore2"].minable.required_fluid = "angels-li
 
 -- fix locale listing removed ores
 for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
-    data.raw["resource"]["infinite-" .. metal.base_ore].localised_description = { "item-description." .. metal.base_ore }
+    data.raw["resource"]["infinite-" .. metal.base_ore].localised_description = table.deepcopy(data.raw["item"]
+        [metal.base_ore].localised_description)
 end

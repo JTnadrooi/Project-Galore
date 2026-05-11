@@ -46,8 +46,11 @@ end
 -- fix acid needed to mine ore2 (jiv)
 data.raw["resource"]["infinite-angels-ore2"].minable.required_fluid = "angels-liquid-sulfuric-acid"
 
--- fix locale listing removed ores
 for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+    -- use updated locale
     data.raw["resource"]["infinite-" .. metal.base_ore].localised_description = table.deepcopy(data.raw["item"]
         [metal.base_ore].localised_description)
+
+    -- fix mining speed
+    data.raw["resource"]["infinite-" .. metal.base_ore].minable.mining_time = 1
 end

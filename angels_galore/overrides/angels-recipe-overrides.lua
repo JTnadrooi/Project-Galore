@@ -950,3 +950,28 @@ vgal.recipe.set_ingredient_amount("angels-stone-crushed-dissolution", 10, "angel
 -- done to compensate overral slower chem/liquifier speeds
 data.raw["recipe"]["angels-liquid-sulfuric-acid"].energy_required = 1 -- og; 2
 data.raw["recipe"]["angels-gas-sulfur-dioxide"].energy_required = 1   -- og; 2
+
+-- make washing recipes faster
+-- also done to compensate + washing plant will get more uses, and I don't want bases to be 50% washing plants
+for _, water_name in ipairs({
+    "angels-water-heavy-mud",
+    "angels-water-concentrated-mud",
+    "angels-water-light-mud",
+    "angels-water-thin-mud",
+    "angels-water-saline",
+}) do
+    data.raw["recipe"][water_name].energy_required = 3 -- og; 5
+
+    -- buff mud yield a bit
+    data.raw["recipe"][water_name].results = vgal.build.table({
+        { "angels-solid-mud", nil, { amount_min = 1, amount_max = 2 } },
+    }, {
+        { water_name, 200 }
+    })
+end
+data.raw["recipe"]["angels-solid-clay"].energy_required = 3      -- og; 5
+data.raw["recipe"]["angels-solid-limestone"].energy_required = 2 -- og; 5
+data.raw["recipe"]["angels-solid-sand"].energy_required = 1      -- og; 5
+
+-- but also reduce sand yield a bit
+vgal.recipe.set_result_amount("angels-solid-sand", 3) -- og; 5

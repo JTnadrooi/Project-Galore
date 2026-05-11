@@ -53,9 +53,12 @@ end
 
 ---@param needed_galore {[1]: string, [2]: string}
 ---@param with {[1]: string, [2]: string}
-function vgal.throw.error_if_missing_galore(needed_galore, with)
+---@param is_pending boolean?
+function vgal.throw.error_if_missing_galore(needed_galore, with, is_pending)
     if mods[with[1]] and not mods[needed_galore[1]] then
         error("\n\n\n\n\n[PLEASE READ]\nInstall or enable \"" ..
-            needed_galore[2] .. "\" for compatibility with " .. with[2] .. ".\n\n\n\n")
+            needed_galore[2] ..
+            "\" for compatibility with " ..
+            with[2] .. "." .. (is_pending and "\n(Mod still in development.)" or "") .. "\n\n\n\n")
     end
 end

@@ -62,6 +62,7 @@ for _, ore in ipairs(agal.defines.removed_alt_ore_indexes) do
     end
 
     vgal.data.trim("angels-ore" .. ore .. "-anode-sludge")
+    vgal.data.deephide(data.raw["fluid"]["angels-ore" .. ore .. "-anode-sludge"])
 end
 
 -- remove mix recipes. (I will have my own ones)
@@ -304,3 +305,5 @@ vgal.data.trim("angels-wire-copper-2")
 
 -- remove thermal water to sludge recipes (and tech)
 vgal.tech.deephide("angels-thermal-water-processing")
+
+-- ful

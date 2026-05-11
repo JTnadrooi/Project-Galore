@@ -75,7 +75,9 @@ for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
 end
 
 -- align ores (ore2 is normally a tier 2 ore)
-data.raw["resource"]["angels-ore2"].minable.mining_time = data.raw["resource"]["angels-ore3"].minable.mining_time
+-- copying mining time doesnt work for some reason
+data.raw["resource"]["angels-ore2"].minable.mining_time = 1
+data.raw["resource"]["angels-ore3"].minable.mining_time = 1
 data.raw["resource"]["angels-ore2"].autoplace = data.raw["resource"]["angels-ore1"].autoplace
 
 -- fuel tweaks

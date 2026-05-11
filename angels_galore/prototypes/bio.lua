@@ -15,7 +15,25 @@ vgal.data.extend({
             { "angels-cellulose-fiber", 2 },
         },
         category = "crafting",
-    }
+    },
+    { -- meat void
+        name = "angels-bio-raw-meat-angels-liquid-nutrient-pulp",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("angels-liquid-nutrient-pulp"),
+            vgal.icon.get_in("angels-bio-raw-meat"),
+        },
+        energy_required = 2,
+        technology = "angels-bio-refugium-butchery-1",
+        ingredients = {
+            { "angels-bio-raw-meat", 5 },
+        },
+        fluid_results = {
+            { "angels-liquid-nutrient-pulp", 20 },
+        },
+        order = "a[nutrient-extraction]-g",
+        category = "angels-nutrient-extractor",
+    },
 }, {
     type = "recipe",
 })

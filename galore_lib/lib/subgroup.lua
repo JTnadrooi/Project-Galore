@@ -30,7 +30,9 @@ function vgal.subgroup.set_for(name, subgroup_name)
         -- if recipe.results and (#recipe.results > 1) then
         --     recipe.main_product = name
         -- end
-        recipe.main_product = name
+        if #(recipe.ingredients or {}) > 1 then
+            recipe.main_product = name
+        end
     end
 end
 

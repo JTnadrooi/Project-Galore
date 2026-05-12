@@ -259,73 +259,85 @@ function vgal.data.extend(entries, fill_in_with)
             ---@diagnostic disable-next-line: assign-type-mismatch
             data:extend { entry }
             for i, tech_entry in ipairs(entry.technologies) do
-                local t_type = type(tech_entry)
-
-                if t_type == "table" then
-                    ---@cast tech_entry table
+                if type(tech_entry) == "table" then
+                    ---@cast tech_entry string[]
 
                     local tech_name = entry.name .. "-node" .. i
 
-                    -- get most expensive prerequisite.
+                    local function find_units_from_tech(tech_name, visited)
+                        visited = visited or {}
+                        if visited[tech_name] then
+                            return {} -- inf loop prevention just to be safe
+                        end
+                        visited[tech_name] = true
+
+                        local tech = vgal.throw.if_tech_not_found(tech_name)
+                        local units = vgal.tech.extract_units(tech)
+
+                        if #units > 0 then
+                            return units
+                        end
+
+                        for _, prereq in ipairs(tech.prerequisites or {}) do
+                            local prereq_units = find_units_from_tech(prereq, visited)
+                            if #prereq_units > 0 then
+                                return prereq_units
+                            end
+                        end
+
+                        return {}
+                    end
+
+                    -- get most expensive prerequisite
                     local units = {}
                     for _, prerequisite in ipairs(tech_entry) do
-                        local tech = vgal.throw.if_tech_not_found(prerequisite)
-                        for _, unit in ipairs(vgal.tech.extract_units(tech)) do
+                        local found_units = find_units_from_tech(prerequisite)
+                        for _, unit in ipairs(found_units) do
                             table.insert(units, unit)
                         end
                     end
 
+                    if #units == 0 then
+                        units = { "automation-science-pack" }
+                    end
+
                     units = vgal.table.remove_duplicates(units)
 
-                    -- commentedbc: algorithm above should be simpler and better.
-                    -- local eventual_units_worth = 0
-                    -- local eventual_units = {}
-                    -- for _, prerequisite in ipairs(tech_entry) do
-                    --     local tech = vgal.throw.if_tech_not_found(prerequisite)
-                    --     local units = vgal.tech.extract_units(tech)
-                    --     local units_worth = vgal.tech.get_units_worth(units)
-                    --     if units_worth > eventual_units_worth then
-                    --         eventual_units = units
-                    --         eventual_units_worth = units_worth
+                    local tech = vgal.tech.create_empty(
+                        tech_name,
+                        1,
+                        units,
+                        #units * 5,
+                        #units >= 4 and 30 or 15,
+                        tech_entry,
+                        "a",
+                        {
+                            {
+                                icon = entry.icons[1].icon,
+                                icon_size = entry.icons[1].icon_size,
+                                scale = 2.2,
+                            },
+                            {
+                                icon = "__galore_lib__/graphics/node.png",
+                                icon_size = 256,
+                            },
+                        }
+                    )
+
+                    data:extend({ tech })
+
+                    tech.__vgal_is_technode = true
+
+                    -- local pure_trigger = true
+                    -- for _, pre in ipairs(tech_entry) do
+                    --     if data.raw["technology"][pre].research_trigger == nil then
+                    --         pure_trigger = false
                     --     end
                     -- end
-
-                    data:extend({
-                        vgal.tech.create_empty(
-                            tech_name,
-                            1,
-                            units,
-                            #units * 5,
-                            #units >= 4 and 30 or 15,
-                            tech_entry,
-                            "a",
-                            {
-                                {
-                                    icon = entry.icons[1].icon,
-                                    icon_size = entry.icons[1].icon_size,
-                                    scale = 2.2,
-                                },
-                                {
-                                    icon = "__galore_lib__/graphics/node.png",
-                                    icon_size = 256,
-                                },
-                            }
-                        )
-                    })
-
-                    local tech = data.raw["technology"][tech_name]
-                    tech.__vgal_can_remove = true
-
-                    local pure_trigger = true
-                    for _, pre in ipairs(tech_entry) do
-                        if data.raw["technology"][pre].research_trigger == nil then
-                            pure_trigger = false
-                        end
-                    end
-                    if pure_trigger then
-                        tech.research_trigger = data.raw["technology"][tech_entry[1]].research_trigger
-                        tech.unit = nil
-                    end
+                    -- if pure_trigger then
+                    --     tech.research_trigger = data.raw["technology"][tech_entry[1]].research_trigger
+                    --     tech.unit = nil
+                    -- end
 
                     tech.localised_name = { "?",
                         { "", { "vgal-internal.tech-node" }, ": ", { "recipe-name." .. entry.name } },
@@ -338,7 +350,7 @@ function vgal.data.extend(entries, fill_in_with)
                     vgal.tech.add_recipe(tech_name, entry.name)
                     tech.hidden = hidden
                     tech.hidden_in_factoriopedia = hidden
-                elseif t_type == "string" then
+                elseif type(tech_entry) == "string" then
                     ---@cast tech_entry string
                     vgal.tech.add_recipe(tech_entry, entry.name)
                 else
@@ -467,7 +479,7 @@ local function remove_empty_vgal_techs()
         end
 
         ---@diagnostic disable-next-line: undefined-field
-        if not tech.__vgal_can_remove then
+        if not tech.__vgal_is_technode then
             removable_techs[tech.name] = nil
         end
 

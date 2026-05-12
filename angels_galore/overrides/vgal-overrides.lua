@@ -8,7 +8,7 @@ vgal.data.trim("vgal-iron-stick-concrete")
 vgal.data.trim("vgal-copper-cable-plastic-bar")
 vgal.data.trim("vgal-crude-oil-coal")
 
--- trim out-of-placeified recipes
+-- trim out-of-place-ified recipes
 vgal.data.trim("vgal-coal-uranium-235-nuclear-fuel")
 vgal.data.trim("vgal-low-density-structure-uranium-fuel-cell")
 

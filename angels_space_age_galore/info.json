@@ -1,0 +1,15 @@
+{
+    "name": "angels_space_age_galore",
+    "version": "0.5.0",
+    "title": "Angel's+Space Age Galore",
+    "author": "JTnadrooi",
+    "contact": "@jtnadrooi",
+    "homepage": "https://github.com/JTnadrooi/Project-Galore",
+    "factorio_version": "2.0",
+    "dependencies": [
+        "base >= 2.0",
+        "space_age_galore",
+        "angels_galore"
+    ],
+    "description": ""
+}

@@ -188,7 +188,7 @@ end
 ---@param recipe_name string
 ---@param old_ingredient_name string
 ---@param new_ingredient_name string
----@param no_throw bool?
+---@param no_throw boolean?
 function vgal.recipe.replace_ingredient(recipe_name, old_ingredient_name, new_ingredient_name, no_throw)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
     for _, ingredient in ipairs(recipe.ingredients or {}) do
@@ -206,7 +206,7 @@ end
 
 ---@param recipe_name string
 ---@param ingredient_name string
----@param no_throw bool?
+---@param no_throw boolean?
 function vgal.recipe.remove_ingredient(recipe_name, ingredient_name, no_throw)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
     for i, ingredient in ipairs(recipe.ingredients or {}) do
@@ -224,7 +224,7 @@ end
 
 ---@param recipe_name string
 ---@param result_name string
----@param no_throw bool?
+---@param no_throw boolean?
 function vgal.recipe.remove_result(recipe_name, result_name, no_throw)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
     local found = false -- for multiple same results
@@ -249,7 +249,7 @@ end
 ---@param recipe_name string
 ---@param old_result_name string
 ---@param new_result_name string
----@param no_throw bool?
+---@param no_throw boolean?
 function vgal.recipe.replace_result(recipe_name, old_result_name, new_result_name, no_throw)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
     local found = false -- for multiple same results

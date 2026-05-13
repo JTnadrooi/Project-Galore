@@ -477,3 +477,20 @@ data.raw["item"]["rocket-fuel"].icon_size = nil
 data.raw["technology"]["uranium-mining"].icons = data.raw["technology"]["angels-advanced-ore-refining-4"].icons
 data.raw["technology"]["uranium-mining"].icon = data.raw["technology"]["angels-advanced-ore-refining-4"].icon
 data.raw["technology"]["uranium-mining"].icon_size = data.raw["technology"]["angels-advanced-ore-refining-4"].icon_size
+
+if not mods["reskins-angels"] then
+    data.raw["item"]["sulfur"].icons = nil
+    data.raw["item"]["sulfur"].icon = "__base__/graphics/icons/sulfur.png"
+    data.raw["item"]["sulfur"].icon_size = nil
+
+    data.raw["recipe"]["angels-solid-sulfur"].icons = nil
+    data.raw["recipe"]["angels-solid-sulfur"].icon = "__base__/graphics/icons/sulfur.png"
+    data.raw["recipe"]["angels-solid-sulfur"].icon_size = nil
+
+    data.raw["recipe"]["angels-yellow-waste-water-purification"].icons = angelsmods.functions.create_liquid_recipe_icon(
+        {
+            "angels-water-mineralized",
+            "angels-water-purified",
+            "sulfur",
+        }, "WsSS")
+end

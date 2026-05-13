@@ -483,16 +483,16 @@ if mods["angels_galore"] then
                 }
             }
         })
-        vgal.icon.add_override({
-            name = "sulfur",
-            source = "item",
-            composite_icon_override = {
-                {
-                    icon = "__angelspetrochemgraphics__/graphics/icons/solid-sulfur.png",
-                    icon_size = 32,
-                }
-            }
-        })
+        -- vgal.icon.add_override({
+        --     name = "sulfur",
+        --     source = "item",
+        --     composite_icon_override = {
+        --         {
+        --             icon = "__angelspetrochemgraphics__/graphics/icons/solid-sulfur.png",
+        --             icon_size = 32,
+        --         }
+        --     }
+        -- })
         vgal.icon.add_override({
             name = "steel-plate",
             source = "item",

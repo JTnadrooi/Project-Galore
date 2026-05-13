@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.2
+  Bugfixes:
+    - Actually prevented Galore Lib functions from setting main_product on recipes unless needed.
+---------------------------------------------------------------------------------------------------
 Version: 2.1.1
   Bugfixes:
     - Prevented Galore Lib functions from setting main_product on recipes unless needed.

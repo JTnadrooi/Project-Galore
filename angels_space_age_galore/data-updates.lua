@@ -1,1 +1,2 @@
-require("overrides.sagal-overrides")
+require("overrides.vanilla-overrides")
+require("overrides.vgal-overrides")

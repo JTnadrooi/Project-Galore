@@ -2,6 +2,8 @@
 Version: 1.0.1
   Features:
     - Added setting to enable normalization of vanilla machine speeds.
+  Balancing:
+    - Made the Angel's storage addon presure tank more expensive.
   Bugfixes:
     - Fixed sand from crushed stone recipe name.
     - Fixed glycerol recipe order.

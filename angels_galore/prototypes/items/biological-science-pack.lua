@@ -45,9 +45,6 @@ vgal.data.extend({
     {
         name = "biological-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("vgal-biological-science-pack"),
-        },
         energy_required = 5,
         technology = "vgal-biological-science-pack",
         ingredients = {

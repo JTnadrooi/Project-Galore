@@ -440,6 +440,18 @@ local subgroups = {
         },
         should_reorder_entries = true,
     },
+    {
+        name = "bio-nutrient-chemistry",
+        group = "angels-bio-processing-vegetables",
+        order = "e[processing]-ab",
+        entries = {},
+        recipe_entries = {
+            "angels-nutrients-refining-1",
+            "angels-nutrients-refining-2",
+            "angels-nutrients-refining-3",
+        },
+        should_reorder_entries = true,
+    },
 
     -- MISC
     {

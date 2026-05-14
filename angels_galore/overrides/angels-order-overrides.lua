@@ -103,3 +103,5 @@ data.raw.recipe["angels-filter-lime-used-cleaning"].main_product = "angels-filte
 vgal.subgroup.clean_recipe("angels-filter-lime-used-cleaning")
 
 data.raw["recipe"]["angels-americium-regeneration"].order = "eb"
+data.raw["recipe"]["angels-fish-pulp-nutrients"].order = "x"
+data.raw["recipe"]["angels-fish-pulp-nutrients"].subgroup = "angels-bio-processor-nutrient"

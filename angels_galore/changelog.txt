@@ -3,6 +3,7 @@ Version: 1.0.1
   Features:
     - Added setting to enable normalization of vanilla machine speeds.
     - Improved butchery icons.
+    - Improved nutrient petrochem recipe order.
   Balancing:
     - Made the Angel's storage addon presure tank more expensive.
   Bugfixes:

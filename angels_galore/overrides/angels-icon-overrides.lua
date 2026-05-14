@@ -498,3 +498,13 @@ if not mods["reskins-angels"] then
             "sulfur",
         }, "WsSS")
 end
+
+-- fix meat recipe icons
+for _, recipe in pairs(data.raw["recipe"]) do
+    if recipe.category == "angels-bio-butchery" and recipe.ingredients and (#recipe.ingredients > 0) then
+        recipe.icons = vgal.icon.register({
+            vgal.icon.get("angels-bio-raw-meat"),
+            vgal.icon.get_in(recipe.ingredients[1].name, "item"),
+        })
+    end
+end

@@ -1,4 +1,4 @@
-agal = agal or {} -- to make it loadable in settings phase.
+agal = agal or {} -- to make it loadable in settings phase
 
 agal.defines = agal.defines or {}
 

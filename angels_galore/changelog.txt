@@ -2,6 +2,7 @@
 Version: 1.0.1
   Bugfixes:
     - Fixed sand from crushed stone recipe name.
+    - Fixed glycerol recipe order.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
   Features:

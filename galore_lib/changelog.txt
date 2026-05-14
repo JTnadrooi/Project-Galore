@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.3
+  Bugfixes:
+    - Fixed most added recipes getting hidden from the signal gui.
+---------------------------------------------------------------------------------------------------
 Version: 2.1.2
   Bugfixes:
     - Actually prevented Galore Lib functions from setting main_product on recipes unless needed.

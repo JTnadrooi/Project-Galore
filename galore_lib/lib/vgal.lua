@@ -170,6 +170,14 @@ function vgal.data.extend(entries, fill_in_with)
                 entry.enabled = not not (#entry.technologies == 0)
             end
 
+            if entry.hide_from_signal_gui == nil then
+                -- vgal auto algoritm (different than vanilla)
+                if entry.icon or entry.icons then
+                    entry.hide_from_signal_gui = false
+                else
+                    entry.hide_from_signal_gui = true
+                end
+            end
 
             -- null stuff
             entry.fluid_ingredients = entry.fluid_ingredients or {}
@@ -313,6 +321,7 @@ function vgal.data.extend(entries, fill_in_with)
                         "a",
                         {
                             {
+                                -- not all recipes have icons so this will break eventually
                                 icon = entry.icons[1].icon,
                                 icon_size = entry.icons[1].icon_size,
                                 scale = 2.2,

@@ -6,7 +6,7 @@ data:extend({
         type = "tool",
         name = "vgal-biological-science-pack",
         localised_description = { "item-description.science-pack" },
-        icon = "__angels_galore__/graphics/icons/biologic-science-pack.png",
+        icon = "__angels_galore__/graphics/icons/biological-science-pack.png",
         subgroup = "science-pack", -- may get changed in subgroups
         color = { r = 230, g = 247, b = 112 },
         order = "cb",
@@ -28,7 +28,7 @@ data:extend({
         name = "vgal-biological-science-pack",
         localised_name = { "technology-name.vgal-biological-science-pack" },
         localised_description = { "technology-description.vgal-biological-science-pack" },
-        icon = "__angels_galore__/graphics/technology/biologic-science-pack.png",
+        icon = "__angels_galore__/graphics/technology/biological-science-pack.png",
         icon_size = 256,
         effects = {}, -- recipe gets added on vgal.data.extend.
         prerequisites = { "angels-composting", "logistic-science-pack" },

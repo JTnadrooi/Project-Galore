@@ -123,6 +123,11 @@ data.raw["recipe"]["angels-liquid-phenol"].icons = angelsmods.functions.create_l
     "COH"
 )
 
+-- fix main casting recipes showing input icon
+vgal.recipe.clear_icons("angels-plate-steel")
+vgal.recipe.clear_icons("angels-plate-iron")
+vgal.recipe.clear_icons("angels-plate-copper")
+
 -- fix bio-tokens still being in garden recipe icons
 for _, environment in pairs(agal.defines.environments) do
     table.remove(data.raw["recipe"][environment.garden .. "-a"].icons, 2) -- at 2 is bio token icon

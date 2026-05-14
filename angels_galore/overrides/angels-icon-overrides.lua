@@ -483,14 +483,13 @@ data.raw["technology"]["uranium-mining"].icons = data.raw["technology"]["angels-
 data.raw["technology"]["uranium-mining"].icon = data.raw["technology"]["angels-advanced-ore-refining-4"].icon
 data.raw["technology"]["uranium-mining"].icon_size = data.raw["technology"]["angels-advanced-ore-refining-4"].icon_size
 
+-- restore sulfur icons (reskins does this already, so check)
 if not mods["reskins-angels"] then
     data.raw["item"]["sulfur"].icons = nil
     data.raw["item"]["sulfur"].icon = "__base__/graphics/icons/sulfur.png"
     data.raw["item"]["sulfur"].icon_size = nil
 
-    data.raw["recipe"]["angels-solid-sulfur"].icons = nil
-    data.raw["recipe"]["angels-solid-sulfur"].icon = "__base__/graphics/icons/sulfur.png"
-    data.raw["recipe"]["angels-solid-sulfur"].icon_size = nil
+    vgal.recipe.clear_icons("angels-solid-sulfur")
 
     data.raw["recipe"]["angels-yellow-waste-water-purification"].icons = angelsmods.functions.create_liquid_recipe_icon(
         {

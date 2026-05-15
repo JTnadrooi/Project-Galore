@@ -4,6 +4,8 @@ Version: 1.0.2
     - Added bobmodules compat.
     - Added bob incompatibilities.
     - Added "vgal-angels-tree-seed-angels-cellulose-fiber" recipe.
+  Bugfixes:
+    - Fixed angels cooling tech not depending on fluid handing even though cooling tower requires pumps.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.1
   Features:

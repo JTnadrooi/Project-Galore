@@ -2,7 +2,7 @@ vgal = vgal or {}
 
 vgal.data = vgal.data or {}
 
-vgal.data.DOMAINS = {}
+vgal.data.domains = {}
 
 if vgal.setting ~= nil then
     error()
@@ -78,7 +78,7 @@ end
 ---@return table<string, data.PrototypeBase>
 ---@return nil
 function vgal.data.domain_pairs(domain_name, prototype_type)
-    local dom = vgal.data.DOMAINS[domain_name]
+    local dom = vgal.data.domains[domain_name]
     if not dom then error("domain " .. domain_name .. " does not exist") end
     if not prototype_type then
         error("prototype_type cannot be nil")
@@ -110,15 +110,15 @@ end
 
 function vgal.data.create_domain(domain_name)
     if vgal.data.domain_exists(domain_name) then
-        error()
+        error("Domain already exists with name " .. domain_name)
     else
         vgal.log("creating domain: " .. domain_name)
-        vgal.data.DOMAINS[domain_name] = {}
+        vgal.data.domains[domain_name] = {}
     end
 end
 
 function vgal.data.domain_exists(domain_name)
-    return not not vgal.data.DOMAINS[domain_name]
+    return not not vgal.data.domains[domain_name]
 end
 
 ---Register a entry to the vgal (Vanilla Galore) ecosystem.
@@ -136,7 +136,7 @@ function vgal.data.extend(entries, fill_in_with)
             if not vgal.data.domain_exists(entry.prefix) then
                 vgal.data.create_domain(entry.prefix)
             end
-            vgal.data.DOMAINS[entry.prefix][vgal.build.name(entry.prefix, entry.name, entry.tier)] = {
+            vgal.data.domains[entry.prefix][vgal.build.name(entry.prefix, entry.name, entry.tier)] = {
                 type = entry.type,
                 name = vgal.build.name(entry.prefix, entry.name, entry.tier),
             }

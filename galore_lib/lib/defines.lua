@@ -14,7 +14,7 @@ vgal.defines.metals = {
     },
 }
 
----@type table<string, table>
+---@type table<string, {name: string, tiers: string[]}>
 vgal.defines.modules = {
     ["productivity-module"] = {
         name = "productivity-module",

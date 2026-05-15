@@ -22,6 +22,10 @@
         "? bobmodules",
         "? quality",
         "! bobores",
+        "! bobassembly",
+        "! bobelectronics",
+        "! bobtech",
+        "! bobrevamp",
         "(?) DiscoScience",
         "(?) proper_tier_doubling_port"
     ],

@@ -508,3 +508,21 @@ for _, recipe in pairs(data.raw["recipe"]) do
         })
     end
 end
+
+-- fix solid fuel recipe icons
+data.raw["recipe"]["angels-solid-fuel-methane"].icons = vgal.icon.register({
+    vgal.icon.get("solid-fuel"),
+    vgal.icon.get_in("methane", "molecule"),
+})
+data.raw["recipe"]["angels-solid-fuel-naphtha"].icons = vgal.icon.register({
+    vgal.icon.get("solid-fuel"),
+    vgal.icon.get_in("angels-liquid-naphtha"),
+})
+data.raw["recipe"]["angels-solid-fuel-fuel-oil"].icons = vgal.icon.register({
+    vgal.icon.get("solid-fuel"),
+    vgal.icon.get_in("angels-liquid-fuel-oil"),
+})
+data.raw["recipe"]["angels-solid-fuel-synthesis"].icons = vgal.icon.register({
+    vgal.icon.get("solid-fuel"),
+    vgal.icon.get_in("angels-gas-synthesis"),
+})

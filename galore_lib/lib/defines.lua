@@ -63,3 +63,14 @@ vgal.defines.tints = {
     },
 }
 vgal.defines.tints["black"] = vgal.defines.tints["crude-oil"]
+
+if mods["quality"] then
+    vgal.defines.modules["quality-module"] = {
+        name = "quality-module",
+        tiers = {
+            "quality-module",
+            "quality-module-2",
+            "quality-module-3",
+        }
+    }
+end

@@ -32,18 +32,6 @@ for _, lab in pairs(data.raw["lab"]) do
     vgal.table.remove(lab.inputs, "angels-token-bio")
 end
 
--- remove bio related stuff from modules.
-vgal.table.remove(data.raw["technology"]["modules"].prerequisites, "angels-bio-processing-crystal-splinter-1")
-for _, module in pairs(vgal.defines.modules) do
-    for tier, tiered_name in ipairs(module.tiers) do
-        if tier == 2 then
-            vgal.table.remove(data.raw["technology"][tiered_name].prerequisites, "angels-bio-processing-crystal-shard-1")
-        elseif tier == 3 then
-            vgal.table.remove(data.raw["technology"][tiered_name].prerequisites, "angels-bio-processing-crystal-full")
-        end
-    end
-end
-
 -- make gardens only drop the garden itself
 for _, environment in pairs(agal.defines.environments) do
     data.raw["tree"][environment.garden].minable.results = {

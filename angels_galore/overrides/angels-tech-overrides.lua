@@ -66,8 +66,37 @@ data.raw["technology"]["angels-bio-processing-crystal-full"].prerequisites = {
     "angels-bio-refugium-biter-3",
 }
 
+-- remove bio related stuff from modules
+vgal.table.remove(data.raw["technology"]["modules"].prerequisites, "angels-bio-processing-crystal-splinter-1")
+for _, module in pairs(vgal.defines.modules) do
+    for tier, tiered_name in ipairs(module.tiers) do
+        if tier == 2 then
+            vgal.table.remove(data.raw["technology"][tiered_name].prerequisites, "angels-bio-processing-crystal-shard-1")
+        elseif tier == 3 then
+            vgal.table.remove(data.raw["technology"][tiered_name].prerequisites, "angels-bio-processing-crystal-full")
+        end
+    end
+end
+-- bobmodules adds some extra modules techs so those need to be fixed as well
+if mods["bobmodules"] then
+    vgal.tech.remove_prerequisite("bob-modules-2", "angels-bio-processing-crystal-splinter-1")
+    vgal.tech.remove_prerequisite("bob-modules-3", "angels-bio-processing-crystal-shard-1")
+    vgal.tech.remove_prerequisite("bob-modules-4", "angels-bio-processing-crystal-full")
+
+    vgal.tech.remove_prerequisite("bob-pollution-clean-module-2", "angels-bio-processing-crystal-splinter-2")
+    vgal.tech.remove_prerequisite("bob-pollution-clean-module-3", "angels-bio-processing-crystal-shard-2")
+    vgal.tech.remove_prerequisite("bob-pollution-create-module-2", "angels-bio-processing-crystal-splinter-2")
+    vgal.tech.remove_prerequisite("bob-pollution-create-module-3", "angels-bio-processing-crystal-shard-2")
+end
+
 -- beacon does not require bio processing anymore (just like the modules)
-vgal.tech.remove_prerequisite("effect-transmission", "angels-bio-processing-crystal-full")
+if mods["bobmodules"] then
+    vgal.tech.remove_prerequisite("effect-transmission", "angels-bio-processing-crystal-splinter-2")
+    vgal.tech.remove_prerequisite("effect-transmission-2", "angels-bio-processing-crystal-shard-2")
+    vgal.tech.remove_prerequisite("effect-transmission-3", "angels-bio-processing-crystal-full")
+else
+    vgal.tech.remove_prerequisite("effect-transmission", "angels-bio-processing-crystal-full")
+end
 
 data.raw["technology"]["angels-slag-processing-3"].prerequisites = {
     "angels-slag-processing-2",

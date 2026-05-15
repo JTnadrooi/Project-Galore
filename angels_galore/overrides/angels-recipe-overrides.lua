@@ -634,33 +634,57 @@ for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) d
 end
 
 -- restore module recipes as they dont require bioprocessing anymore
-for _, module in pairs(vgal.defines.modules) do
-    for tier, tiered_name in ipairs(module.tiers) do
-        local recipe = data.raw.recipe[tiered_name]
+if mods["bobmodules"] then
+    for _, module_data in ipairs({
+        { "speed",            "blue" },
+        { "efficiency",       "green" },
+        { "productivity",     "red" },
+        { "pollution-clean",  "harmonic" },
+        { "pollution-create", "harmonic" },
+    }) do
+        vgal.recipe.remove_ingredient("bob-" .. module_data[1] .. "-processor",
+            "angels-crystal-splinter-" .. module_data[2])
+        vgal.recipe.remove_ingredient("bob-" .. module_data[1] .. "-processor-2",
+            "angels-crystal-shard-" .. module_data[2])
+        vgal.recipe.remove_ingredient("bob-" .. module_data[1] .. "-processor-3",
+            "angels-crystal-full-" .. module_data[2])
+    end
+else
+    for _, module in pairs(vgal.defines.modules) do
+        for tier, tiered_name in ipairs(module.tiers) do
+            local recipe = data.raw.recipe[tiered_name]
 
-        if tier == 1 then
-            recipe.ingredients = vgal.build.table({
-                { "electronic-circuit", 5 },
-                { "advanced-circuit",   5 },
-            })
-        elseif tier == 2 then
-            recipe.ingredients = vgal.build.table({
-                { module.tiers[1],    4 },
-                { "advanced-circuit", 5 },
-                { "processing-unit",  5 },
-            })
-        elseif tier == 3 then
-            recipe.ingredients = vgal.build.table({
-                { module.tiers[2],    4 },
-                { "advanced-circuit", 5 },
-                { "processing-unit",  5 },
-            })
+            if tier == 1 then
+                recipe.ingredients = vgal.build.table({
+                    { "electronic-circuit", 5 },
+                    { "advanced-circuit",   5 },
+                })
+            elseif tier == 2 then
+                recipe.ingredients = vgal.build.table({
+                    { module.tiers[1],    4 },
+                    { "advanced-circuit", 5 },
+                    { "processing-unit",  5 },
+                })
+            elseif tier == 3 then
+                recipe.ingredients = vgal.build.table({
+                    { module.tiers[2],    4 },
+                    { "advanced-circuit", 5 },
+                    { "processing-unit",  5 },
+                })
+            end
         end
     end
 end
 
 -- restore beacon recipes as it doesn't require bioprocessing anymore
-vgal.recipe.remove_ingredient("beacon", "angels-crystal-full-harmonic")
+-- bob modules does some other stuff ofc
+if mods["bobmodules"] then
+    vgal.recipe.remove_ingredient("beacon", "angels-crystal-splinter-harmonic")
+    vgal.recipe.remove_ingredient("bob-beacon-2", "angels-crystal-shard-harmonic")
+    vgal.recipe.remove_ingredient("bob-beacon-3", "angels-crystal-full-harmonic")
+else
+    vgal.recipe.remove_ingredient("beacon", "angels-crystal-full-harmonic")
+end
 
 -- remove the stone uncrushing recipe
 vgal.data.trim("angels-stone-from-crushed-stone")

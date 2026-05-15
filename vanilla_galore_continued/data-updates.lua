@@ -13,5 +13,6 @@ if products or made_in then
 end
 
 require("mods.bz")
-require("mods.bobs")
+require("mods.bobassembly")
+require("mods.bobmodules")
 require("mods.science-tab")

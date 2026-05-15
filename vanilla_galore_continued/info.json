@@ -12,6 +12,8 @@
         "? space-age",
         "? quality",
         "? centrifuge-tint",
+        "(?) bobmodules",
+        "(?) bobassembly",
         "(?) bzcarbon",
         "(?) bzlead",
         "(?) bzsilicon",

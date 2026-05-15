@@ -18,3 +18,4 @@ require("overrides.angels-locale-overrides")
 
 require("mods.angelsaddons")
 require("mods.angelsinfiniteores")
+require("mods.bobmodules")

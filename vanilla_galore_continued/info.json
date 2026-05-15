@@ -20,7 +20,16 @@
         "(?) bzzirconium",
         "(?) James-Oil-Processing",
         "(?) science-tab",
-        "(?) reskins-angels"
+        "(?) reskins-angels",
+        "(?) angelsaddons-mobility",
+        "(?) angelsaddons-storage",
+        "(?) angelsaddons-cab",
+        "(?) angelsaddons-bots",
+        "(?) angelsinfiniteores",
+        "(?) angelspetrochem",
+        "(?) angelsrefining",
+        "(?) angelssmelting",
+        "(?) angelsbioprocessing"
     ],
     "description": "Adds over 110 unique and balanced alternate recipes to VANILLA!"
 }

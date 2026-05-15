@@ -16,6 +16,23 @@ vgal.data.extend({
         },
         category = "crafting",
     },
+    {
+        name = "angels-tree-seed-angels-cellulose-fiber",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("angels-cellulose-fiber"),
+            vgal.icon.get_in("angels-tree-seed"),
+        },
+        energy_required = 1,
+        technology = "angels-bio-arboretum-1",
+        ingredients = {
+            { "angels-tree-seed", 6 },
+        },
+        results = {
+            { "angels-cellulose-fiber", 1 },
+        },
+        category = "crafting",
+    },
     { -- meat void
         name = "angels-bio-raw-meat-angels-liquid-nutrient-pulp",
         prefix = "vgal",

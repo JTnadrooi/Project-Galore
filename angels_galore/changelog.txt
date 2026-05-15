@@ -1,6 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
   Features:
+    - Added boblogistics compat.
     - Added bobmodules compat.
     - Added bob incompatibilities.
     - Added "vgal-angels-tree-seed-angels-cellulose-fiber" recipe.

@@ -3,12 +3,16 @@ if mods["angelsaddons-mobility"] then
 end
 
 if mods["angelsaddons-bots"] then
-    data.raw["item"]["roboport"].order = "--b"
-    data.raw["item"]["roboport"].subgroup = "angels-cargo-ports"
-    data.raw["item"]["construction-robot"].order = "--c"
-    data.raw["item"]["construction-robot"].subgroup = "angels-cargo-bots"
-    data.raw["item"]["logistic-robot"].order = "--b"
-    data.raw["item"]["logistic-robot"].subgroup = "angels-cargo-bots"
+    -- only reorder if boblogistics isnt enabled as boblogistics reorders the bots/roboports too
+    if not mods["boblogistics"] then
+        data.raw["item"]["roboport"].order = "--b"
+        data.raw["item"]["roboport"].subgroup = "angels-cargo-ports"
+        data.raw["item"]["construction-robot"].order = "--c"
+        data.raw["item"]["construction-robot"].subgroup = "angels-cargo-bots"
+        data.raw["item"]["logistic-robot"].order = "--b"
+        data.raw["item"]["logistic-robot"].subgroup = "angels-cargo-bots"
+        return
+    end
 end
 
 if mods["angelsaddons-cab"] then

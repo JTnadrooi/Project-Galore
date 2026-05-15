@@ -2,6 +2,24 @@ for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) d
     -- local pebbles_tech = (metal == "copper") and "angels-ore-floatation" or "angels-ore-crushing"  -- not used as you still need to crush ore into pebbles, you can't smelt ore
 
     vgal.data.extend({
+        {
+            name = metal.ore .. "-angels-cellulose-fiber-" .. metal.pellet,
+            prefix = "vgal",
+            icons = vgal.icon.register {
+                vgal.icon.get(metal.pellet),
+                vgal.icon.get_in("angels-cellulose-fiber"),
+            },
+            energy_required = 2,
+            technology = { "angels-" .. metal.name .. "-smelting-3", "angels-bio-processing-brown" },
+            ingredients = {
+                { metal.processed,          3 },
+                { "angels-cellulose-fiber", 1 },
+            },
+            results = {
+                { metal.pellet, 4 },
+            },
+            category = "angels-pellet-pressing",
+        },
         --- nugget/slag and pebbles recipes ---
         {
             name = metal.nugget .. "-" .. metal.ore,

@@ -650,29 +650,17 @@ if mods["bobmodules"] then
             "angels-crystal-full-" .. module_data[2])
     end
 else
-    for _, module in pairs(vgal.defines.modules) do
-        for tier, tiered_name in ipairs(module.tiers) do
-            local recipe = data.raw.recipe[tiered_name]
-
-            if tier == 1 then
-                recipe.ingredients = vgal.build.table({
-                    { "electronic-circuit", 5 },
-                    { "advanced-circuit",   5 },
-                })
-            elseif tier == 2 then
-                recipe.ingredients = vgal.build.table({
-                    { module.tiers[1],    4 },
-                    { "advanced-circuit", 5 },
-                    { "processing-unit",  5 },
-                })
-            elseif tier == 3 then
-                recipe.ingredients = vgal.build.table({
-                    { module.tiers[2],    4 },
-                    { "advanced-circuit", 5 },
-                    { "processing-unit",  5 },
-                })
-            end
-        end
+    for _, module_data in ipairs({
+        { "speed",        "blue" },
+        { "efficiency",   "green" },
+        { "productivity", "red" },
+    }) do
+        vgal.recipe.remove_ingredient(module_data[1] .. "-module",
+            "angels-crystal-splinter-" .. module_data[2])
+        vgal.recipe.remove_ingredient(module_data[1] .. "-module-2",
+            "angels-crystal-shard-" .. module_data[2])
+        vgal.recipe.remove_ingredient(module_data[1] .. "-module-3",
+            "angels-crystal-full-" .. module_data[2])
     end
 end
 

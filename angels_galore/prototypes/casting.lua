@@ -175,8 +175,8 @@ vgal.data.extend({
             { "plastic-bar",       5 },
         },
         fluid_ingredients = {
-            { "angels-liquid-molten-copper", 185 },
-            { "angels-liquid-molten-steel",  50 },
+            { "angels-liquid-molten-copper", 180 },
+            { "angels-liquid-molten-steel",  25 },
         },
         results = {
             { "low-density-structure", 1 },

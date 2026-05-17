@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.5
+  Features:
+    - Improved recipe.enabled handling
+---------------------------------------------------------------------------------------------------
 Version: 2.1.4
   Features:
     - Added quality mod module to vgal.defines.modules define

@@ -162,12 +162,9 @@ function vgal.data.extend(entries, fill_in_with)
             if entry.enabled ~= nil and #entry.technologies > 0 then
                 error()
             end
-            if entry.enabled == nil and #entry.technologies == 0 then
-                error()
-            end
 
             if entry.enabled == nil then
-                entry.enabled = not not (#entry.technologies == 0)
+                entry.enabled = #entry.technologies == 0
             end
 
             if entry.hide_from_signal_gui == nil then

@@ -15,3 +15,8 @@ vgal.data.trim("vgal-low-density-structure-uranium-fuel-cell")
 -- wood circuits too OP
 vgal.data.trim("vgal-wood-electronic-circuit")
 vgal.data.trim("vgal-wood-heavy-oil-electronic-circuit")
+
+if settings.startup["vgal-remove-steel-intermediate-crafting"].value then
+    vgal.data.trim("vgal-steel-plate-iron-gear-wheel")
+    vgal.data.trim("vgal-steel-plate-iron-stick")
+end

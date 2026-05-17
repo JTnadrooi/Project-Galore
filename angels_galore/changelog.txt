@@ -2,6 +2,8 @@
 Version: 1.0.3
   Bugfixes:
     - Fixed angels addons compats not always running.
+  Balancing:
+    - Halved hydrazine needed for rocket fuel capsules.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
   Features:

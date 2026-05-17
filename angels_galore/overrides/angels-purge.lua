@@ -209,9 +209,9 @@ data.raw.recipe["rocket-fuel"].ingredients = vgal.build.table({
 
 -- fuel crafting chain branch fixes
 data.raw.recipe["angels-rocket-fuel-capsule"].ingredients = vgal.build.table({
-    { "plastic-bar", 1 },
+    { "plastic-bar", 1 },           -- 15c
 }, {
-    { "angels-gas-hydrazine", 50 },
+    { "angels-gas-hydrazine", 20 }, -- 80c
 })
 data.raw.recipe["angels-rocket-fuel-capsule"].energy_required = 5
 vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)

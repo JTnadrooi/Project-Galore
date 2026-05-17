@@ -990,3 +990,7 @@ data.raw["recipe"]["angels-solid-sand"].energy_required = 1      -- og; 5
 
 -- but also reduce sand yield a bit
 vgal.recipe.set_result_amount("angels-solid-sand", 3) -- og; 5
+
+-- buff fermentation base fermentation recipes
+vgal.recipe.set_result_amount("angels-liquid-acetic-acid", 80, "angels-liquid-acetic-acid")
+vgal.recipe.set_result_amount("angels-gas-ethanol", 100, "angels-gas-ethanol")

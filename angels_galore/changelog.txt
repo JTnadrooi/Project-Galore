@@ -5,6 +5,7 @@ Version: 1.0.3
   Balancing:
     - Halved hydrazine needed for rocket fuel capsules to bring rocket fuel "cost" back to 110.
     - Seduced salt needed for salt separation as salt is more expensive now.
+    - Buffed fermentation base recipes they're a reasonable alternative to methanol/carbon dioxide/carbon monoxide from cellulose fiber.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
   Features:

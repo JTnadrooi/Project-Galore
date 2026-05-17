@@ -10,6 +10,8 @@ require("prototypes.voids")
 
 require("prototypes.metal-both")
 require("prototypes.casting")
+require("prototypes.water-treatment")
+require("prototypes.chemistry")
 require("prototypes.sorting")
 require("prototypes.resources")
 require("prototypes.plastic")

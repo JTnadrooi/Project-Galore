@@ -108,3 +108,8 @@ data.raw["recipe"]["angels-fish-pulp-nutrients"].subgroup = "angels-bio-processo
 
 data.raw["recipe"]["vgal-steel-plate-pipe"].order = "a[pipe]-a[pipe]-b"
 data.raw["recipe"]["vgal-steel-plate-pipe-to-ground"].order = "a[pipe]-b[pipe-to-ground]-b"
+
+
+data.raw["fluid"]["angels-water-purified"].order = "b"
+data.raw["fluid"]["angels-water-purified"].subgroup = "angels-water-treatment"
+vgal.subgroup.clean_recipe("angels-water-purified")

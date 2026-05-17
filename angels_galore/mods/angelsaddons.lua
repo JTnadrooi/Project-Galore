@@ -11,7 +11,6 @@ if mods["angelsaddons-bots"] then
         data.raw["item"]["construction-robot"].subgroup = "angels-cargo-bots"
         data.raw["item"]["logistic-robot"].order = "--b"
         data.raw["item"]["logistic-robot"].subgroup = "angels-cargo-bots"
-        return
     end
 end
 

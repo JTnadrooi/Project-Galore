@@ -34,6 +34,7 @@
 | water(na)      | 0.1   |
 | water(aq)      | 0.2   |
 | water(vn)      | 1?    |
+| steam          | 0.05  |
 | ice(fu)        | 100   |
 | ice(sp)        | 50    |
 | ice(aq)        | 2     |

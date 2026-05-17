@@ -126,7 +126,7 @@ vgal.data.extend({
             vgal.icon.get("angels-solid-saw"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
         },
-        energy_required = 1,
+        energy_required = 2,
         technology = { "angels-metallurgy-2", "angels-bio-arboretum-1" },
         ingredients = {
             { "angels-solid-sand", 1 },
@@ -135,7 +135,7 @@ vgal.data.extend({
             { "angels-liquid-molten-steel", 10 },
         },
         results = {
-            { "angels-solid-saw", 5 },
+            { "angels-solid-saw", 6 },
         },
         order = "abb",
         category = "angels-casting",
@@ -216,7 +216,7 @@ vgal.data.extend({
         ingredients = {
             { "angels-solid-sand", 2 },
             { "iron-gear-wheel",   1 },
-            { "pipe",              2 },
+            { "pipe",              1 },
         },
         fluid_ingredients = {
             { "angels-liquid-molten-steel", 10 },

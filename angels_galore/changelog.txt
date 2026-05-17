@@ -3,7 +3,8 @@ Version: 1.0.3
   Bugfixes:
     - Fixed angels addons compats not always running.
   Balancing:
-    - Halved hydrazine needed for rocket fuel capsules.
+    - Halved hydrazine needed for rocket fuel capsules to bring rocket fuel "cost" back to 110.
+    - Seduced salt needed for salt separation as salt is more expensive now.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
   Features:

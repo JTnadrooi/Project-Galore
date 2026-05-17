@@ -710,6 +710,9 @@ for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) d
     vgal.recipe.add_ingredient(metal.pellet, { "angels-solid-clay", 1 })
 end
 
+-- reduce salt needed for sodium recipe as salt is more expensive now
+vgal.recipe.set_ingredient_amount("angels-solid-salt-separation", 5, "angels-solid-salt")
+
 -- commentedbc: just one machine for 1 yellow belt seems a bit to fast
 -- -- increase stone to mineral water speed (og: 1)
 -- data.raw["recipe"]["angels-water-mineralized"].energy_required = 0.5

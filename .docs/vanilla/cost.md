@@ -19,8 +19,8 @@
 
 | ItemID         | Cost  |
 | -------------- | ----- |
-| iron-ore       | 10    |
-| copper-ore     | 10    |
+| iron-ore       | 8     |
+| copper-ore     | 8     |
 | iron-ore(gb)   | 15    |
 | copper-ore(gb) | 15    |
 | tungsten-ore   | 20    |

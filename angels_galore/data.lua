@@ -9,6 +9,7 @@ require("prototypes.subgroups")
 require("prototypes.voids")
 
 require("prototypes.metal-both")
+require("prototypes.casting")
 require("prototypes.sorting")
 require("prototypes.resources")
 require("prototypes.plastic")

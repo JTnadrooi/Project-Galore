@@ -487,6 +487,14 @@ local subgroups = {
             "angels-solid-crystal-full-saw",
             "angels-milling-drum",
             "angels-milling-drum-lubricated",
+        },
+        should_reorder_entries = true,
+    },
+    {
+        name = "recipe-items-2",
+        group = "intermediate-products",
+        order = "cab",
+        entries = {
             "angels-electrode",
             "angels-electrode-used",
             "angels-catalyst-metal-carrier",
@@ -496,9 +504,9 @@ local subgroups = {
         should_reorder_entries = true,
     },
     {
-        name = "recipe-items-filters",
+        name = "recipe-items-3",
         group = "intermediate-products",
-        order = "cab",
+        order = "cac",
         entries = {
             "angels-filter-frame",
             "angels-filter-coal",

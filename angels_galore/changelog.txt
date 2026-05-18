@@ -6,13 +6,17 @@ Version: 1.1.0
     - Added "angels-solid-sodium-hypochlorite-angels-water-purified" recipe.
     - Added "vgal-angels-solid-sodium-chlorate-angels-solid-salt" recipe.
     - Added processed ores from pebbles recipes.
+    - Improved Angels Addons - Bots compat.
   Changes:
     - Made the "vgal-override-vanilla-crafting-speeds" setting default to true.
     - Made it so "vgal-override-vanilla-crafting-speeds" does not change the electric furnace speed to 4 anymore.
   Balancing:
     - Halved hydrazine needed for rocket fuel capsules to bring rocket fuel "cost" back to 110.
     - Seduced salt needed for salt separation as salt is more expensive now.
+    - Buffed the angelsaddons-bots zone extenders (all types) so they aren't that much worse than the bobs variants.
+    - Buffed the angelsaddons-bots tech tree so 2x2 (not 1x1) logistic network chests unlock at chemical science.
     - Buffed fermentation base recipes they're a reasonable alternative to methanol/carbon dioxide/carbon monoxide from cellulose fiber.
+    - Prevent double trash slot count with angelsaddons-bots.
   Bugfixes:
     - Fixed angels addons compats not always running.
 ---------------------------------------------------------------------------------------------------

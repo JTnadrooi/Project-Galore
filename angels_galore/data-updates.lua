@@ -16,7 +16,11 @@ require("overrides.angels-tips-overrides")
 
 require("overrides.angels-locale-overrides")
 
-require("mods.angelsaddons")
+require("mods.angelsaddons-bots")
+require("mods.angelsaddons-cab")
+require("mods.angelsaddons-mobility")
+require("mods.angelsaddons-storage")
 require("mods.angelsinfiniteores")
+
 require("mods.bobmodules")
 require("mods.boblogistics")

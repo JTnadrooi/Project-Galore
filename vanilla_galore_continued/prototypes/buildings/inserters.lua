@@ -6,6 +6,7 @@ vgal.data.extend({
             vgal.icon.get("inserter"),
             vgal.icon.get_in("burner-inserter"),
         },
+        technology = "electronics",
         energy_required = 1,
         ingredients = {
             { "burner-inserter",    1 },

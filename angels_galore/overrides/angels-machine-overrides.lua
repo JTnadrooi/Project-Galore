@@ -172,5 +172,8 @@ do
     vgal.data.deepunhide(data.raw["item"][s_oven.name])
 
     s_oven.crafting_speed = 1
-    s_oven.module_slots = 2
+    s_oven.module_slots   = 2
+    s_oven.energy_usage   = "204kW" -- og: 100kw
+
+    -- oven gets added to metallurgy tech in tech overrides lua file
 end

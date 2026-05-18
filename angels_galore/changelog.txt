@@ -7,12 +7,13 @@ Version: 1.1.0
     - Added processed ores from pebbles recipes.
   Changes:
     - Made the "vgal-override-vanilla-crafting-speeds" setting default to true.
-  Bugfixes:
-    - Fixed angels addons compats not always running.
+    - Made it so "vgal-override-vanilla-crafting-speeds" does not change the electric furnace speed to 4 anymore.
   Balancing:
     - Halved hydrazine needed for rocket fuel capsules to bring rocket fuel "cost" back to 110.
     - Seduced salt needed for salt separation as salt is more expensive now.
     - Buffed fermentation base recipes they're a reasonable alternative to methanol/carbon dioxide/carbon monoxide from cellulose fiber.
+  Bugfixes:
+    - Fixed angels addons compats not always running.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.2
   Features:

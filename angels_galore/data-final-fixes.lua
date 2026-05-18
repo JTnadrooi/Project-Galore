@@ -107,5 +107,4 @@ if settings.startup["vgal-override-vanilla-crafting-speeds"].value then
     data.raw["assembling-machine"]["assembling-machine-1"].crafting_speed = 0.5
     data.raw["assembling-machine"]["assembling-machine-2"].crafting_speed = 1
     data.raw["assembling-machine"]["assembling-machine-3"].crafting_speed = 1.5
-    data.raw["furnace"]["electric-furnace"].crafting_speed = 4
 end

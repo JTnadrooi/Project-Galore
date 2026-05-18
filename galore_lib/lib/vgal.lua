@@ -426,8 +426,30 @@ function vgal.data.deephide(prototype)
     end
 
     if prototype.type == "recipe" then
-        prototype.hide_from_stats = true
         prototype.hide_from_player_crafting = true
+        prototype.enabled = false
+    end
+end
+
+---@param prototype data.PrototypeBase
+function vgal.data.deepunhide(prototype)
+    prototype.hidden = nil
+    prototype.hidden_in_factoriopedia = nil
+    prototype.hide_from_signal_gui = nil
+
+    if prototype.type == "fluid" then
+        prototype.auto_barrel = false
+        if mods["angels_galore"] then
+            local void_recipe = data.raw["recipe"]["angels-chemical-void-" .. prototype.name] or
+                data.raw["recipe"]["angels-water-void-" .. prototype.name]
+            if void_recipe then
+                vgal.data.deepunhide(void_recipe)
+            end
+        end
+    end
+
+    if prototype.type == "recipe" then
+        prototype.hide_from_player_crafting = nil
         prototype.enabled = false
     end
 end

@@ -26,11 +26,11 @@ Angel's Galore is an overhaul based on Angel's mods that focuses on open-ended p
 ## Recommended mods
 
 -   [Angel's Infinite Ores](https://mods.factorio.com/mod/angelsinfiniteores) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Adds tiny infinite ore patches in the center of non-starter ore patches.
--   [Angel's Addons - Robot Logistics](https://mods.factorio.com/mod/angelsaddons-bots) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Adds new early bots and roboport variants. Also contains logistic/construction extenders.
+-   [Angel's Addons - Robot Logistics](https://mods.factorio.com/mod/angelsaddons-bots) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Adds new early bots and roboport variants. Also contains logistic/construction extenders. Content may overlay with the Bob's Logistics mod. (Zone extenders and early robots)
 -   [Angel's Addons - Storage Options](https://mods.factorio.com/mod/angelsaddons-storage) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Adds larger chests.
 -   [Angel's Addons - C.A.B.](https://mods.factorio.com/mod/angelsaddons-cab) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Adds a mobile base type vehicle.
--   [Angel's Addons - Mass Transit](https://mods.factorio.com/mod/angelsaddons-mobility) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Add new higher tier train types themed for petrochem of smelting.
--   [Proper Tier Doubling](https://mods.factorio.com/mod/proper_tier_doubling_port) by [JTnadrooi](https://mods.factorio.com/user/JTnadrooi); Adds proper tier doubling for vanilla buildings and belts.
+-   [Angel's Addons - Mass Transit](https://mods.factorio.com/mod/angelsaddons-mobility) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Add new higher tier train types themed for petrochem of smelting. Content may overlay with the Bob's Logistics mod. (Higher tier trains)
+-   [Proper Tier Doubling](https://mods.factorio.com/mod/proper_tier_doubling_port) by [JTnadrooi (Me)](https://mods.factorio.com/user/JTnadrooi); Adds proper tier doubling for vanilla buildings and belts.
 
 ## Notes
 

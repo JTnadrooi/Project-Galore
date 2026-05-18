@@ -71,27 +71,27 @@ vgal.data.extend({
         order = "ab",
         allow_productivity = false,
     },
-    {
-        name = "angels-stone-crushed-angels-solid-carbon-stone-brick",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("stone-brick"),
-            vgal.icon.get_in("angels-solid-carbon"),
-        },
-        technology = { "angels-metallurgy-2", "angels-coal-processing" },
-        energy_required = 2,
-        ingredients = {
-            { "angels-stone-crushed", 15 },
-            { "angels-solid-carbon",  2 },
-            { "angels-solid-lime",    1 },
-        },
-        results = {
-            { "stone-brick", 5 },
-        },
-        category = "angels-sintering",
+    -- {
+    --     name = "angels-stone-crushed-angels-solid-carbon-stone-brick",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("stone-brick"),
+    --         vgal.icon.get_in("angels-solid-carbon"),
+    --     },
+    --     technology = { "angels-metallurgy-2", "angels-coal-processing" },
+    --     energy_required = 2,
+    --     ingredients = {
+    --         { "angels-stone-crushed", 15 },
+    --         { "angels-solid-carbon",  2 },
+    --         { "angels-solid-lime",    1 },
+    --     },
+    --     results = {
+    --         { "stone-brick", 5 },
+    --     },
+    --     category = "angels-sintering",
 
-        allow_productivity = false,
-    },
+    --     allow_productivity = false,
+    -- },
     {
         name = "agal-hand-mining", -- the vgal prefix gets added anyways
         prefix = "vgal",

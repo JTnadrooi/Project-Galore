@@ -23,3 +23,9 @@ function vgal.locale.get_backup_locale_for_recipeable(recipeable_name, locale_do
 
     return { "?", { "item-" .. locale_domain .. "." .. recipeable_name }, { "entity-" .. locale_domain .. "." .. recipeable_name }, { "fluid-" .. locale_domain .. "." .. recipeable_name } }
 end
+
+---@param prototype data.PrototypeBase
+function vgal.locale.clear(prototype)
+    prototype.localised_name = nil
+    prototype.localised_description = nil
+end

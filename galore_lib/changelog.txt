@@ -1,11 +1,12 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.5
   Features:
-    - Improved recipe.enabled handling
+    - Improved recipe.enabled handling.
+    - Improved Angel's void recipe check.
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.4
   Features:
-    - Added quality mod module to vgal.defines.modules define
+    - Added quality mod module to vgal.defines.modules define.
     - Fixed define naming.
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.3

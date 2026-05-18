@@ -417,7 +417,8 @@ function vgal.data.deephide(prototype)
     if prototype.type == "fluid" then
         prototype.auto_barrel = false
         if mods["angels_galore"] then
-            local void_recipe = data.raw["recipe"]["angels-chemical-void-" .. prototype.name]
+            local void_recipe = data.raw["recipe"]["angels-chemical-void-" .. prototype.name] or
+                data.raw["recipe"]["angels-water-void-" .. prototype.name]
             if void_recipe then
                 vgal.data.deephide(void_recipe)
             end

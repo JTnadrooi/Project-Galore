@@ -188,6 +188,9 @@ vgal.tech.remove_unit("angels-explosives-1", "military-science-pack")
 vgal.tech.remove_unit("angels-explosives-2", "military-science-pack")
 vgal.tech.remove_prerequisite("angels-explosives-1", "military-science-pack")
 
+-- add sintering oven unlock to metallurgy 2
+vgal.tech.add_recipe("angels-metallurgy-2", "angels-sintering-oven")
+
 -- BIO SCIENCE
 -- add initial
 data.raw["technology"]["angels-gardens"].prerequisites = { "vgal-biological-science-pack" }

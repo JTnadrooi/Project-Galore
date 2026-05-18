@@ -25,6 +25,12 @@ do
         { "stone-brick",        20 },
         { "pipe",               12 },
     })
+    data.raw["recipe"]["angels-sintering-oven"].ingredients = vgal.build.table({
+        { "steel-plate",        12 },
+        { "electronic-circuit", 5 },
+        { "stone-brick",        20 },
+        { "pipe",               5 },
+    })
     data.raw["recipe"]["angels-induction-furnace"].ingredients = vgal.build.table({
         { "iron-plate",         10 },
         { "electronic-circuit", 5 },

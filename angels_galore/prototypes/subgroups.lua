@@ -12,7 +12,8 @@ local subgroups = {
         group = "production",
         order = "y-ze",
         entries = {
-            "angels-blast-furnace", "angels-chemical-furnace", "angels-induction-furnace", "angels-casting-machine",
+            "angels-blast-furnace", "angels-sintering-oven", "angels-chemical-furnace", "angels-induction-furnace",
+            "angels-casting-machine",
             "angels-strand-casting-machine",
             "angels-ore-processing-machine",
             "angels-pellet-press", "angels-powder-mixer", "angels-powderizer",

@@ -147,6 +147,6 @@ agal.defines.machine_max_tiers = {
     ["angels-powder-mixer"] = 1,
     ["angels-blast-furnace"] = 1,
     ["angels-chemical-furnace"] = 1,
-    ["angels-sintering-oven"] = 0,        -- removes it.
+    ["angels-sintering-oven"] = 1,
     ["angels-electro-whinning-cell"] = 0, -- removes it.
 }

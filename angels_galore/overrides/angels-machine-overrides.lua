@@ -131,15 +131,6 @@ vgal.data.deephide(data.raw["assembling-machine"]["angels-bio-generator-desert-1
 vgal.data.deephide(data.raw["item"]["angels-bio-generator-desert-1"])
 vgal.data.trim("angels-bio-generator-desert-1")
 
--- remove sintering ovens
--- for i = 1, 5 do
---     if data.raw["assembling-machine"]["angels-sintering-oven-" .. i] then
---         vgal.data.deep_hide(data.raw["assembling-machine"]["angels-sintering-oven-" .. i])
---         vgal.data.deep_hide(data.raw["item"]["angels-sintering-oven-" .. i])
---         vgal.data.trim("angels-sintering-oven-" .. i)
---     end
--- end
-
 -- remove t2 offshore pump: sea pump (not viscous mud pump)
 vgal.data.deephide(data.raw["mining-drill"]["angels-sea-pump"])
 vgal.data.deephide(data.raw["offshore-pump"]["angels-sea-pump-placeable"])
@@ -171,3 +162,15 @@ data.raw["assembling-machine"]["angels-bio-refugium-puffer"].working_sound = {
     sound = { filename = "__angelspetrochemgraphics__/sound/separator.ogg", volume = 0.65 },
     idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },
 }
+
+-- return of the sintering oven
+do
+    local s_oven = data.raw["assembling-machine"]["angels-sintering-oven"]
+
+    vgal.data.deepunhide(s_oven)
+    vgal.data.deepunhide(data.raw["recipe"][s_oven.name])
+    vgal.data.deepunhide(data.raw["item"][s_oven.name])
+
+    s_oven.crafting_speed = 1
+    s_oven.module_slots = 2
+end

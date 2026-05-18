@@ -971,3 +971,5 @@ vgal.tech.use_tech_locale("angels-cooling")
 vgal.tech.use_tech_locale("angels-coolant-1")
 vgal.tech.use_tech_locale("angels-powder-metallurgy-2")
 vgal.tech.use_tech_locale("angels-strand-casting-1")
+
+vgal.locale.clear(data.raw["recipe"]["angels-sintering-oven"])

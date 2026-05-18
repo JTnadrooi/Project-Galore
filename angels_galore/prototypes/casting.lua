@@ -342,6 +342,28 @@ vgal.data.extend({
 
         localised_description = { "agal-internal.insert-casting-recipe-desc" },
     },
+    {
+        name = "angels-liquid-molten-steel-angels-liquid-molten-copper-heat-pipe",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("heat-pipe"),
+            vgal.icon.get_in("angels-liquid-molten-steel"),
+            vgal.icon.get_in2("angels-liquid-molten-copper"),
+        },
+        energy_required = 1,
+        technology = { "angels-metallurgy-2", "nuclear-power" },
+        ingredients = {
+            { "angels-solid-sand", 5 },
+        },
+        fluid_ingredients = {
+            { "angels-liquid-molten-steel",  85 },
+            { "angels-liquid-molten-copper", 200 },
+        },
+        results = {
+            { "heat-pipe", 1 },
+        },
+        category = "angels-casting",
+    },
 }, {
     type = "recipe",
 })

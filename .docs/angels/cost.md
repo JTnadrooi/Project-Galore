@@ -1,5 +1,7 @@
 # Item and Fluid Costs
 
+This list is based on the vanilla cost list. While most items are more complex to produce in Angel's compared to vanilla, costs are relative, so no adjustments are necessary. Exceptions exist: for any item IDs present in both the vanilla cost list and this list, the values in this list take precedence.
+
 ## Legend
 
 | Icon | Meaning                                      |

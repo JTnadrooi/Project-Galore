@@ -1,5 +1,7 @@
 # Item and Fluid Costs
 
+A list contianing all item/fluid ids and their "cost". Very usefull when balancing alternate recipes.
+
 ## Legend
 
 | Icon | Meaning                                      |

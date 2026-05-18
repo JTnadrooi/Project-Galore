@@ -87,16 +87,16 @@ vgal.data.extend({
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("angels-filter-frame"),
-            vgal.icon.get_in("angels-liquid-molten-iron"),
+            vgal.icon.get_in("angels-liquid-molten-steel"),
         },
         energy_required = 1,
         technology = { "angels-metallurgy-2", "angels-slag-processing-1" },
         ingredients = {
             { "angels-solid-sand", 1 },
+            { "iron-plate",        2 },
         },
         fluid_ingredients = {
-            { "angels-liquid-molten-iron",  15 },
-            { "angels-liquid-molten-steel", 20 },
+            { "angels-liquid-molten-steel", 15 },
         },
         results = {
             { "angels-filter-frame", 2 },
@@ -191,22 +191,23 @@ vgal.data.extend({
         icons = vgal.icon.register {
             vgal.icon.get("low-density-structure"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
-            vgal.icon.get_in2("angels-liquid-molten-copper"),
         },
         energy_required = 12,
         technology = { "low-density-structure", "angels-metallurgy-2", },
         ingredients = {
             { "angels-solid-sand", 10 },
             { "plastic-bar",       5 },
+            { "copper-plate",      18 },
         },
         fluid_ingredients = {
-            { "angels-liquid-molten-copper", 180 },
-            { "angels-liquid-molten-steel",  25 },
+            { "angels-liquid-molten-steel", 25 },
         },
         results = {
             { "low-density-structure", 1 },
         },
         category = "angels-casting",
+
+        localised_description = { "agal-internal.insert-casting-recipe-desc" },
     },
     {
         name = "angels-liquid-molten-steel-engine-unit",
@@ -353,21 +354,22 @@ vgal.data.extend({
         icons = vgal.icon.register {
             vgal.icon.get("heat-pipe"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
-            vgal.icon.get_in2("angels-liquid-molten-copper"),
         },
         energy_required = 1,
         technology = { "angels-metallurgy-2", "nuclear-power" },
         ingredients = {
             { "angels-solid-sand", 5 },
+            { "copper-plate",      25 },
         },
         fluid_ingredients = {
-            { "angels-liquid-molten-steel",  75 },
-            { "angels-liquid-molten-copper", 250 },
+            { "angels-liquid-molten-steel", 75 },
         },
         results = {
             { "heat-pipe", 1 },
         },
         category = "angels-casting",
+
+        localised_description = { "agal-internal.insert-casting-recipe-desc" },
     },
 }, {
     type = "recipe",

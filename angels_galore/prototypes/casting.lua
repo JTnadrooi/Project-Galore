@@ -1,4 +1,5 @@
 vgal.data.extend({
+    -- simple intermediates
     {
         name = "angels-liquid-molten-iron-iron-gear-wheel",
         prefix = "vgal",
@@ -32,13 +33,35 @@ vgal.data.extend({
             { "angels-solid-sand", 1 },
         },
         fluid_ingredients = {
-            { "angels-liquid-molten-iron", 30 },
+            { "angels-liquid-molten-iron", 25 },
         },
         results = {
-            { "iron-stick", 6 },
+            { "iron-stick", 5 },
         },
         category = "angels-casting",
     },
+    {
+        name = "angels-liquid-molten-copper-copper-cable",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("copper-cable"),
+            vgal.icon.get_in("angels-liquid-molten-copper"),
+        },
+        energy_required = 1,
+        technology = "angels-metallurgy-2",
+        ingredients = {
+            { "angels-solid-sand", 1 },
+        },
+        fluid_ingredients = {
+            { "angels-liquid-molten-copper", 25 },
+        },
+        results = {
+            { "copper-cable", 5 },
+        },
+        category = "angels-casting",
+    },
+
+    -- recipe items
     {
         name = "angels-liquid-molten-iron-angels-catalyst-metal-carrier",
         prefix = "vgal",
@@ -49,7 +72,7 @@ vgal.data.extend({
         energy_required = 1,
         technology = { "angels-metallurgy-2", "angels-basic-chemistry-3" },
         ingredients = {
-            { "angels-solid-sand", 2 },
+            { "angels-solid-sand", 5 },
         },
         fluid_ingredients = {
             { "angels-liquid-molten-iron", 50 },
@@ -93,7 +116,7 @@ vgal.data.extend({
             { "steel-plate", 1 },
         },
         results = {
-            { "angels-solid-saw", 6 },
+            { "angels-solid-saw", 5 },
         },
         category = "crafting",
         order = "aba",
@@ -135,31 +158,33 @@ vgal.data.extend({
             { "angels-liquid-molten-steel", 10 },
         },
         results = {
-            { "angels-solid-saw", 6 },
+            { "angels-solid-saw", 5 },
         },
         order = "abb",
         category = "angels-casting",
     },
     {
-        name = "angels-liquid-molten-copper-copper-cable",
+        name = "angels-liquid-molten-steel-barrel",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("copper-cable"),
-            vgal.icon.get_in("angels-liquid-molten-copper"),
+            vgal.icon.get("barrel"),
+            vgal.icon.get_in("angels-liquid-molten-steel"),
         },
         energy_required = 1,
-        technology = "angels-metallurgy-2",
+        technology = { "angels-metallurgy-2", "fluid-handling" },
         ingredients = {
             { "angels-solid-sand", 1 },
         },
         fluid_ingredients = {
-            { "angels-liquid-molten-copper", 25 },
+            { "angels-liquid-molten-steel", 20 },
         },
         results = {
-            { "copper-cable", 5 },
+            { "barrel", 2 },
         },
         category = "angels-casting",
     },
+
+    -- complex intermediates
     {
         name = "angels-liquid-molten-steel-angels-liquid-molten-copper-low-density-structure",
         prefix = "vgal",
@@ -168,7 +193,7 @@ vgal.data.extend({
             vgal.icon.get_in("angels-liquid-molten-steel"),
             vgal.icon.get_in2("angels-liquid-molten-copper"),
         },
-        energy_required = 10,
+        energy_required = 12,
         technology = { "low-density-structure", "angels-metallurgy-2", },
         ingredients = {
             { "angels-solid-sand", 10 },
@@ -180,27 +205,6 @@ vgal.data.extend({
         },
         results = {
             { "low-density-structure", 1 },
-        },
-        category = "angels-casting",
-    },
-
-    {
-        name = "angels-liquid-molten-steel-barrel",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("barrel"),
-            vgal.icon.get_in("angels-liquid-molten-steel"),
-        },
-        energy_required = 2,
-        technology = { "angels-metallurgy-2", "fluid-handling" },
-        ingredients = {
-            { "angels-solid-sand", 1 },
-        },
-        fluid_ingredients = {
-            { "angels-liquid-molten-steel", 25 },
-        },
-        results = {
-            { "barrel", 3 },
         },
         category = "angels-casting",
     },
@@ -216,7 +220,7 @@ vgal.data.extend({
         ingredients = {
             { "angels-solid-sand", 2 },
             { "iron-gear-wheel",   1 },
-            { "pipe",              1 },
+            { "pipe",              2 },
         },
         fluid_ingredients = {
             { "angels-liquid-molten-steel", 10 },
@@ -228,6 +232,8 @@ vgal.data.extend({
 
         localised_description = { "agal-internal.insert-casting-recipe-desc" },
     },
+
+    -- placeables/buildings
     {
         name = "angels-liquid-molten-iron-burner-inserter",
         prefix = "vgal",
@@ -242,7 +248,7 @@ vgal.data.extend({
             { "iron-gear-wheel",   5 },
         },
         fluid_ingredients = {
-            { "angels-liquid-molten-iron", 40 },
+            { "angels-liquid-molten-iron", 45 },
         },
         results = {
             { "burner-inserter", 5 },
@@ -251,7 +257,6 @@ vgal.data.extend({
 
         localised_description = { "agal-internal.insert-casting-recipe-desc" },
     },
-
     {
         name = "angels-liquid-molten-steel-pipe",
         prefix = "vgal",
@@ -259,16 +264,16 @@ vgal.data.extend({
             vgal.icon.get("pipe"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
         },
-        energy_required = 1.5,
+        energy_required = 2,
         technology = "angels-metallurgy-2",
         ingredients = {
             { "angels-solid-sand", 1 },
         },
         fluid_ingredients = {
-            { "angels-liquid-molten-steel", 15 },
+            { "angels-liquid-molten-steel", 10 },
         },
         results = {
-            { "pipe", 6 },
+            { "pipe", 5 },
         },
         order = "a[pipe]-a[pipe]-bb",
         category = "angels-casting",
@@ -280,16 +285,16 @@ vgal.data.extend({
             vgal.icon.get("pipe"),
             vgal.icon.get_in("angels-liquid-molten-iron"),
         },
-        energy_required = 2,
+        energy_required = 1,
         technology = "angels-metallurgy-2",
         ingredients = {
             { "angels-solid-sand", 1 },
         },
         fluid_ingredients = {
-            { "angels-liquid-molten-iron", 75 },
+            { "angels-liquid-molten-iron", 50 },
         },
         results = {
-            { "pipe", 8 },
+            { "pipe", 5 },
         },
         order = "a[pipe]-a[pipe]-ab",
         category = "angels-casting",
@@ -356,8 +361,8 @@ vgal.data.extend({
             { "angels-solid-sand", 5 },
         },
         fluid_ingredients = {
-            { "angels-liquid-molten-steel",  85 },
-            { "angels-liquid-molten-copper", 200 },
+            { "angels-liquid-molten-steel",  75 },
+            { "angels-liquid-molten-copper", 250 },
         },
         results = {
             { "heat-pipe", 1 },

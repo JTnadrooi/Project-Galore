@@ -4,6 +4,7 @@ Version: 1.1.0
     - Added casting recipes.
     - Added "angels-solid-sodium-hypochlorite-angels-water-purified" recipe.
     - Added "vgal-angels-solid-sodium-chlorate-angels-solid-salt" recipe.
+    - Added processed ores from pebbles recipes.
   Changes:
     - Made the "vgal-override-vanilla-crafting-speeds" setting default to true.
   Bugfixes:

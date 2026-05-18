@@ -20,6 +20,23 @@ for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) d
             },
             category = "angels-pellet-pressing",
         },
+        {
+            name = metal.pebbles .. "-" .. metal.processed,
+            prefix = "vgal",
+            icons = vgal.icon.register {
+                vgal.icon.get(metal.processed),
+                vgal.icon.get_in(metal.pebbles),
+            },
+            energy_required = 1,
+            technology = "angels-" .. metal.name .. "-smelting-2",
+            ingredients = {
+                { metal.pebbles, 5 },
+            },
+            results = {
+                { metal.processed, 1 },
+            },
+            category = "angels-ore-processing",
+        },
         --- nugget/slag and pebbles recipes ---
         {
             name = metal.nugget .. "-" .. metal.ore,

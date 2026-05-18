@@ -60,7 +60,7 @@
 | ----------------------- | ---- |
 | angels-solid-sand       | 2    |
 | angels-solid-limestone  | 3    |
-| angels-solid-lime       | 4    |
+| angels-solid-lime       | 5    |
 | angels-solid-clay       | 3    |
 | angels-solid-mud(b)     | 6    |
 | angels-stone-crushed(b) | 4    |

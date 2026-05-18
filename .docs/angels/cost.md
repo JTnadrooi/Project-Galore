@@ -51,7 +51,7 @@
 | angels-water-saline           | 0.5  |
 | angels-water-mineralized      | 0.5  |
 | angels-water-purified         | 0.1  |
-| angels-water-waste-yellow(b)  | 0.3  |
+| angels-water-yellow-waste(b)  | 0.3  |
 | angels-thermal-water          | 0.3  |
 
 ## Sediments/Stone

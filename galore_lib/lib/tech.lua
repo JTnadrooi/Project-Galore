@@ -126,6 +126,20 @@ function vgal.tech.remove_recipe(tech_name, recipe_name)
 end
 
 ---@param tech_name string
+---@param effect_type string
+function vgal.tech.remove_effect_with_type(tech_name, effect_type)
+    vgal.throw.if_param_nil(effect_type, "recipe_name")
+
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+    for index, ingredient in ipairs(tech.effects) do
+        if ingredient.type == effect_type then
+            table.remove(tech.effects, index)
+            break
+        end
+    end
+end
+
+---@param tech_name string
 ---@param prerequisite string
 function vgal.tech.add_prerequisite(tech_name, prerequisite)
     local tech = vgal.throw.if_tech_not_found(tech_name)

@@ -52,8 +52,11 @@ end
 data.raw["roboport"]["angels-zone-expander-3"].logistics_radius = 35 / 2
 data.raw["roboport"]["angels-relay-station-3"].logistics_radius = 35 / 2
 
----@diagnostic disable-next-line: assign-type-mismatch
-for expander_name in vgal.table.iter_all(logistic_expanders, construction_expanders, relay_stations, { "angels-cargo-box", "angels-cargo-roboport", "angels-cargo-hub" }) do
+for expander_name in vgal.table.iter_all(logistic_expanders, construction_expanders, relay_stations, {
+    "angels-cargo-box",
+    "angels-cargo-roboport",
+    "angels-cargo-hub",
+}) do
     local expander = data.raw["roboport"][expander_name]
 
     expander.construction_radius = math.max(expander.construction_radius, expander.logistics_radius)

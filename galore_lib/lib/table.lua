@@ -308,7 +308,7 @@ function vgal.table.get_multiplied(input, multiplier, entry_name)
     end
 end
 
----@param ... table[]|any[][]
+---@param ... table|any[]
 ---@return function
 function vgal.table.iter_all(...)
     local tables = { ... }

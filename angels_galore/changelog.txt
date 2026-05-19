@@ -3,11 +3,12 @@ Version: 1.1.0
   Features:
     - Added casting recipes.
     - Added sintering oven and stone sintering recipe.
-    - Added "angels-solid-sodium-hypochlorite-angels-water-purified" recipe.
-    - Added "vgal-angels-solid-sodium-chlorate-angels-solid-salt" recipe.
+    - Added "vgal-angels-solid-sodium-hypochlorite-angels-water-purified" recipe.
+    - Added sodium chlorate indirect void recipes.
     - Added processed ores from pebbles recipes.
     - Improved Angel's Addons - Bots compat.
     - Improved Angel's machines mining_time/removing speeds.
+    - [BOTSADDON] Added a setting that upgrades early bots to match the strength of vanilla bots, while also buffing the vanilla bots themselves to preserve progression.
   Changes:
     - Made the "vgal-override-vanilla-crafting-speeds" setting default to true.
     - Made it so "vgal-override-vanilla-crafting-speeds" does not change the electric furnace speed to 4 anymore.

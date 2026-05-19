@@ -94,3 +94,34 @@ for _, tech_name in ipairs({ "angels-cargo-robots", "logistic-robotics" }) do
         end
     end
 end
+
+if settings.startup["vgal-addonbots-buff-bots"].value then
+    ---@param bot1 data.ConstructionRobotPrototype|data.LogisticRobotPrototype
+    ---@param bot2 data.ConstructionRobotPrototype|data.LogisticRobotPrototype
+    ---@param multiplier number
+    local function process_bots(bot1, bot2, multiplier)
+        bot1.speed = bot2.speed * multiplier
+        -- bot1.energy_per_move = vgal.table.multiply_energy(bot2.energy_per_move, 1 / multiplier)
+        bot1.energy_per_move = bot2.energy_per_move
+        bot1.energy_per_tick = bot2.energy_per_tick
+    end
+
+    local c_multiplier = 13 / 8.6
+    local l_multiplier = 10.8 / 4.3
+    local t2l_multiplier = 2
+
+    local v_c_bot = data.raw["construction-robot"]["construction-robot"]
+    local v_l_bot = data.raw["logistic-robot"]["logistic-robot"]
+
+    local a_c_bot = data.raw["construction-robot"]["angels-construction-robot"]
+    local a_l_bot = data.raw["logistic-robot"]["angels-cargo-robot"]
+    local a_t2l_bot = data.raw["logistic-robot"]["angels-cargo-robot-2"]
+
+    process_bots(a_c_bot, v_c_bot, 1)
+    process_bots(a_l_bot, v_l_bot, 1)
+
+    process_bots(v_c_bot, v_c_bot, c_multiplier)
+    process_bots(v_l_bot, v_l_bot, l_multiplier)
+
+    process_bots(a_t2l_bot, a_t2l_bot, t2l_multiplier)
+end

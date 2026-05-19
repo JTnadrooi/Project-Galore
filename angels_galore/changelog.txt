@@ -12,6 +12,7 @@ Version: 1.1.0
   Changes:
     - Made the "vgal-override-vanilla-crafting-speeds" setting default to true.
     - Made it so "vgal-override-vanilla-crafting-speeds" does not change the electric furnace speed to 4 anymore.
+    - Removed powder prerequisites from metal 2 techs.
   Balancing:
     - Halved hydrazine needed for rocket fuel capsules to bring rocket fuel "cost" back to 110.
     - Seduced salt needed for salt separation as salt is more expensive now.

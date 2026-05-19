@@ -191,6 +191,10 @@ vgal.tech.remove_prerequisite("angels-explosives-1", "military-science-pack")
 -- add sintering oven unlock to metallurgy 2
 vgal.tech.add_recipe("angels-metallurgy-2", "angels-sintering-oven")
 
+-- remove powder prereq from metal 2 techs
+vgal.tech.remove_prerequisite("angels-iron-smelting-2", "angels-powder-metallurgy-2")
+vgal.tech.remove_prerequisite("angels-copper-smelting-2", "angels-powder-metallurgy-2")
+
 -- BIO SCIENCE
 -- add initial
 data.raw["technology"]["angels-gardens"].prerequisites = { "vgal-biological-science-pack" }

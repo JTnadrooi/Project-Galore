@@ -242,13 +242,9 @@ data.raw["technology"]["angels-aluminium-smelting-1"].prerequisites = {}
 
 -- mark empty techs for splicing (can't do this in final-fixes bc of galorelib, but this should work)
 -- AND remove hidden effects, I could use queue_to_clean... hmm...
-local function startsWith(str, prefix)
-    return string.sub(str, 1, #prefix) == prefix
-end
-
 for _, tech in pairs(data.raw["technology"]) do
-    if startsWith(tech.name, "angels")
-        and not startsWith(tech.name, "angels-hidden")
+    if vgal.string.starts_with(tech.name, "angels")
+        and not vgal.string.starts_with(tech.name, "angels-hidden")
         and tech.effects then
         local tech_is_without_relevant_effects = true
 
@@ -300,7 +296,7 @@ local techs_with_tier = {}
 local tech_adjustments = {}
 
 for _, tech in pairs(data.raw["technology"]) do
-    if startsWith(tech.name, "angels") and tech.unit and tech.unit.ingredients and tech.unit.count and not tech.hidden and not vgal.tech.techs_to_splice[tech.name] then
+    if vgal.string.starts_with(tech.name, "angels") and tech.unit and tech.unit.ingredients and tech.unit.count and not tech.hidden and not vgal.tech.techs_to_splice[tech.name] then
         local is_icon_tech = false
         local ingredient_count = #tech.unit.ingredients
         local unit_time = tech.unit.time

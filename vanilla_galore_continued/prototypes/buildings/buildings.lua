@@ -357,24 +357,24 @@ vgal.data.extend({
         },
         category = "crafting",
     },
-    {
-        name = "stone-brick-burner-mining-drill",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("burner-mining-drill"),
-            vgal.icon.get_in("stone-brick"),
-        },
-        energy_required = 2,
-        ingredients = {
-            { "stone-brick",     2 },
-            { "iron-plate",      2 },
-            { "iron-gear-wheel", 3 },
-        },
-        results = {
-            { "burner-mining-drill", 1 },
-        },
-        category = "crafting",
-    },
+    -- {
+    --     name = "stone-brick-burner-mining-drill",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("burner-mining-drill"),
+    --         vgal.icon.get_in("stone-brick"),
+    --     },
+    --     energy_required = 2,
+    --     ingredients = {
+    --         { "stone-brick",     2 },
+    --         { "iron-plate",      2 },
+    --         { "iron-gear-wheel", 3 },
+    --     },
+    --     results = {
+    --         { "burner-mining-drill", 1 },
+    --     },
+    --     category = "crafting",
+    -- },
     {
         name = "burner-mining-drill-electric-mining-drill",
         prefix = "vgal",

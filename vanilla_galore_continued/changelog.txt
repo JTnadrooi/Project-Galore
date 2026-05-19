@@ -2,7 +2,6 @@
 Version: 1.3.9
   Features:
     - Added "vgal-burner-inserter-inserter" recipe.
-    - Added "vgal-stone-brick-burner-mining-drill" recipe.
   Changes:
     - Changed creosote mention in locale to just heavy oil.
 ---------------------------------------------------------------------------------------------------

@@ -6,7 +6,8 @@ Version: 1.1.0
     - Added "angels-solid-sodium-hypochlorite-angels-water-purified" recipe.
     - Added "vgal-angels-solid-sodium-chlorate-angels-solid-salt" recipe.
     - Added processed ores from pebbles recipes.
-    - Improved Angels Addons - Bots compat.
+    - Improved Angel's Addons - Bots compat.
+    - Improved Angel's machines mining_time/removing speeds.
   Changes:
     - Made the "vgal-override-vanilla-crafting-speeds" setting default to true.
     - Made it so "vgal-override-vanilla-crafting-speeds" does not change the electric furnace speed to 4 anymore.

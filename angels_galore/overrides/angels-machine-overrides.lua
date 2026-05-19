@@ -177,3 +177,29 @@ do
 
     -- oven gets added to metallurgy tech in tech overrides lua file
 end
+
+-- fix machine mining speeds
+do
+    local baseline = { 0.2, 3 } -- from assembling machine 1
+
+    local function fix_machine(machine)
+        if machine.minable then
+            local raw_value = baseline[1] * (vgal.entity.get_size(machine) / baseline[2])
+
+            -- round to nearest multiple of 0.05
+            machine.minable.mining_time = math.floor(raw_value * 20 + 0.5) / 20
+        end
+    end
+
+    for _, machine in pairs(data.raw["assembling-machine"]) do
+        if vgal.string.starts_with(machine.name, "angels") then
+            fix_machine(machine)
+        end
+    end
+
+    for _, machine in pairs(data.raw["furnace"]) do
+        if vgal.string.starts_with(machine.name, "angels") then
+            fix_machine(machine)
+        end
+    end
+end

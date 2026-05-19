@@ -381,6 +381,14 @@ function vgal.table.extend_single(target_table, entry, key_name)
     target_table[entry[key_name]] = entry
 end
 
+---@param src data.Energy
+---@param multiplier number
+---@return data.Energy
+function vgal.table.multiply_energy(src, multiplier)
+    local num, unit = src:match("(%d+%.?%d*)(%a+)")
+    return (num * multiplier) .. unit
+end
+
 ---@param target_array any[]
 ---@return any[]
 function vgal.table.remove_duplicates(target_array)

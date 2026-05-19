@@ -15,7 +15,7 @@ Version: 1.1.0
   Balancing:
     - Halved hydrazine needed for rocket fuel capsules to bring rocket fuel "cost" back to 110.
     - Seduced salt needed for salt separation as salt is more expensive now.
-    - Buffed fermentation base recipes they're a reasonable alternative to methanol/carbon dioxide/carbon monoxide from cellulose fiber.
+    - Buffed fermentation base recipes so they're a reasonable alternative to methanol/carbon dioxide/carbon monoxide from cellulose fiber.
     - Prevent double trash slot count with angelsaddons-bots.
     - [BOTSADDON] Buffed zone extenders (all types) so they aren't that much worse than the bobs variants.
     - [BOTSADDON] Made it so 2x2 (not 1x1) logistic network chests unlock at chemical science.
@@ -30,7 +30,7 @@ Version: 1.0.2
     - Added "vgal-angels-tree-seed-angels-cellulose-fiber" recipe.
     - Added organic binder pellet recipes.
   Bugfixes:
-    - Fixed angels cooling tech not depending on fluid handing even though cooling tower requires pumps.
+    - Fixed angels cooling tech not depending on fluid handling even though cooling tower requires pumps.
     - Fixed mistiered tech names.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.1

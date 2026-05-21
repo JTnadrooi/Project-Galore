@@ -121,6 +121,7 @@ A list contianing all item/fluid ids and their "cost". Very usefull when balanci
 | foundry                   | i-5170, r-7760 |
 | centrifuge                | 15700          |
 | pipe                      | 10             |
+| pump                      | 150            |
 | transport-belt            | 15             |
 | fast-transport-belt       | 115            |
 | express-transport-belt    | 365            |
@@ -189,7 +190,7 @@ A list contianing all item/fluid ids and their "cost". Very usefull when balanci
 | nuclear-fuel      | 900  |
 | fusion-power-cell | 1200 |
 
-## Science Packs
+## Tools/Science packs
 
 | ItemID                       | Cost           |
 | ---------------------------- | -------------- |
@@ -205,6 +206,7 @@ A list contianing all item/fluid ids and their "cost". Very usefull when balanci
 | agricultural-science-pack    | i-180, r-260   |
 | cryogenic-science-pack       | 175            |
 | promethium-science-pack      | null           |
+| repair-pack                  | 90             |
 
 ## Vehicles and Transport
 

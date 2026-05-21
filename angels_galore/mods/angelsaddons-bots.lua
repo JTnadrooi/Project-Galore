@@ -102,8 +102,8 @@ if settings.startup["vgal-addonbots-buff-bots"].value then
     local function process_bots(bot1, bot2, multiplier)
         bot1.speed = bot2.speed * multiplier
         -- bot1.energy_per_move = vgal.table.multiply_energy(bot2.energy_per_move, 1 / multiplier)
-        bot1.energy_per_move = bot2.energy_per_move
-        bot1.energy_per_tick = bot2.energy_per_tick
+        -- bot1.energy_per_move = bot2.energy_per_move
+        -- bot1.energy_per_tick = bot2.energy_per_tick
     end
 
     local c_multiplier = 13 / 8.6

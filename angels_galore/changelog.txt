@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+  Balancing:
+    - [BOTSADDON] Buffed charger/relay building speeds so they are faster than roboports in terms of charging speed/tile.
+  Bugfixes:
+    - [BOTSADDON] Fixed early bots using too much moving energy.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Features:
     - Added casting recipes.

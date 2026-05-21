@@ -51,6 +51,25 @@ for tier, relay_station_name in ipairs(relay_stations) do
     end
 end
 
+-- buff charging speeds so they are better than roboports for purelly charging
+for tier, relay_station_name in ipairs(relay_stations) do
+    local relay_station = data.raw["roboport"][relay_station_name]
+
+    local multiplier = 5 + ((tier - 1))
+
+    relay_station.charging_energy = vgal.table.multiply_energy(relay_station.charging_energy, multiplier)
+
+    if relay_station.energy_source and relay_station.energy_source.input_flow_limit then
+        relay_station.energy_source.input_flow_limit = vgal.table.multiply_energy(
+            relay_station.energy_source.input_flow_limit, multiplier)
+    end
+end
+
+-- remove charging station as it has no purpose
+vgal.data.trim("angels-charging-station")
+vgal.data.deephide(data.raw["item"]["angels-charging-station"])
+vgal.data.deephide(data.raw["roboport"]["angels-charging-station"])
+
 -- fix half tile roboport ranges
 -- / 2 because thats how it works
 data.raw["roboport"]["angels-zone-expander-3"].logistics_radius = 35 / 2

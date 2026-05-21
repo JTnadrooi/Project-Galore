@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.0
+  Features:
+    - a
+  Balancing:
+    - "vgal-plastic-bar-repair-pack" electronic circuit cost; 1 -> 2
+---------------------------------------------------------------------------------------------------
 Version: 1.3.9
   Features:
     - Added "vgal-burner-inserter-inserter" recipe.

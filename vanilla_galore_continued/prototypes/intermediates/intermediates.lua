@@ -103,11 +103,11 @@ vgal.data.extend({
         technology = "plastics",
         energy_required = 1,
         ingredients = {
-            { "electronic-circuit", 1 },
-            { "plastic-bar",        1 }
+            { "electronic-circuit", 2 }, -- 50
+            { "plastic-bar",        1 }  -- 15+
         },
         results = {
-            { "repair-pack", 1 },
+            { "repair-pack", 1 }, -- 90
         },
     },
     {

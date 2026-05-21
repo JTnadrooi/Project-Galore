@@ -127,7 +127,7 @@ This list is based on the vanilla cost list. While most items are more complex t
 | angels-gas-acid(b)              | 1     |
 | angels-gas-hydrogen-fluoride(b) | 4     |
 | angels-liquid-hydrofluoric-acid | 7     |
-| angels-solid-calcium-sulfate    | 675!! |
+| angels-solid-calcium-sulfate    | 675?? |
 | angels-fluorite-ore             | 180   |
 
 ## Petrochem

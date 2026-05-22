@@ -90,6 +90,7 @@ A list contianing all item/fluid ids and their "cost". Very usefull when balanci
 | ------------------------- | -------------- |
 | big-electric-pole         | 310            |
 | medium-electric-pole      | 130            |
+| substation                | 1030           |
 | inserter                  | 55             |
 | burner-inserter           | 30             |
 | fast-inserter             | 125            |
@@ -138,6 +139,7 @@ A list contianing all item/fluid ids and their "cost". Very usefull when balanci
 | refined-concrete          | 35             |
 | train-stop                | 365            |
 | rail                      | 32             |
+| rail-signal               | 75             |
 | lab                       | 510            |
 | space-platform-foundation | 1100           |
 | module-t1 (2.0)           | 625            |
@@ -151,10 +153,13 @@ A list contianing all item/fluid ids and their "cost". Very usefull when balanci
 | grenade                  | 150   |
 | stone-wall               | 100   |
 | gate                     | 250   |
+| land-mine                | 80    |
 | firearm-magazine         | 40    |
 | piercing-rounds-magazine | 75    |
+| rocket                   | 35    |
 | railgun-ammo             | 330   |
 | gun-turret               | 500   |
+| laser-turret             | 2100  |
 | flamethrower-turret      | 2350  |
 | artillery-turret(base)   | 6520  |
 | artillery-turret(sa)     | 50240 |
@@ -162,6 +167,8 @@ A list contianing all item/fluid ids and their "cost". Very usefull when balanci
 | explosive-cannon-shell   | 160   |
 | shotgun-shell            | 40    |
 | piercing-shotgun-shell   | 230   |
+| poison-capsule           | 325   |
+| slowdown-capsule         | 200   |
 | nuke                     | 40860 |
 | defender-capsule         | 360   |
 | distractor-capsule       | 1740  |

@@ -1,7 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.0
   Features:
-    - a
+    - Added many new science recipes.
+    - Finalized many "unsure"-tagged science recipes.
+    - Removed "vgal-copper-plate-iron-stick-automation-science-pack" recipe, it did not add anything.
   Balancing:
     - "vgal-plastic-bar-repair-pack" electronic circuit cost; 1 -> 2
 ---------------------------------------------------------------------------------------------------

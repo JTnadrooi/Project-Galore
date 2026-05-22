@@ -415,6 +415,29 @@ vgal.data.extend({
         },
         groups = { "vgal-barrels" },
     },
+    {
+        name = "copper-plate-iron-stick-automation-science-pack",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("automation-science-pack"),
+            vgal.icon.get_in("iron-stick"),
+        },
+        category = "crafting",
+        energy_required = 6,
+        technologies = {
+            "circuit-network",
+            "concrete",
+            "electric-energy-distribution-1",
+            "railway",
+        },
+        ingredients = {
+            { "iron-stick",   3 }, -- 15
+            { "copper-plate", 1 }, -- 10
+        },
+        results = {
+            { "automation-science-pack", 1 }, -- 30
+        },
+    },
 }, {
     type = "recipe",
     groups = { "vgal-removed" },

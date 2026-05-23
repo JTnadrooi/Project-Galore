@@ -8,7 +8,7 @@ vgal.data.extend({
             vgal.icon.get("angels-catalyst-metal-carrier"),
             vgal.icon.get_in("angels-liquid-molten-iron"),
         },
-        energy_required = 1,
+        energy_required = 0.5,
         technology = { "angels-metallurgy-2", "angels-basic-chemistry-3" },
         ingredients = {
             { "angels-solid-sand", 5 },

@@ -1,6 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
   Balancing:
+    - Increased catalyst carrier crafting speeds.
     - "rocket-fuel" hydrazine cost; 20 -> 40
     - [BOTSADDON] Buffed charger/relay building speeds so they are faster than roboports in terms of charging speed/tile.
   Bugfixes:

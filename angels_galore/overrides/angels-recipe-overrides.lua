@@ -1002,3 +1002,6 @@ vgal.recipe.set_result_amount("angels-solid-sand", 3) -- og; 5
 -- buff fermentation base fermentation recipes
 vgal.recipe.set_result_amount("angels-liquid-acetic-acid", 80, "angels-liquid-acetic-acid")
 vgal.recipe.set_result_amount("angels-gas-ethanol", 100, "angels-gas-ethanol")
+
+-- make catalyst frame casting faster, usefull for when quickly stocking up builds on catalyst carriers
+data.raw["recipe"]["angels-catalyst-metal-carrier"].energy_required = 1

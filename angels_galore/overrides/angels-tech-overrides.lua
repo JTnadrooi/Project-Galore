@@ -195,6 +195,16 @@ vgal.tech.add_recipe("angels-metallurgy-2", "angels-sintering-oven")
 vgal.tech.remove_prerequisite("angels-iron-smelting-2", "angels-powder-metallurgy-2")
 vgal.tech.remove_prerequisite("angels-copper-smelting-2", "angels-powder-metallurgy-2")
 
+-- remove chem refining prerequisite from chemistry 3 tech
+-- and removed adv gas processing prerequisite as its moved to purp science
+data.raw["technology"]["angels-advanced-chemistry-3"].prerequisites = {
+    "angels-steam-cracking-2",
+    "angels-thermal-water-extraction",
+}
+
+vgal.tech.add_prerequisite("angels-advanced-gas-processing", "production-science-pack")
+vgal.tech.add_unit("angels-advanced-gas-processing", "production-science-pack")
+
 -- BIO SCIENCE
 -- add initial
 data.raw["technology"]["angels-gardens"].prerequisites = { "vgal-biological-science-pack" }

@@ -497,6 +497,13 @@ if not mods["reskins-angels"] then
             "angels-water-purified",
             "sulfur",
         }, "WsSS")
+
+    data.raw["fluid"]["angels-water-yellow-waste"].icons = angelsmods.functions
+        .create_viscous_liquid_fluid_icon(
+            { "__base__/graphics/icons/sulfur.png" },
+            { { 116, 140, 211 }, { 255, 219, 051 }, { 109, 070, 020, 0.8 }, { 254, 204, 049 } },
+            true
+        )
 end
 
 -- fix meat recipe icons

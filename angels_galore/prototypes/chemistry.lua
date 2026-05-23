@@ -6,16 +6,16 @@ vgal.data.extend({
             vgal.icon.get("angels-solid-salt"),
             vgal.icon.get_in("angels-solid-sodium-chlorate"),
         },
-        energy_required = 5,
+        energy_required = 8,
         technology = "angels-chlorine-processing-4",
         ingredients = {
-            { "angels-solid-sodium-chlorate", 5 },
+            { "angels-solid-sodium-chlorate", 8 }, -- 40cl, 32ox
         },
         results = {
-            { "angels-solid-salt", 5 },
+            { "angels-solid-salt", 1 }, -- 40cl
         },
         fluid_results = {
-            { "angels-gas-oxygen", 20 }, -- any more for net+ loop
+            { "angels-gas-oxygen", 30 },
         },
         allow_productivity = false,
         category = "angels-liquifying",
@@ -34,13 +34,13 @@ vgal.data.extend({
             { "angels-solid-sodium-chlorate", 2 }, -- 10 cl
         },
         fluid_ingredients = {
-            { "angels-liquid-hydrochloric-acid", 50 }, -- 50 cl
+            { "angels-liquid-hydrochloric-acid", 50 }, -- 50 cl, 50water
         },
         results = {
             { "angels-solid-salt", 1 }, -- 40 cl
         },
         fluid_results = {
-            { "angels-water-green-waste", 50 }, -- 10 cl
+            { "angels-water-green-waste", 50 }, -- 10 cl, 50water
         },
         category = "chemistry",
 

@@ -122,7 +122,7 @@ vgal.data.extend({
             { "solid-fuel", 10 },
         },
         fluid_ingredients = {
-            { "petroleum-gas", 40 },
+            { "petroleum-gas", 50 },
         },
         results = {
             { "rocket-fuel", 1 },

@@ -1,5 +1,10 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
+  Features:
+    - Improved tech tree.
+  Changes:
+    - Moved adv gas refining to purple science.
+    - Moved "plastic 3" recipe derived plastic from phenol recipe to chemical science.
   Balancing:
     - Increased catalyst carrier crafting speeds.
     - "rocket-fuel" hydrazine cost; 20 -> 40

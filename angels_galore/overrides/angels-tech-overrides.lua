@@ -208,8 +208,12 @@ data.raw["technology"]["angels-advanced-chemistry-3"].prerequisites = {
     "angels-thermal-water-extraction",
 }
 
+-- move adv gas processing to purp science
 vgal.tech.add_prerequisite("angels-advanced-gas-processing", "production-science-pack")
 vgal.tech.add_unit("angels-advanced-gas-processing", "production-science-pack")
+
+-- move all adv chem 4 recipes to chem 3 so they're blue science instead of purp science (also removes the tech)
+vgal.tech.move_effects("angels-advanced-chemistry-4", "angels-advanced-chemistry-3")
 
 -- BIO SCIENCE
 -- add initial

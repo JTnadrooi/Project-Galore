@@ -45,7 +45,7 @@ vgal.data.extend({
             vgal.icon.get_in("phenol", "molecule"),
         },
         energy_required = 2,
-        technology = "angels-advanced-chemistry-4", -- normally would be plastic 3
+        technology = "angels-advanced-chemistry-3", -- normally would be plastic 3
         fluid_ingredients = {
             { "angels-liquid-phenol", 25 },
             { "angels-gas-methanol",  15 },

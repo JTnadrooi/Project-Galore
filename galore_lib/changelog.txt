@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.6
+  Features:
+    - Added vgal.tech.move_effects(source_tech_name, destination_tech_name)
+---------------------------------------------------------------------------------------------------
 Version: 2.1.5
   Features:
     - Improved recipe.enabled handling.

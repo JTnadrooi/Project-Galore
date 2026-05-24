@@ -408,3 +408,27 @@ function vgal.tech.get_highest_value_unit(tech_name)
 
     return highest_value_unit[1]
 end
+
+function vgal.tech.move_effects(source_tech_name, destination_tech_name)
+    local source_tech = vgal.throw.if_tech_not_found(source_tech_name)
+    local destination_tech = vgal.throw.if_tech_not_found(destination_tech_name)
+
+    local function move_effects(source_effects, dest_effects)
+        if not source_effects or #source_effects == 0 then
+            return
+        end
+
+        for i = #source_effects, 1, -1 do
+            local effect = source_effects[i]
+            table.insert(dest_effects, effect)
+            table.remove(source_effects, i)
+        end
+    end
+
+    if source_tech.effects then
+        if not destination_tech.effects then
+            destination_tech.effects = {}
+        end
+        move_effects(source_tech.effects, destination_tech.effects)
+    end
+end

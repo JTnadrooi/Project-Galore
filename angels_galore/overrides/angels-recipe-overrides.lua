@@ -1005,3 +1005,33 @@ vgal.recipe.set_result_amount("angels-gas-ethanol", 100, "angels-gas-ethanol")
 
 -- make catalyst frame casting faster, usefull for when quickly stocking up builds on catalyst carriers
 data.raw["recipe"]["angels-catalyst-metal-carrier"].energy_required = 1
+
+-- nerf coal cracking
+-- commetedbc; rember og OG:
+-- data.raw["recipe"]["angels-coal-cracking-1"].results = vgal.build.table({ -- ingredients value: 30
+--     { "angels-solid-coke", 6 },                                           -- 30
+-- }, {
+--     { "angels-gas-hydrogen-sulfide", 50 },                                -- 30
+--     { "angels-gas-benzene",          30 },                                -- 15
+--     { "angels-gas-methane",          70 },                                -- 35
+-- })
+-- nerfed:
+data.raw["recipe"]["angels-coal-cracking-1"].results = vgal.build.table({ -- ingredients value: 30
+    { "angels-solid-coke", 4 },
+}, {
+    { "angels-gas-hydrogen-sulfide", 25 },
+    { "angels-gas-benzene",          20 },
+    { "angels-gas-methane",          40 },
+})
+
+-- more coal nerfs
+data.raw["recipe"]["angels-coal-cracking-2"].results = vgal.build.table({ -- ingredients value: 30
+    { "angels-solid-coke",             4 },
+    { "angels-catalyst-metal-carrier", 1 },
+}, {
+    { "angels-liquid-naphtha",     40 }, -- og 60
+    { "angels-liquid-ngl",         30 },
+    { "angels-liquid-mineral-oil", 15 }, -- og 20
+})
+
+-- the third cracking recipe is kinda inefficient (for syngas) so it can stay as is

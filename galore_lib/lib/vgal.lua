@@ -429,7 +429,7 @@ function vgal.data.deephide(prototype)
 
     if prototype.type == "recipe" then
         prototype.hide_from_player_crafting = true
-        prototype.enabled = false
+        prototype.allow_decomposition = false
     end
 end
 
@@ -452,7 +452,7 @@ function vgal.data.deepunhide(prototype)
 
     if prototype.type == "recipe" then
         prototype.hide_from_player_crafting = nil
-        prototype.enabled = false
+        prototype.allow_decomposition = nil
     end
 end
 

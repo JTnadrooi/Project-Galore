@@ -441,3 +441,4 @@ end
 -- manual tech cost fixes
 vgal.tech.set_unit_count("angels-coal-cracking", 200) -- (normally gets icon treatment) same as vanilla, also fitting for something so usefull
 vgal.tech.set_unit_count("angels-nuclear-fuel", 1500)
+vgal.tech.set_unit_count("angels-chlorine-processing-1", 20)

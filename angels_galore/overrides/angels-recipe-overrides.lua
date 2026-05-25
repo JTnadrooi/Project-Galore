@@ -610,7 +610,7 @@ data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 2
 data.raw["recipe"]["angels-gas-methanol-from-wood"].energy_required = 5
 data.raw["recipe"]["angels-gas-ammonia-from-blue-fiber"].energy_required = 5
 data.raw["recipe"]["angels-solid-coke-sulfur"].energy_required = 2
-data.raw["recipe"]["angels-gas-carbon-monoxide"].energy_required = 0.5
+data.raw["recipe"]["angels-gas-carbon-monoxide"].energy_required = 1
 
 -- gas refinery
 -- all are half duration

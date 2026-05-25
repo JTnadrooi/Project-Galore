@@ -44,12 +44,22 @@ end
 ---@param setting_name string
 ---@param forced_value string|boolean|number
 function vgal.setting.hide_and_force(setting_name, forced_value)
-    local setting = data.raw["bool-setting"][setting_name]
-
-    if not setting then
-        error("Bool setting '" .. setting_name .. "' not found")
-    end
+    local setting = vgal.setting.get(setting_name)
 
     setting.hidden = true
     setting.forced_value = forced_value
+end
+
+function vgal.setting.get(setting_name)
+    local setting = data.raw["bool-setting"][setting_name]
+        or data.raw["int-setting"][setting_name]
+        or data.raw["double-setting"][setting_name]
+        or data.raw["string-setting"][setting_name]
+        or data.raw["color-setting"][setting_name]
+
+    if not setting then
+        error("Setting with name " .. setting_name .. " not found")
+    end
+
+    return setting
 end

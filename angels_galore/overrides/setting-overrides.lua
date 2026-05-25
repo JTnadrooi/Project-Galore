@@ -8,3 +8,5 @@ end
 for _, ore_index in ipairs(agal.defines.ore_indexes) do
     vgal.setting.hide_and_force("angels-starting-resource-ore" .. ore_index, true)
 end
+
+vgal.setting.hide_and_force("angels-enable-auto-barreling", "Disabled")

@@ -23,16 +23,16 @@ vgal.data.extend({
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("angels-liquid-naphtha"),
+            vgal.icon.get_in("polyethylene", "molecule"),
         },
         energy_required = 4,
         technology = "angels-advanced-chemistry-3",
         fluid_ingredients = {
-            { "angels-liquid-naphtha",      20 },
-            { "angels-liquid-polyethylene", 20 },
+            { "angels-liquid-naphtha",      10 },
+            { "angels-liquid-polyethylene", 30 },
         },
         results = {
-            { "plastic-bar", 5 },
+            { "plastic-bar", 6 },
         },
         category = "chemistry",
         order = "ab"

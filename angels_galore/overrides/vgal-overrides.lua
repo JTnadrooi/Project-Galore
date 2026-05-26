@@ -20,3 +20,6 @@ if settings.startup["vgal-remove-steel-intermediate-crafting"].value then
     vgal.data.trim("vgal-steel-plate-iron-gear-wheel")
     vgal.data.trim("vgal-steel-plate-iron-stick")
 end
+
+vgal.recipe.replace_ingredient("vgal-bulk-inserter-chemical-science-pack", "angels-gas-methane", "angels-gas-methanol")
+vgal.recipe.set_ingredient_amount("vgal-bulk-inserter-chemical-science-pack", 180, "angels-gas-methanol")

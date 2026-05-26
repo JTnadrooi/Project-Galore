@@ -1,7 +1,7 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.6
   Features:
-    - Added vgal.tech.move_effects(source_tech_name, destination_tech_name)
+    - Added more functions.
 ---------------------------------------------------------------------------------------------------
 Version: 2.1.5
   Features:

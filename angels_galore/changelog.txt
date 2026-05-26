@@ -2,15 +2,31 @@
 Version: 1.1.1
   Features:
     - Improved tech tree.
+    - Improved bio tile recipe.
   Changes:
+    - Reworked plastic from polyethylene recipe.
+    - Hid barreling recipes from player crafting.
     - Moved adv gas refining to purple science.
     - Moved "plastic 3" recipe derived plastic from phenol recipe to chemical science.
+    - Normalized liquid concrete recipe.
+    - Renamed "vgal-angels-liquid-molten-steel-low-density-structure" to remove molten copper mention.
   Balancing:
-    - Increased catalyst carrier crafting speeds.
+    - Replaced 100 methane needed by "vgal-bulk-inserter-chemical-science-pack" with 180 methanol.
+    - Doubled "angels-gas-carbon-monoxide" recipe duration.
+    - "angels-fermentation-corn" recipe duration; 4 -> 3
+    - Nerfed coal cracking 1 and coal cracking 2 recipes.
+    - Increased catalyst carrier crafting speed.
+    - Tweaked "vgal-angels-liquid-naphtha-plastic-bar" so its more polyethylene heavy, and yields more plastic
     - "rocket-fuel" hydrazine cost; 20 -> 40
+    - "vgal-angels-liquid-molten-steel-low-density-structure" molten steel cost; 25 -> 15
+    - "vgal-angels-liquid-molten-steel-low-density-structure" copper plate cost; 18 -> 20
+    - "vgal-angels-liquid-molten-steel-low-density-structure" sand cost; 10 -> 5
     - [BOTSADDON] Buffed charger/relay building speeds so they are faster than roboports in terms of charging speed/tile.
   Bugfixes:
-    - Fixed unintentional hydrogen to chlorine transmutation chain.
+    - Fixed filter casting missing insert casting desc.
+    - Fixed hidden recipes still being used in raw calculations.
+    - Fixed low chlorine 1 tech cost.
+    - Fixed hydrogen to chlorine transmutation chain.
     - Fixed too long steel roll casting speeds.
     - Fixed sulfuric waste water icon.
     - [BOTSADDON] Fixed early bots using too much moving energy.

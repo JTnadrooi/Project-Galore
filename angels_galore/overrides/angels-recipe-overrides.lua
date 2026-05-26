@@ -1047,3 +1047,14 @@ data.raw["recipe"]["angels-bio-tile"].ingredients = vgal.build.table({
 })
 data.raw["recipe"]["angels-bio-tile"].energy_required = 5
 vgal.recipe.set_result_amount("angels-bio-tile", 1)
+
+-- liquid concrete recipe fixes
+data.raw["recipe"]["angels-liquid-concrete"].ingredients = vgal.build.table({
+    { "angels-slag",         1 },
+    { "angels-solid-cement", 2 },
+    -- { "angels-alienated-fertilizer", 1 },
+}, {
+    { "water", 40 }
+})
+data.raw["recipe"]["angels-liquid-concrete"].energy_required = 2
+vgal.recipe.set_result_amount("angels-liquid-concrete", 40)

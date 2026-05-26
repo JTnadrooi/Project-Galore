@@ -19,23 +19,53 @@ vgal.data.extend({
         order = "aa"
     },
     {
+        name = "angels-gas-ethylene-plastic-bar",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("plastic-bar"),
+            vgal.icon.get_in("ethylene", "molecule"),
+        },
+        energy_required = 3,
+        technology = "angels-advanced-chemistry-3",
+        ingredients = {
+            { "angels-catalyst-metal-blue", 1 },
+        },
+        fluid_ingredients = {
+            { "angels-gas-ethylene", 30 },
+        },
+        results = {
+            { "angels-catalyst-metal-carrier", 1 },
+            { "plastic-bar",                   4 },
+        },
+        main_product = "plastic-bar",
+
+        category = "chemistry",
+        order = "ab"
+    },
+    {
         name = "angels-liquid-naphtha-plastic-bar",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("polyethylene", "molecule"),
+            vgal.icon.get_in("angels-liquid-naphtha"),
         },
         energy_required = 4,
         technology = "angels-advanced-chemistry-3",
+        ingredients = {
+            { "angels-catalyst-metal-blue", 1 },
+        },
         fluid_ingredients = {
-            { "angels-liquid-naphtha",      10 },
-            { "angels-liquid-polyethylene", 30 },
+            { "angels-gas-ethylene",   20 },
+            { "angels-liquid-naphtha", 20 },
         },
         results = {
-            { "plastic-bar", 6 },
+            { "angels-catalyst-metal-carrier", 1 },
+            { "plastic-bar",                   6 },
         },
+        main_product = "plastic-bar",
+
         category = "chemistry",
-        order = "ab"
+        order = "abb"
     },
     {
         name = "angels-liquid-phenol-plastic-bar",

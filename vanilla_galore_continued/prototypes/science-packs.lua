@@ -523,7 +523,7 @@ vgal.data.extend({
         },
     },
     {
-        name = "poison-capsule-military-science-pack",
+        name = "slowdown-capsule-military-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("military-science-pack"),
@@ -533,7 +533,7 @@ vgal.data.extend({
         energy_required = 12,
         technology = { "military-3", "explosives" },
         ingredients = {
-            { "explosives",       2 }, -- 30
+            { "explosives",       1 }, -- 15
             { "slowdown-capsule", 1 }, -- 200
         },
         results = {

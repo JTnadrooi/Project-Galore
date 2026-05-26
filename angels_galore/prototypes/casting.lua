@@ -136,12 +136,12 @@ vgal.data.extend({
         energy_required = 12,
         technology = { "low-density-structure", "angels-metallurgy-2", },
         ingredients = {
-            { "angels-solid-sand", 10 },
+            { "angels-solid-sand", 5 },
             { "plastic-bar",       5 },
-            { "copper-plate",      18 },
+            { "copper-plate",      20 },
         },
         fluid_ingredients = {
-            { "angels-liquid-molten-steel", 25 },
+            { "angels-liquid-molten-steel", 15 },
         },
         results = {
             { "low-density-structure", 1 },

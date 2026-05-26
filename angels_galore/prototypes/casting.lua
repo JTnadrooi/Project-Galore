@@ -127,7 +127,7 @@ vgal.data.extend({
 
     -- complex intermediates
     {
-        name = "angels-liquid-molten-steel-angels-liquid-molten-copper-low-density-structure",
+        name = "angels-liquid-molten-steel-low-density-structure",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("low-density-structure"),

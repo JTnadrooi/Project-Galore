@@ -63,6 +63,29 @@ vgal.data.extend({
 
     -- recipe items
     {
+        name = "angels-liquid-molten-iron-angels-filter-frame",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("angels-filter-frame"),
+            vgal.icon.get_in("angels-liquid-molten-steel"),
+        },
+        energy_required = 1,
+        technology = { "angels-metallurgy-2", "angels-slag-processing-1" },
+        ingredients = {
+            { "angels-solid-sand", 1 },
+            { "iron-plate",        2 },
+        },
+        fluid_ingredients = {
+            { "angels-liquid-molten-steel", 15 },
+        },
+        results = {
+            { "angels-filter-frame", 2 },
+        },
+        category = "angels-casting",
+
+        localised_description = { "agal-internal.insert-casting-recipe-desc" },
+    },
+    {
         name = "angels-liquid-molten-iron-angels-solid-saw",
         prefix = "vgal",
         icons = vgal.icon.register {

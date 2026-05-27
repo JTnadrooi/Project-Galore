@@ -605,3 +605,13 @@ function vgal.recipe.get_normalized_return_amounts(raw_amount, deviation)
         return nil, nil, amount_min, amount_max
     end
 end
+
+---@param recipe_name string
+---@param category_name string
+---@return boolean
+function vgal.recipe.has_category(recipe_name, category_name)
+    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+
+    return not not (recipe.category == category_name or
+        (recipe.additional_categories and vgal.table.contains(recipe.additional_categories, category_name)))
+end

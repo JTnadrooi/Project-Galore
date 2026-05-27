@@ -40,6 +40,7 @@ vgal.data.trim("vgal-iron-ore-coal-molten-iron")
 vgal.data.trim("vgal-copper-ore-coal-molten-copper")
 vgal.data.trim("vgal-ammonia-calcite-molten-iron")
 vgal.data.trim("vgal-sulfuric-acid-calcite-molten-copper")
+vgal.data.trim("vgal-sulfuric-acid-sulfur")
 
 vgal.recipe.replace_ingredient("vgal-ammonia-agricultural-science-pack", "ammonia", "angels-gas-urea")
 vgal.recipe.replace_ingredient("vgal-ammonia-artificial-yumako-soil", "ammonia", "angels-gas-urea")

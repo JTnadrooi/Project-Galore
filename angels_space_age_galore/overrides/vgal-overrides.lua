@@ -76,4 +76,5 @@ data.raw.recipe["vgal-ammonia-agricultural-science-pack"].icons = vgal.icon.regi
 --     vgal.icon.get_in("urea", "molecule"),
 -- }
 
+data.raw["recipe"]["vgal-molten-copper-carbon-fiber-low-density-structure"].category = "angels-casting"
 data.raw["recipe"]["tungsten-carbide"].category = "angels-chemical-smelting"

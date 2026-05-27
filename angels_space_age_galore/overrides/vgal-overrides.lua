@@ -75,3 +75,5 @@ data.raw.recipe["vgal-ammonia-agricultural-science-pack"].icons = vgal.icon.regi
 --     vgal.icon.get("artificial-jellynut-soil"),
 --     vgal.icon.get_in("urea", "molecule"),
 -- }
+
+data.raw["recipe"]["tungsten-carbide"].category = "angels-chemical-smelting"

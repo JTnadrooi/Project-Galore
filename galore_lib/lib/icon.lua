@@ -483,6 +483,7 @@ if mods["angels_galore"] then
                 }
             }
         })
+        -- commentedbc; ..............................
         -- vgal.icon.add_override({
         --     name = "sulfur",
         --     source = "item",
@@ -509,6 +510,36 @@ if mods["angels_galore"] then
             composite_icon_override = {
                 {
                     icon = "__angelssmeltinggraphics__/graphics/icons/rod-iron.png",
+                    icon_size = 32,
+                }
+            }
+        })
+        vgal.icon.add_override({
+            name = "holmium-plate",
+            source = "item",
+            composite_icon_override = {
+                {
+                    icon = "__angels_space_age_galore__/graphics/icons/plate-holmium.png",
+                    icon_size = 32,
+                }
+            }
+        })
+        vgal.icon.add_override({
+            name = "lithium-plate",
+            source = "item",
+            composite_icon_override = {
+                {
+                    icon = "__angelssmeltinggraphics__/graphics/icons/plate-silver.png",
+                    icon_size = 32,
+                }
+            }
+        })
+        vgal.icon.add_override({
+            name = "tungsten-plate",
+            source = "item",
+            composite_icon_override = {
+                {
+                    icon = "__angelssmeltinggraphics__/graphics/icons/plate-titanium.png",
                     icon_size = 32,
                 }
             }

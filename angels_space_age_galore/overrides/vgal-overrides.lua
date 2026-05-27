@@ -52,23 +52,6 @@ vgal.recipe.replace_ingredient("vgal-jelly-ammonia-electronic-circuit", "ammonia
 vgal.recipe.replace_ingredient("vgal-petroleum-gas-barrel-biter-egg", "petroleum-gas-barrel",
     "angels-gas-carbon-dioxide-barrel")
 
-data.raw.recipe["vgal-biter-egg-ammonia"].icons = angelsmods.functions.create_gas_recipe_icon(
-    {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 72 },
-    },
-    "NHH", { "biter-egg", "nutrients" }
-)
-
-data.raw.recipe["vgal-petroleum-gas-barrel-biter-egg"].icons = vgal.icon.register({
-    vgal.icon.get("biter-egg"),
-    vgal.icon.get_in("carbon-dioxide", "molecule"),
-})
-
-data.raw.recipe["vgal-ammonia-agricultural-science-pack"].icons = vgal.icon.register({
-    vgal.icon.get("agricultural-science-pack"),
-    vgal.icon.get_in("urea", "molecule"),
-})
-
 -- data.raw.recipe["vgal-ammonia-artificial-yumako-soil"].icons = vgal.icon.register {
 --     vgal.icon.get("artificial-yumako-soil"),
 --     vgal.icon.get_in("urea", "molecule"),

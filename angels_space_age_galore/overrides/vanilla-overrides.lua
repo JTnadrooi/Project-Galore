@@ -51,3 +51,13 @@ do
         end
     end
 end
+
+-- remove vanilla tree farming
+for _, tower in pairs(data.raw["agricultural-tower"]) do
+    if tower.accepted_seeds then
+        vgal.table.remove(tower.accepted_seeds, "tree-seed")
+    end
+end
+vgal.data.trim("wood-processing")
+vgal.data.deephide(data.raw["item"]["tree-seed"])
+data.raw["item"]["tree-seed"].plant_result = nil -- needs to be done even if item is hidden

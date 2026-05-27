@@ -47,7 +47,13 @@ do
     for _, recipe in pairs(data.raw["recipe"]) do
         if recipe.energy_required and recipe.energy_required >= 8
             and (not (vgal.recipe.has_category(recipe.name, "crafting") or vgal.recipe.has_category(recipe.name, "crafting-with-fluid") or vgal.recipe.has_category(recipe.name, "pressing")) and vgal.recipe.has_category(recipe.name, "metallurgy")) then
-            recipe.energy_required = recipe.energy_required / 2
+            local final_energy_required = recipe.energy_required / 2
+
+            if final_energy_required > 3 then
+                final_energy_required = math.ceil(final_energy_required)
+            end
+
+            recipe.energy_required = final_energy_required
         end
     end
 end

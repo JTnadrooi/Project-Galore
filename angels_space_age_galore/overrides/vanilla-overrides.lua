@@ -22,9 +22,10 @@ vgal.data.trim("burnt-spoilage")
 -- angels already adds a fish breeding recipe
 vgal.data.trim("fish-breeding")
 
--- remove solid fuel from scrap
--- no throw bc other mods like to do this as well
-vgal.recipe.remove_result("scrap-recycling", "solid-fuel", true)
+-- commentedbc; carbon from solid fuel
+-- -- remove solid fuel from scrap
+-- -- no throw bc other mods like to do this as well
+-- vgal.recipe.remove_result("scrap-recycling", "solid-fuel", true)
 
 -- foundry fixes
 do

@@ -56,7 +56,7 @@ data.raw["item"]["angels-liquifier"].order = "b"
 vgal.subgroup.set_for("angels-liquifier-2", "vgal-chemistry-machines")
 data.raw["item"]["angels-liquifier-2"].order = "c"
 vgal.subgroup.set_for("stone-brick", "vgal-cement-concrete")
-data.raw["item"]["stone-brick"].order = "c"
+data.raw["item"]["stone-brick"].order = "e"
 data.raw["recipe"]["stone-brick"].order = nil
 
 data.raw["recipe"]["angels-electrode-used"].main_product = "angels-electrode"

@@ -258,8 +258,10 @@ vgal.data.deephide(data.raw["item"]["angels-clay-brick"])
 vgal.data.trim("angels-clay-brick")
 vgal.data.deephide(data.raw["item"]["angels-clay-brick-raw"])
 vgal.data.trim("angels-clay-brick-raw")
+-- vgal.recipe.all.replace_ingredient("angels-concrete-brick",
+--     { type = "item", name = "concrete", amount = 1 })
 vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
-    { type = "item", name = "angels-concrete-brick", amount = 1 })
+    { type = "item", name = "concrete", amount = 1 })
 vgal.recipe.all.replace_ingredient("clay-brick",
     { type = "item", name = "stone-brick", amount = 1 })
 

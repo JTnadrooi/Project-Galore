@@ -153,11 +153,11 @@ vgal.tech.add_recipe("angels-ore-crushing", "angels-copper-pebbles")
 -- add crystal prereq to uranium mining as the sorting recipe is there
 vgal.tech.add_prerequisite("uranium-mining", "angels-ore-leaching")
 
--- simplify ore leaching prerequisites
-data.raw["technology"]["angels-ore-leaching"].prerequisites = { "angels-ore-floatation", "angels-stone-smelting-2" }
-
 -- add pump tech too cooling tech (bc cooling tower requires pumps)
 vgal.tech.add_prerequisite("angels-cooling", "fluid-handling")
+
+-- prevent stone smelting from needing silicon stuff
+vgal.tech.remove_prerequisite("angels-stone-smelting-2", "angels-silicon-smelting-1")
 
 -- move recipes so rocket booster techs get removed
 vgal.tech.move_recipe("angels-rocket-booster-1", "angels-nitrogen-processing-2", "angels-solid-ammonium-nitrate")

@@ -254,16 +254,17 @@ vgal.data.trim("angels-solid-sodium-nitrate-processing")
 -- brick removal (clay/reinforced)
 vgal.data.deephide(data.raw["item"]["angels-reinforced-concrete-brick"])
 vgal.data.trim("angels-reinforced-concrete-brick")
-vgal.data.deephide(data.raw["item"]["angels-clay-brick"])
-vgal.data.trim("angels-clay-brick")
 vgal.data.deephide(data.raw["item"]["angels-clay-brick-raw"])
 vgal.data.trim("angels-clay-brick-raw")
--- vgal.recipe.all.replace_ingredient("angels-concrete-brick",
---     { type = "item", name = "concrete", amount = 1 })
+data.raw.recipe["angels-clay-brick"].ingredients = vgal.build.table({
+    { "angels-solid-clay", 2 }
+})
+data.raw.recipe["angels-clay-brick"].results = vgal.build.table({
+    { "angels-clay-brick", 1 }
+})
+data.raw.recipe["angels-clay-brick"].energy_required = 3.2
 vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
     { type = "item", name = "concrete", amount = 1 })
-vgal.recipe.all.replace_ingredient("clay-brick",
-    { type = "item", name = "stone-brick", amount = 1 })
 
 -- remove liquid plastic as well as liquid plastic recipes (replaced by vgal)
 -- why? they dont fit well with the plastic buff needed to equalize with vgal/sagal

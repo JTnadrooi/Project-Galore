@@ -19,3 +19,4 @@ data.raw["item-subgroup"]["vgal-smelting"].order = "e"
 vgal.subgroup.clean_recipe("casting-low-density-structure")
 vgal.subgroup.clean_recipe("vgal-molten-copper-carbon-fiber-low-density-structure")
 vgal.subgroup.clean_recipe("vgal-molten-iron-rail")
+vgal.subgroup.clean_recipe("vgal-solid-fuel-sulfuric-acid-carbon")

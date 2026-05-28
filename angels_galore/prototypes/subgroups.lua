@@ -114,7 +114,9 @@ local subgroups = {
         group = "angels-smelting",
         order = "y-na",
         entries = {
-            "angels-liquid-concrete", "angels-solid-lime", "angels-solid-cement", "stone-brick", "angels-concrete-brick", -- reinforced and clay removed
+            "angels-liquid-concrete", "angels-solid-lime", "angels-solid-cement",
+            "angels-clay-brick", "stone-brick",
+            "angels-concrete-brick", -- reinforced and clay removed
             "angels-bio-tile",
         },
         should_reorder_entries = true,

@@ -4,7 +4,6 @@ vgal.recipe.add_catalyst_entry("angels-liquid-coolant-used")
 vgal.recipe.add_catalyst_entry("angels-liquid-coolant")
 vgal.recipe.add_catalyst_entry("angels-filter-ceramic-used")
 vgal.recipe.add_catalyst_entry("angels-filter-frame")
-vgal.recipe.add_catalyst_entry("angels-filter-frame")
 vgal.recipe.add_catalyst_entry("angels-catalyst-metal-carrier")
 vgal.recipe.add_catalyst_entry("angels-water-yellow-waste")
 vgal.recipe.add_catalyst_entry("angels-water-greenyellow-waste")
@@ -20,7 +19,7 @@ for fish_index = 1, 3 do vgal.recipe.add_catalyst_entry("angels-alien-fish-" .. 
 for puffer_index = 1, 5 do vgal.recipe.add_catalyst_entry("angels-bio-puffer-" .. puffer_index) end
 for i = 3, 5 do
     for _, environment in pairs(agal.defines.environments) do
-        vgal.recipe.add_catalyst_entry("angels-" .. environment.name .. "-" .. i .. "-" .. "seed-dormant")
+        vgal.recipe.add_catalyst_entry("angels-" .. environment.name .. "-" .. i .. "-seed-dormant")
     end
 end
 
@@ -72,7 +71,7 @@ for _, recipe in pairs(data.raw["recipe"]) do
         if recipe.allow_productivity ~= false then
             if productivity_categories[recipe.category] == "angels-bio-hatchery" then
                 vgal.recipe.smart_allow_productivity(recipe.name, true)
-                vgal.recipe.smart_disallow_productivity(recipe.name, "angels-bio-puffer-egg-shell")
+                vgal.recipe.disallow_productivity_for_result(recipe.name, "angels-bio-puffer-egg-shell")
             else
                 vgal.recipe.smart_allow_productivity(recipe.name)
             end
@@ -102,7 +101,7 @@ vgal.recipe.smart_allow_productivity("angels-solid-trinitrotoluene")
 vgal.recipe.smart_allow_productivity("angels-electrode")
 
 vgal.recipe.smart_allow_productivity("angels-coal-cracking-1")
-vgal.recipe.smart_allow_productivity("angels-coal-cracking-2") -- w
+vgal.recipe.smart_allow_productivity("angels-coal-cracking-2")
 vgal.recipe.smart_allow_productivity("angels-coal-cracking-3")
 
 vgal.recipe.smart_allow_productivity("angels-filter-frame")

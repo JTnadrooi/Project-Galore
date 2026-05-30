@@ -49,7 +49,7 @@ function vgal.recipe.smart_allow_productivity(recipe_name, ignore_catalysts, ski
 
     for _, result in ipairs(recipe.results) do
         if (not ignore_catalysts) and vgal.catalyst_entries[result.name] then
-            vgal.recipe.smart_disallow_productivity(recipe_name, result.name)
+            vgal.recipe.disallow_productivity_for_result(recipe_name, result.name)
         end
         if (not skip_entry_register) and not vgal.recipe.get_if_productivity(result.name) then
             vgal.recipe.add_productivity_entry(result.name)
@@ -61,12 +61,12 @@ end
 
 ---@param recipe_name string
 ---@param result_name string
-function vgal.recipe.smart_disallow_productivity(recipe_name, result_name)
+function vgal.recipe.disallow_productivity_for_result(recipe_name, result_name)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
     local done = false
     for _, result in ipairs(recipe.results) do
         if result.name == result_name then
-            result.ignored_by_productivity = 15000
+            result.ignored_by_productivity = 65535
             done = true
         end
     end

@@ -61,17 +61,40 @@ end
 
 ---@param recipe_name string
 ---@param result_name string
-function vgal.recipe.disallow_productivity_for_result(recipe_name, result_name)
+function vgal.recipe.allow_productivity_for_result(recipe_name, result_name)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
-    local done = false
-    for _, result in ipairs(recipe.results) do
+
+    if not recipe.allow_productivity then
+        error("Recipe does not allow productivity.")
+    end
+
+    local found = false
+    for _, result in ipairs(recipe.results or {}) do
         if result.name == result_name then
-            result.ignored_by_productivity = 65535
-            done = true
+            result.ignored_by_productivity = nil
+            found = true
+            break
         end
     end
-    if not done then
-        error(recipe_name .. ", searched for " .. result_name)
+    if not found then
+        error("Recipe '" .. recipe_name .. "' does not have result '" .. result_name .. "'")
+    end
+end
+
+---@param recipe_name string
+---@param result_name string
+function vgal.recipe.disallow_productivity_for_result(recipe_name, result_name)
+    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+    local found = false
+    for _, result in ipairs(recipe.results or {}) do
+        if result.name == result_name then
+            result.ignored_by_productivity = 65535
+            found = true
+            break
+        end
+    end
+    if not found then
+        error("Recipe '" .. recipe_name .. "' does not have result '" .. result_name .. "'")
     end
 end
 

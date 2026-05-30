@@ -7,7 +7,7 @@ vgal.data.trim("rocket-fuel-from-jelly")
 
 -- might be saveble
 vgal.data.trim("simple-coal-liquefaction")
-vgal.data.trim("carbon")
+-- vgal.data.trim("carbon")
 
 -- other more angel-ish ways avalible
 vgal.data.trim("solid-fuel-from-ammonia")

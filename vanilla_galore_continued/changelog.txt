@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.1
+  Bugfixes:
+    - Moved vgal-log setting locale to GaloreLib.
+  Balancing:
+    - "vgal-centrifuge-utility-science-pack" duration; 120 -> 180
+---------------------------------------------------------------------------------------------------
 Version: 1.4.0
   Features:
     - Added many new science recipes.

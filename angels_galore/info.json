@@ -1,6 +1,6 @@
 {
     "name": "angels_galore",
-    "version": "1.1.1",
+    "version": "1.1.2",
     "title": "Angel's Galore",
     "author": "JTnadrooi",
     "contact": "@jtnadrooi",
@@ -31,5 +31,5 @@
         "(?) DiscoScience",
         "(?) proper_tier_doubling_port"
     ],
-    "description": "An overhaul based on Angel's mods focused on recipes GALORE!"
+    "description": "Adds 120+ recipes to Angel's Mods (Full+Special Vanilla)!"
 }

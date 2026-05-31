@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.1.7
+  Features:
+    - Added more functions.
+    - Improved automatic productivity handling.
+    - Added vgal-show-prod-descs setting.
+  Bugfixes:
+    - Moved vgal-log setting locale to GaloreLib.
+---------------------------------------------------------------------------------------------------
 Version: 2.1.6
   Features:
     - Added more functions.

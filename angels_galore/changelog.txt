@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+  Features:
+    - Restored clay brick, can be used as tile or as ingredient for ceramic filters.
+    - Added fuel value to oil residuals.
+  Balancing:
+    - Decreased stone sintering speed.
+    - Added module slots (3) to air filter.
+    - Increased module slots (2 -> 3) in ore refinery.
+    - Removed concrete brick from building recipes.
+    - Removed productivity from roll to plate recipes.
+    - "angels-bio-tile" soil cost 1 -> 5
+    - Removed stone to stone to crushed stone recipe.
+    - Allowed productivity in stone recipes.
+  Bugfixes:
+    - Fixed ALL productivity related issues and inconsistencies.
+    - Fixed crystal grindstone subgroup.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.1
   Features:
     - Improved tech tree.

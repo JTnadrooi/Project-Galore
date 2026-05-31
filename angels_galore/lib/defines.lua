@@ -103,6 +103,7 @@ agal.defines.metal_steel = {
     name = "steel",
     plate = "steel-plate",
     molten = "angels-liquid-molten-steel",
+    angels_plate_recipe_name = "angels-plate-steel",
     ingot = "angels-ingot-steel",
     roll = "angels-roll-steel",
 }

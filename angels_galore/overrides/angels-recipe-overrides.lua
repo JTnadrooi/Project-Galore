@@ -870,6 +870,7 @@ for _, environment in pairs(agal.defines.environments) do
             raw_results = alt_seeds_results,
             show_amount_in_title = false,
             order = alt_seeds_order,
+            allow_productivity = false,
             subgroup = "angels-farming-gardens",
             category = "angels-petrochem-air-filtering",
         }

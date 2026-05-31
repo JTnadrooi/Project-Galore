@@ -235,10 +235,6 @@ function vgal.data.extend(entries, fill_in_with)
                 entry.main_product = entry.results[1].name
             end
 
-            if entry.allow_productivity == nil then
-                entry.allow_productivity = vgal.recipe.get_if_productivity(entry.main_product)
-            end
-
             entry.crafting_machine_tint = entry.crafting_machine_tint
                 or vgal.recipe.get_preferred_crafting_machine_tint(entry)
 
@@ -265,6 +261,11 @@ function vgal.data.extend(entries, fill_in_with)
 
             ---@diagnostic disable-next-line: assign-type-mismatch
             data:extend { entry }
+
+            if entry.allow_productivity == nil and vgal.recipe.get_if_productivity(entry.main_product) then
+                vgal.recipe.smart_allow_productivity(entry.name)
+            end
+
             for i, tech_entry in ipairs(entry.technologies) do
                 if type(tech_entry) == "table" then
                     ---@cast tech_entry string[]

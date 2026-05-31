@@ -28,6 +28,10 @@ end
 ---@param recipe_name string
 ---@param skip_entry_register boolean?
 function vgal.recipe.smart_allow_productivity(recipe_name, skip_entry_register)
+    -- note; this system is suboptimal, better would be to have groups of items/fluids that are seen as one, if input is in group, output in group cannot get prod
+    -- but thats for later maybe, it works fine with just the catalyst system
+    -- I would need both systems anyways (looking at the waste waters rn)
+
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
 
     if recipe.results and #recipe.results == 0 then
@@ -38,6 +42,13 @@ function vgal.recipe.smart_allow_productivity(recipe_name, skip_entry_register)
     end
 
     recipe.allow_productivity = true
+
+    -- create ingredient map
+    -- needed so prod doesnt work for ingredient outputs ()
+    local ingredient_map = {}
+    for _, ingredient in ipairs(recipe.ingredients) do
+        ingredient_map[ingredient.name] = ingredient.amount
+    end
 
     -- check if recipe results are all catalyst
     -- if so, individual catalysts will not be disallowed prod
@@ -56,7 +67,11 @@ function vgal.recipe.smart_allow_productivity(recipe_name, skip_entry_register)
         else
             result.ignored_by_productivity = nil
         end
-        
+
+        if ingredient_map[result.name] and not result.ignored_by_productivity then -- doesnt really work with multiple result entries
+            result.ignored_by_productivity = (result.ignored_by_productivity or 0) + ingredient_map[result.name]
+        end
+
         if (not skip_entry_register) and not vgal.catalyst_entries[result.name] and not vgal.recipe.get_if_productivity(result.name) then
             vgal.recipe.add_productivity_entry(result.name)
         end

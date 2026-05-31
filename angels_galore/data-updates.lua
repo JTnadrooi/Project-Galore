@@ -9,7 +9,6 @@ require("overrides.vgal-overrides")
 require("overrides.angels-icon-overrides")
 require("overrides.angels-machine-overrides")
 require("overrides.angels-purge")
-require("overrides.angels-prod-overrides")
 require("overrides.angels-tech-overrides")
 
 require("overrides.angels-tips-overrides")

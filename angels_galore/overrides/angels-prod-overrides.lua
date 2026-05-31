@@ -209,4 +209,6 @@ end
 -- MISC
 -- concrete is an intermediate now (angel's says so as well)
 data.raw["recipe"]["concrete"].allow_productivity = true
+data.raw["recipe"]["angels-nuclear-fuel"].allow_productivity = true
+data.raw["recipe"]["angels-nuclear-fuel-2"].allow_productivity = true
 end

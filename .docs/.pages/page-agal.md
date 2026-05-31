@@ -1,6 +1,6 @@
 # Angel's Galore
 
-Angel's Galore is an overhaul based on Angel's mods that focuses on open-ended production and alternate recipe paths. Includes the 100 recipes added by [Vanilla Galore](https://mods.factorio.com/mod/vanilla_galore_continued) with many more planned.
+A large recipe pack for Angel's Mods (Full+Special vanilla). Also contains a collection of tweaks to bring more focus to open-ended production and alternate recipes.
 
 ## This mod is for you if...
 

@@ -45,7 +45,8 @@ local productivity_machines = {
     "angels-crop-farm", "angels-temperate-farm", "angels-swamp-farm", "angels-desert-farm", "angels-composter",
     "angels-bio-processor",
     "angels-nutrient-extractor",
-    "angels-algae-farm", "angels-bio-refugium-puffer", "angels-bio-refugium-fish", "angels-bio-butchery",
+    "angels-algae-farm", "angels-bio-refugium-puffer", "angels-bio-refugium-fish", "angels-bio-refugium-biter",
+    "angels-bio-butchery",
     "angels-bio-hatchery",
     "angels-bio-arboretum-1",
     "angels-seed-extractor",
@@ -88,6 +89,8 @@ for _, recipe in pairs(data.raw["recipe"]) do
         end
     end
 end
+
+-- SMART PROD CALLS
 
 -- CHEM
 vgal.recipe.smart_allow_productivity("angels-rocket-fuel-capsule")
@@ -196,7 +199,7 @@ for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) d
     vgal.recipe.smart_allow_productivity(metal.angels_plate_recipe_name)
 end
 
--- MISC
+-- misc
 -- concrete is an intermediate now (angel's says so as well)
 data.raw["recipe"]["concrete"].allow_productivity = true
 data.raw["recipe"]["angels-nuclear-fuel"].allow_productivity = true
@@ -204,13 +207,10 @@ data.raw["recipe"]["angels-nuclear-fuel-2"].allow_productivity = true
 data.raw["recipe"]["angels-milling-drum"].allow_productivity = true
 data.raw["recipe"]["angels-steam-cracking-oil-residual"].allow_productivity = true
 vgal.recipe.smart_allow_productivity("angels-filter-lime-used-cleaning")
-
--- fixes
 vgal.recipe.allow_productivity_for_all_results("angels-gas-separation")
 vgal.recipe.allow_productivity_for_all_results("angels-oil-separation")
 
--- PROD DISALLOW
-
+-- disallow prod collection
 data.raw["recipe"]["angels-solid-salt-dissolving"].allow_productivity = false
 data.raw["recipe"]["angels-solid-salt"].allow_productivity = false
 data.raw["recipe"]["angels-water-saline-from-water"].allow_productivity = false
@@ -222,8 +222,7 @@ data.raw["recipe"]["angels-coolant-used-filtration-2"].allow_productivity = fals
 vgal.recipe.disallow_productivity_for_result("angels-coke-purification-2", "angels-solid-sodium-carbonate")
 vgal.recipe.disallow_productivity_for_result("angels-coke-purification-2", "water")
 
--- ADD PROD ENTRIES (that didnt get added with the smart_allow_productivity calls)
-
+-- add prod entries (that didnt get added with the smart_allow_productivity calls)
 vgal.recipe.add_productivity_entry("angels-thorium-ore")
 for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
     vgal.recipe.add_productivity_entry(metal.nugget)

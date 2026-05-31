@@ -781,7 +781,7 @@ vgal.data.extend({
             vgal.icon.get_in("centrifuge"),
         },
         category = "crafting",
-        energy_required = 120,
+        energy_required = 180,
         technology = { "utility-science-pack", "uranium-processing" },
         ingredients = {
             { "centrifuge",         1 }, -- 15700

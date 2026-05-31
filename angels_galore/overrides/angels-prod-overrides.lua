@@ -29,8 +29,7 @@ end
 
 -- machines that can benefit from productivity, no corrections needed (well except for the angels-bio-hatchery stuff).
 local productivity_machines = {
-    "angels-bio-press", "angels-bio-generator-temperate-1", "angels-bio-generator-swamp-1",
-    "angels-bio-generator-desert-1",
+    "angels-bio-press", "angels-bio-generator-temperate-1",
     "angels-crop-farm", "angels-temperate-farm", "angels-swamp-farm", "angels-desert-farm", "angels-composter",
     "angels-bio-processor",
     "angels-nutrient-extractor",

@@ -76,7 +76,7 @@ data.raw["assembling-machine"]["angels-advanced-chemical-plant"].module_slots = 
 data.raw["assembling-machine"]["angels-salination-plant"].module_slots = 3
 data.raw["assembling-machine"]["angels-powderizer"].module_slots = 3
 data.raw["assembling-machine"]["angels-electric-boiler"].module_slots = 0
-data.raw["assembling-machine"]["angels-air-filter"].module_slots = 0
+data.raw["assembling-machine"]["angels-air-filter"].module_slots = 3
 
 data.raw["assembling-machine"]["angels-crop-farm"].module_slots = 1
 for _, environment in pairs(agal.defines.environments) do

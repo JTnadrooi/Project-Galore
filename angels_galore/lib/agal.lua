@@ -33,3 +33,9 @@ vgal.table.extend_single(vgal.tech.units, {
     name = "vgal-biological-science-pack",
     value = 2,
 })
+
+---@param prototype data.PrototypeBase
+---@return boolean
+function agal.is_angels(prototype)
+    return vgal.string.starts_with(prototype.name, "angels")
+end

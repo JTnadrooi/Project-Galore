@@ -226,7 +226,14 @@ function vgal.table.to_longform(data, entry_type)
         }
         if type(entry[3]) == "table" then
             for k, v in pairs(entry[3]) do
+                if k == "allow_productivity" then
+                    if v == false then
+                        new_entry.ignored_by_productivity = vgal.defines.ignored_by_productivity_max
+                        goto continue
+                    end
+                end
                 new_entry[k] = v
+                ::continue::
             end
         end
         return new_entry

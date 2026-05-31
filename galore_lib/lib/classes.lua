@@ -38,7 +38,7 @@ do
     ---@class vgal.ShorthandRecipeEntry
     ---@field [1] string The name of the ingredient.
     ---@field [2] number? The amount of the ingredient or nil if other amount values are set at index 3.
-    ---@field [3] { probability?: number, amount_min?: integer, amount_max?: integer }?
+    ---@field [3] { probability?: number, amount_min?: integer, amount_max?: integer, probability?: number }?
 end
 
 do

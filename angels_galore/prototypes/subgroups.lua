@@ -490,6 +490,7 @@ local subgroups = {
             "angels-solid-crystal-full-saw",
             "angels-milling-drum",
             "angels-milling-drum-lubricated",
+            "angels-crystal-grindstone",
         },
         should_reorder_entries = true,
     },

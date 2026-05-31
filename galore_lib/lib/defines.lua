@@ -1,5 +1,7 @@
 vgal.defines = vgal.defines or {}
 
+vgal.defines.ignored_by_productivity_max = 65535
+
 ---@type table<string, table>
 vgal.defines.metals = {
     ["iron"] = {

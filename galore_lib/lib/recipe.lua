@@ -456,18 +456,7 @@ function vgal.recipe.get_result_amount(recipe_name, result_name)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
     for _, result in ipairs(recipe.results) do
         if result.name == result_name then
-            local amount = 1
-
-            if result.amount then
-                amount = result.amount or 1
-            elseif result.amount_min and result.amount_max then
-                amount = (result.amount_min + result.amount_max) / 2
-            end
-
-            if result.probability then
-                amount = amount * result.probability
-            end
-            return amount
+            return vgal.math.get_normalized_amount(result)
         end
     end
     return 0

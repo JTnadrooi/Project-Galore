@@ -15,6 +15,8 @@ vgal.recipe.add_catalyst_entry("angels-liquid-polluted-fish-atmosphere")
 vgal.recipe.add_catalyst_entry("angels-solid-saw")
 vgal.recipe.add_catalyst_entry("angels-solid-crystal-tipped-saw")
 vgal.recipe.add_catalyst_entry("angels-solid-crystal-full-saw")
+vgal.recipe.add_catalyst_entry("angels-milling-drum")
+vgal.recipe.add_catalyst_entry("angels-milling-drum-lubricated")
 
 vgal.recipe.add_catalyst_entry("angels-water-heavy-mud")
 vgal.recipe.add_catalyst_entry("angels-water-concentrated-mud")

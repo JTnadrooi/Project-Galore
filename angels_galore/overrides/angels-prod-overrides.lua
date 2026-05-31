@@ -204,8 +204,9 @@ for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) d
     vgal.recipe.smart_allow_productivity(metal.nugget .. "-smelting")
     vgal.recipe.smart_allow_productivity(metal.plate)
     vgal.recipe.smart_allow_productivity(metal.angels_plate_recipe_name)
-    -- vgal.recipe.smart_allow_productivity("roll-" .. metal .. "-casting")
-    -- vgal.recipe.smart_allow_productivity("roll-" .. metal .. "-casting-fast")
-    -- vgal.recipe.smart_allow_productivity("angels-wire-coil-" .. metal .. "-casting")
-    -- vgal.recipe.smart_allow_productivity("angels-wire-coil-" .. metal .. "-casting-fast")
+end
+
+-- MISC
+-- concrete is an intermediate now (angel's says so as well)
+data.raw["recipe"]["concrete"].allow_productivity = true
 end

@@ -767,7 +767,7 @@ vgal.tech.move_recipe("angels-bio-processing-red", "angels-stone-smelting-1", "a
 data.raw["recipe"]["angels-alien-spores"].results = vgal.build.table({
 }, {
     { "angels-alien-spores",       20 }, -- prev way more (75)
-    { "angels-water-yellow-waste", 80 },
+    { "angels-water-yellow-waste", 80, { allow_productivity = false } },
 })
 -- compensate bacteria recipe a bit (and remove hydrochloric acid ingredient)
 data.raw["recipe"]["angels-alien-bacteria"].ingredients = vgal.build.table({

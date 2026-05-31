@@ -99,6 +99,8 @@ data.raw["item"]["angels-cellulose-fiber"].fuel_value = "0.5MJ"
 data.raw["item"]["angels-wood-pellets"].fuel_value = "2.4MJ" -- +20%
 data.raw["item"]["angels-wood-bricks"].fuel_value = "8MJ"    -- +60%
 data.raw["item"]["angels-wood-charcoal"].fuel_value = "3MJ"
+data.raw["item"]["angels-solid-oil-residual"].fuel_value = "3MJ"
+data.raw["item"]["angels-solid-oil-residual"].fuel_category = "chemical"
 
 data.raw["item"]["coal"].fuel_emissions_multiplier = 1.5
 data.raw["item"]["angels-coal-crushed"].fuel_emissions_multiplier = 1.2

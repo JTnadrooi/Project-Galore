@@ -1032,7 +1032,7 @@ data.raw["recipe"]["angels-fermentation-corn"].energy_required = 3 -- og; 4
 
 -- bio tile changes
 data.raw["recipe"]["angels-bio-tile"].ingredients = vgal.build.table({
-    { "angels-solid-soil",     1 },
+    { "angels-solid-soil",     5 },
     { "angels-concrete-brick", 1 },
     -- { "angels-alienated-fertilizer", 1 },
 })

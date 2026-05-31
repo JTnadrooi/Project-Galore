@@ -985,11 +985,11 @@ for _, water_name in ipairs({
 }) do
     data.raw["recipe"][water_name].energy_required = 3 -- og; 5
 
-    -- buff mud yield a bit
+    -- buff mud yield a bit (past prod, so fix that)
     data.raw["recipe"][water_name].results = vgal.build.table({
         { "angels-solid-mud", nil, { amount_min = 1, amount_max = 2 } },
     }, {
-        { water_name, 200 }
+        { water_name, 200, { allow_productivity = false } }
     })
 end
 data.raw["recipe"]["angels-solid-clay"].energy_required = 3      -- og; 5

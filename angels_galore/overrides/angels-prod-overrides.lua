@@ -12,7 +12,11 @@ vgal.recipe.add_catalyst_entry("angels-liquid-polluted-fish-atmosphere")
 vgal.recipe.add_catalyst_entry("angels-solid-saw")
 vgal.recipe.add_catalyst_entry("angels-solid-crystal-tipped-saw")
 vgal.recipe.add_catalyst_entry("angels-solid-crystal-full-saw")
-vgal.recipe.add_catalyst_entry("angels-bio-puffer-egg-shell")
+vgal.recipe.add_catalyst_entry("angels-water-heavy-mud")
+vgal.recipe.add_catalyst_entry("angels-water-concentrated-mud")
+vgal.recipe.add_catalyst_entry("angels-water-thin-mud")
+vgal.recipe.add_catalyst_entry("angels-water-light-mud")
+vgal.recipe.add_catalyst_entry("angels-water-saline")
 
 vgal.recipe.add_catalyst_entry("raw-fish")
 for fish_index = 1, 3 do vgal.recipe.add_catalyst_entry("angels-alien-fish-" .. fish_index .. "-raw") end

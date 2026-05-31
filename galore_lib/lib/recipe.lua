@@ -26,10 +26,22 @@ function vgal.recipe.add_catalyst_entry(entry_name)
 end
 
 ---@param recipe_name string
----@param ignore_catalysts boolean?
 ---@param skip_entry_register boolean?
-function vgal.recipe.smart_allow_productivity(recipe_name, ignore_catalysts, skip_entry_register)
+function vgal.recipe.smart_allow_productivity(recipe_name, skip_entry_register)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+
+    if recipe.results and #recipe.results == 0 then
+        return
+    end
+    if not recipe.results then
+        return
+    end
+
+    recipe.allow_productivity = true
+
+    -- check if recipe results are all catalyst
+    -- if so, individual catalysts will not be disallowed prod
+    -- this is for recipes that create catalysts (like filter frames in angels)
     local all_catalysts = true
     for _, result in ipairs(recipe.results) do
         if not vgal.catalyst_entries[result.name] then
@@ -37,26 +49,15 @@ function vgal.recipe.smart_allow_productivity(recipe_name, ignore_catalysts, ski
             break
         end
     end
-    if ignore_catalysts then
-        all_catalysts = false
-    end
-    if (all_catalysts and #recipe.results == 1) then
-        recipe.allow_productivity = true
-        ignore_catalysts = true
-    end
-    if not all_catalysts then recipe.allow_productivity = true end
-
 
     for _, result in ipairs(recipe.results) do
-        if (not ignore_catalysts) and vgal.catalyst_entries[result.name] then
+        if (not all_catalysts) and vgal.catalyst_entries[result.name] then
             vgal.recipe.disallow_productivity_for_result(recipe_name, result.name)
         end
         if (not skip_entry_register) and not vgal.recipe.get_if_productivity(result.name) then
             vgal.recipe.add_productivity_entry(result.name)
         end
     end
-
-    return recipe.allow_productivity
 end
 
 ---@param recipe_name string
@@ -88,13 +89,24 @@ function vgal.recipe.disallow_productivity_for_result(recipe_name, result_name)
     local found = false
     for _, result in ipairs(recipe.results or {}) do
         if result.name == result_name then
-            result.ignored_by_productivity = 65535
+            result.ignored_by_productivity = vgal.defines.ignored_by_productivity_max
             found = true
             break
         end
     end
     if not found then
         error("Recipe '" .. recipe_name .. "' does not have result '" .. result_name .. "'")
+    end
+end
+
+---@param recipe_name string
+function vgal.recipe.allow_productivity_for_all_results(recipe_name)
+    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+
+    recipe.allow_productivity = true
+
+    for _, result in ipairs(recipe.results or {}) do
+        result.ignored_by_productivity = nil
     end
 end
 

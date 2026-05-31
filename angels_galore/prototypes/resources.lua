@@ -1,22 +1,5 @@
 vgal.data.extend({
     {
-        name = "angels-slag-angels-stone-crushed", -- the default "angels-stone-crushed" recipe now requires stone
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("angels-stone-crushed"),
-            vgal.icon.get_in("angels-slag"),
-        },
-        energy_required = 1,
-        technology = "angels-ore-crushing",
-        ingredients = {
-            { "angels-slag", 1 },
-        },
-        results = {
-            { "angels-stone-crushed", 2 },
-        },
-        category = "angels-ore-refining-t1",
-    },
-    {
         name = "angels-stone-crushed-angels-solid-sand",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -47,7 +30,6 @@ vgal.data.extend({
         results = {
             { "stone", 2 },
         },
-        allow_productivity = false,
         category = "smelting",
     },
     {
@@ -58,18 +40,17 @@ vgal.data.extend({
             vgal.icon.get_in("angels-solid-carbon"),
         },
         technology = { "angels-metallurgy-2", "angels-coal-processing" },
-        energy_required = 1,
+        energy_required = 1.6,
         ingredients = {
-            { "angels-stone-crushed", 15 },
+            { "angels-stone-crushed", 8 },
             { "angels-solid-carbon",  1 }, -- 6
         },
         results = {
-            { "stone", 8 },
+            { "stone", 4 },
         },
         category = "angels-sintering",
 
         order = "ab",
-        allow_productivity = false,
     },
     -- {
     --     name = "angels-stone-crushed-angels-solid-carbon-stone-brick",
@@ -110,6 +91,7 @@ vgal.data.extend({
         },
         enabled = true,
         show_amount_in_title = false,
+        allow_productivity = false,
         category = "angels-manual-crafting",
     },
     {

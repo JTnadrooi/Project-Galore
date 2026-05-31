@@ -96,11 +96,6 @@ end
 
 -- CHEM
 vgal.recipe.smart_allow_productivity("angels-rocket-fuel-capsule")
-vgal.recipe.smart_allow_productivity("angels-rocket-oxidizer-capsule")
-vgal.recipe.smart_allow_productivity("angels-rocket-booster")
-vgal.recipe.smart_allow_productivity("angels-rocket-booster-2")
-vgal.recipe.smart_allow_productivity("angels-solid-nitroglycerin")
-vgal.recipe.smart_allow_productivity("angels-solid-trinitrotoluene")
 vgal.recipe.smart_allow_productivity("angels-electrode")
 
 vgal.recipe.smart_allow_productivity("angels-coal-cracking-1")
@@ -116,13 +111,8 @@ vgal.recipe.smart_allow_productivity("angels-coke-purification-2")
 vgal.recipe.smart_allow_productivity("angels-mineral-oil-lubricant")
 vgal.recipe.smart_allow_productivity("angels-steam-cracking-fuel-oil")
 vgal.recipe.smart_allow_productivity("angels-pellet-coke")
-vgal.recipe.smart_allow_productivity("angels-gas-carbon-monoxide")
+vgal.recipe.smart_allow_productivity("angels-gas-carbon-monoxide") -- hmmmmmm
 vgal.recipe.smart_allow_productivity("angels-gas-carbon-dioxide")
-vgal.recipe.smart_allow_productivity("angels-liquid-plastic")
-vgal.recipe.smart_allow_productivity("angels-liquid-plastic-2")
-vgal.recipe.smart_allow_productivity("angels-liquid-plastic-3")
-vgal.recipe.smart_allow_productivity("angels-bio-plastic")
-vgal.recipe.smart_allow_productivity("angels-bio-plastic-2")
 
 vgal.recipe.smart_allow_productivity("angels-solid-fuel-methane")
 vgal.recipe.smart_allow_productivity("angels-solid-fuel-naphtha")
@@ -131,7 +121,7 @@ vgal.recipe.smart_allow_productivity("angels-solid-fuel-synthesis")
 vgal.recipe.smart_allow_productivity("angels-solid-fuel-hydrazine")
 vgal.recipe.smart_allow_productivity("angels-catalyst-metal-carrier")
 
-vgal.recipe.smart_allow_productivity("angels-gas-acid-catalyst") -- w
+vgal.recipe.smart_allow_productivity("angels-gas-acid-catalyst")
 vgal.recipe.smart_allow_productivity("angels-solid-ammonium-nitrate")
 vgal.recipe.smart_allow_productivity("angels-solid-ammonium-perchlorate")
 

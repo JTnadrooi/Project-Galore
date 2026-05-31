@@ -52,9 +52,12 @@ function vgal.recipe.smart_allow_productivity(recipe_name, skip_entry_register)
 
     for _, result in ipairs(recipe.results) do
         if (not all_catalysts) and vgal.catalyst_entries[result.name] then
-            vgal.recipe.disallow_productivity_for_result(recipe_name, result.name)
+            result.ignored_by_productivity = vgal.defines.ignored_by_productivity_max
+        else
+            result.ignored_by_productivity = nil
         end
-        if (not skip_entry_register) and not vgal.recipe.get_if_productivity(result.name) then
+        
+        if (not skip_entry_register) and not vgal.catalyst_entries[result.name] and not vgal.recipe.get_if_productivity(result.name) then
             vgal.recipe.add_productivity_entry(result.name)
         end
     end

@@ -315,11 +315,6 @@ data.raw["recipe"]["angels-solid-coke-sulfur"].icons = vgal.icon.register({
     vgal.icon.get_in("angels-water-purified"),
 })
 
--- fix carbon recipe tier icons
-data.raw["recipe"]["angels-solid-carbon"].icons = vgal.icon.register({
-    vgal.icon.get("angels-solid-carbon"),
-})
-
 -- fix green algae recipe tier icons
 data.raw["recipe"]["angels-algae-green-simple"].icons = vgal.icon.register({
     vgal.icon.get("angels-algae-green"),

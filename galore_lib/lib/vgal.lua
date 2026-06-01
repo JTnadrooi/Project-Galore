@@ -257,12 +257,27 @@ function vgal.data.extend(entries, fill_in_with)
             entry.allow_decomposition = false
             entry.allow_as_intermediate = false
 
+            if entry.enable_smart_productivity == nil then
+                local eligible_for_smart_prod = true
+                for _, result in ipairs((entry.results or {}) --[[@as data.ProductPrototype]]) do
+                    if result.ignored_by_productivity then
+                        eligible_for_smart_prod = false
+                    end
+                end
+
+                entry.enable_smart_productivity = eligible_for_smart_prod
+            end
+
+            if entry.allow_productivity == nil then
+                entry.allow_productivity = vgal.recipe.get_if_productivity(entry.main_product)
+            end
+
             vgal.log("registering: " .. entry.name)
 
             ---@diagnostic disable-next-line: assign-type-mismatch
             data:extend { entry }
 
-            if entry.allow_productivity == nil and vgal.recipe.get_if_productivity(entry.main_product) then
+            if entry.enable_smart_productivity and entry.allow_productivity then
                 vgal.recipe.smart_allow_productivity(entry.name)
             end
 

@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.3
+  Features:
+    - Overhauled sodium techs.
+    - Added "vgal-angels-solid-coke-angels-solid-sodium-hydroxide-angels-solid-carbon" (previously angels-coke-purification-2, but got removed from Angel's in latest update)
+  Bugfixes:
+    - Fixed crash with latest angels update.
+    - Fixed quality requiring bioprocessing in latest angels update.
+    - Fixed "vgal-angels-gas-ethylene-plastic-bar" being made in a chemical plant instead of a liquifyers like other 1 input plastic recipes.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.2
   Features:
     - Restored clay brick, can be used as tile or as ingredient for ceramic filters.

@@ -39,7 +39,7 @@ vgal.data.extend({
         },
         main_product = "plastic-bar",
 
-        category = "chemistry",
+        category = "angels-liquifying",
         order = "ab"
     },
     {

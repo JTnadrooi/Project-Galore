@@ -1,20 +1,24 @@
 vgal.data.extend({
     {
-        -- angels mirror, buffed, see the override (didnt wanna make the recipe weird)
-        -- uses (alien bacteria) item usage has been compensated
-        name = "angels-red-cellulose-fiber-angels-solid-calcium-carbonate",
+        name = "sulfuric-acid-angels-solid-carbon",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("angels-solid-calcium-carbonate"),
-            vgal.icon.get_in("angels-red-cellulose-fiber"),
+            vgal.icon.get("angels-solid-carbon"),
+            vgal.icon.get_in("sulfuric-acid"),
         },
-        energy_required = 10, -- 30
-        technology = "angels-bio-processing-red",
+        energy_required = 1,
+        technology = "angels-sulfur-processing-1",
+        fluid_ingredients = {
+            { "sulfuric-acid", 5 },
+        },
         ingredients = {
-            { "angels-red-cellulose-fiber", 6 }, -- 20
+            { "angels-solid-coke", 2 },
+        },
+        fluid_results = {
+            { "angels-water-yellow-waste", 5 },
         },
         results = {
-            { "angels-solid-calcium-carbonate", 5 },
+            { "angels-solid-carbon", 3 },
         },
         category = "angels-liquifying",
     }

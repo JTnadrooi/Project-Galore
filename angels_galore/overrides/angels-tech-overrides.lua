@@ -215,6 +215,12 @@ vgal.tech.add_unit("angels-advanced-gas-processing", "production-science-pack")
 -- move all adv chem 4 recipes to chem 3 so they're blue science instead of purp science (also removes the tech)
 vgal.tech.move_effects("angels-advanced-chemistry-4", "angels-advanced-chemistry-3")
 
+-- move sodium carbonate to earlier as I have some plans w it
+vgal.tech.move_recipe("angels-sodium-processing-2", "angels-sodium-processing-1",
+    "angels-solid-sodium-carbonate-electrolysis")
+vgal.tech.move_recipe("angels-sodium-processing-2", "angels-bio-processing-green", "angels-algae-brown-burning-wash")
+vgal.tech.remove_prerequisite("angels-sodium-processing-2", "angels-bio-processing-green")
+
 -- BIO SCIENCE
 -- add initial
 data.raw["technology"]["angels-gardens"].prerequisites = { "vgal-biological-science-pack" }

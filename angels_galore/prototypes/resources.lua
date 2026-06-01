@@ -7,7 +7,7 @@ vgal.data.extend({
             vgal.icon.get_in("angels-solid-sodium-hydroxide"),
         }),
         energy_required = 2,
-        technology = "angels-nitrogen-processing-1",
+        technology = "angels-sodium-processing-1",
         ingredients = {
             { "angels-solid-coke",             4 },
             { "angels-solid-sodium-hydroxide", 1 },

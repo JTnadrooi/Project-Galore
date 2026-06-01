@@ -3,7 +3,7 @@ require("lib.agal")
 vgal.throw.error_if_missing_galore({ "angels_space_age_galore", "Angel's+Space Age Galore" },
     { "space_age_galore", "Space Age Galore" }, true)
 
-require("overrides.angels-prod-overrides")
+require("overrides.prod-overrides")
 require("prototypes.items.biological-science-pack")
 
 require("prototypes.subgroups")

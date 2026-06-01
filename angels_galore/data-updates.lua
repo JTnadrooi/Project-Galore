@@ -1,19 +1,17 @@
 require("overrides.loot-overrides")
-require("overrides.vanilla-overrides")
 
-require("overrides.angels-order-overrides")
-require("overrides.angels-overrides")
-require("overrides.angels-recipe-overrides")
+require("overrides.order-overrides")
+require("overrides.overrides")
+require("overrides.recipe-overrides")
 
-require("overrides.vgal-overrides")
-require("overrides.angels-icon-overrides")
-require("overrides.angels-machine-overrides")
+require("overrides.icon-overrides")
+require("overrides.machine-overrides")
 require("overrides.angels-purge")
-require("overrides.angels-tech-overrides")
+require("overrides.tech-overrides")
 
-require("overrides.angels-tips-overrides")
+require("overrides.tips-overrides")
 
-require("overrides.angels-locale-overrides")
+require("overrides.locale-overrides")
 
 require("mods.angelsaddons-bots")
 require("mods.angelsaddons-cab")

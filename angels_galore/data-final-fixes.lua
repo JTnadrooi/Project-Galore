@@ -1,4 +1,4 @@
-require("overrides.angels-overrides-final-fixes")
+require("overrides.overrides-final-fixes")
 require("mods.quality")
 
 -- because this doesnt listen in subgroups and im not putting that in final fixes
@@ -97,9 +97,7 @@ data.raw["technology"]["angels-nuclear-fuel"].prerequisites = {
 -- tips and tricks categories can stay, I dont wan't to delete stuff I don't have to
 for _, tnt_item in pairs(data.raw["tips-and-tricks-item"]) do
     if tnt_item.name and tnt_item.name:match("^angels%-") then
-        -- error(tnt_item.name)
         data.raw["tips-and-tricks-item"][tnt_item.name] = nil -- hiding doesn't work
-        -- vgal.data.deephide(tnt_item)
     end
 end
 

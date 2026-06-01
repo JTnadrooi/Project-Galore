@@ -44,7 +44,7 @@ for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
 end
 
 -- fix acid needed to mine ore2 (jiv)
-data.raw["resource"]["infinite-angels-ore2"].minable.required_fluid = "angels-liquid-sulfuric-acid"
+data.raw["resource"]["infinite-angels-ore2"].minable.required_fluid = "sulfuric-acid"
 
 for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
     -- use updated locale

@@ -468,7 +468,7 @@ for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) d
     -- sulfur tweaks
     vgal.recipe.set_result_amount(metal.chunk, 25, "angels-water-yellow-waste")
     vgal.recipe.set_ingredient_amount(metal.chunk, 25, "angels-water-purified")
-    vgal.recipe.set_ingredient_amount(metal.crystal, 10, "angels-liquid-sulfuric-acid")
+    vgal.recipe.set_ingredient_amount(metal.crystal, 10, "sulfuric-acid")
 
     -- geode tweaks
     if metal.name == "copper" then
@@ -951,7 +951,7 @@ for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) d
 end
 
 -- make slag from crushed stone use slightly less sulfuric acid
-vgal.recipe.set_ingredient_amount("angels-stone-crushed-dissolution", 10, "angels-liquid-sulfuric-acid")
+vgal.recipe.set_ingredient_amount("angels-stone-crushed-dissolution", 10, "sulfuric-acid")
 
 -- make sulfuric acid chain recipes faster
 -- done to compensate overral slower chem/liquifier speeds

@@ -633,13 +633,19 @@ end
 
 -- restore module recipes as they dont require bioprocessing anymore
 if mods["bobmodules"] then
-    for _, module_data in ipairs({
+    local module_data_store = {
         { "speed",            "blue" },
         { "efficiency",       "green" },
         { "productivity",     "red" },
         { "pollution-clean",  "harmonic" },
         { "pollution-create", "harmonic" },
-    }) do
+    }
+
+    if mods["quality"] then
+        table.insert(module_data_store, { "quality", "harmonic" })
+    end
+
+    for _, module_data in ipairs(module_data_store) do
         vgal.recipe.remove_ingredient("bob-" .. module_data[1] .. "-processor",
             "angels-crystal-splinter-" .. module_data[2])
         vgal.recipe.remove_ingredient("bob-" .. module_data[1] .. "-processor-2",
@@ -648,11 +654,17 @@ if mods["bobmodules"] then
             "angels-crystal-full-" .. module_data[2])
     end
 else
-    for _, module_data in ipairs({
+    local module_data_store = {
         { "speed",        "blue" },
         { "efficiency",   "green" },
         { "productivity", "red" },
-    }) do
+    }
+
+    if mods["quality"] then
+        table.insert(module_data_store, { "quality", "harmonic" })
+    end
+
+    for _, module_data in ipairs(module_data_store) do
         vgal.recipe.remove_ingredient(module_data[1] .. "-module",
             "angels-crystal-splinter-" .. module_data[2])
         vgal.recipe.remove_ingredient(module_data[1] .. "-module-2",

@@ -70,10 +70,35 @@ data.raw["technology"]["angels-bio-processing-crystal-full"].prerequisites = {
 vgal.table.remove(data.raw["technology"]["modules"].prerequisites, "angels-bio-processing-crystal-splinter-1")
 for _, module in pairs(vgal.defines.modules) do
     for tier, tiered_name in ipairs(module.tiers) do
-        if tier == 2 then
-            vgal.table.remove(data.raw["technology"][tiered_name].prerequisites, "angels-bio-processing-crystal-shard-1")
-        elseif tier == 3 then
-            vgal.table.remove(data.raw["technology"][tiered_name].prerequisites, "angels-bio-processing-crystal-full")
+        if module.name == "quality-module" then -- quality only gets added to module table if quality mod
+            if mods["bobmodules"] then
+                if tier == 2 then
+                    vgal.table.remove(data.raw["technology"][tiered_name].prerequisites,
+                        "angels-bio-processing-crystal-splinter-2")
+                elseif tier == 3 then
+                    vgal.table.remove(data.raw["technology"][tiered_name].prerequisites,
+                        "angels-bio-processing-crystal-shard-2")
+                end
+            else
+                if tier == 1 then
+                    vgal.table.remove(data.raw["technology"][tiered_name].prerequisites,
+                        "angels-bio-processing-crystal-splinter-2")
+                elseif tier == 2 then
+                    vgal.table.remove(data.raw["technology"][tiered_name].prerequisites,
+                        "angels-bio-processing-crystal-shard-2")
+                elseif tier == 3 then
+                    vgal.table.remove(data.raw["technology"][tiered_name].prerequisites,
+                        "angels-bio-processing-crystal-full")
+                end
+            end
+        else
+            if tier == 2 then
+                vgal.table.remove(data.raw["technology"][tiered_name].prerequisites,
+                    "angels-bio-processing-crystal-shard-1")
+            elseif tier == 3 then
+                vgal.table.remove(data.raw["technology"][tiered_name].prerequisites,
+                    "angels-bio-processing-crystal-full")
+            end
         end
     end
 end

@@ -159,6 +159,11 @@ data.raw["mining-drill"]["angels-thermal-bore"].energy_usage               = "12
 data.raw["assembling-machine"]["angels-ore-refinery"].energy_usage         = "2452kW" -- og: 310kw
 data.raw["assembling-machine"]["angels-ore-leaching-plant"].energy_usage   = "543kW"  -- og: 207kw
 
+-- increase furnace power usage
+-- except the sintering oven thing, its perfect already (its supposed to be kinda lower temp also)
+data.raw["assembling-machine"]["angels-blast-furnace"].energy_usage        = "750kW"  -- og: 150kw
+data.raw["assembling-machine"]["angels-chemical-furnace"].energy_usage     = "805kW" -- og: 155kw
+
 data.raw["assembling-machine"]["angels-bio-refugium-puffer"].working_sound = {
     sound = { filename = "__angelspetrochemgraphics__/sound/separator.ogg", volume = 0.65 },
     idle_sound = { filename = "__base__/sound/idle1.ogg", volume = 0.6 },

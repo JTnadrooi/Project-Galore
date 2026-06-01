@@ -72,7 +72,6 @@ data.raw["recipe"]["angels-solid-trinitrotoluene"].order = "ac"
 data.raw["recipe"]["angels-solid-salt-separation"].order = "cb"
 data.raw["recipe"]["angels-solid-sodium-sulfate-separation"].order = "cc"
 
-data.raw["recipe"]["angels-coke-purification-2"].order = "ab"
 data.raw["recipe"]["angels-carbon-from-charcoal"].order = "ac"
 
 data.raw["recipe"]["angels-liquid-aqueous-sodium-hydroxide-reverse"].order = "cb"

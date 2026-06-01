@@ -105,7 +105,6 @@ vgal.recipe.smart_allow_productivity("angels-coal-crushed")
 vgal.recipe.smart_allow_productivity("angels-solid-coke")
 vgal.recipe.smart_allow_productivity("angels-solid-coke-sulfur")
 vgal.recipe.smart_allow_productivity("angels-solid-carbon")
-vgal.recipe.smart_allow_productivity("angels-coke-purification-2")
 vgal.recipe.smart_allow_productivity("angels-mineral-oil-lubricant")
 vgal.recipe.smart_allow_productivity("angels-steam-cracking-fuel-oil")
 vgal.recipe.smart_allow_productivity("angels-pellet-coke")
@@ -219,8 +218,6 @@ data.raw["recipe"]["angels-clay-brick"].allow_productivity = false
 data.raw["recipe"]["nuclear-fuel-reprocessing"].allow_productivity = false
 data.raw["recipe"]["angels-coolant-used-filtration-1"].allow_productivity = false
 data.raw["recipe"]["angels-coolant-used-filtration-2"].allow_productivity = false
-vgal.recipe.disallow_productivity_for_result("angels-coke-purification-2", "angels-solid-sodium-carbonate")
-vgal.recipe.disallow_productivity_for_result("angels-coke-purification-2", "water")
 
 -- add prod entries (that didnt get added with the smart_allow_productivity calls)
 vgal.recipe.add_productivity_entry("angels-thorium-ore")

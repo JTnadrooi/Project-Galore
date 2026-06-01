@@ -238,7 +238,6 @@ local subgroups = {
             { "angels-water-gas-shift-2", "angels-gas-carbon-monoxide" },
             "angels-carbon-from-charcoal",
             "angels-gas-carbon-dioxide-from-wood",
-            { "angels-coke-purification-2", "angels-solid-carbon" },
         },
         should_reorder_entries = true,
     },

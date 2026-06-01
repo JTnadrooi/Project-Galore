@@ -177,9 +177,6 @@ vgal.tech.move_recipe("angels-coolant-2", "angels-coolant-1", "angels-coolant-us
 vgal.tech.add_prerequisite("angels-thermal-water-extraction", "angels-chlorine-processing-2")
 vgal.tech.add_prerequisite("angels-bio-refugium-puffer-1", "angels-thermal-water-extraction")
 
--- move sodium carbonate recipe 1 tier sooner
-vgal.tech.move_recipe("angels-sodium-processing-2", "angels-sodium-processing-1", "angels-solid-sodium-carbonate")
-
 -- move all fluorite acid/gas recipes to thermal water tech
 vgal.tech.move_recipe("angels-sulfur-processing-1", "angels-thermal-water-extraction", "angels-liquid-hydrofluoric-acid")
 vgal.tech.move_recipe("angels-sulfur-processing-1", "angels-thermal-water-extraction", "angels-gas-hydrogen-fluoride")
@@ -215,11 +212,14 @@ vgal.tech.add_unit("angels-advanced-gas-processing", "production-science-pack")
 -- move all adv chem 4 recipes to chem 3 so they're blue science instead of purp science (also removes the tech)
 vgal.tech.move_effects("angels-advanced-chemistry-4", "angels-advanced-chemistry-3")
 
--- move sodium carbonate to earlier as I have some plans w it
-vgal.tech.move_recipe("angels-sodium-processing-2", "angels-sodium-processing-1",
-    "angels-solid-sodium-carbonate-electrolysis")
+-- rework sodium techs (and remove sodium 2)
+-- unlocking the reverse of a recipe a science pack later feels kinda silly
 vgal.tech.move_recipe("angels-sodium-processing-2", "angels-bio-processing-green", "angels-algae-brown-burning-wash")
-vgal.tech.remove_prerequisite("angels-sodium-processing-2", "angels-bio-processing-green")
+vgal.tech.move_effects("angels-sodium-processing-2", "angels-sodium-processing-1") -- removes sodium 2
+vgal.tech.move_recipe("angels-sodium-processing-1", "angels-sulfur-processing-3", "angels-solid-sodium-sulfate")
+vgal.tech.move_recipe("angels-sodium-processing-1", "angels-sulfur-processing-3",
+    "angels-solid-sodium-sulfate-separation")
+vgal.tech.add_prerequisite("angels-sulfur-processing-3", "angels-sodium-processing-1")
 
 -- BIO SCIENCE
 -- add initial

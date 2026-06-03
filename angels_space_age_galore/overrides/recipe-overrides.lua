@@ -127,7 +127,8 @@ do
             local molten_metal_amount =
                 (vgal.recipe.get_ingredient_amount(recipe_name, "molten-iron") + vgal.recipe.get_ingredient_amount(recipe_name, "molten-copper"))
 
-            local sand_amount = vgal.recipe.vanillize_number(molten_metal_amount / 40, "item")
+            local sand_amount = vgal.recipe.vanillize_number(molten_metal_amount / 60, "item")
+            sand_amount = math.min(sand_amount, 10)
 
             vgal.recipe.add_ingredient(recipe_name, { "angels-solid-sand", sand_amount })
         end

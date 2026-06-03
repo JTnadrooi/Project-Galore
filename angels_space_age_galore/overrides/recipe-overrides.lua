@@ -97,6 +97,9 @@ do
     -- discover casting recipes
     for _, recipe in pairs(data.raw["recipe"]) do
         local has_molten_metal_input = false
+        local has_item_output = false
+        local has_science_pack_output = false
+
         for _, ingredient in ipairs(recipe.ingredients or {}) do
             if ingredient.name == "molten-iron" or ingredient.name == "molten-copper" then
                 has_molten_metal_input = true
@@ -104,20 +107,29 @@ do
             end
         end
 
-        if has_molten_metal_input then
-            local also_has_item_output = false
+        if not has_molten_metal_input then
+            goto continue
+        end
 
-            for _, result in ipairs(recipe.results or {}) do
-                if result.type == "item" then
-                    also_has_item_output = true
-                    break
-                end
-            end
-
-            if also_has_item_output then -- (weird if for performance)
-                table.insert(casting_recipes, recipe.name)
+        for _, result in ipairs(recipe.results or {}) do
+            if result.type == "item" then
+                has_item_output = true
+                break
             end
         end
+
+        if not has_item_output then
+            goto continue
+        end
+
+        has_science_pack_output = vgal.table.contains(data.raw["lab"]["lab"].inputs, recipe.results[1].name)
+
+        if has_science_pack_output then
+            goto continue
+        end
+
+        table.insert(casting_recipes, recipe.name)
+        ::continue::
     end
 
     for _, recipe_name in ipairs(casting_recipes) do

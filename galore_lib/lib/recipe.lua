@@ -219,12 +219,8 @@ function vgal.recipe.vanillize_number(number, number_type)
         if number < 10 then
             return 5
         end
-        if not math.fmod(number, 5) == 0 and number < 100 then
-            number = math.floor(number / 10) * 10
-        end
-        if not math.fmod(number, 10) == 0 and number > 100 then
-            number = math.floor(number / 10) * 10
-        end
+
+        return math.floor(number / 10) * 10
     end
     if number_type == "item" then
         if number < 1 then

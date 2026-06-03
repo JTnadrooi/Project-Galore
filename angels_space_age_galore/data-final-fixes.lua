@@ -2,11 +2,9 @@
 ---@type table<string, string>
 local dedupe_map = {
     ["ammonia"] = "angels-gas-ammonia",
-    -- commentedbc; activated carbon != carbon needed by carbide
-    -- ["carbon"] = "angels-solid-carbon",
+    ["carbon"] = "angels-solid-carbon",
     ["molten-iron"] = "angels-liquid-molten-iron",
     ["molten-copper"] = "angels-liquid-molten-copper",
-    -- sulfuric acid is already handled by angels
 }
 
 for _, recipe in pairs(data.raw["recipe"]) do

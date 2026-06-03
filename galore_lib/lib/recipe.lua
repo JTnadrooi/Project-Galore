@@ -218,9 +218,20 @@ function vgal.recipe.vanillize_number(number, number_type)
     if number_type == "fluid" then
         if number < 10 then
             return 5
-        end
+        elseif number < 100 then
+            return math.floor(number / 10) * 10
+        elseif number < 300 then
+            local r20 = math.floor(number / 20 + 0.5) * 20
+            local r25 = math.floor(number / 25 + 0.5) * 25
 
-        return math.floor(number / 10) * 10
+            if math.abs(number - r20) <= math.abs(number - r25) then
+                return r20
+            else
+                return r25
+            end
+        else
+            return math.floor(number / 50) * 50
+        end
     end
     if number_type == "item" then
         if number < 1 then

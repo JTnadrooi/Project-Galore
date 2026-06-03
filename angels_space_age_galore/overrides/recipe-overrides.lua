@@ -75,6 +75,8 @@ vgal.data.trim("fish-breeding")
 -- casting fixes
 do
     local casting_recipes = {}
+
+    -- discover casting recipes
     for _, recipe in pairs(data.raw["recipe"]) do
         local has_molten_metal_input = false
         for _, ingredient in ipairs(recipe.ingredients or {}) do
@@ -114,10 +116,34 @@ do
         vgal.recipe.add_ingredient(recipe_name, { "angels-solid-sand", sand_amount })
     end
 
-    for _, recipe_name in ipairs(casting_recipes) do
-        local recipe = data.raw["recipe"][recipe_name]
+    -- commentedbc: gonna do this manually
+    -- add molten steel instead of iron
+    -- for _, recipe_name in ipairs(casting_recipes) do
+    --     local recipe = data.raw["recipe"][recipe_name]
+    --     local main_product_recipe = data.raw["recipe"][vgal.recipe.get_preferred_main_product(recipe)]
+    --     if main_product_recipe and main_product_recipe.ingredients then
+    --         for _, ingredient in ipairs(main_product_recipe.ingredients) do
 
-        
+    --         end
+    --     end
+    -- end
+
+    -- fix foundry recipe duration (foundry crafting speed has been reduced to 2)
+    -- data.raw["recipe"]["foundry"].energy_required = 5                  -- og; 10
+    -- data.raw["recipe"]["big-mining-drill"].energy_required = 15        -- og; 30
+    -- data.raw["recipe"]["metallurgic-science-pack"].energy_required = 5 -- og; 10
+    -- data.raw["recipe"]["tungsten-plate"].energy_required = 5           -- og; 10
+    for _, recipe in pairs(data.raw["recipe"]) do
+        if recipe.energy_required and recipe.energy_required >= 8
+            and (not (vgal.recipe.has_category(recipe.name, "crafting") or vgal.recipe.has_category(recipe.name, "crafting-with-fluid") or vgal.recipe.has_category(recipe.name, "pressing")) and vgal.recipe.has_category(recipe.name, "metallurgy")) then
+            local final_energy_required = recipe.energy_required / 2
+
+            if final_energy_required > 3 then
+                final_energy_required = math.ceil(final_energy_required)
+            end
+
+            recipe.energy_required = final_energy_required
+        end
     end
 end
 

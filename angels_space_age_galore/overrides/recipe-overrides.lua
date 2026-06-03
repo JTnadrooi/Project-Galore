@@ -129,6 +129,9 @@ do
 
             local sand_amount = vgal.recipe.vanillize_number(molten_metal_amount / 60, "item")
             sand_amount = math.min(sand_amount, 10)
+            if sand_amount == 3 then
+                sand_amount = 2
+            end
 
             vgal.recipe.add_ingredient(recipe_name, { "angels-solid-sand", sand_amount })
         end

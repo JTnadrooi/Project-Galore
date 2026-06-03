@@ -28,6 +28,10 @@ data.raw.recipe["vgal-molten-iron-rail"].icons = vgal.icon.register({
     vgal.icon.get("rail"),
     vgal.icon.get_in("angels-liquid-molten-steel"),
 })
+data.raw.recipe["vgal-molten-iron-molten-copper-space-platform-foundation"].icons = vgal.icon.register({
+    vgal.icon.get("space-platform-foundation"),
+    vgal.icon.get_in("angels-liquid-molten-steel"),
+})
 data.raw.recipe["vgal-molten-copper-carbon-fiber-low-density-structure"].icons = vgal.icon.register({
     vgal.icon.get("low-density-structure"),
     vgal.icon.get_in("carbon-fiber"),

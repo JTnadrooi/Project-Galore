@@ -121,6 +121,9 @@ do
     end
 
     for _, recipe_name in ipairs(casting_recipes) do
+        local recipe = data.raw["recipe"][recipe_name]
+        local main_product_recipe = data.raw["recipe"][vgal.recipe.get_preferred_main_product(recipe)]
+
         -- add sand
         do
             -- molten metals are still using their vanilla variant here, they get replaced in final fixes though
@@ -138,9 +141,6 @@ do
 
         -- steel fixes
         do
-            local recipe = data.raw["recipe"][recipe_name]
-            local main_product_recipe = data.raw["recipe"][vgal.recipe.get_preferred_main_product(recipe)]
-
             local casting_recipe_has_molten_iron = vgal.recipe.get_ingredient_amount(recipe_name, "molten-iron") > 0
 
             -- check main product recipe to see if it has steel plate input, and no iron input
@@ -161,6 +161,16 @@ do
                 if casting_recipe_has_molten_iron and mm_recipe_has_steel_plate and not mm_recipe_has_iron_product then
                     make_steel_casting(recipe)
                 end
+            end
+        end
+
+        -- big mining drill fixes
+        do
+            if recipe.results[1].name == "big-mining-drill" then
+                make_steel_casting(recipe)
+                vgal.recipe.set_ingredient_amount(recipe_name,
+                    math.ceil(vgal.recipe.get_ingredient_amount(recipe_name, "angels-liquid-molten-steel") / 25) * 25,
+                    "angels-liquid-molten-steel")
             end
         end
     end

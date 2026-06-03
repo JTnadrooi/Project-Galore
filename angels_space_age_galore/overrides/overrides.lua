@@ -1,32 +1,3 @@
--- trim unsaveble vanilla recipes
--- bio stuff will be obtained through bioprocessing
-vgal.data.trim("biolubricant")
-vgal.data.trim("bioplastic")
-vgal.data.trim("biosulfur")
-vgal.data.trim("rocket-fuel-from-jelly")
-
--- might be saveble
-vgal.data.trim("simple-coal-liquefaction")
--- vgal.data.trim("carbon")
-
--- other more angel-ish ways avalible
-vgal.data.trim("solid-fuel-from-ammonia")
-vgal.data.trim("ammonia-rocket-fuel")
-
--- not needed now there are alt methods for coal recipes that don't use coal.
-vgal.data.trim("coal-synthesis")
-
--- add spoilage to fiber recipe instead
-vgal.data.trim("burnt-spoilage")
-
--- angels already adds a fish breeding recipe
-vgal.data.trim("fish-breeding")
-
--- commentedbc; carbon from solid fuel
--- -- remove solid fuel from scrap
--- -- no throw bc other mods like to do this as well
--- vgal.recipe.remove_result("scrap-recycling", "solid-fuel", true)
-
 -- foundry fixes
 do
     local foundry = data.raw["assembling-machine"]["foundry"]
@@ -68,3 +39,18 @@ end
 vgal.data.trim("wood-processing")
 vgal.data.deephide(data.raw["item"]["tree-seed"])
 data.raw["item"]["tree-seed"].plant_result = nil -- needs to be done even if item is hidden
+
+-- commentedbc; carbon from solid fuel
+-- -- remove solid fuel from scrap
+-- -- no throw bc other mods like to do this as well
+-- vgal.recipe.remove_result("scrap-recycling", "solid-fuel", true)
+
+-- data.raw.recipe["vgal-ammonia-artificial-yumako-soil"].icons = vgal.icon.register {
+--     vgal.icon.get("artificial-yumako-soil"),
+--     vgal.icon.get_in("urea", "molecule"),
+-- }
+
+-- data.raw.recipe["vgal-ammonia-artificial-jellynut-soil"].icons = vgal.icon.register {
+--     vgal.icon.get("artificial-jellynut-soil"),
+--     vgal.icon.get_in("urea", "molecule"),
+-- }

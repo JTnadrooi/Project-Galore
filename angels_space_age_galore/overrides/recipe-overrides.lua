@@ -1,3 +1,4 @@
+-- vgal trims
 vgal.data.trim("vgal-ammonia-water-crude-oil")
 vgal.data.trim("vgal-spoilage-crude-oil")
 vgal.data.trim("vgal-yumako-mash-light-oil")
@@ -52,15 +53,74 @@ vgal.recipe.replace_ingredient("vgal-jelly-ammonia-electronic-circuit", "ammonia
 vgal.recipe.replace_ingredient("vgal-petroleum-gas-barrel-biter-egg", "petroleum-gas-barrel",
     "angels-gas-carbon-dioxide-barrel")
 
--- data.raw.recipe["vgal-ammonia-artificial-yumako-soil"].icons = vgal.icon.register {
---     vgal.icon.get("artificial-yumako-soil"),
---     vgal.icon.get_in("urea", "molecule"),
--- }
+-- vanilla trims
+-- bio stuff will be obtained through bioprocessing
+vgal.data.trim("biolubricant")
+vgal.data.trim("bioplastic")
+vgal.data.trim("biosulfur")
+vgal.data.trim("rocket-fuel-from-jelly")
+-- might be saveble
+vgal.data.trim("simple-coal-liquefaction")
+vgal.data.trim("carbon")
+-- other more angel-ish ways avalible
+vgal.data.trim("solid-fuel-from-ammonia")
+vgal.data.trim("ammonia-rocket-fuel")
+-- not needed now there are alt methods for coal recipes that don't use coal.
+vgal.data.trim("coal-synthesis")
+-- add spoilage to fiber recipe instead
+vgal.data.trim("burnt-spoilage")
+-- angels already adds a fish breeding recipe
+vgal.data.trim("fish-breeding")
 
--- data.raw.recipe["vgal-ammonia-artificial-jellynut-soil"].icons = vgal.icon.register {
---     vgal.icon.get("artificial-jellynut-soil"),
---     vgal.icon.get_in("urea", "molecule"),
--- }
+-- casting fixes
+do
+    local casting_recipes = {}
+    for _, recipe in pairs(data.raw["recipe"]) do
+        local has_molten_metal_input = false
+        for _, ingredient in ipairs(recipe.ingredients or {}) do
+            if ingredient.name == "molten-iron" or ingredient.name == "molten-copper" then
+                has_molten_metal_input = true
+                break
+            end
+        end
 
+        if has_molten_metal_input then
+            local also_has_item_output = false
+
+            for _, result in ipairs(recipe.results or {}) do
+                if result.type == "item" then
+                    also_has_item_output = true
+                    break
+                end
+            end
+
+            if also_has_item_output then -- (weird if for performance)
+                table.insert(casting_recipes, recipe.name)
+            end
+        end
+    end
+
+    -- add sand
+    for _, recipe_name in ipairs(casting_recipes) do
+        local recipe = data.raw["recipe"][recipe_name]
+
+        -- molten metals are still using their vanilla variant here, they get replaced in final fixes though
+        local molten_metal_amount =
+            (vgal.recipe.get_ingredient_amount(recipe_name, "molten-iron") + vgal.recipe.get_ingredient_amount(recipe_name, "molten-copper"))
+        -- / vgal.recipe.get_main_product_amount(recipe_name, true)
+
+        local sand_amount = vgal.recipe.vanillize_number(molten_metal_amount / 40, "item")
+
+        vgal.recipe.add_ingredient(recipe_name, { "angels-solid-sand", sand_amount })
+    end
+
+    for _, recipe_name in ipairs(casting_recipes) do
+        local recipe = data.raw["recipe"][recipe_name]
+
+        
+    end
+end
+
+-- category tweaks
 data.raw["recipe"]["vgal-molten-copper-carbon-fiber-low-density-structure"].category = "angels-casting"
 data.raw["recipe"]["tungsten-carbide"].category = "angels-chemical-smelting"

@@ -74,6 +74,24 @@ vgal.data.trim("fish-breeding")
 
 -- casting fixes
 do
+    ---@param recipe data.RecipePrototype
+    local function make_steel_casting(recipe)
+        local molten_steel_amount = vgal.recipe.get_ingredient_amount(recipe.name, "molten-iron") / 3
+
+        molten_steel_amount = vgal.recipe.vanillize_number(molten_steel_amount, "fluid")
+
+        vgal.recipe.add_ingredient(recipe.name, { "angels-liquid-molten-steel", molten_steel_amount }, "fluid")
+        vgal.recipe.remove_ingredient(recipe.name, "molten-iron")
+
+        -- error(serpent.block(recipe))
+    end
+
+    local iron_base_items = {
+        ["iron-plate"] = true,
+        ["iron-gear-wheel"] = true,
+        ["iron-stick"] = true,
+    }
+
     local casting_recipes = {}
 
     -- discover casting recipes
@@ -102,31 +120,46 @@ do
         end
     end
 
-    -- add sand
     for _, recipe_name in ipairs(casting_recipes) do
-        local recipe = data.raw["recipe"][recipe_name]
+        -- add sand
+        do
+            -- molten metals are still using their vanilla variant here, they get replaced in final fixes though
+            local molten_metal_amount =
+                (vgal.recipe.get_ingredient_amount(recipe_name, "molten-iron") + vgal.recipe.get_ingredient_amount(recipe_name, "molten-copper"))
 
-        -- molten metals are still using their vanilla variant here, they get replaced in final fixes though
-        local molten_metal_amount =
-            (vgal.recipe.get_ingredient_amount(recipe_name, "molten-iron") + vgal.recipe.get_ingredient_amount(recipe_name, "molten-copper"))
-        -- / vgal.recipe.get_main_product_amount(recipe_name, true)
+            local sand_amount = vgal.recipe.vanillize_number(molten_metal_amount / 40, "item")
 
-        local sand_amount = vgal.recipe.vanillize_number(molten_metal_amount / 40, "item")
+            vgal.recipe.add_ingredient(recipe_name, { "angels-solid-sand", sand_amount })
+        end
 
-        vgal.recipe.add_ingredient(recipe_name, { "angels-solid-sand", sand_amount })
+        -- steel fixes
+        do
+            local recipe = data.raw["recipe"][recipe_name]
+            local main_product_recipe = data.raw["recipe"][vgal.recipe.get_preferred_main_product(recipe)]
+
+            local casting_recipe_has_molten_iron = vgal.recipe.get_ingredient_amount(recipe_name, "molten-iron") > 0
+
+            -- check main product recipe to see if it has steel plate input, and no iron input
+            if main_product_recipe and main_product_recipe.ingredients then
+                local mm_recipe_has_steel_plate = false
+                local mm_recipe_has_iron_product = false
+                for _, ingredient in ipairs(main_product_recipe.ingredients) do
+                    if iron_base_items[ingredient.name] then
+                        mm_recipe_has_iron_product = true
+                        goto continue
+                    elseif ingredient.name == "steel-plate" then
+                        mm_recipe_has_steel_plate = true
+                    end
+                    ::continue::
+                end
+
+                -- if steel and no iron, replace all molten iron req with less molten steel
+                if casting_recipe_has_molten_iron and mm_recipe_has_steel_plate and not mm_recipe_has_iron_product then
+                    make_steel_casting(recipe)
+                end
+            end
+        end
     end
-
-    -- commentedbc: gonna do this manually
-    -- add molten steel instead of iron
-    -- for _, recipe_name in ipairs(casting_recipes) do
-    --     local recipe = data.raw["recipe"][recipe_name]
-    --     local main_product_recipe = data.raw["recipe"][vgal.recipe.get_preferred_main_product(recipe)]
-    --     if main_product_recipe and main_product_recipe.ingredients then
-    --         for _, ingredient in ipairs(main_product_recipe.ingredients) do
-
-    --         end
-    --     end
-    -- end
 
     -- fix foundry recipe duration (foundry crafting speed has been reduced to 2)
     -- data.raw["recipe"]["foundry"].energy_required = 5                  -- og; 10

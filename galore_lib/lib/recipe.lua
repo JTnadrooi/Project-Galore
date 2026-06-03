@@ -212,11 +212,9 @@ end
 
 ---@param number number
 ---@param number_type "item"|"fluid"|"time"
----@param ingredient_name string
 ---@return integer
-function vgal.recipe.vanillize_number(number, number_type, ingredient_name)
+function vgal.recipe.vanillize_number(number, number_type)
     number_type = number_type or "item"
-    ingredient_name = ingredient_name or number_type
     if number_type == "fluid" then
         if number < 10 then
             return 5
@@ -229,14 +227,19 @@ function vgal.recipe.vanillize_number(number, number_type, ingredient_name)
         end
     end
     if number_type == "item" then
+        if number < 1 then
+            return 1
+        else
+            number = math.floor(number)
+        end
+        if number == 7 then number = 8 end
+        if number == 9 then number = 10 end
+        if number == 11 then number = 10 end
         if number > 12 then
             if not math.fmod(number, 5) == 0 then
                 number = math.floor(number / 2) * 2
             end
         end
-        if number == 11 then number = 10 end
-        if number == 9 then number = 10 end
-        if number == 7 then number = 8 end
     end
     if number_type == "time" then
         if number > 12 then
@@ -452,13 +455,20 @@ function vgal.recipe.clear_icons(recipe_name)
 end
 
 ---@param recipe_name string
+---@param guess_main_product_if_not_specified boolean
 ---@return number
-function vgal.recipe.get_main_product_amount(recipe_name)
+function vgal.recipe.get_main_product_amount(recipe_name, guess_main_product_if_not_specified)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
-    if not recipe.main_product then
+    local main_product = recipe.main_product
+
+    if (not main_product) and guess_main_product_if_not_specified then
+        main_product = vgal.recipe.get_preferred_main_product(recipe)
+    end
+
+    if not main_product then
         error("Recipe '" .. recipe_name .. "' does not have a main product.")
     end
-    return vgal.recipe.get_result_amount(recipe_name, recipe.main_product)
+    return vgal.recipe.get_result_amount(recipe_name, main_product)
 end
 
 ---@param recipe_name string

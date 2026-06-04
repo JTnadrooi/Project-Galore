@@ -78,7 +78,7 @@ do
     local function make_steel_casting(recipe)
         local molten_steel_amount = vgal.recipe.get_ingredient_amount(recipe.name, "molten-iron") / 3
 
-        molten_steel_amount = vgal.recipe.vanillize_number(molten_steel_amount, "fluid")
+        molten_steel_amount = vgal.math.vanillize_number(molten_steel_amount, "fluid")
 
         vgal.recipe.add_ingredient(recipe.name, { "angels-liquid-molten-steel", molten_steel_amount }, "fluid")
         vgal.recipe.remove_ingredient(recipe.name, "molten-iron")
@@ -142,7 +142,7 @@ do
             local molten_metal_amount =
                 (vgal.recipe.get_ingredient_amount(recipe_name, "molten-iron") + vgal.recipe.get_ingredient_amount(recipe_name, "molten-copper"))
 
-            local sand_amount = vgal.recipe.vanillize_number(molten_metal_amount / 60, "item")
+            local sand_amount = vgal.math.vanillize_number(molten_metal_amount / 60, "item")
             sand_amount = math.min(sand_amount, 10)
             if sand_amount == 3 then
                 sand_amount = 2

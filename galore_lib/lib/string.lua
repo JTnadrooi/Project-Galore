@@ -6,3 +6,12 @@ vgal.string = vgal.string or {}
 function vgal.string.starts_with(str, prefix)
     return string.sub(str, 1, #prefix) == prefix
 end
+
+---@param str string
+---@param target string
+---@param replacement string
+---@return string
+function vgal.string.replace(str, target, replacement)
+    local result = str:gsub(target:gsub("(%W)", "%%%1"), replacement)
+    return (result) -- gets rid of the second return value maybe
+end

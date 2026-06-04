@@ -46,13 +46,6 @@ vgal.data.trim("vgal-holmium-ore-holmium-plate")
 vgal.data.trim("vgal-angels-liquid-molten-steel-low-density-structure")
 vgal.data.trim("vgal-calcite-carbon-concrete")
 
-vgal.recipe.replace_ingredient("vgal-ammonia-agricultural-science-pack", "ammonia", "angels-gas-urea")
-vgal.recipe.replace_ingredient("vgal-ammonia-artificial-yumako-soil", "ammonia", "angels-gas-urea")
-vgal.recipe.replace_ingredient("vgal-ammonia-artificial-jellynut-soil", "ammonia", "angels-gas-urea")
-vgal.recipe.replace_ingredient("vgal-jelly-ammonia-electronic-circuit", "ammonia", "angels-gas-urea")
-vgal.recipe.replace_ingredient("vgal-petroleum-gas-barrel-biter-egg", "petroleum-gas-barrel",
-    "angels-gas-carbon-dioxide-barrel")
-
 -- vanilla trims
 -- bio stuff will be obtained through bioprocessing
 vgal.data.trim("biolubricant")
@@ -192,6 +185,16 @@ do
         end
     end
 end
+
+vgal.recipe.replace_ingredient("vgal-ammonia-agricultural-science-pack", "ammonia", "angels-gas-urea")
+vgal.recipe.replace_ingredient("vgal-ammonia-artificial-yumako-soil", "ammonia", "angels-gas-urea")
+vgal.recipe.replace_ingredient("vgal-ammonia-artificial-jellynut-soil", "ammonia", "angels-gas-urea")
+vgal.recipe.replace_ingredient("vgal-jelly-ammonia-electronic-circuit", "ammonia", "angels-gas-urea")
+vgal.recipe.replace_ingredient("vgal-petroleum-gas-barrel-biter-egg", "petroleum-gas-barrel",
+    "angels-gas-carbon-dioxide-barrel")
+
+vgal.recipe.replace_result("molten-iron-from-lava", "stone", "angels-slag")
+vgal.recipe.replace_result("molten-copper-from-lava", "stone", "angels-slag")
 
 -- category tweaks
 data.raw["recipe"]["vgal-molten-copper-carbon-fiber-low-density-structure"].category = "angels-casting"

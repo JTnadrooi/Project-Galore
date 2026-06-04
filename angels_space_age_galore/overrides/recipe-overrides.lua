@@ -86,12 +86,6 @@ do
         -- error(serpent.block(recipe))
     end
 
-    local iron_base_items = {
-        ["iron-plate"] = true,
-        ["iron-gear-wheel"] = true,
-        ["iron-stick"] = true,
-    }
-
     local casting_recipes = {}
 
     -- discover casting recipes
@@ -158,19 +152,15 @@ do
             -- check main product recipe to see if it has steel plate input, and no iron input
             if main_product_recipe and main_product_recipe.ingredients then
                 local mm_recipe_has_steel_plate = false
-                local mm_recipe_has_iron_product = false
                 for _, ingredient in ipairs(main_product_recipe.ingredients) do
-                    if iron_base_items[ingredient.name] then
-                        mm_recipe_has_iron_product = true
-                        goto continue
-                    elseif ingredient.name == "steel-plate" then
+                    if ingredient.name == "steel-plate" then
                         mm_recipe_has_steel_plate = true
+                        break
                     end
-                    ::continue::
                 end
 
-                -- if steel and no iron, replace all molten iron req with less molten steel
-                if casting_recipe_has_molten_iron and mm_recipe_has_steel_plate and not mm_recipe_has_iron_product then
+                -- if steel and replace all molten iron req with less molten steel
+                if casting_recipe_has_molten_iron and mm_recipe_has_steel_plate then
                     make_steel_casting(recipe)
                 end
             end
@@ -180,9 +170,6 @@ do
         do
             if recipe.results[1].name == "big-mining-drill" then
                 make_steel_casting(recipe)
-                vgal.recipe.set_ingredient_amount(recipe_name,
-                    math.ceil(vgal.recipe.get_ingredient_amount(recipe_name, "angels-liquid-molten-steel") / 25) * 25,
-                    "angels-liquid-molten-steel")
             end
         end
     end

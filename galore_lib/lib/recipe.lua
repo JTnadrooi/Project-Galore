@@ -214,15 +214,16 @@ end
 ---@param number_type "item"|"fluid"|"time"
 ---@return integer
 function vgal.recipe.vanillize_number(number, number_type)
-    number_type = number_type or "item"
     if number_type == "fluid" then
         if number < 10 then
             return 5
+        elseif number < 50 then
+            return math.ceil(number / 10) * 10
         elseif number < 100 then
-            return math.floor(number / 10) * 10
+            return math.ceil(number / 25) * 25
         elseif number < 300 then
-            local r20 = math.floor(number / 20 + 0.5) * 20
-            local r25 = math.floor(number / 25 + 0.5) * 25
+            local r20 = math.ceil(number / 20 + 0.5) * 20
+            local r25 = math.ceil(number / 25 + 0.5) * 25
 
             if math.abs(number - r20) <= math.abs(number - r25) then
                 return r20
@@ -230,34 +231,45 @@ function vgal.recipe.vanillize_number(number, number_type)
                 return r25
             end
         else
-            return math.floor(number / 50) * 50
+            return math.ceil(number / 50) * 50
         end
     end
+
     if number_type == "item" then
         if number < 1 then
             return 1
         else
             number = math.floor(number)
         end
-        if number == 7 then number = 8 end
-        if number == 9 then number = 10 end
-        if number == 11 then number = 10 end
+        if number == 7 then return 8 end
+        if number == 9 then return 10 end
+        if number == 11 then return 10 end
         if number > 12 then
-            if not math.fmod(number, 5) == 0 then
-                number = math.floor(number / 2) * 2
+            if math.fmod(number, 5) == 0 then
+                return number
+            else
+                return math.floor(number / 2) * 2
             end
+        else
+            return number
         end
     end
+
     if number_type == "time" then
+        if number == 7 then return 8 end
+        if number == 11 then return 10 end
         if number > 12 then
-            if not math.fmod(number, 5) == 0 then
-                number = math.floor(number / 2) * 2
+            if math.fmod(number, 5) == 0 then
+                return number
+            else
+                return math.floor(number / 2) * 2
             end
+        else
+            return number
         end
-        if number == 11 then number = 10 end
-        if number == 7 then number = 8 end
     end
-    return number
+
+    error("Invalid number type.")
 end
 
 ---@param recipe_name string

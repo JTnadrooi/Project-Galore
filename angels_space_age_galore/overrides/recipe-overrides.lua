@@ -186,6 +186,30 @@ do
     end
 end
 
+-- nutrient fixes
+-- all fauna recipes should use nutrients instead of nutrient pulp
+-- flora can stay using pulp, same goes for chem ofc
+do
+    local nutrient_multiplier = 0.5
+    local category_map = vgal.recipe.get_category_map_for({
+        "angels-bio-refugium-puffer",
+        "angels-bio-refugium-biter",
+        "angels-bio-refugium-fish",
+    })
+
+    for _, recipe in pairs(data.raw["recipe"]) do
+        if recipe.category and category_map[recipe.category] then
+            for _, ingredient in ipairs(recipe.ingredients) do
+                if ingredient.name == "angels-liquid-nutrient-pulp" then
+                    ingredient.type = "item"
+                    ingredient.amount = vgal.math.vanillize_number(ingredient.amount * nutrient_multiplier, "item")
+                    ingredient.name = "nutrients"
+                end
+            end
+        end
+    end
+end
+
 vgal.recipe.replace_ingredient("vgal-ammonia-agricultural-science-pack", "ammonia", "angels-gas-urea")
 vgal.recipe.replace_ingredient("vgal-ammonia-artificial-yumako-soil", "ammonia", "angels-gas-urea")
 vgal.recipe.replace_ingredient("vgal-ammonia-artificial-jellynut-soil", "ammonia", "angels-gas-urea")

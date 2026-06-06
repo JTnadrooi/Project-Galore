@@ -636,3 +636,20 @@ function vgal.recipe.has_category(recipe_name, category_name)
     return not not (recipe.category == category_name or
         (recipe.additional_categories and vgal.table.contains(recipe.additional_categories, category_name)))
 end
+
+---@param machine_names string[]
+---@return table<string, string>
+function vgal.recipe.get_category_map_for(machine_names)
+    local result_map = {}
+
+    for _, machine_name in ipairs(machine_names) do
+        local machine = data.raw["assembling-machine"][machine_name] or data.raw["furnace"][machine_name] or
+            error("Machine not found with name " .. machine_name)
+
+        for _, category_name in ipairs(machine.crafting_categories or {}) do
+            result_map[category_name] = machine_name
+        end
+    end
+
+    return result_map
+end

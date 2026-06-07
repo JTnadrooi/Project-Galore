@@ -6,6 +6,7 @@ require("prototypes.subgroups")
 require("prototypes.generation.vgal-ore")
 
 require("prototypes.resources")
+require("prototypes.bio")
 
 
 

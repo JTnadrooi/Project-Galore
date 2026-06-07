@@ -1,6 +1,4 @@
 vgal = require("lib.vgal")
-vgal.log("the *core-of-galore* has loaded.")
-vgal.log("setting galorelib variables..")
 
 vgal.recipe.add_productivity_entry("coal")
 vgal.recipe.add_productivity_entry("iron-ore")
@@ -17,6 +15,5 @@ if mods["space-age"] then
     vgal.recipe.add_productivity_entry("holmium-ore")
     vgal.recipe.add_productivity_entry("calcite")
     vgal.recipe.add_productivity_entry("scrap")
+    vgal.recipe.add_productivity_entry("nutrients")
 end
-
-vgal.log("galorelib variables set.")

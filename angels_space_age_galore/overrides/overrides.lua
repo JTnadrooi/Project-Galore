@@ -1,3 +1,5 @@
+data.raw["underground-belt"]["turbo-underground-belt"].max_distance = 14
+
 -- foundry fixes
 do
     local foundry = data.raw["assembling-machine"]["foundry"]

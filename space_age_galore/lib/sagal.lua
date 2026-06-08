@@ -1,3 +1,7 @@
+sagal = sagal or {}
+
+require("defines")
+
 for _, metal in pairs(vgal.defines.metals --[[@as table<string, vgal.Metal>]]) do
     metal.bacteria = metal.name .. "-bacteria"
     metal.molten = "molten-" .. metal.name

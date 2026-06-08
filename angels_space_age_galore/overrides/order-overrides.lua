@@ -5,10 +5,15 @@ data.raw["item"]["carbon"].subgroup = "vgal-carbon"
 
 vgal.subgroup.clean_recipe("vgal-coal-crushing")
 
-data.raw["item-subgroup"]["agriculture-processes"].group = "angels-bio-processing-nauvis"
+data.raw["item-subgroup"]["agriculture-processes"].group = "angels-bio-processing-vegetables"
+data.raw["item-subgroup"]["agriculture-processes"].order = "d[desert]-xa"
+data.raw["item-subgroup"]["vgal-nutrients"].group = "angels-bio-processing-vegetables"
+data.raw["item-subgroup"]["vgal-nutrients"].order = "d[desert]-xb"
+
 data.raw["item-subgroup"]["vgal-bacteria"].group = "angels-bio-processing-nauvis"
-data.raw["item-subgroup"]["vgal-nutrients"].group = "angels-bio-processing-nauvis"
-data.raw["item-subgroup"]["agriculture-products"].group = "angels-bio-processing-nauvis"
+
+data.raw["recipe"]["yumako-processing"].order = "b-a"
+data.raw["recipe"]["jellynut-processing"].order = "b-b"
 
 data.raw["item-subgroup"]["raw-resource"].group = "angels-resource-refining"
 data.raw["item-subgroup"]["raw-resource"].order = "h"

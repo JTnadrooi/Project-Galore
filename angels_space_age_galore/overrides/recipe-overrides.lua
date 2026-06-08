@@ -64,6 +64,11 @@ vgal.data.trim("coal-synthesis")
 vgal.data.trim("burnt-spoilage")
 -- angels already adds a fish breeding recipe
 vgal.data.trim("fish-breeding")
+-- removal of some nutrients recipes
+vgal.data.trim("nutrients-from-biter-egg")
+vgal.data.trim("nutrients-from-fish")
+-- commentedbc; decided against a fruits from yumako recipe
+-- vgal.data.trim("nutrients-from-yumako-mash")
 
 -- casting fixes
 do
@@ -223,3 +228,69 @@ vgal.recipe.replace_result("molten-copper-from-lava", "stone", "angels-slag")
 -- category tweaks
 data.raw["recipe"]["vgal-molten-copper-carbon-fiber-low-density-structure"].category = "angels-casting"
 data.raw["recipe"]["tungsten-carbide"].category = "angels-chemical-smelting"
+
+-- gleba bioprocessing fixes
+do
+    -- yumako
+    data.raw["recipe"]["yumako-processing"].energy_required = 2
+    data.raw["recipe"]["yumako-processing"].category = "angels-bio-processor"
+    data.raw["recipe"]["yumako-processing"].icons = {
+        {
+            icon = "__angelsbioprocessinggraphics__/graphics/icons/processor-recipe.png",
+            icon_size = 32,
+        },
+        {
+            icon = "__space-age__/graphics/icons/yumako.png",
+            icon_size = 64,
+            scale = 0.4375 * 0.5,
+            shift = { -10, 10 },
+            tint = { r = 1, g = 1, b = 1, a = 1 },
+        },
+    }
+    data.raw["recipe"]["yumako-processing"].ingredients = vgal.build.table({
+        { "yumako", 5 },
+    })
+    data.raw["recipe"]["yumako-processing"].results = vgal.build.table({
+        { "yumako-mash",            12 },
+        { "angels-cellulose-fiber", 4 },
+    })
+
+    -- jellynut
+    data.raw["recipe"]["jellynut-processing"].energy_required = 2
+    data.raw["recipe"]["jellynut-processing"].category = "angels-bio-processor"
+    data.raw["recipe"]["jellynut-processing"].icons = {
+        {
+            icon = "__angelsbioprocessinggraphics__/graphics/icons/processor-recipe.png",
+            icon_size = 32,
+        },
+        {
+            icon = "__space-age__/graphics/icons/jellynut.png",
+            icon_size = 64,
+            scale = 0.4375 * 0.5,
+            shift = { -10, 10 },
+            tint = { r = 1, g = 1, b = 1, a = 1 },
+        },
+    }
+    data.raw["recipe"]["jellynut-processing"].ingredients = vgal.build.table({
+        { "jellynut", 5 },
+    })
+    data.raw["recipe"]["jellynut-processing"].results = vgal.build.table({
+        { "jelly",                 30 },
+        { "angels-alien-bacteria", 2 },
+    })
+
+    -- carbon fiber
+    -- make only craftable on gleba
+    data.raw["recipe"]["carbon-fiber"].surface_conditions = {
+        {
+            property = "pressure",
+            min = 2000,
+            max = 2000,
+        },
+    }
+    data.raw["recipe"]["carbon-fiber"].ingredients = vgal.build.table({
+        { "angels-solid-carbon",    1 },
+        { "angels-cellulose-fiber", 10 },
+        { "yumako-mash",            5 },
+    })
+end

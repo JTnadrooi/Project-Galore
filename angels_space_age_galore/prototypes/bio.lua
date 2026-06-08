@@ -41,3 +41,29 @@ for _, nutrientable_recipe_name in ipairs(nutrientable_recipe_names) do
         type = "recipe",
     })
 end
+
+for _, plant in pairs(sagal.defines.gleba_plants) do
+    vgal.data.extend({
+        {
+            name = plant.name .. "-" .. plant.seed,
+            prefix = "vgal",
+            icons = vgal.icon.register {
+                vgal.icon.get(plant.seed),
+            },
+            energy_required = 0.5,
+            technology = plant.name,
+            ingredients = {
+                { plant.dormant_seed, 5 },
+            },
+            results = {
+                { plant.seed, 5 },
+                { plant.seed, 1, { probability = 0.05 } },
+            },
+            category = "angels-seed-extractor",
+
+            order = "a-" .. ((plant.name == "yumako") and "a" or "b")
+        },
+    }, {
+        type = "recipe",
+    })
+end

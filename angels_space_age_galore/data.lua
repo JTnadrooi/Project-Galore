@@ -2,6 +2,8 @@ require("lib.asagal")
 
 require("prototypes.subgroups")
 
+require("prototypes.items.dormant-seeds")
+
 -- require("prototypes.generation.vgal-saline-fissure")
 require("prototypes.generation.vgal-ore")
 

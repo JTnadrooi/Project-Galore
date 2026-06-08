@@ -12,7 +12,6 @@ do
     -- allow angels casting
     table.insert(foundry.crafting_categories, "angels-casting")
     table.insert(foundry.crafting_categories, "angels-strand-casting")
-
 end
 
 -- remove vanilla tree farming
@@ -24,6 +23,16 @@ end
 vgal.data.trim("wood-processing")
 vgal.data.deephide(data.raw["item"]["tree-seed"])
 data.raw["item"]["tree-seed"].plant_result = nil -- needs to be done even if item is hidden
+
+-- gleba tree seed overhaul
+for _, plant in pairs(sagal.defines.gleba_plants) do
+    data.raw["plant"][plant.tree].minable.results = vgal.build.table({
+        { plant.name,         50 },
+        { plant.dormant_seed, 1 }
+    })
+    data.raw["plant"][plant.tree].minable.result = nil
+    data.raw["plant"][plant.tree].minable.count = nil
+end
 
 -- commentedbc; carbon from solid fuel
 -- -- remove solid fuel from scrap

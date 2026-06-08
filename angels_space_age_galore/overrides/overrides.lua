@@ -39,3 +39,7 @@ data.raw["item"]["tree-seed"].plant_result = nil -- needs to be done even if ite
 --     vgal.icon.get("artificial-jellynut-soil"),
 --     vgal.icon.get_in("urea", "molecule"),
 -- }
+
+-- allow more modules in bio machines (they are later game now + biochamber has like 4)
+data.raw["assembling-machine"]["angels-bio-processor"].module_slots = 4
+data.raw["assembling-machine"]["angels-seed-extractor"].module_slots = 4

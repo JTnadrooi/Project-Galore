@@ -25,3 +25,8 @@ vgal.subgroup.clean_recipe("casting-low-density-structure")
 vgal.subgroup.clean_recipe("vgal-molten-copper-carbon-fiber-low-density-structure")
 vgal.subgroup.clean_recipe("vgal-molten-iron-rail")
 vgal.subgroup.clean_recipe("vgal-solid-fuel-sulfuric-acid-carbon")
+
+
+data.raw["item"]["biter-egg"].order = "-a"
+data.raw["item"]["biter-egg"].subgroup = "angels-bio-biter-egg"
+data.raw["recipe"]["biter-egg"].order = "-a"

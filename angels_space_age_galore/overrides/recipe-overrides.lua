@@ -302,3 +302,7 @@ vgal.recipe.replace_ingredient("angels-biter-medium-egg", "angels-bio-puffer-egg
 vgal.recipe.set_ingredient_amount("angels-biter-medium-egg", 5, "biter-egg")
 vgal.recipe.replace_ingredient("angels-biter-big-egg", "angels-bio-puffer-egg-5", "biter-egg")
 vgal.recipe.set_ingredient_amount("angels-biter-big-egg", 5, "biter-egg")
+
+-- atm related fixes
+vgal.recipe.replace_ingredient("angels-puffer-puffing-1", "angels-gas-compressed-air", "angels-gas-carbon-dioxide")
+vgal.recipe.set_ingredient_amount("angels-puffer-puffing-1", 80, "angels-gas-carbon-dioxide")

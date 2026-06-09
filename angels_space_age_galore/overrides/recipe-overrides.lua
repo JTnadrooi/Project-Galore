@@ -294,3 +294,11 @@ do
         { "yumako-mash",            5 },
     })
 end
+
+-- update biter egg recipes
+vgal.recipe.replace_ingredient("angels-biter-small-egg", "angels-bio-puffer-egg-3", "biter-egg")
+vgal.recipe.set_ingredient_amount("angels-biter-small-egg", 5, "biter-egg")
+vgal.recipe.replace_ingredient("angels-biter-medium-egg", "angels-bio-puffer-egg-4", "biter-egg")
+vgal.recipe.set_ingredient_amount("angels-biter-medium-egg", 5, "biter-egg")
+vgal.recipe.replace_ingredient("angels-biter-big-egg", "angels-bio-puffer-egg-5", "biter-egg")
+vgal.recipe.set_ingredient_amount("angels-biter-big-egg", 5, "biter-egg")

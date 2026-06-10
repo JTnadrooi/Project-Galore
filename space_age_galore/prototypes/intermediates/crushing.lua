@@ -52,7 +52,7 @@ vgal.data.extend({
             vgal.icon.get("coal"),
             vgal.icon.get_overlay("crushing"),
         },
-        energy_required = 0.8,
+        energy_required = 1,
         technology = "space-platform",
         ingredients = {
             { "coal", 5 },

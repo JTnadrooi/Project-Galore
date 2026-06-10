@@ -27,7 +27,7 @@ vgal.data.extend({
             vgal.icon.get("biter-egg"),
             vgal.icon.get_in("nutrients"),
         },
-        energy_required = 3.2,
+        energy_required = 3,
         technology = "captivity",
         ingredients = {
             { "nutrients", 10 },

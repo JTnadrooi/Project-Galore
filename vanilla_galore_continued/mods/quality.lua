@@ -18,6 +18,8 @@ vgal.data.extend({
         results = {
             { "chemical-science-pack", 3 },
         },
+
+        order = "qd"
     },
 }, {
     type = "recipe",

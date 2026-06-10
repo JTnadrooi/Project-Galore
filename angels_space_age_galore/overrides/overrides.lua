@@ -34,6 +34,8 @@ for _, plant in pairs(vgal.defines.gleba_plants) do
     data.raw["plant"][plant.tree].minable.count = nil
 end
 
+vgal.data.deephide(data.raw["plant"]["tree-plant"])
+
 -- commentedbc; carbon from solid fuel
 -- -- remove solid fuel from scrap
 -- -- no throw bc other mods like to do this as well

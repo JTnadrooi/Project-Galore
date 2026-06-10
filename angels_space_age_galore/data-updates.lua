@@ -3,4 +3,5 @@ require("overrides.recipe-overrides")
 
 require("overrides.order-overrides")
 require("overrides.icon-overrides")
-require("overrides.ore-overrides")
+require("overrides.autoplace-overrides")
+require("overrides.factoriopedia-overrides")

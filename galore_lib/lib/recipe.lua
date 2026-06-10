@@ -412,7 +412,7 @@ function vgal.recipe.clear_icons(recipe_name)
 end
 
 ---@param recipe_name string
----@param guess_main_product_if_not_specified boolean
+---@param guess_main_product_if_not_specified boolean?
 ---@return number
 function vgal.recipe.get_main_product_amount(recipe_name, guess_main_product_if_not_specified)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)

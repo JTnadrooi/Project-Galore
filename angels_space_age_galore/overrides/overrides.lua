@@ -52,3 +52,13 @@ end
 -- allow more modules in bio machines (they are later game now + biochamber has like 4)
 data.raw["assembling-machine"]["angels-bio-processor"].module_slots = 4
 data.raw["assembling-machine"]["angels-seed-extractor"].module_slots = 3
+
+-- readd crusher surface condition after is was removed in sagal
+data.raw["assembling-machine"]["crusher"].surface_conditions =
+{
+    {
+        property = "gravity",
+        min = 0,
+        max = 0
+    }
+}

@@ -51,4 +51,4 @@ end
 
 -- allow more modules in bio machines (they are later game now + biochamber has like 4)
 data.raw["assembling-machine"]["angels-bio-processor"].module_slots = 4
-data.raw["assembling-machine"]["angels-seed-extractor"].module_slots = 4
+data.raw["assembling-machine"]["angels-seed-extractor"].module_slots = 3

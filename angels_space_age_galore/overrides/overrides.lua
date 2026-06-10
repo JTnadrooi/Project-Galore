@@ -55,12 +55,32 @@ vgal.data.deephide(data.raw["plant"]["tree-plant"])
 data.raw["assembling-machine"]["angels-bio-processor"].module_slots = 4
 data.raw["assembling-machine"]["angels-seed-extractor"].module_slots = 3
 
+-- surface conditions fixes
 -- readd crusher surface condition after is was removed in sagal
-data.raw["assembling-machine"]["crusher"].surface_conditions =
-{
+data.raw["assembling-machine"]["crusher"].surface_conditions = vgal.get_surface_conditions_for("space")
+data.raw["assembling-machine"]["angels-blast-furnace"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
+data.raw["assembling-machine"]["angels-burner-ore-crusher"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
+data.raw["assembling-machine"]["angels-crop-farm"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
+for _, environment in pairs(vgal.defines.environments) do
+    data.raw["assembling-machine"][environment.farm].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
+end
+data.raw["assembling-machine"]["angels-algae-farm"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
+data.raw["assembling-machine"]["angels-algae-farm-2"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
+data.raw["assembling-machine"]["angels-bio-refugium-puffer"].surface_conditions = vgal.get_surface_conditions_for("gravity")
+data.raw["assembling-machine"]["angels-bio-refugium-biter"].surface_conditions = {
     {
-        property = "gravity",
-        min = 0,
-        max = 0
+        property = "pressure",
+        min = 1000, -- no aq
+        max = 2000  -- no vulc
     }
 }
+data.raw["assembling-machine"]["angels-seed-extractor"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
+data.raw["assembling-machine"]["angels-bio-arboretum-1"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
+data.raw["assembling-machine"]["angels-bio-generator-temperate-1"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
+data.raw["assembling-machine"]["angels-air-filter"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
+data.raw["furnace"]["angels-clarifier"].surface_conditions = vgal.get_surface_conditions_for("gravity")
+
+data.raw["recipe"]["angels-gas-compressed-air"].surface_conditions = vgal.get_surface_conditions_for("nauvis")
+data.raw["recipe"]["vgal-temperate-seeds"].surface_conditions = vgal.get_surface_conditions_for("nauvis")
+data.raw["recipe"]["vgal-swamp-seeds"].surface_conditions = vgal.get_surface_conditions_for("nauvis")
+data.raw["recipe"]["vgal-desert-seeds"].surface_conditions = vgal.get_surface_conditions_for("nauvis")

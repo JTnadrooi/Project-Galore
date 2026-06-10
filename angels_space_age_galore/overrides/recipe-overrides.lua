@@ -307,3 +307,36 @@ vgal.recipe.set_ingredient_amount("angels-biter-big-egg", 5, "biter-egg")
 -- atm related fixes
 vgal.recipe.replace_ingredient("angels-puffer-puffing-1", "angels-gas-compressed-air", "angels-gas-carbon-dioxide")
 vgal.recipe.set_ingredient_amount("angels-puffer-puffing-1", 80, "angels-gas-carbon-dioxide")
+
+-- thruster fuel related fixes
+-- commentedbc; I will only reduce the yield of the vanilla t1 recipes, and add alts, GALORE STYLE.
+-- data.raw["recipe"]["thruster-fuel"].ingredients = vgal.build.table({
+--     { "angels-solid-carbon", 1 },
+-- }, {
+--     { "angels-gas-hydrogen", 40 },
+-- })
+-- data.raw["recipe"]["thruster-oxidizer"].ingredients = vgal.build.table({
+--     { "angels-iron-pebbles", 1 },
+-- }, {
+--     { "angels-gas-oxygen", 60 },
+-- })
+-- data.raw["recipe"]["advanced-thruster-fuel"].ingredients = vgal.build.table({
+--     { "angels-solid-carbon", 2 },
+--     { "angels-solid-lime",   1 },
+-- }, {
+--     { "angels-gas-hydrogen", 60 },
+-- })
+-- data.raw["recipe"]["advanced-thruster-oxidizer"].ingredients = vgal.build.table({
+--     { "angels-solid-lime",  1 },
+--     { "angels-iron-nugget", 1 },
+-- }, {
+--     { "angels-gas-oxygen", 100 },
+-- })
+
+-- space recipe fixes
+vgal.recipe.replace_result("metallic-asteroid-crushing", "iron-ore", "angels-iron-pebbles")
+vgal.recipe.replace_result("advanced-metallic-asteroid-crushing", "copper-ore", "angels-copper-pebbles")
+vgal.recipe.replace_result("advanced-metallic-asteroid-crushing", "iron-ore", "angels-iron-pebbles")
+
+vgal.recipe.replace_ingredient("thruster-oxidizer", "iron-ore", "angels-iron-pebbles")
+vgal.recipe.replace_ingredient("advanced-thruster-oxidizer", "iron-ore", "angels-iron-pebbles")

@@ -597,3 +597,67 @@ end
 function vgal.is_angels(prototype)
     return vgal.string.starts_with(prototype.name, "angels")
 end
+
+---@param target "space"|"nauvis"|"gleba"|"vulcanus"|"fulgora"|"aquilo"|"atmosphere"|"gravity"
+---@return data.SurfaceCondition
+function vgal.get_surface_conditions_for(target)
+    local sc_store = {
+        ["space"] = {
+            {
+                property = "gravity",
+                min = 0,
+                max = 0
+            }
+        },
+        ["nauvis"] = {
+            {
+                property = "pressure",
+                min = 1000,
+                max = 1000
+            }
+        },
+        ["gleba"] = {
+            {
+                property = "pressure",
+                min = 2000,
+                max = 2000
+            }
+        },
+        ["vulcanus"] = {
+            {
+                property = "pressure",
+                min = 4000,
+                max = 4000
+            }
+        },
+        ["fulgora"] = {
+            {
+                property = "magnetic-field",
+                min = 99,
+                max = 99
+            }
+        },
+        ["aquilo"] = {
+            {
+                property = "pressure",
+                min = 300,
+                max = 300
+            }
+        },
+        ["atmosphere"] = {
+            {
+                property = "pressure",
+                min = 100,
+            }
+        },
+        ["gravity"] = {
+            {
+                property = "gravity",
+                min = 1,
+                max = 0
+            }
+        },
+    }
+
+    return sc_store[target] or error(target)
+end

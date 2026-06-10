@@ -20,7 +20,7 @@ end
 data.raw["resource"]["infinite-angels-ore2"].autoplace = data.raw["resource"]["infinite-angels-ore1"].autoplace
 
 -- remove removed infinite ores
-for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
+for _, ore_index in pairs(vgal.defines.removed_ore_indexes) do
     local ore = "infinite-angels-ore" .. ore_index
 
     vgal.data.deephide(data.raw["resource"][ore])
@@ -46,7 +46,7 @@ end
 -- fix acid needed to mine ore2 (jiv)
 data.raw["resource"]["infinite-angels-ore2"].minable.required_fluid = "sulfuric-acid"
 
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     -- use updated locale
     data.raw["resource"]["infinite-" .. metal.base_ore].localised_description = table.deepcopy(data.raw["item"]
         [metal.base_ore].localised_description)

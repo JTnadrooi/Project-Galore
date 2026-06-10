@@ -129,7 +129,7 @@ vgal.recipe.clear_icons("angels-plate-iron")
 vgal.recipe.clear_icons("angels-plate-copper")
 
 -- fix bio-tokens still being in garden recipe icons
-for _, environment in pairs(agal.defines.environments) do
+for _, environment in pairs(vgal.defines.environments) do
     table.remove(data.raw["recipe"][environment.garden .. "-a"].icons, 2) -- at 2 is bio token icon
 end
 
@@ -237,7 +237,7 @@ data.raw.recipe["angels-fermentation-fruit"].icons = vgal.icon.register({
     vgal.icon.get_in("angels-solid-fruit"),
 })
 
-for _, nutrientable in ipairs(agal.defines.nutrientables) do
+for _, nutrientable in ipairs(vgal.defines.nutrientables) do
     data.raw.recipe[nutrientable .. "-nutrients"].icons = vgal.icon.register({
         vgal.icon.get("angels-liquid-nutrient-pulp"),
         vgal.icon.get_in(nutrientable),
@@ -268,7 +268,7 @@ for i = 1, 3 do
     })
 end
 
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.angels_plate_recipe_name].icons = vgal.icon.register({
         vgal.icon.get(metal.plate),
     })
@@ -449,7 +449,7 @@ local function fix_icon(prototype)
     end
 end
 
-for machine_name, max_tier in pairs(agal.defines.machine_max_tiers) do
+for machine_name, max_tier in pairs(vgal.defines.machine_max_tiers) do
     if machine_name == "angels-oil-refinery" or machine_name == "angels-chemical-plant" then
         goto continue
     end

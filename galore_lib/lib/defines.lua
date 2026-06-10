@@ -1,8 +1,36 @@
 vgal.defines = vgal.defines or {}
 
+---@type "vgal"|"sagal"|"asagal"|nil
+vgal.defines.gal_mode = nil
+---@type table<"vgal"|"agal"|"sagal"|"asagal", boolean?>
+vgal.defines.flags = {}
+
+vgal.defines.is_setting_phase = false
+
+if not data.raw["recipe"] then
+    vgal.defines.is_setting_phase = true
+end
+
+if mods["vanilla_galore_continued"] then
+    vgal.defines.gal_mode = "vgal"
+    vgal.defines.flags["vgal"] = true
+end
+if mods["angels_galore"] then
+    vgal.defines.gal_mode = "agal"
+    vgal.defines.flags["agal"] = true
+end
+if mods["space_age_galore"] then
+    vgal.defines.gal_mode = "sagal"
+    vgal.defines.flags["sagal"] = true
+end
+if mods["angels_space_age_galore"] then
+    vgal.defines.gal_mode = "asagal"
+    vgal.defines.flags["asagal"] = true
+end
+
 vgal.defines.ignored_by_productivity_max = 65535
 
----@type table<string, table>
+---@type table<string, vgal.Metal>
 vgal.defines.metals = {
     ["iron"] = {
         name = "iron",
@@ -15,6 +43,52 @@ vgal.defines.metals = {
         plate = "copper-plate",
     },
 }
+
+if vgal.defines.flags["sagal"] then
+    for _, metal in pairs(vgal.defines.metals) do
+        metal.bacteria = metal.name .. "-bacteria"
+        metal.molten = "molten-" .. metal.name
+    end
+end
+
+if vgal.defines.flags["agal"] then
+    for _, metal in pairs(vgal.defines.metals) do
+        metal.ore_index = (metal.name == "copper") and 2 or 3
+        metal.base_ore = "angels-ore" .. metal.ore_index
+
+        metal.nugget = "angels-" .. metal.name .. "-nugget"
+        metal.slag = "angels-" .. metal.name .. "-slag"
+        metal.pebbles = "angels-" .. metal.name .. "-pebbles"
+
+        metal.molten = "angels-liquid-molten-" .. metal.name
+        metal.ingot = "angels-ingot-" .. metal.name
+        metal.processed = "angels-processed-" .. metal.name
+        metal.pellet = "angels-pellet-" .. metal.name
+        metal.roll = "angels-roll-" .. metal.name
+        metal.angels_plate_recipe_name = "angels-plate-" .. metal.name
+        metal.solution = (metal.name == "copper") and "angels-liquid-cupric-chloride-solution" or
+            "angels-liquid-ferric-chloride-solution"
+
+        metal.ore_states = { "crushed", "chunk", "crystal", "pure" }
+
+        for _, ore_state in ipairs(metal.ore_states) do
+            metal[ore_state] = "angels-ore" .. metal.ore_index .. "-" .. ore_state
+        end
+    end
+end
+
+---@type { name: string, plate: string, molten: string?, angels_plate_recipe_name: string?, ingot: string?, roll: string? }
+vgal.defines.metal_steel = {
+    name = "steel",
+    plate = "steel-plate",
+}
+
+if vgal.defines.flags["agal"] then
+    vgal.defines.metal_steel["molten"] = "angels-liquid-molten-steel"
+    vgal.defines.metal_steel["angels_plate_recipe_name"] = "angels-plate-steel"
+    vgal.defines.metal_steel["ingot"] = "angels-ingot-steel"
+    vgal.defines.metal_steel["roll"] = "angels-roll-steel"
+end
 
 ---@type table<string, {name: string, tiers: string[]}>
 vgal.defines.modules = {
@@ -44,28 +118,6 @@ vgal.defines.modules = {
     },
 }
 
----@type string[]
-vgal.defines.recipeable_categories = { "item", "fluid", "tool", "ammo", "capsule", "module", "repair-tool", "armor",
-    "item-with-entity-data",
-    "rail-planner", "gun" }
-
--- commentedbc: this list would be huge.
--- vgal.defines.entityable_categories = { "entity-with-owner", "simple-entity", "container" }
-
----@type table<string, data.RecipeTints>
-vgal.defines.tints = {
-    ["light-oil"] = data.raw["recipe"]["light-oil-cracking"].crafting_machine_tint,
-    ["heavy-oil"] = data.raw["recipe"]["heavy-oil-cracking"].crafting_machine_tint,
-    ["petroleum-gas"] = data.raw["recipe"]["plastic-bar"].crafting_machine_tint,
-    ["crude-oil"] = {
-        primary = { r = 0.1, g = 0.05, b = 0.02, a = 1.000 },
-        secondary = { r = 0.15, g = 0.1, b = 0.05, a = 1.000 },
-        tertiary = { r = 0.2, g = 0.15, b = 0.1, a = 1.000 },
-        quaternary = { r = 0.05, g = 0.03, b = 0.01, a = 1.000 }
-    },
-}
-vgal.defines.tints["black"] = vgal.defines.tints["crude-oil"]
-
 if mods["quality"] then
     vgal.defines.modules["quality-module"] = {
         name = "quality-module",
@@ -74,5 +126,200 @@ if mods["quality"] then
             "quality-module-2",
             "quality-module-3",
         }
+    }
+end
+
+---@type string[]
+vgal.defines.recipeable_categories = {
+    "item",
+    "fluid",
+    "tool",
+    "ammo",
+    "capsule",
+    "module",
+    "repair-tool",
+    "armor",
+    "item-with-entity-data",
+    "rail-planner",
+    "gun",
+}
+
+-- commentedbc: this list would be huge.
+-- vgal.defines.entityable_categories = { "entity-with-owner", "simple-entity", "container" }
+
+if not vgal.defines.is_setting_phase then
+    ---@type table<string, data.RecipeTints>
+    vgal.defines.tints = {
+        ["light-oil"] = data.raw["recipe"]["light-oil-cracking"].crafting_machine_tint,
+        ["heavy-oil"] = data.raw["recipe"]["heavy-oil-cracking"].crafting_machine_tint,
+        ["petroleum-gas"] = data.raw["recipe"]["plastic-bar"].crafting_machine_tint,
+        ["crude-oil"] = {
+            primary = { r = 0.1, g = 0.05, b = 0.02, a = 1.000 },
+            secondary = { r = 0.15, g = 0.1, b = 0.05, a = 1.000 },
+            tertiary = { r = 0.2, g = 0.15, b = 0.1, a = 1.000 },
+            quaternary = { r = 0.05, g = 0.03, b = 0.01, a = 1.000 }
+        },
+    }
+    vgal.defines.tints["black"] = vgal.defines.tints["crude-oil"]
+end
+
+if vgal.defines.flags["sagal"] then
+    ---@type table<string, {name: string, tree: string, seed: string, result: string, dormant_seed: string?}>
+    vgal.defines.gleba_plants = {
+        ["yumako"] = {
+            name = "yumako",
+            tree = "yumako-tree",
+            seed = "yumako-seed",
+            result = "yumako-mash"
+        },
+        ["jellynut"] = {
+            name = "jellynut",
+            tree = "jellystem",
+            seed = "jellynut-seed",
+            result = "jelly"
+        }
+    }
+
+    if vgal.defines.flags["asagal"] then
+        for _, plant in pairs(vgal.defines.gleba_plants) do
+            plant.dormant_seed = "vgal-" .. plant.seed .. "-dormant"
+        end
+    end
+end
+
+if vgal.defines.flags["agal"] then
+    vgal.defines.geodes = { -- sorted from most to least valuable
+        "angels-geode-cyan",
+        "angels-geode-lightgreen",
+        "angels-geode-yellow",
+        "angels-geode-purple",
+        "angels-geode-red",
+        "angels-geode-blue",
+    }
+
+    vgal.defines.nutrientables = {
+        "angels-solid-pips",
+        "angels-solid-beans",
+        "angels-solid-leafs",
+        "angels-solid-fruit",
+        "angels-solid-nuts",
+        "angels-solid-corn",
+    }
+
+    ---@type table<string, {name: string, order: data.Order, farm: string, garden: string, seeds: string[]}>
+    vgal.defines.environments = {
+        ["temperate"] = {
+            name = "temperate",
+            order = "a",
+            farm = "angels-temperate-farm",
+            garden = "angels-temperate-garden",
+            seeds = {
+                "angels-temperate-1-seed",
+                "angels-temperate-2-seed",
+                "angels-temperate-3-seed",
+                "angels-temperate-4-seed",
+                "angels-temperate-5-seed",
+            }
+        },
+        ["swamp"] = {
+            name = "swamp",
+            order = "b",
+            farm = "angels-swamp-farm",
+            garden = "angels-swamp-garden",
+            seeds = {
+                "angels-swamp-1-seed",
+                "angels-swamp-2-seed",
+                "angels-swamp-3-seed",
+                "angels-swamp-4-seed",
+                "angels-swamp-5-seed",
+            }
+        },
+        ["desert"] = {
+            name = "desert",
+            order = "c",
+            farm = "angels-desert-farm",
+            garden = "angels-desert-garden",
+            seeds = {
+                "angels-desert-1-seed",
+                "angels-desert-2-seed",
+                "angels-desert-3-seed",
+                "angels-desert-4-seed",
+                "angels-desert-5-seed",
+            }
+        },
+    }
+
+    ---@type {[1]: "crushed", [2]: "chunk", [3]: "crystal", [4]: "pure"}
+    vgal.defines.ore_states = { "crushed", "chunk", "crystal", "pure" }
+
+    ---@type string[]
+    vgal.defines.alt_ore_states = { "crushed", "powder", "dust", "crystal" } -- see ore8 and 9, they have a dust states.
+
+    ---@type string[]
+    vgal.defines.fluid_alt_ore_states = { "sludge", "slime", "solution" } -- see ore8 and 9, they also have some extra fluid states.
+
+    ---@type integer[]
+    vgal.defines.ore_indexes = { 2, 3 }
+
+    ---@type integer[]
+    vgal.defines.removed_ore_indexes = { 1, 4, 5, 6 }
+
+    ---@type integer[]
+    vgal.defines.removed_alt_ore_indexes = { 8, 9 } -- these ores are kinda different. (they have slightly different ore states, and dont generate)
+
+    ---@type string[]
+    vgal.defines.removed_metal_names = { -- urhm actually, sil-
+        "manganese",
+        "aluminium",
+        "nickel",
+        "silicon",
+        "cobalt",
+        "titanium",
+        "tungsten",
+        "chrome",
+    }
+
+    ---@type table<string, integer>
+    vgal.defines.machine_max_tiers = {
+        ["angels-oil-refinery"] = 1,
+        ["oil-refinery"] = 1,
+        ["angels-steam-cracker"] = 1,
+        ["angels-liquifier"] = 1,
+        ["angels-electrolyser"] = 1,
+        ["angels-chemical-plant"] = 1,
+        ["chemical-plant"] = 1,
+        ["angels-advanced-chemical-plant"] = 1,
+        ["angels-separator"] = 1,
+        ["angels-gas-refinery-small"] = 1,
+        ["angels-gas-refinery"] = 1,
+        ["angels-air-filter"] = 1,
+
+        ["angels-hydro-plant"] = 1,
+        ["angels-washing-plant"] = 1,
+        ["angels-electric-boiler"] = 1,
+        ["angels-salination-plant"] = 1,
+
+        ["angels-algae-farm"] = 2,
+
+        ["angels-induction-furnace"] = 1,
+        ["angels-casting-machine"] = 1,
+        ["angels-strand-casting-machine"] = 1,
+
+        ["angels-ore-sorting-facility"] = 2,
+        ["angels-ore-crusher"] = 1,
+        ["angels-ore-floatation-cell"] = 1,
+        ["angels-ore-leaching-plant"] = 1,
+        ["angels-ore-processing-machine"] = 1,
+        ["angels-ore-refinery"] = 1,
+        ["angels-powderizer"] = 1,
+        ["angels-filtration-unit"] = 1,
+        ["angels-crystallizer"] = 1,
+
+        ["angels-pellet-press"] = 1,
+        ["angels-powder-mixer"] = 1,
+        ["angels-blast-furnace"] = 1,
+        ["angels-chemical-furnace"] = 1,
+        ["angels-sintering-oven"] = 1,
+        ["angels-electro-whinning-cell"] = 0, -- removes it.
     }
 end

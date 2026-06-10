@@ -40,7 +40,7 @@ data.raw["item"]["copper-cable"].order = "b"
 data.raw["item"]["iron-stick"].subgroup = "vgal-basic-intermediate-products"
 data.raw["item"]["iron-stick"].order = "c"
 
-for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel }) do
+for metal in vgal.table.iter_all(vgal.defines.metals, { vgal.defines.metal_steel }) do
     data.raw["item"][metal.plate].subgroup = "vgal-" .. metal.name .. "-casting"
     data.raw["item"][metal.plate].order = "c"
 

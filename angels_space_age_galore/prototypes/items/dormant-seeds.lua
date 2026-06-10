@@ -1,6 +1,6 @@
 local space_age_item_sounds = require("__space-age__.prototypes.item_sounds")
 
-for _, plant in pairs(sagal.defines.gleba_plants) do
+for _, plant in pairs(vgal.defines.gleba_plants) do
     local order = (plant.name == "yumako") and "a[seeds]-a[yumako-seed]-b" or "a[seeds]-b[jellynut-seed]-b"
 
     data:extend({

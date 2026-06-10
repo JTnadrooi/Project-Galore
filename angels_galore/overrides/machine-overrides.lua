@@ -1,11 +1,11 @@
 -- PURGE EXTRA MACHINE TIERS
 local partial_angels_category_buffer = {}
 
-for building_name, max_tier in pairs(agal.defines.machine_max_tiers) do
+for building_name, max_tier in pairs(vgal.defines.machine_max_tiers) do
     local max_categories = nil
     local buildings = {}
-    local is_partial_angels = agal.defines.machine_max_tiers["angels-" .. building_name] or
-        agal.defines.machine_max_tiers[building_name:gsub("^angels%-", "")]
+    local is_partial_angels = vgal.defines.machine_max_tiers["angels-" .. building_name] or
+        vgal.defines.machine_max_tiers[building_name:gsub("^angels%-", "")]
 
     -- for every tier except tier 1 trim if above max and edit module slots.
     for i = 2, 5 do
@@ -80,7 +80,7 @@ data.raw["assembling-machine"]["angels-electric-boiler"].module_slots = 0
 data.raw["assembling-machine"]["angels-air-filter"].module_slots = 3
 
 data.raw["assembling-machine"]["angels-crop-farm"].module_slots = 1
-for _, environment in pairs(agal.defines.environments) do
+for _, environment in pairs(vgal.defines.environments) do
     data.raw["assembling-machine"][environment.farm].module_slots = 3
 end
 
@@ -119,7 +119,7 @@ data.raw["mining-drill"]["angels-thermal-bore"].module_slots = 5
 -- commentedbc: its awkward. speed is kinda limited by belt anyways in most designs. its not like farm recipes are expensive. BUT WAIT. More prod = less seed usage, bypasses belt speed
 -- hmmmm
 -- -- add builtin prod, both to mimic space age as to make the farming a bit easier.
--- for _, environment in ipairs(agal.defines.environments) do
+-- for _, environment in ipairs(vgal.defines.environments) do
 --     data.raw["assembling-machine"][environment .. "-farm"].effect_receiver = { base_effect = { productivity = 0.5 } }
 -- end
 
@@ -161,7 +161,7 @@ data.raw["assembling-machine"]["angels-ore-leaching-plant"].energy_usage   = "54
 
 -- increase furnace power usage
 -- except the sintering oven thing, its perfect already (its supposed to be kinda lower temp also)
-data.raw["assembling-machine"]["angels-blast-furnace"].energy_usage        = "750kW"  -- og: 150kw
+data.raw["assembling-machine"]["angels-blast-furnace"].energy_usage        = "750kW" -- og: 150kw
 data.raw["assembling-machine"]["angels-chemical-furnace"].energy_usage     = "805kW" -- og: 155kw
 
 data.raw["assembling-machine"]["angels-bio-refugium-puffer"].working_sound = {

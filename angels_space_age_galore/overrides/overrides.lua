@@ -25,7 +25,7 @@ vgal.data.deephide(data.raw["item"]["tree-seed"])
 data.raw["item"]["tree-seed"].plant_result = nil -- needs to be done even if item is hidden
 
 -- gleba tree seed overhaul
-for _, plant in pairs(sagal.defines.gleba_plants) do
+for _, plant in pairs(vgal.defines.gleba_plants) do
     data.raw["plant"][plant.tree].minable.results = vgal.build.table({
         { plant.name,         50 },
         { plant.dormant_seed, 1 }

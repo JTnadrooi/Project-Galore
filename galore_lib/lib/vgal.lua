@@ -592,4 +592,8 @@ function vgal.data.finalise()
     end
 end
 
-return vgal
+---@param prototype data.PrototypeBase
+---@return boolean
+function vgal.is_angels(prototype)
+    return vgal.string.starts_with(prototype.name, "angels")
+end

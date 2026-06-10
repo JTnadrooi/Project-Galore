@@ -1,4 +1,4 @@
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     -- vgal.recipe.use_recipe_locale(metal.ingot)
     vgal.recipe.use_recipe_locale(metal.ingot .. "-2", false) -- show amount in title gets faked
     vgal.recipe.use_recipe_locale(metal.ingot .. "-3", false)
@@ -899,7 +899,7 @@ do
 end
 
 -- fix ore entity descs
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["resource"][metal.base_ore].localised_description = table.deepcopy(data.raw["item"][metal.base_ore]
         .localised_description)
 end
@@ -912,8 +912,8 @@ data.raw["recipe"]["angels-solid-sulfur"].localised_name = nil
 
 data.raw["recipe"]["angels-cellulose-fiber-raw-wood"].show_amount_in_title = true
 
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
-    for _, ore_state in ipairs(agal.defines.ore_states) do
+for _, metal in pairs(vgal.defines.metals) do
+    for _, ore_state in ipairs(vgal.defines.ore_states) do
         -- commentedbc: ugly
         -- local previous = nil
         -- if ore_state == "crushed" then

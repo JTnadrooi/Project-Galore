@@ -1,7 +1,7 @@
 if not mods["angelsaddons-storage"] then return end
 
 -- remove removed ore silos
-for _, removed_ore_index in ipairs(agal.defines.removed_ore_indexes) do
+for _, removed_ore_index in ipairs(vgal.defines.removed_ore_indexes) do
     local silo_name = "angels-silo-ore" .. removed_ore_index
     vgal.data.trim(silo_name)
     vgal.data.deephide(data.raw["item"][silo_name])

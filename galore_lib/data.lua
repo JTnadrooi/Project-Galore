@@ -1,4 +1,4 @@
-vgal = require("lib.vgal")
+require("lib.vgal")
 
 vgal.recipe.add_productivity_entry("coal")
 vgal.recipe.add_productivity_entry("iron-ore")

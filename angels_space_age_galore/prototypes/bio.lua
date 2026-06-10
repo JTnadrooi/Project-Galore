@@ -42,7 +42,7 @@ for _, nutrientable_recipe_name in ipairs(nutrientable_recipe_names) do
     })
 end
 
-for _, plant in pairs(sagal.defines.gleba_plants) do
+for _, plant in pairs(vgal.defines.gleba_plants) do
     vgal.data.extend({
         {
             name = plant.name .. "-" .. plant.seed,

@@ -526,7 +526,7 @@ local subgroups = {
     },
 }
 
-for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel }) do
+for metal in vgal.table.iter_all(vgal.defines.metals, { vgal.defines.metal_steel }) do
     local base_order = ({
         ["copper"] = "a",
         ["iron"] = "b",
@@ -566,7 +566,7 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel
     })
 end
 
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["item"][metal.base_ore].order = "a"
 
     local ore_entries = {}

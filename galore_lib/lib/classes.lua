@@ -68,4 +68,22 @@ do
     ---@field name string
     ---@field ore string
     ---@field plate string
+    ---@field bacteria string?
+    ---@field molten string?
+    ---@field ore_index integer?
+    ---@field base_ore string?
+    ---@field pebbles string?
+    ---@field nugget string?
+    ---@field slag string?
+    ---@field ingot string?
+    ---@field processed string?
+    ---@field pellet string?
+    ---@field roll string?
+    ---@field angels_plate_recipe_name string?
+    ---@field solution string?
+    ---@field ore_states {[1]: "crushed", [2]: "chunk", [3]: "crystal", [4]: "pure"}?
+    ---@field crushed string?
+    ---@field chunk string?
+    ---@field crystal string?
+    ---@field pure string?
 end

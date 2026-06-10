@@ -27,7 +27,7 @@ vgal.recipe.replace_ingredient("vgal-bulk-inserter-chemical-science-pack", "ange
 vgal.recipe.set_ingredient_amount("vgal-bulk-inserter-chemical-science-pack", 180, "angels-gas-methanol")
 
 -- casting recipe tweaks
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw.recipe[metal.pebbles .. "-smelting"].energy_required = 6.4
     data.raw.recipe[metal.nugget .. "-smelting"].energy_required = 6.4
 
@@ -451,7 +451,7 @@ do
 end
 
 -- use ore2 for more distinct color, but copy rest
-for _, ore_state in ipairs(agal.defines.ore_states) do
+for _, ore_state in ipairs(vgal.defines.ore_states) do
     data.raw["recipe"]["angels-ore2-" .. ore_state .. "-processing"].results =
         table.deepcopy(data.raw["recipe"]["angels-ore1-" .. ore_state .. "-processing"].results)
 end
@@ -472,7 +472,7 @@ local function unhide(name)
 end
 
 -- unhide nuggets and pebbles.
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     unhide(metal.pebbles)
     -- unhide("angels-" .. metal .. "-pebbles-smelting")
     unhide(metal.nugget)
@@ -488,7 +488,7 @@ vgal.recipe.replace_result("angels-ore2-chunk", "angels-water-greenyellow-waste"
 -- the acid change is done in final fixes, it doesn't work otherwise
 
 -- fix ores
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.chunk].energy_required = 1
     data.raw["recipe"][metal.crystal].energy_required = 0.5
     data.raw["recipe"][metal.pure].energy_required = 0.5
@@ -565,7 +565,7 @@ data.raw["recipe"]["angels-ore2-pure-processing"].results = vgal.build.table({
     { "angels-copper-slag",    1 },
 })
 
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.plate].ingredients = vgal.build.table({
         { metal.crushed, 3 }
     })
@@ -575,14 +575,14 @@ end
 vgal.recipe.all.remove_ingredient("angels-token-bio")
 vgal.recipe.all.remove_result("angels-token-bio")
 
-for _, environment in pairs(agal.defines.environments) do
+for _, environment in pairs(vgal.defines.environments) do
     vgal.recipe.deephide(environment.garden .. "-b")
     vgal.recipe.deephide(environment.garden .. "-cultivating-a")
 end
 
 -- commentedbc: its a pain, and slag should be the result from smelting, not processing
 -- -- add slag result to processing recipes.
--- for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+-- for _, metal in pairs(vgal.defines.metals) do
 --     vgal.recipe.multiply(metal.processed, 1.5)
 --     vgal.recipe.add_result(metal.processed, vgal.table.to_longform({ "angels-slag", 1, { probability = 0.5 } }, "item"))
 
@@ -649,13 +649,13 @@ vgal.recipe.set_result_amount("angels-cellulose-fiber-raw-wood", 6)   -- cellulo
 vgal.recipe.set_ingredient_amount("angels-wood-pellets", 8)           -- from 12. 1.5 coal != 9 cellulose fiber worth
 
 -- make crushing recipes early early game.
-for _, ore_index in ipairs(agal.defines.ore_indexes) do
+for _, ore_index in ipairs(vgal.defines.ore_indexes) do
     vgal.tech.remove_recipe("angels-ore-crushing", "angels-ore" .. ore_index .. "-crushed")
     data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].enabled = true
     data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].additional_categories = { "angels-manual-crafting" }
 end
 
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.plate].enabled = true
 end
 
@@ -716,7 +716,7 @@ end
 vgal.data.trim("angels-stone-from-crushed-stone")
 
 -- commentedbc: stone as byproduct is repetitive with how you already have slag and crushed stone to deal with
--- for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+-- for _, metal in pairs(vgal.defines.metals) do
 --     data.raw["recipe"][metal.crushed].results = vgal.build.table({
 --         { metal.crushed,          2 },
 --         { "angels-stone-crushed", 1, { probability = 0.5 } },
@@ -744,7 +744,7 @@ vgal.recipe.add_result("angels-ingot-iron-2", { "angels-slag", 1 })
 vgal.recipe.add_result("angels-ingot-iron-3", { "angels-slag", nil, { amount_min = 1, amount_max = 2 } })
 
 -- add clay requirement to pellet pressing
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     vgal.recipe.add_ingredient(metal.pellet, { "angels-solid-clay", 1 })
 end
 
@@ -847,7 +847,7 @@ end
 vgal.data.trim("angels-garden-cultivating")
 
 -- for each environment logic
-for _, environment in pairs(agal.defines.environments) do
+for _, environment in pairs(vgal.defines.environments) do
     -- remove garden duplication recipe
     vgal.data.trim(environment.garden)
 
@@ -978,7 +978,7 @@ vgal.recipe.set_result_amount("angels-water-saline-from-water", 250)
 vgal.recipe.set_result_amount("angels-solid-salt", 2)
 
 -- make metal solution recipes more suitable for voiding
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw.recipe[metal.solution].energy_required = 1
     data.raw.recipe[metal.solution].ingredients = vgal.build.table({
         { metal.pebbles, 6 },

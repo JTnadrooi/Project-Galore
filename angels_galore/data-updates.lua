@@ -24,6 +24,6 @@ require("mods.boblogistics")
 
 -- hmm i wonder what this is doing here
 -- (it doesnt listen in any other stage)
-for metal in vgal.table.iter_all(vgal.defines.metals, { agal.defines.metal_steel }) do
+for metal in vgal.table.iter_all(vgal.defines.metals, { vgal.defines.metal_steel }) do
     data.raw["recipe"][metal.angels_plate_recipe_name .. "-2"].allow_productivity = false -- works but galorelib prod desc runs before this so bla bla
 end

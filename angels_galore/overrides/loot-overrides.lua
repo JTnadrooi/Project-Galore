@@ -29,7 +29,7 @@ do
         { "angels-crystal-dust", nil, { amount_min = 2, amount_max = 5 } },
     }
 
-    for i, geode in ipairs(agal.defines.geodes) do
+    for i, geode in ipairs(vgal.defines.geodes) do
         table.insert(crystal_rock_results, { geode, 1, { probability = i * 0.05 } })
     end
 

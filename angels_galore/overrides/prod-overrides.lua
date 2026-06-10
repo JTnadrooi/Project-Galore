@@ -34,7 +34,7 @@ vgal.recipe.add_catalyst_entry("angels-water-saline")
 -- for puffer_index = 1, 5 do vgal.recipe.add_catalyst_entry("angels-bio-puffer-" .. puffer_index) end
 
 for i = 3, 5 do
-    for _, environment in pairs(agal.defines.environments) do
+    for _, environment in pairs(vgal.defines.environments) do
         vgal.recipe.add_catalyst_entry("angels-" .. environment.name .. "-" .. i .. "-seed-dormant")
     end
 end
@@ -84,7 +84,7 @@ end
 
 for _, recipe in pairs(data.raw["recipe"]) do
     if productivity_categories[recipe.category] then
-        if agal.is_angels(recipe) then
+        if vgal.is_angels(recipe) then
             vgal.recipe.smart_allow_productivity(recipe.name)
         end
     end
@@ -191,7 +191,7 @@ vgal.recipe.smart_allow_productivity("angels-stone-crushed-dissolution")
 vgal.recipe.smart_allow_productivity("angels-liquid-concrete")
 
 -- METALLURGY
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     vgal.recipe.smart_allow_productivity(metal.pebbles .. "-smelting")
     vgal.recipe.smart_allow_productivity(metal.nugget .. "-smelting")
     vgal.recipe.smart_allow_productivity(metal.plate)
@@ -221,7 +221,7 @@ data.raw["recipe"]["angels-coolant-used-filtration-2"].allow_productivity = fals
 
 -- add prod entries (that didnt get added with the smart_allow_productivity calls)
 vgal.recipe.add_productivity_entry("angels-thorium-ore")
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     vgal.recipe.add_productivity_entry(metal.nugget)
     vgal.recipe.add_productivity_entry(metal.slag)
 end

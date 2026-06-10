@@ -1,4 +1,4 @@
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     -- local pebbles_tech = (metal == "copper") and "angels-ore-floatation" or "angels-ore-crushing"  -- not used as you still need to crush ore into pebbles, you can't smelt ore
 
     vgal.data.extend({

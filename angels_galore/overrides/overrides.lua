@@ -49,13 +49,13 @@ for _, lab in pairs(data.raw["lab"]) do
 end
 
 -- make gardens only drop the garden itself
-for _, environment in pairs(agal.defines.environments) do
+for _, environment in pairs(vgal.defines.environments) do
     data.raw["tree"][environment.garden].minable.results = {
         { type = "item", name = environment.garden, amount = 1 },
     }
 end
 -- remove ore gen of removed ores.
-for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
+for _, ore_index in pairs(vgal.defines.removed_ore_indexes) do
     local ore = "angels-ore" .. ore_index
 
     vgal.data.deephide(data.raw["resource"][ore])
@@ -79,7 +79,7 @@ for _, ore_index in pairs(agal.defines.removed_ore_indexes) do
 end
 
 -- fix ore mining speeds
-for _, metal in pairs(vgal.defines.metals --[[@as table<string, agal.Metal>]]) do
+for _, metal in pairs(vgal.defines.metals) do
     data.raw["resource"][metal.base_ore].minable.mining_time = 1
 end
 

@@ -409,6 +409,13 @@ function vgal.icon.register(composite_icons, composition)
     error("unrecognised composition")
 end
 
+---@param prototype data.PrototypeBase
+function vgal.icon.clear_icon_data(prototype)
+    prototype.icon = nil
+    prototype.icon_size = nil
+    prototype.icons = nil
+end
+
 -- OVERRIDE LOGIC
 
 if mods["angels_galore"] then

@@ -340,3 +340,5 @@ vgal.recipe.replace_result("advanced-metallic-asteroid-crushing", "iron-ore", "a
 
 vgal.recipe.replace_ingredient("thruster-oxidizer", "iron-ore", "angels-iron-pebbles")
 vgal.recipe.replace_ingredient("advanced-thruster-oxidizer", "iron-ore", "angels-iron-pebbles")
+
+vgal.recipe.replace_result("vgal-metallic-asteroid-chunk-lava", "stone", "angels-slag")

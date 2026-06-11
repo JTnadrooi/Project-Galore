@@ -74,7 +74,14 @@ data.raw["assembling-machine"]["angels-bio-generator-temperate-1"].surface_condi
 data.raw["assembling-machine"]["angels-air-filter"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
 data.raw["furnace"]["angels-clarifier"].surface_conditions = vgal.get_surface_conditions_for("gravity")
 
+-- recipe surface_conditions fixes
 data.raw["recipe"]["angels-gas-compressed-air"].surface_conditions = vgal.get_surface_conditions_for("nauvis")
 data.raw["recipe"]["vgal-temperate-seeds"].surface_conditions = vgal.get_surface_conditions_for("nauvis")
 data.raw["recipe"]["vgal-swamp-seeds"].surface_conditions = vgal.get_surface_conditions_for("nauvis")
 data.raw["recipe"]["vgal-desert-seeds"].surface_conditions = vgal.get_surface_conditions_for("nauvis")
+
+data.raw["recipe"]["angels-pellet-press"].surface_conditions = vgal.get_surface_conditions_for("vulcanus")
+data.raw["recipe"]["angels-gas-refinery"].surface_conditions = vgal.get_surface_conditions_for("fulgora")
+for _, environment in pairs(vgal.defines.environments) do
+    data.raw["recipe"][environment.farm].surface_conditions = vgal.get_surface_conditions_for("gleba")
+end

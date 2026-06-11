@@ -67,13 +67,7 @@ end
 data.raw["assembling-machine"]["angels-algae-farm"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
 data.raw["assembling-machine"]["angels-algae-farm-2"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
 data.raw["assembling-machine"]["angels-bio-refugium-puffer"].surface_conditions = vgal.get_surface_conditions_for("gravity")
-data.raw["assembling-machine"]["angels-bio-refugium-biter"].surface_conditions = {
-    {
-        property = "pressure",
-        min = 1000, -- no aq
-        max = 2000  -- no vulc
-    }
-}
+data.raw["assembling-machine"]["angels-bio-refugium-biter"].surface_conditions = vgal.get_surface_conditions_for("nauvis")
 data.raw["assembling-machine"]["angels-seed-extractor"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
 data.raw["assembling-machine"]["angels-bio-arboretum-1"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
 data.raw["assembling-machine"]["angels-bio-generator-temperate-1"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")

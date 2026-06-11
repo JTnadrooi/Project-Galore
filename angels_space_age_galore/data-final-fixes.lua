@@ -28,3 +28,20 @@ end
 for og_name, _ in pairs(dedupe_map) do
     vgal.data.deephide(vgal.get_recipeable(og_name))
 end
+
+-- fix prereq of removed vanilla techs
+for _, tech in pairs(data.raw["technology"]) do
+    if tech.prerequisites then
+        for i, prerequisite in ipairs(tech.prerequisites) do
+            if prerequisite == "fish-breeding" then
+                tech.prerequisites[i] = "angels-bio-refugium-fish-1"
+                break
+            end
+
+            if prerequisite == "tree-seeding" then
+                tech.prerequisites[i] = "angels-bio-arboretum-1"
+                break
+            end
+        end
+    end
+end

@@ -54,3 +54,10 @@ data.raw.recipe["vgal-ammonia-agricultural-science-pack"].icons = vgal.icon.regi
     vgal.icon.get("agricultural-science-pack"),
     vgal.icon.get_in("urea", "molecule"),
 })
+
+vgal.icon.clear_icon_data(data.raw["technology"]["angels-bio-refugium-fish-1"])
+data.raw["technology"]["angels-bio-refugium-fish-1"].icon = "__space-age__/graphics/technology/fish-breeding.png"
+data.raw["technology"]["angels-bio-refugium-fish-1"].icon_size = 256
+vgal.icon.clear_icon_data(data.raw["technology"]["angels-bio-refugium-fish-2"])
+data.raw["technology"]["angels-bio-refugium-fish-2"].icon = "__space-age__/graphics/technology/fish-breeding.png"
+data.raw["technology"]["angels-bio-refugium-fish-2"].icon_size = 256

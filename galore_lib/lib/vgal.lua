@@ -654,7 +654,6 @@ function vgal.get_surface_conditions_for(target)
             {
                 property = "gravity",
                 min = 1,
-                max = 0
             }
         },
     }

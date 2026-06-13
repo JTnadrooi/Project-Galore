@@ -334,11 +334,11 @@ vgal.recipe.set_ingredient_amount("angels-puffer-puffing-1", 80, "angels-gas-car
 -- })
 
 -- space recipe fixes
-vgal.recipe.replace_result("metallic-asteroid-crushing", "iron-ore", "angels-iron-pebbles")
-vgal.recipe.replace_result("advanced-metallic-asteroid-crushing", "copper-ore", "angels-copper-pebbles")
-vgal.recipe.replace_result("advanced-metallic-asteroid-crushing", "iron-ore", "angels-iron-pebbles")
+-- vgal.recipe.replace_result("metallic-asteroid-crushing", "iron-ore", "angels-iron-pebbles")
+-- vgal.recipe.replace_result("advanced-metallic-asteroid-crushing", "copper-ore", "angels-copper-pebbles")
+-- vgal.recipe.replace_result("advanced-metallic-asteroid-crushing", "iron-ore", "angels-iron-pebbles")
 
-vgal.recipe.replace_ingredient("thruster-oxidizer", "iron-ore", "angels-iron-pebbles")
-vgal.recipe.replace_ingredient("advanced-thruster-oxidizer", "iron-ore", "angels-iron-pebbles")
+-- vgal.recipe.replace_ingredient("thruster-oxidizer", "iron-ore", "angels-iron-pebbles")
+-- vgal.recipe.replace_ingredient("advanced-thruster-oxidizer", "iron-ore", "angels-iron-pebbles")
 
 vgal.recipe.replace_result("vgal-metallic-asteroid-chunk-lava", "stone", "angels-slag")

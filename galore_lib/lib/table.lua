@@ -408,3 +408,14 @@ function vgal.table.remove_duplicates(target_array)
     end
     return result
 end
+---@param array any[]
+---@return table<any, boolean>
+function vgal.table.to_map(array)
+    local output = {}
+
+    for _, item in ipairs(array) do
+        output[item] = true
+    end
+
+    return output
+end

@@ -647,7 +647,7 @@ function vgal.get_surface_conditions_for(target)
         ["atmosphere"] = {
             {
                 property = "pressure",
-                min = 100,
+                min = 10,
             }
         },
         ["gravity"] = {

@@ -1,4 +1,5 @@
 -- to make costs align with vanilla (one plastic bar should be around as much "worth" as 1.5 plates) plastic bar recipes have been buffed
+-- plastic recipes are genrally very "cost-efficient" (they have high multiplier) because of their inherent difficutly. Its more difficult to scale up than metals.
 vgal.data.extend({
     {
         name = "angels-gas-propene-plastic-bar",
@@ -10,10 +11,10 @@ vgal.data.extend({
         energy_required = 4, -- 2
         technology = "plastics",
         fluid_ingredients = {
-            { "angels-gas-propene", 80 },
+            { "angels-gas-propene", 80 }, -- 80
         },
         results = {
-            { "plastic-bar", 5 }, -- 5
+            { "plastic-bar", 5 }, -- 75
         },
         category = "angels-liquifying",
         order = "aa"
@@ -28,10 +29,10 @@ vgal.data.extend({
         energy_required = 3,
         technology = "angels-advanced-chemistry-3",
         fluid_ingredients = {
-            { "angels-liquid-polyethylene", 20 },
+            { "angels-liquid-polyethylene", 20 }, -- 20
         },
         results = {
-            { "plastic-bar", 4 },
+            { "plastic-bar", 4 }, -- 60
         },
         main_product = "plastic-bar",
 
@@ -48,11 +49,11 @@ vgal.data.extend({
         energy_required = 4,
         technology = "angels-advanced-chemistry-3",
         fluid_ingredients = {
-            { "angels-liquid-polyethylene", 10 },
-            { "angels-liquid-naphtha",      20 },
+            { "angels-liquid-polyethylene", 10 }, -- 10
+            { "angels-liquid-naphtha",      20 }, -- 20
         },
         results = {
-            { "plastic-bar", 6 },
+            { "plastic-bar", 6 }, -- 90
         },
         main_product = "plastic-bar",
 
@@ -69,11 +70,11 @@ vgal.data.extend({
         energy_required = 2,
         technology = "angels-advanced-chemistry-3", -- normally would be plastic 3
         fluid_ingredients = {
-            { "angels-liquid-phenol", 25 },
-            { "angels-gas-methanol",  15 },
+            { "angels-liquid-phenol", 25 },         -- 15
+            { "angels-gas-methanol",  15 },         -- 10
         },
         results = {
-            { "plastic-bar", 3 },
+            { "plastic-bar", 3 }, -- 45
         },
         category = "chemistry",
         order = "ac"

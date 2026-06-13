@@ -73,7 +73,7 @@ vgal.data.extend({
             vgal.icon.get_in("angels-solid-carbon"),
         },
         technology = { "angels-metallurgy-2", "angels-coal-processing" },
-        energy_required = 1.6,
+        energy_required = 3.2,
         ingredients = {
             { "angels-stone-crushed", 8 },
             { "angels-solid-carbon",  1 }, -- 6

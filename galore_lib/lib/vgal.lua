@@ -44,6 +44,8 @@ vgal.productivity_entries = {}
 
 ---@type table<string, boolean>
 vgal.catalyst_entries = {}
+---@type table<string, table<string, boolean>>
+vgal.catalyst_groups = {}
 
 vgal.group_overrides = {}
 if mods["vanilla_galore_continued"] then

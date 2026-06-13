@@ -19,10 +19,19 @@ function vgal.recipe.add_productivity_entry(entry_name)
     vgal.productivity_entries[entry_name] = true
 end
 
+--- Registers a catalyst entry. (In smart_allow_productivity()) Catalyst entries will not have productivity applied to them unless the recipe only outputs catalyst entries. In that case, the entire recipe gets productivity.
 ---@param entry_name string
 function vgal.recipe.add_catalyst_entry(entry_name)
     vgal.get_recipeable(entry_name)
     vgal.catalyst_entries[entry_name] = true
+end
+
+---@param entry_names string[]
+function vgal.recipe.add_catalyst_group(entry_names)
+    for _, entry_name in ipairs(entry_names) do
+        vgal.get_recipeable(entry_name)
+    end
+    vgal.table.assign_keys_to_reference(vgal.catalyst_groups, entry_names, vgal.table.to_map(entry_names), true)
 end
 
 ---@param recipe_name string
@@ -43,37 +52,37 @@ function vgal.recipe.smart_allow_productivity(recipe_name, skip_entry_register)
 
     recipe.allow_productivity = true
 
-    -- create ingredient map
-    -- needed so prod doesnt work for ingredient outputs ()
-    local ingredient_map = {}
+    ---@type table<string, number>
+    local productivity_ignore_map = {}
     for _, ingredient in ipairs(recipe.ingredients) do
-        ingredient_map[ingredient.name] = ingredient.amount
+        productivity_ignore_map[ingredient.name] = (productivity_ignore_map[ingredient.name] or 0) + ingredient.amount
+
+        local catalyst_group = vgal.catalyst_groups[ingredient.name]
+        if catalyst_group then
+            for catalyst_in_group, _ in pairs(catalyst_group) do
+                productivity_ignore_map[catalyst_in_group] = (productivity_ignore_map[catalyst_in_group] or 0) + ingredient.amount
+            end
+        end
     end
 
-    -- check if recipe results are all catalyst
-    -- if so, individual catalysts will not be disallowed prod
-    -- this is for recipes that create catalysts (like filter frames in angels)
-    local all_catalysts = true
     for _, result in ipairs(recipe.results) do
-        if not vgal.catalyst_entries[result.name] then
-            all_catalysts = false
-            break
+        if vgal.catalyst_entries[result.name] then
+            productivity_ignore_map[result.name] = vgal.defines.ignored_by_productivity_max
         end
     end
 
     local all_ignored = true
     for _, result in ipairs(recipe.results) do
-        if (not all_catalysts) and vgal.catalyst_entries[result.name] then
-            result.ignored_by_productivity = vgal.defines.ignored_by_productivity_max
-        else
-            result.ignored_by_productivity = nil
+        result.ignored_by_productivity = productivity_ignore_map[result.name]
+        if productivity_ignore_map[result.name] then
+            productivity_ignore_map[result.name] = productivity_ignore_map[result.name] - vgal.math.get_normalized_amount(result)
+
+            if productivity_ignore_map[result.name] <= 0 then
+                productivity_ignore_map[result.name] = nil
+            end
         end
 
-        if ingredient_map[result.name] and not result.ignored_by_productivity then -- doesnt really work with multiple result entries
-            result.ignored_by_productivity = (result.ignored_by_productivity or 0) + ingredient_map[result.name]
-        end
-
-        if (not skip_entry_register) and not vgal.catalyst_entries[result.name] and not vgal.recipe.get_if_productivity(result.name) then
+        if (not skip_entry_register) and not productivity_ignore_map[result.name] and not vgal.recipe.get_if_productivity(result.name) then
             vgal.recipe.add_productivity_entry(result.name)
         end
 

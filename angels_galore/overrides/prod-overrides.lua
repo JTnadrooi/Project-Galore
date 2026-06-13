@@ -2,27 +2,54 @@
 -- recipes decide what items get prod and what not according to the catalyst and prod entry lists
 
 -- register catalysts (catalysts don't work with productivity)
-vgal.recipe.add_catalyst_entry("angels-electrode-used")
-vgal.recipe.add_catalyst_entry("angels-liquid-coolant-used")
-vgal.recipe.add_catalyst_entry("angels-liquid-coolant")
-vgal.recipe.add_catalyst_entry("angels-filter-ceramic-used")
-vgal.recipe.add_catalyst_entry("angels-filter-frame")
-vgal.recipe.add_catalyst_entry("angels-catalyst-metal-carrier")
+vgal.recipe.add_catalyst_group({
+    "angels-electrode-used",
+    "angels-electrode",
+})
+vgal.recipe.add_catalyst_group({
+    "angels-liquid-coolant-used",
+    "angels-liquid-coolant",
+})
+vgal.recipe.add_catalyst_group({
+    "angels-filter-lime-used",
+    "angels-filter-lime",
+})
+vgal.recipe.add_catalyst_group({
+    "angels-filter-ceramic-used",
+    "angels-filter-ceramic",
+})
+vgal.recipe.add_catalyst_group({
+    "angels-filter-frame",
+    "angels-filter-coal",
+})
+vgal.recipe.add_catalyst_group({
+    "angels-catalyst-metal-carrier",
+    "angels-catalyst-metal-blue",
+    "angels-catalyst-metal-yellow",
+})
+vgal.recipe.add_catalyst_group({
+    "angels-liquid-fish-atmosphere",
+    "angels-liquid-polluted-fish-atmosphere",
+})
+vgal.recipe.add_catalyst_group({
+    "angels-milling-drum",
+    "angels-milling-drum-lubricated",
+})
+vgal.recipe.add_catalyst_group({
+    "angels-water-viscous-mud",
+    "angels-water-heavy-mud",
+    "angels-water-concentrated-mud",
+    "angels-water-thin-mud",
+    "angels-water-light-mud",
+    "angels-water-saline",
+    "angels-water-purified",
+    "angels-water-mineralized",
+    "steam",
+    "water",
+})
 vgal.recipe.add_catalyst_entry("angels-water-yellow-waste")
 vgal.recipe.add_catalyst_entry("angels-water-greenyellow-waste")
 vgal.recipe.add_catalyst_entry("angels-water-green-waste")
-vgal.recipe.add_catalyst_entry("angels-liquid-polluted-fish-atmosphere")
-vgal.recipe.add_catalyst_entry("angels-solid-saw")
-vgal.recipe.add_catalyst_entry("angels-solid-crystal-tipped-saw")
-vgal.recipe.add_catalyst_entry("angels-solid-crystal-full-saw")
-vgal.recipe.add_catalyst_entry("angels-milling-drum")
-vgal.recipe.add_catalyst_entry("angels-milling-drum-lubricated")
-
-vgal.recipe.add_catalyst_entry("angels-water-heavy-mud")
-vgal.recipe.add_catalyst_entry("angels-water-concentrated-mud")
-vgal.recipe.add_catalyst_entry("angels-water-thin-mud")
-vgal.recipe.add_catalyst_entry("angels-water-light-mud")
-vgal.recipe.add_catalyst_entry("angels-water-saline")
 
 -- for puffer_index = 1, 5 do
 --     vgal.recipe.add_catalyst_entry("angels-bio-puffer-" .. puffer_index)
@@ -35,9 +62,14 @@ vgal.recipe.add_catalyst_entry("angels-water-saline")
 
 for i = 3, 5 do
     for _, environment in pairs(vgal.defines.environments) do
-        vgal.recipe.add_catalyst_entry("angels-" .. environment.name .. "-" .. i .. "-seed-dormant")
+        vgal.recipe.add_catalyst_group({
+            "angels-" .. environment.name .. "-" .. i .. "-seed-dormant",
+            "angels-" .. environment.name .. "-" .. i .. "-seed",
+        })
     end
 end
+
+-- error(serpent.block(vgal.catalyst_groups))
 
 -- machines that can benefit from productivity, no corrections needed
 local productivity_machines = {

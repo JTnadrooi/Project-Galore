@@ -19,6 +19,8 @@ function vgal.math.get_normalized_amount(result)
         amount = result.amount or 1
     elseif result.amount_min and result.amount_max then
         amount = (result.amount_min + result.amount_max) / 2
+    else
+        error("Invalid recipe result: " .. serpent.block(result))
     end
 
     if result.probability then

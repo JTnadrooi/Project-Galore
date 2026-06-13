@@ -309,7 +309,3 @@ vgal.data.trim("angels-wire-copper-2")
 
 -- remove thermal water to sludge recipes (and tech)
 vgal.tech.deephide("angels-thermal-water-processing")
-
--- remove polyethylene (its plastic)
-vgal.data.deephide(data.raw["fluid"]["angels-liquid-polyethylene"])
-vgal.data.trim("angels-liquid-polyethylene")

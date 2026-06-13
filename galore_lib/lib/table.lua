@@ -408,6 +408,27 @@ function vgal.table.remove_duplicates(target_array)
     end
     return result
 end
+
+---@param target_table table
+---@param keys string[]
+---@param reference_table table
+---@param populate_if_key_exists boolean?
+function vgal.table.assign_keys_to_reference(target_table, keys, reference_table, populate_if_key_exists)
+    for _, key in ipairs(keys) do
+        if target_table[key] then
+            if populate_if_key_exists then
+                for ref_key, ref_value in pairs(reference_table) do
+                    target_table[key][ref_key] = ref_value
+                end
+            else
+                error("Key " .. key .. " already in table.")
+            end
+        else
+            target_table[key] = table.deepcopy(reference_table)
+        end
+    end
+end
+
 ---@param array any[]
 ---@return table<any, boolean>
 function vgal.table.to_map(array)

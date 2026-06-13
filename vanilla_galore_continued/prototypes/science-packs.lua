@@ -318,7 +318,7 @@ vgal.data.extend({
             vgal.icon.get_in("bulk-inserter"),
         },
         category = "crafting-with-fluid",
-        energy_required = 64,
+        energy_required = 120,
         technology = { "bulk-inserter", "chemical-science-pack" },
         ingredients = {
             { "bulk-inserter",       2 }, -- 1800

@@ -133,7 +133,18 @@ data.raw["technology"]["angels-water-chemistry-1"].prerequisites = {
     "production-science-pack"
 }
 
-vgal.tech.add_prerequisite("angels-bio-refugium-biter-1", "angels-bio-refugium-butchery-1")
+-- prepare/future fix biter techs
+-- prereqs get ruined during pruning
+data.raw["technology"]["angels-bio-refugium-biter-1"].prerequisites = {
+    "angels-bio-refugium-butchery-1",
+    "processing-unit",
+    "production-science-pack",
+    "angels-bio-refugium-puffer-2",
+}
+
+data.raw["technology"]["angels-bio-refugium-biter-3"].prerequisites = {
+    "angels-bio-refugium-biter-2",
+}
 
 -- restore automation 3 to be same as vanilla (restore is a byproduct of the fix)
 data.raw["technology"]["automation-3"].prerequisites = {
@@ -141,6 +152,14 @@ data.raw["technology"]["automation-3"].prerequisites = {
     "speed-module",
     "production-science-pack"
 }
+
+data.raw["technology"]["angels-thorium-power"].prerequisites = {
+    "kovarex-enrichment-process",
+    "utility-science-pack",
+    "angels-ore-refining",
+}
+
+vgal.tech.add_prerequisite("nuclear-power", "angels-thermal-water-extraction")
 
 -- fix roll casting tech prerequisites
 local funky_tech_names = {

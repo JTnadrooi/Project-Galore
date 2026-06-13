@@ -152,6 +152,8 @@ This list is based on the vanilla cost list. While most items are more complex t
 | angels-gas-acetone            | 0.8  |
 | angels-gas-butane             | 0.3  |
 | angels-gas-ethane             | 0.3  |
+| angels-gas-ethylene           | 0.4  |
+| angels-liquid-polyethylene    | 1    |
 | angels-liquid-toluene         | 1.4  |
 | angels-liquid-phenol          | 0.5  |
 | angels-liquid-glycerol        | 0.4  |

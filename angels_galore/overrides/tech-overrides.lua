@@ -133,6 +133,8 @@ data.raw["technology"]["angels-water-chemistry-1"].prerequisites = {
     "production-science-pack"
 }
 
+vgal.tech.add_prerequisite("angels-bio-refugium-biter-1", "angels-bio-refugium-butchery-1")
+
 -- restore automation 3 to be same as vanilla (restore is a byproduct of the fix)
 data.raw["technology"]["automation-3"].prerequisites = {
     "electric-engine",

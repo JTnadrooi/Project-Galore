@@ -163,7 +163,7 @@ vgal.data.extend({
         },
         fluid_results = {
             { "ammonia", 20 },
-            { "water",   10, { ignored_by_productivity = 10, show_details_in_recipe_tooltip = false } },
+            { "water",   10, { show_details_in_recipe_tooltip = false } },
         },
         technology = "planet-discovery-fulgora",
         show_amount_in_title = false,

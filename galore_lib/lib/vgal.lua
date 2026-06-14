@@ -46,6 +46,8 @@ vgal.productivity_entries = {}
 vgal.catalyst_entries = {}
 ---@type table<string, table<string, boolean>>
 vgal.catalyst_groups = {}
+---@type table<string, boolean>
+vgal.entry_stat_relevant_catalysts = {}
 
 vgal.group_overrides = {}
 if mods["vanilla_galore_continued"] then
@@ -261,13 +263,31 @@ function vgal.data.extend(entries, fill_in_with)
 
             if entry.enable_smart_productivity == nil then
                 local eligible_for_smart_prod = true
-                for _, result in ipairs((entry.results or {}) --[[@as data.ProductPrototype]]) do
+                for _, result in ipairs((entry.results or {})) do
+                    --[[@cast result data.ProductPrototype]]
                     if result.ignored_by_productivity then
                         eligible_for_smart_prod = false
                     end
                 end
 
                 entry.enable_smart_productivity = eligible_for_smart_prod
+            end
+            if entry.enable_smart_stats == nil then
+                local eligible_for_smart_stats = true
+                for _, result in ipairs((entry.results or {})) do
+                    --[[@cast result data.ProductPrototype]]
+                    if result.ignored_by_stats then
+                        eligible_for_smart_stats = false
+                    end
+                end
+                for _, ingredient in ipairs((entry.ingredients or {})) do
+                    --[[@cast ingredient data.IngredientPrototype]]
+                    if ingredient.ignored_by_stats then
+                        eligible_for_smart_stats = false
+                    end
+                end
+
+                entry.enable_smart_stats = eligible_for_smart_stats
             end
 
             if entry.allow_productivity == nil then
@@ -281,6 +301,10 @@ function vgal.data.extend(entries, fill_in_with)
 
             if entry.enable_smart_productivity and entry.allow_productivity then
                 vgal.recipe.smart_allow_productivity(entry.name)
+            end
+
+            if entry.enable_smart_stats then
+                vgal.recipe.smart_fix_stats(entry.name)
             end
 
             for i, tech_entry in ipairs(entry.technologies) do

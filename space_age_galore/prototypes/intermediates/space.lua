@@ -13,11 +13,12 @@ vgal.data.extend({
         },
         results = {
             { "holmium-ore",               1, { probability = 0.015 } },
-            { "promethium-asteroid-chunk", 1, { probability = 0.80, ignored_by_productivity = 1 } },
+            { "promethium-asteroid-chunk", 1, { probability = 0.80 } },
         },
         category = "crushing",
         order = "b-a-d", -- hey
         show_amount_in_title = false,
+        enable_smart_stats = false,
         complementairy_recipe = "metallic-asteroid-crushing",
         productivity_technology = "asteroid-productivity",
     },
@@ -41,6 +42,7 @@ vgal.data.extend({
         },
         category = "crushing",
         show_amount_in_title = false,
+        enable_smart_stats = false,
         allow_productivity = false,
         complementairy_recipe = "oxide-asteroid-reprocessing",
     },
@@ -89,6 +91,7 @@ vgal.data.extend({
         subgroup = "vgal-space-advanced",
         order = "aa",
         productivity_technology = "asteroid-productivity",
+        enable_smart_stats = false,
         groups = { "vgal-unsure" },
     },
     -- {

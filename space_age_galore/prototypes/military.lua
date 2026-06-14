@@ -128,18 +128,12 @@ vgal.data.extend({
             { "holmium-plate", 1 },
             { "carbon",        5 },
         },
-        -- fluid_ingredients = {
-        --     { "fluoroketone-cold", 5, { ignored_by_stats = 5, } },
-        -- },
         fluid_ingredients = {
             { "ammonia", 50 },
         },
         results = {
             { "railgun-ammo", 1 }, -- 330
         },
-        -- fluid_results = {
-        --     { "fluoroketone-hot", 5, { temperature = 180, ignored_by_stats = 5, ignored_by_productivity = 5 } },
-        -- },
         category = "crafting-with-fluid",
     },
     -- {

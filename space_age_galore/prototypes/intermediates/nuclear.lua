@@ -75,12 +75,12 @@ vgal.data.extend({
             { "fluorine", 25 },
         },
         ingredients = {
-            { "uranium-235", 10, { ignored_by_stats = 10 } },
-            { "uranium-238", 7,  { ignored_by_stats = 6 } },
+            { "uranium-235", 10 },
+            { "uranium-238", 7 },
         },
         results = {
-            { "uranium-235", 11, { ignored_by_stats = 10, ignored_by_productivity = 10 } },
-            { "uranium-238", 6,  { ignored_by_stats = 6, ignored_by_productivity = 6 } },
+            { "uranium-235", 11 },
+            { "uranium-238", 6 },
         },
         category = "centrifuging",
         show_amount_in_title = false,

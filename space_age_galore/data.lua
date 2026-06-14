@@ -21,6 +21,15 @@ vgal.table.extend_single(vgal.tech.units, {
     value = 10,
 })
 
+vgal.recipe.add_catalyst_group({
+    "ice",
+    "water",
+})
+vgal.recipe.add_catalyst_group({
+    "fluoroketone-hot",
+    "fluoroketone-cold",
+})
+
 -- req
 require("overrides.vgal-overrides")
 require("overrides.overrides")

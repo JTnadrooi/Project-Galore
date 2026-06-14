@@ -51,14 +51,20 @@ vgal.recipe.add_catalyst_entry("angels-water-yellow-waste")
 vgal.recipe.add_catalyst_entry("angels-water-greenyellow-waste")
 vgal.recipe.add_catalyst_entry("angels-water-green-waste")
 
--- for puffer_index = 1, 5 do
---     vgal.recipe.add_catalyst_entry("angels-bio-puffer-" .. puffer_index)
--- end
+vgal.recipe.make_catalyst_entry_stat_relevant("angels-water-yellow-waste")
+vgal.recipe.make_catalyst_entry_stat_relevant("angels-water-greenyellow-waste")
+vgal.recipe.make_catalyst_entry_stat_relevant("angels-water-green-waste")
 
--- vgal.recipe.add_catalyst_entry("raw-fish")
--- for fish_index = 1, 3 do vgal.recipe.add_catalyst_entry("angels-alien-fish-" .. fish_index .. "-raw") end
-
--- for puffer_index = 1, 5 do vgal.recipe.add_catalyst_entry("angels-bio-puffer-" .. puffer_index) end
+vgal.recipe.make_catalyst_entry_stat_relevant("angels-water-viscous-mud")
+vgal.recipe.make_catalyst_entry_stat_relevant("angels-water-heavy-mud")
+vgal.recipe.make_catalyst_entry_stat_relevant("angels-water-concentrated-mud")
+vgal.recipe.make_catalyst_entry_stat_relevant("angels-water-thin-mud")
+vgal.recipe.make_catalyst_entry_stat_relevant("angels-water-light-mud")
+vgal.recipe.make_catalyst_entry_stat_relevant("angels-water-saline")
+vgal.recipe.make_catalyst_entry_stat_relevant("angels-water-purified")
+vgal.recipe.make_catalyst_entry_stat_relevant("angels-water-mineralized")
+vgal.recipe.make_catalyst_entry_stat_relevant("steam")
+vgal.recipe.make_catalyst_entry_stat_relevant("water")
 
 for i = 3, 5 do
     for _, environment in pairs(vgal.defines.environments) do

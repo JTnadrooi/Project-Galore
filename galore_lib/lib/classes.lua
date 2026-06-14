@@ -24,6 +24,7 @@ do
     ---@field localised_description_source? string
     ---@field locale_source? string
     ---@field enable_smart_productivity? boolean
+    ---@field enable_smart_stats? boolean
 end
 
 do

@@ -564,8 +564,7 @@ function vgal.recipe.set_result_amount(recipe_name, amount, result_name)
             if amount == 0 then
                 table.remove(recipe.results, i)
             else
-                result.amount, result.probability, result.amount_min, result.amount_max = vgal.recipe
-                    .get_normalized_return_amounts(amount)
+                result.amount, result.probability, result.amount_min, result.amount_max = vgal.recipe.get_normalized_return_amounts(amount)
             end
         end
     end

@@ -18,16 +18,15 @@ vgal.data.extend({
         },
         show_amount_in_title = false,
         crafting_machine_tint = vgal.defines.tints["crude-oil"],
+        groups = { "vgal-renewable-ores" },
     },
 }, {
     type = "recipe",
 })
 
-local centrifuge_results = {
+for _, result in ipairs({
     "copper-ore", "iron-ore"
-}
-local alt_electric_engines = true
-for _, result in ipairs(centrifuge_results) do
+}) do
     local order = result == "iron-ore" and "ra" or "rb"
     vgal.data.extend({
         {
@@ -49,7 +48,6 @@ for _, result in ipairs(centrifuge_results) do
             },
             show_amount_in_title = false,
             crafting_machine_tint = vgal.defines.tints["black"],
-            hidden = not not mods["space-age"],
             order = order,
             groups = { "vgal-renewable-ores" },
         },
@@ -77,7 +75,6 @@ for _, result in ipairs(centrifuge_results) do
             },
             show_amount_in_title = false,
             crafting_machine_tint = vgal.defines.tints["black"],
-            hidden = not not mods["space-age"],
             order = order .. "b",
             groups = { "vgal-renewable-ores" },
         },

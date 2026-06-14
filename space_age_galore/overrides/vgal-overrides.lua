@@ -26,11 +26,6 @@ data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
 
 vgal.data.trim("vgal-processing-unit-artillery-turret")
 vgal.data.trim("vgal-steam-concrete")
-vgal.data.trim("vgal-water-copper-ore")
-vgal.data.trim("vgal-water-electric-engine-unit-copper-ore")
-vgal.data.trim("vgal-water-iron-ore")
-vgal.data.trim("vgal-water-electric-engine-unit-iron-ore")
-vgal.data.trim("vgal-crude-oil-coal")
 vgal.data.trim("vgal-sulfuric-acid-processing-unit")
 
 data.raw["recipe"]["vgal-plastic-bar-electronic-circuit"].category = "electronics"

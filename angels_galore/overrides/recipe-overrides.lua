@@ -8,7 +8,6 @@ vgal.data.trim("vgal-steam-sulfur")
 vgal.data.trim("vgal-steam-concrete")
 vgal.data.trim("vgal-iron-stick-concrete")
 vgal.data.trim("vgal-copper-cable-plastic-bar")
-vgal.data.trim("vgal-crude-oil-coal")
 
 -- trim out-of-place-ified recipes
 vgal.data.trim("vgal-coal-uranium-235-nuclear-fuel")

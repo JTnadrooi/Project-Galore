@@ -74,6 +74,12 @@ function vgal.recipe.smart_allow_productivity(recipe_name, skip_entry_register)
         end
     end
 
+    for _, result in ipairs(recipe.results) do
+        if vgal.catalyst_entries[result.name] then
+            productivity_ignore_map[result.name] = vgal.defines.ignored_by_productivity_max
+        end
+    end
+
     -- ACT
     local all_ignored = true
     for _, result in ipairs(recipe.results) do

@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.3
+  Features:
+    - Normalized some recipe durations.
+  Balancing:
+    - "vgal-nutrients-biter-egg" duration 3.2 -> 3
+    - "vgal-coal-crushing" duration 0.8 -> 1
+  Bugfixes:
+    - Fixed missing prod for nutrients from sulfur + ammonia recipe.
+    - Fixed prod affecting carbon in carbon uranium filtering recipe.
+    - Fixed ignored_by_stats issues.
+    - Fixed bacteria recipe surface conditions.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.2
   Features:
     - Renamed "Nadrooi uranium reprocessing" (vgal-depleted-uranium-fuel-cell-fusion-power-cell) to "Nadrooi valorization process"

@@ -1,4 +1,21 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.4
+  Features:
+    - Returned polyethylene as it will be used in more than enough plastic alts to justify its presense. (Removed unwieldy catalyst plastic bar recipes)
+    - Renamed crushed stone to gravel.
+    - Renamed Fusion rocket fuel to Thorium rocket fuel.
+    - Undid rename of Carbon to Activated carbon as in Space Age the carbons will be merged. (I initially renamed it as this wasn't the plan originally)
+    - Add "vgal-angels-gas-ethylene-angels-gas-chlorine-plastic-bar" recipe.
+  Balancing:
+    - Decreased stone sintering speed.
+    - Ethylene derived plastic balance changes (in preparation for more hydrocarbon chemistry recipes update).
+    - Increased energy usage of chemical and blast furnaces.
+    - [BOTSADDON] Made the extenders more expensive to compensate them needing one of their previous tiers.
+  Bugfixes:
+    - Fixed "vgal-angels-solid-coke-angels-solid-sodium-hydroxide-angels-solid-carbon" per-result productivity.
+    - Fixed issues with technology prerequisites around nuclear and biter farming techs.
+    - Fixed artillery tech missing cement prerequisite.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.3
   Features:
     - Overhauled sodium techs.

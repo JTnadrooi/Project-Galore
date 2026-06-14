@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.0
+  Features:
+    - Moved all functions from sagal, agal and asagal to the gallib "vgal.(...)" namespace.
+    - Added more functions.
+  Bugfixes:
+    - Productivity fixes.
+    - ignored_by_stats fixes.
+---------------------------------------------------------------------------------------------------
 Version: 2.1.7
   Features:
     - Added more functions.

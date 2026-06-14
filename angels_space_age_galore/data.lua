@@ -5,8 +5,8 @@ require("prototypes.items.dormant-seeds")
 -- require("prototypes.generation.vgal-saline-fissure")
 require("prototypes.generation.vgal-ore")
 
-require("prototypes.resources")
-require("prototypes.bio")
+require("prototypes.recipes.resources")
+require("prototypes.recipes.bio")
 
 
 

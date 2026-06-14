@@ -20,6 +20,32 @@ vgal.data.extend({
         category = "angels-liquifying",
         order = "aa"
     },
+    -- {
+    --     name = "angels-gas-propene-angels-gas-ammonia-plastic-bar",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.register {
+    --         vgal.icon.get("plastic-bar"),
+    --         vgal.icon.get_in("propene", "molecule"),
+    --         vgal.icon.get_in2("ammonia", "molecule"),
+    --     },
+    --     energy_required = 6,
+    --     technology = { "plastics", "angels-nitrogen-processing-2" },
+    --     fluid_ingredients = {
+    --         { "angels-gas-propene", 80 },
+    --         { "angels-gas-ammonia", 50 },
+    --         { "angels-gas-oxygen",  20 },
+    --     },
+    --     results = {
+    --         { "plastic-bar", 10 },
+    --     },
+    --     fluid_results = {
+    --         { "angels-water-purified", 50, { allow_productivity = false } },
+    --     },
+    --     main_product = "plastic-bar",
+
+    --     category = "angels-advanced-chemistry",
+    --     order = "aab"
+    -- },
     {
         name = "angels-liquid-polyethylene-plastic-bar",
         prefix = "vgal",
@@ -50,7 +76,7 @@ vgal.data.extend({
         energy_required = 4,
         technology = "angels-advanced-chemistry-3",
         fluid_ingredients = {
-            { "angels-liquid-polyethylene", 10 }, -- 10
+            { "angels-liquid-polyethylene", 15 }, -- 10
             { "angels-liquid-naphtha",      20 }, -- 20
         },
         results = {
@@ -70,16 +96,16 @@ vgal.data.extend({
             vgal.icon.get_in2("chlorine", "molecule"),
         },
         energy_required = 3,
-        technology = "angels-advanced-chemistry-3",
+        technology = { "plastics", "angels-chlorine-processing-1" },
         fluid_ingredients = {
-            { "angels-gas-ethylene", 25 },
-            { "angels-gas-chlorine", 10 },
+            { "angels-gas-ethylene", 30 }, -- 15
+            { "angels-gas-chlorine", 20 }, -- 8
         },
         results = {
             { "plastic-bar", 4 },
         },
         fluid_results = {
-            { "angels-gas-hydrogen-chloride", 10, { allow_productivity = false } },
+            { "angels-gas-hydrogen-chloride", 20, { allow_productivity = false } },
         },
         main_product = "plastic-bar",
 

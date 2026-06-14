@@ -481,11 +481,6 @@ for _, metal in pairs(vgal.defines.metals) do
     unhide(metal.plate)
 end
 
--- prepare recipe for next loop. (the recipe amount will not apply otherwise)
-vgal.recipe.replace_result("angels-ore2-chunk", "angels-water-greenyellow-waste", "angels-water-yellow-waste")
-
--- the acid change is done in final fixes, it doesn't work otherwise
-
 -- fix ores
 for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.chunk].energy_required = 1
@@ -493,7 +488,10 @@ for _, metal in pairs(vgal.defines.metals) do
     data.raw["recipe"][metal.pure].energy_required = 0.5
 
     -- sulfur tweaks
-    vgal.recipe.set_result_amount(metal.chunk, 25, "angels-water-yellow-waste")
+    -- jiv acid fix done in final fixes, so this would throw without the check
+    if metal.ore_index ~= 2 then
+        vgal.recipe.set_result_amount(metal.chunk, 25, "angels-water-yellow-waste")
+    end
     vgal.recipe.set_ingredient_amount(metal.chunk, 25, "angels-water-purified")
     vgal.recipe.set_ingredient_amount(metal.crystal, 10, "sulfuric-acid")
 

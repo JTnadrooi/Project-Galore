@@ -93,6 +93,13 @@ data.raw["technology"]["angels-nuclear-fuel"].prerequisites = {
     "rocket-fuel",
 }
 
+-- this really doesnt listen
+data.raw["recipe"]["angels-ore2-chunk"].results = vgal.build.table({
+    { "angels-ore2-chunk", 2 },
+}, {
+    { "angels-water-yellow-waste", 25, { ignored_by_productivity = vgal.defines.ignored_by_productivity_max } }, -- GALORE PROD CHECK SCRIPT RUNS BEFORE THIS (i should make it a seperate mod)
+})
+
 -- remove angel's tips and tricks, most of them are now misinforming in some way or another, I'm gonna add my own later
 -- tips and tricks categories can stay, I dont wan't to delete stuff I don't have to
 for _, tnt_item in pairs(data.raw["tips-and-tricks-item"]) do

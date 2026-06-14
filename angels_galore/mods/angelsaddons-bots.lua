@@ -34,22 +34,41 @@ local relay_stations = {
     "angels-relay-station-3",
 }
 
--- fix recipes so its not 4 items needed for the next tier
-for tier, expander_name in ipairs(logistic_expanders) do
-    if tier > 1 then
-        vgal.recipe.set_ingredient_amount(expander_name, 1, logistic_expanders[tier - 1])
+local ingredients_store = {
+    ["t1"] = {
+        { "electronic-circuit", 2 },
+        { "iron-plate",         5 },
+    },
+    ["t2"] = {
+        { "advanced-circuit", 5 },
+        { "iron-gear-wheel",  15 },
+        { "steel-plate",      10 },
+    },
+    ["t3"] = {
+        { "processing-unit", 5 },
+        { "iron-gear-wheel", 25 },
+        { "steel-plate",     30 },
+    },
+}
+
+-- fix recipes
+local function process_expander_tiers(expander_list)
+    for tier, expander_name in ipairs(expander_list) do
+        local ingredients = table.deepcopy(ingredients_store["t" .. tier])
+        if tier > 1 then
+            table.insert(ingredients, { expander_list[tier - 1], 2 })
+        end
+        data.raw["recipe"][expander_name].ingredients = vgal.build.table(ingredients)
     end
 end
-for tier, expander_name in ipairs(construction_expanders) do
-    if tier > 1 then
-        vgal.recipe.set_ingredient_amount(expander_name, 1, construction_expanders[tier - 1])
-    end
-end
-for tier, relay_station_name in ipairs(relay_stations) do
-    if tier > 1 then
-        vgal.recipe.set_ingredient_amount(relay_station_name, 1, relay_stations[tier - 1])
-    end
-end
+
+process_expander_tiers(logistic_expanders)
+process_expander_tiers(construction_expanders)
+process_expander_tiers(relay_stations)
+
+-- tweak port recipe
+vgal.recipe.replace_ingredient("angels-cargo-hub", "stone-brick", "concrete")
+vgal.tech.add_prerequisite("angels-construction-robots-3", "angels-stone-smelting-2")
 
 -- buff charging speeds so they are better than roboports for purelly charging
 for tier, relay_station_name in ipairs(relay_stations) do

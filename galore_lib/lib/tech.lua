@@ -502,3 +502,28 @@ function vgal.tech.get_unit_ingredients(tech_name)
 
     return unit_ingredients
 end
+
+---@param tech_name string
+---@param unit_ingredient_name string
+---@param unit_ingredient_amount integer?
+function vgal.tech.ensure_unit_ingredient(tech_name, unit_ingredient_name, unit_ingredient_amount)
+    unit_ingredient_amount = unit_ingredient_amount or 1
+
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    if not tech.unit then
+        return
+    end
+
+    if not tech.unit.ingredients then
+        tech.unit.ingredients = {}
+    end
+
+    for _, ingredient in ipairs(tech.unit.ingredients or {}) do
+        if ingredient[1] == unit_ingredient_name then
+            return
+        end
+    end
+
+    table.insert(tech.unit.ingredients, { unit_ingredient_name, unit_ingredient_amount })
+end

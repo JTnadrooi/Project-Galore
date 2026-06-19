@@ -277,38 +277,10 @@ data.raw["technology"]["angels-bio-farm-1"].prerequisites = { "angels-gardens" }
 vgal.tech.add_prerequisite("angels-bio-processing-paste", "vgal-biological-science-pack")
 
 -- Add vgal-biological-science-pack as unit to technologies that require the "vgal-biological-science-pack" tech.
-local cache = {}
-
-local function has_prerequisite_recursive(tech_name, target, visited)
-    if cache[tech_name] ~= nil then
-        return cache[tech_name]
-    end
-
-    visited = visited or {}
-    if visited[tech_name] then
-        return false
-    end
-    visited[tech_name] = true
-
-    local tech = data.raw["technology"][tech_name]
-    if not tech or not tech.prerequisites then
-        cache[tech_name] = false
-        return false
-    end
-
-    for _, prereq_name in pairs(tech.prerequisites) do
-        if prereq_name == target or has_prerequisite_recursive(prereq_name, target, visited) then
-            cache[tech_name] = true
-            return true
-        end
-    end
-
-    cache[tech_name] = false
-    return false
-end
+local cache_bio_sp = {}
 
 for tech_name, tech in pairs(data.raw["technology"]) do
-    if has_prerequisite_recursive(tech_name, "vgal-biological-science-pack") then
+    if vgal.tech.has_prerequisite_recursive(cache_bio_sp, tech_name, "vgal-biological-science-pack") then
         if tech.unit and tech.unit.ingredients then
             table.insert(tech.unit.ingredients, { "vgal-biological-science-pack", 1 })
         end

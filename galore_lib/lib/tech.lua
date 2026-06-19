@@ -432,3 +432,36 @@ function vgal.tech.move_effects(source_tech_name, destination_tech_name)
         move_effects(source_tech.effects, destination_tech.effects)
     end
 end
+
+---@param cache table
+---@param tech_name string
+---@param target string
+---@param visited table?
+---@return boolean
+function vgal.tech.has_prerequisite_recursive(cache, tech_name, target, visited)
+    if cache[tech_name] ~= nil then
+        return cache[tech_name]
+    end
+
+    visited = visited or {}
+    if visited[tech_name] then
+        return false
+    end
+    visited[tech_name] = true
+
+    local tech = data.raw["technology"][tech_name]
+    if not tech or not tech.prerequisites then
+        cache[tech_name] = false
+        return false
+    end
+
+    for _, prereq_name in pairs(tech.prerequisites) do
+        if prereq_name == target or vgal.tech.has_prerequisite_recursive(cache, prereq_name, target, visited) then
+            cache[tech_name] = true
+            return true
+        end
+    end
+
+    cache[tech_name] = false
+    return false
+end

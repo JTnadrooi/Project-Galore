@@ -436,18 +436,22 @@ end
 ---@param cache table
 ---@param tech_name string
 ---@param target string
----@param visited table?
 ---@return boolean
-function vgal.tech.has_prerequisite_recursive(cache, tech_name, target, visited)
-    if cache[tech_name] ~= nil then
-        return cache[tech_name]
-    end
+function vgal.tech.has_prerequisite_recursive(cache, tech_name, target)
+    local state = cache[tech_name]
 
-    visited = visited or {}
-    if visited[tech_name] then
+    -- if currently visiting this node, we found a cycle -> no path through this loop
+    if state == "visiting" then
         return false
     end
-    visited[tech_name] = true
+
+    -- if we already computed a definite result, return it
+    if state ~= nil then -- true or false
+        return state
+    end
+
+    -- mark as "visiting" to detect cycles in deeper recursive calls
+    cache[tech_name] = "visiting"
 
     local tech = data.raw["technology"][tech_name]
     if not tech or not tech.prerequisites then
@@ -456,7 +460,7 @@ function vgal.tech.has_prerequisite_recursive(cache, tech_name, target, visited)
     end
 
     for _, prereq_name in pairs(tech.prerequisites) do
-        if prereq_name == target or vgal.tech.has_prerequisite_recursive(cache, prereq_name, target, visited) then
+        if prereq_name == target or vgal.tech.has_prerequisite_recursive(cache, prereq_name, target) then
             cache[tech_name] = true
             return true
         end

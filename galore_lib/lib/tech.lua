@@ -469,3 +469,20 @@ function vgal.tech.has_prerequisite_recursive(cache, tech_name, target)
     cache[tech_name] = false
     return false
 end
+
+---@param tech_name string
+---@param unit_ingredient_name string
+---@return boolean
+function vgal.tech.has_unit_ingredient(tech_name, unit_ingredient_name)
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    if tech.unit and tech.unit.ingredients then
+        for _, ingredient in ipairs(tech.unit.ingredients or {}) do
+            if ingredient[1] == unit_ingredient_name then
+                return true
+            end
+        end
+    end
+
+    return false
+end

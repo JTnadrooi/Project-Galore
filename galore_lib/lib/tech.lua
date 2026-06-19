@@ -486,3 +486,19 @@ function vgal.tech.has_unit_ingredient(tech_name, unit_ingredient_name)
 
     return false
 end
+
+---@param tech_name string
+---@return string[]
+function vgal.tech.get_unit_ingredients(tech_name)
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    local unit_ingredients = {}
+
+    if tech.unit and tech.unit.ingredients then
+        for _, ingredient in ipairs(tech.unit.ingredients or {}) do
+            table.insert(unit_ingredients, ingredient[1])
+        end
+    end
+
+    return unit_ingredients
+end

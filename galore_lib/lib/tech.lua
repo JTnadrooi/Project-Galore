@@ -527,3 +527,72 @@ function vgal.tech.ensure_unit_ingredient(tech_name, unit_ingredient_name, unit_
 
     table.insert(tech.unit.ingredients, { unit_ingredient_name, unit_ingredient_amount })
 end
+
+---@param tech_name string
+---@param prerequisites string[]
+---@param icons data.IconData[]
+---@param recipes string[]
+---@return data.TechnologyPrototype
+function vgal.tech.create_simple(tech_name, prerequisites, icons, recipes)
+    local function find_units_from_tech(tech_name, visited)
+        visited = visited or {}
+        if visited[tech_name] then
+            return {} -- inf loop prevention just to be safe
+        end
+        visited[tech_name] = true
+
+        local tech = vgal.throw.if_tech_not_found(tech_name)
+        local units = vgal.tech.extract_units(tech)
+
+        if #units > 0 then
+            return units
+        end
+
+        for _, prereq in ipairs(tech.prerequisites or {}) do
+            local prereq_units = find_units_from_tech(prereq, visited)
+            if #prereq_units > 0 then
+                return prereq_units
+            end
+        end
+
+        return {}
+    end
+
+    -- get most expensive prerequisite
+    local units = {}
+    for _, prerequisite in ipairs(prerequisites) do
+        local found_units = find_units_from_tech(prerequisite)
+        for _, unit in ipairs(found_units) do
+            table.insert(units, unit)
+        end
+    end
+
+    if #units == 0 then
+        units = { "automation-science-pack" }
+    end
+
+    units = vgal.table.remove_duplicates(units)
+
+    local tech = vgal.tech.create_empty(
+        tech_name,
+        1,
+        units,
+        #units * 5,
+        #units >= 4 and 30 or 15,
+        prerequisites,
+        "a",
+        icons
+    )
+    if not tech.effects then
+        tech.effects = {}
+    end
+
+    for _, recipe_name in ipairs(recipes) do
+        table.insert(tech.effects, {
+            type = "unlock-recipe",
+            recipe = recipe_name,
+        })
+    end
+
+    return tech
+end

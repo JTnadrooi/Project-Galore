@@ -85,3 +85,9 @@ data.raw["recipe"]["angels-gas-refinery"].surface_conditions = vgal.get_surface_
 for _, environment in pairs(vgal.defines.environments) do
     data.raw["recipe"][environment.farm].surface_conditions = vgal.get_surface_conditions_for("gleba")
 end
+
+-- move alien fish to gleba
+for i = 1, 3 do
+    data.raw["planet"]["gleba"].map_gen_settings.autoplace_settings.entity.settings["angels-alien-fish-" .. i] = {}
+    data.raw["planet"]["nauvis"].map_gen_settings.autoplace_settings.entity.settings["angels-alien-fish-" .. i] = nil
+end

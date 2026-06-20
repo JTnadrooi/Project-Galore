@@ -3,14 +3,26 @@
 vgal.tech.add_prerequisite("angels-ore-processing-2", "metallurgic-science-pack")
 
 -- gleba
-vgal.tech.add_prerequisite("angels-bio-refugium-hatchery", "agricultural-science-pack")
-vgal.tech.add_prerequisite("angels-bio-refugium-fish-1", "agricultural-science-pack")
+vgal.tech.add_prerequisite("angels-bio-refugium-hatchery", "planet-discovery-gleba")
+vgal.tech.add_prerequisite("angels-bio-refugium-fish-1", "agriculture")
+vgal.tech.add_prerequisite("angels-bio-processing-alien-1", "agricultural-science-pack")
+vgal.tech.add_prerequisite("angels-bio-processing-crystal-splinter-1", "agricultural-science-pack")
+vgal.tech.add_prerequisite("angels-bio-refugium-puffer-1", "agriculture")
+vgal.tech.add_prerequisite("angels-bio-refugium-puffer-3", "agricultural-science-pack")
+vgal.tech.add_prerequisite("angels-bio-refugium-biter-1", "biter-egg-handling")
+
+vgal.tech.add_prerequisite("planet-discovery-gleba", "angels-bio-nutrient-paste")
+vgal.tech.add_unit("planet-discovery-gleba", "vgal-biological-science-pack")
 
 vgal.data.deephide(data.raw["technology"]["tree-seeding"])
 vgal.data.deephide(data.raw["technology"]["fish-breeding"])
 
 -- fulgora
 vgal.tech.add_prerequisite("angels-advanced-gas-processing", "electromagnetic-science-pack")
+
+-- remove puffer atm from puffer 1 as it gets unlocked later
+-- puffer from gleba atm early tho
+vgal.tech.remove_recipe("angels-bio-refugium-puffer-1", "angels-gas-puffer-atmosphere")
 
 local cache_space_sp = {}
 local cache_agri_sp = {}
@@ -34,5 +46,9 @@ for _, tech in pairs(data.raw["technology"]) do
                 table.insert(tech.unit.ingredients, { "electromagnetic-science-pack", 1 })
             end
         end
+    end
+
+    if vgal.tech.has_unit_ingredient(tech.name, "agricultural-science-pack") then
+        vgal.tech.ensure_unit_ingredient(tech.name, "vgal-biological-science-pack")
     end
 end

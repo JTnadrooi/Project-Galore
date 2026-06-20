@@ -1,4 +1,5 @@
 require("prototypes.subgroups")
+require("prototypes.technology")
 
 require("prototypes.items.dormant-seeds")
 

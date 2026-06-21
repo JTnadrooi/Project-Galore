@@ -553,3 +553,25 @@ if mods["angels_galore"] then
         })
     end
 end
+
+local angels_molecule_map = {
+    ["angels-gas-oxygen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/oxygen.png", 72 },
+    ["angels-gas-hydrogen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 72 },
+    ["angels-gas-sulfur-dioxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/sulfur-dioxide.png", 72 },
+    ["angels-gas-carbon-dioxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 72 },
+    ["angels-gas-carbon-monoxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 72 },
+    ["angels-gas-chlorine"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/chlorine.png", 72 },
+    ["angels-gas-ammonia"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 72 },
+    ["angels-gas-nitrogen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/nitrogen.png", 72 },
+    ["angels-gas-hydrogen-fluoride"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 72 },
+}
+
+---@param fluids string[]
+---@return (string|{[1]: string, [2]: integer})[]
+function vgal.icon.map_to_angels_molecule_icons(fluids)
+    local result = {}
+    for _, fluid_name in ipairs(fluids) do
+        table.insert(result, angels_molecule_map[fluid_name] or fluid_name)
+    end
+    return result
+end

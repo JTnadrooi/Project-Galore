@@ -564,7 +564,7 @@ function vgal.is_angels(prototype)
 end
 
 ---@param target "space"|"nauvis"|"gleba"|"vulcanus"|"fulgora"|"aquilo"|"atmosphere"|"gravity"
----@return data.SurfaceCondition
+---@return data.SurfaceCondition[]
 function vgal.get_surface_conditions_for(target)
     local sc_store = {
         ["space"] = {

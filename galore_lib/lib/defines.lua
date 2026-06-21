@@ -206,7 +206,7 @@ if vgal.defines.flags["agal"] then
         "angels-solid-corn",
     }
 
-    ---@type table<string, {name: string, order: data.Order, farm: string, garden: string, seeds: string[]}>
+    ---@type table<string, {name: string, order: data.Order, farm: string, garden: string, seeds: string[], plants: string[]}>
     vgal.defines.environments = {
         ["temperate"] = {
             name = "temperate",
@@ -219,6 +219,13 @@ if vgal.defines.flags["agal"] then
                 "angels-temperate-3-seed",
                 "angels-temperate-4-seed",
                 "angels-temperate-5-seed",
+            },
+            plants = {
+                "angels-temperate-1",
+                "angels-temperate-2",
+                "angels-temperate-3",
+                "angels-temperate-4",
+                "angels-temperate-5",
             }
         },
         ["swamp"] = {
@@ -232,6 +239,13 @@ if vgal.defines.flags["agal"] then
                 "angels-swamp-3-seed",
                 "angels-swamp-4-seed",
                 "angels-swamp-5-seed",
+            },
+            plants = {
+                "angels-swamp-1",
+                "angels-swamp-2",
+                "angels-swamp-3",
+                "angels-swamp-4",
+                "angels-swamp-5",
             }
         },
         ["desert"] = {
@@ -245,6 +259,13 @@ if vgal.defines.flags["agal"] then
                 "angels-desert-3-seed",
                 "angels-desert-4-seed",
                 "angels-desert-5-seed",
+            },
+            plants = {
+                "angels-desert-1",
+                "angels-desert-2",
+                "angels-desert-3",
+                "angels-desert-4",
+                "angels-desert-5",
             }
         },
     }

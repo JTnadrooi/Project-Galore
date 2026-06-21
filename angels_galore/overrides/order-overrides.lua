@@ -112,3 +112,5 @@ data.raw["recipe"]["vgal-steel-plate-pipe-to-ground"].order = "a[pipe]-b[pipe-to
 data.raw["fluid"]["angels-water-purified"].order = "b"
 data.raw["fluid"]["angels-water-purified"].subgroup = "angels-water-treatment"
 vgal.subgroup.clean_recipe("angels-water-purified")
+
+data.raw["item-subgroup"]["angels-petrochem-basic-fluids"].order = "abx"

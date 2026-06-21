@@ -323,3 +323,69 @@ if vgal.defines.flags["agal"] then
         ["angels-electro-whinning-cell"] = 0, -- removes it.
     }
 end
+
+if vgal.defines.flags["asagal"] then
+    ---@type table<string, vgal.Atmosphere>
+    vgal.defines.atmospheres = {
+        ["nauvis"] = { -- not relevant in agal
+            name = "vgal-atm-nauvis",
+            planet = "nauvis",
+            index = 1,
+            energy_required = 1,
+            colors = { { 180, 180, 225 }, { 150, 150, 187 }, { 120, 120, 150 } },
+            fluid_results = {
+                { "angels-gas-oxygen",   20 },
+                { "angels-gas-nitrogen", 80 },
+            }
+        },
+        ["vulcanus"] = {
+            name = "vgal-atm-vulcanus",
+            planet = "vulcanus",
+            index = 2,
+            energy_required = 0.5,
+            colors = { { 220, 200, 160 }, { 190, 170, 130 }, { 160, 140, 100 } },
+            fluid_results = {
+                { "angels-gas-oxygen",         10 },
+                -- { "angels-gas-sulfur-dioxide", 20 },
+                { "angels-gas-carbon-dioxide", 60 },
+                { "angels-gas-nitrogen",       30 },
+            }
+        },
+        ["fulgora"] = {
+            name = "vgal-atm-fulgora",
+            planet = "fulgora",
+            index = 3,
+            energy_required = 2,
+            colors = { { 200, 170, 190 }, { 170, 140, 160 }, { 140, 110, 130 } },
+            fluid_results = {
+                { "angels-gas-oxygen",   10 },
+                { "angels-gas-nitrogen", 60 },
+                { "angels-gas-residual", 30 },
+            }
+        },
+        ["gleba"] = {
+            name = "vgal-atm-gleba",
+            planet = "gleba",
+            index = 4,
+            energy_required = 0.5,
+            colors = { { 180, 210, 180 }, { 150, 180, 150 }, { 120, 150, 120 } },
+            fluid_results = {
+                { "angels-gas-oxygen",            40 },
+                { "angels-gas-nitrogen",          50 },
+                { "angels-gas-hydrogen-fluoride", 10 },
+            }
+        },
+        ["aquilo"] = {
+            name = "vgal-atm-aquilo",
+            planet = "aquilo",
+            index = 5,
+            energy_required = 5,
+            colors = { { 200, 210, 250 }, { 140, 150, 215 }, { 80, 90, 180 } },
+            fluid_results = {
+                { "angels-gas-oxygen",            5 },
+                { "angels-gas-ammonia",           70 },
+                { "angels-gas-hydrogen-fluoride", 25 },
+            }
+        },
+    }
+end

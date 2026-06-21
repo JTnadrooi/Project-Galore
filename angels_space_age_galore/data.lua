@@ -1,4 +1,5 @@
 require("prototypes.subgroups")
+require("prototypes.fluid")
 require("prototypes.technology")
 
 require("prototypes.items.dormant-seeds")
@@ -8,6 +9,7 @@ require("prototypes.generation.vgal-ore")
 
 require("prototypes.recipes.resources")
 require("prototypes.recipes.bio")
+require("prototypes.recipes.atmosphere")
 
 
 

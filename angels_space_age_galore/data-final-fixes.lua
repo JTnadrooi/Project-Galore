@@ -5,6 +5,7 @@ local dedupe_map = {
     ["carbon"] = "angels-solid-carbon",
     ["molten-iron"] = "angels-liquid-molten-iron",
     ["molten-copper"] = "angels-liquid-molten-copper",
+    ["angels-gas-compressed-air"] = "vgal-atm-nauvis",
 }
 
 for _, recipe in pairs(data.raw["recipe"]) do

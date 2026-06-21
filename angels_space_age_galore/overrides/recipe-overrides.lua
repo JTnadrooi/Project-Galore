@@ -71,6 +71,10 @@ vgal.data.trim("nutrients-from-fish")
 -- commentedbc; decided against a fruits from yumako recipe
 -- vgal.data.trim("nutrients-from-yumako-mash")
 
+vgal.data.trim("angels-air-separation")
+vgal.data.trim("angels-gas-compressed-air")
+vgal.data.deephide(data.raw["fluid"]["angels-gas-compressed-air"])
+
 -- casting fixes
 do
     ---@param recipe data.RecipePrototype

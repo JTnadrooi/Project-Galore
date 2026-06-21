@@ -89,3 +89,14 @@ do
     ---@field crystal string?
     ---@field pure string?
 end
+
+do
+    ---@class vgal.Atmosphere
+    ---@field name string
+    ---@field planet string
+    ---@field colors {[1]: {[1]: integer, [2]: integer, [3]: integer}, [2]: {[1]: integer, [2]: integer, [3]: integer}, [3]: {[1]: integer, [2]: integer, [3]: integer}}
+    ---@field results vgal.ShorthandRecipeEntry[]?
+    ---@field fluid_results vgal.ShorthandRecipeEntry[]
+    ---@field index integer
+    ---@field energy_required number
+end

@@ -1,6 +1,13 @@
 vgal.throw = vgal.throw or {}
 
 
+---@param flag_name "vgal"|"agal"|"sagal"|"asagal"
+function vgal.throw.if_missing_flag(flag_name)
+    if not vgal.defines.flags[flag_name] then
+        error("Invalid action/function call, missing flag; " .. flag_name)
+    end
+end
+
 ---@param recipe_name string
 function vgal.throw.if_recipe_not_found(recipe_name)
     vgal.throw.if_param_nil(recipe_name, "recipe_name")

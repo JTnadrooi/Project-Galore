@@ -55,6 +55,10 @@ data.raw.recipe["vgal-ammonia-agricultural-science-pack"].icons = vgal.icon.regi
     vgal.icon.get_in("urea", "molecule"),
 })
 
+data.raw.recipe["vgal-spoilage-crude-oil"].icons = angelsmods.functions.create_liquid_recipe_icon({
+    "angels-liquid-multi-phase-oil",
+}, { { 100, 100, 100 }, { 171, 161, 055 }, { 127, 163, 109 } }, { "spoilage" })
+
 vgal.icon.clear_icon_data(data.raw["technology"]["angels-bio-refugium-fish-1"])
 data.raw["technology"]["angels-bio-refugium-fish-1"].icon = "__space-age__/graphics/technology/fish-breeding.png"
 data.raw["technology"]["angels-bio-refugium-fish-1"].icon_size = 256

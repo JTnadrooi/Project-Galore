@@ -1,6 +1,6 @@
 -- vgal trims
 vgal.data.trim("vgal-ammonia-water-crude-oil")
-vgal.data.trim("vgal-spoilage-crude-oil")
+-- vgal.data.trim("vgal-spoilage-crude-oil")
 vgal.data.trim("vgal-yumako-mash-light-oil")
 vgal.data.trim("vgal-carbon-sulfur-lubricant")
 vgal.data.trim("vgal-jelly-crude-oil-solid-fuel")
@@ -346,3 +346,5 @@ vgal.recipe.set_ingredient_amount("angels-puffer-puffing-1", 80, "angels-gas-car
 -- vgal.recipe.replace_ingredient("advanced-thruster-oxidizer", "iron-ore", "angels-iron-pebbles")
 
 vgal.recipe.replace_result("vgal-metallic-asteroid-chunk-lava", "stone", "angels-slag")
+
+vgal.recipe.replace_result("vgal-spoilage-crude-oil", "crude-oil", "angels-liquid-multi-phase-oil")

@@ -30,3 +30,6 @@ vgal.subgroup.clean_recipe("vgal-solid-fuel-sulfuric-acid-carbon")
 data.raw["item"]["biter-egg"].order = "-a"
 data.raw["item"]["biter-egg"].subgroup = "angels-bio-biter-egg"
 data.raw["recipe"]["biter-egg"].order = "-a"
+
+data.raw.recipe["vgal-spoilage-crude-oil"].order = "-"
+data.raw.recipe["vgal-spoilage-crude-oil"].subgroup = "angels-petrochem-carbon-oil-feed"

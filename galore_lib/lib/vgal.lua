@@ -138,11 +138,13 @@ function vgal.data.extend(entries, fill_in_with)
     for _, entry in ipairs(entries) do
         entry = vgal.table.deep_merge_with_priority(entry, fill_in_with)
 
-        if entry.prefix then
-            if not vgal.data.domain_exists(entry.prefix) then
-                vgal.data.create_domain(entry.prefix)
+        entry.domain = entry.domain or entry.prefix
+
+        if entry.domain then
+            if not vgal.data.domain_exists(entry.domain) then
+                vgal.data.create_domain(entry.domain)
             end
-            vgal.data.domains[entry.prefix][vgal.build.name(entry.prefix, entry.name, entry.tier)] = {
+            vgal.data.domains[entry.domain][vgal.build.name(entry.prefix, entry.name, entry.tier)] = {
                 type = entry.type,
                 name = vgal.build.name(entry.prefix, entry.name, entry.tier),
             }

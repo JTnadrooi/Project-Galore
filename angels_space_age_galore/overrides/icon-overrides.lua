@@ -10,6 +10,11 @@ if not mods["reskins-angels"] then
     data.raw["item"]["lithium-plate"].icon_size = 32
 end
 
+-- vgal.icon.set_icons(data.raw["fluid"]["fluorine"], angelsmods.functions.create_gas_fluid_icon(
+--     { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 72 },
+--     "FFF"
+-- ))
+
 data.raw.recipe["molten-iron-from-lava"].icons = vgal.icon.register({
     vgal.icon.get("angels-liquid-molten-iron"),
     vgal.icon.get_in("lava"),

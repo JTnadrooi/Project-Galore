@@ -91,3 +91,17 @@ for i = 1, 3 do
     data.raw["planet"]["gleba"].map_gen_settings.autoplace_settings.entity.settings["angels-alien-fish-" .. i] = {}
     data.raw["planet"]["nauvis"].map_gen_settings.autoplace_settings.entity.settings["angels-alien-fish-" .. i] = nil
 end
+
+do
+    local vent = data.raw["resource"]["fluorine-vent"]
+    vent.minable.results[1].name = "angels-gas-hydrogen-fluoride"
+
+    for _, stateless_visualisation_entry in ipairs(vent.stateless_visualisation) do
+        if stateless_visualisation_entry.animation and stateless_visualisation_entry.animation.tint then
+            stateless_visualisation_entry.animation.tint = util.multiply_color(util.mix_color(angelsmods.functions.fluid_color("HF"), { r = 2, g = 2, b = 2 }), 0.2)
+        end
+    end
+
+    vent.map_color = angelsmods.functions.fluid_color("HF")
+    vent.icon = "__angels_space_age_galore__/graphics/icons/fluorine-vent.png"
+end

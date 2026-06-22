@@ -14,7 +14,7 @@ vgal.recipe.make_recipeable_void("spoilage", "bio", 20)
 -- chem
 vgal.recipe.make_recipeable_void("thruster-fuel", "chemical")
 vgal.recipe.make_recipeable_void("thruster-oxidizer", "chemical")
-vgal.recipe.make_recipeable_void("fluorine", "chemical")
+-- vgal.recipe.make_recipeable_void("fluorine", "chemical")
 
 -- water
 vgal.recipe.make_recipeable_void("ammoniacal-solution", "water")

@@ -2,6 +2,7 @@
 ---@type table<string, string>
 local dedupe_map = {
     ["ammonia"] = "angels-gas-ammonia",
+    ["fluorine"] = "angels-gas-hydrogen-fluoride",
     ["carbon"] = "angels-solid-carbon",
     ["molten-iron"] = "angels-liquid-molten-iron",
     ["molten-copper"] = "angels-liquid-molten-copper",

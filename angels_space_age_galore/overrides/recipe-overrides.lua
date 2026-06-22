@@ -46,6 +46,7 @@ vgal.data.trim("vgal-holmium-ore-holmium-plate")
 vgal.data.trim("vgal-angels-liquid-molten-steel-low-density-structure")
 vgal.data.trim("vgal-calcite-carbon-concrete")
 vgal.data.trim("vgal-coal-crushing")
+vgal.data.trim("vgal-biter-egg-ammonia")
 
 -- vanilla trims
 -- bio stuff will be obtained through bioprocessing

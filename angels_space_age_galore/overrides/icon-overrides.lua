@@ -38,13 +38,6 @@ data.raw.recipe["vgal-molten-copper-carbon-fiber-low-density-structure"].icons =
     vgal.icon.get_in2("angels-liquid-molten-copper"),
 })
 
-data.raw.recipe["vgal-biter-egg-ammonia"].icons = angelsmods.functions.create_gas_recipe_icon(
-    {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 72 },
-    },
-    "NHH", { "biter-egg", "nutrients" }
-)
-
 data.raw.recipe["vgal-petroleum-gas-barrel-biter-egg"].icons = vgal.icon.register({
     vgal.icon.get("biter-egg"),
     vgal.icon.get_in("carbon-dioxide", "molecule"),

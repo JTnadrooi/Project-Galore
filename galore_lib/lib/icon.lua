@@ -416,6 +416,14 @@ function vgal.icon.clear_icon_data(prototype)
     prototype.icons = nil
 end
 
+---@param prototype data.PrototypeBase
+---@param icons data.IconData[]
+function vgal.icon.set_icons(prototype, icons)
+    vgal.icon.clear_icon_data(prototype)
+
+    prototype.icons = icons
+end
+
 -- OVERRIDE LOGIC
 
 if mods["angels_galore"] then

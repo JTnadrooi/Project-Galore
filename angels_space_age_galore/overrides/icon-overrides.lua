@@ -63,3 +63,23 @@ data.raw["technology"]["angels-bio-refugium-fish-1"].icon_size = 256
 vgal.icon.clear_icon_data(data.raw["technology"]["angels-bio-refugium-fish-2"])
 data.raw["technology"]["angels-bio-refugium-fish-2"].icon = "__space-age__/graphics/technology/fish-breeding.png"
 data.raw["technology"]["angels-bio-refugium-fish-2"].icon_size = 256
+
+-- make nutrients icons more galore like
+-- also my icon library is not fit for the other way....
+-- and I can't use the angels graphics to do asesprite stuff soo....
+data.raw.recipe["nutrients-from-spoilage"].icons = vgal.icon.register({
+    vgal.icon.get("nutrients"),
+    vgal.icon.get_in("spoilage"),
+})
+data.raw.recipe["nutrients-from-yumako-mash"].icons = vgal.icon.register({
+    vgal.icon.get("nutrients"),
+    vgal.icon.get_in("yumako-mash"),
+})
+data.raw.recipe["nutrients-from-bioflux"].icons = vgal.icon.register({
+    vgal.icon.get("nutrients"),
+    vgal.icon.get_in("bioflux"),
+})
+data.raw.recipe["vgal-sulfur-ammonia-nutrients"].icons = vgal.icon.register({
+    vgal.icon.get("nutrients"),
+    vgal.icon.get_in("sulfur"),
+})

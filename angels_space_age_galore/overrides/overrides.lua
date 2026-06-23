@@ -86,6 +86,22 @@ for _, environment in pairs(vgal.defines.environments) do
     data.raw["recipe"][environment.farm].surface_conditions = vgal.get_surface_conditions_for("gleba")
 end
 
+data.raw["offshore-pump"]["angels-ground-water-pump"].surface_conditions = {
+    {
+        property = "pressure",
+        min = 1000,
+        max = 2000
+    },
+}
+
+data.raw["offshore-pump"]["angels-seafloor-pump"].surface_conditions = {
+    {
+        property = "pressure",
+        min = 1000,
+        max = 2000
+    },
+}
+
 -- move alien fish to gleba
 for i = 1, 3 do
     data.raw["planet"]["gleba"].map_gen_settings.autoplace_settings.entity.settings["angels-alien-fish-" .. i] = {}
@@ -105,3 +121,6 @@ do
     vent.map_color = angelsmods.functions.fluid_color("HF")
     vent.icon = "__angels_space_age_galore__/graphics/icons/fluorine-vent.png"
 end
+
+data.raw.tile["oil-ocean-shallow"].fluid = "angels-liquid-naphtha"
+data.raw.tile["oil-ocean-deep"].fluid = "angels-liquid-naphtha"

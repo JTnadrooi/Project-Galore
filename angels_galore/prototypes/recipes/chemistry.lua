@@ -17,8 +17,10 @@ vgal.data.extend({
         fluid_results = {
             { "angels-gas-oxygen", 30 },
         },
-        allow_productivity = false,
         category = "angels-liquifying",
+        
+        allow_productivity = false,
+        show_amount_in_title = false,
     },
     {
         name = "angels-solid-sodium-chlorate-angels-liquid-hydrochloric-acid-angels-solid-salt",
@@ -46,6 +48,7 @@ vgal.data.extend({
 
         order = "ab",
         allow_productivity = false,
+        show_amount_in_title = false,
     },
     {
         -- angels mirror, buffed, see the override (didnt wanna make the recipe weird)

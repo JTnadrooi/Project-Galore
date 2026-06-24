@@ -20,6 +20,9 @@ vgal.data.extend({
             { "angels-catalyst-metal-carrier", 10 },
         },
         category = "angels-casting",
+
+        localised_name = { "", { "item-name.angels-catalyst-metal-carrier" }, " ", { "vgal-internal.casting-postfix" } },
+        show_amount_in_title = false,
     },
     {
         name = "steel-plate-angels-solid-saw",

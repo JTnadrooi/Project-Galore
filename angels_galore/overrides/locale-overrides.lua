@@ -11,10 +11,10 @@ end
 local function get_reacts_with_catalyst_loc(catalyst, target, needs_refine, for_base_ore)
     local ore_name = (target == "uranium") and "uranium-ore" or "angels-thorium-ore"
 
-    local header = { "", { needs_refine and "agal-internal.further-refine-and-sort-catalyst" or "agal-internal.sort-catalyst" } }
+    local header = { "", { needs_refine and "vgal-internal.further-refine-and-sort-catalyst" or "vgal-internal.sort-catalyst" } }
 
     if for_base_ore then
-        header = { "agal-internal.refine-and-sort-catalyst" }
+        header = { "vgal-internal.refine-and-sort-catalyst" }
     end
 
     return
@@ -131,7 +131,7 @@ do
         "",
         {
             "",
-            { "agal-internal.sort" },
+            { "vgal-internal.sort" },
             {
                 "",
                 { "item-description.loc-nl" },
@@ -219,7 +219,7 @@ do
         "",
         {
             "",
-            { "agal-internal.sort" },
+            { "vgal-internal.sort" },
             {
                 "",
                 { "item-description.loc-nl" },
@@ -307,7 +307,7 @@ do
         "",
         {
             "",
-            { "agal-internal.sort" },
+            { "vgal-internal.sort" },
             {
                 "",
                 { "item-description.loc-nl" },
@@ -390,7 +390,7 @@ do
         "",
         {
             "",
-            { "agal-internal.sort" },
+            { "vgal-internal.sort" },
             {
                 "",
                 { "item-description.loc-nl" },
@@ -558,7 +558,7 @@ do
         "",
         {
             "",
-            { "agal-internal.sort" },
+            { "vgal-internal.sort" },
             {
                 "",
                 { "item-description.loc-nl" },
@@ -646,7 +646,7 @@ do
         "",
         {
             "",
-            { "agal-internal.sort" },
+            { "vgal-internal.sort" },
             {
                 "",
                 { "item-description.loc-nl" },
@@ -734,7 +734,7 @@ do
         "",
         {
             "",
-            { "agal-internal.sort" },
+            { "vgal-internal.sort" },
             {
                 "",
                 { "item-description.loc-nl" },
@@ -817,7 +817,7 @@ do
         "",
         {
             "",
-            { "agal-internal.sort" },
+            { "vgal-internal.sort" },
             {
                 "",
                 { "item-description.loc-nl" },
@@ -930,9 +930,9 @@ for _, metal in pairs(vgal.defines.metals) do
         { "?",
             {
                 "",
-                { "agal-internal.ore-" .. metal.ore_index },
+                { "vgal-internal.ore-" .. metal.ore_index },
                 " ",
-                { "agal-internal.act-" .. ore_state },
+                { "vgal-internal.act-" .. ore_state },
             },
             { "item-name." .. metal[ore_state] },
         }

@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.2.1
+  Features:
+    - Added more functions.
+    - Added new vgalRecipe.categories field (preperation for 2.1 version)
+---------------------------------------------------------------------------------------------------
 Version: 2.2.0
   Features:
     - Moved all functions from sagal, agal and asagal to the gallib "vgal.(...)" namespace.

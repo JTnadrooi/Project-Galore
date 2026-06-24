@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.3
+  Features:
+    - Added compatiblity with the new GaloreLib category system.
+---------------------------------------------------------------------------------------------------
 Version: 1.4.2
   Balancing:
     - "vgal-bulk-inserter-chemical-science-pack" duration; 64 -> 132

@@ -1,4 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.5
+  Features:
+    - Added compatiblity with the new GaloreLib category system.
+    - Added fish atm and tree seed voids.
+    - Added fuel value to plants, algae and eggs.
+    - Added custom recipe names to some plastic recipes.
+    - Removed Hand mining recipe.
+  Balancing:
+    - "vgal-angels-stone-crushed-angels-solid-carbon-stone" gravel cost 8 -> 6.
+    - "vgal-angels-stone-crushed-angels-solid-carbon-stone" duration 3.2 -> 2.4.
+  Bugfixes:
+    - Fixed missing space age like nutrients from fish pulp name.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.4
   Features:
     - Returned polyethylene as it will be used in more than enough plastic alts to justify its presense. (Removed unwieldy catalyst plastic bar recipes)

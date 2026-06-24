@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.4
+  Features:
+    - Added compatiblity with the new GaloreLib category system.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.3
   Features:
     - Normalized some recipe durations.

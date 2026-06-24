@@ -50,7 +50,7 @@ vgal.catalyst_groups = {}
 vgal.entry_stat_relevant_catalysts = {}
 
 vgal.group_overrides = {}
-if mods["vanilla_galore_continued"] then
+if vgal.defines.flags["vgal"] then
     local function split(inputstr, sep)
         if sep == nil then
             sep = "%s"
@@ -133,7 +133,7 @@ end
 function vgal.data.extend(entries, fill_in_with)
     fill_in_with = fill_in_with or {}
 
-    fill_in_with.groups = vgal.table.ensure(fill_in_with.group, fill_in_with.groups)
+    -- fill_in_with.groups = vgal.table.ensure(fill_in_with.group, fill_in_with.groups)
 
     for _, entry in ipairs(entries) do
         entry = vgal.table.deep_merge_with_priority(entry, fill_in_with)
@@ -153,8 +153,6 @@ function vgal.data.extend(entries, fill_in_with)
         if entry.type == "recipe" then
             ---@cast entry vgal.VgalRecipePrototype
 
-            entry.technologies = vgal.table.ensure(entry.technology, entry.technologies)
-
             if entry.complementairy_recipe then
                 local complementairy_recipe = data.raw["recipe"][entry.complementairy_recipe]
                 entry.order = entry.order or complementairy_recipe.order
@@ -167,7 +165,8 @@ function vgal.data.extend(entries, fill_in_with)
             entry.name = vgal.build.name(entry.prefix, entry.name, entry.tier)
 
             -- tech kinda, real stuff happens later.
-            if entry.enabled ~= nil and #entry.technologies > 0 then
+            entry.technologies = vgal.table.ensure(entry.technology, entry.technologies)
+            if entry.enabled ~= nil and #entry.technologies > 0 then -- entry cannot have `enabled` set if technolog(y/ies) is set.
                 error()
             end
 
@@ -184,14 +183,15 @@ function vgal.data.extend(entries, fill_in_with)
                 end
             end
 
-            -- null stuff
+            -- prevent nils
             entry.fluid_ingredients = entry.fluid_ingredients or {}
             entry.fluid_results = entry.fluid_results or {}
             entry.ingredients = entry.ingredients or {}
             entry.results = entry.results or {}
             entry.module_allows = entry.module_allows or {}
-            entry.groups = vgal.table.ensure(entry.group, entry.groups)
 
+            -- toggle group management
+            entry.groups = vgal.table.ensure(entry.group, entry.groups)
             local hidden = false
             for _, group in ipairs(entry.groups) do
                 if not vgal.groups[group] then
@@ -205,6 +205,7 @@ function vgal.data.extend(entries, fill_in_with)
                 end
             end
 
+            -- group overrides
             if vgal.group_overrides[entry.name] then
                 hidden = vgal.group_overrides[entry.name].hidden
             end
@@ -228,21 +229,25 @@ function vgal.data.extend(entries, fill_in_with)
                 entry.icon_size = nil
             end
 
-            -- validate.
+            -- prevent nil energy_required
             if not entry.energy_required then
                 error("Missing energy_required for " .. entry.name)
             end
 
+            -- in/output table building
             entry.ingredients = entry.raw_ingredients or vgal.build.table(entry.ingredients, entry.fluid_ingredients)
             entry.results = entry.raw_results or vgal.build.table(entry.results, entry.fluid_results)
+
+            -- ensure categories
+            entry.categories = vgal.table.ensure(entry.category, entry.categories)
+            vgal.recipe.set_categories(entry, entry.categories)
 
             if not entry.main_product then
                 ---@diagnostic disable-next-line: undefined-field
                 entry.main_product = entry.results[1].name
             end
 
-            entry.crafting_machine_tint = entry.crafting_machine_tint
-                or vgal.recipe.get_preferred_crafting_machine_tint(entry)
+            entry.crafting_machine_tint = entry.crafting_machine_tint or vgal.recipe.get_preferred_crafting_machine_tint(entry)
 
             if entry.locale_source then
                 entry.localised_name_source = entry.locale_source
@@ -624,4 +629,17 @@ function vgal.get_surface_conditions_for(target)
     }
 
     return sc_store[target] or error(target)
+end
+
+---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "recipe"): data.RecipePrototype
+---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "fluid"): data.FluidPrototype
+---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "item"): data.ItemPrototype
+function vgal.get_from_prototype_or_prototype_name(prototype_or_prototype_name, prototype_type)
+    if type(prototype_or_prototype_name) == "string" then
+        ---@diagnostic disable-next-line: return-type-mismatch
+        return data.raw[prototype_type][prototype_or_prototype_name] or error("Could not find prototype with name " .. prototype_or_prototype_name)
+    else
+        ---@diagnostic disable-next-line: return-type-mismatch
+        return prototype_or_prototype_name
+    end
 end

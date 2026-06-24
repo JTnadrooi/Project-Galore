@@ -317,7 +317,7 @@ vgal.data.extend({
             vgal.icon.get("chemical-science-pack"),
             vgal.icon.get_in("bulk-inserter"),
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
         energy_required = 132,
         technology = { "bulk-inserter", "chemical-science-pack" },
         ingredients = {
@@ -548,7 +548,7 @@ vgal.data.extend({
             vgal.icon.get("production-science-pack"),
             vgal.icon.get_in("low-density-structure"),
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
         energy_required = 12,
         technology = { "production-science-pack", "low-density-structure" },
         ingredients = {

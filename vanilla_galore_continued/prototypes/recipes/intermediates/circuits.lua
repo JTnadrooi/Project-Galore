@@ -18,7 +18,7 @@ vgal.data.extend({
     --     results = {
     --         { "electronic-circuit", 4 } -- 100
     --     },
-    --     category = "crafting-with-fluid",
+    --     category = "crafting",
     --     groups = { "vgal-unsure" },
     -- },
     {
@@ -41,7 +41,7 @@ vgal.data.extend({
         results = {
             { "advanced-circuit", 4 } -- 400
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     -- {
     --     name = "plastic-bar-electronic-circuit-advanced-circuit-processing-unit",
@@ -66,7 +66,7 @@ vgal.data.extend({
     --         { "advanced-circuit",   1, { probability = 0.2, show_details_in_recipe_tooltip = false } }, -- 20
     --         { "processing-unit",    1, { probability = 0.1, show_details_in_recipe_tooltip = false } }, -- 70
     --     },                                                                                              -- 105
-    --     category = "crafting-with-fluid",
+    --     category = "crafting",
     --     groups = { "vgal-convoluted" },
     -- },
     {
@@ -108,7 +108,7 @@ vgal.data.extend({
         results = {
             { "electronic-circuit", 2 }
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
         groups = { "vgal-wood-recipes" },
     },
     {
@@ -131,7 +131,7 @@ vgal.data.extend({
     {
         name = "plastic-bar-processing-unit",
         prefix = "vgal",
-        category = "crafting-with-fluid",
+        category = "crafting",
         icons = vgal.icon.register {
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("plastic-bar")
@@ -153,7 +153,7 @@ vgal.data.extend({
     {
         name = "sulfuric-acid-processing-unit",
         prefix = "vgal",
-        category = "crafting-with-fluid",
+        category = "crafting",
         icons = vgal.icon.register {
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("sulfuric-acid")
@@ -174,7 +174,7 @@ vgal.data.extend({
     {
         name = "low-density-structure-processing-unit",
         prefix = "vgal",
-        category = "crafting-with-fluid",
+        category = "crafting",
         icons = vgal.icon.register {
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("low-density-structure")

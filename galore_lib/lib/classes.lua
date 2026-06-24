@@ -26,6 +26,7 @@ do
     ---@field enable_smart_productivity? boolean
     ---@field enable_smart_stats? boolean
     ---@field domain? string
+    ---@field categories? string[]
 end
 
 do

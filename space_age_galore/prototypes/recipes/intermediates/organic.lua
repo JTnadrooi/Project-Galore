@@ -8,7 +8,7 @@ vgal.data.extend({
             -- vgal.icon.get_overlay("nutrients"),
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/sulfur-ammonia-nutrients.png"),
         },
-        category = "organic-or-assembling",
+        categories = { "crafting", "organic" },
         energy_required = 1,
         technology = "agriculture",
         fluid_ingredients = {

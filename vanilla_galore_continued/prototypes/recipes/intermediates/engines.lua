@@ -38,7 +38,7 @@ vgal.data.extend({
         results = {
             { "engine-unit", 1 },
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "advanced-circuit-electric-engine-unit",
@@ -78,9 +78,8 @@ vgal.data.extend({
     --     results = {
     --         { "electric-engine-unit", 1 }, -- 180
     --     },
-    --     category = "crafting-with-fluid",
+    --     category = "crafting",
     -- },
 }, {
     type = "recipe",
 })
-

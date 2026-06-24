@@ -291,7 +291,7 @@ vgal.data.extend({
         results = {
             { "assembling-machine-2", 1 }, -- 540
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "electric-engine-assembling-machine-3",
@@ -313,7 +313,7 @@ vgal.data.extend({
         results = {
             { "assembling-machine-3", 1 }, -- 3580
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     -- OTHER
     {
@@ -336,7 +336,7 @@ vgal.data.extend({
         results = {
             { "rail", 8 },
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "advanced-circuit-solar-panel",
@@ -451,7 +451,7 @@ vgal.data.extend({
         results = {
             { "concrete", 10 },
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "steam-concrete",
@@ -472,7 +472,7 @@ vgal.data.extend({
         results = {
             { "concrete", 10 },
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
         show_amount_in_title = false,
     },
     {

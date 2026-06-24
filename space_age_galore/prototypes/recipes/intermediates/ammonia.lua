@@ -90,7 +90,7 @@ vgal.data.extend({
         icons = vgal.icon.register {
             vgal.icon.get("ammonia"),
         },
-        category = "organic-or-chemistry",
+        categories = { "organic", "chemistry" },
         energy_required = 1,
         technology = "oil-processing",
         fluid_ingredients = {

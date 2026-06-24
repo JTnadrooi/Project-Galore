@@ -40,7 +40,7 @@ vgal.data.extend({
         results = {
             { "advanced-circuit", 3 } -- 300
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "iron-stick-engine-unit",
@@ -81,7 +81,7 @@ vgal.data.extend({
         results = {
             { "electronic-circuit", 1 }
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "iron-gear-wheel-electronic-circuit",
@@ -109,7 +109,7 @@ vgal.data.extend({
     {
         name = "iron-gear-wheel-processing-unit", -- analog
         prefix = "vgal",
-        category = "crafting-with-fluid",
+        category = "crafting",
         icons = vgal.icon.register {
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("iron-gear-wheel")
@@ -274,7 +274,7 @@ vgal.data.extend({
             },
         },
         energy_required = 15,
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "uranium-238-low-density-structure",
@@ -316,7 +316,7 @@ vgal.data.extend({
             { "uranium-fuel-cell", 15 },
         },
         energy_required = 12,
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "processing-unit-fast-splitter",
@@ -376,7 +376,7 @@ vgal.data.extend({
         results = {
             { "express-splitter", 1 }
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "barrel-battery",

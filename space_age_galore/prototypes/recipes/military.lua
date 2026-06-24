@@ -134,7 +134,7 @@ vgal.data.extend({
         results = {
             { "railgun-ammo", 1 }, -- 330
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     -- {
     --     name = "tungsten-carbide-railgun-ammo",
@@ -178,7 +178,7 @@ vgal.data.extend({
         results = {
             { "railgun-turret", 1 },
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
         groups = { "vgal-silly" },
     },
     {
@@ -236,7 +236,7 @@ vgal.data.extend({
         results = {
             { "defender-capsule", 1 }, -- 360
         },
-        category = "organic-or-assembling",
+        categories = { "crafting", "organic" },
         groups = { "vgal-silly" },
     },
     {
@@ -256,7 +256,7 @@ vgal.data.extend({
         results = {
             { "defender-capsule", 1 }, -- 360
         },
-        category = "organic-or-assembling",
+        categories = { "crafting", "organic" },
         groups = { "vgal-silly" },
     },
 }, {

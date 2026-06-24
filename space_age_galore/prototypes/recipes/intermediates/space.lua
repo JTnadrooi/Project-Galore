@@ -280,7 +280,7 @@ vgal.data.extend({
         icons = vgal.icon.register {
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/thruster-oxidizer-thruster-fuel-steam.png"),
         },
-        category = "chemistry-or-cryogenics",
+        categories = { "chemistry", "cryogenics" },
         energy_required = 5,
         technology = "space-platform",
         fluid_ingredients = {

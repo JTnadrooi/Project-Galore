@@ -93,7 +93,7 @@ vgal.data.extend({
         results = {
             { "express-transport-belt", 1 }
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "plastic-bar-express-transport-belt",
@@ -115,7 +115,7 @@ vgal.data.extend({
         results = {
             { "express-transport-belt", 1 }, -- 365
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     -- UNDERGROUND
     {
@@ -175,7 +175,7 @@ vgal.data.extend({
         results = {
             { "express-underground-belt", 2 }
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     -- SPLITTER
     {
@@ -256,7 +256,7 @@ vgal.data.extend({
         results = {
             { "express-splitter", 1 } -- 2045
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
 }, {
     type = "recipe",

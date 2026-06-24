@@ -59,7 +59,7 @@ vgal.data.extend({
             { "uranium-fuel-cell", 15 },
         },
         energy_required = 25,
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
 }, {
     type = "recipe",

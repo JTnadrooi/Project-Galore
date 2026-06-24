@@ -13,7 +13,7 @@ vgal.data.extend({
             vgal.icon.get("sulfur"),
         },
         show_amount_in_title = false,
-        category = "chemistry-or-cryogenics",
+        categories = { "chemistry", "cryogenics" },
         energy_required = 2,
         technology = "calcite-processing",
         fluid_ingredients = {
@@ -79,7 +79,7 @@ vgal.data.extend({
 
             vgal.icon.get_in2("sulfuric-acid"),
         },
-        category = "chemistry-or-cryogenics",
+        categories = { "chemistry", "cryogenics" },
         energy_required = 5,
         technology = "space-platform",
         fluid_ingredients = {
@@ -145,7 +145,7 @@ vgal.data.extend({
     --         vgal.icon.get("sulfur"),
     --         vgal.icon.get_in("ammonia"),
     --     },
-    --     category = "chemistry-or-cryogenics",
+    --     categories = { "chemistry", "cryogenics" },
     --     energy_required = 6,
     --     fluid_ingredients = {
     --         { "heavy-oil", 120 },
@@ -217,7 +217,7 @@ vgal.data.extend({
             vgal.icon.get_in("thruster-fuel"),
             vgal.icon.get_in2("thruster-oxidizer"),
         },
-        category = "chemistry-or-cryogenics",
+        categories = { "chemistry", "cryogenics" },
         energy_required = 6,
         technology = "space-platform-thruster",
         fluid_ingredients = {
@@ -297,7 +297,7 @@ vgal.data.extend({
     --         -- vgal.icon.get_out_to("fluorine"),
     --         -- vgal.icon.get_overlay("to"),
     --     },
-    --     category = "chemistry-or-cryogenics",
+    --     categories = { "chemistry", "cryogenics" },
     --     energy_required = 2,
     --     technology = "calcite-processing",
     --     ingredients = {
@@ -317,7 +317,7 @@ vgal.data.extend({
     --         vgal.icon.get("tungsten-carbide"),
     --         vgal.icon.get_in("fluorine"),
     --     },
-    --     category = "crafting-with-fluid",
+    --     category = "crafting",
     --     energy_required = 5,
     --     technology = "calcite-processing",
     --     ingredients = {
@@ -387,7 +387,7 @@ vgal.data.extend({
             vgal.icon.get("battery"),
             vgal.icon.get_in("lithium"),
         },
-        category = "chemistry-or-cryogenics",
+        categories = { "chemistry", "cryogenics" },
         energy_required = 10, -- fast
         technology = "lithium-processing",
         fluid_ingredients = {
@@ -409,7 +409,7 @@ vgal.data.extend({
             vgal.icon.get("explosives"),
             vgal.icon.get_in("ammonia"),
         },
-        category = "chemistry-or-cryogenics",
+        categories = { "chemistry", "cryogenics" },
         energy_required = 10,
         technology = "explosives",
         fluid_ingredients = {
@@ -454,7 +454,7 @@ vgal.data.extend({
             vgal.icon.get("plastic-bar"),
             vgal.icon.get_in("ammonia"),
         },
-        category = "chemistry-or-cryogenics",
+        categories = { "chemistry", "cryogenics" },
         energy_required = 4,
         technology = "space-platform",
         fluid_ingredients = {

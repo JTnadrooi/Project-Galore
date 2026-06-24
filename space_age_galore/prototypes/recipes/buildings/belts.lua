@@ -142,7 +142,7 @@ vgal.data.extend({
             { "splitter", 200 }, -- 47000
         },
         groups = { "vgal-silly" },
-        category = "pressing",
+        categories = { "crafting", "metallurgy" },
     },
 }, {
     type = "recipe",

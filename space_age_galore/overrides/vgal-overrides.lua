@@ -28,30 +28,30 @@ vgal.data.trim("vgal-processing-unit-artillery-turret")
 vgal.data.trim("vgal-steam-concrete")
 vgal.data.trim("vgal-sulfuric-acid-processing-unit")
 
-data.raw["recipe"]["vgal-plastic-bar-electronic-circuit"].category = "electronics"
-data.raw["recipe"]["vgal-plastic-bar-processing-unit"].category = "electronics"
-data.raw["recipe"]["vgal-sulfuric-acid-processing-unit"].category = "electronics"
-data.raw["recipe"]["vgal-sulfuric-acid-advanced-circuit"].category = "electronics"
-data.raw["recipe"]["vgal-low-density-structure-processing-unit"].category = "electronics"
+vgal.recipe.set_categories("vgal-plastic-bar-electronic-circuit", { "crafting", "electromagnetics" })
+vgal.recipe.set_categories("vgal-plastic-bar-processing-unit", { "crafting", "electromagnetics" })
+vgal.recipe.set_categories("vgal-sulfuric-acid-processing-unit", { "crafting", "electromagnetics" })
+vgal.recipe.set_categories("vgal-sulfuric-acid-advanced-circuit", { "crafting", "electromagnetics" })
+vgal.recipe.set_categories("vgal-low-density-structure-processing-unit", { "crafting", "electromagnetics" })
 
-data.raw["recipe"]["vgal-processing-unit-substation"].category = "electronics"
-data.raw["recipe"]["vgal-processing-unit-beacon"].category = "electronics"
-data.raw["recipe"]["vgal-advanced-circuit-solar-panel"].category = "electronics"
-data.raw["recipe"]["vgal-steel-plate-accumulator"].category = "electronics"
+vgal.recipe.set_categories("vgal-processing-unit-substation", { "crafting", "electromagnetics" })
+vgal.recipe.set_categories("vgal-processing-unit-beacon", { "crafting", "electromagnetics" })
+vgal.recipe.set_categories("vgal-advanced-circuit-solar-panel", { "crafting", "electromagnetics" })
+vgal.recipe.set_categories("vgal-steel-plate-accumulator", { "crafting", "electromagnetics" })
 
-data.raw["recipe"]["vgal-copper-cable-plastic-bar"].category = "chemistry-or-cryogenics"
-data.raw["recipe"]["vgal-copper-cable-battery"].category = "chemistry-or-cryogenics"
-data.raw["recipe"]["vgal-coal-sulfur"].category = "chemistry-or-cryogenics"
-data.raw["recipe"]["vgal-steam-sulfur"].category = "chemistry-or-cryogenics"
+vgal.recipe.set_categories("vgal-copper-cable-plastic-bar", { "chemistry", "cryogenics" })
+vgal.recipe.set_categories("vgal-copper-cable-battery", { "chemistry", "cryogenics" })
+vgal.recipe.set_categories("vgal-coal-sulfur", { "chemistry", "cryogenics" })
+vgal.recipe.set_categories("vgal-steam-sulfur", { "chemistry", "cryogenics" })
 
-data.raw["recipe"]["vgal-petroleum-gas-rocket-fuel"].category = "organic-or-assembling"
+vgal.recipe.set_categories("vgal-petroleum-gas-rocket-fuel", { "crafting", "organic" })
 
-data.raw["recipe"]["vgal-petroleum-gas-coal-heavy-oil"].category = "organic-or-chemistry"
-data.raw["recipe"]["vgal-steam-heavy-oil-light-oil"].category = "organic-or-chemistry"
-data.raw["recipe"]["vgal-steam-light-oil-petroleum-gas"].category = "organic-or-chemistry"
+vgal.recipe.set_categories("vgal-petroleum-gas-coal-heavy-oil", { "chemistry", "cryogenics" })
+vgal.recipe.set_categories("vgal-steam-heavy-oil-light-oil", { "chemistry", "cryogenics" })
+vgal.recipe.set_categories("vgal-steam-light-oil-petroleum-gas", { "chemistry", "cryogenics" })
 
-data.raw["recipe"]["vgal-low-density-structure-engine-unit"].category = "pressing"
-data.raw["recipe"]["vgal-low-density-structure-barrel"].category = "pressing"
+vgal.recipe.set_categories("vgal-low-density-structure-engine-unit", { "crafting", "metallurgy" })
+vgal.recipe.set_categories("vgal-low-density-structure-barrel", { "crafting", "metallurgy" })
 
 local valid_suffixes = {
     "transport-belt",

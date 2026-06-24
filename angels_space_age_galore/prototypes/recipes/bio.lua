@@ -34,8 +34,7 @@ for _, nutrientable_recipe_name in ipairs(nutrientable_recipe_names) do
             results = {
                 { "nutrients", nutrients_count },
             },
-            category = "organic",
-            additional_categories = { "crafting" }
+            categories = { "organic", "crafting" }
         },
     }, {
         type = "recipe",

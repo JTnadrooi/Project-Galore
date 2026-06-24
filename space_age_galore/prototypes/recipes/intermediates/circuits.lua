@@ -88,7 +88,7 @@ vgal.data.extend({
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("tungsten-carbide"),
         },
-        category = "electronics",
+        categories = { "crafting", "electromagnetics" },
         energy_required = 6,
         technology = "tungsten-carbide",
         fluid_ingredients = {
@@ -111,7 +111,7 @@ vgal.data.extend({
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("tungsten-carbide"),
         },
-        category = "electronics",
+        categories = { "crafting", "electromagnetics" },
         energy_required = 10,
         technology = "tungsten-carbide",
         fluid_ingredients = {

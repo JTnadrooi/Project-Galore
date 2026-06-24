@@ -63,7 +63,7 @@ vgal.data.extend({
         results = {
             { "artificial-jellynut-soil", 10 },
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "ammonia-artificial-yumako-soil",
@@ -85,7 +85,7 @@ vgal.data.extend({
         results = {
             { "artificial-yumako-soil", 10 },
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         type = "recipe",
@@ -95,7 +95,7 @@ vgal.data.extend({
             vgal.icon.get("ice-platform"),
             vgal.icon.get_in("low-density-structure"),
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
         energy_required = 30,
         technology = "planet-discovery-aquilo",
         ingredients = {

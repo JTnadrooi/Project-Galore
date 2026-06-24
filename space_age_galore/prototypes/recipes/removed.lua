@@ -53,7 +53,7 @@ vgal.data.extend({
             vgal.icon.get_out_to("carbon"),
             vgal.icon.get_overlay("to"),
         },
-        category = "chemistry-or-cryogenics",
+        categories = { "chemistry", "cryogenics" },
         energy_required = 8,
         technology = "space-platform",
         fluid_ingredients = {

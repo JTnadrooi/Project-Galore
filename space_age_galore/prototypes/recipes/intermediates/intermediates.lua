@@ -102,7 +102,7 @@ vgal.data.extend({
         results = {
             { "concrete", 10 }, -- ~100 * 1.5 = 150
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "holmium-ore-holmium-plate", -- fg/vn
@@ -133,7 +133,7 @@ vgal.data.extend({
             vgal.icon.get("carbon-fiber"),
             vgal.icon.get_in("wood"),
         },
-        category = "chemistry-or-cryogenics",
+        categories = { "chemistry", "cryogenics" },
         energy_required = 10,
         technology = "carbon-fiber",
         fluid_ingredients = {
@@ -156,7 +156,7 @@ vgal.data.extend({
             vgal.icon.get("logistic-robot"),
             vgal.icon.get_in("pentapod-egg"),
         },
-        category = "organic-or-assembling",
+        categories = { "crafting", "organic" },
         energy_required = 1,
         technology = "biochamber",
         ingredients = {
@@ -184,7 +184,7 @@ vgal.data.extend({
             vgal.icon.get("construction-robot"),
             vgal.icon.get_in("pentapod-egg"),
         },
-        category = "organic-or-assembling",
+        categories = { "crafting", "organic" },
         energy_required = 1,
         technology = { "biochamber", "construction-robotics" },
         ingredients = {
@@ -279,7 +279,7 @@ vgal.data.extend({
     --         vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/sulfur-ammonia-nutrients.png"),
     --         vgal.icon.get_in2("lithium-brine"),
     --     },
-    --     category = "chemistry-or-cryogenics",
+    --     categories = { "chemistry", "cryogenics" },
     --     energy_required = 5,
     --     technology = "lithium-processing",
     --     fluid_ingredients = {

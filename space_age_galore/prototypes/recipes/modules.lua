@@ -16,7 +16,7 @@ vgal.data.extend({
         results = {
             { "speed-module", 1 },
         },
-        category = "electronics",
+        categories = { "crafting", "electromagnetics" },
     },
     {
         name = "biter-egg-productivity-module",
@@ -35,7 +35,7 @@ vgal.data.extend({
         results = {
             { "productivity-module", 1 },
         },
-        category = "electronics",
+        categories = { "crafting", "electromagnetics" },
     },
     {
         name = "spoilage-efficiency-module",
@@ -54,7 +54,7 @@ vgal.data.extend({
         results = {
             { "efficiency-module", 1 },
         },
-        category = "electronics",
+        categories = { "crafting", "electromagnetics" },
     },
     {
         name = "superconductor-quality-module",
@@ -73,7 +73,7 @@ vgal.data.extend({
         results = {
             { "quality-module", 1 },
         },
-        category = "electronics",
+        categories = { "crafting", "electromagnetics" },
     },
     -- TIER 2
     {
@@ -94,7 +94,7 @@ vgal.data.extend({
         results = {
             { "speed-module-2", 1 },
         },
-        category = "electronics",
+        categories = { "crafting", "electromagnetics" },
     },
     {
         name = "biter-egg-productivity-module-2",
@@ -114,7 +114,7 @@ vgal.data.extend({
         results = {
             { "productivity-module-2", 1 },
         },
-        category = "electronics",
+        categories = { "crafting", "electromagnetics" },
     },
     {
         name = "spoilage-efficiency-module-2",
@@ -134,7 +134,7 @@ vgal.data.extend({
         results = {
             { "efficiency-module-2", 1 },
         },
-        category = "electronics",
+        categories = { "crafting", "electromagnetics" },
     },
     {
         name = "superconductor-quality-module-2",
@@ -154,7 +154,7 @@ vgal.data.extend({
         results = {
             { "quality-module-2", 1 },
         },
-        category = "electronics",
+        categories = { "crafting", "electromagnetics" },
     },
 }, {
     type = "recipe",

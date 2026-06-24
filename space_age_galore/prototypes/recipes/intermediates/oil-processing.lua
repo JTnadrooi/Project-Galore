@@ -5,7 +5,7 @@ vgal.data.extend({
         icons = vgal.icon.register {
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/ammonia-water-crude-oil.png"),
         },
-        category = "organic-or-chemistry",
+        categories = { "organic", "chemistry" },
         energy_required = 4,
         fluid_ingredients = {
             { "ammonia", 10 }, -- 20

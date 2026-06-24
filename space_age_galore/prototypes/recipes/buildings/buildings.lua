@@ -154,7 +154,7 @@ vgal.data.extend({
         results = {
             { "assembling-machine-2", 1 }, -- 540
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
         groups = { "vgal-convoluted" },
     },
     {
@@ -177,7 +177,7 @@ vgal.data.extend({
         results = {
             { "assembling-machine-3", 1 }, -- 3580
         },
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
 }, {
     type = "recipe",

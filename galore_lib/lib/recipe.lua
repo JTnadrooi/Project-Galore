@@ -851,3 +851,44 @@ function vgal.recipe.make_recipeable_void(recipeable_name, void_category, void_a
 
     data:extend({ recipe })
 end
+
+---@param categories string[]
+---@param recipe_or_recipe_name string|data.RecipePrototype|vgal.VgalRecipePrototype
+function vgal.recipe.set_categories(recipe_or_recipe_name, categories)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
+    if vgal.defines.factorio_version == "2.0" then
+        local has_fluid_ingredient = false
+        for _, ingredient in ipairs(recipe.ingredients) do
+            ---@cast ingredient data.IngredientPrototype
+
+            if ingredient.type == "fluid" then
+                has_fluid_ingredient = true
+                break
+            end
+        end
+        if has_fluid_ingredient then
+            categories = vgal.table.select(categories, function(c)
+                if c == "crafting" then
+                    return "crafting-with-fluid"
+                else
+                    return c
+                end
+            end)
+        end
+
+
+        recipe.category = categories[1]
+        local rest = {}
+        for i = 2, #categories do
+            rest[#rest + 1] = categories[i]
+        end
+        recipe.additional_categories = rest
+
+        if #recipe.additional_categories == 0 then
+            recipe.additional_categories = nil
+        end
+    else
+        recipe.categories = categories
+    end
+end

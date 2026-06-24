@@ -92,8 +92,8 @@ end
 
 --- Ensures a single value or multiple values is a table.
 --- @param single any|nil A single value to normalize/ensure into a table.
---- @param multiple table|nil A table of values.
---- @return table A table wapping around the single value or the multiple.
+--- @param multiple any[]|nil A table of values.
+--- @return any[]
 function vgal.table.ensure(single, multiple)
     if single then
         if multiple then

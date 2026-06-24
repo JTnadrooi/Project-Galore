@@ -33,7 +33,7 @@ vgal.data.extend({
             vgal.icon.get("ice"),
             vgal.icon.get_in("water", "fluid"),
         },
-        category = "chemistry-or-cryogenics",
+        categories = { "chemistry", "cryogenics" },
         energy_required = 20,
         technology = "space-platform",
         fluid_ingredients = {

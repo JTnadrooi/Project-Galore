@@ -1,5 +1,7 @@
 vgal.defines = vgal.defines or {}
 
+---@type "2.0"|"2.1"
+vgal.defines.factorio_version = "2.0"
 ---@type "vgal"|"sagal"|"asagal"|nil
 vgal.defines.gal_mode = nil
 ---@type table<"vgal"|"agal"|"sagal"|"asagal", boolean?>

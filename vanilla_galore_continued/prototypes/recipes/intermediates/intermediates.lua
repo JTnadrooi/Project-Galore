@@ -128,7 +128,7 @@ vgal.data.extend({
             { "rocket-fuel", 1 },
         },
         energy_required = 15,
-        category = "crafting-with-fluid",
+        category = "crafting",
     },
     {
         name = "copper-cable-plastic-bar",

@@ -63,7 +63,6 @@ require("prototypes.recipes.buildings.tiles")
 
 require("mods.maraxsis")
 require("mods.james")
-require("mods.bobs")
 require("mods.wolf")
 require("mods.cerys")
 require("mods.demolisher-scales")

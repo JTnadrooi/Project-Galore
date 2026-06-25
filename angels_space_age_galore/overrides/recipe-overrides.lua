@@ -209,6 +209,7 @@ do
     })
 
     for _, recipe in pairs(data.raw["recipe"]) do
+        ---@diagnostic disable-next-line: undefined-field
         if recipe.category and category_map[recipe.category] then
             for _, ingredient in ipairs(recipe.ingredients) do
                 if ingredient.name == "angels-liquid-nutrient-pulp" then

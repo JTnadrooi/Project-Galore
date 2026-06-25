@@ -61,7 +61,7 @@ vgal.data.extend({
             { "light-oil", 40 }, -- 60 * 1.5 = 90
         },
         results = {
-            { "yumako-seed", 1, { probability = 0.015 } },
+            { "yumako-seed", 1, { independent_probability = 0.015 } },
         },
         show_amount_in_title = false,
         main_product = "light-oil",

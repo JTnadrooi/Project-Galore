@@ -11,7 +11,7 @@ if mods["bzcarbon"] then
         "vgal")
 
     if settings.startup["bzcarbon-reuse"].value == "yes" then
-        vgal.recipe.all.link_result({ type = "item", name = "diamond", amount = 1, probability = 0.5 },
+        vgal.recipe.all.link_result({ type = "item", name = "diamond", amount = 1, independent_probability = 0.5 },
             "low-density-structure", 1, "vgal")
     end
 

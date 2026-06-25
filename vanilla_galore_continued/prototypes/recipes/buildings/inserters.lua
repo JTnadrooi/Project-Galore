@@ -15,6 +15,7 @@ vgal.data.extend({
         results = {
             { "inserter", 1 },
         },
+        category = "crafting"
     },
     {
         name = "processing-unit-bulk-inserter",
@@ -33,6 +34,7 @@ vgal.data.extend({
         results = {
             { "bulk-inserter", 1 }, -- 900
         },
+        category = "crafting"
     },
     {
         name = "engine-unit-burner-inserter",
@@ -51,6 +53,7 @@ vgal.data.extend({
             { "burner-inserter", 4 }, -- 120
         },
         groups = { "vgal-convoluted" },
+        category = "crafting"
     },
 }, {
     type = "recipe",

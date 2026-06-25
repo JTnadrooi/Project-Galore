@@ -62,9 +62,9 @@ vgal.data.extend({
     --         { "sulfuric-acid", 10 }, -- 15
     --     },
     --     results = {
-    --         { "electronic-circuit", 1, { probability = 0.5, show_details_in_recipe_tooltip = false } }, -- 15
-    --         { "advanced-circuit",   1, { probability = 0.2, show_details_in_recipe_tooltip = false } }, -- 20
-    --         { "processing-unit",    1, { probability = 0.1, show_details_in_recipe_tooltip = false } }, -- 70
+    --         { "electronic-circuit", 1, { independent_probability = 0.5, show_details_in_recipe_tooltip = false } }, -- 15
+    --         { "advanced-circuit",   1, { independent_probability = 0.2, show_details_in_recipe_tooltip = false } }, -- 20
+    --         { "processing-unit",    1, { independent_probability = 0.1, show_details_in_recipe_tooltip = false } }, -- 70
     --     },                                                                                              -- 105
     --     category = "crafting",
     --     groups = { "vgal-convoluted" },
@@ -127,6 +127,7 @@ vgal.data.extend({
         results = {
             { "electronic-circuit", 1 }, -- 25
         },
+        category = "crafting"
     },
     {
         name = "plastic-bar-processing-unit",

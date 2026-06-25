@@ -570,7 +570,7 @@ function vgal.recipe.set_result_amount(recipe_name, amount, result_name)
             if amount == 0 then
                 table.remove(recipe.results, i)
             else
-                result.amount, result.probability, result.amount_min, result.amount_max = vgal.recipe.get_normalized_return_amounts(amount)
+                result.amount, result.independent_probability, result.amount_min, result.amount_max = vgal.recipe.get_normalized_return_amounts(amount)
             end
         end
     end
@@ -713,8 +713,7 @@ end
 function vgal.recipe.has_category(recipe_name, category_name)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
 
-    return not not (recipe.category == category_name or
-        (recipe.additional_categories and vgal.table.contains(recipe.additional_categories, category_name)))
+    return vgal.table.contains(recipe.categories, category_name)
 end
 
 ---@param machine_names string[]
@@ -808,7 +807,7 @@ function vgal.recipe.make_recipeable_void(recipeable_name, void_category, void_a
                 type = "item",
                 name = output_item,
                 amount = output_amount,
-                probability = output_prob ~= 1 and output_prob or nil,
+                independent_probability = output_prob ~= 1 and output_prob or nil,
             }
         },
         main_product = output_item,
@@ -857,38 +856,26 @@ end
 function vgal.recipe.set_categories(recipe_or_recipe_name, categories)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
-    if vgal.defines.factorio_version == "2.0" then
-        local has_fluid_ingredient = false
-        for _, ingredient in ipairs(recipe.ingredients) do
-            ---@cast ingredient data.IngredientPrototype
+    local has_fluid_ingredient = false
+    for _, ingredient in ipairs(recipe.ingredients) do
+        ---@cast ingredient data.IngredientPrototype
 
-            if ingredient.type == "fluid" then
-                has_fluid_ingredient = true
-                break
-            end
+        if ingredient.type == "fluid" then
+            has_fluid_ingredient = true
+            break
         end
-        if has_fluid_ingredient then
-            categories = vgal.table.select(categories, function(c)
-                if c == "crafting" then
-                    return "crafting-with-fluid"
-                else
-                    return c
-                end
-            end)
-        end
-
-
-        recipe.category = categories[1]
-        local rest = {}
-        for i = 2, #categories do
-            rest[#rest + 1] = categories[i]
-        end
-        recipe.additional_categories = rest
-
-        if #recipe.additional_categories == 0 then
-            recipe.additional_categories = nil
-        end
-    else
-        recipe.categories = categories
     end
+    if has_fluid_ingredient then
+        categories = vgal.table.select(categories, function(c)
+            if c == "crafting" then
+                return "crafting-with-fluid"
+            else
+                return c
+            end
+        end)
+    end
+
+    recipe.categories = categories
+    recipe.category = nil
+    recipe.additional_categories = nil
 end

@@ -109,6 +109,7 @@ vgal.data.extend({
         results = {
             { "repair-pack", 1 }, -- 90
         },
+        category = "crafting",
     },
     {
         name = "petroleum-gas-rocket-fuel",

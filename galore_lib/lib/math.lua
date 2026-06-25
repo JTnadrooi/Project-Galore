@@ -23,8 +23,8 @@ function vgal.math.get_normalized_amount(result)
         error("Invalid recipe result: " .. serpent.block(result))
     end
 
-    if result.probability then
-        amount = amount * result.probability
+    if result.independent_probability then
+        amount = amount * result.independent_probability
     end
     return amount
 end

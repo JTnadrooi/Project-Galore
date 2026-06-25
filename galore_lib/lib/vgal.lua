@@ -453,6 +453,10 @@ function vgal.get_recipeable(prototype_name)
     vgal.throw.if_param_nil(prototype_name, "prototype_name")
 
     for _, category in ipairs(vgal.defines.recipeable_categories) do
+        if not data.raw[category] then
+            error(category)
+        end
+
         if data.raw[category][prototype_name] then
             return data.raw[category][prototype_name] --[[@as vgal.PrototypeWithIcons]]
         end

@@ -12,8 +12,8 @@ vgal.data.extend({
             { "promethium-asteroid-chunk", 1 },
         },
         results = {
-            { "holmium-ore",               1, { probability = 0.015 } },
-            { "promethium-asteroid-chunk", 1, { probability = 0.80 } },
+            { "holmium-ore",               1, { independent_probability = 0.015 } },
+            { "promethium-asteroid-chunk", 1, { independent_probability = 0.80 } },
         },
         category = "crushing",
         order = "b-a-d", -- hey
@@ -35,10 +35,10 @@ vgal.data.extend({
             { "promethium-asteroid-chunk", 1 },
         },
         results = {
-            { "promethium-asteroid-chunk", 1, { probability = 0.20 } },
-            { "oxide-asteroid-chunk",      1, { probability = 0.10 } },
-            { "metallic-asteroid-chunk",   1, { probability = 0.10 } },
-            { "carbonic-asteroid-chunk",   1, { probability = 0.10 } },
+            { "promethium-asteroid-chunk", 1, { independent_probability = 0.20 } },
+            { "oxide-asteroid-chunk",      1, { independent_probability = 0.10 } },
+            { "metallic-asteroid-chunk",   1, { independent_probability = 0.10 } },
+            { "carbonic-asteroid-chunk",   1, { independent_probability = 0.10 } },
         },
         category = "crushing",
         show_amount_in_title = false,
@@ -61,7 +61,7 @@ vgal.data.extend({
         },
         results = {
             { "ice",     2 },
-            { "calcite", 1, { probability = 0.05 } },
+            { "calcite", 1, { independent_probability = 0.05 } },
         },
         fluid_results = {
             { "ammoniacal-solution", 20 },
@@ -86,7 +86,7 @@ vgal.data.extend({
         results = {
             { "iron-ore",                5 },
             { "tungsten-ore",            2 },
-            { "metallic-asteroid-chunk", 1, { probability = 0.05 } },
+            { "metallic-asteroid-chunk", 1, { independent_probability = 0.05 } },
         },
         subgroup = "vgal-space-advanced",
         order = "aa",
@@ -110,7 +110,7 @@ vgal.data.extend({
     --     results = {
     --         { "ice",                  6 },
     --         { "stone",                4 },
-    --         { "oxide-asteroid-chunk", 1, { probability = 0.05 } },
+    --         { "oxide-asteroid-chunk", 1, { independent_probability = 0.05 } },
     --     },
     --     complementairy_recipe = "advanced-oxide-asteroid-crushing",
     --     productivity_technology = "asteroid-productivity",
@@ -221,7 +221,7 @@ vgal.data.extend({
     --     results = {
     --         { "carbon",                  5 },
     --         { "uranium-ore",             2 },
-    --         { "carbonic-asteroid-chunk", 1, { probability = 0.05 } },
+    --         { "carbonic-asteroid-chunk", 1, { independent_probability = 0.05 } },
     --     },
     --     complementairy_recipe = "advanced-carbonic-asteroid-crushing",
     --     productivity_technology = "asteroid-productivity",
@@ -243,7 +243,7 @@ vgal.data.extend({
     --     },
     --     results = {
     --         { "carbon", 2 },
-    --         { "sulfur", 1, { probability = 0.05 } },
+    --         { "sulfur", 1, { independent_probability = 0.05 } },
     --     },
     --     fluid_results = {
     --         { "petroleum-gas", 50 },

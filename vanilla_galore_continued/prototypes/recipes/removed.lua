@@ -269,7 +269,7 @@ vgal.data.extend({
                 "coal",
                 1,
                 {
-                    probability = 0.25,
+                    independent_probability = 0.25,
                 },
             },
         },

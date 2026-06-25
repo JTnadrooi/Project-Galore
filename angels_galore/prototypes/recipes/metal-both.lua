@@ -122,7 +122,7 @@ for _, metal in pairs(vgal.defines.metals) do
                 { "angels-mineral-sludge", 25 }
             },
             results = {
-                { metal.pebbles, 1, { probability = 0.8 } },
+                { metal.pebbles, 1, { independent_probability = 0.8 } },
             },
             category = "angels-crystallizing",
             show_amount_in_title = false

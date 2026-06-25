@@ -2,7 +2,7 @@
 for _, tree in pairs(data.raw["tree"]) do
     if (not (string.find(tree.name, "dry") or string.find(tree.name, "dead") or string.find(tree.name, "trunk"))) and tree.minable then
         local results = vgal.build.table({
-            { "angels-tree-seed",   1,   { probability = 0.025 } },
+            { "angels-tree-seed",   1,   { independent_probability = 0.025 } },
             { "angels-solid-leafs", nil, { amount_min = 1, amount_max = 3 } } -- leafs... peculiar. (its not a mispelling but still)
         })
 
@@ -30,7 +30,7 @@ do
     }
 
     for i, geode in ipairs(vgal.defines.geodes) do
-        table.insert(crystal_rock_results, { geode, 1, { probability = i * 0.05 } })
+        table.insert(crystal_rock_results, { geode, 1, { independent_probability = i * 0.05 } })
     end
 
     data.raw["simple-entity"]["angels-crystal-rock"].minable.results = vgal.build.table(crystal_rock_results)

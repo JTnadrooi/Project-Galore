@@ -11,7 +11,7 @@ vgal.data.extend({
             { "crude-oil", 100 }
         },
         results = {
-            { "sulfur", 1, { probability = 0.60 } }
+            { "sulfur", 1, { independent_probability = 0.60 } }
         },
         fluid_results = {
             { "petroleum-gas", 50 }

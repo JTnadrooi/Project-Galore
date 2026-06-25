@@ -32,7 +32,7 @@ vgal.data.extend({
             { "uranium-235", 1 },
         },
         results = {
-            { "uranium-238", 1, { probability = 0.25, } },
+            { "uranium-238", 1, { independent_probability = 0.25, } },
         },
         allow_productivity = false,
         show_amount_in_title = false,

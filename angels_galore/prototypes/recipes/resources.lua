@@ -87,7 +87,7 @@ vgal.data.extend({
     --     results = {
     --         { "stone",             nil, { amount_min = 1, amount_max = 3 } },
     --         { "angels-solid-sand", nil, { amount_min = 2, amount_max = 6 } },
-    --         -- { "angels-solid-limestone", 1,   { probability = 0.25 } },
+    --         -- { "angels-solid-limestone", 1,   { independent_probability = 0.25 } },
     --     },
     --     enabled = true,
     --     show_amount_in_title = false,
@@ -217,7 +217,7 @@ vgal.data.extend({
     --     },
     --     results = {
     --         { "angels-thorium-ore",            1 },
-    --         { "angels-solid-calcium-chloride", 1, { probability = 0.4 } }
+    --         { "angels-solid-calcium-chloride", 1, { independent_probability = 0.4 } }
     --     },
     --     category = "angels-chemical-smelting",
     -- },

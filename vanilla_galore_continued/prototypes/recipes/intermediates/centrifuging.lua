@@ -44,7 +44,7 @@ for _, result in ipairs({
             },
             results = {
                 { result,  nil, { amount_min = 1, amount_max = 2 } }, -- 15
-                { "stone", 1,   { probability = 0.2 } }               -- 2
+                { "stone", 1,   { independent_probability = 0.2 } }   -- 2
             },
             show_amount_in_title = false,
             crafting_machine_tint = vgal.defines.tints["black"],
@@ -70,8 +70,8 @@ for _, result in ipairs({
             },
             results = {
                 { result,                 nil, { amount_min = 3, amount_max = 5 } }, -- 40
-                { "stone",                1,   { probability = 0.25 } },             -- 2.5
-                { "electric-engine-unit", 1,   { probability = 0.98 } },             -- 0.02*180~=4
+                { "stone",                1,   { independent_probability = 0.25 } }, -- 2.5
+                { "electric-engine-unit", 1,   { independent_probability = 0.98 } }, -- 0.02*180~=4
             },
             show_amount_in_title = false,
             crafting_machine_tint = vgal.defines.tints["black"],

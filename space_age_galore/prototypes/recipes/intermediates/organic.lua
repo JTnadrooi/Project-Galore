@@ -219,8 +219,8 @@ for _, metal in pairs(vgal.defines.metals) do
             },
             results = {
                 { metal.bacteria, 1 },
-                { "uranium-235",  1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
-                { "uranium-238",  1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
+                { "uranium-235",  1, { independent_probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
+                { "uranium-238",  1, { independent_probability = 0.4, show_details_in_recipe_tooltip = false } },
             },
             allow_productivity = false,
             show_amount_in_title = false,
@@ -246,8 +246,8 @@ for _, metal in pairs(vgal.defines.metals) do
             },
             results = {
                 { metal.bacteria, 1 },
-                { "uranium-235",  1, { probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
-                { "uranium-238",  1, { probability = 0.4, show_details_in_recipe_tooltip = false } },
+                { "uranium-235",  1, { independent_probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
+                { "uranium-238",  1, { independent_probability = 0.4, show_details_in_recipe_tooltip = false } },
             },
             allow_productivity = false,
             show_amount_in_title = false,
@@ -271,9 +271,9 @@ for _, metal in pairs(vgal.defines.metals) do
                 { "uranium-235",  1, { ignored_by_stats = 1 } }, -- 700
             },
             results = {
-                { metal.bacteria, 10, { ignored_by_stats = 1 } },                                                                                          -- r180
-                { "uranium-235",  1,  { probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } }, -- 686
-                { "uranium-238",  1,  { probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },                       -- 4
+                { metal.bacteria, 10, { ignored_by_stats = 1 } },                                                                                                      -- r180
+                { "uranium-235",  1,  { independent_probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } }, -- 686
+                { "uranium-238",  1,  { independent_probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },                       -- 4
             },
             show_amount_in_title = false,
             result_is_always_fresh = true,

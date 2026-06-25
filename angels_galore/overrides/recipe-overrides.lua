@@ -499,11 +499,11 @@ for _, metal in pairs(vgal.defines.metals) do
     if metal.name == "copper" then
         vgal.recipe.remove_result(metal.chunk, "angels-geode-purple")
         vgal.recipe.add_result(metal.pure, "angels-geode-yellow")
-        vgal.recipe.add_result(metal.pure, { "angels-crystal-dust", 1, { probability = 0.20 } })
+        vgal.recipe.add_result(metal.pure, { "angels-crystal-dust", 1, { independent_probability = 0.20 } })
     else
         vgal.recipe.remove_result(metal.chunk, "angels-geode-yellow")
         vgal.recipe.add_result(metal.pure, "angels-geode-blue")
-        vgal.recipe.add_result(metal.pure, { "angels-crystal-dust", 1, { probability = 0.25 } })
+        vgal.recipe.add_result(metal.pure, { "angels-crystal-dust", 1, { independent_probability = 0.25 } })
     end
 
     -- tiny buff
@@ -581,7 +581,7 @@ end
 -- -- add slag result to processing recipes.
 -- for _, metal in pairs(vgal.defines.metals) do
 --     vgal.recipe.multiply(metal.processed, 1.5)
---     vgal.recipe.add_result(metal.processed, vgal.table.to_longform({ "angels-slag", 1, { probability = 0.5 } }, "item"))
+--     vgal.recipe.add_result(metal.processed, vgal.table.to_longform({ "angels-slag", 1, { independent_probability = 0.5 } }, "item"))
 
 --     -- make roll casting faster.
 --     data.raw["recipe"][metal.roll].energy_required = 1
@@ -716,8 +716,8 @@ vgal.data.trim("angels-stone-from-crushed-stone")
 -- for _, metal in pairs(vgal.defines.metals) do
 --     data.raw["recipe"][metal.crushed].results = vgal.build.table({
 --         { metal.crushed,          2 },
---         { "angels-stone-crushed", 1, { probability = 0.5 } },
---         { "stone",                1, { probability = 0.25 } },
+--         { "angels-stone-crushed", 1, { independent_probability = 0.5 } },
+--         { "stone",                1, { independent_probability = 0.25 } },
 --     })
 -- end
 
@@ -757,7 +757,7 @@ local function fix_mud_in_washing_recipe(recipe_name)
 
     vgal.recipe.remove_result(recipe_name, "angels-solid-mud")
     -- vgal.recipe.add_result(recipe_name, { type = "item", name = "angels-solid-mud", amount_min = 1, amount_max = 2 })
-    vgal.recipe.add_result(recipe_name, { type = "item", name = "angels-solid-mud", amount = 1, probability = 0.75 })
+    vgal.recipe.add_result(recipe_name, { type = "item", name = "angels-solid-mud", amount = 1, independent_probability = 0.75 })
 end
 
 fix_mud_in_washing_recipe("angels-water-heavy-mud")
@@ -902,7 +902,7 @@ for _, environment in pairs(vgal.defines.environments) do
     -- also allow it to be done by the player for some reason
     local recipe = data.raw["recipe"][environment.garden .. "-a"]
     for _, result in ipairs(recipe.results) do
-        result.probability = nil
+        result.independent_probability = nil
     end
     recipe.energy_required = 100
     recipe.additional_categories = { "angels-manual-crafting" }

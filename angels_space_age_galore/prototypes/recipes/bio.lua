@@ -56,7 +56,7 @@ for _, plant in pairs(vgal.defines.gleba_plants) do
             },
             results = {
                 { plant.seed, 5 },
-                { plant.seed, 1, { probability = 0.05 } },
+                { plant.seed, 1, { independent_probability = 0.05 } },
             },
             category = "angels-seed-extractor",
 

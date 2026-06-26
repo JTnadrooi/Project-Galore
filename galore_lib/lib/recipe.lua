@@ -19,7 +19,7 @@ function vgal.recipe.add_productivity_entry(entry_name)
     vgal.productivity_entries[entry_name] = true
 end
 
----Registers a catalyst entry. (In smart_allow_productivity()) Catalyst entries will not have productivity applied to them unless the recipe only outputs catalyst entries. In that case, the entire recipe gets productivity.
+---Registers a catalyst entry. (In smart_allow_productivity()) Catalyst entries will not have productivity applied to them.
 ---@param entry_name string
 function vgal.recipe.add_catalyst_entry(entry_name)
     vgal.get_recipeable(entry_name)
@@ -218,43 +218,6 @@ function vgal.recipe.allow_productivity_for_all_results(recipe_name)
 
     for _, result in ipairs(recipe.results or {}) do
         result.ignored_by_productivity = nil
-    end
-end
-
----@param recipe_name string
-function vgal.recipe.normalize_dublicates(recipe_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
-    local mem = {}
-    local has_value = false
-    if recipe.ingredients then
-        for _, ingredient in ipairs(recipe.ingredients) do
-            has_value = false
-            for _, memory_value in ipairs(mem) do
-                if memory_value.name == ingredient.name then
-                    has_value = true
-                    memory_value.amount = ingredient.amount + memory_value.amount
-                end
-            end
-            if not has_value then
-                table.insert(mem, ingredient)
-            end
-        end
-    end
-    mem = {}
-    has_value = false
-    if recipe.results then
-        for _, result in ipairs(recipe.results) do
-            has_value = false
-            for _, memVal in ipairs(mem) do
-                if memVal.name == result.name then
-                    has_value = true
-                    memVal.amount = result.amount + memVal.amount
-                end
-            end
-            if not has_value then
-                table.insert(mem, result)
-            end
-        end
     end
 end
 
@@ -608,18 +571,19 @@ end
 ---@param ingredient_name string
 function vgal.recipe.multiply_ingredients(recipe_name, multiplier, ingredient_name)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+
     recipe.ingredients = vgal.table.get_multiplied(recipe.ingredients, multiplier, ingredient_name)
 end
 
 ---@param recipe data.RecipePrototype
 function vgal.recipe.get_preferred_crafting_machine_tint(recipe)
-    local main_productRecipe = data.raw.recipe[recipe.main_product]
-    local mainFluidProduct = data.raw["fluid"][recipe.main_product]
+    local main_product_recipe = data.raw.recipe[recipe.main_product]
+    local main_fluid_product = data.raw["fluid"][recipe.main_product]
     local tint = nil
 
-    tint = tint or main_productRecipe and main_productRecipe.crafting_machine_tint
+    tint = tint or main_product_recipe and main_product_recipe.crafting_machine_tint
     tint = tint or vgal.defines.tints[recipe.main_product]
-    tint = tint or mainFluidProduct and vgal.fluid.get_recipe_tint(mainFluidProduct.name)
+    tint = tint or main_fluid_product and vgal.fluid.get_recipe_tint(main_fluid_product.name)
 
     return tint
 end

@@ -85,7 +85,7 @@ vgal.data.extend({
             vgal.icon.get_in_fluid("ammoniacal-solution"),
         },
         category = "organic",
-        reset_freshness_on_craft = true,
+
         energy_required = 6,
         technology = "planet-discovery-aquilo",
         fluid_ingredients = {
@@ -96,7 +96,7 @@ vgal.data.extend({
             { "raw-fish",  2 },
         },
         results = {
-            { "raw-fish", nil, { amount_min = 1, amount_max = 6 } },
+            { "raw-fish", nil, { amount_min = 1, amount_max = 6, reset_freshness_on_craft = true, } },
         },
         show_amount_in_title = false,
     },
@@ -218,13 +218,12 @@ for _, metal in pairs(vgal.defines.metals) do
                 { "uranium-235",  1, { ignored_by_stats = 1 } },
             },
             results = {
-                { metal.bacteria, 1 },
+                { metal.bacteria, 1, { always_fresh = true } },
                 { "uranium-235",  1, { independent_probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
                 { "uranium-238",  1, { independent_probability = 0.4, show_details_in_recipe_tooltip = false } },
             },
             allow_productivity = false,
             show_amount_in_title = false,
-            result_is_always_fresh = true,
             order = order_base .. "xba",
             groups = { "vgal-removed" }, -- I'm sorry for that one player using this for q5, I forgot about the internal prod boost..
         },
@@ -245,13 +244,12 @@ for _, metal in pairs(vgal.defines.metals) do
                 { "uranium-235",  1, { ignored_by_stats = 1 } },
             },
             results = {
-                { metal.bacteria, 1 },
+                { metal.bacteria, 1, { always_fresh = true } },
                 { "uranium-235",  1, { independent_probability = 0.6, ignored_by_stats = 1, show_details_in_recipe_tooltip = false } },
                 { "uranium-238",  1, { independent_probability = 0.4, show_details_in_recipe_tooltip = false } },
             },
             allow_productivity = false,
             show_amount_in_title = false,
-            result_is_always_fresh = true,
             order = order_base .. "xbb",
         },
         {
@@ -271,12 +269,11 @@ for _, metal in pairs(vgal.defines.metals) do
                 { "uranium-235",  1, { ignored_by_stats = 1 } }, -- 700
             },
             results = {
-                { metal.bacteria, 10, { ignored_by_stats = 1 } },                                                                                                      -- r180
+                { metal.bacteria, 10, { ignored_by_stats = 1, always_fresh = true } },                                                                                 -- r180
                 { "uranium-235",  1,  { independent_probability = 0.98, ignored_by_stats = 1, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } }, -- 686
                 { "uranium-238",  1,  { independent_probability = 0.02, ignored_by_productivity = 1, show_details_in_recipe_tooltip = false } },                       -- 4
             },
             show_amount_in_title = false,
-            result_is_always_fresh = true,
             groups = { "vgal-unsure" },
             order = order_base .. "b",
             surface_conditions =
@@ -307,10 +304,9 @@ for _, metal in pairs(vgal.defines.metals) do
                 { "bioflux",      1 },
             },
             results = {
-                { metal.bacteria, 8, { ignored_by_stats = 1 } },
+                { metal.bacteria, 8, { ignored_by_stats = 1, always_fresh = true } },
             },
             show_amount_in_title = false,
-            result_is_always_fresh = true,
             groups = { "vgal-unsure" },
             order = order_base .. "c",
         },

@@ -34,7 +34,7 @@ for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
                 })
 
             new_recipe.results[1].amount = result_amount * 2 -- double amounts
-            new_recipe.category = "maraxsis-hydro-plant"
+            new_recipe.categories = { "maraxsis-hydro-plant" }
             new_recipe.surface_conditions = { {
                 property = "pressure",
                 min = 400000,
@@ -51,7 +51,7 @@ for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
                 { type = "unlock-recipe", recipe = new_recipe.name })
         end
     elseif recipe.main_product == "electric-engine-unit" or recipe.main_product == "engine-unit" then
-        recipe.category = "maraxsis-hydro-plant-or-advanced-crafting"
+        recipe.categories = { "advanced-crafting", "maraxsis-hydro-plant" }
     elseif recipe.main_product == "chemical-plant" or
         recipe.main_product == "pumpjack" or
         recipe.main_product == "nuclear-reactor" or
@@ -59,7 +59,7 @@ for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
         recipe.main_product == "pipe-to-ground" or
         recipe.main_product == "offshore-pump" or
         recipe.main_product == "pump" then
-        recipe.category = "maraxsis-hydro-plant-or-assembling"
+        recipe.categories = { "crafting", "maraxsis-hydro-plant" }
     end
 end
 
@@ -82,6 +82,5 @@ end
 
 clean_and_main("maraxsis-nutrients-from-tropical-fish", "nutrients")
 if data.raw["recipe"]["vgal-thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel"] then
-    data.raw["recipe"]["vgal-thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel"].category =
-    "maraxsis-hydro-plant-or-chemistry"
+    data.raw["recipe"]["vgal-thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel"].categories = { "chemistry", "maraxsis-hydro-plant" }
 end

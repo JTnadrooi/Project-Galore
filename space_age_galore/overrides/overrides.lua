@@ -42,15 +42,15 @@ if settings.startup["vgal-ice-recipes"].value then
     data.raw["recipe"]["ice-melting"].allow_productivity = false
 end
 if settings.startup["vgal-press-engine-unit"].value then
-    data.raw["recipe"]["engine-unit"].category = "pressing"
-    data.raw["recipe"]["vgal-low-density-structure-engine-unit"].category = "pressing"
-    data.raw["recipe"]["vgal-lubricant-engine-unit"].category = "pressing"
+    data.raw["recipe"]["engine-unit"].categories = { "advanced-crafting", "metallurgy" }
+    data.raw["recipe"]["vgal-low-density-structure-engine-unit"].categories = { "advanced-crafting", "metallurgy" }
+    data.raw["recipe"]["vgal-lubricant-engine-unit"].categories = { "crafting-with-fluid", "metallurgy" }
 end
 if settings.startup["vgal-press-barrel"].value then
-    data.raw["recipe"]["barrel"].category = "pressing"
-    data.raw["recipe"]["vgal-iron-plate-barrel"].category = "pressing"
-    data.raw["recipe"]["vgal-iron-plate-copper-plate-barrel"].category = "pressing"
-    data.raw["recipe"]["vgal-low-density-structure-barrel"].category = "pressing"
+    data.raw["recipe"]["barrel"].categories = { "crafting", "metallurgy" }
+    data.raw["recipe"]["vgal-iron-plate-barrel"].categories = { "crafting", "metallurgy" }
+    data.raw["recipe"]["vgal-iron-plate-copper-plate-barrel"].categories = { "crafting", "metallurgy" }
+    data.raw["recipe"]["vgal-low-density-structure-barrel"].categories = { "crafting", "metallurgy" }
 end
 if settings.startup["vgal-crushing-recipes"].value then
     data.raw["assembling-machine"]["crusher"].surface_conditions = nil

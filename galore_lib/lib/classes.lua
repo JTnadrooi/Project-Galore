@@ -43,7 +43,7 @@ do
     ---@class vgal.ShorthandRecipeEntry
     ---@field [1] string The name of the ingredient.
     ---@field [2] number? The amount of the ingredient or nil if other amount values are set at index 3.
-    ---@field [3] { independent_probability?: number, amount_min?: integer, amount_max?: integer, independent_probability?: number, allow_productivity?: boolean, ignored_by_stats?: integer,  ignored_by_productivity?: integer, show_details_in_recipe_tooltip?: boolean, extra_count_fraction?: number, percent_spoiled?: number }?
+    ---@field [3] { independent_probability?: number, amount_min?: integer, amount_max?: integer, independent_probability?: number, allow_productivity?: boolean, ignored_by_stats?: integer,  ignored_by_productivity?: integer, show_details_in_recipe_tooltip?: boolean, extra_count_fraction?: number, percent_spoiled?: number, always_fresh?: boolean, reset_freshness_on_craft?: boolean }?
 end
 
 do

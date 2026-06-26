@@ -12,13 +12,12 @@ vgal.data.extend({
             { "petroleum-gas-barrel", 1 },
         },
         results = {
-            { "biter-egg", 4 },
+            { "biter-egg", 4, { always_fresh = true } },
             { "barrel",    1, { independent_probability = 0.90 } },
         },
         category = "captive-spawner-process",
         localised_name = { "", "4 \xC3\x97 ", { "recipe-name.vgal-petroleum-gas-barrel-biter-egg" } },
         preserve_products_in_machine_output = true,
-        result_is_always_fresh = true,
     },
     {
         name = "nutrients-biter-egg",
@@ -33,11 +32,10 @@ vgal.data.extend({
             { "nutrients", 10 },
         },
         results = {
-            { "biter-egg", 2 },
+            { "biter-egg", 2, { always_fresh = true } },
         },
         category = "captive-spawner-process",
         preserve_products_in_machine_output = true,
-        result_is_always_fresh = true,
     },
     {
         name = "pentapod-egg-biter-egg-duel-biter-preferred",

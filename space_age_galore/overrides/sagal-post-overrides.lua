@@ -1,3 +1,3 @@
 if settings.startup["vgal-press-engine-unit"].value then
-    data.raw["recipe"]["vgal-tungsten-plate-engine-unit"].category = "pressing"
+    vgal.recipe.add_category("vgal-tungsten-plate-engine-unit", "metallurgy")
 end

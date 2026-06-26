@@ -128,7 +128,7 @@ local subgroups = {
     },
 }
 
-local toClean = {
+local to_clean = {
     "fluoroketone-cooling",
     "ammoniacal-solution-separation",
     "solid-fuel-from-ammonia",
@@ -142,7 +142,7 @@ local toClean = {
     "burnt-spoilage",
     "fluoroketone",
     "fish-breeding",
-    "wood-processing",
+    "tree-seed",
     "ice-melting",
     "steam-condensation",
     "molten-iron-from-lava",
@@ -154,7 +154,7 @@ local toClean = {
     "pentapod-egg",
 }
 
-for _, value in ipairs(toClean) do
+for _, value in ipairs(to_clean) do
     vgal.subgroup.clean_recipe(value)
 end
 
@@ -235,6 +235,6 @@ data.raw["recipe"]["simple-coal-liquefaction"].subgroup = "vgal-oil"
 data.raw["recipe"]["scrap-recycling"].subgroup = "vgal-scrap"
 
 -- restore clean/cleared properties with updated order and subgroup for compat reasons
-for _, value in ipairs(toClean) do
+for _, value in ipairs(to_clean) do
     vgal.subgroup.restore(value)
 end

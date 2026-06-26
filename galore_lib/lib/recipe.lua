@@ -812,8 +812,6 @@ function vgal.recipe.make_recipeable_void(recipeable_name, void_category, void_a
         },
         main_product = output_item,
         show_amount_in_title = false,
-        always_show_products = output_amount * output_prob > 0,
-        always_show_made_in = true,
         allow_decomposition = false,
         allow_as_intermediate = false,
         crafting_machine_tint = cfg.tint and angelsmods.functions.get_fluid_recipe_tint(recipeable_name) or nil,
@@ -852,20 +850,11 @@ function vgal.recipe.make_recipeable_void(recipeable_name, void_category, void_a
 end
 
 ---@param categories string[]
----@param recipe_or_recipe_name string|data.RecipePrototype|vgal.VgalRecipePrototype
+---@param recipe_or_recipe_name string|data.RecipePrototype
 function vgal.recipe.set_categories(recipe_or_recipe_name, categories)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
-    local has_fluid_ingredient = false
-    for _, ingredient in ipairs(recipe.ingredients) do
-        ---@cast ingredient data.IngredientPrototype
-
-        if ingredient.type == "fluid" then
-            has_fluid_ingredient = true
-            break
-        end
-    end
-    if has_fluid_ingredient then
+    if vgal.recipe.has_ingredient_with_type(recipe, "fluid") then
         categories = vgal.table.select(categories, function(c)
             if c == "crafting" then
                 return "crafting-with-fluid"
@@ -878,4 +867,33 @@ function vgal.recipe.set_categories(recipe_or_recipe_name, categories)
     recipe.categories = categories
     recipe.category = nil
     recipe.additional_categories = nil
+end
+
+---@param ingredient_type "fluid"|"item"
+---@param recipe_or_recipe_name string|data.RecipePrototype
+---@return boolean
+function vgal.recipe.has_ingredient_with_type(recipe_or_recipe_name, ingredient_type)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
+    for _, ingredient in ipairs(recipe.ingredients) do
+        ---@cast ingredient data.IngredientPrototype
+
+        if ingredient.type == ingredient_type then
+            return true
+        end
+    end
+
+    return false
+end
+
+---@param recipe_or_recipe_name string|data.RecipePrototype
+---@param category_name string
+function vgal.recipe.add_category(recipe_or_recipe_name, category_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
+    if recipe.categories then
+        table.insert(recipe.categories, category_name)
+    else
+        recipe.categories = { category_name }
+    end
 end

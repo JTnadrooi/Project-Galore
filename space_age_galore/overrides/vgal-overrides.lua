@@ -63,7 +63,7 @@ for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
     for _, suffix in ipairs(valid_suffixes) do
         ---@diagnostic disable-next-line: param-type-mismatch
         if recipe.name:sub(- #suffix) == suffix then
-            recipe.category = "pressing"
+            vgal.recipe.add_category(recipe, "metallurgy")
             break
         end
     end

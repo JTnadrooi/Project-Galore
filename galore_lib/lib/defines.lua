@@ -1,7 +1,5 @@
 vgal.defines = vgal.defines or {}
 
----@type "2.0"|"2.1"
-vgal.defines.factorio_version = "2.1"
 ---@type "vgal"|"sagal"|"asagal"|nil
 vgal.defines.gal_mode = nil
 ---@type table<"vgal"|"agal"|"sagal"|"asagal", boolean?>
@@ -144,10 +142,6 @@ vgal.defines.recipeable_categories = {
     "rail-planner",
     "gun",
 }
-
-if vgal.defines.factorio_version == "2.0" then
-    table.insert(vgal.defines.recipeable_categories, "tool")
-end
 
 -- commentedbc: this list would be huge.
 -- vgal.defines.entityable_categories = { "entity-with-owner", "simple-entity", "container" }

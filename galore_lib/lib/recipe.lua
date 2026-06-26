@@ -43,14 +43,14 @@ function vgal.recipe.add_catalyst_group(entry_names)
     vgal.table.assign_keys_to_reference(vgal.catalyst_groups, entry_names, vgal.table.to_map(entry_names), true)
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param skip_entry_register boolean?
-function vgal.recipe.smart_allow_productivity(recipe_name, skip_entry_register)
+function vgal.recipe.smart_allow_productivity(recipe_or_recipe_name, skip_entry_register)
     -- note; this system is suboptimal, better would be to have groups of items/fluids that are seen as one, if input is in group, output in group cannot get prod
     -- but thats for later maybe, it works fine with just the catalyst system
     -- I would need both systems anyways (looking at the waste waters rn)
 
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     -- early return if possible
     if (not recipe.results) or (recipe.results and #recipe.results == 0) then
@@ -110,9 +110,9 @@ function vgal.recipe.smart_allow_productivity(recipe_name, skip_entry_register)
     end
 end
 
----@param recipe_name string
-function vgal.recipe.smart_fix_stats(recipe_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+---@param recipe_or_recipe_name string|data.RecipePrototype
+function vgal.recipe.smart_fix_stats(recipe_or_recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     -- early return if possible
     if (not recipe.results) or (recipe.results and #recipe.results == 0) then
@@ -171,10 +171,10 @@ function vgal.recipe.smart_fix_stats(recipe_name)
     end
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param result_name string
-function vgal.recipe.allow_productivity_for_result(recipe_name, result_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.allow_productivity_for_result(recipe_or_recipe_name, result_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     if not recipe.allow_productivity then
         error("Recipe does not allow productivity.")
@@ -189,14 +189,14 @@ function vgal.recipe.allow_productivity_for_result(recipe_name, result_name)
         end
     end
     if not found then
-        error("Recipe '" .. recipe_name .. "' does not have result '" .. result_name .. "'")
+        error("Recipe '" .. recipe.name .. "' does not have result '" .. result_name .. "'")
     end
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param result_name string
-function vgal.recipe.disallow_productivity_for_result(recipe_name, result_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.disallow_productivity_for_result(recipe_or_recipe_name, result_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     local found = false
     for _, result in ipairs(recipe.results or {}) do
         if result.name == result_name then
@@ -206,13 +206,13 @@ function vgal.recipe.disallow_productivity_for_result(recipe_name, result_name)
         end
     end
     if not found then
-        error("Recipe '" .. recipe_name .. "' does not have result '" .. result_name .. "'")
+        error("Recipe '" .. recipe.name .. "' does not have result '" .. result_name .. "'")
     end
 end
 
----@param recipe_name string
-function vgal.recipe.allow_productivity_for_all_results(recipe_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+---@param recipe_or_recipe_name string|data.RecipePrototype
+function vgal.recipe.allow_productivity_for_all_results(recipe_or_recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     recipe.allow_productivity = true
 
@@ -221,17 +221,18 @@ function vgal.recipe.allow_productivity_for_all_results(recipe_name)
     end
 end
 
----@param recipe_name string
-function vgal.recipe.deephide(recipe_name)
-    if (not data.raw["recipe"][recipe_name]) then error("Recipe " .. recipe_name .. " not found.") end
+---@param recipe_or_recipe_name string|data.RecipePrototype
+function vgal.recipe.deephide(recipe_or_recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
-    vgal.data.deephide(data.raw["recipe"][recipe_name])
+    vgal.data.deephide(recipe)
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@return data.IconData[]
-function vgal.recipe.force_get_icons(recipe_name)
-    local recipe = data.raw["recipe"][recipe_name]
+function vgal.recipe.force_get_icons(recipe_or_recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
     if recipe.icons then
         return recipe.icons
     end
@@ -251,15 +252,16 @@ function vgal.recipe.force_get_icons(recipe_name)
             }
         }
     end
-    error("Could not get icons for " .. recipe_name)
+
+    error("Could not get icons for " .. recipe.name)
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param old_ingredient_name string
 ---@param new_ingredient_name string
 ---@param no_throw boolean?
-function vgal.recipe.replace_ingredient(recipe_name, old_ingredient_name, new_ingredient_name, no_throw)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.replace_ingredient(recipe_or_recipe_name, old_ingredient_name, new_ingredient_name, no_throw)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     for _, ingredient in ipairs(recipe.ingredients or {}) do
         if ingredient.name == old_ingredient_name then
             ingredient.name = new_ingredient_name
@@ -269,15 +271,15 @@ function vgal.recipe.replace_ingredient(recipe_name, old_ingredient_name, new_in
     if (not no_throw) then
         error("Ingredient '" ..
             old_ingredient_name ..
-            "' not found in recipe '" .. recipe_name .. "', ingredients: " .. serpent.block(recipe.ingredients))
+            "' not found in recipe '" .. recipe.name .. "', ingredients: " .. serpent.block(recipe.ingredients))
     end
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param ingredient_name string
 ---@param no_throw boolean?
-function vgal.recipe.remove_ingredient(recipe_name, ingredient_name, no_throw)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.remove_ingredient(recipe_or_recipe_name, ingredient_name, no_throw)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     for i, ingredient in ipairs(recipe.ingredients or {}) do
         if ingredient.name == ingredient_name then
             table.remove(recipe.ingredients, i)
@@ -287,15 +289,15 @@ function vgal.recipe.remove_ingredient(recipe_name, ingredient_name, no_throw)
     if (not no_throw) then
         error("Ingredient '" ..
             ingredient_name ..
-            "' not found in recipe '" .. recipe_name .. "', ingredients: " .. serpent.block(recipe.ingredients))
+            "' not found in recipe '" .. recipe.name .. "', ingredients: " .. serpent.block(recipe.ingredients))
     end
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param result_name string
 ---@param no_throw boolean?
-function vgal.recipe.remove_result(recipe_name, result_name, no_throw)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.remove_result(recipe_or_recipe_name, result_name, no_throw)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     local found = false -- for multiple same results
     if recipe.main_product == result_name then
         recipe.main_product = nil
@@ -311,16 +313,16 @@ function vgal.recipe.remove_result(recipe_name, result_name, no_throw)
     if (not no_throw) and (not found) then
         error("Result '" ..
             result_name ..
-            "' not found in recipe '" .. recipe_name .. "', results: " .. serpent.block(recipe.results))
+            "' not found in recipe '" .. recipe.name .. "', results: " .. serpent.block(recipe.results))
     end
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param old_result_name string
 ---@param new_result_name string
 ---@param no_throw boolean?
-function vgal.recipe.replace_result(recipe_name, old_result_name, new_result_name, no_throw)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.replace_result(recipe_or_recipe_name, old_result_name, new_result_name, no_throw)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     local found = false -- for multiple same results
     if recipe.main_product == old_result_name then
         recipe.main_product = new_result_name
@@ -336,14 +338,14 @@ function vgal.recipe.replace_result(recipe_name, old_result_name, new_result_nam
     if (not no_throw) and (not found) then
         error("Result '" ..
             old_result_name ..
-            "' not found in recipe '" .. recipe_name .. "', results: " .. serpent.block(recipe.results))
+            "' not found in recipe '" .. recipe.name .. "', results: " .. serpent.block(recipe.results))
     end
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param new_icons data.IconData[]
-function vgal.recipe.override_iron(recipe_name, new_icons)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.override_iron(recipe_or_recipe_name, new_icons)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     if recipe then
         recipe.icons = new_icons
         recipe.icon = nil
@@ -362,13 +364,13 @@ function vgal.recipe.get_productivity_tech_name(main_product)
     return nil
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param new_result data.ProductPrototype|string|vgal.ShorthandRecipeEntry
 ---@param result_type "item"|"fluid"|nil Sets the result type. Only used when new_result is a string or shorthand recipe entry.
-function vgal.recipe.add_result(recipe_name, new_result, result_type)
+function vgal.recipe.add_result(recipe_or_recipe_name, new_result, result_type)
     result_type = result_type or "item"
 
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     if not recipe.main_product then
         recipe.main_product = vgal.recipe.get_preferred_main_product(recipe)
     end
@@ -387,13 +389,14 @@ function vgal.recipe.add_result(recipe_name, new_result, result_type)
     end
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param result_name string
 ---@return boolean
-function vgal.recipe.has_result(recipe_name, result_name)
-    local recipe = data.raw["recipe"][recipe_name]
+function vgal.recipe.has_result(recipe_or_recipe_name, result_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
     if recipe and recipe.results then
-        for _, result in ipairs(vgal.recipe.get_results(recipe_name)) do
+        for _, result in ipairs(vgal.recipe.get_results(recipe_or_recipe_name)) do
             if result.name == result_name then
                 return true
             end
@@ -402,11 +405,11 @@ function vgal.recipe.has_result(recipe_name, result_name)
     return false
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param ingredient_name string
 ---@return boolean
-function vgal.recipe.has_ingredient(recipe_name, ingredient_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.has_ingredient(recipe_or_recipe_name, ingredient_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     if recipe and recipe.ingredients then
         for _, ingredient in ipairs(recipe.ingredients or {}) do
             if ingredient.name == ingredient_name then
@@ -417,21 +420,21 @@ function vgal.recipe.has_ingredient(recipe_name, ingredient_name)
     return false
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param recipeable_name string
 ---@return boolean
-function vgal.recipe.has_item(recipe_name, recipeable_name)
-    return vgal.recipe.has_ingredient(recipe_name, recipeable_name) or
-        vgal.recipe.has_result(recipe_name, recipeable_name)
+function vgal.recipe.has_item(recipe_or_recipe_name, recipeable_name)
+    return vgal.recipe.has_ingredient(recipe_or_recipe_name, recipeable_name) or
+        vgal.recipe.has_result(recipe_or_recipe_name, recipeable_name)
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param new_ingredient data.IngredientPrototype|string|vgal.ShorthandRecipeEntry
 ---@param ingredient_type "item"|"fluid"|nil Sets the ingredient type. Only used when new_ingredient is a string or shorthand recipe entry.
-function vgal.recipe.add_ingredient(recipe_name, new_ingredient, ingredient_type)
+function vgal.recipe.add_ingredient(recipe_or_recipe_name, new_ingredient, ingredient_type)
     ingredient_type = ingredient_type or "item"
 
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     recipe.ingredients = recipe.ingredients or {}
 
@@ -447,19 +450,19 @@ function vgal.recipe.add_ingredient(recipe_name, new_ingredient, ingredient_type
     end
 end
 
----@param recipe_name string
-function vgal.recipe.clear_icons(recipe_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+---@param recipe_or_recipe_name string|data.RecipePrototype
+function vgal.recipe.clear_icons(recipe_or_recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     recipe.icon = nil
     recipe.icon_size = nil
     recipe.icons = nil
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param guess_main_product_if_not_specified boolean?
 ---@return number
-function vgal.recipe.get_main_product_amount(recipe_name, guess_main_product_if_not_specified)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.get_main_product_amount(recipe_or_recipe_name, guess_main_product_if_not_specified)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     local main_product = recipe.main_product
 
     if (not main_product) and guess_main_product_if_not_specified then
@@ -467,16 +470,16 @@ function vgal.recipe.get_main_product_amount(recipe_name, guess_main_product_if_
     end
 
     if not main_product then
-        error("Recipe '" .. recipe_name .. "' does not have a main product.")
+        error("Recipe '" .. recipe.name .. "' does not have a main product.")
     end
-    return vgal.recipe.get_result_amount(recipe_name, main_product)
+    return vgal.recipe.get_result_amount(recipe_or_recipe_name, main_product)
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param result_name string
 ---@return number
-function vgal.recipe.get_result_amount(recipe_name, result_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.get_result_amount(recipe_or_recipe_name, result_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     for _, result in ipairs(recipe.results) do
         if result.name == result_name then
             return vgal.math.get_normalized_amount(result)
@@ -485,11 +488,11 @@ function vgal.recipe.get_result_amount(recipe_name, result_name)
     return 0
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param ingredient_name string
 ---@return number
-function vgal.recipe.get_ingredient_amount(recipe_name, ingredient_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.get_ingredient_amount(recipe_or_recipe_name, ingredient_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     for _, ingredient in ipairs(recipe.ingredients) do
         if ingredient.name == ingredient_name then
             return ingredient.amount
@@ -498,12 +501,12 @@ function vgal.recipe.get_ingredient_amount(recipe_name, ingredient_name)
     return 0
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param multiplier number
 ---@param entry_name? string
 ---@param multiply_energy_required boolean?
-function vgal.recipe.multiply(recipe_name, multiplier, entry_name, multiply_energy_required)
-    local recipe = data.raw["recipe"][recipe_name]
+function vgal.recipe.multiply(recipe_or_recipe_name, multiplier, entry_name, multiply_energy_required)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     recipe.results = vgal.table.get_multiplied(recipe.results, multiplier, entry_name)
     recipe.ingredients = vgal.table.get_multiplied(recipe.ingredients, multiplier, entry_name)
@@ -513,18 +516,18 @@ function vgal.recipe.multiply(recipe_name, multiplier, entry_name, multiply_ener
     end
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param multiplier number
-function vgal.recipe.multiply_results(recipe_name, multiplier)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.multiply_results(recipe_or_recipe_name, multiplier)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     recipe.results = vgal.table.get_multiplied(recipe.results, multiplier)
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param amount number
 ---@param result_name string?
-function vgal.recipe.set_result_amount(recipe_name, amount, result_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.set_result_amount(recipe_or_recipe_name, amount, result_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     local found = false
     for i = #recipe.results, 1, -1 do
         local result = recipe.results[i]
@@ -539,15 +542,15 @@ function vgal.recipe.set_result_amount(recipe_name, amount, result_name)
     end
 
     if result_name ~= nil and not found then
-        error("Result '" .. result_name .. "' not found in recipe '" .. recipe_name .. "'.")
+        error("Result '" .. result_name .. "' not found in recipe '" .. recipe.name .. "'.")
     end
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param amount number
 ---@param ingredient_name string?
-function vgal.recipe.set_ingredient_amount(recipe_name, amount, ingredient_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.set_ingredient_amount(recipe_or_recipe_name, amount, ingredient_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     local found = false
     for i = #recipe.ingredients, 1, -1 do
         local ingredient = recipe.ingredients[i]
@@ -562,21 +565,23 @@ function vgal.recipe.set_ingredient_amount(recipe_name, amount, ingredient_name)
     end
 
     if ingredient_name ~= nil and not found then -- I can't just add bc I need to know the type and im not guessing that.
-        error("Ingredient '" .. ingredient_name .. "' not found in recipe '" .. recipe_name .. "'.")
+        error("Ingredient '" .. ingredient_name .. "' not found in recipe '" .. recipe.name .. "'.")
     end
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param multiplier number
 ---@param ingredient_name string
-function vgal.recipe.multiply_ingredients(recipe_name, multiplier, ingredient_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.multiply_ingredients(recipe_or_recipe_name, multiplier, ingredient_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     recipe.ingredients = vgal.table.get_multiplied(recipe.ingredients, multiplier, ingredient_name)
 end
 
----@param recipe data.RecipePrototype
-function vgal.recipe.get_preferred_crafting_machine_tint(recipe)
+---@param recipe_or_recipe_name string|data.RecipePrototype
+function vgal.recipe.get_preferred_crafting_machine_tint(recipe_or_recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
     local main_product_recipe = data.raw.recipe[recipe.main_product]
     local main_fluid_product = data.raw["fluid"][recipe.main_product]
     local tint = nil
@@ -594,8 +599,7 @@ function vgal.recipe.get_preferred_main_product(recipe)
         return recipe.main_product
     end
     if recipe.results and (#recipe.results > 0) then
-        return recipe.results[1].name or recipe.results[1][1] or error("Invalid recipe results for recipe " ..
-            recipe.name .. ", see: " .. serpent.block(recipe.results[1]))
+        return recipe.results[1].name or recipe.results[1][1] or error("Invalid recipe results for recipe " .. recipe.name .. ", see: " .. serpent.block(recipe.results[1]))
     end
     if recipe.fluid_results and (#recipe.fluid_results > 0) then
         return recipe.fluid_results[1][1] or error("Invalid recipe results for recipe " .. recipe.name)
@@ -627,10 +631,10 @@ function vgal.recipe.get_domain_or_all_pairs(domain_name)
     return iterator, dom, start_key
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param show_amount_in_title boolean?
-function vgal.recipe.use_recipe_locale(recipe_name, show_amount_in_title)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.use_recipe_locale(recipe_or_recipe_name, show_amount_in_title)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     recipe.localised_name = { "?", { "recipe-name." .. recipe.name }, vgal.locale
         .get_backup_locale_for_recipeable(
@@ -671,20 +675,20 @@ function vgal.recipe.get_normalized_return_amounts(raw_amount, deviation)
     end
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param category_name data.RecipeCategoryID
 ---@return boolean
-function vgal.recipe.has_category(recipe_name, category_name)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.has_category(recipe_or_recipe_name, category_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     return vgal.table.contains(recipe.categories, category_name)
 end
 
----@param recipe_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param original_category data.RecipeCategoryID
 ---@param replacement_category data.RecipeCategoryID
-function vgal.recipe.replace_category(recipe_name, original_category, replacement_category)
-    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+function vgal.recipe.replace_category(recipe_or_recipe_name, original_category, replacement_category)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     for i, category in ipairs(recipe.categories or {}) do
         if category == original_category then

@@ -1,6 +1,4 @@
 data:extend {
-    vgal.setting.new_bool("vgal-always-show-products", "aa"),
-    vgal.setting.new_bool("vgal-always-show-made-in", "aab"),
     {
         type = "string-setting",
         name = "vgal-high-temp-oil-processing-temp",

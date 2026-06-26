@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.4
   Features:
-    - Added compatiblity with the new GaloreLib category system.
+    - Updated to Factorio 2.1
+    - Renamed "Fischer-Tropsch oil synthesis" recipe to "Oil synthesis".
 ---------------------------------------------------------------------------------------------------
 Version: 1.6.3
   Features:

@@ -1,8 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 2.2.1
   Features:
+    - Updated to Factorio 2.1
     - Added more functions.
-    - Added new vgalRecipe.categories field (preperation for 2.1 version)
 ---------------------------------------------------------------------------------------------------
 Version: 2.2.0
   Features:

@@ -1,11 +1,11 @@
 {
     "name": "vanilla_galore_continued",
-    "version": "1.4.2",
+    "version": "1.4.3",
     "title": "Vanilla Galore",
     "author": "JTnadrooi",
     "contact": "@jtnadrooi",
     "homepage": "https://github.com/JTnadrooi/Project-Galore",
-    "factorio_version": "2.0",
+    "factorio_version": "2.1",
     "dependencies": [
         "base >= 2.0",
         "galore_lib",

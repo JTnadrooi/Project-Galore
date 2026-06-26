@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.3
   Features:
-    - Added compatiblity with the new GaloreLib category system.
+    - Updated to Factorio 2.1 (NOTE: Centrifuge graphics still need ported, but a temporary fix is in place.)
+    - Improved recipe UI order.
 ---------------------------------------------------------------------------------------------------
 Version: 1.4.2
   Balancing:
@@ -119,7 +120,7 @@ Version: 1.2.0
     - "vgal-low-density-structure-uranium-fuel-cell" uranium-238 cost; 30 -> 29.
     - "vgal-low-density-structure-uranium-fuel-cell" uranium fuel cell result amount; 25 -> 15.
     - "vgal-uranium-fuel-cell-rocket-part" low density structure cost; 6 -> 10.
-    - "vgal-uranium-235-uranium-238" output probability 100% -> 25%.
+    - "vgal-uranium-235-uranium-238" output independent_probability 100% -> 25%.
     - "vgal-coal-uranium-235-nuclear-fuel" time taken reduced 50s -> 45s.
   Bugfixes:
     - Fixed "vgal-coal-uranium-235-nuclear-fuel" being made in a assembler instead of a centrifuge.

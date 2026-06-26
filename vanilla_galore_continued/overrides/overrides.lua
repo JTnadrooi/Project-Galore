@@ -1,11 +1,11 @@
-do return end
+-- do return end
 
 ---@diagnostic disable-next-line: undefined-global
 local pictures = require("__base__.prototypes.entity.assembler-pictures").assembler3pipepictures
 pictures.north = util.empty_sprite()
-pictures.east.filename = "__vanilla_galore_continued__/graphics/fluid-boxes/centrifuge-E.png"
-pictures.south.filename = "__vanilla_galore_continued__/graphics/fluid-boxes/centrifuge-S.png"
-pictures.west.filename = "__vanilla_galore_continued__/graphics/fluid-boxes/centrifuge-W.png"
+-- pictures.east.filename = "__vanilla_galore_continued__/graphics/fluid-boxes/centrifuge-E.png"
+-- pictures.south.filename = "__vanilla_galore_continued__/graphics/fluid-boxes/centrifuge-S.png"
+-- pictures.west.filename = "__vanilla_galore_continued__/graphics/fluid-boxes/centrifuge-W.png"
 
 local fluid_boxes = {
     {

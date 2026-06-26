@@ -45,21 +45,15 @@ local subgroups = {
         entries = { "ice", "water", "steam" }
     },
     {
-        name = "oil-fluids",
+        name = "oil-cracking",
         group = "intermediate-products",
         order = "ac",
         entries = { "heavy-oil", "light-oil", "petroleum-gas", "crude-oil" }
     },
     {
-        name = "oil-cracking",
-        group = "intermediate-products",
-        order = "aca",
-        entries = {}
-    },
-    {
         name = "fulgora-fluids",
         group = "intermediate-products",
-        order = "acb",
+        order = "aa",
         entries = { "holmium-solution", "electrolyte" }
     },
     {
@@ -193,11 +187,11 @@ vgal.subgroup.set_for("wood", "agriculture-processes")
 vgal.subgroup.set_for("tree-seed", "agriculture-processes")
 
 vgal.subgroup.set_for("supercapacitor", "intermediate-product")
-vgal.subgroup.set_for("superconductor", "vgal-chemistry-products")
+vgal.subgroup.set_for("superconductor", "intermediate-product")
 vgal.subgroup.set_for("holmium-plate", "vgal-smelting")
 
 vgal.subgroup.set_for("tungsten-plate", "vgal-smelting")
-vgal.subgroup.set_for("tungsten-carbide", "vgal-chemistry-products")
+vgal.subgroup.set_for("tungsten-carbide", "intermediate-product")
 
 data.raw["recipe"]["casting-iron"].subgroup = "vgal-intermediate-casting"
 data.raw["recipe"]["casting-copper"].subgroup = "vgal-intermediate-casting"

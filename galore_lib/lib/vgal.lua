@@ -639,11 +639,11 @@ end
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "fluid"): data.FluidPrototype
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "item"): data.ItemPrototype
 function vgal.get_from_prototype_or_prototype_name(prototype_or_prototype_name, prototype_type)
-    if type(prototype_or_prototype_name) == "string" then
-        ---@diagnostic disable-next-line: return-type-mismatch
-        return data.raw[prototype_type][prototype_or_prototype_name] or error("Could not find prototype with name " .. prototype_or_prototype_name)
-    else
+    if prototype_or_prototype_name.type then
         ---@diagnostic disable-next-line: return-type-mismatch
         return prototype_or_prototype_name
+    else
+        ---@diagnostic disable-next-line: return-type-mismatch
+        return data.raw[prototype_type][prototype_or_prototype_name] or error("Could not find " .. prototype_type .. " with name " .. prototype_or_prototype_name)
     end
 end

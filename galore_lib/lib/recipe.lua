@@ -708,7 +708,7 @@ function vgal.recipe.get_normalized_return_amounts(raw_amount, deviation)
 end
 
 ---@param recipe_name string
----@param category_name string
+---@param category_name data.RecipeCategoryID
 ---@return boolean
 function vgal.recipe.has_category(recipe_name, category_name)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
@@ -716,8 +716,22 @@ function vgal.recipe.has_category(recipe_name, category_name)
     return vgal.table.contains(recipe.categories, category_name)
 end
 
+---@param recipe_name string
+---@param original_category data.RecipeCategoryID
+---@param replacement_category data.RecipeCategoryID
+function vgal.recipe.replace_category(recipe_name, original_category, replacement_category)
+    local recipe = vgal.throw.if_recipe_not_found(recipe_name)
+
+    for i, category in ipairs(recipe.categories or {}) do
+        if category == original_category then
+            recipe.categories[i] = replacement_category
+            return
+        end
+    end
+end
+
 ---@param machine_names string[]
----@return table<string, string>
+---@return table<data.RecipeCategoryID, string>
 function vgal.recipe.get_category_map_for(machine_names)
     local result_map = {}
 

@@ -12,8 +12,8 @@ function vgal.recipe.all.link_ingredient(ingredient, main_product_name, multipli
             vgal.recipe.add_ingredient(recipe.name,
                 vgal.table.get_multiplied(ingredient, multiplier * vgal.recipe.get_main_product_amount(recipe.name))
             )
-            if recipe.category == "crafting" and ingredient.type == "fluid" then
-                recipe.category = "crafting-with-fluid"
+            if ingredient.type == "fluid" then
+                vgal.recipe.replace_category(recipe.name, "crafting", "crafting-with-fluid")
             end
         end
     end

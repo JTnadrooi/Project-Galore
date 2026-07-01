@@ -78,11 +78,10 @@ if vgal.defines.flags["vgal"] then
     end
 end
 
----@param domain_name string
----@param prototype_type string
----@return function
----@return table<string, data.PrototypeBase>
----@return nil
+---@overload fun(domain_name: string, prototype_type: "recipe"): fun(): integer, data.RecipePrototype
+---@overload fun(domain_name: string, prototype_type: "fluid"): fun(): integer, data.FluidPrototype
+---@overload fun(domain_name: string, prototype_type: "item"): fun(): integer, data.ItemPrototype
+---@overload fun(domain_name: string, prototype_type: string): fun(): integer, data.PrototypeBase
 function vgal.data.domain_pairs(domain_name, prototype_type)
     local dom = vgal.data.domains[domain_name]
     if not dom then error("domain " .. domain_name .. " does not exist") end
@@ -111,7 +110,7 @@ function vgal.data.domain_pairs(domain_name, prototype_type)
         end
     end
 
-    return iter, dom, nil
+    return iter, dom
 end
 
 function vgal.data.create_domain(domain_name)
@@ -638,6 +637,7 @@ end
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "recipe"): data.RecipePrototype
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "fluid"): data.FluidPrototype
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "item"): data.ItemPrototype
+---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: string): data.PrototypeBase
 function vgal.get_from_prototype_or_prototype_name(prototype_or_prototype_name, prototype_type)
     if prototype_or_prototype_name.type then
         ---@diagnostic disable-next-line: return-type-mismatch
@@ -652,7 +652,7 @@ end
 ---@return any?
 function vgal.force_require(path)
     local normalized_path = (string.gsub(path, "/", "."))
-    
+
     package.loaded[normalized_path] = nil
     return require(normalized_path)
 end

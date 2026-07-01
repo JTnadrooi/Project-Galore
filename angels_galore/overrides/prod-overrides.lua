@@ -100,6 +100,7 @@ local productivity_machines = {
 }
 
 -- will be filled with crafting categories that should benefit from productivity
+---@type table<data.RecipeCategoryID, string>
 local productivity_categories = {}
 
 -- make sure machines allow productivity.
@@ -121,7 +122,7 @@ for _, machine_name in ipairs(productivity_machines) do
 end
 
 for _, recipe in pairs(data.raw["recipe"]) do
-    if productivity_categories[recipe.category] then
+    if vgal.recipe.has_any_category_in_category_map(recipe, productivity_categories) then
         if vgal.is_angels(recipe) then
             vgal.recipe.smart_allow_productivity(recipe.name)
         end

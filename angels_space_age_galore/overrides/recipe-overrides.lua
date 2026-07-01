@@ -210,7 +210,7 @@ do
 
     for _, recipe in pairs(data.raw["recipe"]) do
         ---@diagnostic disable-next-line: undefined-field
-        if recipe.category and category_map[recipe.category] then
+        if vgal.recipe.has_any_category_in_category_map(recipe, category_map) then
             for _, ingredient in ipairs(recipe.ingredients) do
                 if ingredient.name == "angels-liquid-nutrient-pulp" then
                     ingredient.type = "item"
@@ -233,14 +233,14 @@ vgal.recipe.replace_result("molten-iron-from-lava", "stone", "angels-slag")
 vgal.recipe.replace_result("molten-copper-from-lava", "stone", "angels-slag")
 
 -- category tweaks
-data.raw["recipe"]["vgal-molten-copper-carbon-fiber-low-density-structure"].category = "angels-casting"
-data.raw["recipe"]["tungsten-carbide"].category = "angels-chemical-smelting"
+data.raw["recipe"]["vgal-molten-copper-carbon-fiber-low-density-structure"].categories = { "angels-casting" }
+data.raw["recipe"]["tungsten-carbide"].categories = { "angels-chemical-smelting" }
 
 -- gleba bioprocessing fixes
 do
     -- yumako
     data.raw["recipe"]["yumako-processing"].energy_required = 2
-    data.raw["recipe"]["yumako-processing"].category = "angels-bio-processor"
+    data.raw["recipe"]["yumako-processing"].categories = { "angels-bio-processor" }
     data.raw["recipe"]["yumako-processing"].icons = {
         {
             icon = "__angelsbioprocessinggraphics__/graphics/icons/processor-recipe.png",
@@ -264,7 +264,7 @@ do
 
     -- jellynut
     data.raw["recipe"]["jellynut-processing"].energy_required = 2
-    data.raw["recipe"]["jellynut-processing"].category = "angels-bio-processor"
+    data.raw["recipe"]["jellynut-processing"].categories = { "angels-bio-processor" }
     data.raw["recipe"]["jellynut-processing"].icons = {
         {
             icon = "__angelsbioprocessinggraphics__/graphics/icons/processor-recipe.png",

@@ -192,7 +192,7 @@ data.raw.recipe["angels-liquid-glycerol"].results = vgal.build.table({}, {
     { "angels-liquid-glycerol",       25 },
     { "angels-gas-hydrogen-chloride", 100 },
 })
-data.raw.recipe["angels-liquid-glycerol"].category = "angels-advanced-chemistry"
+data.raw.recipe["angels-liquid-glycerol"].categories = { "angels-advanced-chemistry" }
 data.raw.recipe["angels-liquid-glycerol"].main_product = "angels-liquid-glycerol"
 vgal.data.trim("angels-gas-epichlorohydrin")
 vgal.data.deephide(data.raw["fluid"]["angels-gas-epichlorohydrin"])

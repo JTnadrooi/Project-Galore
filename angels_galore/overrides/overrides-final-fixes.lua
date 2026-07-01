@@ -1,10 +1,3 @@
--- hide barrel recipes from player crafting.
-for _, recipe in pairs(data.raw["recipe"]) do
-    if recipe.category == "barreling-pump" then
-        recipe.hide_from_player_crafting = true
-    end
-end
-
 -- clean subgroups bc anywhere else this code is just a suggestion.
 local subgroups_to_clean = {
     ["angels-copper"] = true,

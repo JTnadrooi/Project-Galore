@@ -114,8 +114,9 @@ if settings.startup["vgal-override-vanilla-crafting-speeds"].value then
     data.raw["assembling-machine"]["assembling-machine-3"].crafting_speed = 1.5
 end
 
+--- tocomebackat, use setting
 for _, recipe in pairs(data.raw["recipe"]) do
-    if recipe.category == "angels-barreling-pump" then
+    if vgal.recipe.has_category(recipe, "angels-barreling-pump") then
         recipe.hide_from_player_crafting = true
     end
 end

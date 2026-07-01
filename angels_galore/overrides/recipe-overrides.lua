@@ -918,7 +918,7 @@ data.raw["recipe"]["angels-air-separation"].results = vgal.build.table({}, {
 })
 
 -- press coke pellet in pellet press
-data.raw["recipe"]["angels-pellet-coke"].category = "angels-pellet-pressing"
+data.raw["recipe"]["angels-pellet-coke"].categories = { "angels-pellet-pressing" }
 
 -- buff sodium carbonate from algae recipe so it can compete with the other recipes
 data.raw["recipe"]["angels-algae-brown-burning-wash"].ingredients = vgal.build.table({
@@ -984,7 +984,7 @@ for _, metal in pairs(vgal.defines.metals) do
         { "angels-gas-chlorine",   15 },
     })
     vgal.recipe.set_result_amount(metal.solution, 60)
-    data.raw.recipe[metal.solution].category = "chemistry"
+    data.raw.recipe[metal.solution].categories = { "chemistry" }
 end
 
 -- make slag from crushed stone use slightly less sulfuric acid

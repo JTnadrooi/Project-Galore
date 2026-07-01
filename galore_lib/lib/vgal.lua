@@ -647,3 +647,12 @@ function vgal.get_from_prototype_or_prototype_name(prototype_or_prototype_name, 
         return data.raw[prototype_type][prototype_or_prototype_name] or error("Could not find " .. prototype_type .. " with name " .. prototype_or_prototype_name)
     end
 end
+
+---@param path string
+---@return any?
+function vgal.force_require(path)
+    local normalized_path = (string.gsub(path, "/", "."))
+    
+    package.loaded[normalized_path] = nil
+    return require(normalized_path)
+end

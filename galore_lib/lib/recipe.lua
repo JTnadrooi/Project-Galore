@@ -651,7 +651,7 @@ end
 ---@param raw_amount number
 ---@param deviation number?
 ---@return integer? amount
----@return number? probablity
+---@return number? independent_probability
 ---@return integer? min_amount
 ---@return integer? max_amount
 function vgal.recipe.get_normalized_return_amounts(raw_amount, deviation)
@@ -682,6 +682,41 @@ function vgal.recipe.has_category(recipe_or_recipe_name, category_name)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     return vgal.table.contains(recipe.categories, category_name)
+end
+
+---@param recipe_or_recipe_name string|data.RecipePrototype
+---@param category_names data.RecipeCategoryID[]
+---@return boolean
+function vgal.recipe.has_any_category(recipe_or_recipe_name, category_names)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
+    local category_set = {}
+    for _, name in ipairs(category_names) do
+        category_set[name] = true
+    end
+
+    for _, category in ipairs(recipe.categories) do
+        if category_set[category] then
+            return true
+        end
+    end
+
+    return false
+end
+
+---@param recipe_or_recipe_name string|data.RecipePrototype
+---@param category_map table<data.RecipeCategoryID, string>|table<data.RecipeCategoryID, boolean>
+---@return boolean
+function vgal.recipe.has_any_category_in_category_map(recipe_or_recipe_name, category_map)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
+    for _, category in ipairs(recipe.categories or {}) do
+        if category_map[category] then
+            return true
+        end
+    end
+
+    return false
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype

@@ -33,16 +33,16 @@ vgal.data.extend({
             vgal.icon.get_in_fluid("plastic-bar"),
         },
         category = "chemistry",
-        energy_required = 2.5,
+        energy_required = 4,
         technology = "lubricant",
         fluid_ingredients = {
-            { "petroleum-gas", 30 }, -- 30
+            { "heavy-oil", 30 }, -- 60
         },
         ingredients = {
             { "plastic-bar", 1 }, -- 15
         },
         fluid_results = {
-            { "lubricant", 20 }, -- 40
+            { "lubricant", 40 }, -- 80
         },
     },
     {

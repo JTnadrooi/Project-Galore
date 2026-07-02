@@ -1,9 +1,9 @@
 -- high temp oil processing
-local ht_oil_temp = settings.startup["vgal-high-temp-oil-processing-temp"].value --[[@as "Any"|"165C"|"500C"]]
+local ht_oil_temp = settings.startup["vgal-high-temp-oil-processing-temp"].value --[[@as "any"|"165"|"500"]]
 
-if ht_oil_temp ~= "Any" then
+if ht_oil_temp ~= "any" then
     ---@diagnostic disable-next-line: cast-local-type, param-type-mismatch
-    ht_oil_temp = tonumber(ht_oil_temp:match("%d+"))
+    ht_oil_temp = tonumber(ht_oil_temp) --[[@as 165|500]]
     if ht_oil_temp then
         data.raw["recipe"]["vgal-steam-light-oil-petroleum-gas"].ingredients[1].minimum_temperature = ht_oil_temp
         data.raw["recipe"]["vgal-steam-heavy-oil-light-oil"].ingredients[1].minimum_temperature = ht_oil_temp
@@ -17,14 +17,14 @@ end
 
 if mods["quality"] then
     -- quality upgrades
-    local q_upgrades_mode = settings.startup["vgal-quality-upgrades-mode"].value --[[@as "Disabled"|"Replace"|"Add"]]
+    local q_upgrades_mode = settings.startup["vgal-quality-upgrades-mode"].value --[[@as "disabled"|"replace"|"add"]]
     local q_upgrades_result_probablity = settings.startup["vgal-quality-upgrades-result-probability"].value --[[@as number?]]
 
     if q_upgrades_result_probablity == 1 then
         q_upgrades_result_probablity = nil
     end
 
-    if q_upgrades_mode ~= "Disabled" then
+    if q_upgrades_mode ~= "disabled" then
         ---@param recipe data.RecipePrototype
         ---@return data.RecipePrototype
         function get_q_recipe_from(recipe)
@@ -32,7 +32,7 @@ if mods["quality"] then
 
             -- change name
             -- only change name if adding, else it will replace when extended
-            if q_upgrades_mode == "Add" then
+            if q_upgrades_mode == "add" then
                 q_recipe.name = "vgal-quality-upgrade" .. q_recipe.name:sub(5)
             end
 
@@ -130,7 +130,7 @@ if mods["quality"] then
             q_recipe_map[recipe_name] = q_recipe.name
         end
 
-        if q_upgrades_mode == "Add" then
+        if q_upgrades_mode == "add" then
             for _, tech in pairs(data.raw["technology"]) do
                 for _, effect in ipairs(tech.effects or {}) do
                     if effect.type == "unlock-recipe" and q_recipe_map[effect.recipe] then

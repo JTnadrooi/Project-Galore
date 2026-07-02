@@ -3,9 +3,9 @@ data:extend {
         type = "string-setting",
         name = "vgal-high-temp-oil-processing-temp",
         setting_type = "startup",
-        default_value = "Any",
+        default_value = "any",
         allowed_values = {
-            "Any", "165C", "500C"
+            "any", "165", "500"
         },
         order = "aac"
     },
@@ -20,9 +20,9 @@ if mods["quality"] then
             type = "string-setting",
             name = "vgal-quality-upgrades-mode",
             setting_type = "startup",
-            default_value = "Disabled",
+            default_value = "disabled",
             allowed_values = {
-                "Disabled", "Replace", "Add"
+                "disabled", "replace", "add"
             },
             order = "ca"
         },

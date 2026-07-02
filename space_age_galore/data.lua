@@ -66,5 +66,6 @@ require("mods.james")
 require("mods.wolf")
 require("mods.cerys")
 require("mods.demolisher-scales")
+require("mods.quality")
 
 require("overrides.sagal-post-overrides")

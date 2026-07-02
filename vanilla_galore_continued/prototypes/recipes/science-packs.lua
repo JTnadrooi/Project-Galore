@@ -760,7 +760,6 @@ for _, module in pairs(vgal.defines.modules) do
     vgal.data.extend({
         {
             name = module.name .. "-chemical-science-pack",
-            type = "recipe",
             prefix = "vgal",
             icons = vgal.icon.register {
                 vgal.icon.get("chemical-science-pack"),
@@ -777,7 +776,9 @@ for _, module in pairs(vgal.defines.modules) do
                 { "chemical-science-pack", 3 }, -- 735
             },
             order = "d[chemical-science-pack]-m-" .. module.order,
-            groups = { "vgal-science-packs" },
         }
+    }, {
+        type = "recipe",
+        groups = { "vgal-science-packs" }
     })
 end

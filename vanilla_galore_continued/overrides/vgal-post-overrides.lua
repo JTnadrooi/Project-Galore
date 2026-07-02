@@ -106,25 +106,21 @@ if mods["quality"] then
             end
 
             upgrade_recipes["vgal-lithium-battery"] = true
-upgrade_recipes["vgal-pentapod-egg-plastic-bar"] = true
+            upgrade_recipes["vgal-pentapod-egg-plastic-bar"] = true
         end
 
         local q_recipe_map = {}
 
         for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
-            if vgal.string.starts_with(recipe.name, "vgal-low-density-structure") or
-                vgal.string.starts_with(recipe.name, "vgal-advanced-circuit") or
-                vgal.string.starts_with(recipe.name, "vgal-processing-unit") then
-                upgrade_recipes[recipe.name] = true
-                goto continue
-            end
             if vgal.string.ends_with(recipe.main_product, "-science-pack") and
                 (vgal.recipe.get_main_product_amount(recipe) > (vgal.recipe.get_main_product_amount(data.raw["recipe"][recipe.main_product], true) + 1))
             then
                 upgrade_recipes[recipe.name] = true
-                goto continue
+            elseif vgal.string.starts_with(recipe.name, "vgal-low-density-structure") or
+                vgal.string.starts_with(recipe.name, "vgal-advanced-circuit") or
+                vgal.string.starts_with(recipe.name, "vgal-processing-unit") then
+                upgrade_recipes[recipe.name] = true
             end
-            ::continue::
         end
 
         for recipe_name, _ in pairs(upgrade_recipes) do

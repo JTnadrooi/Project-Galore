@@ -255,30 +255,21 @@ function vgal.table.to_longform(data, entry_type)
     end
 end
 
----Multiply the "amount" field of one or more longform entries.
----
----For `item` entries, the result is rounded to the nearest integer with a minimum of 1.
----For `fluid` entries, the result is kept as a float.
----
----You can optionally provide an `entry_name` to only multiply entries with that name.
----
----@param input data.ProductPrototype|data.IngredientPrototype|data.ProductPrototype[]|data.IngredientPrototype[]
----Single entry or array of entries to process.
----@param multiplier number The factor to multiply the `amount` by.
----@param entry_name string? Optional. Only multiply entries whose `name` matches this.
----@return data.ProductPrototype|data.IngredientPrototype|data.ProductPrototype[]|data.IngredientPrototype[]
----Returns a processed entry or array of entries.
+---@generic T: data.ProductPrototype|data.IngredientPrototype|data.ProductPrototype[]|data.IngredientPrototype[]
+---@param input T|data.ProductPrototype|data.IngredientPrototype|data.ProductPrototype[]|data.IngredientPrototype[]
+---@param multiplier number
+---@param entry_name string?
+---@return T
 function vgal.table.get_multiplied(input, multiplier, entry_name)
-    -- Multiply the "amount" field in a single entry based on its type.
-    -- For type "item", the result is rounded (with a minimum value of 1).
-    -- For type "fluid", the result is left as a float.
+    ---@param entry data.ProductPrototype|data.IngredientPrototype
+    ---@param multiplier number
+    ---@param entry_name string?
+    ---@return data.ProductPrototype|data.IngredientPrototype
     local function process_entry(entry, multiplier, entry_name)
-        -- If entry_name is provided, only process if the entry's name matches.
         if entry_name and entry.name ~= entry_name then
-            return entry -- Return unmodified if names don't match.
+            return entry
         end
 
-        -- Make a shallow copy of the entry to avoid mutating the original.
         local new_entry = {}
         for k, v in pairs(entry) do
             new_entry[k] = v
@@ -286,20 +277,16 @@ function vgal.table.get_multiplied(input, multiplier, entry_name)
 
         local multiplied = entry.amount * multiplier
 
-        if entry.type == "item" then
-            -- For items, round the amount to the nearest integer.
-            -- Ensure that even if the multiplication gives a value less than 1, it rounds to at least 1.
-            multiplied = math.floor(multiplied + 0.5)
-            if multiplied < 1 then
-                multiplied = 1
-            end
+        multiplied = math.floor(multiplied + 0.5)
+        if multiplied < 1 then
+            multiplied = 1
         end
 
         new_entry.amount = multiplied
+
         return new_entry
     end
 
-    -- Check if the input is a single entry (has a "type" field).
     if input.type then
         return process_entry(input, multiplier, entry_name)
     elseif type(input) == "table" then

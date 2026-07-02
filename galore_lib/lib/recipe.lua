@@ -476,13 +476,23 @@ function vgal.recipe.get_main_product_amount(recipe_or_recipe_name, guess_main_p
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype
----@param result_name string
+---@param result_name string?
 ---@return number
 function vgal.recipe.get_result_amount(recipe_or_recipe_name, result_name)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+    if recipe.results then
+        if result_name then
     for _, result in ipairs(recipe.results) do
         if result.name == result_name then
             return vgal.math.get_normalized_amount(result)
+                end
+            end
+        else
+            if #recipe.results ~= 1 then
+                error("Cannot get result count for recipe with multiple or no results.")
+            else
+                return vgal.math.get_normalized_amount(recipe.results[1])
+            end
         end
     end
     return 0

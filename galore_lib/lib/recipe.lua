@@ -482,9 +482,9 @@ function vgal.recipe.get_result_amount(recipe_or_recipe_name, result_name)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     if recipe.results then
         if result_name then
-    for _, result in ipairs(recipe.results) do
-        if result.name == result_name then
-            return vgal.math.get_normalized_amount(result)
+            for _, result in ipairs(recipe.results) do
+                if result.name == result_name then
+                    return vgal.math.get_normalized_amount(result)
                 end
             end
         else
@@ -669,7 +669,7 @@ function vgal.recipe.get_normalized_return_amounts(raw_amount, deviation)
         return raw_amount, nil, nil, nil
     end
 
-    deviation = deviation or tonumber("1" .. string.rep("0", #tostring(raw_amount) - 1))
+    deviation = deviation or 2
 
     if raw_amount < 1 then
         return 1, raw_amount, nil, nil

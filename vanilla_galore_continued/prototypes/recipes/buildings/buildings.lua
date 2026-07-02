@@ -254,7 +254,7 @@ vgal.data.extend({
     },
     -- ASSEMBLING MACHINES (expected beltmall config; electric-engine, steel-plate, advanced-circuit, iron-gear-wheel)
     {
-        name = "electric-engine-assembling-machine-1",
+        name = "electric-engine-unit-assembling-machine-1",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("assembling-machine-1"),
@@ -272,7 +272,7 @@ vgal.data.extend({
         category = "crafting",
     },
     {
-        name = "electric-engine-assembling-machine-2", -- hell
+        name = "electric-engine-unit-assembling-machine-2", -- hell
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("assembling-machine-2"),
@@ -294,7 +294,7 @@ vgal.data.extend({
         category = "crafting",
     },
     {
-        name = "electric-engine-assembling-machine-3",
+        name = "electric-engine-unit-assembling-machine-3",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("assembling-machine-3"),

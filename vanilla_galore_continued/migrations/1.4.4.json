@@ -1,0 +1,22 @@
+{
+    "recipe": [
+        [
+            "vgal-electric-engine-assembling-machine-1",
+            "vgal-electric-engine-unit-assembling-machine-1"
+        ],
+        [
+            "vgal-electric-engine-assembling-machine-2",
+            "vgal-electric-engine-unit-assembling-machine-2"
+        ],
+        [
+            "vgal-electric-engine-assembling-machine-3",
+            "vgal-electric-engine-unit-assembling-machine-3"
+        ]
+    ],
+    "technology": [
+        [
+            "vgal-electric-engine-assembling-machine-3-node1",
+            "vgal-electric-engine-unit-assembling-machine-3-node1"
+        ]
+    ]
+}

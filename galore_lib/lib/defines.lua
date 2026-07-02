@@ -90,11 +90,13 @@ if vgal.defines.flags["agal"] then
     vgal.defines.metal_steel["roll"] = "angels-roll-steel"
 end
 
----@type table<string, {name: string, order: string, tiers: string[]}>
+---@type table<string, {name: string, order: string, tiers: string[], unique_ingredient: string?, unique_ingredient_amount: integer?}>
 vgal.defines.modules = {
     ["speed-module"] = {
         name = "speed-module",
         order = "a",
+        unique_ingredient = "tungsten-carbide",
+        unique_ingredient_amount = 1,
         tiers = {
             "speed-module",
             "speed-module-2",
@@ -104,6 +106,8 @@ vgal.defines.modules = {
     ["efficiency-module"] = {
         name = "efficiency-module",
         order = "b",
+        unique_ingredient = "spoilage",
+        unique_ingredient_amount = 1,
         tiers = {
             "efficiency-module",
             "efficiency-module-2",
@@ -113,6 +117,8 @@ vgal.defines.modules = {
     ["productivity-module"] = {
         name = "productivity-module",
         order = "c",
+        unique_ingredient = "biter-egg",
+        unique_ingredient_amount = 5,
         tiers = {
             "productivity-module",
             "productivity-module-2",
@@ -125,6 +131,8 @@ if mods["quality"] then
     vgal.defines.modules["quality-module"] = {
         name = "quality-module",
         order = "d",
+        unique_ingredient = "superconductor",
+        unique_ingredient_amount = 1,
         tiers = {
             "quality-module",
             "quality-module-2",

@@ -106,6 +106,7 @@ if mods["quality"] then
             end
 
             upgrade_recipes["vgal-lithium-battery"] = true
+upgrade_recipes["vgal-pentapod-egg-plastic-bar"] = true
         end
 
         local q_recipe_map = {}

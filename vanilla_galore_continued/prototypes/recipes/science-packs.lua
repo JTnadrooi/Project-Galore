@@ -332,66 +332,6 @@ vgal.data.extend({
         },
     },
     {
-        name = "speed-module-chemical-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("chemical-science-pack"),
-            vgal.icon.get_in("speed-module"),
-        },
-        category = "crafting",
-        energy_required = 36,
-        technology = { "chemical-science-pack", "speed-module", "battery" },
-        ingredients = {
-            { "speed-module", 1 },
-            { "battery",      2 }
-        },
-        results = {
-            { "chemical-science-pack", 3 },
-        },
-
-        order = "qa"
-    },
-    {
-        name = "efficiency-module-chemical-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("chemical-science-pack"),
-            vgal.icon.get_in("efficiency-module"),
-        },
-        category = "crafting",
-        energy_required = 36,
-        technology = { "chemical-science-pack", "efficiency-module", "battery" },
-        ingredients = {
-            { "efficiency-module", 1 }, -- 625
-            { "battery",           2 }, -- 100
-        },
-        results = {
-            { "chemical-science-pack", 3 }, -- 735
-        },
-
-        order = "qb"
-    },
-    {
-        name = "productivity-module-chemical-science-pack",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("chemical-science-pack"),
-            vgal.icon.get_in("productivity-module"),
-        },
-        category = "crafting",
-        energy_required = 36,
-        technology = { "chemical-science-pack", "productivity-module", "battery" },
-        ingredients = {
-            { "productivity-module", 1 },
-            { "battery",             2 }
-        },
-        results = {
-            { "chemical-science-pack", 3 },
-        },
-
-        order = "qc"
-    },
-    {
         name = "electric-engine-unit-chemical-science-pack",
         prefix = "vgal",
         icons = vgal.icon.register {
@@ -815,3 +755,29 @@ vgal.data.extend({
     type = "recipe",
     groups = { "vgal-science-packs" },
 })
+
+for _, module in pairs(vgal.defines.modules) do
+    vgal.data.extend({
+        {
+            name = module.name .. "-chemical-science-pack",
+            type = "recipe",
+            prefix = "vgal",
+            icons = vgal.icon.register {
+                vgal.icon.get("chemical-science-pack"),
+                vgal.icon.get_in(module.name),
+            },
+            category = "crafting",
+            energy_required = 36,
+            technology = { "chemical-science-pack", module.name, "battery" },
+            ingredients = {
+                { module.name, 1 }, -- 625
+                { "battery",   2 }, -- 100
+            },
+            results = {
+                { "chemical-science-pack", 3 }, -- 735
+            },
+            order = "d[chemical-science-pack]-m-" .. module.order,
+            groups = { "vgal-science-packs" },
+        }
+    })
+end

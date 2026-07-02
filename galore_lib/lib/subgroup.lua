@@ -75,6 +75,26 @@ function vgal.subgroup.clean(prototype)
     prototype.subgroup = nil
 end
 
+---@param prototype data.PrototypeBase
+---@return {order: data.Order?, subgroup: data.ItemSubGroupID?}
+function vgal.subgroup.get_order_or_guess(prototype)
+    local order = prototype.order
+    local subgroup = prototype.subgroup
+
+    if (not order) or (not subgroup) then
+        if prototype.type == "recipe" then
+            local recipe = prototype --[[@as data.RecipePrototype]]
+            local main_product = vgal.recipe.get_preferred_main_product(recipe)
+
+            local main_product_order_data = vgal.subgroup.get_order_or_guess(vgal.get_recipeable(main_product))
+
+            return { order = order or main_product_order_data.order, subgroup = subgroup or main_product_order_data.subgroup }
+        end
+    end
+
+    return { order = order, subgroup = subgroup }
+end
+
 ---@param subgroups vgal.SubgroupOverrideCollection[]
 function vgal.subgroup.process_override_subgroups(subgroups)
     for _, subgroup in ipairs(subgroups) do

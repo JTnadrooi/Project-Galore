@@ -15,3 +15,10 @@ function vgal.string.replace(str, target, replacement)
     local result = str:gsub(target:gsub("(%W)", "%%%1"), replacement)
     return (result) -- gets rid of the second return value maybe
 end
+
+---@param str string
+---@param suffix string
+---@return boolean
+function vgal.string.ends_with(str, suffix)
+    return suffix == "" or string.sub(str, - #suffix) == suffix
+end

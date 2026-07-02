@@ -1,5 +1,17 @@
 vgal.icon = vgal.icon or {}
 
+local angels_molecule_map = {
+    ["angels-gas-oxygen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/oxygen.png", 72 },
+    ["angels-gas-hydrogen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 72 },
+    ["angels-gas-sulfur-dioxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/sulfur-dioxide.png", 72 },
+    ["angels-gas-carbon-dioxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 72 },
+    ["angels-gas-carbon-monoxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 72 },
+    ["angels-gas-chlorine"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/chlorine.png", 72 },
+    ["angels-gas-ammonia"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 72 },
+    ["angels-gas-nitrogen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/nitrogen.png", 72 },
+    ["angels-gas-hydrogen-fluoride"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 72 },
+}
+
 ---@type table<string, table<string, vgal.IconOverride>>
 vgal.icon.overrides = vgal.icon.overrides or {}
 
@@ -409,11 +421,46 @@ function vgal.icon.register(composite_icons, composition)
     error("unrecognised composition")
 end
 
+---@param prototype_to data.PrototypeBase
+---@param prototype_from vgal.PrototypeWithIcons
+function vgal.icon.copy_icon_data_from(prototype_from, prototype_to)
+    prototype_to.icon = prototype_from.icon
+    prototype_to.icon_size = prototype_from.icon_size
+    prototype_to.icons = prototype_from.icons
+end
+
 ---@param prototype data.PrototypeBase
 function vgal.icon.clear_icon_data(prototype)
     prototype.icon = nil
     prototype.icon_size = nil
     prototype.icons = nil
+end
+
+---@param prototype vgal.PrototypeWithIcons
+function vgal.icon.ensure_icons(prototype)
+    if not prototype.icons then
+        if prototype.icon then
+            prototype.icons = {
+                icon = prototype.icon,
+                icon_size = prototype.icon_size,
+            }
+            return
+        end
+        if prototype.type == "recipe" then
+            ---@cast prototype data.RecipePrototype
+            if prototype.results and #prototype.results > 1 then
+                local main_product = vgal.recipe.get_preferred_main_product(prototype)
+
+                vgal.icon.copy_icon_data_from(vgal.get_recipeable(main_product), prototype)
+
+                vgal.icon.ensure_icons(prototype --[[@as vgal.PrototypeWithIcons]])
+                return
+            end
+        end
+        
+        error("Could not ensure icons field for prototype " .. prototype.name)
+    end
+
 end
 
 ---@param prototype data.PrototypeBase
@@ -422,6 +469,16 @@ function vgal.icon.set_icons(prototype, icons)
     vgal.icon.clear_icon_data(prototype)
 
     prototype.icons = icons
+end
+
+---@param fluids string[]
+---@return (string|{[1]: string, [2]: integer})[]
+function vgal.icon.map_to_angels_molecule_icons(fluids)
+    local result = {}
+    for _, fluid_name in ipairs(fluids) do
+        table.insert(result, angels_molecule_map[fluid_name] or fluid_name)
+    end
+    return result
 end
 
 -- OVERRIDE LOGIC
@@ -560,26 +617,4 @@ if mods["angels_galore"] then
             }
         })
     end
-end
-
-local angels_molecule_map = {
-    ["angels-gas-oxygen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/oxygen.png", 72 },
-    ["angels-gas-hydrogen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 72 },
-    ["angels-gas-sulfur-dioxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/sulfur-dioxide.png", 72 },
-    ["angels-gas-carbon-dioxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 72 },
-    ["angels-gas-carbon-monoxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 72 },
-    ["angels-gas-chlorine"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/chlorine.png", 72 },
-    ["angels-gas-ammonia"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 72 },
-    ["angels-gas-nitrogen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/nitrogen.png", 72 },
-    ["angels-gas-hydrogen-fluoride"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 72 },
-}
-
----@param fluids string[]
----@return (string|{[1]: string, [2]: integer})[]
-function vgal.icon.map_to_angels_molecule_icons(fluids)
-    local result = {}
-    for _, fluid_name in ipairs(fluids) do
-        table.insert(result, angels_molecule_map[fluid_name] or fluid_name)
-    end
-    return result
 end

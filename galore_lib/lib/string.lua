@@ -22,3 +22,23 @@ end
 function vgal.string.ends_with(str, suffix)
     return suffix == "" or string.sub(str, - #suffix) == suffix
 end
+
+---@param str string
+---@return string
+function vgal.string.escape(str)
+    return (str:gsub("(%W)", "%%%1"))
+end
+
+---@param inputstr string
+---@param sep string
+---@return string[]
+function vgal.string.split(inputstr, sep)
+    sep = vgal.string.escape(sep)
+
+    local t = {}
+    for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
+        table.insert(t, str)
+    end
+    
+    return t
+end

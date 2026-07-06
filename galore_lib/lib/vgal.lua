@@ -51,19 +51,8 @@ vgal.entry_stat_relevant_catalysts = {}
 
 vgal.group_overrides = {}
 if vgal.defines.flags["vgal"] then
-    local function split(inputstr, sep)
-        if sep == nil then
-            sep = "%s"
-        end
-        local t = {}
-        for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
-            table.insert(t, str)
-        end
-        return t
-    end
-
-    local disable_entries = split(settings.startup["vgal-custom-disabled-recipes"].value)
-    local enable_entries = split(settings.startup["vgal-custom-enabled-recipes"].value)
+    local disable_entries = vgal.string.split(settings.startup["vgal-custom-disabled-recipes"].value --[[@as string]], " ")
+    local enable_entries = vgal.string.split(settings.startup["vgal-custom-enabled-recipes"].value --[[@as string]], " ")
 
     for _, disable_entry in ipairs(disable_entries) do
         vgal.group_overrides[disable_entry] = {

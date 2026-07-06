@@ -878,22 +878,32 @@ end
 
 ---@param categories string[]
 ---@param recipe_or_recipe_name string|data.RecipePrototype
-function vgal.recipe.set_categories(recipe_or_recipe_name, categories)
+function vgal.recipe.set_conformed_categories(recipe_or_recipe_name, categories)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
+    recipe.categories = vgal.recipe.conform_categories_to_recipe(recipe, categories)
+end
+
+---@param categories string[]
+---@param recipe_or_recipe_name string|data.RecipePrototype
+---@return string[]
+function vgal.recipe.conform_categories_to_recipe(recipe_or_recipe_name, categories)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
+    local result = nil
     if vgal.recipe.has_ingredient_with_type(recipe, "fluid") then
-        categories = vgal.table.select(categories, function(c)
+        result = vgal.table.select(categories, function(c)
             if c == "crafting" then
                 return "crafting-with-fluid"
             else
                 return c
             end
         end)
+    else
+        result = table.deepcopy(categories)
     end
 
-    recipe.categories = categories
-    recipe.category = nil
-    recipe.additional_categories = nil
+    return result
 end
 
 ---@param ingredient_type "fluid"|"item"

@@ -102,3 +102,9 @@ do
     ---@field index integer
     ---@field energy_required number
 end
+
+do
+    ---@class vgal.Domain
+    ---@field name string
+    ---@field entries table<string, {name: string, type: string}>
+end

@@ -2,6 +2,7 @@ vgal = vgal or {}
 
 vgal.data = vgal.data or {}
 
+---@type table<string, vgal.Domain>
 vgal.data.domains = {}
 
 if vgal.setting ~= nil then
@@ -72,21 +73,17 @@ end
 ---@overload fun(domain_name: string, prototype_type: "item"): fun(): integer, data.ItemPrototype
 ---@overload fun(domain_name: string, prototype_type: string): fun(): integer, data.PrototypeBase
 function vgal.data.domain_pairs(domain_name, prototype_type)
+    vgal.throw.if_param_nil(prototype_type, "prototype_type")
+
     local dom = vgal.data.domains[domain_name]
-    if not dom then error("domain " .. domain_name .. " does not exist") end
-    if not prototype_type then
-        error("prototype_type cannot be nil")
+    if not vgal.data.domain_exists(domain_name) then
+        error("domain " .. domain_name .. " does not exist")
     end
     if not data.raw[prototype_type] then
         error("type " .. tostring(prototype_type) .. " does not exist")
     end
-    if type(dom) ~= "table" then
-        error("internal error: expected domain table, got " .. tostring(dom))
-    end
+
     local function iter(t, last_key)
-        if type(t) ~= "table" then
-            error("internal error: expected domain table, got " .. tostring(t) .. ", last key: " .. tostring(last_key))
-        end
         local key, entry = next(t, last_key)
         while key do
             if entry
@@ -99,7 +96,7 @@ function vgal.data.domain_pairs(domain_name, prototype_type)
         end
     end
 
-    return iter, dom
+    return iter, dom.entries
 end
 
 function vgal.data.create_domain(domain_name)
@@ -107,7 +104,10 @@ function vgal.data.create_domain(domain_name)
         error("Domain already exists with name " .. domain_name)
     else
         vgal.log("creating domain: " .. domain_name)
-        vgal.data.domains[domain_name] = {}
+        vgal.data.domains[domain_name] = {
+            name = domain_name,
+            entries = {},
+        }
     end
 end
 
@@ -128,13 +128,15 @@ function vgal.data.extend(entries, fill_in_with)
 
         entry.domain = entry.domain or entry.prefix
 
+        local entry_name = vgal.build.name(entry.prefix, entry.name, entry.tier)
+
         if entry.domain then
             if not vgal.data.domain_exists(entry.domain) then
                 vgal.data.create_domain(entry.domain)
             end
-            vgal.data.domains[entry.domain][vgal.build.name(entry.prefix, entry.name, entry.tier)] = {
+            vgal.data.domains[entry.domain].entries[entry_name] = {
                 type = entry.type,
-                name = vgal.build.name(entry.prefix, entry.name, entry.tier),
+                name = entry_name,
             }
         end
 

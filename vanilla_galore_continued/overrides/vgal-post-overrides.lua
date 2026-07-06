@@ -18,7 +18,7 @@ end
 if mods["quality"] then
     -- quality upgrades
     local q_upgrades_mode = settings.startup["vgal-quality-upgrades-mode"].value --[[@as "disabled"|"replace"|"add"]]
-    local q_upgrades_result_probablity = settings.startup["vgal-quality-upgrades-result-probability"].value --[[@as number?]]
+    local q_upgrades_result_probablity = settings.startup["vgal-quality-upgrades-result-probability"].value / 100 --[[@as number?]]
 
     if q_upgrades_result_probablity == 1 then
         q_upgrades_result_probablity = nil

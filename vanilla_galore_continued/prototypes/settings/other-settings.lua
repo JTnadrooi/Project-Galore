@@ -27,12 +27,12 @@ if mods["quality"] then
             order = "ca"
         },
         {
-            type = "double-setting",
+            type = "int-setting",
             name = "vgal-quality-upgrades-result-probability",
             setting_type = "startup",
-            default_value = 1 / 4,
-            minimum_value = 0.01,
-            maximum_value = 1,
+            default_value = 25,
+            minimum_value = 1,
+            maximum_value = 100,
             order = "cb"
         },
     }

@@ -74,6 +74,7 @@ if mods["quality"] then
             ["vgal-explosives-grenade"] = true,
             ["vgal-coal-uranium-235-nuclear-fuel"] = true,
             ["vgal-plastic-bar-repair-pack"] = true,
+            ["vgal-sulfuric-acid-advanced-circuit"] = true,
         }
 
         if vgal.defines.flags["sagal"] then

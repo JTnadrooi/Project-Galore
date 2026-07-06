@@ -20,9 +20,9 @@ if mods["quality"] then
             type = "string-setting",
             name = "vgal-quality-upgrades-mode",
             setting_type = "startup",
-            default_value = "disabled",
+            default_value = "disable",
             allowed_values = {
-                "disabled", "replace", "add"
+                "disable", "replace", "add"
             },
             order = "ca"
         },

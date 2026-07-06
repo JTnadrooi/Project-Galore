@@ -17,14 +17,14 @@ end
 
 if mods["quality"] then
     -- quality upgrades
-    local q_upgrades_mode = settings.startup["vgal-quality-upgrades-mode"].value --[[@as "disabled"|"replace"|"add"]]
+    local q_upgrades_mode = settings.startup["vgal-quality-upgrades-mode"].value --[[@as "disable"|"replace"|"add"]]
     local q_upgrades_result_probablity = settings.startup["vgal-quality-upgrades-result-probability"].value / 100 --[[@as number?]]
 
     if q_upgrades_result_probablity == 1 then
         q_upgrades_result_probablity = nil
     end
 
-    if q_upgrades_mode ~= "disabled" then
+    if q_upgrades_mode ~= "disable" then
         ---@param recipe data.RecipePrototype
         ---@return data.RecipePrototype
         function get_q_recipe_from(recipe)

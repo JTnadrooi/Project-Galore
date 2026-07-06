@@ -60,7 +60,7 @@ if mods["quality"] then
             q_recipe.order = q_recipe_order_data.order .. "-x[quality-upgrade]"
 
             -- prepend quality-upgrade locale
-            q_recipe.localised_name = { "", { "vgal-internal.quality-upgrade" }, ": ", vgal.recipe.get_preferred_localised_name(q_recipe) }
+            q_recipe.localised_name = { "", { "vgal-internal.quality-upgrade" }, ": ", vgal.recipe.get_localised_name_or_guess(q_recipe) }
 
             return q_recipe
         end

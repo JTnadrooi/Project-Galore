@@ -49,7 +49,7 @@ end
 ---@param force boolean?
 function vgal.subgroup.restore(recipe_name, force)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
-    local main_product = vgal.recipe.get_preferred_main_product(recipe)
+    local main_product = vgal.recipe.get_main_product_or_guess(recipe)
 
     local recipeable = vgal.get_recipeable(main_product)
 
@@ -84,7 +84,7 @@ function vgal.subgroup.get_order_or_guess(prototype)
     if (not order) or (not subgroup) then
         if prototype.type == "recipe" then
             local recipe = prototype --[[@as data.RecipePrototype]]
-            local main_product = vgal.recipe.get_preferred_main_product(recipe)
+            local main_product = vgal.recipe.get_main_product_or_guess(recipe)
 
             local main_product_order_data = vgal.subgroup.get_order_or_guess(vgal.get_recipeable(main_product))
 

@@ -194,8 +194,7 @@ function vgal.data.extend(entries, fill_in_with)
             local hidden = false
             for _, group in ipairs(entry.groups) do
                 if not vgal.groups[group] then
-                    error("Group with name " .. group .. " does not exist, recipe " ..
-                        entry.name .. " tries to register to it.")
+                    error("Group with name " .. group .. " does not exist, recipe " .. entry.name .. " tries to register to it.")
                 end
 
                 if not vgal.groups[group].enabled then
@@ -246,22 +245,20 @@ function vgal.data.extend(entries, fill_in_with)
                 entry.main_product = entry.results[1].name
             end
 
-            entry.crafting_machine_tint = entry.crafting_machine_tint or vgal.recipe.get_preferred_crafting_machine_tint(entry)
+            entry.crafting_machine_tint = entry.crafting_machine_tint or vgal.recipe.get_crafting_machine_tint_or_guess(entry)
 
             if entry.locale_source then
                 entry.localised_name_source = entry.locale_source
                 entry.localised_description_source = entry.locale_source
             end
             if entry.localised_name_source then
-                entry.localised_name = vgal.recipe.get_preferred_localised_name(data.raw["recipe"]
-                    [entry.localised_name_source])
+                entry.localised_name = vgal.recipe.get_localised_name_or_guess(data.raw["recipe"][entry.localised_name_source])
             end
             if entry.localised_description_source then
-                entry.localised_description = vgal.recipe.get_preferred_localised_description(data.raw["recipe"]
-                    [entry.localised_description_source])
+                entry.localised_description = vgal.recipe.get_localised_description_or_guess(data.raw["recipe"][entry.localised_description_source])
             end
-            entry.localised_name = vgal.recipe.get_preferred_localised_name(entry)
-            entry.localised_description = vgal.recipe.get_preferred_localised_description(entry)
+            entry.localised_name = vgal.recipe.get_localised_name_or_guess(entry)
+            entry.localised_description = vgal.recipe.get_localised_description_or_guess(entry)
 
             entry.auto_recycle = false
             entry.allow_decomposition = false

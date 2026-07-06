@@ -132,7 +132,7 @@ do
 
     for _, recipe_name in ipairs(casting_recipes) do
         local recipe = data.raw["recipe"][recipe_name]
-        local main_product_recipe = data.raw["recipe"][vgal.recipe.get_preferred_main_product(recipe)]
+        local main_product_recipe = data.raw["recipe"][vgal.recipe.get_main_product_or_guess(recipe)]
 
         -- add sand
         do

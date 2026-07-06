@@ -372,7 +372,7 @@ function vgal.recipe.add_result(recipe_or_recipe_name, new_result, result_type)
 
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     if not recipe.main_product then
-        recipe.main_product = vgal.recipe.get_preferred_main_product(recipe)
+        recipe.main_product = vgal.recipe.get_main_product_or_guess(recipe)
     end
 
     recipe.results = recipe.results or {}
@@ -466,7 +466,7 @@ function vgal.recipe.get_main_product_amount(recipe_or_recipe_name, guess_main_p
     local main_product = recipe.main_product
 
     if (not main_product) and guess_main_product_if_not_specified then
-        main_product = vgal.recipe.get_preferred_main_product(recipe)
+        main_product = vgal.recipe.get_main_product_or_guess(recipe)
     end
 
     if not main_product then
@@ -589,7 +589,7 @@ function vgal.recipe.multiply_ingredients(recipe_or_recipe_name, multiplier, ing
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype
-function vgal.recipe.get_preferred_crafting_machine_tint(recipe_or_recipe_name)
+function vgal.recipe.get_crafting_machine_tint_or_guess(recipe_or_recipe_name)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     local main_product_recipe = data.raw.recipe[recipe.main_product]
@@ -604,7 +604,7 @@ function vgal.recipe.get_preferred_crafting_machine_tint(recipe_or_recipe_name)
 end
 
 ---@param recipe data.RecipePrototype|vgal.VgalRecipePrototype
-function vgal.recipe.get_preferred_main_product(recipe)
+function vgal.recipe.get_main_product_or_guess(recipe)
     if recipe.main_product then
         return recipe.main_product
     end
@@ -618,15 +618,15 @@ function vgal.recipe.get_preferred_main_product(recipe)
 end
 
 ---@param recipe data.RecipePrototype|vgal.VgalRecipePrototype
-function vgal.recipe.get_preferred_localised_name(recipe)
+function vgal.recipe.get_localised_name_or_guess(recipe)
     return recipe.localised_name or { "?",
         { "", { "recipe-name." .. recipe.name } },
-        { "", vgal.locale.guess_locale(vgal.recipe.get_preferred_main_product(recipe)) },
+        { "", vgal.locale.guess_locale(vgal.recipe.get_main_product_or_guess(recipe)) },
     }
 end
 
 ---@param recipe data.RecipePrototype|vgal.VgalRecipePrototype
-function vgal.recipe.get_preferred_localised_description(recipe)
+function vgal.recipe.get_localised_description_or_guess(recipe)
     return recipe.localised_description or { "recipe-description." .. recipe.name }
 end
 

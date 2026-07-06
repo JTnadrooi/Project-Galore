@@ -449,7 +449,7 @@ function vgal.icon.ensure_icons(prototype)
         if prototype.type == "recipe" then
             ---@cast prototype data.RecipePrototype
             if prototype.results and #prototype.results > 1 then
-                local main_product = vgal.recipe.get_preferred_main_product(prototype)
+                local main_product = vgal.recipe.get_main_product_or_guess(prototype)
 
                 vgal.icon.copy_icon_data_from(vgal.get_recipeable(main_product), prototype)
 
@@ -457,10 +457,9 @@ function vgal.icon.ensure_icons(prototype)
                 return
             end
         end
-        
+
         error("Could not ensure icons field for prototype " .. prototype.name)
     end
-
 end
 
 ---@param prototype data.PrototypeBase

@@ -229,6 +229,7 @@ function vgal.data.extend(entries, fill_in_with)
 
             -- ensure categories
             entry.categories = vgal.table.ensure(entry.category, entry.categories)
+            entry.category = nil
             entry.categories = vgal.recipe.conform_categories_to_recipe(entry, entry.categories)
 
             if not entry.main_product then

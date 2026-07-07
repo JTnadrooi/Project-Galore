@@ -691,7 +691,7 @@ end
 function vgal.recipe.has_category(recipe_or_recipe_name, category_name)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
-    return vgal.table.contains(recipe.categories, category_name)
+    return vgal.table.contains(recipe.categories or { "crafting" }, category_name)
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype
@@ -705,7 +705,7 @@ function vgal.recipe.has_any_category(recipe_or_recipe_name, category_names)
         category_set[name] = true
     end
 
-    for _, category in ipairs(recipe.categories) do
+    for _, category in ipairs(recipe.categories or { "crafting" }) do
         if category_set[category] then
             return true
         end
@@ -720,7 +720,7 @@ end
 function vgal.recipe.has_any_category_in_category_map(recipe_or_recipe_name, category_map)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
-    for _, category in ipairs(recipe.categories or {}) do
+    for _, category in ipairs(recipe.categories or { "crafting" }) do
         if category_map[category] then
             return true
         end
@@ -735,7 +735,7 @@ end
 function vgal.recipe.replace_category(recipe_or_recipe_name, original_category, replacement_category)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
-    for i, category in ipairs(recipe.categories or {}) do
+    for i, category in ipairs(recipe.categories or { "crafting" }) do
         if category == original_category then
             recipe.categories[i] = replacement_category
             return

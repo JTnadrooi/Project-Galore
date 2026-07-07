@@ -415,8 +415,9 @@ function vgal.table.assign_keys_to_reference(target_table, keys, reference_table
     end
 end
 
----@param array any[]
----@return table<any, boolean>
+---@generic T
+---@param array T[]
+---@return table<T, boolean>
 function vgal.table.to_map(array)
     local output = {}
 

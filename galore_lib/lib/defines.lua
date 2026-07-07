@@ -66,8 +66,7 @@ if vgal.defines.flags["agal"] then
         metal.pellet = "angels-pellet-" .. metal.name
         metal.roll = "angels-roll-" .. metal.name
         metal.angels_plate_recipe_name = "angels-plate-" .. metal.name
-        metal.solution = (metal.name == "copper") and "angels-liquid-cupric-chloride-solution" or
-            "angels-liquid-ferric-chloride-solution"
+        metal.solution = (metal.name == "copper") and "angels-liquid-cupric-chloride-solution" or "angels-liquid-ferric-chloride-solution"
 
         metal.ore_states = { "crushed", "chunk", "crystal", "pure" }
 
@@ -153,6 +152,7 @@ vgal.defines.recipeable_categories = {
     "item-with-entity-data",
     "rail-planner",
     "gun",
+    "tool", -- sometimes still... (looking at angels bio token rn)
 }
 
 -- commentedbc: this list would be huge.

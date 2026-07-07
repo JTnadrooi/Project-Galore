@@ -108,3 +108,10 @@ do
     ---@field name string
     ---@field entries table<string, {name: string, type: string}>
 end
+
+do
+    ---@class vgal.PrototypeWithIcons : data.PrototypeBase
+    ---@field icons data.IconData[]
+    ---@field icon data.FileName
+    ---@field icon_size data.SpriteSizeType
+end

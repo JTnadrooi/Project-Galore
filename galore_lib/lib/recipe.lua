@@ -931,6 +931,10 @@ function vgal.recipe.add_category(recipe_or_recipe_name, category_name)
     if recipe.categories then
         table.insert(recipe.categories, category_name)
     else
-        recipe.categories = { category_name }
+        if vgal.recipe.has_ingredient_with_type(recipe, "fluid") then
+            recipe.categories = { "crafting-with-fluid", category_name }
+        else
+            recipe.categories = { "crafting", category_name }
+        end
     end
 end

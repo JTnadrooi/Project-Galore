@@ -312,11 +312,9 @@ end
 ---@param unit_name string
 ---@param unit_count integer?
 function vgal.tech.add_unit(tech_name, unit_name, unit_count)
-    unit_count = unit_count or 1
+    vgal.get_recipeable(unit_name)
 
-    if not data.raw["tool"][unit_name] then
-        error("Tool prototype not found: " .. unit_name)
-    end
+    unit_count = unit_count or 1
 
     local tech = vgal.throw.if_tech_not_found(tech_name)
 
@@ -334,9 +332,7 @@ end
 ---@param tech_name string
 ---@param unit_name string
 function vgal.tech.remove_unit(tech_name, unit_name)
-    if not data.raw["tool"][unit_name] then
-        error("Tool prototype not found: " .. unit_name)
-    end
+    vgal.get_recipeable(unit_name)
 
     local tech = vgal.throw.if_tech_not_found(tech_name)
 

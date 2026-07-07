@@ -84,7 +84,7 @@ for _, metal_name in ipairs({ "iron", "steel" }) do -- copper doesn't have any e
     for i = 2, 6 do
         local recipe = data.raw["recipe"]["angels-liquid-molten-" .. metal_name .. "-" .. i]
         if recipe then
-            vgal.recipe.deephide(recipe.name)
+            vgal.recipe.deephide(recipe)
             vgal.data.trim(recipe.name)
         end
     end

@@ -10,7 +10,7 @@ function vgal.recipe.all.link_ingredient(ingredient, main_product_name, multipli
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do
         if (main_product_name == nil) or recipe.main_product == main_product_name then
             vgal.recipe.add_ingredient(recipe.name,
-                vgal.table.get_multiplied(ingredient, multiplier * vgal.recipe.get_main_product_amount(recipe.name))
+                vgal.table.get_multiplied(ingredient, multiplier * vgal.recipe.get_main_product_amount(recipe))
             )
             if ingredient.type == "fluid" then
                 vgal.recipe.replace_category(recipe.name, "crafting", "crafting-with-fluid")
@@ -28,7 +28,7 @@ function vgal.recipe.all.link_result(result, main_product_name, multiplier, doma
     for _, recipe in vgal.recipe.get_domain_or_all_pairs(domain_name) do
         if (main_product_name == nil) or recipe.main_product == main_product_name then
             vgal.recipe.add_result(recipe.name,
-                vgal.table.get_multiplied(result, multiplier * vgal.recipe.get_main_product_amount(recipe.name))
+                vgal.table.get_multiplied(result, multiplier * vgal.recipe.get_main_product_amount(recipe))
             )
         end
     end

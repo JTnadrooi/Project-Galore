@@ -124,7 +124,7 @@ end
 for _, recipe in pairs(data.raw["recipe"]) do
     if vgal.recipe.has_any_category_in_category_map(recipe, productivity_categories) then
         if vgal.is_angels(recipe) then
-            vgal.recipe.smart_allow_productivity(recipe.name)
+            vgal.recipe.smart_allow_productivity(recipe)
         end
     end
 end

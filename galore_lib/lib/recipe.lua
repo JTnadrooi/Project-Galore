@@ -269,9 +269,7 @@ function vgal.recipe.replace_ingredient(recipe_or_recipe_name, old_ingredient_na
         end
     end
     if (not no_throw) then
-        error("Ingredient '" ..
-            old_ingredient_name ..
-            "' not found in recipe '" .. recipe.name .. "', ingredients: " .. serpent.block(recipe.ingredients))
+        error("Ingredient '" .. old_ingredient_name .. "' not found in recipe '" .. recipe.name .. "', ingredients: " .. serpent.block(recipe.ingredients))
     end
 end
 
@@ -287,9 +285,7 @@ function vgal.recipe.remove_ingredient(recipe_or_recipe_name, ingredient_name, n
         end
     end
     if (not no_throw) then
-        error("Ingredient '" ..
-            ingredient_name ..
-            "' not found in recipe '" .. recipe.name .. "', ingredients: " .. serpent.block(recipe.ingredients))
+        error("Ingredient '" .. ingredient_name .. "' not found in recipe '" .. recipe.name .. "', ingredients: " .. serpent.block(recipe.ingredients))
     end
 end
 

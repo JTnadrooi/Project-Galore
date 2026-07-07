@@ -900,8 +900,7 @@ end
 
 -- fix ore entity descs
 for _, metal in pairs(vgal.defines.metals) do
-    data.raw["resource"][metal.base_ore].localised_description = table.deepcopy(data.raw["item"][metal.base_ore]
-        .localised_description)
+    data.raw["resource"][metal.base_ore].localised_description = table.deepcopy(data.raw["item"][metal.base_ore].localised_description)
 end
 
 -- misc

@@ -29,13 +29,11 @@ end
 -- (actual)catalyst fixes
 vgal.data.trim("angels-catalyst-metal-red")
 vgal.data.deephide(data.raw["item"]["angels-catalyst-metal-red"])
-vgal.recipe.all.replace_ingredient("angels-catalyst-metal-red",
-    { type = "item", name = "angels-catalyst-metal-yellow", amount = 1 })
+vgal.recipe.all.replace_ingredient("angels-catalyst-metal-red", { type = "item", name = "angels-catalyst-metal-yellow", amount = 1 })
 
 vgal.data.trim("angels-catalyst-metal-green")
 vgal.data.deephide(data.raw["item"]["angels-catalyst-metal-green"])
-vgal.recipe.all.replace_ingredient("angels-catalyst-metal-green",
-    { type = "item", name = "angels-catalyst-metal-blue", amount = 1 })
+vgal.recipe.all.replace_ingredient("angels-catalyst-metal-green", { type = "item", name = "angels-catalyst-metal-blue", amount = 1 })
 
 -- remove the NORMAL ores and their processing recipes
 for _, ore in ipairs(vgal.defines.removed_ore_indexes) do

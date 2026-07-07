@@ -451,8 +451,7 @@ end
 
 -- use ore2 for more distinct color, but copy rest
 for _, ore_state in ipairs(vgal.defines.ore_states) do
-    data.raw["recipe"]["angels-ore2-" .. ore_state .. "-processing"].results =
-        table.deepcopy(data.raw["recipe"]["angels-ore1-" .. ore_state .. "-processing"].results)
+    data.raw["recipe"]["angels-ore2-" .. ore_state .. "-processing"].results = table.deepcopy(data.raw["recipe"]["angels-ore1-" .. ore_state .. "-processing"].results)
 end
 
 -- restore refining recipes.

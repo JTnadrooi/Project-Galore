@@ -573,13 +573,11 @@ for _, metal in pairs(vgal.defines.metals) do
     for ore_state_index, ore_state in ipairs(metal.ore_states) do
         table.insert(ore_entries, metal[ore_state])
 
-        data.raw["item"][metal[ore_state]].order = "a-" ..
-            vgal.subgroup.order_from_number(ore_state_index)
+        data.raw["item"][metal[ore_state]].order = "a-" .. vgal.subgroup.order_from_number(ore_state_index)
 
         vgal.subgroup.clean_recipe(metal[ore_state])
         data.raw["recipe"][metal[ore_state] .. "-processing"].subgroup = "vgal-angels-ore" .. metal.ore_index
-        data.raw["recipe"][metal[ore_state] .. "-processing"].order = "b-" ..
-            vgal.subgroup.order_from_number(ore_state_index)
+        data.raw["recipe"][metal[ore_state] .. "-processing"].order = "b-" .. vgal.subgroup.order_from_number(ore_state_index)
     end
 
     table.insert(subgroups,

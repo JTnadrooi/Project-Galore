@@ -141,7 +141,7 @@ if mods["quality"] then
 end
 
 ---@type string[]
-vgal.defines.recipeable_categories = {
+vgal.defines.recipeable_types = {
     "item",
     "fluid",
     "ammo",

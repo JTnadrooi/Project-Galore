@@ -647,9 +647,11 @@ vgal.recipe.set_ingredient_amount("angels-wood-pellets", 8)           -- from 12
 
 -- make crushing recipes early early game.
 for _, ore_index in ipairs(vgal.defines.ore_indexes) do
+    local recipe = data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"]
+
     vgal.tech.remove_recipe("angels-ore-crushing", "angels-ore" .. ore_index .. "-crushed")
-    data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].enabled = true
-    data.raw["recipe"]["angels-ore" .. ore_index .. "-crushed"].additional_categories = { "angels-manual-crafting" }
+    recipe.enabled = true
+    vgal.recipe.add_category(recipe, "hand-crafting")
 end
 
 for _, metal in pairs(vgal.defines.metals) do
@@ -905,7 +907,7 @@ for _, environment in pairs(vgal.defines.environments) do
         result.independent_probability = nil
     end
     recipe.energy_required = 100
-    recipe.additional_categories = { "angels-manual-crafting" }
+    vgal.recipe.add_category(recipe, "hand-crafting")
 end
 
 -- fix ceramic filter recipe

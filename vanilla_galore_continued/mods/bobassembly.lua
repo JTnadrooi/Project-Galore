@@ -24,8 +24,7 @@ if settings.startup["bobmods-assembly-electronicmachines"].value then
             ) and
             ((not vgal.recipe.has_category(recipe.name, "organic")) and (vgal.recipe.has_category(recipe.name, "crafting") or vgal.recipe.has_category(recipe.name, "crafting-with-fluid")))
         then
-            recipe.additional_categories = recipe.additional_categories or {}
-            table.insert(recipe.additional_categories, "electronics")
+            vgal.recipe.add_category(recipe, "electronics")
         end
     end
 end

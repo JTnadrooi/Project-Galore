@@ -823,7 +823,7 @@ function vgal.recipe.make_recipeable_void(recipeable_name, void_category, void_a
         type = "recipe",
         name = "vgal-" .. cat .. "-void-" .. recipeable_name,
         localised_name = { "recipe-name.angels-" .. cat .. "-void", { input_type .. "-name." .. recipeable_name } },
-        category = "angels-" .. cat .. "-void",
+        categories = { "angels-" .. cat .. "-void" },
         enabled = true,
         hide_from_signal_gui = true,
         hide_from_player_crafting = angelsmods.trigger.enable_hide_void,

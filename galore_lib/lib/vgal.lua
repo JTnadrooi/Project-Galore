@@ -430,26 +430,30 @@ function vgal.data.deepunhide(prototype)
     end
 end
 
----@class vgal.PrototypeWithIcons : data.PrototypeBase
----@field icons data.IconData[]
----@field icon data.FileName
----@field icon_size data.SpriteSizeType
-
 ---@param prototype_name string
 ---@return vgal.PrototypeWithIcons
 function vgal.get_recipeable(prototype_name)
+    local result = vgal.try_get_recipeable(prototype_name)
+
+    if result then
+        return result
+    else
+        error("Recipeable of name '" .. prototype_name .. "' not found.")
+    end
+end
+
+---@param prototype_name string
+---@return vgal.PrototypeWithIcons?
+function vgal.try_get_recipeable(prototype_name)
     vgal.throw.if_param_nil(prototype_name, "prototype_name")
 
     for _, category in ipairs(vgal.defines.recipeable_categories) do
-        if not data.raw[category] then
-            error(category)
-        end
-
         if data.raw[category][prototype_name] then
             return data.raw[category][prototype_name] --[[@as vgal.PrototypeWithIcons]]
         end
     end
-    error("Recipeable of name '" .. prototype_name .. "' not found.")
+
+    return nil
 end
 
 -- commentedbc: see vgal.defines.entityable_categories comment

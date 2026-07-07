@@ -1,5 +1,6 @@
 require("overrides.overrides-final-fixes")
 require("mods.quality")
+require("mods.recycler")
 
 -- because this doesnt listen in subgroups and im not putting that in final fixes
 data.raw["item"]["chemical-plant"].subgroup = "vgal-chemistry-machines"

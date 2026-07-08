@@ -1,15 +1,15 @@
 vgal.icon = vgal.icon or {}
 
 local angels_molecule_map = {
-    ["angels-gas-oxygen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/oxygen.png", 72 },
-    ["angels-gas-hydrogen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 72 },
-    ["angels-gas-sulfur-dioxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/sulfur-dioxide.png", 72 },
-    ["angels-gas-carbon-dioxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 72 },
-    ["angels-gas-carbon-monoxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 72 },
-    ["angels-gas-chlorine"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/chlorine.png", 72 },
-    ["angels-gas-ammonia"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 72 },
-    ["angels-gas-nitrogen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/nitrogen.png", 72 },
-    ["angels-gas-hydrogen-fluoride"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 72 },
+    ["angels-gas-oxygen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/oxygen.png", 64 },
+    ["angels-gas-hydrogen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 64 },
+    ["angels-gas-sulfur-dioxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/sulfur-dioxide.png", 64 },
+    ["angels-gas-carbon-dioxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
+    ["angels-gas-carbon-monoxide"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
+    ["angels-gas-chlorine"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/chlorine.png", 64 },
+    ["angels-gas-ammonia"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 64 },
+    ["angels-gas-nitrogen"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/nitrogen.png", 64 },
+    ["angels-gas-hydrogen-fluoride"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 64 },
 }
 
 ---@type table<string, table<string, vgal.IconOverride>>

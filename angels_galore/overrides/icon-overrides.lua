@@ -10,7 +10,7 @@ end
 -- carbon gasses
 data.raw["recipe"]["angels-water-gas-shift-2"].icons = angelsmods.functions.create_gas_recipe_icon(
     {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 72 },
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
     },
     "CCOc", {
         { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 72, },
@@ -18,43 +18,43 @@ data.raw["recipe"]["angels-water-gas-shift-2"].icons = angelsmods.functions.crea
 )
 data.raw["recipe"]["angels-gas-carbon-dioxide-from-wood"].icons = angelsmods.functions.create_gas_recipe_icon(
     {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 72 },
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
     },
     "COcOc", { "angels-wood-pellets" }
 )
 data.raw["recipe"]["angels-water-gas-shift-1"].icons = angelsmods.functions.create_gas_recipe_icon(
     {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 72 },
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
         { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png",       72 },
     },
-    "COcOc", { "steam", { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 72 }, }
+    "COcOc", { "steam", { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 }, }
 )
 
 -- misc distinguish
 data.raw["recipe"]["angels-gas-methanol-from-wood"].icons = angelsmods.functions.create_gas_recipe_icon(
     {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 72 },
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 64 },
     },
     "COH", { "angels-cellulose-fiber", }
 )
 
 data.raw["recipe"]["angels-gas-ammonia-from-blue-fiber"].icons = angelsmods.functions.create_gas_recipe_icon(
     {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 72 },
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 64 },
     },
     "NHH", { "angels-blue-cellulose-fiber", }
 )
 
 data.raw["recipe"]["angels-liquid-acetic-acid"].icons = angelsmods.functions.create_liquid_recipe_icon(
     {
-        { "__angelsbioprocessinggraphics__/graphics/icons/molecule-acetic-acid.png", 72 },
+        { "__angelsbioprocessinggraphics__/graphics/icons/molecule-acetic-acid.png", 64 },
     },
     "COH", { "angels-liquid-fermentation-raw", }
 )
 
 data.raw["recipe"]["angels-gas-ethanol"].icons = angelsmods.functions.create_gas_recipe_icon(
     {
-        { "__angelsbioprocessinggraphics__/graphics/icons/molecule-ethanol.png", 72 },
+        { "__angelsbioprocessinggraphics__/graphics/icons/molecule-ethanol.png", 64 },
     },
     "COH", { "angels-liquid-fermentation-raw", }
 )
@@ -69,7 +69,7 @@ for recipe_name, product_name in pairs({
 }) do
     data.raw["recipe"][recipe_name].icons = angelsmods.functions.create_gas_recipe_icon(
         {
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/" .. product_name .. ".png", 72 },
+            { "__angelspetrochemgraphics__/graphics/icons/molecules/" .. product_name .. ".png", 64 },
         },
         "CHH", { "steam", }
     )
@@ -89,7 +89,7 @@ end
 -- fix polyethelene icon
 data.raw["recipe"]["angels-liquid-polyethylene"].icons = angelsmods.functions.create_liquid_recipe_icon(
     {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/polyethylene.png", 72 },
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/polyethylene.png", 64 },
     },
     "CHH"
 )
@@ -97,7 +97,7 @@ data.raw["recipe"]["angels-liquid-polyethylene"].icons = angelsmods.functions.cr
 -- fix steam-cracking-methane icon
 data.raw["recipe"]["angels-steam-cracking-methane"].icons = angelsmods.functions.create_gas_recipe_icon(
     {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 72 },
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 64 },
     },
     "COH", { "steam", }
 )
@@ -105,7 +105,7 @@ data.raw["recipe"]["angels-steam-cracking-methane"].icons = angelsmods.functions
 -- add some more input icons to make it more fit for its subgroup
 data.raw["recipe"]["angels-condensates-refining"].icons = angelsmods.functions.create_gas_recipe_icon(
     {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/methane.png", 72 },
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/methane.png", 64 },
         "angels-solid-coke",
         "angels-liquid-naphtha",
     },
@@ -118,7 +118,7 @@ data.raw["recipe"]["angels-condensates-refining"].icons = angelsmods.functions.c
 -- fix fluid/gas recipe icons not being other type
 data.raw["recipe"]["angels-liquid-phenol"].icons = angelsmods.functions.create_liquid_recipe_icon(
     {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/phenol.png", 72 },
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/phenol.png", 64 },
     },
     "COH"
 )

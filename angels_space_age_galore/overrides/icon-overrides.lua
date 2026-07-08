@@ -11,7 +11,7 @@ if not mods["reskins-angels"] then
 end
 
 -- vgal.icon.set_icons(data.raw["fluid"]["fluorine"], angelsmods.functions.create_gas_fluid_icon(
---     { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 72 },
+--     { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 64 },
 --     "FFF"
 -- ))
 

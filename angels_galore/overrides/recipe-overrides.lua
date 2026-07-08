@@ -1,25 +1,25 @@
 vgal.recipe.replace_ingredient("explosives", "water", "angels-water-purified")
 
 -- trim unsavable recipes
-vgal.data.trim("vgal-petroleum-gas-rocket-fuel")
-vgal.data.trim("vgal-plastic-bar-lubricant")
-vgal.data.trim("vgal-coal-sulfur")
-vgal.data.trim("vgal-steam-sulfur")
-vgal.data.trim("vgal-steam-concrete")
-vgal.data.trim("vgal-iron-stick-concrete")
-vgal.data.trim("vgal-copper-cable-plastic-bar")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-petroleum-gas-rocket-fuel")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-plastic-bar-lubricant")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-coal-sulfur")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-steam-sulfur")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-steam-concrete")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-iron-stick-concrete")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-copper-cable-plastic-bar")
 
 -- trim out-of-place-ified recipes
-vgal.data.trim("vgal-coal-uranium-235-nuclear-fuel")
-vgal.data.trim("vgal-low-density-structure-uranium-fuel-cell")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-coal-uranium-235-nuclear-fuel")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-low-density-structure-uranium-fuel-cell")
 
 -- wood circuits too OP
-vgal.data.trim("vgal-wood-electronic-circuit")
-vgal.data.trim("vgal-wood-heavy-oil-electronic-circuit")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-wood-electronic-circuit")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-wood-heavy-oil-electronic-circuit")
 
 if settings.startup["vgal-remove-steel-intermediate-crafting"].value then
-    vgal.data.trim("vgal-steel-plate-iron-gear-wheel")
-    vgal.data.trim("vgal-steel-plate-iron-stick")
+    vgal.recipe.hide_and_queue_for_tech_removal("vgal-steel-plate-iron-gear-wheel")
+    vgal.recipe.hide_and_queue_for_tech_removal("vgal-steel-plate-iron-stick")
 end
 
 vgal.recipe.replace_ingredient("vgal-bulk-inserter-chemical-science-pack", "angels-gas-methane", "angels-gas-methanol")
@@ -572,8 +572,8 @@ vgal.recipe.all.remove_ingredient("angels-token-bio")
 vgal.recipe.all.remove_result("angels-token-bio")
 
 for _, environment in pairs(vgal.defines.environments) do
-    vgal.recipe.deephide(environment.garden .. "-b")
-    vgal.recipe.deephide(environment.garden .. "-cultivating-a")
+    vgal.recipe.hide(environment.garden .. "-b")
+    vgal.recipe.hide(environment.garden .. "-cultivating-a")
 end
 
 -- commentedbc: its a pain, and slag should be the result from smelting, not processing
@@ -587,8 +587,8 @@ end
 -- end
 
 -- remove hand recipes
-vgal.data.trim("angels-ore1-crushed-hand")
-vgal.data.trim("angels-ore3-crushed-hand")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-ore1-crushed-hand")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-ore3-crushed-hand")
 
 -- crystal overhaul/restore
 vgal.recipe.multiply("angels-crystal-powder-slurry", 10)
@@ -639,10 +639,10 @@ data.raw["recipe"]["angels-gas-methanol-from-wood"].show_amount_in_title = false
 
 -- misc balancing.
 data.raw["recipe"]["angels-ingot-copper-3"].energy_required = 3
-vgal.data.trim("angels-solid-salt-from-saline")                       -- bc of productivity
-data.raw["recipe"]["angels-solid-mud-landfill"].energy_required = 0.5 -- to make it inline with vanilla landfill
-vgal.recipe.set_result_amount("angels-cellulose-fiber-raw-wood", 6)   -- cellulose fiber fuel value has been reduced as well
-vgal.recipe.set_ingredient_amount("angels-wood-pellets", 8)           -- from 12. 1.5 coal != 9 cellulose fiber worth
+vgal.recipe.hide_and_queue_for_tech_removal("angels-solid-salt-from-saline") -- bc of productivity
+data.raw["recipe"]["angels-solid-mud-landfill"].energy_required = 0.5        -- to make it inline with vanilla landfill
+vgal.recipe.set_result_amount("angels-cellulose-fiber-raw-wood", 6)          -- cellulose fiber fuel value has been reduced as well
+vgal.recipe.set_ingredient_amount("angels-wood-pellets", 8)                  -- from 12. 1.5 coal != 9 cellulose fiber worth
 
 -- make crushing recipes early early game.
 for _, ore_index in ipairs(vgal.defines.ore_indexes) do
@@ -711,7 +711,7 @@ else
 end
 
 -- remove the stone uncrushing recipe
-vgal.data.trim("angels-stone-from-crushed-stone")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-stone-from-crushed-stone")
 
 -- commentedbc: stone as byproduct is repetitive with how you already have slag and crushed stone to deal with
 -- for _, metal in pairs(vgal.defines.metals) do
@@ -723,7 +723,7 @@ vgal.data.trim("angels-stone-from-crushed-stone")
 -- end
 
 -- remove vsicous water recipe as it will break with prod
-vgal.data.trim("angels-water-viscous-mud")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-water-viscous-mud")
 
 -- commentedbc: need stone on demand
 -- -- remove slag sources that aren't smelting (nuclear can stay though, I see slag being generated from that.)
@@ -842,12 +842,12 @@ end
 
 -- garden overhaul (supported by token removal)
 -- remove the garden from nothin' recipe
-vgal.data.trim("angels-garden-cultivating")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-garden-cultivating")
 
 -- for each environment logic
 for _, environment in pairs(vgal.defines.environments) do
     -- remove garden duplication recipe
-    vgal.data.trim(environment.garden)
+    vgal.recipe.hide_and_queue_for_tech_removal(environment.garden)
 
     -- add alt seeds recipe
     local seed_recipe = data.raw["recipe"][environment.garden .. "-a"]
@@ -961,7 +961,7 @@ vgal.recipe.set_result_amount("angels-solid-fuel-fuel-oil", 4)
 vgal.recipe.set_result_amount("angels-solid-fuel-synthesis", 4)
 -- vgal.recipe.set_result_amount("angels-solid-fuel-hydrazine", 5)
 
-vgal.data.trim("angels-solid-fuel-hydrazine") -- It could not be saved with the how new rocket fuel recipe is a way better use of hydrazine and unlocks at about the same time
+vgal.recipe.hide_and_queue_for_tech_removal("angels-solid-fuel-hydrazine") -- It could not be saved with the how new rocket fuel recipe is a way better use of hydrazine and unlocks at about the same time
 
 -- make fish to oil recipes faster
 data.raw["recipe"]["angels-fish-pressing-0"].energy_required = 6

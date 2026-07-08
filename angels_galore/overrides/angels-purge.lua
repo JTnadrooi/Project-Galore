@@ -15,8 +15,8 @@ vgal.tech.move_recipe("angels-advanced-chemistry-3", "angels-basic-chemistry-3",
 
 -- upgrade kit removal.
 for _, environment in pairs(vgal.defines.environments) do
-    vgal.recipe.deephide("angels-" .. environment.name .. "-upgrade")
-    vgal.data.deephide(data.raw["item"]["angels-" .. environment.name .. "-upgrade"])
+    vgal.recipe.hide("angels-" .. environment.name .. "-upgrade")
+    vgal.item.hide("angels-" .. environment.name .. "-upgrade")
     local building_recipe = data.raw["recipe"][environment.farm]
     for i, ingredient in ipairs(building_recipe.ingredients) do
         if ingredient.name == ("angels-" .. environment.name .. "-upgrade") then
@@ -27,40 +27,40 @@ for _, environment in pairs(vgal.defines.environments) do
 end
 
 -- (actual)catalyst fixes
-vgal.data.trim("angels-catalyst-metal-red")
-vgal.data.deephide(data.raw["item"]["angels-catalyst-metal-red"])
+vgal.recipe.hide_and_queue_for_tech_removal("angels-catalyst-metal-red")
+vgal.item.hide("angels-catalyst-metal-red")
 vgal.recipe.all.replace_ingredient("angels-catalyst-metal-red", { type = "item", name = "angels-catalyst-metal-yellow", amount = 1 })
 
-vgal.data.trim("angels-catalyst-metal-green")
-vgal.data.deephide(data.raw["item"]["angels-catalyst-metal-green"])
+vgal.recipe.hide_and_queue_for_tech_removal("angels-catalyst-metal-green")
+vgal.item.hide("angels-catalyst-metal-green")
 vgal.recipe.all.replace_ingredient("angels-catalyst-metal-green", { type = "item", name = "angels-catalyst-metal-blue", amount = 1 })
 
 -- remove the NORMAL ores and their processing recipes
 for _, ore in ipairs(vgal.defines.removed_ore_indexes) do
-    vgal.data.deephide(data.raw["item"]["angels-ore" .. ore])
+    vgal.item.hide("angels-ore" .. ore)
 
     for _, state in ipairs(vgal.defines.ore_states) do
-        vgal.data.trim("angels-ore" .. ore .. "-" .. state .. "-processing")
-        vgal.data.trim("angels-ore" .. ore .. "-" .. state)
-        vgal.data.deephide(data.raw["item"]["angels-ore" .. ore .. "-" .. state])
+        vgal.recipe.hide_and_queue_for_tech_removal("angels-ore" .. ore .. "-" .. state .. "-processing")
+        vgal.recipe.hide_and_queue_for_tech_removal("angels-ore" .. ore .. "-" .. state)
+        vgal.item.hide("angels-ore" .. ore .. "-" .. state)
     end
 end
 
 -- remove the ALT ores and their processing recipes
 for _, ore in ipairs(vgal.defines.removed_alt_ore_indexes) do
     for _, state in ipairs(vgal.defines.alt_ore_states) do
-        vgal.data.trim("angels-ore" .. ore .. "-" .. state .. "-processing")
-        vgal.data.trim("angels-ore" .. ore .. "-" .. state)
-        vgal.data.deephide(data.raw["item"]["angels-ore" .. ore .. "-" .. state])
+        vgal.recipe.hide_and_queue_for_tech_removal("angels-ore" .. ore .. "-" .. state .. "-processing")
+        vgal.recipe.hide_and_queue_for_tech_removal("angels-ore" .. ore .. "-" .. state)
+        vgal.item.hide("angels-ore" .. ore .. "-" .. state)
     end
 
     for _, state in ipairs(vgal.defines.fluid_alt_ore_states) do
-        vgal.data.trim("angels-ore" .. ore .. "-" .. state)
-        vgal.data.deephide(data.raw["fluid"]["angels-ore" .. ore .. "-" .. state])
+        vgal.recipe.hide_and_queue_for_tech_removal("angels-ore" .. ore .. "-" .. state)
+        vgal.fluid.hide("angels-ore" .. ore .. "-" .. state)
     end
 
-    vgal.data.trim("angels-ore" .. ore .. "-anode-sludge")
-    vgal.data.deephide(data.raw["fluid"]["angels-ore" .. ore .. "-anode-sludge"])
+    vgal.recipe.hide_and_queue_for_tech_removal("angels-ore" .. ore .. "-anode-sludge")
+    vgal.fluid.hide("angels-ore" .. ore .. "-anode-sludge")
 end
 
 -- remove mix recipes. (I will have my own ones)
@@ -69,23 +69,23 @@ for i = 1, 6 do
         local recipe = data.raw["recipe"]["angels-ore-" .. state .. "-mix" .. i .. "-processing"]
 
         if recipe then
-            vgal.data.deephide(recipe)
+            vgal.recipe.hide(recipe)
         end
     end
 end
 
 -- remove mineral sludge to ores recipes. (I will have my own ones)
-vgal.recipe.deephide("angels-slag-processing-1")
-vgal.recipe.deephide("angels-slag-processing-2")
-vgal.recipe.deephide("angels-slag-processing-3")
+vgal.recipe.hide("angels-slag-processing-1")
+vgal.recipe.hide("angels-slag-processing-2")
+vgal.recipe.hide("angels-slag-processing-3")
 
 -- remove extra molten metal recipes
 for _, metal_name in ipairs({ "iron", "steel" }) do -- copper doesn't have any extra smelting recipes
     for i = 2, 6 do
         local recipe = data.raw["recipe"]["angels-liquid-molten-" .. metal_name .. "-" .. i]
         if recipe then
-            vgal.recipe.deephide(recipe)
-            vgal.data.trim(recipe.name)
+            vgal.recipe.hide(recipe)
+            vgal.recipe.hide_and_queue_for_tech_removal(recipe.name)
         end
     end
 end
@@ -108,14 +108,14 @@ end
 local function dh_fluid(name)
     local fluid = data.raw["fluid"][name]
     if fluid then
-        vgal.data.deephide(fluid)
+        vgal.fluid.hide(fluid)
     end
 end
 
 local function dh_item(name)
     local item = data.raw["item"][name]
     if item then
-        vgal.data.deephide(item)
+        vgal.item.hide(item)
     end
 end
 
@@ -141,43 +141,43 @@ for _, metal_name in ipairs(vgal.defines.removed_metal_names) do
 end
 
 -- misfits
-vgal.data.deephide(data.raw["item"]["angels-bauxite-ore"])      -- aluminium ore
-vgal.data.deephide(data.raw["item"]["angels-quartz"])           -- silicon ore (will make a comeback)
-vgal.data.deephide(data.raw["item"]["angels-rutile-ore"])       -- titanium ore
-vgal.data.deephide(data.raw["item"]["angels-processed-silica"]) -- silicon processed
-vgal.data.deephide(data.raw["item"]["angels-pellet-silica"])    -- silicon pellet
+vgal.item.hide("angels-bauxite-ore")      -- aluminium ore
+vgal.item.hide("angels-quartz")           -- silicon ore (will make a comeback)
+vgal.item.hide("angels-rutile-ore")       -- titanium ore
+vgal.item.hide("angels-processed-silica") -- silicon processed
+vgal.item.hide("angels-pellet-silica")    -- silicon pellet
 
 -- specifics (items)
-vgal.data.deephide(data.raw["item"]["angels-solid-sodium-aluminate"])
-vgal.data.deephide(data.raw["item"]["angels-solid-chromate"])
-vgal.data.deephide(data.raw["item"]["angels-solid-dichromate"])
-vgal.data.deephide(data.raw["item"]["angels-solid-ammonium-paratungstate"])
-vgal.data.deephide(data.raw["item"]["angels-silver-ore"]) -- this is the only mention of silver anywhere.
+vgal.item.hide("angels-solid-sodium-aluminate")
+vgal.item.hide("angels-solid-chromate")
+vgal.item.hide("angels-solid-dichromate")
+vgal.item.hide("angels-solid-ammonium-paratungstate")
+vgal.item.hide("angels-silver-ore") -- this is the only mention of silver anywhere.
 -- vgal.data.deep_hide(data.raw["item"]["angels-thorium-ore"]) -- this is the only mention of thorium anywhere. | commentedbc: not sure.
 
 -- specifics (fluids)
-vgal.data.deephide(data.raw["fluid"]["angels-liquid-trichlorosilane"])
-vgal.data.deephide(data.raw["fluid"]["angels-gas-silane"])
-vgal.data.deephide(data.raw["fluid"]["angels-liquid-tungstic-acid"])
+vgal.fluid.hide("angels-liquid-trichlorosilane")
+vgal.fluid.hide("angels-gas-silane")
+vgal.fluid.hide("angels-liquid-tungstic-acid")
 
 -- remove yellow modules (COMEBACKAT)
-local BIO_MODULES = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
-for _, bio_module in ipairs(BIO_MODULES) do
-    vgal.data.deephide(data.raw["module"][bio_module])
-    vgal.data.deephide(data.raw["technology"][bio_module])
-    vgal.data.trim(bio_module)
+local bio_modules = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
+for _, bio_module in ipairs(bio_modules) do
+    vgal.data.hide(data.raw["module"][bio_module])
+    vgal.tech.hide(bio_module)
+    vgal.recipe.hide_and_queue_for_tech_removal(bio_module)
 end
 
 -- removal of direct fluids (direct fluids: fluids used for like one purpose)
 
 -- bio plastic - liquid-cellulose-acetate
-vgal.data.trim("angels-liquid-cellulose-acetate")
-vgal.data.deephide(data.raw["fluid"]["angels-liquid-cellulose-acetate"])
+vgal.recipe.hide_and_queue_for_tech_removal("angels-liquid-cellulose-acetate")
+vgal.fluid.hide("angels-liquid-cellulose-acetate")
 -- plastic recipe is just created with new ingredient (mixture)
 
 -- plastic 3 - gas-formaldehyde
-vgal.data.trim("angels-gas-formaldehyde")
-vgal.data.deephide(data.raw["fluid"]["angels-gas-formaldehyde"])
+vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-formaldehyde")
+vgal.fluid.hide("angels-gas-formaldehyde")
 -- plastic recipe is just created with new ingredient (methanol)
 
 -- chloride variations
@@ -192,10 +192,10 @@ data.raw.recipe["angels-liquid-glycerol"].results = vgal.build.table({}, {
 })
 data.raw.recipe["angels-liquid-glycerol"].categories = { "angels-advanced-chemistry" }
 data.raw.recipe["angels-liquid-glycerol"].main_product = "angels-liquid-glycerol"
-vgal.data.trim("angels-gas-epichlorohydrin")
-vgal.data.deephide(data.raw["fluid"]["angels-gas-epichlorohydrin"])
-vgal.data.trim("angels-gas-allylchlorid")
-vgal.data.deephide(data.raw["fluid"]["angels-gas-allylchlorid"])
+vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-epichlorohydrin")
+vgal.fluid.hide("angels-gas-epichlorohydrin")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-allylchlorid")
+vgal.fluid.hide("angels-gas-allylchlorid")
 
 -- rocket fuel changes (from top of crafting tree to bottom)
 -- rocket fuel ox capsule is removed, fuel capsule isn't
@@ -214,21 +214,21 @@ data.raw.recipe["angels-rocket-fuel-capsule"].ingredients = vgal.build.table({
 data.raw.recipe["angels-rocket-fuel-capsule"].energy_required = 5
 vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)
 
-vgal.data.deephide(data.raw["fluid"]["angels-gas-dimethylamine"])
-vgal.data.trim("angels-gas-dimethylamine")
+vgal.fluid.hide("angels-gas-dimethylamine")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-dimethylamine")
 
-vgal.data.deephide(data.raw["fluid"]["angels-gas-dimethylhydrazine"])
-vgal.data.trim("angels-gas-dimethylhydrazine")
+vgal.fluid.hide("angels-gas-dimethylhydrazine")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-dimethylhydrazine")
 
-vgal.data.deephide(data.raw["fluid"]["angels-gas-methylamine"])
-vgal.data.trim("angels-gas-methylamine")
+vgal.fluid.hide("angels-gas-methylamine")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-methylamine")
 
 -- ox crafting chain branch fixes
-vgal.data.deephide(data.raw["item"]["angels-rocket-oxidizer-capsule"])
-vgal.data.trim("angels-rocket-oxidizer-capsule")
+vgal.item.hide("angels-rocket-oxidizer-capsule")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-rocket-oxidizer-capsule")
 
-vgal.data.deephide(data.raw["fluid"]["angels-gas-dinitrogen-tetroxide"])
-vgal.data.trim("angels-gas-dinitrogen-tetroxide")
+vgal.fluid.hide("angels-gas-dinitrogen-tetroxide")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-dinitrogen-tetroxide")
 
 data.raw.recipe["angels-gas-nitrogen-dioxide"].ingredients = vgal.build.table({
     { "angels-catalyst-metal-blue", 1 }
@@ -245,15 +245,15 @@ data.raw.recipe["angels-gas-nitrogen-dioxide"].results = vgal.build.table({
 })
 data.raw.recipe["angels-gas-nitrogen-dioxide"].main_product = "angels-gas-nitrogen-dioxide"
 
-vgal.data.deephide(data.raw["fluid"]["angels-gas-nitrogen-monoxide"])
-vgal.data.trim("angels-gas-nitrogen-monoxide")
-vgal.data.trim("angels-solid-sodium-nitrate-processing")
+vgal.fluid.hide("angels-gas-nitrogen-monoxide")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-nitrogen-monoxide")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-solid-sodium-nitrate-processing")
 
 -- brick removal (clay/reinforced)
-vgal.data.deephide(data.raw["item"]["angels-reinforced-concrete-brick"])
-vgal.data.trim("angels-reinforced-concrete-brick")
-vgal.data.deephide(data.raw["item"]["angels-clay-brick-raw"])
-vgal.data.trim("angels-clay-brick-raw")
+vgal.item.hide("angels-reinforced-concrete-brick")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-reinforced-concrete-brick")
+vgal.item.hide("angels-clay-brick-raw")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-clay-brick-raw")
 data.raw.recipe["angels-clay-brick"].ingredients = vgal.build.table({
     { "angels-solid-clay", 2 }
 })
@@ -266,18 +266,18 @@ vgal.recipe.all.replace_ingredient("angels-reinforced-concrete-brick",
 
 -- remove liquid plastic as well as liquid plastic recipes (replaced by vgal)
 -- why? they dont fit well with the plastic buff needed to equalize with vgal/sagal
-vgal.data.deephide(data.raw["fluid"]["angels-liquid-plastic"])
-vgal.data.trim("angels-solid-plastic")
-vgal.data.trim("angels-liquid-plastic")
-vgal.data.trim("angels-liquid-plastic-2")
-vgal.data.trim("angels-liquid-plastic-3")
-vgal.data.trim("angels-liquid-plastic-bio-1")
-vgal.data.trim("angels-liquid-plastic-bio-2")
+vgal.fluid.hide("angels-liquid-plastic")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-solid-plastic")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-liquid-plastic")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-liquid-plastic-2")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-liquid-plastic-3")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-liquid-plastic-bio-1")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-liquid-plastic-bio-2")
 
 -- remove rocket boosters
-vgal.data.trim("angels-rocket-booster")
-vgal.data.trim("angels-rocket-booster-2")
-vgal.data.deephide(data.raw["item"]["angels-rocket-booster"])
+vgal.recipe.hide_and_queue_for_tech_removal("angels-rocket-booster")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-rocket-booster-2")
+vgal.item.hide("angels-rocket-booster")
 data.raw.recipe["rocket"].ingredients = vgal.build.table({
     { "explosives", 1 },
     { "iron-plate", 2 },
@@ -287,23 +287,23 @@ vgal.recipe.remove_ingredient("angels-atomic-bomb", "angels-rocket-booster")
 vgal.recipe.remove_ingredient("angels-atomic-bomb-2", "angels-rocket-booster")
 
 -- remove extra trees
-vgal.data.trim("angels-tree-arboretum-0")
-vgal.data.deephide(data.raw["item"]["angels-temperate-tree"])
-vgal.data.deephide(data.raw["item"]["angels-swamp-tree"])
-vgal.data.deephide(data.raw["item"]["angels-desert-tree"])
+vgal.recipe.hide_and_queue_for_tech_removal("angels-tree-arboretum-0")
+vgal.item.hide("angels-temperate-tree")
+vgal.item.hide("angels-swamp-tree")
+vgal.item.hide("angels-desert-tree")
 
 for _, environment in ipairs({ "temperate", "swamp", "desert" }) do
     local tree = data.raw["tree"]["angels-" .. environment .. "-tree"]
     tree.autoplace = {
         probability_expression = "0"
     }
-    vgal.data.deephide(tree)
+    vgal.data.hide(tree)
 end
 
 -- remove copper wire coil (copper wire recipe gets reordered during final fixes)
-vgal.data.trim("angels-wire-coil-copper")
-vgal.data.trim("angels-wire-coil-copper-2")
-vgal.data.trim("angels-wire-copper-2")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-wire-coil-copper")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-wire-coil-copper-2")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-wire-copper-2")
 
 -- remove thermal water to sludge recipes (and tech)
-vgal.tech.deephide("angels-thermal-water-processing")
+vgal.tech.deep_hide("angels-thermal-water-processing")

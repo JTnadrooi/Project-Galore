@@ -24,9 +24,9 @@ data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].icons = vgal.icon.register
 }
 data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
 
-vgal.data.trim("vgal-processing-unit-artillery-turret")
-vgal.data.trim("vgal-steam-concrete")
-vgal.data.trim("vgal-sulfuric-acid-processing-unit")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-processing-unit-artillery-turret")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-steam-concrete")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-sulfuric-acid-processing-unit")
 
 vgal.recipe.add_category("vgal-plastic-bar-electronic-circuit", "electromagnetics")
 vgal.recipe.add_category("vgal-plastic-bar-processing-unit", "electromagnetics")

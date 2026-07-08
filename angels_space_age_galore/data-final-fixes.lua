@@ -28,7 +28,7 @@ for _, recipe in pairs(data.raw["recipe"]) do
 end
 
 for og_name, _ in pairs(dedupe_map) do
-    vgal.data.deephide(vgal.get_recipeable(og_name))
+    vgal.data.hide(vgal.get_recipeable(og_name))
 end
 
 -- fix prereq of removed vanilla techs

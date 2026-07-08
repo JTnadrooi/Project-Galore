@@ -14,8 +14,8 @@ vgal.tech.add_prerequisite("angels-bio-refugium-biter-1", "biter-egg-handling")
 vgal.tech.add_prerequisite("planet-discovery-gleba", "angels-bio-nutrient-paste")
 vgal.tech.add_unit("planet-discovery-gleba", "vgal-biological-science-pack")
 
-vgal.data.deephide(data.raw["technology"]["tree-seeding"])
-vgal.data.deephide(data.raw["technology"]["fish-breeding"])
+vgal.tech.hide("tree-seeding")
+vgal.tech.hide("fish-breeding")
 
 -- fulgora
 vgal.tech.add_prerequisite("angels-advanced-gas-processing", "electromagnetic-science-pack")

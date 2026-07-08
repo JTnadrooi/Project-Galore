@@ -15,9 +15,9 @@ for building_name, max_tier in pairs(vgal.defines.machine_max_tiers) do
             building.module_slots = 1 + i
         end
         if (i > max_tier) and building then
-            vgal.data.deephide(building)
-            vgal.data.deephide(data.raw["item"][building_name .. "-" .. i])
-            vgal.data.trim(building_name .. "-" .. i)
+            vgal.data.hide(building)
+            vgal.item.hide(building_name .. "-" .. i)
+            vgal.recipe.hide_and_queue_for_tech_removal(building_name .. "-" .. i)
             building.next_upgrade = nil
         else
             table.insert(buildings, building)
@@ -61,9 +61,9 @@ for building_name, max_tier in pairs(vgal.defines.machine_max_tiers) do
     end
 
     if max_tier == 0 then
-        vgal.data.deephide(data.raw["assembling-machine"][building_name])
-        vgal.data.deephide(data.raw["item"][building_name])
-        vgal.data.trim(building_name)
+        vgal.data.hide(data.raw["assembling-machine"][building_name])
+        vgal.item.hide(building_name)
+        vgal.recipe.hide_and_queue_for_tech_removal(building_name)
     end
 end
 
@@ -124,25 +124,25 @@ data.raw["mining-drill"]["angels-thermal-bore"].module_slots = 5
 -- end
 
 -- remove environment seed generators
-vgal.data.deephide(data.raw["assembling-machine"]["angels-bio-generator-swamp-1"])
-vgal.data.deephide(data.raw["item"]["angels-bio-generator-swamp-1"])
-vgal.data.trim("angels-bio-generator-swamp-1")
+vgal.data.hide(data.raw["assembling-machine"]["angels-bio-generator-swamp-1"])
+vgal.item.hide("angels-bio-generator-swamp-1")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-bio-generator-swamp-1")
 
-vgal.data.deephide(data.raw["assembling-machine"]["angels-bio-generator-desert-1"])
-vgal.data.deephide(data.raw["item"]["angels-bio-generator-desert-1"])
-vgal.data.trim("angels-bio-generator-desert-1")
+vgal.data.hide(data.raw["assembling-machine"]["angels-bio-generator-desert-1"])
+vgal.item.hide("angels-bio-generator-desert-1")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-bio-generator-desert-1")
 
 -- remove t2 offshore pump: sea pump (not viscous mud pump)
-vgal.data.deephide(data.raw["mining-drill"]["angels-sea-pump"])
-vgal.data.deephide(data.raw["offshore-pump"]["angels-sea-pump-placeable"])
-vgal.data.deephide(data.raw["item"]["angels-sea-pump"])
-vgal.data.trim("angels-sea-pump")
+vgal.data.hide(data.raw["mining-drill"]["angels-sea-pump"])
+vgal.data.hide(data.raw["offshore-pump"]["angels-sea-pump-placeable"])
+vgal.item.hide("angels-sea-pump")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-sea-pump")
 
 -- remove t2 thermal water extractor (and copy locale)
 -- t1 has 4 module slots now anyways
-vgal.data.deephide(data.raw["mining-drill"]["angels-thermal-extractor"])
-vgal.data.deephide(data.raw["item"]["angels-thermal-extractor"])
-vgal.data.trim("angels-thermal-extractor")
+vgal.data.hide(data.raw["mining-drill"]["angels-thermal-extractor"])
+vgal.item.hide("angels-thermal-extractor")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-thermal-extractor")
 data.raw["mining-drill"]["angels-thermal-bore"].localised_description      = {
     "entity-description.angels-thermal-extractor",
 }

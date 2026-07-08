@@ -1,7 +1,8 @@
 ---@diagnostic disable: param-type-mismatch
 vgal.tech = vgal.tech or {}
 
-vgal.tech.recipes_to_remove_from_techs = vgal.tech.recipes_to_remove_from_techs or {} -- array
+---@type table<string, boolean>
+vgal.tech.recipes_to_remove_from_techs = vgal.tech.recipes_to_remove_from_techs or {} -- table
 vgal.tech.techs_to_splice = vgal.tech.techs_to_splice or {}                           -- table
 vgal.tech.units = {
     ["automation-science-pack"] = {
@@ -87,13 +88,6 @@ function vgal.tech.add_productivity_change(tech_name, recipe_name, change, hidde
             }
         )
     end
-end
-
----@param recipe_name string
-function vgal.tech.queue_to_clean(recipe_name)
-    vgal.throw.if_recipe_not_found(recipe_name)
-
-    table.insert(vgal.tech.recipes_to_remove_from_techs, recipe_name)
 end
 
 ---@param tech_name string
@@ -210,7 +204,7 @@ function vgal.tech.merge(tech_name_from, tech_name_to)
     end
 
     tech_from.effects = {}
-    vgal.data.deephide(tech_from)
+    vgal.tech.hide(tech_from)
 end
 
 function vgal.tech.move_recipe(tech_name_from, tech_name_to, recipe_name)
@@ -253,19 +247,26 @@ function vgal.tech.add_ingredient(tech_name, unit_name)
     table.insert(tech.unit.ingredients, { unit_name, 1 })
 end
 
----@param tech_name (string)
-function vgal.tech.deephide(tech_name)
+---@param tech_or_tech_name string|data.TechnologyPrototype
+function vgal.tech.hide(tech_or_tech_name)
+    local tech = vgal.get_from_prototype_or_prototype_name(tech_or_tech_name, "technology")
+
+    vgal.data.hide(tech)
+end
+
+---@param tech_name string
+function vgal.tech.deep_hide(tech_name)
     local tech = vgal.throw.if_tech_not_found(tech_name)
 
     if tech.effects then
         for _, effect in pairs(tech.effects) do
             if effect.recipe then
-                vgal.recipe.deephide(effect.recipe)
+                vgal.recipe.hide(effect.recipe)
             end
         end
     end
 
-    vgal.data.deephide(tech)
+    vgal.data.hide(tech)
 end
 
 ---@param tech data.TechnologyPrototype

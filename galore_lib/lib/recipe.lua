@@ -222,10 +222,10 @@ function vgal.recipe.allow_productivity_for_all_results(recipe_or_recipe_name)
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype
-function vgal.recipe.deephide(recipe_or_recipe_name)
+function vgal.recipe.hide(recipe_or_recipe_name)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
-    vgal.data.deephide(recipe)
+    vgal.data.hide(recipe)
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype
@@ -933,4 +933,19 @@ function vgal.recipe.add_category(recipe_or_recipe_name, category_name)
             recipe.categories = { "crafting", category_name }
         end
     end
+end
+
+---@param recipe_or_recipe_name string|data.RecipePrototype
+function vgal.recipe.hide_and_queue_for_tech_removal(recipe_or_recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
+    vgal.recipe.queue_for_tech_removal(recipe.name)
+    vgal.recipe.hide(recipe.name)
+end
+
+---@param recipe_or_recipe_name string|data.RecipePrototype
+function vgal.recipe.queue_for_tech_removal(recipe_or_recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
+    vgal.tech.recipes_to_remove_from_techs[recipe.name] = true
 end

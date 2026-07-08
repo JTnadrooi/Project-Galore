@@ -85,9 +85,9 @@ for tier, relay_station_name in ipairs(relay_stations) do
 end
 
 -- remove charging station as it has no purpose
-vgal.data.trim("angels-charging-station")
-vgal.data.deephide(data.raw["item"]["angels-charging-station"])
-vgal.data.deephide(data.raw["roboport"]["angels-charging-station"])
+vgal.recipe.hide_and_queue_for_tech_removal("angels-charging-station")
+vgal.item.hide("angels-charging-station")
+vgal.data.hide(data.raw["roboport"]["angels-charging-station"])
 
 -- fix half tile roboport ranges
 -- / 2 because thats how it works

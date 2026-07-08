@@ -18,6 +18,7 @@ require("math")
 require("recipe")
 require("recipe-all")
 require("fluid")
+require("item")
 require("entity")
 require("string")
 require("subgroup")
@@ -200,7 +201,7 @@ function vgal.data.extend(entries, fill_in_with)
             end
 
             if hidden then
-                vgal.data.deephide(entry)
+                vgal.recipe.hide(entry)
             end
 
             -- icon stuff
@@ -378,32 +379,26 @@ function vgal.data.extend(entries, fill_in_with)
     end
 end
 
----@param recipe_name string
-function vgal.data.trim(recipe_name)
-    vgal.tech.queue_to_clean(recipe_name)
-    vgal.recipe.deephide(recipe_name)
-end
-
 ---@param prototype data.PrototypeBase
-function vgal.data.deephide(prototype)
+function vgal.data.hide(prototype)
     prototype.hidden = true
     prototype.hidden_in_factoriopedia = true
     prototype.hide_from_signal_gui = true
 
-    if prototype.type == "fluid" then
+    if prototype.type == "recipe" then
+        ---@cast prototype data.RecipePrototype
+        prototype.hide_from_player_crafting = true
+        prototype.allow_decomposition = false
+    elseif prototype.type == "fluid" then
+        ---@cast prototype data.FluidPrototype
         prototype.auto_barrel = false
-        if mods["angels_galore"] then
+        if vgal.defines.flags["agal"] then
             local void_recipe = data.raw["recipe"]["angels-chemical-void-" .. prototype.name] or
                 data.raw["recipe"]["angels-water-void-" .. prototype.name]
             if void_recipe then
-                vgal.data.deephide(void_recipe)
+                vgal.data.hide(void_recipe)
             end
         end
-    end
-
-    if prototype.type == "recipe" then
-        prototype.hide_from_player_crafting = true
-        prototype.allow_decomposition = false
     end
 end
 
@@ -415,7 +410,7 @@ function vgal.data.deepunhide(prototype)
 
     if prototype.type == "fluid" then
         prototype.auto_barrel = false
-        if mods["angels_galore"] then
+        if vgal.defines.flags["agal"] then
             local void_recipe = data.raw["recipe"]["angels-chemical-void-" .. prototype.name] or
                 data.raw["recipe"]["angels-water-void-" .. prototype.name]
             if void_recipe then
@@ -475,8 +470,8 @@ local function remove_empty_vgal_techs()
         end
 
         for _, effect in ipairs(tech.effects or {}) do
-            for _, recipe_name in ipairs(vgal.tech.recipes_to_remove_from_techs) do
-                if effect.recipe == recipe_name then -- for each toclean, check if its the effect
+            for _, recipe_name in pairs(vgal.tech.recipes_to_remove_from_techs) do
+                if effect.recipe == recipe_name then
                     effect.hidden = true
                     break
                 end
@@ -502,7 +497,7 @@ local function remove_empty_vgal_techs()
     end
 
     for _, tech in pairs(removable_techs) do
-        vgal.data.deephide(tech)
+        vgal.data.hide(tech)
     end
 end
 
@@ -543,7 +538,7 @@ local function splice_and_flatten_techs()
     end
 
     for tech_name, _ in pairs(vgal.tech.techs_to_splice) do
-        vgal.tech.deephide(tech_name)
+        vgal.tech.deep_hide(tech_name)
     end
 end
 
@@ -630,11 +625,16 @@ end
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "recipe"): data.RecipePrototype
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "fluid"): data.FluidPrototype
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "item"): data.ItemPrototype
+---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "technology"): data.TechnologyPrototype
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: string): data.PrototypeBase
 function vgal.get_from_prototype_or_prototype_name(prototype_or_prototype_name, prototype_type)
     if prototype_or_prototype_name.type then
-        ---@diagnostic disable-next-line: return-type-mismatch
-        return prototype_or_prototype_name
+        if prototype_or_prototype_name.type == prototype_type then
+            ---@diagnostic disable-next-line: return-type-mismatch
+            return prototype_or_prototype_name
+        else
+            error("Invalid prototype type for prototype with name'" .. prototype_or_prototype_name.name .. "': " .. prototype_or_prototype_name.type)
+        end
     else
         ---@diagnostic disable-next-line: return-type-mismatch
         return data.raw[prototype_type][prototype_or_prototype_name] or error("Could not find " .. prototype_type .. " with name " .. prototype_or_prototype_name)

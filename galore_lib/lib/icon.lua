@@ -482,7 +482,7 @@ end
 
 -- OVERRIDE LOGIC
 
-if mods["angels_galore"] then
+if vgal.defines.flags["agal"] then
     vgal.icon.add_override({
         name = "petroleum-gas",
         source = "fluid",

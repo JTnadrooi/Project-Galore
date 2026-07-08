@@ -20,8 +20,8 @@ for _, tower in pairs(data.raw["agricultural-tower"]) do
         vgal.table.remove(tower.accepted_seeds, "tree-seed")
     end
 end
-vgal.data.trim("tree-seed")
-vgal.data.deephide(data.raw["item"]["tree-seed"])
+vgal.recipe.hide_and_queue_for_tech_removal("tree-seed")
+vgal.item.hide("tree-seed")
 data.raw["item"]["tree-seed"].plant_result = nil -- needs to be done even if item is hidden
 
 -- gleba tree seed overhaul
@@ -34,7 +34,7 @@ for _, plant in pairs(vgal.defines.gleba_plants) do
     data.raw["plant"][plant.tree].minable.count = nil
 end
 
-vgal.data.deephide(data.raw["plant"]["tree-plant"])
+vgal.data.hide(data.raw["plant"]["tree-plant"])
 
 -- commentedbc; carbon from solid fuel
 -- -- remove solid fuel from scrap

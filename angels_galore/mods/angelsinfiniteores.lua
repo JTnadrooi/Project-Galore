@@ -23,7 +23,7 @@ data.raw["resource"]["infinite-angels-ore2"].autoplace = data.raw["resource"]["i
 for _, ore_index in pairs(vgal.defines.removed_ore_indexes) do
     local ore = "infinite-angels-ore" .. ore_index
 
-    vgal.data.deephide(data.raw["resource"][ore])
+    vgal.data.hide(data.raw["resource"][ore])
     data.raw["autoplace-control"][ore] = nil
     data.raw["planet"]["nauvis"].map_gen_settings.autoplace_controls[ore] = nil
     data.raw["planet"]["nauvis"].map_gen_settings.autoplace_settings.entity.settings[ore] = nil

@@ -20,3 +20,10 @@ function vgal.fluid.get_recipe_tint(fluid_name)
         quaternary = to_rgba(fluid.base_color),
     }
 end
+
+---@param fluid_or_fluid_name string|data.FluidPrototype
+function vgal.fluid.hide(fluid_or_fluid_name)
+    local fluid = vgal.get_from_prototype_or_prototype_name(fluid_or_fluid_name, "fluid")
+
+    vgal.data.hide(fluid)
+end

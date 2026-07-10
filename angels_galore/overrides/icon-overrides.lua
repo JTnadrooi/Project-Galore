@@ -86,7 +86,7 @@ for _, product_name in ipairs({
     }, { { 210, 120, 210 }, { 175, 100, 175 }, { 140, 080, 140 } }, { "angels-liquid-" .. product_name, })
 end
 
--- fix polyethelene icon
+-- fix polyethylene icon
 data.raw["recipe"]["angels-liquid-polyethylene"].icons = angelsmods.functions.create_liquid_recipe_icon(
     {
         { "__angelspetrochemgraphics__/graphics/icons/molecules/polyethylene.png", 64 },

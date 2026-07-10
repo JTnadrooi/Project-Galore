@@ -3,7 +3,7 @@ local item_tints = require("__base__.prototypes.item-tints")
 
 data:extend({
     {
-        type = "tool",
+        type = "item",
         name = "vgal-biological-science-pack",
         localised_description = { "item-description.science-pack" },
         icon = "__angels_galore__/graphics/icons/biological-science-pack.png",

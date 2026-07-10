@@ -42,7 +42,7 @@ for _, tech_name in ipairs(alien_sample_tech_names) do
     end
 end
 
-vgal.data.hide(data.raw["tool"]["angels-token-bio"])
+vgal.data.hide(data.raw["item"]["angels-token-bio"])
 
 for _, lab in pairs(data.raw["lab"]) do
     vgal.table.remove(lab.inputs, "angels-token-bio")

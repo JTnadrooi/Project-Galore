@@ -152,7 +152,6 @@ vgal.defines.recipeable_types = {
     "item-with-entity-data",
     "rail-planner",
     "gun",
-    "tool", -- sometimes still... (looking at angels bio token rn)
 }
 
 -- commentedbc: this list would be huge.

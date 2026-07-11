@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.5
+  Features:
+    - Updated thumbnail.
+    - Added compat with Vanilla Galore's Quality upgrades modes.
+    - Removed silly "vgal-carbon-fiber-low-density-structure" recipe description.
+  Bugfixes:
+    - Fixed crash without quality mod.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.4
   Features:
     - Updated to Factorio 2.1

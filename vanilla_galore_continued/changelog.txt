@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.4
+  Features:
+    - Updated thumbnail.
+    - Added quality upgrade recipe variants. They default to disabled and can be configured to replace the recipes they're based of.
+    - Added °C to tempurature settings dropdown items. (Also changed internal prototype names, no builtin-migration possible.)
+  Balancing:
+    - "vgal-plastic-bar-lubricant" duration; 2.5 -> 4
+    - "vgal-plastic-bar-lubricant" lubricant yield; 20 -> 40
+    - "vgal-plastic-bar-lubricant" replaced petroleum gas requirement with heavy oil.
+  Bugfixes:
+    - Fixed electric engine assembling machine recipe prototype names.
+---------------------------------------------------------------------------------------------------
 Version: 1.4.3
   Features:
     - Updated to Factorio 2.1 (NOTE: Centrifuge graphics still need ported, but a temporary fix is in place.)

@@ -1,7 +1,8 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.5
   Features:
-    - Added compatiblity with the new GaloreLib category system.
+    - Updated thumbnail.
+    - Updated to Factorio 2.1
     - Added fish atm and tree seed voids.
     - Added fuel value to plants, algae and eggs.
     - Added custom recipe names to some plastic recipes.

@@ -6,6 +6,8 @@ A large recipe pack that adds over 90 new recipes to the 110 already present in 
 
 **MOD SPOTLIGHT [HERE](https://www.youtube.com/watch?v=xpqJSHA4Q5A&lc=Ugw0CpAURsOiowPeeEx4AaABAg)**
 
+**(NEW) ANGEL'S GALORE [HERE](https://mods.factorio.com/mod/angels_galore)**
+
 ## This mod is for you if...
 
 -   You're looking for a recipe mod that introduces many balanced alternate recipes. _(All calculations are documented in the [GitHub repo](https://github.com/JTnadrooi/Project-Galore), both in the `docs\` folder and through in-script comments.)_

@@ -7,7 +7,7 @@ vgal.data.extend({
             vgal.icon.get_in("sulfuric-acid"),
         },
         energy_required = 1,
-        technology = "angels-sulfur-processing-1",
+        technology = "sulfur-processing",
         fluid_ingredients = {
             { "sulfuric-acid", 5 },
         },

@@ -227,15 +227,15 @@ vgal.tech.add_prerequisite("angels-thermal-water-extraction", "angels-chlorine-p
 vgal.tech.add_prerequisite("angels-bio-refugium-puffer-1", "angels-thermal-water-extraction")
 
 -- move all fluorite acid/gas recipes to thermal water tech
-vgal.tech.move_recipe("angels-sulfur-processing-1", "angels-thermal-water-extraction", "angels-liquid-hydrofluoric-acid")
-vgal.tech.move_recipe("angels-sulfur-processing-1", "angels-thermal-water-extraction", "angels-gas-hydrogen-fluoride")
+vgal.tech.move_recipe("sulfur-processing", "angels-thermal-water-extraction", "angels-liquid-hydrofluoric-acid")
+vgal.tech.move_recipe("sulfur-processing", "angels-thermal-water-extraction", "angels-gas-hydrogen-fluoride")
 vgal.tech.move_recipe("angels-sulfur-processing-2", "angels-thermal-water-extraction",
     "angels-hydrogen-fluoride-dissolving")
 
 -- remove military science from explosives alt techs
-vgal.tech.remove_unit("angels-explosives-1", "military-science-pack")
 vgal.tech.remove_unit("angels-explosives-2", "military-science-pack")
-vgal.tech.remove_prerequisite("angels-explosives-1", "military-science-pack")
+vgal.tech.remove_unit("angels-explosives-3", "military-science-pack")
+vgal.tech.remove_prerequisite("angels-explosives-2", "military-science-pack")
 
 -- add sintering oven unlock to metallurgy 2
 vgal.tech.add_recipe("angels-metallurgy-2", "angels-sintering-oven")

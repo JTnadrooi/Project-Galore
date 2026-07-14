@@ -66,15 +66,33 @@ process_expander_tiers(logistic_expanders)
 process_expander_tiers(construction_expanders)
 process_expander_tiers(relay_stations)
 
--- tweak port recipe
-vgal.recipe.replace_ingredient("angels-cargo-hub", "stone-brick", "concrete")
+-- tweak recipe
+data.raw["recipe"]["angels-cargo-box"].ingredients = vgal.build.table({
+    { "iron-gear-wheel",    20 },
+    { "steel-plate",        25 },
+    { "electronic-circuit", 20 },
+})
+data.raw["recipe"]["angels-cargo-roboport"].ingredients = vgal.build.table({
+    { "iron-gear-wheel",  40 },
+    { "steel-plate",      35 },
+    { "advanced-circuit", 25 },
+    { "concrete",         20 },
+})
+data.raw["recipe"]["angels-cargo-hub"].ingredients = vgal.build.table({
+    { "iron-gear-wheel",  60 },
+    { "steel-plate",      45 },
+    { "processing-unit",  30 },
+    { "refined-concrete", 50 },
+})
+
+-- fix techs (caused by recipe fixes)
 vgal.tech.add_prerequisite("angels-construction-robots-3", "angels-stone-smelting-2")
 
 -- buff charging speeds so they are better than roboports for purelly charging
 for tier, relay_station_name in ipairs(relay_stations) do
     local relay_station = data.raw["roboport"][relay_station_name]
 
-    local multiplier = 5 + ((tier - 1))
+    local multiplier = 5 + (tier - 1)
 
     relay_station.charging_energy = vgal.table.multiply_energy(relay_station.charging_energy, multiplier)
 

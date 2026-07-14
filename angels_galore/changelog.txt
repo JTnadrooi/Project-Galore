@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.6
+  Balancing:
+    - [BOTSADDON] Slightly rebalance angelsbots roboport recipes
+  Bugfixes:
+    - Fixed crash caused with newest Angel's version.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.5
   Features:
     - Updated thumbnail.

@@ -23,6 +23,36 @@ A large recipe pack for Angel's Mods (Full+Special vanilla). Also contains a col
 
 (This list will definitely expand. As of writing this, the mod is still brand new.)
 
+## List of changes made to pure Angel's
+
+-   Angel's Special Vanilla has been made to work with [Angel's Smelting](https://mods.factorio.com/mod/angelssmelting) and [Angel's Bioprocessing](https://mods.factorio.com/mod/angelsbioprocessing). Refining the base ores yields iron-/copper- pebbles, nuggets and slag but none of the extra metals, while still being able to enjoy metallurgy and farming. Restored from 1.1 Angel's.
+-   Machine tiers have been made more vanilla-like; Most Angel's machines have a single tier (like the vanilla chemical plant and oil refinery) with their crafting speed and module slots increased to compensate. This makes them automatically work better with quality and thus Space Age. For a shorter overhaul like pure Angel's, you end up swapping machines way too often; in Galore, if you want to improve production, you use alternative recipes instead of replacing the machine.
+-   Everything that should allow productivity - as it would be in vanilla, without causing net positive loops - allows productivity.
+-   Angel's alternative recipes have been rebalanced to follow more Galore-like guidelines instead of a tier system. _This means no recipe is always better, or worse than another, it will always depend on something dynamic._
+-   Alien tokens have been replaced by a "Biological science pack". Bioprocessing has generally been made more attractive as part of the rebalance above.
+-   Agricultural modules have been removed.
+-   Bioprocessing has been made optional.
+-   Icons have been updated to be more Galore-like. Tier icons have been replaced by the main ingredient icon.
+-   Stone is now sintered from "Gravel" (renamed from "Crushed stone") in a furnace.
+-   Slag is now a byproduct from ore smelting as a nudge toward the player making mineral sludge for uranium/thorium.
+-   Technology costs have been increased, to be more in line with vanilla technologies.
+-   Ore processing has been made less space-intensive because you technically don't _need_ it anymore (for the extra metals) - it has been made more attractive to compensate.
+-   Recipes/crafting durations/machine crafting speeds have been normalized. Example effects: No more crafting speeds like 2.25, recipe durations like 7 or recipe fluid requirements of 1. This can be seen most clearly in the recipes for the many Angel's buildings.
+-   Some chemicals have been removed. (full list below.) Reasons differ per chemical.
+    -   epichlorohydrin (Obscures crafting chain, single use, will have unbalanced realism issues with future Galore recipes)
+    -   allyl chloride (Same as above)
+    -   dimethylamine (Rocket fuel crafting chain overhaul, see entry below)
+    -   dimethylhydrazine (Same as above)
+    -   methylamine (Same as above)
+    -   dinitrogen tetroxide (Same as above)
+    -   nitrogen monoxide (single use)
+    -   liquid plastic (Single use, prevent liquid plastic on bus)
+-   Rocket fuel crafting has been simplified (hydrazine + plastic bar + nitric acid). See entry below, but Space Age also played a big part in this.
+-   Item "costs" have been made in line with their relative costs in vanilla. Example: Galore adds a circuit recipe that uses plastic bars instead of iron plates. If I hadn't tweaked Angel's plastic recipe yields, no one would be using this recipe. (Angel's petrochem makes plastic way "costlier" to make relative to iron plates.)
+-   Metal carrier catalysts have been made to work as the following; 1 ore = 10 catalysts, with catalyst recipes always consuming the catalyst (and giving the empty carrier in return). Restored from 2.0 Angel's.
+-   More items have been given a fuel value; E.g. oil residuals and most plants.
+-   Locales have been more vanilla-like; E.g. "Nutrient pulp from nuts".
+
 ## Recommended mods
 
 -   [Angel's Infinite Ores](https://mods.factorio.com/mod/angelsinfiniteores) by [Arch666Angel](https://mods.factorio.com/user/Arch666Angel); Adds tiny infinite ore patches in the center of non-starter ore patches.

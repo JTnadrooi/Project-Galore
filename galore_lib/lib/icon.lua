@@ -173,7 +173,7 @@ function vgal.icon.get(key_name, icon_source)
                 }
             }
         end
-        if string.find(key_name, "tier") then
+        if vgal.string.contains(key_name, "tier") then
             local tier = string.sub(key_name, -1)
             return {
                 {

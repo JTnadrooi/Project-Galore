@@ -9,6 +9,13 @@ end
 
 ---@param str string
 ---@param target string
+---@return boolean
+function vgal.string.contains(str, target)
+    return not not string.find(str, target)
+end
+
+---@param str string
+---@param target string
 ---@param replacement string
 ---@return string
 function vgal.string.replace(str, target, replacement)
@@ -39,6 +46,6 @@ function vgal.string.split(inputstr, sep)
     for str in string.gmatch(inputstr, "([^" .. sep .. "]+)") do
         table.insert(t, str)
     end
-    
+
     return t
 end

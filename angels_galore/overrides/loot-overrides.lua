@@ -1,6 +1,6 @@
 -- add tree loot (add seeds)
 for _, tree in pairs(data.raw["tree"]) do
-    if (not (string.find(tree.name, "dry") or string.find(tree.name, "dead") or string.find(tree.name, "trunk"))) and tree.minable then
+    if tree.minable and vgal.string.starts_with(tree.name, "tree-0") and not vgal.string.contains(tree.name, "stump") then
         local results = vgal.build.table({
             { "angels-tree-seed",   1,   { independent_probability = 0.025 } },
             { "angels-solid-leafs", nil, { amount_min = 1, amount_max = 3 } } -- leafs... peculiar. (its not a mispelling but still)

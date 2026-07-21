@@ -114,3 +114,7 @@ data.raw["fluid"]["angels-water-purified"].subgroup = "angels-water-treatment"
 vgal.subgroup.clean_recipe("angels-water-purified")
 
 data.raw["item-subgroup"]["angels-petrochem-basic-fluids"].order = "abx"
+
+for i = 1, 3 do
+    data.raw["recipe"]["angels-coal-cracking-" .. i].order = "i[coal-cracking]-" .. vgal.subgroup.order_from_number(i)
+end

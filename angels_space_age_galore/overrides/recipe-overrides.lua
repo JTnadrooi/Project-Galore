@@ -55,7 +55,6 @@ vgal.recipe.hide_and_queue_for_tech_removal("bioplastic")
 vgal.recipe.hide_and_queue_for_tech_removal("biosulfur")
 vgal.recipe.hide_and_queue_for_tech_removal("rocket-fuel-from-jelly")
 -- might be saveble
-vgal.recipe.hide_and_queue_for_tech_removal("simple-coal-liquefaction")
 vgal.recipe.hide_and_queue_for_tech_removal("carbon")
 -- other more angel-ish ways avalible
 vgal.recipe.hide_and_queue_for_tech_removal("solid-fuel-from-ammonia")
@@ -350,3 +349,32 @@ vgal.recipe.set_ingredient_amount("angels-puffer-puffing-1", 80, "angels-gas-car
 vgal.recipe.replace_result("vgal-metallic-asteroid-chunk-lava", "stone", "angels-slag")
 
 vgal.recipe.replace_result("vgal-spoilage-crude-oil", "crude-oil", "angels-liquid-multi-phase-oil")
+
+-- simple coal liquifaction fixes
+do
+    local recipe = data.raw["recipe"]["simple-coal-liquefaction"]
+    recipe.energy_required = 4
+    recipe.categories = { "angels-advanced-chemistry" }
+    recipe.ingredients = vgal.build.table({
+        { "coal",    5 },
+        { "calcite", 1 },
+    }, {
+        { "sulfuric-acid", 15 }
+    })
+    recipe.results = vgal.build.table({
+        { "angels-solid-coke", 4 },
+    }, {
+        -- { "angels-gas-hydrogen-sulfide", 20 },
+        { "angels-gas-methane", 50 },
+        -- { "angels-gas-carbon-dioxide",   15 },
+    })
+    recipe.icons = angelsmods.functions.create_gas_recipe_icon({
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/methane.png", 72 },
+        -- { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png",   72 },
+        -- { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen-sulfide.png", 72 },
+    }, "OiOiOi", {
+        "calcite",
+    })
+    recipe.subgroup = "angels-petrochem-coal"
+    recipe.order = "h[simple-coal-cracking]-"
+end

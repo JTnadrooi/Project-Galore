@@ -225,7 +225,6 @@ data.raw["recipe"]["advanced-metallic-asteroid-crushing"].subgroup = "vgal-space
 data.raw["recipe"]["advanced-carbonic-asteroid-crushing"].subgroup = "vgal-space-advanced"
 data.raw["recipe"]["advanced-oxide-asteroid-crushing"].subgroup = "vgal-space-advanced"
 
-data.raw["recipe"]["simple-coal-liquefaction"].subgroup = "vgal-oil"
 data.raw["recipe"]["scrap-recycling"].subgroup = "vgal-scrap"
 
 -- restore clean/cleared properties with updated order and subgroup for compat reasons

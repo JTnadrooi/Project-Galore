@@ -117,7 +117,7 @@ vgal.data.extend({
         },
         category = "crafting",
         energy_required = 60,
-        technology = "plastics",
+        technology = "automation",
         ingredients = {
             { "assembling-machine-1", 1 },  -- 265
             { "pipe",                 10 }, -- 100

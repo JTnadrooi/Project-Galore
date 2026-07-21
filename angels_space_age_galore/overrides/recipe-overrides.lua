@@ -378,3 +378,28 @@ do
     recipe.subgroup = "angels-petrochem-coal"
     recipe.order = "h[simple-coal-cracking]-"
 end
+
+-- acid neutralisation fixes
+do
+    local recipe = data.raw["recipe"]["acid-neutralisation"]
+    recipe.energy_required = 1
+    recipe.categories = { "angels-liquifying" }
+    recipe.ingredients = vgal.build.table({
+        { "calcite", 1 },
+    }, {
+        { "sulfuric-acid", 100 }
+    })
+    recipe.results = vgal.build.table({
+        { "angels-solid-calcium-sulfate", 1 },
+    }, {
+        { "steam", 60, { temperature = 165 } },
+    })
+    recipe.icons = angelsmods.functions.create_gas_recipe_icon({
+        "steam",
+    }, "SOO", {
+        "calcite",
+        "sulfuric-acid",
+    })
+    recipe.subgroup = "angels-water-boiling"
+    recipe.order = "c[acid-neutralisation]-a"
+end

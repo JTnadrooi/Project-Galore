@@ -9,6 +9,7 @@ require("prototypes.generation.vgal-ore")
 
 require("prototypes.recipes.resources")
 require("prototypes.recipes.petrochem")
+require("prototypes.recipes.chemistry")
 require("prototypes.recipes.bio")
 require("prototypes.recipes.atmosphere")
 require("prototypes.recipes.voids")

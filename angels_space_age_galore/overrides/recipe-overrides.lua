@@ -362,7 +362,7 @@ do
         { "sulfuric-acid", 15 }
     })
     recipe.results = vgal.build.table({
-        { "angels-solid-coke", 4 },
+        { "angels-solid-coke", 2 },
     }, {
         -- { "angels-gas-hydrogen-sulfide", 20 },
         { "angels-gas-methane", 50 },

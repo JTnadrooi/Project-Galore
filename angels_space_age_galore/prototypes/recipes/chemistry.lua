@@ -20,9 +20,10 @@ vgal.data.extend({
             { "steam", 120, { temperature = 500 } },
         },
         category = "angels-liquifying",
+
         subgroup = "angels-water-boiling",
         order = "c[acid-neutralisation]-b",
-
+        allow_productivity = false,
         surface_conditions = vgal.get_surface_conditions_for("vulcanus"),
     },
 }, {

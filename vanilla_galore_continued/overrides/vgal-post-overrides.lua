@@ -75,6 +75,7 @@ if mods["quality"] then
             ["vgal-coal-uranium-235-nuclear-fuel"] = true,
             ["vgal-plastic-bar-repair-pack"] = true,
             ["vgal-sulfuric-acid-advanced-circuit"] = true,
+            ["vgal-steel-plate-gun-turret"] = true,
         }
 
         if vgal.defines.flags["sagal"] then
@@ -126,7 +127,7 @@ if mods["quality"] then
         end
 
         for recipe_name, _ in pairs(upgrade_recipes) do
-            local recipe = data.raw["recipe"][recipe_name] or error(recipe_name)
+            local recipe = vgal.throw.if_recipe_not_found(recipe_name)
             local q_recipe = get_q_recipe_from(recipe)
             data:extend({ q_recipe })
             q_recipe_map[recipe_name] = q_recipe.name

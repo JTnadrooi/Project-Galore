@@ -83,3 +83,6 @@ data.raw.recipe["vgal-sulfur-ammonia-nutrients"].icons = vgal.icon.register({
     vgal.icon.get("nutrients"),
     vgal.icon.get_in("sulfur"),
 })
+
+-- fix electrolyte icon (data in galorelib icons override section)
+data.raw["fluid"]["electrolyte"].icons = vgal.icon.get("electrolyte", "fluid")

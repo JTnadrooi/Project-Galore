@@ -615,5 +615,12 @@ if vgal.defines.flags["agal"] then
                 }
             }
         })
+        vgal.icon.add_override({
+            name = "electrolyte",
+            source = "fluid",
+            composite_icon_override_function = function()
+                return angelsmods.functions.create_viscous_liquid_fluid_icon(nil, { { 230, 60, 120 }, nil, { 235, 80, 130 } })
+            end
+        })
     end
 end

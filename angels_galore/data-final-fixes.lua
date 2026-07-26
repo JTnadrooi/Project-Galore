@@ -2,6 +2,15 @@ require("overrides.overrides-final-fixes")
 require("mods.quality")
 require("mods.recycler")
 
+-- increase inventory size
+do
+    local size_multiplier = (settings.startup["vgal-inventory-size-percentage"].value / 100) --[[@as number]]
+    data.raw.character.character.inventory_size = data.raw.character.character.inventory_size
+    for _, char in pairs(data.raw["character"]) do
+        char.inventory_size = char.inventory_size * size_multiplier
+    end
+end
+
 -- because this doesnt listen in subgroups and im not putting that in final fixes
 data.raw["item"]["chemical-plant"].subgroup = "vgal-chemistry-machines"
 data.raw["item"]["chemical-plant"].order = "d"

@@ -1,4 +1,6 @@
 vgal.recipe.replace_ingredient("explosives", "water", "angels-water-purified")
+vgal.recipe.replace_ingredient("grenade", "coal", "angels-coal-crushed")
+vgal.recipe.set_ingredient_amount("grenade", 15, "angels-coal-crushed")
 
 -- trim unsavable recipes
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-petroleum-gas-rocket-fuel")

@@ -56,7 +56,7 @@ vgal.recipe.hide_and_queue_for_tech_removal("biosulfur")
 vgal.recipe.hide_and_queue_for_tech_removal("rocket-fuel-from-jelly")
 -- might be saveble
 vgal.recipe.hide_and_queue_for_tech_removal("carbon")
--- other more angel-ish ways avalible
+-- other more angel-ish ways available
 vgal.recipe.hide_and_queue_for_tech_removal("solid-fuel-from-ammonia")
 vgal.recipe.hide_and_queue_for_tech_removal("ammonia-rocket-fuel")
 -- not needed now there are alt methods for coal recipes that don't use coal.
@@ -183,8 +183,7 @@ do
     -- data.raw["recipe"]["metallurgic-science-pack"].energy_required = 5 -- og; 10
     -- data.raw["recipe"]["tungsten-plate"].energy_required = 5           -- og; 10
     for _, recipe in pairs(data.raw["recipe"]) do
-        if recipe.energy_required and recipe.energy_required >= 8
-            and (not (vgal.recipe.has_category(recipe.name, "crafting") or vgal.recipe.has_category(recipe.name, "crafting-with-fluid") or vgal.recipe.has_category(recipe.name, "pressing")) and vgal.recipe.has_category(recipe.name, "metallurgy")) then
+        if recipe.energy_required and recipe.energy_required >= 8 and (not vgal.recipe.has_crafting_category(recipe)) and vgal.recipe.has_category(recipe, "metallurgy") then
             local final_energy_required = recipe.energy_required / 2
 
             if final_energy_required > 3 then

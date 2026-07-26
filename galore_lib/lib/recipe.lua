@@ -682,6 +682,12 @@ function vgal.recipe.get_normalized_return_amounts(raw_amount, deviation)
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype
+---@return boolean
+function vgal.recipe.has_crafting_category(recipe_or_recipe_name)
+    return vgal.recipe.has_any_category(recipe_or_recipe_name, { "crafting", "crafting-with-fluid", "advanced-crafting" })
+end
+
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param category_name data.RecipeCategoryID
 ---@return boolean
 function vgal.recipe.has_category(recipe_or_recipe_name, category_name)

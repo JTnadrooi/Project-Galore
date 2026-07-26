@@ -125,6 +125,7 @@ function vgal.data.extend(entries, fill_in_with)
     -- fill_in_with.groups = vgal.table.ensure(fill_in_with.group, fill_in_with.groups)
 
     for _, entry in ipairs(entries) do
+        entry.vgal = entry.vgal or {}
         entry = vgal.table.deep_merge_with_priority(entry, fill_in_with)
 
         entry.domain = entry.domain or entry.prefix

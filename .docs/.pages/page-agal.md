@@ -49,9 +49,14 @@ A large recipe pack for Angel's Mods (Full+Special vanilla). Also contains a col
     -   liquid plastic (Single use, prevent liquid plastic on bus)
 -   Rocket fuel crafting has been simplified (hydrazine + plastic bar + nitric acid). See entry below, but Space Age also played a big part in this.
 -   Item "costs" have been made in line with their relative costs in vanilla. Example: Galore adds a circuit recipe that uses plastic bars instead of iron plates. If I hadn't tweaked Angel's plastic recipe yields, no one would be using this recipe. (Angel's petrochem makes plastic way "costlier" to make relative to iron plates.)
--   Metal carrier catalysts have been made to work as the following; 1 ore = 10 catalysts, with catalyst recipes always consuming the catalyst (and giving the empty carrier in return). Restored from 2.0 Angel's.
--   More items have been given a fuel value; E.g. oil residuals and most plants.
+-   Metal carrier catalysts have been made to work as follows: 1 ore = 10 catalysts, with catalyst recipes always consuming the catalyst (and giving the empty carrier in return). Restored from 2.0 Angel's.
+-   More items have been given a fuel value; E.g. oil residuals, biter eggs, and most plants.
 -   Locales have been more vanilla-like; E.g. "Nutrient pulp from nuts".
+-   Thermal bore and ore processing facility power usage has been increased.
+-   Nuclear fuel now produces less polution.
+-   Trees now rarely drop tree seeds and leaves.
+-   The time it takes to mine Angel's machines is now proportionate to the size of the machine, with 3x3 buildings taking as long to remove as a vanilla assembling machine (3x3).
+-   Slag has been added as a result of the higher yield ingot recipes.
 
 ## Recommended mods
 

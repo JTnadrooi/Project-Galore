@@ -6,7 +6,7 @@ Adds **over 110** unique, well-balanced recipes to the base game, with the optio
 
 **SPACE AGE SUPPORT [HERE](https://mods.factorio.com/mod/space_age_galore)**
 
-**MOD SPOTLIGHT [HERE](https://www.youtube.com/watch?v=xpqJSHA4Q5A&lc=Ugw0CpAURsOiowPeeEx4AaABAg)**
+**MOD SPOTLIGHT [HERE](https://www.youtube.com/watch?v=xpqJSHA4Q5A)**
 
 ## This mod is for you if...
 
@@ -27,7 +27,7 @@ Adds **over 110** unique, well-balanced recipes to the base game, with the optio
 
 ## Special thanks
 
--   [Factorio Mod Tips](https://www.youtube.com/@FactorioModTips) - For creating a [mod spotlight](https://www.youtube.com/watch?v=xpqJSHA4Q5A&lc=Ugw0CpAURsOiowPeeEx4AaABAg)!
+-   [Factorio Mod Tips](https://www.youtube.com/@FactorioModTips) - For creating a [mod spotlight](https://www.youtube.com/watch?v=xpqJSHA4Q5A)!
 -   MMMiles! - For helping with solving some bugs.
 -   [Semenar](https://mods.factorio.com/user/Semenar) - For multiple recipes ideas.
 -   [Quezler](https://mods.factorio.com/user/Quezler) - For the centrifuge pipe graphics.

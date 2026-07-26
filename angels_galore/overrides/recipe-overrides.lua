@@ -812,6 +812,10 @@ data.raw["recipe"]["angels-alien-goo"].energy_required = 5
 vgal.recipe.set_ingredient_amount("angels-solid-alienated-fertilizer", 10, "angels-alien-goo") -- prev 5
 vgal.recipe.set_ingredient_amount("angels-bio-alien-processed-meat", 5, "angels-alien-goo")    -- prev 2
 
+-- fix catalyst frame recipes
+vgal.recipe.set_result_amount("angels-catalyst-metal-yellow", 10)
+vgal.recipe.set_result_amount("angels-catalyst-metal-blue", 10)
+
 -- fix cement/concrete recipes
 data.raw["recipe"]["angels-solid-cement"].ingredients = vgal.build.table({
     { "angels-stone-crushed", 1 },

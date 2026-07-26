@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.1.7
+  Features:
+    - Added build-in inventory size increase, defaults to 150% but can be adjusted or disabled.
+  Balancing:
+    - Replaced coal in grenade recipe for 15 crushed coal.
+  Bugfixes:
+    - Fixed metal catalyst recipes only producing one item.
+---------------------------------------------------------------------------------------------------
 Version: 1.1.6
   Balancing:
     - [BOTSADDON] Slightly rebalance angelsbots roboport recipes

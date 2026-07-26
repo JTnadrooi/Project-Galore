@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.5
+  Features:
+    - Added automatic tech node research which can be enabled in the settings. (Suggested by Dr_Hammer)
+    - Added "vgal-steel-plate-gun-turret" recipe.
+  Bugfixes:
+    - Fixed "vgal-assembling-machine-1-automation-science-pack" being unlocked with plastics instead of automation tech.
+---------------------------------------------------------------------------------------------------
 Version: 1.4.4
   Features:
     - Updated thumbnail.

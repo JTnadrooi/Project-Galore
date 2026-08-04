@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+  Features:
+    - Added a large amount of new (petro-)chemistry recipes.
+    - Added "vgal-angels-gas-nitrogen-angels-ingot-steel" (tagged as unsure)
+    - Added "vgal-angels-solid-carbon-angels-ingot-steel" (tagged as unsure)
+    - Added "vgal-angels-gas-propene-angels-gas-hydrogen-plastic-bar"
+    - Added "vgal-angels-liquid-acetic-acid-plastic-bar" (tagged as unsure)
+    - Made Angel's petrochemistry recipe names more vanilla like.
+  Balancing:
+    - "vgal-angels-liquid-naphtha-plastic-bar" polyethylene cost; 15 -> 20
+---------------------------------------------------------------------------------------------------
 Version: 1.1.7
   Features:
     - Added build-in inventory size increase, defaults to 150% but can be adjusted or disabled.

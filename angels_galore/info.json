@@ -1,6 +1,6 @@
 {
     "name": "angels_galore",
-    "version": "1.1.7",
+    "version": "1.2.0",
     "title": "Angel's Galore",
     "author": "JTnadrooi",
     "contact": "@jtnadrooi",
@@ -31,5 +31,5 @@
         "(?) DiscoScience",
         "(?) proper_tier_doubling_port"
     ],
-    "description": "Adds over 120 recipes to ANGEL'S MODS (Full+Special Vanilla)! Contains tweaks for a smoother pure Angel's experience, (see modpage)."
+    "description": "Adds over 130 recipes to ANGEL'S MODS (Full+Special Vanilla)! Contains tweaks for a smoother pure Angel's experience. (see modpage)"
 }

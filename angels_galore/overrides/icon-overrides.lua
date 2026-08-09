@@ -524,3 +524,7 @@ data.raw["recipe"]["angels-solid-fuel-synthesis"].icons = vgal.icon.register({
     vgal.icon.get("solid-fuel"),
     vgal.icon.get_in("angels-gas-synthesis"),
 })
+data.raw["recipe"]["angels-solid-fuel-hydrazine"].icons = vgal.icon.register({
+    vgal.icon.get("solid-fuel"),
+    vgal.icon.get_in("hydrazine", "molecule"),
+})

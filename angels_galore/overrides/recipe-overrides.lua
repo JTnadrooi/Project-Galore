@@ -957,13 +957,17 @@ data.raw["recipe"]["angels-gas-puffer-atmosphere"].energy_required = 4 -- og: 30
 -- vgal.recipe.set_result_amount("angels-solid-trinitrotoluene", 8, "explosives")
 
 -- solid fuel cost fixes
-vgal.recipe.set_result_amount("angels-solid-fuel-methane", 4)
-vgal.recipe.set_result_amount("angels-solid-fuel-naphtha", 4)
-vgal.recipe.set_result_amount("angels-solid-fuel-fuel-oil", 4)
-vgal.recipe.set_result_amount("angels-solid-fuel-synthesis", 4)
--- vgal.recipe.set_result_amount("angels-solid-fuel-hydrazine", 5)
+do
+    vgal.recipe.set_result_amount("angels-solid-fuel-methane", 4)
+    vgal.recipe.set_result_amount("angels-solid-fuel-naphtha", 4)
+    vgal.recipe.set_result_amount("angels-solid-fuel-fuel-oil", 4)
+    vgal.recipe.set_result_amount("angels-solid-fuel-synthesis", 4)
 
-vgal.recipe.hide_and_queue_for_tech_removal("angels-solid-fuel-hydrazine") -- It could not be saved with the how new rocket fuel recipe is a way better use of hydrazine and unlocks at about the same time
+    local hydrazine_solid_fuel_recipe = data.raw["recipe"]["angels-solid-fuel-hydrazine"]
+    vgal.recipe.set_result_amount(hydrazine_solid_fuel_recipe, 5)
+    vgal.recipe.set_ingredient_amount(hydrazine_solid_fuel_recipe, 20)
+    hydrazine_solid_fuel_recipe.energy_required = 5
+end
 
 -- make fish to oil recipes faster
 data.raw["recipe"]["angels-fish-pressing-0"].energy_required = 6

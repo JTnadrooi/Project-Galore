@@ -19,6 +19,29 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-low-density-structure-uranium-
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-wood-electronic-circuit")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-wood-heavy-oil-electronic-circuit")
 
+-- fix hydrogen-ox-carbon alchemy (see helpers.md)
+-- made a bug report but I need it fixed exactly like this
+do
+    local water_shift_recipe = data.raw["recipe"]["angels-water-gas-shift-1"]
+    water_shift_recipe.results = vgal.build.table({}, {
+        { "angels-gas-hydrogen",       30 },
+        { "angels-gas-carbon-dioxide", 50 },
+    })
+
+    local reverse_water_shift_recipe = data.raw["recipe"]["angels-water-gas-shift-2"]
+    reverse_water_shift_recipe.ingredients = vgal.build.table({}, {
+        { "angels-gas-hydrogen",       30 },
+        { "angels-gas-carbon-dioxide", 50 },
+    })
+
+    local water_synthesis = data.raw["recipe"]["angels-water-synthesis"]
+    water_synthesis.ingredients = vgal.build.table({}, {
+        { "angels-gas-hydrogen", 60 },
+        { "angels-gas-oxygen",   40 },
+    })
+end
+
+
 if settings.startup["vgal-remove-steel-intermediate-crafting"].value then
     vgal.recipe.hide_and_queue_for_tech_removal("vgal-steel-plate-iron-gear-wheel")
     vgal.recipe.hide_and_queue_for_tech_removal("vgal-steel-plate-iron-stick")

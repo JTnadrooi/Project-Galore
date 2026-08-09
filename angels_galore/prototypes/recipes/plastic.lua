@@ -142,8 +142,8 @@ vgal.data.extend({
         energy_required = 2,
         technology = "angels-advanced-chemistry-3",
         fluid_ingredients = {
-            { "angels-liquid-phenol", 25 }, -- 15
-            { "angels-gas-methanol",  15 }, -- 10
+            { "angels-liquid-phenol", 30 }, -- 15
+            { "angels-gas-methanol",  25 }, -- 10
         },
         results = {
             { "plastic-bar", 3 }, -- 45

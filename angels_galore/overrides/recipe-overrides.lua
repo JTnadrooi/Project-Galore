@@ -1,4 +1,20 @@
-vgal.recipe.replace_ingredient("explosives", "water", "angels-water-purified")
+-- explosives fixes (vanilla and angels)
+do
+    local explosives_1_recipe = data.raw["recipe"]["explosives"]
+    vgal.recipe.replace_ingredient(explosives_1_recipe, "water", "angels-water-purified")
+    vgal.recipe.replace_ingredient(explosives_1_recipe, "coal", "angels-coal-crushed")
+    vgal.recipe.set_ingredient_amount(explosives_1_recipe, 2, "angels-coal-crushed")
+
+    local explosives_2_recipe = data.raw["recipe"]["angels-solid-nitroglycerin"]
+    vgal.recipe.set_result_amount(explosives_2_recipe, 5)
+    vgal.recipe.replace_ingredient(explosives_2_recipe, "coal", "angels-coal-crushed")
+    explosives_2_recipe.energy_required = 4
+
+    local explosives_3_recipe = data.raw["recipe"]["angels-solid-trinitrotoluene"]
+    vgal.recipe.set_result_amount(explosives_3_recipe, 5, "explosives")
+    explosives_3_recipe.energy_required = 3
+end
+
 vgal.recipe.replace_ingredient("grenade", "coal", "angels-coal-crushed")
 vgal.recipe.set_ingredient_amount("grenade", 15, "angels-coal-crushed")
 

@@ -132,7 +132,6 @@ end
 -- SMART PROD CALLS
 
 -- CHEM
-vgal.recipe.smart_allow_productivity("angels-rocket-fuel-capsule")
 vgal.recipe.smart_allow_productivity("angels-electrode")
 
 vgal.recipe.smart_allow_productivity("angels-coal-cracking-1")

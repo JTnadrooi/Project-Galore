@@ -44,10 +44,6 @@ vgal.recipe.multiply("angels-plate-steel", 1.25)
 
 data.raw.recipe["angels-roll-steel"].energy_required = 1
 
-vgal.recipe.replace_ingredient("nuclear-fuel", "rocket-fuel", "angels-rocket-fuel-capsule")
-vgal.recipe.replace_ingredient("angels-nuclear-fuel", "rocket-fuel", "angels-rocket-fuel-capsule")
-vgal.recipe.replace_ingredient("angels-nuclear-fuel-2", "rocket-fuel", "angels-rocket-fuel-capsule")
-
 -- normalize building recipes
 do
     data.raw["recipe"]["angels-blast-furnace"].ingredients = vgal.build.table({

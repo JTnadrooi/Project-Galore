@@ -198,21 +198,15 @@ vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-allylchlorid")
 vgal.fluid.hide("angels-gas-allylchlorid")
 
 -- rocket fuel changes (from top of crafting tree to bottom)
--- rocket fuel ox capsule is removed, fuel capsule isn't
+-- rocket fuel ox and fuel capsule are removed
 data.raw.recipe["rocket-fuel"].ingredients = vgal.build.table({ -- 200 (same as vanilla)
-    { "angels-rocket-fuel-capsule", 1 }                         -- 175
+    { "solid-fuel", 10 }                                        -- 150
 }, {
     { "angels-liquid-nitric-acid", 25 },                        -- 25
 })
 
--- fuel crafting chain branch fixes
-data.raw.recipe["angels-rocket-fuel-capsule"].ingredients = vgal.build.table({
-    { "plastic-bar", 1 },           -- 15c
-}, {
-    { "angels-gas-hydrazine", 40 }, -- 160c
-})
-data.raw.recipe["angels-rocket-fuel-capsule"].energy_required = 5
-vgal.recipe.set_result_amount("angels-rocket-fuel-capsule", 1)
+vgal.item.hide("angels-rocket-fuel-capsule")
+vgal.recipe.hide_and_queue_for_tech_removal("angels-rocket-fuel-capsule")
 
 vgal.fluid.hide("angels-gas-dimethylamine")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-dimethylamine")

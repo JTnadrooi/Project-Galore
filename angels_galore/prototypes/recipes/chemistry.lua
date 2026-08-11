@@ -178,7 +178,9 @@ vgal.data.extend({
 
         allow_productivity = false,
         show_amount_in_title = false,
-        main_product = "angels-gas-propene"
+        main_product = "angels-gas-propene",
+        -- subgroup = "vgal-CH-gas-from-O",
+        -- order = "b[O]-a"
     },
     {
         name = "angels-gas-acetone-angels-gas-propene-angels-gas-ethylene",
@@ -211,7 +213,9 @@ vgal.data.extend({
 
         allow_productivity = false,
         show_amount_in_title = false,
-        main_product = "angels-gas-propene"
+        main_product = "angels-gas-propene",
+        -- subgroup = "vgal-CH-gas-from-O",
+        -- order = "b[O]-b"
     },
     {
         name = "angels-liquid-naphtha-angels-gas-propene-angels-gas-ethylene",
@@ -242,8 +246,9 @@ vgal.data.extend({
 
         allow_productivity = false,
         show_amount_in_title = false,
-        main_product = "angels-gas-ethylene"
-    },
+        main_product = "angels-gas-ethylene",
+        subgroup = "vgal-CH-gas-from-O",
+        order = "a[steam-cracking]-ab"
     -- { -- commentedbc: syngas
     --     name = "angels-liquid-vegetable-oil-angels-gas-propene-angels-gas-ethylene",
     --     prefix = "vgal",

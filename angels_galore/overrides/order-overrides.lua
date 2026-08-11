@@ -87,10 +87,6 @@ data.raw["recipe"]["angels-algae-brown-burning-wash"].order = "bb"
 
 data.raw["recipe"]["angels-solid-mud-landfill"].order = "ab"
 
-data.raw["fluid"]["angels-liquid-perchloric-acid"].order = "gb"
-data.raw["fluid"]["angels-liquid-perchloric-acid"].subgroup = "angels-petrochem-chlorine"
-vgal.subgroup.clean_recipe("angels-liquid-perchloric-acid")
-
 data.raw["recipe"]["angels-plutonium-breeding"].order = "gb"
 
 data.raw["item"]["steam-turbine"].order = "e"
@@ -118,3 +114,8 @@ data.raw["item-subgroup"]["angels-petrochem-basic-fluids"].order = "abx"
 for i = 1, 3 do
     data.raw["recipe"]["angels-coal-cracking-" .. i].order = "i[coal-cracking]-" .. vgal.subgroup.order_from_number(i)
 end
+
+data.raw["fluid"]["angels-liquid-ferric-chloride-solution"].order = "c"
+data.raw["fluid"]["angels-liquid-cupric-chloride-solution"].order = "d"
+data.raw["fluid"]["angels-liquid-ferric-chloride-solution"].subgroup = "vgal-Cl-liquid"
+data.raw["fluid"]["angels-liquid-cupric-chloride-solution"].subgroup = "vgal-Cl-liquid"

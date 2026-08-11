@@ -230,13 +230,23 @@ local subgroups = {
         order = "aab",
         entries = {
             "angels-solid-carbon",
+        },
+        cleaning_entries = {
+            "angels-carbon-from-charcoal",
+        },
+        should_reorder_entries = true,
+    },
+    {
+        name = "CO-gas",
+        group = "angels-petrochem-refining",
+        order = "aac",
+        entries = {
             "angels-gas-carbon-monoxide",
             "angels-gas-carbon-dioxide",
         },
         cleaning_entries = {
             { "angels-water-gas-shift-1", "angels-gas-carbon-dioxide" },
             { "angels-water-gas-shift-2", "angels-gas-carbon-monoxide" },
-            "angels-carbon-from-charcoal",
             "angels-gas-carbon-dioxide-from-wood",
         },
         should_reorder_entries = true,
@@ -257,19 +267,64 @@ local subgroups = {
         should_reorder_entries = true,
     },
     {
-        name = "NHH",
+        name = "NO",
         group = "angels-petrochem-refining",
-        order = "cab",
+        order = "bba",
+        entries = {
+            "angels-gas-compressed-air",
+            "angels-gas-nitrogen",
+            "angels-gas-nitrogen-dioxide",
+            "angels-gas-urea",
+            "angels-liquid-nitric-acid",
+        },
+        cleaning_entries = {
+            "angels-sodium-nitrate-acid-processing",
+            { "angels-air-separation", "angels-gas-nitrogen" },
+        },
+        should_reorder_entries = true,
+    },
+    {
+        name = "NH",
+        group = "angels-petrochem-refining",
+        order = "bbb",
         entries = {
             "angels-gas-ammonia",
             "angels-gas-hydrazine",
             "angels-gas-monochloramine", -- misfit
-            "angels-liquid-nitric-acid", -- misfit
         },
         cleaning_entries = {
-            { "angels-steam-cracking-butane", "angels-gas-benzene" },
             "angels-gas-ammonia-from-blue-fiber",
             "angels-sodium-nitrate-acid-processing",
+        },
+        should_reorder_entries = true,
+    },
+    {
+        name = "Cl-gas",
+        group = "angels-petrochem-refining",
+        order = "cab",
+        entries = {
+            "angels-gas-chlorine",
+            "angels-gas-hydrogen-chloride",
+            "angels-gas-chlor-methane",
+        },
+        cleaning_entries = {
+            { "angels-water-saline-separation",          "angels-gas-chlorine" },
+            { "angels-gas-hydrogen-chloride-separation", "angels-gas-chlorine" },
+        },
+        should_reorder_entries = true,
+    },
+    {
+        name = "Cl-liquid",
+        group = "angels-petrochem-refining",
+        order = "cac",
+        entries = {
+            "angels-liquid-hydrochloric-acid",
+            "angels-liquid-perchloric-acid",
+            "angels-liquid-ferric-chloride-solution", -- no effect, reinforced in final fixes
+            "angels-liquid-cupric-chloride-solution", -- no effect, reinforced in final fixes
+        },
+        cleaning_entries = {
+            { "angels-liquid-hydrochloric-acid-solid-sodium-sulfate", "angels-liquid-hydrochloric-acid" },
         },
         should_reorder_entries = true,
     },
@@ -293,9 +348,21 @@ local subgroups = {
         should_reorder_entries = true,
     },
     {
-        name = "CH-liquid",
+        name = "CH-gas-from-O",
         group = "angels-petrochem-refining",
         order = "fab",
+        recipe_entries = { -- doesnt get overriden by the entry above bc of order (SHOULD KEEP INDEXED SUBGROUPS)
+            { "angels-catalyst-steam-cracking-naphtha", "a[steam-cracking]-a" },
+            { "angels-gas-propene",                     "a[steam-cracking]-b" },
+            { "angels-gas-ethylene",                    "a[steam-cracking]-c" },
+            { "angels-steam-cracking-butane",           "a[steam-cracking]-d" },
+        },
+        should_reorder_entries = true,
+    },
+    {
+        name = "CH-liquid",
+        group = "angels-petrochem-refining",
+        order = "fac",
         entries = {
             "angels-liquid-polyethylene",
         },

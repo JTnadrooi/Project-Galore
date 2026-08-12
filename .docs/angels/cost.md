@@ -94,11 +94,15 @@ This list is based on the vanilla cost list. While most items are more complex t
 
 ## Coal/Petrochem Solid
 
-| ItemID                         | Cost |
-| ------------------------------ | ---- |
-| angels-solid-sodium-sulfate    | 90   |
-| angels-solid-calcium-carbonate | 6    |
-| null                           | null |
+| ItemID                            | Cost |
+| --------------------------------- | ---- |
+| angels-solid-sodium-sulfate       | 90   |
+| angels-solid-sodium-chlorate      | 30   |
+| angels-solid-sodium-perchlorate   | 35   |
+| angels-solid-calcium-carbonate    | 6    |
+| angels-solid-ammonium-nitrate     | 50   |
+| angels-solid-ammonium-perchlorate | 100  |
+| null                              | null |
 
 ## Salt/Chlor(..)
 
@@ -115,6 +119,7 @@ This list is based on the vanilla cost list. While most items are more complex t
 | angels-gas-hydrazine                   | 4    |
 | angels-rocket-fuel-capsule             | 95   |
 | angels-liquid-hydrochloric-acid        | 1    |
+| angels-liquid-perchloric-acid          | 2.5  |
 | angels-liquid-nitric-acid              | 1    |
 | angels-liquid-aqueous-sodium-hydroxide | 2    |
 

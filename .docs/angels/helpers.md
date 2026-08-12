@@ -6,3 +6,5 @@
 1 sodium chlorate = 4 oxygen + 5 chlorine
 1 hydrochloric acid = 0.4 oxygen + 0.6 hydrogen + 1 chlorine
 1 water green waste = 0.4 oxygen + 0.6 hydrogen + 0.01 sodium + 0.4 chlorine
+1 carbon monoxide = 0.02 carbon + 0.4 oxygen
+1 carbon dioxide = 0.02 carbon + 0.8 oxygen

@@ -32,11 +32,11 @@ vgal.data.extend({
         energy_required = 2,
         technology = "angels-sodium-processing-1",
         ingredients = {
-            { "angels-solid-coke",             4 },
+            { "angels-solid-coke",             3 },
             { "angels-solid-sodium-hydroxide", 1 },
         },
         fluid_ingredients = {
-            { "angels-gas-nitrogen", 30 },
+            { "angels-gas-nitrogen", 50 },
         },
         results = {
             { "angels-solid-carbon",           6 },

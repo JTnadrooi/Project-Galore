@@ -4,7 +4,7 @@ vgal.data.extend({
         prefix = "vgal",
         icons = angelsmods.functions.create_gas_recipe_icon({
             "steam",
-        }, "SOO", {
+        }, "WsWsWs", {
             "angels-solid-sodium-hydroxide",
             "sulfuric-acid",
         }),

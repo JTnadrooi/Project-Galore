@@ -399,7 +399,7 @@ do
     })
     recipe.icons = angelsmods.functions.create_gas_recipe_icon({
         "steam",
-    }, "SOO", {
+    }, "WsWsWs", {
         "calcite",
         "sulfuric-acid",
     })

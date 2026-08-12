@@ -52,7 +52,7 @@ do
     ---@field order data.Order
     ---@field group string
     ---@field entries string[]?
-    ---@field recipe_entries string[]?
+    ---@field recipe_entries (string|{[1]: string, [2]: data.Order})[]?
     ---@field cleaning_entries (string|{[1]: string, [2]: string})[]?
     ---@field when boolean?
     ---@field when_settings string[]?

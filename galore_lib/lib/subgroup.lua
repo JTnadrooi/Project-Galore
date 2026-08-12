@@ -120,12 +120,25 @@ function vgal.subgroup.process_override_subgroups(subgroups)
 
         vgal.subgroup.new("vgal-" .. subgroup.name, subgroup.entries or {}, subgroup.group, subgroup.order)
 
-        for i, recipe_name in ipairs(subgroup.recipe_entries or {}) do
-            local recipe = vgal.throw.if_recipe_not_found(recipe_name)
-            recipe.subgroup = "vgal-" .. subgroup.name
+        for i, recipe_entry in ipairs(subgroup.recipe_entries or {}) do
+            if recipe_entry[1] then
+                ---@cast recipe_entry {[1]: string, [2]: data.Order}
 
-            if subgroup.should_reorder_entries then
-                recipe.order = vgal.subgroup.order_from_number(i)
+                local recipe = vgal.throw.if_recipe_not_found(recipe_entry[1])
+                recipe.subgroup = "vgal-" .. subgroup.name
+
+                if subgroup.should_reorder_entries then
+                    recipe.order = recipe_entry[2]
+                end
+            else
+                ---@cast recipe_entry string
+
+                local recipe = vgal.throw.if_recipe_not_found(recipe_entry)
+                recipe.subgroup = "vgal-" .. subgroup.name
+
+                if subgroup.should_reorder_entries then
+                    recipe.order = vgal.subgroup.order_from_number(i)
+                end
             end
         end
 

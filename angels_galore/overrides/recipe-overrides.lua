@@ -50,11 +50,11 @@ do
         { "angels-gas-carbon-dioxide", 50 },
     })
 
-    local water_synthesis = data.raw["recipe"]["angels-water-synthesis"]
-    water_synthesis.ingredients = vgal.build.table({}, {
-        { "angels-gas-hydrogen", 60 },
-        { "angels-gas-oxygen",   40 },
-    })
+    -- local water_synthesis = data.raw["recipe"]["angels-water-synthesis"]
+    -- water_synthesis.ingredients = vgal.build.table({}, {
+    --     { "angels-gas-hydrogen", 60 },
+    --     { "angels-gas-oxygen",   40 },
+    -- })
 end
 
 
@@ -654,7 +654,6 @@ data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 2
 --     { "angels-liquid-molten-concrete", 100 }
 -- })
 -- vgal.data.trim("angels-concrete")
-
 
 -- reduce crafting times as galore severelly reduces some machine speeds
 -- liquifier

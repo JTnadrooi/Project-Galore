@@ -47,9 +47,13 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-angels-liquid-molten-steel-low
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-calcite-carbon-concrete")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-coal-crushing")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-biter-egg-ammonia")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-wood-carbon-fiber")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-carbon-steel-plate")
 
 -- vanilla trims
 -- bio stuff will be obtained through bioprocessing
+vgal.recipe.hide_and_queue_for_tech_removal("steam-condensation")
 vgal.recipe.hide_and_queue_for_tech_removal("biolubricant")
 vgal.recipe.hide_and_queue_for_tech_removal("bioplastic")
 vgal.recipe.hide_and_queue_for_tech_removal("biosulfur")

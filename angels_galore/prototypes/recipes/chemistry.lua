@@ -130,7 +130,7 @@ vgal.data.extend({
             { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 72 },
         }),
         energy_required = 2,
-        technology = "angels-gas-processing",
+        technology = "angels-steam-cracking-1",
         fluid_ingredients = {
             { "angels-gas-ethylene", 50 },
             { "angels-gas-hydrogen", 10 },
@@ -169,7 +169,7 @@ vgal.data.extend({
         },
         fluid_results = {
             { "angels-gas-propene",    30 },
-            { "angels-water-purified", 15 },
+            { "angels-water-purified", 10 },
         },
         results = {
             { "angels-catalyst-metal-carrier", 1 },
@@ -204,7 +204,7 @@ vgal.data.extend({
         fluid_results = {
             { "angels-gas-propene",    50 },
             { "angels-gas-ethylene",   30 },
-            { "angels-water-purified", 25 },
+            { "angels-water-purified", 20 },
         },
         results = {
             { "angels-catalyst-metal-carrier", 1 },

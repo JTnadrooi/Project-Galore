@@ -48,6 +48,7 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-calcite-carbon-concrete")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-coal-crushing")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-biter-egg-ammonia")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-thruster-fuel-thruster-oxidizer-steam")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-wood-carbon-fiber")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-carbon-steel-plate")
 

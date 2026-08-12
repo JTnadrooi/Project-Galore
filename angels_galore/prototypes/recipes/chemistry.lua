@@ -51,6 +51,30 @@ vgal.data.extend({
         show_amount_in_title = false,
     },
     {
+        name = "angels-solid-calcium-carbonate-angels-liquid-hydrochloric-acid-angels-solid-calcium-chloride",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("angels-solid-calcium-chloride"),
+            vgal.icon.get_in("angels-solid-calcium-carbonate"),
+        },
+        energy_required = 2,
+        technology = "angels-chlorine-processing-3",
+        ingredients = {
+            { "angels-solid-calcium-carbonate", 4 },
+        },
+        fluid_ingredients = {
+            { "angels-liquid-hydrochloric-acid", 20 },
+        },
+        results = {
+            { "angels-solid-calcium-chloride", 4 },
+        },
+        fluid_results = {
+            { "angels-gas-carbon-dioxide", 50 },
+            { "angels-water-purified",     20 },
+        },
+        category = "chemistry",
+    },
+    {
         -- angels mirror, buffed, see the override (didnt wanna make the recipe weird)
         -- uses (alien bacteria) item usage has been compensated
         name = "angels-red-cellulose-fiber-angels-solid-calcium-carbonate",
@@ -68,6 +92,30 @@ vgal.data.extend({
             { "angels-solid-calcium-carbonate", 5 },
         },
         category = "angels-liquifying",
+    },
+
+    {
+        name = "angels-gas-methanol-angels-gas-chlor-methane",
+        prefix = "vgal",
+        icons = angelsmods.functions.create_gas_recipe_icon({
+            { "__angelspetrochemgraphics__/graphics/icons/molecules/chloromethane.png", 72 },
+        }, "CClH", {
+            { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 72 },
+        }),
+        energy_required = 2,
+        technology = "angels-chlorine-processing-2",
+        fluid_ingredients = {
+            { "angels-gas-methanol",             40 },
+            { "angels-liquid-hydrochloric-acid", 60 },
+        },
+        fluid_results = {
+            { "angels-gas-chlor-methane", 100 },
+            { "angels-water-purified",    50 },
+        },
+        category = "chemistry",
+
+        allow_productivity = false,
+        show_amount_in_title = false,
     },
     {
         name = "angels-gas-ethanol-angels-liquid-acetic-acid",
@@ -249,6 +297,62 @@ vgal.data.extend({
         main_product = "angels-gas-ethylene",
         subgroup = "vgal-CH-gas-from-O",
         order = "a[steam-cracking]-ab"
+    },
+    {
+        name = "angels-liquid-toluene-angels-gas-benzene",
+        prefix = "vgal",
+        icons = angelsmods.functions.create_gas_recipe_icon({
+            { "__angelspetrochemgraphics__/graphics/icons/molecules/benzene.png", 72 },
+        }, "CHH", {
+            "angels-liquid-toluene",
+        }),
+        energy_required = 2,
+        technology = "angels-advanced-chemistry-3",
+        fluid_ingredients = {
+            { "angels-liquid-toluene", 100 },
+            { "angels-gas-hydrogen",   50 },
+        },
+        ingredients = {
+            { "angels-catalyst-metal-yellow", 1 },
+        },
+        fluid_results = {
+            { "angels-gas-benzene", 100 },
+        },
+        results = {
+            { "angels-catalyst-metal-carrier", 1 },
+        },
+        category = "chemistry",
+
+        allow_productivity = false,
+        show_amount_in_title = false,
+        main_product = "angels-gas-benzene"
+    },
+    -- {
+    --     name = "angels-liquid-toluene-angels-gas-benzene-angels-gas-methane",
+    --     prefix = "vgal",
+    --     icons = angelsmods.functions.create_gas_recipe_icon({
+    --         { "__angelspetrochemgraphics__/graphics/icons/molecules/benzene.png", 72 },
+    --         { "__angelspetrochemgraphics__/graphics/icons/molecules/methane.png", 72 },
+    --     }, "CHH", {
+    --         "angels-liquid-toluene",
+    --     }),
+    --     energy_required = 4,
+    --     technology = "angels-advanced-chemistry-3",
+    --     fluid_ingredients = {
+    --         { "angels-liquid-toluene", 100 },
+    --         { "angels-gas-hydrogen",   50 },
+    --     },
+    --     fluid_results = {
+    --         { "angels-gas-benzene", 50 },
+    --         { "angels-gas-methane", 20 },
+    --     },
+    --     category = "chemistry",
+
+    --     allow_productivity = false,
+    --     show_amount_in_title = false,
+    --     main_product = "angels-gas-benzene",
+    --     groups = { "vgal-unsure" }
+    -- },
     -- { -- commentedbc: syngas
     --     name = "angels-liquid-vegetable-oil-angels-gas-propene-angels-gas-ethylene",
     --     prefix = "vgal",
@@ -323,6 +427,244 @@ vgal.data.extend({
         subgroup = "vgal-bio-nutrient-chemistry",
         order = "e",
     },
+
+    {
+        name = "angels-solid-ammonium-nitrate-angels-liquid-fuel-oil-explosives",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("explosives"),
+            vgal.icon.get_in("angels-solid-ammonium-nitrate"),
+        },
+        energy_required = 8,
+        technology = "angels-explosives-2",
+        ingredients = {
+            { "angels-solid-ammonium-nitrate", 1 }, -- 50
+        },
+        fluid_ingredients = {
+            { "angels-liquid-fuel-oil", 20 }, -- 16
+        },
+        results = {
+            { "explosives", 4 }, -- 60
+        },
+        category = "chemistry",
+    },
+
+    {
+        name = "angels-solid-coke-angels-gas-carbon-dioxide",
+        prefix = "vgal",
+        icons = angelsmods.functions.create_gas_recipe_icon(
+            {
+                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
+            },
+            "COcOc", { "angels-solid-coke" }
+        ),
+        energy_required = 1,
+        technology = "angels-coal-processing",
+        ingredients = {
+            { "angels-solid-coke", 2 },
+        },
+        fluid_results = {
+            { "angels-gas-carbon-dioxide", 75 },
+        },
+        category = "angels-liquifying",
+    },
+    {
+        name = "angels-gas-carbon-dioxide-angels-solid-carbon-angels-gas-carbon-monoxide",
+        prefix = "vgal",
+        icons = angelsmods.functions.create_gas_recipe_icon(
+            {
+                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
+            },
+            "CCOc",
+            {
+                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
+                "angels-solid-carbon"
+            }
+        ),
+        energy_required = 2,
+        technology = "angels-coal-processing-2",
+        ingredients = {
+            { "angels-solid-carbon",        1 },
+            { "angels-catalyst-metal-blue", 1 },
+        },
+        fluid_ingredients = {
+            { "angels-gas-carbon-dioxide", 50 },
+        },
+        results = {
+            { "angels-catalyst-metal-carrier", 1 },
+        },
+        fluid_results = {
+            { "angels-gas-carbon-monoxide", 100 },
+        },
+        category = "angels-liquifying",
+
+        allow_productivity = false,
+        show_amount_in_title = false,
+        main_product = "angels-gas-carbon-monoxide",
+    },
+    {
+        name = "angels-gas-carbon-monoxide-angels-solid-carbon",
+        prefix = "vgal",
+        icons = angelsmods.functions.create_gas_recipe_icon(
+            {
+                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
+                "angels-solid-carbon"
+            },
+            "COcOc",
+            {
+                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
+            }
+        ),
+        energy_required = 2,
+        technology = "angels-coal-processing-2",
+        ingredients = {
+            { "angels-catalyst-metal-yellow", 1 },
+        },
+        fluid_ingredients = {
+            { "angels-gas-carbon-monoxide", 100 },
+        },
+        results = {
+            { "angels-solid-carbon",           1 },
+            { "angels-catalyst-metal-carrier", 1 },
+        },
+        fluid_results = {
+            { "angels-gas-carbon-dioxide", 50 },
+        },
+        category = "angels-liquifying",
+
+        allow_productivity = false,
+        show_amount_in_title = false,
+        main_product = "angels-gas-carbon-dioxide",
+    },
+    {
+        name = "angels-gas-carbon-dioxide-angels-gas-carbon-monoxide",
+        prefix = "vgal",
+        icons = angelsmods.functions.create_gas_recipe_icon(
+            {
+                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
+            },
+            "CCOc",
+            {
+                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
+            }
+        ),
+        energy_required = 3,
+        technology = "angels-basic-chemistry-3",
+        ingredients = {
+            { "angels-electrode", 1 },
+        },
+        fluid_ingredients = {
+            { "angels-gas-carbon-dioxide", 50 }, -- 40 oxygen
+        },
+        results = {
+            { "angels-electrode-used", 1 }
+        },
+        fluid_results = {
+            { "angels-gas-carbon-monoxide", 50 }, -- 20 oxygen
+            { "angels-gas-oxygen",          20 },
+        },
+        category = "angels-petrochem-electrolyser",
+
+        main_product = "angels-gas-carbon-monoxide",
+        allow_productivity = false,
+        show_amount_in_title = false,
+    },
+    {
+        name = "angels-solid-ammonium-perchlorate-rocket-fuel",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("rocket-fuel"),
+            vgal.icon.get_in("angels-solid-ammonium-perchlorate"),
+        },
+        energy_required = 15,
+        technology = "rocket-fuel",
+        ingredients = {
+            { "angels-solid-ammonium-perchlorate", 1 }, -- 100
+            { "solid-fuel",                        5 }, -- 90
+        },
+        results = {
+            { "rocket-fuel", 1 }, -- 200
+        },
+        category = "chemistry",
+
+        groups = { "vgal-unsure" }
+    },
+    {
+        name = "angels-gas-hydrogen-angels-gas-oxygen-rocket-fuel",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("rocket-fuel"),
+            vgal.icon.get_in("hydrogen", "molecule"),
+            vgal.icon.get_in2("oxygen", "molecule"),
+        },
+        energy_required = 15,
+        technology = "rocket-fuel",
+        fluid_ingredients = {
+            { "angels-gas-hydrogen", 1500 },
+            { "angels-gas-oxygen",   200 },
+        },
+        results = {
+            { "rocket-fuel", 1 },
+        },
+        category = "chemistry",
+
+        groups = { "vgal-unsure" }
+    },
+    {
+        name = "angels-gas-propene-solid-fuel",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("solid-fuel"),
+            vgal.icon.get_in("propene", "molecule"),
+        },
+        energy_required = 4,
+        technology = { "flammables", "angels-steam-cracking-1" },
+        ingredients = {
+            { "angels-solid-coke", 1 },
+        },
+        fluid_ingredients = {
+            { "angels-gas-propene", 50 },
+        },
+        results = {
+            { "solid-fuel", 4 },
+        },
+        category = "chemistry",
+        order = "ab",
+    },
+    -- {
+    --     name = "angels-gas-carbon-dioxide-angels-gas-carbon-monoxide",
+    --     prefix = "vgal",
+    --     icons = angelsmods.functions.create_gas_recipe_icon(
+    --         {
+    --             { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
+    --         },
+    --         "ClCOc",
+    --         {
+    --             { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
+    --         }
+    --     ),
+    --     energy_required = 2,
+    --     technology = "angels-basic-chemistry-3",
+    --     ingredients = {
+    --         { "angels-electrode", 1 },
+    --     },
+    --     fluid_ingredients = {
+    --         { "angels-gas-carbon-dioxide", 50 },
+    --         { "angels-water-saline",       50 },
+    --     },
+    --     results = {
+    --         { "angels-electrode-used",         1 },
+    --         { "angels-solid-sodium-hydroxide", 1 }
+    --     },
+    --     fluid_results = {
+    --         { "angels-gas-carbon-monoxide", 50 },
+    --         { "angels-gas-chlorine",        50 },
+    --         -- { "angels-liquid-aqueous-",                 50 },
+    --     },
+    --     category = "angels-petrochem-electrolyser",
+
+    --     main_product = "angels-gas-carbon-monoxide"
+    -- },
 }, {
     type = "recipe",
 })

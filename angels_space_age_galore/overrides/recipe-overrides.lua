@@ -33,6 +33,7 @@ vgal.recipe.hide_and_queue_for_tech_removal("casting-pipe")
 vgal.recipe.hide_and_queue_for_tech_removal("casting-pipe-to-ground")
 -- vgal.data.trim("vgal-molten-iron-rail")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-molten-iron-refined-concrete")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-calcite-holmium-solution")
 -- vgal.data.trim("vgal-molten-copper-carbon-fiber-low-density-structure")
 -- vgal.data.trim("vgal-molten-iron-molten-copper-space-platform-foundation")
 vgal.recipe.hide_and_queue_for_tech_removal("iron-ore-melting")
@@ -420,16 +421,16 @@ do
         { "angels-water-purified", 25 }
     })
 end
-do
-    local holmium_solution_recipe_2 = data.raw["recipe"]["vgal-calcite-holmium-solution"]
-    vgal.recipe.replace_category(holmium_solution_recipe_2, "chemistry", "angels-liquifying")
-    holmium_solution_recipe_2.ingredients = vgal.build.table({
-        { "angels-solid-lime", 1 },
-        { "holmium-ore",       1 },
-    }, {
-        { "steam", 25, { minimum_temperature = 500 } },
-    })
-end
+-- do
+--     local holmium_solution_recipe_2 = data.raw["recipe"]["vgal-calcite-holmium-solution"]
+--     vgal.recipe.replace_category(holmium_solution_recipe_2, "chemistry", "angels-liquifying")
+--     holmium_solution_recipe_2.ingredients = vgal.build.table({
+--         { "angels-solid-lime", 1 },
+--         { "holmium-ore",       1 },
+--     }, {
+--         { "steam", 25, { minimum_temperature = 500 } },
+--     })
+-- end
 
 -- electrolyte fixes
 do

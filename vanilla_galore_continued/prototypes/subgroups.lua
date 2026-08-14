@@ -64,9 +64,23 @@ local subgroups = {
             "advanced-oil-processing",
             "basic-oil-processing",
             "coal-liquefaction",
+        }
+    },
+    {
+        name = "water",
+        group = "intermediate-products",
+        order = "ab",
+        entries = { "water", "steam" }
+    },
+    {
+        name = "oil-cracking",
+        group = "intermediate-products",
+        order = "ac",
+        recipe_entries = {
             "heavy-oil-cracking",
             "light-oil-cracking",
-        }
+        },
+        entries = { "heavy-oil", "light-oil", "petroleum-gas", "crude-oil" },
     },
     {
         name = "chemistry-products",

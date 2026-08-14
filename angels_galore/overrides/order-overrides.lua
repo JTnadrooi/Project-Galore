@@ -119,3 +119,11 @@ data.raw["fluid"]["angels-liquid-ferric-chloride-solution"].order = "c"
 data.raw["fluid"]["angels-liquid-cupric-chloride-solution"].order = "d"
 data.raw["fluid"]["angels-liquid-ferric-chloride-solution"].subgroup = "vgal-Cl-liquid"
 data.raw["fluid"]["angels-liquid-cupric-chloride-solution"].subgroup = "vgal-Cl-liquid"
+
+data.raw["fluid"]["steam"].order = "b"
+data.raw["fluid"]["steam"].subgroup = "vgal-water"
+data.raw["item-subgroup"]["vgal-water"].group = "angels-water-treatment"
+data.raw["item-subgroup"]["vgal-water"].order = "h"
+
+vgal.subgroup.clean_recipe("angels-steam-water")
+vgal.subgroup.clean_recipe("angels-steam-water-purified")

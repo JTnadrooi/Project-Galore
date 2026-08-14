@@ -39,18 +39,6 @@ local subgroups = {
         entries = { "scrap" }
     },
     {
-        name = "water",
-        group = "intermediate-products",
-        order = "ab",
-        entries = { "ice", "water", "steam" }
-    },
-    {
-        name = "oil-cracking",
-        group = "intermediate-products",
-        order = "ac",
-        entries = { "heavy-oil", "light-oil", "petroleum-gas", "crude-oil" }
-    },
-    {
         name = "fulgora-fluids",
         group = "intermediate-products",
         order = "aa",
@@ -226,6 +214,9 @@ data.raw["recipe"]["advanced-carbonic-asteroid-crushing"].subgroup = "vgal-space
 data.raw["recipe"]["advanced-oxide-asteroid-crushing"].subgroup = "vgal-space-advanced"
 
 data.raw["recipe"]["scrap-recycling"].subgroup = "vgal-scrap"
+
+data.raw.item["ice"].order = "a"
+data.raw.item["ice"].subgroup = "vgal-water"
 
 -- restore clean/cleared properties with updated order and subgroup for compat reasons
 for _, value in ipairs(to_clean) do

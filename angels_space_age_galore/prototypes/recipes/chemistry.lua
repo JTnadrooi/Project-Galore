@@ -21,8 +21,8 @@ vgal.data.extend({
         },
         category = "angels-liquifying",
 
-        subgroup = "angels-water-boiling",
         order = "c[acid-neutralisation]-b",
+        subgroup = "vgal-water",
         allow_productivity = false,
         surface_conditions = vgal.get_surface_conditions_for("vulcanus"),
     },

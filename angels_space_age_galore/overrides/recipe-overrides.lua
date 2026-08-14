@@ -48,7 +48,7 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-calcite-carbon-concrete")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-coal-crushing")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-biter-egg-ammonia")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel")
-vgal.recipe.hide_and_queue_for_tech_removal("vgal-thruster-fuel-thruster-oxidizer-steam")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-thruster-oxidizer-thruster-fuel-steam")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-wood-carbon-fiber")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-carbon-steel-plate")
 
@@ -385,25 +385,210 @@ end
 
 -- acid neutralisation fixes
 do
-    local recipe = data.raw["recipe"]["acid-neutralisation"]
-    recipe.energy_required = 1
-    recipe.categories = { "angels-liquifying" }
-    recipe.ingredients = vgal.build.table({
+    local acid_neutralisation_recipe = data.raw["recipe"]["acid-neutralisation"]
+    acid_neutralisation_recipe.energy_required = 1
+    vgal.recipe.replace_category(acid_neutralisation_recipe, "chemistry", "angels-liquifying")
+    acid_neutralisation_recipe.ingredients = vgal.build.table({
         { "calcite", 1 },
     }, {
         { "sulfuric-acid", 100 }
     })
-    recipe.results = vgal.build.table({
+    acid_neutralisation_recipe.results = vgal.build.table({
         { "angels-solid-calcium-sulfate", 1 },
     }, {
         { "steam", 60, { temperature = 165 } },
     })
-    recipe.icons = angelsmods.functions.create_gas_recipe_icon({
+    acid_neutralisation_recipe.icons = angelsmods.functions.create_gas_recipe_icon({
         "steam",
     }, "WsWsWs", {
         "calcite",
         "sulfuric-acid",
     })
-    recipe.subgroup = "angels-water-boiling"
-    recipe.order = "c[acid-neutralisation]-a"
+    acid_neutralisation_recipe.main_product = "steam"
+    acid_neutralisation_recipe.subgroup = "vgal-water"
+    acid_neutralisation_recipe.order = "c[acid-neutralisation]-a"
+end
+
+-- holmium solution fixes
+do
+    local holmium_solution_recipe = data.raw["recipe"]["holmium-solution"]
+    vgal.recipe.replace_category(holmium_solution_recipe, "chemistry", "angels-liquifying")
+    holmium_solution_recipe.ingredients = vgal.build.table({
+        { "angels-solid-sand", 1 }, -- may be replaced by silicon if I end up implementing it
+        { "holmium-ore",       2 },
+    }, {
+        { "angels-water-purified", 25 }
+    })
+end
+do
+    local holmium_solution_recipe_2 = data.raw["recipe"]["vgal-calcite-holmium-solution"]
+    vgal.recipe.replace_category(holmium_solution_recipe_2, "chemistry", "angels-liquifying")
+    holmium_solution_recipe_2.ingredients = vgal.build.table({
+        { "angels-solid-lime", 1 },
+        { "holmium-ore",       1 },
+    }, {
+        { "steam", 25, { minimum_temperature = 500 } },
+    })
+end
+
+-- electrolyte fixes
+do
+    local electrolyte_recipe = data.raw["recipe"]["electrolyte"]
+    vgal.recipe.replace_category(electrolyte_recipe, "electromagnetics", "angels-advanced-chemistry")
+    electrolyte_recipe.energy_required = 20
+    electrolyte_recipe.ingredients = vgal.build.table({}, {
+        { "holmium-solution",      25 },
+        { "angels-liquid-toluene", 50 },
+        { "angels-water-saline",   50 },
+        -- could add as alt:
+        -- { "angels-solid-ammonium-nitrate", 1 },
+        -- { "angels-solid-sodium-perchlorate", 1 },
+    })
+    electrolyte_recipe.results = vgal.build.table({}, {
+        { "electrolyte", 50 },
+    })
+end
+
+-- ice smelting fixes
+do
+    local ice_melting_recipe = data.raw["recipe"]["ice-melting"]
+    vgal.recipe.replace_category(ice_melting_recipe, "chemistry", "angels-liquifying")
+    ice_melting_recipe.icons = angelsmods.functions.create_liquid_recipe_icon({
+        "water",
+    }, "WsWsWs", {
+        "ice",
+    })
+end
+
+-- ammonia separation fixes
+do
+    local ammoniacal_solution_separation = data.raw["recipe"]["ammoniacal-solution-separation"]
+    vgal.recipe.replace_category(ammoniacal_solution_separation, "chemistry", "angels-liquifying")
+    ammoniacal_solution_separation.icons = angelsmods.functions.create_liquid_recipe_icon({
+        { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 72 },
+        "ice",
+    }, "WsWsWs", {
+        "ammoniacal-solution",
+    })
+end
+
+-- crushing fixes
+do
+    ---@param chunk_name string
+    ---@param extra_output string?
+    ---@return data.IconData[]
+    function get_asteroid_crushing_icon(chunk_name, extra_output)
+        local icons = {
+            {
+                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
+                icon_size = 32,
+            },
+            {
+                icon = vgal.icon.get(chunk_name)[1].icon,
+                icon_size = vgal.icon.get(chunk_name)[1].icon_size,
+                scale = 0.25,
+                shift = { -10, 10 },
+            },
+        }
+
+        if extra_output then
+            table.insert(icons, {
+                icon = vgal.icon.get(extra_output)[1].icon,
+                icon_size = vgal.icon.get(extra_output)[1].icon_size,
+                scale = 0.25,
+                shift = { 10, 10 },
+            })
+        end
+
+        -- if extra_output then
+        --     icons = angelsmods.functions.add_number_icon_layer(icons, 2, angelsmods.petrochem.number_tint)
+        -- else
+        --     icons = angelsmods.functions.add_number_icon_layer(icons, 1, angelsmods.petrochem.number_tint)
+        -- end
+
+        return icons
+        -- -- using angels
+        -- carbon_crushing_1_recipe.icons = angelsmods.functions.add_icon_layer({
+        --     {
+        --         icon = vgal.icon.get("crusher")[1].icon,
+        --         icon_size = vgal.icon.get("crusher")[1].icon_size,
+        --         scale = 0.5,
+        --     },
+        -- }, angelsmods.functions.get_object_icons("carbonic-asteroid-chunk"), { -10, 10 }, 0.5)
+    end
+
+    -- carbonic
+    do
+        local carbon_crushing_1_recipe = data.raw["recipe"]["carbonic-asteroid-crushing"]
+        carbon_crushing_1_recipe.icons = get_asteroid_crushing_icon("carbonic-asteroid-chunk")
+        carbon_crushing_1_recipe.results = vgal.build.table({
+            { "angels-solid-coke",       8 },
+            { "carbonic-asteroid-chunk", 1, { independent_probability = 0.3 } },
+        })
+
+        -- advanced
+        local carbon_crushing_2_recipe = data.raw["recipe"]["advanced-carbonic-asteroid-crushing"]
+        carbon_crushing_2_recipe.icons = get_asteroid_crushing_icon("carbonic-asteroid-chunk", "sulfur")
+        carbon_crushing_2_recipe.results = vgal.build.table({
+            { "angels-solid-coke",       4 },
+            { "sulfur",                  2 },
+            { "carbonic-asteroid-chunk", 1, { independent_probability = 0.1 } },
+        })
+    end
+
+    -- metallic
+    do
+        local metal_crushing_1_recipe = data.raw["recipe"]["metallic-asteroid-crushing"]
+        metal_crushing_1_recipe.icons = get_asteroid_crushing_icon("metallic-asteroid-chunk")
+        metal_crushing_1_recipe.results = vgal.build.table({
+            { "angels-iron-nugget",      3 },
+            { "angels-iron-pebbles",     6 },
+            { "iron-ore",                8 },
+            { "metallic-asteroid-chunk", 1, { independent_probability = 0.3 } },
+        })
+
+        -- advanced
+        local metal_crushing_2_recipe = data.raw["recipe"]["advanced-metallic-asteroid-crushing"]
+        metal_crushing_2_recipe.icons = get_asteroid_crushing_icon("metallic-asteroid-chunk", "copper-ore")
+        metal_crushing_2_recipe.results = vgal.build.table({
+            { "angels-iron-nugget",      4 },
+            { "angels-iron-pebbles",     8 },
+            { "copper-ore",              4 },
+            { "metallic-asteroid-chunk", 1, { independent_probability = 0.1 } },
+        })
+
+        -- smelting
+        local metal_smelting_recipe = data.raw["recipe"]["vgal-metallic-asteroid-chunk-lava"]
+        metal_smelting_recipe.icons = get_asteroid_crushing_icon("metallic-asteroid-chunk", "lava")
+
+        -- tungsten
+        local metal_tungsten_recipe = data.raw["recipe"]["vgal-metallic-asteroid-chunk-tungsten-ore"]
+        metal_tungsten_recipe.icons = get_asteroid_crushing_icon("metallic-asteroid-chunk", "tungsten-ore")
+        metal_tungsten_recipe.results = vgal.build.table({
+            { "angels-iron-nugget",      2 },
+            { "angels-iron-pebbles",     3 },
+            { "tungsten-ore",            2 },
+            { "metallic-asteroid-chunk", 1, { independent_probability = 0.1 } },
+        })
+    end
+
+    -- oxide
+    do
+        local ice_crushing_1_recipe = data.raw["recipe"]["oxide-asteroid-crushing"]
+        ice_crushing_1_recipe.icons = get_asteroid_crushing_icon("oxide-asteroid-chunk")
+
+        -- advanced
+        local ice_crushing_2_recipe = data.raw["recipe"]["advanced-oxide-asteroid-crushing"]
+        ice_crushing_2_recipe.icons = get_asteroid_crushing_icon("oxide-asteroid-chunk", "calcite")
+
+        -- ammonia
+        local ice_ammonia_recipe = data.raw["recipe"]["vgal-oxide-asteroid-chunk-ammoniacal-solution"]
+        ice_ammonia_recipe.icons = get_asteroid_crushing_icon("oxide-asteroid-chunk", "ammoniacal-solution")
+    end
+
+    -- promethium
+    do
+        local promethium_crushing_1_recipe = data.raw["recipe"]["vgal-promethium-asteroid-chunk-crushing"]
+        promethium_crushing_1_recipe.icons = get_asteroid_crushing_icon("promethium-asteroid-chunk")
+    end
 end

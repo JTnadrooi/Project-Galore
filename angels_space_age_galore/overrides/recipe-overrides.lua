@@ -592,3 +592,17 @@ do
         promethium_crushing_1_recipe.icons = get_asteroid_crushing_icon("promethium-asteroid-chunk")
     end
 end
+
+-- scrap crushing fixes
+do
+    local scrap_crushing_recipe = data.raw["recipe"]["vgal-scrap-crushing"]
+    scrap_crushing_recipe.categories = { "angels-ore-refining-t1" }
+    scrap_crushing_recipe.energy_required = 2
+    scrap_crushing_recipe.icons = angelsmods.functions.add_icon_layer({
+        {
+            icon = "__angelsrefininggraphics__/graphics/icons/ore-crusher.png",
+            icon_size = 64,
+            scale = 0.5,
+        },
+    }, angelsmods.functions.get_object_icons("scrap"), { -10, 10 }, 0.5)
+end

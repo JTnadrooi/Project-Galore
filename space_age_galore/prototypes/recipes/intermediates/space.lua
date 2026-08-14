@@ -84,8 +84,8 @@ vgal.data.extend({
             { "metallic-asteroid-chunk", 1 },
         },
         results = {
-            { "iron-ore",                5 },
             { "tungsten-ore",            2 },
+            { "iron-ore",                5 },
             { "metallic-asteroid-chunk", 1, { independent_probability = 0.05 } },
         },
         subgroup = "vgal-space-advanced",

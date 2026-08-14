@@ -169,7 +169,7 @@ vgal.data.extend({
         },
         category = "chemistry",
         energy_required = 10,
-        technology = "holmium-processing",
+        technology = { "holmium-processing", "calcite-processing", },
         fluid_ingredients = {
             { "steam", 100, { minimum_temperature = 500 } },
         },

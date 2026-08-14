@@ -160,7 +160,7 @@ vgal.data.extend({
     -- },
     {
         type = "recipe",
-        name = "calcite-stone-holmium-solution",
+        name = "calcite-holmium-solution",
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("holmium-solution"),

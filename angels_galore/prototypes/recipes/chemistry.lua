@@ -458,7 +458,7 @@ vgal.data.extend({
             },
             "COcOc", { "angels-solid-coke" }
         ),
-        energy_required = 1,
+        energy_required = 2,
         technology = "angels-coal-processing",
         ingredients = {
             { "angels-solid-coke", 2 },

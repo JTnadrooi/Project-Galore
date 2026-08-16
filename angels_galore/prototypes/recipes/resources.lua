@@ -52,6 +52,27 @@ vgal.data.extend({
 
         order = "ab",
     },
+    {
+        name = "angels-solid-calcium-carbonate-angels-solid-lime",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("angels-solid-lime"),
+            vgal.icon.get_in("angels-solid-calcium-carbonate"),
+        },
+        energy_required = 2,
+        technology = "angels-stone-smelting-1",
+        ingredients = {
+            { "angels-solid-calcium-carbonate", 4 },
+        },
+        results = {
+            { "angels-solid-lime", 4 },
+        },
+        fluid_results = {
+            { "angels-gas-carbon-dioxide", 60 },
+        },
+        category = "angels-blast-smelting",
+        allow_productivity = false,
+    },
     -- {
     --     name = "angels-stone-crushed-angels-solid-carbon-stone-brick",
     --     prefix = "vgal",

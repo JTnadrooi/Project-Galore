@@ -1,23 +1,21 @@
 vgal.data.extend({
     {
-        name = "calcite-angels-solid-lime",
+        name = "calcite-angels-solid-calcium-carbonate",
         prefix = "vgal",
         icons = vgal.icon.register {
-            vgal.icon.get("angels-solid-lime"),
+            vgal.icon.get("angels-solid-calcium-carbonate"),
             vgal.icon.get_in("calcite"),
         },
-        energy_required = 3,
+        energy_required = 2,
         technology = "calcite-processing",
         ingredients = {
-            { "calcite", 4 },
+            { "calcite", 2 },
         },
         results = {
-            { "angels-solid-lime", 4 },
+            { "angels-solid-calcium-carbonate", 2 },
+            { "angels-stone-crushed",           1 },
         },
-        fluid_results = {
-            { "angels-gas-carbon-dioxide", 50 },
-        },
-        category = "angels-blast-smelting",
+        categories = { "angels-ore-refining-t1", "hand-crafting" }
     },
 }, {
     type = "recipe",

@@ -390,7 +390,7 @@ do
     acid_neutralisation_recipe.energy_required = 1
     vgal.recipe.replace_category(acid_neutralisation_recipe, "chemistry", "angels-liquifying")
     acid_neutralisation_recipe.ingredients = vgal.build.table({
-        { "calcite", 1 },
+        { "angels-solid-calcium-carbonate", 1 },
     }, {
         { "sulfuric-acid", 100 }
     })

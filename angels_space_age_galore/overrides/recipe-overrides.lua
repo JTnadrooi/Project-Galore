@@ -402,7 +402,7 @@ do
     acid_neutralisation_recipe.icons = angelsmods.functions.create_gas_recipe_icon({
         "steam",
     }, "WsWsWs", {
-        "calcite",
+        "angels-solid-calcium-carbonate",
         "sulfuric-acid",
     })
     acid_neutralisation_recipe.main_product = "steam"

@@ -665,6 +665,33 @@ vgal.data.extend({
 
     --     main_product = "angels-gas-carbon-monoxide"
     -- },
+    {
+        name = "angels-solid-calcium-carbonate-angels-gas-methane",
+        prefix = "vgal",
+        icons = angelsmods.functions.create_gas_recipe_icon({
+            { "__angelspetrochemgraphics__/graphics/icons/molecules/methane.png", 72 },
+        }, "CHH", {
+            "angels-solid-calcium-carbonate",
+        }),
+        energy_required = 2,
+        technology = "angels-gas-processing",
+        ingredients = {
+            { "angels-solid-calcium-carbonate", 2 }, -- 40 carbon dioxide
+        },
+        fluid_ingredients = {
+            { "angels-gas-hydrogen", 30 },
+        },
+        results = {
+            { "angels-solid-lime", 1 },
+        },
+        fluid_results = {
+            { "angels-gas-methane", 50 },
+            -- { "angels-water-purified", 20 },
+        },
+        category = "angels-liquifying",
+
+        main_product = "angels-gas-methane"
+    },
 }, {
     type = "recipe",
 })

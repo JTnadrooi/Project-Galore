@@ -20,6 +20,8 @@ vgal.data.extend({
         complementairy_recipe = "advanced-oil-processing",
         show_amount_in_title = false,
         main_product = "petroleum-gas",
+
+        order = "a[oil-processing]-a[basic-oil-processing]-b"
     },
     {
         name = "steam-crude-oil-sulfur",
@@ -45,6 +47,8 @@ vgal.data.extend({
         complementairy_recipe = "basic-oil-processing",
         show_amount_in_title = false,
         main_product = "petroleum-gas",
+
+        order = "a[oil-processing]-a[basic-oil-processing]-c"
     },
     {
         name = "steam-advanced-oil-processing",
@@ -67,6 +71,8 @@ vgal.data.extend({
         complementairy_recipe = "advanced-oil-processing",
         show_amount_in_title = false,
         main_product = "petroleum-gas",
+
+        order = "a[oil-processing]-b[advanced-oil-processing]-b"
     },
     {
         name = "petroleum-gas-coal-heavy-oil",
@@ -89,6 +95,8 @@ vgal.data.extend({
         },
         technology = "advanced-oil-processing",
         show_amount_in_title = false,
+
+        order = "c"
     },
     {
         name = "heavy-oil-light-oil-petroleum-gas",
@@ -132,6 +140,8 @@ vgal.data.extend({
         technology = "advanced-oil-processing",
         complementairy_recipe = "heavy-oil-cracking",
         show_amount_in_title = false,
+
+        order = "b[fluid-chemistry]-a[heavy-oil-cracking]-b"
     },
     {
         name = "steam-light-oil-petroleum-gas",
@@ -152,6 +162,8 @@ vgal.data.extend({
         technology = "advanced-oil-processing",
         complementairy_recipe = "light-oil-cracking",
         show_amount_in_title = false,
+
+        order = "b[fluid-chemistry]-b[light-oil-cracking]-b"
     },
 }, {
     type = "recipe",

@@ -73,3 +73,5 @@ data.raw["recipe"]["iron-ore-melting"].subgroup = "vgal-molten-metals"
 data.raw["recipe"]["iron-ore-melting"].order = "bbaa"
 data.raw["recipe"]["copper-ore-melting"].subgroup = "vgal-molten-metals"
 data.raw["recipe"]["copper-ore-melting"].order = "bbba"
+
+data.raw["recipe"]["simple-coal-liquefaction"].subgroup = "vgal-oil"

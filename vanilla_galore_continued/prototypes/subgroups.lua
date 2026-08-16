@@ -52,7 +52,7 @@ local subgroups = {
         name = "nuclear-energy",
         group = "production",
         order = "bb",
-        entries = { "nuclear-reactor", "heat-exchanger", "heat-pipe", "steam-turbine" }
+        entries = { "nuclear-reactor", "heat-exchanger", "heat-pipe", "steam-turbine" },
     },
     -- INTERMEDIATES
     {
@@ -250,9 +250,9 @@ local subgroups = {
 
 vgal.subgroup.process_override_subgroups(subgroups)
 
-vgal.subgroup.set_for("heavy-oil", "fluid-recipes")
-vgal.subgroup.set_for("light-oil", "fluid-recipes")
-vgal.subgroup.set_for("petroleum-gas", "fluid-recipes")
-vgal.subgroup.set_for("sulfuric-acid", "fluid-recipes")
+-- vgal.subgroup.set_for("heavy-oil", "fluid-recipes")
+-- vgal.subgroup.set_for("light-oil", "fluid-recipes")
+-- vgal.subgroup.set_for("petroleum-gas", "fluid-recipes")
+-- vgal.subgroup.set_for("sulfuric-acid", "fluid-recipes")
 vgal.subgroup.set_for("lubricant", "fluid-recipes")
-vgal.subgroup.set_for("steam", "fluid-recipes")
+-- vgal.subgroup.set_for("steam", "fluid-recipes")

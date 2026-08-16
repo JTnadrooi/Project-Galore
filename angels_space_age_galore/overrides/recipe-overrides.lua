@@ -459,6 +459,7 @@ do
     }, "WsWsWs", {
         "ice",
     })
+    vgal.recipe.multiply_results(ice_melting_recipe, 2.5)
 end
 
 -- ammonia separation fixes

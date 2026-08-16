@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.6
+  Features:
+    - Improved recipe UI order.
+---------------------------------------------------------------------------------------------------
 Version: 1.4.5
   Features:
     - Added automatic tech node research which can be enabled in the settings. (Suggested by Dr_Hammer)

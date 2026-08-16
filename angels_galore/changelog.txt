@@ -1,4 +1,25 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.1
+  Features:
+    - Added more carbon dioxide/monoxide related recipe. (Boudouard processes, other)
+    - Added "vgal-angels-gas-methanol-angels-gas-chlor-methane" recipe
+    - Added "vgal-angels-liquid-toluene-angels-gas-benzene" recipe
+    - Added "vgal-angels-solid-ammonium-nitrate-angels-liquid-fuel-oil-explosives" recipe
+    - Added "vgal-angels-solid-coke-angels-gas-carbon-dioxide" recipe
+    - Added "vgal-angels-gas-hydrogen-angels-gas-oxygen-rocket-fuel" recipe (tagged as unsure)
+    - Added "vgal-angels-solid-ammonium-perchlorate-rocket-fuel" recipe.
+    - Added "vgal-angels-gas-propene-solid-fuel" recipe
+    - Added "vgal-angels-solid-calcium-carbonate-angels-solid-lime" recipe.
+    - Re-Added "angels-solid-fuel-hydrazine" recipe
+    - Removed rocket fuel capsule and overhauled rocket fuel production to use solid fuel instead.
+  Balancing:
+    - Replaced coal in explosives recipe with 2 crushed coal. (Same for angels explosives recipes)
+    - Increased general hydrogen requirements in vgal chemistry recipes.
+    - "vgal-angels-liquid-phenol-plastic-bar" phenol cost; 25 -> 30
+    - "vgal-angels-liquid-phenol-plastic-bar" methanol cost; 15 -> 25
+    - "vgal-angels-solid-coke-angels-solid-sodium-hydroxide-angels-solid-carbon" nitrogen cost; 30 -> 50
+    - "vgal-angels-solid-coke-angels-solid-sodium-hydroxide-angels-solid-carbon" coke cost; 4 -> 3
+---------------------------------------------------------------------------------------------------
 Version: 1.2.0
   Features:
     - Added a large amount of new (petro-)chemistry recipes.

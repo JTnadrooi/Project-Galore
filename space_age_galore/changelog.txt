@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.6
+  Features:
+    - Added "... from ..." locale to "vgal-calcite-holmium-solution".
+  Changes:
+    - (Internal) Renamed "vgal-calcite-stone-holmium-solution" to "vgal-calcite-holmium-solution".
+---------------------------------------------------------------------------------------------------
 Version: 1.6.5
   Features:
     - Updated thumbnail.

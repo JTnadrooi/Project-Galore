@@ -1,5 +1,6 @@
 require("prototypes.subgroups")
 require("prototypes.fluids.atmospheres")
+require("prototypes.buildings.space-vent")
 require("prototypes.technology")
 
 require("prototypes.items.dormant-seeds")

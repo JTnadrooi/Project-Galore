@@ -70,7 +70,7 @@ vgal.data.extend({
         },
         fluid_results = {
             { "angels-gas-carbon-dioxide", 50 },
-            { "angels-water-purified",     20 },
+            -- { "angels-water-purified",     20 },
         },
         category = "chemistry",
     },
@@ -181,7 +181,7 @@ vgal.data.extend({
         technology = "angels-steam-cracking-1",
         fluid_ingredients = {
             { "angels-gas-ethylene", 50 },
-            { "angels-gas-hydrogen", 10 },
+            { "angels-gas-hydrogen", 20 },
         },
         ingredients = {
             { "angels-catalyst-metal-blue", 1 },
@@ -210,14 +210,14 @@ vgal.data.extend({
         technologies = { "angels-bio-nutrient-paste", "angels-advanced-chemistry-3" },
         fluid_ingredients = {
             { "angels-gas-acetone",  50 },
-            { "angels-gas-hydrogen", 10 },
+            { "angels-gas-hydrogen", 20 },
         },
         ingredients = {
             { "angels-catalyst-metal-yellow", 1 },
         },
         fluid_results = {
             { "angels-gas-propene",    30 },
-            { "angels-water-purified", 10 },
+            { "angels-water-purified", 20 },
         },
         results = {
             { "angels-catalyst-metal-carrier", 1 },

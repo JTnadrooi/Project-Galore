@@ -247,25 +247,6 @@ vgal.data.extend({
     --     },
     --     category = "angels-water-treatment",
     -- },
-    -- {
-    --     name = "angels-thermal-water-angels-fluorite-ore",
-    --     prefix = "vgal",
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("angels-fluorite-ore"),
-    --     },
-    --     energy_required = 1,
-    --     technology = "angels-thermal-water-extraction",
-    --     fluid_ingredients = {
-    --         { "angels-thermal-water", 100 },
-    --     },
-    --     ingredients = {
-    --         { "angels-solid-calcium-chloride", 1 },
-    --     },
-    --     results = {
-    --         { "angels-fluorite-ore", 1 },
-    --     },
-    --     category = "angels-crystallizing",
-    -- },
 }, {
     type = "recipe",
 })

@@ -26,6 +26,32 @@ vgal.data.extend({
         allow_productivity = false,
         category = "angels-water-treatment",
     },
+    -- {
+    --     name = "angels-thermal-water-angels-water-mineralized",
+    --     prefix = "vgal",
+    --     icons = angelsmods.functions.create_liquid_recipe_icon({
+    --         "angels-water-mineralized",
+    --         "angels-fluorite-ore",
+    --     }, "WsWsWs", { "angels-solid-calcium-chloride" }),
+    --     energy_required = 2,
+    --     technology = "angels-thermal-water-extraction",
+    --     fluid_ingredients = {
+    --         { "angels-thermal-water", 150 },
+    --     },
+    --     ingredients = {
+    --         { "angels-solid-calcium-chloride", 1 },
+    --     },
+    --     results = {
+    --         { "angels-fluorite-ore", 1, { independent_probability = 0.05 } },
+    --     },
+    --     fluid_results = {
+    --         { "angels-water-mineralized", 80 },
+    --         { "angels-water-green-waste", 20 },
+    --     },
+    --     main_product = "angels-water-mineralized",
+    --     category = "angels-water-treatment",
+    --     allow_productivity = false,
+    -- },
 }, {
     type = "recipe",
 })

@@ -242,32 +242,6 @@ vgal.data.extend({
     --     },
     --     category = "angels-chemical-smelting",
     -- },
-    -- {
-    --     name = "angels-thermal-water-angels-water-saline",
-    --     prefix = "vgal",
-    --     -- icons = angelsmods.functions.create_liquid_recipe_icon({
-    --     --     { "__angelspetrochemgraphics__/graphics/icons/ore-fluorite.png", 32 },
-    --     --     "angels-water-saline",
-    --     -- }, "WsFF"),
-    --     icons = vgal.icon.register {
-    --         vgal.icon.get("angels-fluorite-ore"),
-    --     },
-    --     energy_required = 2,
-    --     technology = "angels-thermal-water-extraction",
-    --     ingredients = {
-    --         { "angels-solid-calcium-chloride", 2 },
-    --     },
-    --     fluid_ingredients = {
-    --         { "angels-thermal-water", 100 },
-    --     },
-    --     results = {
-    --         { "angels-fluorite-ore", 1 },
-    --     },
-    --     fluid_results = {
-    --         { "angels-water-saline", 50, { ignored_by_productivity = 50 } },
-    --     },
-    --     category = "angels-water-treatment",
-    -- },
 }, {
     type = "recipe",
 })

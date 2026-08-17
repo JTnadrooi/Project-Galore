@@ -222,7 +222,7 @@ vgal.tech.add_prerequisite("artillery", "angels-stone-smelting-2")
 -- move coolant 2 filtering recipe to earlier (this removed coolant 2 tech as its empty now)
 vgal.tech.move_recipe("angels-coolant-2", "angels-coolant-1", "angels-coolant-used-filtration-2")
 
--- fix stuff around new fluorite obtaining method
+-- fix stuff around new fluorite obtaining method (?) COMEBACKAT
 vgal.tech.add_prerequisite("angels-thermal-water-extraction", "angels-chlorine-processing-2")
 vgal.tech.add_prerequisite("angels-bio-refugium-puffer-1", "angels-thermal-water-extraction")
 

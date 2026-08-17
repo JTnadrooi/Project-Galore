@@ -51,10 +51,9 @@ This list is based on the vanilla cost list. While most items are more complex t
 | angels-water-light-mud        | 0.4  |
 | angels-water-thin-mud         | 0.4  |
 | angels-water-saline           | 0.5  |
-| angels-water-mineralized      | 0.5  |
+| angels-water-mineralized      | 0.3  |
 | angels-water-purified         | 0.1  |
 | angels-water-yellow-waste(b)  | 0.3  |
-| angels-thermal-water          | 0.3  |
 
 ## Sediments/Stone
 

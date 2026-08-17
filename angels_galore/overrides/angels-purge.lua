@@ -160,7 +160,7 @@ vgal.fluid.hide("angels-liquid-trichlorosilane")
 vgal.fluid.hide("angels-gas-silane")
 vgal.fluid.hide("angels-liquid-tungstic-acid")
 
--- remove yellow modules (COMEBACKAT)
+-- remove yellow modules
 local bio_modules = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
 for _, bio_module in ipairs(bio_modules) do
     vgal.data.hide(data.raw["module"][bio_module])
@@ -301,3 +301,24 @@ vgal.recipe.hide_and_queue_for_tech_removal("angels-wire-copper-2")
 
 -- remove thermal water to sludge recipes (and tech)
 vgal.tech.deep_hide("angels-thermal-water-processing")
+
+-- remove thermal water
+do
+    vgal.fluid.hide("angels-thermal-water")
+    for _, recipe in pairs(data.raw["recipe"]) do
+        for _, ingredient in ipairs(recipe.ingredients or {}) do
+            if ingredient.name == "angels-thermal-water" then
+                ingredient.name = "angels-water-mineralized"
+            end
+        end
+    end
+
+    local fissure_resource = data.raw["resource"]["angels-fissure"]
+    local mineralized_water_fluid = data.raw["fluid"]["angels-water-mineralized"]
+
+    fissure_resource.map_color = mineralized_water_fluid.base_color
+    fissure_resource.tint = mineralized_water_fluid.flow_color
+    fissure_resource.minable.results = vgal.build.table({}, {
+        { mineralized_water_fluid.name, 25 }
+    })
+end

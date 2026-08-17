@@ -1,4 +1,5 @@
-local fissure_planet_names = { "gleba", "vulcanus" }
+local fissure_planet_names = { "gleba" }
+local mineralized_water_fluid = data.raw["fluid"]["angels-water-mineralized"]
 
 for _, planet_name in ipairs(fissure_planet_names) do
     angelsmods.functions.add_resource("make", {
@@ -11,14 +12,14 @@ for _, planet_name in ipairs(fissure_planet_names) do
         infinite = true,
         glow = true,
         var = 1,
-        map_color = { r = 1, g = 0.5, b = 0 },
-        tint = { r = 0.65, g = 0.4, b = 0.15 },
+        map_color = mineralized_water_fluid.base_color,
+        tint = mineralized_water_fluid.flow_color,
         mining_time = 2.5,
         type = "fluid",
         category = "angels-fissure",
         -- normal = 10000,
         -- maximum = 50000,
-        output_name = "angels-thermal-water",
+        output_name = "angels-water-mineralized",
         output_min = 20,
         output_max = 20,
         icon = "__angelsrefininggraphics__/graphics/icons/fissure.png",

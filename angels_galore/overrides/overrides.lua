@@ -90,6 +90,3 @@ data.raw["resource"]["angels-ore2"].autoplace = table.deepcopy(data.raw["resourc
 -- the desc says it tastes like chicken tho
 -- update: capsule type would require me to "remove" the raw meat as "item" and I'm not doing that.. boo
 -- maybe in final fixes
-
--- vgal.recipe.unhide("thermal-water-purification")
--- vgal.tech.add_recipe("vgal-hydrochloric-intermediates", "thermal-water-purification")

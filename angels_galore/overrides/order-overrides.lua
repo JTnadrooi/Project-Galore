@@ -127,3 +127,6 @@ data.raw["item-subgroup"]["vgal-water"].order = "h"
 
 vgal.subgroup.clean_recipe("angels-steam-water")
 vgal.subgroup.clean_recipe("angels-steam-water-purified")
+
+vgal.recipe.use_recipe_locale("angels-steam-water")
+vgal.recipe.use_recipe_locale("angels-steam-water-purified")

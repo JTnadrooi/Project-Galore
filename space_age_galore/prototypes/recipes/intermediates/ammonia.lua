@@ -167,7 +167,6 @@ vgal.data.extend({
         },
         technology = "planet-discovery-fulgora",
         show_amount_in_title = false,
-        localised_name = { "", "20 \xC3\x97 ", { "recipe-name.vgal-ice-solid-fuel-ammonia" } },
         surface_conditions =
         {
             {

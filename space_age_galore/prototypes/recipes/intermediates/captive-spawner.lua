@@ -16,7 +16,6 @@ vgal.data.extend({
             { "barrel",    1, { independent_probability = 0.90 } },
         },
         category = "captive-spawner-process",
-        localised_name = { "", "4 \xC3\x97 ", { "recipe-name.vgal-petroleum-gas-barrel-biter-egg" } },
         preserve_products_in_machine_output = true,
     },
     {

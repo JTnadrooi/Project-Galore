@@ -1125,6 +1125,11 @@ data.raw["recipe"]["angels-liquid-concrete"].ingredients = vgal.build.table({
 data.raw["recipe"]["angels-liquid-concrete"].energy_required = 2
 vgal.recipe.set_result_amount("angels-liquid-concrete", 40)
 
+-- make ore to pebbles crushing possible by hand (prevents space age softlocks)
+for _, metal in ipairs(vgal.defines.metals) do
+    vgal.recipe.add_category(metal.pebbles, "hand-crafting")
+end
+
 -- catalyst fixes
 
 ---@param recipe_name string

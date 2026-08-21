@@ -459,7 +459,7 @@ do
     }, "WsWsWs", {
         "ice",
     })
-    vgal.recipe.multiply_results(ice_melting_recipe, 2.5)
+    vgal.recipe.set_result_amount(ice_melting_recipe, 50) -- og; 20
 end
 
 -- ammonia separation fixes
@@ -607,4 +607,29 @@ do
             scale = 0.5,
         },
     }, angelsmods.functions.get_object_icons("scrap"), { -10, 10 }, 0.5)
+end
+
+-- space fuel/oxidizer fixes
+do
+    -- no carbon usage i know,
+
+    local fuel_recipe = data.raw["recipe"]["thruster-fuel"]
+    -- vgal.recipe.replace_category(fuel_recipe, "chemistry", "angels-liquifying")
+    -- fuel_recipe.energy_required = 4
+    fuel_recipe.ingredients = vgal.build.table({
+        -- { "angels-solid-carbon", 2 }
+    }, {
+        { "angels-gas-hydrogen", 20 }, -- ~ 30 water
+    })
+    -- vgal.recipe.set_result_amount(fuel_recipe, 150)
+
+    local oxidizer_recipe = data.raw["recipe"]["thruster-oxidizer"]
+    -- vgal.recipe.replace_category(oxidizer_recipe, "chemistry", "angels-liquifying")
+    -- oxidizer_recipe.energy_required = 4
+    oxidizer_recipe.ingredients = vgal.build.table({
+        -- { "iron-ore", 2 }
+    }, {
+        { "angels-gas-oxygen", 10 }, -- ~ 25 water
+    })
+    -- vgal.recipe.set_result_amount(oxidizer_recipe, 150)
 end

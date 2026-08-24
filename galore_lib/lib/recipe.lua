@@ -839,3 +839,117 @@ function vgal.recipe.queue_for_tech_removal(recipe_or_recipe_name)
 
     vgal.tech.recipes_to_remove_from_techs[recipe.name] = true
 end
+
+---@param recipeable_name string
+---@param void_category "bio"|"water"|"chemical"
+---@param void_amount integer?
+function vgal.recipe.make_recipeable_void(recipeable_name, void_category, void_amount)
+    vgal.throw.if_missing_flag("agal")
+
+    local base_data = vgal.get_recipeable(recipeable_name)
+    local input_type = (base_data.type == "fluid") and "fluid" or "item"
+
+    local cfg = ({
+        water = {
+            default_amount = 400,
+            process_time = 5,
+            output_item = nil,
+            output_probability = 0,
+            tint = true,
+        },
+        chemical = {
+            default_amount = 100,
+            process_time = 1,
+            output_item = nil,
+            output_probability = 0,
+            tint = true,
+        },
+        bio = {
+            default_amount = 1,
+            process_time = 1,
+            output_item = "angels-solid-compost",
+            output_probability = 1,
+            tint = false,
+        },
+    })[void_category]
+    if not cfg then return end
+
+    local amount = void_amount or cfg.default_amount
+    local input_amount = amount > 1 and amount or 1
+    local output_amount = (void_category == "bio") and (amount < 1 and 1 / amount or 1) or (amount < 1 and amount or 1)
+
+    local recipe = {
+        type = "recipe",
+        name = "vgal-" .. void_category .. "-void-" .. recipeable_name,
+        localised_name = { "recipe-name.angels-" .. void_category .. "-void", { input_type .. "-name." .. recipeable_name } },
+        categories = { "angels-" .. void_category .. "-void" },
+        enabled = true,
+        hide_from_signal_gui = true,
+        hide_from_player_crafting = angelsmods.trigger.enable_hide_void,
+        energy_required = cfg.process_time,
+        ingredients = { { type = input_type, name = recipeable_name, amount = input_amount } },
+        always_show_made_in = true,
+        allow_decomposition = false,
+        allow_as_intermediate = false,
+        hide_from_stats = false,
+        subgroup = "angels-" .. void_category .. "-void",
+        order = "",
+        icons = {},
+    }
+
+    if cfg.output_item then
+        recipe.results = { {
+            type = "item",
+            name = cfg.output_item,
+            amount = output_amount,
+            independent_probability = cfg.output_probability ~= 1 and cfg.output_probability or nil,
+        } }
+        recipe.main_product = cfg.output_item
+    end
+
+    local subgroup = base_data.subgroup or "angels-void"
+    recipe.order = data.raw["item-group"][data.raw["item-subgroup"][subgroup].group].order or "z"
+    recipe.order = recipe.order .. "-" .. data.raw["item-subgroup"][subgroup].order .. "-" .. (base_data.order or "z")
+    if #recipe.order > 200 then recipe.order = recipe.order:sub(1, 200) end
+
+    local icons
+    if void_category == "water" then
+        icons = {
+            { icon = "__angelsrefininggraphics__/graphics/icons/angels-gas/gas-recipe-mid.png", icon_size = 750, scale = 32 / 750 },
+            { icon = "__angelsrefininggraphics__/graphics/icons/clarifier.png",                 icon_size = 64,  scale = 0.7 * 0.5 },
+            { icon = "__angelsrefininggraphics__/graphics/icons/void.png",                      icon_size = 32,  scale = 0.4,      shift = { 9.6, 9.6 } },
+        }
+    elseif void_category == "chemical" then
+        icons = {
+            { icon = "__angelspetrochemgraphics__/graphics/icons/flare-stack.png", icon_size = 64 },
+            { icon = "__angelsrefininggraphics__/graphics/icons/void.png",         icon_size = 32, scale = 0.4, shift = { 9.6, 9.6 } },
+        }
+    else
+        icons = util.table.deepcopy(angelsmods.functions.get_object_icons("angels-solid-compost") or {})
+        if #icons == 0 then
+            icons = { { icon = "__angelsrefininggraphics__/graphics/icons/void.png", icon_size = 32 } }
+        end
+    end
+
+    local input_icons = util.table.deepcopy(angelsmods.functions.get_object_icons(recipeable_name) or {})
+    for _, layer in pairs(input_icons) do
+        local size = layer.icon_size or 64
+        local scale = (layer.scale or 32 / size) * 0.5
+        local shift_x = ((layer.shift or {})[1] or (layer.shift or {})["x"] or 0) * 0.5 - 8
+        local shift_y = ((layer.shift or {})[2] or (layer.shift or {})["y"] or 0) * 0.5 - 8
+        table.insert(icons, {
+            icon = layer.icon,
+            icon_size = layer.icon_size,
+            scale = scale,
+            shift = { shift_x, shift_y },
+            tint = layer.tint,
+        })
+    end
+    recipe.icons = icons
+
+    if cfg.tint then
+        recipe.crafting_machine_tint = angelsmods.functions.get_fluid_recipe_tint(recipeable_name)
+    end
+
+    data:extend({ recipe })
+end

@@ -217,9 +217,9 @@ do
     })
     data.raw["recipe"]["angels-clarifier"].ingredients = vgal.build.table({
         { "pipe",            10 },
-        { "iron-gear-wheel", 16 },
-        { "iron-plate",      10 },
-        { "stone-brick",     15 },
+        { "iron-gear-wheel", 4 },
+        { "iron-plate",      5 },
+        { "stone-brick",     10 },
     })
     data.raw["recipe"]["angels-flare-stack"].ingredients = vgal.build.table({
         { "pipe",         12 },
@@ -1126,7 +1126,7 @@ data.raw["recipe"]["angels-liquid-concrete"].energy_required = 2
 vgal.recipe.set_result_amount("angels-liquid-concrete", 40)
 
 -- make ore to pebbles crushing possible by hand (prevents space age softlocks)
-for _, metal in ipairs(vgal.defines.metals) do
+for _, metal in pairs(vgal.defines.metals) do
     vgal.recipe.add_category(metal.pebbles, "hand-crafting")
 end
 

@@ -306,6 +306,16 @@ do
     })
 end
 
+-- gleba building fixes
+do
+    local biochamber_recipe = data.raw["recipe"]["biochamber"]
+    vgal.recipe.replace_ingredient(biochamber_recipe, "landfill", "angels-solid-soil")
+    vgal.recipe.set_ingredient_amount(biochamber_recipe, 5, "angels-solid-soil")
+    local tower_recipe = data.raw["recipe"]["agricultural-tower"]
+    vgal.recipe.replace_ingredient(tower_recipe, "landfill", "angels-solid-soil")
+    vgal.recipe.set_ingredient_amount(tower_recipe, 5, "angels-solid-soil")
+end
+
 -- update biter egg recipes
 vgal.recipe.replace_ingredient("angels-biter-small-egg", "angels-bio-puffer-egg-3", "biter-egg")
 vgal.recipe.set_ingredient_amount("angels-biter-small-egg", 5, "biter-egg")
@@ -342,14 +352,6 @@ vgal.recipe.set_ingredient_amount("angels-puffer-puffing-1", 80, "angels-gas-car
 -- }, {
 --     { "angels-gas-oxygen", 100 },
 -- })
-
--- space recipe fixes
--- vgal.recipe.replace_result("metallic-asteroid-crushing", "iron-ore", "angels-iron-pebbles")
--- vgal.recipe.replace_result("advanced-metallic-asteroid-crushing", "copper-ore", "angels-copper-pebbles")
--- vgal.recipe.replace_result("advanced-metallic-asteroid-crushing", "iron-ore", "angels-iron-pebbles")
-
--- vgal.recipe.replace_ingredient("thruster-oxidizer", "iron-ore", "angels-iron-pebbles")
--- vgal.recipe.replace_ingredient("advanced-thruster-oxidizer", "iron-ore", "angels-iron-pebbles")
 
 vgal.recipe.replace_result("vgal-metallic-asteroid-chunk-lava", "stone", "angels-slag")
 

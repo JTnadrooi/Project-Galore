@@ -643,10 +643,8 @@ vgal.recipe.set_result_amount("angels-bio-tile", 2)
 vgal.recipe.set_result_amount("angels-alien-goo", 10)
 
 -- soil crafting speed tweaks (buff)
-vgal.recipe.multiply("angels-solid-soil", 5)
-vgal.recipe.multiply("angels-solid-soil-alternative", 5)
-data.raw["recipe"]["angels-solid-soil"].energy_required = 2
-data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 2
+data.raw["recipe"]["angels-solid-soil"].energy_required = 0.5
+data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 0.5
 
 -- commented-bc: the molten concrete recipe gets unlocked way to late.
 -- -- concrete fixes (the vanilla recipe is kinda OP)

@@ -55,7 +55,6 @@ vgal.data.extend({
             angelsmods.functions.fluid_color("NaCO3"),
         }),
 
-        show_amount_in_title = false,
     },
 }, {
     type = "recipe",

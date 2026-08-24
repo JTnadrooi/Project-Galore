@@ -16,7 +16,6 @@ vgal.data.extend({
         results = {
             { "coal", nil, { amount_min = 2, amount_max = 4 } } -- 20
         },
-        show_amount_in_title = false,
         crafting_machine_tint = vgal.defines.tints["crude-oil"],
         groups = { "vgal-renewable-ores" },
     },

@@ -21,7 +21,6 @@ vgal.data.extend({
         subgroup = "raw-resource",
         order = "ga",
         productivity_technology = "scrap-recycling-productivity",
-        show_amount_in_title = false,
         groups = { "vgal-unsure" },
     },
     {
@@ -43,7 +42,6 @@ vgal.data.extend({
         category = "crushing",
         subgroup = "raw-resource",
         order = "gb",
-        show_amount_in_title = false,
     },
     {
         name = "coal-crushing",
@@ -65,7 +63,6 @@ vgal.data.extend({
         category = "crushing",
         subgroup = "raw-resource",
         order = "gc",
-        show_amount_in_title = false,
     },
 }, {
     type = "recipe",

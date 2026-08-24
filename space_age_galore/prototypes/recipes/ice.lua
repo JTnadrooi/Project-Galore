@@ -22,7 +22,6 @@ vgal.data.extend({
             { "ice", 100 },
         },
         groups = { "vgal-unsure", "vgal-ice-recipes" },
-        show_amount_in_title = false,
         allow_productivity = false,
     },
     {
@@ -42,7 +41,6 @@ vgal.data.extend({
         results = {
             { "ice", 5 },
         },
-        show_amount_in_title = false,
         allow_productivity = false,
         groups = { "vgal-ice-recipes" },
     },

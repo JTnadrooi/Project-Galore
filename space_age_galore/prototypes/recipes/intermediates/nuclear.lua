@@ -17,7 +17,6 @@ vgal.data.extend({
             { "carbon",      nil, { amount_min = 1, amount_max = 2 } },
         },
         category = "centrifuging",
-        show_amount_in_title = false,
     },
     {
         type = "recipe",
@@ -83,7 +82,6 @@ vgal.data.extend({
             { "uranium-238", 6 },
         },
         category = "centrifuging",
-        show_amount_in_title = false,
         allow_quality = false,
         order = "bcb",
     },

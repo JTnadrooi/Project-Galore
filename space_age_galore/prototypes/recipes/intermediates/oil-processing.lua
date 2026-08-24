@@ -20,7 +20,6 @@ vgal.data.extend({
         subgroup = "vgal-oil",
         order = "aaa",
         technology = "space-platform",
-        show_amount_in_title = false,
         crafting_machine_tint = {
             primary = { r = 0.0, g = 0.3, b = 1.0, a = 1.000 },
             secondary = { r = 0.1, g = 0.5, b = 1.0, a = 1.000 },
@@ -63,7 +62,6 @@ vgal.data.extend({
         results = {
             { "yumako-seed", 1, { independent_probability = 0.015 } },
         },
-        show_amount_in_title = false,
         main_product = "light-oil",
         technology = "yumako",
     },

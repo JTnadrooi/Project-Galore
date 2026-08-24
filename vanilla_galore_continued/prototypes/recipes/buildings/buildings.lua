@@ -473,7 +473,6 @@ vgal.data.extend({
             { "concrete", 10 },
         },
         category = "crafting",
-        show_amount_in_title = false,
     },
     {
         name = "advanced-circuit-lab",

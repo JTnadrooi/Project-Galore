@@ -12,7 +12,6 @@ vgal.data.extend({
             vgal.icon.get_in_bg2("calcite"),
             vgal.icon.get("sulfur"),
         },
-        show_amount_in_title = false,
         categories = { "chemistry", "cryogenics" },
         energy_required = 2,
         technology = "calcite-processing",
@@ -92,7 +91,6 @@ vgal.data.extend({
             { "carbon", 1 }, -- 50
         },
         order = "b[chemistry]-f[carbon]-c",
-        show_amount_in_title = false,
     },
     {
         type = "recipe",
@@ -206,7 +204,6 @@ vgal.data.extend({
         },
         groups = { "vgal-unsure", "vgal-convoluted" },
         productivity_technology = "scrap-recycling-productivity",
-        show_amount_in_title = false,
     },
     {
         type = "recipe",

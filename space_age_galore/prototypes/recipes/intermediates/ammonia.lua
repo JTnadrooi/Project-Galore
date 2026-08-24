@@ -18,7 +18,6 @@ vgal.data.extend({
         fluid_results = {
             { "ammonia", 80 }, -- 160 * 1.5 = 240
         },
-        show_amount_in_title = false,
         surface_conditions =
         {
             {
@@ -46,7 +45,6 @@ vgal.data.extend({
         fluid_results = {
             { "ammonia", 50 }, -- 100 * 1.5 = 150
         },
-        show_amount_in_title = false,
         surface_conditions =
         {
             {
@@ -74,7 +72,6 @@ vgal.data.extend({
         fluid_results = {
             { "ammonia", 80 }, -- 160 * 1.5 = 240
         },
-        show_amount_in_title = false,
         surface_conditions =
         {
             {
@@ -166,7 +163,6 @@ vgal.data.extend({
             { "water",   10, { show_details_in_recipe_tooltip = false } },
         },
         technology = "planet-discovery-fulgora",
-        show_amount_in_title = false,
         surface_conditions =
         {
             {

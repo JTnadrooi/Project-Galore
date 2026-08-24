@@ -40,7 +40,6 @@ vgal.data.extend({
         results = {
             { "stone", nil, { amount_min = 10, amount_max = 30 } }, -- 200 * 1.5 = 300
         },
-        show_amount_in_title = false,
         surface_conditions =
         {
             {
@@ -97,7 +96,6 @@ vgal.data.extend({
         results = {
             { "raw-fish", nil, { amount_min = 1, amount_max = 6, reset_freshness_on_craft = true, } },
         },
-        show_amount_in_title = false,
     },
     {
         type = "recipe",
@@ -121,7 +119,6 @@ vgal.data.extend({
             { "carbon", 1 },
         },
         order = "b[chemistry]-f[carbon]-b",
-        show_amount_in_title = false,
     },
     {
         type = "recipe",
@@ -146,7 +143,6 @@ vgal.data.extend({
         },
         groups = { "vgal-wood-recipes" },
         order = "b[chemistry]-f[carbon]-c",
-        show_amount_in_title = false,
     },
     {
         type = "recipe",

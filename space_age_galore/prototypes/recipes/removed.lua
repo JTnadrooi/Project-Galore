@@ -65,7 +65,6 @@ vgal.data.extend({
         results = {
             { "carbon", 1 }, -- 50
         },
-        show_amount_in_title = false,
     },
     {
         name = "tungsten-plate-engine-unit",

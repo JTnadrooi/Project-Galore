@@ -17,7 +17,6 @@ vgal.data.extend({
         },
         category = "crushing",
         order = "b-a-d", -- hey
-        show_amount_in_title = false,
         enable_smart_stats = false,
         complementairy_recipe = "metallic-asteroid-crushing",
         productivity_technology = "asteroid-productivity",
@@ -41,7 +40,6 @@ vgal.data.extend({
             { "carbonic-asteroid-chunk",   1, { independent_probability = 0.10 } },
         },
         category = "crushing",
-        show_amount_in_title = false,
         enable_smart_stats = false,
         allow_productivity = false,
         complementairy_recipe = "oxide-asteroid-reprocessing",
@@ -171,7 +169,6 @@ vgal.data.extend({
                 max = 0
             }
         },
-        show_amount_in_title = false,
     },
     {
         type = "recipe",
@@ -202,7 +199,6 @@ vgal.data.extend({
                 max = 0
             }
         },
-        show_amount_in_title = false,
     },
     -- {
     --     type = "recipe",
@@ -302,7 +298,6 @@ vgal.data.extend({
             }
         },
         allow_productivity = false,
-        show_amount_in_title = false,
         groups = { "vgal-unsure" },
     },
     {
@@ -333,7 +328,6 @@ vgal.data.extend({
                 max = 0
             }
         },
-        show_amount_in_title = false,
     },
     {
         type = "recipe",
@@ -363,7 +357,6 @@ vgal.data.extend({
                 max = 0
             }
         },
-        show_amount_in_title = false,
     },
 }, {
     type = "recipe",

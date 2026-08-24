@@ -22,7 +22,6 @@ vgal.data.extend({
         results = {
             { "sulfur", 2 }
         },
-        show_amount_in_title = false,
     },
     {
         type = "recipe",

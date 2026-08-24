@@ -20,7 +20,6 @@ vgal.data.extend({
         category = "angels-liquifying",
 
         allow_productivity = false,
-        show_amount_in_title = false,
     },
     {
         name = "angels-solid-sodium-chlorate-angels-liquid-hydrochloric-acid-angels-solid-salt",
@@ -48,7 +47,6 @@ vgal.data.extend({
 
         order = "ab",
         allow_productivity = false,
-        show_amount_in_title = false,
     },
     {
         name = "angels-solid-calcium-carbonate-angels-liquid-hydrochloric-acid-angels-solid-calcium-chloride",
@@ -115,7 +113,6 @@ vgal.data.extend({
         category = "chemistry",
 
         allow_productivity = false,
-        show_amount_in_title = false,
     },
     {
         name = "angels-gas-ethanol-angels-liquid-acetic-acid",
@@ -138,7 +135,6 @@ vgal.data.extend({
         category = "chemistry",
 
         allow_productivity = false,
-        show_amount_in_title = false,
     },
     {
         name = "angels-liquid-acetic-acid-angels-gas-acetone",
@@ -165,7 +161,6 @@ vgal.data.extend({
         category = "chemistry",
 
         allow_productivity = false,
-        show_amount_in_title = false,
         main_product = "angels-gas-acetone"
     },
     {
@@ -195,7 +190,6 @@ vgal.data.extend({
         category = "chemistry",
 
         allow_productivity = false,
-        show_amount_in_title = false,
         main_product = "angels-gas-butane"
     },
     {
@@ -225,7 +219,6 @@ vgal.data.extend({
         category = "chemistry",
 
         allow_productivity = false,
-        show_amount_in_title = false,
         main_product = "angels-gas-propene",
         -- subgroup = "vgal-CH-gas-from-O",
         -- order = "b[O]-a"
@@ -260,7 +253,6 @@ vgal.data.extend({
         category = "angels-advanced-chemistry",
 
         allow_productivity = false,
-        show_amount_in_title = false,
         main_product = "angels-gas-propene",
         -- subgroup = "vgal-CH-gas-from-O",
         -- order = "b[O]-b"
@@ -293,7 +285,6 @@ vgal.data.extend({
         category = "angels-steam-cracking",
 
         allow_productivity = false,
-        show_amount_in_title = false,
         main_product = "angels-gas-ethylene",
         subgroup = "vgal-CH-gas-from-O",
         order = "a[steam-cracking]-ab"
@@ -324,7 +315,6 @@ vgal.data.extend({
         category = "chemistry",
 
         allow_productivity = false,
-        show_amount_in_title = false,
         main_product = "angels-gas-benzene"
     },
     -- {
@@ -422,7 +412,6 @@ vgal.data.extend({
         category = "angels-advanced-gas-refining",
 
         allow_productivity = false,
-        show_amount_in_title = false,
 
         subgroup = "vgal-bio-nutrient-chemistry",
         order = "e",
@@ -499,7 +488,6 @@ vgal.data.extend({
         category = "angels-liquifying",
 
         allow_productivity = false,
-        show_amount_in_title = false,
         main_product = "angels-gas-carbon-monoxide",
     },
     {
@@ -533,7 +521,6 @@ vgal.data.extend({
         category = "angels-liquifying",
 
         allow_productivity = false,
-        show_amount_in_title = false,
         main_product = "angels-gas-carbon-dioxide",
     },
     {
@@ -567,7 +554,6 @@ vgal.data.extend({
 
         main_product = "angels-gas-carbon-monoxide",
         allow_productivity = false,
-        show_amount_in_title = false,
     },
     {
         name = "angels-solid-ammonium-perchlorate-rocket-fuel",

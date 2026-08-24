@@ -953,3 +953,19 @@ function vgal.recipe.make_recipeable_void(recipeable_name, void_category, void_a
 
     data:extend({ recipe })
 end
+
+---@param recipe_or_recipe_name string|data.RecipePrototype
+---@param reset_freshness_on_craft boolean
+function vgal.recipe.set_reset_freshness_on_craft(recipe_or_recipe_name, reset_freshness_on_craft)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
+    local new_value = reset_freshness_on_craft --[[@as boolean?]]
+
+    if new_value == false then
+        new_value = nil
+    end
+
+    for _, result in ipairs(recipe.results or {}) do
+        result.reset_freshness_on_craft = new_value
+    end
+end

@@ -24,7 +24,12 @@ make_spoil("angels-solid-fruit", 40)
 make_spoil("angels-seeded-dish", 2, "angels-substrate-dish")
 make_spoil("angels-bio-alien-processed-meat", 10, "angels-bio-raw-meat")
 
-data.raw["capsule"]["raw-fish"].spoil_result = nil
-data.raw["capsule"]["raw-fish"].spoil_level = nil
-data.raw["capsule"]["raw-fish"].spoil_ticks = nil
-data.raw["capsule"]["raw-fish"].spoil_to_trigger_result = nil
+make_spoil("angels-algae-green", 5)
+make_spoil("angels-algae-brown", 10)
+make_spoil("angels-algae-red", 15)
+make_spoil("angels-algae-blue", 15)
+
+for _, fish in pairs(vgal.defines.fish) do
+    -- make_spoil(fish.name, 7550 / 60)
+    make_spoil(fish.name, 60)
+end

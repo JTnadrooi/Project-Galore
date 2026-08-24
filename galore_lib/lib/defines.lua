@@ -207,6 +207,30 @@ if vgal.defines.flags["agal"] then
         "angels-geode-blue",
     }
 
+    ---@type table<string, {name: string, keeping_recipe: string, breeding_recipe: string}>
+    vgal.defines.fish = {
+        ["raw-fish"] = {
+            name = "raw-fish",
+            keeping_recipe = "angels-fish-keeping-0",
+            breeding_recipe = "angels-alien-fish-0-raw",
+        },
+        ["angels-alien-fish-1-raw"] = {
+            name = "angels-alien-fish-1-raw",
+            keeping_recipe = "angels-fish-keeping-1",
+            breeding_recipe = "angels-alien-fish-1-raw",
+        },
+        ["angels-alien-fish-2-raw"] = {
+            name = "angels-alien-fish-2-raw",
+            keeping_recipe = "angels-fish-keeping-2",
+            breeding_recipe = "angels-alien-fish-2-raw",
+        },
+        ["angels-alien-fish-3-raw"] = {
+            name = "angels-alien-fish-3-raw",
+            keeping_recipe = "angels-fish-keeping-3",
+            breeding_recipe = "angels-alien-fish-3-raw",
+        },
+    }
+
     vgal.defines.nutrientables = {
         "angels-solid-pips",
         "angels-solid-beans",

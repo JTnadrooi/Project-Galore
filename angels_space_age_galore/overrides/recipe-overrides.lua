@@ -635,3 +635,16 @@ do
     })
     -- vgal.recipe.set_result_amount(oxidizer_recipe, 150)
 end
+
+-- reset_freshness_on_craft fixes
+do
+    for _, fish in pairs(vgal.defines.fish) do
+        vgal.recipe.set_reset_freshness_on_craft(fish.breeding_recipe, true)
+
+        -- hmmm.
+        -- they still breed, but the process is less focussed on it. (explains the new fish)
+        -- also making the nutrients involve output freshness is silly
+        -- I could make it require 1 fish input instead but that seems a bit redux-y
+        vgal.recipe.set_reset_freshness_on_craft(fish.keeping_recipe, true)
+    end
+end

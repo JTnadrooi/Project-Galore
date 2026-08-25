@@ -55,8 +55,7 @@ for _, plant in pairs(vgal.defines.gleba_plants) do
                 { plant.dormant_seed, 5 },
             },
             results = {
-                { plant.seed, 5 },
-                { plant.seed, 1, { independent_probability = 0.05 } },
+                { plant.seed, nil, { amount_min = 5, amount_max = 10 } },
             },
             category = "angels-seed-extractor",
 

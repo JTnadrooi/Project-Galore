@@ -130,3 +130,7 @@ vgal.subgroup.clean_recipe("angels-steam-water-purified")
 
 vgal.recipe.use_recipe_locale("angels-steam-water")
 vgal.recipe.use_recipe_locale("angels-steam-water-purified")
+
+for _, waste_water in pairs(vgal.defines.waste_waters) do
+    data.raw["recipe"][waste_water.purification_recipe].order = vgal.subgroup.order_from_number(waste_water.index) .. "[" .. waste_water.color .. "]"
+end

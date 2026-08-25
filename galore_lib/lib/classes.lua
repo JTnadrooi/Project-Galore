@@ -115,3 +115,7 @@ do
     ---@field icon data.FileName
     ---@field icon_size data.SpriteSizeType
 end
+
+do
+    ---@alias vgal.AngelsColorPalette { [1]: integer, [2]: integer, [3]: integer } | string
+end

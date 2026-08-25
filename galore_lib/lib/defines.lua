@@ -240,6 +240,46 @@ if vgal.defines.flags["agal"] then
         "angels-solid-corn",
     }
 
+    ---@type table<string, {name: string, color: string, result: string, secondary_result_water: string, purification_recipe_palette: vgal.AngelsColorPalette, purification_recipe: string, index: integer}>
+    vgal.defines.waste_waters = {
+        ["angels-water-yellow-waste"] = {
+            name = "angels-water-yellow-waste",
+            color = "yellow",
+            result = "sulfur",
+            secondary_result_water = "angels-water-mineralized",
+            purification_recipe_palette = "WsSS",
+            purification_recipe = "angels-yellow-waste-water-purification",
+            index = 1,
+        },
+        ["angels-water-greenyellow-waste"] = {
+            name = "angels-water-greenyellow-waste",
+            color = "greenyellow",
+            result = "angels-fluorite-ore",
+            secondary_result_water = "angels-water-mineralized",
+            purification_recipe_palette = "WsFF",
+            purification_recipe = "angels-greenyellow-waste-water-purification",
+            index = 2,
+        },
+        ["angels-water-green-waste"] = {
+            name = "angels-water-green-waste",
+            color = "green",
+            result = "angels-solid-salt",
+            secondary_result_water = "angels-water-saline",
+            purification_recipe_palette = "WsClCl",
+            purification_recipe = "angels-green-waste-water-purification",
+            index = 3,
+        },
+        ["angels-water-red-waste"] = {
+            name = "angels-water-red-waste",
+            color = "red",
+            result = "angels-solid-sodium-nitrate",
+            secondary_result_water = "angels-water-mineralized",
+            purification_recipe_palette = "WsOO",
+            purification_recipe = "angels-red-waste-water-purification",
+            index = 4,
+        },
+    }
+
     ---@type table<string, {name: string, order: data.Order, farm: string, garden: string, seeds: string[], plants: string[]}>
     vgal.defines.environments = {
         ["temperate"] = {

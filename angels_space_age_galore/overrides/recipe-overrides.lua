@@ -44,7 +44,7 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-ammonia-calcite-molten-iron")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-sulfuric-acid-calcite-molten-copper")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-sulfuric-acid-sulfur")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-holmium-ore-holmium-plate")
-vgal.recipe.hide_and_queue_for_tech_removal("vgal-angels-liquid-molten-steel-low-density-structure")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-angels-liquid-molten-steel-low-density-structure") -- tagged as removed
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-calcite-carbon-concrete")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-coal-crushing")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-biter-egg-ammonia")

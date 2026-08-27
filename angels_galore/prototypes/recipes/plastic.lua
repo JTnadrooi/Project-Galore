@@ -194,6 +194,27 @@ vgal.data.extend({
         groups = { "vgal-unsure" }
     },
     {
+        name = "angels-liquid-fermentation-raw-plastic-bar",
+        prefix = "vgal",
+        icons = vgal.icon.register {
+            vgal.icon.get("plastic-bar"),
+            vgal.icon.get_in("angels-liquid-fermentation-raw"),
+        },
+        energy_required = 2,
+        technology = "angels-bio-plastic-1",
+        fluid_ingredients = {
+            { "angels-liquid-glycerol",         25 },
+            { "angels-liquid-fermentation-raw", 30 },
+        },
+        results = {
+            { "plastic-bar", 3 },
+        },
+        category = "chemistry",
+        order = "bbb",
+
+        -- groups = { "vgal-unsure" }
+    },
+    {
         name = "angels-liquid-propionic-acid-plastic-bar", -- bio 2
         prefix = "vgal",
         icons = vgal.icon.register {

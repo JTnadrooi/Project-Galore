@@ -104,6 +104,8 @@ vgal.data.extend({
         main_product = "water",
         allow_productivity = false,
         category = "angels-filtering",
+
+        groups = { "vgal-unsure" }
     },
 }, {
     type = "recipe",

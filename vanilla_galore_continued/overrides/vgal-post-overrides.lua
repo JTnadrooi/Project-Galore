@@ -36,6 +36,8 @@ if mods["quality"] then
                 q_recipe.name = "vgal-quality-upgrade" .. q_recipe.name:sub(5)
             end
 
+            q_recipe.hide_from_player_crafting = true
+
             -- reduce output
             for _, result in ipairs(q_recipe.results) do
                 if result.name == q_recipe.main_product then

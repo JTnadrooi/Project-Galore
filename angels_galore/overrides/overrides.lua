@@ -83,10 +83,15 @@ for _, metal in pairs(vgal.defines.metals) do
     data.raw["resource"][metal.base_ore].minable.mining_time = 1
 end
 
--- steal autoplace
+-- steal autoplace from other lower tier ore
+-- t2 autoplaces create sparser ores
 data.raw["resource"]["angels-ore2"].autoplace = table.deepcopy(data.raw["resource"]["angels-ore1"].autoplace)
+data.raw["resource"]["angels-ore2"].autoplace.control = "angels-ore2"
+data.raw["resource"]["angels-ore2"].autoplace.probability_expression = vgal.string.replace(data.raw["resource"]["angels-ore2"].autoplace.probability_expression --[[@as string]], "ore1", "ore2")
+data.raw["resource"]["angels-ore2"].autoplace.richness_expression = vgal.string.replace(data.raw["resource"]["angels-ore2"].autoplace.richness_expression --[[@as string]], "ore1", "ore2")
 
 -- make raw meat consumable (not too far fetched with how the engineer already eats raw fish but yea don't do this)
 -- the desc says it tastes like chicken tho
 -- update: capsule type would require me to "remove" the raw meat as "item" and I'm not doing that.. boo
 -- maybe in final fixes
+-- edit: no

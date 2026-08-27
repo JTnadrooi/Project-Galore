@@ -4,7 +4,7 @@ vgal.data.extend({
         prefix = "vgal",
         icons = vgal.icon.register {
             vgal.icon.get("angels-ingot-steel"),
-            vgal.icon.get_in("angels-gas-nitrogen"),
+            vgal.icon.get_in("angels-slag"),
         },
         energy_required = 4,
         technology = { "angels-nitrogen-processing-1", "angels-steel-smelting-1" },

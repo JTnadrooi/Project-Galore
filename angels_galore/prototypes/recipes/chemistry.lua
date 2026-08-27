@@ -87,7 +87,7 @@ vgal.data.extend({
             { "angels-red-cellulose-fiber", 6 }, -- 20
         },
         results = {
-            { "angels-solid-calcium-carbonate", 5 },
+            { "angels-solid-calcium-carbonate", 4 },
         },
         category = "angels-liquifying",
     },

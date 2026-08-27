@@ -967,6 +967,9 @@ data.raw["recipe"]["angels-algae-brown-burning-wash"].ingredients = vgal.build.t
 })
 data.raw["recipe"]["angels-algae-brown-burning-wash"].energy_required = 3
 
+-- increase algae green recipe requirements (og 80) as mineral water is cheaper now
+vgal.recipe.set_ingredient_amount("angels-algae-green", 100)
+
 -- make filter recipes faster (og's: 4 to 8)
 data.raw["recipe"]["angels-liquid-raw-vegetable-oil-filtering-1"].energy_required = 2
 data.raw["recipe"]["angels-liquid-raw-vegetable-oil-filtering-2"].energy_required = 2

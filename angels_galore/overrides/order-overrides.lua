@@ -135,6 +135,12 @@ for _, waste_water in pairs(vgal.defines.waste_waters) do
     data.raw["recipe"][waste_water.purification_recipe].order = vgal.subgroup.order_from_number(waste_water.index) .. "[" .. waste_water.color .. "]"
 end
 
-data.raw["recipe"]["angels-solid-salt"].order = "a[salt]-a[from-water]-a"
 data.raw["fluid"]["water"].order = "a[water]"
 data.raw["fluid"]["water"].subgroup = "vgal-water"
+
+-- data.raw["item"]["angels-solid-salt"].order = "b[salt]"
+-- data.raw["item"]["angels-solid-salt"].subgroup = "angels-water-salination"
+
+vgal.subgroup.clean_recipe("angels-solid-salt")
+data.raw["recipe"]["angels-solid-salt"].order = "a[salt]-a[from-water]-a"
+data.raw["recipe"]["angels-solid-salt"].subgroup = "angels-water-salination"

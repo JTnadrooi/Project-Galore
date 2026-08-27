@@ -78,7 +78,8 @@ vgal.data.extend({
         allow_productivity = false,
         category = "angels-salination-plant",
 
-        order = "a[salt]-a[from-water]-b"
+        order = "a[salt]-a[from-water]-b",
+        subgroup = "angels-water-salination",
     },
     {
         name = "angels-water-purified-water",

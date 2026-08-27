@@ -20,6 +20,7 @@ vgal.data.extend({
         category = "angels-liquifying",
 
         allow_productivity = false,
+        order = "a[salt]-b[from-sodium-chlorate]-a"
     },
     {
         name = "angels-solid-sodium-chlorate-angels-liquid-hydrochloric-acid-angels-solid-salt",
@@ -44,8 +45,7 @@ vgal.data.extend({
             { "angels-water-green-waste", 50 }, -- 10 cl, 50water
         },
         category = "chemistry",
-
-        order = "ab",
+        order = "a[salt]-b[from-sodium-chlorate]-b",
         allow_productivity = false,
     },
     {

@@ -420,7 +420,7 @@ local subgroups = {
         group = "angels-petrochem-refining",
         order = "i-ab",
         entries = {
-            "angels-solid-salt",
+            { "angels-solid-salt", "a[salt]" },
             "angels-solid-sodium-carbonate",
             "angels-solid-sodium-hydroxide",
             "angels-solid-sodium-sulfate",

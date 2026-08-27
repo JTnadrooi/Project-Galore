@@ -524,38 +524,6 @@ vgal.data.extend({
         main_product = "angels-gas-carbon-dioxide",
     },
     {
-        name = "angels-gas-carbon-dioxide-angels-gas-carbon-monoxide",
-        prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon(
-            {
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
-            },
-            "CCOc",
-            {
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
-            }
-        ),
-        energy_required = 3,
-        technology = "angels-basic-chemistry-3",
-        ingredients = {
-            { "angels-electrode", 1 },
-        },
-        fluid_ingredients = {
-            { "angels-gas-carbon-dioxide", 50 }, -- 40 oxygen
-        },
-        results = {
-            { "angels-electrode-used", 1 }
-        },
-        fluid_results = {
-            { "angels-gas-carbon-monoxide", 50 }, -- 20 oxygen
-            { "angels-gas-oxygen",          20 },
-        },
-        category = "angels-petrochem-electrolyser",
-
-        main_product = "angels-gas-carbon-monoxide",
-        allow_productivity = false,
-    },
-    {
         name = "angels-solid-ammonium-perchlorate-rocket-fuel",
         prefix = "vgal",
         icons = vgal.icon.register {

@@ -113,12 +113,21 @@ function vgal.subgroup.process_override_subgroups(subgroups)
         end
 
         if subgroup.should_reorder_entries then
-            for i, entry_name in ipairs(subgroup.entries or {}) do
-                vgal.get_recipeable(entry_name).order = vgal.subgroup.order_from_number(i)
+            for i, entry in ipairs(subgroup.entries or {}) do
+                local entry_name
+                if type(entry) == "string" then
+                    entry_name = entry
+                else
+                    entry_name = entry[1]
+                end
+
+                vgal.get_recipeable(entry_name).order = entry[2] or vgal.subgroup.order_from_number(i)
             end
         end
 
-        vgal.subgroup.new("vgal-" .. subgroup.name, subgroup.entries or {}, subgroup.group, subgroup.order)
+        vgal.subgroup.new("vgal-" .. subgroup.name, vgal.table.select(subgroup.entries or {}, function(e)
+            return e[1] or e
+        end), subgroup.group, subgroup.order)
 
         for i, recipe_entry in ipairs(subgroup.recipe_entries or {}) do
             if recipe_entry[1] then

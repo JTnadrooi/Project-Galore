@@ -130,3 +130,6 @@ for _, recipe in pairs(data.raw["recipe"]) do
         recipe.hide_from_player_crafting = true
     end
 end
+-- error(serpent.block(data.raw["noise-expression"]["default-infinite-angels-ore3-patches"]))
+-- error(data.raw["resource"]["angels-ore2"].autoplace.probability_expression .. "\n\n" .. data.raw["resource"]["angels-ore2"].autoplace.richness_expression .. "\n\n---\n\n")
+-- error(data.raw["resource"]["angels-ore2"].autoplace.control)

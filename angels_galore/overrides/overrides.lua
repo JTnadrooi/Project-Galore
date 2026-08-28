@@ -85,10 +85,8 @@ end
 
 -- steal autoplace from other lower tier ore
 -- t2 autoplaces create sparser ores
-data.raw["resource"]["angels-ore2"].autoplace = table.deepcopy(data.raw["resource"]["angels-ore1"].autoplace)
-data.raw["resource"]["angels-ore2"].autoplace.control = "angels-ore2"
-data.raw["resource"]["angels-ore2"].autoplace.probability_expression = vgal.string.replace(data.raw["resource"]["angels-ore2"].autoplace.probability_expression --[[@as string]], "ore1", "ore2")
-data.raw["resource"]["angels-ore2"].autoplace.richness_expression = vgal.string.replace(data.raw["resource"]["angels-ore2"].autoplace.richness_expression --[[@as string]], "ore1", "ore2")
+-- angels resources lack control field
+vgal.copy_angels_ore1_gen_to_ore2(false)
 
 -- make raw meat consumable (not too far fetched with how the engineer already eats raw fish but yea don't do this)
 -- the desc says it tastes like chicken tho

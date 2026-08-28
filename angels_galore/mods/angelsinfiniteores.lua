@@ -16,8 +16,9 @@ for i, effect in pairs(data.raw["technology"]["uranium-mining"].effects) do
     end
 end
 
--- hyjack autoplace
-data.raw["resource"]["infinite-angels-ore2"].autoplace = data.raw["resource"]["infinite-angels-ore1"].autoplace
+-- steal autoplace from other lower tier ore
+-- t2 autoplaces create sparser ores (idk if the same with inf ores but just to be safe)
+vgal.copy_angels_ore1_gen_to_ore2(true)
 
 -- remove removed infinite ores
 for _, ore_index in pairs(vgal.defines.removed_ore_indexes) do

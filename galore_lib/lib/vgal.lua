@@ -642,6 +642,26 @@ function vgal.get_from_prototype_or_prototype_name(prototype_or_prototype_name, 
     end
 end
 
+---@param do_infinite boolean
+function vgal.copy_angels_ore1_gen_to_ore2(do_infinite)
+    vgal.throw.if_missing_flag("agal")
+
+    local destination_ore_name = do_infinite and "infinite-angels-ore2" or "angels-ore2"
+    local source_ore_name = do_infinite and "infinite-angels-ore1" or "angels-ore1"
+
+    local destination_resource = data.raw["resource"][destination_ore_name] or error(destination_ore_name .. " not found")
+    local source_resource = data.raw["resource"][source_ore_name] or error(source_ore_name .. " not found")
+
+    destination_resource.autoplace = table.deepcopy(source_resource.autoplace)
+    destination_resource.autoplace.probability_expression = vgal.string.replace(destination_resource.autoplace.probability_expression --[[@as string]], "ore1", "ore2")
+    destination_resource.autoplace.richness_expression = vgal.string.replace(destination_resource.autoplace.richness_expression --[[@as string]], "ore1", "ore2")
+
+    local destination_noise = data.raw["noise-expression"]["default-" .. destination_ore_name .. "-patches"]
+    local source_noise = data.raw["noise-expression"]["default-" .. source_ore_name .. "-patches"]
+
+    destination_noise.expression = vgal.string.replace(source_noise.expression --[[@as string]], "ore1", "ore2")
+end
+
 ---@param path string
 ---@return any?
 function vgal.force_require(path)

@@ -19,7 +19,7 @@ Version: 1.2.2
     - Removed "vgal-angels-liquid-molten-steel-low-density-structure".
     - Removed "vgal-angels-liquid-molten-steel-engine-unit".
     - Made pebble crushing possible by hand.
-    - [internal] replaced "angels-" prefix with "vgal-" prefix in voids created by AGAL.
+    - [internal] Replaced "angels-" prefix with "vgal-" prefix in voids created by AGAL.
   Balancing:
     - Made clarifier cheaper to craft.
     - "vgal-angels-red-cellulose-fiber-angels-solid-calcium-carbonate" calcium carbonate yield; 5 -> 4

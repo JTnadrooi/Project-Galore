@@ -201,7 +201,7 @@ Version: 1.1.24
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.23
   Bugfixes:
-    - [HOTFIX] Fixed a game breaking bug that was VGALLIB hiding certain techs, even when needed by other mods.
+    - Fixed GaloreLib hiding certain techs, even when needed by other mods.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.22
   Features:
@@ -233,11 +233,11 @@ Version: 1.1.12
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.11
   Bugfixes:
-    - Add locale for module setting.
+    - Added missing locale for module setting.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.10
   Features:
-    - All recipes now should have proper crafting tints.
+    - Added proper crafting tints for all recipes.
   Bugfixes:
     - Fixed a spelling error in the high temp oil recipes' name.
 ---------------------------------------------------------------------------------------------------
@@ -252,16 +252,16 @@ Version: 1.1.8
   Features:
     - James oil support!
     - BZ mods support!
-    - Added "vgal-heavy-oil-light-oil-petroleum-gas" recipe. (listed as unsure)
+    - Added "vgal-heavy-oil-light-oil-petroleum-gas" recipe. (tagged as unsure)
   Balancing:
-    - "vgal-advanced-circuit-flying-robot-frame" now requires steel like the rest of the frame recipes.
+    - Made it so "vgal-advanced-circuit-flying-robot-frame" now requires steel like the rest of the frame recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.7
   Features:
     - Improved a few icons.
   Balancing:
-    - "vgal-crude-oil-sulfur" time taken increased by one second.
-    - "vgal-petroleum-gas-coal-heavy-oil" time taken increased by half a second.
+    - Increased "vgal-crude-oil-sulfur" duration by 1 second.
+    - Increased "vgal-petroleum-gas-coal-heavy-oil" duration by 0.5 second.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.6
   Features:
@@ -271,22 +271,22 @@ Version: 1.1.6
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.5
   Features:
-    - More recipes added. (Nuclear/Oil)
+    - Added more Nuclear/Oil recipes.
   Balancing:
     - Severly reduced steam costs in many recipes.
-    - "vgal-steam-advanced-oil-processing" time taken increased by 25%
+    - Increased "vgal-steam-advanced-oil-processing" time taken by 25%.
   Bugfixes:
-    - "James Oil" compat.. "fixed"
+    - "fixed" "James Oil" compat.
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
   Features:
-    - More recipe groups added, all toggle-able through the settings!
+    - Add more recipe groups, all toggle-able through the settings!
   Bugfixes:
-    - "Coal processing" => "Coal liquifaction" in locale.
+    - Changed Galore "Coal processing" => "Coal liquifaction" in locale.
 ---------------------------------------------------------------------------------------------------
 Version: 1.0.0
   Features:
-    - More recipes added. (I'm not listing them all..)
+    - Added more recipes.
   Balancing:
     - "vgal-processing-unit-personal-roboport-equipment" ingredients changed.
     - "vgal-refined-concrete-utility-science-pack" renamed to "vgal-refined-concrete-low-density-structure-utility-science-pack".
@@ -303,30 +303,29 @@ Version: 0.2.4
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.3
   Balancing:
-    - Rocket part recipes slightly adjusted.
+    - Slightly adjusted rocket part recipes.
     - Removed the solar rocket part recipe.
   Bugfixes:
-    - Engine units cannot be crafted with ones hands anymore.
+    - Fixed engine units being craftable by hand.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.2
   Features:
-    - changelog.txt added.
-    - /recipes-reload command.
-    - Code that reloads recipes on game load.
+    - Added /recipes-reload command.
+    - Added code that reloads recipes on game load.
   Bugfixes:
     - Fixed internal names of the "stone-wall-furnace-automation-science-pack" and "steel-plate-automation-science-pack" recipes.
-    - Recipe updates not registering.
+    - Fixed recipe updates not registering.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.1
   Features:
-    - Space Age support through "Space Age Galore".
-    - "removed" recipe group added.
+    - Added Space Age support through "Space Age Galore".
+    - Added "removed" recipe group.
   Balancing:
-    - Analog circuits removed.
-    - "vgal-heavy-oil-rocket-fuel" removed.
-    - "vgal-plastic-bar-low-density-structure" removed.
-    - "vgal-iron-stick-engine-unit" removed.
+    - Removed analog circuits.
+    - Removed "vgal-heavy-oil-rocket-fuel".
+    - Removed "vgal-plastic-bar-low-density-structure" removed.
+    - Removed "vgal-iron-stick-engine-unit" removed.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
-  Major Features:
+  Features:
     - Initial release.

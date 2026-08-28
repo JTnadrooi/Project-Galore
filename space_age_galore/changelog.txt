@@ -71,6 +71,7 @@ Version: 1.5.3
   Balancing:
     - Removed "vgal-copper-bacteria-iron-bacteria" recipe. (I'm sorry for that one player using this for q5, I forgot about the internal prod boost..) - HAS REPLACEMENT
     - Removed "vgal-iron-bacteria-copper-bacteria" recipe. - HAS REPLACEMENT
+  Changes:
     - Made it so "vgal-water-coal-ammonia" can be crafted in a biochamber as well as a chemical plant.
   Bugfixes:
     - Renamed "vgal-oxide-asteroid-chunk-ammoniacal-solution" (Oxide asteroid chunk leaching) to "Oxide asteroid leaching".
@@ -87,7 +88,8 @@ Version: 1.5.2
     - Added "vgal-uranium-235-copper-bacteria" recipe, tagged as unsure.
     - Added "vgal-ammoniacal-solution-copper-bacteria" recipe, tagged as unsure.
     - Added "vgal-ammoniacal-solution-iron-bacteria" recipe, tagged as unsure.
-    - (Internal) Improved file ordering.
+  Changes:
+    - [internal] Improved file ordering.
   Balancing:
     - "vgal-fluorine-kovarex-enrichment-process" fluorine cost 50 -> 25.
   Bugfixes:
@@ -98,8 +100,8 @@ Version: 1.5.2
 Version: 1.5.1
   Features:
     - Accounted for piercing round recipe changes.
+  Changes:
     - Made it so ineffective Vanilla Galore settings get hidden.
-    - Improved loading time.
   Balancing:
     - "vgal-tungsten-plate-piercing-rounds-magazine" piercing-rounds-magazine yield 1 -> 2.
     - "vgal-tungsten-plate-piercing-rounds-magazine" firearm-magazine cost 1 -> 2.
@@ -178,9 +180,10 @@ Version: 1.4.0
 ---------------------------------------------------------------------------------------------------
 Version: 1.3.50
   Features:
-    - Split the library at last.
     - Changed thumbnail.
     - Added "vgal-promethium-asteroid-chunk-crushing" recipe, tagged as unsure.
+  Changes:
+    - Split the library at last.
   Balancing:
     - "vgal-scrap-crushing" holmium ore output probability 2% -> 1.5%.
   Bugfixes:
@@ -234,7 +237,8 @@ Version: 1.1.25
 Version: 1.1.22
   Features:
     - Improved recipe order.
-    - Subgroups are now being readded after reordering. Should improve passive compactiblity.
+  Changes:
+    - Made it so subgroups are now readded after reordering. Should improve passive compactiblity.
   Balancing:
     - "vgal-tungsten-carbide-burner-mining-drill" molten iron cost divided by 3.
     - "vgal-tungsten-carbide-burner-mining-drill" time cost divided by 2.
@@ -341,7 +345,7 @@ Version: 1.0.6
   Features:
     - James oil support! (inherited from Vanilla Galore 1.0.8)
     - BZ mods support! (inherited from Vanilla Galore 1.0.8)
-  Balancing:
+  Changes:
     - Made it so "vgal-yumako-mash-light-oil" can now also be crafted in an assembling machine.
   Bugfixes:
     - Fixed the changelog listing the wrong recipe added.
@@ -377,8 +381,6 @@ Version: 1.0.0
     - Fixed amount not showing in title for multiple recipes.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.9
-  Features:
-    - Vanilla Galore 1.1.5 support.
   Bugfixes:
     - "James Oil" compat.. "fixed"
     - Fixed recipes showing in prod technologies, even when not enabled.
@@ -389,44 +391,43 @@ Version: 0.2.8
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.7
   Features:
-    - More recipes added. (Tungsten assembling machines)
+    - Added tungsten assembling machines recipes.
     - Simplified startup settings.
-    - Pressing settings added.
-    - Vanilla Galore 1.0 support.
+    - Added pressing settings.
   Balancing:
     - "vgal-tungsten-carbide-heat-pipe" cost increased.
     - "vgal-molten-iron-molten-copper-space-platform-foundation" cost increased.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.6
   Bugfixes:
-    - HOTFIX: Crash when rocket part recipes are disabled, /THIS/ time caused by the maraxsis compat script not knowing when a recipe is disabled.
+    - Fixed crash when rocket part recipes are disabled, /THIS/ time caused by the maraxsis compat script not knowing when a recipe is disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.5
   Bugfixes:
-    - HOTFIX: Crash when rocket part recipes are disabled, this time caused by the "vgal-unsure" recipe-group.
+    - Fixed crash when rocket part recipes are disabled, this time caused by the "vgal-unsure" recipe-group.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.4
-  Bugfixes:
-    - HOTFIX: Crash when rocket part recipes are disabled.
   Balancing:
-    - "vgal-flying-robot-frame-rocket-part" cost reduced
+    - Reduced "vgal-flying-robot-frame-rocket-part" cost.
+  Bugfixes:
+    - Fixed crash when rocket part recipes are disabled.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.3
   Features:
-    - Nuclear rocket part ported from Vanilla Galore.
-    - Maraxsis support improved.
+    - Ported nuclear rocket part recipe from Vanilla Galore.
+    - Improved Maraxsis support.
   Bugfixes:
-    - Uranium-based space science recipe surface conditions fixed.
-    - Engine units cannot be crafted with ones bare hands anymore.
+    - Fixed uranium-based space science recipe surface conditions.
+    - Fixed engine units being craftable by hand.
   Balancing:
-    - "vgal-uranium-235-space-science-pack" time taken reduced.
+    - Reduced "vgal-uranium-235-space-science-pack" duration.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.2
   Features:
-    - "Maraxsis" and "Demolisher Scales" mod support.
-  Bugfixes:
-    - "vgal-calcite-stone-holmium-solution" recipe time fixed to be more inline with vanilla.
+    - Added "Maraxsis" and "Demolisher Scales" mod support.
+  Balancing:
+    - Made "vgal-calcite-stone-holmium-solution" crafting time more inline with vanilla
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.1
-  Major Features:
+  Features:
     - Initial release.

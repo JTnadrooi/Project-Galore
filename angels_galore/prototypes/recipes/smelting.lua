@@ -10,7 +10,7 @@ vgal.data.extend({
         technology = { "angels-nitrogen-processing-1", "angels-steel-smelting-1" },
         ingredients = {
             { "angels-ingot-iron", 24 },
-            { "angels-slag",       4 },
+            { "angels-slag",       6 },
         },
         fluid_ingredients = {
             { "angels-gas-nitrogen", 250 },

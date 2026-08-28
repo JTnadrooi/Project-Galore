@@ -1,4 +1,9 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.7
+  Bugfixes:
+    - Restored bacteria surface conditions
+    - Fixed recipe result amounts still showing in some recipe names.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.6
   Features:
     - Added "... from ..." locale to "vgal-calcite-holmium-solution".

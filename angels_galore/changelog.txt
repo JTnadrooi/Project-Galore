@@ -1,4 +1,36 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.2
+  Features:
+    - Improved water boiling locale.
+    - Improved pebbles-to-ore recipes locale.
+    - Improved electrode cleaning locale.
+    - Added fuel value to compost.
+    - Added improved waste water purification recipes.
+    - Added mineralized water electrolysis recipes.
+    - Added "vgal-angels-electrode-used-angels-solid-carbon-angels-electrode" recipe.
+    - Added "vgal-angels-water-mineralized-angels-water-purified" recipe.
+    - Added "vgal-angels-water-saline-angels-solid-salt" recipe.
+    - Added "vgal-angels-liquid-fermentation-raw-plastic-bar" recipe.
+    - Added "vgal-angels-water-purified-water" recipe. (tagged as unsure)
+  Changes:
+    - Changed "vgal-angels-gas-nitrogen-angels-ingot-steel" icon to show slag instead of nitrogen gas.
+    - Merged thermal water into mineralized water.
+    - Normalized soil recipes, and made them a bit slower per item.
+    - Removed "vgal-angels-liquid-molten-steel-low-density-structure".
+    - Removed "vgal-angels-liquid-molten-steel-engine-unit".
+    - Made pebble crushing possible by hand.
+    - [internal] replaced "angels-" prefix with "vgal-" prefix in voids created by AGAL.
+  Balancing:
+    - Made clarifier cheaper to craft.
+    - "vgal-angels-red-cellulose-fiber-angels-solid-calcium-carbonate" calcium carbonate yield; 5 -> 4
+    - "vgal-angels-solid-calcium-carbonate-angels-solid-lime" carbon dioxide yield; 60 -> 50
+    - "angels-algae-green" both ingredients; 80 -> 100
+    - "vgal-angels-gas-nitrogen-angels-ingot-steel" slag cost; 4 -> 6
+  Bugfixes:
+    - Fixed recipe result amounts still showing in some recipe names.
+    - Fixed jivolite spawning not being affected by map settings. (Thanks Maltsi!)
+    - Fixed jivolite spawning in smaller patches than stiratite.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.1
   Features:
     - Added more carbon dioxide/monoxide related recipe. (Boudouard processes, other)

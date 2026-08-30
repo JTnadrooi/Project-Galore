@@ -9,6 +9,8 @@ for _, atm in pairs(vgal.defines.atmospheres) do
         unlock_tech = "angels-nitrogen-processing-1"
     end
 
+    local separation_energy_required = (separation_category == "chemistry") and 1 or 0.5
+
     vgal.data.extend({
         {
             name = atm.name,
@@ -34,7 +36,7 @@ for _, atm in pairs(vgal.defines.atmospheres) do
                 end)),
                 atm.colors
             ),
-            energy_required = 1,
+            energy_required = separation_energy_required,
             technology = unlock_tech,
             fluid_ingredients = {
                 { atm.name, 100 }

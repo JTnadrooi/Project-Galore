@@ -443,9 +443,9 @@ end
 function vgal.try_get_recipeable(prototype_name)
     vgal.throw.if_param_nil(prototype_name, "prototype_name")
 
-    for _, category in ipairs(vgal.defines.recipeable_types) do
-        if data.raw[category][prototype_name] then
-            return data.raw[category][prototype_name] --[[@as vgal.PrototypeWithIcons]]
+    for category_name, _ in pairs(vgal.defines.recipeable_types) do
+        if data.raw[category_name][prototype_name] then
+            return data.raw[category_name][prototype_name] --[[@as vgal.PrototypeWithIcons]]
         end
     end
 
@@ -626,19 +626,30 @@ end
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "recipe"): data.RecipePrototype
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "fluid"): data.FluidPrototype
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "item"): data.ItemPrototype
+---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "recipeable-item"): data.ItemPrototype
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: "technology"): data.TechnologyPrototype
 ---@overload fun(prototype_or_prototype_name: data.PrototypeBase|string, prototype_type: string): data.PrototypeBase
 function vgal.get_from_prototype_or_prototype_name(prototype_or_prototype_name, prototype_type)
     if prototype_or_prototype_name.type then
-        if prototype_or_prototype_name.type == prototype_type then
+        if prototype_or_prototype_name.type == prototype_type or (prototype_type == "recipeable-item" and (prototype_or_prototype_name.type ~= "fluid") and vgal.defines.recipeable_types[prototype_or_prototype_name.type]) then
             ---@diagnostic disable-next-line: return-type-mismatch
             return prototype_or_prototype_name
         else
             error("Invalid prototype type for prototype with name'" .. prototype_or_prototype_name.name .. "': " .. prototype_or_prototype_name.type)
         end
     else
-        ---@diagnostic disable-next-line: return-type-mismatch
-        return data.raw[prototype_type][prototype_or_prototype_name] or error("Could not find " .. prototype_type .. " with name " .. prototype_or_prototype_name)
+        if prototype_type == "recipeable-item" then
+            local recipeable = vgal.get_recipeable(prototype_or_prototype_name --[[@as string]]) -- throws if not found
+
+            if recipeable.type == "fluid" then
+                error("Invalid prototype type (fluid) for prototype with name'" .. prototype_or_prototype_name.name .. "': " .. prototype_or_prototype_name.type)
+            end
+
+            return recipeable
+        else
+            ---@diagnostic disable-next-line: return-type-mismatch
+            return data.raw[prototype_type][prototype_or_prototype_name] or error("Could not find " .. prototype_type .. " with name " .. prototype_or_prototype_name)
+        end
     end
 end
 

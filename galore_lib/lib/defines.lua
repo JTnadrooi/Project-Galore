@@ -140,18 +140,18 @@ if mods["quality"] then
     }
 end
 
----@type string[]
+---@type table<string, boolean>
 vgal.defines.recipeable_types = {
-    "item",
-    "fluid",
-    "ammo",
-    "capsule",
-    "module",
-    "repair-tool",
-    "armor",
-    "item-with-entity-data",
-    "rail-planner",
-    "gun",
+    ["item"] = true,
+    ["fluid"] = true,
+    ["ammo"] = true,
+    ["capsule"] = true,
+    ["module"] = true,
+    ["repair-tool"] = true,
+    ["armor"] = true,
+    ["item-with-entity-data"] = true,
+    ["rail-planner"] = true,
+    ["gun"] = true,
 }
 
 -- commentedbc: this list would be huge.

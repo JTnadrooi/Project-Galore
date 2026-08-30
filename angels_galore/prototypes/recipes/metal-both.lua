@@ -125,7 +125,27 @@ for _, metal in pairs(vgal.defines.metals) do
                 { metal.pebbles, 1, { independent_probability = 0.8 } },
             },
             category = "angels-crystallizing",
-            show_amount_in_title = false
+
+            order = "b-b[crystallizing]-a",
+        },
+        {
+            name = "angels-mineral-sludge-" .. metal.base_ore,
+            prefix = "vgal",
+            icons = angelsmods.functions.create_liquid_recipe_icon({
+                metal.base_ore,
+            }, { { 202, 099, 017 }, { 097, 052, 020 }, { 097, 052, 020 } }),
+            energy_required = 2,
+            technology = "angels-slag-processing-1",
+            fluid_ingredients = {
+                { "angels-mineral-sludge", 50 }
+            },
+            results = {
+                { metal.base_ore, 1, { independent_probability = 1 } },
+            },
+            category = "angels-crystallizing",
+
+            order = "b-b[crystallizing]-b",
+            subgroup = "vgal-" .. metal.name .. "-sorting-results"
         },
     }, {
         type = "recipe",

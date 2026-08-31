@@ -198,13 +198,38 @@ if vgal.defines.flags["sagal"] then
 end
 
 if vgal.defines.flags["agal"] then
+    ---@type table<string, {name: string, index: integer, color: string}>
     vgal.defines.geodes = { -- sorted from most to least valuable
-        "angels-geode-cyan",
-        "angels-geode-lightgreen",
-        "angels-geode-yellow",
-        "angels-geode-purple",
-        "angels-geode-red",
-        "angels-geode-blue",
+        ["angels-geode-cyan"] = {
+            name  = "angels-geode-cyan",
+            index = 1,
+            color = "cyan",
+        },
+        ["angels-geode-lightgreen"] = {
+            name  = "angels-geode-lightgreen",
+            index = 2,
+            color = "lightgreen",
+        },
+        ["angels-geode-yellow"] = {
+            name  = "angels-geode-yellow",
+            index = 3,
+            color = "yellow",
+        },
+        ["angels-geode-purple"] = {
+            name  = "angels-geode-purple",
+            index = 4,
+            color = "purple",
+        },
+        ["angels-geode-red"] = {
+            name  = "angels-geode-red",
+            index = 5,
+            color = "red",
+        },
+        ["angels-geode-blue"] = {
+            name  = "angels-geode-blue",
+            index = 6,
+            color = "blue",
+        },
     }
 
     ---@type table<string, {name: string, keeping_recipe: string, breeding_recipe: string}>
@@ -231,13 +256,26 @@ if vgal.defines.flags["agal"] then
         },
     }
 
+    ---@type table<string, {name: string}>
     vgal.defines.nutrientables = {
-        "angels-solid-pips",
-        "angels-solid-beans",
-        "angels-solid-leafs",
-        "angels-solid-fruit",
-        "angels-solid-nuts",
-        "angels-solid-corn",
+        ["angels-solid-pips"] = {
+            name = "angels-solid-pips",
+        },
+        ["angels-solid-beans"] = {
+            name = "angels-solid-beans",
+        },
+        ["angels-solid-leafs"] = {
+            name = "angels-solid-leafs",
+        },
+        ["angels-solid-fruit"] = {
+            name = "angels-solid-fruit",
+        },
+        ["angels-solid-nuts"] = {
+            name = "angels-solid-nuts",
+        },
+        ["angels-solid-corn"] = {
+            name = "angels-solid-corn",
+        },
     }
 
     ---@type table<string, {name: string, color: string, result: string, secondary_result_water: string, purification_recipe_palette: vgal.AngelsColorPalette, purification_recipe: string, index: integer}>

@@ -29,8 +29,8 @@ do
         { "angels-crystal-dust", nil, { amount_min = 2, amount_max = 5 } },
     }
 
-    for i, geode in ipairs(vgal.defines.geodes) do
-        table.insert(crystal_rock_results, { geode, 1, { independent_probability = i * 0.05 } })
+    for _, geode in pairs(vgal.defines.geodes) do
+        table.insert(crystal_rock_results, { geode.name, 1, { independent_probability = geode.index * 0.05 } })
     end
 
     data.raw["simple-entity"]["angels-crystal-rock"].minable.results = vgal.build.table(crystal_rock_results)

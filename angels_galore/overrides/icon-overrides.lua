@@ -238,9 +238,9 @@ data.raw.recipe["angels-fermentation-fruit"].icons = vgal.icon.register({
 })
 
 for _, nutrientable in ipairs(vgal.defines.nutrientables) do
-    data.raw.recipe[nutrientable .. "-nutrients"].icons = vgal.icon.register({
+    data.raw.recipe[nutrientable.name .. "-nutrients"].icons = vgal.icon.register({
         vgal.icon.get("angels-liquid-nutrient-pulp"),
-        vgal.icon.get_in(nutrientable),
+        vgal.icon.get_in(nutrientable.name),
     })
 end
 

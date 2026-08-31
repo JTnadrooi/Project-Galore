@@ -300,8 +300,9 @@ function vgal.table.get_multiplied(input, multiplier, entry_name)
     end
 end
 
----@param ... table|any[]
----@return function
+---@generic T
+---@param ... table<any, T>
+---@return fun():T|nil
 function vgal.table.iter_all(...)
     local tables = { ... }
     local iterators = {}

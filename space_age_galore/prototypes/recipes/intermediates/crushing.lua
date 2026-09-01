@@ -20,7 +20,10 @@ vgal.data.extend({
         category = "crushing",
         subgroup = "raw-resource",
         order = "ga",
+
         productivity_technology = "scrap-recycling-productivity",
+        main_product = "holmium-ore",
+
         groups = { "vgal-unsure" },
     },
     {

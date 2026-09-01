@@ -44,5 +44,27 @@ for _, environment in pairs(vgal.defines.environments) do
         type = "recipe",
     })
 
-    -- local ceramic_filter_seed_recipe = table.deepcopy(data.raw["recipe"]["vgal-".. environment])
+    local ceramic_filter_seed_recipe = table.deepcopy(data.raw["recipe"]["vgal-" .. environment.name .. "-seeds"])
+
+    ceramic_filter_seed_recipe.name = "vgal-angels-filter-ceramic-" .. environment.name .. "-seeds"
+    vgal.recipe.replace_ingredient(ceramic_filter_seed_recipe, "angels-filter-coal", "angels-filter-ceramic")
+    ceramic_filter_seed_recipe.order = "b[from-ceramic-filter]-" .. environment.order
+    ceramic_filter_seed_recipe.icons = angelsmods.functions.create_gas_recipe_icon(
+        {
+            environment.seeds[1],
+            environment.seeds[2],
+            environment.seeds[3],
+        },
+        { { 180, 180, 225 }, { 150, 150, 187 }, { 120, 120, 150 } },
+        {
+            environment.seeds[4],
+            environment.seeds[5],
+            "angels-filter-ceramic",
+        }
+    )
+    ceramic_filter_seed_recipe.localised_name = nil
+    ceramic_filter_seed_recipe.localised_description = nil
+
+    data:extend({ ceramic_filter_seed_recipe })
+    vgal.tech.create_node(ceramic_filter_seed_recipe, { "angels-gardens", "angels-slag-processing-2" })
 end

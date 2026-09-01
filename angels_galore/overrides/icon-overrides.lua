@@ -528,3 +528,12 @@ data.raw["recipe"]["angels-solid-fuel-hydrazine"].icons = vgal.icon.register({
     vgal.icon.get("solid-fuel"),
     vgal.icon.get_in("hydrazine", "molecule"),
 })
+
+for _, nutrientable in pairs(vgal.defines.nutrientables) do
+    local recipe = data.raw["recipe"][nutrientable.name .. "-nutrients"]
+
+    recipe.icons = vgal.icon.register({
+        vgal.icon.get("angels-liquid-nutrient-pulp"),
+        vgal.icon.get_in(nutrientable.name, "item"),
+    })
+end

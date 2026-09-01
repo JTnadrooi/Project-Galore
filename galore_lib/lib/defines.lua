@@ -536,7 +536,7 @@ if vgal.defines.flags["agal"] then
         },
     }
 
-    ---@type table<string, {name: string, tier: integer, environment: string, dormant_seed: string?, plant: string}>
+    ---@type table<string, {name: string, tier: integer, environment: string, dormant: string?, plant: string}>
     vgal.defines.seeds = {
         ["angels-temperate-1-seed"] = {
             name = "angels-temperate-1-seed",
@@ -554,21 +554,21 @@ if vgal.defines.flags["agal"] then
             name = "angels-temperate-3-seed",
             tier = 2,
             environment = "temperate",
-            dormant_seed = "angels-temperate-3-seed-dormant",
+            dormant = "angels-temperate-3-seed-dormant",
             plant = "angels-temperate-3",
         },
         ["angels-temperate-4-seed"] = {
             name = "angels-temperate-4-seed",
             tier = 3,
             environment = "temperate",
-            dormant_seed = "angels-temperate-4-seed-dormant",
+            dormant = "angels-temperate-4-seed-dormant",
             plant = "angels-temperate-4",
         },
         ["angels-temperate-5-seed"] = {
             name = "angels-temperate-5-seed",
             tier = 3,
             environment = "temperate",
-            dormant_seed = "angels-temperate-5-seed-dormant",
+            dormant = "angels-temperate-5-seed-dormant",
             plant = "angels-temperate-5",
         },
         ["angels-swamp-1-seed"] = {
@@ -587,21 +587,21 @@ if vgal.defines.flags["agal"] then
             name = "angels-swamp-3-seed",
             tier = 2,
             environment = "swamp",
-            dormant_seed = "angels-swamp-3-seed-dormant",
+            dormant = "angels-swamp-3-seed-dormant",
             plant = "angels-swamp-3",
         },
         ["angels-swamp-4-seed"] = {
             name = "angels-swamp-4-seed",
             tier = 3,
             environment = "swamp",
-            dormant_seed = "angels-swamp-4-seed-dormant",
+            dormant = "angels-swamp-4-seed-dormant",
             plant = "angels-swamp-4",
         },
         ["angels-swamp-5-seed"] = {
             name = "angels-swamp-5-seed",
             tier = 3,
             environment = "swamp",
-            dormant_seed = "angels-swamp-5-seed-dormant",
+            dormant = "angels-swamp-5-seed-dormant",
             plant = "angels-swamp-5",
         },
         ["angels-desert-1-seed"] = {
@@ -620,24 +620,41 @@ if vgal.defines.flags["agal"] then
             name = "angels-desert-3-seed",
             tier = 2,
             environment = "desert",
-            dormant_seed = "angels-desert-3-seed-dormant",
+            dormant = "angels-desert-3-seed-dormant",
             plant = "angels-desert-3",
         },
         ["angels-desert-4-seed"] = {
             name = "angels-desert-4-seed",
             tier = 3,
             environment = "desert",
-            dormant_seed = "angels-desert-4-seed-dormant",
+            dormant = "angels-desert-4-seed-dormant",
             plant = "angels-desert-4",
         },
         ["angels-desert-5-seed"] = {
             name = "angels-desert-5-seed",
             tier = 3,
             environment = "desert",
-            dormant_seed = "angels-desert-5-seed-dormant",
+            dormant = "angels-desert-5-seed-dormant",
             plant = "angels-desert-5",
         },
     }
+
+    if vgal.defines.flags["asagal"] then
+        vgal.defines.seeds["yumako-seed"] = {
+            name = "yumako-seed",
+            tier = 2,
+            environment = "gleba",
+            dormant = "vgal-yumako-seed-dormant",
+            plant = "yumako",
+        }
+        vgal.defines.seeds["jellynut-seed"] = {
+            name = "jellynut-seed",
+            tier = 2,
+            environment = "gleba",
+            dormant = "vgal-jellynut-seed-dormant",
+            plant = "jellynut",
+        }
+    end
 
     ---@type table<string, {splinter: {name: string, raw: string}, shard: {name: string, raw: string}, full: {name: string, raw: string}}>
     vgal.defines.angels_crystal_colors = {
@@ -775,6 +792,19 @@ if vgal.defines.flags["agal"] then
 end
 
 if vgal.defines.flags["asagal"] then
+    ---@type {name: string, seeds: string[], plants: string[]}
+    vgal.defines.gleba_environment = {
+        name = "gleba",
+        seeds = {
+            "yumako-seed",
+            "jellynut-seed",
+        },
+        plants = {
+            "yumako",
+            "jellynut",
+        }
+    }
+
     ---@type table<string, vgal.Atmosphere>
     vgal.defines.atmospheres = {
         ["nauvis"] = { -- not relevant in agal

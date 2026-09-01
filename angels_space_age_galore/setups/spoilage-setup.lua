@@ -16,7 +16,8 @@ vgal.item.set_spoil_minutes("angels-solid-corn", 90)
 vgal.item.set_spoil_minutes("angels-solid-beans", 60)
 vgal.item.set_spoil_minutes("angels-solid-fruit", 40)
 
-vgal.item.set_spoil_minutes("angels-seeded-dish", 2, "angels-substrate-dish")
+vgal.item.set_spoil_minutes("angels-seeded-dish", 5, "angels-substrate-dish")
+vgal.item.set_spoil_minutes("angels-substrate-dish", 5, "angels-petri-dish")
 vgal.item.set_spoil_minutes("angels-bio-alien-processed-meat", 10, "angels-bio-raw-meat")
 
 vgal.item.set_spoil_minutes("angels-algae-green", 5)
@@ -32,4 +33,10 @@ end
 for _, puffer in pairs(vgal.defines.puffers) do
     vgal.item.set_spoil_minutes(puffer.name, 15)
     vgal.item.set_spoil_minutes(puffer.egg, 90)
+end
+
+for _, seed in pairs(vgal.defines.seeds) do
+    if seed.dormant then
+        vgal.item.set_spoil_minutes(seed.name, 60)
+    end
 end

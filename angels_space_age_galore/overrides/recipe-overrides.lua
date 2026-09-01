@@ -638,24 +638,20 @@ end
 
 -- reset_freshness_on_craft fixes
 do
-    for _, fish in pairs(vgal.defines.fish) do
-        vgal.recipe.set_reset_freshness_on_craft(fish.breeding_recipe, true)
-
-        -- hmmm.
-        -- they still breed, but the process is less focussed on it. (explains the new fish)
-        -- also making the nutrients involve output freshness is silly
-        -- I could make it require 1 fish input instead but that seems a bit redux-y
-        vgal.recipe.set_reset_freshness_on_craft(fish.keeping_recipe, true)
+    for _, recipe in pairs(data.raw["recipe"]) do
+        if vgal.recipe.has_any_category(recipe, {
+                "angels-bio-refugium-fish",
+                "angels-bio-refugium-puffer",
+                "angels-bio-hatchery",
+                "angels-bio-butchery",
+                "angels-temperate-farming",
+                "angels-advanced-temperate-farming",
+                "angels-swamp-farming",
+                "angels-advanced-swamp-farming",
+                "angels-desert-farming",
+                "angels-advanced-desert-farming",
+            }) then
+            vgal.recipe.set_reset_freshness_on_craft(recipe, true)
+        end
     end
-
-    for i = 1, 5 do
-        vgal.recipe.set_reset_freshness_on_craft("angels-bio-puffer-egg-" .. i, true)
-        vgal.recipe.set_reset_freshness_on_craft("angels-bio-puffer-" .. i, true)
-    end
-    
-    vgal.recipe.set_reset_freshness_on_craft("angels-puffer-breeding-23", true)
-    vgal.recipe.set_reset_freshness_on_craft("angels-puffer-breeding-12", true)
-    vgal.recipe.set_reset_freshness_on_craft("angels-puffer-breeding-13", true)
-    vgal.recipe.set_reset_freshness_on_craft("angels-puffer-breeding-14", true)
-    vgal.recipe.set_reset_freshness_on_craft("angels-puffer-breeding-15", true)
 end

@@ -126,8 +126,8 @@ for _, environment in pairs(vgal.defines.environments) do
 
         vgal.item.set_rocket_capacity(seed.name, 100)
 
-        if seed.dormant_seed then
-            vgal.item.set_rocket_capacity(seed.dormant_seed, 100)
+        if seed.dormant then
+            vgal.item.set_rocket_capacity(seed.dormant, 100)
         end
     end
     for _, plant in ipairs(environment.plants) do

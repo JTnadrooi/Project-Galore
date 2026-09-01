@@ -1,6 +1,3 @@
-require("setups.spoilage-setup")
-require("setups.weight-setup")
-
 require("prototypes.subgroups")
 require("prototypes.fluids.atmospheres")
 require("prototypes.buildings.space-vent")
@@ -10,6 +7,9 @@ require("prototypes.items.dormant-seeds")
 
 -- require("prototypes.generation.vgal-saline-fissure")
 require("prototypes.generation.vgal-ore")
+
+require("setups.spoilage-setup")
+require("setups.weight-setup")
 
 require("prototypes.recipes.resources")
 require("prototypes.recipes.petrochem")

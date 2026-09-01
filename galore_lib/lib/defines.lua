@@ -140,6 +140,74 @@ if mods["quality"] then
     }
 end
 
+---@type table<string, {name: string, fuel_cell: string?, ore: string?}>
+vgal.defines.nuclear_rocks = {
+    ["uranium-238"] = {
+        name = "uranium-238",
+        ore = "uranium-ore",
+        fuel_cell = "uranium-fuel-cell"
+    },
+    ["uranium-235"] = {
+        name = "uranium-235",
+        ore = "uranium-ore",
+        fuel_cell = "uranium-fuel-cell"
+    },
+}
+
+if vgal.defines.flags["agal"] then
+    vgal.defines.nuclear_rocks["angels-uranium-234"] = {
+        name = "angels-uranium-234",
+        ore = "uranium-ore",
+        fuel_cell = "angels-uranium-fuel-cell"
+    }
+    vgal.defines.nuclear_rocks["angels-neptunium-240"] = {
+        name = "angels-neptunium-240",
+    }
+    vgal.defines.nuclear_rocks["angels-plutonium-239"] = {
+        name = "angels-plutonium-239",
+        ore = "angels-thorium-ore",
+        fuel_cell = "angels-mixed-oxide-cell"
+    }
+    vgal.defines.nuclear_rocks["angels-thorium-232"] = {
+        name = "angels-thorium-232",
+        ore = "angels-thorium-ore",
+        fuel_cell = "angels-thorium-fuel-cell",
+    }
+    vgal.defines.nuclear_rocks["angels-americium-241"] = {
+        name = "angels-americium-241",
+    }
+    vgal.defines.nuclear_rocks["angels-curium-245"] = {
+        name = "angels-curium-245",
+    }
+end
+
+---@type table<string, {name: string, depleted_fuel_cell: string}>
+vgal.defines.fuel_cells = {
+    ["uranium-fuel-cell"] = {
+        name = "uranium-fuel-cell",
+        depleted_fuel_cell = "depleted-uranium-fuel-cell"
+    },
+}
+
+if vgal.defines.flags["agal"] then
+    vgal.defines.fuel_cells["angels-uranium-fuel-cell"] = {
+        name = "angels-uranium-fuel-cell",
+        depleted_fuel_cell = "depleted-uranium-fuel-cell"
+    }
+    vgal.defines.fuel_cells["angels-mixed-oxide-cell"] = {
+        name = "angels-mixed-oxide-cell",
+        depleted_fuel_cell = "angels-depleted-mixed-oxide-cell"
+    }
+    vgal.defines.fuel_cells["angels-thorium-fuel-cell"] = {
+        name = "angels-thorium-fuel-cell",
+        depleted_fuel_cell = "angels-depleted-thorium-fuel-cell"
+    }
+    vgal.defines.fuel_cells["angels-thorium-fuel-cell"] = {
+        name = "angels-thorium-fuel-cell",
+        depleted_fuel_cell = "angels-depleted-deuterium-fuel-cell"
+    }
+end
+
 ---@type table<string, boolean>
 vgal.defines.recipeable_types = {
     ["item"] = true,
@@ -229,6 +297,19 @@ if vgal.defines.flags["agal"] then
             name  = "angels-geode-blue",
             index = 6,
             color = "blue",
+        },
+    }
+
+    ---@type table<string, {name: string}>
+    vgal.defines.catalysators = {
+        ["angels-catalysator-brown"] = {
+            name = "angels-catalysator-brown",
+        },
+        ["angels-catalysator-green"] = {
+            name = "angels-catalysator-green",
+        },
+        ["angels-catalysator-orange"] = {
+            name = "angels-catalysator-orange",
         },
     }
 
@@ -379,6 +460,242 @@ if vgal.defines.flags["agal"] then
                 "angels-desert-4",
                 "angels-desert-5",
             }
+        },
+    }
+
+    ---@type table<string, {name: string, egg: string, puffing_recipe: string, puffing_output_gas: string, waste_water: string?}>
+    vgal.defines.puffers = {
+        ["angels-bio-puffer-1"] = {
+            name = "angels-bio-puffer-1",
+            egg = "angels-bio-puffer-egg-1",
+            puffing_recipe = "angels-puffer-puffing-1",
+            puffing_output_gas = "angels-gas-acid",
+        },
+        ["angels-bio-puffer-2"] = {
+            name = "angels-bio-puffer-2",
+            egg = "angels-bio-puffer-egg-2",
+            puffing_recipe = "angels-puffer-puffing-2",
+            puffing_output_gas = "angels-gas-raw-1",
+            waste_water = "angels-water-yellow-waste"
+        },
+        ["angels-bio-puffer-3"] = {
+            name = "angels-bio-puffer-3",
+            egg = "angels-bio-puffer-egg-3",
+            puffing_recipe = "angels-puffer-puffing-3",
+            puffing_output_gas = "angels-gas-urea",
+            waste_water = "angels-water-red-waste"
+        },
+        ["angels-bio-puffer-4"] = {
+            name = "angels-bio-puffer-4",
+            egg = "angels-bio-puffer-egg-4",
+            puffing_recipe = "angels-puffer-puffing-4",
+            puffing_output_gas = "angels-gas-synthesis",
+            waste_water = "angels-water-greenyellow-waste"
+        },
+        ["angels-bio-puffer-5"] = {
+            name = "angels-bio-puffer-5",
+            egg = "angels-bio-puffer-egg-5",
+            puffing_recipe = "angels-puffer-puffing-5",
+            puffing_output_gas = "angels-gas-hydrazine",
+            waste_water = "angels-water-green-waste"
+        },
+    }
+
+    ---@type table<string, {name: string, egg: string}>
+    vgal.defines.angels_biters = {
+        ["angels-biter-small"] = {
+            name = "angels-biter-small",
+            egg = "angels-biter-small-egg",
+        },
+        ["angels-biter-medium"] = {
+            name = "angels-biter-medium",
+            egg = "angels-biter-medium-egg",
+        },
+        ["angels-biter-big"] = {
+            name = "angels-biter-big",
+            egg = "angels-biter-big-egg",
+        },
+    }
+
+    ---@type table<string, {name: string, cellulose_fiber: string?}>
+    vgal.defines.algae = {
+        ["angels-algae-green"] = {
+            name = "angels-algae-green",
+            cellulose_fiber = "angels-cellulose-fiber",
+        },
+        ["angels-algae-brown"] = {
+            name = "angels-algae-brown",
+        },
+        ["angels-algae-red"] = {
+            name = "angels-algae-red",
+            cellulose_fiber = "angels-red-cellulose-fiber",
+        },
+        ["angels-algae-blue"] = {
+            name = "angels-algae-blue",
+            cellulose_fiber = "angels-blue-cellulose-fiber",
+        },
+    }
+
+    ---@type table<string, {name: string, tier: integer, environment: string, dormant_seed: string?, plant: string}>
+    vgal.defines.seeds = {
+        ["angels-temperate-1-seed"] = {
+            name = "angels-temperate-1-seed",
+            tier = 1,
+            environment = "temperate",
+            plant = "angels-temperate-1",
+        },
+        ["angels-temperate-2-seed"] = {
+            name = "angels-temperate-2-seed",
+            tier = 1,
+            environment = "temperate",
+            plant = "angels-temperate-2",
+        },
+        ["angels-temperate-3-seed"] = {
+            name = "angels-temperate-3-seed",
+            tier = 2,
+            environment = "temperate",
+            dormant_seed = "angels-temperate-3-seed-dormant",
+            plant = "angels-temperate-3",
+        },
+        ["angels-temperate-4-seed"] = {
+            name = "angels-temperate-4-seed",
+            tier = 3,
+            environment = "temperate",
+            dormant_seed = "angels-temperate-4-seed-dormant",
+            plant = "angels-temperate-4",
+        },
+        ["angels-temperate-5-seed"] = {
+            name = "angels-temperate-5-seed",
+            tier = 3,
+            environment = "temperate",
+            dormant_seed = "angels-temperate-5-seed-dormant",
+            plant = "angels-temperate-5",
+        },
+        ["angels-swamp-1-seed"] = {
+            name = "angels-swamp-1-seed",
+            tier = 1,
+            environment = "swamp",
+            plant = "angels-swamp-1",
+        },
+        ["angels-swamp-2-seed"] = {
+            name = "angels-swamp-2-seed",
+            tier = 1,
+            environment = "swamp",
+            plant = "angels-swamp-2",
+        },
+        ["angels-swamp-3-seed"] = {
+            name = "angels-swamp-3-seed",
+            tier = 2,
+            environment = "swamp",
+            dormant_seed = "angels-swamp-3-seed-dormant",
+            plant = "angels-swamp-3",
+        },
+        ["angels-swamp-4-seed"] = {
+            name = "angels-swamp-4-seed",
+            tier = 3,
+            environment = "swamp",
+            dormant_seed = "angels-swamp-4-seed-dormant",
+            plant = "angels-swamp-4",
+        },
+        ["angels-swamp-5-seed"] = {
+            name = "angels-swamp-5-seed",
+            tier = 3,
+            environment = "swamp",
+            dormant_seed = "angels-swamp-5-seed-dormant",
+            plant = "angels-swamp-5",
+        },
+        ["angels-desert-1-seed"] = {
+            name = "angels-desert-1-seed",
+            tier = 1,
+            environment = "desert",
+            plant = "angels-desert-1",
+        },
+        ["angels-desert-2-seed"] = {
+            name = "angels-desert-2-seed",
+            tier = 1,
+            environment = "desert",
+            plant = "angels-desert-2",
+        },
+        ["angels-desert-3-seed"] = {
+            name = "angels-desert-3-seed",
+            tier = 2,
+            environment = "desert",
+            dormant_seed = "angels-desert-3-seed-dormant",
+            plant = "angels-desert-3",
+        },
+        ["angels-desert-4-seed"] = {
+            name = "angels-desert-4-seed",
+            tier = 3,
+            environment = "desert",
+            dormant_seed = "angels-desert-4-seed-dormant",
+            plant = "angels-desert-4",
+        },
+        ["angels-desert-5-seed"] = {
+            name = "angels-desert-5-seed",
+            tier = 3,
+            environment = "desert",
+            dormant_seed = "angels-desert-5-seed-dormant",
+            plant = "angels-desert-5",
+        },
+    }
+
+    ---@type table<string, {splinter: {name: string, raw: string}, shard: {name: string, raw: string}, full: {name: string, raw: string}}>
+    vgal.defines.angels_crystal_colors = {
+        ["blue"] = {
+            splinter = {
+                name = "angels-crystal-splinter-blue",
+                raw = "angels-crystal-splinter-blue-cut",
+            },
+            shard = {
+                name = "angels-crystal-shard-blue",
+                raw = "angels-crystal-shard-blue-cut",
+            },
+            full = {
+                name = "angels-crystal-full-blue",
+                raw = "angels-crystal-full-blue-cut",
+            }
+        },
+        ["green"] = {
+            splinter = {
+                name = "angels-crystal-splinter-green",
+                raw = "angels-crystal-splinter-green-cut",
+            },
+            shard = {
+                name = "angels-crystal-shard-green",
+                raw = "angels-crystal-shard-green-cut",
+            },
+            full = {
+                name = "angels-crystal-full-green",
+                raw = "angels-crystal-full-green-cut",
+            }
+        },
+        ["red"] = {
+            splinter = {
+                name = "angels-crystal-splinter-red",
+                raw = "angels-crystal-splinter-red-cut",
+            },
+            shard = {
+                name = "angels-crystal-shard-red",
+                raw = "angels-crystal-shard-red-cut",
+            },
+            full = {
+                name = "angels-crystal-full-red",
+                raw = "angels-crystal-full-red-cut",
+            }
+        },
+        ["white"] = {
+            splinter = {
+                name = "angels-crystal-splinter-harmonic",
+                raw = "angels-crystal-splinter-raw",
+            },
+            shard = {
+                name = "angels-crystal-shard-harmonic",
+                raw = "angels-crystal-shard-raw",
+            },
+            full = {
+                name = "angels-crystal-full-harmonic",
+                raw = "angels-crystal-full-raw",
+            },
         },
     }
 

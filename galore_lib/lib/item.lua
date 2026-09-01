@@ -20,3 +20,15 @@ function vgal.item.set_spoil_minutes(item_or_item_name, spoil_minutes, spoil_res
     item.spoil_ticks = spoil_minutes * 3600
     item.spoil_result = spoil_result or "spoilage"
 end
+
+---@param item_or_item_name string|data.ItemPrototype
+---@param rocket_capacity integer|"too-heavy"
+function vgal.item.set_rocket_capacity(item_or_item_name, rocket_capacity)
+    local item = vgal.get_from_prototype_or_prototype_name(item_or_item_name, "recipeable-item")
+
+    if rocket_capacity == "too-heavy" then
+        item.weight = 2000000
+    else
+        item.weight = 1000000 / rocket_capacity
+    end
+end

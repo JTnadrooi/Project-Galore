@@ -1,3 +1,6 @@
+require("setups.spoilage-setup")
+require("setups.weight-setup")
+
 require("prototypes.subgroups")
 require("prototypes.fluids.atmospheres")
 require("prototypes.buildings.space-vent")

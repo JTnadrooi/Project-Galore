@@ -365,9 +365,10 @@ function vgal.table.from_array(arr, key_name)
     return result
 end
 
----@param target_table table
----@param entry table
----@param key_name (string|number)?
+---@generic T
+---@param target_table table<any, T>
+---@param entry T
+---@param key_name? string
 function vgal.table.extend_single(target_table, entry, key_name)
     key_name = key_name or "name"
 

@@ -4,6 +4,7 @@ do
     space_vent_item.place_result = "vgal-space-vent"
     space_vent_item.subgroup = "space-platform"
     space_vent_item.order = "x"
+    space_vent_item.weight = 20 / 1000000
 
     data:extend({ space_vent_item })
 end

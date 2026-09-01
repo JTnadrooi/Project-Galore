@@ -525,50 +525,45 @@ function vgal.tech.ensure_unit_ingredient(tech_name, unit_ingredient_name, unit_
     table.insert(tech.unit.ingredients, { unit_ingredient_name, unit_ingredient_amount })
 end
 
----@param tech_name string
+---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param prerequisites string[]
----@param icons data.IconData[]
----@param recipes string[]
----@return data.TechnologyPrototype
-function vgal.tech.create_simple(tech_name, prerequisites, icons, recipes)
-    local function find_units_from_tech(tech_name, visited)
+---@param index integer?
+---@param hidden boolean?
+function vgal.tech.create_node(recipe_or_recipe_name, prerequisites, index, hidden)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+    local tech_name = recipe.name .. "-node" .. (index or 1)
+
+    local function find_units_from_tech(name, visited)
         visited = visited or {}
-        if visited[tech_name] then
-            return {} -- inf loop prevention just to be safe
-        end
-        visited[tech_name] = true
-
-        local tech = vgal.throw.if_tech_not_found(tech_name)
+        if visited[name] then return {} end
+        visited[name] = true
+        local tech = vgal.throw.if_tech_not_found(name)
         local units = vgal.tech.extract_units(tech)
-
-        if #units > 0 then
-            return units
-        end
-
+        if #units > 0 then return units end
         for _, prereq in ipairs(tech.prerequisites or {}) do
-            local prereq_units = find_units_from_tech(prereq, visited)
-            if #prereq_units > 0 then
-                return prereq_units
-            end
+            local found = find_units_from_tech(prereq, visited)
+            if #found > 0 then return found end
         end
-
         return {}
     end
 
-    -- get most expensive prerequisite
     local units = {}
-    for _, prerequisite in ipairs(prerequisites) do
-        local found_units = find_units_from_tech(prerequisite)
-        for _, unit in ipairs(found_units) do
-            table.insert(units, unit)
-        end
+    for _, prereq in ipairs(prerequisites) do
+        local found = find_units_from_tech(prereq)
+        for _, u in ipairs(found) do table.insert(units, u) end
     end
-
-    if #units == 0 then
-        units = { "automation-science-pack" }
-    end
-
+    if #units == 0 then units = { "automation-science-pack" } end
     units = vgal.table.remove_duplicates(units)
+
+    local icons = {}
+    local icon_def = recipe.icon and { icon = recipe.icon, icon_size = recipe.icon_size } or (recipe.icons and recipe.icons[1])
+    local first_icon = table.deepcopy(icon_def)
+    first_icon.scale = 2.2
+    table.insert(icons, first_icon)
+    table.insert(icons, {
+        icon = "__galore_lib__/graphics/node.png",
+        icon_size = 256,
+    })
 
     local tech = vgal.tech.create_empty(
         tech_name,
@@ -580,16 +575,21 @@ function vgal.tech.create_simple(tech_name, prerequisites, icons, recipes)
         "a",
         icons
     )
-    if not tech.effects then
-        tech.effects = {}
-    end
-
-    for _, recipe_name in ipairs(recipes) do
-        table.insert(tech.effects, {
-            type = "unlock-recipe",
-            recipe = recipe_name,
-        })
-    end
-
-    return tech
+    tech.effects = tech.effects or {}
+    table.insert(tech.effects, {
+        type = "unlock-recipe",
+        recipe = recipe.name,
+    })
+    tech.__vgal_is_technode = true
+    tech.hidden = hidden or false
+    tech.hidden_in_factoriopedia = tech.hidden
+    tech.localised_name = {
+        "?",
+        { "", { "vgal-internal.tech-node" }, ": ", { "recipe-name." .. recipe.name } },
+        { "", { "vgal-internal.tech-node" }, ": ", vgal.locale.guess_locale(recipe.main_product) },
+    }
+    tech.localised_description = {
+        "", { "recipe-description." .. recipe.name },
+    }
+    data:extend({ tech })
 end

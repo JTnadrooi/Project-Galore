@@ -306,36 +306,8 @@ function vgal.data.extend(entries, fill_in_with)
 
             for i, tech_entry in ipairs(entry.technologies) do
                 if type(tech_entry) == "table" then
-                    ---@cast tech_entry string[]
-                    local tech = vgal.tech.create_simple(entry.name .. "-node" .. i, tech_entry, {
-                        {
-                            -- not all recipes have icons so this will break eventually
-                            icon = entry.icons[1].icon,
-                            icon_size = entry.icons[1].icon_size,
-                            scale = 2.2,
-                        },
-                        {
-                            icon = "__galore_lib__/graphics/node.png",
-                            icon_size = 256,
-                        },
-                    }, { entry.name })
-
-                    tech.__vgal_is_technode = true
-
-                    tech.localised_name = { "?",
-                        { "", { "vgal-internal.tech-node" }, ": ", { "recipe-name." .. entry.name } },
-                        { "", { "vgal-internal.tech-node" }, ": ", vgal.locale.guess_locale(entry.main_product) },
-                    }
-                    tech.localised_description = {
-                        "", { "recipe-description." .. entry.name },
-                    }
-
-                    tech.hidden = hidden
-                    tech.hidden_in_factoriopedia = hidden
-
-                    data:extend({ tech })
+                    vgal.tech.create_node(entry, tech_entry, i, hidden)
                 elseif type(tech_entry) == "string" then
-                    ---@cast tech_entry string
                     vgal.tech.add_recipe(tech_entry, entry.name)
                 else
                     error("Invalid prototype technologies entry: " .. serpent.block(tech_entry))

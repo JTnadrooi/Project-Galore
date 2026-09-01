@@ -28,6 +28,7 @@ require("prototypes.recipes.resources")
 require("prototypes.recipes.plastic")
 require("prototypes.recipes.intermediates")
 require("prototypes.recipes.bio")
+require("prototypes.recipes.seeds")
 require("prototypes.recipes.petrochem")
 
 require("prototypes.recipes.removed")

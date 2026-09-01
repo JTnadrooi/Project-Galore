@@ -604,6 +604,12 @@ do
     local scrap_crushing_recipe = data.raw["recipe"]["vgal-scrap-crushing"]
     scrap_crushing_recipe.categories = { "angels-ore-refining-t1" }
     scrap_crushing_recipe.energy_required = 2
+    scrap_crushing_recipe.results = vgal.build.table({
+        { "angels-iron-pebbles",   1, { independent_probability = 0.15, show_details_in_recipe_tooltip = false } },
+        { "angels-copper-pebbles", 1, { independent_probability = 0.08, show_details_in_recipe_tooltip = false } },
+        { "angels-stone-crushed",  1, { independent_probability = 0.1, show_details_in_recipe_tooltip = false } },
+        { "holmium-ore",           1, { independent_probability = 0.015, show_details_in_recipe_tooltip = false } },
+    })
     scrap_crushing_recipe.icons = angelsmods.functions.add_icon_layer({
         {
             icon = "__angelsrefininggraphics__/graphics/icons/ore-crusher.png",

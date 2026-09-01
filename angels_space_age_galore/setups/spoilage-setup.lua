@@ -29,8 +29,7 @@ for _, fish in pairs(vgal.defines.fish) do
     vgal.item.set_spoil_minutes(fish.name, 60)
 end
 
-for i = 1, 5 do
-    vgal.item.set_spoil_minutes("angels-bio-puffer-" .. i, 60)
-    -- vgal.item.make_spoil_in("angels-bio-puffer-egg-" .. i, 15, "angels-bio-puffer-egg-shell")
-    vgal.item.set_spoil_minutes("angels-bio-puffer-egg-" .. i, 15)
+for _, puffer in pairs(vgal.defines.puffers) do
+    vgal.item.set_spoil_minutes(puffer.name, 15)
+    vgal.item.set_spoil_minutes(puffer.egg, 90)
 end

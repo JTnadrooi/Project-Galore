@@ -23,65 +23,6 @@ vgal.data.extend({
     },
     {
         type = "recipe",
-        name = "jelly-electronic-circuit",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("electronic-circuit"),
-            vgal.icon.get_in("jelly"),
-        },
-        category = "organic",
-        energy_required = 0.6,
-        technology = "biochamber",
-        ingredients = {
-            { "jelly",       2 }, -- 16
-            { "plastic-bar", 1 }, -- 15
-        },
-        results = {
-            { "electronic-circuit", 1 } -- 25 * 1.5 = 37.5
-        },
-        surface_conditions =
-        {
-            {
-                property = "pressure",
-                min = 2000,
-                max = 2000
-            }
-        },
-    },
-    {
-        type = "recipe",
-        name = "jelly-ammonia-electronic-circuit",
-        prefix = "vgal",
-        icons = vgal.icon.register {
-            vgal.icon.get("electronic-circuit"),
-            vgal.icon.get_in("jelly"),
-            vgal.icon.get_in2("ammonia"),
-        },
-        category = "organic",
-        energy_required = 1.2,
-        technology = "biochamber",
-        fluid_ingredients = {
-            { "ammonia", 5 }, -- 10
-        },
-        ingredients = {
-            { "jelly",       1 }, -- 8
-            { "plastic-bar", 2 }, -- 30
-        },
-        results = {
-            { "electronic-circuit", 2 } -- 50 * 1.5 = 75
-        },
-        surface_conditions =
-        {
-            {
-                property = "pressure",
-                min = 2000,
-                max = 2000
-            }
-        },
-        locale_source = "vgal-jelly-electronic-circuit",
-    },
-    {
-        type = "recipe",
         name = "tungsten-carbide-advanced-circuit",
         prefix = "vgal",
         icons = vgal.icon.register {

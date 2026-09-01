@@ -26,10 +26,22 @@ vgal.subgroup.clean_recipe("vgal-molten-copper-carbon-fiber-low-density-structur
 vgal.subgroup.clean_recipe("vgal-molten-iron-rail")
 vgal.subgroup.clean_recipe("vgal-solid-fuel-sulfuric-acid-carbon")
 
-
 data.raw["item"]["biter-egg"].order = "-a"
 data.raw["item"]["biter-egg"].subgroup = "angels-bio-biter-egg"
 data.raw["recipe"]["biter-egg"].order = "-a"
 
 data.raw.recipe["vgal-spoilage-crude-oil"].order = "-"
 data.raw.recipe["vgal-spoilage-crude-oil"].subgroup = "angels-petrochem-carbon-oil-feed"
+
+data.raw["item"]["pentapod-egg"].order = "--a"
+data.raw["item"]["pentapod-egg"].subgroup = "angels-bio-biter-egg"
+vgal.subgroup.clean_recipe("pentapod-egg")
+
+data.raw["item-subgroup"]["agriculture-products"].order = "fb"
+data.raw["item-subgroup"]["agriculture-products"].group = "angels-bio-processing-nauvis"
+
+data.raw["recipe"]["ice-melting"].order = "a[water]-b[from-not-water]"
+
+data.raw["item"]["lithium"].order = "f"
+data.raw["item"]["lithium"].subgroup = "vgal-petrochem-other-solids"
+vgal.subgroup.clean_recipe("lithium")

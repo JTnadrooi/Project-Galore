@@ -16,6 +16,8 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-ammonia-artificial-jellynut-so
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-ammonia-explosives")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-carbon-uranium-ore")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-wood-carbon")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-ammonia-plastic-bar")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-pentapod-egg-plastic-bar") -- tocomebackat
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-spoilage-sulfuric-acid-carbon")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-ammoniacal-solution-raw-fish")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-carbon-stone-thruster-fuel")

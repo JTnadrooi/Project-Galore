@@ -1081,6 +1081,19 @@ for _, metal in pairs(vgal.defines.metals) do
     vgal.recipe.add_category(metal.pebbles, "hand-crafting")
 end
 
+-- make puffer breeding lossy puffer wise
+for _, puffer in pairs(vgal.defines.puffers) do
+    local breeding_recipe = data.raw["recipe"][puffer.egg]
+    for _, result in ipairs(breeding_recipe.results) do
+        if vgal.defines.puffers[result.name] then
+            result.independent_probability = 0.98
+        end
+    end
+    vgal.recipe.remove_result(breeding_recipe, puffer.name)
+    table.insert(breeding_recipe.results, { type = "item", name = puffer.name, amount = 1 })
+    table.insert(breeding_recipe.results, { type = "item", name = puffer.name, amount = 1, independent_probability = 0.99 })
+end
+
 -- catalyst fixes
 
 ---@param recipe_name string

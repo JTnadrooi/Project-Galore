@@ -43,8 +43,8 @@ make_burnable("angels-biter-medium-egg", 5)
 make_burnable("angels-biter-big-egg", 6)
 make_burnable("angels-solid-compost", 0.15) -- 3x green algae
 
-for i = 1, 5 do
-    make_burnable("angels-bio-puffer-egg-" .. i, math.min(i, 4))
+for _, puffer in pairs(vgal.defines.puffers) do
+    make_burnable(puffer.egg, 5)
 end
 
 for _, environment in pairs(vgal.defines.environments) do

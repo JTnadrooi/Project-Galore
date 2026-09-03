@@ -27,6 +27,7 @@ data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-processing-unit-artillery-turret")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-steam-concrete")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-sulfuric-acid-processing-unit")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-low-density-structure-processing-unit") -- its just way too op with the prod techs
 
 vgal.recipe.add_category("vgal-plastic-bar-electronic-circuit", "electromagnetics")
 vgal.recipe.add_category("vgal-plastic-bar-processing-unit", "electromagnetics")

@@ -108,12 +108,34 @@ vgal.data.extend({
         },
         fluid_results = {
             { "angels-gas-chlor-methane", 100 },
-            { "angels-water-purified",    50 },
+            { "angels-water-purified",    40 },
         },
         category = "chemistry",
 
         allow_productivity = false,
     },
+    -- {
+    --     name = "angels-gas-ethylene-angels-gas-ethanol",
+    --     prefix = "vgal",
+    --     icons = angelsmods.functions.create_liquid_recipe_icon({
+    --         { "__angelsbioprocessinggraphics__/graphics/icons/molecule-acetic-acid.png", 72 },
+    --     }, "COH", {
+    --         -- { "__angelspetrochemgraphics__/graphics/icons/molecules/ethanol.png", 64 },
+    --     }),
+    --     energy_required = 2,
+    --     technology = "angels-bio-fermentation",
+    --     fluid_ingredients = {
+    --         { "angels-gas-ethanol", 50 },
+    --         { "angels-gas-oxygen",  25 },
+    --     },
+    --     fluid_results = {
+    --         { "angels-liquid-acetic-acid", 50 },
+    --         { "angels-water-purified",     25 },
+    --     },
+    --     category = "chemistry",
+
+    --     allow_productivity = false,
+    -- },
     {
         name = "angels-gas-ethanol-angels-liquid-acetic-acid",
         prefix = "vgal",
@@ -129,7 +151,7 @@ vgal.data.extend({
             { "angels-gas-oxygen",  20 },
         },
         fluid_results = {
-            { "angels-liquid-acetic-acid", 50 },
+            { "angels-liquid-acetic-acid", 40 },
             { "angels-water-purified",     20 },
         },
         category = "chemistry",
@@ -153,7 +175,7 @@ vgal.data.extend({
             { "angels-solid-lime", 1 },
         },
         fluid_results = {
-            { "angels-gas-acetone", 60 },
+            { "angels-gas-acetone", 100 },
         },
         results = {
             { "angels-solid-calcium-carbonate", 1, { independent_probability = 0.5 } },
@@ -176,13 +198,13 @@ vgal.data.extend({
         technology = "angels-steam-cracking-1",
         fluid_ingredients = {
             { "angels-gas-ethylene", 50 },
-            { "angels-gas-hydrogen", 20 },
+            { "angels-gas-hydrogen", 50 },
         },
         ingredients = {
             { "angels-catalyst-metal-blue", 1 },
         },
         fluid_results = {
-            { "angels-gas-butane", 30 },
+            { "angels-gas-butane", 50 },
         },
         results = {
             { "angels-catalyst-metal-carrier", 1 },
@@ -204,7 +226,7 @@ vgal.data.extend({
         technologies = { "angels-bio-nutrient-paste", "angels-advanced-chemistry-3" },
         fluid_ingredients = {
             { "angels-gas-acetone",  50 },
-            { "angels-gas-hydrogen", 20 },
+            { "angels-gas-hydrogen", 30 },
         },
         ingredients = {
             { "angels-catalyst-metal-yellow", 1 },

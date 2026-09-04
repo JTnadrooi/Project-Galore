@@ -144,3 +144,11 @@ data.raw["fluid"]["water"].subgroup = "vgal-water"
 vgal.subgroup.clean_recipe("angels-solid-salt")
 data.raw["recipe"]["angels-solid-salt"].order = "a[salt]-a[from-water]-a"
 data.raw["recipe"]["angels-solid-salt"].subgroup = "angels-water-salination"
+
+data.raw["fluid"]["angels-liquid-raw-vegetable-oil"].subgroup = "angels-bio-processor-press-vegetables"
+
+vgal.subgroup.clean_recipe("angels-coal-crushed")
+vgal.subgroup.clean_recipe("angels-solid-coke")
+data.raw["recipe"]["angels-solid-coke"].main_product = "angels-solid-coke"
+vgal.subgroup.clean_recipe("angels-solid-coke-sulfur")
+data.raw["recipe"]["angels-solid-coke-sulfur"].main_product = "angels-solid-coke"

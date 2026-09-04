@@ -54,6 +54,7 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-thruster-fuel-thruster-oxidize
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-thruster-oxidizer-thruster-fuel-steam")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-wood-carbon-fiber")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-carbon-steel-plate")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-solid-fuel-sulfuric-acid-carbon")
 
 -- vanilla trims
 -- bio stuff will be obtained through bioprocessing
@@ -62,15 +63,11 @@ vgal.recipe.hide_and_queue_for_tech_removal("biolubricant")
 vgal.recipe.hide_and_queue_for_tech_removal("bioplastic")
 vgal.recipe.hide_and_queue_for_tech_removal("biosulfur")
 vgal.recipe.hide_and_queue_for_tech_removal("rocket-fuel-from-jelly")
--- might be saveble
+-- is already in agal
 vgal.recipe.hide_and_queue_for_tech_removal("carbon")
 -- other more angel-ish ways available
 vgal.recipe.hide_and_queue_for_tech_removal("solid-fuel-from-ammonia")
 vgal.recipe.hide_and_queue_for_tech_removal("ammonia-rocket-fuel")
--- not needed now there are alt methods for coal recipes that don't use coal.
-vgal.recipe.hide_and_queue_for_tech_removal("coal-synthesis")
--- add spoilage to fiber recipe instead
-vgal.recipe.hide_and_queue_for_tech_removal("burnt-spoilage")
 -- angels already adds a fish breeding recipe
 vgal.recipe.hide_and_queue_for_tech_removal("fish-breeding")
 -- removal of some nutrients recipes
@@ -642,6 +639,45 @@ do
         { "angels-gas-oxygen", 10 }, -- ~ 25 water
     })
     -- vgal.recipe.set_result_amount(oxidizer_recipe, 150)
+end
+
+-- fix burnt spoilage
+do
+    local burnt_spoilage_recipe = data.raw["recipe"]["burnt-spoilage"]
+    burnt_spoilage_recipe.icons = vgal.icon.register({
+        vgal.icon.get("angels-wood-charcoal"),
+        vgal.icon.get_in("spoilage"),
+    })
+    burnt_spoilage_recipe.energy_required = 3
+    burnt_spoilage_recipe.ingredients = vgal.build.table({
+        { "spoilage", 6 }
+    }, {
+        -- { "angels-gas-oxygen", 20 },
+    })
+    burnt_spoilage_recipe.results = vgal.build.table({
+        { "angels-wood-charcoal", 1 } -- even wth how the biochamber prod is missing, it gets fixed by the charcoal to carbon prod
+    }, {
+        { "angels-gas-carbon-dioxide", 20 },
+    })
+    burnt_spoilage_recipe.main_product = "angels-wood-charcoal"
+    vgal.recipe.replace_category(burnt_spoilage_recipe, "organic", "angels-liquifying")
+
+    vgal.subgroup.clean(burnt_spoilage_recipe)
+
+    -- fix unlock (move to way sooner)
+    vgal.tech.move_recipe("biochamber", "angels-bio-wood-processing-2", burnt_spoilage_recipe.name)
+end
+
+-- fix coal synthesis
+do
+    local coal_synthesis_recipe = data.raw["recipe"]["coal-synthesis"]
+    coal_synthesis_recipe.icons = vgal.icon.register({
+        vgal.icon.get("coal"),
+        vgal.icon.get_in("angels-solid-carbon"),
+    })
+    coal_synthesis_recipe.main_product = "coal"
+
+    vgal.subgroup.clean(coal_synthesis_recipe)
 end
 
 -- reset_freshness_on_craft fixes

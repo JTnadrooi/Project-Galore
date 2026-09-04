@@ -312,7 +312,7 @@ do
             end
         end
     end
-
+    vgal.recipe.replace_ingredient("angels-water-void-angels-thermal-water", "angels-water-mineralized", "angels-thermal-water") -- to prevent clarifier from picking the recipe to void mineral water
     local fissure_resource = data.raw["resource"]["angels-fissure"]
     local mineralized_water_fluid = data.raw["fluid"]["angels-water-mineralized"]
 

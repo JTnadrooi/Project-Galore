@@ -30,7 +30,7 @@ for _, environment in pairs(vgal.defines.environments) do
             name = environment.name .. "-seeds",
             prefix = "vgal",
             icons = alt_seeds_icons,
-            energy_required = 300,
+            energy_required = 120,
             technology = "angels-gardens",
             raw_ingredients = coal_filter_seeds_ingredients,
             raw_results = coal_filter_seeds_results,

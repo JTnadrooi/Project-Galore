@@ -1094,6 +1094,21 @@ for _, puffer in pairs(vgal.defines.puffers) do
     table.insert(breeding_recipe.results, { type = "item", name = puffer.name, amount = 1, independent_probability = 0.99 })
 end
 
+do
+    local desert_sorting_3_recipe = data.raw["recipe"]["angels-sorting-desert-3"] -- t2
+    desert_sorting_3_recipe.results = vgal.build.table({
+        { "angels-solid-pips",  24 },                                             -- same as before
+        { "angels-solid-fruit", 6 },                                              -- added (removed the 4 crystal dust result)
+    })
+
+    local desert_temperate_4_recipe = data.raw["recipe"]["angels-sorting-temperate-4"] -- t3
+    desert_temperate_4_recipe.results = vgal.build.table({
+        { "angels-solid-pips",   16 },                                                 -- og; 28
+        { "angels-solid-fruit",  8 },                                                  -- og; 10
+        { "angels-crystal-dust", 4 },                                                  -- added
+    })
+end
+
 -- catalyst fixes
 
 ---@param recipe_name string

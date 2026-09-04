@@ -1,4 +1,25 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.3
+  Features:
+    - Improved Galore chemistry locale.
+    - Added base ores from mineral sludge recipes.
+    - Added ceramic filter versions of the seed filtering recipes.
+    - Added "vgal-angels-wood-pellets-angels-solid-coke" (listed as unsure)
+    - Added "vgal-angels-wood-charcoal-angels-coal-crushed" (listed as unsure)
+  Changes:
+    - Set all puffer egg fuel values to 5Mj.
+    - Replaced the secondary product (crytal dust) from Nilaubergine processing with fruits.
+    - Reworked Quillnoa processing.
+    - Made it so the second puffer has a 1% chance of getting lost in all puffer breeding recipes.
+  Balancing:
+    - Made minor changes to the Galore chemistry recipes to make them look cleaner. Balance stays intact.
+    - Made clarifier cheaper to craft. 
+    - Reduced seed from atm recipe durations from 300s to 120s.
+  Bugfixes:
+    - Fixed angels nutrient pulp recipe icons not being inline with vgal ones.
+    - Fixed seed from atm filtering recipes not yielding t2 and t3 seeds.
+    - Fixed the clarifier using the thermal water voiding recipe to void mineral water.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.2
   Features:
     - Improved water boiling locale.

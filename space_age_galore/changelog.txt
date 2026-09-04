@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.8
+  Changes:
+    - Removed organic circuit recipes. 
+    - (Internal) Changed scrap crushing (tagged as unsure) main_product to holmium-ore (previously iron-ore)
+  Balancing:
+    - "vgal-low-density-structure-processing-unit" is now hidden. It's still in VGAL though.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.7
   Bugfixes:
     - Restored bacteria surface conditions

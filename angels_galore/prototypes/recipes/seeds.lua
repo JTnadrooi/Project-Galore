@@ -48,6 +48,7 @@ for _, environment in pairs(vgal.defines.environments) do
 
     ceramic_filter_seed_recipe.name = "vgal-angels-filter-ceramic-" .. environment.name .. "-seeds"
     vgal.recipe.replace_ingredient(ceramic_filter_seed_recipe, "angels-filter-coal", "angels-filter-ceramic")
+    vgal.recipe.replace_result(ceramic_filter_seed_recipe, "angels-filter-frame", "angels-filter-ceramic-used")
     ceramic_filter_seed_recipe.order = "b[from-ceramic-filter]-" .. environment.order
     ceramic_filter_seed_recipe.icons = angelsmods.functions.create_gas_recipe_icon(
         {

@@ -3,7 +3,7 @@ vgal.data.extend({
     {
         name = "steel-plate-automation-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("automation-science-pack"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -21,7 +21,7 @@ vgal.data.extend({
     {
         name = "lamp-automation-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("automation-science-pack"),
             vgal.icon.get_in("small-lamp"),
         },
@@ -39,7 +39,7 @@ vgal.data.extend({
     {
         name = "stone-wall-furnace-automation-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("automation-science-pack"),
             vgal.icon.get_in("stone-wall"),
         },
@@ -57,7 +57,7 @@ vgal.data.extend({
     {
         name = "burner-inserter-automation-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("automation-science-pack"),
             vgal.icon.get_in("burner-inserter"),
         },
@@ -75,7 +75,7 @@ vgal.data.extend({
     {
         name = "burner-mining-drill-automation-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("automation-science-pack"),
             vgal.icon.get_in("burner-mining-drill"),
         },
@@ -93,7 +93,7 @@ vgal.data.extend({
     {
         name = "plastic-bar-automation-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("automation-science-pack"),
             vgal.icon.get_in("plastic-bar"),
         },
@@ -111,7 +111,7 @@ vgal.data.extend({
     {
         name = "assembling-machine-1-automation-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("automation-science-pack"),
             vgal.icon.get_in("assembling-machine-1"),
         },
@@ -130,7 +130,7 @@ vgal.data.extend({
     {
         name = "concrete-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("logistic-science-pack"),
             vgal.icon.get_in("concrete")
         },
@@ -148,7 +148,7 @@ vgal.data.extend({
     {
         name = "assembling-machine-2-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("logistic-science-pack"),
             vgal.icon.get_in("assembling-machine-2")
         },
@@ -166,7 +166,7 @@ vgal.data.extend({
     {
         name = "solar-planel-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("logistic-science-pack"),
             vgal.icon.get_in("solar-panel"),
         },
@@ -184,7 +184,7 @@ vgal.data.extend({
     {
         name = "electric-mining-drill-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("logistic-science-pack"),
             vgal.icon.get_in("electric-mining-drill")
         },
@@ -202,7 +202,7 @@ vgal.data.extend({
     {
         name = "fast-transport-belt-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("logistic-science-pack"),
             vgal.icon.get_in("fast-transport-belt")
         },
@@ -220,7 +220,7 @@ vgal.data.extend({
     {
         name = "gate-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("logistic-science-pack"),
             vgal.icon.get_in("gate")
         },
@@ -239,7 +239,7 @@ vgal.data.extend({
     {
         name = "accumulator-chemical-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("chemical-science-pack"),
             vgal.icon.get_in("accumulator")
         },
@@ -258,7 +258,7 @@ vgal.data.extend({
     {
         name = "substation-chemical-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("chemical-science-pack"),
             vgal.icon.get_in("substation")
         },
@@ -276,7 +276,7 @@ vgal.data.extend({
     {
         name = "substation-chemical-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("chemical-science-pack"),
             vgal.icon.get_in("substation")
         },
@@ -294,7 +294,7 @@ vgal.data.extend({
     {
         name = "lab-chemical-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("chemical-science-pack"),
             vgal.icon.get_in("lab")
         },
@@ -313,7 +313,7 @@ vgal.data.extend({
     {
         name = "bulk-inserter-chemical-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("chemical-science-pack"),
             vgal.icon.get_in("bulk-inserter"),
         },
@@ -334,7 +334,7 @@ vgal.data.extend({
     {
         name = "electric-engine-unit-chemical-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("chemical-science-pack"),
             vgal.icon.get_in("electric-engine-unit")
         },
@@ -354,7 +354,7 @@ vgal.data.extend({
     {
         name = "gun-turret-military-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("military-science-pack"),
             vgal.icon.get_in("gun-turret"),
         },
@@ -372,7 +372,7 @@ vgal.data.extend({
     {
         name = "flamethrower-turret-military-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("military-science-pack"),
             vgal.icon.get_in("flamethrower-turret"),
         },
@@ -391,7 +391,7 @@ vgal.data.extend({
     {
         name = "laser-turret-military-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("military-science-pack"),
             vgal.icon.get_in("laser-turret"),
         },
@@ -410,7 +410,7 @@ vgal.data.extend({
     {
         name = "defender-capsule-military-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("military-science-pack"),
             vgal.icon.get_in("defender-capsule"),
         },
@@ -429,7 +429,7 @@ vgal.data.extend({
     {
         name = "rocket-military-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("military-science-pack"),
             vgal.icon.get_in("rocket"),
         },
@@ -447,7 +447,7 @@ vgal.data.extend({
     {
         name = "poison-capsule-military-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("military-science-pack"),
             vgal.icon.get_in("poison-capsule"),
         },
@@ -465,7 +465,7 @@ vgal.data.extend({
     {
         name = "slowdown-capsule-military-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("military-science-pack"),
             vgal.icon.get_in("slowdown-capsule"),
         },
@@ -484,7 +484,7 @@ vgal.data.extend({
     {
         name = "low-density-structure-production-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("production-science-pack"),
             vgal.icon.get_in("low-density-structure"),
         },
@@ -503,7 +503,7 @@ vgal.data.extend({
     {
         name = "express-transport-belt-bulk-inserter-production-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("production-science-pack"),
             vgal.icon.get_in("express-transport-belt"),
         },
@@ -522,7 +522,7 @@ vgal.data.extend({
     {
         name = "productivity-module-2-bulk-inserter-production-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("production-science-pack"),
             vgal.icon.get_in("productivity-module-2"),
         },
@@ -541,7 +541,7 @@ vgal.data.extend({
     {
         name = "productivity-module-3-production-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("production-science-pack"),
             vgal.icon.get_in("productivity-module-3")
         },
@@ -562,7 +562,7 @@ vgal.data.extend({
     {
         name = "beacon-production-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("production-science-pack"),
             vgal.icon.get_in("beacon"),
         },
@@ -581,7 +581,7 @@ vgal.data.extend({
     {
         name = "assembling-machine-3-production-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("production-science-pack"),
             vgal.icon.get_in("assembling-machine-3"),
         },
@@ -600,7 +600,7 @@ vgal.data.extend({
     {
         name = "fast-transport-belt-production-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("production-science-pack"),
             vgal.icon.get_in("fast-transport-belt"),
         },
@@ -620,7 +620,7 @@ vgal.data.extend({
     {
         name = "refined-concrete-low-density-structure-utility-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("utility-science-pack"),
             vgal.icon.get_in("refined-concrete"),
             vgal.icon.get_in2("low-density-structure"),
@@ -639,7 +639,7 @@ vgal.data.extend({
     {
         name = "refined-concrete-flying-robot-frame-utility-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("utility-science-pack"),
             vgal.icon.get_in("refined-concrete"),
             vgal.icon.get_in2("flying-robot-frame"),
@@ -658,7 +658,7 @@ vgal.data.extend({
     {
         name = "refined-concrete-processing-unit-utility-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("utility-science-pack"),
             vgal.icon.get_in("refined-concrete"),
             vgal.icon.get_in2("processing-unit"),
@@ -677,7 +677,7 @@ vgal.data.extend({
     {
         name = "logistic-robot-construction-robot-utility-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("utility-science-pack"),
             vgal.icon.get_in("logistic-robot"),
             vgal.icon.get_in2("construction-robot"),
@@ -697,7 +697,7 @@ vgal.data.extend({
     {
         name = "roboport-utility-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("utility-science-pack"),
             vgal.icon.get_in("roboport"),
         },
@@ -716,7 +716,7 @@ vgal.data.extend({
     {
         name = "centrifuge-utility-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("utility-science-pack"),
             vgal.icon.get_in("centrifuge"),
         },
@@ -735,7 +735,7 @@ vgal.data.extend({
     -- {
     --     name = "uranium-fuel-cell-utility-science-pack",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("utility-science-pack"),
     --         vgal.icon.get_in("uranium-fuel-cell"),
     --     },
@@ -761,7 +761,7 @@ for _, module in pairs(vgal.defines.modules) do
         {
             name = module.name .. "-chemical-science-pack",
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get("chemical-science-pack"),
                 vgal.icon.get_in(module.name),
             },

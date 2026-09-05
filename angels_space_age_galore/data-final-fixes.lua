@@ -66,7 +66,7 @@ do
             {
                 name = "vgal-space-void-" .. voidable_fluid_name,
                 domain = "vgal",
-                icons = vgal.icon.register({
+                icons = vgal.icon.merge_composites({
                     vgal.icon.get("vgal-space-vent"),
                     vgal.icon.get_in(voidable_fluid_name)
                 }),

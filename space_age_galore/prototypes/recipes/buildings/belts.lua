@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "plastic-bar-turbo-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("turbo-transport-belt"),
             vgal.icon.get_in("plastic-bar"),
         },
@@ -33,7 +33,7 @@ vgal.data.extend({
     {
         name = "low-density-structure-turbo-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("turbo-transport-belt"),
             vgal.icon.get_in("low-density-structure"),
         },
@@ -64,7 +64,7 @@ vgal.data.extend({
     {
         name = "low-density-structure-turbo-underground-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("turbo-underground-belt"),
             vgal.icon.get_in("low-density-structure"),
         },
@@ -94,7 +94,7 @@ vgal.data.extend({
     {
         name = "low-density-structure-turbo-splitter",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("turbo-splitter"),
             vgal.icon.get_in("low-density-structure"),
         },
@@ -125,7 +125,7 @@ vgal.data.extend({
     {
         name = "quantum-processor-splitter",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("splitter"),
             vgal.icon.get_in("quantum-processor"),
         },

@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "steel-plate-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("transport-belt"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -20,7 +20,7 @@ vgal.data.extend({
     {
         name = "plastic-bar-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("transport-belt"),
             vgal.icon.get_in("plastic-bar"),
         },
@@ -38,7 +38,7 @@ vgal.data.extend({
     {
         name = "steel-plate-fast-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("fast-transport-belt"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -57,7 +57,7 @@ vgal.data.extend({
     {
         name = "plastic-bar-fast-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("fast-transport-belt"),
             vgal.icon.get_in("plastic-bar"),
         },
@@ -76,7 +76,7 @@ vgal.data.extend({
     {
         name = "steel-plate-express-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("express-transport-belt"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -98,7 +98,7 @@ vgal.data.extend({
     {
         name = "plastic-bar-express-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("express-transport-belt"),
             vgal.icon.get_in("plastic-bar"),
         },
@@ -121,7 +121,7 @@ vgal.data.extend({
     {
         name = "steel-plate-underground-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("underground-belt"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -139,7 +139,7 @@ vgal.data.extend({
     {
         name = "steel-plate-fast-underground-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("fast-underground-belt"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -158,7 +158,7 @@ vgal.data.extend({
     {
         name = "steel-plate-express-underground-belt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("express-underground-belt"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -181,7 +181,7 @@ vgal.data.extend({
     {
         name = "advanced-circuit-splitter",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("splitter"),
             vgal.icon.get_in("advanced-circuit"),
         },
@@ -200,7 +200,7 @@ vgal.data.extend({
     {
         name = "processing-unit-splitter",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("splitter"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -220,7 +220,7 @@ vgal.data.extend({
     {
         name = "advanced-circuit-fast-splitter",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("fast-splitter"),
             vgal.icon.get_in("advanced-circuit"),
         },
@@ -239,7 +239,7 @@ vgal.data.extend({
     {
         name = "processing-unit-express-splitter",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("express-splitter"),
             vgal.icon.get_in("processing-unit"),
         },

@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "tungsten-carbide-burner-mining-drill",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("burner-mining-drill"),
             vgal.icon.get_in("tungsten-carbide"),
         },
@@ -22,7 +22,7 @@ vgal.data.extend({
     {
         name = "tungsten-carbide-electric-mining-drill",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electric-mining-drill"),
             vgal.icon.get_in("tungsten-carbide"),
         },
@@ -43,7 +43,7 @@ vgal.data.extend({
     {
         name = "processing-unit-big-mining-drill",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("big-mining-drill"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -74,7 +74,7 @@ vgal.data.extend({
     {
         name = "tungsten-carbide-electric-furnace",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electric-furnace"),
             vgal.icon.get_in("tungsten-carbide"),
         },
@@ -96,7 +96,7 @@ vgal.data.extend({
     {
         name = "tungsten-carbide-heat-pipe",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("heat-pipe"),
             vgal.icon.get_in("tungsten-carbide"),
         },
@@ -117,7 +117,7 @@ vgal.data.extend({
     {
         name = "tungsten-plate-assembling-machine-1",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("assembling-machine-1"),
             vgal.icon.get_in("tungsten-plate"),
         },
@@ -137,7 +137,7 @@ vgal.data.extend({
     {
         name = "tungsten-plate-assembling-machine-2",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("assembling-machine-2"),
             vgal.icon.get_in("tungsten-plate"),
         },
@@ -160,7 +160,7 @@ vgal.data.extend({
     {
         name = "tungsten-plate-assembling-machine-3",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("assembling-machine-3"),
             vgal.icon.get_in("tungsten-plate"),
         },

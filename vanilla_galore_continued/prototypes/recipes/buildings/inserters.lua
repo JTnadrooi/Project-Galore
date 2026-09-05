@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "burner-inserter-inserter",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("inserter"),
             vgal.icon.get_in("burner-inserter"),
         },
@@ -20,7 +20,7 @@ vgal.data.extend({
     {
         name = "processing-unit-bulk-inserter",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("bulk-inserter"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -39,7 +39,7 @@ vgal.data.extend({
     {
         name = "engine-unit-burner-inserter",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("burner-inserter"),
             vgal.icon.get_in("engine-unit"),
         },

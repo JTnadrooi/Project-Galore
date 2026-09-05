@@ -3,7 +3,7 @@ vgal.data.extend({
         type = "recipe",
         name = "sulfur-ammonia-nutrients", -- for nauvis / aquilo
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             -- vgal.icon.get_in("sulfur"),
             -- vgal.icon.get_overlay("nutrients"),
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/sulfur-ammonia-nutrients.png"),
@@ -25,7 +25,7 @@ vgal.data.extend({
         type = "recipe",
         name = "pentapod-egg-bioflux-stone",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_in_to("pentapod-egg"),
             vgal.icon.get_out_to("stone"),
             vgal.icon.get_overlay("to"),
@@ -53,7 +53,7 @@ vgal.data.extend({
         type = "recipe",
         name = "raw-fish-bioflux",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("bioflux"),
             vgal.icon.get_in("raw-fish"),
         },
@@ -78,7 +78,7 @@ vgal.data.extend({
         type = "recipe",
         name = "ammoniacal-solution-raw-fish",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("fish-breeding", "recipe"),
             vgal.icon.get_in_fluid("ammoniacal-solution"),
         },
@@ -101,7 +101,7 @@ vgal.data.extend({
         type = "recipe",
         name = "spoilage-sulfuric-acid-carbon",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("carbon"),
             vgal.icon.get_in("spoilage"),
             vgal.icon.get_in2("sulfuric-acid"),
@@ -124,7 +124,7 @@ vgal.data.extend({
         type = "recipe",
         name = "wood-carbon",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_in_to("wood"),
             vgal.icon.get_out_to("carbon"),
             vgal.icon.get_overlay("to"),
@@ -148,7 +148,7 @@ vgal.data.extend({
         type = "recipe",
         name = "jelly-sulfur-lubricant",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("lubricant"),
             vgal.icon.get_in_fluid("sulfur"),
             vgal.icon.get_in_fluid2("jelly"),
@@ -170,7 +170,7 @@ vgal.data.extend({
     {
         name = "jelly-crude-oil-solid-fuel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("solid-fuel"),
             vgal.icon.get_in("jelly"),
             -- vgal.icon.get_in2("crude-oil"),
@@ -200,7 +200,7 @@ for _, metal in pairs(vgal.defines.metals) do
             type = "recipe",
             name = other_bacteria .. "-" .. metal.bacteria,
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get_in_to(other_bacteria),
                 vgal.icon.get_out_to(metal.bacteria),
                 vgal.icon.get_overlay("to"),
@@ -226,7 +226,7 @@ for _, metal in pairs(vgal.defines.metals) do
             type = "recipe",
             name = other_bacteria .. "-" .. metal.bacteria .. "-centrifuging",
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get_in_to(other_bacteria),
                 vgal.icon.get_out_to(metal.bacteria),
                 vgal.icon.get_overlay("to"),
@@ -251,7 +251,7 @@ for _, metal in pairs(vgal.defines.metals) do
             type = "recipe",
             name = "uranium-235-" .. metal.bacteria,
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get(metal.bacteria .. "-cultivation", "recipe"),
                 vgal.icon.get_in_fluid("uranium-235"),
             },
@@ -284,7 +284,7 @@ for _, metal in pairs(vgal.defines.metals) do
             type = "recipe",
             name = "ammoniacal-solution-" .. metal.bacteria,
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get(metal.bacteria .. "-cultivation", "recipe"),
                 vgal.icon.get_in_fluid("ammoniacal-solution"),
             },

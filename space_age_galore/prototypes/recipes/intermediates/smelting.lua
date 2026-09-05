@@ -3,7 +3,7 @@ vgal.data.extend({
         type = "recipe",
         name = "carbon-steel-plate",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("steel-plate"),
             vgal.icon.get_in("carbon"),
         },
@@ -23,7 +23,7 @@ vgal.data.extend({
         type = "recipe",
         name = "iron-ore-coal-molten-iron", -- future nadrooi, dont add a carbon recipe
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("molten-iron"),
             vgal.icon.get_in("coal"),
         },
@@ -43,7 +43,7 @@ vgal.data.extend({
         type = "recipe",
         name = "copper-ore-coal-molten-copper",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("molten-copper"),
             vgal.icon.get_in("coal"),
         },
@@ -63,7 +63,7 @@ vgal.data.extend({
         type = "recipe",
         name = "ammonia-calcite-molten-iron",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("molten-iron"),
             vgal.icon.get_in("ammonia"),
         },
@@ -86,7 +86,7 @@ vgal.data.extend({
         type = "recipe",
         name = "sulfuric-acid-calcite-molten-copper",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("molten-copper"),
             vgal.icon.get_in("sulfuric-acid"),
         },

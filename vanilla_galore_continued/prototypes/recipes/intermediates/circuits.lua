@@ -3,7 +3,7 @@ vgal.data.extend({
     --     name = "sulfuric-acid-electronic-circuit",
     --     prefix = "vgal",
     --     technology = "sulfur-processing",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("electronic-circuit"),
     --         vgal.icon.get_in("sulfuric-acid"),
     --     },
@@ -25,7 +25,7 @@ vgal.data.extend({
         name = "sulfuric-acid-advanced-circuit",
         prefix = "vgal",
         technology = "advanced-circuit",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("sulfuric-acid"),
         },
@@ -47,7 +47,7 @@ vgal.data.extend({
     --     name = "plastic-bar-electronic-circuit-advanced-circuit-processing-unit",
     --     prefix = "vgal",
     --     technology = "processing-unit",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("processing-unit"),
     --         vgal.icon.get_in("sulfuric-acid", "fluid"),
     --         vgal.icon.get_out("electronic-circuit"),
@@ -72,7 +72,7 @@ vgal.data.extend({
     {
         name = "wood-electronic-circuit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("wood"),
         },
@@ -91,7 +91,7 @@ vgal.data.extend({
     {
         name = "wood-heavy-oil-electronic-circuit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("wood"),
             vgal.icon.get_in2("heavy-oil", "fluid"),
@@ -114,7 +114,7 @@ vgal.data.extend({
     {
         name = "plastic-bar-electronic-circuit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("plastic-bar"),
         },
@@ -133,7 +133,7 @@ vgal.data.extend({
         name = "plastic-bar-processing-unit",
         prefix = "vgal",
         category = "crafting",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("plastic-bar")
         },
@@ -155,7 +155,7 @@ vgal.data.extend({
         name = "sulfuric-acid-processing-unit",
         prefix = "vgal",
         category = "crafting",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("sulfuric-acid")
         },
@@ -176,7 +176,7 @@ vgal.data.extend({
         name = "low-density-structure-processing-unit",
         prefix = "vgal",
         category = "crafting",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("low-density-structure")
         },

@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "molten-iron-rail",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("rail"),
             vgal.icon.get_overlay("casting-iron"),
         },
@@ -23,7 +23,7 @@ vgal.data.extend({
     {
         name = "molten-iron-refined-concrete",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("refined-concrete"),
             vgal.icon.get_overlay("casting-iron"),
         },
@@ -46,7 +46,7 @@ vgal.data.extend({
     {
         name = "ammonia-artificial-jellynut-soil",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("artificial-jellynut-soil"),
             vgal.icon.get_in("ammonia"),
         },
@@ -68,7 +68,7 @@ vgal.data.extend({
     {
         name = "ammonia-artificial-yumako-soil",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("artificial-yumako-soil"),
             vgal.icon.get_in("ammonia"),
         },
@@ -91,7 +91,7 @@ vgal.data.extend({
         type = "recipe",
         name = "low-density-structure-ice-platform",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("ice-platform"),
             vgal.icon.get_in("low-density-structure"),
         },
@@ -112,7 +112,7 @@ vgal.data.extend({
     {
         name = "molten-iron-molten-copper-space-platform-foundation",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("space-platform-foundation"),
             vgal.icon.get_overlay("casting-iron-copper"),
         },
@@ -130,7 +130,7 @@ vgal.data.extend({
     {
         name = "low-density-structure-space-platform-foundation",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("space-platform-foundation"),
             vgal.icon.get_in("low-density-structure"),
         },

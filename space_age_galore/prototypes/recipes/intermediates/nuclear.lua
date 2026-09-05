@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "carbon-uranium-ore",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_in_to("carbon"),
             vgal.icon.get_out_to("uranium-ore"),
             vgal.icon.get_overlay("to"),
@@ -22,7 +22,7 @@ vgal.data.extend({
         type = "recipe",
         name = "depleted-uranium-fuel-cell-fusion-power-cell",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("fusion-power-cell"),
             vgal.icon.get_in("depleted-uranium-fuel-cell"),
         },
@@ -41,7 +41,7 @@ vgal.data.extend({
     -- {
     --     name = "fluorine-uranium-ore-uranium-238-uranium-235",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get_placeholder(),
     --     },
     --     energy_required = 10,
@@ -62,7 +62,7 @@ vgal.data.extend({
     {
         name = "fluorine-kovarex-enrichment-process",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             -- vgal.icon.get("kovarex-enrichment-process", "recipe"),
             -- vgal.icon.get_overlay("plus"),
             -- vgal.icon.get_placeholder(),
@@ -88,7 +88,7 @@ vgal.data.extend({
     {
         name = "lithium-plate-uranium-fuel-cell",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("uranium-fuel-cell"),
             vgal.icon.get_in("lithium-plate"),
         },

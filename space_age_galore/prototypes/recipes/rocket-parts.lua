@@ -3,7 +3,7 @@
 --         name = "lithium-plate-rocket-part",
 --         prefix = "vgal",
 --         technology = "lithium-processing",
---         icons = vgal.icon.register {
+--         icons = vgal.icon.merge_composites {
 --             vgal.icon.get("rocket-part"),
 --             vgal.icon.get_in("lithium-plate")
 --         },

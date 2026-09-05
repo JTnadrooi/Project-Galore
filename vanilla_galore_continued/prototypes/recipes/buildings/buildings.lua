@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "processing-unit-artillery-turret",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("artillery-turret"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -23,7 +23,7 @@ vgal.data.extend({
     {
         name = "advanced-circuit-laser-turret",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("laser-turret"),
             vgal.icon.get_in("advanced-circuit"),
         },
@@ -43,7 +43,7 @@ vgal.data.extend({
     {
         name = "processing-unit-laser-turret",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("laser-turret"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -63,7 +63,7 @@ vgal.data.extend({
     {
         name = "steel-plate-accumulator",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("accumulator"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -81,7 +81,7 @@ vgal.data.extend({
     {
         name = "concrete-stone-wall",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("stone-wall"),
             vgal.icon.get_in("concrete"),
         },
@@ -99,7 +99,7 @@ vgal.data.extend({
     {
         name = "refined-concrete-stone-wall",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("stone-wall"),
             vgal.icon.get_in("refined-concrete"),
         },
@@ -117,7 +117,7 @@ vgal.data.extend({
     {
         name = "processing-unit-beacon",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("beacon"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -137,7 +137,7 @@ vgal.data.extend({
     {
         name = "processing-unit-centrifuge",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("centrifuge"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -157,7 +157,7 @@ vgal.data.extend({
     {
         name = "processing-unit-nuclear-reactor",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("nuclear-reactor"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -177,7 +177,7 @@ vgal.data.extend({
     {
         name = "processing-unit-roboport",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("roboport"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -196,7 +196,7 @@ vgal.data.extend({
     {
         name = "processing-unit-electric-furnace",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electric-furnace"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -215,7 +215,7 @@ vgal.data.extend({
     {
         name = "processing-unit-substation",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("substation"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -234,7 +234,7 @@ vgal.data.extend({
     {
         name = "processing-unit-tank",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("tank", "item-with-entity-data"),
             vgal.icon.get_in("processing-unit"),
         },
@@ -256,7 +256,7 @@ vgal.data.extend({
     {
         name = "electric-engine-unit-assembling-machine-1",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("assembling-machine-1"),
             vgal.icon.get_in("electric-engine-unit"),
         },
@@ -274,7 +274,7 @@ vgal.data.extend({
     {
         name = "electric-engine-unit-assembling-machine-2", -- hell
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("assembling-machine-2"),
             vgal.icon.get_in("electric-engine-unit"),
         },
@@ -296,7 +296,7 @@ vgal.data.extend({
     {
         name = "electric-engine-unit-assembling-machine-3",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("assembling-machine-3"),
             vgal.icon.get_in("electric-engine-unit"),
         },
@@ -319,7 +319,7 @@ vgal.data.extend({
     {
         name = "heavy-oil-rail",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("rail", "rail-planner"),
             vgal.icon.get_in("heavy-oil", "fluid"),
         },
@@ -341,7 +341,7 @@ vgal.data.extend({
     {
         name = "advanced-circuit-solar-panel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("solar-panel"),
             vgal.icon.get_in("advanced-circuit"),
         },
@@ -360,7 +360,7 @@ vgal.data.extend({
     -- {
     --     name = "stone-brick-burner-mining-drill",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("burner-mining-drill"),
     --         vgal.icon.get_in("stone-brick"),
     --     },
@@ -378,7 +378,7 @@ vgal.data.extend({
     {
         name = "burner-mining-drill-electric-mining-drill",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electric-mining-drill"),
             vgal.icon.get_in("burner-mining-drill"),
         },
@@ -397,7 +397,7 @@ vgal.data.extend({
     {
         name = "electric-engine-unit-electric-mining-drill",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electric-mining-drill"),
             vgal.icon.get_in("electric-engine-unit"),
         },
@@ -416,7 +416,7 @@ vgal.data.extend({
     {
         name = "low-density-structure-heat-pipe",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("heat-pipe"),
             vgal.icon.get_in("low-density-structure"),
         },
@@ -435,7 +435,7 @@ vgal.data.extend({
     {
         name = "iron-stick-concrete",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("concrete"),
             vgal.icon.get_in("iron-stick"),
         },
@@ -456,7 +456,7 @@ vgal.data.extend({
     {
         name = "steam-concrete",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("concrete"),
             vgal.icon.get_in("steam", "fluid"),
         },
@@ -477,7 +477,7 @@ vgal.data.extend({
     {
         name = "advanced-circuit-lab",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("lab"),
             vgal.icon.get_in("advanced-circuit"),
         },
@@ -496,7 +496,7 @@ vgal.data.extend({
     {
         name = "steel-plate-pipe",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("pipe"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -513,7 +513,7 @@ vgal.data.extend({
     {
         name = "steel-plate-pipe-to-ground",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("pipe-to-ground"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -531,7 +531,7 @@ vgal.data.extend({
     {
         name = "steel-plate-boiler",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("boiler"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -549,7 +549,7 @@ vgal.data.extend({
     {
         name = "advanced-circuit-radar",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("radar"),
             vgal.icon.get_in("advanced-circuit"),
         },

@@ -3,7 +3,7 @@ vgal.data.extend({
         type = "recipe",
         name = "holmium-plate-electronic-circuit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("holmium-plate"),
         },
@@ -25,7 +25,7 @@ vgal.data.extend({
         type = "recipe",
         name = "tungsten-carbide-advanced-circuit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("tungsten-carbide"),
         },
@@ -48,7 +48,7 @@ vgal.data.extend({
         type = "recipe",
         name = "tungsten-carbide-processing-unit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("tungsten-carbide"),
         },
@@ -72,7 +72,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "yumako-mash-advanced-circuit",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("advanced-circuit"),
     --         vgal.icon.get_in("yumako-mash"),
     --     },
@@ -101,7 +101,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "yumako-mash-ammonia-advanced-circuit",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("advanced-circuit"),
     --         vgal.icon.get_in("yumako-mash"),
     --         vgal.icon.get_in2("ammonia"),
@@ -134,7 +134,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "bioflux-processing-unit",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("processing-unit"),
     --         vgal.icon.get_in("bioflux"),
     --     },
@@ -157,7 +157,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "bioflux-ammonia-processing-unit",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("processing-unit"),
     --         vgal.icon.get_in("bioflux"),
     --         vgal.icon.get_in2("ammonia"),

@@ -644,7 +644,7 @@ end
 -- fix burnt spoilage
 do
     local burnt_spoilage_recipe = data.raw["recipe"]["burnt-spoilage"]
-    burnt_spoilage_recipe.icons = vgal.icon.register({
+    burnt_spoilage_recipe.icons = vgal.icon.merge_composites({
         vgal.icon.get("angels-wood-charcoal"),
         vgal.icon.get_in("spoilage"),
     })
@@ -671,7 +671,7 @@ end
 -- fix coal synthesis
 do
     local coal_synthesis_recipe = data.raw["recipe"]["coal-synthesis"]
-    coal_synthesis_recipe.icons = vgal.icon.register({
+    coal_synthesis_recipe.icons = vgal.icon.merge_composites({
         vgal.icon.get("coal"),
         vgal.icon.get_in("angels-solid-carbon"),
     })

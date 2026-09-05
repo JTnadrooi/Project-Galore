@@ -3,7 +3,7 @@ vgal.data.extend({
         type = "recipe",
         name = "sulfuric-acid-sulfur",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             -- vgal.icon.get("sulfur"),
             -- vgal.icon.get_in("sulfuric-acid", "fluid"),
             -- vgal.icon.get_in2("calcite"),
@@ -47,7 +47,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "stone-bioflux-calcite",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("calcite"),
     --         vgal.icon.get_in("bioflux"),
     --     },
@@ -71,7 +71,7 @@ vgal.data.extend({
         type = "recipe",
         name = "solid-fuel-sulfuric-acid-carbon",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_in_to("solid-fuel"),
             vgal.icon.get_out_to("carbon"),
             vgal.icon.get_overlay("to"),
@@ -96,7 +96,7 @@ vgal.data.extend({
         type = "recipe",
         name = "carbon-sulfur-lubricant",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("lubricant"),
             vgal.icon.get_in_fluid("sulfur"),
             vgal.icon.get_in_fluid2("carbon"),
@@ -119,7 +119,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "carbon-lubricant", -- for vulcanus
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("lubricant"),
     --         vgal.icon.get_in_fluid("carbon"),
     --     },
@@ -139,7 +139,7 @@ vgal.data.extend({
     -- {
     --     name = "heavy-oil-ammonia-sulfur",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("sulfur"),
     --         vgal.icon.get_in("ammonia"),
     --     },
@@ -160,7 +160,7 @@ vgal.data.extend({
         type = "recipe",
         name = "calcite-holmium-solution",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("holmium-solution"),
             vgal.icon.get_in_fluid("steam"),
             vgal.icon.get_in_fluid2("calcite"),
@@ -183,7 +183,7 @@ vgal.data.extend({
         type = "recipe",
         name = "scrap-sulfuric-acid-holmium-solution", --
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("holmium-solution"),
             vgal.icon.get_in_fluid("scrap"),
             vgal.icon.get_in_fluid2("sulfuric-acid"),
@@ -209,7 +209,7 @@ vgal.data.extend({
         type = "recipe",
         name = "thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("rocket-fuel"),
             vgal.icon.get_in("thruster-fuel"),
             vgal.icon.get_in2("thruster-oxidizer"),
@@ -241,7 +241,7 @@ vgal.data.extend({
         type = "recipe",
         name = "plastic-bar-electrolyte",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electrolyte"),
             vgal.icon.get_in("light-oil"),
             vgal.icon.get_in2("plastic-bar"),
@@ -264,7 +264,7 @@ vgal.data.extend({
         type = "recipe",
         name = "sulfuric-acid-electrolyte",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electrolyte"),
             vgal.icon.get_in("sulfuric-acid"),
             vgal.icon.get_in2("stone"),
@@ -287,7 +287,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "calcite-fluorine",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("fluorine"),
     --         -- vgal.icon.get_in_fluid("calcite"),
     --         -- vgal.icon.get_in_to("calcite"),
@@ -310,7 +310,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "fluorine-tungsten-carbide",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("tungsten-carbide"),
     --         vgal.icon.get_in("fluorine"),
     --     },
@@ -334,7 +334,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "fluorine-lithium-rocket-fuel", -- Lithium-Fluorine propellant!
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("rocket-fuel"),
     --         vgal.icon.get_in("fluorine"),
     --     },
@@ -357,7 +357,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "lithium-brine-solid-fuel",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("solid-fuel"),
     --         vgal.icon.get_in("lithium-brine"),
     --     },
@@ -380,7 +380,7 @@ vgal.data.extend({
         type = "recipe",
         name = "lithium-battery", -- will be used for alternate cryogenic science recipe but currently NO ONE (no one) will be using it.
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("battery"),
             vgal.icon.get_in("lithium"),
         },
@@ -402,7 +402,7 @@ vgal.data.extend({
         type = "recipe",
         name = "ammonia-explosives", -- lets goo, less coal usage on gleba (and in space)!
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("explosives"),
             vgal.icon.get_in("ammonia"),
         },
@@ -424,7 +424,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "fluorine-superconductor",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("superconductor"),
     --         vgal.icon.get_in("fluorine"),
     --     },
@@ -447,7 +447,7 @@ vgal.data.extend({
         type = "recipe",
         name = "ammonia-plastic-bar", -- can be done on aquilo, carbon comes from spoilage
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("plastic-bar"),
             vgal.icon.get_in("ammonia"),
         },
@@ -468,7 +468,7 @@ vgal.data.extend({
         type = "recipe",
         name = "pentapod-egg-plastic-bar",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("plastic-bar"),
             vgal.icon.get_in("pentapod-egg"),
         },

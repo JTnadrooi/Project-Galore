@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "iron-plate-copper-plate-barrel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("barrel"),
             vgal.icon.get_in("copper-plate"),
             vgal.icon.get_in2("iron-plate"),
@@ -22,7 +22,7 @@ vgal.data.extend({
     {
         name = "low-density-structure-barrel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("barrel"),
             vgal.icon.get_in("low-density-structure"),
         },
@@ -41,7 +41,7 @@ vgal.data.extend({
     {
         name = "steel-plate-iron-gear-wheel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("iron-gear-wheel"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -58,7 +58,7 @@ vgal.data.extend({
     {
         name = "steel-plate-iron-stick",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("iron-stick"),
             vgal.icon.get_in("steel-plate"),
         },
@@ -75,7 +75,7 @@ vgal.data.extend({
     {
         name = "copper-cable-battery",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("battery"),
             vgal.icon.get_in("copper-cable"),
         },
@@ -96,7 +96,7 @@ vgal.data.extend({
     {
         name = "plastic-bar-repair-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("repair-pack", "repair-tool"),
             vgal.icon.get_in("plastic-bar"),
         },
@@ -114,7 +114,7 @@ vgal.data.extend({
     {
         name = "petroleum-gas-rocket-fuel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("rocket-fuel"),
             vgal.icon.get_in("petroleum-gas", "fluid"),
         },
@@ -134,7 +134,7 @@ vgal.data.extend({
     {
         name = "copper-cable-plastic-bar",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("plastic-bar"),
             vgal.icon.get_in("copper-cable"),
         },
@@ -155,7 +155,7 @@ vgal.data.extend({
     -- {
     --     name = "light-oil-plastic-bar",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("plastic-bar"),
     --         vgal.icon.get_in("light-oil", "fluid"),
     --     },
@@ -176,7 +176,7 @@ vgal.data.extend({
     {
         name = "advanced-circuit-flying-robot-frame",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("flying-robot-frame"),
             vgal.icon.get_in("advanced-circuit"),
         },
@@ -196,7 +196,7 @@ vgal.data.extend({
     {
         name = "processing-unit-flying-robot-frame",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("flying-robot-frame"),
             vgal.icon.get_in("processing-unit"),
         },

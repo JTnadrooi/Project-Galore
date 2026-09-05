@@ -3,7 +3,7 @@ vgal.data.extend({
         type = "recipe",
         name = "iron-bacteria-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_in_to("iron-bacteria"),
             vgal.icon.get_out_to("ammonia"),
             vgal.icon.get_overlay("to"),
@@ -30,7 +30,7 @@ vgal.data.extend({
         type = "recipe",
         name = "copper-bacteria-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_in_to("copper-bacteria"),
             vgal.icon.get_out_to("ammonia"),
             vgal.icon.get_overlay("to"),
@@ -57,7 +57,7 @@ vgal.data.extend({
         type = "recipe",
         name = "biter-egg-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_in_to("biter-egg"),
             vgal.icon.get_out_to("ammonia"),
             vgal.icon.get_overlay("to"),
@@ -84,7 +84,7 @@ vgal.data.extend({
         type = "recipe",
         name = "water-coal-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("ammonia"),
         },
         categories = { "organic", "chemistry" },
@@ -112,7 +112,7 @@ vgal.data.extend({
     {
         name = "calcite-sulfuric-acid-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_in_to("calcite"),
             vgal.icon.get_out_to("ammonia"),
             vgal.icon.get_overlay("to"),
@@ -145,7 +145,7 @@ vgal.data.extend({
     {
         name = "ice-solid-fuel-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_in_to("ice"),
             vgal.icon.get_out_to("ammonia"),
             vgal.icon.get_overlay("to"),

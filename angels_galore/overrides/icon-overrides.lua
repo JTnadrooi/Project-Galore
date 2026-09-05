@@ -1,7 +1,7 @@
 local function use_main_icon(recipe_name)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
 
-    recipe.icons = vgal.icon.register({
+    recipe.icons = vgal.icon.merge_composites({
         vgal.icon.get(recipe_name),
     })
 end
@@ -134,56 +134,56 @@ for _, environment in pairs(vgal.defines.environments) do
 end
 
 -- toluene fixes
-data.raw.recipe["angels-liquid-toluene-from-benzene"].icons = vgal.icon.register({
+data.raw.recipe["angels-liquid-toluene-from-benzene"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-toluene"),
     vgal.icon.get_in("benzene", "molecule"),
 })
-data.raw.recipe["angels-liquid-toluene"].icons = vgal.icon.register({
+data.raw.recipe["angels-liquid-toluene"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-toluene"),
     vgal.icon.get_in("angels-liquid-naphtha"),
 })
 
 -- other
-data.raw.recipe["angels-garden-cultivating"].icons = vgal.icon.register({
+data.raw.recipe["angels-garden-cultivating"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-paste-cellulose"),
     vgal.icon.get_out("angels-temperate-garden"),
     vgal.icon.get_out2("angels-desert-garden"),
     vgal.icon.get_out3("angels-swamp-garden"),
 })
 
--- data.raw.recipe["angels-sulfur-air-scrubbing"].icons = vgal.icon.register({
+-- data.raw.recipe["angels-sulfur-air-scrubbing"].icons = vgal.icon.merge_composites({
 --     vgal.icon.get("angels-filter-lime-used"),
 -- })
 
-data.raw.recipe["angels-filter-lime-used-cleaning"].icons = vgal.icon.register({
+data.raw.recipe["angels-filter-lime-used-cleaning"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-filter-frame"),
     vgal.icon.get_in("angels-filter-lime-used"),
 })
 
-data.raw.recipe["angels-filter-ceramic-refurbish"].icons = vgal.icon.register({
+data.raw.recipe["angels-filter-ceramic-refurbish"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-filter-ceramic"),
     vgal.icon.get_in("angels-filter-ceramic-used"),
 })
 
-data.raw["recipe"]["angels-solid-mud-landfill"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-mud-landfill"].icons = vgal.icon.merge_composites({
     vgal.icon.get("landfill"),
     vgal.icon.get_in("angels-solid-mud"),
 })
 
-data.raw.recipe["angels-solid-soil-alternative"].icons = vgal.icon.register({
+data.raw.recipe["angels-solid-soil-alternative"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-solid-soil"),
     vgal.icon.get_in("angels-solid-sand"),
 })
 
-data.raw.recipe["angels-water-saline-from-water"].icons = vgal.icon.register({
+data.raw.recipe["angels-water-saline-from-water"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-water-saline"),
 })
 
-data.raw.recipe["angels-solid-sulfur"].icons = vgal.icon.register({
+data.raw.recipe["angels-solid-sulfur"].icons = vgal.icon.merge_composites({
     vgal.icon.get("sulfur"),
 })
 
-data.raw.recipe["angels-solid-salt-dissolving"].icons = vgal.icon.register({
+data.raw.recipe["angels-solid-salt-dissolving"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-water-saline"),
     vgal.icon.get_in("angels-solid-salt"),
 })
@@ -191,92 +191,92 @@ data.raw.recipe["angels-solid-salt-dissolving"].icons = vgal.icon.register({
 use_main_icon("angels-solid-salt")
 
 use_main_icon("angels-solid-sodium")
-data.raw.recipe["angels-solid-salt-separation"].icons = vgal.icon.register({
+data.raw.recipe["angels-solid-salt-separation"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-solid-sodium"),
     vgal.icon.get_in("angels-solid-salt"),
 })
-data.raw.recipe["angels-solid-sodium-sulfate-separation"].icons = vgal.icon.register({
+data.raw.recipe["angels-solid-sodium-sulfate-separation"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-solid-sodium"),
     vgal.icon.get_in("angels-solid-sodium-sulfate"),
 })
 
-data.raw["recipe"]["angels-algae-brown-burning-wash"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-algae-brown-burning-wash"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-solid-sodium-carbonate"),
     vgal.icon.get_in("angels-algae-brown"),
 })
 
-data.raw.recipe["angels-coolant-used-filtration-1"].icons = vgal.icon.register({
+data.raw.recipe["angels-coolant-used-filtration-1"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-coolant"),
     vgal.icon.get_in("angels-filter-coal"),
 })
 
-data.raw.recipe["angels-coolant-used-filtration-2"].icons = vgal.icon.register({
+data.raw.recipe["angels-coolant-used-filtration-2"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-coolant"),
     vgal.icon.get_in("angels-filter-ceramic"),
 })
 
-data.raw.recipe["angels-carbon-from-charcoal"].icons = vgal.icon.register({
+data.raw.recipe["angels-carbon-from-charcoal"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-solid-carbon"),
     vgal.icon.get_in("angels-wood-charcoal"),
 })
 
-data.raw.recipe["angels-liquid-aqueous-sodium-hydroxide-reverse"].icons = vgal.icon.register({
+data.raw.recipe["angels-liquid-aqueous-sodium-hydroxide-reverse"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-solid-sodium-hydroxide"),
     vgal.icon.get_in("angels-liquid-aqueous-sodium-hydroxide"),
 })
 
 use_main_icon("angels-solid-sodium-hydroxide")
 
-data.raw.recipe["angels-fermentation-corn"].icons = vgal.icon.register({
+data.raw.recipe["angels-fermentation-corn"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-fermentation-raw"),
     vgal.icon.get_in("angels-solid-corn"),
 })
 
-data.raw.recipe["angels-fermentation-fruit"].icons = vgal.icon.register({
+data.raw.recipe["angels-fermentation-fruit"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-fermentation-raw"),
     vgal.icon.get_in("angels-solid-fruit"),
 })
 
 for _, nutrientable in ipairs(vgal.defines.nutrientables) do
-    data.raw.recipe[nutrientable.name .. "-nutrients"].icons = vgal.icon.register({
+    data.raw.recipe[nutrientable.name .. "-nutrients"].icons = vgal.icon.merge_composites({
         vgal.icon.get("angels-liquid-nutrient-pulp"),
         vgal.icon.get_in(nutrientable.name),
     })
 end
 
-data.raw.recipe["angels-fish-pulp-nutrients"].icons = vgal.icon.register({
+data.raw.recipe["angels-fish-pulp-nutrients"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-nutrient-pulp"),
     vgal.icon.get_in("angels-fish-pulp"),
 })
 
 for _, vegetable_oilable in ipairs({ "nuts", "pips", "beans" }) do
-    data.raw.recipe["angels-liquid-raw-vegetable-oil-" .. vegetable_oilable].icons = vgal.icon.register({
+    data.raw.recipe["angels-liquid-raw-vegetable-oil-" .. vegetable_oilable].icons = vgal.icon.merge_composites({
         vgal.icon.get("angels-liquid-raw-vegetable-oil"),
         vgal.icon.get_in("angels-solid-" .. vegetable_oilable),
     })
 end
 
-data.raw.recipe["angels-fish-pressing-0"].icons = vgal.icon.register({
+data.raw.recipe["angels-fish-pressing-0"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-raw-fish-oil"),
     vgal.icon.get_in("raw-fish"),
 })
 
 for i = 1, 3 do
-    data.raw.recipe["angels-fish-pressing-" .. i].icons = vgal.icon.register({
+    data.raw.recipe["angels-fish-pressing-" .. i].icons = vgal.icon.merge_composites({
         vgal.icon.get("angels-liquid-raw-fish-oil"),
         vgal.icon.get_in("angels-alien-fish-" .. i .. "-raw"),
     })
 end
 
 for _, metal in pairs(vgal.defines.metals) do
-    data.raw["recipe"][metal.angels_plate_recipe_name].icons = vgal.icon.register({
+    data.raw["recipe"][metal.angels_plate_recipe_name].icons = vgal.icon.merge_composites({
         vgal.icon.get(metal.plate),
     })
-    data.raw["recipe"][metal.plate].icons = vgal.icon.register({
+    data.raw["recipe"][metal.plate].icons = vgal.icon.merge_composites({
         vgal.icon.get(metal.plate),
         vgal.icon.get_in(metal.base_ore),
     })
-    data.raw.recipe[metal.processed].icons = vgal.icon.register({
+    data.raw.recipe[metal.processed].icons = vgal.icon.merge_composites({
         vgal.icon.get(metal.processed),
     })
 end
@@ -295,92 +295,92 @@ use_main_icon("angels-solid-soil")
 
 -- fix explosives recipe tier icons
 use_main_icon("explosives")
-data.raw["recipe"]["angels-solid-nitroglycerin"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-nitroglycerin"].icons = vgal.icon.merge_composites({
     vgal.icon.get("explosives"),
     vgal.icon.get_in("glycerol", "molecule"),
 })
-data.raw["recipe"]["angels-solid-trinitrotoluene"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-trinitrotoluene"].icons = vgal.icon.merge_composites({
     vgal.icon.get("explosives"),
     vgal.icon.get_in("angels-liquid-toluene"),
 })
 
 -- fix coke recipe tier icons
-data.raw["recipe"]["angels-solid-coke"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-coke"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-solid-coke"),
 })
 
 -- fix coke recipe tier icons
-data.raw["recipe"]["angels-solid-coke-sulfur"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-coke-sulfur"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-solid-coke"),
     vgal.icon.get_in("angels-water-purified"),
 })
 
 -- fix green algae recipe tier icons
-data.raw["recipe"]["angels-algae-green-simple"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-algae-green-simple"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-algae-green"),
 })
-data.raw["recipe"]["angels-algae-green"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-algae-green"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-algae-green"),
     -- vgal.icon.get_in("angels-water-mineralized"),
     vgal.icon.get_in("carbon-dioxide", "molecule"),
 })
 
 -- fix wood sawing recipe tier icons
-data.raw["recipe"]["angels-wood-sawing-1"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-wood-sawing-1"].icons = vgal.icon.merge_composites({
     vgal.icon.get("wood"),
 })
-data.raw["recipe"]["angels-wood-sawing-2"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-wood-sawing-2"].icons = vgal.icon.merge_composites({
     vgal.icon.get("wood"),
     vgal.icon.get_in("angels-solid-crystal-tipped-saw"),
 })
-data.raw["recipe"]["angels-wood-sawing-3"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-wood-sawing-3"].icons = vgal.icon.merge_composites({
     vgal.icon.get("wood"),
     vgal.icon.get_in("angels-solid-crystal-full-saw"),
 })
 
 -- fix tree seed recipe tier icons
 use_main_icon("angels-tree-seed")
-data.raw["recipe"]["angels-tree-seed-2"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-tree-seed-2"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-tree-seed"),
     vgal.icon.get_in("angels-solid-fertilizer"),
 })
-data.raw["recipe"]["angels-tree-seed-3"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-tree-seed-3"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-tree-seed"),
     vgal.icon.get_in("carbon-dioxide", "molecule"),
 })
 
 -- fix tree recipe tier icons
 use_main_icon("angels-solid-tree")
-data.raw["recipe"]["angels-solid-tree-2"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-tree-2"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-solid-tree"),
     vgal.icon.get_in("angels-solid-fertilizer"),
 })
-data.raw["recipe"]["angels-solid-tree-3"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-tree-3"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-solid-tree"),
     vgal.icon.get_in("angels-liquid-nutrient-pulp"),
 })
 
 -- fix crystal splinter recipe tier icons
-data.raw["recipe"]["angels-crystal-splinter-crystalization-1"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-crystal-splinter-crystalization-1"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-crystal-splinter-raw"),
 })
-data.raw["recipe"]["angels-crystal-splinter-crystalization-2"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-crystal-splinter-crystalization-2"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-crystal-splinter-raw"),
     vgal.icon.get_in("angels-crystal-seed"),
 })
 
 -- fix crystal shard recipe tier icons
-data.raw["recipe"]["angels-crystal-shard-crystalization-1"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-crystal-shard-crystalization-1"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-crystal-shard-raw"),
 })
-data.raw["recipe"]["angels-crystal-shard-crystalization-2"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-crystal-shard-crystalization-2"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-crystal-shard-raw"),
     vgal.icon.get_in("angels-crystal-enhancer"),
 })
 
 -- fix concrete recipe tier icons
 use_main_icon("concrete")
-data.raw["recipe"]["angels-concrete"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-concrete"].icons = vgal.icon.merge_composites({
     vgal.icon.get("concrete"),
     vgal.icon.get_in("angels-liquid-concrete"),
 })
@@ -388,7 +388,7 @@ data.raw["recipe"]["angels-concrete"].icons = vgal.icon.register({
 -- fix plate casting recipes tier icons
 for _, material in ipairs({ "iron", "copper", "steel" }) do
     use_main_icon("angels-roll-" .. material)
-    data.raw["recipe"]["angels-roll-" .. material .. "-2"].icons = vgal.icon.register({
+    data.raw["recipe"]["angels-roll-" .. material .. "-2"].icons = vgal.icon.merge_composites({
         vgal.icon.get("angels-roll-" .. material),
         vgal.icon.get_in("angels-liquid-coolant"),
     })
@@ -397,21 +397,21 @@ end
 -- fix ingot recipes tier icons
 -- copper
 use_main_icon("angels-ingot-copper")
-data.raw["recipe"]["angels-ingot-copper-2"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-ingot-copper-2"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-ingot-copper"),
     vgal.icon.get_in("angels-processed-copper"),
 })
-data.raw["recipe"]["angels-ingot-copper-3"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-ingot-copper-3"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-ingot-copper"),
     vgal.icon.get_in("angels-anode-copper"),
 })
 -- iron
 use_main_icon("angels-ingot-iron")
-data.raw["recipe"]["angels-ingot-iron-2"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-ingot-iron-2"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-ingot-iron"),
     vgal.icon.get_in("angels-processed-iron"),
 })
-data.raw["recipe"]["angels-ingot-iron-3"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-ingot-iron-3"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-ingot-iron"),
     vgal.icon.get_in("angels-pellet-iron"),
 })
@@ -424,11 +424,11 @@ use_main_icon("angels-liquid-concrete")
 
 -- fix atomic bomb tier irons
 use_main_icon("atomic-bomb")
-data.raw["recipe"]["angels-atomic-bomb"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-atomic-bomb"].icons = vgal.icon.merge_composites({
     vgal.icon.get("atomic-bomb"),
     vgal.icon.get_in("angels-plutonium-239"),
 })
-data.raw["recipe"]["angels-atomic-bomb-2"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-atomic-bomb-2"].icons = vgal.icon.merge_composites({
     vgal.icon.get("atomic-bomb"),
     vgal.icon.get_in("angels-muon-fusion-catalyst"),
 })
@@ -500,7 +500,7 @@ end
 -- fix meat recipe icons
 for _, recipe in pairs(data.raw["recipe"]) do
     if vgal.recipe.has_category(recipe, "angels-bio-butchery") and recipe.ingredients and (#recipe.ingredients > 0) then
-        recipe.icons = vgal.icon.register({
+        recipe.icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-bio-raw-meat"),
             vgal.icon.get_in(recipe.ingredients[1].name, "item"),
         })
@@ -508,23 +508,23 @@ for _, recipe in pairs(data.raw["recipe"]) do
 end
 
 -- fix solid fuel recipe icons
-data.raw["recipe"]["angels-solid-fuel-methane"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-fuel-methane"].icons = vgal.icon.merge_composites({
     vgal.icon.get("solid-fuel"),
     vgal.icon.get_in("methane", "molecule"),
 })
-data.raw["recipe"]["angels-solid-fuel-naphtha"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-fuel-naphtha"].icons = vgal.icon.merge_composites({
     vgal.icon.get("solid-fuel"),
     vgal.icon.get_in("angels-liquid-naphtha"),
 })
-data.raw["recipe"]["angels-solid-fuel-fuel-oil"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-fuel-fuel-oil"].icons = vgal.icon.merge_composites({
     vgal.icon.get("solid-fuel"),
     vgal.icon.get_in("angels-liquid-fuel-oil"),
 })
-data.raw["recipe"]["angels-solid-fuel-synthesis"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-fuel-synthesis"].icons = vgal.icon.merge_composites({
     vgal.icon.get("solid-fuel"),
     vgal.icon.get_in("angels-gas-synthesis"),
 })
-data.raw["recipe"]["angels-solid-fuel-hydrazine"].icons = vgal.icon.register({
+data.raw["recipe"]["angels-solid-fuel-hydrazine"].icons = vgal.icon.merge_composites({
     vgal.icon.get("solid-fuel"),
     vgal.icon.get_in("hydrazine", "molecule"),
 })
@@ -532,7 +532,7 @@ data.raw["recipe"]["angels-solid-fuel-hydrazine"].icons = vgal.icon.register({
 for _, nutrientable in pairs(vgal.defines.nutrientables) do
     local recipe = data.raw["recipe"][nutrientable.name .. "-nutrients"]
 
-    recipe.icons = vgal.icon.register({
+    recipe.icons = vgal.icon.merge_composites({
         vgal.icon.get("angels-liquid-nutrient-pulp"),
         vgal.icon.get_in(nutrientable.name, "item"),
     })

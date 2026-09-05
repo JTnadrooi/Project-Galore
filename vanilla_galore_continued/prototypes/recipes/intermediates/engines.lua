@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "low-density-structure-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("engine-unit"),
             vgal.icon.get_in("low-density-structure"),
         },
@@ -21,7 +21,7 @@ vgal.data.extend({
     {
         name = "lubricant-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("engine-unit"),
             vgal.icon.get_in("lubricant", "fluid"),
         },
@@ -43,7 +43,7 @@ vgal.data.extend({
     {
         name = "advanced-circuit-electric-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electric-engine-unit"),
             vgal.icon.get_in("advanced-circuit"),
         },
@@ -61,7 +61,7 @@ vgal.data.extend({
     -- {
     --     name = "plastic-bar-electric-engine-unit",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("electric-engine-unit"),
     --         vgal.icon.get_in("plastic-bar"),
     --     },

@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "angels-gas-nitrogen-angels-ingot-steel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-ingot-steel"),
             vgal.icon.get_in("angels-slag"),
         },
@@ -25,7 +25,7 @@ vgal.data.extend({
     {
         name = "angels-solid-carbon-angels-ingot-steel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-ingot-steel"),
             vgal.icon.get_in("angels-solid-carbon"),
         },
@@ -48,7 +48,7 @@ vgal.data.extend({
     -- {
     --     name = "angels-solid-sand-angels-ingot-steel",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("angels-ingot-steel"),
     --         vgal.icon.get_in("angels-solid-sand"),
     --     },

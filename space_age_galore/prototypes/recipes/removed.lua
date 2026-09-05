@@ -3,7 +3,7 @@ vgal.data.extend({
         type = "recipe",
         name = "carbon-lubricant",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("lubricant"),
             vgal.icon.get_in_fluid("carbon"),
         },
@@ -23,7 +23,7 @@ vgal.data.extend({
     {
         name = "calcite-carbon-stone-brick", -- vu
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("stone-brick"),
             vgal.icon.get_in("calcite"),
         },
@@ -43,12 +43,12 @@ vgal.data.extend({
         type = "recipe",
         name = "solid-fuel-carbon",
         prefix = "vgal",
-        -- icons = vgal.icon.register {
+        -- icons = vgal.icon.merge_composites {
         --     vgal.icon.get("carbon"),
         --     vgal.icon.get_in("solid-fuel"),
         --     vgal.icon.get_in2("steam"),
         -- },
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_in_to("solid-fuel"),
             vgal.icon.get_out_to("carbon"),
             vgal.icon.get_overlay("to"),
@@ -69,7 +69,7 @@ vgal.data.extend({
     {
         name = "tungsten-plate-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("engine-unit"),
             vgal.icon.get_in("tungsten-plate"),
         },
@@ -88,7 +88,7 @@ vgal.data.extend({
     {
         name = "molten-iron-molten-copper-uranium-238-low-density-structure",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("casting-low-density-structure", "recipe"),
             vgal.icon.get_in("uranium-238"),
         },
@@ -113,7 +113,7 @@ vgal.data.extend({
     {
         name = "tungsten-plate-barrel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("barrel"),
             vgal.icon.get_in("tungsten-plate"),
         },
@@ -132,7 +132,7 @@ vgal.data.extend({
     {
         name = "plastic-bar-railgun-ammo",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("railgun-ammo"),
             vgal.icon.get_in("plastic-bar"),
         },
@@ -152,7 +152,7 @@ vgal.data.extend({
         type = "recipe",
         name = "jelly-electronic-circuit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("jelly"),
         },
@@ -179,7 +179,7 @@ vgal.data.extend({
         type = "recipe",
         name = "jelly-ammonia-electronic-circuit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("jelly"),
             vgal.icon.get_in2("ammonia"),

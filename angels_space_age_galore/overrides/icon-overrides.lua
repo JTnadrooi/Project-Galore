@@ -15,40 +15,40 @@ end
 --     "FFF"
 -- ))
 
-data.raw.recipe["molten-iron-from-lava"].icons = vgal.icon.register({
+data.raw.recipe["molten-iron-from-lava"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-molten-iron"),
     vgal.icon.get_in("lava"),
 })
-data.raw.recipe["molten-copper-from-lava"].icons = vgal.icon.register({
+data.raw.recipe["molten-copper-from-lava"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-molten-copper"),
     vgal.icon.get_in("lava"),
 })
 
-data.raw.recipe["casting-low-density-structure"].icons = vgal.icon.register({
+data.raw.recipe["casting-low-density-structure"].icons = vgal.icon.merge_composites({
     vgal.icon.get("low-density-structure"),
     vgal.icon.get_in("angels-liquid-molten-copper"),
     vgal.icon.get_in("angels-liquid-molten-steel"),
 })
-data.raw.recipe["vgal-molten-iron-rail"].icons = vgal.icon.register({
+data.raw.recipe["vgal-molten-iron-rail"].icons = vgal.icon.merge_composites({
     vgal.icon.get("rail"),
     vgal.icon.get_in("angels-liquid-molten-steel"),
 })
-data.raw.recipe["vgal-molten-iron-molten-copper-space-platform-foundation"].icons = vgal.icon.register({
+data.raw.recipe["vgal-molten-iron-molten-copper-space-platform-foundation"].icons = vgal.icon.merge_composites({
     vgal.icon.get("space-platform-foundation"),
     vgal.icon.get_in("angels-liquid-molten-steel"),
 })
-data.raw.recipe["vgal-molten-copper-carbon-fiber-low-density-structure"].icons = vgal.icon.register({
+data.raw.recipe["vgal-molten-copper-carbon-fiber-low-density-structure"].icons = vgal.icon.merge_composites({
     vgal.icon.get("low-density-structure"),
     vgal.icon.get_in("carbon-fiber"),
     vgal.icon.get_in2("angels-liquid-molten-copper"),
 })
 
-data.raw.recipe["vgal-petroleum-gas-barrel-biter-egg"].icons = vgal.icon.register({
+data.raw.recipe["vgal-petroleum-gas-barrel-biter-egg"].icons = vgal.icon.merge_composites({
     vgal.icon.get("biter-egg"),
     vgal.icon.get_in("carbon-dioxide", "molecule"),
 })
 
-data.raw.recipe["vgal-ammonia-agricultural-science-pack"].icons = vgal.icon.register({
+data.raw.recipe["vgal-ammonia-agricultural-science-pack"].icons = vgal.icon.merge_composites({
     vgal.icon.get("agricultural-science-pack"),
     vgal.icon.get_in("urea", "molecule"),
 })
@@ -67,19 +67,19 @@ data.raw["technology"]["angels-bio-refugium-fish-2"].icon_size = 256
 -- make nutrients icons more galore like
 -- also my icon library is not fit for the other way....
 -- and I can't use the angels graphics to do asesprite stuff soo....
-data.raw.recipe["nutrients-from-spoilage"].icons = vgal.icon.register({
+data.raw.recipe["nutrients-from-spoilage"].icons = vgal.icon.merge_composites({
     vgal.icon.get("nutrients"),
     vgal.icon.get_in("spoilage"),
 })
-data.raw.recipe["nutrients-from-yumako-mash"].icons = vgal.icon.register({
+data.raw.recipe["nutrients-from-yumako-mash"].icons = vgal.icon.merge_composites({
     vgal.icon.get("nutrients"),
     vgal.icon.get_in("yumako-mash"),
 })
-data.raw.recipe["nutrients-from-bioflux"].icons = vgal.icon.register({
+data.raw.recipe["nutrients-from-bioflux"].icons = vgal.icon.merge_composites({
     vgal.icon.get("nutrients"),
     vgal.icon.get_in("bioflux"),
 })
-data.raw.recipe["vgal-sulfur-ammonia-nutrients"].icons = vgal.icon.register({
+data.raw.recipe["vgal-sulfur-ammonia-nutrients"].icons = vgal.icon.merge_composites({
     vgal.icon.get("nutrients"),
     vgal.icon.get_in("sulfur"),
 })

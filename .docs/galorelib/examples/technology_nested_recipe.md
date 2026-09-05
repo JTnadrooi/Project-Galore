@@ -12,7 +12,7 @@ vgal.data.extend({
                 {                                            -- ignore the horribility(?) of this recipe.
                     name = "carbon-uranium-ore",             -- becomes "test-carbon-uranium-ore-2". Inherits "prefix" from parent technology.
                     tier = 2,                                -- currently only gets added to recipe name but more functionality is planned in the future.
-                    icons = vgal.icon.register {
+                    icons = vgal.icon.merge_composites {
                         vgal.icon.get_in_to("carbon"),       -- the "in" ingredient
                         vgal.icon.get_out_to("uranium-ore"), -- the "out" result
                         vgal.icon.get_overlay("to"),         -- the arrow

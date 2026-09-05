@@ -3,7 +3,7 @@ vgal.data.extend({
         type = "recipe",
         name = "water-fluoroketone-cold-ice", -- 1 rocket is 5000 fluid, 1r = 500,000 ice, 1r = 10,000,000 water
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("ice"),
             vgal.icon.get_in("water", "fluid"),
             vgal.icon.get_in2("fluoroketone-cold", "fluid"),
@@ -28,7 +28,7 @@ vgal.data.extend({
         type = "recipe",
         name = "water-ice",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("ice"),
             vgal.icon.get_in("water", "fluid"),
         },

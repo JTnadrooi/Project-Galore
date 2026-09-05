@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-steel-low-density-structure",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("low-density-structure"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
         },
@@ -27,7 +27,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-steel-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("engine-unit"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
         },

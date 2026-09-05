@@ -362,63 +362,16 @@ function vgal.icon.get_in_bg2(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.30, { 7, -7 })
 end
 
----@param composite_icons data.IconData[][]
+---@param composites data.IconData[][]
 ---@return data.IconData[]
-function vgal.icon.from_composite(composite_icons)
+function vgal.icon.merge_composites(composites)
     local new_icons = {}
-    for _, composite_icon in ipairs(composite_icons) do
+    for _, composite_icon in ipairs(composites) do
         for _, icon in ipairs(composite_icon) do
             table.insert(new_icons, icon)
         end
     end
     return new_icons
-end
-
----@param composite_icons data.IconData[][]
----@param composition ("default")?
----@return data.IconData[]
-function vgal.icon.register(composite_icons, composition)
-    composition = composition or "default"
-    -- if composition == "angels_recipe" then
-    --     local newIcons = {}
-    --     local outIcons = {}
-    --     local inIcons = {}
-    --     for _, iconTable in ipairs(icons) do
-    --         if vgal.icon.get_icon_target(iconTable, true) == "in" then
-    --             table.insert(inIcons, iconTable)
-    --         elseif vgal.icon.get_icon_target(iconTable, true) == "out" then
-    --             table.insert(outIcons, iconTable)
-    --         else
-    --             table.insert(newIcons, iconTable)
-    --         end
-    --     end
-    --     local scalingConst = 0.3
-    --     if #outIcons == 2 then
-    --         vgal.icon.set_target(outIcons[2], "out3")
-    --     end
-    --     if #inIcons == 2 then
-    --         vgal.icon.set_target(inIcons[2], "in3")
-    --     end
-    --     if #inIcons == 1 then
-    --         vgal.icon.set_target(inIcons[1], "in3")
-    --     end
-    --     for index2, iconTable2 in ipairs(outIcons) do
-    --         local placeIndex = 0
-    --         placeIndex = vgal.icon.get_icon_target_index(iconTable2) or index2
-    --         table.insert(newIcons, vgal.icon.shift(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), 12 }))
-    --     end
-    --     for index2, iconTable2 in ipairs(inIcons) do
-    --         local placeIndex = 0
-    --         placeIndex = vgal.icon.get_icon_target_index(iconTable2) or index2
-    --         table.insert(newIcons,
-    --             vgal.icon.shift(iconTable2, scalingConst, { (-11.5 + (11.5 * (placeIndex - 1))), -12 }))
-    --     end
-    --     return vgal.icon.register(newIcons)
-    -- end
-    if composition == "default" then
-        return vgal.icon.from_composite(composite_icons)
-    end
-    error("unrecognised composition")
 end
 
 ---@param prototype_to data.PrototypeBase

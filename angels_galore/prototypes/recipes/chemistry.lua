@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "angels-solid-sodium-chlorate-angels-solid-salt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-solid-salt"),
             vgal.icon.get_in("angels-solid-sodium-chlorate"),
         },
@@ -25,7 +25,7 @@ vgal.data.extend({
     {
         name = "angels-solid-sodium-chlorate-angels-liquid-hydrochloric-acid-angels-solid-salt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-solid-salt"),
             vgal.icon.get_in("angels-solid-sodium-chlorate"),
             vgal.icon.get_in2("hydrochloric-acid", "molecule"),
@@ -51,7 +51,7 @@ vgal.data.extend({
     {
         name = "angels-solid-calcium-carbonate-angels-liquid-hydrochloric-acid-angels-solid-calcium-chloride",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-solid-calcium-chloride"),
             vgal.icon.get_in("angels-solid-calcium-carbonate"),
         },
@@ -77,7 +77,7 @@ vgal.data.extend({
         -- uses (alien bacteria) item usage has been compensated
         name = "angels-red-cellulose-fiber-angels-solid-calcium-carbonate",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-solid-calcium-carbonate"),
             vgal.icon.get_in("angels-red-cellulose-fiber"),
         },
@@ -442,7 +442,7 @@ vgal.data.extend({
     {
         name = "angels-solid-ammonium-nitrate-angels-liquid-fuel-oil-explosives",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("explosives"),
             vgal.icon.get_in("angels-solid-ammonium-nitrate"),
         },
@@ -548,7 +548,7 @@ vgal.data.extend({
     {
         name = "angels-solid-ammonium-perchlorate-rocket-fuel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("rocket-fuel"),
             vgal.icon.get_in("angels-solid-ammonium-perchlorate"),
         },
@@ -568,7 +568,7 @@ vgal.data.extend({
     {
         name = "angels-gas-hydrogen-angels-gas-oxygen-rocket-fuel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("rocket-fuel"),
             vgal.icon.get_in("hydrogen", "molecule"),
             vgal.icon.get_in2("oxygen", "molecule"),
@@ -589,7 +589,7 @@ vgal.data.extend({
     {
         name = "angels-gas-propene-solid-fuel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("solid-fuel"),
             vgal.icon.get_in("propene", "molecule"),
         },

@@ -2,7 +2,7 @@ vgal.data.extend({
     -- {
     --     name = "angels-catalysator-brown-iron-ore",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("angels_sorting", "raw"),
     --         vgal.icon.get_out2("iron-ore"),
     --     },

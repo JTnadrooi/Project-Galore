@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "scrap-crushing",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("scrap"),
             vgal.icon.get_overlay("crushing"),
         },
@@ -29,7 +29,7 @@ vgal.data.extend({
     {
         name = "stone-crushing",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("stone"),
             vgal.icon.get_overlay("crushing"),
         },
@@ -49,7 +49,7 @@ vgal.data.extend({
     {
         name = "coal-crushing",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("coal"),
             vgal.icon.get_overlay("crushing"),
         },

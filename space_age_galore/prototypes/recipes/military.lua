@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "tungsten-plate-piercing-rounds-magazine",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("piercing-rounds-magazine", "ammo"),
             vgal.icon.get_in("tungsten-plate"),
         },
@@ -20,7 +20,7 @@ vgal.data.extend({
     {
         name = "tungsten-plate-cannon-shell",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("cannon-shell", "ammo"),
             vgal.icon.get_in("tungsten-plate"),
         },
@@ -39,7 +39,7 @@ vgal.data.extend({
     {
         name = "tungsten-plate-explosive-cannon-shell",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("explosive-cannon-shell", "ammo"),
             vgal.icon.get_in("tungsten-plate"),
         },
@@ -58,7 +58,7 @@ vgal.data.extend({
     {
         name = "tungsten-plate-piercing-shotgun-shell",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("piercing-shotgun-shell", "ammo"),
             vgal.icon.get_in("tungsten-plate"),
         },
@@ -76,7 +76,7 @@ vgal.data.extend({
     {
         name = "superconductor-railgun-ammo",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("railgun-ammo"),
             vgal.icon.get_in("superconductor"),
         },
@@ -96,7 +96,7 @@ vgal.data.extend({
     {
         name = "molten-iron-molten-copper-railgun-ammo",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("railgun-ammo"),
             vgal.icon.get_overlay("casting-iron-copper"),
         },
@@ -118,7 +118,7 @@ vgal.data.extend({
     {
         name = "holmium-plate-railgun-ammo",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("railgun-ammo"),
             vgal.icon.get_in("holmium-plate"),
         },
@@ -139,7 +139,7 @@ vgal.data.extend({
     -- {
     --     name = "tungsten-carbide-railgun-ammo",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("railgun-ammo"),
     --         vgal.icon.get_in("tungsten-carbide"),
     --     },
@@ -159,7 +159,7 @@ vgal.data.extend({
     {
         name = "electronic-circuit-railgun-turret",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("railgun-turret"),
             vgal.icon.get_in("electronic-circuit"),
         },
@@ -184,7 +184,7 @@ vgal.data.extend({
     {
         name = "gun-turret-rail-railgun-turret",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("railgun-turret"),
             vgal.icon.get_in("gun-turret"),
         },
@@ -203,7 +203,7 @@ vgal.data.extend({
     {
         name = "pistol-rail-railgun",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("railgun-turret"),
             vgal.icon.get_in("pistol"),
         },
@@ -222,7 +222,7 @@ vgal.data.extend({
     {
         name = "biter-egg-defender-capsule",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("defender-capsule"),
             vgal.icon.get_in("biter-egg"),
         },
@@ -242,7 +242,7 @@ vgal.data.extend({
     {
         name = "pentapod-egg-defender-capsule",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("defender-capsule"),
             vgal.icon.get_in("pentapod-egg"),
         },

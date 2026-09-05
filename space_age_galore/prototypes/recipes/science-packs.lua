@@ -3,7 +3,7 @@ vgal.data.extend({
     {
         name = "uranium-235-space-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("space-science-pack"),
             vgal.icon.get_in("uranium-235"),
         },
@@ -34,7 +34,7 @@ vgal.data.extend({
     {
         name = "ammonia-agricultural-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("agricultural-science-pack"),
             vgal.icon.get_in("ammonia"),
         },
@@ -63,7 +63,7 @@ vgal.data.extend({
     {
         name = "sulfur-petroleum-gas-agricultural-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("agricultural-science-pack"),
             vgal.icon.get_in("sulfur"),
         },
@@ -92,7 +92,7 @@ vgal.data.extend({
     -- {
     --     name = "carbon-fiber-agricultural-science-pack",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("agricultural-science-pack"),
     --         vgal.icon.get_in("carbon-fiber"),
     --     },
@@ -118,7 +118,7 @@ vgal.data.extend({
     {
         name = "electronic-circuit-agricultural-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("agricultural-science-pack"),
             vgal.icon.get_in("electronic-circuit"),
         },
@@ -145,7 +145,7 @@ vgal.data.extend({
     -- {
     --     name = "biter-egg-agricultural-science-pack",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("agricultural-science-pack"),
     --         vgal.icon.get_in("biter-egg"),
     --     },
@@ -175,7 +175,7 @@ vgal.data.extend({
     -- {
     --     name = "superconductor-agricultural-science-pack",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("agricultural-science-pack"),
     --         vgal.icon.get_in("superconductor"),
     --     },
@@ -207,7 +207,7 @@ vgal.data.extend({
     {
         name = "big-mining-drill-calcite-metallurgic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("metallurgic-science-pack"),
             vgal.icon.get_in("big-mining-drill"),
         },
@@ -242,7 +242,7 @@ vgal.data.extend({
     {
         name = "pentapod-egg-biter-egg-military-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("military-science-pack"),
             vgal.icon.get_in("biter-egg"),
             vgal.icon.get_in2("pentapod-egg"),

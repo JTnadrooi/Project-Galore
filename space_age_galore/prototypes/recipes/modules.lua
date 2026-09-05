@@ -18,7 +18,7 @@ for _, module in pairs(vgal.defines.modules) do
                 {
                     name = module.unique_ingredient .. "-" .. tiered_module_name,
                     prefix = "vgal",
-                    icons = vgal.icon.register {
+                    icons = vgal.icon.merge_composites {
                         vgal.icon.get(tiered_module_name),
                         vgal.icon.get_overlay("planet"),
                     },

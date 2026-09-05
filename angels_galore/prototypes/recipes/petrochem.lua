@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "sulfuric-acid-angels-solid-carbon",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-solid-carbon"),
             vgal.icon.get_in("sulfuric-acid"),
         },
@@ -25,7 +25,7 @@ vgal.data.extend({
     {
         name = "angels-solid-coke-angels-solid-sodium-hydroxide-angels-solid-carbon",
         prefix = "vgal",
-        icons = vgal.icon.register({
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-carbon"),
             vgal.icon.get_in("angels-solid-sodium-hydroxide"),
         }),
@@ -58,7 +58,7 @@ vgal.data.extend({
     {
         name = "angels-wood-pellets-angels-solid-coke",
         prefix = "vgal",
-        icons = vgal.icon.register({
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-coke"),
             vgal.icon.get_in("angels-wood-pellets"),
         }),
@@ -80,7 +80,7 @@ vgal.data.extend({
     {
         name = "angels-wood-charcoal-angels-coal-crushed",
         prefix = "vgal",
-        icons = vgal.icon.register({
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-coal-crushed"),
             vgal.icon.get_in("angels-wood-charcoal"),
         }),
@@ -100,7 +100,7 @@ vgal.data.extend({
     -- {
     --     name = "angels-solid-oil-residual-angels-solid-coke",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register({
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("angels-solid-coke"),
     --         vgal.icon.get_in("angels-solid-oil-residual"),
     --     }),

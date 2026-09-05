@@ -59,7 +59,7 @@ vgal.data.extend({
     {
         name = "angels-water-saline-angels-solid-salt",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-solid-salt"),
             vgal.icon.get_in("angels-water-saline"),
         },

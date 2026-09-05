@@ -5,7 +5,7 @@ for _, metal in pairs(vgal.defines.metals) do
         {
             name = metal.ore .. "-angels-cellulose-fiber-" .. metal.pellet,
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get(metal.pellet),
                 vgal.icon.get_in("angels-cellulose-fiber"),
             },
@@ -23,7 +23,7 @@ for _, metal in pairs(vgal.defines.metals) do
         {
             name = metal.pebbles .. "-" .. metal.processed,
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get(metal.processed),
                 vgal.icon.get_in(metal.pebbles),
             },
@@ -41,7 +41,7 @@ for _, metal in pairs(vgal.defines.metals) do
         {
             name = metal.nugget .. "-" .. metal.ore,
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get("angels_sorting", "raw"),
                 vgal.icon.get_in(metal.nugget),
                 vgal.icon.get_out2(metal.ore),
@@ -60,7 +60,7 @@ for _, metal in pairs(vgal.defines.metals) do
         {
             name = metal.slag .. "-" .. metal.ore,
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get("angels_sorting", "raw"),
                 vgal.icon.get_in(metal.slag),
                 vgal.icon.get_out2(metal.ore),
@@ -79,7 +79,7 @@ for _, metal in pairs(vgal.defines.metals) do
         {
             name = metal.pebbles .. "-" .. metal.plate,
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get(metal.plate),
                 vgal.icon.get_in(metal.pebbles),
             },
@@ -96,7 +96,7 @@ for _, metal in pairs(vgal.defines.metals) do
         {
             name = metal.nugget .. "-" .. metal.plate,
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get(metal.plate),
                 vgal.icon.get_in(metal.nugget),
             },

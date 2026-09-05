@@ -3,7 +3,7 @@ vgal.data.extend({
         type = "recipe",
         name = "coal-sulfur",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/coal-sulfur.png"),
             -- vgal.icon.get_in_fluid("petroleum-gas"),
             -- vgal.icon.get("coal"),
@@ -27,7 +27,7 @@ vgal.data.extend({
         type = "recipe",
         name = "plastic-bar-lubricant",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("lubricant"),
             vgal.icon.get_in_fluid("plastic-bar"),
         },
@@ -47,7 +47,7 @@ vgal.data.extend({
     {
         name = "steam-sulfur",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("sulfur"),
             vgal.icon.get_in("steam"),
         },

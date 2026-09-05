@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "angels-electrode-used-angels-solid-carbon-angels-electrode",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-electrode"),
             vgal.icon.get_in("angels-solid-carbon"),
         },

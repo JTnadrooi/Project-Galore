@@ -65,7 +65,7 @@ vgal.data.extend({
     {
         name = "space-vent",
         domain = "vgal",
-        icons = vgal.icon.register({
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("vgal-space-vent"),
         }),
         energy_required = 5,

@@ -1,11 +1,11 @@
 data:extend({
-    -- vgal.tech.create_simple("vgal-puffer-atmosphere", { "agricultural-science-pack" }, vgal.icon.register({
+    -- vgal.tech.create_simple("vgal-puffer-atmosphere", { "agricultural-science-pack" }, vgal.icon.merge_composites({
     --     vgal.icon.get_placeholder(),
     -- }), { "angels-gas-puffer-atmosphere" }),
     {
         type = "technology",
         name = "vgal-puffer-atmosphere",
-        icons = vgal.icon.register({
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_placeholder(),
         }),
         effects =

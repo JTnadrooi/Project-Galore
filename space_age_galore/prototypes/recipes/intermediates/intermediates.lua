@@ -3,7 +3,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "carbon-fiber-superconductor",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("superconductor"),
     --         vgal.icon.get_in("carbon-fiber"),
     --     },
@@ -25,7 +25,7 @@ vgal.data.extend({
         type = "recipe",
         name = "holmium-solution-copper-cable",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("copper-cable"),
             vgal.icon.get_in("holmium-solution", "fluid"),
         },
@@ -45,7 +45,7 @@ vgal.data.extend({
     {
         name = "lava-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("engine-unit"),
             vgal.icon.get_in("lava"),
         },
@@ -64,7 +64,7 @@ vgal.data.extend({
     -- { -- eventually, I will be able to calculate fulgora stuff..
     --     name = "jelly-light-oil-superconductor",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("superconductor"),
     --         vgal.icon.get_in("crude-oil"),
     --         vgal.icon.get_in2("jelly"),
@@ -85,7 +85,7 @@ vgal.data.extend({
     {
         name = "calcite-carbon-concrete", -- vu
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("concrete"),
             vgal.icon.get_in("calcite"),
         },
@@ -107,7 +107,7 @@ vgal.data.extend({
     {
         name = "holmium-ore-holmium-plate", -- fg/vn
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("holmium-plate"),
             -- vgal.icon.get_in("molten-copper"),
             vgal.icon.get_overlay("casting-copper"),
@@ -129,7 +129,7 @@ vgal.data.extend({
         type = "recipe",
         name = "wood-carbon-fiber",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("carbon-fiber"),
             vgal.icon.get_in("wood"),
         },
@@ -152,7 +152,7 @@ vgal.data.extend({
         type = "recipe",
         name = "pentapod-egg-logistic-robot", -- woah!
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("logistic-robot"),
             vgal.icon.get_in("pentapod-egg"),
         },
@@ -180,7 +180,7 @@ vgal.data.extend({
         type = "recipe",
         name = "pentapod-egg-construction-robot", -- woah!
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("construction-robot"),
             vgal.icon.get_in("pentapod-egg"),
         },
@@ -208,7 +208,7 @@ vgal.data.extend({
         type = "recipe",
         name = "carbon-fiber-low-density-structure",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("low-density-structure"),
             vgal.icon.get_in("carbon-fiber"),
         },
@@ -227,7 +227,7 @@ vgal.data.extend({
     {
         name = "molten-copper-carbon-fiber-low-density-structure",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("low-density-structure"),
             vgal.icon.get_in("carbon-fiber"),
             vgal.icon.get_overlay("casting-copper"),
@@ -254,7 +254,7 @@ vgal.data.extend({
         type = "recipe",
         name = "lithium-plate-low-density-structure",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("low-density-structure"),
             vgal.icon.get_in("lithium-plate"),
         },
@@ -275,7 +275,7 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "lithium-brine-sulfur-ammonia-nutrients", -- for aquilo
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/sulfur-ammonia-nutrients.png"),
     --         vgal.icon.get_in2("lithium-brine"),
     --     },

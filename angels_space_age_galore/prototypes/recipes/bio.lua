@@ -22,7 +22,7 @@ for _, nutrientable_recipe_name in ipairs(nutrientable_recipe_names) do
         {
             name = ingredient.name .. "-nutrients",
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get("nutrients"),
                 vgal.icon.get_in(ingredient.name),
             },
@@ -46,7 +46,7 @@ for _, plant in pairs(vgal.defines.gleba_plants) do
         {
             name = plant.name .. "-" .. plant.seed,
             prefix = "vgal",
-            icons = vgal.icon.register {
+            icons = vgal.icon.merge_composites {
                 vgal.icon.get(plant.seed),
             },
             energy_required = 0.5,
@@ -70,7 +70,7 @@ vgal.data.extend({
     {
         name = "yumako-mash-angels-liquid-vegetable-oil",
         prefix = "vgal",
-        icons = vgal.icon.register({
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-liquid-raw-vegetable-oil"),
             vgal.icon.get_in("yumako-mash"),
         }),

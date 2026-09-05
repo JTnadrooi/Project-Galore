@@ -3,7 +3,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-iron-iron-gear-wheel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("iron-gear-wheel"),
             vgal.icon.get_in("angels-liquid-molten-iron"),
         },
@@ -25,7 +25,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-iron-iron-stick",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("iron-stick"),
             vgal.icon.get_in("angels-liquid-molten-iron"),
         },
@@ -47,7 +47,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-copper-copper-cable",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("copper-cable"),
             vgal.icon.get_in("angels-liquid-molten-copper"),
         },
@@ -71,7 +71,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-iron-angels-filter-frame",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-filter-frame"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
         },
@@ -95,7 +95,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-iron-angels-solid-saw",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-solid-saw"),
             vgal.icon.get_in("angels-liquid-molten-iron"),
         },
@@ -118,7 +118,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-steel-angels-solid-saw",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-solid-saw"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
         },
@@ -141,7 +141,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-steel-barrel",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("barrel"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
         },
@@ -165,7 +165,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-iron-burner-inserter",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("burner-inserter"),
             vgal.icon.get_in("angels-liquid-molten-iron"),
         },
@@ -189,7 +189,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-steel-pipe",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("pipe"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
         },
@@ -212,7 +212,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-iron-pipe",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("pipe"),
             vgal.icon.get_in("angels-liquid-molten-iron"),
         },
@@ -235,7 +235,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-steel-pipe-to-ground",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("pipe-to-ground"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
         },
@@ -260,7 +260,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-iron-pipe-to-ground",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("pipe-to-ground"),
             vgal.icon.get_in("angels-liquid-molten-iron"),
         },
@@ -285,7 +285,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-steel-angels-liquid-molten-copper-heat-pipe",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("heat-pipe"),
             vgal.icon.get_in("angels-liquid-molten-steel"),
         },

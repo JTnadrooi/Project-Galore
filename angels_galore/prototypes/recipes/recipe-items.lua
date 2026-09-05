@@ -4,7 +4,7 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-iron-angels-catalyst-metal-carrier",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-catalyst-metal-carrier"),
             vgal.icon.get_in("angels-liquid-molten-iron"),
         },
@@ -26,7 +26,7 @@ vgal.data.extend({
     {
         name = "steel-plate-angels-solid-saw",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-solid-saw"),
             vgal.icon.get_in("steel-plate"),
         },

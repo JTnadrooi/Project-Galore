@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "ammonia-water-crude-oil",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/ammonia-water-crude-oil.png"),
         },
         categories = { "organic", "chemistry" },
@@ -30,7 +30,7 @@ vgal.data.extend({
     {
         name = "spoilage-crude-oil", -- the number one least efficient recipe in all of Galore. (2.5%)
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/spoilage-crude-oil.png"),
         },
         category = "organic",
@@ -48,7 +48,7 @@ vgal.data.extend({
     {
         name = "yumako-mash-light-oil",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/yumako-mash-light-oil.png"),
         },
         category = "organic",
@@ -68,7 +68,7 @@ vgal.data.extend({
     -- {
     --     name = "solid-fuel-calcite-stone-brick-jelly",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("jelly"),
     --         vgal.icon.get_in("calcite"),
     --     },

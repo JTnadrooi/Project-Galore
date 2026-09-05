@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "petroleum-gas-barrel-biter-egg",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("biter-egg"),
             vgal.icon.get_in("petroleum-gas"),
         },
@@ -21,7 +21,7 @@ vgal.data.extend({
     {
         name = "nutrients-biter-egg",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("biter-egg"),
             vgal.icon.get_in("nutrients"),
         },
@@ -39,7 +39,7 @@ vgal.data.extend({
     {
         name = "pentapod-egg-biter-egg-duel-biter-preferred",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("biter-egg"),
             vgal.icon.get_in("biter-egg"),
             vgal.icon.get_in2("pentapod-egg"),
@@ -73,7 +73,7 @@ vgal.data.extend({
     {
         name = "pentapod-egg-biter-egg-duel-pentapod-preferred",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("pentapod-egg"),
             vgal.icon.get_in("biter-egg"),
             vgal.icon.get_in2("pentapod-egg"),
@@ -107,7 +107,7 @@ vgal.data.extend({
     -- {
     --     name = "pentapod-egg-biter-egg-duel-military-science-pack",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("military-science-pack"),
     --         vgal.icon.get_in("biter-egg"),
     --         vgal.icon.get_in("pentapod-egg"),

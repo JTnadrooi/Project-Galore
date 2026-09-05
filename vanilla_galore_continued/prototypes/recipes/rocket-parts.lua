@@ -3,7 +3,7 @@ vgal.data.extend({
         name = "engine-unit-rocket-part",
         prefix = "vgal",
         technology = "rocket-silo",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("rocket-part"),
             vgal.icon.get_in("engine-unit")
         },
@@ -23,13 +23,13 @@ vgal.data.extend({
         name = "uranium-fuel-cell-rocket-part",
         prefix = "vgal",
         technology = { "rocket-silo", "nuclear-power" },
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("rocket-part"),
             vgal.icon.get_in("uranium-fuel-cell")
         },
         energy_required = 2,
         ingredients = {
-            { "low-density-structure", 10 },  -- 2250
+            { "low-density-structure", 10 }, -- 2250
             { "uranium-fuel-cell",     10 }, -- 4600
             { "processing-unit",       10 }, -- 7100
         },
@@ -42,7 +42,7 @@ vgal.data.extend({
         name = "flying-robot-frame-rocket-part",
         prefix = "vgal",
         technology = "rocket-silo",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("rocket-part"),
             vgal.icon.get_in("flying-robot-frame")
         },

@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "angels-stone-crushed-angels-solid-sand",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-solid-sand"),
             vgal.icon.get_in("angels-stone-crushed"),
         },
@@ -19,7 +19,7 @@ vgal.data.extend({
     {
         name = "angels-stone-crushed-stone",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("stone"),
             -- vgal.icon.get_in("angels-stone-crushed"),
         },
@@ -35,7 +35,7 @@ vgal.data.extend({
     {
         name = "angels-stone-crushed-angels-solid-carbon-stone",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("stone"),
             vgal.icon.get_in("angels-solid-carbon"),
         },
@@ -55,7 +55,7 @@ vgal.data.extend({
     {
         name = "angels-solid-calcium-carbonate-angels-solid-lime",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("angels-solid-lime"),
             vgal.icon.get_in("angels-solid-calcium-carbonate"),
         },
@@ -76,7 +76,7 @@ vgal.data.extend({
     -- {
     --     name = "angels-stone-crushed-angels-solid-carbon-stone-brick",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("stone-brick"),
     --         vgal.icon.get_in("angels-solid-carbon"),
     --     },
@@ -97,7 +97,7 @@ vgal.data.extend({
     -- {
     --     name = "agal-hand-mining", -- the vgal prefix gets added anyways
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get_placeholder(),
     --         -- vgal.icon.get_out("stone"),
     --         -- vgal.icon.get_out2("angels-solid-sand"),
@@ -201,7 +201,7 @@ vgal.data.extend({
     -- {
     --     name = "angels-liquid-aqueous-sodium-hydroxide-angels-thorium-ore",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("angels-thorium-ore"),
     --         vgal.icon.get_in("angels-liquid-aqueous-sodium-hydroxide"),
     --     },
@@ -223,7 +223,7 @@ vgal.data.extend({
     -- {
     --     name = "angels-gas-chlorine-angels-thorium-ore",
     --     prefix = "vgal",
-    --     icons = vgal.icon.register {
+    --     icons = vgal.icon.merge_composites {
     --         vgal.icon.get("angels-thorium-ore"),
     --         vgal.icon.get_in("angels-gas-chlorine"),
     --     },

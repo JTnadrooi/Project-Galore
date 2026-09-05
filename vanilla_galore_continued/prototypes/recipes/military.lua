@@ -2,7 +2,7 @@ vgal.data.extend({
     {
         name = "explosives-grenade",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("grenade", "capsule"),
             vgal.icon.get_in("explosives"),
         },
@@ -20,7 +20,7 @@ vgal.data.extend({
     {
         name = "steel-plate-gun-turret",
         prefix = "vgal",
-        icons = vgal.icon.register {
+        icons = vgal.icon.merge_composites {
             vgal.icon.get("gun-turret"),
             vgal.icon.get_in("steel-plate"),
         },

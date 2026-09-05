@@ -41,12 +41,12 @@ vgal.data.hide(data.raw["plant"]["tree-plant"])
 -- -- no throw bc other mods like to do this as well
 -- vgal.recipe.remove_result("scrap-recycling", "solid-fuel", true)
 
--- data.raw.recipe["vgal-ammonia-artificial-yumako-soil"].icons = vgal.icon.register {
+-- data.raw.recipe["vgal-ammonia-artificial-yumako-soil"].icons = vgal.icon.merge_composites {
 --     vgal.icon.get("artificial-yumako-soil"),
 --     vgal.icon.get_in("urea", "molecule"),
 -- }
 
--- data.raw.recipe["vgal-ammonia-artificial-jellynut-soil"].icons = vgal.icon.register {
+-- data.raw.recipe["vgal-ammonia-artificial-jellynut-soil"].icons = vgal.icon.merge_composites {
 --     vgal.icon.get("artificial-jellynut-soil"),
 --     vgal.icon.get_in("urea", "molecule"),
 -- }

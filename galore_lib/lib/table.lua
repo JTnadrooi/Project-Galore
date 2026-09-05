@@ -91,9 +91,10 @@ function vgal.table.first(tbl, predicate)
 end
 
 --- Ensures a single value or multiple values is a table.
---- @param single any|nil A single value to normalize/ensure into a table.
---- @param multiple any[]|nil A table of values.
---- @return any[]
+--- @generic T
+--- @param single T? A single value to normalize/ensure into a table.
+--- @param multiple T[]? A table of values.
+--- @return T[]
 function vgal.table.ensure(single, multiple)
     if single then
         if multiple then

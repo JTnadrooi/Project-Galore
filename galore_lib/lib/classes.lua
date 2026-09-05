@@ -1,6 +1,6 @@
 do
     ---A vgal recipe - to be registed.
-    ---@class vgal.VgalRecipePrototype:data.RecipePrototype
+    ---@class vgal.VgalRecipePrototype:data.RecipePrototype, vgal.PrototypeWithIcons
     ---Non optional empty fields get borrowed from this recipe.
     ---@field complementairy_recipe? string
     ---Used in the recipe and technology name.
@@ -19,10 +19,7 @@ do
     ---@field type? string
     ---@field group? string
     ---@field groups? string[]
-    ---@field productivity_technology? string|table
-    ---@field localised_name_source? string
-    ---@field localised_description_source? string
-    ---@field locale_source? string
+    ---@field productivity_technology? string|{[1]: string, [2]: integer}
     ---@field enable_smart_productivity? boolean
     ---@field enable_smart_stats? boolean
     ---@field domain? string

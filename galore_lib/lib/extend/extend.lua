@@ -10,7 +10,6 @@ function vgal.extend(entries, fill_in_with)
     fill_in_with = fill_in_with or {}
 
     for _, entry in ipairs(entries) do
-        entry.vgal = entry.vgal or {}
         entry = vgal.table.deep_merge_with_priority(entry, fill_in_with)
         local extend_handler = vgal.extend_handlers[entry.type]
         if extend_handler then

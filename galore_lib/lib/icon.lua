@@ -394,14 +394,17 @@ function vgal.icon.ensure_icons(prototype)
     if not prototype.icons then
         if prototype.icon then
             prototype.icons = {
-                icon = prototype.icon,
-                icon_size = prototype.icon_size,
+                {
+                    icon = prototype.icon,
+                    icon_size = prototype.icon_size,
+                },
             }
             return
         end
+
         if prototype.type == "recipe" then
             ---@cast prototype data.RecipePrototype
-            if prototype.results and #prototype.results > 1 then
+            if prototype.results and #prototype.results > 0 then
                 local main_product = vgal.recipe.get_main_product_or_guess(prototype)
 
                 vgal.icon.copy_icon_data_from(vgal.get_recipeable(main_product), prototype)

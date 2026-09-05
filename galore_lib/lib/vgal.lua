@@ -4,7 +4,7 @@ vgal = vgal or {}
 vgal.domains = {}
 
 if vgal.setting ~= nil then
-    error()
+    error("Cannot load entire GaloreLib in setting phase.")
 end
 
 require("throw")

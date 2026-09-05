@@ -247,8 +247,8 @@ vgal.extend({
         },
         subgroup = "vulcanus-processes",
         order = "b[casting]-f[low-density-structure]-b",
-        localised_name_source = "casting-low-density-structure",
-        localised_description_source = "vgal-carbon-fiber-low-density-structure",
+        localised_name = { "recipe-name.casting-low-density-structure" },
+        localised_description = { "recipe-description.vgal-carbon-fiber-low-density-structure" },
     },
     {
         type = "recipe",

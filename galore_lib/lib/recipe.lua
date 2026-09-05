@@ -599,30 +599,30 @@ function vgal.recipe.get_crafting_machine_tint_or_guess(recipe_or_recipe_name)
     return tint
 end
 
----@param recipe data.RecipePrototype|vgal.VgalRecipePrototype
-function vgal.recipe.get_main_product_or_guess(recipe)
+---@param recipe_or_recipe_name string|data.RecipePrototype
+function vgal.recipe.get_main_product_or_guess(recipe_or_recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     if recipe.main_product then
         return recipe.main_product
     end
     if recipe.results and (#recipe.results > 0) then
         return recipe.results[1].name or recipe.results[1][1] or error("Invalid recipe results for recipe " .. recipe.name .. ", see: " .. serpent.block(recipe.results[1]))
     end
-    if recipe.fluid_results and (#recipe.fluid_results > 0) then
-        return recipe.fluid_results[1][1] or error("Invalid recipe results for recipe " .. recipe.name)
-    end
     error("Could not get preferred main product for: " .. recipe)
 end
 
----@param recipe data.RecipePrototype|vgal.VgalRecipePrototype
-function vgal.recipe.get_localised_name_or_guess(recipe)
+---@param recipe_or_recipe_name string|data.RecipePrototype
+function vgal.recipe.get_localised_name_or_guess(recipe_or_recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     return recipe.localised_name or { "?",
         { "", { "recipe-name." .. recipe.name } },
         { "", vgal.locale.guess_locale(vgal.recipe.get_main_product_or_guess(recipe)) },
     }
 end
 
----@param recipe data.RecipePrototype|vgal.VgalRecipePrototype
-function vgal.recipe.get_localised_description_or_guess(recipe)
+---@param recipe_or_recipe_name string|data.RecipePrototype
+function vgal.recipe.get_localised_description_or_guess(recipe_or_recipe_name)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     return recipe.localised_description or { "recipe-description." .. recipe.name }
 end
 

@@ -107,8 +107,8 @@ vgal.extend({
         category = "metallurgy",
         subgroup = "vulcanus-processes",
         order = "b-f-a",
-        localised_name_source = "casting-low-density-structure",
-        localised_description_source = "vgal-uranium-238-low-density-structure",
+        localised_name = vgal.recipe.get_localised_name_or_guess(data.raw["recipe"]["casting-low-density-structure"]),
+        localised_description = vgal.recipe.get_localised_description_or_guess(data.raw["recipe"]["vgal-uranium-238-low-density-structure"]),
     },
     {
         name = "tungsten-plate-barrel",
@@ -205,7 +205,8 @@ vgal.extend({
                 max = 2000
             }
         },
-        locale_source = "vgal-jelly-electronic-circuit",
+        localised_name = { "recipe-name.vgal-jelly-electronic-circuit" },
+        localised_description = { "recipe-description.vgal-jelly-electronic-circuit" },
     },
 }, {
     type = "recipe",

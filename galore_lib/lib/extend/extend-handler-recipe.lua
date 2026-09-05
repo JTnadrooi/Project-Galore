@@ -28,9 +28,14 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
     end
 
     -- in/output table building
+    local main_ingredient
     do
         output_recipe.ingredients = input_recipe.raw_ingredients or vgal.build.table(input_recipe.ingredients or {}, input_recipe.fluid_ingredients or {})
         output_recipe.results     = input_recipe.raw_results or vgal.build.table(input_recipe.results or {}, input_recipe.fluid_results or {})
+
+        if #output_recipe.ingredients > 0 then
+            main_ingredient = output_recipe.ingredients[1].name
+        end
     end
 
     -- main product building
@@ -47,7 +52,13 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
 
     -- name building
     do
-        output_recipe.name = vgal.build.name(input_recipe.prefix, input_recipe.name, input_recipe.tier == 1 and nil or input_recipe.tier)
+        if input_recipe.name then
+            output_recipe.name = vgal.build.name(input_recipe.prefix, input_recipe.name, input_recipe.tier == 1 and nil or input_recipe.tier)
+        elseif main_ingredient and output_recipe.main_product then
+            output_recipe.name = vgal.build.name(input_recipe.prefix, main_ingredient .. "-" .. output_recipe.main_product, input_recipe.tier == 1 and nil or input_recipe.tier)
+        else
+            error("Missing prototype name.")
+        end
     end
 
     -- icon fixes
@@ -56,8 +67,20 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
         output_recipe.icon      = input_recipe.icon
         output_recipe.icon_size = input_recipe.icon_size
 
-        vgal.icon.ensure_icons(output_recipe --[[@as vgal.PrototypeWithIcons]])
+        vgal.icon.normalize_icon_fields(output_recipe --[[@as vgal.PrototypeWithIcons]])
+
+        if (not output_recipe.icons) and output_recipe.name ~= output_recipe.main_product and output_recipe.main_product and main_ingredient then
+            output_recipe.icons = vgal.icon.merge_composites({
+                vgal.icon.get(output_recipe.main_product),
+                vgal.icon.get_in(main_ingredient)
+            })
+        end
     end
+
+    output_recipe.hidden_in_factoriopedia = input_recipe.hidden_in_factoriopedia
+    output_recipe.hide_from_bonus_gui = input_recipe.hide_from_bonus_gui
+    output_recipe.hide_from_player_crafting = input_recipe.hide_from_player_crafting
+    output_recipe.hide_from_stats = input_recipe.hide_from_stats
 
     -- toggle group management
     do
@@ -103,8 +126,8 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
 
     -- locale building
     do
-        output_recipe.localised_name        = vgal.recipe.get_localised_name_or_guess(output_recipe)
-        output_recipe.localised_description = vgal.recipe.get_localised_description_or_guess(output_recipe)
+        output_recipe.localised_name = input_recipe.localised_name or vgal.recipe.get_localised_name_or_guess(output_recipe)
+        output_recipe.localised_description = input_recipe.localised_description or vgal.recipe.get_localised_description_or_guess(output_recipe)
     end
 
     local enable_smart_productivity

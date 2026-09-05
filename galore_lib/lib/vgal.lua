@@ -112,6 +112,7 @@ function vgal.hide(prototype)
     if prototype.type == "recipe" then
         ---@cast prototype data.RecipePrototype
         prototype.hide_from_player_crafting = true
+        prototype.hide_from_bonus_gui = false
         prototype.allow_decomposition = false
     elseif prototype.type == "fluid" then
         ---@cast prototype data.FluidPrototype

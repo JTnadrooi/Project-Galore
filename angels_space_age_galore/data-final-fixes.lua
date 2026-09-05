@@ -75,9 +75,6 @@ do
                 fluid_ingredients = {
                     { voidable_fluid_name, 100 }
                 },
-                results = {
-                    { "fish", 1 } -- gets removed later (below)
-                },
                 category = "vgal-space-venting",
                 hide_from_signal_gui = true,
                 hide_from_player_crafting = angelsmods.trigger.enable_hide_void,
@@ -87,8 +84,5 @@ do
         }, {
             type = "recipe",
         })
-
-        data.raw["recipe"]["vgal-space-void-" .. voidable_fluid_name].results = {}
-        data.raw["recipe"]["vgal-space-void-" .. voidable_fluid_name].main_product = nil
     end
 end

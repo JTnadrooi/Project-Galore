@@ -384,24 +384,16 @@ end
 
 ---@param prototype data.PrototypeBase
 function vgal.icon.clear_icon_data(prototype)
+    prototype.icons = nil
     prototype.icon = nil
     prototype.icon_size = nil
-    prototype.icons = nil
 end
 
 ---@param prototype vgal.PrototypeWithIcons
-function vgal.icon.ensure_icons(prototype)
-    if not prototype.icons then
-        if prototype.icon then
-            prototype.icons = {
-                {
-                    icon = prototype.icon,
-                    icon_size = prototype.icon_size,
-                },
-            }
-            return
-        end
+function vgal.icon.ensure_icons_field(prototype)
+    vgal.icon.normalize_icon_fields(prototype)
 
+    if not prototype.icons then
         if prototype.type == "recipe" then
             ---@cast prototype data.RecipePrototype
             if prototype.results and #prototype.results > 0 then
@@ -409,13 +401,31 @@ function vgal.icon.ensure_icons(prototype)
 
                 vgal.icon.copy_icon_data_from(vgal.get_recipeable(main_product), prototype)
 
-                vgal.icon.ensure_icons(prototype --[[@as vgal.PrototypeWithIcons]])
+                vgal.icon.ensure_icons_field(prototype --[[@as vgal.PrototypeWithIcons]])
                 return
             end
         end
 
         error("Could not ensure icons field for prototype " .. prototype.name)
     end
+end
+
+---@param prototype vgal.PrototypeWithIcons
+function vgal.icon.normalize_icon_fields(prototype)
+    if prototype.icons then
+        prototype.icon = nil
+        prototype.icon_size = nil
+    elseif prototype.icon then
+        prototype.icons = {
+            {
+                icon = prototype.icon,
+                icon_size = prototype.icon_size,
+            },
+        }
+        prototype.icon = nil
+        prototype.icon_size = nil
+    end
+    prototype.icon_size = nil
 end
 
 ---@param prototype data.PrototypeBase

@@ -1,0 +1,12 @@
+{
+    "recipe": [
+        [
+            "vgal-lamp-automation-science-pack",
+            "vgal-small-lamp-automation-science-pack"
+        ],
+        [
+            "vgal-stone-wall-furnace-automation-science-pack",
+            "vgal-stone-wall-automation-science-pack"
+        ]
+    ]
+}

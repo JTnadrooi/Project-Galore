@@ -52,7 +52,7 @@ if mods["quality"] then
             end
 
             -- add quality-upgrade icon
-            vgal.icon.ensure_icons(q_recipe --[[@as vgal.PrototypeWithIcons]])
+            vgal.icon.ensure_icons_field(q_recipe --[[@as vgal.PrototypeWithIcons]])
             table.insert(q_recipe.icons, {
                 icon = "__vanilla_galore_continued__/graphics/icons/quality-upgrade.png",
             })

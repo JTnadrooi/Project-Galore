@@ -626,17 +626,6 @@ function vgal.recipe.get_localised_description_or_guess(recipe_or_recipe_name)
     return recipe.localised_description or { "recipe-description." .. recipe.name }
 end
 
----@param domain_name string?
-function vgal.recipe.get_domain_or_all_pairs(domain_name)
-    local iterator, dom, start_key
-    if domain_name then
-        iterator, dom, start_key = vgal.domain_pairs(domain_name, "recipe")
-    else
-        iterator, dom, start_key = pairs(data.raw["recipe"])
-    end -- THIS CANNOT BE DONE DIFFERENTLY.
-    return iterator, dom, start_key
-end
-
 ---@param recipe_or_recipe_name string|data.RecipePrototype
 ---@param show_amount_in_title boolean?
 function vgal.recipe.use_recipe_locale(recipe_or_recipe_name, show_amount_in_title)

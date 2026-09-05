@@ -807,16 +807,20 @@ vgal.recipe.add_result("angels-wood-sawing-2", { "angels-solid-leafs", nil, { am
 vgal.recipe.add_result("angels-wood-sawing-3", { "angels-solid-leafs", nil, { amount_min = 2, amount_max = 4 } })
 
 -- make default calcium carbonate recipe the limestone one
-data.raw["recipe"]["angels-solid-calcium-carbonate"].ingredients = vgal.build.table({
-    { "angels-solid-lime", 1 },
-}, {
-    { "angels-gas-carbon-dioxide", 20 }, -- more that creating lime ouputs, lossy process (can be fixed with prod tho.. I'm allowing it)
-})
-data.raw["recipe"]["angels-solid-calcium-carbonate"].results = vgal.build.table({
-    { "angels-solid-calcium-carbonate", 1 },
-})
-data.raw["recipe"]["angels-solid-calcium-carbonate"].energy_required = 2
-vgal.tech.move_recipe("angels-bio-processing-red", "angels-stone-smelting-1", "angels-solid-calcium-carbonate")
+do
+    local calcium_carbonate_recipe = data.raw["recipe"]["angels-solid-calcium-carbonate"]
+    calcium_carbonate_recipe.ingredients = vgal.build.table({
+        { "angels-solid-lime", 1 },
+    }, {
+        { "angels-gas-carbon-dioxide", 20 }, -- more that creating lime ouputs, lossy process (can be fixed with prod tho.. I'm allowing it)
+    })
+    calcium_carbonate_recipe.results = vgal.build.table({
+        { "angels-solid-calcium-carbonate", 1 },
+    })
+    calcium_carbonate_recipe.energy_required = 2
+    calcium_carbonate_recipe.allow_productivity = false
+    vgal.tech.move_recipe("angels-bio-processing-red", "angels-stone-smelting-1", calcium_carbonate_recipe.name)
+end
 
 -- normalize alien spores recipe
 data.raw["recipe"]["angels-alien-spores"].results = vgal.build.table({

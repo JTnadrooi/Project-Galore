@@ -608,7 +608,7 @@ function vgal.recipe.get_main_product_or_guess(recipe_or_recipe_name)
     if recipe.results and (#recipe.results > 0) then
         return recipe.results[1].name or recipe.results[1][1] or error("Invalid recipe results for recipe " .. recipe.name .. ", see: " .. serpent.block(recipe.results[1]))
     end
-    error("Could not get preferred main product for: " .. recipe)
+    error("Could not get preferred main product for: " .. recipe.name)
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype

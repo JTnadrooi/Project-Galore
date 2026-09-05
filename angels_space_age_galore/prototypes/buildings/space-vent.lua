@@ -63,7 +63,7 @@ end
 
 vgal.extend({
     {
-        name = "space-vent",
+        name = "vgal-space-vent",
         domain = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("vgal-space-vent"),

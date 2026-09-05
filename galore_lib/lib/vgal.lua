@@ -23,7 +23,7 @@ require("subgroup")
 require("tech")
 require("table")
 require("build")
-require("extend")
+require("extend.extend")
 
 ---@type vgal.VgalToggleGroupPrototype[]
 vgal.groups = {}

@@ -651,7 +651,7 @@ data.raw["recipe"]["angels-solid-soil-alternative"].energy_required = 0.5
 -- data.raw["recipe"]["concrete"].ingredients = vgal.table.build({}, {
 --     { "angels-liquid-molten-concrete", 100 }
 -- })
--- vgal.data.trim("angels-concrete")
+-- vgal.trim("angels-concrete")
 
 -- reduce crafting times as galore severelly reduces some machine speeds
 -- liquifier

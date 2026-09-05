@@ -60,7 +60,7 @@ local valid_suffixes = {
     "underground-belt"
 }
 
-for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
+for _, recipe in vgal.domain_pairs("vgal", "recipe") do
     for _, suffix in ipairs(valid_suffixes) do
         if recipe.name:sub(- #suffix) == suffix then
             vgal.recipe.add_category(recipe, "metallurgy")

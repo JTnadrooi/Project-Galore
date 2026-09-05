@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "molten-iron-rail",
         prefix = "vgal",

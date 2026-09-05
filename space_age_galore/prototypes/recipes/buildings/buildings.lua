@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "tungsten-carbide-burner-mining-drill",
         prefix = "vgal",

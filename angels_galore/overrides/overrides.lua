@@ -42,7 +42,7 @@ for _, tech_name in ipairs(alien_sample_tech_names) do
     end
 end
 
-vgal.data.hide(data.raw["item"]["angels-token-bio"])
+vgal.hide(data.raw["item"]["angels-token-bio"])
 
 for _, lab in pairs(data.raw["lab"]) do
     vgal.table.remove(lab.inputs, "angels-token-bio")
@@ -58,7 +58,7 @@ end
 for _, ore_index in pairs(vgal.defines.removed_ore_indexes) do
     local ore = "angels-ore" .. ore_index
 
-    vgal.data.hide(data.raw["resource"][ore])
+    vgal.hide(data.raw["resource"][ore])
     data.raw["autoplace-control"][ore] = nil
     data.raw["planet"]["nauvis"].map_gen_settings.autoplace_controls[ore] = nil
     data.raw["planet"]["nauvis"].map_gen_settings.autoplace_settings.entity.settings[ore] = nil

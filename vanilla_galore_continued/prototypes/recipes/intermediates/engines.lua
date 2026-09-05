@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "low-density-structure-engine-unit",
         prefix = "vgal",

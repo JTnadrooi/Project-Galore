@@ -25,7 +25,7 @@ for _, environment in pairs(vgal.defines.environments) do
         }
     )
 
-    vgal.data.extend({
+    vgal.extend({
         {
             name = environment.name .. "-seeds",
             prefix = "vgal",

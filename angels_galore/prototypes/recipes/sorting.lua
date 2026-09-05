@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     -- {
     --     name = "angels-catalysator-brown-iron-ore",
     --     prefix = "vgal",

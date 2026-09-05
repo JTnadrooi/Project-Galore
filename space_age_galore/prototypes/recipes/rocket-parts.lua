@@ -1,4 +1,4 @@
--- vgal.data.extend({
+-- vgal.extend({
 --     {
 --         name = "lithium-plate-rocket-part",
 --         prefix = "vgal",

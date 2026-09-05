@@ -105,7 +105,7 @@ end
 -- remove charging station as it has no purpose
 vgal.recipe.hide_and_queue_for_tech_removal("angels-charging-station")
 vgal.item.hide("angels-charging-station")
-vgal.data.hide(data.raw["roboport"]["angels-charging-station"])
+vgal.hide(data.raw["roboport"]["angels-charging-station"])
 
 -- fix half tile roboport ranges
 -- / 2 because thats how it works

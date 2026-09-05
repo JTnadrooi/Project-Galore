@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "tungsten-plate-piercing-rounds-magazine",
         prefix = "vgal",

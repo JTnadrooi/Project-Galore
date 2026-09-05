@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "angels-solid-leafs-angels-cellulose-fiber",
         prefix = "vgal",

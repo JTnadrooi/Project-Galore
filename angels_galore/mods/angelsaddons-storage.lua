@@ -5,7 +5,7 @@ for _, removed_ore_index in ipairs(vgal.defines.removed_ore_indexes) do
     local silo_name = "angels-silo-ore" .. removed_ore_index
     vgal.recipe.hide_and_queue_for_tech_removal(silo_name)
     vgal.item.hide(silo_name)
-    vgal.data.hide(data.raw["container"][silo_name])
+    vgal.hide(data.raw["container"][silo_name])
 end
 
 -- make pressure tank more expensive and lategame

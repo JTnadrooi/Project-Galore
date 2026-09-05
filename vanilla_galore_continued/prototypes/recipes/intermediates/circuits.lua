@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     -- {
     --     name = "sulfuric-acid-electronic-circuit",
     --     prefix = "vgal",

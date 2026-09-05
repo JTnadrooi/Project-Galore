@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "angels-stone-crushed-angels-solid-sand",
         prefix = "vgal",

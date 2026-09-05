@@ -16,7 +16,7 @@ for name, subgroup in pairs(data.raw["item-subgroup"]) do
     end
 end
 
-for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
+for _, recipe in vgal.domain_pairs("vgal", "recipe") do
     if nauvis_packs[recipe.main_product] then
         recipe.subgroup = "vgal-" .. recipe.main_product
     end

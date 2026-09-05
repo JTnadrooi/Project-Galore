@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "angels-solid-sodium-chlorate-angels-solid-salt",
         prefix = "vgal",

@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "iron-gear-wheel-advanced-circuit", -- analog
         prefix = "vgal",

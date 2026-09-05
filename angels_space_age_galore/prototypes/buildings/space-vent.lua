@@ -61,7 +61,7 @@ do
     data:extend({ space_vent })
 end
 
-vgal.data.extend({
+vgal.extend({
     {
         name = "space-vent",
         domain = "vgal",

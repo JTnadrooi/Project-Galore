@@ -1,16 +1,14 @@
 vgal = vgal or {}
 
-vgal.data = vgal.data or {}
-
 ---@type table<string, vgal.Domain>
-vgal.data.domains = {}
+vgal.domains = {}
 
 if vgal.setting ~= nil then
     error()
 end
 
-require("defines")
 require("throw")
+require("defines")
 require("classes")
 require("icon")
 require("locale")
@@ -25,18 +23,7 @@ require("subgroup")
 require("tech")
 require("table")
 require("build")
-
----@param toLog number|string
-function vgal.log(toLog)
-    if settings.startup["vgal-log"].value then
-        log("vgal.log-[" .. tostring(toLog) .. "]")
-    end
-end
-
----@param toLog table
-function vgal.log_block(toLog)
-    vgal.log(serpent.block(toLog) or error("Cannot log nil."))
-end
+require("extend")
 
 ---@type vgal.VgalToggleGroupPrototype[]
 vgal.groups = {}
@@ -73,11 +60,11 @@ end
 ---@overload fun(domain_name: string, prototype_type: "fluid"): fun(): integer, data.FluidPrototype
 ---@overload fun(domain_name: string, prototype_type: "item"): fun(): integer, data.ItemPrototype
 ---@overload fun(domain_name: string, prototype_type: string): fun(): integer, data.PrototypeBase
-function vgal.data.domain_pairs(domain_name, prototype_type)
+function vgal.domain_pairs(domain_name, prototype_type)
     vgal.throw.if_param_nil(prototype_type, "prototype_type")
 
-    local dom = vgal.data.domains[domain_name]
-    if not vgal.data.domain_exists(domain_name) then
+    local dom = vgal.domains[domain_name]
+    if not vgal.domain_exists(domain_name) then
         error("domain " .. domain_name .. " does not exist")
     end
     if not data.raw[prototype_type] then
@@ -100,260 +87,24 @@ function vgal.data.domain_pairs(domain_name, prototype_type)
     return iter, dom.entries
 end
 
-function vgal.data.create_domain(domain_name)
-    if vgal.data.domain_exists(domain_name) then
+function vgal.create_domain(domain_name)
+    if vgal.domain_exists(domain_name) then
         error("Domain already exists with name " .. domain_name)
     else
         vgal.log("creating domain: " .. domain_name)
-        vgal.data.domains[domain_name] = {
+        vgal.domains[domain_name] = {
             name = domain_name,
             entries = {},
         }
     end
 end
 
-function vgal.data.domain_exists(domain_name)
-    return not not vgal.data.domains[domain_name]
-end
-
----Register a entry to the vgal (Vanilla Galore) ecosystem.
----@param entries vgal.VgalRecipePrototype[]|vgal.VgalToggleGroupPrototype[]
----@param fill_in_with? vgal.VgalRecipePrototype|vgal.VgalToggleGroupPrototype
-function vgal.data.extend(entries, fill_in_with)
-    fill_in_with = fill_in_with or {}
-
-    -- fill_in_with.groups = vgal.table.ensure(fill_in_with.group, fill_in_with.groups)
-
-    for _, entry in ipairs(entries) do
-        entry.vgal = entry.vgal or {}
-        entry = vgal.table.deep_merge_with_priority(entry, fill_in_with)
-
-        entry.domain = entry.domain or entry.prefix
-
-        local entry_name = vgal.build.name(entry.prefix, entry.name, entry.tier)
-
-        if entry.domain then
-            if not vgal.data.domain_exists(entry.domain) then
-                vgal.data.create_domain(entry.domain)
-            end
-            vgal.data.domains[entry.domain].entries[entry_name] = {
-                type = entry.type,
-                name = entry_name,
-            }
-        end
-
-        if entry.type == "recipe" then
-            ---@cast entry vgal.VgalRecipePrototype
-
-            if entry.complementairy_recipe then
-                local complementairy_recipe = data.raw["recipe"][entry.complementairy_recipe]
-                entry.order = entry.order or complementairy_recipe.order
-                entry.subgroup = entry.subgroup or complementairy_recipe.subgroup
-                entry.crafting_machine_tint = entry.crafting_machine_tint or complementairy_recipe.crafting_machine_tint
-            end
-
-            -- name components
-            entry.tier = entry.tier == 1 and nil or entry.tier
-            entry.name = vgal.build.name(entry.prefix, entry.name, entry.tier)
-
-            -- tech kinda, real stuff happens later.
-            entry.technologies = vgal.table.ensure(entry.technology, entry.technologies)
-            if entry.enabled ~= nil and #entry.technologies > 0 then -- entry cannot have `enabled` set if technolog(y/ies) is set.
-                error()
-            end
-
-            if entry.enabled == nil then
-                entry.enabled = #entry.technologies == 0
-            end
-
-            if entry.hide_from_signal_gui == nil then
-                -- vgal auto algoritm (different than vanilla)
-                if entry.icon or entry.icons then
-                    entry.hide_from_signal_gui = false
-                else
-                    entry.hide_from_signal_gui = true
-                end
-            end
-
-            -- prevent nils
-            entry.fluid_ingredients = entry.fluid_ingredients or {}
-            entry.fluid_results = entry.fluid_results or {}
-            entry.ingredients = entry.ingredients or {}
-            entry.results = entry.results or {}
-            entry.module_allows = entry.module_allows or {}
-
-            -- toggle group management
-            entry.groups = vgal.table.ensure(entry.group, entry.groups)
-            local hidden = false
-            for _, group in ipairs(entry.groups) do
-                if not vgal.groups[group] then
-                    error("Group with name " .. group .. " does not exist, recipe " .. entry.name .. " tries to register to it.")
-                end
-
-                if not vgal.groups[group].enabled then
-                    hidden = true
-                    break
-                end
-            end
-
-            -- group overrides
-            if vgal.group_overrides[entry.name] then
-                hidden = vgal.group_overrides[entry.name].hidden
-            end
-
-            if hidden then
-                vgal.recipe.hide(entry)
-            end
-
-            -- icon stuff
-            if entry.icon then
-                if entry.icons then
-                    error("Cannot have both icon and icons set for " .. entry.name)
-                end
-                entry.icons = {
-                    {
-                        icon = entry.icon,
-                        icon_size = entry.icon_size or 32,
-                    }
-                }
-                entry.icon = nil
-                entry.icon_size = nil
-            end
-
-            -- prevent nil energy_required
-            if not entry.energy_required then
-                error("Missing energy_required for " .. entry.name)
-            end
-
-            -- in/output table building
-            entry.ingredients = entry.raw_ingredients or vgal.build.table(entry.ingredients, entry.fluid_ingredients)
-            entry.results = entry.raw_results or vgal.build.table(entry.results, entry.fluid_results)
-
-            -- ensure categories
-            entry.categories = vgal.table.ensure(entry.category, entry.categories)
-            entry.category = nil
-            entry.categories = vgal.recipe.conform_categories_to_recipe(entry, entry.categories)
-
-            if not entry.main_product then
-                ---@diagnostic disable-next-line: undefined-field
-                entry.main_product = entry.results[1].name
-            end
-
-            entry.crafting_machine_tint = entry.crafting_machine_tint or vgal.recipe.get_crafting_machine_tint_or_guess(entry)
-
-            if entry.locale_source then
-                entry.localised_name_source = entry.locale_source
-                entry.localised_description_source = entry.locale_source
-            end
-            if entry.localised_name_source then
-                entry.localised_name = vgal.recipe.get_localised_name_or_guess(data.raw["recipe"][entry.localised_name_source])
-            end
-            if entry.localised_description_source then
-                entry.localised_description = vgal.recipe.get_localised_description_or_guess(data.raw["recipe"][entry.localised_description_source])
-            end
-            entry.localised_name = vgal.recipe.get_localised_name_or_guess(entry)
-            entry.localised_description = vgal.recipe.get_localised_description_or_guess(entry)
-
-            entry.auto_recycle = false
-            entry.allow_decomposition = false
-            entry.allow_as_intermediate = false
-
-            if entry.enable_smart_productivity == nil then
-                local eligible_for_smart_prod = true
-                for _, result in ipairs((entry.results or {})) do
-                    --[[@cast result data.ProductPrototype]]
-                    if result.ignored_by_productivity then
-                        eligible_for_smart_prod = false
-                    end
-                end
-
-                entry.enable_smart_productivity = eligible_for_smart_prod
-            end
-            if entry.enable_smart_stats == nil then
-                local eligible_for_smart_stats = true
-                for _, result in ipairs((entry.results or {})) do
-                    --[[@cast result data.ProductPrototype]]
-                    if result.ignored_by_stats then
-                        eligible_for_smart_stats = false
-                    end
-                end
-                for _, ingredient in ipairs((entry.ingredients or {})) do
-                    --[[@cast ingredient data.IngredientPrototype]]
-                    if ingredient.ignored_by_stats then
-                        eligible_for_smart_stats = false
-                    end
-                end
-
-                entry.enable_smart_stats = eligible_for_smart_stats
-            end
-
-            if entry.allow_productivity == nil then
-                entry.allow_productivity = vgal.recipe.get_if_productivity(entry.main_product)
-            end
-
-            vgal.log("registering: " .. entry.name)
-
-            ---@diagnostic disable-next-line: assign-type-mismatch
-            data:extend { entry }
-
-            if entry.enable_smart_productivity and entry.allow_productivity then
-                vgal.recipe.smart_allow_productivity(entry.name)
-            end
-
-            if entry.enable_smart_stats then
-                vgal.recipe.smart_fix_stats(entry.name)
-            end
-
-            for i, tech_entry in ipairs(entry.technologies) do
-                if type(tech_entry) == "table" then
-                    vgal.tech.create_node(entry, tech_entry, i, hidden)
-                elseif type(tech_entry) == "string" then
-                    vgal.tech.add_recipe(tech_entry, entry.name)
-                else
-                    error("Invalid prototype technologies entry: " .. serpent.block(tech_entry))
-                end
-            end
-
-            if entry.productivity_technology ~= "" then -- so if "", no prod even when tech exists
-                entry.productivity_technology = entry.productivity_technology or vgal.recipe.get_productivity_tech_name(
-                    entry.main_product)
-                if entry.productivity_technology then
-                    if type(entry.productivity_technology) == "string" then
-                        ---@type string
-                        vgal.tech.add_productivity_change(entry.productivity_technology --[[@as string]], entry.name, nil,
-                            entry.hidden)
-                    else
-                        vgal.tech.add_productivity_change(
-                            entry.productivity_technology[1],
-                            entry.name,
-                            entry.productivity_technology[2],
-                            entry.hidden
-                        )
-                    end
-                end
-            end
-        elseif entry.type == "toggle-group" then
-            ---@cast entry vgal.VgalToggleGroupPrototype
-
-            if entry.enabled == nil then
-                if entry.enabled_setting then
-                    ---@diagnostic disable-next-line: assign-type-mismatch
-                    entry.enabled = settings.startup[entry.enabled_setting].value
-                else
-                    ---@diagnostic disable-next-line: assign-type-mismatch
-                    entry.enabled = settings.startup[entry.name].value
-                end
-            end
-
-            vgal.groups[entry.name] = entry
-        else
-            error("Invalid prototype type " .. entry.type .. " for " .. entry.name)
-        end
-    end
+function vgal.domain_exists(domain_name)
+    return not not vgal.domains[domain_name]
 end
 
 ---@param prototype data.PrototypeBase
-function vgal.data.hide(prototype)
+function vgal.hide(prototype)
     prototype.hidden = true
     prototype.hidden_in_factoriopedia = true
     prototype.hide_from_signal_gui = true
@@ -369,14 +120,14 @@ function vgal.data.hide(prototype)
             local void_recipe = data.raw["recipe"]["angels-chemical-void-" .. prototype.name] or
                 data.raw["recipe"]["angels-water-void-" .. prototype.name]
             if void_recipe then
-                vgal.data.hide(void_recipe)
+                vgal.hide(void_recipe)
             end
         end
     end
 end
 
 ---@param prototype data.PrototypeBase
-function vgal.data.deepunhide(prototype)
+function vgal.deepunhide(prototype)
     prototype.hidden = nil
     prototype.hidden_in_factoriopedia = nil
     prototype.hide_from_signal_gui = nil
@@ -387,7 +138,7 @@ function vgal.data.deepunhide(prototype)
             local void_recipe = data.raw["recipe"]["angels-chemical-void-" .. prototype.name] or
                 data.raw["recipe"]["angels-water-void-" .. prototype.name]
             if void_recipe then
-                vgal.data.deepunhide(void_recipe)
+                vgal.deepunhide(void_recipe)
             end
         end
     end
@@ -396,32 +147,6 @@ function vgal.data.deepunhide(prototype)
         prototype.hide_from_player_crafting = nil
         prototype.allow_decomposition = nil
     end
-end
-
----@param prototype_name string
----@return vgal.PrototypeWithIcons
-function vgal.get_recipeable(prototype_name)
-    local result = vgal.try_get_recipeable(prototype_name)
-
-    if result then
-        return result
-    else
-        error("Recipeable of name '" .. prototype_name .. "' not found.")
-    end
-end
-
----@param prototype_name string
----@return vgal.PrototypeWithIcons?
-function vgal.try_get_recipeable(prototype_name)
-    vgal.throw.if_param_nil(prototype_name, "prototype_name")
-
-    for category_name, _ in pairs(vgal.defines.recipeable_types) do
-        if data.raw[category_name][prototype_name] then
-            return data.raw[category_name][prototype_name] --[[@as vgal.PrototypeWithIcons]]
-        end
-    end
-
-    return nil
 end
 
 -- commentedbc: see vgal.defines.entityable_categories comment
@@ -470,7 +195,7 @@ local function remove_empty_vgal_techs()
     end
 
     for _, tech in pairs(removable_techs) do
-        vgal.data.hide(tech)
+        vgal.hide(tech)
     end
 end
 
@@ -515,7 +240,7 @@ local function splice_and_flatten_techs()
     end
 end
 
-function vgal.data.finalise()
+function vgal.finalise()
     remove_empty_vgal_techs()
     splice_and_flatten_techs()
 
@@ -524,6 +249,43 @@ function vgal.data.finalise()
             error("Recipe '" .. recipe_name .. "' not found in enable/disable override settings.")
         end
     end
+end
+
+---@param to_log number|string
+function vgal.log(to_log)
+    if settings.startup["vgal-log"].value then
+        log("vgal.log-[" .. tostring(to_log) .. "]")
+    end
+end
+
+---@param to_log table
+function vgal.log_block(to_log)
+    vgal.log(serpent.block(to_log) or error("Cannot log nil."))
+end
+
+---@param prototype_name string
+---@return vgal.PrototypeWithIcons
+function vgal.get_recipeable(prototype_name)
+    local result = vgal.try_get_recipeable(prototype_name)
+
+    if result then
+        return result
+    else
+        error("Recipeable of name '" .. prototype_name .. "' not found.")
+    end
+end
+
+---@param prototype_name string
+---@return vgal.PrototypeWithIcons?
+function vgal.try_get_recipeable(prototype_name)
+    vgal.throw.if_param_nil(prototype_name, "prototype_name")
+
+    for category_name, _ in pairs(vgal.defines.recipeable_types) do
+        if data.raw[category_name][prototype_name] then
+            return data.raw[category_name][prototype_name] --[[@as vgal.PrototypeWithIcons]]
+        end
+    end
+    return nil
 end
 
 ---@param prototype data.PrototypeBase

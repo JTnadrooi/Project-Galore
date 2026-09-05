@@ -225,7 +225,7 @@ end
 function vgal.recipe.hide(recipe_or_recipe_name)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
-    vgal.data.hide(recipe)
+    vgal.hide(recipe)
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype
@@ -630,7 +630,7 @@ end
 function vgal.recipe.get_domain_or_all_pairs(domain_name)
     local iterator, dom, start_key
     if domain_name then
-        iterator, dom, start_key = vgal.data.domain_pairs(domain_name, "recipe")
+        iterator, dom, start_key = vgal.domain_pairs(domain_name, "recipe")
     else
         iterator, dom, start_key = pairs(data.raw["recipe"])
     end -- THIS CANNOT BE DONE DIFFERENTLY.

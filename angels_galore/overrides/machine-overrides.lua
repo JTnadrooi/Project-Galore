@@ -15,7 +15,7 @@ for building_name, max_tier in pairs(vgal.defines.machine_max_tiers) do
             building.module_slots = 1 + i
         end
         if (i > max_tier) and building then
-            vgal.data.hide(building)
+            vgal.hide(building)
             vgal.item.hide(building_name .. "-" .. i)
             vgal.recipe.hide_and_queue_for_tech_removal(building_name .. "-" .. i)
             building.next_upgrade = nil
@@ -61,7 +61,7 @@ for building_name, max_tier in pairs(vgal.defines.machine_max_tiers) do
     end
 
     if max_tier == 0 then
-        vgal.data.hide(data.raw["assembling-machine"][building_name])
+        vgal.hide(data.raw["assembling-machine"][building_name])
         vgal.item.hide(building_name)
         vgal.recipe.hide_and_queue_for_tech_removal(building_name)
     end
@@ -124,23 +124,23 @@ data.raw["mining-drill"]["angels-thermal-bore"].module_slots = 5
 -- end
 
 -- remove environment seed generators
-vgal.data.hide(data.raw["assembling-machine"]["angels-bio-generator-swamp-1"])
+vgal.hide(data.raw["assembling-machine"]["angels-bio-generator-swamp-1"])
 vgal.item.hide("angels-bio-generator-swamp-1")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-bio-generator-swamp-1")
 
-vgal.data.hide(data.raw["assembling-machine"]["angels-bio-generator-desert-1"])
+vgal.hide(data.raw["assembling-machine"]["angels-bio-generator-desert-1"])
 vgal.item.hide("angels-bio-generator-desert-1")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-bio-generator-desert-1")
 
 -- remove t2 offshore pump: sea pump (not viscous mud pump)
-vgal.data.hide(data.raw["mining-drill"]["angels-sea-pump"])
-vgal.data.hide(data.raw["offshore-pump"]["angels-sea-pump-placeable"])
+vgal.hide(data.raw["mining-drill"]["angels-sea-pump"])
+vgal.hide(data.raw["offshore-pump"]["angels-sea-pump-placeable"])
 vgal.item.hide("angels-sea-pump")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-sea-pump")
 
 -- remove t2 thermal water extractor (and copy locale)
 -- t1 has 4 module slots now anyways
-vgal.data.hide(data.raw["mining-drill"]["angels-thermal-extractor"])
+vgal.hide(data.raw["mining-drill"]["angels-thermal-extractor"])
 vgal.item.hide("angels-thermal-extractor")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-thermal-extractor")
 data.raw["mining-drill"]["angels-thermal-bore"].localised_description      = {
@@ -173,9 +173,9 @@ data.raw["assembling-machine"]["angels-bio-refugium-puffer"].working_sound = {
 do
     local s_oven = data.raw["assembling-machine"]["angels-sintering-oven"]
 
-    vgal.data.deepunhide(s_oven)
-    vgal.data.deepunhide(data.raw["recipe"][s_oven.name])
-    vgal.data.deepunhide(data.raw["item"][s_oven.name])
+    vgal.deepunhide(s_oven)
+    vgal.deepunhide(data.raw["recipe"][s_oven.name])
+    vgal.deepunhide(data.raw["item"][s_oven.name])
 
     s_oven.crafting_speed = 1
     s_oven.module_slots   = 2

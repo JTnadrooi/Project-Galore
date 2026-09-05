@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "angels-water-mineralized-angels-gas-oxygen-angels-gas-hydrogen",
         prefix = "vgal",

@@ -30,7 +30,7 @@ data:extend({
         localised_description = { "technology-description.vgal-biological-science-pack" },
         icon = "__angels_galore__/graphics/technology/biological-science-pack.png",
         icon_size = 256,
-        effects = {}, -- recipe gets added on vgal.data.extend.
+        effects = {}, -- recipe gets added on vgal.extend.
         prerequisites = { "angels-composting", "logistic-science-pack" },
         unit =
         {
@@ -41,7 +41,7 @@ data:extend({
     },
 })
 
-vgal.data.extend({
+vgal.extend({
     {
         name = "biological-science-pack",
         prefix = "vgal",

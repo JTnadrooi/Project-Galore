@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "crude-oil-sulfur",
         prefix = "vgal",

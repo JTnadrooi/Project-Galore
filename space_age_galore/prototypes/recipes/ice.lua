@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         type = "recipe",
         name = "water-fluoroketone-cold-ice", -- 1 rocket is 5000 fluid, 1r = 500,000 ice, 1r = 10,000,000 water

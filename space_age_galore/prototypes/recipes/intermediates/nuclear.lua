@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "carbon-uranium-ore",
         prefix = "vgal",

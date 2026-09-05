@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         type = "recipe",
         name = "crude-oil-coal", -- not in sa-gal
@@ -27,7 +27,7 @@ for _, result in ipairs({
     "copper-ore", "iron-ore"
 }) do
     local order = result == "iron-ore" and "ra" or "rb"
-    vgal.data.extend({
+    vgal.extend({
         {
             name = "water-" .. result, -- not in sa-gal
             prefix = "vgal",

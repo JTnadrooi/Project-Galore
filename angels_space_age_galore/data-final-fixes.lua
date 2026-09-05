@@ -28,7 +28,7 @@ for _, recipe in pairs(data.raw["recipe"]) do
 end
 
 for og_name, _ in pairs(dedupe_map) do
-    vgal.data.hide(vgal.get_recipeable(og_name))
+    vgal.hide(vgal.get_recipeable(og_name))
 end
 
 -- fix prereq of removed vanilla techs
@@ -62,7 +62,7 @@ do
     for voidable_fluid_name, _ in pairs(voidables) do
         local voidable_fluid = data.raw["fluid"][voidable_fluid_name]
 
-        vgal.data.extend({
+        vgal.extend({
             {
                 name = "vgal-space-void-" .. voidable_fluid_name,
                 domain = "vgal",

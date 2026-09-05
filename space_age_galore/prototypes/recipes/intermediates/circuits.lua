@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         type = "recipe",
         name = "holmium-plate-electronic-circuit",

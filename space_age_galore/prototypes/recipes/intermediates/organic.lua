@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         type = "recipe",
         name = "sulfur-ammonia-nutrients", -- for nauvis / aquilo
@@ -195,7 +195,7 @@ vgal.data.extend({
 for _, metal in pairs(vgal.defines.metals) do
     local other_bacteria = (metal.name == "iron" and "copper" or "iron") .. "-bacteria"
     local order_base = metal.name == "iron" and "a" or "b"
-    vgal.data.extend({
+    vgal.extend({
         {
             type = "recipe",
             name = other_bacteria .. "-" .. metal.bacteria,

@@ -4,7 +4,7 @@ local handlers = {
     ["electric-engine-unit"] = "engine-unit",
     ["holmium-plate"] = "holmium-plate",
 }
-for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
+for _, recipe in vgal.domain_pairs("vgal", "recipe") do
     if handlers[recipe.main_product] then
         local tech_pre_name = "cerys-" .. handlers[recipe.main_product] .. "-productivity-"
         for i = 1, 10 do

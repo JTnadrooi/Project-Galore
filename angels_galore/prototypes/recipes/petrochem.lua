@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "sulfuric-acid-angels-solid-carbon",
         prefix = "vgal",

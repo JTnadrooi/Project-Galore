@@ -1,5 +1,5 @@
 -- I refer to items only used as some sorts of catalyst in recipes as "recipe items"
-vgal.data.extend({
+vgal.extend({
     -- crafting
     {
         name = "angels-liquid-molten-iron-angels-catalyst-metal-carrier",

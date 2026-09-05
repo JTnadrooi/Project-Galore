@@ -3,7 +3,7 @@
 An example showcasing the nested recipe feature, in addition to some of the new recipe/tech properties.
 
 ```lua
-vgal.data.extend({
+vgal.extend({
         {
             name = "example-technology", -- becomes "test-example-technology". "prefix" get from autofilled properties.
             icon = "__example-mod__/graphics/technology/example.png",

@@ -18,7 +18,7 @@ for _, nutrientable_recipe_name in ipairs(nutrientable_recipe_names) do
     nutrients_count = math.floor(nutrients_count / 10) * 10
     nutrients_count = math.max(nutrients_count, 10)
 
-    vgal.data.extend({
+    vgal.extend({
         {
             name = ingredient.name .. "-nutrients",
             prefix = "vgal",
@@ -42,7 +42,7 @@ for _, nutrientable_recipe_name in ipairs(nutrientable_recipe_names) do
 end
 
 for _, plant in pairs(vgal.defines.gleba_plants) do
-    vgal.data.extend({
+    vgal.extend({
         {
             name = plant.name .. "-" .. plant.seed,
             prefix = "vgal",
@@ -66,7 +66,7 @@ for _, plant in pairs(vgal.defines.gleba_plants) do
     })
 end
 
-vgal.data.extend({
+vgal.extend({
     {
         name = "yumako-mash-angels-liquid-vegetable-oil",
         prefix = "vgal",

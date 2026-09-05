@@ -116,7 +116,7 @@ if mods["quality"] then
 
         local q_recipe_map = {}
 
-        for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
+        for _, recipe in vgal.domain_pairs("vgal", "recipe") do
             if vgal.string.ends_with(recipe.main_product, "-science-pack") and
                 (vgal.recipe.get_main_product_amount(recipe) > (vgal.recipe.get_main_product_amount(data.raw["recipe"][recipe.main_product], true) + 1))
             then

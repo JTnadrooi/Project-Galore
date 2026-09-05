@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         type = "toggle-group",
         name = "vgal-crushing-recipes",

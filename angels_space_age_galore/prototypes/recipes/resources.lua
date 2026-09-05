@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "calcite-angels-solid-calcium-carbonate",
         prefix = "vgal",

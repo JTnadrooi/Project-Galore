@@ -1,7 +1,7 @@
 -- to make costs align with vanilla (one plastic bar should be around as much "worth" as 1.5 plates) plastic bar recipes have been buffed
 -- plastic recipes are genrally very "cost-efficient" (they have high multiplier) because of their inherent difficutly. Its more difficult to scale up than metals.
 -- especially the ethylene derivative recipes, I'm trying to make it more attractive to do something with it instead of voiding it. (you cant really get it on demand.. yet)
-vgal.data.extend({
+vgal.extend({
     {
         name = "angels-gas-propene-plastic-bar",
         prefix = "vgal",

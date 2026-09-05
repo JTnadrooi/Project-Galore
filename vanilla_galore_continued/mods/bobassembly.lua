@@ -1,7 +1,7 @@
 if not mods["bobassembly"] then return end
 
 if settings.startup["bobmods-assembly-electronicmachines"].value then
-    for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
+    for _, recipe in vgal.domain_pairs("vgal", "recipe") do
         ---@cast recipe data.RecipePrototype
 
         if

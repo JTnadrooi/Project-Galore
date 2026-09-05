@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "petroleum-gas-barrel-biter-egg",
         prefix = "vgal",

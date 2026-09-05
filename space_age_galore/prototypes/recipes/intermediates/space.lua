@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "promethium-asteroid-chunk-crushing",
         prefix = "vgal",

@@ -1,4 +1,4 @@
-vgal.data.finalise()
+vgal.finalise()
 
 if settings.startup["vgal-show-prod-descs"].value then
     for _, recipe in pairs(data.raw["recipe"]) do

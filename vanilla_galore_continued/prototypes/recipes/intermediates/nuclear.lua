@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "coal-uranium-235-nuclear-fuel",
         prefix = "vgal",

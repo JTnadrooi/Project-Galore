@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "plastic-bar-turbo-transport-belt",
         prefix = "vgal",

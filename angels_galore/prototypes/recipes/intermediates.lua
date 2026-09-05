@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "angels-electrode-used-angels-solid-carbon-angels-electrode",
         prefix = "vgal",

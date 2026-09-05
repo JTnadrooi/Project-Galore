@@ -25,5 +25,5 @@ end
 function vgal.fluid.hide(fluid_or_fluid_name)
     local fluid = vgal.get_from_prototype_or_prototype_name(fluid_or_fluid_name, "fluid")
 
-    vgal.data.hide(fluid)
+    vgal.hide(fluid)
 end

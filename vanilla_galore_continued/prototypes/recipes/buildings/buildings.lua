@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "processing-unit-artillery-turret",
         prefix = "vgal",

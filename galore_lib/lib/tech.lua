@@ -251,7 +251,7 @@ end
 function vgal.tech.hide(tech_or_tech_name)
     local tech = vgal.get_from_prototype_or_prototype_name(tech_or_tech_name, "technology")
 
-    vgal.data.hide(tech)
+    vgal.hide(tech)
 end
 
 ---@param tech_name string
@@ -266,7 +266,7 @@ function vgal.tech.deep_hide(tech_name)
         end
     end
 
-    vgal.data.hide(tech)
+    vgal.hide(tech)
 end
 
 ---@param tech data.TechnologyPrototype

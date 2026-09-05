@@ -14,7 +14,7 @@ local pack_fluids = {
     ["utility-science-pack"] = { "hydrogen", 60 },
 }
 local new_recipes = {}
-for _, recipe in vgal.data.domain_pairs("vgal", "recipe") do
+for _, recipe in vgal.domain_pairs("vgal", "recipe") do
     ---@diagnostic disable-next-line: param-type-mismatch
     if recipe.name:match("%-science%-pack$") then
         ---@diagnostic disable-next-line: undefined-field

@@ -153,7 +153,7 @@ vgal.item.hide("angels-solid-chromate")
 vgal.item.hide("angels-solid-dichromate")
 vgal.item.hide("angels-solid-ammonium-paratungstate")
 vgal.item.hide("angels-silver-ore") -- this is the only mention of silver anywhere.
--- vgal.data.deep_hide(data.raw["item"]["angels-thorium-ore"]) -- this is the only mention of thorium anywhere. | commentedbc: not sure.
+-- vgal.deep_hide(data.raw["item"]["angels-thorium-ore"]) -- this is the only mention of thorium anywhere. | commentedbc: not sure.
 
 -- specifics (fluids)
 vgal.fluid.hide("angels-liquid-trichlorosilane")
@@ -163,7 +163,7 @@ vgal.fluid.hide("angels-liquid-tungstic-acid")
 -- remove yellow modules
 local bio_modules = { "angels-bio-yield-module", "angels-bio-yield-module-2", "angels-bio-yield-module-3" }
 for _, bio_module in ipairs(bio_modules) do
-    vgal.data.hide(data.raw["module"][bio_module])
+    vgal.hide(data.raw["module"][bio_module])
     vgal.tech.hide(bio_module)
     vgal.recipe.hide_and_queue_for_tech_removal(bio_module)
 end
@@ -291,7 +291,7 @@ for _, environment in ipairs({ "temperate", "swamp", "desert" }) do
     tree.autoplace = {
         probability_expression = "0"
     }
-    vgal.data.hide(tree)
+    vgal.hide(tree)
 end
 
 -- remove copper wire coil (copper wire recipe gets reordered during final fixes)

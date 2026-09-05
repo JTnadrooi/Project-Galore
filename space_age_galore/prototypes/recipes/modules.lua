@@ -14,7 +14,7 @@ for _, module in pairs(vgal.defines.modules) do
 
             local energy_required = (tier == 2) and 30 or 15
 
-            vgal.data.extend({
+            vgal.extend({
                 {
                     name = module.unique_ingredient .. "-" .. tiered_module_name,
                     prefix = "vgal",

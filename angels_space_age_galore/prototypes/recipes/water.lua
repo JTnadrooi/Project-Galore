@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "water-low-pressure-boiling-steam",
         prefix = "vgal",

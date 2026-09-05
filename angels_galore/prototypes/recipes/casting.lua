@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     -- simple intermediates
     {
         name = "angels-liquid-molten-iron-iron-gear-wheel",

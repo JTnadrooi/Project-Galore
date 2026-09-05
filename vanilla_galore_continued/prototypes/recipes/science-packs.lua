@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     -- AUTOMATION
     {
         name = "steel-plate-automation-science-pack",
@@ -757,7 +757,7 @@ vgal.data.extend({
 })
 
 for _, module in pairs(vgal.defines.modules) do
-    vgal.data.extend({
+    vgal.extend({
         {
             name = module.name .. "-chemical-science-pack",
             prefix = "vgal",

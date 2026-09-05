@@ -11,7 +11,7 @@ for _, atm in pairs(vgal.defines.atmospheres) do
 
     local separation_energy_required = (separation_category == "chemistry") and 1 or 0.5
 
-    vgal.data.extend({
+    vgal.extend({
         {
             name = atm.name,
             domain = "vgal",
@@ -51,7 +51,7 @@ for _, atm in pairs(vgal.defines.atmospheres) do
     })
 end
 
-vgal.data.extend({
+vgal.extend({
     {
         name = "simple-angels-gas-puffer-atmosphere",
         prefix = "vgal",

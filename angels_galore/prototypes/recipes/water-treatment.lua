@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "angels-solid-sodium-hypochlorite-angels-water-purified",
         prefix = "vgal",
@@ -113,7 +113,7 @@ vgal.data.extend({
 })
 
 for _, waste_water in pairs(vgal.defines.waste_waters) do
-    vgal.data.extend({
+    vgal.extend({
         {
             name = "angels-solid-calcium-chloride-" .. waste_water.name .. "-angels-water-purified",
             prefix = "vgal",

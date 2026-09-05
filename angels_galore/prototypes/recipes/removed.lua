@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "angels-liquid-molten-steel-low-density-structure",
         prefix = "vgal",

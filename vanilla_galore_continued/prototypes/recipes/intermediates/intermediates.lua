@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "iron-plate-copper-plate-barrel",
         prefix = "vgal",

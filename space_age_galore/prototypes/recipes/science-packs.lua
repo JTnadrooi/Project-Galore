@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     -- SPACE
     {
         name = "uranium-235-space-science-pack",

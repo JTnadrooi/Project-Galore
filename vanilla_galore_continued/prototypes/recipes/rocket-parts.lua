@@ -1,4 +1,4 @@
-vgal.data.extend({
+vgal.extend({
     {
         name = "engine-unit-rocket-part",
         prefix = "vgal",

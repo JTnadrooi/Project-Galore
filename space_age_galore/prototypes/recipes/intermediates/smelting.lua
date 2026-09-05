@@ -3,10 +3,10 @@ vgal.data.extend({
         type = "recipe",
         name = "carbon-steel-plate",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("steel-plate"),
             vgal.icon.get_in("carbon"),
-        },
+        }),
         category = "metallurgy",
         energy_required = 6.4,
         technology = "foundry",
@@ -23,10 +23,10 @@ vgal.data.extend({
         type = "recipe",
         name = "iron-ore-coal-molten-iron", -- future nadrooi, dont add a carbon recipe
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("molten-iron"),
             vgal.icon.get_in("coal"),
-        },
+        }),
         category = "metallurgy",
         energy_required = 32,
         technology = "foundry",
@@ -43,10 +43,10 @@ vgal.data.extend({
         type = "recipe",
         name = "copper-ore-coal-molten-copper",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("molten-copper"),
             vgal.icon.get_in("coal"),
-        },
+        }),
         category = "metallurgy",
         energy_required = 32,
         technology = "foundry",
@@ -63,10 +63,10 @@ vgal.data.extend({
         type = "recipe",
         name = "ammonia-calcite-molten-iron",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("molten-iron"),
             vgal.icon.get_in("ammonia"),
-        },
+        }),
         category = "metallurgy",
         energy_required = 32,
         technology = "foundry",
@@ -86,10 +86,10 @@ vgal.data.extend({
         type = "recipe",
         name = "sulfuric-acid-calcite-molten-copper",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("molten-copper"),
             vgal.icon.get_in("sulfuric-acid"),
-        },
+        }),
         category = "metallurgy",
         energy_required = 32,
         technology = "foundry",

@@ -59,10 +59,10 @@ vgal.data.extend({
     {
         name = "angels-water-saline-angels-solid-salt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-salt"),
             vgal.icon.get_in("angels-water-saline"),
-        },
+        }),
         energy_required = 1,
         technology = "angels-water-treatment-3",
         fluid_ingredients = {

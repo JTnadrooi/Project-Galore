@@ -2,9 +2,9 @@ vgal.data.extend({
     {
         name = "crude-oil-sulfur",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/crude-oil-sulfur.png"),
-        },
+        }),
         category = "oil-processing",
         energy_required = 5,
         fluid_ingredients = {
@@ -25,11 +25,11 @@ vgal.data.extend({
     {
         name = "steam-crude-oil-sulfur",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/crude-oil-sulfur.png"),
             vgal.icon.get_in("steam"),
             vgal.icon.get_in2("steam"),
-        },
+        }),
         category = "oil-processing",
         energy_required = 3,
         fluid_ingredients = {
@@ -51,9 +51,9 @@ vgal.data.extend({
     {
         name = "steam-advanced-oil-processing",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/steam-advanced-oil-processing.png"),
-        },
+        }),
         category = "oil-processing",
         energy_required = 2.5,
         fluid_ingredients = {
@@ -74,11 +74,11 @@ vgal.data.extend({
     {
         name = "petroleum-gas-coal-heavy-oil",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             -- vgal.icon.get("heavy-oil"),
             -- vgal.icon.get_in_fluid("petroleum-gas"),
             vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/petroleum-gas-coal-heavy-oil.png"),
-        },
+        }),
         category = "chemistry",
         energy_required = 1.5,
         ingredients = {
@@ -97,11 +97,11 @@ vgal.data.extend({
     {
         name = "heavy-oil-light-oil-petroleum-gas",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             -- vgal.icon.get("heavy-oil"),
             -- vgal.icon.get_in_fluid("petroleum-gas"),
             vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/heavy-oil-light-oil-petroleum-gas.png"),
-        },
+        }),
         category = "oil-processing",
         energy_required = 1,
         fluid_ingredients = {
@@ -119,10 +119,10 @@ vgal.data.extend({
     {
         name = "steam-heavy-oil-light-oil",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("heavy-oil-cracking", "recipe"),
             vgal.icon.get_in("steam"),
-        },
+        }),
         category = "chemistry",
         energy_required = 1,
         fluid_ingredients = {
@@ -140,10 +140,10 @@ vgal.data.extend({
     {
         name = "steam-light-oil-petroleum-gas",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("light-oil-cracking", "recipe"),
             vgal.icon.get_in("steam"),
-        },
+        }),
         category = "chemistry",
         energy_required = 1,
         fluid_ingredients = {

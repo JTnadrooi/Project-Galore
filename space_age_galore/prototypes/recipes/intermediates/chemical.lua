@@ -3,7 +3,7 @@ vgal.data.extend({
         type = "recipe",
         name = "sulfuric-acid-sulfur",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             -- vgal.icon.get("sulfur"),
             -- vgal.icon.get_in("sulfuric-acid", "fluid"),
             -- vgal.icon.get_in2("calcite"),
@@ -11,7 +11,7 @@ vgal.data.extend({
             vgal.icon.get_in_bg("sulfuric-acid"),
             vgal.icon.get_in_bg2("calcite"),
             vgal.icon.get("sulfur"),
-        },
+        }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 2,
         technology = "calcite-processing",
@@ -47,10 +47,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "stone-bioflux-calcite",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("calcite"),
     --         vgal.icon.get_in("bioflux"),
-    --     },
+    --     }),
     --     category = "organic",
     --     energy_required = 8,
     --     technology = { "bacteria-cultivation", "calcite-processing" },
@@ -71,13 +71,13 @@ vgal.data.extend({
         type = "recipe",
         name = "solid-fuel-sulfuric-acid-carbon",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_in_to("solid-fuel"),
             vgal.icon.get_out_to("carbon"),
             vgal.icon.get_overlay("to"),
 
             vgal.icon.get_in2("sulfuric-acid"),
-        },
+        }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 5,
         technology = "space-platform",
@@ -96,11 +96,11 @@ vgal.data.extend({
         type = "recipe",
         name = "carbon-sulfur-lubricant",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("lubricant"),
             vgal.icon.get_in_fluid("sulfur"),
             vgal.icon.get_in_fluid2("carbon"),
-        },
+        }),
         category = "chemistry",
         energy_required = 1,
         technology = "space-platform",
@@ -119,10 +119,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "carbon-lubricant", -- for vulcanus
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("lubricant"),
     --         vgal.icon.get_in_fluid("carbon"),
-    --     },
+    --     }),
     --     category = "chemistry",
     --     energy_required = 3,
     --     technology = "space-platform",
@@ -139,10 +139,10 @@ vgal.data.extend({
     -- {
     --     name = "heavy-oil-ammonia-sulfur",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("sulfur"),
     --         vgal.icon.get_in("ammonia"),
-    --     },
+    --     }),
     --     categories = { "chemistry", "cryogenics" },
     --     energy_required = 6,
     --     fluid_ingredients = {
@@ -160,11 +160,11 @@ vgal.data.extend({
         type = "recipe",
         name = "calcite-holmium-solution",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("holmium-solution"),
             vgal.icon.get_in_fluid("steam"),
             vgal.icon.get_in_fluid2("calcite"),
-        },
+        }),
         category = "chemistry",
         energy_required = 10,
         technology = { "holmium-processing", "calcite-processing", },
@@ -183,11 +183,11 @@ vgal.data.extend({
         type = "recipe",
         name = "scrap-sulfuric-acid-holmium-solution", --
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("holmium-solution"),
             vgal.icon.get_in_fluid("scrap"),
             vgal.icon.get_in_fluid2("sulfuric-acid"),
-        },
+        }),
         category = "chemistry",
         energy_required = 25,
         technology = "holmium-processing",
@@ -209,11 +209,11 @@ vgal.data.extend({
         type = "recipe",
         name = "thruster-fuel-thruster-oxidizer-solid-fuel-rocket-fuel",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("rocket-fuel"),
             vgal.icon.get_in("thruster-fuel"),
             vgal.icon.get_in2("thruster-oxidizer"),
-        },
+        }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 6,
         technology = "space-platform-thruster",
@@ -241,11 +241,11 @@ vgal.data.extend({
         type = "recipe",
         name = "plastic-bar-electrolyte",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electrolyte"),
             vgal.icon.get_in("light-oil"),
             vgal.icon.get_in2("plastic-bar"),
-        },
+        }),
         category = "electromagnetics",
         energy_required = 10,
         technology = "electromagnetic-plant",
@@ -264,11 +264,11 @@ vgal.data.extend({
         type = "recipe",
         name = "sulfuric-acid-electrolyte",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electrolyte"),
             vgal.icon.get_in("sulfuric-acid"),
             vgal.icon.get_in2("stone"),
-        },
+        }),
         category = "electromagnetics",
         energy_required = 10,
         technology = "electromagnetic-plant",
@@ -287,13 +287,13 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "calcite-fluorine",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("fluorine"),
     --         -- vgal.icon.get_in_fluid("calcite"),
     --         -- vgal.icon.get_in_to("calcite"),
     --         -- vgal.icon.get_out_to("fluorine"),
     --         -- vgal.icon.get_overlay("to"),
-    --     },
+    --     }),
     --     categories = { "chemistry", "cryogenics" },
     --     energy_required = 2,
     --     technology = "calcite-processing",
@@ -310,10 +310,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "fluorine-tungsten-carbide",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("tungsten-carbide"),
     --         vgal.icon.get_in("fluorine"),
-    --     },
+    --     }),
     --     category = "crafting",
     --     energy_required = 5,
     --     technology = "calcite-processing",
@@ -334,10 +334,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "fluorine-lithium-rocket-fuel", -- Lithium-Fluorine propellant!
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("rocket-fuel"),
     --         vgal.icon.get_in("fluorine"),
-    --     },
+    --     }),
     --     category = "cryogenics",
     --     energy_required = 10,
     --     technology = "lithium-processing",
@@ -357,10 +357,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "lithium-brine-solid-fuel",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("solid-fuel"),
     --         vgal.icon.get_in("lithium-brine"),
-    --     },
+    --     }),
     --     category = "cryogenics",
     --     energy_required = 8,
     --     technology = "lithium-processing",
@@ -380,10 +380,10 @@ vgal.data.extend({
         type = "recipe",
         name = "lithium-battery", -- will be used for alternate cryogenic science recipe but currently NO ONE (no one) will be using it.
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("battery"),
             vgal.icon.get_in("lithium"),
-        },
+        }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 10, -- fast
         technology = "lithium-processing",
@@ -402,10 +402,10 @@ vgal.data.extend({
         type = "recipe",
         name = "ammonia-explosives", -- lets goo, less coal usage on gleba (and in space)!
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("explosives"),
             vgal.icon.get_in("ammonia"),
-        },
+        }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 10,
         technology = "explosives",
@@ -424,10 +424,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "fluorine-superconductor",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("superconductor"),
     --         vgal.icon.get_in("fluorine"),
-    --     },
+    --     }),
     --     category = "cryogenics",
     --     energy_required = 10,
     --     technology = "lithium-processing",
@@ -447,10 +447,10 @@ vgal.data.extend({
         type = "recipe",
         name = "ammonia-plastic-bar", -- can be done on aquilo, carbon comes from spoilage
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("plastic-bar"),
             vgal.icon.get_in("ammonia"),
-        },
+        }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 4,
         technology = "space-platform",
@@ -468,10 +468,10 @@ vgal.data.extend({
         type = "recipe",
         name = "pentapod-egg-plastic-bar",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("plastic-bar"),
             vgal.icon.get_in("pentapod-egg"),
-        },
+        }),
         category = "organic",
         energy_required = 20,
         technology = "bioflux-processing",

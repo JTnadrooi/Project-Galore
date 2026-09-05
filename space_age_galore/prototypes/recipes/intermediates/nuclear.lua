@@ -2,11 +2,11 @@ vgal.data.extend({
     {
         name = "carbon-uranium-ore",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_in_to("carbon"),
             vgal.icon.get_out_to("uranium-ore"),
             vgal.icon.get_overlay("to"),
-        },
+        }),
         energy_required = 25,
         technology = { "uranium-processing", "space-platform" },
         ingredients = {
@@ -22,10 +22,10 @@ vgal.data.extend({
         type = "recipe",
         name = "depleted-uranium-fuel-cell-fusion-power-cell",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("fusion-power-cell"),
             vgal.icon.get_in("depleted-uranium-fuel-cell"),
-        },
+        }),
         category = "cryogenics",
         energy_required = 20,
         technology = "fusion-reactor",
@@ -41,9 +41,9 @@ vgal.data.extend({
     -- {
     --     name = "fluorine-uranium-ore-uranium-238-uranium-235",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get_placeholder(),
-    --     },
+    --     }),
     --     energy_required = 10,
     --     technology = { "uranium-processing", "cryogenic-plant" },
     --     fluid_ingredients = {
@@ -62,12 +62,12 @@ vgal.data.extend({
     {
         name = "fluorine-kovarex-enrichment-process",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             -- vgal.icon.get("kovarex-enrichment-process", "recipe"),
             -- vgal.icon.get_overlay("plus"),
             -- vgal.icon.get_placeholder(),
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/fluorine-kovarex-enrichment-process.png"),
-        },
+        }),
         energy_required = 30,
         technology = { "kovarex-enrichment-process", "cryogenic-plant" },
         fluid_ingredients = {
@@ -88,10 +88,10 @@ vgal.data.extend({
     {
         name = "lithium-plate-uranium-fuel-cell",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("uranium-fuel-cell"),
             vgal.icon.get_in("lithium-plate"),
-        },
+        }),
         technology = { "nuclear-power", "lithium-processing" },
         ingredients = {
             { "lithium-plate", 1 },

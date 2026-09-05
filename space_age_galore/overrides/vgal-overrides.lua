@@ -18,10 +18,10 @@ data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].ingredients = vgal.build.t
     { "uranium-235", 1 },
     { "carbon",      5 },
 })
-data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].icons = vgal.icon.merge_composites {
+data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].icons = vgal.icon.merge_composites({
     vgal.icon.get("nuclear-fuel"),
     vgal.icon.get_in("carbon"),
-}
+})
 data.raw.recipe["vgal-heavy-oil-rocket-fuel"].energy_required = 30
 
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-processing-unit-artillery-turret")

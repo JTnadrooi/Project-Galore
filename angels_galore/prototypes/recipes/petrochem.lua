@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "sulfuric-acid-angels-solid-carbon",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-carbon"),
             vgal.icon.get_in("sulfuric-acid"),
-        },
+        }),
         energy_required = 1,
         technology = "sulfur-processing",
         fluid_ingredients = {

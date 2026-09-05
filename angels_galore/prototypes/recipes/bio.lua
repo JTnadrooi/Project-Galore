@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "angels-solid-leafs-angels-cellulose-fiber",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-cellulose-fiber"),
             vgal.icon.get_in("angels-solid-leafs"),
-        },
+        }),
         energy_required = 1,
         technology = "angels-bio-arboretum-1",
         ingredients = {
@@ -19,10 +19,10 @@ vgal.data.extend({
     {
         name = "angels-tree-seed-angels-cellulose-fiber",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-cellulose-fiber"),
             vgal.icon.get_in("angels-tree-seed"),
-        },
+        }),
         energy_required = 1,
         technology = "angels-bio-arboretum-1",
         ingredients = {
@@ -36,10 +36,10 @@ vgal.data.extend({
     { -- meat void
         name = "angels-bio-raw-meat-angels-liquid-nutrient-pulp",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-liquid-nutrient-pulp"),
             vgal.icon.get_in("angels-bio-raw-meat"),
-        },
+        }),
         energy_required = 2,
         technology = "angels-bio-refugium-butchery-1",
         ingredients = {

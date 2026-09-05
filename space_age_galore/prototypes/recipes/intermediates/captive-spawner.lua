@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "petroleum-gas-barrel-biter-egg",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("biter-egg"),
             vgal.icon.get_in("petroleum-gas"),
-        },
+        }),
         energy_required = 5,
         technology = "captivity",
         ingredients = {
@@ -21,10 +21,10 @@ vgal.data.extend({
     {
         name = "nutrients-biter-egg",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("biter-egg"),
             vgal.icon.get_in("nutrients"),
-        },
+        }),
         energy_required = 3,
         technology = "captivity",
         ingredients = {
@@ -39,11 +39,11 @@ vgal.data.extend({
     {
         name = "pentapod-egg-biter-egg-duel-biter-preferred",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("biter-egg"),
             vgal.icon.get_in("biter-egg"),
             vgal.icon.get_in2("pentapod-egg"),
-        },
+        }),
         energy_required = 5,
         technology = "captivity",
         ingredients = {
@@ -73,11 +73,11 @@ vgal.data.extend({
     {
         name = "pentapod-egg-biter-egg-duel-pentapod-preferred",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("pentapod-egg"),
             vgal.icon.get_in("biter-egg"),
             vgal.icon.get_in2("pentapod-egg"),
-        },
+        }),
         energy_required = 5,
         technology = "captivity",
         ingredients = {
@@ -107,11 +107,11 @@ vgal.data.extend({
     -- {
     --     name = "pentapod-egg-biter-egg-duel-military-science-pack",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("military-science-pack"),
     --         vgal.icon.get_in("biter-egg"),
     --         vgal.icon.get_in("pentapod-egg"),
-    --     },
+    --     }),
     --     energy_required = 3.2,
     --     technology = "captivity",
     --     ingredients = {

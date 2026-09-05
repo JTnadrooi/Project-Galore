@@ -34,10 +34,10 @@ if mods["bzcarbon"] then
         { "uranium-235", 1 },
         { "graphite",    5 },
     })
-    data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].icons = vgal.icon.merge_composites {
+    data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].icons = vgal.icon.merge_composites({
         vgal.icon.get("nuclear-fuel"),
         vgal.icon.get_in("graphite"),
-    }
+    })
 
     if mods["space-age"] then
         vgal.recipe.hide("ammonia-from-spoilage")

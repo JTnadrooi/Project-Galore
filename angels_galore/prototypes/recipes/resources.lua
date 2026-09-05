@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "angels-stone-crushed-angels-solid-sand",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-sand"),
             vgal.icon.get_in("angels-stone-crushed"),
-        },
+        }),
         energy_required = 1,
         technology = "angels-stone-smelting-1",
         ingredients = {
@@ -19,10 +19,10 @@ vgal.data.extend({
     {
         name = "angels-stone-crushed-stone",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("stone"),
             -- vgal.icon.get_in("angels-stone-crushed"),
-        },
+        }),
         energy_required = 3.2,
         ingredients = {
             { "angels-stone-crushed", 4 },
@@ -35,10 +35,10 @@ vgal.data.extend({
     {
         name = "angels-stone-crushed-angels-solid-carbon-stone",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("stone"),
             vgal.icon.get_in("angels-solid-carbon"),
-        },
+        }),
         technology = { "angels-metallurgy-2", "angels-coal-processing" },
         energy_required = 2.4,
         ingredients = {
@@ -55,10 +55,10 @@ vgal.data.extend({
     {
         name = "angels-solid-calcium-carbonate-angels-solid-lime",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-lime"),
             vgal.icon.get_in("angels-solid-calcium-carbonate"),
-        },
+        }),
         energy_required = 2,
         technology = "angels-stone-smelting-1",
         ingredients = {
@@ -76,10 +76,10 @@ vgal.data.extend({
     -- {
     --     name = "angels-stone-crushed-angels-solid-carbon-stone-brick",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("stone-brick"),
     --         vgal.icon.get_in("angels-solid-carbon"),
-    --     },
+    --     }),
     --     technology = { "angels-metallurgy-2", "angels-coal-processing" },
     --     energy_required = 2,
     --     ingredients = {
@@ -97,12 +97,12 @@ vgal.data.extend({
     -- {
     --     name = "agal-hand-mining", -- the vgal prefix gets added anyways
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get_placeholder(),
     --         -- vgal.icon.get_out("stone"),
     --         -- vgal.icon.get_out2("angels-solid-sand"),
     --         -- vgal.icon.get_out3("angels-solid-limestone"),
-    --     },
+    --     }),
     --     energy_required = 10,
     --     ingredients = {},
     --     results = {
@@ -201,10 +201,10 @@ vgal.data.extend({
     -- {
     --     name = "angels-liquid-aqueous-sodium-hydroxide-angels-thorium-ore",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("angels-thorium-ore"),
     --         vgal.icon.get_in("angels-liquid-aqueous-sodium-hydroxide"),
-    --     },
+    --     }),
     --     technology = { "angels-thorium-power", "angels-sodium-processing-1" },
     --     energy_required = 2,
     --     ingredients = {
@@ -223,10 +223,10 @@ vgal.data.extend({
     -- {
     --     name = "angels-gas-chlorine-angels-thorium-ore",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("angels-thorium-ore"),
     --         vgal.icon.get_in("angels-gas-chlorine"),
-    --     },
+    --     }),
     --     technology = "angels-thorium-power",
     --     energy_required = 2,
     --     ingredients = {

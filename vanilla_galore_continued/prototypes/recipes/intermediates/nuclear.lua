@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "coal-uranium-235-nuclear-fuel",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("nuclear-fuel"),
             vgal.icon.get_in("coal"),
-        },
+        }),
         technology = "kovarex-enrichment-process",
         energy_required = 45,
         ingredients = {
@@ -21,11 +21,11 @@ vgal.data.extend({
     {
         name = "uranium-235-uranium-238",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_in_to("uranium-235"),
             vgal.icon.get_out_to("uranium-238"),
             vgal.icon.get_overlay("to"),
-        },
+        }),
         technology = "uranium-processing",
         energy_required = 30,
         ingredients = {
@@ -40,11 +40,11 @@ vgal.data.extend({
     {
         name = "low-density-structure-uranium-fuel-cell",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("uranium-fuel-cell"),
             vgal.icon.get_in("sulfuric-acid", "fluid"),
             vgal.icon.get_in2("low-density-structure"),
-        },
+        }),
         technology = { "nuclear-power", "low-density-structure" },
         ingredients = {
             { "low-density-structure", 1 },

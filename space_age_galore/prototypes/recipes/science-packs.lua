@@ -3,10 +3,10 @@ vgal.data.extend({
     {
         name = "uranium-235-space-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("space-science-pack"),
             vgal.icon.get_in("uranium-235"),
-        },
+        }),
         category = "crafting",
         energy_required = 100,
         technology = { "space-science-pack", "uranium-processing" },
@@ -34,10 +34,10 @@ vgal.data.extend({
     {
         name = "ammonia-agricultural-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("agricultural-science-pack"),
             vgal.icon.get_in("ammonia"),
-        },
+        }),
         category = "organic",
         energy_required = 8,
         technology = "agricultural-science-pack",
@@ -63,10 +63,10 @@ vgal.data.extend({
     {
         name = "sulfur-petroleum-gas-agricultural-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("agricultural-science-pack"),
             vgal.icon.get_in("sulfur"),
-        },
+        }),
         category = "organic",
         energy_required = 4,
         technology = "agricultural-science-pack",
@@ -92,10 +92,10 @@ vgal.data.extend({
     -- {
     --     name = "carbon-fiber-agricultural-science-pack",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("agricultural-science-pack"),
     --         vgal.icon.get_in("carbon-fiber"),
-    --     },
+    --     }),
     --     category = "organic",
     --     energy_required = 5,
     --     technology = "carbon-fiber",
@@ -118,10 +118,10 @@ vgal.data.extend({
     {
         name = "electronic-circuit-agricultural-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("agricultural-science-pack"),
             vgal.icon.get_in("electronic-circuit"),
-        },
+        }),
         category = "organic",
         energy_required = 4,
         technology = "carbon-fiber",
@@ -145,10 +145,10 @@ vgal.data.extend({
     -- {
     --     name = "biter-egg-agricultural-science-pack",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("agricultural-science-pack"),
     --         vgal.icon.get_in("biter-egg"),
-    --     },
+    --     }),
     --     category = "organic",
     --     energy_required = 45,
     --     technology = "carbon-fiber",
@@ -175,10 +175,10 @@ vgal.data.extend({
     -- {
     --     name = "superconductor-agricultural-science-pack",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("agricultural-science-pack"),
     --         vgal.icon.get_in("superconductor"),
-    --     },
+    --     }),
     --     category = "organic",
     --     energy_required = 4,
     --     technology = "agricultural-science-pack",
@@ -207,10 +207,10 @@ vgal.data.extend({
     {
         name = "big-mining-drill-calcite-metallurgic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("metallurgic-science-pack"),
             vgal.icon.get_in("big-mining-drill"),
-        },
+        }),
         category = "metallurgy",
         energy_required = 60,
         technology = "metallurgic-science-pack",
@@ -242,11 +242,11 @@ vgal.data.extend({
     {
         name = "pentapod-egg-biter-egg-military-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("military-science-pack"),
             vgal.icon.get_in("biter-egg"),
             vgal.icon.get_in2("pentapod-egg"),
-        },
+        }),
         category = "crafting",
         energy_required = 30,
         technology = "captivity",

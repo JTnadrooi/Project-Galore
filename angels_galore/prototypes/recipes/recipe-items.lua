@@ -4,10 +4,10 @@ vgal.data.extend({
     {
         name = "angels-liquid-molten-iron-angels-catalyst-metal-carrier",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-catalyst-metal-carrier"),
             vgal.icon.get_in("angels-liquid-molten-iron"),
-        },
+        }),
         energy_required = 0.5,
         technology = { "angels-metallurgy-2", "angels-basic-chemistry-3" },
         ingredients = {
@@ -26,10 +26,10 @@ vgal.data.extend({
     {
         name = "steel-plate-angels-solid-saw",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-saw"),
             vgal.icon.get_in("steel-plate"),
-        },
+        }),
         energy_required = 6,
         technology = "angels-bio-arboretum-1",
         ingredients = {

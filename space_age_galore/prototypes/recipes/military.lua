@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "tungsten-plate-piercing-rounds-magazine",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("piercing-rounds-magazine", "ammo"),
             vgal.icon.get_in("tungsten-plate"),
-        },
+        }),
         energy_required = 6,
         technology = { "tungsten-steel", "military-2" },
         ingredients = {
@@ -20,10 +20,10 @@ vgal.data.extend({
     {
         name = "tungsten-plate-cannon-shell",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("cannon-shell", "ammo"),
             vgal.icon.get_in("tungsten-plate"),
-        },
+        }),
         energy_required = 6,
         technology = { "tungsten-steel", "tank" },
         ingredients = {
@@ -39,10 +39,10 @@ vgal.data.extend({
     {
         name = "tungsten-plate-explosive-cannon-shell",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("explosive-cannon-shell", "ammo"),
             vgal.icon.get_in("tungsten-plate"),
-        },
+        }),
         energy_required = 6,
         technology = { "tungsten-steel", "tank" },
         ingredients = {
@@ -58,10 +58,10 @@ vgal.data.extend({
     {
         name = "tungsten-plate-piercing-shotgun-shell",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("piercing-shotgun-shell", "ammo"),
             vgal.icon.get_in("tungsten-plate"),
-        },
+        }),
         energy_required = 8,
         technology = { "tungsten-steel", "military-4" },
         ingredients = {
@@ -76,10 +76,10 @@ vgal.data.extend({
     {
         name = "superconductor-railgun-ammo",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("railgun-ammo"),
             vgal.icon.get_in("superconductor"),
-        },
+        }),
         energy_required = 20,
         technology = "railgun",
         ingredients = {
@@ -96,10 +96,10 @@ vgal.data.extend({
     {
         name = "molten-iron-molten-copper-railgun-ammo",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("railgun-ammo"),
             vgal.icon.get_overlay("casting-iron-copper"),
-        },
+        }),
         energy_required = 25,
         technology = "railgun",
         fluid_ingredients = {
@@ -118,10 +118,10 @@ vgal.data.extend({
     {
         name = "holmium-plate-railgun-ammo",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("railgun-ammo"),
             vgal.icon.get_in("holmium-plate"),
-        },
+        }),
         energy_required = 25,
         technology = "railgun",
         ingredients = {
@@ -139,10 +139,10 @@ vgal.data.extend({
     -- {
     --     name = "tungsten-carbide-railgun-ammo",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("railgun-ammo"),
     --         vgal.icon.get_in("tungsten-carbide"),
-    --     },
+    --     }),
     --     energy_required = 24,
     --     technology = "railgun",
     --     ingredients = {
@@ -159,10 +159,10 @@ vgal.data.extend({
     {
         name = "electronic-circuit-railgun-turret",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("railgun-turret"),
             vgal.icon.get_in("electronic-circuit"),
-        },
+        }),
         energy_required = 20,
         technology = "railgun",
         fluid_ingredients = {
@@ -184,10 +184,10 @@ vgal.data.extend({
     {
         name = "gun-turret-rail-railgun-turret",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("railgun-turret"),
             vgal.icon.get_in("gun-turret"),
-        },
+        }),
         energy_required = 20,
         technology = "railgun",
         ingredients = {
@@ -203,10 +203,10 @@ vgal.data.extend({
     {
         name = "pistol-rail-railgun",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("railgun-turret"),
             vgal.icon.get_in("pistol"),
-        },
+        }),
         energy_required = 10,
         technology = "railgun",
         ingredients = {
@@ -222,10 +222,10 @@ vgal.data.extend({
     {
         name = "biter-egg-defender-capsule",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("defender-capsule"),
             vgal.icon.get_in("biter-egg"),
-        },
+        }),
         energy_required = 6,
         technology = { "defender", "captivity" },
         ingredients = {
@@ -242,10 +242,10 @@ vgal.data.extend({
     {
         name = "pentapod-egg-defender-capsule",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("defender-capsule"),
             vgal.icon.get_in("pentapod-egg"),
-        },
+        }),
         energy_required = 6,
         technology = { "defender", "biochamber" },
         ingredients = {

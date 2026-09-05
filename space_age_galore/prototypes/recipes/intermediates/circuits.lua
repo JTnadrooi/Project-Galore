@@ -3,10 +3,10 @@ vgal.data.extend({
         type = "recipe",
         name = "holmium-plate-electronic-circuit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("holmium-plate"),
-        },
+        }),
         category = "electromagnetics",
         energy_required = 5,
         technology = "holmium-processing",
@@ -25,10 +25,10 @@ vgal.data.extend({
         type = "recipe",
         name = "tungsten-carbide-advanced-circuit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("tungsten-carbide"),
-        },
+        }),
         categories = { "crafting", "electromagnetics" },
         energy_required = 6,
         technology = "tungsten-carbide",
@@ -48,10 +48,10 @@ vgal.data.extend({
         type = "recipe",
         name = "tungsten-carbide-processing-unit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("tungsten-carbide"),
-        },
+        }),
         categories = { "crafting", "electromagnetics" },
         energy_required = 10,
         technology = "tungsten-carbide",
@@ -72,10 +72,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "yumako-mash-advanced-circuit",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("advanced-circuit"),
     --         vgal.icon.get_in("yumako-mash"),
-    --     },
+    --     }),
     --     category = "organic",
     --     energy_required = 12,
     --     technology = "biochamber",
@@ -101,11 +101,11 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "yumako-mash-ammonia-advanced-circuit",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("advanced-circuit"),
     --         vgal.icon.get_in("yumako-mash"),
     --         vgal.icon.get_in2("ammonia"),
-    --     },
+    --     }),
     --     category = "organic",
     --     energy_required = 8,
     --     technology = "biochamber",
@@ -134,10 +134,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "bioflux-processing-unit",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("processing-unit"),
     --         vgal.icon.get_in("bioflux"),
-    --     },
+    --     }),
     --     category = "organic",
     --     energy_required = 24,
     --     technology = "bioflux-processing",
@@ -157,11 +157,11 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "bioflux-ammonia-processing-unit",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("processing-unit"),
     --         vgal.icon.get_in("bioflux"),
     --         vgal.icon.get_in2("ammonia"),
-    --     },
+    --     }),
     --     category = "organic",
     --     energy_required = 20,
     --     technology = "bioflux-processing",

@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "scrap-crushing",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("scrap"),
             vgal.icon.get_overlay("crushing"),
-        },
+        }),
         energy_required = 0.2,
         technology = "recycling",
         ingredients = {
@@ -29,10 +29,10 @@ vgal.data.extend({
     {
         name = "stone-crushing",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("stone"),
             vgal.icon.get_overlay("crushing"),
-        },
+        }),
         energy_required = 0.8,
         technology = "calcite-processing",
         ingredients = {
@@ -49,10 +49,10 @@ vgal.data.extend({
     {
         name = "coal-crushing",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("coal"),
             vgal.icon.get_overlay("crushing"),
-        },
+        }),
         energy_required = 1,
         technology = "space-platform",
         ingredients = {

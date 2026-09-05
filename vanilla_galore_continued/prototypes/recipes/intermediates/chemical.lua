@@ -3,13 +3,13 @@ vgal.data.extend({
         type = "recipe",
         name = "coal-sulfur",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__vanilla_galore_continued__/graphics/icons/recipe/coal-sulfur.png"),
             -- vgal.icon.get_in_fluid("petroleum-gas"),
             -- vgal.icon.get("coal"),
             -- vgal.icon.get("sulfur"),
             -- vgal.icon.get_overlay("reprocessing"),
-        },
+        }),
         category = "chemistry",
         energy_required = 6,
         technology = "sulfur-processing",
@@ -27,10 +27,10 @@ vgal.data.extend({
         type = "recipe",
         name = "plastic-bar-lubricant",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("lubricant"),
             vgal.icon.get_in_fluid("plastic-bar"),
-        },
+        }),
         category = "chemistry",
         energy_required = 4,
         technology = "lubricant",
@@ -47,10 +47,10 @@ vgal.data.extend({
     {
         name = "steam-sulfur",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("sulfur"),
             vgal.icon.get_in("steam"),
-        },
+        }),
         technology = "sulfur-processing",
         category = "chemistry",
         energy_required = 1,

@@ -3,11 +3,11 @@ vgal.data.extend({
         name = "iron-gear-wheel-advanced-circuit", -- analog
         prefix = "vgal",
         technology = { "advanced-circuit", "sulfur-processing" },
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("iron-gear-wheel"),
             vgal.icon.get_in2("steel-plate"),
-        },
+        }),
         energy_required = 18,
         ingredients = {
             { "plastic-bar",     2 }, -- 30
@@ -23,11 +23,11 @@ vgal.data.extend({
         name = "iron-gear-wheel-lubricant-advanced-circuit", -- analog
         prefix = "vgal",
         technology = "lubricant",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("iron-gear-wheel"),
             vgal.icon.get_in2("lubricant", "fluid"),
-        },
+        }),
         energy_required = 18,
         ingredients = {
             { "plastic-bar",     2 }, -- 30
@@ -45,10 +45,10 @@ vgal.data.extend({
     {
         name = "iron-stick-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("engine-unit"),
             vgal.icon.get_in("iron-stick"),
-        },
+        }),
         technology = "engine",
         energy_required = 8,
         ingredients = {
@@ -64,11 +64,11 @@ vgal.data.extend({
     {
         name = "iron-gear-wheel-lubricant-electronic-circuit", -- analog
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("iron-gear-wheel"),
             vgal.icon.get_in2("lubricant", "fluid"),
-        },
+        }),
         technology = "lubricant",
         energy_required = 0.5,
         ingredients = {
@@ -86,10 +86,10 @@ vgal.data.extend({
     {
         name = "iron-gear-wheel-electronic-circuit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("iron-gear-wheel"),
-        },
+        }),
         technologies = {
             "circuit-network",
             "concrete",
@@ -110,10 +110,10 @@ vgal.data.extend({
         name = "iron-gear-wheel-processing-unit", -- analog
         prefix = "vgal",
         category = "crafting",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("iron-gear-wheel")
-        },
+        }),
         technology = "processing-unit",
         energy_required = 8,
         ingredients = {
@@ -132,10 +132,10 @@ vgal.data.extend({
         name = "solar-panel-rocket-part",
         prefix = "vgal",
         technology = "rocket-silo",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("rocket-part"),
             vgal.icon.get_in("solar-panel")
-        },
+        }),
         energy_required = 2,
         ingredients = {
             { "solar-panel",           4 },
@@ -151,11 +151,11 @@ vgal.data.extend({
     {
         name = "roboport-speed-module-utility-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("utility-science-pack"),
             vgal.icon.get_in("roboport"),
             vgal.icon.get_in2("speed-module"),
-        },
+        }),
         category = "crafting",
         energy_required = 72,
         technology = { "utility-science-pack", "construction-robotics", "logistic-robotics" },
@@ -172,11 +172,11 @@ vgal.data.extend({
     {
         name = "roboport-productivity-module-utility-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("utility-science-pack"),
             vgal.icon.get_in("roboport"),
             vgal.icon.get_in2("productivity-module"),
-        },
+        }),
         category = "crafting",
         energy_required = 72,
         technology = { "utility-science-pack", "construction-robotics", "logistic-robotics" },
@@ -193,11 +193,11 @@ vgal.data.extend({
     {
         name = "roboport-efficiency-module-utility-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("utility-science-pack"),
             vgal.icon.get_in("roboport"),
             vgal.icon.get_in2("efficiency-module"),
-        },
+        }),
         category = "crafting",
         energy_required = 72,
         technology = { "utility-science-pack", "construction-robotics", "logistic-robotics" },
@@ -214,10 +214,10 @@ vgal.data.extend({
     {
         name = "battery-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("engine-unit"),
             vgal.icon.get_in("battery"),
-        },
+        }),
         technology = "battery",
         energy_required = 10,
         ingredients = {
@@ -233,10 +233,10 @@ vgal.data.extend({
     {
         name = "plastic-bar-low-density-structure",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("low-density-structure"),
             vgal.icon.get_in("plastic-bar"),
-        },
+        }),
         category = "crafting",
         energy_required = 15,
         technology = "low-density-structure",
@@ -252,10 +252,10 @@ vgal.data.extend({
     {
         name = "heavy-oil-rocket-fuel",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("rocket-fuel"),
             vgal.icon.get_in("heavy-oil", "fluid"),
-        },
+        }),
         technology = "rocket-fuel",
         ingredients = {
             { "solid-fuel", 8 },
@@ -279,10 +279,10 @@ vgal.data.extend({
     {
         name = "uranium-238-low-density-structure",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("low-density-structure"),
             vgal.icon.get_in("uranium-238"),
-        },
+        }),
         category = "crafting",
         energy_required = 15,
         technology = { "low-density-structure", "uranium-processing" },
@@ -298,11 +298,11 @@ vgal.data.extend({
     {
         name = "steel-plate-uranium-fuel-cell",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("uranium-fuel-cell"),
             vgal.icon.get_in("sulfuric-acid", "fluid"),
             vgal.icon.get_in2("steel-plate"),
-        },
+        }),
         technology = "nuclear-power",
         ingredients = {
             { "steel-plate", 2 },
@@ -321,10 +321,10 @@ vgal.data.extend({
     {
         name = "processing-unit-fast-splitter",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("fast-splitter"),
             vgal.icon.get_in("processing-unit"),
-        },
+        }),
         energy_required = 8,
         technology = { "processing-unit", "logistics-2" },
         ingredients = {
@@ -340,10 +340,10 @@ vgal.data.extend({
     {
         name = "plastic-bar-electric-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electric-engine-unit"),
             vgal.icon.get_in("plastic-bar"),
-        },
+        }),
         technology = "electric-engine",
         energy_required = 10,
         ingredients = {
@@ -359,10 +359,10 @@ vgal.data.extend({
     {
         name = "advanced-circuit-express-splitter",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("express-splitter"),
             vgal.icon.get_in("advanced-circuit"),
-        },
+        }),
         energy_required = 4,
         technology = "logistics-3",
         ingredients = {
@@ -381,10 +381,10 @@ vgal.data.extend({
     {
         name = "barrel-battery",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("battery"),
             vgal.icon.get_in("barrel"),
-        },
+        }),
         category = "crafting",
         energy_required = 2,
         technology = "battery",
@@ -400,10 +400,10 @@ vgal.data.extend({
     {
         name = "iron-plate-barrel",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("barrel"),
             vgal.icon.get_in("iron-plate"),
-        },
+        }),
         category = "crafting",
         energy_required = 2,
         technology = "fluid-handling",
@@ -418,10 +418,10 @@ vgal.data.extend({
     {
         name = "copper-plate-iron-stick-automation-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("automation-science-pack"),
             vgal.icon.get_in("iron-stick"),
-        },
+        }),
         category = "crafting",
         energy_required = 6,
         technologies = {

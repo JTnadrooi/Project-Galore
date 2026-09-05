@@ -3,10 +3,10 @@ vgal.data.extend({
     --     name = "sulfuric-acid-electronic-circuit",
     --     prefix = "vgal",
     --     technology = "sulfur-processing",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("electronic-circuit"),
     --         vgal.icon.get_in("sulfuric-acid"),
-    --     },
+    --     }),
     --     energy_required = 2,
     --     ingredients = {
     --         { "copper-cable", 4 }, -- 40
@@ -25,10 +25,10 @@ vgal.data.extend({
         name = "sulfuric-acid-advanced-circuit",
         prefix = "vgal",
         technology = "advanced-circuit",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("sulfuric-acid"),
-        },
+        }),
         energy_required = 32,
         ingredients = {
             { "copper-cable",       8 }, -- 40
@@ -47,12 +47,12 @@ vgal.data.extend({
     --     name = "plastic-bar-electronic-circuit-advanced-circuit-processing-unit",
     --     prefix = "vgal",
     --     technology = "processing-unit",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("processing-unit"),
     --         vgal.icon.get_in("sulfuric-acid", "fluid"),
     --         vgal.icon.get_out("electronic-circuit"),
     --         vgal.icon.get_out2("advanced-circuit"),
-    --     },
+    --     }),
     --     energy_required = 1,
     --     ingredients = {
     --         { "copper-cable", 10 }, -- 50
@@ -72,10 +72,10 @@ vgal.data.extend({
     {
         name = "wood-electronic-circuit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("wood"),
-        },
+        }),
         technology = "electronics",
         energy_required = 0.5,
         ingredients = {
@@ -91,11 +91,11 @@ vgal.data.extend({
     {
         name = "wood-heavy-oil-electronic-circuit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("wood"),
             vgal.icon.get_in2("heavy-oil", "fluid"),
-        },
+        }),
         technology = "advanced-oil-processing",
         energy_required = 1,
         ingredients = {
@@ -114,10 +114,10 @@ vgal.data.extend({
     {
         name = "plastic-bar-electronic-circuit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electronic-circuit"),
             vgal.icon.get_in("plastic-bar"),
-        },
+        }),
         technology = "plastics",
         energy_required = 0.5,
         ingredients = {
@@ -133,10 +133,10 @@ vgal.data.extend({
         name = "plastic-bar-processing-unit",
         prefix = "vgal",
         category = "crafting",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("plastic-bar")
-        },
+        }),
         technology = "processing-unit",
         energy_required = 10,
         ingredients = {
@@ -155,10 +155,10 @@ vgal.data.extend({
         name = "sulfuric-acid-processing-unit",
         prefix = "vgal",
         category = "crafting",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("sulfuric-acid")
-        },
+        }),
         technology = "processing-unit",
         energy_required = 10,
         ingredients = {
@@ -176,10 +176,10 @@ vgal.data.extend({
         name = "low-density-structure-processing-unit",
         prefix = "vgal",
         category = "crafting",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("processing-unit"),
             vgal.icon.get_in("low-density-structure")
-        },
+        }),
         technology = { "low-density-structure", "processing-unit" },
         energy_required = 8,
         ingredients = {

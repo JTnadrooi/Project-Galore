@@ -18,10 +18,10 @@ for _, module in pairs(vgal.defines.modules) do
                 {
                     name = module.unique_ingredient .. "-" .. tiered_module_name,
                     prefix = "vgal",
-                    icons = vgal.icon.merge_composites {
+                    icons = vgal.icon.merge_composites({
                         vgal.icon.get(tiered_module_name),
                         vgal.icon.get_overlay("planet"),
-                    },
+                    }),
                     energy_required = energy_required,
                     technology = module.tiers[3],
                     ingredients = ingredients,

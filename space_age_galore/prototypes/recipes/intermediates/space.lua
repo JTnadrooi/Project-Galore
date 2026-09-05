@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "promethium-asteroid-chunk-crushing",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("promethium-asteroid-chunk"),
             vgal.icon.get_overlay("crushing"),
-        },
+        }),
         energy_required = 1,
         technology = "promethium-science-pack",
         ingredients = {
@@ -24,10 +24,10 @@ vgal.data.extend({
     {
         name = "promethium-asteroid-chunk-reprocessing",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("promethium-asteroid-chunk"),
             vgal.icon.get_overlay("reprocessing"),
-        },
+        }),
         energy_required = 2,
         technology = "promethium-science-pack",
         ingredients = {
@@ -48,9 +48,9 @@ vgal.data.extend({
         type = "recipe",
         name = "oxide-asteroid-chunk-ammoniacal-solution",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/oxide-asteroid-chunk-ammoniacal-solution.png"),
-        },
+        }),
         category = "cryogenics",
         energy_required = 10,
         technology = "cryogenic-plant",
@@ -72,9 +72,9 @@ vgal.data.extend({
         type = "recipe",
         name = "metallic-asteroid-chunk-tungsten-ore",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/metallic-asteroid-chunk-tungsten-ore.png"),
-        },
+        }),
         category = "crushing",
         energy_required = 10,
         technology = "tungsten-carbide",
@@ -96,9 +96,9 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "oxide-asteroid-chunk-stone",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get_placeholder(),
-    --     },
+    --     }),
     --     technology = "foundry",
     --     energy_required = 4,
     --     category = "crushing",
@@ -116,13 +116,13 @@ vgal.data.extend({
     {
         name = "metallic-asteroid-chunk-lava", -- should be used for stone, for the other recipes this isn't that good
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/metallic-asteroid-chunk-lava.png"),
             -- vgal.icon.get("lava"),
             -- vgal.icon.get("metallic-asteroid-chunk"),
             -- vgal.icon.get_in_fluid("metallic-asteroid-chunk"),
             -- vgal.icon.get_in_fluid2("calcite"),
-        },
+        }),
         energy_required = 5,
         technology = "foundry",
         ingredients = {
@@ -144,9 +144,9 @@ vgal.data.extend({
         type = "recipe",
         name = "carbon-stone-thruster-fuel", -- ~ 80% less carbon usage, bit less water, 2x faster (adv is 4x faster)
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/carbon-stone-thruster-fuel.png"),
-        },
+        }),
         category = "chemistry",
         energy_required = 5,
         technology = "foundry",
@@ -174,9 +174,9 @@ vgal.data.extend({
         type = "recipe",
         name = "iron-ore-stone-thruster-oxidizer", -- ~ 80% less iron usage, bit less water, 2x faster (adv is 4x faster)
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/iron-ore-stone-thruster-oxidizer.png"),
-        },
+        }),
         category = "chemistry",
         energy_required = 5,
         technology = "foundry",
@@ -204,10 +204,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "carbonic-asteroid-chunk-uranium-ore",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         -- vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/carbonic-asteroid-chunk-uranium-ore.png"),
     --         vgal.icon.get_placeholder(),
-    --     },
+    --     }),
     --     category = "crushing",
     --     energy_required = 10,
     --     technology = "cryogenic-plant",
@@ -226,11 +226,11 @@ vgal.data.extend({
     -- {
     --     name = "carbonic-asteroid-chunk-petroleum-gas", -- methane
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("petroleum-gas"),
     --         vgal.icon.get_in_fluid("carbonic-asteroid-chunk"),
     --         -- vgal.icon.get_in_fluid2("calcite"),
-    --     },
+    --     }),
     --     energy_required = 12,
     --     technology = "cryogenic-plant",
     --     category = "cryogenics",
@@ -251,10 +251,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "fluorine-steam-thruster-oxidizer",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         -- vgal.icon.get("thruster-oxidizer"),
     --         vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/fluorine-steam-thruster-oxidizer.png"),
-    --     },
+    --     }),
     --     category = "chemistry",
     --     energy_required = 12,
     --     technology = "planet-discovery-aquilo",
@@ -273,9 +273,9 @@ vgal.data.extend({
         type = "recipe",
         name = "thruster-oxidizer-thruster-fuel-steam",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/thruster-oxidizer-thruster-fuel-steam.png"),
-        },
+        }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 5,
         technology = "space-platform",
@@ -304,9 +304,9 @@ vgal.data.extend({
         type = "recipe",
         name = "ammonia-thruster-oxidizer",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/ammonia-thruster-oxidizer.png"),
-        },
+        }),
         category = "cryogenics",
         energy_required = 10,
         technology = "cryogenic-plant",
@@ -333,9 +333,9 @@ vgal.data.extend({
         type = "recipe",
         name = "crude-oil-thruster-fuel",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/crude-oil-thruster-fuel.png"),
-        },
+        }),
         category = "cryogenics",
         energy_required = 10,
         technology = "cryogenic-plant",

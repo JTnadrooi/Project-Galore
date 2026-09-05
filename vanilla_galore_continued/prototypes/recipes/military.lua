@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "explosives-grenade",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("grenade", "capsule"),
             vgal.icon.get_in("explosives"),
-        },
+        }),
         energy_required = 6,
         technology = { "explosives", "military-2" },
         ingredients = {
@@ -20,10 +20,10 @@ vgal.data.extend({
     {
         name = "steel-plate-gun-turret",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("gun-turret"),
             vgal.icon.get_in("steel-plate"),
-        },
+        }),
         energy_required = 10,
         technology = { "gun-turret", "steel-processing" },
         ingredients = {

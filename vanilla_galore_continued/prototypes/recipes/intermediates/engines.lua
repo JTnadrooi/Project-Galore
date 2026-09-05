@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "low-density-structure-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("engine-unit"),
             vgal.icon.get_in("low-density-structure"),
-        },
+        }),
         technology = "low-density-structure",
         energy_required = 60,
         ingredients = {
@@ -21,10 +21,10 @@ vgal.data.extend({
     {
         name = "lubricant-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("engine-unit"),
             vgal.icon.get_in("lubricant", "fluid"),
-        },
+        }),
         technology = "lubricant",
         energy_required = 10,
         ingredients = {
@@ -43,10 +43,10 @@ vgal.data.extend({
     {
         name = "advanced-circuit-electric-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electric-engine-unit"),
             vgal.icon.get_in("advanced-circuit"),
-        },
+        }),
         technology = "electric-engine",
         energy_required = 10,
         ingredients = {
@@ -61,10 +61,10 @@ vgal.data.extend({
     -- {
     --     name = "plastic-bar-electric-engine-unit",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("electric-engine-unit"),
     --         vgal.icon.get_in("plastic-bar"),
-    --     },
+    --     }),
     --     technology = "electric-engine",
     --     energy_required = 10,
     --     ingredients = {

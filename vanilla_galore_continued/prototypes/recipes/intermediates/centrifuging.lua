@@ -3,10 +3,10 @@ vgal.data.extend({
         type = "recipe",
         name = "crude-oil-coal", -- not in sa-gal
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("coal"),
             vgal.icon.get_in_fluid("crude-oil"),
-        },
+        }),
         category = "centrifuging",
         energy_required = 6,
         technology = "uranium-processing",
@@ -31,10 +31,10 @@ for _, result in ipairs({
         {
             name = "water-" .. result, -- not in sa-gal
             prefix = "vgal",
-            icons = vgal.icon.merge_composites {
+            icons = vgal.icon.merge_composites({
                 vgal.icon.get(result),
                 vgal.icon.get_in_fluid("water"),
-            },
+            }),
             category = "centrifuging",
             energy_required = 4,
             technology = "uranium-processing",
@@ -53,11 +53,11 @@ for _, result in ipairs({
         {
             name = "water-electric-engine-unit-" .. result, -- not in sa-gal
             prefix = "vgal",
-            icons = vgal.icon.merge_composites {
+            icons = vgal.icon.merge_composites({
                 vgal.icon.get(result),
                 vgal.icon.get_in_fluid("water"),
                 vgal.icon.get_in_fluid2("electric-engine-unit"),
-            },
+            }),
             category = "centrifuging",
             energy_required = 4,
             technology = { "uranium-processing", "electric-engine" },

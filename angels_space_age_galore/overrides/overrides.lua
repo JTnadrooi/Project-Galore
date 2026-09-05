@@ -41,15 +41,15 @@ vgal.data.hide(data.raw["plant"]["tree-plant"])
 -- -- no throw bc other mods like to do this as well
 -- vgal.recipe.remove_result("scrap-recycling", "solid-fuel", true)
 
--- data.raw.recipe["vgal-ammonia-artificial-yumako-soil"].icons = vgal.icon.merge_composites {
+-- data.raw.recipe["vgal-ammonia-artificial-yumako-soil"].icons = vgal.icon.merge_composites({
 --     vgal.icon.get("artificial-yumako-soil"),
 --     vgal.icon.get_in("urea", "molecule"),
--- }
+-- })
 
--- data.raw.recipe["vgal-ammonia-artificial-jellynut-soil"].icons = vgal.icon.merge_composites {
+-- data.raw.recipe["vgal-ammonia-artificial-jellynut-soil"].icons = vgal.icon.merge_composites({
 --     vgal.icon.get("artificial-jellynut-soil"),
 --     vgal.icon.get_in("urea", "molecule"),
--- }
+-- })
 
 -- allow more modules in bio machines (they are later game now + biochamber has like 4)
 data.raw["assembling-machine"]["angels-bio-processor"].module_slots = 4

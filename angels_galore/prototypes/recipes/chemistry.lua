@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "angels-solid-sodium-chlorate-angels-solid-salt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-salt"),
             vgal.icon.get_in("angels-solid-sodium-chlorate"),
-        },
+        }),
         energy_required = 8,
         technology = "angels-chlorine-processing-4",
         ingredients = {
@@ -25,11 +25,11 @@ vgal.data.extend({
     {
         name = "angels-solid-sodium-chlorate-angels-liquid-hydrochloric-acid-angels-solid-salt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-salt"),
             vgal.icon.get_in("angels-solid-sodium-chlorate"),
             vgal.icon.get_in2("hydrochloric-acid", "molecule"),
-        },
+        }),
         energy_required = 2,
         technology = "angels-chlorine-processing-4",
         ingredients = {
@@ -51,10 +51,10 @@ vgal.data.extend({
     {
         name = "angels-solid-calcium-carbonate-angels-liquid-hydrochloric-acid-angels-solid-calcium-chloride",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-calcium-chloride"),
             vgal.icon.get_in("angels-solid-calcium-carbonate"),
-        },
+        }),
         energy_required = 2,
         technology = "angels-chlorine-processing-3",
         ingredients = {
@@ -77,10 +77,10 @@ vgal.data.extend({
         -- uses (alien bacteria) item usage has been compensated
         name = "angels-red-cellulose-fiber-angels-solid-calcium-carbonate",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-calcium-carbonate"),
             vgal.icon.get_in("angels-red-cellulose-fiber"),
-        },
+        }),
         energy_required = 10, -- 30
         technology = "angels-bio-processing-red",
         ingredients = {
@@ -442,10 +442,10 @@ vgal.data.extend({
     {
         name = "angels-solid-ammonium-nitrate-angels-liquid-fuel-oil-explosives",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("explosives"),
             vgal.icon.get_in("angels-solid-ammonium-nitrate"),
-        },
+        }),
         energy_required = 8,
         technology = "angels-explosives-2",
         ingredients = {
@@ -548,10 +548,10 @@ vgal.data.extend({
     {
         name = "angels-solid-ammonium-perchlorate-rocket-fuel",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("rocket-fuel"),
             vgal.icon.get_in("angels-solid-ammonium-perchlorate"),
-        },
+        }),
         energy_required = 15,
         technology = "rocket-fuel",
         ingredients = {
@@ -568,11 +568,11 @@ vgal.data.extend({
     {
         name = "angels-gas-hydrogen-angels-gas-oxygen-rocket-fuel",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("rocket-fuel"),
             vgal.icon.get_in("hydrogen", "molecule"),
             vgal.icon.get_in2("oxygen", "molecule"),
-        },
+        }),
         energy_required = 15,
         technology = "rocket-fuel",
         fluid_ingredients = {
@@ -589,10 +589,10 @@ vgal.data.extend({
     {
         name = "angels-gas-propene-solid-fuel",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("solid-fuel"),
             vgal.icon.get_in("propene", "molecule"),
-        },
+        }),
         energy_required = 4,
         technology = { "flammables", "angels-steam-cracking-1" },
         ingredients = {

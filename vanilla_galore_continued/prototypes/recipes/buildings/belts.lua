@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "steel-plate-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("transport-belt"),
             vgal.icon.get_in("steel-plate"),
-        },
+        }),
         energy_required = 5,
         technology = "steel-processing",
         ingredients = {
@@ -20,10 +20,10 @@ vgal.data.extend({
     {
         name = "plastic-bar-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("transport-belt"),
             vgal.icon.get_in("plastic-bar"),
-        },
+        }),
         energy_required = 2,
         technology = "plastics",
         ingredients = {
@@ -38,10 +38,10 @@ vgal.data.extend({
     {
         name = "steel-plate-fast-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("fast-transport-belt"),
             vgal.icon.get_in("steel-plate"),
-        },
+        }),
         energy_required = 2,
         technology = { "logistics-2", "steel-processing" },
         ingredients = {
@@ -57,10 +57,10 @@ vgal.data.extend({
     {
         name = "plastic-bar-fast-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("fast-transport-belt"),
             vgal.icon.get_in("plastic-bar"),
-        },
+        }),
         energy_required = 1,
         technology = { "plastics", "logistics-2" },
         ingredients = {
@@ -76,10 +76,10 @@ vgal.data.extend({
     {
         name = "steel-plate-express-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("express-transport-belt"),
             vgal.icon.get_in("steel-plate"),
-        },
+        }),
         energy_required = 2,
         technology = "logistics-3",
         ingredients = {
@@ -98,10 +98,10 @@ vgal.data.extend({
     {
         name = "plastic-bar-express-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("express-transport-belt"),
             vgal.icon.get_in("plastic-bar"),
-        },
+        }),
         energy_required = 1,
         technology = "logistics-3",
         ingredients = {
@@ -121,10 +121,10 @@ vgal.data.extend({
     {
         name = "steel-plate-underground-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("underground-belt"),
             vgal.icon.get_in("steel-plate"),
-        },
+        }),
         energy_required = 2,
         technology = { "logistics", "steel-processing" },
         ingredients = {
@@ -139,10 +139,10 @@ vgal.data.extend({
     {
         name = "steel-plate-fast-underground-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("fast-underground-belt"),
             vgal.icon.get_in("steel-plate"),
-        },
+        }),
         energy_required = 4,
         technology = { "logistics-2", "steel-processing" },
         ingredients = {
@@ -158,10 +158,10 @@ vgal.data.extend({
     {
         name = "steel-plate-express-underground-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("express-underground-belt"),
             vgal.icon.get_in("steel-plate"),
-        },
+        }),
         energy_required = 4,
         technology = "logistics-3",
         ingredients = {
@@ -181,10 +181,10 @@ vgal.data.extend({
     {
         name = "advanced-circuit-splitter",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("splitter"),
             vgal.icon.get_in("advanced-circuit"),
-        },
+        }),
         energy_required = 2,
         technology = { "logistics", "advanced-circuit" },
         ingredients = {
@@ -200,10 +200,10 @@ vgal.data.extend({
     {
         name = "processing-unit-splitter",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("splitter"),
             vgal.icon.get_in("processing-unit"),
-        },
+        }),
         energy_required = 12,
         technology = "processing-unit",
         ingredients = {
@@ -220,10 +220,10 @@ vgal.data.extend({
     {
         name = "advanced-circuit-fast-splitter",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("fast-splitter"),
             vgal.icon.get_in("advanced-circuit"),
-        },
+        }),
         energy_required = 4,
         technology = "advanced-circuit",
         ingredients = {
@@ -239,10 +239,10 @@ vgal.data.extend({
     {
         name = "processing-unit-express-splitter",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("express-splitter"),
             vgal.icon.get_in("processing-unit"),
-        },
+        }),
         energy_required = 4,
         technology = { "logistics-3", "processing-unit" },
         ingredients = {

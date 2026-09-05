@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "molten-iron-rail",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("rail"),
             vgal.icon.get_overlay("casting-iron"),
-        },
+        }),
         energy_required = 2,
         technology = "foundry",
         fluid_ingredients = {
@@ -23,10 +23,10 @@ vgal.data.extend({
     {
         name = "molten-iron-refined-concrete",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("refined-concrete"),
             vgal.icon.get_overlay("casting-iron"),
-        },
+        }),
         energy_required = 15,
         technology = "foundry",
         fluid_ingredients = {
@@ -46,10 +46,10 @@ vgal.data.extend({
     {
         name = "ammonia-artificial-jellynut-soil",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("artificial-jellynut-soil"),
             vgal.icon.get_in("ammonia"),
-        },
+        }),
         energy_required = 2,
         technology = "artificial-soil",
         ingredients = {
@@ -68,10 +68,10 @@ vgal.data.extend({
     {
         name = "ammonia-artificial-yumako-soil",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("artificial-yumako-soil"),
             vgal.icon.get_in("ammonia"),
-        },
+        }),
         energy_required = 2,
         technology = "artificial-soil",
         ingredients = {
@@ -91,10 +91,10 @@ vgal.data.extend({
         type = "recipe",
         name = "low-density-structure-ice-platform",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("ice-platform"),
             vgal.icon.get_in("low-density-structure"),
-        },
+        }),
         category = "crafting",
         energy_required = 30,
         technology = "planet-discovery-aquilo",
@@ -112,10 +112,10 @@ vgal.data.extend({
     {
         name = "molten-iron-molten-copper-space-platform-foundation",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("space-platform-foundation"),
             vgal.icon.get_overlay("casting-iron-copper"),
-        },
+        }),
         energy_required = 12,
         technology = "foundry",
         fluid_ingredients = {
@@ -130,10 +130,10 @@ vgal.data.extend({
     {
         name = "low-density-structure-space-platform-foundation",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("space-platform-foundation"),
             vgal.icon.get_in("low-density-structure"),
-        },
+        }),
         energy_required = 10,
         technology = "rocket-silo",
         ingredients = {

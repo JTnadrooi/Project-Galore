@@ -3,10 +3,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "carbon-fiber-superconductor",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("superconductor"),
     --         vgal.icon.get_in("carbon-fiber"),
-    --     },
+    --     }),
     --     category = "electromagnetics",
     --     energy_required = 6,
     --     technology = "carbon-fiber",
@@ -25,10 +25,10 @@ vgal.data.extend({
         type = "recipe",
         name = "holmium-solution-copper-cable",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("copper-cable"),
             vgal.icon.get_in("holmium-solution", "fluid"),
-        },
+        }),
         category = "electromagnetics",
         energy_required = 6,
         technology = "holmium-processing",
@@ -45,10 +45,10 @@ vgal.data.extend({
     {
         name = "lava-engine-unit",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("engine-unit"),
             vgal.icon.get_in("lava"),
-        },
+        }),
         energy_required = 20,
         technology = "foundry",
         fluid_ingredients = {
@@ -64,11 +64,11 @@ vgal.data.extend({
     -- { -- eventually, I will be able to calculate fulgora stuff..
     --     name = "jelly-light-oil-superconductor",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("superconductor"),
     --         vgal.icon.get_in("crude-oil"),
     --         vgal.icon.get_in2("jelly"),
-    --     },
+    --     }),
     --     energy_required = 3,
     --     technology = { "jellynut", "electromagnetic-plant" },
     --     fluid_ingredients = {
@@ -85,10 +85,10 @@ vgal.data.extend({
     {
         name = "calcite-carbon-concrete", -- vu
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("concrete"),
             vgal.icon.get_in("calcite"),
-        },
+        }),
         energy_required = 10,
         technology = "calcite-processing",
         fluid_ingredients = {
@@ -107,11 +107,11 @@ vgal.data.extend({
     {
         name = "holmium-ore-holmium-plate", -- fg/vn
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("holmium-plate"),
             -- vgal.icon.get_in("molten-copper"),
             vgal.icon.get_overlay("casting-copper"),
-        },
+        }),
         energy_required = 2,
         technology = { "foundry", "holmium-processing" },
         fluid_ingredients = {
@@ -129,10 +129,10 @@ vgal.data.extend({
         type = "recipe",
         name = "wood-carbon-fiber",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("carbon-fiber"),
             vgal.icon.get_in("wood"),
-        },
+        }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 10,
         technology = "carbon-fiber",
@@ -152,10 +152,10 @@ vgal.data.extend({
         type = "recipe",
         name = "pentapod-egg-logistic-robot", -- woah!
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("logistic-robot"),
             vgal.icon.get_in("pentapod-egg"),
-        },
+        }),
         categories = { "crafting", "organic" },
         energy_required = 1,
         technology = "biochamber",
@@ -180,10 +180,10 @@ vgal.data.extend({
         type = "recipe",
         name = "pentapod-egg-construction-robot", -- woah!
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("construction-robot"),
             vgal.icon.get_in("pentapod-egg"),
-        },
+        }),
         categories = { "crafting", "organic" },
         energy_required = 1,
         technology = { "biochamber", "construction-robotics" },
@@ -208,10 +208,10 @@ vgal.data.extend({
         type = "recipe",
         name = "carbon-fiber-low-density-structure",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("low-density-structure"),
             vgal.icon.get_in("carbon-fiber"),
-        },
+        }),
         category = "crafting",
         energy_required = 15,
         technology = "carbon-fiber",
@@ -227,11 +227,11 @@ vgal.data.extend({
     {
         name = "molten-copper-carbon-fiber-low-density-structure",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("low-density-structure"),
             vgal.icon.get_in("carbon-fiber"),
             vgal.icon.get_overlay("casting-copper"),
-        },
+        }),
         category = "metallurgy",
         energy_required = 15,
         technology = { "carbon-fiber", "foundry" },
@@ -254,10 +254,10 @@ vgal.data.extend({
         type = "recipe",
         name = "lithium-plate-low-density-structure",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("low-density-structure"),
             vgal.icon.get_in("lithium-plate"),
-        },
+        }),
         category = "crafting",
         energy_required = 12,
         technology = "lithium-processing",
@@ -275,10 +275,10 @@ vgal.data.extend({
     --     type = "recipe",
     --     name = "lithium-brine-sulfur-ammonia-nutrients", -- for aquilo
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/sulfur-ammonia-nutrients.png"),
     --         vgal.icon.get_in2("lithium-brine"),
-    --     },
+    --     }),
     --     categories = { "chemistry", "cryogenics" },
     --     energy_required = 5,
     --     technology = "lithium-processing",

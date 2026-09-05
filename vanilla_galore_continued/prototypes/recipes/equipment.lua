@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "processing-unit-personal-roboport-equipment",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("personal-roboport-equipment"),
             vgal.icon.get_in("processing-unit"),
-        },
+        }),
         energy_required = 15,
         technology = { "personal-roboport-equipment", "processing-unit", "low-density-structure" },
         ingredients = {
@@ -22,10 +22,10 @@ vgal.data.extend({
     {
         name = "processing-unit-belt-immunity-equipment",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("belt-immunity-equipment"),
             vgal.icon.get_in("processing-unit"),
-        },
+        }),
         energy_required = 12,
         technology = { "processing-unit", "belt-immunity-equipment" },
         ingredients = {
@@ -40,10 +40,10 @@ vgal.data.extend({
     {
         name = "processing-unit-energy-shield-equipment",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("energy-shield-equipment"),
             vgal.icon.get_in("processing-unit"),
-        },
+        }),
         energy_required = 12,
         technology = { "processing-unit", "energy-shield-equipment" },
         ingredients = {
@@ -58,10 +58,10 @@ vgal.data.extend({
     {
         name = "processing-unit-night-vision-equipment",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("night-vision-equipment"),
             vgal.icon.get_in("processing-unit"),
-        },
+        }),
         energy_required = 12,
         technology = { "processing-unit", "night-vision-equipment" },
         ingredients = {
@@ -76,10 +76,10 @@ vgal.data.extend({
     {
         name = "processing-unit-modular-armor",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("modular-armor"),
             vgal.icon.get_in("processing-unit"),
-        },
+        }),
         energy_required = 20,
         technology = { "processing-unit", "low-density-structure", "modular-armor" },
         ingredients = {
@@ -95,10 +95,10 @@ vgal.data.extend({
     {
         name = "low-density-structure-power-armor",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("power-armor"),
             vgal.icon.get_in("low-density-structure"),
-        },
+        }),
         energy_required = 25,
         technology = { "low-density-structure", "power-armor" },
         ingredients = {
@@ -115,10 +115,10 @@ vgal.data.extend({
     {
         name = "low-density-structure-battery-equipment",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("battery-equipment"),
             vgal.icon.get_in("low-density-structure"),
-        },
+        }),
         energy_required = 12,
         technology = { "low-density-structure", "battery-equipment" },
         ingredients = {

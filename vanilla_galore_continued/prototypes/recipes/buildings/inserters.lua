@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "burner-inserter-inserter",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("inserter"),
             vgal.icon.get_in("burner-inserter"),
-        },
+        }),
         technology = "electronics",
         energy_required = 1,
         ingredients = {
@@ -20,10 +20,10 @@ vgal.data.extend({
     {
         name = "processing-unit-bulk-inserter",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("bulk-inserter"),
             vgal.icon.get_in("processing-unit"),
-        },
+        }),
         technology = { "bulk-inserter", "processing-unit" },
         energy_required = 1,
         ingredients = {
@@ -39,10 +39,10 @@ vgal.data.extend({
     {
         name = "engine-unit-burner-inserter",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("burner-inserter"),
             vgal.icon.get_in("engine-unit"),
-        },
+        }),
         technology = "engine",
         energy_required = 2,
         ingredients = {

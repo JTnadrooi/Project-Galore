@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "angels-electrode-used-angels-solid-carbon-angels-electrode",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-electrode"),
             vgal.icon.get_in("angels-solid-carbon"),
-        },
+        }),
         energy_required = 1,
         technology = "angels-basic-chemistry-3",
         ingredients = {

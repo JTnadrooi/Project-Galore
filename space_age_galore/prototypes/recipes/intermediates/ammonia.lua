@@ -3,11 +3,11 @@ vgal.data.extend({
         type = "recipe",
         name = "iron-bacteria-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_in_to("iron-bacteria"),
             vgal.icon.get_out_to("ammonia"),
             vgal.icon.get_overlay("to"),
-        },
+        }),
         category = "organic",
         energy_required = 6,
         technology = "bacteria-cultivation",
@@ -30,11 +30,11 @@ vgal.data.extend({
         type = "recipe",
         name = "copper-bacteria-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_in_to("copper-bacteria"),
             vgal.icon.get_out_to("ammonia"),
             vgal.icon.get_overlay("to"),
-        },
+        }),
         category = "organic",
         energy_required = 4,
         technology = "bacteria-cultivation",
@@ -57,11 +57,11 @@ vgal.data.extend({
         type = "recipe",
         name = "biter-egg-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_in_to("biter-egg"),
             vgal.icon.get_out_to("ammonia"),
             vgal.icon.get_overlay("to"),
-        },
+        }),
         category = "organic",
         energy_required = 10,
         technology = "captivity",
@@ -84,9 +84,9 @@ vgal.data.extend({
         type = "recipe",
         name = "water-coal-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("ammonia"),
-        },
+        }),
         categories = { "organic", "chemistry" },
         energy_required = 1,
         technology = "oil-processing",
@@ -112,13 +112,13 @@ vgal.data.extend({
     {
         name = "calcite-sulfuric-acid-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_in_to("calcite"),
             vgal.icon.get_out_to("ammonia"),
             vgal.icon.get_overlay("to"),
 
             vgal.icon.get_in2("sulfuric-acid"),
-        },
+        }),
         category = "chemistry",
         energy_required = 2,
         fluid_ingredients = {
@@ -145,13 +145,13 @@ vgal.data.extend({
     {
         name = "ice-solid-fuel-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get_in_to("ice"),
             vgal.icon.get_out_to("ammonia"),
             vgal.icon.get_overlay("to"),
 
             vgal.icon.get_in2("solid-fuel"),
-        },
+        }),
         category = "chemistry",
         energy_required = 2,
         ingredients = {

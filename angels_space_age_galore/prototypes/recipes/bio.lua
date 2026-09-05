@@ -22,10 +22,10 @@ for _, nutrientable_recipe_name in ipairs(nutrientable_recipe_names) do
         {
             name = ingredient.name .. "-nutrients",
             prefix = "vgal",
-            icons = vgal.icon.merge_composites {
+            icons = vgal.icon.merge_composites({
                 vgal.icon.get("nutrients"),
                 vgal.icon.get_in(ingredient.name),
-            },
+            }),
             energy_required = nutrientable_recipe.energy_required * 2,
             technology = "agriculture",
             ingredients = {
@@ -46,9 +46,9 @@ for _, plant in pairs(vgal.defines.gleba_plants) do
         {
             name = plant.name .. "-" .. plant.seed,
             prefix = "vgal",
-            icons = vgal.icon.merge_composites {
+            icons = vgal.icon.merge_composites({
                 vgal.icon.get(plant.seed),
-            },
+            }),
             energy_required = 0.5,
             technology = plant.name,
             ingredients = {

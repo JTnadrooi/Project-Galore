@@ -2,10 +2,10 @@ vgal.data.extend({
     -- {
     --     name = "angels-catalysator-brown-iron-ore",
     --     prefix = "vgal",
-    --     icons = vgal.icon.merge_composites {
+    --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("angels_sorting", "raw"),
     --         vgal.icon.get_out2("iron-ore"),
-    --     },
+    --     }),
     --     energy_required = 1.5,
     --     technology = "angels-advanced-ore-refining-1",
     --     ingredients = {

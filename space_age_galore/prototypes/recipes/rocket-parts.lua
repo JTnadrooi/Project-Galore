@@ -3,10 +3,10 @@
 --         name = "lithium-plate-rocket-part",
 --         prefix = "vgal",
 --         technology = "lithium-processing",
---         icons = vgal.icon.merge_composites {
+--         icons = vgal.icon.merge_composites({
 --             vgal.icon.get("rocket-part"),
 --             vgal.icon.get_in("lithium-plate")
---         },
+--         }),
 --         energy_required = 3,
 --         ingredients = {
 --             { "rocket-fuel",     1 },

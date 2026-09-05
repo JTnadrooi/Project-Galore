@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "plastic-bar-turbo-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("turbo-transport-belt"),
             vgal.icon.get_in("plastic-bar"),
-        },
+        }),
         energy_required = 1,
         technology = "turbo-transport-belt",
         ingredients = {
@@ -33,10 +33,10 @@ vgal.data.extend({
     {
         name = "low-density-structure-turbo-transport-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("turbo-transport-belt"),
             vgal.icon.get_in("low-density-structure"),
-        },
+        }),
         energy_required = 2,
         technology = "turbo-transport-belt",
         ingredients = {
@@ -64,10 +64,10 @@ vgal.data.extend({
     {
         name = "low-density-structure-turbo-underground-belt",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("turbo-underground-belt"),
             vgal.icon.get_in("low-density-structure"),
-        },
+        }),
         energy_required = 4,
         technology = "turbo-transport-belt",
         ingredients = {
@@ -94,10 +94,10 @@ vgal.data.extend({
     {
         name = "low-density-structure-turbo-splitter",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("turbo-splitter"),
             vgal.icon.get_in("low-density-structure"),
-        },
+        }),
         energy_required = 4,
         technology = "turbo-transport-belt",
         ingredients = {
@@ -125,10 +125,10 @@ vgal.data.extend({
     {
         name = "quantum-processor-splitter",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("splitter"),
             vgal.icon.get_in("quantum-processor"),
-        },
+        }),
         energy_required = 120,
         technology = "quantum-processor",
         ingredients = {

@@ -2,10 +2,10 @@ vgal.data.extend({
     {
         name = "tungsten-carbide-burner-mining-drill",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("burner-mining-drill"),
             vgal.icon.get_in("tungsten-carbide"),
-        },
+        }),
         energy_required = 1,
         technology = "tungsten-carbide",
         fluid_ingredients = {
@@ -22,10 +22,10 @@ vgal.data.extend({
     {
         name = "tungsten-carbide-electric-mining-drill",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electric-mining-drill"),
             vgal.icon.get_in("tungsten-carbide"),
-        },
+        }),
         energy_required = 2,
         technology = "tungsten-carbide",
         fluid_ingredients = {
@@ -43,10 +43,10 @@ vgal.data.extend({
     {
         name = "processing-unit-big-mining-drill",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("big-mining-drill"),
             vgal.icon.get_in("processing-unit"),
-        },
+        }),
         energy_required = 32,
         technology = "big-mining-drill",
         fluid_ingredients = {
@@ -74,10 +74,10 @@ vgal.data.extend({
     {
         name = "tungsten-carbide-electric-furnace",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("electric-furnace"),
             vgal.icon.get_in("tungsten-carbide"),
-        },
+        }),
         energy_required = 5,
         technology = { "tungsten-carbide", "advanced-material-processing-2" },
         fluid_ingredients = {
@@ -96,10 +96,10 @@ vgal.data.extend({
     {
         name = "tungsten-carbide-heat-pipe",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("heat-pipe"),
             vgal.icon.get_in("tungsten-carbide"),
-        },
+        }),
         energy_required = 1,
         technology = { "tungsten-carbide", "nuclear-power" }, -- rip to those who for some reasons go to gleba and vulcanus before nuclear power.
         fluid_ingredients = {
@@ -117,10 +117,10 @@ vgal.data.extend({
     {
         name = "tungsten-plate-assembling-machine-1",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("assembling-machine-1"),
             vgal.icon.get_in("tungsten-plate"),
-        },
+        }),
         energy_required = 1,
         technology = "tungsten-steel",
         ingredients = {
@@ -137,10 +137,10 @@ vgal.data.extend({
     {
         name = "tungsten-plate-assembling-machine-2",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("assembling-machine-2"),
             vgal.icon.get_in("tungsten-plate"),
-        },
+        }),
         energy_required = 1,
         technology = "tungsten-steel",
         ingredients = {
@@ -160,10 +160,10 @@ vgal.data.extend({
     {
         name = "tungsten-plate-assembling-machine-3",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites {
+        icons = vgal.icon.merge_composites({
             vgal.icon.get("assembling-machine-3"),
             vgal.icon.get_in("tungsten-plate"),
-        },
+        }),
         energy_required = 1,
         technology = { "automation-3", "tungsten-steel" },
         ingredients = {

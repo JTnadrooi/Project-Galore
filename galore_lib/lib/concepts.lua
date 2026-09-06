@@ -119,9 +119,9 @@ end
 
 do
     ---@class vgal.IconBlueprint
-    ---@field inputs string[]
+    ---@field inputs string[]?
     ---@field outputs string[]
-    ---@field style string
+    ---@field style string?
 end
 
 do

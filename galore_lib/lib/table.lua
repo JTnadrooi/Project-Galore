@@ -333,7 +333,7 @@ end
 
 ---@param arr number[]
 ---@return number[]
-function vgal.table.normalise_array(arr)
+function vgal.table.normalize_array(arr)
     local max = -math.huge
     for _, v in ipairs(arr) do
         if v > max then max = v end

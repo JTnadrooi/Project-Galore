@@ -37,7 +37,7 @@ vgal.extend({
             {
                 ingredients = { { "automation-science-pack", 100 }, { "logistic-science-pack", 200 } },
                 time = 30, -- also allows a string like energy_required.
-                -- "count" is auto-calculated and ingredient amounts are normalised.
+                -- "count" is auto-calculated and ingredient amounts are normalized.
             },
             unit = -- or alternatively.. (note: logistic science pack cost will not be doubled)
             {

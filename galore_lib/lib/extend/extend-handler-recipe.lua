@@ -70,9 +70,10 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
         vgal.icon.normalize_icon_fields(output_recipe --[[@as vgal.PrototypeWithIcons]])
 
         if (not output_recipe.icons) and output_recipe.name ~= output_recipe.main_product and output_recipe.main_product and main_ingredient then
-            output_recipe.icons = vgal.icon.merge_composites({
-                vgal.icon.get(output_recipe.main_product),
-                vgal.icon.get_in(main_ingredient)
+            output_recipe.icons = vgal.icon.create({
+                inputs = { main_ingredient },
+                outputs = { output_recipe.main_product },
+                style = "default"
             })
         end
     end

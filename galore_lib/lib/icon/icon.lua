@@ -35,6 +35,7 @@ vgal.icon.directory = {
     tech = "__vanilla_galore__/graphics/tech/"
 }
 
+---@type table<string, fun(input: vgal.IconBlueprint): data.IconData[]>
 vgal.icon.create_handlers = {}
 
 require("icon-create-handler-default")
@@ -57,12 +58,12 @@ end
 
 ---@param composite_icon data.IconData[]
 ---@return data.IconData[]
-function vgal.icon.normalise_composite_scales(composite_icon)
+function vgal.icon.normalize_composite_scales(composite_icon)
     local sizes = {}
     for i, icon2 in ipairs(composite_icon) do
         sizes[i] = vgal.icon.get_auto_scale(icon2)
     end
-    local normed = vgal.table.normalise_array(sizes)
+    local normed = vgal.table.normalize_array(sizes)
     local scaled_icons = {}
     for i, icon2 in ipairs(composite_icon) do
         local copy = util.table.deepcopy(icon2)
@@ -83,8 +84,8 @@ function vgal.icon.shift(composite_icon, scale, shift)
     scale = scale or 1
     shift = shift or { 0, 0 }
     local icons = {}
-    local icon_normalised = vgal.icon.normalise_composite_scales(composite_icon) -- copies
-    for _, icon2 in ipairs(icon_normalised) do
+    local icon_normalized = vgal.icon.normalize_composite_scales(composite_icon) -- copies
+    for _, icon2 in ipairs(icon_normalized) do
         local new_icon = util.table.deepcopy(icon2)
         if new_icon.scale then
             new_icon.scale = scale * new_icon.scale
@@ -406,6 +407,12 @@ function vgal.icon.merge_composites(composites)
     return new_icons
 end
 
+---@param blueprint vgal.IconBlueprint
+function vgal.icon.normalize_blueprint(blueprint)
+    blueprint.inputs = blueprint.inputs or {}
+    blueprint.style = blueprint.style or "default"
+end
+
 ---@param prototype_to data.PrototypeBase|vgal.PrototypeWithIcons
 ---@param prototype_from data.PrototypeBase|vgal.PrototypeWithIcons
 function vgal.icon.copy_icon_data_from(prototype_from, prototype_to)
@@ -484,6 +491,22 @@ function vgal.icon.map_to_angels_molecule_icons(fluids)
         table.insert(result, angels_molecule_map[fluid_name] or fluid_name)
     end
     return result
+end
+
+---@param blueprint vgal.IconBlueprint
+function vgal.icon.create(blueprint)
+    vgal.throw.if_param_nil(blueprint, "blueprint")
+
+    blueprint = table.deepcopy(blueprint)
+
+    vgal.icon.normalize_blueprint(blueprint)
+
+    local create_handler = vgal.icon.create_handlers[blueprint.style]
+    if create_handler then
+        return create_handler(blueprint)
+    else
+        error("Could not find create handler for style '" .. blueprint.style .. "'")
+    end
 end
 
 -- OVERRIDE LOGIC

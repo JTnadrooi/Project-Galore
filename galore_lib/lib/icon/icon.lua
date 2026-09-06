@@ -35,6 +35,10 @@ vgal.icon.directory = {
     tech = "__vanilla_galore__/graphics/tech/"
 }
 
+vgal.icon.create_handlers = {}
+
+require("icon-create-handler-default")
+
 ---@param icon data.IconData
 ---@return number
 function vgal.icon.get_auto_scale(icon)

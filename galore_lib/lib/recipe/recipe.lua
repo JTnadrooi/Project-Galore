@@ -1,6 +1,8 @@
 ---@diagnostic disable: duplicate-set-field, param-type-mismatch
 vgal.recipe = vgal.recipe or {}
 
+require("recipe-all")
+
 ---@param main_product string
 function vgal.recipe.get_if_productivity(main_product)
     local recipe = data.raw["recipe"][main_product]

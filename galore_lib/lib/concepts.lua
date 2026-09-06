@@ -116,3 +116,17 @@ end
 do
     ---@alias vgal.AngelsColorPalette { [1]: integer, [2]: integer, [3]: integer } | string
 end
+
+do
+    ---@class vgal.IconBlueprint
+    ---@field inputs string[]
+    ---@field outputs string[]
+    ---@field style string
+end
+
+do
+    ---@class vgal.AngelsIconBlueprint : vgal.IconBlueprint
+    ---@field style "angels"
+    ---@field core "fluid"|"gas"
+    ---@field palette vgal.AngelsColorPalette
+end

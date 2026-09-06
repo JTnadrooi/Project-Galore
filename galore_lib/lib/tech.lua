@@ -555,11 +555,8 @@ function vgal.tech.create_node(recipe_or_recipe_name, prerequisites, index, hidd
     if #units == 0 then units = { "automation-science-pack" } end
     units = vgal.table.remove_duplicates(units)
 
-    local icons = {}
-    local icon_def = recipe.icon and { icon = recipe.icon, icon_size = recipe.icon_size } or (recipe.icons and recipe.icons[1])
-    local first_icon = table.deepcopy(icon_def)
-    first_icon.scale = 2.2
-    table.insert(icons, first_icon)
+    local icons = vgal.icon.convert_to_icon_size_format(vgal.icon.get_icons(recipe), 256)
+
     table.insert(icons, {
         icon = "__galore_lib__/graphics/node.png",
         icon_size = 256,

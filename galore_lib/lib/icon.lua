@@ -362,34 +362,62 @@ function vgal.icon.get_in_bg2(key_name, icon_source)
     return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.30, { 7, -7 })
 end
 
+---@param icons data.IconData[]
+---@param output_icon_size_format 16|32|64|128|256
+---@param input_icon_size_format (16|32|64|128|256)?
+---@return data.IconData[]
+function vgal.icon.convert_to_icon_size_format(icons, output_icon_size_format, input_icon_size_format)
+    input_icon_size_format = input_icon_size_format or 64
+
+    local output_icons = table.deepcopy(icons)
+
+    local ratio = output_icon_size_format / input_icon_size_format
+    for _, icon in ipairs(output_icons) do
+        if icon.scale then
+            icon.scale = icon.scale * ratio
+        end
+        if icon.shift then
+            if icon.shift[1] then
+                icon.shift[1] = icon.shift[1] * ratio
+                icon.shift[2] = icon.shift[2] * ratio
+            elseif icon.shift.x then
+                icon.shift.x = icon.shift.x * ratio
+                icon.shift.y = icon.shift.y * ratio
+            end
+        end
+    end
+
+    return output_icons
+end
+
 ---@param composites data.IconData[][]
 ---@return data.IconData[]
 function vgal.icon.merge_composites(composites)
     local new_icons = {}
     for _, composite_icon in ipairs(composites) do
         for _, icon in ipairs(composite_icon) do
-            table.insert(new_icons, icon)
+            table.insert(new_icons, table.deepcopy(icon))
         end
     end
     return new_icons
 end
 
----@param prototype_to data.PrototypeBase
----@param prototype_from vgal.PrototypeWithIcons
+---@param prototype_to data.PrototypeBase|vgal.PrototypeWithIcons
+---@param prototype_from data.PrototypeBase|vgal.PrototypeWithIcons
 function vgal.icon.copy_icon_data_from(prototype_from, prototype_to)
     prototype_to.icon = prototype_from.icon
     prototype_to.icon_size = prototype_from.icon_size
     prototype_to.icons = prototype_from.icons
 end
 
----@param prototype data.PrototypeBase
+---@param prototype data.PrototypeBase|vgal.PrototypeWithIcons
 function vgal.icon.clear_icon_data(prototype)
     prototype.icons = nil
     prototype.icon = nil
     prototype.icon_size = nil
 end
 
----@param prototype vgal.PrototypeWithIcons
+---@param prototype data.PrototypeBase|vgal.PrototypeWithIcons
 function vgal.icon.ensure_icons_field(prototype)
     vgal.icon.normalize_icon_fields(prototype)
 
@@ -410,7 +438,7 @@ function vgal.icon.ensure_icons_field(prototype)
     end
 end
 
----@param prototype vgal.PrototypeWithIcons
+---@param prototype data.PrototypeBase|vgal.PrototypeWithIcons
 function vgal.icon.normalize_icon_fields(prototype)
     if prototype.icons then
         prototype.icon = nil
@@ -434,6 +462,14 @@ function vgal.icon.set_icons(prototype, icons)
     vgal.icon.clear_icon_data(prototype)
 
     prototype.icons = icons
+end
+
+---@param prototype data.PrototypeBase|vgal.PrototypeWithIcons
+---@return data.IconData[]
+function vgal.icon.get_icons(prototype)
+    return table.deepcopy(prototype.icon and {
+        { icon = prototype.icon, icon_size = prototype.icon_size },
+    } or prototype.icons)
 end
 
 ---@param fluids string[]

@@ -21,10 +21,10 @@ vgal.extend({
     {
         name = "uranium-235-uranium-238",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_in_to("uranium-235"),
-            vgal.icon.get_out_to("uranium-238"),
-            vgal.icon.get_overlay("to"),
+        icons = vgal.icon.create({
+            inputs = { "uranium-235" },
+            outputs = { "uranium-238" },
+            style = "arrow",
         }),
         technology = "uranium-processing",
         energy_required = 30,

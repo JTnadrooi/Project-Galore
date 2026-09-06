@@ -3,23 +3,18 @@ vgal.extend({
         type = "recipe",
         name = "sulfuric-acid-sulfur",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            -- vgal.icon.get("sulfur"),
-            -- vgal.icon.get_in("sulfuric-acid", "fluid"),
-            -- vgal.icon.get_in2("calcite"),
-
-            vgal.icon.get_in_bg("sulfuric-acid"),
-            vgal.icon.get_in_bg2("calcite"),
-            vgal.icon.get("sulfur"),
+        icons = vgal.icon.create({
+            inputs = { "sulfuric-acid" },
+            outputs = { "sulfur" }
         }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 2,
         technology = "calcite-processing",
-        fluid_ingredients = {
-            { "sulfuric-acid", 1000 },
-        },
         ingredients = {
             { "calcite", 1 }, -- 10
+        },
+        fluid_ingredients = {
+            { "sulfuric-acid", 1000 },
         },
         fluid_results = {
             {
@@ -71,12 +66,10 @@ vgal.extend({
         type = "recipe",
         name = "solid-fuel-sulfuric-acid-carbon",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_in_to("solid-fuel"),
-            vgal.icon.get_out_to("carbon"),
-            vgal.icon.get_overlay("to"),
-
-            vgal.icon.get_in2("sulfuric-acid"),
+        icons = vgal.icon.create({
+            inputs = { "solid-fuel", "sulfuric-acid" },
+            outputs = { "carbon" },
+            style = "arrow",
         }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 5,
@@ -96,10 +89,10 @@ vgal.extend({
         type = "recipe",
         name = "carbon-sulfur-lubricant",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("lubricant"),
-            vgal.icon.get_in_fluid("sulfur"),
-            vgal.icon.get_in_fluid2("carbon"),
+        icons = vgal.icon.create({
+            inputs = { "sulfur", "carbon" },
+            outputs = { "lubricant" },
+            style = "fluid",
         }),
         category = "chemistry",
         energy_required = 1,
@@ -160,10 +153,10 @@ vgal.extend({
         type = "recipe",
         name = "calcite-holmium-solution",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("holmium-solution"),
-            vgal.icon.get_in_fluid("steam"),
-            vgal.icon.get_in_fluid2("calcite"),
+        icons = vgal.icon.create({
+            inputs = { "steam", "calcite" },
+            outputs = { "holmium-solution" },
+            style = "fluid",
         }),
         category = "chemistry",
         energy_required = 10,
@@ -183,10 +176,10 @@ vgal.extend({
         type = "recipe",
         name = "scrap-sulfuric-acid-holmium-solution", --
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("holmium-solution"),
-            vgal.icon.get_in_fluid("scrap"),
-            vgal.icon.get_in_fluid2("sulfuric-acid"),
+        icons = vgal.icon.create({
+            inputs = { "scrap", "sulfuric-acid" },
+            outputs = { "holmium-solution" },
+            style = "fluid",
         }),
         category = "chemistry",
         energy_required = 25,

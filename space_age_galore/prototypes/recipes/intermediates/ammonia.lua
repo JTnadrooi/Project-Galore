@@ -3,10 +3,10 @@ vgal.extend({
         type = "recipe",
         name = "iron-bacteria-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_in_to("iron-bacteria"),
-            vgal.icon.get_out_to("ammonia"),
-            vgal.icon.get_overlay("to"),
+        icons = vgal.icon.create({
+            inputs = { "iron-bacteria" },
+            outputs = { "ammonia" },
+            style = "arrow",
         }),
         category = "organic",
         energy_required = 6,
@@ -30,10 +30,10 @@ vgal.extend({
         type = "recipe",
         name = "copper-bacteria-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_in_to("copper-bacteria"),
-            vgal.icon.get_out_to("ammonia"),
-            vgal.icon.get_overlay("to"),
+        icons = vgal.icon.create({
+            inputs = { "copper-bacteria" },
+            outputs = { "ammonia" },
+            style = "arrow",
         }),
         category = "organic",
         energy_required = 4,
@@ -57,10 +57,10 @@ vgal.extend({
         type = "recipe",
         name = "biter-egg-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_in_to("biter-egg"),
-            vgal.icon.get_out_to("ammonia"),
-            vgal.icon.get_overlay("to"),
+        icons = vgal.icon.create({
+            inputs = { "biter-egg" },
+            outputs = { "ammonia" },
+            style = "arrow",
         }),
         category = "organic",
         energy_required = 10,
@@ -84,14 +84,12 @@ vgal.extend({
         type = "recipe",
         name = "water-coal-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("ammonia"),
-        }),
+        icons = vgal.icon.get("ammonia"),
         categories = { "organic", "chemistry" },
         energy_required = 1,
         technology = "oil-processing",
         fluid_ingredients = {
-            { "water", 100 }, -- 1 (50vn)so pls dont use it on vulcanus ok?
+            { "water", 100 }, -- 1 (50vn) so no vulcanus
         },
         ingredients = {
             { "coal", 2 }, -- 20
@@ -112,12 +110,10 @@ vgal.extend({
     {
         name = "calcite-sulfuric-acid-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_in_to("calcite"),
-            vgal.icon.get_out_to("ammonia"),
-            vgal.icon.get_overlay("to"),
-
-            vgal.icon.get_in2("sulfuric-acid"),
+        icons = vgal.icon.create({
+            inputs = { "calcite", "sulfuric-acid" },
+            outputs = { "ammonia" },
+            style = "arrow",
         }),
         category = "chemistry",
         energy_required = 2,
@@ -145,12 +141,10 @@ vgal.extend({
     {
         name = "ice-solid-fuel-ammonia",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_in_to("ice"),
-            vgal.icon.get_out_to("ammonia"),
-            vgal.icon.get_overlay("to"),
-
-            vgal.icon.get_in2("solid-fuel"),
+        icons = vgal.icon.create({
+            inputs = { "ice", "solid-fuel" },
+            outputs = { "ammonia" },
+            style = "arrow",
         }),
         category = "chemistry",
         energy_required = 2,

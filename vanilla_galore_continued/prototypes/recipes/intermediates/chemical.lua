@@ -27,9 +27,10 @@ vgal.extend({
         type = "recipe",
         name = "plastic-bar-lubricant",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("lubricant"),
-            vgal.icon.get_in_fluid("plastic-bar"),
+        icons = vgal.icon.create({
+            inputs = { "plastic-bar" },
+            outputs = { "lubricant" },
+            style = "fluid",
         }),
         category = "chemistry",
         energy_required = 4,

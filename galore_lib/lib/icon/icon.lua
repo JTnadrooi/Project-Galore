@@ -39,6 +39,8 @@ vgal.icon.directory = {
 vgal.icon.create_handlers = {}
 
 require("icon-create-handler-default")
+require("icon-create-handler-arrow")
+require("icon-create-handler-fluid")
 
 ---@param icon data.IconData
 ---@return number
@@ -243,64 +245,6 @@ function vgal.icon.get(key_name, icon_source)
     error()
 end
 
--- local function targeted_shift_icon(icon, target, scaleOverride)
---     local shift = {}
---     local scale = 1
---     if target then
---         scale = (scaleOverride or 0.25) * (64 / (icon.icon_size or 64))
---         -- if target == "core" then
---         --     scale = icon.scale
---         -- end
---         if target == "in1" then
---             shift = { -8, -8 }
---         end
---         if target == "in2" then
---             shift = { 8, -8 }
---         end
---         if target == "in3" then
---             shift = { 0, -8 }
---         end
---         if target == "out1" then
---             shift = { -8, 8 }
---         end
---         if target == "out2" then
---             shift = { 8, 8 }
---         end
---         if target == "out3" then
---             shift = { 0, 8 }
---         end
---     end
---     return vgal.icon.shift(icon, scale, shift)
--- end
-
----@param key_name string
----@param icon_source string?
----@return data.IconData[]
-function vgal.icon.get_in_fluid(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.35, { 0, -6.5 })
-end
-
----@param key_name string
----@param icon_source string?
----@return data.IconData[]
-function vgal.icon.get_in_fluid2(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 0, -5 })
-end
-
----@param key_name string
----@param icon_source string?
----@return data.IconData[]
-function vgal.icon.get_in_to(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.38, { -6.5, -6.5 })
-end
-
----@param key_name string
----@param icon_source string?
----@return data.IconData[]
-function vgal.icon.get_out_to(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.35, { 5.5, 6.5 })
-end
-
 ---@param key_name string
 ---@param icon_source string?
 ---@return data.IconData[]
@@ -317,54 +261,32 @@ end
 
 ---@param key_name string
 ---@param icon_source string?
+---@param tile_index integer 1|2|3|4|5|6|7|8|9
 ---@return data.IconData[]
-function vgal.icon.get_out(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { -8, 8 })
-end
+function vgal.icon.get_subicon(key_name, icon_source, tile_index)
+    local tile_offsets = {
+        { -8, -8 }, -- 1: top-left
+        { 0,  -8 }, -- 2: top-center
+        { 8,  -8 }, -- 3: top-right
+        { -8, 0 },  -- 4: middle-left
+        { 0,  0 },  -- 5: center
+        { 8,  0 },  -- 6: middle-right
+        { -8, 8 },  -- 7: bottom-left
+        { 0,  8 },  -- 8: bottom-center
+        { 8,  8 }   -- 9: bottom-right
+    }
 
----@param key_name string
----@param icon_source string?
----@return data.IconData[]
-function vgal.icon.get_out2(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 8, 8 })
-end
+    if tile_index < 1 or tile_index > 9 then
+        error("tile_number must be between 1 and 9")
+    end
 
----@param key_name string
----@param icon_source string?
----@return data.IconData[]
-function vgal.icon.get_out3(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 0, 8 })
-end
-
----@param key_name string
----@param icon_source string?
----@return data.IconData[]
-function vgal.icon.get_bg(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 1, { 0, 1.2 })
-end
-
----@return data.IconData[]
-function vgal.icon.get_none()
-    return vgal.icon.get_from_path("__galore_lib__/graphics/none.png")
+    local offset = tile_offsets[tile_index]
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, offset)
 end
 
 ---@return data.IconData[]
 function vgal.icon.get_placeholder()
     return vgal.icon.get_from_path("__galore_lib__/graphics/placeholder.png")
-end
-
----@param key_name string
----@param icon_source string?
----@return data.IconData[]
-function vgal.icon.get_in_bg(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.30, { -7, -7 })
-end
-
----@param key_name string
----@param icon_source string?
----@return data.IconData[]
-function vgal.icon.get_in_bg2(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.30, { 7, -7 })
 end
 
 ---@param icons data.IconData[]

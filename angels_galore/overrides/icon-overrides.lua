@@ -1,9 +1,7 @@
 local function use_main_icon(recipe_name)
     local recipe = vgal.throw.if_recipe_not_found(recipe_name)
 
-    recipe.icons = vgal.icon.merge_composites({
-        vgal.icon.get(recipe_name),
-    })
+    recipe.icons = vgal.icon.get(recipe_name)
 end
 
 -- distinguish recipe icons with updated order
@@ -146,9 +144,9 @@ data.raw.recipe["angels-liquid-toluene"].icons = vgal.icon.merge_composites({
 -- other
 data.raw.recipe["angels-garden-cultivating"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-paste-cellulose"),
-    vgal.icon.get_out("angels-temperate-garden"),
-    vgal.icon.get_out2("angels-desert-garden"),
-    vgal.icon.get_out3("angels-swamp-garden"),
+    vgal.icon.get_subicon("angels-temperate-garden", nil, 7),
+    vgal.icon.get_subicon("angels-desert-garden", nil, 8),
+    vgal.icon.get_subicon("angels-swamp-garden", nil, 9),
 })
 
 -- data.raw.recipe["angels-sulfur-air-scrubbing"].icons = vgal.icon.merge_composites({

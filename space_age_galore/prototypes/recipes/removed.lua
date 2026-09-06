@@ -3,9 +3,10 @@ vgal.extend({
         type = "recipe",
         name = "carbon-lubricant",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("lubricant"),
-            vgal.icon.get_in_fluid("carbon"),
+        icons = vgal.icon.create({
+            inputs = { "carbon" },
+            outputs = { "lubricant" },
+            style = "fluid",
         }),
         category = "chemistry",
         energy_required = 1,
@@ -48,10 +49,10 @@ vgal.extend({
         --     vgal.icon.get_in("solid-fuel"),
         --     vgal.icon.get_in2("steam"),
         -- }),
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_in_to("solid-fuel"),
-            vgal.icon.get_out_to("carbon"),
-            vgal.icon.get_overlay("to"),
+        icons = vgal.icon.create({
+            inputs = { "solid-fuel" },
+            outputs = { "carbon" },
+            style = "arrow",
         }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 8,

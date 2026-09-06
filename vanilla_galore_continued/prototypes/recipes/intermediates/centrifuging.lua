@@ -3,9 +3,10 @@ vgal.extend({
         type = "recipe",
         name = "crude-oil-coal", -- not in sa-gal
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("coal"),
-            vgal.icon.get_in_fluid("crude-oil"),
+        icons = vgal.icon.create({
+            inputs = { "crude-oil" },
+            outputs = { "coal" },
+            style = "fluid",
         }),
         category = "centrifuging",
         energy_required = 6,
@@ -31,9 +32,10 @@ for _, result in ipairs({
         {
             name = "water-" .. result, -- not in sa-gal
             prefix = "vgal",
-            icons = vgal.icon.merge_composites({
-                vgal.icon.get(result),
-                vgal.icon.get_in_fluid("water"),
+            icons = vgal.icon.create({
+                inputs = { "water" },
+                outputs = { result },
+                style = "fluid",
             }),
             category = "centrifuging",
             energy_required = 4,
@@ -51,12 +53,12 @@ for _, result in ipairs({
             groups = { "vgal-renewable-ores" },
         },
         {
-            name = "water-electric-engine-unit-" .. result, -- not in sa-gal
+            name = "water-electric-engine-unit-" .. result, -- not in sagal
             prefix = "vgal",
-            icons = vgal.icon.merge_composites({
-                vgal.icon.get(result),
-                vgal.icon.get_in_fluid("water"),
-                vgal.icon.get_in_fluid2("electric-engine-unit"),
+            icons = vgal.icon.create({
+                inputs = { "water", "electric-engine-unit" },
+                outputs = { result },
+                style = "fluid",
             }),
             category = "centrifuging",
             energy_required = 4,

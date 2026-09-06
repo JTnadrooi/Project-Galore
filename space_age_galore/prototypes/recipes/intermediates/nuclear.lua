@@ -2,10 +2,10 @@ vgal.extend({
     {
         name = "carbon-uranium-ore",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_in_to("carbon"),
-            vgal.icon.get_out_to("uranium-ore"),
-            vgal.icon.get_overlay("to"),
+        icons = vgal.icon.create({
+            inputs = { "carbon" },
+            outputs = { "uranium-ore" },
+            style = "arrow",
         }),
         energy_required = 25,
         technology = { "uranium-processing", "space-platform" },

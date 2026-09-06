@@ -116,13 +116,7 @@ vgal.extend({
     {
         name = "metallic-asteroid-chunk-lava", -- should be used for stone, for the other recipes this isn't that good
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/metallic-asteroid-chunk-lava.png"),
-            -- vgal.icon.get("lava"),
-            -- vgal.icon.get("metallic-asteroid-chunk"),
-            -- vgal.icon.get_in_fluid("metallic-asteroid-chunk"),
-            -- vgal.icon.get_in_fluid2("calcite"),
-        }),
+        icons = vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/metallic-asteroid-chunk-lava.png"),
         energy_required = 5,
         technology = "foundry",
         ingredients = {

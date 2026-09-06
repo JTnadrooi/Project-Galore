@@ -3,11 +3,7 @@ vgal.extend({
         type = "recipe",
         name = "sulfur-ammonia-nutrients", -- for nauvis / aquilo
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            -- vgal.icon.get_in("sulfur"),
-            -- vgal.icon.get_overlay("nutrients"),
-            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/sulfur-ammonia-nutrients.png"),
-        }),
+        icons = vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/sulfur-ammonia-nutrients.png"),
         categories = { "crafting", "organic" },
         energy_required = 1,
         technology = "agriculture",
@@ -25,10 +21,10 @@ vgal.extend({
         type = "recipe",
         name = "pentapod-egg-bioflux-stone",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_in_to("pentapod-egg"),
-            vgal.icon.get_out_to("stone"),
-            vgal.icon.get_overlay("to"),
+        icons = vgal.icon.create({
+            inputs = { "pentapod-egg" },
+            outputs = { "stone" },
+            style = "arrow",
         }),
         category = "organic",
         energy_required = 45,
@@ -60,12 +56,12 @@ vgal.extend({
         category = "cryogenics",
         energy_required = 8,
         technology = "cryogenic-plant",
-        fluid_ingredients = {
-            { "fluoroketone-cold", 20 },
-        },
         ingredients = {
             { "raw-fish",  1 },  -- 530
             { "nutrients", 20 }, -- 160
+        },
+        fluid_ingredients = {
+            { "fluoroketone-cold", 20 },
         },
         results = {
             { "bioflux", 5 },
@@ -80,7 +76,7 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("fish-breeding", "recipe"),
-            vgal.icon.get_in_fluid("ammoniacal-solution"),
+            vgal.icon.shift(vgal.icon.get("ammoniacal-solution"), 0.35, { 0, -6.5 })
         }),
         category = "organic",
 
@@ -124,10 +120,10 @@ vgal.extend({
         type = "recipe",
         name = "wood-carbon",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_in_to("wood"),
-            vgal.icon.get_out_to("carbon"),
-            vgal.icon.get_overlay("to"),
+        icons = vgal.icon.create({
+            inputs = { "wood" },
+            outputs = { "carbon" },
+            style = "arrow",
         }),
         category = "organic",
         energy_required = 8,
@@ -148,10 +144,10 @@ vgal.extend({
         type = "recipe",
         name = "jelly-sulfur-lubricant",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("lubricant"),
-            vgal.icon.get_in_fluid("sulfur"),
-            vgal.icon.get_in_fluid2("jelly"),
+        icons = vgal.icon.create({
+            inputs = { "sulfur", "jelly" },
+            outputs = { "lubricant" },
+            style = "fluid",
         }),
         category = "organic",
         energy_required = 1,
@@ -200,10 +196,10 @@ for _, metal in pairs(vgal.defines.metals) do
             type = "recipe",
             name = other_bacteria .. "-" .. metal.bacteria,
             prefix = "vgal",
-            icons = vgal.icon.merge_composites({
-                vgal.icon.get_in_to(other_bacteria),
-                vgal.icon.get_out_to(metal.bacteria),
-                vgal.icon.get_overlay("to"),
+            icons = vgal.icon.create({
+                inputs = { other_bacteria },
+                outputs = { metal.bacteria },
+                style = "arrow",
             }),
             category = "organic",
             energy_required = 60,
@@ -226,10 +222,10 @@ for _, metal in pairs(vgal.defines.metals) do
             type = "recipe",
             name = other_bacteria .. "-" .. metal.bacteria .. "-centrifuging",
             prefix = "vgal",
-            icons = vgal.icon.merge_composites({
-                vgal.icon.get_in_to(other_bacteria),
-                vgal.icon.get_out_to(metal.bacteria),
-                vgal.icon.get_overlay("to"),
+            icons = vgal.icon.create({
+                inputs = { other_bacteria },
+                outputs = { metal.bacteria },
+                style = "arrow",
             }),
             category = "centrifuging",
             energy_required = 30,
@@ -253,7 +249,7 @@ for _, metal in pairs(vgal.defines.metals) do
             prefix = "vgal",
             icons = vgal.icon.merge_composites({
                 vgal.icon.get(metal.bacteria .. "-cultivation", "recipe"),
-                vgal.icon.get_in_fluid("uranium-235"),
+                vgal.icon.shift(vgal.icon.get("uranium-235"), 0.35, { 0, -6.5 }),
             }),
             category = "organic",
             energy_required = 8,
@@ -286,7 +282,7 @@ for _, metal in pairs(vgal.defines.metals) do
             prefix = "vgal",
             icons = vgal.icon.merge_composites({
                 vgal.icon.get(metal.bacteria .. "-cultivation", "recipe"),
-                vgal.icon.get_in_fluid("ammoniacal-solution"),
+                vgal.icon.shift(vgal.icon.get("ammoniacal-solution"), 0.35, { 0, -6.5 }),
             }),
             category = "organic",
             energy_required = 8,

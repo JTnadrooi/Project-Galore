@@ -2,9 +2,12 @@ vgal.extend({
     {
         name = "water-low-pressure-boiling-steam",
         prefix = "vgal",
-        icons = angelsmods.functions.create_liquid_recipe_icon({
-            "steam",
-        }, "WsWsWs", { "water" }),
+        vgal.icon.create({
+            style   = "angels-liquid",
+            outputs = { "steam" },
+            inputs  = { "water" },
+            palette = "WsWsWs",
+        }),
         energy_required = 1,
         technology = { "angels-electric-boiler", "space-platform" },
         fluid_ingredients = {

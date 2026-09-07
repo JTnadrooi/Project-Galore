@@ -4,9 +4,9 @@ vgal.extend({
         name = "crude-oil-coal", -- not in sa-gal
         prefix = "vgal",
         icons = vgal.icon.create({
+            style = "fluid",
             inputs = { "crude-oil" },
             outputs = { "coal" },
-            style = "fluid",
         }),
         category = "centrifuging",
         energy_required = 6,
@@ -33,9 +33,9 @@ for _, result in ipairs({
             name = "water-" .. result, -- not in sa-gal
             prefix = "vgal",
             icons = vgal.icon.create({
+                style = "fluid",
                 inputs = { "water" },
                 outputs = { result },
-                style = "fluid",
             }),
             category = "centrifuging",
             energy_required = 4,
@@ -56,9 +56,9 @@ for _, result in ipairs({
             name = "water-electric-engine-unit-" .. result, -- not in sagal
             prefix = "vgal",
             icons = vgal.icon.create({
+                style = "fluid",
                 inputs = { "water", "electric-engine-unit" },
                 outputs = { result },
-                style = "fluid",
             }),
             category = "centrifuging",
             energy_required = 4,

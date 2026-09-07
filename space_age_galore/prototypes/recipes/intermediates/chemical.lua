@@ -67,9 +67,9 @@ vgal.extend({
         name = "solid-fuel-sulfuric-acid-carbon",
         prefix = "vgal",
         icons = vgal.icon.create({
+            style = "arrow",
             inputs = { "solid-fuel", "sulfuric-acid" },
             outputs = { "carbon" },
-            style = "arrow",
         }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 5,
@@ -90,9 +90,9 @@ vgal.extend({
         name = "carbon-sulfur-lubricant",
         prefix = "vgal",
         icons = vgal.icon.create({
+            style = "fluid",
             inputs = { "sulfur", "carbon" },
             outputs = { "lubricant" },
-            style = "fluid",
         }),
         category = "chemistry",
         energy_required = 1,
@@ -154,9 +154,9 @@ vgal.extend({
         name = "calcite-holmium-solution",
         prefix = "vgal",
         icons = vgal.icon.create({
+            style = "fluid",
             inputs = { "steam", "calcite" },
             outputs = { "holmium-solution" },
-            style = "fluid",
         }),
         category = "chemistry",
         energy_required = 10,
@@ -177,9 +177,9 @@ vgal.extend({
         name = "scrap-sulfuric-acid-holmium-solution", --
         prefix = "vgal",
         icons = vgal.icon.create({
+            style = "fluid",
             inputs = { "scrap", "sulfuric-acid" },
             outputs = { "holmium-solution" },
-            style = "fluid",
         }),
         category = "chemistry",
         energy_required = 25,

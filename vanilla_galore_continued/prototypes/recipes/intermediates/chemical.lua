@@ -28,9 +28,9 @@ vgal.extend({
         name = "plastic-bar-lubricant",
         prefix = "vgal",
         icons = vgal.icon.create({
+            style = "fluid",
             inputs = { "plastic-bar" },
             outputs = { "lubricant" },
-            style = "fluid",
         }),
         category = "chemistry",
         energy_required = 4,

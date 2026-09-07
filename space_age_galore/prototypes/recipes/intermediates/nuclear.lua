@@ -3,9 +3,9 @@ vgal.extend({
         name = "carbon-uranium-ore",
         prefix = "vgal",
         icons = vgal.icon.create({
+            style = "arrow",
             inputs = { "carbon" },
             outputs = { "uranium-ore" },
-            style = "arrow",
         }),
         energy_required = 25,
         technology = { "uranium-processing", "space-platform" },

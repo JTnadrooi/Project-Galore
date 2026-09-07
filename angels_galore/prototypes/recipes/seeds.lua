@@ -12,18 +12,12 @@ for _, environment in pairs(vgal.defines.environments) do
         { type = "item", name = "angels-filter-frame", amount = 1, ignored_by_productivity = 1 } --[[@as data.ItemProductPrototype]]
     )
 
-    local alt_seeds_icons = angelsmods.functions.create_gas_recipe_icon(
-        {
-            environment.seeds[1],
-            environment.seeds[2],
-            environment.seeds[3],
-        },
-        { { 180, 180, 225 }, { 150, 150, 187 }, { 120, 120, 150 } },
-        {
-            environment.seeds[4],
-            environment.seeds[5],
-        }
-    )
+    local alt_seeds_icons = vgal.icon.create({
+        style   = "angels-gas",
+        inputs  = { environment.seeds[4], environment.seeds[5] },
+        outputs = { environment.seeds[1], environment.seeds[2], environment.seeds[3] },
+        palette = { { 180, 180, 225 }, { 150, 150, 187 }, { 120, 120, 150 } },
+    })
 
     vgal.extend({
         {
@@ -50,19 +44,12 @@ for _, environment in pairs(vgal.defines.environments) do
     vgal.recipe.replace_ingredient(ceramic_filter_seed_recipe, "angels-filter-coal", "angels-filter-ceramic")
     vgal.recipe.replace_result(ceramic_filter_seed_recipe, "angels-filter-frame", "angels-filter-ceramic-used")
     ceramic_filter_seed_recipe.order = "b[from-ceramic-filter]-" .. environment.order
-    ceramic_filter_seed_recipe.icons = angelsmods.functions.create_gas_recipe_icon(
-        {
-            environment.seeds[1],
-            environment.seeds[2],
-            environment.seeds[3],
-        },
-        { { 180, 180, 225 }, { 150, 150, 187 }, { 120, 120, 150 } },
-        {
-            environment.seeds[4],
-            environment.seeds[5],
-            "angels-filter-ceramic",
-        }
-    )
+    ceramic_filter_seed_recipe.icons = vgal.icon.create({
+        style   = "angels-gas",
+        inputs  = { environment.seeds[4], environment.seeds[5], "angels-filter-ceramic" },
+        outputs = { environment.seeds[1], environment.seeds[2], environment.seeds[3] },
+        palette = { { 180, 180, 225 }, { 150, 150, 187 }, { 120, 120, 150 } },
+    })
     ceramic_filter_seed_recipe.localised_name = nil
     ceramic_filter_seed_recipe.localised_description = nil
 

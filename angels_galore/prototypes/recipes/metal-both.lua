@@ -101,9 +101,11 @@ for _, metal in pairs(vgal.defines.metals) do
         {
             name = "angels-mineral-sludge-" .. metal.pebbles,
             prefix = "vgal",
-            icons = angelsmods.functions.create_liquid_recipe_icon({
-                metal.pebbles,
-            }, { { 202, 099, 017 }, { 097, 052, 020 }, { 097, 052, 020 } }),
+            icons = vgal.icon.create({
+                style   = "angels-liquid",
+                outputs = { metal.pebbles },
+                palette = { { 202, 099, 017 }, { 097, 052, 020 }, { 097, 052, 020 } },
+            }),
             energy_required = 1,
             technology = "angels-slag-processing-1",
             fluid_ingredients = {
@@ -119,9 +121,11 @@ for _, metal in pairs(vgal.defines.metals) do
         {
             name = "angels-mineral-sludge-" .. metal.base_ore,
             prefix = "vgal",
-            icons = angelsmods.functions.create_liquid_recipe_icon({
-                metal.base_ore,
-            }, { { 202, 099, 017 }, { 097, 052, 020 }, { 097, 052, 020 } }),
+            icons = vgal.icon.create({
+                style   = "angels-liquid",
+                outputs = { metal.base_ore },
+                palette = { { 202, 099, 017 }, { 097, 052, 020 }, { 097, 052, 020 } },
+            }),
             energy_required = 2,
             technology = "angels-slag-processing-1",
             fluid_ingredients = {

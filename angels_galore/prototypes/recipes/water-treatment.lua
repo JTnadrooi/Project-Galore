@@ -2,10 +2,12 @@ vgal.extend({
     {
         name = "angels-solid-sodium-hypochlorite-angels-water-purified",
         prefix = "vgal",
-        icons = angelsmods.functions.create_liquid_recipe_icon({
-            "angels-water-saline",
-            "angels-water-purified",
-        }, "WsWsWs", { "angels-solid-sodium-hypochlorite" }),
+        icons = vgal.icon.create({
+            style   = "angels-liquid",
+            inputs  = { "angels-solid-sodium-hypochlorite" },
+            outputs = { "angels-water-saline", "angels-water-purified" },
+            palette = "WsWsWs",
+        }),
         energy_required = 5,
         technology = { "angels-chlorine-processing-4", "angels-nitrogen-processing-3", },
         ingredients = {
@@ -29,11 +31,12 @@ vgal.extend({
     {
         name = "angels-water-mineralized-angels-water-purified",
         prefix = "vgal",
-        icons = angelsmods.functions.create_liquid_recipe_icon({
-            "angels-water-saline",
-            "angels-water-purified",
-            "angels-stone-crushed",
-        }, "WsWsWs", { "angels-water-mineralized" }),
+        icons = vgal.icon.create({
+            style   = "angels-liquid",
+            inputs  = { "angels-water-mineralized" },
+            outputs = { "angels-water-saline", "angels-water-purified", "angels-stone-crushed" },
+            palette = "WsWsWs",
+        }),
         energy_required = 1,
         technology = { "angels-water-treatment", "angels-stone-smelting-1" },
         ingredients = {
@@ -117,11 +120,12 @@ for _, waste_water in pairs(vgal.defines.waste_waters) do
         {
             name = "angels-solid-calcium-chloride-" .. waste_water.name .. "-angels-water-purified",
             prefix = "vgal",
-            icons = angelsmods.functions.create_liquid_recipe_icon({
-                waste_water.secondary_result_water,
-                "angels-water-purified",
-                waste_water.result,
-            }, waste_water.purification_recipe_palette, { "angels-solid-calcium-chloride" }),
+            icons = vgal.icon.create({
+                style   = "angels-liquid",
+                inputs  = { "angels-solid-calcium-chloride" },
+                outputs = { waste_water.secondary_result_water, "angels-water-purified", waste_water.result },
+                palette = waste_water.purification_recipe_palette,
+            }),
             energy_required = 2,
             technology = "angels-chlorine-processing-2",
             ingredients = {

@@ -2,11 +2,11 @@ vgal.extend({
     {
         name = "sulfuric-acid-angels-solid-sodium-hydroxide-steam",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon({
-            "steam",
-        }, "WsWsWs", {
-            "angels-solid-sodium-hydroxide",
-            "sulfuric-acid",
+        vgal.icon.create({
+            style   = "angels-gas",
+            inputs  = { "angels-solid-sodium-hydroxide", "sulfuric-acid" },
+            outputs = { "steam" },
+            palette = "WsWsWs",
         }),
         energy_required = 0.5,
         technology = "calcite-processing",

@@ -89,10 +89,11 @@ vgal.extend({
     {
         name = "jelly-angels-liquid-mineral-oil",
         prefix = "vgal",
-        icons = angelsmods.functions.create_liquid_recipe_icon({
-            "angels-liquid-mineral-oil",
-        }, { { 063, 189, 063 }, { 058, 173, 58 }, { 053, 159, 053 } }, {
-            "jelly"
+        icons = vgal.icon.create({
+            style   = "angels-liquid",
+            inputs  = { "jelly" },
+            outputs = { "angels-liquid-mineral-oil" },
+            palette = { { 063, 189, 063 }, { 058, 173, 58 }, { 053, 159, 053 } },
         }),
         energy_required = 4,
         technology = { "angels-bio-pressing-1", "yumako" },

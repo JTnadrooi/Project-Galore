@@ -71,9 +71,9 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
 
         if (not output_recipe.icons) and output_recipe.name ~= output_recipe.main_product and output_recipe.main_product and main_ingredient then
             output_recipe.icons = vgal.icon.create({
+                style = "default",
                 inputs = { main_ingredient },
                 outputs = { output_recipe.main_product },
-                style = "default"
             })
         end
     end

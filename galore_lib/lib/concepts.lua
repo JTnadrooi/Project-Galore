@@ -114,19 +114,49 @@ do
 end
 
 do
-    ---@alias vgal.AngelsColorPalette { [1]: integer, [2]: integer, [3]: integer } | string
+    ---@alias vgal.AngelsColorPalette {[1]: { [1]: integer, [2]: integer, [3]: integer }, [2]: { [1]: integer, [2]: integer, [3]: integer }, [3]: { [1]: integer, [2]: integer, [3]: integer }} | string
 end
 
 do
     ---@class vgal.IconBlueprint
     ---@field inputs string[]?
-    ---@field outputs string[]
-    ---@field style string?
+    ---@field outputs string[]?
 end
 
 do
-    ---@class vgal.AngelsIconBlueprint : vgal.IconBlueprint
-    ---@field style "angels"
-    ---@field core "fluid"|"gas"
+    ---@class vgal.DefaultIconBlueprint : vgal.IconBlueprint
+    ---@field style? "default"
+end
+
+do
+    ---@class vgal.FluidIconBlueprint : vgal.IconBlueprint
+    ---@field style "fluid"
+end
+
+do
+    ---@class vgal.ArrowIconBlueprint : vgal.IconBlueprint
+    ---@field style "arrow"
+end
+
+do
+    ---@class vgal.AngelsGasIconBlueprint : vgal.IconBlueprint
+    ---@field style "angels-gas"
+    ---@field tier integer?
     ---@field palette vgal.AngelsColorPalette
+end
+
+do
+    ---@class vgal.AngelsLiquidIconBlueprint : vgal.IconBlueprint
+    ---@field style "angels-liquid"
+    ---@field tier integer?
+    ---@field palette vgal.AngelsColorPalette
+end
+
+do
+    ---@alias vgal.AnyIconBlueprint
+    ---| (vgal.DefaultIconBlueprint)
+    ---| (vgal.FluidIconBlueprint)
+    ---| (vgal.ArrowIconBlueprint)
+    ---| (vgal.AngelsGasIconBlueprint)
+    ---| (vgal.AngelsLiquidIconBlueprint)
 end

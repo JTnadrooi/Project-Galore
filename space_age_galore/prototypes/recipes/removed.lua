@@ -4,9 +4,9 @@ vgal.extend({
         name = "carbon-lubricant",
         prefix = "vgal",
         icons = vgal.icon.create({
+            style = "fluid",
             inputs = { "carbon" },
             outputs = { "lubricant" },
-            style = "fluid",
         }),
         category = "chemistry",
         energy_required = 1,
@@ -50,9 +50,9 @@ vgal.extend({
         --     vgal.icon.get_in2("steam"),
         -- }),
         icons = vgal.icon.create({
+            style = "arrow",
             inputs = { "solid-fuel" },
             outputs = { "carbon" },
-            style = "arrow",
         }),
         categories = { "chemistry", "cryogenics" },
         energy_required = 8,

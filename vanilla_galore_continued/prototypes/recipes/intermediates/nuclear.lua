@@ -22,9 +22,9 @@ vgal.extend({
         name = "uranium-235-uranium-238",
         prefix = "vgal",
         icons = vgal.icon.create({
+            style = "arrow",
             inputs = { "uranium-235" },
             outputs = { "uranium-238" },
-            style = "arrow",
         }),
         technology = "uranium-processing",
         energy_required = 30,

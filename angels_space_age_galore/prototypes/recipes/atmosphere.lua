@@ -15,10 +15,11 @@ for _, atm in pairs(vgal.defines.atmospheres) do
         {
             name = atm.name,
             domain = "vgal",
-            icons = angelsmods.functions.create_gas_recipe_icon(
-                { atm.name },
-                atm.colors
-            ),
+            icons = vgal.icon.create({
+                style   = "angels-gas",
+                outputs = { atm.name },
+                palette = atm.colors,
+            }),
             energy_required = atm.energy_required,
             technology = unlock_tech,
             fluid_results = {
@@ -30,12 +31,11 @@ for _, atm in pairs(vgal.defines.atmospheres) do
         {
             name = atm.name .. "-separation",
             domain = "vgal",
-            icons = angelsmods.functions.create_gas_recipe_icon(
-                vgal.icon.map_to_angels_molecule_icons(vgal.table.select(atm.fluid_results, function(f)
-                    return f[1]
-                end)),
-                atm.colors
-            ),
+            icons = vgal.icon.create({
+                style   = "angels-gas",
+                outputs = vgal.table.select(atm.fluid_results, function(f) return f[1] end),
+                palette = atm.colors,
+            }),
             energy_required = separation_energy_required,
             technology = unlock_tech,
             fluid_ingredients = {
@@ -55,10 +55,12 @@ vgal.extend({
     {
         name = "simple-angels-gas-puffer-atmosphere",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon(
-            nil,
-            { { 194, 227, 091 }, { 184, 239, 000 }, { 156, 207, 000 } }, { "vgal-atm-gleba", }
-        ),
+        icons = vgal.icon.create({
+            style   = "angels-gas",
+            inputs  = { "vgal-atm-gleba" },
+            outputs = { "angels-gas-puffer-atmosphere" },
+            palette = { { 194, 227, 091 }, { 184, 239, 000 }, { 156, 207, 000 } },
+        }),
         energy_required = 2,
         technology = "angels-bio-refugium-puffer-1",
         fluid_ingredients = {

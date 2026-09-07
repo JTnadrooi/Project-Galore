@@ -2,17 +2,13 @@ vgal.extend({
     {
         name = "angels-water-mineralized-angels-gas-oxygen-angels-gas-hydrogen",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon(
-            {
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/oxygen.png",   72 },
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 72 },
-            },
-            "OHH",
-            {
-                angelsmods.functions.add_number_icon_layer({}, 1, angelsmods.petrochem.number_tint),
-                "angels-water-mineralized",
-            }
-        ),
+        icons = vgal.icon.create({
+            style   = "angels-gas",
+            inputs  = { "angels-water-mineralized" },
+            outputs = { "angels-gas-oxygen", "angels-gas-hydrogen" },
+            palette = "OHH",
+            tier    = 1,
+        }),
         energy_required = 4,
         technology = "angels-water-treatment",
         fluid_ingredients = {
@@ -36,17 +32,13 @@ vgal.extend({
     {
         name = "angels-water-mineralized-angels-gas-oxygen-angels-gas-hydrogen-fast",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon(
-            {
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/oxygen.png",   72 },
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 72 },
-            },
-            "OHH",
-            {
-                angelsmods.functions.add_number_icon_layer({}, 2, angelsmods.petrochem.number_tint),
-                "angels-water-mineralized",
-            }
-        ),
+        icons = vgal.icon.create({
+            style   = "angels-gas",
+            inputs  = { "angels-water-mineralized" },
+            outputs = { "angels-gas-oxygen", "angels-gas-hydrogen" },
+            palette = "OHH",
+            tier    = 2,
+        }),
         energy_required = 2,
         technology = "angels-water-treatment",
         ingredients = {
@@ -74,15 +66,12 @@ vgal.extend({
     {
         name = "angels-gas-carbon-dioxide-angels-gas-carbon-monoxide",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon(
-            {
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
-            },
-            "CCOc",
-            {
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
-            }
-        ),
+        icons = vgal.icon.create({
+            style   = "angels-gas",
+            inputs  = { "angels-gas-carbon-dioxide" },
+            outputs = { "angels-gas-carbon-monoxide" },
+            palette = "CCOc",
+        }),
         energy_required = 3,
         technology = "angels-basic-chemistry-3",
         ingredients = {

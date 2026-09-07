@@ -5,121 +5,124 @@ local function use_main_icon(recipe_name)
 end
 
 -- distinguish recipe icons with updated order
--- carbon gasses
-data.raw["recipe"]["angels-water-gas-shift-2"].icons = angelsmods.functions.create_gas_recipe_icon(
-    {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
-    },
-    "CCOc", {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 72, },
-    }
-)
-data.raw["recipe"]["angels-gas-carbon-dioxide-from-wood"].icons = angelsmods.functions.create_gas_recipe_icon(
-    {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
-    },
-    "COcOc", { "angels-wood-pellets" }
-)
-data.raw["recipe"]["angels-water-gas-shift-1"].icons = angelsmods.functions.create_gas_recipe_icon(
-    {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png",       72 },
-    },
-    "COcOc", { "steam", { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 }, }
-)
+data.raw["recipe"]["angels-water-gas-shift-2"].icons = vgal.icon.create({
+    style   = "angels-gas",
+    inputs  = { "angels-gas-hydrogen" },        -- overlay: hydrogen
+    outputs = { "angels-gas-carbon-monoxide" }, -- main icon: carbon monoxide
+    palette = "CCOc",
+})
 
--- misc distinguish
-data.raw["recipe"]["angels-gas-methanol-from-wood"].icons = angelsmods.functions.create_gas_recipe_icon(
-    {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 64 },
-    },
-    "COH", { "angels-cellulose-fiber", }
-)
+data.raw["recipe"]["angels-gas-carbon-dioxide-from-wood"].icons = vgal.icon.create({
+    style   = "angels-gas",
+    inputs  = { "angels-wood-pellets" },
+    outputs = { "angels-gas-carbon-dioxide" },
+    palette = "COcOc",
+})
 
-data.raw["recipe"]["angels-gas-ammonia-from-blue-fiber"].icons = angelsmods.functions.create_gas_recipe_icon(
-    {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 64 },
-    },
-    "NHH", { "angels-blue-cellulose-fiber", }
-)
+data.raw["recipe"]["angels-water-gas-shift-1"].icons = vgal.icon.create({
+    style   = "angels-gas",
+    inputs  = { "steam", "angels-gas-carbon-monoxide" },
+    outputs = { "angels-gas-carbon-dioxide", "angels-gas-hydrogen" },
+    palette = "COcOc",
+})
 
-data.raw["recipe"]["angels-liquid-acetic-acid"].icons = angelsmods.functions.create_liquid_recipe_icon(
-    {
-        { "__angelsbioprocessinggraphics__/graphics/icons/molecule-acetic-acid.png", 64 },
-    },
-    "COH", { "angels-liquid-fermentation-raw", }
-)
+data.raw["recipe"]["angels-gas-methanol-from-wood"].icons = vgal.icon.create({
+    style   = "angels-gas",
+    inputs  = { "angels-cellulose-fiber" },
+    outputs = { "angels-gas-methanol" },
+    core    = "gas",
+    palette = "COH",
+})
 
-data.raw["recipe"]["angels-gas-ethanol"].icons = angelsmods.functions.create_gas_recipe_icon(
-    {
-        { "__angelsbioprocessinggraphics__/graphics/icons/molecule-ethanol.png", 64 },
-    },
-    "COH", { "angels-liquid-fermentation-raw", }
-)
+data.raw["recipe"]["angels-gas-ammonia-from-blue-fiber"].icons = vgal.icon.create({
+    style   = "angels-gas",
+    inputs  = { "angels-blue-cellulose-fiber" },
+    outputs = { "angels-gas-ammonia" },
+    core    = "gas",
+    palette = "NHH",
+})
+
+data.raw["recipe"]["angels-liquid-acetic-acid"].icons = vgal.icon.create({
+    style   = "angels-liquid",
+    inputs  = { "angels-liquid-fermentation-raw" },
+    outputs = { "angels-liquid-acetic-acid" },
+    core    = "liquid",
+    palette = "COH",
+})
+
+data.raw["recipe"]["angels-gas-ethanol"].icons = vgal.icon.create({
+    style   = "angels-gas",
+    inputs  = { "angels-liquid-fermentation-raw" },
+    outputs = { "angels-gas-ethanol" },
+    core    = "gas",
+    palette = "COH",
+})
 
 -- fix steam cracking icons
 for recipe_name, product_name in pairs({
-    ["angels-steam-cracking-methane"] = "methanol",
-    ["angels-steam-cracking-butane"] = "benzene",
-    ["angels-gas-ethylene"] = "ethylene",
-    ["angels-gas-propene"] = "propene",
+    ["angels-steam-cracking-methane"]          = "methanol",
+    ["angels-steam-cracking-butane"]           = "benzene",
+    ["angels-gas-ethylene"]                    = "ethylene",
+    ["angels-gas-propene"]                     = "propene",
     ["angels-catalyst-steam-cracking-naphtha"] = "propene",
 }) do
-    data.raw["recipe"][recipe_name].icons = angelsmods.functions.create_gas_recipe_icon(
-        {
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/" .. product_name .. ".png", 64 },
-        },
-        "CHH", { "steam", }
-    )
+    data.raw["recipe"][recipe_name].icons = vgal.icon.create({
+        style   = "angels-gas",
+        inputs  = { "steam" },
+        outputs = { "angels-gas-" .. product_name },
+        core    = "gas",
+        palette = "CHH",
+    })
 end
 
--- fix syngas recipe icons
+-- fix syngas recipe icons (custom palette with RGB values)
 for _, product_name in ipairs({
     "naphtha",
     "mineral-oil",
     "fuel-oil",
 }) do
-    data.raw["recipe"]["angels-steam-cracking-" .. product_name].icons = angelsmods.functions.create_gas_recipe_icon({
-        "angels-gas-synthesis",
-    }, { { 210, 120, 210 }, { 175, 100, 175 }, { 140, 080, 140 } }, { "angels-liquid-" .. product_name, })
+    data.raw["recipe"]["angels-steam-cracking-" .. product_name].icons = vgal.icon.create({
+        style   = "angels-gas",
+        inputs  = { "angels-liquid-" .. product_name },
+        outputs = { "angels-gas-synthesis" },
+        core    = "gas",
+        palette = { { 210, 120, 210 }, { 175, 100, 175 }, { 140, 080, 140 } },
+    })
 end
 
 -- fix polyethylene icon
-data.raw["recipe"]["angels-liquid-polyethylene"].icons = angelsmods.functions.create_liquid_recipe_icon(
-    {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/polyethylene.png", 64 },
-    },
-    "CHH"
-)
+data.raw["recipe"]["angels-liquid-polyethylene"].icons = vgal.icon.create({
+    style   = "angels-liquid",
+    outputs = { "angels-liquid-polyethylene" },
+    core    = "liquid",
+    palette = "CHH",
+})
 
--- fix steam-cracking-methane icon
-data.raw["recipe"]["angels-steam-cracking-methane"].icons = angelsmods.functions.create_gas_recipe_icon(
-    {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 64 },
-    },
-    "COH", { "steam", }
-)
+-- override steam-cracking-methane with correct palette and output
+data.raw["recipe"]["angels-steam-cracking-methane"].icons = vgal.icon.create({
+    style   = "angels-gas",
+    inputs  = { "steam" },
+    outputs = { "angels-gas-methanol" },
+    core    = "gas",
+    palette = "COH",
+})
 
--- add some more input icons to make it more fit for its subgroup
-data.raw["recipe"]["angels-condensates-refining"].icons = angelsmods.functions.create_gas_recipe_icon(
-    {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/methane.png", 64 },
-        "angels-solid-coke",
-        "angels-liquid-naphtha",
-    },
-    "CHH",
-    {
-        "angels-liquid-condensates",
-    }
-)
+-- add more input icons to make it fit its subgroup
+data.raw["recipe"]["angels-condensates-refining"].icons = vgal.icon.create({
+    style   = "angels-gas",
+    inputs  = { "angels-liquid-condensates" },
+    outputs = { "angels-gas-methane", "angels-solid-coke", "angels-liquid-naphtha" },
+    core    = "gas",
+    palette = "CHH",
+})
 
 -- fix fluid/gas recipe icons not being other type
-data.raw["recipe"]["angels-liquid-phenol"].icons = angelsmods.functions.create_liquid_recipe_icon(
-    {
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/phenol.png", 64 },
-    },
-    "COH"
-)
+data.raw["recipe"]["angels-liquid-phenol"].icons = vgal.icon.create({
+    style   = "angels-liquid",
+    outputs = { "angels-liquid-phenol" },
+    core    = "liquid",
+    palette = "COH",
+})
 
 -- fix main casting recipes showing input icon
 vgal.recipe.clear_icons("angels-plate-steel")
@@ -480,12 +483,11 @@ if not mods["reskins-angels"] then
 
     vgal.recipe.clear_icons("angels-solid-sulfur")
 
-    data.raw["recipe"]["angels-yellow-waste-water-purification"].icons = angelsmods.functions.create_liquid_recipe_icon(
-        {
-            "angels-water-mineralized",
-            "angels-water-purified",
-            "sulfur",
-        }, "WsSS")
+    data.raw["recipe"]["angels-yellow-waste-water-purification"].icons = vgal.icon.create({
+        style   = "angels-liquid",
+        outputs = { "angels-water-mineralized", "angels-water-purified", "sulfur" },
+        palette = "WsSS",
+    })
 
     data.raw["fluid"]["angels-water-yellow-waste"].icons = angelsmods.functions
         .create_viscous_liquid_fluid_icon(

@@ -374,12 +374,11 @@ do
         { "angels-gas-methane", 50 },
         -- { "angels-gas-carbon-dioxide",   15 },
     })
-    recipe.icons = angelsmods.functions.create_gas_recipe_icon({
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/methane.png", 72 },
-        -- { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png",   72 },
-        -- { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen-sulfide.png", 72 },
-    }, "OiOiOi", {
-        "calcite",
+    recipe.icons = vgal.icon.create({
+        style   = "angels-gas",
+        inputs  = { "calcite" },
+        outputs = { "angels-gas-methane" },
+        palette = "OiOiOi",
     })
     recipe.subgroup = "angels-petrochem-coal"
     recipe.order = "h[simple-coal-cracking]-"
@@ -400,11 +399,11 @@ do
     }, {
         { "steam", 60, { temperature = 165 } },
     })
-    acid_neutralisation_recipe.icons = angelsmods.functions.create_gas_recipe_icon({
-        "steam",
-    }, "WsWsWs", {
-        "angels-solid-calcium-carbonate",
-        "sulfuric-acid",
+    acid_neutralisation_recipe.icons = vgal.icon.create({
+        style   = "angels-gas",
+        inputs  = { "angels-solid-calcium-carbonate", "sulfuric-acid" },
+        outputs = { "steam" },
+        palette = "WsWsWs",
     })
     acid_neutralisation_recipe.main_product = "steam"
     acid_neutralisation_recipe.subgroup = "vgal-water"
@@ -455,10 +454,11 @@ end
 do
     local ice_melting_recipe = data.raw["recipe"]["ice-melting"]
     vgal.recipe.replace_category(ice_melting_recipe, "chemistry", "angels-liquifying")
-    ice_melting_recipe.icons = angelsmods.functions.create_liquid_recipe_icon({
-        "water",
-    }, "WsWsWs", {
-        "ice",
+    ice_melting_recipe.icons = vgal.icon.create({
+        style   = "angels-liquid",
+        inputs  = { "ice" },
+        outputs = { "water" },
+        palette = "WsWsWs",
     })
     vgal.recipe.set_result_amount(ice_melting_recipe, 50) -- og; 20
 end
@@ -467,11 +467,11 @@ end
 do
     local ammoniacal_solution_separation = data.raw["recipe"]["ammoniacal-solution-separation"]
     vgal.recipe.replace_category(ammoniacal_solution_separation, "chemistry", "angels-liquifying")
-    ammoniacal_solution_separation.icons = angelsmods.functions.create_liquid_recipe_icon({
-        { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 72 },
-        "ice",
-    }, "WsWsWs", {
-        "ammoniacal-solution",
+    ammoniacal_solution_separation.icons = vgal.icon.create({
+        style   = "angels-liquid",
+        inputs  = { "ammoniacal-solution" },
+        outputs = { "angels-gas-ammonia", "ice" },
+        palette = "WsWsWs",
     })
 end
 

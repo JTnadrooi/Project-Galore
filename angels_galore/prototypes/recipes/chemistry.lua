@@ -95,10 +95,11 @@ vgal.extend({
     {
         name = "angels-gas-methanol-angels-gas-chlor-methane",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon({
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/chloromethane.png", 72 },
-        }, "CClH", {
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 72 },
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-gas-methanol" },
+            outputs = { "angels-gas-chlor-methane" },
+            palette = "CClH",
         }),
         energy_required = 2,
         technology = "angels-chlorine-processing-2",
@@ -117,10 +118,11 @@ vgal.extend({
     -- {
     --     name = "angels-gas-ethylene-angels-gas-ethanol",
     --     prefix = "vgal",
-    --     icons = angelsmods.functions.create_liquid_recipe_icon({
-    --         { "__angelsbioprocessinggraphics__/graphics/icons/molecule-acetic-acid.png", 72 },
-    --     }, "COH", {
-    --         -- { "__angelspetrochemgraphics__/graphics/icons/molecules/ethanol.png", 64 },
+    --     icons = vgal.icon.create({
+    --         style = "angels-liquid",
+    --         inputs = {},
+    --         outputs = { "angels-liquid-acetic-acid" },
+    --         palette = "COH",
     --     }),
     --     energy_required = 2,
     --     technology = "angels-bio-fermentation",
@@ -139,10 +141,11 @@ vgal.extend({
     {
         name = "angels-gas-ethanol-angels-liquid-acetic-acid",
         prefix = "vgal",
-        icons = angelsmods.functions.create_liquid_recipe_icon({
-            { "__angelsbioprocessinggraphics__/graphics/icons/molecule-acetic-acid.png", 72 },
-        }, "COH", {
-            -- { "__angelspetrochemgraphics__/graphics/icons/molecules/ethanol.png", 64 },
+        icons = vgal.icon.create({
+            style = "angels-liquid",
+            inputs = {},
+            outputs = { "angels-liquid-acetic-acid" },
+            palette = "COH",
         }),
         energy_required = 2,
         technology = "angels-bio-fermentation",
@@ -161,10 +164,11 @@ vgal.extend({
     {
         name = "angels-liquid-acetic-acid-angels-gas-acetone",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon({
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/acetone.png", 72 },
-        }, "COH", {
-            "angels-solid-lime"
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-solid-lime" },
+            outputs = { "angels-gas-acetone" },
+            palette = "COH",
         }),
         energy_required = 2,
         technology = "angels-bio-plastic-1",
@@ -188,11 +192,11 @@ vgal.extend({
     {
         name = "angels-gas-ethylene-angels-gas-butane",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon({
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/butane.png", 72 },
-        }, "CHH", {
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/ethylene.png", 72 },
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 72 },
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-gas-ethylene", "angels-gas-hydrogen" },
+            outputs = { "angels-gas-butane" },
+            palette = "CHH",
         }),
         energy_required = 2,
         technology = "angels-steam-cracking-1",
@@ -217,10 +221,11 @@ vgal.extend({
     {
         name = "angels-gas-acetone-angels-gas-propene",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon({
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/propene.png", 72 },
-        }, "CHH", {
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/acetone.png", 72 },
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-gas-acetone" },
+            outputs = { "angels-gas-propene" },
+            palette = "CHH",
         }),
         energy_required = 2,
         technologies = { "angels-bio-nutrient-paste", "angels-advanced-chemistry-3" },
@@ -248,12 +253,11 @@ vgal.extend({
     {
         name = "angels-gas-acetone-angels-gas-propene-angels-gas-ethylene",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon({
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/propene.png",  72 },
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/ethylene.png", 72 },
-        }, "CHH", {
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/acetone.png", 72 },
-            -- { "__angelspetrochemgraphics__/graphics/icons/molecules/ethanol.png", 64 },
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-gas-acetone" },
+            outputs = { "angels-gas-propene", "angels-gas-ethylene" },
+            palette = "CHH",
         }),
         energy_required = 2,
         technologies = { "angels-bio-nutrient-paste", "angels-advanced-chemistry-3" },
@@ -282,11 +286,11 @@ vgal.extend({
     {
         name = "angels-liquid-naphtha-angels-gas-propene-angels-gas-ethylene",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon({
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/propene.png",  72 },
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/ethylene.png", 72 },
-        }, "CHH", {
-            "steam",
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "steam" },
+            outputs = { "angels-gas-propene", "angels-gas-ethylene" },
+            palette = "CHH",
         }),
         energy_required = 4,
         technology = "angels-steam-cracking-1",
@@ -314,10 +318,11 @@ vgal.extend({
     {
         name = "angels-liquid-toluene-angels-gas-benzene",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon({
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/benzene.png", 72 },
-        }, "CHH", {
-            "angels-liquid-toluene",
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-liquid-toluene" },
+            outputs = { "angels-gas-benzene" },
+            palette = "CHH",
         }),
         energy_required = 2,
         technology = "angels-advanced-chemistry-3",
@@ -342,11 +347,11 @@ vgal.extend({
     -- {
     --     name = "angels-liquid-toluene-angels-gas-benzene-angels-gas-methane",
     --     prefix = "vgal",
-    --     icons = angelsmods.functions.create_gas_recipe_icon({
-    --         { "__angelspetrochemgraphics__/graphics/icons/molecules/benzene.png", 72 },
-    --         { "__angelspetrochemgraphics__/graphics/icons/molecules/methane.png", 72 },
-    --     }, "CHH", {
-    --         "angels-liquid-toluene",
+    --     icons = vgal.icon.create({
+    --         style = "angels-gas",
+    --         inputs = { "angels-liquid-toluene" },
+    --         outputs = { "angels-gas-benzene", "angels-gas-methane" },
+    --         palette = "CHH",
     --     }),
     --     energy_required = 4,
     --     technology = "angels-advanced-chemistry-3",
@@ -368,11 +373,12 @@ vgal.extend({
     -- { -- commentedbc: syngas
     --     name = "angels-liquid-vegetable-oil-angels-gas-propene-angels-gas-ethylene",
     --     prefix = "vgal",
-    --     icons = angelsmods.functions.create_liquid_recipe_icon({
-    --         { "__angelspetrochemgraphics__/graphics/icons/molecules/propene.png",  72 },
-    --         "water",
-    --         { "__angelspetrochemgraphics__/graphics/icons/molecules/ethylene.png", 72 },
-    --     }, { { 255, 255, 056 }, { 255, 205, 040 }, { 201, 155, 030 } }),
+    --     icons = vgal.icon.create({
+    --         style = "angels-liquid",
+    --         inputs = {},
+    --         outputs = { "angels-gas-propene", "water", "angels-gas-ethylene" },
+    --         palette = { { 255, 255, 056 }, { 255, 205, 040 }, { 201, 155, 030 } },
+    --     }),
     --     energy_required = 4,
     --     technology = "angels-bio-pressing-1",
     --     fluid_ingredients = {
@@ -391,11 +397,12 @@ vgal.extend({
     -- {
     --     name = "angels-liquid-nutrient-pulp-angels-liquid-propionic-acid",
     --     prefix = "vgal",
-    --     icons = angelsmods.functions.create_liquid_recipe_icon({
-    --         { "__angelsbioprocessinggraphics__/graphics/icons/molecule-propionic-acid.png", 72 },
-    --         { "__angelsbioprocessinggraphics__/graphics/icons/molecule-acetic-acid.png",    72 },
-    --         { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png",    72 },
-    --     }, { { 214, 146, 040 }, { 169, 130, 039 }, { 120, 083, 004 } }),
+    --     icons = vgal.icon.create({
+    --         style = "angels-liquid",
+    --         inputs = {},
+    --         outputs = { "angels-liquid-propionic-acid", "angels-liquid-acetic-acid", "angels-gas-carbon-dioxide" },
+    --         palette = { { 214, 146, 040 }, { 169, 130, 039 }, { 120, 083, 004 } },
+    --     }),
     --     energy_required = 2,
     --     technology = "angels-bio-plastic-2",
     --     fluid_ingredients = {
@@ -417,10 +424,12 @@ vgal.extend({
     {
         name = "angels-liquid-nutrient-pulp-angels-liquid-glycerol-angels-liquid-propionic-acid",
         prefix = "vgal",
-        icons = angelsmods.functions.create_liquid_recipe_icon({
-            { "__angelsbioprocessinggraphics__/graphics/icons/molecule-propionic-acid.png", 72 },
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/propene.png",           72 },
-        }, { { 214, 146, 040 }, { 169, 130, 039 }, { 120, 083, 004 } }),
+        icons = vgal.icon.create({
+            style = "angels-liquid",
+            inputs = {},
+            outputs = { "angels-liquid-propionic-acid", "angels-gas-propene" },
+            palette = { { 214, 146, 040 }, { 169, 130, 039 }, { 120, 083, 004 } },
+        }),
         energy_required = 2,
         technology = { "angels-bio-plastic-2", "angels-explosives-2", "angels-advanced-gas-processing" },
         fluid_ingredients = {
@@ -463,12 +472,12 @@ vgal.extend({
     {
         name = "angels-solid-coke-angels-gas-carbon-dioxide",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon(
-            {
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
-            },
-            "COcOc", { "angels-solid-coke" }
-        ),
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-solid-coke" },
+            outputs = { "angels-gas-carbon-dioxide" },
+            palette = "COcOc",
+        }),
         energy_required = 2,
         technology = "angels-coal-processing",
         ingredients = {
@@ -482,16 +491,12 @@ vgal.extend({
     {
         name = "angels-gas-carbon-dioxide-angels-solid-carbon-angels-gas-carbon-monoxide",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon(
-            {
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
-            },
-            "CCOc",
-            {
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
-                "angels-solid-carbon"
-            }
-        ),
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-gas-carbon-dioxide", "angels-solid-carbon" },
+            outputs = { "angels-gas-carbon-monoxide" },
+            palette = "CCOc",
+        }),
         energy_required = 2,
         technology = "angels-coal-processing-2",
         ingredients = {
@@ -515,16 +520,12 @@ vgal.extend({
     {
         name = "angels-gas-carbon-monoxide-angels-solid-carbon",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon(
-            {
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
-                "angels-solid-carbon"
-            },
-            "COcOc",
-            {
-                { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
-            }
-        ),
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-gas-carbon-monoxide" },
+            outputs = { "angels-gas-carbon-dioxide", "angels-solid-carbon" },
+            palette = "COcOc",
+        }),
         energy_required = 2,
         technology = "angels-coal-processing-2",
         ingredients = {
@@ -610,15 +611,12 @@ vgal.extend({
     -- {
     --     name = "angels-gas-carbon-dioxide-angels-gas-carbon-monoxide",
     --     prefix = "vgal",
-    --     icons = angelsmods.functions.create_gas_recipe_icon(
-    --         {
-    --             { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
-    --         },
-    --         "ClCOc",
-    --         {
-    --             { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
-    --         }
-    --     ),
+    --     icons = vgal.icon.create({
+    --         style = "angels-gas",
+    --         inputs = { "angels-gas-carbon-dioxide" },
+    --         outputs = { "angels-gas-carbon-monoxide" },
+    --         palette = "ClCOc",
+    --     }),
     --     energy_required = 2,
     --     technology = "angels-basic-chemistry-3",
     --     ingredients = {
@@ -644,10 +642,11 @@ vgal.extend({
     {
         name = "angels-solid-calcium-carbonate-angels-gas-methane",
         prefix = "vgal",
-        icons = angelsmods.functions.create_gas_recipe_icon({
-            { "__angelspetrochemgraphics__/graphics/icons/molecules/methane.png", 72 },
-        }, "CHH", {
-            "angels-solid-calcium-carbonate",
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-solid-calcium-carbonate" },
+            outputs = { "angels-gas-methane" },
+            palette = "CHH",
         }),
         energy_required = 2,
         technology = "angels-gas-processing",

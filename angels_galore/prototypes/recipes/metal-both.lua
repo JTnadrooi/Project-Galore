@@ -33,10 +33,10 @@ for _, metal in pairs(vgal.defines.metals) do
         {
             name = metal.nugget .. "-" .. metal.ore,
             prefix = "vgal",
-            icons = vgal.icon.merge_composites({
-                vgal.icon.get("angels_sorting", "raw"),
-                vgal.icon.get_subicon(metal.nugget, nil, 1),
-                vgal.icon.get_subicon(metal.ore, nil, 9),
+            icons = vgal.icon.create({
+                style = "angels-sorting",
+                inputs = { metal.nugget },
+                outputs = { metal.ore },
             }),
             energy_required = 1,
             technology = "angels-advanced-ore-refining-1",
@@ -52,10 +52,10 @@ for _, metal in pairs(vgal.defines.metals) do
         {
             name = metal.slag .. "-" .. metal.ore,
             prefix = "vgal",
-            icons = vgal.icon.merge_composites({
-                vgal.icon.get("angels_sorting", "raw"),
-                vgal.icon.get_subicon(metal.slag, nil, 1),
-                vgal.icon.get_subicon(metal.ore, nil, 9),
+            icons = vgal.icon.create({
+                style = "angels-sorting",
+                inputs = { metal.slag },
+                outputs = { metal.ore },
             }),
             energy_required = 1.5, -- og; 1 but changed for ratio reasons
             technology = "angels-ore-leaching",

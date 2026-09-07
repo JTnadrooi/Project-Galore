@@ -32,3 +32,26 @@ end
 vgal.icon.create_handlers["angels-liquid"] = function(blueprint)
     return combined_handler(angelsmods.functions.create_liquid_recipe_icon, blueprint)
 end
+
+---@param blueprint vgal.AngelsLiquidIconBlueprint
+---@return data.IconData[]
+vgal.icon.create_handlers["angels-sorting"] = function(blueprint)
+    local composites = {
+        {
+            {
+                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
+                icon_size = 32,
+            },
+        }
+    }
+
+    if blueprint.inputs[1] then
+        table.insert(composites, vgal.icon.shift(vgal.icon.get(blueprint.inputs[1]), 0.25, { -10, -10 }))
+    end
+
+    if blueprint.outputs[1] then
+        table.insert(composites, vgal.icon.shift(vgal.icon.get(blueprint.outputs[1]), 0.25, { 10, 10 }))
+    end
+
+    return vgal.icon.merge_composites(composites)
+end

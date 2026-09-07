@@ -153,10 +153,16 @@ do
 end
 
 do
+    ---@class vgal.AngelsSortingIconBlueprint : vgal.IconBlueprint
+    ---@field style "angels-sorting"
+end
+
+do
     ---@alias vgal.AnyIconBlueprint
     ---| (vgal.DefaultIconBlueprint)
     ---| (vgal.FluidIconBlueprint)
     ---| (vgal.ArrowIconBlueprint)
     ---| (vgal.AngelsGasIconBlueprint)
     ---| (vgal.AngelsLiquidIconBlueprint)
+    ---| (vgal.AngelsSortingIconBlueprint)
 end

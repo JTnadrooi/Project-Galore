@@ -1,6 +1,8 @@
 vgal.extend({
     -- AUTOMATION
     {
+        name = "steel-plate-automation-science-pack",
+        prefix = "vgal",
         category = "crafting",
         energy_required = 12,
         technology = "steel-processing",
@@ -13,6 +15,8 @@ vgal.extend({
         },
     },
     {
+        name = "small-lamp-automation-science-pack",
+        prefix = "vgal",
         category = "crafting",
         energy_required = 20,
         technology = "lamp",
@@ -25,6 +29,8 @@ vgal.extend({
         },
     },
     {
+        name = "stone-wall-automation-science-pack",
+        prefix = "vgal",
         category = "crafting",
         energy_required = 30,
         technology = "stone-wall",
@@ -37,6 +43,8 @@ vgal.extend({
         },
     },
     {
+        name = "burner-inserter-automation-science-pack",
+        prefix = "vgal",
         category = "crafting",
         energy_required = 10,
         technology = "automation-science-pack",
@@ -49,6 +57,8 @@ vgal.extend({
         },
     },
     {
+        name = "burner-mining-drill-automation-science-pack",
+        prefix = "vgal",
         category = "crafting",
         energy_required = 30,
         technology = "automation-science-pack",
@@ -61,6 +71,8 @@ vgal.extend({
         },
     },
     {
+        name = "plastic-bar-automation-science-pack",
+        prefix = "vgal",
         category = "crafting",
         energy_required = 6,
         technology = "plastics",
@@ -73,6 +85,8 @@ vgal.extend({
         },
     },
     {
+        name = "assembling-machine-1-automation-science-pack",
+        prefix = "vgal",
         category = "crafting",
         energy_required = 60,
         technology = "automation",
@@ -88,10 +102,6 @@ vgal.extend({
     {
         name = "concrete-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("logistic-science-pack"),
-            vgal.icon.get_in("concrete")
-        }),
         category = "crafting",
         energy_required = 6,
         technology = "concrete",
@@ -106,10 +116,6 @@ vgal.extend({
     {
         name = "assembling-machine-2-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("logistic-science-pack"),
-            vgal.icon.get_in("assembling-machine-2")
-        }),
         category = "crafting",
         energy_required = 60,
         technology = "automation-2",
@@ -124,10 +130,6 @@ vgal.extend({
     {
         name = "solar-planel-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("logistic-science-pack"),
-            vgal.icon.get_in("solar-panel"),
-        }),
         category = "crafting",
         energy_required = 64,
         technology = "solar-energy",
@@ -142,10 +144,6 @@ vgal.extend({
     {
         name = "electric-mining-drill-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("logistic-science-pack"),
-            vgal.icon.get_in("electric-mining-drill")
-        }),
         category = "crafting",
         energy_required = 36,
         technology = { "electric-mining-drill", "repair-pack", "logistic-science-pack" },
@@ -160,10 +158,6 @@ vgal.extend({
     {
         name = "fast-transport-belt-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("logistic-science-pack"),
-            vgal.icon.get_in("fast-transport-belt")
-        }),
         category = "crafting",
         energy_required = 24,
         technology = { "fast-inserter", "logistics-2" },
@@ -178,10 +172,6 @@ vgal.extend({
     {
         name = "gate-logistic-science-pack",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("logistic-science-pack"),
-            vgal.icon.get_in("gate")
-        }),
         category = "crafting",
         energy_required = 25,
         technology = "gate",
@@ -693,7 +683,7 @@ vgal.extend({
     -- },
 }, {
     type = "recipe",
-    prefix = "vgal",
+    -- prefix = "vgal",
     groups = { "vgal-science-packs" },
 })
 

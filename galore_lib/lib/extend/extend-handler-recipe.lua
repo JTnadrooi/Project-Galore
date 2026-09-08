@@ -52,13 +52,14 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
 
     -- name building
     do
-        if input_recipe.name then
-            output_recipe.name = vgal.build.name(input_recipe.prefix, input_recipe.name, input_recipe.tier == 1 and nil or input_recipe.tier)
-        elseif main_ingredient and output_recipe.main_product then
-            output_recipe.name = vgal.build.name(input_recipe.prefix, main_ingredient .. "-" .. output_recipe.main_product, input_recipe.tier == 1 and nil or input_recipe.tier)
-        else
-            error("Missing prototype name.")
-        end
+        output_recipe.name = vgal.build.name(input_recipe.prefix, input_recipe.name, input_recipe.tier == 1 and nil or input_recipe.tier)
+        -- if input_recipe.name then
+        --     output_recipe.name = vgal.build.name(input_recipe.prefix, input_recipe.name, input_recipe.tier == 1 and nil or input_recipe.tier)
+        -- elseif main_ingredient and output_recipe.main_product then
+        --     output_recipe.name = vgal.build.name(input_recipe.prefix, main_ingredient .. "-" .. output_recipe.main_product, input_recipe.tier == 1 and nil or input_recipe.tier)
+        -- else
+        --     error("Missing prototype name.")
+        -- end
     end
 
     -- icon fixes

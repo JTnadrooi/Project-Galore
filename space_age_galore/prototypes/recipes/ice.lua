@@ -11,14 +11,12 @@ vgal.extend({
         category = "cryogenics",
         energy_required = 20,
         technology = "cryogenic-plant",
-        fluid_ingredients = {
+        ingredients = {
             { "fluoroketone-cold", 15 },
             { "water",             2000 },
         },
-        fluid_results = {
-            { "fluoroketone-hot", 14, { temperature = 180 } },
-        },
         results = {
+            { "fluoroketone-hot", 14, { temperature = 180 } },
             { "ice", 100 },
         },
         groups = { "vgal-unsure", "vgal-ice-recipes" },
@@ -35,7 +33,7 @@ vgal.extend({
         categories = { "chemistry", "cryogenics" },
         energy_required = 20,
         technology = "space-platform",
-        fluid_ingredients = {
+        ingredients = {
             { "water", 150 },
         },
         results = {

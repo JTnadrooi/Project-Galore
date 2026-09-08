@@ -39,13 +39,13 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-wood-heavy-oil-electronic-circ
 -- made a bug report but I need it fixed exactly like this
 do
     local water_shift_recipe = data.raw["recipe"]["angels-water-gas-shift-1"]
-    water_shift_recipe.results = vgal.build.table({}, {
+    water_shift_recipe.results = vgal.build.io({
         { "angels-gas-hydrogen",       30 },
         { "angels-gas-carbon-dioxide", 50 },
     })
 
     local reverse_water_shift_recipe = data.raw["recipe"]["angels-water-gas-shift-2"]
-    reverse_water_shift_recipe.ingredients = vgal.build.table({}, {
+    reverse_water_shift_recipe.ingredients = vgal.build.io({
         { "angels-gas-hydrogen",       30 },
         { "angels-gas-carbon-dioxide", 50 },
     })
@@ -85,268 +85,268 @@ data.raw.recipe["angels-roll-steel"].energy_required = 1
 
 -- normalize building recipes
 do
-    data.raw["recipe"]["angels-blast-furnace"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-blast-furnace"].ingredients = vgal.build.io({
         { "iron-plate",         10 },
         { "electronic-circuit", 5 },
         { "stone-brick",        20 },
         { "pipe",               12 },
     })
-    data.raw["recipe"]["angels-sintering-oven"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-sintering-oven"].ingredients = vgal.build.io({
         { "steel-plate",        12 },
         { "electronic-circuit", 5 },
         { "stone-brick",        20 },
         { "pipe",               5 },
     })
-    data.raw["recipe"]["angels-induction-furnace"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-induction-furnace"].ingredients = vgal.build.io({
         { "iron-plate",         10 },
         { "electronic-circuit", 5 },
         { "iron-gear-wheel",    20 },
         { "stone-brick",        15 },
     })
-    data.raw["recipe"]["angels-chemical-furnace"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-chemical-furnace"].ingredients = vgal.build.io({
         { "iron-plate",         10 },
         { "electronic-circuit", 5 },
         { "stone-brick",        15 },
         { "pipe",               20 },
     })
-    data.raw["recipe"]["angels-casting-machine"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-casting-machine"].ingredients = vgal.build.io({
         { "iron-gear-wheel", 15 },
         { "pipe",            10 },
         { "stone-brick",     5 },
     })
-    data.raw["recipe"]["angels-strand-casting-machine"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-strand-casting-machine"].ingredients = vgal.build.io({
         { "iron-gear-wheel",    15 },
         { "pipe",               10 },
         { "steel-plate",        10 },
         { "electronic-circuit", 12 },
     })
-    data.raw["recipe"]["angels-ore-crusher"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-ore-crusher"].ingredients = vgal.build.io({
         { "iron-gear-wheel",           5 },
         { "iron-plate",                10 },
         { "electronic-circuit",        2 },
         { "angels-burner-ore-crusher", 1 },
     })
-    data.raw["recipe"]["angels-ore-sorting-facility"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-ore-sorting-facility"].ingredients = vgal.build.io({
         { "iron-gear-wheel",    20 },
         { "iron-plate",         25 },
         { "electronic-circuit", 6 },
         { "stone-brick",        20 },
     })
-    data.raw["recipe"]["angels-ore-sorting-facility-2"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-ore-sorting-facility-2"].ingredients = vgal.build.io({
         { "angels-ore-sorting-facility", 1 },
         { "iron-gear-wheel",             25 },
         { "steel-plate",                 10 },
         { "electronic-circuit",          15 },
     })
-    data.raw["recipe"]["angels-ore-floatation-cell"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-ore-floatation-cell"].ingredients = vgal.build.io({
         { "pipe",               20 },
         { "steel-plate",        12 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-ore-leaching-plant"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-ore-leaching-plant"].ingredients = vgal.build.io({
         { "pipe",             30 },
         { "steel-plate",      15 },
         { "concrete",         10 },
         { "advanced-circuit", 10 },
     })
-    data.raw["recipe"]["angels-ore-refinery"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-ore-refinery"].ingredients = vgal.build.io({
         { "iron-gear-wheel",  50 },
         { "steel-plate",      30 },
         { "refined-concrete", 35 },
         { "processing-unit",  10 },
     })
-    data.raw["recipe"]["angels-thermal-bore"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-thermal-bore"].ingredients = vgal.build.io({
         { "steel-plate", 10 },
         { "pipe",        20 },
         { "pump",        5 },
     })
-    data.raw["recipe"]["angels-thermal-extractor"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-thermal-extractor"].ingredients = vgal.build.io({
         { "steel-plate",         25 },
         { "pipe",                20 },
         { "advanced-circuit",    5 },
         { "angels-thermal-bore", 1 },
     })
-    data.raw["recipe"]["angels-filtration-unit"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-filtration-unit"].ingredients = vgal.build.io({
         { "pipe",               20 },
         { "steel-plate",        15 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-crystallizer"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-crystallizer"].ingredients = vgal.build.io({
         { "pipe",               15 },
         { "steel-plate",        20 },
         { "electronic-circuit", 6 },
     })
-    data.raw["recipe"]["angels-ore-processing-machine"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-ore-processing-machine"].ingredients = vgal.build.io({
         { "stone-brick",     15 },
         { "iron-gear-wheel", 20 },
         { "steel-plate",     10 },
     })
-    data.raw["recipe"]["angels-pellet-press"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-pellet-press"].ingredients = vgal.build.io({
         { "concrete",        12 },
         { "iron-gear-wheel", 30 },
         { "steel-plate",     12 },
     })
-    data.raw["recipe"]["angels-powder-mixer"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-powder-mixer"].ingredients = vgal.build.io({
         { "stone-brick",     8 },
         { "iron-gear-wheel", 10 },
         { "steel-plate",     6 },
     })
-    data.raw["recipe"]["angels-powderizer"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-powderizer"].ingredients = vgal.build.io({
         { "stone-brick",     10 },
         { "iron-gear-wheel", 5 },
         { "steel-plate",     5 },
     })
 
     -- PETRO
-    data.raw["recipe"]["angels-hydro-plant"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-hydro-plant"].ingredients = vgal.build.io({
         { "pipe",               25 },
         { "iron-plate",         15 },
         { "stone-brick",        10 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-salination-plant"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-salination-plant"].ingredients = vgal.build.io({
         { "pipe",             30 },
         { "steel-plate",      25 },
         { "concrete",         20 },
         { "advanced-circuit", 5 },
     })
-    data.raw["recipe"]["angels-cooling-tower"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-cooling-tower"].ingredients = vgal.build.io({
         { "pipe",        15 },
         { "steel-plate", 10 },
         { "pump",        2 },
     })
-    data.raw["recipe"]["angels-clarifier"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-clarifier"].ingredients = vgal.build.io({
         { "pipe",            10 },
         { "iron-gear-wheel", 4 },
         { "iron-plate",      5 },
         { "stone-brick",     10 },
     })
-    data.raw["recipe"]["angels-flare-stack"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-flare-stack"].ingredients = vgal.build.io({
         { "pipe",         12 },
         { "stone-brick",  15 },
         { "copper-cable", 10 },
     })
-    data.raw["recipe"]["angels-ground-water-pump"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-ground-water-pump"].ingredients = vgal.build.io({
         { "pipe",            5 },
         { "iron-gear-wheel", 2 },
         { "stone-brick",     5 },
     })
-    data.raw["recipe"]["angels-seafloor-pump"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-seafloor-pump"].ingredients = vgal.build.io({
         { "pipe",            8 },
         { "iron-gear-wheel", 5 },
         { "stone-brick",     10 },
     })
-    data.raw["recipe"]["angels-sea-pump"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-sea-pump"].ingredients = vgal.build.io({
         { "angels-seafloor-pump", 1 },
         { "iron-gear-wheel",      20 },
         { "concrete",             10 },
         { "steel-plate",          15 },
     })
-    data.raw["recipe"]["angels-sea-pump"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-sea-pump"].ingredients = vgal.build.io({
         { "angels-seafloor-pump", 1 },
         { "iron-gear-wheel",      20 },
         { "concrete",             10 },
         { "steel-plate",          15 },
     })
-    data.raw["recipe"]["angels-washing-plant"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-washing-plant"].ingredients = vgal.build.io({
         { "pipe",               20 },
         { "iron-plate",         25 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-washing-plant"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-washing-plant"].ingredients = vgal.build.io({
         { "pipe",               20 },
         { "iron-plate",         25 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-electrolyser"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-electrolyser"].ingredients = vgal.build.io({
         { "pipe",               10 },
         { "iron-plate",         25 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-electrolyser-2"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-electrolyser-2"].ingredients = vgal.build.io({
         { "angels-electrolyser", 1 },
         { "steel-plate",         20 },
         { "electronic-circuit",  10 },
     })
-    data.raw["recipe"]["angels-electric-boiler"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-electric-boiler"].ingredients = vgal.build.io({
         { "boiler",             1 },
         { "electronic-circuit", 5 },
         { "steel-plate",        8 },
         { "copper-plate",       10 },
     })
-    data.raw["recipe"]["angels-air-filter"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-air-filter"].ingredients = vgal.build.io({
         { "pipe",               8 },
         { "iron-gear-wheel",    10 },
         { "stone-brick",        15 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-liquifier"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-liquifier"].ingredients = vgal.build.io({
         { "pipe",               2 },
         { "iron-gear-wheel",    5 },
         { "iron-plate",         10 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-liquifier-2"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-liquifier-2"].ingredients = vgal.build.io({
         { "angels-liquifier",   1 },
         { "iron-gear-wheel",    15 },
         { "steel-plate",        10 },
         { "electronic-circuit", 8 },
     })
-    data.raw["recipe"]["chemical-plant"].ingredients = vgal.build.table({
+    data.raw["recipe"]["chemical-plant"].ingredients = vgal.build.io({
         { "pipe",               5 },
         { "iron-gear-wheel",    5 },
         { "iron-plate",         15 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-chemical-plant-2"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-chemical-plant-2"].ingredients = vgal.build.io({
         { "chemical-plant",     1 },
         { "iron-gear-wheel",    15 },
         { "steel-plate",        10 },
         { "electronic-circuit", 8 },
     })
-    data.raw["recipe"]["angels-advanced-chemical-plant"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-advanced-chemical-plant"].ingredients = vgal.build.io({
         { "pipe",               8 },
         { "iron-gear-wheel",    15 },
         { "steel-plate",        25 },
         { "electronic-circuit", 10 },
     })
-    data.raw["recipe"]["angels-advanced-chemical-plant-2"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-advanced-chemical-plant-2"].ingredients = vgal.build.io({
         { "angels-advanced-chemical-plant", 1 },
         { "steel-plate",                    25 },
         { "concrete",                       20 },
         { "processing-unit",                5 },
     })
-    data.raw["recipe"]["oil-refinery"].ingredients = vgal.build.table({
+    data.raw["recipe"]["oil-refinery"].ingredients = vgal.build.io({
         { "steel-plate",        15 },
         { "stone-brick",        10 },
         { "pipe",               10 },
         { "electronic-circuit", 10 },
     })
-    data.raw["recipe"]["angels-gas-refinery-small"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-gas-refinery-small"].ingredients = vgal.build.io({
         { "steel-plate",        10 },
         { "stone-brick",        15 },
         { "pipe",               12 },
         { "electronic-circuit", 10 },
     })
-    data.raw["recipe"]["angels-gas-refinery"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-gas-refinery"].ingredients = vgal.build.io({
         { "steel-plate",      25 },
         { "concrete",         30 },
         { "pipe",             30 },
         { "advanced-circuit", 10 },
     })
-    data.raw["recipe"]["angels-separator"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-separator"].ingredients = vgal.build.io({
         { "pipe",               10 },
         { "iron-gear-wheel",    5 },
         { "steel-plate",        8 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-separator-2"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-separator-2"].ingredients = vgal.build.io({
         { "angels-separator", 1 },
         { "concrete",         20 },
         { "steel-plate",      12 },
         { "advanced-circuit", 5 },
     })
-    data.raw["recipe"]["angels-steam-cracker"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-steam-cracker"].ingredients = vgal.build.io({
         { "pipe",               10 },
         { "iron-gear-wheel",    20 },
         { "steel-plate",        25 },
@@ -354,106 +354,106 @@ do
     })
 
     -- BIO
-    data.raw["recipe"]["angels-crop-farm"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-crop-farm"].ingredients = vgal.build.io({
         { "stone-brick",        10 },
         { "steel-plate",        10 },
         { "angels-solid-soil",  10 },
         { "electronic-circuit", 2 },
     })
-    data.raw["recipe"]["angels-temperate-farm"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-temperate-farm"].ingredients = vgal.build.io({
         { "concrete",                          10 },
         { "angels-solid-soil",                 20 },
         { "angels-solid-alienated-fertilizer", 1 },
         { "advanced-circuit",                  2 },
         { "angels-crop-farm",                  1 },
     })
-    data.raw["recipe"]["angels-desert-farm"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-desert-farm"].ingredients = vgal.build.io({
         { "concrete",                          10 },
         { "angels-solid-sand",                 20 },
         { "angels-solid-alienated-fertilizer", 1 },
         { "advanced-circuit",                  2 },
         { "angels-crop-farm",                  1 },
     })
-    data.raw["recipe"]["angels-swamp-farm"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-swamp-farm"].ingredients = vgal.build.io({
         { "concrete",                          10 },
         { "angels-solid-mud",                  20 },
         { "angels-solid-alienated-fertilizer", 1 },
         { "advanced-circuit",                  2 },
         { "angels-crop-farm",                  1 },
     })
-    data.raw["recipe"]["angels-seed-extractor"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-seed-extractor"].ingredients = vgal.build.io({
         { "iron-gear-wheel",    10 },
         { "steel-plate",        5 },
         { "electronic-circuit", 2 },
     })
-    data.raw["recipe"]["angels-composter"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-composter"].ingredients = vgal.build.io({
         { "iron-gear-wheel",    10 },
         { "iron-plate",         8 },
         { "electronic-circuit", 2 },
         { "stone-brick",        5 },
     })
-    data.raw["recipe"]["angels-bio-processor"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-bio-processor"].ingredients = vgal.build.io({
         { "iron-gear-wheel",    10 },
         { "steel-plate",        10 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-bio-press"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-bio-press"].ingredients = vgal.build.io({
         { "iron-gear-wheel",    12 },
         { "steel-plate",        10 },
         { "electronic-circuit", 2 },
         { "pipe",               5 },
     })
-    data.raw["recipe"]["angels-nutrient-extractor"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-nutrient-extractor"].ingredients = vgal.build.io({
         { "iron-gear-wheel",    10 },
         { "steel-plate",        10 },
         { "electronic-circuit", 5 },
         { "pipe",               5 },
     })
-    data.raw["recipe"]["angels-algae-farm"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-algae-farm"].ingredients = vgal.build.io({
         { "stone-brick",        10 },
         { "iron-plate",         15 },
         { "electronic-circuit", 5 },
         { "pipe",               10 },
     })
-    data.raw["recipe"]["angels-algae-farm-2"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-algae-farm-2"].ingredients = vgal.build.io({
         { "angels-algae-farm",  1 },
         { "steel-plate",        15 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-bio-generator-temperate-1"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-bio-generator-temperate-1"].ingredients = vgal.build.io({
         { "stone-brick",        10 },
         { "iron-plate",         15 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-bio-arboretum-1"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-bio-arboretum-1"].ingredients = vgal.build.io({
         { "stone-brick",        10 },
         { "iron-plate",         15 },
         { "angels-solid-soil",  10 },
         { "electronic-circuit", 5 },
     })
-    data.raw["recipe"]["angels-bio-refugium-fish"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-bio-refugium-fish"].ingredients = vgal.build.io({
         { "steel-plate",        20 },
         { "pipe",               15 },
         { "electronic-circuit", 10 },
     })
-    data.raw["recipe"]["angels-bio-butchery"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-bio-butchery"].ingredients = vgal.build.io({
         { "steel-plate",        10 },
         { "iron-gear-wheel",    12 },
         { "stone-brick",        5 },
         { "electronic-circuit", 2 },
     })
-    data.raw["recipe"]["angels-bio-hatchery"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-bio-hatchery"].ingredients = vgal.build.io({
         { "steel-plate", 10 },
         { "concrete",    15 },
         { "small-lamp",  6 },
     })
-    data.raw["recipe"]["angels-bio-refugium-puffer"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-bio-refugium-puffer"].ingredients = vgal.build.io({
         { "concrete",         15 },
         { "steel-plate",      20 },
         { "pipe",             15 },
         { "advanced-circuit", 5 },
     })
-    data.raw["recipe"]["angels-bio-refugium-biter"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-bio-refugium-biter"].ingredients = vgal.build.io({
         { "concrete",        15 },
         { "steel-plate",     20 },
         { "pipe",            30 },
@@ -461,7 +461,7 @@ do
     })
 
     -- NUCLEAR
-    data.raw["recipe"]["angels-burner-reactor"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-burner-reactor"].ingredients = vgal.build.io({
         { "concrete",        500 },
         { "processing-unit", 500 },
         { "steel-plate",     350 },
@@ -469,17 +469,17 @@ do
     })
 
     -- STORAGE
-    data.raw["recipe"]["angels-storage-tank-1"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-storage-tank-1"].ingredients = vgal.build.io({
         { "pipe",        50 },
         { "steel-plate", 15 },
         { "stone-brick", 12 },
     })
-    data.raw["recipe"]["angels-storage-tank-2"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-storage-tank-2"].ingredients = vgal.build.io({
         { "pipe",        30 },
         { "steel-plate", 12 },
         { "stone-brick", 10 },
     })
-    data.raw["recipe"]["angels-storage-tank-3"].ingredients = vgal.build.table({
+    data.raw["recipe"]["angels-storage-tank-3"].ingredients = vgal.build.io({
         { "iron-plate",  10 },
         { "steel-plate", 5 },
         { "stone-brick", 5 },
@@ -553,45 +553,45 @@ for _, metal in pairs(vgal.defines.metals) do
 end
 
 -- restore processing recipes.
-data.raw["recipe"]["angels-ore3-crushed-processing"].results = vgal.build.table({
+data.raw["recipe"]["angels-ore3-crushed-processing"].results = vgal.build.io({
     { "iron-ore",            1 },
     { "angels-iron-nugget",  1 },
     { "angels-iron-pebbles", 2 },
 })
-data.raw["recipe"]["angels-ore3-chunk-processing"].results = vgal.build.table({
+data.raw["recipe"]["angels-ore3-chunk-processing"].results = vgal.build.io({
     { "iron-ore",            1 },
     { "angels-iron-nugget",  2 },
     { "angels-iron-pebbles", 4 },
 })
-data.raw["recipe"]["angels-ore3-crystal-processing"].results = vgal.build.table({
+data.raw["recipe"]["angels-ore3-crystal-processing"].results = vgal.build.io({
     { "iron-ore",            2 },
     { "angels-iron-nugget",  3 },
     { "angels-iron-pebbles", 3 },
     { "angels-iron-slag",    1 },
 })
-data.raw["recipe"]["angels-ore3-pure-processing"].results = vgal.build.table({
+data.raw["recipe"]["angels-ore3-pure-processing"].results = vgal.build.io({
     { "iron-ore",            2 },
     { "angels-iron-nugget",  5 },
     { "angels-iron-pebbles", 3 },
     { "angels-iron-slag",    1 },
 })
 
-data.raw["recipe"]["angels-ore2-crushed-processing"].results = vgal.build.table({
+data.raw["recipe"]["angels-ore2-crushed-processing"].results = vgal.build.io({
     { "copper-ore",           2 },
     { "angels-copper-nugget", 1 },
 })
-data.raw["recipe"]["angels-ore2-chunk-processing"].results = vgal.build.table({
+data.raw["recipe"]["angels-ore2-chunk-processing"].results = vgal.build.io({
     { "copper-ore",            2 },
     { "angels-copper-nugget",  2 },
     { "angels-copper-pebbles", 2 },
 })
-data.raw["recipe"]["angels-ore2-crystal-processing"].results = vgal.build.table({
+data.raw["recipe"]["angels-ore2-crystal-processing"].results = vgal.build.io({
     { "copper-ore",            4 },
     { "angels-copper-nugget",  2 },
     { "angels-copper-pebbles", 3 },
     { "angels-copper-slag",    1 },
 })
-data.raw["recipe"]["angels-ore2-pure-processing"].results = vgal.build.table({
+data.raw["recipe"]["angels-ore2-pure-processing"].results = vgal.build.io({
     { "copper-ore",            3 },
     { "angels-copper-nugget",  4 },
     { "angels-copper-pebbles", 5 },
@@ -599,7 +599,7 @@ data.raw["recipe"]["angels-ore2-pure-processing"].results = vgal.build.table({
 })
 
 for _, metal in pairs(vgal.defines.metals) do
-    data.raw["recipe"][metal.plate].ingredients = vgal.build.table({
+    data.raw["recipe"][metal.plate].ingredients = vgal.build.io({
         { metal.crushed, 3 }
     })
 end
@@ -809,12 +809,11 @@ vgal.recipe.add_result("angels-wood-sawing-3", { "angels-solid-leafs", nil, { am
 -- make default calcium carbonate recipe the limestone one
 do
     local calcium_carbonate_recipe = data.raw["recipe"]["angels-solid-calcium-carbonate"]
-    calcium_carbonate_recipe.ingredients = vgal.build.table({
-        { "angels-solid-lime", 1 },
-    }, {
+    calcium_carbonate_recipe.ingredients = vgal.build.io({
+        { "angels-solid-lime",         1 },
         { "angels-gas-carbon-dioxide", 20 }, -- more that creating lime ouputs, lossy process (can be fixed with prod tho.. I'm allowing it)
     })
-    calcium_carbonate_recipe.results = vgal.build.table({
+    calcium_carbonate_recipe.results = vgal.build.io({
         { "angels-solid-calcium-carbonate", 1 },
     })
     calcium_carbonate_recipe.energy_required = 2
@@ -823,17 +822,15 @@ do
 end
 
 -- normalize alien spores recipe
-data.raw["recipe"]["angels-alien-spores"].results = vgal.build.table({
-}, {
+data.raw["recipe"]["angels-alien-spores"].results = vgal.build.io({
     { "angels-alien-spores",       20 }, -- prev way more (75)
     { "angels-water-yellow-waste", 80, { allow_productivity = false } },
 })
 -- compensate bacteria recipe a bit (and remove hydrochloric acid ingredient)
-data.raw["recipe"]["angels-alien-bacteria"].ingredients = vgal.build.table({
+data.raw["recipe"]["angels-alien-bacteria"].ingredients = vgal.build.io({
     { "angels-solid-calcium-carbonate", 1 },
-}, {
-    { "angels-alien-spores", 10 },                              -- prev 50
-    { "angels-water-saline", 50 },                              -- a bit more streamlined with how you could be using it from brown algae already for the calcium carbonate
+    { "angels-alien-spores",            10 },                   -- prev 50
+    { "angels-water-saline",            50 },                   -- a bit more streamlined with how you could be using it from brown algae already for the calcium carbonate
 })
 data.raw["recipe"]["angels-alien-bacteria"].energy_required = 5 -- prev 3
 -- vgal.recipe.set_result_amount("angels-alien-bacteria", 1)
@@ -855,16 +852,15 @@ vgal.recipe.set_result_amount("angels-catalyst-metal-yellow", 10)
 vgal.recipe.set_result_amount("angels-catalyst-metal-blue", 10)
 
 -- fix cement/concrete recipes
-data.raw["recipe"]["angels-solid-cement"].ingredients = vgal.build.table({
+data.raw["recipe"]["angels-solid-cement"].ingredients = vgal.build.io({
     { "angels-stone-crushed", 1 },
     { "angels-solid-lime",    1 },
 })
 data.raw["recipe"]["angels-solid-cement"].energy_required = 1 -- prev 4 (no one is gonna pave their base if u have to place 1000(~40) powdermixers for like a t1 belt of concrete)
-data.raw["recipe"]["concrete"].ingredients = vgal.build.table({
+data.raw["recipe"]["concrete"].ingredients = vgal.build.io({
     { "angels-iron-pebbles", 1 },
     { "stone-brick",         5 },
-}, {
-    { "water", 100 },
+    { "water",               100 },
 })
 vgal.recipe.multiply("angels-concrete-brick", 1.25)
 data.raw["recipe"]["angels-concrete-brick"].energy_required = 5
@@ -905,7 +901,7 @@ end
 vgal.recipe.replace_ingredient("angels-filter-ceramic", "angels-solid-aluminium-oxide", "angels-clay-brick")
 
 -- tweak atmospheric separation recipe (it will also work better with space age this way, gleba will have the higher ox yield one)
-data.raw["recipe"]["angels-air-separation"].results = vgal.build.table({}, {
+data.raw["recipe"]["angels-air-separation"].results = vgal.build.io({
     { "angels-gas-oxygen",   20 },
     { "angels-gas-nitrogen", 80 },
 })
@@ -914,9 +910,8 @@ data.raw["recipe"]["angels-air-separation"].results = vgal.build.table({}, {
 data.raw["recipe"]["angels-pellet-coke"].categories = { "angels-pellet-pressing" }
 
 -- buff sodium carbonate from algae recipe so it can compete with the other recipes
-data.raw["recipe"]["angels-algae-brown-burning-wash"].ingredients = vgal.build.table({
-    { "angels-algae-brown", 6 },
-}, {
+data.raw["recipe"]["angels-algae-brown-burning-wash"].ingredients = vgal.build.io({
+    { "angels-algae-brown",    6 },
     { "angels-water-purified", 20 },
 })
 data.raw["recipe"]["angels-algae-brown-burning-wash"].energy_required = 3
@@ -977,9 +972,8 @@ vgal.recipe.set_result_amount("angels-solid-salt", 2)
 -- make metal solution recipes more suitable for voiding
 for _, metal in pairs(vgal.defines.metals) do
     data.raw.recipe[metal.solution].energy_required = 1
-    data.raw.recipe[metal.solution].ingredients = vgal.build.table({
-        { metal.pebbles, 6 },
-    }, {
+    data.raw.recipe[metal.solution].ingredients = vgal.build.io({
+        { metal.pebbles,           6 },
         { "angels-water-purified", 60 },
         { "angels-gas-chlorine",   15 },
     })
@@ -1007,10 +1001,9 @@ for _, water_name in ipairs({
     data.raw["recipe"][water_name].energy_required = 3 -- og; 5
 
     -- buff mud yield a bit (past prod, so fix that)
-    data.raw["recipe"][water_name].results = vgal.build.table({
+    data.raw["recipe"][water_name].results = vgal.build.io({
         { "angels-solid-mud", nil, { amount_min = 1, amount_max = 2 } },
-    }, {
-        { water_name, 200, { allow_productivity = false } }
+        { water_name,         200, { allow_productivity = false } }
     })
 end
 data.raw["recipe"]["angels-solid-clay"].energy_required = 3      -- og; 5
@@ -1037,22 +1030,20 @@ data.raw["recipe"]["angels-catalyst-metal-carrier"].energy_required = 1
 --     { "angels-gas-methane",          70 },                                -- 35
 -- })
 -- nerfed:
-data.raw["recipe"]["angels-coal-cracking-1"].results = vgal.build.table({ -- ingredients value: 30
-    { "angels-solid-coke", 4 },
-}, {
+data.raw["recipe"]["angels-coal-cracking-1"].results = vgal.build.io({ -- ingredients value: 30
+    { "angels-solid-coke",           4 },
     { "angels-gas-hydrogen-sulfide", 25 },
     { "angels-gas-benzene",          20 },
     { "angels-gas-methane",          40 },
 })
 
 -- more coal nerfs
-data.raw["recipe"]["angels-coal-cracking-2"].results = vgal.build.table({ -- ingredients value: 30
+data.raw["recipe"]["angels-coal-cracking-2"].results = vgal.build.io({ -- ingredients value: 30
     { "angels-solid-coke",             4 },
     { "angels-catalyst-metal-carrier", 1 },
-}, {
-    { "angels-liquid-naphtha",     40 }, -- og 60
-    { "angels-liquid-ngl",         30 },
-    { "angels-liquid-mineral-oil", 15 }, -- og 20
+    { "angels-liquid-naphtha",         40 }, -- og 60
+    { "angels-liquid-ngl",             30 },
+    { "angels-liquid-mineral-oil",     15 }, -- og 20
 })
 
 -- the third cracking recipe is kinda inefficient (for syngas) so it can stay as is
@@ -1061,7 +1052,7 @@ data.raw["recipe"]["angels-coal-cracking-2"].results = vgal.build.table({ -- ing
 data.raw["recipe"]["angels-fermentation-corn"].energy_required = 3 -- og; 4
 
 -- bio tile changes
-data.raw["recipe"]["angels-bio-tile"].ingredients = vgal.build.table({
+data.raw["recipe"]["angels-bio-tile"].ingredients = vgal.build.io({
     { "angels-solid-soil",     5 },
     { "angels-concrete-brick", 1 },
     -- { "angels-alienated-fertilizer", 1 },
@@ -1070,12 +1061,11 @@ data.raw["recipe"]["angels-bio-tile"].energy_required = 5
 vgal.recipe.set_result_amount("angels-bio-tile", 1)
 
 -- liquid concrete recipe fixes
-data.raw["recipe"]["angels-liquid-concrete"].ingredients = vgal.build.table({
+data.raw["recipe"]["angels-liquid-concrete"].ingredients = vgal.build.io({
     { "angels-slag",         1 },
     { "angels-solid-cement", 2 },
     -- { "angels-alienated-fertilizer", 1 },
-}, {
-    { "water", 40 }
+    { "water",               40 }
 })
 data.raw["recipe"]["angels-liquid-concrete"].energy_required = 2
 vgal.recipe.set_result_amount("angels-liquid-concrete", 40)
@@ -1100,13 +1090,13 @@ end
 
 do
     local desert_sorting_3_recipe = data.raw["recipe"]["angels-sorting-desert-3"] -- t2
-    desert_sorting_3_recipe.results = vgal.build.table({
+    desert_sorting_3_recipe.results = vgal.build.io({
         { "angels-solid-pips",  24 },                                             -- same as before
         { "angels-solid-fruit", 6 },                                              -- added (removed the 4 crystal dust result)
     })
 
     local desert_temperate_4_recipe = data.raw["recipe"]["angels-sorting-temperate-4"] -- t3
-    desert_temperate_4_recipe.results = vgal.build.table({
+    desert_temperate_4_recipe.results = vgal.build.io({
         { "angels-solid-pips",   16 },                                                 -- og; 28
         { "angels-solid-fruit",  8 },                                                  -- og; 10
         { "angels-crystal-dust", 4 },                                                  -- added

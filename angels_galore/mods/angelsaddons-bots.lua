@@ -58,7 +58,7 @@ local function process_expander_tiers(expander_list)
         if tier > 1 then
             table.insert(ingredients, { expander_list[tier - 1], 2 })
         end
-        data.raw["recipe"][expander_name].ingredients = vgal.build.table(ingredients)
+        data.raw["recipe"][expander_name].ingredients = vgal.build.io(ingredients)
     end
 end
 
@@ -67,18 +67,18 @@ process_expander_tiers(construction_expanders)
 process_expander_tiers(relay_stations)
 
 -- tweak recipe
-data.raw["recipe"]["angels-cargo-box"].ingredients = vgal.build.table({
+data.raw["recipe"]["angels-cargo-box"].ingredients = vgal.build.io({
     { "iron-gear-wheel",    20 },
     { "steel-plate",        25 },
     { "electronic-circuit", 20 },
 })
-data.raw["recipe"]["angels-cargo-roboport"].ingredients = vgal.build.table({
+data.raw["recipe"]["angels-cargo-roboport"].ingredients = vgal.build.io({
     { "iron-gear-wheel",  40 },
     { "steel-plate",      35 },
     { "advanced-circuit", 25 },
     { "concrete",         20 },
 })
-data.raw["recipe"]["angels-cargo-hub"].ingredients = vgal.build.table({
+data.raw["recipe"]["angels-cargo-hub"].ingredients = vgal.build.io({
     { "iron-gear-wheel",  60 },
     { "steel-plate",      45 },
     { "processing-unit",  30 },

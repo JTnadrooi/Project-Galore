@@ -13,8 +13,6 @@ vgal.extend({
         },
         results = {
             { "angels-solid-salt", 1 }, -- 40cl
-        },
-        fluid_results = {
             { "angels-gas-oxygen", 30 },
         },
         category = "angels-liquifying",
@@ -33,15 +31,11 @@ vgal.extend({
         energy_required = 2,
         technology = "angels-chlorine-processing-4",
         ingredients = {
-            { "angels-solid-sodium-chlorate", 2 }, -- 10 cl
-        },
-        fluid_ingredients = {
+            { "angels-solid-sodium-chlorate",    2 },  -- 10 cl
             { "angels-liquid-hydrochloric-acid", 50 }, -- 50 cl, 50water
         },
         results = {
-            { "angels-solid-salt", 1 }, -- 40 cl
-        },
-        fluid_results = {
+            { "angels-solid-salt",        1 },  -- 40 cl
             { "angels-water-green-waste", 50 }, -- 10 cl, 50water
         },
         category = "chemistry",
@@ -58,16 +52,12 @@ vgal.extend({
         energy_required = 2,
         technology = "angels-chlorine-processing-3",
         ingredients = {
-            { "angels-solid-calcium-carbonate", 4 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-calcium-carbonate",  4 },
             { "angels-liquid-hydrochloric-acid", 20 },
         },
         results = {
             { "angels-solid-calcium-chloride", 4 },
-        },
-        fluid_results = {
-            { "angels-gas-carbon-dioxide", 50 },
+            { "angels-gas-carbon-dioxide",     50 },
             -- { "angels-water-purified",     20 },
         },
         category = "chemistry",
@@ -103,11 +93,11 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = "angels-chlorine-processing-2",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-gas-methanol",             40 },
             { "angels-liquid-hydrochloric-acid", 60 },
         },
-        fluid_results = {
+        results = {
             { "angels-gas-chlor-methane", 100 },
             { "angels-water-purified",    40 },
         },
@@ -126,11 +116,11 @@ vgal.extend({
     --     }),
     --     energy_required = 2,
     --     technology = "angels-bio-fermentation",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "angels-gas-ethanol", 50 },
     --         { "angels-gas-oxygen",  25 },
     --     },
-    --     fluid_results = {
+    --     results = {
     --         { "angels-liquid-acetic-acid", 50 },
     --         { "angels-water-purified",     25 },
     --     },
@@ -149,11 +139,11 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = "angels-bio-fermentation",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-gas-ethanol", 50 },
             { "angels-gas-oxygen",  20 },
         },
-        fluid_results = {
+        results = {
             { "angels-liquid-acetic-acid", 40 },
             { "angels-water-purified",     20 },
         },
@@ -172,22 +162,17 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = "angels-bio-plastic-1",
-        fluid_ingredients = {
-            { "angels-liquid-acetic-acid", 50 },
-        },
         ingredients = {
-            { "angels-solid-lime", 1 },
-        },
-        fluid_results = {
-            { "angels-gas-acetone", 100 },
+            { "angels-liquid-acetic-acid", 50 },
+            { "angels-solid-lime",         1 },
         },
         results = {
-            { "angels-solid-calcium-carbonate", 1, { independent_probability = 0.5 } },
+            { "angels-gas-acetone",             100 },
+            { "angels-solid-calcium-carbonate", 1,  { independent_probability = 0.5 } },
         },
         category = "chemistry",
 
         allow_productivity = false,
-        main_product = "angels-gas-acetone"
     },
     {
         name = "angels-gas-ethylene-angels-gas-butane",
@@ -200,23 +185,18 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = "angels-steam-cracking-1",
-        fluid_ingredients = {
-            { "angels-gas-ethylene", 50 },
-            { "angels-gas-hydrogen", 50 },
-        },
         ingredients = {
+            { "angels-gas-ethylene",        50 },
+            { "angels-gas-hydrogen",        50 },
             { "angels-catalyst-metal-blue", 1 },
         },
-        fluid_results = {
-            { "angels-gas-butane", 50 },
-        },
         results = {
+            { "angels-gas-butane",             50 },
             { "angels-catalyst-metal-carrier", 1 },
         },
         category = "chemistry",
 
         allow_productivity = false,
-        main_product = "angels-gas-butane"
     },
     {
         name = "angels-gas-acetone-angels-gas-propene",
@@ -229,24 +209,19 @@ vgal.extend({
         }),
         energy_required = 2,
         technologies = { "angels-bio-nutrient-paste", "angels-advanced-chemistry-3" },
-        fluid_ingredients = {
-            { "angels-gas-acetone",  50 },
-            { "angels-gas-hydrogen", 30 },
-        },
         ingredients = {
+            { "angels-gas-acetone",           50 },
+            { "angels-gas-hydrogen",          30 },
             { "angels-catalyst-metal-yellow", 1 },
         },
-        fluid_results = {
-            { "angels-gas-propene",    30 },
-            { "angels-water-purified", 20 },
-        },
         results = {
+            { "angels-gas-propene",            30 },
+            { "angels-water-purified",         20 },
             { "angels-catalyst-metal-carrier", 1 },
         },
         category = "chemistry",
 
         allow_productivity = false,
-        main_product = "angels-gas-propene",
         -- subgroup = "vgal-CH-gas-from-O",
         -- order = "b[O]-a"
     },
@@ -261,25 +236,20 @@ vgal.extend({
         }),
         energy_required = 2,
         technologies = { "angels-bio-nutrient-paste", "angels-advanced-chemistry-3" },
-        fluid_ingredients = {
-            { "angels-gas-acetone", 50 },
-            { "angels-gas-ethanol", 50 },
-        },
         ingredients = {
+            { "angels-gas-acetone",           50 },
+            { "angels-gas-ethanol",           50 },
             { "angels-catalyst-metal-yellow", 1 },
         },
-        fluid_results = {
-            { "angels-gas-propene",    50 },
-            { "angels-gas-ethylene",   30 },
-            { "angels-water-purified", 20 },
-        },
         results = {
+            { "angels-gas-propene",            50 },
+            { "angels-gas-ethylene",           30 },
+            { "angels-water-purified",         20 },
             { "angels-catalyst-metal-carrier", 1 },
         },
         category = "angels-advanced-chemistry",
 
         allow_productivity = false,
-        main_product = "angels-gas-propene",
         -- subgroup = "vgal-CH-gas-from-O",
         -- order = "b[O]-b"
     },
@@ -294,24 +264,19 @@ vgal.extend({
         }),
         energy_required = 4,
         technology = "angels-steam-cracking-1",
-        fluid_ingredients = {
-            { "angels-liquid-naphtha", 100 },
-            { "steam",                 100 },
-        },
         ingredients = {
+            { "angels-liquid-naphtha",      100 },
+            { "steam",                      100 },
             { "angels-catalyst-metal-blue", 1 },
         },
-        fluid_results = {
-            { "angels-gas-ethylene", 40 },
-            { "angels-gas-propene",  50 },
-        },
         results = {
+            { "angels-gas-ethylene",           40 },
+            { "angels-gas-propene",            50 },
             { "angels-catalyst-metal-carrier", 1 },
         },
         category = "angels-steam-cracking",
 
         allow_productivity = false,
-        main_product = "angels-gas-ethylene",
         subgroup = "vgal-CH-gas-from-O",
         order = "a[steam-cracking]-ab"
     },
@@ -326,23 +291,18 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = "angels-advanced-chemistry-3",
-        fluid_ingredients = {
-            { "angels-liquid-toluene", 100 },
-            { "angels-gas-hydrogen",   50 },
-        },
         ingredients = {
+            { "angels-liquid-toluene",        100 },
+            { "angels-gas-hydrogen",          50 },
             { "angels-catalyst-metal-yellow", 1 },
         },
-        fluid_results = {
-            { "angels-gas-benzene", 100 },
-        },
         results = {
+            { "angels-gas-benzene",            100 },
             { "angels-catalyst-metal-carrier", 1 },
         },
         category = "chemistry",
 
         allow_productivity = false,
-        main_product = "angels-gas-benzene"
     },
     -- {
     --     name = "angels-liquid-toluene-angels-gas-benzene-angels-gas-methane",
@@ -355,11 +315,11 @@ vgal.extend({
     --     }),
     --     energy_required = 4,
     --     technology = "angels-advanced-chemistry-3",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "angels-liquid-toluene", 100 },
     --         { "angels-gas-hydrogen",   50 },
     --     },
-    --     fluid_results = {
+    --     results = {
     --         { "angels-gas-benzene", 50 },
     --         { "angels-gas-methane", 20 },
     --     },
@@ -367,7 +327,6 @@ vgal.extend({
 
     --     allow_productivity = false,
     --     show_amount_in_title = false,
-    --     main_product = "angels-gas-benzene",
     --     groups = { "vgal-unsure" }
     -- },
     -- { -- commentedbc: syngas
@@ -381,10 +340,10 @@ vgal.extend({
     --     }),
     --     energy_required = 4,
     --     technology = "angels-bio-pressing-1",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "angels-liquid-vegetable-oil", 100 },
     --     },
-    --     fluid_results = {
+    --     results = {
     --         { "angels-gas-propene",     50 },
     --         { "angels-gas-ethylene",    10 },
     --         { "angels-liquid-fuel-oil", 20 },
@@ -405,10 +364,10 @@ vgal.extend({
     --     }),
     --     energy_required = 2,
     --     technology = "angels-bio-plastic-2",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "angels-liquid-nutrient-pulp", 100 },
     --     },
-    --     fluid_results = {
+    --     results = {
     --         { "angels-liquid-propionic-acid", 40 },
     --         { "angels-liquid-acetic-acid",    15 },
     --         { "angels-gas-carbon-dioxide",    15 },
@@ -432,11 +391,11 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = { "angels-bio-plastic-2", "angels-explosives-2", "angels-advanced-gas-processing" },
-        fluid_ingredients = {
+        ingredients = {
             { "angels-liquid-nutrient-pulp", 100 },
             { "angels-liquid-glycerol",      15 },
         },
-        fluid_results = {
+        results = {
             { "angels-liquid-propionic-acid", 45 },
             { "angels-gas-propene",           30 },
         },
@@ -458,10 +417,8 @@ vgal.extend({
         energy_required = 8,
         technology = "angels-explosives-2",
         ingredients = {
-            { "angels-solid-ammonium-nitrate", 1 }, -- 50
-        },
-        fluid_ingredients = {
-            { "angels-liquid-fuel-oil", 20 }, -- 16
+            { "angels-solid-ammonium-nitrate", 1 },  -- 50
+            { "angels-liquid-fuel-oil",        20 }, -- 16
         },
         results = {
             { "explosives", 4 }, -- 60
@@ -483,7 +440,7 @@ vgal.extend({
         ingredients = {
             { "angels-solid-coke", 2 },
         },
-        fluid_results = {
+        results = {
             { "angels-gas-carbon-dioxide", 75 },
         },
         category = "angels-liquifying",
@@ -501,21 +458,16 @@ vgal.extend({
         technology = "angels-coal-processing-2",
         ingredients = {
             { "angels-solid-carbon",        1 },
+            { "angels-gas-carbon-dioxide",  50 },
             { "angels-catalyst-metal-blue", 1 },
         },
-        fluid_ingredients = {
-            { "angels-gas-carbon-dioxide", 50 },
-        },
         results = {
+            { "angels-gas-carbon-monoxide",    100 },
             { "angels-catalyst-metal-carrier", 1 },
-        },
-        fluid_results = {
-            { "angels-gas-carbon-monoxide", 100 },
         },
         category = "angels-liquifying",
 
         allow_productivity = false,
-        main_product = "angels-gas-carbon-monoxide",
     },
     {
         name = "angels-gas-carbon-monoxide-angels-solid-carbon",
@@ -529,22 +481,17 @@ vgal.extend({
         energy_required = 2,
         technology = "angels-coal-processing-2",
         ingredients = {
+            { "angels-gas-carbon-monoxide",   100 },
             { "angels-catalyst-metal-yellow", 1 },
         },
-        fluid_ingredients = {
-            { "angels-gas-carbon-monoxide", 100 },
-        },
         results = {
+            { "angels-gas-carbon-dioxide",     50 },
             { "angels-solid-carbon",           1 },
             { "angels-catalyst-metal-carrier", 1 },
-        },
-        fluid_results = {
-            { "angels-gas-carbon-dioxide", 50 },
         },
         category = "angels-liquifying",
 
         allow_productivity = false,
-        main_product = "angels-gas-carbon-dioxide",
     },
     {
         name = "angels-solid-ammonium-perchlorate-rocket-fuel",
@@ -576,7 +523,7 @@ vgal.extend({
         }),
         energy_required = 15,
         technology = "rocket-fuel",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-gas-hydrogen", 1500 },
             { "angels-gas-oxygen",   200 },
         },
@@ -597,9 +544,7 @@ vgal.extend({
         energy_required = 4,
         technology = { "flammables", "angels-steam-cracking-1" },
         ingredients = {
-            { "angels-solid-coke", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-coke",  1 },
             { "angels-gas-propene", 50 },
         },
         results = {
@@ -622,7 +567,7 @@ vgal.extend({
     --     ingredients = {
     --         { "angels-electrode", 1 },
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "angels-gas-carbon-dioxide", 50 },
     --         { "angels-water-saline",       50 },
     --     },
@@ -630,14 +575,13 @@ vgal.extend({
     --         { "angels-electrode-used",         1 },
     --         { "angels-solid-sodium-hydroxide", 1 }
     --     },
-    --     fluid_results = {
+    --     results = {
     --         { "angels-gas-carbon-monoxide", 50 },
     --         { "angels-gas-chlorine",        50 },
     --         -- { "angels-liquid-aqueous-",                 50 },
     --     },
     --     category = "angels-petrochem-electrolyser",
 
-    --     main_product = "angels-gas-carbon-monoxide"
     -- },
     {
         name = "angels-solid-calcium-carbonate-angels-gas-methane",
@@ -652,20 +596,14 @@ vgal.extend({
         technology = "angels-gas-processing",
         ingredients = {
             { "angels-solid-calcium-carbonate", 2 }, -- 40 carbon dioxide
-        },
-        fluid_ingredients = {
-            { "angels-gas-hydrogen", 30 },
+            { "angels-gas-hydrogen",            30 },
         },
         results = {
-            { "angels-solid-lime", 1 },
-        },
-        fluid_results = {
             { "angels-gas-methane", 50 },
+            { "angels-solid-lime",  1 },
             -- { "angels-water-purified", 20 },
         },
         category = "angels-liquifying",
-
-        main_product = "angels-gas-methane"
     },
 }, {
     type = "recipe",

@@ -30,9 +30,7 @@ vgal.extend({
         ingredients = {
             { "iron-gear-wheel", 1 },
             { "pipe",            2 },
-            { "iron-plate",      2 }
-        },
-        fluid_ingredients = {
+            { "iron-plate",      2 },
             { "lubricant", 5 }
         },
         results = {
@@ -72,7 +70,7 @@ vgal.extend({
     --         { "copper-cable",       15 }, -- 75
     --         { "plastic-bar",        2 },  -- 30
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "lubricant", 10 } -- 20
     --     },
     --     results = {

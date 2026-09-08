@@ -45,7 +45,7 @@ vgal.extend({
         ingredients = {
             { "angels-bio-raw-meat", 5 },
         },
-        fluid_results = {
+        results = {
             { "angels-liquid-nutrient-pulp", 20 },
         },
         order = "a[nutrient-extraction]-g",

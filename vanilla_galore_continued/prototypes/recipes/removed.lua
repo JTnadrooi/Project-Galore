@@ -30,12 +30,10 @@ vgal.extend({
         }),
         energy_required = 18,
         ingredients = {
-            { "plastic-bar",     2 }, -- 30
-            { "iron-gear-wheel", 6 }, -- 120
-            { "iron-plate",      5 }, -- 60
-        },
-        fluid_ingredients = {
-            { "lubricant", 20 }, -- 50
+            { "plastic-bar",     2 },  -- 30
+            { "iron-gear-wheel", 6 },  -- 120
+            { "iron-plate",      5 },  -- 60
+            { "lubricant",       20 }, -- 50
         },
         results = {
             { "advanced-circuit", 3 } -- 300
@@ -73,10 +71,8 @@ vgal.extend({
         energy_required = 0.5,
         ingredients = {
             { "iron-gear-wheel", 1 },
-            { "iron-stick",      1 }
-        },
-        fluid_ingredients = {
-            { "lubricant", 1 },
+            { "iron-stick",      1 },
+            { "lubricant",       1 },
         },
         results = {
             { "electronic-circuit", 1 }
@@ -120,9 +116,7 @@ vgal.extend({
             { "engine-unit",      2 }, -- 180
             { "iron-gear-wheel",  6 }, -- 120
             { "advanced-circuit", 4 }, -- 400
-        },
-        fluid_ingredients = {
-            { "sulfuric-acid", 5 }, -- 10
+            { "sulfuric-acid",    5 }, -- 10
         },
         results = {
             { "processing-unit", 1 }, -- 710
@@ -259,9 +253,7 @@ vgal.extend({
         technology = "rocket-fuel",
         ingredients = {
             { "solid-fuel", 8 },
-        },
-        fluid_ingredients = {
-            { "heavy-oil", 50 },
+            { "heavy-oil",  50 },
         },
         results = {
             { "rocket-fuel", 1 },
@@ -305,11 +297,9 @@ vgal.extend({
         }),
         technology = "nuclear-power",
         ingredients = {
-            { "steel-plate", 2 },
-            { "uranium-235", 1 },
-            { "uranium-238", 25 },
-        },
-        fluid_ingredients = {
+            { "steel-plate",   2 },
+            { "uranium-235",   1 },
+            { "uranium-238",   25 },
             { "sulfuric-acid", 20 },
         },
         results = {
@@ -369,9 +359,7 @@ vgal.extend({
             { "steel-plate",      2 },
             { "advanced-circuit", 10 },
             { "fast-splitter",    1 },
-        },
-        fluid_ingredients = {
-            { "lubricant", 80 },
+            { "lubricant",        80 },
         },
         results = {
             { "express-splitter", 1 }

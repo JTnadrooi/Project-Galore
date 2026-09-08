@@ -65,9 +65,7 @@ vgal.extend({
             { "angels-solid-calcium-carbonate", 4 },
         },
         results = {
-            { "angels-solid-lime", 4 },
-        },
-        fluid_results = {
+            { "angels-solid-lime",         4 },
             { "angels-gas-carbon-dioxide", 50 },
         },
         category = "angels-blast-smelting",
@@ -211,7 +209,7 @@ vgal.extend({
     --         -- { "angels-catalysator-green", 1 },
     --         { "angels-solid-sand", 5 },
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "angels-liquid-aqueous-sodium-hydroxide", 10 },
     --     },
     --     results = {
@@ -233,7 +231,7 @@ vgal.extend({
     --         -- { "angels-catalysator-green", 1 },
     --         { "angels-solid-sand", 5 },
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "angels-gas-chlorine", 50 },
     --     },
     --     results = {

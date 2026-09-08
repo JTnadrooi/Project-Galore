@@ -44,9 +44,7 @@ vgal.extend({
         ingredients = {
             { "pentapod-egg", 1 }, -- 200
             { "bioflux",      3 }, -- 180
-        },
-        fluid_ingredients = {
-            { "ammonia", 80 }, -- 160
+            { "ammonia",      80 }, -- 160
         },
         results = {
             { "agricultural-science-pack", 2 }, -- 400 * 1.5 = 600
@@ -71,10 +69,8 @@ vgal.extend({
         energy_required = 4,
         technology = "agricultural-science-pack",
         ingredients = {
-            { "sulfur",    4 },  -- 80gb
-            { "nutrients", 10 }, -- 100
-        },
-        fluid_ingredients = {
+            { "sulfur",        4 },  -- 80gb
+            { "nutrients",     10 }, -- 100
             { "petroleum-gas", 50 }, -- 50
         },
         results = {
@@ -152,7 +148,7 @@ vgal.extend({
     --     category = "organic",
     --     energy_required = 45,
     --     technology = "carbon-fiber",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "light-oil", 20 },
     --     },
     --     ingredients = {
@@ -186,7 +182,7 @@ vgal.extend({
     --         { "superconductor", 1 },  --
     --         { "jelly",          12 }, --
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "light-oil", 30 }, --
     --     },
     --     results = {

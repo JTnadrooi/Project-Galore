@@ -12,8 +12,6 @@ vgal.extend({
             { "plastic-bar",            8 }, -- 120
             { "tungsten-plate",         2 }, -- -180
             { "express-transport-belt", 1 },
-        },
-        fluid_ingredients = {
             { "lubricant", 25 }, -- +10
         },
         results = {
@@ -43,8 +41,6 @@ vgal.extend({
             { "low-density-structure",  1 }, -- +365
             { "tungsten-plate",         2 }, -- -480
             { "express-transport-belt", 2 },
-        },
-        fluid_ingredients = {
             { "lubricant", 5 }, -- -30
         },
         results = {
@@ -74,8 +70,6 @@ vgal.extend({
             { "low-density-structure",    5 },
             { "tungsten-plate",           10 },
             { "express-underground-belt", 2 },
-        },
-        fluid_ingredients = {
             { "lubricant", 40 },
         },
         results = {
@@ -105,8 +99,6 @@ vgal.extend({
             { "low-density-structure", 1 },
             { "processing-unit",       2 },
             { "express-splitter",      1 },
-        },
-        fluid_ingredients = {
             { "lubricant", 80 },
         },
         results = {

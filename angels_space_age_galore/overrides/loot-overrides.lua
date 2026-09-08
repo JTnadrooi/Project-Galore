@@ -3,7 +3,7 @@ for _, tree_name in ipairs({
     "ashland-lichen-tree-flaming",
 }) do
     local tree = data.raw["tree"][tree_name]
-    local results = vgal.build.table({
+    local results = vgal.build.io({
         { "angels-wood-charcoal", nil, { amount_min = 1, amount_max = 4 } },
     })
 
@@ -22,6 +22,6 @@ for _, tree_name in ipairs({
     tree.minable.results = results
 end
 
-vgal.entity.set_results(data.raw["tree"]["water-cane"], vgal.build.table({
+vgal.entity.set_results(data.raw["tree"]["water-cane"], vgal.build.io({
     { "angels-cellulose-fiber", nil, { amount_min = 1, amount_max = 2 } }
 }))

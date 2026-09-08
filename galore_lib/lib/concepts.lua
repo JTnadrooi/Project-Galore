@@ -11,10 +11,8 @@ do
     ---@field technologies? string[]|table[]
     ---@field prefix? string
     ---@field ingredients? vgal.ShorthandRecipeEntry[]
-    ---@field fluid_ingredients? vgal.ShorthandRecipeEntry[]
     ---@field raw_ingredients? data.IngredientPrototype[]
     ---@field results? vgal.ShorthandRecipeEntry[]
-    ---@field fluid_results? vgal.ShorthandRecipeEntry[]
     ---@field raw_results? data.ProductPrototype[]
     ---@field type? string
     ---@field group? string
@@ -38,8 +36,8 @@ end
 
 do
     ---@class vgal.ShorthandRecipeEntry
-    ---@field [1] string The name of the ingredient.
-    ---@field [2] number? The amount of the ingredient or nil if other amount values are set at index 3.
+    ---@field [1] string The name of the ingredient/result.
+    ---@field [2] number? The amount of the ingredient/result or nil if other amount values are set at index 3.
     ---@field [3] { independent_probability?: number, amount_min?: integer, amount_max?: integer, independent_probability?: number, allow_productivity?: boolean, ignored_by_stats?: integer,  ignored_by_productivity?: integer, show_details_in_recipe_tooltip?: boolean, extra_count_fraction?: number, percent_spoiled?: number, always_fresh?: boolean, reset_freshness_on_craft?: boolean }?
 end
 
@@ -95,7 +93,6 @@ do
     ---@field planet string
     ---@field colors {[1]: {[1]: integer, [2]: integer, [3]: integer}, [2]: {[1]: integer, [2]: integer, [3]: integer}, [3]: {[1]: integer, [2]: integer, [3]: integer}}
     ---@field results vgal.ShorthandRecipeEntry[]?
-    ---@field fluid_results vgal.ShorthandRecipeEntry[]
     ---@field index integer
     ---@field energy_required number
 end

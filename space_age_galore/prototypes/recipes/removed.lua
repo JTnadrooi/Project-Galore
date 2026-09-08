@@ -11,13 +11,11 @@ vgal.extend({
         category = "chemistry",
         energy_required = 1,
         technology = "space-platform",
-        fluid_ingredients = {
-            { "water", 30 },
-        },
         ingredients = {
+            { "water",  30 },
             { "carbon", 3 }, -- 100
         },
-        fluid_results = {
+        results = {
             { "lubricant", 20 }, -- 60
         },
     },
@@ -57,10 +55,8 @@ vgal.extend({
         categories = { "chemistry", "cryogenics" },
         energy_required = 8,
         technology = "space-platform",
-        fluid_ingredients = {
-            { "steam", 20 },
-        },
         ingredients = {
+            { "steam",      20 },
             { "solid-fuel", 5 }, -- 30
         },
         results = {
@@ -95,12 +91,10 @@ vgal.extend({
         }),
         energy_required = 15,
         technology = { "foundry", "uranium-processing" },
-        fluid_ingredients = {
+        ingredients = {
             { "molten-copper", 150 },
             { "molten-iron",   80 },
-        },
-        ingredients = {
-            { "uranium-238", 1 },
+            { "uranium-238",   1 },
         },
         results = {
             { "low-density-structure", 1 },
@@ -188,10 +182,8 @@ vgal.extend({
         category = "organic",
         energy_required = 1.2,
         technology = "biochamber",
-        fluid_ingredients = {
-            { "ammonia", 5 }, -- 10
-        },
         ingredients = {
+            { "ammonia",     5 }, -- 10
             { "jelly",       1 }, -- 8
             { "plastic-bar", 2 }, -- 30
         },

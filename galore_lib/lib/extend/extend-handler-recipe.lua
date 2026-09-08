@@ -30,8 +30,8 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
     -- in/output table building
     local main_ingredient
     do
-        output_recipe.ingredients = input_recipe.raw_ingredients or vgal.build.table(input_recipe.ingredients or {}, input_recipe.fluid_ingredients or {})
-        output_recipe.results     = input_recipe.raw_results or vgal.build.table(input_recipe.results or {}, input_recipe.fluid_results or {})
+        output_recipe.ingredients = input_recipe.raw_ingredients or vgal.build.io(input_recipe.ingredients or {})
+        output_recipe.results     = input_recipe.raw_results or vgal.build.io(input_recipe.results or {})
 
         if #output_recipe.ingredients > 0 then
             main_ingredient = output_recipe.ingredients[1].name

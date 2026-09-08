@@ -11,7 +11,7 @@ vgal.extend({
         }),
         energy_required = 4, -- 2
         technology = "plastics",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-gas-propene", 80 }, -- 80
         },
         results = {
@@ -30,7 +30,7 @@ vgal.extend({
         }),
         energy_required = 4, -- 2
         technology = "plastics",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-gas-propene",  70 },
             { "angels-gas-hydrogen", 30 },
         },
@@ -50,7 +50,7 @@ vgal.extend({
     --     }),
     --     energy_required = 6,
     --     technology = { "plastics", "angels-nitrogen-processing-2" },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "angels-gas-propene", 80 },
     --         { "angels-gas-ammonia", 50 },
     --         { "angels-gas-oxygen",  20 },
@@ -58,10 +58,9 @@ vgal.extend({
     --     results = {
     --         { "plastic-bar", 10 },
     --     },
-    --     fluid_results = {
+    --     results = {
     --         { "angels-water-purified", 50, { allow_productivity = false } },
     --     },
-    --     main_product = "plastic-bar",
 
     --     category = "angels-advanced-chemistry",
     --     order = "aab"
@@ -75,13 +74,12 @@ vgal.extend({
         }),
         energy_required = 3,
         technology = "angels-advanced-chemistry-3",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-liquid-polyethylene", 20 }, -- 20
         },
         results = {
             { "plastic-bar", 4 }, -- 60
         },
-        main_product = "plastic-bar",
 
         category = "angels-liquifying",
         order = "ab"
@@ -95,14 +93,13 @@ vgal.extend({
         }),
         energy_required = 4,
         technology = "angels-advanced-chemistry-3",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-liquid-polyethylene", 20 },
             { "angels-liquid-naphtha",      20 }, -- 20
         },
         results = {
             { "plastic-bar", 6 }, -- 90
         },
-        main_product = "plastic-bar",
 
         category = "chemistry",
         order = "abb"
@@ -117,17 +114,14 @@ vgal.extend({
         }),
         energy_required = 3,
         technology = { "plastics", "angels-chlorine-processing-1" },
-        fluid_ingredients = {
+        ingredients = {
             { "angels-gas-ethylene", 30 }, -- 15
             { "angels-gas-chlorine", 20 }, -- 8
         },
         results = {
-            { "plastic-bar", 4 },
-        },
-        fluid_results = {
+            { "plastic-bar",                  4 },
             { "angels-gas-hydrogen-chloride", 20, { allow_productivity = false } },
         },
-        main_product = "plastic-bar",
 
         category = "chemistry",
         order = "abc"
@@ -141,7 +135,7 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = "angels-advanced-chemistry-3",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-liquid-phenol", 30 }, -- 15
             { "angels-gas-methanol",  25 }, -- 10
         },
@@ -160,7 +154,7 @@ vgal.extend({
         }),
         energy_required = 4,
         technology = "angels-bio-plastic-1",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-liquid-cellulose-acetate-mixture", 20 },
             { "angels-gas-acetone",                      25 },
         },
@@ -180,7 +174,7 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = "angels-bio-plastic-1",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-liquid-acetic-acid", 25 },
             { "angels-gas-ethylene",       30 },
             { "angels-gas-oxygen",         15 },
@@ -202,7 +196,7 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = "angels-bio-plastic-1",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-liquid-glycerol",         25 },
             { "angels-liquid-fermentation-raw", 30 },
         },
@@ -225,9 +219,7 @@ vgal.extend({
         energy_required = 4,
         technology = "angels-bio-plastic-2",
         ingredients = {
-            { "angels-cellulose-fiber", 5 },
-        },
-        fluid_ingredients = {
+            { "angels-cellulose-fiber",       5 },
             { "angels-liquid-propionic-acid", 25 },
             { "angels-liquid-acetic-acid",    20 },
         },
@@ -251,7 +243,7 @@ vgal.extend({
     --         { "angels-solid-sodium-hydroxide", 1 },
     --         { "angels-cellulose-fiber",        2 },
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "angels-liquid-propionic-acid", 50 },
     --         -- { "angels-liquid-cellulose-acetate-mixture", 15 },
     --         { "angels-liquid-toluene",        25 },

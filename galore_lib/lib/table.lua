@@ -215,13 +215,13 @@ end
 ---1. A single entry: `{name, amount[, extra_table]}`
 ---2. An array of entries: `{ {name, amount[, extra]}, ... }`
 ---
----@param data vgal.ShorthandRecipeEntry | vgal.ShorthandRecipeEntry[]
----@param entry_type string The type to assign to each longform entry.
+---@param io_entry vgal.ShorthandRecipeEntry|vgal.ShorthandRecipeEntry[]
+---@param entry_type string? The type to assign to each longform entry.
 ---@return data.ProductPrototype[]|data.IngredientPrototype[]
-function vgal.table.to_longform(data, entry_type)
+function vgal.table.to_longform_io(io_entry, entry_type)
     local function to_single(entry)
         local new_entry = {
-            type = entry_type,
+            type = entry_type or (data.raw["fluid"][io_entry[1]] and "fluid" or "item"),
             name = entry[1],
             amount = entry[2]
         }
@@ -239,20 +239,20 @@ function vgal.table.to_longform(data, entry_type)
         return new_entry
     end
 
-    if next(data) == nil then
+    if next(io_entry) == nil then
         return {}
     end
 
-    if type(data[1]) == "table" and data[1][1] ~= nil then
+    if type(io_entry[1]) == "table" and io_entry[1][1] ~= nil then
         local transformed = {}
 
-        for _, item in ipairs(data) do
+        for _, item in ipairs(io_entry) do
             table.insert(transformed, to_single(item))
         end
 
         return transformed
     else
-        return to_single(data)
+        return to_single(io_entry)
     end
 end
 

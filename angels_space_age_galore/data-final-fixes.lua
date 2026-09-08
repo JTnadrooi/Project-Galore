@@ -72,7 +72,7 @@ do
                 }),
                 energy_required = 1,
                 enabled = true,
-                fluid_ingredients = {
+                ingredients = {
                     { voidable_fluid_name, 100 }
                 },
                 category = "vgal-space-venting",

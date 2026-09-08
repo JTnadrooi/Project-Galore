@@ -11,7 +11,7 @@ vgal.extend({
         category = "centrifuging",
         energy_required = 6,
         technology = "uranium-processing",
-        fluid_ingredients = {
+        ingredients = {
             { "crude-oil", 100 }, -- 50
         },
         results = {
@@ -40,7 +40,7 @@ for _, result in ipairs({
             category = "centrifuging",
             energy_required = 4,
             technology = "uranium-processing",
-            fluid_ingredients = {
+            ingredients = {
                 { "water", 40 },
             },
             results = {
@@ -63,10 +63,8 @@ for _, result in ipairs({
             category = "centrifuging",
             energy_required = 4,
             technology = { "uranium-processing", "electric-engine" },
-            fluid_ingredients = {
-                { "water", 60 },
-            },
             ingredients = {
+                { "water", 60 },
                 { "electric-engine-unit", 1 }, -- 2
             },
             results = {

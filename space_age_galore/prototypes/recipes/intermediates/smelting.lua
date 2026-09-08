@@ -34,7 +34,7 @@ vgal.extend({
             { "iron-ore", 50 },
             { "coal",     25 }, -- calcite is 115 (when imported), this is 240
         },
-        fluid_results = {
+        results = {
             { "molten-iron", 400 },
         },
         order = "bbab",
@@ -54,7 +54,7 @@ vgal.extend({
             { "copper-ore", 50 },
             { "coal",       25 }, -- calcite is 115 (when imported), this is 240
         },
-        fluid_results = {
+        results = {
             { "molten-copper", 400 },
         },
         order = "bbbb",
@@ -70,14 +70,12 @@ vgal.extend({
         category = "metallurgy",
         energy_required = 32,
         technology = "foundry",
-        fluid_ingredients = {
-            { "ammonia", 80 }, -- 160
-        },
         ingredients = {
+            { "ammonia",  80 }, -- 160
             { "iron-ore", 32 }, -- delta = 160
             { "calcite",  1 },
         },
-        fluid_results = {
+        results = {
             { "molten-iron", 500 },
         },
         order = "bbac",
@@ -93,14 +91,12 @@ vgal.extend({
         category = "metallurgy",
         energy_required = 32,
         technology = "foundry",
-        fluid_ingredients = {
-            { "sulfuric-acid", 80 }, -- 120
-        },
         ingredients = {
-            { "copper-ore", 32 }, -- delta = 160
-            { "calcite",    1 },
+            { "sulfuric-acid", 80 }, -- 120
+            { "copper-ore",    32 }, -- delta = 160
+            { "calcite",       1 },
         },
-        fluid_results = {
+        results = {
             { "molten-copper", 500 },
         },
         order = "bbbc",

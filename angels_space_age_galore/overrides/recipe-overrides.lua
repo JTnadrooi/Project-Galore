@@ -257,10 +257,10 @@ do
             tint = { r = 1, g = 1, b = 1, a = 1 },
         },
     }
-    data.raw["recipe"]["yumako-processing"].ingredients = vgal.build.table({
+    data.raw["recipe"]["yumako-processing"].ingredients = vgal.build.io({
         { "yumako", 5 },
     })
-    data.raw["recipe"]["yumako-processing"].results = vgal.build.table({
+    data.raw["recipe"]["yumako-processing"].results = vgal.build.io({
         { "yumako-mash",            12 },
         { "angels-cellulose-fiber", 4 },
     })
@@ -281,10 +281,10 @@ do
             tint = { r = 1, g = 1, b = 1, a = 1 },
         },
     }
-    data.raw["recipe"]["jellynut-processing"].ingredients = vgal.build.table({
+    data.raw["recipe"]["jellynut-processing"].ingredients = vgal.build.io({
         { "jellynut", 5 },
     })
-    data.raw["recipe"]["jellynut-processing"].results = vgal.build.table({
+    data.raw["recipe"]["jellynut-processing"].results = vgal.build.io({
         { "jelly",                 30 },
         { "angels-alien-bacteria", 2 },
     })
@@ -298,7 +298,7 @@ do
             max = 2000,
         },
     }
-    data.raw["recipe"]["carbon-fiber"].ingredients = vgal.build.table({
+    data.raw["recipe"]["carbon-fiber"].ingredients = vgal.build.io({
         { "angels-solid-carbon",    1 },
         { "angels-cellulose-fiber", 10 },
         { "yumako-mash",            5 },
@@ -361,15 +361,13 @@ do
     local recipe = data.raw["recipe"]["simple-coal-liquefaction"]
     recipe.energy_required = 4
     recipe.categories = { "angels-advanced-chemistry" }
-    recipe.ingredients = vgal.build.table({
-        { "coal",    5 },
-        { "calcite", 1 },
-    }, {
+    recipe.ingredients = vgal.build.io({
+        { "coal",          5 },
+        { "calcite",       1 },
         { "sulfuric-acid", 15 }
     })
-    recipe.results = vgal.build.table({
-        { "angels-solid-coke", 2 },
-    }, {
+    recipe.results = vgal.build.io({
+        { "angels-solid-coke",  2 },
         -- { "angels-gas-hydrogen-sulfide", 20 },
         { "angels-gas-methane", 50 },
         -- { "angels-gas-carbon-dioxide",   15 },
@@ -389,15 +387,13 @@ do
     local acid_neutralisation_recipe = data.raw["recipe"]["acid-neutralisation"]
     acid_neutralisation_recipe.energy_required = 1
     vgal.recipe.replace_category(acid_neutralisation_recipe, "chemistry", "angels-liquifying")
-    acid_neutralisation_recipe.ingredients = vgal.build.table({
+    acid_neutralisation_recipe.ingredients = vgal.build.io({
         { "angels-solid-calcium-carbonate", 1 },
-    }, {
-        { "sulfuric-acid", 100 }
+        { "sulfuric-acid",                  100 }
     })
-    acid_neutralisation_recipe.results = vgal.build.table({
+    acid_neutralisation_recipe.results = vgal.build.io({
         { "angels-solid-calcium-sulfate", 1 },
-    }, {
-        { "steam", 60, { temperature = 165 } },
+        { "steam",                        60, { temperature = 165 } },
     })
     acid_neutralisation_recipe.icons = vgal.icon.create({
         style   = "angels-gas",
@@ -414,10 +410,9 @@ end
 do
     local holmium_solution_recipe = data.raw["recipe"]["holmium-solution"]
     vgal.recipe.replace_category(holmium_solution_recipe, "chemistry", "angels-liquifying")
-    holmium_solution_recipe.ingredients = vgal.build.table({
-        { "angels-solid-sand", 1 }, -- may be replaced by silicon if I end up implementing it
-        { "holmium-ore",       2 },
-    }, {
+    holmium_solution_recipe.ingredients = vgal.build.io({
+        { "angels-solid-sand",     1 }, -- may be replaced by silicon if I end up implementing it
+        { "holmium-ore",           2 },
         { "angels-water-purified", 25 }
     })
 end
@@ -437,7 +432,7 @@ do
     local electrolyte_recipe = data.raw["recipe"]["electrolyte"]
     vgal.recipe.replace_category(electrolyte_recipe, "electromagnetics", "angels-advanced-chemistry")
     electrolyte_recipe.energy_required = 20
-    electrolyte_recipe.ingredients = vgal.build.table({}, {
+    electrolyte_recipe.ingredients = vgal.build.io({
         { "holmium-solution",      25 },
         { "angels-liquid-toluene", 50 },
         { "angels-water-saline",   50 },
@@ -445,7 +440,7 @@ do
         -- { "angels-solid-ammonium-nitrate", 1 },
         -- { "angels-solid-sodium-perchlorate", 1 },
     })
-    electrolyte_recipe.results = vgal.build.table({}, {
+    electrolyte_recipe.results = vgal.build.io({
         { "electrolyte", 50 },
     })
 end
@@ -524,7 +519,7 @@ do
     do
         local carbon_crushing_1_recipe = data.raw["recipe"]["carbonic-asteroid-crushing"]
         carbon_crushing_1_recipe.icons = get_asteroid_crushing_icon("carbonic-asteroid-chunk")
-        carbon_crushing_1_recipe.results = vgal.build.table({
+        carbon_crushing_1_recipe.results = vgal.build.io({
             { "angels-solid-coke",       8 },
             { "carbonic-asteroid-chunk", 1, { independent_probability = 0.3 } },
         })
@@ -532,7 +527,7 @@ do
         -- advanced
         local carbon_crushing_2_recipe = data.raw["recipe"]["advanced-carbonic-asteroid-crushing"]
         carbon_crushing_2_recipe.icons = get_asteroid_crushing_icon("carbonic-asteroid-chunk", "sulfur")
-        carbon_crushing_2_recipe.results = vgal.build.table({
+        carbon_crushing_2_recipe.results = vgal.build.io({
             { "angels-solid-coke",       4 },
             { "sulfur",                  2 },
             { "carbonic-asteroid-chunk", 1, { independent_probability = 0.1 } },
@@ -543,7 +538,7 @@ do
     do
         local metal_crushing_1_recipe = data.raw["recipe"]["metallic-asteroid-crushing"]
         metal_crushing_1_recipe.icons = get_asteroid_crushing_icon("metallic-asteroid-chunk")
-        metal_crushing_1_recipe.results = vgal.build.table({
+        metal_crushing_1_recipe.results = vgal.build.io({
             { "angels-iron-nugget",      3 },
             { "angels-iron-pebbles",     6 },
             { "iron-ore",                8 },
@@ -553,7 +548,7 @@ do
         -- advanced
         local metal_crushing_2_recipe = data.raw["recipe"]["advanced-metallic-asteroid-crushing"]
         metal_crushing_2_recipe.icons = get_asteroid_crushing_icon("metallic-asteroid-chunk", "copper-ore")
-        metal_crushing_2_recipe.results = vgal.build.table({
+        metal_crushing_2_recipe.results = vgal.build.io({
             { "angels-iron-nugget",      4 },
             { "angels-iron-pebbles",     8 },
             { "copper-ore",              4 },
@@ -567,7 +562,7 @@ do
         -- tungsten
         local metal_tungsten_recipe = data.raw["recipe"]["vgal-metallic-asteroid-chunk-tungsten-ore"]
         metal_tungsten_recipe.icons = get_asteroid_crushing_icon("metallic-asteroid-chunk", "tungsten-ore")
-        metal_tungsten_recipe.results = vgal.build.table({
+        metal_tungsten_recipe.results = vgal.build.io({
             { "angels-iron-nugget",      2 },
             { "angels-iron-pebbles",     3 },
             { "tungsten-ore",            2 },
@@ -601,7 +596,7 @@ do
     local scrap_crushing_recipe = data.raw["recipe"]["vgal-scrap-crushing"]
     scrap_crushing_recipe.categories = { "angels-ore-refining-t1" }
     scrap_crushing_recipe.energy_required = 2
-    scrap_crushing_recipe.results = vgal.build.table({
+    scrap_crushing_recipe.results = vgal.build.io({
         { "angels-iron-pebbles",   1, { independent_probability = 0.15, show_details_in_recipe_tooltip = false } },
         { "angels-copper-pebbles", 1, { independent_probability = 0.08, show_details_in_recipe_tooltip = false } },
         { "angels-stone-crushed",  1, { independent_probability = 0.1, show_details_in_recipe_tooltip = false } },
@@ -623,9 +618,8 @@ do
     local fuel_recipe = data.raw["recipe"]["thruster-fuel"]
     -- vgal.recipe.replace_category(fuel_recipe, "chemistry", "angels-liquifying")
     -- fuel_recipe.energy_required = 4
-    fuel_recipe.ingredients = vgal.build.table({
+    fuel_recipe.ingredients = vgal.build.io({
         -- { "angels-solid-carbon", 2 }
-    }, {
         { "angels-gas-hydrogen", 20 }, -- ~ 30 water
     })
     -- vgal.recipe.set_result_amount(fuel_recipe, 150)
@@ -633,9 +627,8 @@ do
     local oxidizer_recipe = data.raw["recipe"]["thruster-oxidizer"]
     -- vgal.recipe.replace_category(oxidizer_recipe, "chemistry", "angels-liquifying")
     -- oxidizer_recipe.energy_required = 4
-    oxidizer_recipe.ingredients = vgal.build.table({
+    oxidizer_recipe.ingredients = vgal.build.io({
         -- { "iron-ore", 2 }
-    }, {
         { "angels-gas-oxygen", 10 }, -- ~ 25 water
     })
     -- vgal.recipe.set_result_amount(oxidizer_recipe, 150)
@@ -649,14 +642,12 @@ do
         vgal.icon.get_in("spoilage"),
     })
     burnt_spoilage_recipe.energy_required = 3
-    burnt_spoilage_recipe.ingredients = vgal.build.table({
+    burnt_spoilage_recipe.ingredients = vgal.build.io({
         { "spoilage", 6 }
-    }, {
         -- { "angels-gas-oxygen", 20 },
     })
-    burnt_spoilage_recipe.results = vgal.build.table({
-        { "angels-wood-charcoal", 1 } -- even wth how the biochamber prod is missing, it gets fixed by the charcoal to carbon prod
-    }, {
+    burnt_spoilage_recipe.results = vgal.build.io({
+        { "angels-wood-charcoal",      1 }, -- even wth how the biochamber prod is missing, it gets fixed by the charcoal to carbon prod
         { "angels-gas-carbon-dioxide", 20 },
     })
     burnt_spoilage_recipe.main_product = "angels-wood-charcoal"

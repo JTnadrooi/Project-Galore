@@ -1,10 +1,10 @@
 -- remove removed ores
 -- update metal catalysts so they dont use the remvoed ores.
-data.raw.recipe["angels-catalyst-metal-yellow"].ingredients = vgal.build.table({
+data.raw.recipe["angels-catalyst-metal-yellow"].ingredients = vgal.build.io({
     { "angels-catalyst-metal-carrier", 10 },
     { "angels-ore2",                   1 },
 })
-data.raw.recipe["angels-catalyst-metal-blue"].ingredients = vgal.build.table({
+data.raw.recipe["angels-catalyst-metal-blue"].ingredients = vgal.build.io({
     { "angels-catalyst-metal-carrier", 10 },
     { "angels-ore3",                   1 },
 })
@@ -181,12 +181,12 @@ vgal.fluid.hide("angels-gas-formaldehyde")
 -- plastic recipe is just created with new ingredient (methanol)
 
 -- chloride variations
-data.raw.recipe["angels-liquid-glycerol"].ingredients = vgal.build.table({}, {
+data.raw.recipe["angels-liquid-glycerol"].ingredients = vgal.build.io({
     { "angels-gas-propene",    25 },
     { "angels-water-purified", 100 },
     { "angels-gas-chlorine",   50 },
 })
-data.raw.recipe["angels-liquid-glycerol"].results = vgal.build.table({}, {
+data.raw.recipe["angels-liquid-glycerol"].results = vgal.build.io({
     { "angels-liquid-glycerol",       25 },
     { "angels-gas-hydrogen-chloride", 100 },
 })
@@ -199,10 +199,9 @@ vgal.fluid.hide("angels-gas-allylchlorid")
 
 -- rocket fuel changes (from top of crafting tree to bottom)
 -- rocket fuel ox and fuel capsule are removed
-data.raw.recipe["rocket-fuel"].ingredients = vgal.build.table({ -- 200 (same as vanilla)
-    { "solid-fuel", 10 }                                        -- 150
-}, {
-    { "angels-liquid-nitric-acid", 25 },                        -- 25
+data.raw.recipe["rocket-fuel"].ingredients = vgal.build.io({ -- 200 (same as vanilla)
+    { "solid-fuel",                10 },                     -- 150
+    { "angels-liquid-nitric-acid", 25 },                     -- 25
 })
 
 vgal.item.hide("angels-rocket-fuel-capsule")
@@ -224,18 +223,16 @@ vgal.recipe.hide_and_queue_for_tech_removal("angels-rocket-oxidizer-capsule")
 vgal.fluid.hide("angels-gas-dinitrogen-tetroxide")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-dinitrogen-tetroxide")
 
-data.raw.recipe["angels-gas-nitrogen-dioxide"].ingredients = vgal.build.table({
-    { "angels-catalyst-metal-blue", 1 }
-}, {
-    { "angels-gas-ammonia", 40 }, -- 20h
-    { "angels-gas-oxygen",  60 }, -- 60ox
+data.raw.recipe["angels-gas-nitrogen-dioxide"].ingredients = vgal.build.io({
+    { "angels-catalyst-metal-blue", 1 },
+    { "angels-gas-ammonia",         40 }, -- 20h
+    { "angels-gas-oxygen",          60 }, -- 60ox
 })
 
-data.raw.recipe["angels-gas-nitrogen-dioxide"].results = vgal.build.table({
-    { "angels-catalyst-metal-carrier", 1 }
-}, {
-    { "angels-gas-nitrogen-dioxide", 100 },
-    { "angels-water-purified",       30 }, -- 60h = 100h2o so 20h = 33h2o (angels chemistry, I think I did it correctly)
+data.raw.recipe["angels-gas-nitrogen-dioxide"].results = vgal.build.io({
+    { "angels-catalyst-metal-carrier", 1 },
+    { "angels-gas-nitrogen-dioxide",   100 },
+    { "angels-water-purified",         30 }, -- 60h = 100h2o so 20h = 33h2o (angels chemistry, I think I did it correctly)
 })
 data.raw.recipe["angels-gas-nitrogen-dioxide"].main_product = "angels-gas-nitrogen-dioxide"
 
@@ -248,10 +245,10 @@ vgal.item.hide("angels-reinforced-concrete-brick")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-reinforced-concrete-brick")
 vgal.item.hide("angels-clay-brick-raw")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-clay-brick-raw")
-data.raw.recipe["angels-clay-brick"].ingredients = vgal.build.table({
+data.raw.recipe["angels-clay-brick"].ingredients = vgal.build.io({
     { "angels-solid-clay", 2 }
 })
-data.raw.recipe["angels-clay-brick"].results = vgal.build.table({
+data.raw.recipe["angels-clay-brick"].results = vgal.build.io({
     { "angels-clay-brick", 1 }
 })
 data.raw.recipe["angels-clay-brick"].energy_required = 3.2
@@ -272,7 +269,7 @@ vgal.recipe.hide_and_queue_for_tech_removal("angels-liquid-plastic-bio-2")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-rocket-booster")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-rocket-booster-2")
 vgal.item.hide("angels-rocket-booster")
-data.raw.recipe["rocket"].ingredients = vgal.build.table({
+data.raw.recipe["rocket"].ingredients = vgal.build.io({
     { "explosives", 1 },
     { "iron-plate", 2 },
 })
@@ -318,7 +315,7 @@ do
 
     fissure_resource.map_color = mineralized_water_fluid.base_color
     fissure_resource.tint = mineralized_water_fluid.flow_color
-    fissure_resource.minable.results = vgal.build.table({}, {
+    fissure_resource.minable.results = vgal.build.io({
         { mineralized_water_fluid.name, 25 }
     })
 end

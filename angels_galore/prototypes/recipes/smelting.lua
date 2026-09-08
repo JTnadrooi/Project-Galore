@@ -9,10 +9,8 @@ vgal.extend({
         energy_required = 4,
         technology = { "angels-nitrogen-processing-1", "angels-steel-smelting-1" },
         ingredients = {
-            { "angels-ingot-iron", 24 },
-            { "angels-slag",       6 },
-        },
-        fluid_ingredients = {
+            { "angels-ingot-iron",   24 },
+            { "angels-slag",         6 },
             { "angels-gas-nitrogen", 250 },
         },
         results = {
@@ -34,9 +32,7 @@ vgal.extend({
         ingredients = {
             { "angels-ingot-iron",   16 },
             { "angels-solid-carbon", 4 },
-        },
-        fluid_ingredients = {
-            { "angels-gas-oxygen", 40 },
+            { "angels-gas-oxygen",   40 },
         },
         results = {
             { "angels-ingot-steel", 5 },
@@ -58,7 +54,7 @@ vgal.extend({
     --         { "angels-ingot-iron", 24 },
     --         { "angels-solid-sand", 5 },
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "angels-gas-oxygen", 40 },
     --     },
     --     results = {

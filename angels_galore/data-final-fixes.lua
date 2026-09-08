@@ -104,9 +104,8 @@ data.raw["technology"]["angels-nuclear-fuel"].prerequisites = {
 }
 
 -- this really doesnt listen
-data.raw["recipe"]["angels-ore2-chunk"].results = vgal.build.table({
+data.raw["recipe"]["angels-ore2-chunk"].results = vgal.build.io({
     { "angels-ore2-chunk", 2 },
-}, {
     { "angels-water-yellow-waste", 25, { ignored_by_productivity = vgal.defines.ignored_by_productivity_max } }, -- GALORE PROD CHECK SCRIPT RUNS BEFORE THIS (i should make it a seperate mod)
 })
 

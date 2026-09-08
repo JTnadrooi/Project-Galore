@@ -79,7 +79,7 @@ vgal.extend({
         ingredients = {
             { "yumako-mash", 5 },
         },
-        fluid_results = {
+        results = {
             { "angels-liquid-raw-vegetable-oil", 30 },
         },
         category = "angels-bio-pressing",
@@ -100,7 +100,7 @@ vgal.extend({
         ingredients = {
             { "jelly", 8 },
         },
-        fluid_results = {
+        results = {
             { "angels-liquid-mineral-oil", 30 },
         },
         category = "angels-bio-pressing",

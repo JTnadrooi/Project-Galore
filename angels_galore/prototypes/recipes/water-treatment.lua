@@ -13,18 +13,13 @@ vgal.extend({
         ingredients = {
             { "angels-solid-sodium-hypochlorite", 1 },
             { "angels-solid-carbon",              1 },
-        },
-        fluid_ingredients = {
-            { "water", 5000 },
+            { "water",                            5000 },
         },
         results = {
+            { "angels-water-purified",        4800 },
+            { "angels-water-saline",          150 },
             { "angels-solid-sodium-chlorate", 1 },
         },
-        fluid_results = {
-            { "angels-water-purified", 4800 },
-            { "angels-water-saline",   150 },
-        },
-        main_product = "angels-water-purified",
         allow_productivity = false,
         category = "angels-water-treatment",
     },
@@ -40,20 +35,17 @@ vgal.extend({
         energy_required = 1,
         technology = { "angels-water-treatment", "angels-stone-smelting-1" },
         ingredients = {
-            { "angels-solid-lime", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-lime",        1 },
             { "angels-water-mineralized", 100 },
         },
         -- results = {
         --     { "angels-stone-crushed", 2 },
         -- },
-        fluid_results = {
+        results = {
             -- { "water",                 70 },
             { "angels-water-purified", 70 },
             { "angels-water-saline",   20 },
         },
-        -- main_product = "water",
         allow_productivity = false,
         category = "angels-water-treatment",
         subgroup = "angels-water-cleaning",
@@ -68,16 +60,15 @@ vgal.extend({
         }),
         energy_required = 1,
         technology = "angels-water-treatment-3",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-water-saline", 150 },
         },
         results = {
             { "angels-solid-salt", 1 },
         },
-        -- fluid_results = {
+        -- results = {
         --     { "angels-water-purified", 100 },
         -- },
-        -- main_product = "angels-water-purified",
         allow_productivity = false,
         category = "angels-salination-plant",
 
@@ -94,18 +85,13 @@ vgal.extend({
         energy_required = 1,
         technology = "angels-slag-processing-1",
         ingredients = {
-            { "angels-filter-coal", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-filter-coal",    1 },
             { "angels-water-purified", 150 },
         },
         results = {
+            { "water",               100 },
             { "angels-filter-frame", 1 },
         },
-        fluid_results = {
-            { "water", 100 },
-        },
-        main_product = "water",
         allow_productivity = false,
         category = "angels-filtering",
 
@@ -130,24 +116,20 @@ for _, waste_water in pairs(vgal.defines.waste_waters) do
             technology = "angels-chlorine-processing-2",
             ingredients = {
                 { "angels-solid-calcium-chloride", 1 },
-            },
-            fluid_ingredients = {
-                { waste_water.name, 500 },
+                { waste_water.name,                500 },
             },
             results = {
-                { waste_water.result, 5 },
-            },
-            fluid_results = {
+                { waste_water.result,                 5 },
                 { "angels-water-purified",            350 },
                 { waste_water.secondary_result_water, 80 },
             },
-            -- fluid_ingredients = {
+            -- ingredients = {
             --     { waste_water.name, 400 },
             -- },
             -- results = {
             --     { waste_water.result, 4 },
             -- },
-            -- fluid_results = {
+            -- results = {
             --     { "angels-water-purified",            275 },
             --     { waste_water.secondary_result_water, 80 },
             -- },

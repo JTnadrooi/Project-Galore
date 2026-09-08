@@ -108,7 +108,7 @@ for _, metal in pairs(vgal.defines.metals) do
             }),
             energy_required = 1,
             technology = "angels-slag-processing-1",
-            fluid_ingredients = {
+            ingredients = {
                 { "angels-mineral-sludge", 25 }
             },
             results = {
@@ -128,7 +128,7 @@ for _, metal in pairs(vgal.defines.metals) do
             }),
             energy_required = 2,
             technology = "angels-slag-processing-1",
-            fluid_ingredients = {
+            ingredients = {
                 { "angels-mineral-sludge", 50 }
             },
             results = {

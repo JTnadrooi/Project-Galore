@@ -26,7 +26,7 @@ data.raw["item"]["tree-seed"].plant_result = nil -- needs to be done even if ite
 
 -- gleba tree seed overhaul
 for _, plant in pairs(vgal.defines.gleba_plants) do
-    data.raw["plant"][plant.tree].minable.results = vgal.build.table({
+    data.raw["plant"][plant.tree].minable.results = vgal.build.io({
         { plant.name,         50 },
         { plant.dormant_seed, 1 }
     })

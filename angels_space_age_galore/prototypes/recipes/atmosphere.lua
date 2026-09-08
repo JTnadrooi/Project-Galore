@@ -1,7 +1,7 @@
 for _, atm in pairs(vgal.defines.atmospheres) do
     local unlock_tech = "planet-discovery-" .. atm.planet
     local separation_category = "angels-advanced-chemistry"
-    if #atm.fluid_results < 3 then
+    if #atm.results < 3 then
         separation_category = "chemistry"
     end
 
@@ -22,7 +22,7 @@ for _, atm in pairs(vgal.defines.atmospheres) do
             }),
             energy_required = atm.energy_required,
             technology = unlock_tech,
-            fluid_results = {
+            results = {
                 { atm.name, 200 }
             },
             category = "angels-petrochem-air-filtering",
@@ -33,16 +33,15 @@ for _, atm in pairs(vgal.defines.atmospheres) do
             domain = "vgal",
             icons = vgal.icon.create({
                 style   = "angels-gas",
-                outputs = vgal.table.select(atm.fluid_results, function(f) return f[1] end),
+                outputs = vgal.table.select(atm.results, function(f) return f[1] end),
                 palette = atm.colors,
             }),
             energy_required = separation_energy_required,
             technology = unlock_tech,
-            fluid_ingredients = {
+            ingredients = {
                 { atm.name, 100 }
             },
             results = atm.results,
-            fluid_results = atm.fluid_results,
             category = separation_category,
             order = "c" .. vgal.subgroup.order_from_number(atm.index),
         },
@@ -63,11 +62,11 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = "angels-bio-refugium-puffer-1",
-        fluid_ingredients = {
+        ingredients = {
             { "vgal-atm-gleba",            100 },
             { "angels-gas-sulfur-dioxide", 25 },
         },
-        fluid_results = {
+        results = {
             { "angels-gas-puffer-atmosphere", 50 },
         },
         category = "chemistry",

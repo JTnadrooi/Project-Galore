@@ -18,7 +18,7 @@ vgal.extend({
                         vgal.icon.get_overlay("to"),         -- the arrow
                     },
                     energy_required = "1m25s",               -- becomes "energy_required = 85".
-                    ingredients = {                          -- items only, or use the base way of defining ingredients. For fluids use "fluid_ingredients".
+                    ingredients = {                          -- items only, or use the base way of defining ingredients. For fluids use "ingredients".
                         { "carbon", 15 },
                     },
                     results = {

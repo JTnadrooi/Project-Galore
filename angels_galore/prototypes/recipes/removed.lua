@@ -9,11 +9,9 @@ vgal.extend({
         energy_required = 12,
         technology = { "low-density-structure", "angels-metallurgy-2", },
         ingredients = {
-            { "angels-solid-sand", 5 },
-            { "plastic-bar",       5 },
-            { "copper-plate",      20 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",          5 },
+            { "plastic-bar",                5 },
+            { "copper-plate",               20 },
             { "angels-liquid-molten-steel", 15 },
         },
         results = {
@@ -34,11 +32,9 @@ vgal.extend({
         energy_required = 8,
         technology = { "angels-metallurgy-2", "engine" },
         ingredients = {
-            { "angels-solid-sand", 2 },
-            { "iron-gear-wheel",   1 },
-            { "pipe",              2 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",          2 },
+            { "iron-gear-wheel",            1 },
+            { "pipe",                       2 },
             { "angels-liquid-molten-steel", 10 },
         },
         results = {

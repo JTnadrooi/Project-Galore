@@ -1,7 +1,7 @@
 -- add tree loot (add seeds)
 for _, tree in pairs(data.raw["tree"]) do
     if tree.minable and vgal.string.starts_with(tree.name, "tree-0") and not vgal.string.contains(tree.name, "stump") then
-        local results = vgal.build.table({
+        local results = vgal.build.io({
             { "angels-tree-seed",   1,   { independent_probability = 0.025 } },
             { "angels-solid-leafs", nil, { amount_min = 1, amount_max = 3 } } -- leafs... peculiar. (its not a mispelling but still)
         })
@@ -33,7 +33,7 @@ do
         table.insert(crystal_rock_results, { geode.name, 1, { independent_probability = geode.index * 0.05 } })
     end
 
-    data.raw["simple-entity"]["angels-crystal-rock"].minable.results = vgal.build.table(crystal_rock_results)
+    data.raw["simple-entity"]["angels-crystal-rock"].minable.results = vgal.build.io(crystal_rock_results)
 end
 
 -- I could add limestone to rocks, but I think thats overdoing it a bit.

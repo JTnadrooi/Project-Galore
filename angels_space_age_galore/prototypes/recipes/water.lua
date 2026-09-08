@@ -10,10 +10,10 @@ vgal.extend({
         }),
         energy_required = 1,
         technology = { "angels-electric-boiler", "space-platform" },
-        fluid_ingredients = {
+        ingredients = {
             { "water", 200 },
         },
-        fluid_results = {
+        results = {
             { "steam", 200, { temperature = 35 } },
         },
         category = "angels-petrochem-boiler",

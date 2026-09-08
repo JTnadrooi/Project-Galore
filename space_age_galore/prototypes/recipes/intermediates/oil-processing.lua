@@ -7,14 +7,12 @@ vgal.extend({
         }),
         categories = { "organic", "chemistry" },
         energy_required = 4,
-        fluid_ingredients = {
+        ingredients = {
             { "ammonia", 10 }, -- 20
             { "water",   20 },
+            { "carbon",  1 },  -- 40
         },
-        ingredients = {
-            { "carbon", 1 }, -- 40
-        },
-        fluid_results = {
+        results = {
             { "crude-oil", 60 }, -- 30 * 1.5 = 45
         },
         subgroup = "vgal-oil",
@@ -38,7 +36,7 @@ vgal.extend({
         ingredients = {
             { "spoilage", 20 }, -- 200
         },
-        fluid_results = {
+        results = {
             { "crude-oil", 10 }, -- 5
         },
         subgroup = "vgal-oil",
@@ -56,13 +54,10 @@ vgal.extend({
         ingredients = {
             { "yumako-mash", 6 }, -- 60
         },
-        fluid_results = {
-            { "light-oil", 40 }, -- 60 * 1.5 = 90
-        },
         results = {
+            { "light-oil",   40 }, -- 60 * 1.5 = 90
             { "yumako-seed", 1, { independent_probability = 0.015 } },
         },
-        main_product = "light-oil",
         technology = "yumako",
     },
     -- {
@@ -79,7 +74,7 @@ vgal.extend({
     --         { "calcite",     1 }, -- 10
     --         { "solid-fuel",  5 }, -- 75
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "steam", 40 }, --
     --     },
     --     results = {

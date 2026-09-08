@@ -11,12 +11,10 @@ vgal.extend({
         energy_required = 2,
         technology = "calcite-processing",
         ingredients = {
-            { "calcite", 1 }, -- 10
-        },
-        fluid_ingredients = {
+            { "calcite",       1 }, -- 10
             { "sulfuric-acid", 1000 },
         },
-        fluid_results = {
+        results = {
             {
                 "steam",
                 2000,
@@ -24,8 +22,6 @@ vgal.extend({
                     temperature = 165,
                 },
             },
-        },
-        results = {
             { "sulfur", 4 }, -- 50
         },
         surface_conditions =
@@ -49,7 +45,7 @@ vgal.extend({
     --     category = "organic",
     --     energy_required = 8,
     --     technology = { "bacteria-cultivation", "calcite-processing" },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "steam", 20, { temperature = 500 } },
     --     },
     --     ingredients = {
@@ -74,11 +70,9 @@ vgal.extend({
         categories = { "chemistry", "cryogenics" },
         energy_required = 5,
         technology = "space-platform",
-        fluid_ingredients = {
-            { "sulfuric-acid", 10 },
-        },
         ingredients = {
-            { "solid-fuel", 20 }, -- 30
+            { "sulfuric-acid", 10 },
+            { "solid-fuel",    20 }, -- 30
         },
         results = {
             { "carbon", 1 }, -- 50
@@ -97,14 +91,12 @@ vgal.extend({
         category = "chemistry",
         energy_required = 1,
         technology = "space-platform",
-        fluid_ingredients = {
-            { "water", 30 },
-        },
         ingredients = {
+            { "water",  30 },
             { "carbon", 2 }, -- 100
             { "sulfur", 1 }, -- 15
         },
-        fluid_results = {
+        results = {
             { "lubricant", 20 }, -- 60
         },
     },
@@ -119,13 +111,13 @@ vgal.extend({
     --     category = "chemistry",
     --     energy_required = 3,
     --     technology = "space-platform",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "water", 30 },
     --     },
     --     ingredients = {
     --         { "carbon", 4 }, -- 200
     --     },
-    --     fluid_results = {
+    --     results = {
     --         { "lubricant", 30 }, -- 60
     --     },
     -- },
@@ -138,7 +130,7 @@ vgal.extend({
     --     }),
     --     categories = { "chemistry", "cryogenics" },
     --     energy_required = 6,
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "heavy-oil", 120 },
     --         { "ammonia",   80 }, -- 160
     --     },
@@ -161,14 +153,12 @@ vgal.extend({
         category = "chemistry",
         energy_required = 10,
         technology = { "holmium-processing", "calcite-processing", },
-        fluid_ingredients = {
-            { "steam", 100, { minimum_temperature = 500 } },
-        },
         ingredients = {
+            { "steam",       100, { minimum_temperature = 500 } },
             { "calcite",     1 },
             { "holmium-ore", 1 },
         },
-        fluid_results = {
+        results = {
             { "holmium-solution", 100 },
         },
     },
@@ -184,15 +174,13 @@ vgal.extend({
         category = "chemistry",
         energy_required = 25,
         technology = "holmium-processing",
-        fluid_ingredients = {
-            { "sulfuric-acid", 200 }, -- 750
-        },
         ingredients = {
-            { "scrap",   250 }, -- 1250 (250 scrap = 2,5 ore)
-            { "calcite", 1 },   -- 115
-            { "carbon",  5 },   -- <250 from the solid fuel, or from space
+            { "sulfuric-acid", 200 }, -- 750
+            { "scrap",         250 }, -- 1250 (250 scrap = 2,5 ore)
+            { "calcite",       1 },   -- 115
+            { "carbon",        5 },   -- <250 from the solid fuel, or from space
         },
-        fluid_results = {
+        results = {
             { "holmium-solution", 250, }, -- 2125
         },
         groups = { "vgal-unsure", "vgal-convoluted" },
@@ -210,12 +198,10 @@ vgal.extend({
         categories = { "chemistry", "cryogenics" },
         energy_required = 6,
         technology = "space-platform-thruster",
-        fluid_ingredients = {
+        ingredients = {
             { "thruster-oxidizer", 100 }, -- 200
             { "thruster-fuel",     200 }, -- 200
-        },
-        ingredients = {
-            { "solid-fuel", 1 }, -- 15 (in a rocket goes like 1000 so its ok)
+            { "solid-fuel",        1 },   -- 15 (in a rocket goes like 1000 so its ok)
         },
         results = {
             { "rocket-fuel", 1 }, -- 200
@@ -242,14 +228,12 @@ vgal.extend({
         category = "electromagnetics",
         energy_required = 10,
         technology = "electromagnetic-plant",
-        fluid_ingredients = {
+        ingredients = {
             { "light-oil",        40 },
             { "holmium-solution", 10 },
+            { "plastic-bar",      2 },
         },
-        ingredients = {
-            { "plastic-bar", 2 },
-        },
-        fluid_results = {
+        results = {
             { "electrolyte", 15 },
         },
     },
@@ -265,14 +249,12 @@ vgal.extend({
         category = "electromagnetics",
         energy_required = 10,
         technology = "electromagnetic-plant",
-        fluid_ingredients = {
+        ingredients = {
             { "sulfuric-acid",    40 }, -- 80
             { "holmium-solution", 10 }, -- 80
+            { "stone",            1 },  -- 10
         },
-        ingredients = {
-            { "stone", 1 }, -- 10
-        },
-        fluid_results = {
+        results = {
             { "electrolyte", 15 }, --
         },
     },
@@ -293,7 +275,7 @@ vgal.extend({
     --     ingredients = {
     --         { "calcite", 2 },
     --     },
-    --     fluid_results = {
+    --     results = {
     --         { "fluorine", 20 },
     --     },
     --     show_amount_in_title = false,
@@ -314,7 +296,7 @@ vgal.extend({
     --         { "tungsten-ore", 5 },
     --         { "carbon",       5 },
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "fluorine", 10 },
     --     },
     --     results = {
@@ -338,7 +320,7 @@ vgal.extend({
     --         { "lithium",      1 }, -- 150
     --         { "copper-plate", 1 }, --
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "fluorine", 30 }, -- 200
     --     },
     --     results = {
@@ -361,7 +343,7 @@ vgal.extend({
     --         { "copper-plate", 1 },
     --         { "carbon",       2 },
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "lithium-brine", 20 },
     --     },
     --     results = {
@@ -380,10 +362,8 @@ vgal.extend({
         categories = { "chemistry", "cryogenics" },
         energy_required = 10, -- fast
         technology = "lithium-processing",
-        fluid_ingredients = {
-            { "ammonia", 10 }, -- 20
-        },
         ingredients = {
+            { "ammonia",      10 }, -- 20
             { "lithium",      1 }, -- 150
             { "copper-plate", 5 }, -- 50
         },
@@ -402,12 +382,10 @@ vgal.extend({
         categories = { "chemistry", "cryogenics" },
         energy_required = 10,
         technology = "explosives",
-        fluid_ingredients = {
-            { "ammonia", 10 } -- 20
-        },
         ingredients = {
-            { "coal",   1 }, -- 10 (but 210 on gleba)
-            { "sulfur", 2 }, -- 30
+            { "ammonia", 10 }, -- 20
+            { "coal",    1 },  -- 10 (but 210 on gleba)
+            { "sulfur",  2 },  -- 30
         },
         results = {
             { "explosives", 4 }, -- 60
@@ -427,7 +405,7 @@ vgal.extend({
     --     ingredients = {
     --         { "copper-plate", 2 }, --
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "fluorine",  10 }, --
     --         { "light-oil", 5 },  --
     --     },
@@ -447,11 +425,9 @@ vgal.extend({
         categories = { "chemistry", "cryogenics" },
         energy_required = 4,
         technology = "space-platform",
-        fluid_ingredients = {
-            { "ammonia", 20 }, -- 30
-        },
         ingredients = {
-            { "carbon", 1 }, -- 50
+            { "ammonia", 20 }, -- 30
+            { "carbon",  1 },  -- 50
         },
         results = {
             { "plastic-bar", 5 }, -- 75, 100gb
@@ -468,10 +444,8 @@ vgal.extend({
         category = "organic",
         energy_required = 20,
         technology = "bioflux-processing",
-        fluid_ingredients = {
-            { "crude-oil", 20 }, -- 10
-        },
         ingredients = {
+            { "crude-oil",    20 }, -- 10
             { "pentapod-egg", 1 },  -- 200
             { "coal",         1 },  -- 210
             { "nutrients",    12 }, -- 120

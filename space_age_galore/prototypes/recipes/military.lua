@@ -102,12 +102,10 @@ vgal.extend({
         }),
         energy_required = 25,
         technology = "railgun",
-        fluid_ingredients = {
+        ingredients = {
             { "molten-iron",   200 },
             { "molten-copper", 60 },
-        },
-        ingredients = {
-            { "explosives", 3 },
+            { "explosives",    3 },
         },
         results = {
             { "railgun-ammo", 1 }, -- 330
@@ -127,9 +125,7 @@ vgal.extend({
         ingredients = {
             { "holmium-plate", 1 },
             { "carbon",        5 },
-        },
-        fluid_ingredients = {
-            { "ammonia", 50 },
+            { "ammonia",       50 },
         },
         results = {
             { "railgun-ammo", 1 }, -- 330
@@ -165,10 +161,8 @@ vgal.extend({
         }),
         energy_required = 20,
         technology = "railgun",
-        fluid_ingredients = {
-            { "lubricant", 250 },
-        },
         ingredients = {
+            { "lubricant",          250 },
             { "electronic-circuit", 10000 },
             { "steel-plate",        800 },
             { "pipe",               50 },

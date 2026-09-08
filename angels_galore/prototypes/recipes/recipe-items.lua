@@ -11,9 +11,7 @@ vgal.extend({
         energy_required = 0.5,
         technology = { "angels-metallurgy-2", "angels-basic-chemistry-3" },
         ingredients = {
-            { "angels-solid-sand", 5 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",         5 },
             { "angels-liquid-molten-iron", 50 },
         },
         results = {

@@ -8,17 +8,13 @@ vgal.extend({
         }),
         energy_required = 1,
         technology = "sulfur-processing",
-        fluid_ingredients = {
-            { "sulfuric-acid", 5 },
-        },
         ingredients = {
             { "angels-solid-coke", 2 },
-        },
-        fluid_results = {
-            { "angels-water-yellow-waste", 5 },
+            { "sulfuric-acid",     5 },
         },
         results = {
-            { "angels-solid-carbon", 3 },
+            { "angels-solid-carbon",       3 },
+            { "angels-water-yellow-waste", 5 },
         },
         category = "angels-liquifying",
     },
@@ -34,16 +30,12 @@ vgal.extend({
         ingredients = {
             { "angels-solid-coke",             3 },
             { "angels-solid-sodium-hydroxide", 1 },
-        },
-        fluid_ingredients = {
-            { "angels-gas-nitrogen", 50 },
+            { "angels-gas-nitrogen",           50 },
         },
         results = {
             { "angels-solid-carbon",           6 },
-            { "angels-solid-sodium-carbonate", 1, { allow_productivity = false } },
-        },
-        fluid_results = {
-            { "water", 10, { allow_productivity = false } },
+            { "angels-solid-sodium-carbonate", 1,  { allow_productivity = false } },
+            { "water",                         10, { allow_productivity = false } },
         },
         category = "angels-liquifying",
 
@@ -67,11 +59,9 @@ vgal.extend({
         ingredients = {
             { "angels-wood-pellets", 3 },
         },
-        fluid_results = {
-            { "angels-liquid-condensates", 25 },
-        },
         results = {
-            { "angels-solid-coke", 2 },
+            { "angels-solid-coke",         2 },
+            { "angels-liquid-condensates", 25 },
         },
         category = "angels-liquifying",
 
@@ -106,7 +96,7 @@ vgal.extend({
     --     }),
     --     energy_required = 2,
     --     technology = "angels-bio-wood-processing-2",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         --     { "angels-liquid-vegetable-oil", 100 },
     --         -- { "angels-gas-oxygen", 20 },
     --     },
@@ -114,7 +104,7 @@ vgal.extend({
     --         -- { "angels-wood-charcoal", 2 },
     --         { "angels-solid-oil-residual", 2 },
     --     },
-    --     fluid_results = {
+    --     results = {
     --         { "angels-gas-methane", 20 },
     --         -- { "angels-water-purified", 30 },
     --     },

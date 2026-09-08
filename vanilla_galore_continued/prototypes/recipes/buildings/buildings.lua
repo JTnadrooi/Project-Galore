@@ -284,9 +284,7 @@ vgal.extend({
             { "steel-plate",          1 }, -- 50
             { "electric-engine-unit", 1 }, -- 180
             { "assembling-machine-1", 1 }, -- 265
-        },
-        fluid_ingredients = {
-            { "lubricant", 5 }, -- 40
+            { "lubricant",            5 }, -- 40
         },
         results = {
             { "assembling-machine-2", 1 }, -- 540
@@ -306,9 +304,7 @@ vgal.extend({
             { "electric-engine-unit", 12 }, -- 2160
             { "iron-gear-wheel",      25 }, -- 500
             { "assembling-machine-2", 1 },  -- 540
-        },
-        fluid_ingredients = {
-            { "lubricant", 50 }, -- 100
+            { "lubricant",            50 }, -- 100
         },
         results = {
             { "assembling-machine-3", 1 }, -- 3580
@@ -329,9 +325,7 @@ vgal.extend({
             { "steel-plate", 4 },
             { "iron-stick",  4 },
             { "stone",       1 },
-        },
-        fluid_ingredients = {
-            { "heavy-oil", 10 }, -- creosote
+            { "heavy-oil",   10 }, -- creosote
         },
         results = {
             { "rail", 8 },
@@ -444,9 +438,7 @@ vgal.extend({
         ingredients = {
             { "iron-stick",  2 },
             { "stone-brick", 5 },
-        },
-        fluid_ingredients = {
-            { "water", 100 },
+            { "water",       100 },
         },
         results = {
             { "concrete", 10 },
@@ -465,9 +457,7 @@ vgal.extend({
         ingredients = {
             { "iron-stick",  5 },
             { "stone-brick", 4 },
-        },
-        fluid_ingredients = {
-            { "steam", 80 },
+            { "steam",       80 },
         },
         results = {
             { "concrete", 10 },

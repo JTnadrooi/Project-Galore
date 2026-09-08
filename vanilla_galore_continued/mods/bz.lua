@@ -29,7 +29,7 @@ if mods["bzcarbon"] then
         "vgal")
     vgal.recipe.all.link_ingredient({ type = "item", name = "graphite", amount = 1 }, "battery", 1, "vgal")
 
-    data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].ingredients = vgal.build.table({
+    data.raw.recipe["vgal-coal-uranium-235-nuclear-fuel"].ingredients = vgal.build.io({
         { "rocket-fuel", 1 },
         { "uranium-235", 1 },
         { "graphite",    5 },

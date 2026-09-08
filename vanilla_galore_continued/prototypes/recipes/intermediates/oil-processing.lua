@@ -7,13 +7,11 @@ vgal.extend({
         }),
         category = "oil-processing",
         energy_required = 5,
-        fluid_ingredients = {
+        ingredients = {
             { "crude-oil", 100 }
         },
         results = {
-            { "sulfur", 1, { independent_probability = 0.60 } }
-        },
-        fluid_results = {
+            { "sulfur",        1, { independent_probability = 0.60 } },
             { "petroleum-gas", 50 }
         },
         technology = "sulfur-processing",
@@ -32,14 +30,12 @@ vgal.extend({
         }),
         category = "oil-processing",
         energy_required = 3,
-        fluid_ingredients = {
+        ingredients = {
             { "steam",     40 },
             { "crude-oil", 100 }
         },
         results = {
-            { "sulfur", nil, { amount_min = 1, amount_max = 2 } }
-        },
-        fluid_results = {
+            { "sulfur",        nil, { amount_min = 1, amount_max = 2 } },
             { "petroleum-gas", 55 }
         },
         technology = "sulfur-processing",
@@ -56,11 +52,11 @@ vgal.extend({
         }),
         category = "oil-processing",
         energy_required = 2.5,
-        fluid_ingredients = {
+        ingredients = {
             { "steam",     50 },
             { "crude-oil", 100 }
         },
-        fluid_results = {
+        results = {
             { "heavy-oil",     10 },
             { "light-oil",     55 },
             { "petroleum-gas", 75 }
@@ -82,12 +78,10 @@ vgal.extend({
         category = "chemistry",
         energy_required = 1.5,
         ingredients = {
-            { "coal", 2 }, -- ~12pg, 10
-        },
-        fluid_ingredients = {
+            { "coal",          2 },  -- ~12pg, 10
             { "petroleum-gas", 20 }, -- 20pg, 20
         },
-        fluid_results = {
+        results = {
             { "heavy-oil", 30 }, --30pg, 60
         },
         technology = "advanced-oil-processing",
@@ -104,11 +98,11 @@ vgal.extend({
         }),
         category = "oil-processing",
         energy_required = 1,
-        fluid_ingredients = {
+        ingredients = {
             { "heavy-oil", 50 },
             { "water",     30 },
         },
-        fluid_results = {
+        results = {
             { "heavy-oil",     10 },
             { "light-oil",     20 },
             { "petroleum-gas", 10 },
@@ -125,11 +119,11 @@ vgal.extend({
         }),
         category = "chemistry",
         energy_required = 1,
-        fluid_ingredients = {
+        ingredients = {
             { "steam",     15 },
             { "heavy-oil", 50 },
         },
-        fluid_results = {
+        results = {
             { "light-oil", 40 },
         },
         technology = "advanced-oil-processing",
@@ -146,11 +140,11 @@ vgal.extend({
         }),
         category = "chemistry",
         energy_required = 1,
-        fluid_ingredients = {
+        ingredients = {
             { "steam",     15 },
             { "light-oil", 40 },
         },
-        fluid_results = {
+        results = {
             { "petroleum-gas", 30 },
         },
         technology = "advanced-oil-processing",

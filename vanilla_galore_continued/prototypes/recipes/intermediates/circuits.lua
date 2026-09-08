@@ -12,7 +12,7 @@ vgal.extend({
     --         { "copper-cable", 4 }, -- 40
     --         { "iron-plate",   4 }, -- 40
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "sulfuric-acid", 5 }, -- ~8
     --     },
     --     results = {
@@ -34,9 +34,7 @@ vgal.extend({
             { "copper-cable",       8 }, -- 40
             { "electronic-circuit", 6 }, -- 150
             { "plastic-bar",        8 }, -- 120
-        },
-        fluid_ingredients = {
-            { "sulfuric-acid", 40 }, -- 60
+            { "sulfuric-acid",      40 }, -- 60
         },
         results = {
             { "advanced-circuit", 4 } -- 400
@@ -58,7 +56,7 @@ vgal.extend({
     --         { "copper-cable", 10 }, -- 50
     --         { "plastic-bar",  2 },  -- 30
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "sulfuric-acid", 10 }, -- 15
     --     },
     --     results = {
@@ -101,9 +99,7 @@ vgal.extend({
         ingredients = {
             { "wood",         1 },
             { "copper-cable", 6 },
-        },
-        fluid_ingredients = {
-            { "heavy-oil", 5 },
+            { "heavy-oil",    5 },
         },
         results = {
             { "electronic-circuit", 2 }
@@ -143,9 +139,7 @@ vgal.extend({
             { "plastic-bar",        6 }, -- 90
             { "electronic-circuit", 6 }, -- 150
             { "advanced-circuit",   4 }, -- 400
-        },
-        fluid_ingredients = {
-            { "sulfuric-acid", 5 }, -- 10
+            { "sulfuric-acid",      5 }, -- 10
         },
         results = {
             { "processing-unit", 1 }, -- 710
@@ -164,9 +158,7 @@ vgal.extend({
         ingredients = {
             { "electronic-circuit", 15 }, -- 150
             { "advanced-circuit",   2 },  -- 400
-        },
-        fluid_ingredients = {
-            { "sulfuric-acid", 20 }, -- 30
+            { "sulfuric-acid",      20 }, -- 30
         },
         results = {
             { "processing-unit", 1 }, -- 710
@@ -186,9 +178,7 @@ vgal.extend({
             { "low-density-structure", 1 }, -- 375
             { "advanced-circuit",      1 }, -- 100
             { "electronic-circuit",    2 }, -- 50
-        },
-        fluid_ingredients = {
-            { "sulfuric-acid", 5 }, -- 10
+            { "sulfuric-acid",         5 }, -- 10
         },
         results = {
             { "processing-unit", 1 }, -- 710

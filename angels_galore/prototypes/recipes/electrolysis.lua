@@ -11,19 +11,16 @@ vgal.extend({
         }),
         energy_required = 4,
         technology = "angels-water-treatment",
-        fluid_ingredients = {
+        ingredients = {
             { "angels-water-mineralized", 100 },
         },
         results = {
-            { "angels-slag", 2 },
-        },
-        fluid_results = {
+            { "angels-slag",         2 },
             { "angels-gas-oxygen",   30 },
             { "angels-gas-hydrogen", 40 },
         },
         category = "angels-petrochem-electrolyser",
 
-        main_product = "angels-slag",
         allow_productivity = false,
 
         order = "a[water-separation]-ab[mineralized-water]-a",
@@ -42,22 +39,17 @@ vgal.extend({
         energy_required = 2,
         technology = "angels-water-treatment",
         ingredients = {
-            { "angels-electrode", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-electrode",         1 },
             { "angels-water-mineralized", 100 },
         },
         results = {
             { "angels-slag",           2 },
             { "angels-electrode-used", 1 },
-        },
-        fluid_results = {
-            { "angels-gas-oxygen",   30 },
-            { "angels-gas-hydrogen", 40 },
+            { "angels-gas-oxygen",     30 },
+            { "angels-gas-hydrogen",   40 },
         },
         category = "angels-petrochem-electrolyser",
 
-        main_product = "angels-slag",
         allow_productivity = false,
 
         order = "a[water-separation]-ab[mineralized-water]-b",
@@ -75,21 +67,16 @@ vgal.extend({
         energy_required = 3,
         technology = "angels-basic-chemistry-3",
         ingredients = {
-            { "angels-electrode", 1 },
-        },
-        fluid_ingredients = {
             { "angels-gas-carbon-dioxide", 50 }, -- 40 oxygen
+            { "angels-electrode",          1 },
         },
         results = {
-            { "angels-electrode-used", 1 }
-        },
-        fluid_results = {
             { "angels-gas-carbon-monoxide", 50 }, -- 20 oxygen
+            { "angels-electrode-used",      1 },
             { "angels-gas-oxygen",          20 },
         },
         category = "angels-petrochem-electrolyser",
 
-        main_product = "angels-gas-carbon-monoxide",
         allow_productivity = false,
     },
 }, {

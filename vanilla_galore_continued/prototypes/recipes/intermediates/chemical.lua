@@ -14,9 +14,7 @@ vgal.extend({
         energy_required = 6,
         technology = "sulfur-processing",
         ingredients = {
-            { "coal", 6 }
-        },
-        fluid_ingredients = {
+            { "coal", 6 },
             { "steam", 80 },
         },
         results = {
@@ -35,13 +33,11 @@ vgal.extend({
         category = "chemistry",
         energy_required = 4,
         technology = "lubricant",
-        fluid_ingredients = {
-            { "heavy-oil", 30 }, -- 60
-        },
         ingredients = {
+            { "heavy-oil", 30 }, -- 60
             { "plastic-bar", 1 }, -- 15
         },
-        fluid_results = {
+        results = {
             { "lubricant", 40 }, -- 80
         },
     },
@@ -55,7 +51,7 @@ vgal.extend({
         technology = "sulfur-processing",
         category = "chemistry",
         energy_required = 1,
-        fluid_ingredients = {
+        ingredients = {
             { "steam",         20 },
             { "petroleum-gas", 40 },
         },

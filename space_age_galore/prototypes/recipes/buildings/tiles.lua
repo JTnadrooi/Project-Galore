@@ -8,10 +8,8 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = "foundry",
-        fluid_ingredients = {
-            { "molten-iron", 220 },
-        },
         ingredients = {
+            { "molten-iron", 220 },
             { "stone", 3 },
         },
         results = {
@@ -29,11 +27,9 @@ vgal.extend({
         }),
         energy_required = 15,
         technology = "foundry",
-        fluid_ingredients = {
+        ingredients = {
             { "molten-iron", 100 },
             { "water",       100 },
-        },
-        ingredients = {
             { "concrete", 20 },
         },
         results = {
@@ -56,8 +52,6 @@ vgal.extend({
             { "jellynut-seed", 1 },
             { "nutrients",     40 },
             { "landfill",      5 },
-        },
-        fluid_ingredients = {
             { "ammonia", 100 },
         },
         results = {
@@ -78,8 +72,6 @@ vgal.extend({
             { "yumako-seed", 1 },
             { "nutrients",   40 },
             { "landfill",    5 },
-        },
-        fluid_ingredients = {
             { "ammonia", 100 },
         },
         results = {
@@ -101,8 +93,6 @@ vgal.extend({
         ingredients = {
             { "low-density-structure", 1 },
             { "ice",                   25 },
-        },
-        fluid_ingredients = {
             { "ammonia", 100 },
         },
         results = {
@@ -118,7 +108,7 @@ vgal.extend({
         }),
         energy_required = 12,
         technology = "foundry",
-        fluid_ingredients = {
+        ingredients = {
             { "molten-iron",   1000 },
             { "molten-copper", 200 },
         },

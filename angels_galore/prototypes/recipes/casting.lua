@@ -10,9 +10,7 @@ vgal.extend({
         energy_required = 1,
         technology = "angels-metallurgy-2",
         ingredients = {
-            { "angels-solid-sand", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",         1 },
             { "angels-liquid-molten-iron", 75 },
         },
         results = {
@@ -32,9 +30,7 @@ vgal.extend({
         energy_required = 1,
         technology = "angels-metallurgy-2",
         ingredients = {
-            { "angels-solid-sand", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",         1 },
             { "angels-liquid-molten-iron", 25 },
         },
         results = {
@@ -54,9 +50,7 @@ vgal.extend({
         energy_required = 1,
         technology = "angels-metallurgy-2",
         ingredients = {
-            { "angels-solid-sand", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",           1 },
             { "angels-liquid-molten-copper", 25 },
         },
         results = {
@@ -78,10 +72,8 @@ vgal.extend({
         energy_required = 1,
         technology = { "angels-metallurgy-2", "angels-slag-processing-1" },
         ingredients = {
-            { "angels-solid-sand", 1 },
-            { "iron-plate",        2 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",          1 },
+            { "iron-plate",                 2 },
             { "angels-liquid-molten-steel", 15 },
         },
         results = {
@@ -102,9 +94,7 @@ vgal.extend({
         energy_required = 1,
         technology = { "angels-metallurgy-2", "angels-bio-arboretum-1" },
         ingredients = {
-            { "angels-solid-sand", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",         1 },
             { "angels-liquid-molten-iron", 50 },
         },
         results = {
@@ -125,9 +115,7 @@ vgal.extend({
         energy_required = 2,
         technology = { "angels-metallurgy-2", "angels-bio-arboretum-1" },
         ingredients = {
-            { "angels-solid-sand", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",          1 },
             { "angels-liquid-molten-steel", 10 },
         },
         results = {
@@ -148,9 +136,7 @@ vgal.extend({
         energy_required = 1,
         technology = { "angels-metallurgy-2", "fluid-handling" },
         ingredients = {
-            { "angels-solid-sand", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",          1 },
             { "angels-liquid-molten-steel", 20 },
         },
         results = {
@@ -172,10 +158,8 @@ vgal.extend({
         energy_required = 2,
         technology = "angels-metallurgy-2",
         ingredients = {
-            { "angels-solid-sand", 1 },
-            { "iron-gear-wheel",   5 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",         1 },
+            { "iron-gear-wheel",           5 },
             { "angels-liquid-molten-iron", 45 },
         },
         results = {
@@ -196,9 +180,7 @@ vgal.extend({
         energy_required = 2,
         technology = "angels-metallurgy-2",
         ingredients = {
-            { "angels-solid-sand", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",          1 },
             { "angels-liquid-molten-steel", 10 },
         },
         results = {
@@ -219,9 +201,7 @@ vgal.extend({
         energy_required = 1,
         technology = "angels-metallurgy-2",
         ingredients = {
-            { "angels-solid-sand", 1 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",         1 },
             { "angels-liquid-molten-iron", 50 },
         },
         results = {
@@ -242,10 +222,8 @@ vgal.extend({
         energy_required = 1,
         technology = "angels-metallurgy-2",
         ingredients = {
-            { "angels-solid-sand", 1 },
-            { "pipe",              10 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",          1 },
+            { "pipe",                       10 },
             { "angels-liquid-molten-steel", 10 },
         },
         results = {
@@ -267,10 +245,8 @@ vgal.extend({
         energy_required = 0.5,
         technology = "angels-metallurgy-2",
         ingredients = {
-            { "angels-solid-sand", 1 },
-            { "pipe",              10 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",         1 },
+            { "pipe",                      10 },
             { "angels-liquid-molten-iron", 50 },
         },
         results = {
@@ -292,10 +268,8 @@ vgal.extend({
         energy_required = 1,
         technology = { "angels-metallurgy-2", "nuclear-power" },
         ingredients = {
-            { "angels-solid-sand", 5 },
-            { "copper-plate",      25 },
-        },
-        fluid_ingredients = {
+            { "angels-solid-sand",          5 },
+            { "copper-plate",               25 },
             { "angels-liquid-molten-steel", 75 },
         },
         results = {

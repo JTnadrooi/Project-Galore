@@ -14,7 +14,7 @@ vgal.extend({
     --         { "carbon-fiber", 1 },
     --         { "calcite",      1 },
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "light-oil", 5 },
     --     },
     --     results = {
@@ -32,11 +32,9 @@ vgal.extend({
         category = "electromagnetics",
         energy_required = 6,
         technology = "holmium-processing",
-        fluid_ingredients = {
-            { "holmium-solution", 5 }, -- 42.5
-        },
         ingredients = {
-            { "copper-plate", 10 }, -- 100
+            { "holmium-solution", 5 },  -- 42.5
+            { "copper-plate",     10 }, -- 100
         },
         results = {
             { "copper-cable", 30 }, -- 150
@@ -51,7 +49,7 @@ vgal.extend({
         }),
         energy_required = 20,
         technology = "foundry",
-        fluid_ingredients = {
+        ingredients = {
             { "lava", 250 }, -- 10
         },
         results = {
@@ -71,7 +69,7 @@ vgal.extend({
     --     }),
     --     energy_required = 3,
     --     technology = { "jellynut", "electromagnetic-plant" },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "light-oil", 5 }, -- 8
     --     },
     --     ingredients = {
@@ -91,10 +89,8 @@ vgal.extend({
         }),
         energy_required = 10,
         technology = "calcite-processing",
-        fluid_ingredients = {
-            { "water", 100 },
-        },
         ingredients = {
+            { "water",       100 },
             { "carbon",      1 }, -- 30
             { "calcite",     2 }, -- 20
             { "stone-brick", 2 }, -- 40
@@ -114,11 +110,9 @@ vgal.extend({
         }),
         energy_required = 2,
         technology = { "foundry", "holmium-processing" },
-        fluid_ingredients = {
-            { "molten-copper", 20 },
-        },
         ingredients = {
-            { "holmium-ore", 1 },
+            { "molten-copper", 20 },
+            { "holmium-ore",   1 },
         },
         results = {
             { "holmium-plate", 2 },
@@ -136,12 +130,10 @@ vgal.extend({
         categories = { "chemistry", "cryogenics" },
         energy_required = 10,
         technology = "carbon-fiber",
-        fluid_ingredients = {
-            { "ammonia", 10 } -- 20
-        },
         ingredients = {
-            { "carbon", 5 },  -- 250
-            { "wood",   20 }, -- 200
+            { "ammonia", 10 },  -- 20
+            { "carbon",  5 },   -- 250
+            { "wood",    20 },  -- 200
         },
         results = {
             { "carbon-fiber", 1 }, -- 120
@@ -235,12 +227,10 @@ vgal.extend({
         category = "metallurgy",
         energy_required = 15,
         technology = { "carbon-fiber", "foundry" },
-        fluid_ingredients = {
-            { "molten-copper", 40 },
-        },
         ingredients = {
-            { "carbon-fiber", 2 }, -- 240
-            { "plastic-bar",  6 }, -- 120
+            { "molten-copper", 40 },
+            { "carbon-fiber",  2 }, -- 240
+            { "plastic-bar",   6 }, -- 120
         },
         results = {
             { "low-density-structure", 1 },
@@ -282,7 +272,7 @@ vgal.extend({
     --     categories = { "chemistry", "cryogenics" },
     --     energy_required = 5,
     --     technology = "lithium-processing",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "ammonia",       50 },
     --         { "lithium-brine", 5 },
     --     },

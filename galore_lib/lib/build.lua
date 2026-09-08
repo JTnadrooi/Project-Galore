@@ -9,13 +9,16 @@ function vgal.build.name(prefix, name, tier)
     return (prefix and (prefix .. "-") or "") .. name .. (tier and ("-" .. tier) or "")
 end
 
----@param items vgal.ShorthandRecipeEntry[]?
----@param fluids vgal.ShorthandRecipeEntry[]?
+---@param items_and_fluids vgal.ShorthandRecipeEntry[]?
 ---@return data.ProductPrototype[]|data.IngredientPrototype[]
-function vgal.build.table(items, fluids)
-    items = items or {}
-    fluids = fluids or {}
-    local i = vgal.table.to_longform(items, "item")
-    local f = vgal.table.to_longform(fluids, "fluid")
-    return vgal.table.merge_array(i, f)
+function vgal.build.io(items_and_fluids)
+    local result = {}
+    for _, item_or_fluid in ipairs(items_and_fluids or {}) do
+        if data.raw["fluid"][item_or_fluid[1]] then
+            table.insert(result, vgal.table.to_longform_io(item_or_fluid, "fluid"))
+        else
+            table.insert(result, vgal.table.to_longform_io(item_or_fluid, "item"))
+        end
+    end
+    return result
 end

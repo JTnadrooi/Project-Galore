@@ -12,7 +12,7 @@ end
 data.raw["technology"]["angels-pressure-tanks"].prerequisites = { "angels-stone-smelting-2" }
 data.raw["technology"]["angels-pressure-tanks"].unit.count = 200
 vgal.tech.add_unit("angels-pressure-tanks", "chemical-science-pack")
-data.raw.recipe["angels-pressure-tank-1"].ingredients = vgal.build.table({
+data.raw.recipe["angels-pressure-tank-1"].ingredients = vgal.build.io({
     { "concrete",    25 },
     { "steel-plate", 20 },
     { "pipe",        60 },

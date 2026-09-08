@@ -46,7 +46,7 @@ vgal.extend({
     --     }),
     --     energy_required = 10,
     --     technology = { "uranium-processing", "cryogenic-plant" },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "fluorine", 25 },
     --     },
     --     ingredients = {
@@ -70,10 +70,8 @@ vgal.extend({
         }),
         energy_required = 30,
         technology = { "kovarex-enrichment-process", "cryogenic-plant" },
-        fluid_ingredients = {
-            { "fluorine", 25 },
-        },
         ingredients = {
+            { "fluorine", 25 },
             { "uranium-235", 10 },
             { "uranium-238", 7 },
         },

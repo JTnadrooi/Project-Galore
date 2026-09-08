@@ -58,10 +58,8 @@ vgal.extend({
             { "oxide-asteroid-chunk", 1 },
         },
         results = {
-            { "ice",     2 },
-            { "calcite", 1, { independent_probability = 0.05 } },
-        },
-        fluid_results = {
+            { "ice",                 2 },
+            { "calcite",             1, { independent_probability = 0.05 } },
             { "ammoniacal-solution", 20 },
         },
         subgroup = "vgal-space-advanced",
@@ -122,15 +120,12 @@ vgal.extend({
         ingredients = {
             { "metallic-asteroid-chunk", 1 },
         },
-        fluid_results = {
-            { "lava", 50 }, -- .. lava = .. molten, ~ .. stone
-        },
         results = {
+            { "lava",  50 }, -- .. lava = .. molten, ~ .. stone
             { "stone", 2 },
         },
         category = "metallurgy",
         subgroup = "vgal-space-advanced",
-        main_product = "lava",
         order = "aa",
         productivity_technology = "asteroid-productivity",
     },
@@ -144,14 +139,12 @@ vgal.extend({
         category = "chemistry",
         energy_required = 5,
         technology = "foundry",
-        fluid_ingredients = {
-            { "water", 40 },
-        },
         ingredients = {
+            { "water",  40 },
             { "carbon", 2 },
             { "stone",  1 },
         },
-        fluid_results = {
+        results = {
             { "thruster-fuel", 350 },
         },
         order = "baa",
@@ -174,14 +167,12 @@ vgal.extend({
         category = "chemistry",
         energy_required = 5,
         technology = "foundry",
-        fluid_ingredients = {
-            { "water", 40 },
-        },
         ingredients = {
+            { "water",    40 },
             { "iron-ore", 2 },
             { "stone",    1 },
         },
-        fluid_results = {
+        results = {
             { "thruster-oxidizer", 350 },
         },
         order = "caa",
@@ -235,7 +226,7 @@ vgal.extend({
     --         { "carbon", 2 },
     --         { "sulfur", 1, { independent_probability = 0.05 } },
     --     },
-    --     fluid_results = {
+    --     results = {
     --         { "petroleum-gas", 50 },
     --     },
     --     complementairy_recipe = "advanced-metallic-asteroid-crushing",
@@ -252,14 +243,14 @@ vgal.extend({
     --     category = "chemistry",
     --     energy_required = 12,
     --     technology = "planet-discovery-aquilo",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "fluorine", 5 },
     --         { "steam",    1500 },
     --     },
     --     ingredients = {
     --         { "calcite", 1 },
     --     },
-    --     fluid_results = {
+    --     results = {
     --         { "thruster-oxidizer", 3000 },
     --     },
     -- },
@@ -273,14 +264,12 @@ vgal.extend({
         categories = { "chemistry", "cryogenics" },
         energy_required = 5,
         technology = "space-platform",
-        fluid_ingredients = {
+        ingredients = {
             { "thruster-oxidizer", 1000 },
             { "thruster-fuel",     1000 },
+            { "solid-fuel",        1 },
         },
-        ingredients = {
-            { "solid-fuel", 1 },
-        },
-        fluid_results = {
+        results = {
             { "steam", 300, { temperature = 500 } },
         },
         surface_conditions =
@@ -304,13 +293,11 @@ vgal.extend({
         category = "cryogenics",
         energy_required = 10,
         technology = "cryogenic-plant",
-        fluid_ingredients = {
-            { "ammonia", 50 },
-        },
         ingredients = {
+            { "ammonia",  50 },
             { "iron-ore", 1 },
         },
-        fluid_results = {
+        results = {
             { "thruster-oxidizer", 3000 },
         },
         order = "cc",
@@ -333,13 +320,11 @@ vgal.extend({
         category = "cryogenics",
         energy_required = 10,
         technology = "cryogenic-plant",
-        fluid_ingredients = {
-            { "crude-oil", 50 },
-        },
         ingredients = {
-            { "calcite", 1 },
+            { "crude-oil", 50 },
+            { "calcite",   1 },
         },
-        fluid_results = {
+        results = {
             { "thruster-fuel", 3000 },
         },
         order = "bc",

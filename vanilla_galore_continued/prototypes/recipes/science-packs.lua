@@ -253,9 +253,7 @@ vgal.extend({
         ingredients = {
             { "bulk-inserter",       2 }, -- 1800
             { "fast-transport-belt", 8 }, -- 920
-        },
-        fluid_ingredients = {
-            { "petroleum-gas", 100 }, -- 100
+            { "petroleum-gas",       100 }, -- 100
         },
         results = {
             { "chemical-science-pack", 12 }, -- 2940

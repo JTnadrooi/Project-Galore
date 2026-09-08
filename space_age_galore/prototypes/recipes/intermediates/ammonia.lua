@@ -15,7 +15,7 @@ vgal.extend({
             { "iron-bacteria", 4 },  -- 120
             { "nutrients",     10 }, -- 100
         },
-        fluid_results = {
+        results = {
             { "ammonia", 80 }, -- 160 * 1.5 = 240
         },
         surface_conditions =
@@ -42,7 +42,7 @@ vgal.extend({
             { "copper-bacteria", 2 }, -- 60
             { "nutrients",       8 }, -- 80
         },
-        fluid_results = {
+        results = {
             { "ammonia", 50 }, -- 100 * 1.5 = 150
         },
         surface_conditions =
@@ -69,7 +69,7 @@ vgal.extend({
             { "biter-egg", 1 }, -- 80
             { "nutrients", 8 }, -- 80
         },
-        fluid_results = {
+        results = {
             { "ammonia", 80 }, -- 160 * 1.5 = 240
         },
         surface_conditions =
@@ -88,13 +88,11 @@ vgal.extend({
         categories = { "organic", "chemistry" },
         energy_required = 1,
         technology = "oil-processing",
-        fluid_ingredients = {
-            { "water", 100 }, -- 1 (50vn) so no vulcanus
-        },
         ingredients = {
-            { "coal", 2 }, -- 20
+            { "water", 100 }, -- 1 (50vn) so no vulcanus
+            { "coal",  2 },   -- 20
         },
-        fluid_results = {
+        results = {
             { "ammonia", 10 } -- 20 (50vn)
         },
         order = "b-e-bb",
@@ -117,14 +115,12 @@ vgal.extend({
         }),
         category = "chemistry",
         energy_required = 2,
-        fluid_ingredients = {
-            { "sulfuric-acid", 50 },
-        },
         ingredients = {
-            { "calcite", 2 }, -- 20
-            { "carbon",  5 }, -- 30
+            { "sulfuric-acid", 50 },
+            { "calcite",       2 }, -- 20
+            { "carbon",        5 }, -- 30
         },
-        fluid_results = {
+        results = {
             { "ammonia", 20 }, -- 100vu
         },
         technology = "calcite-processing",
@@ -152,7 +148,7 @@ vgal.extend({
             { "solid-fuel", 1 },
             { "ice",        3 },
         },
-        fluid_results = {
+        results = {
             { "ammonia", 20 },
             { "water",   10, { show_details_in_recipe_tooltip = false } },
         },

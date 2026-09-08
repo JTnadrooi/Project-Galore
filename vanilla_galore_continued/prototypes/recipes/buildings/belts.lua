@@ -86,9 +86,7 @@ vgal.extend({
             { "steel-plate",         3 },
             { "iron-gear-wheel",     2 },
             { "fast-transport-belt", 1 },
-        },
-        fluid_ingredients = {
-            { "lubricant", 20 },
+            { "lubricant",           20 },
         },
         results = {
             { "express-transport-belt", 1 }
@@ -108,9 +106,7 @@ vgal.extend({
             { "plastic-bar",         10 }, -- 150
             { "iron-gear-wheel",     2 },  -- 40
             { "fast-transport-belt", 1 },  -- 115
-        },
-        fluid_ingredients = {
-            { "lubricant", 25 }, -- 50
+            { "lubricant",           25 }, -- 50
         },
         results = {
             { "express-transport-belt", 1 }, -- 365
@@ -168,9 +164,7 @@ vgal.extend({
             { "steel-plate",           28 },
             { "iron-gear-wheel",       10 },
             { "fast-underground-belt", 2 },
-        },
-        fluid_ingredients = {
-            { "lubricant", 40 },
+            { "lubricant",             40 },
         },
         results = {
             { "express-underground-belt", 2 }
@@ -249,9 +243,7 @@ vgal.extend({
             { "steel-plate",     4 }, -- 200
             { "processing-unit", 1 }, -- 710
             { "fast-splitter",   1 }, -- 685
-        },
-        fluid_ingredients = {
-            { "lubricant", 80 }, -- 160
+            { "lubricant",       80 }, -- 160
         },
         results = {
             { "express-splitter", 1 } -- 2045

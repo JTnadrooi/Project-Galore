@@ -7,11 +7,9 @@ vgal.extend({
         categories = { "crafting", "organic" },
         energy_required = 1,
         technology = "agriculture",
-        fluid_ingredients = {
-            { "ammonia", 25 }, -- 50
-        },
         ingredients = {
-            { "sulfur", 1 }, -- 15 (20gb)
+            { "ammonia", 25 }, -- 50
+            { "sulfur",  1 },  -- 15 (20gb)
         },
         results = {
             { "nutrients", 10 }, -- 100
@@ -57,16 +55,12 @@ vgal.extend({
         energy_required = 8,
         technology = "cryogenic-plant",
         ingredients = {
-            { "raw-fish",  1 },  -- 530
-            { "nutrients", 20 }, -- 160
-        },
-        fluid_ingredients = {
+            { "raw-fish",          1 },  -- 530
+            { "nutrients",         20 }, -- 160
             { "fluoroketone-cold", 20 },
         },
         results = {
-            { "bioflux", 5 },
-        },
-        fluid_results = {
+            { "bioflux",          5 },
             { "fluoroketone-hot", 15, { temperature = 180 } },
         },
     },
@@ -82,12 +76,10 @@ vgal.extend({
 
         energy_required = 6,
         technology = "planet-discovery-aquilo",
-        fluid_ingredients = {
-            { "ammoniacal-solution", 100 },
-        },
         ingredients = {
-            { "nutrients", 30 },
-            { "raw-fish",  2 },
+            { "ammoniacal-solution", 100 },
+            { "nutrients",           30 },
+            { "raw-fish",            2 },
         },
         results = {
             { "raw-fish", nil, { amount_min = 1, amount_max = 6, reset_freshness_on_craft = true, } },
@@ -105,11 +97,9 @@ vgal.extend({
         category = "organic",
         energy_required = 12,
         technology = "biochamber",
-        fluid_ingredients = {
-            { "sulfuric-acid", 5 },
-        },
         ingredients = {
-            { "spoilage", 3 },
+            { "sulfuric-acid", 5 },
+            { "spoilage",      3 },
         },
         results = {
             { "carbon", 1 },
@@ -133,9 +123,7 @@ vgal.extend({
         },
         results = {
             { "carbon", 1 }, -- 50 * 1.5 = 75
-        },
-        fluid_results = {
-            { "water", 10 },
+            { "water",  10 },
         },
         groups = { "vgal-wood-recipes" },
         order = "b[chemistry]-f[carbon]-c",
@@ -152,14 +140,12 @@ vgal.extend({
         category = "organic",
         energy_required = 1,
         technology = "bioflux-processing",
-        fluid_ingredients = {
-            { "water", 30 },
-        },
         ingredients = {
+            { "water",  30 },
             { "jelly",  12 }, -- 72
             { "sulfur", 1 },  -- 15
         },
-        fluid_results = {
+        results = {
             { "lubricant", 20 }, -- (1.5)=60
         },
     },
@@ -173,11 +159,9 @@ vgal.extend({
         }),
         energy_required = 3,
         technology = "jellynut",
-        fluid_ingredients = {
-            { "crude-oil", 6 }, -- ~2
-        },
         ingredients = {
-            { "jelly", 4 }, -- 24
+            { "crude-oil", 6 }, -- ~2
+            { "jelly",     4 }, -- 24
         },
         results = {
             { "solid-fuel", 1 }, -- 20 * 1.5 = 30
@@ -287,12 +271,10 @@ for _, metal in pairs(vgal.defines.metals) do
             category = "organic",
             energy_required = 8,
             technology = "planet-discovery-aquilo",
-            fluid_ingredients = {
-                { "ammoniacal-solution", 50 },
-            },
             ingredients = {
-                { metal.bacteria, 1, { ignored_by_stats = 1 } },
-                { "bioflux",      1 },
+                { "ammoniacal-solution", 50 },
+                { metal.bacteria,        1, { ignored_by_stats = 1 } },
+                { "bioflux",             1 },
             },
             results = {
                 { metal.bacteria, 8, { ignored_by_stats = 1, always_fresh = true } },

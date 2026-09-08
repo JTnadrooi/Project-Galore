@@ -380,7 +380,7 @@ function vgal.recipe.add_result(recipe_or_recipe_name, new_result, result_type)
         return
     elseif type(new_result) == "table" then
         if vgal.table.is_array(new_result) then
-            table.insert(recipe.results, vgal.table.to_longform(new_result, result_type))
+            table.insert(recipe.results, vgal.table.to_longform_io(new_result, result_type))
         else
             table.insert(recipe.results, new_result)
         end
@@ -441,7 +441,7 @@ function vgal.recipe.add_ingredient(recipe_or_recipe_name, new_ingredient, ingre
         return
     elseif type(new_ingredient) == "table" then
         if vgal.table.is_array(new_ingredient) then
-            table.insert(recipe.ingredients, vgal.table.to_longform(new_ingredient, ingredient_type))
+            table.insert(recipe.ingredients, vgal.table.to_longform_io(new_ingredient, ingredient_type))
         else
             table.insert(recipe.ingredients, new_ingredient)
         end

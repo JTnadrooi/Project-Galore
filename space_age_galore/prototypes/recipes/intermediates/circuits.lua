@@ -10,10 +10,8 @@ vgal.extend({
         category = "electromagnetics",
         energy_required = 5,
         technology = "holmium-processing",
-        fluid_ingredients = {
-            { "sulfuric-acid", 20 }, -- 30
-        },
         ingredients = {
+            { "sulfuric-acid", 20 }, -- 30
             { "holmium-plate", 1 },  -- 170
             { "copper-cable",  20 }, -- 100
         },
@@ -32,10 +30,8 @@ vgal.extend({
         categories = { "crafting", "electromagnetics" },
         energy_required = 6,
         technology = "tungsten-carbide",
-        fluid_ingredients = {
-            { "sulfuric-acid", 5 }, -- ~2 on vn
-        },
         ingredients = {
+            { "sulfuric-acid",      5 }, -- ~2 on vn
             { "electronic-circuit", 1 }, -- 25
             { "tungsten-carbide",   1 }, -- 70
             { "copper-cable",       2 }, -- 10
@@ -55,10 +51,8 @@ vgal.extend({
         categories = { "crafting", "electromagnetics" },
         energy_required = 10,
         technology = "tungsten-carbide",
-        fluid_ingredients = {
-            { "sulfuric-acid", 10 }, -- 5(vn)
-        },
         ingredients = {
+            { "sulfuric-acid",      10 }, -- 5(vn)
             { "electronic-circuit", 15 }, -- 375
             { "advanced-circuit",   1 },  -- 100
             { "tungsten-carbide",   2 },  -- 140
@@ -109,7 +103,7 @@ vgal.extend({
     --     category = "organic",
     --     energy_required = 8,
     --     technology = "biochamber",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "ammonia", 5 }, -- 10
     --     },
     --     ingredients = {
@@ -141,7 +135,7 @@ vgal.extend({
     --     category = "organic",
     --     energy_required = 24,
     --     technology = "bioflux-processing",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "sulfuric-acid", 10 }, -- 20
     --     },
     --     ingredients = {
@@ -165,7 +159,7 @@ vgal.extend({
     --     category = "organic",
     --     energy_required = 20,
     --     technology = "bioflux-processing",
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "ammonia", 15 }, -- 30
     --     },
     --     ingredients = {

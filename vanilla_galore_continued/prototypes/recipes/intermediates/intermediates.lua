@@ -83,10 +83,8 @@ vgal.extend({
         energy_required = 8,
         technology = "battery",
         ingredients = {
-            { "copper-cable", 2 },
-            { "iron-plate",   2 },
-        },
-        fluid_ingredients = {
+            { "copper-cable",  2 },
+            { "iron-plate",    2 },
             { "sulfuric-acid", 30 }
         },
         results = {
@@ -120,9 +118,7 @@ vgal.extend({
         }),
         technology = "rocket-fuel",
         ingredients = {
-            { "solid-fuel", 10 },
-        },
-        fluid_ingredients = {
+            { "solid-fuel",    10 },
             { "petroleum-gas", 50 },
         },
         results = {
@@ -140,10 +136,8 @@ vgal.extend({
         }),
         technology = "plastics",
         ingredients = {
-            { "coal",         1 },
-            { "copper-cable", 1 },
-        },
-        fluid_ingredients = {
+            { "coal",          1 },
+            { "copper-cable",  1 },
             { "petroleum-gas", 10 },
         },
         results = {
@@ -163,7 +157,7 @@ vgal.extend({
     --     ingredients = {
     --         { "coal", 1 },
     --     },
-    --     fluid_ingredients = {
+    --     ingredients = {
     --         { "light-oil", 25 },
     --     },
     --     results = {

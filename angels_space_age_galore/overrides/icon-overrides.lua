@@ -45,12 +45,12 @@ data.raw.recipe["vgal-molten-copper-carbon-fiber-low-density-structure"].icons =
 
 data.raw.recipe["vgal-petroleum-gas-barrel-biter-egg"].icons = vgal.icon.merge_composites({
     vgal.icon.get("biter-egg"),
-    vgal.icon.get_in("carbon-dioxide", "molecule"),
+    vgal.icon.get_in("angels-gas-carbon-dioxide"),
 })
 
 data.raw.recipe["vgal-ammonia-agricultural-science-pack"].icons = vgal.icon.merge_composites({
     vgal.icon.get("agricultural-science-pack"),
-    vgal.icon.get_in("urea", "molecule"),
+    vgal.icon.get_in("angels-gas-urea"),
 })
 
 data.raw.recipe["vgal-spoilage-crude-oil"].icons = vgal.icon.create({

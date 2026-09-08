@@ -69,7 +69,7 @@ require("icon-create-handler-angels")
 ---@param icon data.IconData
 ---@return number
 function vgal.icon.get_auto_scale(icon)
-    return icon.scale or ((64 / 2) / (icon.icon_size or 64))
+    return (64 / 2) / (icon.icon_size or 64)
 end
 
 ---@param override vgal.IconOverride
@@ -86,13 +86,15 @@ end
 ---@return data.IconData[]
 function vgal.icon.normalize_composite_scales(composite_icon)
     local sizes = {}
-    for i, icon2 in ipairs(composite_icon) do
-        sizes[i] = vgal.icon.get_auto_scale(icon2)
+
+    for i, icon in ipairs(composite_icon) do
+        sizes[i] = vgal.icon.get_auto_scale(icon)
     end
+
     local normed = vgal.table.normalize_array(sizes)
     local scaled_icons = {}
-    for i, icon2 in ipairs(composite_icon) do
-        local copy = util.table.deepcopy(icon2)
+    for i, icon in ipairs(composite_icon) do
+        local copy = util.table.deepcopy(icon)
         copy.scale = normed[i]
         scaled_icons[i] = copy
     end
@@ -102,25 +104,62 @@ function vgal.icon.normalize_composite_scales(composite_icon)
     return scaled_icons
 end
 
+---@param shift data.Vector.struct|{[1]: number, [2]: number}
+---@return {[1]: number, [2]: number}
+function vgal.icon.to_normalized_shift(shift)
+    shift = table.deepcopy(shift)
+
+    if shift.x and shift.y then
+        shift[1] = shift.x
+        shift[2] = shift.y
+        shift.x = nil
+        shift.y = nil
+        return shift
+    elseif shift[1] and shift[2] then
+        shift.x = nil
+        shift.y = nil
+        return shift
+    else
+        error("Invalid shift: " .. serpent.block(shift))
+    end
+end
+
 ---@param composite_icon data.IconData[]
 ---@param scale number?
 ---@param shift data.Vector.struct|{[1]: number, [2]: number}?
 ---@return data.IconData[]
 function vgal.icon.shift(composite_icon, scale, shift)
     scale = scale or 1
-    shift = shift or { 0, 0 }
+    shift = shift and vgal.icon.to_normalized_shift(shift) or { 0, 0 }
+
     local icons = {}
-    local icon_normalized = vgal.icon.normalize_composite_scales(composite_icon) -- copies
-    for _, icon2 in ipairs(icon_normalized) do
-        local new_icon = util.table.deepcopy(icon2)
-        if new_icon.scale then
-            new_icon.scale = scale * new_icon.scale
+
+    -- composite_icon = vgal.icon.normalize_composite_scales(composite_icon) -- copies
+
+    for _, icon in ipairs(composite_icon) do
+        ---@type data.IconData
+        ---@diagnostic disable-next-line: missing-fields
+        local new_icon = {}
+        new_icon.icon = icon.icon
+        new_icon.icon_size = icon.icon_size
+        new_icon.draw_background = icon.draw_background
+        new_icon.floating = icon.floating
+        new_icon.tint = icon.tint
+
+        new_icon.scale = scale * (icon.scale or vgal.icon.get_auto_scale(icon))
+
+        if icon.shift then
+            local new_shift = vgal.icon.to_normalized_shift(icon.shift)
+            new_shift[1] = (new_shift[1]) * scale + shift[1]
+            new_shift[2] = (new_shift[2]) * scale + shift[2]
+            new_icon.shift = new_shift
         else
-            new_icon.scale = scale * vgal.icon.get_auto_scale(new_icon)
+            new_icon.shift = shift
         end
-        new_icon.shift = shift or new_icon.shift
+
         table.insert(icons, new_icon)
     end
+
     return icons
 end
 
@@ -163,124 +202,60 @@ end
 ---@return data.IconData[]
 function vgal.icon.get(key_name, icon_source)
     icon_source = icon_source or vgal.get_recipeable(key_name).type
+    local result
     if icon_source == "recipe" then
         local recipe = data.raw["recipe"][key_name]
-        if recipe.icon then
-            return {
-                {
-                    icon = recipe.icon,
-                    icon_size = recipe.icon_size,
-                }
-            }
-        else
-            return util.table.deepcopy(recipe.icons or
-                error("Cannot get icon from invalid prototype with icons. Key: " ..
-                    key_name .. ", Source: " .. icon_source))
-        end
-    end
-    if icon_source == "raw" then
-        if key_name == "angels_sorting" then
-            return {
-                {
-                    icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
-                    icon_size = 32,
-                }
-            }
-        end
-        if key_name == "angels_crushing" then
-            return {
-                {
-                    icon = "__angelsrefininggraphics__/graphics/icons/ore-crusher.png",
-                    icon_size = 64,
-                    scale = 0.5,
-                }
-            }
-        end
-        if key_name == "angels_electrolyzing" then
-            return {
-                {
-                    icon = "__angels_galore__/graphics/icons/electrolyzing-icon-2.png",
-                    icon_size = 52,
-                }
-            }
-        end
-        if vgal.string.contains(key_name, "tier") then
-            local tier = string.sub(key_name, -1)
-            return {
-                {
-                    icon = "__angelsrefining__/graphics/icons/numerals/num-" .. tier .. "-outline.png",
-                    icon_size = 64,
-                    tint = { 0, 0, 0, 1 },
-                },
-                {
-                    icon = "__angelsrefining__/graphics/icons/numerals/num-" .. tier .. ".png",
-                    icon_size = 64,
-                    tint = angelsmods.petrochem.number_tint, -- angelsmods.bioprocessing.number_tint
-                },
-            }
-        end
-    end
-    if icon_source == "molecule" and mods["angelspetrochem"] then
-        if key_name == "acetic-acid" or key_name == "acetic-anhydride" or key_name == "celluslose-acetate" or key_name == "ethanol" or key_name == "propionic-acid" then
-            return {
-                {
-                    icon = "__angelsbioprocessinggraphics__/graphics/icons/molecule-" .. key_name .. ".png",
-                    icon_size = 72,
-                    -- scale = (72 / 64) * 1.8,
-                }
-            }
-        end
-
-        return {
-            {
-                icon = "__angelspetrochemgraphics__/graphics/icons/molecules/" .. key_name .. ".png",
-                icon_size = 72,
-                -- scale = (72 / 64) * 1.8,
-            }
-        }
-    end
-
-    local override = vgal.icon.overrides[key_name]
-    if override and override[icon_source] then
-        return override[icon_source].composite_icon_override or override[icon_source].composite_icon_override_function()
-    end
-
-    local associated_item_prototype = vgal.get_recipeable(key_name)
-
-    vgal.log("getting icon: " .. associated_item_prototype.name)
-
-    if associated_item_prototype then
-        if associated_item_prototype.icon then
-            if associated_item_prototype.icon == nil or associated_item_prototype.icon == '' then
-                error()
+        if recipe then
+            if recipe.icon then
+                result = { { icon = recipe.icon, icon_size = recipe.icon_size or 64 } }
+            elseif recipe.icons then
+                result = util.table.deepcopy(recipe.icons)
             end
-            return {
-                {
-                    icon = associated_item_prototype.icon,
-                    icon_size = associated_item_prototype.icon_size or 64,
-                }
-            }
         end
-        if associated_item_prototype.icons then
-            local icons = util.table.deepcopy(associated_item_prototype.icons)
-            return icons
+        if not result then
+            error("Cannot get icon from invalid recipe: " .. key_name)
+        end
+    else
+        local override = vgal.icon.overrides[key_name]
+        if override and override[icon_source] then
+            local source_override = override[icon_source]
+            if source_override.composite_icon_override then
+                result = source_override.composite_icon_override
+            elseif source_override.composite_icon_override_function then
+                result = source_override.composite_icon_override_function()
+            end
+        end
+        if not result then
+            local recipeable = vgal.get_recipeable(key_name)
+            if recipeable then
+                -- vgal.log("getting icon: " .. associated_item.name)
+                if recipeable.icon then
+                    result = { { icon = recipeable.icon, icon_size = recipeable.icon_size or 64 } }
+                elseif recipeable.icons then
+                    result = util.table.deepcopy(recipeable.icons)
+                end
+            end
+            if not result then
+                error("Cannot get icon from invalid prototype with icons. Key: " .. key_name .. ", Source: " .. icon_source)
+            end
         end
     end
-    error()
+    -- vgal.log("successfully got icon for: " .. key_name)
+    return result
 end
 
 ---@param key_name string
 ---@param icon_source string?
 ---@return data.IconData[]
 function vgal.icon.get_in(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { -8, -8 })
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.5, { -8, -8 })
 end
 
 ---@param key_name string
 ---@param icon_source string?
 ---@return data.IconData[]
 function vgal.icon.get_in2(key_name, icon_source)
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, { 8, -8 })
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.5, { 8, -8 })
 end
 
 ---@param key_name string
@@ -305,7 +280,7 @@ function vgal.icon.get_subicon(key_name, icon_source, tile_index)
     end
 
     local offset = tile_offsets[tile_index]
-    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.25, offset)
+    return vgal.icon.shift(vgal.icon.get(key_name, icon_source), 0.5, offset)
 end
 
 ---@return data.IconData[]
@@ -357,7 +332,7 @@ end
 function vgal.icon.normalize_blueprint(blueprint)
     blueprint.inputs = blueprint.inputs or {}
     blueprint.outputs = blueprint.outputs or {}
-    blueprint.type = blueprint.type or "default"
+    blueprint.style = blueprint.style or "default"
 end
 
 ---@param prototype_to data.PrototypeBase|vgal.PrototypeWithIcons
@@ -464,7 +439,7 @@ if vgal.defines.flags["agal"] then
         name = "petroleum-gas",
         source = "fluid",
         composite_icon_override_function = function()
-            return vgal.icon.get("methane", "molecule")
+            return vgal.icon.get("angels-gas-methane")
         end
     })
     vgal.icon.add_override({
@@ -481,13 +456,13 @@ if vgal.defines.flags["agal"] then
             return vgal.icon.get("angels-liquid-naphtha")
         end
     })
-    vgal.icon.add_override({
-        name = "sulfuric-acid",
-        source = "fluid",
-        composite_icon_override_function = function()
-            return vgal.icon.get("sulfuric-acid", "molecule")
-        end
-    })
+    -- vgal.icon.add_override({
+    --     name = "sulfuric-acid",
+    --     source = "fluid",
+    --     composite_icon_override_function = function()
+    --         return vgal.icon.get("sulfuric-acid")
+    --     end
+    -- })
 
     if mods["reskins-angels"] then
         vgal.icon.add_override({

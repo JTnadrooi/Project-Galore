@@ -7,7 +7,7 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("propene", "molecule"),
+            vgal.icon.get_in("angels-gas-propene"),
         }),
         energy_required = 4, -- 2
         technology = "plastics",
@@ -25,8 +25,8 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("propene", "molecule"),
-            vgal.icon.get_in2("hydrogen", "molecule"),
+            vgal.icon.get_in("angels-gas-propene"),
+            vgal.icon.get_in2("angels-gas-hydrogen"),
         }),
         energy_required = 4, -- 2
         technology = "plastics",
@@ -45,8 +45,8 @@ vgal.extend({
     --     prefix = "vgal",
     --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("plastic-bar"),
-    --         vgal.icon.get_in("propene", "molecule"),
-    --         vgal.icon.get_in2("ammonia", "molecule"),
+    --         vgal.icon.get_in("angels-gas-propene"),
+    --         vgal.icon.get_in2("angels-gas-ammonia"),
     --     }),
     --     energy_required = 6,
     --     technology = { "plastics", "angels-nitrogen-processing-2" },
@@ -71,7 +71,7 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("polyethylene", "molecule"),
+            vgal.icon.get_in("angels-liquid-polyethylene"),
         }),
         energy_required = 3,
         technology = "angels-advanced-chemistry-3",
@@ -112,8 +112,8 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("ethylene", "molecule"),
-            vgal.icon.get_in2("chlorine", "molecule"),
+            vgal.icon.get_in("angels-gas-ethylene"),
+            vgal.icon.get_in2("angels-gas-chlorine"),
         }),
         energy_required = 3,
         technology = { "plastics", "angels-chlorine-processing-1" },
@@ -137,7 +137,7 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("phenol", "molecule"),
+            vgal.icon.get_in("angels-liquid-phenol"),
         }),
         energy_required = 2,
         technology = "angels-advanced-chemistry-3",
@@ -156,7 +156,7 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("acetone", "molecule"),
+            vgal.icon.get_in("angels-gas-acetone"),
         }),
         energy_required = 4,
         technology = "angels-bio-plastic-1",
@@ -175,8 +175,8 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("acetic-acid", "molecule"),
-            vgal.icon.get_in2("ethylene", "molecule"),
+            vgal.icon.get_in("angels-liquid-acetic-acid"),
+            vgal.icon.get_in2("angels-gas-ethylene"),
         }),
         energy_required = 2,
         technology = "angels-bio-plastic-1",
@@ -219,7 +219,7 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("plastic-bar"),
-            vgal.icon.get_in("propionic-acid", "molecule"),
+            vgal.icon.get_in("angels-liquid-propionic-acid"),
             vgal.icon.get_in2("angels-cellulose-fiber"),
         }),
         energy_required = 4,
@@ -242,7 +242,7 @@ vgal.extend({
     --     prefix = "vgal",
     --     icons = vgal.icon.merge_composites({
     --         vgal.icon.get("plastic-bar"),
-    --         vgal.icon.get_in("propionic-acid", "molecule"),
+    --         vgal.icon.get_in("angels-liquid-propionic-acid"),
     --         vgal.icon.get_in2("angels-solid-sodium-hydroxide"),
     --     }),
     --     energy_required = 4,

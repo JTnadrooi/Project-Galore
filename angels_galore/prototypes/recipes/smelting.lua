@@ -4,7 +4,7 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-ingot-steel"),
-            vgal.icon.get_in("angels-slag"),
+            vgal.icon.get_in("angels-gas-nitrogen"),
         }),
         energy_required = 4,
         technology = { "angels-nitrogen-processing-1", "angels-steel-smelting-1" },

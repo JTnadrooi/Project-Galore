@@ -137,7 +137,7 @@ end
 -- toluene fixes
 data.raw.recipe["angels-liquid-toluene-from-benzene"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-toluene"),
-    vgal.icon.get_in("benzene", "molecule"),
+    vgal.icon.get_in("angels-gas-benzene"),
 })
 data.raw.recipe["angels-liquid-toluene"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-toluene"),
@@ -298,7 +298,7 @@ use_main_icon("angels-solid-soil")
 use_main_icon("explosives")
 data.raw["recipe"]["angels-solid-nitroglycerin"].icons = vgal.icon.merge_composites({
     vgal.icon.get("explosives"),
-    vgal.icon.get_in("glycerol", "molecule"),
+    vgal.icon.get_in("angels-liquid-glycerol"),
 })
 data.raw["recipe"]["angels-solid-trinitrotoluene"].icons = vgal.icon.merge_composites({
     vgal.icon.get("explosives"),
@@ -323,7 +323,7 @@ data.raw["recipe"]["angels-algae-green-simple"].icons = vgal.icon.merge_composit
 data.raw["recipe"]["angels-algae-green"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-algae-green"),
     -- vgal.icon.get_in("angels-water-mineralized"),
-    vgal.icon.get_in("carbon-dioxide", "molecule"),
+    vgal.icon.get_in("angels-gas-carbon-dioxide"),
 })
 
 -- fix wood sawing recipe tier icons
@@ -347,7 +347,7 @@ data.raw["recipe"]["angels-tree-seed-2"].icons = vgal.icon.merge_composites({
 })
 data.raw["recipe"]["angels-tree-seed-3"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-tree-seed"),
-    vgal.icon.get_in("carbon-dioxide", "molecule"),
+    vgal.icon.get_in("angels-gas-carbon-dioxide"),
 })
 
 -- fix tree recipe tier icons
@@ -510,7 +510,7 @@ end
 -- fix solid fuel recipe icons
 data.raw["recipe"]["angels-solid-fuel-methane"].icons = vgal.icon.merge_composites({
     vgal.icon.get("solid-fuel"),
-    vgal.icon.get_in("methane", "molecule"),
+    vgal.icon.get_in("angels-gas-methane"),
 })
 data.raw["recipe"]["angels-solid-fuel-naphtha"].icons = vgal.icon.merge_composites({
     vgal.icon.get("solid-fuel"),
@@ -526,7 +526,7 @@ data.raw["recipe"]["angels-solid-fuel-synthesis"].icons = vgal.icon.merge_compos
 })
 data.raw["recipe"]["angels-solid-fuel-hydrazine"].icons = vgal.icon.merge_composites({
     vgal.icon.get("solid-fuel"),
-    vgal.icon.get_in("hydrazine", "molecule"),
+    vgal.icon.get_in("angels-gas-hydrazine"),
 })
 
 for _, nutrientable in pairs(vgal.defines.nutrientables) do

@@ -76,7 +76,7 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("fish-breeding", "recipe"),
-            vgal.icon.shift(vgal.icon.get("ammoniacal-solution"), 0.35, { 0, -6.5 })
+            vgal.icon.shift(vgal.icon.get("ammoniacal-solution"), 0.7, { 0, -6.5 })
         }),
         category = "organic",
 
@@ -249,7 +249,7 @@ for _, metal in pairs(vgal.defines.metals) do
             prefix = "vgal",
             icons = vgal.icon.merge_composites({
                 vgal.icon.get(metal.bacteria .. "-cultivation", "recipe"),
-                vgal.icon.shift(vgal.icon.get("uranium-235"), 0.35, { 0, -6.5 }),
+                vgal.icon.shift(vgal.icon.get("uranium-235"), 0.7, { 0, -6.5 }),
             }),
             category = "organic",
             energy_required = 8,
@@ -282,7 +282,7 @@ for _, metal in pairs(vgal.defines.metals) do
             prefix = "vgal",
             icons = vgal.icon.merge_composites({
                 vgal.icon.get(metal.bacteria .. "-cultivation", "recipe"),
-                vgal.icon.shift(vgal.icon.get("ammoniacal-solution"), 0.35, { 0, -6.5 }),
+                vgal.icon.shift(vgal.icon.get("ammoniacal-solution"), 0.7, { 0, -6.5 }),
             }),
             category = "organic",
             energy_required = 8,

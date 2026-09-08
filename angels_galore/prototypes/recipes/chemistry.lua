@@ -28,7 +28,7 @@ vgal.extend({
         icons = vgal.icon.merge_composites({
             vgal.icon.get("angels-solid-salt"),
             vgal.icon.get_in("angels-solid-sodium-chlorate"),
-            vgal.icon.get_in2("hydrochloric-acid", "molecule"),
+            vgal.icon.get_in2("angels-liquid-hydrochloric-acid"),
         }),
         energy_required = 2,
         technology = "angels-chlorine-processing-4",
@@ -571,8 +571,8 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("rocket-fuel"),
-            vgal.icon.get_in("hydrogen", "molecule"),
-            vgal.icon.get_in2("oxygen", "molecule"),
+            vgal.icon.get_in("angels-gas-hydrogen"),
+            vgal.icon.get_in2("angels-gas-oxygen"),
         }),
         energy_required = 15,
         technology = "rocket-fuel",
@@ -592,7 +592,7 @@ vgal.extend({
         prefix = "vgal",
         icons = vgal.icon.merge_composites({
             vgal.icon.get("solid-fuel"),
-            vgal.icon.get_in("propene", "molecule"),
+            vgal.icon.get_in("angels-gas-propene"),
         }),
         energy_required = 4,
         technology = { "flammables", "angels-steam-cracking-1" },

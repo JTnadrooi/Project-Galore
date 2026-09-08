@@ -197,15 +197,11 @@ vgal.extend({
     {
         name = "pistol-rail-railgun",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("railgun-turret"),
-            vgal.icon.get_in("pistol"),
-        }),
         energy_required = 10,
         technology = "railgun",
         ingredients = {
-            { "rail",   8000 },
             { "pistol", 1 },
+            { "rail",   8000 },
         },
         results = {
             { "railgun", 1 },

@@ -15,6 +15,7 @@ vgal.extend({
             { "sulfuric-acid", 1000 },
         },
         results = {
+            { "sulfur", 4 }, -- 50
             {
                 "steam",
                 2000,
@@ -22,7 +23,6 @@ vgal.extend({
                     temperature = 165,
                 },
             },
-            { "sulfur", 4 }, -- 50
         },
         surface_conditions =
         {
@@ -364,8 +364,8 @@ vgal.extend({
         technology = "lithium-processing",
         ingredients = {
             { "ammonia",      10 }, -- 20
-            { "lithium",      1 }, -- 150
-            { "copper-plate", 5 }, -- 50
+            { "lithium",      1 },  -- 150
+            { "copper-plate", 5 },  -- 50
         },
         results = {
             { "battery", 5 }, -- 250

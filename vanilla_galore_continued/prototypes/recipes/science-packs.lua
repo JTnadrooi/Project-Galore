@@ -184,7 +184,7 @@ vgal.extend({
         }),
         category = "crafting",
         energy_required = 25,
-        technology = "concrete",
+        technology = "gate",
         ingredients = {
             { "gate",   1 }, -- 250
             { "boiler", 1 }, -- 90

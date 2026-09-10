@@ -20,6 +20,8 @@ require("mods.angelsaddons-mobility")
 require("mods.angelsaddons-storage")
 require("mods.angelsinfiniteores")
 
+require("recycling-fixes")
+
 require("mods.bobmodules")
 require("mods.boblogistics")
 

@@ -105,7 +105,7 @@ data.raw["technology"]["angels-nuclear-fuel"].prerequisites = {
 
 -- this really doesnt listen
 data.raw["recipe"]["angels-ore2-chunk"].results = vgal.build.io({
-    { "angels-ore2-chunk", 2 },
+    { "angels-ore2-chunk",         2 },
     { "angels-water-yellow-waste", 25, { ignored_by_productivity = vgal.defines.ignored_by_productivity_max } }, -- GALORE PROD CHECK SCRIPT RUNS BEFORE THIS (i should make it a seperate mod)
 })
 
@@ -132,3 +132,13 @@ end
 -- error(serpent.block(data.raw["noise-expression"]["default-infinite-angels-ore3-patches"]))
 -- error(data.raw["resource"]["angels-ore2"].autoplace.probability_expression .. "\n\n" .. data.raw["resource"]["angels-ore2"].autoplace.richness_expression .. "\n\n---\n\n")
 -- error(data.raw["resource"]["angels-ore2"].autoplace.control)
+
+
+-- local r = {}
+-- for _, recipe in pairs(data.raw["recipe"]) do
+--     if vgal.recipe.has_result(recipe, "processing-unit") and not vgal.recipe.has_category(recipe, "recycling") then
+--         r[recipe.name] = { recipe.name, recipe.auto_recycle }
+--     end
+-- end
+
+-- error(serpent.block(r))

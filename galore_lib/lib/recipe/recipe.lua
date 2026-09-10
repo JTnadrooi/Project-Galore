@@ -394,7 +394,7 @@ function vgal.recipe.has_result(recipe_or_recipe_name, result_name)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     if recipe and recipe.results then
-        for _, result in ipairs(vgal.recipe.get_results(recipe_or_recipe_name)) do
+        for _, result in ipairs(recipe.results) do
             if result.name == result_name then
                 return true
             end

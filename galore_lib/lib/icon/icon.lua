@@ -163,19 +163,6 @@ function vgal.icon.shift(composite_icon, scale, shift)
     return icons
 end
 
----@param tier integer
----@return data.Color
-function vgal.icon.get_tier_tint(tier)
-    local tints = {
-        { a = 1, b = 88 / 255,  g = 204 / 255, r = 119 / 255 }, -- #58cc77
-        { a = 1, b = 84 / 255,  g = 208 / 255, r = 222 / 255 }, -- #54d0de
-        { a = 1, b = 250 / 255, g = 120 / 255, r = 194 / 255 }, -- #fa78c2
-        { a = 1, b = 250 / 255, g = 120 / 255, r = 130 / 255 }, -- #fa7885
-        { a = 1, b = 215 / 255, g = 250 / 255, r = 120 / 255 }, -- #d7fa78
-    }
-    return tints[tier] or { a = 1, b = 0.5, g = 0.5, r = 0.5 }
-end
-
 ---@param metadata table?
 ---@return data.IconData[]
 function vgal.icon.get_overlay(overlay, metadata)

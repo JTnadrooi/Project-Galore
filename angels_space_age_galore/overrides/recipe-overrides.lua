@@ -46,6 +46,8 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-ammonia-calcite-molten-iron")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-sulfuric-acid-calcite-molten-copper")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-sulfuric-acid-sulfur")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-holmium-ore-holmium-plate")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-plastic-bar-electrolyte")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-sulfuric-acid-electrolyte")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-angels-liquid-molten-steel-low-density-structure") -- tagged as removed
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-calcite-carbon-concrete")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-coal-crushing")
@@ -417,7 +419,7 @@ do
     -- })
     holmium_solution_recipe.ingredients = vgal.build.io({
         { "holmium-ore",                     2 },
-        { "angels-liquid-hydrochloric-acid", 50 }
+        { "angels-liquid-hydrochloric-acid", 10 }
     })
 end
 -- do

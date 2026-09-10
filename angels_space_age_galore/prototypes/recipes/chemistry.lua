@@ -35,7 +35,7 @@ vgal.extend({
         energy_required = 10,
         technology = "holmium-processing",
         ingredients = {
-            { "angels-liquid-nitric-acid", 50 },
+            { "angels-liquid-nitric-acid", 10 },
             { "holmium-ore",               2 },
         },
         results = {

@@ -33,3 +33,5 @@ foreach ($match in $rMatches) {
         Write-Warning "Skipping invalid group: '$inner'"
     }
 }
+
+Read-Host "Press ENTER to continue..."

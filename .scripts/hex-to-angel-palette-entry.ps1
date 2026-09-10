@@ -30,3 +30,5 @@ else {
 if ($output) {
     Write-Output $output
 }
+
+Read-Host "Press ENTER to continue..."

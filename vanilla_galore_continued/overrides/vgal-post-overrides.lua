@@ -34,9 +34,8 @@ if mods["quality"] then
             -- only change name if adding, else it will replace when extended
             if q_upgrades_mode == "add" then
                 q_recipe.name = "vgal-quality-upgrade" .. q_recipe.name:sub(5)
+                q_recipe.hide_from_player_crafting = true
             end
-
-            q_recipe.hide_from_player_crafting = true
 
             -- reduce output
             for _, result in ipairs(q_recipe.results) do

@@ -410,10 +410,14 @@ end
 do
     local holmium_solution_recipe = data.raw["recipe"]["holmium-solution"]
     vgal.recipe.replace_category(holmium_solution_recipe, "chemistry", "angels-liquifying")
+    -- holmium_solution_recipe.ingredients = vgal.build.io({
+    --     { "angels-solid-sand",     1 }, -- may be replaced by silicon if I end up implementing it
+    --     { "holmium-ore",           2 },
+    --     { "angels-water-purified", 25 }
+    -- })
     holmium_solution_recipe.ingredients = vgal.build.io({
-        { "angels-solid-sand",     1 }, -- may be replaced by silicon if I end up implementing it
-        { "holmium-ore",           2 },
-        { "angels-water-purified", 25 }
+        { "holmium-ore",                     2 },
+        { "angels-liquid-hydrochloric-acid", 50 }
     })
 end
 -- do
@@ -431,11 +435,11 @@ end
 do
     local electrolyte_recipe = data.raw["recipe"]["electrolyte"]
     vgal.recipe.replace_category(electrolyte_recipe, "electromagnetics", "angels-advanced-chemistry")
-    electrolyte_recipe.energy_required = 20
+    electrolyte_recipe.energy_required = 15
     electrolyte_recipe.ingredients = vgal.build.io({
-        { "holmium-solution",      25 },
-        { "angels-liquid-toluene", 50 },
-        { "angels-water-saline",   50 },
+        { "holmium-solution",      30 }, -- prod
+        { "angels-liquid-toluene", 10 },
+        { "angels-water-saline",   10 },
         -- could add as alt:
         -- { "angels-solid-ammonium-nitrate", 1 },
         -- { "angels-solid-sodium-perchlorate", 1 },
@@ -443,6 +447,12 @@ do
     electrolyte_recipe.results = vgal.build.io({
         { "electrolyte", 50 },
     })
+end
+
+-- scrap fixes
+do
+    local scrap_recyling_recipe = data.raw["recipe"]["scrap-recycling"]
+    vgal.recipe.replace_result(scrap_recyling_recipe, "stone", "angels-stone-crushed")
 end
 
 -- ice smelting fixes

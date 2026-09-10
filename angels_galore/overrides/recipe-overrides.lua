@@ -898,7 +898,7 @@ for _, environment in pairs(vgal.defines.environments) do
 end
 
 -- fix ceramic filter recipe
-vgal.recipe.replace_ingredient("angels-filter-ceramic", "angels-solid-aluminium-oxide", "angels-clay-brick")
+vgal.recipe.replace_ingredient("angels-filter-ceramic", "angels-solid-aluminium-oxide", "stone-brick")
 
 -- tweak atmospheric separation recipe (it will also work better with space age this way, gleba will have the higher ox yield one)
 data.raw["recipe"]["angels-air-separation"].results = vgal.build.io({

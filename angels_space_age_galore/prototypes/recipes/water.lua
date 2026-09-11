@@ -2,7 +2,7 @@ vgal.extend({
     {
         name = "water-low-pressure-boiling-steam",
         prefix = "vgal",
-        vgal.icon.create({
+        icons = vgal.icon.create({
             style   = "angels-liquid",
             outputs = { "steam" },
             inputs  = { "water" },

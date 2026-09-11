@@ -2,7 +2,7 @@ vgal.extend({
     {
         name = "sulfuric-acid-angels-solid-sodium-hydroxide-steam",
         prefix = "vgal",
-        vgal.icon.create({
+        icons = vgal.icon.create({
             style   = "angels-gas",
             inputs  = { "angels-solid-sodium-hydroxide", "sulfuric-acid" },
             outputs = { "steam" },

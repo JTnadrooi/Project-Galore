@@ -89,3 +89,4 @@ data.raw.recipe["vgal-sulfur-ammonia-nutrients"].icons = vgal.icon.merge_composi
 
 -- fix electrolyte icon (data in galorelib icons override section)
 data.raw["fluid"]["electrolyte"].icons = vgal.icon.get("electrolyte", "fluid")
+data.raw["fluid"]["holmium-solution"].icons = vgal.icon.get("holmium-solution", "fluid")

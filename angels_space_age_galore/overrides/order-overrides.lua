@@ -45,3 +45,8 @@ data.raw["recipe"]["ice-melting"].order = "a[water]-b[from-not-water]"
 data.raw["item"]["lithium"].order = "f"
 data.raw["item"]["lithium"].subgroup = "vgal-petrochem-other-solids"
 vgal.subgroup.clean_recipe("lithium")
+
+data.raw["item-subgroup"]["vgal-fulgora-fluids"].order = "ebb"
+data.raw["item-subgroup"]["vgal-fulgora-fluids"].group = "angels-petrochem-refining"
+data.raw["fluid"]["holmium-solution"].order = "e"
+data.raw["fluid"]["holmium-solution"].subgroup = "vgal-Cl-liquid"

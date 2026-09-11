@@ -561,5 +561,15 @@ if vgal.defines.flags["agal"] then
                 return angelsmods.functions.create_viscous_liquid_fluid_icon(nil, { { 230, 60, 120 }, nil, { 235, 80, 130 } })
             end
         })
+        vgal.icon.add_override({
+            name = "holmium-solution",
+            source = "fluid",
+            composite_icon_override_function = function()
+                return angelsmods.functions.create_viscous_liquid_fluid_icon(
+                    nil,
+                    { { 113, 104, 109 }, { 113, 104, 109 }, { 217, 173, 173 }, { 217, 173, 173 } }
+                )
+            end
+        })
     end
 end

@@ -411,16 +411,19 @@ end
 -- holmium solution fixes
 do
     local holmium_solution_recipe = data.raw["recipe"]["holmium-solution"]
-    vgal.recipe.replace_category(holmium_solution_recipe, "chemistry", "angels-liquifying")
+    -- vgal.recipe.replace_category(holmium_solution_recipe, "chemistry", "angels-liquifying")
+    holmium_solution_recipe.energy_required = 5
     -- holmium_solution_recipe.ingredients = vgal.build.io({
     --     { "angels-solid-sand",     1 }, -- may be replaced by silicon if I end up implementing it
     --     { "holmium-ore",           2 },
     --     { "angels-water-purified", 25 }
     -- })
     holmium_solution_recipe.ingredients = vgal.build.io({
-        { "holmium-ore",                     2 },
-        { "angels-liquid-hydrochloric-acid", 10 }
+        { "holmium-ore",           1 },
+        { "angels-gas-chlorine",   15 },
+        { "angels-water-purified", 10 },
     })
+    vgal.recipe.set_result_amount(holmium_solution_recipe, 60)
 end
 -- do
 --     local holmium_solution_recipe_2 = data.raw["recipe"]["vgal-calcite-holmium-solution"]
@@ -448,6 +451,11 @@ do
     })
     electrolyte_recipe.results = vgal.build.io({
         { "electrolyte", 50 },
+    })
+    electrolyte_recipe.icons = vgal.icon.create({
+        style   = "angels-liquid",
+        outputs = { "electrolyte" },
+        palette = { { 188, 064, 107 }, { 188, 064, 107 }, { 188, 064, 107 }, },
     })
 end
 

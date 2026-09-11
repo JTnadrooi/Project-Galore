@@ -24,24 +24,24 @@ vgal.extend({
         allow_productivity = false,
         surface_conditions = vgal.get_surface_conditions_for("vulcanus"),
     },
-    {
-        name = "angels-liquid-nitric-acid-holmium-solution",
-        prefix = "vgal",
-        icons = vgal.icon.create({
-            inputs = { "angels-liquid-nitric-acid" },
-            outputs = { "holmium-solution" },
-        }),
-        category = "angels-liquifying",
-        energy_required = 10,
-        technology = "holmium-processing",
-        ingredients = {
-            { "angels-liquid-nitric-acid", 10 },
-            { "holmium-ore",               2 },
-        },
-        results = {
-            { "holmium-solution", 100 },
-        },
-    },
+    -- {
+    --     name = "angels-liquid-nitric-acid-holmium-solution",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.create({
+    --         inputs = { "angels-liquid-nitric-acid" },
+    --         outputs = { "holmium-solution" },
+    --     }),
+    --     category = "angels-liquifying",
+    --     energy_required = 10,
+    --     technology = "holmium-processing",
+    --     ingredients = {
+    --         { "angels-liquid-nitric-acid", 10 },
+    --         { "holmium-ore",               2 },
+    --     },
+    --     results = {
+    --         { "holmium-solution", 100 },
+    --     },
+    -- },
     {
         name = "holmium-ore-angels-crystal-slurry",
         prefix = "vgal",

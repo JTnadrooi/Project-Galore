@@ -1,4 +1,5 @@
 require("overrides.locale-overrides")
+require("overrides.icon-overrides")
 require("overrides.tech-overrides")
 require("overrides.overrides")
 require("overrides.recipe-overrides")
@@ -7,6 +8,5 @@ require("overrides.spoilage-overrides")
 require("overrides.loot-overrides")
 
 require("overrides.order-overrides")
-require("overrides.icon-overrides")
 require("overrides.autoplace-overrides")
 require("overrides.factoriopedia-overrides")

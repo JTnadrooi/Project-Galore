@@ -974,7 +974,7 @@ for _, metal in pairs(vgal.defines.metals) do
     data.raw.recipe[metal.solution].energy_required = 1
     data.raw.recipe[metal.solution].ingredients = vgal.build.io({
         { metal.pebbles,           6 },
-        { "angels-water-purified", 60 },
+        { "angels-water-purified", 10 },
         { "angels-gas-chlorine",   15 },
     })
     vgal.recipe.set_result_amount(metal.solution, 60)

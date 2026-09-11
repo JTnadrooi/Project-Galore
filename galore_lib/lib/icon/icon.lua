@@ -387,6 +387,7 @@ end
 ---@param prototype data.PrototypeBase|vgal.PrototypeWithIcons
 ---@return data.IconData[]
 function vgal.icon.get_icons(prototype)
+    ---@diagnostic disable-next-line: return-type-mismatch
     return table.deepcopy(prototype.icon and {
         { icon = prototype.icon, icon_size = prototype.icon_size },
     } or prototype.icons)

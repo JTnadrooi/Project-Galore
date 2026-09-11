@@ -22,7 +22,8 @@ do
     ---@field enable_smart_stats? boolean
     ---@field domain? string
     ---@field categories? string[]
-    ---@field category string
+    ---@field category string?
+    ---@field override boolean?
 end
 
 do

@@ -84,6 +84,13 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
     output_recipe.hide_from_player_crafting = input_recipe.hide_from_player_crafting
     output_recipe.hide_from_stats = input_recipe.hide_from_stats
 
+    output_recipe.surface_conditions = input_recipe.surface_conditions
+    output_recipe.can_set_quality = input_recipe.can_set_quality
+    output_recipe.maximum_productivity = input_recipe.maximum_productivity
+    output_recipe.factoriopedia_alternative = input_recipe.factoriopedia_alternative
+    output_recipe.factoriopedia_description = input_recipe.factoriopedia_description
+    output_recipe.factoriopedia_simulation = input_recipe.factoriopedia_simulation
+
     -- toggle group management
     do
         local hidden = false
@@ -165,6 +172,12 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
     end
 
     output_recipe.allow_productivity = (input_recipe.allow_productivity == nil) and vgal.recipe.get_if_productivity(output_recipe.main_product) or input_recipe.allow_productivity
+
+    if data.raw["recipe"][output_recipe.name] and not input_recipe.override then
+        error("Recipe with name '" .. output_recipe.name .. "' already exists.")
+    elseif (not data.raw["recipe"][output_recipe.name]) and input_recipe.override then
+        error("No recipe found to override for recipe with name '" .. output_recipe.name .. "'.")
+    end
 
     vgal.log("registering: " .. output_recipe.name)
 

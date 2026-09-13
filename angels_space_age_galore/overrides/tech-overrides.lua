@@ -14,6 +14,10 @@ vgal.tech.add_prerequisite("angels-bio-refugium-puffer-1", "agriculture")
 vgal.tech.add_prerequisite("angels-bio-refugium-puffer-3", "agricultural-science-pack")
 vgal.tech.add_prerequisite("angels-bio-refugium-biter-1", "biter-egg-handling")
 
+-- for _, environment in pairs(vgal.defines.environments) do
+--     vgal.tech.add_prerequisite("angels-bio-" .. environment.name .. "-farm", "carbon-fiber")
+-- end
+
 vgal.tech.add_prerequisite("planet-discovery-gleba", "angels-bio-nutrient-paste")
 vgal.tech.add_unit("planet-discovery-gleba", "vgal-biological-science-pack")
 

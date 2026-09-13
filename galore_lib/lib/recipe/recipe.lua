@@ -728,7 +728,9 @@ end
 function vgal.recipe.replace_category(recipe_or_recipe_name, original_category, replacement_category)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
-    for i, category in ipairs(recipe.categories or { "crafting" }) do
+    recipe.categories = recipe.categories or { "crafting" }
+
+    for i, category in ipairs(recipe.categories) do
         if category == original_category then
             recipe.categories[i] = replacement_category
             return

@@ -134,6 +134,13 @@ function vgal.tech.remove_effect_with_type(tech_name, effect_type)
 end
 
 ---@param tech_name string
+---@param science_pack_prerequisite string
+function vgal.tech.add_science_pack_prerequisite_and_unit(tech_name, science_pack_prerequisite)
+    vgal.tech.add_prerequisite(tech_name, science_pack_prerequisite)
+    vgal.tech.add_unit(tech_name, science_pack_prerequisite)
+end
+
+---@param tech_name string
 ---@param prerequisite string
 function vgal.tech.add_prerequisite(tech_name, prerequisite)
     local tech = vgal.throw.if_tech_not_found(tech_name)

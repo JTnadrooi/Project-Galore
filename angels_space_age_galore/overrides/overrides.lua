@@ -149,6 +149,9 @@ data.raw.tile["oil-ocean-deep-2"].fluid = "angels-liquid-naphtha"
 -- reduce spoilage fuel value to reduce algae spoil fuel value increase (current: 200%)
 data.raw["item"]["spoilage"].fuel_value = "100kJ"
 
+-- reduce jellynut fuel value now processing isnt needed for seeds
+data.raw["capsule"]["jellynut"].fuel_value = "6MJ"
+
 -- fix holmium color
 data.raw["fluid"]["holmium-solution"].flow_color = { 229, 182, 207 }
 data.raw["fluid"]["holmium-solution"].base_color = { 229, 182, 207 }

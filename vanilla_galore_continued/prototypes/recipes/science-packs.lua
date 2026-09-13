@@ -118,7 +118,7 @@ vgal.extend({
         prefix = "vgal",
         category = "crafting",
         energy_required = 60,
-        technology = "automation-2",
+        technology = { "automation-2", "fast-inserter" },
         ingredients = {
             { "assembling-machine-2", 1 }, -- 540
             { "fast-inserter",        1 }, -- 125
@@ -251,8 +251,8 @@ vgal.extend({
         energy_required = 132,
         technology = { "bulk-inserter", "chemical-science-pack" },
         ingredients = {
-            { "bulk-inserter",       2 }, -- 1800
-            { "fast-transport-belt", 8 }, -- 920
+            { "bulk-inserter",       2 },   -- 1800
+            { "fast-transport-belt", 8 },   -- 920
             { "petroleum-gas",       100 }, -- 100
         },
         results = {
@@ -306,7 +306,7 @@ vgal.extend({
         }),
         category = "crafting",
         energy_required = 60,
-        technology = { "military-science-pack", "flamethrower" },
+        technology = { "military-science-pack", "flamethrower", "explosives" },
         ingredients = {
             { "explosives",               2 }, -- 60
             { "piercing-rounds-magazine", 6 }, -- 450
@@ -437,7 +437,7 @@ vgal.extend({
         }),
         category = "crafting",
         energy_required = 25,
-        technology = { "logistics-3", "fast-inserter" },
+        technology = { "logistics-3", "concrete", "bulk-inserter" },
         ingredients = {
             { "express-transport-belt", 6 },  -- 2190
             { "concrete",               40 }, -- 650 (is:480)
@@ -534,7 +534,7 @@ vgal.extend({
         }),
         category = "crafting",
         energy_required = 12,
-        technology = { "production-science-pack", "concrete" },
+        technology = { "production-science-pack", "concrete", "processing-unit" },
         ingredients = {
             { "fast-transport-belt", 8 },  -- 920
             { "concrete",            20 }, -- 240
@@ -555,7 +555,7 @@ vgal.extend({
         }),
         category = "crafting",
         energy_required = 6,
-        technology = "utility-science-pack",
+        technology = { "utility-science-pack", "concrete" },
         ingredients = {
             { "low-density-structure", 1 },
             { "refined-concrete",      25 },
@@ -574,7 +574,7 @@ vgal.extend({
         }),
         category = "crafting",
         energy_required = 6,
-        technology = "utility-science-pack",
+        technology = { "utility-science-pack", "concrete" },
         ingredients = {
             { "flying-robot-frame", 1 },
             { "refined-concrete",   20 },
@@ -593,7 +593,7 @@ vgal.extend({
         }),
         category = "crafting",
         energy_required = 6,
-        technology = "utility-science-pack",
+        technology = { "utility-science-pack", "concrete" },
         ingredients = {
             { "processing-unit",  1 },
             { "refined-concrete", 20 },

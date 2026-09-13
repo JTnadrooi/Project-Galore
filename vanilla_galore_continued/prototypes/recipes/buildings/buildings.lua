@@ -299,7 +299,7 @@ vgal.extend({
             vgal.icon.get_in("electric-engine-unit"),
         }),
         energy_required = 1,
-        technology = { "electric-engine", "automation-3" },
+        technology = "automation-3",
         ingredients = {
             { "electric-engine-unit", 12 }, -- 2160
             { "iron-gear-wheel",      25 }, -- 500
@@ -415,7 +415,7 @@ vgal.extend({
             vgal.icon.get_in("low-density-structure"),
         }),
         energy_required = 1,
-        technology = { "uranium-processing", "low-density-structure" },
+        technology = { "nuclear-power", "low-density-structure" },
         ingredients = {
             { "steel-plate",           6 },
             { "copper-plate",          2 },

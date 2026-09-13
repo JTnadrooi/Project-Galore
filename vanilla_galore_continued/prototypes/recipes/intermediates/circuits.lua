@@ -24,16 +24,16 @@ vgal.extend({
     {
         name = "sulfuric-acid-advanced-circuit",
         prefix = "vgal",
-        technology = "advanced-circuit",
+        technology = { "advanced-circuit", "sulfur-processing" },
         icons = vgal.icon.merge_composites({
             vgal.icon.get("advanced-circuit"),
             vgal.icon.get_in("sulfuric-acid"),
         }),
         energy_required = 32,
         ingredients = {
-            { "copper-cable",       8 }, -- 40
-            { "electronic-circuit", 6 }, -- 150
-            { "plastic-bar",        8 }, -- 120
+            { "copper-cable",       8 },  -- 40
+            { "electronic-circuit", 6 },  -- 150
+            { "plastic-bar",        8 },  -- 120
             { "sulfuric-acid",      40 }, -- 60
         },
         results = {

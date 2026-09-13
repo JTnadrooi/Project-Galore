@@ -64,7 +64,7 @@ vgal.extend({
         }),
         category = "crafting",
         energy_required = 6,
-        technology = "steel-processing",
+        technologies = { "railway", "concrete", "electric-energy-distribution-1", { "circuit-network", "steel-processing" } },
         ingredients = {
             { "steel-plate", 1 },
         },
@@ -98,7 +98,7 @@ vgal.extend({
             vgal.icon.get("repair-pack", "repair-tool"),
             vgal.icon.get_in("plastic-bar"),
         }),
-        technology = "plastics",
+        technology = { "plastics", "repair-pack" },
         energy_required = 1,
         ingredients = {
             { "electronic-circuit", 2 }, -- 50

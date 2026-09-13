@@ -219,7 +219,7 @@ vgal.extend({
             vgal.icon.get_in("advanced-circuit"),
         }),
         energy_required = 4,
-        technology = "advanced-circuit",
+        technology = { "logistics-2", "advanced-circuit" },
         ingredients = {
             { "steel-plate",      4 }, -- 200
             { "advanced-circuit", 2 }, -- 200
@@ -240,9 +240,9 @@ vgal.extend({
         energy_required = 4,
         technology = { "logistics-3", "processing-unit" },
         ingredients = {
-            { "steel-plate",     4 }, -- 200
-            { "processing-unit", 1 }, -- 710
-            { "fast-splitter",   1 }, -- 685
+            { "steel-plate",     4 },  -- 200
+            { "processing-unit", 1 },  -- 710
+            { "fast-splitter",   1 },  -- 685
             { "lubricant",       80 }, -- 160
         },
         results = {

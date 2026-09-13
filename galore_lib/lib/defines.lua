@@ -106,7 +106,7 @@ vgal.defines.modules = {
         name = "efficiency-module",
         order = "b",
         unique_ingredient = "spoilage",
-        unique_ingredient_amount = 1,
+        unique_ingredient_amount = 5,
         tiers = {
             "efficiency-module",
             "efficiency-module-2",
@@ -117,7 +117,7 @@ vgal.defines.modules = {
         name = "productivity-module",
         order = "c",
         unique_ingredient = "biter-egg",
-        unique_ingredient_amount = 5,
+        unique_ingredient_amount = 1,
         tiers = {
             "productivity-module",
             "productivity-module-2",

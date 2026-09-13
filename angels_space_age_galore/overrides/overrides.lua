@@ -140,8 +140,11 @@ do
     vent.icon = "__angels_space_age_galore__/graphics/icons/fluorine-vent.png"
 end
 
+-- file ocean fluids
 data.raw.tile["oil-ocean-shallow"].fluid = "angels-liquid-naphtha"
+data.raw.tile["oil-ocean-shallow-2"].fluid = "angels-liquid-naphtha"
 data.raw.tile["oil-ocean-deep"].fluid = "angels-liquid-naphtha"
+data.raw.tile["oil-ocean-deep-2"].fluid = "angels-liquid-naphtha"
 
 -- reduce spoilage fuel value to reduce algae spoil fuel value increase (current: 200%)
 data.raw["item"]["spoilage"].fuel_value = "100kJ"

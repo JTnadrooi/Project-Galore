@@ -420,8 +420,8 @@ do
     -- })
     holmium_solution_recipe.ingredients = vgal.build.io({
         { "holmium-ore",           1 },
-        { "angels-gas-chlorine",   15 },
         { "angels-water-purified", 10 },
+        { "angels-gas-chlorine",   15 },
     })
     vgal.recipe.set_result_amount(holmium_solution_recipe, 60)
 end
@@ -459,11 +459,15 @@ do
     })
 end
 
+vgal.recipe.replace_ingredient("superconductor", "angels-liquid-fuel-oil", "angels-gas-acetone")
+
 -- scrap fixes
 do
     local scrap_recyling_recipe = data.raw["recipe"]["scrap-recycling"]
     vgal.recipe.replace_result(scrap_recyling_recipe, "stone", "angels-stone-crushed")
 end
+
+vgal.recipe.replace_category("holmium-plate", "crafting-with-fluid", "angels-casting")
 
 -- ice smelting fixes
 do
@@ -593,10 +597,12 @@ do
     -- oxide
     do
         local ice_crushing_1_recipe = data.raw["recipe"]["oxide-asteroid-crushing"]
+        vgal.recipe.set_result_amount(ice_crushing_1_recipe, 12)
         ice_crushing_1_recipe.icons = get_asteroid_crushing_icon("oxide-asteroid-chunk")
 
         -- advanced
         local ice_crushing_2_recipe = data.raw["recipe"]["advanced-oxide-asteroid-crushing"]
+        vgal.recipe.set_result_amount(ice_crushing_2_recipe, 4)
         ice_crushing_2_recipe.icons = get_asteroid_crushing_icon("oxide-asteroid-chunk", "calcite")
 
         -- ammonia

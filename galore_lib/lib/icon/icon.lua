@@ -530,8 +530,9 @@ if vgal.defines.flags["agal"] then
             source = "item",
             composite_icon_override = {
                 {
-                    icon = "__angels_space_age_galore__/graphics/icons/plate-holmium.png",
+                    icon = "__angelssmeltinggraphics__/graphics/icons/plate-platinum.png",
                     icon_size = 32,
+                    tint = { 229, 182, 207 }
                 }
             }
         })

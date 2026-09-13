@@ -494,6 +494,16 @@ do
     })
 end
 
+-- recipe to planet moving
+vgal.recipe.replace_ingredient("angels-pellet-press", "steel-plate", "tungsten-plate")
+-- vgal.recipe.replace_ingredient("angels-gas-refinery", "steel-plate", "holmium-plate")
+vgal.recipe.replace_ingredient("angels-gas-refinery", "advanced-circuit", "processing-unit")
+vgal.recipe.replace_ingredient("angels-gas-refinery", "concrete", "refined-concrete")
+vgal.recipe.add_ingredient("angels-gas-refinery", { "superconductor", 10 })
+-- for _, environment in pairs(vgal.defines.environments) do
+--     vgal.recipe.add_ingredient(environment.farm, { "carbon-fiber", 10 })
+-- end
+
 -- crushing fixes
 do
     ---@param chunk_name string

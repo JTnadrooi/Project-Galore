@@ -10,3 +10,6 @@ require("overrides.loot-overrides")
 require("overrides.order-overrides")
 require("overrides.autoplace-overrides")
 require("overrides.factoriopedia-overrides")
+
+require("mods.angelsaddons-bots")
+require("mods.angelsaddons-storage")

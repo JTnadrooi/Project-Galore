@@ -11,7 +11,7 @@ vgal.tech.replace_recipe("angels-ore-crushing", "angels-ore4-crushed", "angels-o
 
 -- remove cement 3. it only adds alternate recipes but as those arent really alternates and more upgrades, Im gonna remove them instead of editing them.
 vgal.tech.deep_hide("angels-stone-smelting-3")
-vgal.tech.techs_to_splice["angels-stone-smelting-3"] = data.raw["technology"]["angels-stone-smelting-3"]
+vgal.tech.techs_to_splice["angels-stone-smelting-3"] = true
 
 -- move fertilizer to unlock before agri science and remove farming 2 tech (it only had the fertilizer recipe)
 vgal.tech.move_recipe("angels-bio-farm-2", "angels-composting", "angels-solid-fertilizer")
@@ -33,7 +33,7 @@ for _, environment in ipairs({ "desert", "swamp", "temperate" }) do
     }
 end
 
-vgal.recipe_prerequisites_make["vgal-sulfuric-acid-advanced-circuit"].prerequisite_groups = { { "advanced-circuit" } }
+vgal.recipe_prerequisites_store["vgal-sulfuric-acid-advanced-circuit"].prerequisite_groups = { { "advanced-circuit" } }
 
 -- vgal.tech.add_prerequisite("angels-water-treatment-3", "chemical-science-pack")
 -- vgal.tech.add_prerequisite("angels-bio-processing-blue", "chemical-science-pack")
@@ -314,7 +314,7 @@ for _, tech in pairs(data.raw["technology"]) do
         end
 
         if tech_is_without_relevant_effects then
-            vgal.tech.techs_to_splice[tech.name] = tech
+            vgal.tech.techs_to_splice[tech.name] = true
         end
     end
 end

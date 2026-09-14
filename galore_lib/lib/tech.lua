@@ -2,8 +2,9 @@
 vgal.tech = vgal.tech or {}
 
 ---@type table<string, boolean>
-vgal.tech.recipes_to_remove_from_techs = vgal.tech.recipes_to_remove_from_techs or {} -- table
-vgal.tech.techs_to_splice = vgal.tech.techs_to_splice or {}                           -- table
+vgal.tech.recipes_to_remove_from_techs = vgal.tech.recipes_to_remove_from_techs or {}
+---@type table<string, boolean>
+vgal.tech.techs_to_splice = vgal.tech.techs_to_splice or {}
 vgal.tech.units = {
     ["automation-science-pack"] = {
         name = "automation-science-pack",

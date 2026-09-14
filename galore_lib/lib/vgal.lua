@@ -38,7 +38,7 @@ vgal.catalyst_groups = {}
 vgal.entry_stat_relevant_catalysts = {}
 
 ---@type table<string, {recipe: string, prerequisite_groups: string[][]}>
-vgal.recipe_prerequisites_make = {}
+vgal.recipe_prerequisites_store = {}
 
 vgal.group_overrides = {}
 if vgal.defines.flags["vgal"] then
@@ -159,8 +159,9 @@ local function splice_and_flatten_techs()
         local modified = false
         for i, prerequisite in ipairs(tech.prerequisites or {}) do
             if vgal.tech.techs_to_splice[prerequisite] then
+                local tech = vgal.throw.if_tech_not_found(prerequisite)
                 -- Get the prerequisites to add
-                local new_prereqs = vgal.tech.techs_to_splice[prerequisite].prerequisites or {}
+                local new_prereqs = tech.prerequisites or {}
 
                 -- Remove the current prerequisite (the one being spliced)
                 table.remove(tech.prerequisites, i)
@@ -193,12 +194,12 @@ local function splice_and_flatten_techs()
     end
 end
 
-local function process_recipe_prerequisites_make()
+local function assign_recipe_technologies_and_create_nodes()
     -- error(serpent.block(vgal.recipe_prerequisites_make))
-    for _, prerequisites_make_entry in pairs(vgal.recipe_prerequisites_make) do
-        local recipe = vgal.throw.if_recipe_not_found(prerequisites_make_entry.recipe)
+    for _, recipe_prerequisites_entry in pairs(vgal.recipe_prerequisites_store) do
+        local recipe = vgal.throw.if_recipe_not_found(recipe_prerequisites_entry.recipe)
         -- p = {{"red-science", ""}}
-        for i, prerequisite_group in ipairs(prerequisites_make_entry.prerequisite_groups) do
+        for i, prerequisite_group in ipairs(recipe_prerequisites_entry.prerequisite_groups) do
             if #prerequisite_group == 1 then
                 vgal.tech.add_recipe(prerequisite_group[1], recipe.name)
             else
@@ -209,7 +210,7 @@ local function process_recipe_prerequisites_make()
 end
 
 function vgal.finalise()
-    process_recipe_prerequisites_make()
+    assign_recipe_technologies_and_create_nodes()
     splice_and_flatten_techs()
 
     for recipe_name, _ in pairs(vgal.group_overrides) do

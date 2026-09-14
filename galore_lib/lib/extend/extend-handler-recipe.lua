@@ -202,7 +202,7 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
             error("Invalid prototype technologies entry: " .. serpent.block(tech_entry))
         end
     end
-    vgal.recipe_prerequisites_make[output_recipe.name] = {
+    vgal.recipe_prerequisites_store[output_recipe.name] = {
         recipe = output_recipe.name,
         prerequisite_groups = prerequisite_groups,
     }

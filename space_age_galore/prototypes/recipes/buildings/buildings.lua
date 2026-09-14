@@ -28,8 +28,8 @@ vgal.extend({
         technology = "tungsten-carbide",
         ingredients = {
             { "molten-iron",        200 }, -- 200
-            { "tungsten-carbide",   1 }, -- 60
-            { "electronic-circuit", 4 }, -- 100
+            { "tungsten-carbide",   1 },   -- 60
+            { "electronic-circuit", 4 },   -- 100
         },
         results = {
             { "electric-mining-drill", 1 }, -- 275 * 1.5 = 412
@@ -46,7 +46,7 @@ vgal.extend({
         energy_required = 32,
         technology = "big-mining-drill",
         ingredients = {
-            { "molten-iron", 200 },
+            { "molten-iron",           200 },
             { "electric-mining-drill", 1 },  -- 275
             { "tungsten-carbide",      20 }, -- 1200
             { "electric-engine-unit",  6 },  -- 1020
@@ -73,9 +73,9 @@ vgal.extend({
             vgal.icon.get_in("tungsten-carbide"),
         }),
         energy_required = 5,
-        technology = { "tungsten-carbide", "advanced-material-processing-2" },
+        technology = "tungsten-carbide",
         ingredients = {
-            { "molten-iron", 200 }, -- 200
+            { "molten-iron",      200 }, -- 200
             { "tungsten-carbide", 8 },  -- 480
             { "advanced-circuit", 4 },  -- 400
             { "stone-brick",      10 }, -- 200
@@ -95,8 +95,8 @@ vgal.extend({
         energy_required = 1,
         technology = { "tungsten-carbide", "nuclear-power" }, -- rip to those who for some reasons go to gleba and vulcanus before nuclear power.
         ingredients = {
-            { "molten-iron",   250 },
-            { "molten-copper", 200 },
+            { "molten-iron",      250 },
+            { "molten-copper",    200 },
             { "tungsten-carbide", 2 }, -- 150
         },
         results = {
@@ -137,7 +137,7 @@ vgal.extend({
             { "tungsten-plate",       2 }, -- 120
             { "iron-gear-wheel",      5 }, -- 100
             { "assembling-machine-1", 1 }, -- 265
-            { "lubricant", 10 }, -- 20
+            { "lubricant",            10 }, -- 20
         },
         results = {
             { "assembling-machine-2", 1 }, -- 540
@@ -158,7 +158,7 @@ vgal.extend({
             { "electric-engine-unit", 5 },  -- 900
             { "tungsten-plate",       30 }, -- 1800
             { "assembling-machine-2", 1 },  -- 540
-            { "lubricant", 40 }, -- 80
+            { "lubricant",            40 }, -- 80
         },
         results = {
             { "assembling-machine-3", 1 }, -- 3580

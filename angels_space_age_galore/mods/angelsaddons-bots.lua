@@ -39,7 +39,7 @@ vgal.recipe.add_ingredient("angels-cargo-hub", { "superconductor", 20 })
 data.raw["recipe"]["angels-cargo-hub"].surface_conditions = vgal.get_surface_conditions_for("fulgora")
 
 data.raw["recipe"]["angels-cargo-robot-2"].ingredients = vgal.build.io({
-    { "superconductor",       2 },
+    { "superconductor",       1 },
     { "steel-plate",          5 },
     { "processing-unit",      5 },
     { "electric-engine-unit", 5 },

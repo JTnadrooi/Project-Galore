@@ -141,10 +141,10 @@ do
 end
 
 -- file ocean fluids
-data.raw.tile["oil-ocean-shallow"].fluid = "angels-liquid-naphtha"
-data.raw.tile["oil-ocean-shallow-2"].fluid = "angels-liquid-naphtha"
-data.raw.tile["oil-ocean-deep"].fluid = "angels-liquid-naphtha"
-data.raw.tile["oil-ocean-deep-2"].fluid = "angels-liquid-naphtha"
+data.raw.tile["oil-ocean-shallow"].fluid = "vgal-naphtha-sludge"
+data.raw.tile["oil-ocean-shallow-2"].fluid = "vgal-naphtha-sludge"
+data.raw.tile["oil-ocean-deep"].fluid = "vgal-naphtha-sludge"
+data.raw.tile["oil-ocean-deep-2"].fluid = "vgal-naphtha-sludge"
 
 -- reduce spoilage fuel value to reduce algae spoil fuel value increase (current: 200%)
 data.raw["item"]["spoilage"].fuel_value = "100kJ"

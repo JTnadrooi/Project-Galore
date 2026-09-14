@@ -1,5 +1,5 @@
 require("prototypes.subgroups")
-require("prototypes.fluids.atmospheres")
+require("prototypes.fluids")
 require("prototypes.buildings.space-vent")
 require("prototypes.technology")
 
@@ -18,7 +18,3 @@ require("prototypes.recipes.water")
 require("prototypes.recipes.bio")
 require("prototypes.recipes.atmosphere")
 require("prototypes.recipes.voids")
-
-
-
--- fix fissure locales (the make method does not have a way to do this)

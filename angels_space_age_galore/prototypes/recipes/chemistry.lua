@@ -61,6 +61,30 @@ vgal.extend({
             { "angels-crystal-slurry", 100 },
         },
     },
+    {
+        name = "naphtha-sludge-separation",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style = "angels-liquid",
+            outputs = { "angels-mineral-sludge", "angels-liquid-naphtha" },
+            palette = { { 171, 161, 055 }, { 178, 102, 036 }, { 164, 063, 071 } },
+        }),
+        energy_required = 2,
+        technology = "planet-discovery-fulgora",
+        ingredients = {
+            { "vgal-naphtha-sludge", 100 },
+        },
+        results = {
+            { "angels-liquid-naphtha",     50 },
+            { "angels-mineral-sludge",     10 },
+            { "angels-water-yellow-waste", 40 },
+        },
+        allow_productivity = true,
+        category = "angels-petrochem-separation",
+
+        subgroup = "vgal-fulgora-fluids",
+        order = "a",
+    },
 }, {
     type = "recipe",
 })

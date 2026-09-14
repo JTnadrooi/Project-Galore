@@ -192,15 +192,20 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
         vgal.recipe.smart_fix_stats(output_recipe)
     end
 
-    for i, tech_entry in ipairs(technologies) do
+    local prerequisite_groups = {}
+    for _, tech_entry in ipairs(technologies) do
         if type(tech_entry) == "table" then
-            vgal.tech.create_node(output_recipe.name, tech_entry, i, output_recipe.hidden)
+            table.insert(prerequisite_groups, tech_entry)
         elseif type(tech_entry) == "string" then
-            vgal.tech.add_recipe(tech_entry, output_recipe.name)
+            table.insert(prerequisite_groups, { tech_entry })
         else
             error("Invalid prototype technologies entry: " .. serpent.block(tech_entry))
         end
     end
+    vgal.recipe_prerequisites_make[output_recipe.name] = {
+        recipe = output_recipe.name,
+        prerequisite_groups = prerequisite_groups,
+    }
 
     local productivity_technology
     if input_recipe.productivity_technology ~= "" then -- so if "", no prod even when tech exists

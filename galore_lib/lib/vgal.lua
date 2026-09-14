@@ -37,6 +37,9 @@ vgal.catalyst_groups = {}
 ---@type table<string, boolean>
 vgal.entry_stat_relevant_catalysts = {}
 
+---@type table<string, {recipe: string, prerequisite_groups: string[][]}>
+vgal.recipe_prerequisites_make = {}
+
 vgal.group_overrides = {}
 if vgal.defines.flags["vgal"] then
     local disable_entries = vgal.string.split(settings.startup["vgal-custom-disabled-recipes"].value --[[@as string]], " ")
@@ -149,56 +152,6 @@ function vgal.deepunhide(prototype)
     end
 end
 
--- commentedbc: see vgal.defines.entityable_categories comment
--- function vgal.get_entityable(prototype_name)
---     for _, category in ipairs(vgal.defines.entityable_categories) do
---         if data.raw[category][prototype_name] then
---             return data.raw[category][prototype_name]
---         end
---     end
---     error("Entityable of name '" .. prototype_name .. "' not found.")
--- end
-local function remove_empty_vgal_techs()
-    local required_techs = {}
-    local removable_techs = {}
-
-    for _, tech in pairs(data.raw["technology"]) do
-        for _, p in ipairs(tech.prerequisites or {}) do -- techs used as prerequisites will not be removed
-            required_techs[p] = true
-        end
-
-        for _, effect in ipairs(tech.effects or {}) do
-            for _, recipe_name in pairs(vgal.tech.recipes_to_remove_from_techs) do
-                if effect.recipe == recipe_name then
-                    effect.hidden = true
-                    break
-                end
-            end
-        end
-
-        removable_techs[tech.name] = tech
-
-        for _, effect in ipairs(tech.effects or {}) do
-            if not effect.hidden then
-                removable_techs[tech.name] = nil
-            end
-        end
-
-        ---@diagnostic disable-next-line: undefined-field
-        if not tech.__vgal_is_technode then
-            removable_techs[tech.name] = nil
-        end
-
-        if required_techs[tech.name] then
-            removable_techs[tech.name] = nil
-        end
-    end
-
-    for _, tech in pairs(removable_techs) do
-        vgal.hide(tech)
-    end
-end
-
 -- removes techs in the techs_to_splice table and bypasses its prerequisites for other techs
 local function splice_and_flatten_techs()
     for _, tech in pairs(data.raw["technology"]) do
@@ -240,8 +193,23 @@ local function splice_and_flatten_techs()
     end
 end
 
+local function process_recipe_prerequisites_make()
+    -- error(serpent.block(vgal.recipe_prerequisites_make))
+    for _, prerequisites_make_entry in pairs(vgal.recipe_prerequisites_make) do
+        local recipe = vgal.throw.if_recipe_not_found(prerequisites_make_entry.recipe)
+        -- p = {{"red-science", ""}}
+        for i, prerequisite_group in ipairs(prerequisites_make_entry.prerequisite_groups) do
+            if #prerequisite_group == 1 then
+                vgal.tech.add_recipe(prerequisite_group[1], recipe.name)
+            else
+                vgal.tech.create_node(recipe, prerequisite_group, i, recipe.hidden)
+            end
+        end
+    end
+end
+
 function vgal.finalise()
-    remove_empty_vgal_techs()
+    process_recipe_prerequisites_make()
     splice_and_flatten_techs()
 
     for recipe_name, _ in pairs(vgal.group_overrides) do
@@ -254,7 +222,7 @@ end
 ---@param to_log number|string
 function vgal.log(to_log)
     if settings.startup["vgal-log"].value then
-        log("vgal.log-[" .. tostring(to_log) .. "]")
+        log("vgal.log-[" .. tostring(to_log or "nil") .. "]")
     end
 end
 

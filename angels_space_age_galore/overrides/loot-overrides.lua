@@ -15,11 +15,13 @@ for _, tree_name in ipairs({
 
     if tree.minable.results then
         for _, result in ipairs(tree.minable.results) do
-            table.insert(results, result)
+            if result.name ~= "carbon" then
+                table.insert(results, result)
+            end
         end
     end
 
-    tree.minable.results = results
+    vgal.entity.set_results(tree, results)
 end
 
 vgal.entity.set_results(data.raw["tree"]["water-cane"], vgal.build.io({

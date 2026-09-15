@@ -12,7 +12,7 @@ vgal.extend({
         energy_required = 2,
         technology = "calcite-processing",
         ingredients = {
-            { "calcite", 2 },
+            { "calcite", 1 },
         },
         results = {
             { "angels-solid-calcium-carbonate", 2 },

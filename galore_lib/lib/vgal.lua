@@ -159,11 +159,10 @@ local function splice_and_flatten_techs()
         local modified = false
         for i, prerequisite in ipairs(tech.prerequisites or {}) do
             if vgal.tech.techs_to_splice[prerequisite] then
-                local tech = vgal.throw.if_tech_not_found(prerequisite)
-                -- Get the prerequisites to add
-                local new_prereqs = tech.prerequisites or {}
+                local spliced = vgal.throw.if_tech_not_found(prerequisite)
+                local new_prereqs = spliced.prerequisites or {}
 
-                -- Remove the current prerequisite (the one being spliced)
+                -- Remove the spliced prerequisite from THIS tech
                 table.remove(tech.prerequisites, i)
 
                 -- Add new prerequisites without duplicates

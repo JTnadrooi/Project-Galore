@@ -98,7 +98,7 @@ for i = 1, 4 do
             local tech = data.raw["technology"]["angels-" .. metal_name .. "-" .. suffix .. "-" .. i]
 
             if tech then
-                vgal.tech.techs_to_splice[tech.name] = tech
+                vgal.tech.techs_to_splice[tech.name] = true
             end
         end
     end

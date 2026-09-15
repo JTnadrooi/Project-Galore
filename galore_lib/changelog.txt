@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.5.0
+  Features:
+    - Improved "vgal-auto-research-tech-nodes" setting.
+    - Added more functions.
+    - Improved icon library.
+    - Improved technode icons.
+    - Improved extend library.
+---------------------------------------------------------------------------------------------------
 Version: 2.2.6
   Features:
     - Added more functions.
@@ -72,7 +80,7 @@ Version: 2.1.0
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.1
   Bugfixes:
-    - Fixed all recipes added by vgal.data.extend being unlocked by default. (Thanks Samario!)
+    - Fixed all recipes added by vgal.extend being unlocked by default. (Thanks Samario!)
 ---------------------------------------------------------------------------------------------------
 Version: 2.0.0
   Features:

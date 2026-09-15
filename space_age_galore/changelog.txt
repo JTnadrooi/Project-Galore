@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.9
+  Features:
+    - Improved icons.
+  Bugfixes:
+    - Fixed "vgal-pistol-rail-railgun" icon.
+    - Fixed planet specific ingredient counts in planet module recipes.
+    - Fixed countless tech prerequicite issues. (Thanks MitruMesre!)
+---------------------------------------------------------------------------------------------------
 Version: 1.6.8
   Changes:
     - Removed organic circuit recipes. 

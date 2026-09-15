@@ -1,4 +1,14 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.4
+  Features:
+    - Improved icons.
+  Changes:
+    - Made ceramic filter require a stone brick instead of a clay brick to create.
+  Bugfixes:
+    - Fixed productivity being allowed in "angels-solid-calcium-carbonate" recipe.
+    - Fixed recycling.
+    - Fixed tech prerequicite issues.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.3
   Features:
     - Improved Galore chemistry locale.

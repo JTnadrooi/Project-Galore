@@ -929,6 +929,9 @@ data.raw["recipe"]["angels-liquid-raw-fish-oil-filtering-2"].energy_required = 2
 -- also helps with machine buffers as puffers get going
 data.raw["recipe"]["angels-gas-puffer-atmosphere"].energy_required = 4 -- og: 30
 
+-- make output number nicer (og 70)
+vgal.recipe.set_result_amount("angels-gas-carbon-dioxide-from-wood", 75)
+
 -- commentedbc: wrong, the buff above fixes most issues
 -- buff waste puffing
 -- its unsure if the non-sulfuric waste puffing recipes need this as most waste is still unobtainable as of writing this, but I buff them all for consistency reasons

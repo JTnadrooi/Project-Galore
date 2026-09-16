@@ -256,7 +256,6 @@ do
             icon_size = 64,
             scale = 0.4375 * 0.5,
             shift = { -10, 10 },
-            tint = { r = 1, g = 1, b = 1, a = 1 },
         },
     }
     data.raw["recipe"]["yumako-processing"].ingredients = vgal.build.io({

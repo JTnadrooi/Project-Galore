@@ -605,6 +605,27 @@ vgal.extend({
         },
         category = "angels-liquifying",
     },
+    {
+        name = "angels-gas-chlor-methane-angels-gas-ethane",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-gas-chlor-methane" },
+            outputs = { "angels-gas-ethane" },
+            palette = "CHH",
+        }),
+        energy_required = 2,
+        technology = "angels-chlorine-processing-2",
+        ingredients = {
+            { "angels-gas-chlor-methane", 100 }, -- 60 chlor
+            { "angels-solid-sodium",      1 },
+        },
+        results = {
+            { "angels-gas-ethane", 50 },
+            { "angels-solid-salt", 1 }, -- 60 chlor
+        },
+        category = "angels-liquifying",
+    },
 }, {
     type = "recipe",
 })

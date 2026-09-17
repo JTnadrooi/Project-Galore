@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 2.5.1
+  Features:
+    - Added more functions.
+  Bugfixes:
+    - Fixed failing map creation.
+---------------------------------------------------------------------------------------------------
 Version: 2.5.0
   Features:
     - Improved "vgal-auto-research-tech-nodes" setting.

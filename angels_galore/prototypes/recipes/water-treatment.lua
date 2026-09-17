@@ -52,6 +52,20 @@ vgal.extend({
         order = "x[mineralized]"
     },
     {
+        name = "angels-water-mineralized-angels-water-saline",
+        prefix = "vgal",
+        energy_required = 2,
+        technology = "angels-water-treatment-3",
+        ingredients = {
+            { "angels-water-mineralized", 400 },
+        },
+        results = {
+            { "angels-water-saline", 150 },
+        },
+        allow_productivity = false,
+        category = "angels-salination-plant",
+    },
+    {
         name = "angels-water-saline-angels-solid-salt",
         prefix = "vgal",
         icons = vgal.icon.merge_composites({

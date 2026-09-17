@@ -1051,6 +1051,8 @@ data.raw["recipe"]["angels-coal-cracking-2"].results = vgal.build.io({ -- ingred
 
 -- the third cracking recipe is kinda inefficient (for syngas) so it can stay as is
 
+vgal.recipe.set_ingredient_amount("angels-gas-sulfur-dioxide-calcium-sulfate", 1, "angels-solid-calcium-sulfate")
+
 -- improve ratio a bit
 data.raw["recipe"]["angels-fermentation-corn"].energy_required = 3 -- og; 4
 

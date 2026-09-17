@@ -2,10 +2,10 @@ vgal.icon = vgal.icon or {}
 
 ---@type table<string, {[1]: string, [2]: integer}>
 local angels_molecule_map = {
-    -- Gases (petrochem)
     ["angels-gas-oxygen"]               = { "__angelspetrochemgraphics__/graphics/icons/molecules/oxygen.png", 64 },
     ["angels-gas-hydrogen"]             = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 64 },
     ["angels-gas-sulfur-dioxide"]       = { "__angelspetrochemgraphics__/graphics/icons/molecules/sulfur-dioxide.png", 64 },
+    ["angels-gas-hydrogen-sulfide"]     = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen-sulfide.png", 64 },
     ["angels-gas-carbon-dioxide"]       = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-dioxide.png", 64 },
     ["angels-gas-carbon-monoxide"]      = { "__angelspetrochemgraphics__/graphics/icons/molecules/carbon-monoxide.png", 64 },
     ["angels-gas-chlorine"]             = { "__angelspetrochemgraphics__/graphics/icons/molecules/chlorine.png", 64 },
@@ -18,21 +18,20 @@ local angels_molecule_map = {
     ["angels-gas-butane"]               = { "__angelspetrochemgraphics__/graphics/icons/molecules/butane.png", 72 },
     ["angels-gas-benzene"]              = { "__angelspetrochemgraphics__/graphics/icons/molecules/benzene.png", 72 },
     ["angels-gas-methane"]              = { "__angelspetrochemgraphics__/graphics/icons/molecules/methane.png", 64 },
+    ["angels-gas-ethane"]               = { "__angelspetrochemgraphics__/graphics/icons/molecules/ethane.png", 64 },
     ["angels-gas-chlor-methane"]        = { "__angelspetrochemgraphics__/graphics/icons/molecules/chloromethane.png", 72 },
     ["angels-gas-acetone"]              = { "__angelspetrochemgraphics__/graphics/icons/molecules/acetone.png", 72 },
 
-    -- Gases from bioprocessing
     ["angels-gas-ethanol"]              = { "__angelsbioprocessinggraphics__/graphics/icons/molecule-ethanol.png", 64 },
 
-    -- Liquids (bioprocessing)
     ["angels-liquid-acetic-acid"]       = { "__angelsbioprocessinggraphics__/graphics/icons/molecule-acetic-acid.png", 64 },
     ["angels-liquid-propionic-acid"]    = { "__angelsbioprocessinggraphics__/graphics/icons/molecule-propionic-acid.png", 72 },
     ["angels-liquid-glycerol"]          = { "__angelsbioprocessinggraphics__/graphics/icons/molecule-glycerol.png", 64 },
 
-    -- Liquids (petrochem)
     ["angels-liquid-phenol"]            = { "__angelspetrochemgraphics__/graphics/icons/molecules/phenol.png", 64 },
     ["angels-liquid-polyethylene"]      = { "__angelspetrochemgraphics__/graphics/icons/molecules/polyethylene.png", 64 },
     ["angels-liquid-hydrochloric-acid"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrochloric-acid.png", 64 },
+    ["angels-liquid-hydrofluoric-acid"] = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 64 },
 }
 
 ---@type table<string, table<string, vgal.IconOverride>>

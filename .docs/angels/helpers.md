@@ -8,3 +8,9 @@
 1 water green waste = 0.4 oxygen + 0.6 hydrogen + 0.01 sodium + 0.4 chlorine
 1 carbon monoxide = 0.02 carbon + 0.4 oxygen
 1 carbon dioxide = 0.02 carbon + 0.8 oxygen
+
+1 hydrogen sulfide = 0.05 sulfur
+1 sulfur dioxide = 0.01(6) sulfur
+1 sulfuric acid = 0.025 sulfur
+1 acid gas = 0.03 sulfur
+1 calcium sulfide = 0.8(3) sulfur

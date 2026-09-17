@@ -651,6 +651,28 @@ vgal.extend({
 
         groups = { "vgal-unsure" },
     },
+    {
+        name = "angels-gas-acid-angels-solid-calcium-sulfate",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-solid-calcium-carbonate" },
+            outputs = { "angels-gas-carbon-dioxide", "angels-gas-hydrogen-sulfide", "angels-liquid-hydrofluoric-acid" },
+            palette = "SHH",
+        }),
+        energy_required = 3,
+        technology = "angels-sulfur-processing-2",
+        ingredients = {
+            { "angels-gas-acid",                100 },
+            { "angels-solid-calcium-carbonate", 3 },
+        },
+        results = {
+            { "angels-solid-calcium-sulfate", 3 },
+            { "angels-gas-carbon-dioxide",    20 },
+            { "angels-gas-hydrogen-fluoride", 20 },
+        },
+        category = "angels-advanced-chemistry",
+    },
 }, {
     type = "recipe",
 })

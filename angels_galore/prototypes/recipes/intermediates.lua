@@ -20,6 +20,29 @@ vgal.extend({
         order = "ab",
         allow_productivity = false,
     },
+    {
+        name = "angels-water-mineralized-lubricant",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style = "angels-liquid",
+            inputs = { "angels-water-mineralized" },
+            outputs = { "lubricant" },
+            palette = { { 063, 189, 063 }, { 058, 173, 58 }, { 053, 159, 053 } },
+        }),
+        energy_required = 4,
+        technology = "lubricant",
+        ingredients = {
+            { "angels-liquid-mineral-oil", 40 },
+            { "angels-water-mineralized",  10 },
+        },
+        results = {
+            { "lubricant", 30 },
+        },
+        category = "chemistry",
+
+        -- order = "gb",
+        allow_productivity = true,
+    },
 }, {
     type = "recipe",
 })

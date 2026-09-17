@@ -152,3 +152,6 @@ vgal.subgroup.clean_recipe("angels-solid-coke")
 data.raw["recipe"]["angels-solid-coke"].main_product = "angels-solid-coke"
 vgal.subgroup.clean_recipe("angels-solid-coke-sulfur")
 data.raw["recipe"]["angels-solid-coke-sulfur"].main_product = "angels-solid-coke"
+
+data.raw["fluid"]["lubricant"].order = "g"
+data.raw["fluid"]["lubricant"].subgroup = "angels-petrochem-carbon-oil-feed"

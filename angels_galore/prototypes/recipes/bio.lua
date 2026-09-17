@@ -51,6 +51,32 @@ vgal.extend({
         order = "a[nutrient-extraction]-g",
         category = "angels-nutrient-extractor",
     },
+    {
+        name = "angels-liquid-nutrient-pulp-angels-liquid-glycerol-angels-liquid-propionic-acid",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style = "angels-liquid",
+            inputs = {},
+            outputs = { "angels-liquid-propionic-acid", "angels-gas-propene" },
+            palette = { { 214, 146, 040 }, { 169, 130, 039 }, { 120, 083, 004 } },
+        }),
+        energy_required = 2,
+        technology = { "angels-bio-plastic-2", "angels-explosives-2", "angels-advanced-gas-processing" },
+        ingredients = {
+            { "angels-liquid-nutrient-pulp", 100 },
+            { "angels-liquid-glycerol",      15 },
+        },
+        results = {
+            { "angels-liquid-propionic-acid", 45 },
+            { "angels-gas-propene",           30 },
+        },
+        category = "angels-advanced-gas-refining",
+
+        allow_productivity = false,
+
+        subgroup = "vgal-bio-nutrient-chemistry",
+        order = "e",
+    },
 }, {
     type = "recipe",
 })

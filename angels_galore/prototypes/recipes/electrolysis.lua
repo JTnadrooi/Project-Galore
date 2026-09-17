@@ -79,6 +79,36 @@ vgal.extend({
 
         allow_productivity = false,
     },
+    -- {
+    --     name = "angels-gas-carbon-dioxide-angels-gas-carbon-monoxide",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.create({
+    --         style = "angels-gas",
+    --         inputs = { "angels-gas-carbon-dioxide" },
+    --         outputs = { "angels-gas-carbon-monoxide" },
+    --         palette = "ClCOc",
+    --     }),
+    --     energy_required = 2,
+    --     technology = "angels-basic-chemistry-3",
+    --     ingredients = {
+    --         { "angels-electrode", 1 },
+    --     },
+    --     ingredients = {
+    --         { "angels-gas-carbon-dioxide", 50 },
+    --         { "angels-water-saline",       50 },
+    --     },
+    --     results = {
+    --         { "angels-electrode-used",         1 },
+    --         { "angels-solid-sodium-hydroxide", 1 }
+    --     },
+    --     results = {
+    --         { "angels-gas-carbon-monoxide", 50 },
+    --         { "angels-gas-chlorine",        50 },
+    --         -- { "angels-liquid-aqueous-",                 50 },
+    --     },
+    --     category = "angels-petrochem-electrolyser",
+
+    -- },
 }, {
     type = "recipe",
 })

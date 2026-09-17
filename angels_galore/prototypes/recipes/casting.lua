@@ -166,7 +166,7 @@ vgal.extend({
             { "burner-inserter", 5 },
         },
         category = "angels-casting",
-
+        
         localised_description = { "vgal-internal.insert-casting-recipe-desc" },
         localised_name = { "", { "entity-name.burner-inserter" }, " ", { "vgal-internal.casting-postfix" } },
     },

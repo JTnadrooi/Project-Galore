@@ -89,7 +89,7 @@ vgal.extend({
             { "angels-water-purified", 150 },
         },
         results = {
-            { "water",               100 },
+            { "water",               150 },
             { "angels-filter-frame", 1 },
         },
         allow_productivity = false,

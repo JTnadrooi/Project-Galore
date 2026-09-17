@@ -15,7 +15,7 @@ end
 local function research_tech_nodes(event)
     local forces = {}
 
-    if event.research and event.research.force then
+    if event and event.research and event.research.force then
         table.insert(forces, event.research.force)
     else
         for _, force in pairs(game.forces) do

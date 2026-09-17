@@ -72,7 +72,7 @@ vgal.extend({
         icons = vgal.icon.create({
             style = "angels-gas",
             inputs = { "angels-solid-calcium-carbonate" },
-            outputs = { "angels-gas-carbon-dioxide", "angels-gas-hydrogen-sulfide", "angels-liquid-hydrofluoric-acid" },
+            outputs = { "angels-gas-carbon-dioxide", "angels-gas-calcium-sulfate", "angels-liquid-hydrofluoric-acid" },
             palette = "SHH",
         }),
         energy_required = 3,

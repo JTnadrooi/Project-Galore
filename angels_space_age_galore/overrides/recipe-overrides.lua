@@ -359,28 +359,29 @@ vgal.recipe.replace_result("vgal-spoilage-crude-oil", "crude-oil", "angels-liqui
 
 -- simple coal liquifaction fixes
 do
-    local recipe = data.raw["recipe"]["simple-coal-liquefaction"]
-    recipe.energy_required = 4
-    recipe.categories = { "angels-advanced-chemistry" }
-    recipe.ingredients = vgal.build.io({
+    local simple_coal_cracking_recipe = data.raw["recipe"]["simple-coal-liquefaction"]
+    simple_coal_cracking_recipe.energy_required = 4
+    simple_coal_cracking_recipe.categories = { "angels-advanced-chemistry" }
+    simple_coal_cracking_recipe.ingredients = vgal.build.io({
         { "coal",          5 },
         { "calcite",       1 },
         { "sulfuric-acid", 15 }
     })
-    recipe.results = vgal.build.io({
-        { "angels-solid-coke",  2 },
+    simple_coal_cracking_recipe.results = vgal.build.io({
+        { "angels-solid-coke",     2 },
         -- { "angels-gas-hydrogen-sulfide", 20 },
-        { "angels-gas-methane", 50 },
+        { "angels-gas-methane",    40 },
+        { "angels-liquid-naphtha", 10 },
         -- { "angels-gas-carbon-dioxide",   15 },
     })
-    recipe.icons = vgal.icon.create({
+    simple_coal_cracking_recipe.icons = vgal.icon.create({
         style   = "angels-gas",
         inputs  = { "calcite" },
-        outputs = { "angels-gas-methane" },
+        outputs = { "angels-gas-methane", "angels-liquid-naphtha" },
         palette = "OiOiOi",
     })
-    recipe.subgroup = "angels-petrochem-coal"
-    recipe.order = "h[simple-coal-cracking]-"
+    simple_coal_cracking_recipe.subgroup = "angels-petrochem-coal"
+    simple_coal_cracking_recipe.order = "h[simple-coal-cracking]-"
 end
 
 -- acid neutralisation fixes

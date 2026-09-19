@@ -88,6 +88,26 @@ vgal.extend({
         groups = { "vgal-unsure" }
     },
     -- {
+    --     name = "coal-angels-liquid-naphtha",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.create({
+    --         style   = "angels-gas",
+    --         inputs  = { "sulfuric-acid" },
+    --         outputs = { "angels-liquid-naphtha" },
+    --         palette = "OiOiOi",
+    --     }),
+    --     energy_required = 6,
+    --     technology = "coal-liquefaction",
+    --     ingredients = {
+    --         { "coal",          2 },
+    --         { "sulfuric-acid", 15 },
+    --     },
+    --     results = {
+    --         { "angels-liquid-naphtha", 20 },
+    --     },
+    --     category = "angels-liquifying",
+    -- },
+    -- {
     --     name = "angels-solid-oil-residual-angels-solid-coke",
     --     prefix = "vgal",
     --     icons = vgal.icon.merge_composites({

@@ -8,7 +8,7 @@ vgal.tech.add_prerequisite("angels-ore-processing-2", "metallurgic-science-pack"
 -- fix tungsten techs
 data.raw["technology"]["angels-tungsten-smelting-1"].prerequisites = { "planet-discovery-vulcanus" }
 data.raw["technology"]["angels-tungsten-smelting-2"].prerequisites = { "angels-tungsten-smelting-1", "metallurgic-science-pack" }
-data.raw["technology"]["angels-tungsten-smelting-3"].prerequisites = { "angels-tungsten-smelting-2", "production-science-pack" }
+data.raw["technology"]["angels-tungsten-smelting-3"].prerequisites = { "angels-tungsten-smelting-2", "production-science-pack", "angels-ore-processing-2" }
 data.raw["technology"]["tungsten-carbide"].prerequisites = { "angels-tungsten-smelting-1" }
 vgal.tech.add_prerequisite("tungsten-steel", "angels-tungsten-smelting-1")
 

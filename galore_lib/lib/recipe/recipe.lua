@@ -962,3 +962,11 @@ function vgal.recipe.set_reset_freshness_on_craft(recipe_or_recipe_name, reset_f
         result.reset_freshness_on_craft = new_value
     end
 end
+
+---@param recipe_or_recipe_name string|data.RecipePrototype
+---@param icons data.IconData[]
+function vgal.recipe.set_icons(recipe_or_recipe_name, icons)
+    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
+
+    vgal.icon.set_icons(recipe, icons)
+end

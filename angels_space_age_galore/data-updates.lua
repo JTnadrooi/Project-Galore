@@ -1,4 +1,5 @@
 require("overrides.locale-overrides")
+require("overrides.tungsten-overrides")
 require("overrides.icon-overrides")
 require("overrides.tech-overrides")
 require("overrides.overrides")

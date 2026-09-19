@@ -5,6 +5,27 @@ vgal.tech.move_recipe("space-platform-thruster", "space-platform", "ice-melting"
 -- vulcanus
 vgal.tech.add_prerequisite("angels-ore-processing-2", "metallurgic-science-pack")
 
+-- fix tungsten techs
+data.raw["technology"]["angels-tungsten-smelting-1"].prerequisites = { "planet-discovery-vulcanus" }
+data.raw["technology"]["angels-tungsten-smelting-2"].prerequisites = { "angels-tungsten-smelting-1", "metallurgic-science-pack" }
+data.raw["technology"]["angels-tungsten-smelting-3"].prerequisites = { "angels-tungsten-smelting-2", "production-science-pack" }
+data.raw["technology"]["tungsten-carbide"].prerequisites = { "angels-tungsten-smelting-1" }
+vgal.tech.add_prerequisite("tungsten-steel", "angels-tungsten-smelting-1")
+
+data.raw["technology"]["angels-tungsten-smelting-1"].unit = nil
+data.raw["technology"]["angels-tungsten-smelting-1"].research_trigger = table.deepcopy(data.raw["technology"]["tungsten-carbide"].research_trigger)
+
+data.raw["technology"]["tungsten-carbide"].research_trigger = {
+    type = "craft-item",
+    item = "angels-powder-tungsten",
+}
+
+vgal.tech.remove_ingredient("angels-tungsten-smelting-2", "production-science-pack")
+vgal.tech.remove_ingredient("angels-tungsten-smelting-2", "utility-science-pack")
+vgal.tech.remove_ingredient("angels-tungsten-smelting-3", "utility-science-pack")
+-- vgal.tech.add_ingredient("angels-tungsten-smelting-2", "metallurgic-science-pack")
+
+
 -- gleba
 vgal.tech.add_prerequisite("angels-bio-refugium-hatchery", "planet-discovery-gleba")
 vgal.tech.add_prerequisite("angels-bio-refugium-fish-1", "agriculture")

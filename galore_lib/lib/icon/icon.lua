@@ -524,53 +524,65 @@ if vgal.defines.flags["agal"] then
                 }
             }
         })
-        vgal.icon.add_override({
-            name = "holmium-plate",
-            source = "item",
-            composite_icon_override = {
-                {
-                    icon = "__angelssmeltinggraphics__/graphics/icons/plate-platinum.png",
-                    icon_size = 32,
-                    tint = { 229, 182, 207 }
-                }
-            }
-        })
-        vgal.icon.add_override({
-            name = "lithium-plate",
-            source = "item",
-            composite_icon_override = {
-                {
-                    icon = "__angelssmeltinggraphics__/graphics/icons/plate-silver.png",
-                    icon_size = 32,
-                }
-            }
-        })
-        vgal.icon.add_override({
-            name = "tungsten-plate",
-            source = "item",
-            composite_icon_override = {
-                {
-                    icon = "__angelssmeltinggraphics__/graphics/icons/plate-titanium.png",
-                    icon_size = 32,
-                }
-            }
-        })
-        vgal.icon.add_override({
-            name = "electrolyte",
-            source = "fluid",
-            composite_icon_override_function = function()
-                return angelsmods.functions.create_viscous_liquid_fluid_icon(nil, { { 230, 60, 120 }, nil, { 235, 80, 130 } })
-            end
-        })
-        vgal.icon.add_override({
-            name = "holmium-solution",
-            source = "fluid",
-            composite_icon_override_function = function()
-                return angelsmods.functions.create_viscous_liquid_fluid_icon(
-                    nil,
-                    { { 113, 104, 109 }, { 113, 104, 109 }, { 217, 173, 173 }, { 217, 173, 173 } }
-                )
-            end
-        })
     end
+end
+
+if vgal.defines.flags["asagal"] then
+    vgal.icon.add_override({
+        name = "holmium-plate",
+        source = "item",
+        composite_icon_override = {
+            {
+                icon = "__angels_space_age_galore__/graphics/icons/plate-holmium.png",
+                icon_size = 32,
+            }
+        }
+    })
+    vgal.icon.add_override({
+        name = "lithium-plate",
+        source = "item",
+        composite_icon_override = {
+            {
+                icon = "__angelssmeltinggraphics__/graphics/icons/plate-silver.png",
+                icon_size = 32,
+            }
+        }
+    })
+    vgal.icon.add_override({
+        name = "tungsten-plate",
+        source = "item",
+        composite_icon_override = {
+            {
+                icon = "__angels_space_age_galore__/graphics/icons/plate-tungsten.png",
+                icon_size = 32,
+            }
+        }
+    })
+    vgal.icon.add_override({
+        name = "electrolyte",
+        source = "fluid",
+        composite_icon_override_function = function()
+            return angelsmods.functions.create_viscous_liquid_fluid_icon(nil, { { 230, 60, 120 }, nil, { 235, 80, 130 } })
+        end
+    })
+    vgal.icon.add_override({
+        name = "holmium-solution",
+        source = "fluid",
+        composite_icon_override_function = function()
+            return angelsmods.functions.create_viscous_liquid_fluid_icon(
+                nil,
+                { { 113, 104, 109 }, { 113, 104, 109 }, { 217, 173, 173 }, { 217, 173, 173 } }
+            )
+        end
+    })
+    vgal.icon.add_override({
+        name = "angels-liquid-tungstic-acid",
+        source = "fluid",
+        composite_icon_override_function = function()
+            return angelsmods.functions.create_viscous_liquid_fluid_icon(
+                nil,
+                { { 235, 235, 240 }, { 235, 235, 240 }, { 075, 026, 102, 0.75 }, { 075, 026, 102, 0.75 } }
+            )
+        end
+    })
 end

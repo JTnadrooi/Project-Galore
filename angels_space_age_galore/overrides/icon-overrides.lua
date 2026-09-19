@@ -1,13 +1,20 @@
 -- make plate icons more angel-like
 if not mods["reskins-angels"] then
-    data.raw["item"]["tungsten-plate"].icon = "__angelssmeltinggraphics__/graphics/icons/plate-titanium.png"
-    data.raw["item"]["tungsten-plate"].icon_size = 32
+    vgal.icon.set_icons(data.raw["item"]["tungsten-plate"], vgal.icon.get("tungsten-plate"))
 
     vgal.icon.set_icons(data.raw["item"]["holmium-plate"], vgal.icon.get("holmium-plate"))
 
     data.raw["item"]["lithium-plate"].icon = "__angelssmeltinggraphics__/graphics/icons/plate-silver.png"
     data.raw["item"]["lithium-plate"].icon_size = 32
 end
+
+-- fix electrolyte icon (data in galorelib icons override section)
+vgal.icon.set_icons(data.raw["fluid"]["electrolyte"], vgal.icon.get("electrolyte", "fluid"))
+vgal.icon.set_icons(data.raw["fluid"]["holmium-solution"], vgal.icon.get("holmium-solution", "fluid"))
+vgal.icon.set_icons(data.raw["fluid"]["angels-liquid-tungstic-acid"], vgal.icon.get("angels-liquid-tungstic-acid", "fluid"))
+
+data.raw["fluid"]["angels-liquid-tungstic-acid"].base_color = { r = 80 / 255, g = 30 / 255, b = 105 / 255 }
+data.raw["fluid"]["angels-liquid-tungstic-acid"].flow_color = { r = 80 / 255, g = 30 / 255, b = 105 / 255 }
 
 -- vgal.icon.set_icons(data.raw["fluid"]["fluorine"], angelsmods.functions.create_gas_fluid_icon(
 --     { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 64 },
@@ -86,6 +93,32 @@ data.raw.recipe["vgal-sulfur-ammonia-nutrients"].icons = vgal.icon.merge_composi
     vgal.icon.get_in("sulfur"),
 })
 
--- fix electrolyte icon (data in galorelib icons override section)
-data.raw["fluid"]["electrolyte"].icons = vgal.icon.get("electrolyte", "fluid")
-data.raw["fluid"]["holmium-solution"].icons = vgal.icon.get("holmium-solution", "fluid")
+-- vgal.recipe.set_icons("angels-solid-tungsten-oxide", vgal.icon.create({
+--     -- inputs = { "tungsten-ore" },
+--     outputs = { "angels-solid-tungsten-oxide" },
+-- }))
+
+vgal.recipe.set_icons("angels-solid-tungsten-oxide-2", vgal.icon.create({
+    inputs = { "angels-solid-ammonium-paratungstate" },
+    outputs = { "angels-solid-tungsten-oxide" },
+}))
+
+vgal.recipe.set_icons("angels-solid-ammonium-paratungstate-2", vgal.icon.create({
+    inputs = { "angels-liquid-tungstic-acid" },
+    outputs = { "angels-solid-ammonium-paratungstate" },
+}))
+
+-- vgal.recipe.set_icons("angels-solid-ammonium-paratungstate", vgal.icon.create({
+--     -- inputs = { "angels-processed-tungsten" },
+--     outputs = { "angels-solid-ammonium-paratungstate" },
+-- }))
+vgal.recipe.clear_icons("angels-solid-tungsten-oxide")
+data.raw["recipe"]["angels-solid-tungsten-oxide"].main_product = "angels-solid-tungsten-oxide"
+vgal.recipe.clear_icons("angels-solid-ammonium-paratungstate")
+data.raw["recipe"]["angels-solid-ammonium-paratungstate"].main_product = "angels-solid-ammonium-paratungstate"
+
+vgal.recipe.set_icons("angels-liquid-tungstic-acid", vgal.icon.create({
+    style = "angels-liquid",
+    outputs = { "angels-liquid-tungstic-acid" },
+    palette = { { 075, 026, 102 }, { 170, 170, 180 }, { 170, 170, 180 } }
+}))

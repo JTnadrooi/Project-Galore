@@ -76,6 +76,18 @@ if vgal.defines.flags["agal"] then
     end
 end
 
+if vgal.defines.flags["asagal"] then
+    ---@type { name: string, ore: string, plate: string, processed: string, pellet: string, powder: string}
+    vgal.defines.metal_tungsten = {
+        name = "tungsten",
+        ore = "tungsten-ore",
+        plate = "tungsten-plate",
+        processed = "angels-processed-tungsten",
+        pellet = "angels-pellet-tungsten",
+        powder = "angels-powder-tungsten",
+    }
+end
+
 ---@type { name: string, plate: string, molten: string?, angels_plate_recipe_name: string?, ingot: string?, roll: string? }
 vgal.defines.metal_steel = {
     name = "steel",
@@ -742,9 +754,12 @@ if vgal.defines.flags["agal"] then
         "silicon",
         "cobalt",
         "titanium",
-        "tungsten",
         "chrome",
     }
+
+    if not vgal.defines.flags["asagal"] then
+        table.insert(vgal.defines.removed_metal_names, "tungsten")
+    end
 
     ---@type table<string, integer>
     vgal.defines.machine_max_tiers = {

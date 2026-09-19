@@ -50,3 +50,7 @@ data.raw["item-subgroup"]["vgal-fulgora-fluids"].order = "ebb"
 data.raw["item-subgroup"]["vgal-fulgora-fluids"].group = "angels-petrochem-refining"
 data.raw["fluid"]["holmium-solution"].order = "e"
 data.raw["fluid"]["holmium-solution"].subgroup = "vgal-Cl-liquid"
+
+data.raw["item-subgroup"]["angels-tungsten"].order = "b-d"
+data.raw["item"]["tungsten-plate"].order = "g"
+data.raw["item"]["tungsten-plate"].subgroup = "angels-tungsten"

@@ -134,6 +134,15 @@ for _, environment in pairs(vgal.defines.environments) do
     table.remove(data.raw["recipe"][environment.garden .. "-a"].icons, 2) -- at 2 is bio token icon
 end
 
+-- make saline water electrolysis t1
+data.raw["recipe"]["angels-water-saline-separation"].icons = vgal.icon.create({
+    style   = "angels-gas",
+    inputs  = { "angels-water-saline" },
+    outputs = { "angels-gas-chlorine", "angels-gas-hydrogen" },
+    palette = "ClHH",
+    tier    = 1,
+})
+
 -- toluene fixes
 data.raw.recipe["angels-liquid-toluene-from-benzene"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-toluene"),

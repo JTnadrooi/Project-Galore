@@ -79,6 +79,35 @@ vgal.extend({
 
         allow_productivity = false,
     },
+    {
+        name = "angels-water-saline-angels-electrode-angels-gas-chlorine",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style   = "angels-gas",
+            inputs  = { "angels-water-saline" },
+            outputs = { "angels-gas-chlorine", "angels-gas-hydrogen" },
+            palette = "ClHH",
+            tier    = 2,
+        }),
+        energy_required = 1,
+        technology = "angels-chlorine-processing-1",
+        ingredients = {
+            { "angels-water-saline", 100 },
+            { "angels-electrode",    1 },
+        },
+        results = {
+            { "angels-gas-chlorine",           40 },
+            { "angels-gas-hydrogen",           60 },
+            { "angels-solid-sodium-hydroxide", 1 },
+            { "angels-electrode-used",         1 },
+        },
+        category = "angels-petrochem-electrolyser",
+
+        allow_productivity = false,
+
+        order = "a[chlorine]-a[electrolysis]-b",
+        subgroup = "vgal-Cl-gas",
+    },
     -- {
     --     name = "angels-gas-carbon-dioxide-angels-gas-carbon-monoxide",
     --     prefix = "vgal",

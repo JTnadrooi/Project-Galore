@@ -89,6 +89,9 @@ data.raw["recipe"]["angels-solid-mud-landfill"].order = "ab"
 
 data.raw["recipe"]["angels-plutonium-breeding"].order = "gb"
 
+data.raw["recipe"]["angels-water-saline-separation"].order = "a[chlorine]-a[electrolysis]-a"
+data.raw["recipe"]["angels-gas-hydrogen-chloride-separation"].order = "a[chlorine]-b[separation]"
+
 data.raw["item"]["steam-turbine"].order = "e"
 data.raw["item"]["steam-turbine"].subgroup = "angels-power-nuclear"
 

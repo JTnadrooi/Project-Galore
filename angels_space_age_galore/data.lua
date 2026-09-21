@@ -13,6 +13,7 @@ require("setups.weight-setup")
 
 require("prototypes.recipes.water-treatment")
 require("prototypes.recipes.resources")
+require("prototypes.recipes.metal-both")
 require("prototypes.recipes.petrochem")
 require("prototypes.recipes.chemistry")
 require("prototypes.recipes.water")

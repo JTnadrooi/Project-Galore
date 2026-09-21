@@ -52,5 +52,7 @@ data.raw["fluid"]["holmium-solution"].order = "e"
 data.raw["fluid"]["holmium-solution"].subgroup = "vgal-Cl-liquid"
 
 data.raw["item-subgroup"]["angels-tungsten"].order = "b-d"
-data.raw["item"]["tungsten-plate"].order = "g"
+data.raw["item"]["tungsten-plate"].order = "ia"
 data.raw["item"]["tungsten-plate"].subgroup = "angels-tungsten"
+data.raw["item"]["tungsten-carbide"].order = "ib"
+data.raw["item"]["tungsten-carbide"].subgroup = "angels-tungsten"

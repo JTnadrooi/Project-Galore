@@ -89,27 +89,47 @@ vgal.extend({
         order = "a[salt]-a[from-water]-b",
         subgroup = "angels-water-salination",
     },
+    -- {
+    --     name = "angels-water-purified-water",
+    --     prefix = "vgal",
+    --     icons = angelsmods.functions.create_viscous_liquid_filtering_recipe_icon(
+    --         "coal",
+    --         { { 116, 140, 211 }, { 039, 112, 194, 0.6 } }
+    --     ),
+    --     energy_required = 1,
+    --     technology = "angels-slag-processing-1",
+    --     ingredients = {
+    --         { "angels-filter-coal",    1 },
+    --         { "angels-water-purified", 150 },
+    --     },
+    --     results = {
+    --         { "water",               150 },
+    --         { "angels-filter-frame", 1 },
+    --     },
+    --     allow_productivity = false,
+    --     category = "angels-filtering",
+
+    --     groups = { "vgal-unsure" }
+    -- },
     {
         name = "angels-water-purified-water",
         prefix = "vgal",
-        icons = angelsmods.functions.create_viscous_liquid_filtering_recipe_icon(
-            "coal",
-            { { 116, 140, 211 }, { 039, 112, 194, 0.6 } }
-        ),
+        icons = vgal.icon.get("water"),
+        -- icons = angelsmods.functions.create_viscous_liquid_filtering_recipe_icon(
+        --     "coal",
+        --     { { 116, 140, 211 }, { 039, 112, 194, 0.6 } }
+        -- ),
         energy_required = 1,
         technology = "angels-slag-processing-1",
         ingredients = {
-            { "angels-filter-coal",    1 },
-            { "angels-water-purified", 150 },
+            { "angels-stone-crushed",  5 }, -- 2.5 slag. (positive stone loops may be possible if electrolysis gets productivity support (for slag only))
+            { "angels-water-purified", 100 },
         },
         results = {
-            { "water",               150 },
-            { "angels-filter-frame", 1 },
+            { "water", 100 },
         },
         allow_productivity = false,
-        category = "angels-filtering",
-
-        groups = { "vgal-unsure" }
+        category = "angels-liquifying",
     },
 }, {
     type = "recipe",

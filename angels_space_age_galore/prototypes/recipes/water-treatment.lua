@@ -1,0 +1,4 @@
+vgal.extend({
+}, {
+    type = "recipe",
+})

@@ -11,6 +11,7 @@ require("prototypes.generation.vgal-ore")
 require("setups.spoilage-setup")
 require("setups.weight-setup")
 
+require("prototypes.recipes.water-treatment")
 require("prototypes.recipes.resources")
 require("prototypes.recipes.petrochem")
 require("prototypes.recipes.chemistry")

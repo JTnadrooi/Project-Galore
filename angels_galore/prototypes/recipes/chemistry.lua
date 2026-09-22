@@ -88,6 +88,51 @@ vgal.extend({
         },
         category = "angels-advanced-chemistry",
     },
+    {
+        name = "angels-solid-calcium-chloride-angels-gas-hydrogen-chloride",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-solid-calcium-chloride", "steam" },
+            outputs = { "angels-gas-hydrogen-chloride" },
+            palette = "ClClH",
+        }),
+        energy_required = 3,
+        technology = "angels-chlorine-processing-2",
+        ingredients = {
+            { "angels-solid-calcium-chloride", 4 },
+            { "steam",                         40 },
+        },
+        results = {
+            { "angels-gas-hydrogen-chloride", 20 },
+        },
+        category = "angels-liquifying",
+
+        allow_productivity = false,
+    },
+    {
+        name = "angels-solid-calcium-chloride-angels-solid-calcium-sulfate",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-solid-calcium-chloride" },
+            outputs = { "angels-solid-calcium-sulfate", "angels-gas-hydrogen-chloride" },
+            palette = "SHCl",
+        }),
+        energy_required = 2,
+        technology = "angels-chlorine-processing-2",
+        ingredients = {
+            { "angels-solid-calcium-chloride", 3 },
+            { "sulfuric-acid",                 100 },
+        },
+        results = {
+            { "angels-solid-calcium-sulfate", 3 },
+            { "angels-gas-hydrogen-chloride", 20 },
+        },
+        category = "angels-liquifying",
+
+        allow_productivity = false,
+    },
 }, {
     type = "recipe",
 })

@@ -24,6 +24,7 @@ do
     ---@field categories? string[]
     ---@field category string?
     ---@field override boolean?
+    ---@field main_recipe boolean?
 end
 
 do

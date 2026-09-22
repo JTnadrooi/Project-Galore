@@ -598,3 +598,25 @@ function vgal.tech.create_node(recipe_or_recipe_name, prerequisites, index, hidd
     }
     data:extend({ tech })
 end
+
+---@param tech_name string
+---@param old_prerequisite string
+---@param new_prerequisite string
+function vgal.tech.replace_prerequisite(tech_name, old_prerequisite, new_prerequisite)
+    local tech = vgal.throw.if_tech_not_found(tech_name)
+
+    local prerequisites = tech.prerequisites
+    local replaced = false
+
+    for i, prerequisite in ipairs(prerequisites) do
+        if prerequisite == old_prerequisite then
+            prerequisites[i] = new_prerequisite
+            replaced = true
+            break
+        end
+    end
+
+    if not replaced then
+        error("No prerequisite with name: " .. old_prerequisite .. " found in technology: " .. tech_name)
+    end
+end

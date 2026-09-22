@@ -31,4 +31,73 @@ data:extend({
         },
         upgrade = true
     },
+    {
+        type = "technology",
+        name = "vgal-holmium-smelting-1",
+        icon = "__angels_space_age_galore__/graphics/technology/smelting-holmium-tech.png",
+        icon_size = 256,
+        prerequisites = {
+            "recycling",
+        },
+        effects = {},
+        unit = {
+            count = 250,
+            ingredients = {
+                { "automation-science-pack", 1 },
+                { "logistic-science-pack",   1 },
+                { "chemical-science-pack",   1 },
+                { "space-science-pack",      1 },
+            },
+            time = 30,
+        },
+        order = "c-a",
+    },
+    {
+        type = "technology",
+        name = "vgal-holmium-smelting-2",
+        icon = "__angels_space_age_galore__/graphics/technology/smelting-holmium-tech.png",
+        icon_size = 256,
+        prerequisites = {
+            "vgal-holmium-smelting-1",
+            "angels-ore-processing-1",
+        },
+        effects = {},
+        unit = {
+            count = 300,
+            ingredients = {
+                { "automation-science-pack", 1 },
+                { "logistic-science-pack",   1 },
+                { "chemical-science-pack",   1 },
+                { "space-science-pack",      1 },
+                { "production-science-pack", 1 },
+            },
+            time = 30,
+        },
+        order = "c-a",
+    },
+    {
+        type = "technology",
+        name = "vgal-holmium-smelting-3",
+        icon = "__angels_space_age_galore__/graphics/technology/smelting-holmium-tech.png",
+        icon_size = 256,
+        prerequisites = {
+            "vgal-holmium-smelting-2",
+            "angels-ore-processing-2",
+        },
+        effects = {},
+        unit = {
+            count = 400,
+            ingredients = {
+                { "automation-science-pack",  1 },
+                { "logistic-science-pack",    1 },
+                { "chemical-science-pack",    1 },
+                { "space-science-pack",       1 },
+                { "production-science-pack",  1 },
+                { "utility-science-pack",     1 },
+                { "metallurgic-science-pack", 1 },
+            },
+            time = 30,
+        },
+        order = "c-a",
+    },
 })

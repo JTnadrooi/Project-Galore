@@ -44,7 +44,7 @@ data:extend({
         icon = "__angels_space_age_galore__/graphics/icons/holmium-oxide.png",
         icon_size = 32,
         subgroup = "vgal-holmium",
-        order = "ba",
+        order = "ca",
         stack_size = 200,
     },
     {
@@ -53,7 +53,7 @@ data:extend({
         icon = "__angels_space_age_galore__/graphics/icons/holmium-chloride.png",
         icon_size = 32,
         subgroup = "vgal-holmium",
-        order = "bb",
+        order = "cb",
         stack_size = 200,
     },
     {
@@ -62,7 +62,7 @@ data:extend({
         icon = "__angels_space_age_galore__/graphics/icons/holmium-fluoride.png",
         icon_size = 32,
         subgroup = "vgal-holmium",
-        order = "bc",
+        order = "cc",
         stack_size = 200,
     },
 })

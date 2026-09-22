@@ -2,15 +2,14 @@
 vgal.extend_handlers["recipe"] = function(input_recipe)
     ---@type data.RecipePrototype
     ---@diagnostic disable-next-line: missing-fields
-    local output_recipe                 = { type = "recipe" }
-    local domain                        = input_recipe.domain or input_recipe.prefix
-    local groups                        = vgal.table.ensure(input_recipe.group, input_recipe.groups)
-    local technologies                  = vgal.table.ensure(input_recipe.technology, input_recipe.technologies)
-    local complementairy_recipe         = input_recipe.complementairy_recipe and (data.raw["recipe"][input_recipe.complementairy_recipe] or error("complementairy_recipe '" .. input_recipe.complementairy_recipe .. "' does not exist."))
+    local output_recipe         = { type = "recipe" }
+    local domain                = input_recipe.domain or input_recipe.prefix
+    local groups                = vgal.table.ensure(input_recipe.group, input_recipe.groups)
+    local technologies          = vgal.table.ensure(input_recipe.technology, input_recipe.technologies)
+    local complementairy_recipe = input_recipe.complementairy_recipe and (data.raw["recipe"][input_recipe.complementairy_recipe] or error("complementairy_recipe '" .. input_recipe.complementairy_recipe .. "' does not exist."))
 
-    output_recipe.order                 = input_recipe.order or (complementairy_recipe and complementairy_recipe.order)
-    output_recipe.subgroup              = input_recipe.subgroup or (complementairy_recipe and complementairy_recipe.subgroup)
-    output_recipe.crafting_machine_tint = input_recipe.crafting_machine_tint or (complementairy_recipe and complementairy_recipe.crafting_machine_tint) or vgal.recipe.get_crafting_machine_tint_or_guess(output_recipe)
+    output_recipe.order         = input_recipe.order or (complementairy_recipe and complementairy_recipe.order)
+    output_recipe.subgroup      = input_recipe.subgroup or (complementairy_recipe and complementairy_recipe.subgroup)
 
     if input_recipe.enabled == nil then
         output_recipe.enabled = #technologies == 0
@@ -22,9 +21,25 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
 
     -- simple defaults
     do
-        output_recipe.auto_recycle          = input_recipe.auto_recycle or false
-        output_recipe.allow_decomposition   = input_recipe.allow_decomposition or false
-        output_recipe.allow_as_intermediate = input_recipe.allow_as_intermediate or false
+        local default_value = input_recipe.main_recipe and nil or false
+
+        if input_recipe.auto_recycle == nil then
+            output_recipe.auto_recycle = default_value
+        else
+            output_recipe.auto_recycle = input_recipe.auto_recycle
+        end
+
+        if input_recipe.allow_decomposition == nil then
+            output_recipe.allow_decomposition = default_value
+        else
+            output_recipe.allow_decomposition = input_recipe.allow_decomposition
+        end
+
+        if input_recipe.allow_as_intermediate == nil then
+            output_recipe.allow_as_intermediate = default_value
+        else
+            output_recipe.allow_as_intermediate = input_recipe.allow_as_intermediate
+        end
     end
 
     -- in/output table building
@@ -71,11 +86,17 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
         vgal.icon.normalize_icon_fields(output_recipe --[[@as vgal.PrototypeWithIcons]])
 
         if (not output_recipe.icons) and output_recipe.name ~= output_recipe.main_product and output_recipe.main_product and main_ingredient then
-            output_recipe.icons = vgal.icon.create({
-                style = "default",
-                inputs = { main_ingredient },
-                outputs = { output_recipe.main_product },
-            })
+            if input_recipe.main_recipe then
+                output_recipe.icons = nil
+                output_recipe.icon = nil
+                output_recipe.icon_size = nil
+            else
+                output_recipe.icons = vgal.icon.create({
+                    style = "default",
+                    inputs = { main_ingredient },
+                    outputs = { output_recipe.main_product },
+                })
+            end
         end
     end
 
@@ -90,6 +111,8 @@ vgal.extend_handlers["recipe"] = function(input_recipe)
     output_recipe.factoriopedia_alternative = input_recipe.factoriopedia_alternative
     output_recipe.factoriopedia_description = input_recipe.factoriopedia_description
     output_recipe.factoriopedia_simulation = input_recipe.factoriopedia_simulation
+
+    output_recipe.crafting_machine_tint = input_recipe.crafting_machine_tint or (complementairy_recipe and complementairy_recipe.crafting_machine_tint) or vgal.recipe.get_crafting_machine_tint_or_guess(output_recipe)
 
     -- toggle group management
     do

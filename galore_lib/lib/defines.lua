@@ -90,7 +90,7 @@ if vgal.defines.flags["sagal"] then
         vgal.defines.metal_tungsten.powder = "angels-powder-tungsten"
     end
 
-    ---@type { name: string, ore: string, plate: string, processed: string?, pellet: string?, powder: string?}
+    ---@type { name: string, ore: string, molten: string?, roll: string?, ingot: string?, plate: string, processed: string?, pellet: string?, powder: string?}
     vgal.defines.metal_holmium = {
         name = "holmium",
         ore = "holmium-ore",
@@ -98,9 +98,12 @@ if vgal.defines.flags["sagal"] then
     }
 
     if vgal.defines.flags["asagal"] then
-        vgal.defines.metal_holmium.processed = "angels-processed-holmium"
-        vgal.defines.metal_holmium.pellet = "angels-pellet-holmium"
-        vgal.defines.metal_holmium.powder = "angels-powder-holmium"
+        vgal.defines.metal_holmium.processed = "vgal-processed-holmium"
+        vgal.defines.metal_holmium.pellet = "vgal-pellet-holmium"
+        vgal.defines.metal_holmium.powder = "vgal-powder-holmium"
+        vgal.defines.metal_holmium.ingot = "vgal-ingot-holmium"
+        vgal.defines.metal_holmium.molten = "vgal-molten-holmium"
+        vgal.defines.metal_holmium.roll = "vgal-roll-holmium"
     end
 end
 

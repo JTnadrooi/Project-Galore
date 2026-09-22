@@ -412,7 +412,7 @@ end
 do
     local holmium_solution_recipe = data.raw["recipe"]["holmium-solution"]
     -- vgal.recipe.replace_category(holmium_solution_recipe, "chemistry", "angels-liquifying")
-    holmium_solution_recipe.energy_required = 5
+    holmium_solution_recipe.energy_required = 2
     -- holmium_solution_recipe.ingredients = vgal.build.io({
     --     { "angels-solid-sand",     1 }, -- may be replaced by silicon if I end up implementing it
     --     { "holmium-ore",           2 },
@@ -424,6 +424,24 @@ do
         { "angels-gas-chlorine",   15 },
     })
     vgal.recipe.set_result_amount(holmium_solution_recipe, 60)
+end
+
+-- holmium plate fixes
+do
+    local holmium_plate_recipe = data.raw["recipe"]["holmium-plate"]
+    -- vgal.recipe.replace_category(holmium_solution_recipe, "chemistry", "angels-liquifying")
+
+    vgal.recipe.replace_category(holmium_plate_recipe, "crafting-with-fluid", "angels-casting")
+    holmium_plate_recipe.energy_required = 2
+    -- holmium_solution_recipe.ingredients = vgal.build.io({
+    --     { "angels-solid-sand",     1 }, -- may be replaced by silicon if I end up implementing it
+    --     { "holmium-ore",           2 },
+    --     { "angels-water-purified", 25 }
+    -- })
+    holmium_plate_recipe.ingredients = vgal.build.io({
+        { "vgal-molten-holmium", 50 }
+    })
+    vgal.recipe.set_result_amount(holmium_plate_recipe, 5)
 end
 -- do
 --     local holmium_solution_recipe_2 = data.raw["recipe"]["vgal-calcite-holmium-solution"]
@@ -466,8 +484,6 @@ do
     local scrap_recyling_recipe = data.raw["recipe"]["scrap-recycling"]
     vgal.recipe.replace_result(scrap_recyling_recipe, "stone", "angels-stone-crushed")
 end
-
-vgal.recipe.replace_category("holmium-plate", "crafting-with-fluid", "angels-casting")
 
 -- ice smelting fixes
 do

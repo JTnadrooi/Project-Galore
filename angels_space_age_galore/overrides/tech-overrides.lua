@@ -47,6 +47,19 @@ vgal.tech.hide("fish-breeding")
 
 -- fulgora
 vgal.tech.add_prerequisite("angels-advanced-gas-processing", "electromagnetic-science-pack")
+data.raw["technology"]["holmium-processing"].prerequisites = { "vgal-holmium-smelting-1" }
+data.raw["technology"]["vgal-holmium-smelting-1"].research_trigger = table.deepcopy(data.raw["technology"]["holmium-processing"].research_trigger)
+data.raw["technology"]["vgal-holmium-smelting-1"].unit = nil
+data.raw["technology"]["holmium-processing"].research_trigger = {
+    type = "craft-item",
+    item = "vgal-ingot-holmium",
+}
+-- vgal.tech.move_recipe("holmium-processing", "holmium-ore", "vgal-holmium-smelting-1")
+vgal.tech.move_recipe("holmium-processing", "vgal-holmium-smelting-1", "holmium-solution")
+
+
+
+-- vgal.tech.replace_prerequisite("", "holmium-processing", )
 
 -- remove puffer atm from puffer 1 as it gets unlocked later
 -- puffer from gleba atm early tho

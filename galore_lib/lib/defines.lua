@@ -76,16 +76,32 @@ if vgal.defines.flags["agal"] then
     end
 end
 
-if vgal.defines.flags["asagal"] then
-    ---@type { name: string, ore: string, plate: string, processed: string, pellet: string, powder: string}
+if vgal.defines.flags["sagal"] then
+    ---@type { name: string, ore: string, plate: string, processed: string?, pellet: string?, powder: string?}
     vgal.defines.metal_tungsten = {
         name = "tungsten",
         ore = "tungsten-ore",
         plate = "tungsten-plate",
-        processed = "angels-processed-tungsten",
-        pellet = "angels-pellet-tungsten",
-        powder = "angels-powder-tungsten",
     }
+
+    if vgal.defines.flags["asagal"] then
+        vgal.defines.metal_tungsten.processed = "angels-processed-tungsten"
+        vgal.defines.metal_tungsten.pellet = "angels-pellet-tungsten"
+        vgal.defines.metal_tungsten.powder = "angels-powder-tungsten"
+    end
+
+    ---@type { name: string, ore: string, plate: string, processed: string?, pellet: string?, powder: string?}
+    vgal.defines.metal_holmium = {
+        name = "holmium",
+        ore = "holmium-ore",
+        plate = "holmium-plate",
+    }
+
+    if vgal.defines.flags["asagal"] then
+        vgal.defines.metal_holmium.processed = "angels-processed-holmium"
+        vgal.defines.metal_holmium.pellet = "angels-pellet-holmium"
+        vgal.defines.metal_holmium.powder = "angels-powder-holmium"
+    end
 end
 
 ---@type { name: string, plate: string, molten: string?, angels_plate_recipe_name: string?, ingot: string?, roll: string? }
@@ -95,10 +111,10 @@ vgal.defines.metal_steel = {
 }
 
 if vgal.defines.flags["agal"] then
-    vgal.defines.metal_steel["molten"] = "angels-liquid-molten-steel"
-    vgal.defines.metal_steel["angels_plate_recipe_name"] = "angels-plate-steel"
-    vgal.defines.metal_steel["ingot"] = "angels-ingot-steel"
-    vgal.defines.metal_steel["roll"] = "angels-roll-steel"
+    vgal.defines.metal_steel.molten = "angels-liquid-molten-steel"
+    vgal.defines.metal_steel.angels_plate_recipe_name = "angels-plate-steel"
+    vgal.defines.metal_steel.ingot = "angels-ingot-steel"
+    vgal.defines.metal_steel.roll = "angels-roll-steel"
 end
 
 ---@type table<string, {name: string, order: string, tiers: string[], unique_ingredient: string?, unique_ingredient_amount: integer?}>

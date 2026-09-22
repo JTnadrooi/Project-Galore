@@ -10,6 +10,11 @@ local subgroups = {
         },
         should_reorder_entries = true,
     },
+    {
+        name = "holmium",
+        group = "angels-smelting",
+        order = "b-db",
+    },
 }
 
 vgal.subgroup.process_override_subgroups(subgroups)

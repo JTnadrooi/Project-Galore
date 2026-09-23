@@ -7,14 +7,14 @@ vgal.extend({
             vgal.icon.get("iron-gear-wheel"),
             vgal.icon.get_in("angels-liquid-molten-iron"),
         }),
-        energy_required = 1,
+        energy_required = 2,
         technology = "angels-metallurgy-2",
         ingredients = {
             { "angels-solid-sand",         1 },
-            { "angels-liquid-molten-iron", 75 },
+            { "angels-liquid-molten-iron", 100 },
         },
         results = {
-            { "iron-gear-wheel", 4 },
+            { "iron-gear-wheel", 5 },
         },
         category = "angels-casting",
 
@@ -166,7 +166,7 @@ vgal.extend({
             { "burner-inserter", 5 },
         },
         category = "angels-casting",
-        
+
         localised_description = { "vgal-internal.insert-casting-recipe-desc" },
         localised_name = { "", { "entity-name.burner-inserter" }, " ", { "vgal-internal.casting-postfix" } },
     },

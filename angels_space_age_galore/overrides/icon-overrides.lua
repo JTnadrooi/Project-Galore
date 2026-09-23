@@ -21,15 +21,6 @@ data.raw["fluid"]["angels-liquid-tungstic-acid"].flow_color = { r = 80 / 255, g 
 data.raw["fluid"]["fluorine"].base_color = angelsmods.functions.fluid_color("F")
 data.raw["fluid"]["fluorine"].flow_color = angelsmods.functions.fluid_color("F")
 
-data.raw.recipe["molten-iron-from-lava"].icons = vgal.icon.merge_composites({
-    vgal.icon.get("angels-liquid-molten-iron"),
-    vgal.icon.get_in("lava"),
-})
-data.raw.recipe["molten-copper-from-lava"].icons = vgal.icon.merge_composites({
-    vgal.icon.get("angels-liquid-molten-copper"),
-    vgal.icon.get_in("lava"),
-})
-
 data.raw.recipe["casting-low-density-structure"].icons = vgal.icon.merge_composites({
     vgal.icon.get("low-density-structure"),
     vgal.icon.get_in("angels-liquid-molten-copper"),

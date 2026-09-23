@@ -234,8 +234,46 @@ vgal.recipe.replace_ingredient("vgal-jelly-ammonia-electronic-circuit", "ammonia
 vgal.recipe.replace_ingredient("vgal-petroleum-gas-barrel-biter-egg", "petroleum-gas-barrel",
     "angels-gas-carbon-dioxide-barrel")
 
-vgal.recipe.replace_result("molten-iron-from-lava", "stone", "angels-slag")
-vgal.recipe.replace_result("molten-copper-from-lava", "stone", "angels-slag")
+-- fix lava to metal techs
+do
+    local copper_from_lava_recipe = data.raw["recipe"]["molten-copper-from-lava"]
+    copper_from_lava_recipe.energy_required = 8
+    copper_from_lava_recipe.ingredients = vgal.build.io({
+        { "angels-solid-lime", 1 },
+        { "lava",              500 },
+    })
+    copper_from_lava_recipe.results = vgal.build.io({
+        { "angels-ingot-copper", 25 },
+        { "angels-slag",         15 }
+    })
+    copper_from_lava_recipe.main_product = "angels-ingot-copper"
+
+    copper_from_lava_recipe.icons = vgal.icon.create({
+        style   = "angels-liquid",
+        outputs = { "angels-ingot-copper" },
+        palette = { { 202, 099, 017 }, { 099, 031, 032 }, { 099, 031, 032 } },
+    })
+end
+
+do
+    local iron_from_lava_recipe = data.raw["recipe"]["molten-iron-from-lava"]
+    iron_from_lava_recipe.energy_required = 8
+    iron_from_lava_recipe.ingredients = vgal.build.io({
+        { "angels-solid-lime", 1 },
+        { "lava",              500 },
+    })
+    iron_from_lava_recipe.results = vgal.build.io({
+        { "angels-ingot-iron", 25 },
+        { "angels-slag",       10 }
+    })
+    iron_from_lava_recipe.main_product = "angels-ingot-iron"
+
+    iron_from_lava_recipe.icons = vgal.icon.create({
+        style   = "angels-liquid",
+        outputs = { "angels-ingot-iron" },
+        palette = { { 202, 099, 017 }, { 099, 031, 032 }, { 099, 031, 032 } },
+    })
+end
 
 -- category tweaks
 data.raw["recipe"]["vgal-molten-copper-carbon-fiber-low-density-structure"].categories = { "angels-casting" }

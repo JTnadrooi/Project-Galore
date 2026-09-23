@@ -128,7 +128,7 @@ end
 
 do
     local vent = data.raw["resource"]["fluorine-vent"]
-    vent.minable.results[1].name = "angels-gas-hydrogen-fluoride"
+    -- vent.minable.results[1].name = "angels-gas-hydrogen-fluoride"
 
     for _, stateless_visualisation_entry in ipairs(vent.stateless_visualisation) do
         if stateless_visualisation_entry.animation and stateless_visualisation_entry.animation.tint then

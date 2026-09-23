@@ -451,7 +451,7 @@ local subgroups = {
         should_reorder_entries = true,
     },
     {
-        name = "fluoride",
+        name = "fluorine",
         group = "angels-petrochem-refining",
         order = "db",
         entries = {

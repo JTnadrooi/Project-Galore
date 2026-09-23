@@ -2,6 +2,8 @@ vgal.icon = vgal.icon or {}
 
 ---@type table<string, {[1]: string, [2]: integer}>
 local angels_molecule_map = {
+    ["fluorine"]                        = { "__angels_space_age_galore__/graphics/icons/molecules/fluorine.png", 72 },
+
     ["angels-gas-oxygen"]               = { "__angelspetrochemgraphics__/graphics/icons/molecules/oxygen.png", 64 },
     ["angels-gas-hydrogen"]             = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen.png", 64 },
     ["angels-gas-sulfur-dioxide"]       = { "__angelspetrochemgraphics__/graphics/icons/molecules/sulfur-dioxide.png", 64 },
@@ -582,6 +584,16 @@ if vgal.defines.flags["asagal"] then
             return angelsmods.functions.create_viscous_liquid_fluid_icon(
                 nil,
                 { { 235, 235, 240 }, { 235, 235, 240 }, { 075, 026, 102, 0.75 }, { 075, 026, 102, 0.75 } }
+            )
+        end
+    })
+    vgal.icon.add_override({
+        name = "fluorine",
+        source = "fluid",
+        composite_icon_override_function = function()
+            return angelsmods.functions.create_gas_fluid_icon(
+                { "__angels_space_age_galore__/graphics/icons/molecules/fluorine.png", 72 },
+                "FFF"
             )
         end
     })

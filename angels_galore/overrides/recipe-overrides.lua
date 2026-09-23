@@ -987,6 +987,9 @@ end
 -- make slag from crushed stone use slightly less sulfuric acid
 vgal.recipe.set_ingredient_amount("angels-stone-crushed-dissolution", 10, "sulfuric-acid")
 
+-- normalize
+vgal.recipe.set_result_amount("angels-gas-hydrogen-fluoride", 50, "angels-gas-hydrogen-fluoride")
+
 -- make sulfuric acid chain recipes faster
 -- done to compensate overral slower chem/liquifier speeds
 data.raw["recipe"]["angels-liquid-sulfuric-acid"].energy_required = 1 -- og; 2

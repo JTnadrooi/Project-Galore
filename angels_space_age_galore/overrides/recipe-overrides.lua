@@ -623,12 +623,12 @@ do
     -- oxide
     do
         local ice_crushing_1_recipe = data.raw["recipe"]["oxide-asteroid-crushing"]
-        vgal.recipe.set_result_amount(ice_crushing_1_recipe, 12)
+        vgal.recipe.set_result_amount(ice_crushing_1_recipe, 12, "ice")
         ice_crushing_1_recipe.icons = get_asteroid_crushing_icon("oxide-asteroid-chunk")
 
         -- advanced
         local ice_crushing_2_recipe = data.raw["recipe"]["advanced-oxide-asteroid-crushing"]
-        vgal.recipe.set_result_amount(ice_crushing_2_recipe, 4)
+        vgal.recipe.set_result_amount(ice_crushing_2_recipe, 4, "ice")
         ice_crushing_2_recipe.icons = get_asteroid_crushing_icon("oxide-asteroid-chunk", "calcite")
 
         -- ammonia

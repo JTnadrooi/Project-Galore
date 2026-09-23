@@ -4,6 +4,8 @@ if not mods["reskins-angels"] then
 
     vgal.icon.set_icons(data.raw["item"]["holmium-plate"], vgal.icon.get("holmium-plate"))
 
+    vgal.icon.set_icons(data.raw["fluid"]["fluorine"], vgal.icon.get("fluorine"))
+
     data.raw["item"]["lithium-plate"].icon = "__angelssmeltinggraphics__/graphics/icons/plate-silver.png"
     data.raw["item"]["lithium-plate"].icon_size = 32
 end
@@ -16,10 +18,8 @@ vgal.icon.set_icons(data.raw["fluid"]["angels-liquid-tungstic-acid"], vgal.icon.
 data.raw["fluid"]["angels-liquid-tungstic-acid"].base_color = { r = 80 / 255, g = 30 / 255, b = 105 / 255 }
 data.raw["fluid"]["angels-liquid-tungstic-acid"].flow_color = { r = 80 / 255, g = 30 / 255, b = 105 / 255 }
 
--- vgal.icon.set_icons(data.raw["fluid"]["fluorine"], angelsmods.functions.create_gas_fluid_icon(
---     { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 64 },
---     "FFF"
--- ))
+data.raw["fluid"]["fluorine"].base_color = angelsmods.functions.fluid_color("F")
+data.raw["fluid"]["fluorine"].flow_color = angelsmods.functions.fluid_color("F")
 
 data.raw.recipe["molten-iron-from-lava"].icons = vgal.icon.merge_composites({
     vgal.icon.get("angels-liquid-molten-iron"),

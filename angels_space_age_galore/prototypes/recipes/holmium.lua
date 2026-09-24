@@ -95,7 +95,7 @@ vgal.extend({
         results = {
             { "vgal-holmium-oxide", 12 },
         },
-        category = "angels-blast-smelting",
+        category = "vgal-blast-chemistry",
 
         main_recipe = true,
         allow_productivity = true,
@@ -129,7 +129,7 @@ vgal.extend({
         results = {
             { "vgal-holmium-fluoride", 12 },
         },
-        category = "angels-blast-smelting",
+        category = "vgal-blast-chemistry",
 
         main_recipe = true,
         allow_productivity = true,

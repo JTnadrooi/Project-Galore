@@ -175,7 +175,7 @@ vgal.extend({
             { "angels-solid-lime",         4 },
             { "angels-gas-carbon-dioxide", 50 },
         },
-        category = "angels-blast-smelting",
+        category = "vgal-blast-chemistry",
         allow_productivity = false,
     },
 }, {

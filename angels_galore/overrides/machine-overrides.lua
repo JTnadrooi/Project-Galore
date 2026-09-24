@@ -209,3 +209,5 @@ do
         end
     end
 end
+
+table.insert(data.raw["assembling-machine"]["angels-blast-furnace"].crafting_categories, "vgal-blast-chemistry")

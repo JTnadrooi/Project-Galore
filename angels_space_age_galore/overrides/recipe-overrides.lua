@@ -275,9 +275,14 @@ do
     })
 end
 
+-- make ingot recipes craftable in foundry
+
 -- category tweaks
 data.raw["recipe"]["vgal-molten-copper-carbon-fiber-low-density-structure"].categories = { "angels-casting" }
 data.raw["recipe"]["tungsten-carbide"].categories = { "angels-chemical-smelting" }
+data.raw["recipe"]["angels-solid-tungsten-oxide"].categories = { "vgal-blast-chemistry" }
+data.raw["recipe"]["angels-solid-tungsten-oxide-2"].categories = { "vgal-blast-chemistry" }
+data.raw["recipe"]["angels-powder-tungsten"].categories = { "vgal-blast-chemistry" }
 
 -- gleba bioprocessing fixes
 do

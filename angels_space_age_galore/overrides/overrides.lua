@@ -7,11 +7,13 @@ do
     -- first reduce crafting speed
     -- why? so I can use the base angels galore casting recipes without adding new slower ones (that would be as fast as the game) and/or make the casting machine speeds weird
     -- 4 is way to fast anyways....
+    -- (its a few percent faster overall anyway)
     foundry.crafting_speed = 2 -- og; 4
 
     -- allow angels casting
     table.insert(foundry.crafting_categories, "angels-casting")
     table.insert(foundry.crafting_categories, "angels-strand-casting")
+    table.insert(foundry.crafting_categories, "angels-blast-smelting") -- bc of the "vgal-blast-chemistry" category, this does not include more chemistry like recipes (so ingot only)
 end
 
 -- remove vanilla tree farming

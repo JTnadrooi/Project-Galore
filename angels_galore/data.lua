@@ -11,6 +11,7 @@ vgal.table.extend_single(vgal.tech.units, {
 -- req
 require("overrides.prod-overrides")
 require("prototypes.items.biological-science-pack")
+require("prototypes.recipe-categories")
 
 require("prototypes.subgroups")
 

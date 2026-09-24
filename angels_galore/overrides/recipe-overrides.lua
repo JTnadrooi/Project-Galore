@@ -1026,6 +1026,9 @@ vgal.recipe.set_result_amount("angels-gas-ethanol", 100, "angels-gas-ethanol")
 -- make catalyst frame casting faster, usefull for when quickly stocking up builds on catalyst carriers
 data.raw["recipe"]["angels-catalyst-metal-carrier"].energy_required = 1
 
+-- blast chemistry fixes
+data.raw["recipe"]["angels-solid-lime"].categories = { "vgal-blast-chemistry" }
+
 -- nerf coal cracking
 -- commetedbc; rember og OG:
 -- data.raw["recipe"]["angels-coal-cracking-1"].results = vgal.build.table({ -- ingredients value: 30

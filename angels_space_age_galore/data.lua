@@ -13,6 +13,7 @@ require("setups.spoilage-setup")
 require("setups.weight-setup")
 
 require("prototypes.recipes.holmium")
+require("prototypes.recipes.tungsten")
 require("prototypes.recipes.water-treatment")
 require("prototypes.recipes.resources")
 require("prototypes.recipes.metal-both")

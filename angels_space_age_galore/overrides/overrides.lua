@@ -157,3 +157,12 @@ data.raw["capsule"]["jellynut"].fuel_value = "6MJ"
 -- fix holmium color
 data.raw["fluid"]["holmium-solution"].flow_color = { 229, 182, 207 }
 data.raw["fluid"]["holmium-solution"].base_color = { 229, 182, 207 }
+
+-- return of steel powder (needed for tungsten-steel powder)
+vgal.deepunhide(data.raw.item["angels-powder-steel"])
+vgal.deepunhide(data.raw.recipe["angels-powder-steel"])
+vgal.tech.add_recipe("angels-steel-smelting-1", "angels-powder-steel")
+vgal.locale.clear(data.raw["recipe"]["angels-powder-steel"]) -- to avoid "something went wrong" locale
+
+-- make mining slower so t2/t3 tungsten processing will not just be ingored
+data.raw["resource"]["tungsten-ore"].minable.mining_time = 4 -- og; 2

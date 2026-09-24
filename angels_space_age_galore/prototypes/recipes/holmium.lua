@@ -1,6 +1,5 @@
 local holmium = vgal.defines.metal_holmium
 
--- main recipes
 vgal.extend({
     {
         name = holmium.processed,

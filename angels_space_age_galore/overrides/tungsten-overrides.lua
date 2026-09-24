@@ -31,7 +31,7 @@ do
     tungsten_plate_recipe.energy_required = 5
     tungsten_plate_recipe.categories = { "angels-sintering" }
     tungsten_plate_recipe.ingredients = vgal.build.io({
-        { tungsten_metal.powder, 1 },
+        { "vgal-tungsten-steel-powder", 1 },
     })
     tungsten_plate_recipe.results = vgal.build.io({
         { tungsten_metal.plate, 1 },

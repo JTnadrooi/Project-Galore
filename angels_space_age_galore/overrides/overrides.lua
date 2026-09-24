@@ -9,6 +9,7 @@ do
     -- 4 is way to fast anyways....
     -- (its a few percent faster overall anyway)
     foundry.crafting_speed = 2 -- og; 4
+    foundry.graphics_set.animation.animation_speed = 2
 
     -- allow angels casting
     table.insert(foundry.crafting_categories, "angels-casting")

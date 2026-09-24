@@ -1,17 +1,13 @@
 -- PURGE EXTRA MACHINE TIERS
-local partial_angels_category_buffer = {}
 
+---@type table<string, string>
 for building_name, max_tier in pairs(vgal.defines.machine_max_tiers) do
-    local max_categories = nil
     local buildings = {}
-    local is_partial_angels = vgal.defines.machine_max_tiers["angels-" .. building_name] or
-        vgal.defines.machine_max_tiers[building_name:gsub("^angels%-", "")]
 
     -- for every tier except tier 1 trim if above max and edit module slots.
     for i = 2, 5 do
         local building = data.raw["assembling-machine"][building_name .. "-" .. i]
         if building then
-            max_categories = building.crafting_categories
             building.module_slots = 1 + i
         end
         if (i > max_tier) and building then
@@ -29,10 +25,6 @@ for building_name, max_tier in pairs(vgal.defines.machine_max_tiers) do
         data.raw["assembling-machine"][building_name]
     if building_max then
         building_max.next_upgrade = nil
-    else
-        if not is_partial_angels then
-            error(building_name)
-        end
     end
 
     -- base tier should be included in all the buildings and fix module slots.
@@ -41,23 +33,6 @@ for building_name, max_tier in pairs(vgal.defines.machine_max_tiers) do
     if building_min then
         table.insert(buildings, building_min)
         building_min.module_slots = 2
-    else
-        if not is_partial_angels then
-            error(building_name)
-        end
-    end
-
-    if not max_categories and is_partial_angels then
-        max_categories = partial_angels_category_buffer["angels-" .. building_name]
-    end
-
-    -- make all builings craft everything.
-    for _, tier_building in ipairs(buildings) do
-        tier_building.crafting_categories = max_categories
-    end
-
-    if is_partial_angels then
-        partial_angels_category_buffer[building_name] = max_categories
     end
 
     if max_tier == 0 then

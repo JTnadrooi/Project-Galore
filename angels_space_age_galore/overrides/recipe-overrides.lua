@@ -283,6 +283,7 @@ data.raw["recipe"]["tungsten-carbide"].categories = { "angels-chemical-smelting"
 data.raw["recipe"]["angels-solid-tungsten-oxide"].categories = { "vgal-blast-chemistry" }
 data.raw["recipe"]["angels-solid-tungsten-oxide-2"].categories = { "vgal-blast-chemistry" }
 data.raw["recipe"]["angels-powder-tungsten"].categories = { "vgal-blast-chemistry" }
+vgal.recipe.add_category("angels-ingot-copper-3", "metallurgy") -- bc chemi furnace
 
 -- gleba bioprocessing fixes
 do

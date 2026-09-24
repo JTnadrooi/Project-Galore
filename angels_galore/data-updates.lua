@@ -3,10 +3,10 @@ require("overrides.loot-overrides")
 require("overrides.order-overrides")
 require("overrides.overrides")
 require("overrides.fuel-overrides")
-require("overrides.recipe-overrides")
 
 require("overrides.icon-overrides")
 require("overrides.machine-overrides")
+require("overrides.recipe-overrides")
 require("overrides.angels-purge")
 require("overrides.tech-overrides")
 

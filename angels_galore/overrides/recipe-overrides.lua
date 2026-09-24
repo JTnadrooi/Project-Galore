@@ -15,6 +15,44 @@ do
     explosives_3_recipe.energy_required = 3
 end
 
+-- make all recipes use t1 categories
+do
+    ---@type table<string, string>
+    local category_map = {}
+
+    ---@param base_category_name string
+    local function add_category_map_entry(base_category_name)
+        local t1 = (data.raw["recipe-category"][base_category_name] and base_category_name or base_category_name .. "-1") or error(base_category_name)
+
+        for i = 2, 4 do
+            category_map[base_category_name .. "-" .. i] = t1
+        end
+    end
+
+    add_category_map_entry("angels-filtering")
+    add_category_map_entry("angels-ore-sorting")
+    add_category_map_entry("angels-powderizing")
+    add_category_map_entry("angels-blast-smelting")
+    add_category_map_entry("angels-casting")
+    add_category_map_entry("angels-chemical-smelting")
+    add_category_map_entry("angels-induction-smelting")
+    add_category_map_entry("angels-ore-processing")
+    add_category_map_entry("angels-pellet-pressing")
+    add_category_map_entry("angels-powder-mixing")
+    add_category_map_entry("angels-sintering")
+    add_category_map_entry("angels-strand-casting")
+
+    for _, recipe in pairs(data.raw["recipe"]) do
+        if recipe.categories then
+            for i, category in ipairs(recipe.categories) do
+                if category_map[category] then
+                    recipe.categories[i] = category_map[category]
+                end
+            end
+        end
+    end
+end
+
 vgal.recipe.replace_ingredient("grenade", "coal", "angels-coal-crushed")
 vgal.recipe.set_ingredient_amount("grenade", 15, "angels-coal-crushed")
 

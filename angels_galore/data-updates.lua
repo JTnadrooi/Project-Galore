@@ -14,6 +14,7 @@ require("overrides.tips-overrides")
 
 require("overrides.locale-overrides")
 
+require("mods.quality")
 require("mods.angelsaddons-bots")
 require("mods.angelsaddons-cab")
 require("mods.angelsaddons-mobility")

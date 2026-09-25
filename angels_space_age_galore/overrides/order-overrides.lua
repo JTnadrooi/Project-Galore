@@ -64,3 +64,6 @@ data.raw["item"]["holmium-plate"].order = "fb"
 data.raw["item"]["holmium-plate"].subgroup = "vgal-holmium"
 data.raw["fluid"]["fluorine"].order = "-"
 data.raw["fluid"]["fluorine"].subgroup = "vgal-fluorine"
+
+data.raw["item"]["angels-powder-steel"].order = "b"
+data.raw["item"]["angels-powder-steel"].subgroup = "vgal-steel-processing"

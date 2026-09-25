@@ -79,11 +79,11 @@ vgal.extend({
         technology = "angels-sulfur-processing-2",
         ingredients = {
             { "angels-gas-acid",                100 },
-            { "angels-solid-calcium-carbonate", 3 },
+            { "angels-solid-calcium-carbonate", 3 }, -- 37.5 co2
         },
         results = {
             { "angels-solid-calcium-sulfate", 3 },
-            { "angels-gas-carbon-dioxide",    20 },
+            { "angels-gas-carbon-dioxide",    40 }, -- +20
             { "angels-gas-hydrogen-fluoride", 20 },
         },
         category = "angels-advanced-chemistry",

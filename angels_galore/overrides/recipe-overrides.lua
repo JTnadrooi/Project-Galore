@@ -967,6 +967,9 @@ data.raw["recipe"]["angels-liquid-raw-fish-oil-filtering-2"].energy_required = 2
 -- also helps with machine buffers as puffers get going
 data.raw["recipe"]["angels-gas-puffer-atmosphere"].energy_required = 4 -- og: 30
 
+-- reduce oxygen requirement
+vgal.recipe.set_ingredient_amount("angels-gas-sulfur-dioxide", 40, "angels-gas-oxygen")
+
 -- make output number nicer (og 70)
 vgal.recipe.set_result_amount("angels-gas-carbon-dioxide-from-wood", 75)
 

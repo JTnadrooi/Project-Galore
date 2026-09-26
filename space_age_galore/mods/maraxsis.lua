@@ -34,6 +34,7 @@ for _, recipe in vgal.domain_pairs("vgal", "recipe") do
                 })
 
             new_recipe.results[1].amount = result_amount * 2 -- double amounts
+            new_recipe.results[1].quality_min = "uncommon"   -- add quality thingy
             new_recipe.categories = { "maraxsis-hydro-plant" }
             new_recipe.surface_conditions = { {
                 property = "pressure",

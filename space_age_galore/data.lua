@@ -60,8 +60,6 @@ require("prototypes.recipes.removed")
 require("prototypes.recipes.buildings.buildings")
 require("prototypes.recipes.buildings.belts")
 require("prototypes.recipes.buildings.tiles")
-
-require("mods.maraxsis")
 require("mods.james")
 require("mods.wolf")
 require("mods.cerys")

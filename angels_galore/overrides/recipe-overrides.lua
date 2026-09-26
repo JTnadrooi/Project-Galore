@@ -1001,6 +1001,9 @@ do
     hydrazine_solid_fuel_recipe.energy_required = 5
 end
 
+-- buff ammonia from algae
+vgal.recipe.set_ingredient_amount("angels-gas-ammonia-from-blue-fiber", 10)
+
 -- make fish to oil recipes faster
 data.raw["recipe"]["angels-fish-pressing-0"].energy_required = 6
 data.raw["recipe"]["angels-fish-pressing-1"].energy_required = 4

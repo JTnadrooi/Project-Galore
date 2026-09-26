@@ -41,6 +41,7 @@ do
     add_category_map_entry("angels-powder-mixing")
     add_category_map_entry("angels-sintering")
     add_category_map_entry("angels-strand-casting")
+    add_category_map_entry("angels-bio-processing")
 
     for _, recipe in pairs(data.raw["recipe"]) do
         if recipe.categories then

@@ -57,13 +57,17 @@ data.raw["technology"]["holmium-processing"].research_trigger = {
 -- vgal.tech.move_recipe("holmium-processing", "holmium-ore", "vgal-holmium-smelting-1")
 vgal.tech.move_recipe("holmium-processing", "vgal-holmium-smelting-1", "holmium-solution")
 
-
-
 -- vgal.tech.replace_prerequisite("", "holmium-processing", )
 
 -- remove puffer atm from puffer 1 as it gets unlocked later
 -- puffer from gleba atm early tho
 vgal.tech.remove_recipe("angels-bio-refugium-puffer-1", "angels-gas-puffer-atmosphere")
+
+-- make sure planets are possible with prereq techs
+vgal.tech.add_prerequisite("planet-discovery-vulcanus", "angels-ore-powderizer")
+vgal.tech.add_prerequisite("planet-discovery-vulcanus", "angels-slag-processing-1")
+vgal.tech.add_prerequisite("planet-discovery-fulgora", "angels-slag-processing-1")
+vgal.tech.add_prerequisite("planet-discovery-gleba", "angels-slag-processing-1")
 
 local cache_space_sp = {}
 local cache_agri_sp = {}

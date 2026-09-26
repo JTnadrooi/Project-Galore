@@ -15,6 +15,11 @@ local subgroups = {
         group = "angels-smelting",
         order = "b-db",
     },
+    {
+        name = "lithium",
+        group = "angels-smelting",
+        order = "b-dc",
+    },
 }
 
 vgal.subgroup.process_override_subgroups(subgroups)

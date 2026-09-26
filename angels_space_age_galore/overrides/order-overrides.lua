@@ -67,3 +67,10 @@ data.raw["fluid"]["fluorine"].subgroup = "vgal-fluorine"
 
 data.raw["item"]["angels-powder-steel"].order = "b"
 data.raw["item"]["angels-powder-steel"].subgroup = "vgal-steel-processing"
+
+data.raw["item"]["lithium-plate"].order = "ia"
+data.raw["item"]["lithium-plate"].subgroup = "vgal-lithium"
+data.raw["item"]["lithium"].order = "a"
+data.raw["item"]["lithium"].subgroup = "vgal-lithium"
+data.raw["fluid"]["lithium-brine"].order = "a"
+data.raw["fluid"]["lithium-brine"].subgroup = "vgal-lithium"

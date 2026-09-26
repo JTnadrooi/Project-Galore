@@ -4,7 +4,9 @@ require("prototypes.buildings.space-vent")
 require("prototypes.technology")
 
 require("prototypes.items.dormant-seeds")
-require("prototypes.items.metal-items")
+require("prototypes.items.holmium-items")
+require("prototypes.items.lithium-items")
+require("prototypes.items.tungsten-items")
 
 -- require("prototypes.generation.vgal-saline-fissure")
 require("prototypes.generation.vgal-ore")

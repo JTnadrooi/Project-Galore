@@ -78,7 +78,6 @@ for _, invalid_icon_item_name in ipairs({
 end
 
 -- tech icon fixes
--- casting tech icons are a bit too advanced and big for me to edit :(
 for _, invalid_icon_tech_name in ipairs({
     "angels-tungsten-smelting-1",
     "angels-tungsten-smelting-2",
@@ -86,5 +85,6 @@ for _, invalid_icon_tech_name in ipairs({
 }) do
     local invalid_icon_tech = data.raw["technology"][invalid_icon_tech_name]
     -- invalid_icon_item.icon = vgal.string.replace(invalid_icon_item.icon, "iron", "holmium")
-    invalid_icon_tech.icon = vgal.string.replace(invalid_icon_tech.icon, "tungsten", "nitinol")
+    invalid_icon_tech.icon = vgal.string.replace(invalid_icon_tech.icon, "angelssmeltinggraphics", "angels_space_age_galore")
+    invalid_icon_tech.icon = vgal.string.replace(invalid_icon_tech.icon, "casting", "smelting")
 end

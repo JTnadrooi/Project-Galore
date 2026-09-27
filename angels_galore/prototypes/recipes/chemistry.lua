@@ -88,6 +88,30 @@ vgal.extend({
         },
         category = "angels-advanced-chemistry",
     },
+    -- {
+    --     name = "angels-gas-residual-angels-gas-hydrogen",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.create({
+    --         style = "angels-gas",
+    --         outputs = { "angels-gas-hydrogen", "angels-gas-carbon-dioxide", "angels-gas-carbon-monoxide" },
+    --         palette = { { 064, 000, 064 }, { 128, 000, 128 }, { 192, 000, 192 } },
+    --     }),
+    --     energy_required = 2,
+    --     technology = "angels-steam-cracking-2",
+    --     ingredients = {
+    --         { "angels-gas-residual", 100 },
+    --     },
+    --     results = {
+    --         { "angels-gas-hydrogen",        40 },
+    --         { "angels-gas-carbon-dioxide",  40 },
+    --         { "angels-gas-carbon-monoxide", 20 },
+    --     },
+    --     category = "angels-advanced-chemistry",
+
+    --     order = "h",
+    --     subgroup = "angels-petrochem-carbon-synthesis",
+    -- },
+    -- -Added "vgal-angels-gas-residual-angels-gas-hydrogen"
     {
         name = "angels-solid-calcium-chloride-angels-gas-hydrogen-chloride",
         prefix = "vgal",

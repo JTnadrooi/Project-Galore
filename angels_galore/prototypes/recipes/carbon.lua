@@ -47,26 +47,26 @@ vgal.extend({
             angelsmods.functions.fluid_color("NaCO3"),
         }),
     },
-    {
-        name = "angels-wood-pellets-angels-solid-coke",
-        prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("angels-solid-coke"),
-            vgal.icon.get_in("angels-wood-pellets"),
-        }),
-        energy_required = 5,
-        technology = "angels-bio-wood-processing-2",
-        ingredients = {
-            { "angels-wood-pellets", 3 },
-        },
-        results = {
-            { "angels-solid-coke",         2 },
-            { "angels-liquid-condensates", 25 },
-        },
-        category = "angels-liquifying",
+    -- {
+    --     name = "angels-wood-pellets-angels-solid-coke",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.merge_composites({
+    --         vgal.icon.get("angels-solid-coke"),
+    --         vgal.icon.get_in("angels-wood-pellets"),
+    --     }),
+    --     energy_required = 5,
+    --     technology = "angels-bio-wood-processing-2",
+    --     ingredients = {
+    --         { "angels-wood-pellets", 3 },
+    --     },
+    --     results = {
+    --         { "angels-solid-coke",         2 },
+    --         { "angels-liquid-condensates", 25 },
+    --     },
+    --     category = "angels-liquifying",
 
-        groups = { "vgal-unsure" }
-    },
+    --     groups = { "vgal-unsure" }
+    -- },
     {
         name = "angels-wood-charcoal-angels-coal-crushed",
         prefix = "vgal",

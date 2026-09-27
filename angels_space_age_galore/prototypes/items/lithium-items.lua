@@ -12,7 +12,6 @@ for i, iron_basic_recipeable_name in ipairs({
     local iron_basic_recipeable = vgal.get_recipeable(iron_basic_recipeable_name)
     local output_item_icon_path = iron_basic_recipeable.icon or error()
     output_item_icon_path = vgal.string.replace(output_item_icon_path, original_metal_name, "silver")
-    -- output_item_icon_path = vgal.string.replace(output_item_icon_path, "angelssmeltinggraphics", "angels_space_age_galore")
 
     local output_item = table.deepcopy(iron_basic_recipeable)
     local output_item_name = output_item.name
@@ -66,7 +65,7 @@ data:extend({
     -- {
     --     type = "item",
     --     name = "vgal-holmium-fluoride",
-    --     icon = "__angels_space_age_galore__/graphics/icons/holmium-fluoride.png",
+    --     icon = "__angelssmeltinggraphics__/graphics/icons/holmium-fluoride.png",
     --     icon_size = 32,
     --     subgroup = "vgal-holmium",
     --     order = "cc",

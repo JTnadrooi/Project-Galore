@@ -34,7 +34,7 @@ data:extend({
     {
         type = "technology",
         name = "vgal-holmium-smelting-1",
-        icon = "__angels_space_age_galore__/graphics/technology/smelting-holmium-tech.png",
+        icon = "__angelssmeltinggraphics__/graphics/technology/smelting-holmium-tech.png",
         icon_size = 256,
         prerequisites = {
             "recycling",
@@ -55,7 +55,7 @@ data:extend({
     {
         type = "technology",
         name = "vgal-holmium-smelting-2",
-        icon = "__angels_space_age_galore__/graphics/technology/smelting-holmium-tech.png",
+        icon = "__angelssmeltinggraphics__/graphics/technology/smelting-holmium-tech.png",
         icon_size = 256,
         prerequisites = {
             "vgal-holmium-smelting-1",
@@ -79,7 +79,7 @@ data:extend({
     {
         type = "technology",
         name = "vgal-holmium-smelting-3",
-        icon = "__angels_space_age_galore__/graphics/technology/smelting-holmium-tech.png",
+        icon = "__angelssmeltinggraphics__/graphics/technology/smelting-holmium-tech.png",
         icon_size = 256,
         prerequisites = {
             "vgal-holmium-smelting-2",

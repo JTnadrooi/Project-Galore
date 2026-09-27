@@ -535,7 +535,7 @@ if vgal.defines.flags["asagal"] then
         source = "item",
         composite_icon_override = {
             {
-                icon = "__angels_space_age_galore__/graphics/icons/plate-holmium.png",
+                icon = "__angelssmeltinggraphics__/graphics/icons/plate-holmium.png",
                 icon_size = 32,
             }
         }
@@ -555,7 +555,7 @@ if vgal.defines.flags["asagal"] then
         source = "item",
         composite_icon_override = {
             {
-                icon = "__angels_space_age_galore__/graphics/icons/plate-tungsten.png",
+                icon = "__angelssmeltinggraphics__/graphics/icons/plate-spage-tungsten.png",
                 icon_size = 32,
             }
         }

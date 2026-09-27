@@ -74,7 +74,8 @@ for _, invalid_icon_item_name in ipairs({
 }) do
     local invalid_icon_item = data.raw["item"][invalid_icon_item_name]
     -- invalid_icon_item.icon = vgal.string.replace(invalid_icon_item.icon, "iron", "holmium")
-    invalid_icon_item.icon = vgal.string.replace(invalid_icon_item.icon, "angelssmeltinggraphics", "angels_space_age_galore")
+    invalid_icon_item.icon = vgal.string.replace(invalid_icon_item.icon, "tungsten", "spage-tungsten")
+    invalid_icon_item.icon = vgal.string.replace(invalid_icon_item.icon, "ammonium-paratungstate", "spage-ammonium-paratungstate")
 end
 
 -- tech icon fixes
@@ -85,6 +86,5 @@ for _, invalid_icon_tech_name in ipairs({
 }) do
     local invalid_icon_tech = data.raw["technology"][invalid_icon_tech_name]
     -- invalid_icon_item.icon = vgal.string.replace(invalid_icon_item.icon, "iron", "holmium")
-    invalid_icon_tech.icon = vgal.string.replace(invalid_icon_tech.icon, "angelssmeltinggraphics", "angels_space_age_galore")
-    invalid_icon_tech.icon = vgal.string.replace(invalid_icon_tech.icon, "casting", "smelting")
+    invalid_icon_tech.icon = "__angelssmeltinggraphics__/graphics/technology/smelting-spage-tungsten-tech.png"
 end

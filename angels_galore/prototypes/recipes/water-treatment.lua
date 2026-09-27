@@ -120,7 +120,7 @@ vgal.extend({
         --     { { 116, 140, 211 }, { 039, 112, 194, 0.6 } }
         -- ),
         energy_required = 1,
-        technology = "angels-slag-processing-1",
+        technology = "angels-water-treatment",
         ingredients = {
             { "angels-stone-crushed",  5 }, -- 2.5 slag. (positive stone loops may be possible if electrolysis gets productivity support (for slag only))
             { "angels-water-purified", 100 },

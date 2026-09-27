@@ -277,6 +277,13 @@ vgal.recipe.remove_ingredient("atomic-bomb", "angels-rocket-booster")
 vgal.recipe.remove_ingredient("angels-atomic-bomb", "angels-rocket-booster")
 vgal.recipe.remove_ingredient("angels-atomic-bomb-2", "angels-rocket-booster")
 
+-- remove water roll recipes (cooling ones stay but aren't more efficient anymore)
+for metal in vgal.table.iter_all(vgal.defines.metals, { vgal.defines.metal_steel }) do
+    vgal.recipe.set_ingredient_amount("angels-roll-" .. metal.name .. "-2", 160, metal.molten)
+
+    vgal.recipe.override("angels-roll-" .. metal.name, "angels-roll-" .. metal.name .. "-2")
+    vgal.recipe.hide_and_queue_for_tech_removal("angels-roll-" .. metal.name .. "-2")
+end
 -- remove extra trees
 vgal.recipe.hide_and_queue_for_tech_removal("angels-tree-arboretum-0")
 vgal.item.hide("angels-temperate-tree")

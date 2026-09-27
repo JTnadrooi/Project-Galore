@@ -970,3 +970,13 @@ function vgal.recipe.set_icons(recipe_or_recipe_name, icons)
 
     vgal.icon.set_icons(recipe, icons)
 end
+
+---@param original_recipe_name string
+---@param new_recipe_or_recipe_name string|data.RecipePrototype
+function vgal.recipe.override(original_recipe_name, new_recipe_or_recipe_name)
+    local new_recipe = table.deepcopy(vgal.get_from_prototype_or_prototype_name(new_recipe_or_recipe_name, "recipe"))
+
+    new_recipe.name = original_recipe_name
+
+    data:extend({ new_recipe })
+end

@@ -221,6 +221,25 @@ vgal.tech.add_prerequisite("atomic-bomb", "angels-fusion-power-1")
 -- add cement to artillery tech prereq
 vgal.tech.add_prerequisite("artillery", "angels-stone-smelting-2")
 
+-- merge smelting and casting techs
+for metal in vgal.table.iter_all(vgal.defines.metals, { vgal.defines.metal_steel }) do
+    if metal.name == "steel" then
+        vgal.tech.move_effects("angels-" .. metal.name .. "-smelting-3", "angels-strand-casting-1")
+        vgal.tech.move_effects("angels-" .. metal.name .. "-smelting-2", "angels-strand-casting-1")
+    else
+        vgal.icon.copy_icon_data_from(data.raw["technology"]["angels-" .. metal.name .. "-smelting-2"], data.raw["technology"]["angels-" .. metal.name .. "-smelting-1"])
+        vgal.tech.move_effects("angels-" .. metal.name .. "-casting-3", "angels-strand-casting-1")
+        vgal.tech.move_effects("angels-" .. metal.name .. "-casting-2", "angels-strand-casting-1")
+    end
+
+    vgal.locale.clear(data.raw["technology"]["angels-" .. metal.name .. "-smelting-1"])
+end
+
+vgal.tech.add_prerequisite("angels-strand-casting-1", "angels-coolant-1")
+vgal.tech.add_prerequisite("angels-strand-casting-1", "angels-copper-smelting-1")
+vgal.tech.add_prerequisite("angels-strand-casting-1", "angels-iron-smelting-1")
+vgal.tech.add_prerequisite("angels-strand-casting-1", "angels-steel-smelting-1")
+
 -- move coolant 2 filtering recipe to earlier (this removed coolant 2 tech as its empty now)
 vgal.tech.move_recipe("angels-coolant-2", "angels-coolant-1", "angels-coolant-used-filtration-2")
 

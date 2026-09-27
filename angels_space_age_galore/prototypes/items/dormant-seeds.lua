@@ -23,7 +23,7 @@ for _, plant in pairs(vgal.defines.gleba_plants) do
             stack_size = 10,
             default_import_location = "gleba",
             weight = 10 * kg,
-            fuel_category = "chemical",
+            fuel_categories = { "chemical" },
             fuel_value = "4MJ"
         },
     })

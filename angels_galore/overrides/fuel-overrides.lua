@@ -4,7 +4,7 @@ local function make_burnable(recipeable_name, fuel_value_megajoules)
     local recipeable = vgal.get_recipeable(recipeable_name)
 
     recipeable.fuel_value = fuel_value_megajoules .. "MJ"
-    recipeable.fuel_category = "chemical"
+    recipeable.fuel_categories = { "chemical" }
 end
 
 data.raw["item"]["angels-coal-crushed"].fuel_value = "2.5MJ"

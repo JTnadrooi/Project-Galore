@@ -5,8 +5,8 @@ vgal.extend({
         energy_required = 2,
         technology = "tungsten-steel",
         ingredients = {
-            { "angels-powder-tungsten", 6 },
-            { "angels-powder-steel",    6 },
+            { "angels-powder-tungsten", 8 },
+            { "angels-powder-steel",    4 },
         },
         results = {
             { "vgal-tungsten-steel-powder", 12 },

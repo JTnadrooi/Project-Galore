@@ -164,8 +164,9 @@ vgal.deepunhide(data.raw.item["angels-powder-steel"])
 vgal.deepunhide(data.raw.recipe["angels-powder-steel"])
 vgal.tech.add_recipe("angels-ore-powderizer", "angels-powder-steel")
 vgal.locale.clear(data.raw["recipe"]["angels-powder-steel"]) -- to avoid "something went wrong" locale
+vgal.recipe.set_result_amount("angels-powder-steel", 2)
 
 -- make mining slower so t2/t3 tungsten processing will not just be ingored
-data.raw["resource"]["tungsten-ore"].minable.mining_time = 4 -- og; 2
+data.raw["resource"]["tungsten-ore"].minable.mining_time = 5 -- og; 2
 
-data.raw["assembling-machine"]["foundry"].energy_usage = "1424kW"
+data.raw["assembling-machine"]["foundry"].energy_usage = "1808kW"

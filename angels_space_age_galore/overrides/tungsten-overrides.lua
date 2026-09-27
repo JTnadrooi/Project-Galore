@@ -31,7 +31,7 @@ do
     tungsten_plate_recipe.energy_required = 5
     tungsten_plate_recipe.categories = { "angels-sintering" }
     tungsten_plate_recipe.ingredients = vgal.build.io({
-        { "vgal-tungsten-steel-powder", 1 },
+        { "vgal-tungsten-steel-powder", 4 },
     })
     tungsten_plate_recipe.results = vgal.build.io({
         { tungsten_metal.plate, 1 },
@@ -42,8 +42,8 @@ do
     local tungsten_carbide_recipe = data.raw["recipe"]["tungsten-carbide"]
     -- vgal.recipe.replace_ingredient(tungsten_carbide_recipe, tungsten_metal.ore, tungsten_metal.powder)
     tungsten_carbide_recipe.ingredients = vgal.build.io({
-        { tungsten_metal.powder, 1 },
-        { "angels-gas-methane",  40 },
+        { tungsten_metal.powder, 2 },
+        { "angels-gas-methane",  10 },
     })
 end
 

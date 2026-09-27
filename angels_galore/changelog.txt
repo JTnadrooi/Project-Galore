@@ -1,4 +1,32 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.0
+  Features:
+    - Updated to Factorio 2.1.20
+    - Added "vgal-angels-liquid-phenol-lubricant"
+    - Added "vgal-angels-water-saline-angels-electrode-angels-gas-chlorine"
+    - Added "vgal-angels-water-mineralized-angels-water-saline"
+    - Added "vgal-angels-gas-acid-angels-solid-calcium-sulfate"
+    - Added "vgal-vgal-angels-water-mineralized-lubricant"
+    - Added "vgal-angels-solid-calcium-chloride-angels-gas-hydrogen-chloride"
+    - Added "vgal-angels-solid-calcium-chloride-angels-solid-calcium-sulfate"
+    - Added "vgal-angels-gas-chlor-methane-angels-gas-ethane" (listed as unsure)
+    - Added "vgal-angels-gas-methane-angels-liquid-acetic-acid" (listed as unsure)
+  Changes:
+    - Reworked "vgal-angels-water-purified-water" to be more like the mineralized water recipe.
+    - Made "vgal-angels-water-purified-water" unhidden by default. (Unsure tag removed)
+    - Removed "vgal-angels-wood-pellets-angels-solid-coke"
+    - Combined several metallurgy techs.
+    - Reworked roll casting.
+  Balancing:
+    - "angels-gas-carbon-dioxide-from-wood" carbon dioxide yield; 70 -> 75
+    - "vgal-angels-liquid-molten-iron-iron-gear-wheel" duration; 1 -> 2
+    - "vgal-angels-liquid-molten-iron-iron-gear-wheel" molten iron needed; 75 -> 100
+    - "vgal-angels-liquid-molten-iron-iron-gear-wheel" iron gear yield; 4 -> 5
+    - "angels-gas-sulfur-dioxide" oxygen needed; 60 -> 40
+    - "angels-gas-ammonia-from-blue-fiber" blue fiber needed; 20 -> 10
+  Bugfixes:
+    - Fixed "separation" mispellings.
+---------------------------------------------------------------------------------------------------
 Version: 1.2.4
   Features:
     - Improved icons.

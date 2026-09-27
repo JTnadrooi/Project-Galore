@@ -57,6 +57,9 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-thruster-oxidizer-thruster-fue
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-wood-carbon-fiber")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-carbon-steel-plate")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-solid-fuel-sulfuric-acid-carbon")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-calcite-sulfuric-acid-ammonia")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-ice-solid-fuel-ammonia")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-scrap-sulfuric-acid-holmium-solution")
 
 -- vanilla trims
 -- bio stuff will be obtained through bioprocessing

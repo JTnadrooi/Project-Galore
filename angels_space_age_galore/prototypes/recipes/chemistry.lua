@@ -11,11 +11,12 @@ vgal.extend({
         energy_required = 0.5,
         technology = "calcite-processing",
         ingredients = {
-            { "sulfuric-acid",                 200 },
+            { "sulfuric-acid",                 500 },
             { "angels-solid-sodium-hydroxide", 1 },
         },
         results = {
-            { "steam", 120, { temperature = 500 } },
+            { "steam",                       300, { temperature = 500 } },
+            { "angels-solid-sodium-sulfate", 1,   { independent_probability = 0.25 } }
         },
         category = "angels-liquifying",
 

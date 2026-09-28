@@ -19,6 +19,7 @@ require("prototypes.recipes.voids")
 
 require("prototypes.recipes.metal-both")
 require("prototypes.recipes.casting")
+require("prototypes.recipes.cement")
 require("prototypes.recipes.recipe-items")
 require("prototypes.recipes.water-treatment")
 require("prototypes.recipes.chemistry")

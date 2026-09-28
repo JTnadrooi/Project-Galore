@@ -66,6 +66,21 @@ vgal.extend({
         -- order = "gb",
         allow_productivity = true,
     },
+    {
+        name = "angels-liquid-concrete-refined-concrete",
+        prefix = "vgal",
+        energy_required = 15,
+        technology = "angels-stone-smelting-2",
+        ingredients = {
+            { "angels-liquid-concrete", 200 },
+            { "steel-plate",            1 },
+            { "iron-stick",             5 },
+        },
+        results = {
+            { "refined-concrete", 10 },
+        },
+        category = "crafting-with-fluid",
+    },
 }, {
     type = "recipe",
 })

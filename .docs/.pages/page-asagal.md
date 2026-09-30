@@ -1,6 +1,6 @@
 # Angel's+Space Age Galore
 
-![Galore Overview](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/overview-compact-horizontal.png?raw=true)
+![Galore Overview](https://github.com/JTnadrooi/Project-Galore/blob/2.1dev/.media/overview-compact-horizontal.png?raw=true?raw=true)
 
 **SPACE AGE-LESS VERSION [HERE](https://mods.factorio.com/mod/angels_galore)**
 

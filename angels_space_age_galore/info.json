@@ -1,6 +1,6 @@
 {
     "name": "angels_space_age_galore",
-    "version": "0.5.0",
+    "version": "0.9.0",
     "title": "Angel's+Space Age Galore",
     "author": "JTnadrooi",
     "contact": "@jtnadrooi",
@@ -11,5 +11,5 @@
         "space_age_galore",
         "angels_galore"
     ],
-    "description": "The culmination of all Galore mods. (400+ extra recipes)"
+    "description": "An overhaul mod that seamlessly integrates all 4 Angel's mods (and optionally all Angel's Addons) with Space Age! It builds on the pure-Angel's framework established in Angel's Galore. Includes all 3 Galore mods. No factory will be the same."
 }

@@ -9,6 +9,13 @@ do
     -- 4 is way to fast anyways....
     -- (its a few percent faster overall anyway)
     foundry.crafting_speed = 2 -- og; 4
+    local anim = foundry.graphics_set.animation
+
+    for _, direction in pairs({ "north", "east", "south", "west" }) do
+        if foundry.graphics_set.animation[direction] then
+            foundry.graphics_set.animation[direction].animation_speed = 2
+        end
+    end
     foundry.graphics_set.animation.animation_speed = 2
 
     -- allow angels casting

@@ -36,10 +36,6 @@ vgal.extend({
     { -- meat void
         name = "angels-bio-raw-meat-angels-liquid-nutrient-pulp",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("angels-liquid-nutrient-pulp"),
-            vgal.icon.get_in("angels-bio-raw-meat"),
-        }),
         energy_required = 2,
         technology = "angels-bio-refugium-butchery-1",
         ingredients = {
@@ -77,6 +73,34 @@ vgal.extend({
         subgroup = "vgal-bio-nutrient-chemistry",
         order = "e",
     },
+    -- {
+    --     name = "angels-algae-green-angels-liquid-fermentation-raw",
+    --     prefix = "vgal",
+    --     energy_required = 1,
+    --     technology = "angels-bio-fermentation",
+    --     ingredients = {
+    --         { "angels-algae-green", 20 },
+    --         { "water",              10 },
+    --     },
+    --     results = {
+    --         { "angels-liquid-fermentation-raw", 20 },
+    --     },
+    --     category = "angels-liquifying",
+    -- },
+    -- {
+    --     name = "angels-algae-brown-angels-liquid-fermentation-raw",
+    --     prefix = "vgal",
+    --     energy_required = 1,
+    --     technology = "angels-bio-fermentation",
+    --     ingredients = {
+    --         { "angels-algae-brown", 10 },
+    --         { "water",              10 },
+    --     },
+    --     results = {
+    --         { "angels-liquid-fermentation-raw", 20 },
+    --     },
+    --     category = "angels-liquifying",
+    -- },
 }, {
     type = "recipe",
 })

@@ -25,7 +25,7 @@ for i, iron_basic_recipeable_name in ipairs({
     output_item.icon = output_item_icon_path
 
     output_item.order = vgal.subgroup.order_from_number(1 + i)
-    output_item.subgroup = "vgal-" .. final_metal_name
+    output_item.subgroup = "vgal-" .. final_metal_name .. "-processing"
 
     ---@diagnostic disable-next-line: assign-type-mismatch
     data:extend({ output_item })
@@ -40,7 +40,7 @@ data:extend({
         name = "vgal-lithium-chloride",
         icon = "__angelssmeltinggraphics__/graphics/icons/solid-silver-oxide.png",
         icon_size = 32,
-        subgroup = "vgal-lithium",
+        subgroup = "vgal-lithium-processing",
         order = "bb",
         stack_size = 200,
     },
@@ -49,7 +49,7 @@ data:extend({
         name = "vgal-lithium-carbonate",
         icon = "__angelssmeltinggraphics__/graphics/icons/solid-sodium-silver-cyanide.png",
         icon_size = 32,
-        subgroup = "vgal-lithium",
+        subgroup = "vgal-lithium-processing",
         order = "bc",
         stack_size = 200,
     },
@@ -58,7 +58,7 @@ data:extend({
     --     name = "vgal-concentrated-lithium-brine",
     --     icon = "__angelssmeltinggraphics__/graphics/icons/solid-sodium-silver-cyanide.png",
     --     icon_size = 32,
-    --     subgroup = "vgal-lithium",
+    --     subgroup = "vgal-lithium-processing",
     --     order = "a",
     --     stack_size = 200,
     -- },
@@ -67,7 +67,7 @@ data:extend({
     --     name = "vgal-holmium-fluoride",
     --     icon = "__angelssmeltinggraphics__/graphics/icons/holmium-fluoride.png",
     --     icon_size = 32,
-    --     subgroup = "vgal-holmium",
+    --     subgroup = "vgal-holmium-processing",
     --     order = "cc",
     --     stack_size = 200,
     -- },

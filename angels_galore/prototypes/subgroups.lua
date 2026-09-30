@@ -464,6 +464,20 @@ local subgroups = {
         should_reorder_entries = true,
     },
     {
+        name = "mineral-oil",
+        group = "angels-petrochem-refining",
+        order = "ebab",
+        entries = {
+            "angels-liquid-mineral-oil",
+            "lubricant",
+        },
+        cleaning_entries = {
+            "angels-mineral-oil-lubricant",
+            "angels-liquid-mineral-oil-catalyst",
+        },
+        should_reorder_entries = true,
+    },
+    {
         name = "explosives",
         group = "angels-petrochem-refining",
         order = "x",

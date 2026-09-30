@@ -156,8 +156,8 @@ data.raw["recipe"]["angels-solid-coke"].main_product = "angels-solid-coke"
 vgal.subgroup.clean_recipe("angels-solid-coke-sulfur")
 data.raw["recipe"]["angels-solid-coke-sulfur"].main_product = "angels-solid-coke"
 
-data.raw["fluid"]["lubricant"].order = "g"
-data.raw["fluid"]["lubricant"].subgroup = "angels-petrochem-carbon-oil-feed"
+data.raw["fluid"]["lubricant"].order = "b"
+data.raw["fluid"]["lubricant"].subgroup = "vgal-mineral-oil"
 
 data.raw["fluid"]["angels-water-saline"].order = "a[water-saline]"
 data.raw["fluid"]["angels-water-saline"].subgroup = "angels-water-salination"

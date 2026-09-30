@@ -93,3 +93,11 @@ vgal.copy_angels_ore1_gen_to_ore2(false)
 -- update: capsule type would require me to "remove" the raw meat as "item" and I'm not doing that.. boo
 -- maybe in final fixes
 -- edit: no
+
+-- restore default map settings (angel's changes them)
+do
+    local map_settings = data.raw["map-settings"]["map-settings"]
+    map_settings.pollution.enabled = true
+    map_settings.enemy_evolution.enabled = true
+    map_settings.enemy_expansion.enabled = true
+end

@@ -6,9 +6,9 @@ for i, iron_basic_recipeable_name in ipairs({
     basic_metal.processed,
     basic_metal.pellet,
     basic_metal.ingot,
+    "angels-powder-" .. basic_metal.name,
     basic_metal.molten,
     basic_metal.roll,
-    "angels-powder-" .. basic_metal.name,
 }) do
     local iron_basic_recipeable = vgal.get_recipeable(iron_basic_recipeable_name)
     local output_item_icon_path = iron_basic_recipeable.icon or error()
@@ -26,7 +26,9 @@ for i, iron_basic_recipeable_name in ipairs({
     output_item.icon = output_item_icon_path
 
     output_item.order = vgal.subgroup.order_from_number(1 + i)
-    output_item.subgroup = "vgal-" .. final_metal_name
+    output_item.subgroup = (i > 4) and ("vgal-" .. final_metal_name .. "-smelting") or ("vgal-" .. final_metal_name .. "-processing")
+
+
 
     ---@diagnostic disable-next-line: assign-type-mismatch
     data:extend({ output_item })
@@ -41,7 +43,7 @@ data:extend({
         name = "vgal-holmium-oxide",
         icon = "__angelssmeltinggraphics__/graphics/icons/solid-holmium-oxide.png",
         icon_size = 32,
-        subgroup = "vgal-holmium",
+        subgroup = "vgal-holmium-processing",
         order = "ca",
         stack_size = 200,
     },
@@ -50,7 +52,7 @@ data:extend({
         name = "vgal-holmium-chloride",
         icon = "__angelssmeltinggraphics__/graphics/icons/solid-holmium-chloride.png",
         icon_size = 32,
-        subgroup = "vgal-holmium",
+        subgroup = "vgal-holmium-processing",
         order = "cb",
         stack_size = 200,
     },
@@ -59,7 +61,7 @@ data:extend({
         name = "vgal-holmium-fluoride",
         icon = "__angelssmeltinggraphics__/graphics/icons/solid-holmium-fluoride.png",
         icon_size = 32,
-        subgroup = "vgal-holmium",
+        subgroup = "vgal-holmium-processing",
         order = "cc",
         stack_size = 200,
     },

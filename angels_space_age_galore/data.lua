@@ -1,12 +1,12 @@
-require("prototypes.subgroups")
-require("prototypes.fluids")
-require("prototypes.buildings.space-vent")
-require("prototypes.technology")
-
 require("prototypes.items.dormant-seeds")
 require("prototypes.items.holmium-items")
 require("prototypes.items.lithium-items")
 require("prototypes.items.tungsten-items")
+
+require("prototypes.subgroups")
+require("prototypes.fluids")
+require("prototypes.buildings.space-vent")
+require("prototypes.technology")
 
 -- require("prototypes.generation.vgal-saline-fissure")
 require("prototypes.generation.vgal-ore")

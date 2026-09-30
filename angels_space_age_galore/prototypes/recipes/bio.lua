@@ -104,9 +104,6 @@ vgal.extend({
             { "angels-liquid-mineral-oil", 30 },
         },
         category = "angels-bio-pressing",
-
-        order = "fb",
-        subgroup = "angels-petrochem-carbon-oil-feed",
     },
 }, {
     type = "recipe",

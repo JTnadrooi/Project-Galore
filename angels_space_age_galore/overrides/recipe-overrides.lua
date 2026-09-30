@@ -60,6 +60,7 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-solid-fuel-sulfuric-acid-carbo
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-calcite-sulfuric-acid-ammonia")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-ice-solid-fuel-ammonia")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-scrap-sulfuric-acid-holmium-solution")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-sulfur-ammonia-nutrients")
 
 -- vanilla trims
 -- bio stuff will be obtained through bioprocessing

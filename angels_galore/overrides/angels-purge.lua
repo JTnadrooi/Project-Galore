@@ -283,6 +283,9 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { vgal.defines.metal_steel
 
     vgal.recipe.override("angels-roll-" .. metal.name, "angels-roll-" .. metal.name .. "-2")
     vgal.recipe.hide_and_queue_for_tech_removal("angels-roll-" .. metal.name .. "-2")
+
+    vgal.recipe.clear_icons("angels-roll-" .. metal.name)
+    data.raw["recipe"]["angels-roll-" .. metal.name].main_product = "angels-roll-" .. metal.name
 end
 
 -- removed acid neutralization conflict recipe

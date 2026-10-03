@@ -53,14 +53,15 @@ vgal.extend({
     {
         name = holmium.roll,
         domain = "vgal",
-        energy_required = 1,
+        energy_required = 2,
         technology = "vgal-holmium-smelting-2",
         ingredients = {
-            { holmium.molten, 80 },
-            { "water",        40 },
+            { holmium.molten,          160 },
+            { "angels-liquid-coolant", 40 },
         },
         results = {
-            { holmium.roll, 2 },
+            { holmium.roll,                 4 },
+            { "angels-liquid-coolant-used", 40, { temperature = 300, allow_productivity = false } },
         },
         category = "angels-strand-casting",
 

@@ -1,6 +1,6 @@
 # Angel's+Space Age Galore
 
-![Galore Overview](https://github.com/JTnadrooi/Project-Galore/blob/2.1dev/.media/overview-compact-horizontal.png?raw=true?raw=true)
+![Galore Overview](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/overview-compact-horizontal.png?raw=true?raw=true)
 
 **SPACE AGE-LESS VERSION [HERE](https://mods.factorio.com/mod/angels_galore)**
 
@@ -12,6 +12,8 @@ The inclusion of the entire Galore suite makes this probably _the_ "mod with the
 
 As for difficulty, it's harder than Krastorio 2 but not nearly as hard as AngelBob or Seablock.
 
+![Gleba 1](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/spaghetti/asagal-gleba-1.png?raw=true?raw=true)
+
 ## Notes
 
 -   For a full list of changes made to Pure Angel's to make it a smoother playing experience, see the Angel's Galore mod page.
@@ -19,6 +21,8 @@ As for difficulty, it's harder than Krastorio 2 but not nearly as hard as AngelB
 -   Unlike most large overhaul mods, ASAGAL's lack of Bob's mods has allowed me to make it very stable and compatible with other mods. Play however you like. No planet mods are necessary for this mod to run, ~~but ASAGAL includes many compatibility scripts for many different planet mods.~~ (not yet) Please create a suggestion thread if you wish for a mod compatibility patch to be added!
 -   All balance calculations are documented in the [GitHub repo](https://github.com/JTnadrooi/Project-Galore), both in the `docs/` folder and through comments in the scripts.
 -   As of writing this, Aquilo content has not yet been completely implemented. This will change in the following week.
+
+![Vulcanus 1](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/spaghetti/asagal-vulcanus-1.png?raw=true?raw=true)
 
 ## Recommended Mods
 
@@ -33,6 +37,8 @@ As for difficulty, it's harder than Krastorio 2 but not nearly as hard as AngelB
 ## Community Compat Patches
 
 _None yet, but any future community compatibility mods will be included here. If you are planning to make or have made such a mod, feel free to let me know and I will list it here._
+
+![Gleba 2](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/spaghetti/asagal-gleba-2.png?raw=true?raw=true)
 
 ## Special Thanks
 

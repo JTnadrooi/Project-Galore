@@ -39,7 +39,7 @@ local subgroups = {
         group = "angels-smelting",
         order = "b-dcb",
         entries = {
-            { "holmium-plate", "fb" }
+            { "holmium-plate", "h" }
         },
         should_reorder_entries = true,
     },

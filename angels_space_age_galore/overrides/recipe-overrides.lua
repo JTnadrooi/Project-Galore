@@ -743,7 +743,7 @@ do
     })
     burnt_spoilage_recipe.energy_required = 3
     burnt_spoilage_recipe.ingredients = vgal.build.io({
-        { "spoilage", 6 }
+        { "spoilage", 8 }
         -- { "angels-gas-oxygen", 20 },
     })
     burnt_spoilage_recipe.results = vgal.build.io({

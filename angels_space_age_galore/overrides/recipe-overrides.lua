@@ -716,22 +716,35 @@ do
     -- no carbon usage i know,
 
     local fuel_recipe = data.raw["recipe"]["thruster-fuel"]
-    -- vgal.recipe.replace_category(fuel_recipe, "chemistry", "angels-liquifying")
-    -- fuel_recipe.energy_required = 4
     fuel_recipe.ingredients = vgal.build.io({
-        -- { "angels-solid-carbon", 2 }
         { "angels-gas-hydrogen", 20 }, -- ~ 30 water
     })
-    -- vgal.recipe.set_result_amount(fuel_recipe, 150)
 
     local oxidizer_recipe = data.raw["recipe"]["thruster-oxidizer"]
-    -- vgal.recipe.replace_category(oxidizer_recipe, "chemistry", "angels-liquifying")
-    -- oxidizer_recipe.energy_required = 4
     oxidizer_recipe.ingredients = vgal.build.io({
-        -- { "iron-ore", 2 }
         { "angels-gas-oxygen", 10 }, -- ~ 25 water
     })
-    -- vgal.recipe.set_result_amount(oxidizer_recipe, 150)
+end
+
+do
+    local fuel_recipe_2 = data.raw["recipe"]["advanced-thruster-fuel"]
+    fuel_recipe_2.ingredients = vgal.build.io({
+        { "angels-gas-methane", 30 },
+    })
+    fuel_recipe_2.icons = vgal.icon.create({
+        inputs = { "angels-gas-methane" },
+        outputs = { "thruster-fuel" },
+    })
+
+    local oxidizer_recipe_2 = data.raw["recipe"]["advanced-thruster-oxidizer"]
+    oxidizer_recipe_2.ingredients = vgal.build.io({
+        { "angels-solid-sodium-chlorate", 1 },
+    })
+    oxidizer_recipe_2.icons = vgal.icon.create({
+        -- inputs = { "angels-solid-ammonium-nitrate" },
+        inputs = { "angels-solid-sodium-chlorate" },
+        outputs = { "thruster-oxidizer" },
+    })
 end
 
 -- fix burnt spoilage

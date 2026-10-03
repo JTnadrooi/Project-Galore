@@ -14,6 +14,7 @@ require("prototypes.generation.vgal-ore")
 require("setups.spoilage-setup")
 require("setups.weight-setup")
 
+require("prototypes.recipes.space")
 require("prototypes.recipes.holmium")
 require("prototypes.recipes.tungsten")
 require("prototypes.recipes.water-treatment")

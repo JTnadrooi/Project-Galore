@@ -16,8 +16,8 @@ vgal.extend({
             { "water",                            5000 },
         },
         results = {
-            { "angels-water-purified",        4800 },
             { "angels-water-saline",          150 },
+            { "angels-water-purified",        4800 },
             { "angels-solid-sodium-chlorate", 1 },
         },
         allow_productivity = false,
@@ -154,8 +154,8 @@ for _, waste_water in pairs(vgal.defines.waste_waters) do
             },
             results = {
                 { waste_water.result,                 5 },
-                { "angels-water-purified",            350 },
                 { waste_water.secondary_result_water, 80 },
+                { "angels-water-purified",            350 },
             },
             -- ingredients = {
             --     { waste_water.name, 400 },

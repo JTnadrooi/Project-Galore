@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.12
+  Features:
+    - Fixed asteroid crushing stat/prod related issues.
+  Changes:
+    - Slightly reworked promethium crushing.
+    - Increased scrap crushing holmium yield by 0.5%.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.11
   Features:
     - Added Maraxsis classic support.

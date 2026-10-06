@@ -66,6 +66,54 @@ vgal.extend({
 
         allow_productivity = false,
     },
+    -- {
+    --     name = "angels-gas-methane-angels-gas-carbon-monoxide",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.create({
+    --         style = "angels-gas",
+    --         inputs = { "angels-gas-methane", "steam" },
+    --         outputs = { "angels-gas-carbon-monoxide", "angels-gas-hydrogen", },
+    --         palette = "COcOc",
+    --     }),
+    --     energy_required = 2,
+    --     technology = { "angels-coal-processing", "angels-gas-processing" },
+    --     ingredients = {
+    --         { "angels-gas-methane", 50 },
+    --         { "steam",              50 },
+    --     },
+    --     results = {
+    --         { "angels-gas-carbon-monoxide", 50 },
+    --         { "angels-gas-hydrogen",        50 },
+    --     },
+    --     category = "chemistry",
+
+    --     allow_productivity = false,
+    -- },
+    {
+        name = "angels-gas-methane-angels-gas-synthesis",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-gas-methane" },
+            outputs = { "angels-gas-synthesis", },
+            palette = { { 210, 120, 210 }, { 175, 100, 175 }, { 140, 080, 140 } },
+        }),
+        energy_required = 4,
+        technology = "angels-steam-cracking-2",
+        ingredients = {
+            { "angels-gas-methane", 100 },
+            { "steam",              100 },
+        },
+        results = {
+            { "angels-gas-synthesis", 50 },
+            { "angels-gas-residual",  10 },
+        },
+        category = "angels-steam-cracking",
+
+        order = "be",
+        subgroup = "angels-petrochem-carbon-synthesis",
+        allow_productivity = false,
+    },
     {
         name = "angels-gas-acid-angels-solid-calcium-sulfate",
         prefix = "vgal",

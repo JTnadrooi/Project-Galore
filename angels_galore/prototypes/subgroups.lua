@@ -478,6 +478,17 @@ local subgroups = {
         should_reorder_entries = true,
     },
     {
+        name = "synthesis-gas-processes",
+        group = "angels-petrochem-refining",
+        order = "ecb",
+        recipe_entries = {
+            "angels-gas-synthesis-methanation",
+            "angels-liquid-naphtha-catalyst",
+            "angels-gas-synthesis-methanol",
+        },
+        should_reorder_entries = true,
+    },
+    {
         name = "explosives",
         group = "angels-petrochem-refining",
         order = "x",

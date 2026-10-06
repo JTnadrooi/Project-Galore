@@ -1204,3 +1204,8 @@ fix_catalyst("angels-gas-methanol")
 fix_catalyst("angels-cumene-process")
 fix_catalyst("angels-liquid-propionic-acid")
 fix_catalyst("angels-solid-sodium-perchlorate")
+
+
+-- fix copper cable decomposition (angels changes this on purpose)
+data.raw["recipe"]["angels-wire-copper-2"].allow_decomposition = false
+data.raw["recipe"]["copper-cable"].allow_decomposition = true

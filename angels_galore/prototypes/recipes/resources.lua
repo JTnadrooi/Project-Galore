@@ -19,10 +19,7 @@ vgal.extend({
     {
         name = "angels-stone-crushed-stone",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("stone"),
-            -- vgal.icon.get_in("angels-stone-crushed"),
-        }),
+        icons = vgal.icon.get("stone"),
         energy_required = 3.2,
         ingredients = {
             { "angels-stone-crushed", 4 },
@@ -31,6 +28,22 @@ vgal.extend({
             { "stone", 2 },
         },
         category = "smelting",
+    },
+    {
+        name = "angels-stone-crushed-angels-solid-limestone",
+        prefix = "vgal",
+        energy_required = 0.5,
+        technology = "angels-stone-smelting-1",
+        ingredients = {
+            { "angels-stone-crushed",           2 },
+            { "angels-solid-calcium-carbonate", 1 },
+        },
+        results = {
+            { "angels-solid-limestone", 1 },
+        },
+        category = "crafting",
+
+        allow_productivity = false,
     },
     {
         name = "angels-stone-crushed-angels-solid-carbon-stone",

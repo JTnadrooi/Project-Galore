@@ -729,7 +729,7 @@ end
 do
     local fuel_recipe_2 = data.raw["recipe"]["advanced-thruster-fuel"]
     fuel_recipe_2.ingredients = vgal.build.io({
-        { "angels-gas-methane", 30 },
+        { "angels-gas-methane", 50 },
     })
     fuel_recipe_2.icons = vgal.icon.create({
         inputs = { "angels-gas-methane" },
@@ -739,6 +739,7 @@ do
     local oxidizer_recipe_2 = data.raw["recipe"]["advanced-thruster-oxidizer"]
     oxidizer_recipe_2.ingredients = vgal.build.io({
         { "angels-solid-sodium-chlorate", 1 },
+        { "iron-ore",                     1 },
     })
     oxidizer_recipe_2.icons = vgal.icon.create({
         -- inputs = { "angels-solid-ammonium-nitrate" },

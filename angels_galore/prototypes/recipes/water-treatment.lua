@@ -20,6 +20,7 @@ vgal.extend({
             { "angels-water-purified",        4800 },
             { "angels-solid-sodium-chlorate", 1 },
         },
+        main_product = "angels-water-purified",
         allow_productivity = false,
         category = "angels-water-treatment",
     },

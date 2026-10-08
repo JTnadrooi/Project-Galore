@@ -138,6 +138,23 @@ vgal.extend({
     --     category = "angels-petrochem-electrolyser",
 
     -- },
+    {
+        name = "angels-solid-sodium-nitrate-angels-solid-sodium",
+        prefix = "vgal",
+        energy_required = 2,
+        technology = "angels-nitrogen-processing-2",
+        ingredients = {
+            { "angels-solid-sodium-nitrate", 5 },
+            { "angels-electrode",            1 },
+        },
+        results = {
+            { "angels-solid-sodium",         5 },
+            { "angels-gas-nitrogen-dioxide", 100 },
+            { "angels-electrode-used",       1 },
+        },
+        category = "angels-petrochem-electrolyser",
+        allow_productivity = false,
+    },
 }, {
     type = "recipe",
 })

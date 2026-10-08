@@ -205,6 +205,45 @@ vgal.extend({
 
         allow_productivity = false,
     },
+    {
+        name = "angels-solid-ammonium-nitrate-angels-gas-ammonia",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-solid-ammonium-nitrate" },
+            outputs = { "angels-gas-ammonia" },
+            palette = "NNH",
+        }),
+        energy_required = 2,
+        technology = "angels-nitrogen-processing-2",
+        ingredients = {
+            { "angels-solid-ammonium-nitrate", 2 },
+            { "angels-solid-sodium-hydroxide", 1 },
+        },
+        results = {
+            { "angels-gas-ammonia",          50 },
+            { "angels-solid-sodium-nitrate", 1 },
+        },
+        category = "angels-liquifying",
+
+        allow_productivity = false,
+    },
+    -- {
+    --     name = "angels-solid-sodium-nitrate-angels-solid-sodium-sulfate",
+    --     prefix = "vgal",
+    --     energy_required = 2,
+    --     technology = "angels-sulfur-processing-3",
+    --     ingredients = {
+    --         { "angels-solid-sodium-nitrate", 2 },
+    --         { "sulfur",                      1 },
+    --     },
+    --     results = {
+    --         { "angels-solid-sodium-sulfate", 1 },
+    --     },
+    --     category = "chemistry",
+
+    --     allow_productivity = false,
+    -- },
 }, {
     type = "recipe",
 })

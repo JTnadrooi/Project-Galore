@@ -820,6 +820,7 @@ for _, metal in pairs(vgal.defines.metals) do
 end
 
 -- reduce salt needed for sodium recipe as salt is more expensive now
+-- still works
 vgal.recipe.set_ingredient_amount("angels-solid-salt-separation", 5, "angels-solid-salt")
 
 -- commentedbc: just one machine for 1 yellow belt seems a bit to fast

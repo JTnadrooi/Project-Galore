@@ -61,6 +61,7 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-calcite-sulfuric-acid-ammonia"
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-ice-solid-fuel-ammonia")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-scrap-sulfuric-acid-holmium-solution")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-sulfur-ammonia-nutrients")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-oxide-asteroid-chunk-ammoniacal-solution")
 
 -- vanilla trims
 -- bio stuff will be obtained through bioprocessing
@@ -574,43 +575,11 @@ do
     ---@param extra_output string?
     ---@return data.IconData[]
     function get_asteroid_crushing_icon(chunk_name, extra_output)
-        local icons = {
-            {
-                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
-                icon_size = 32,
-            },
-            {
-                icon = vgal.icon.get(chunk_name)[1].icon,
-                icon_size = vgal.icon.get(chunk_name)[1].icon_size,
-                scale = 0.25,
-                shift = { -10, 10 },
-            },
-        }
-
-        if extra_output then
-            table.insert(icons, {
-                icon = vgal.icon.get(extra_output)[1].icon,
-                icon_size = vgal.icon.get(extra_output)[1].icon_size,
-                scale = 0.25,
-                shift = { 10, 10 },
-            })
-        end
-
-        -- if extra_output then
-        --     icons = angelsmods.functions.add_number_icon_layer(icons, 2, angelsmods.petrochem.number_tint)
-        -- else
-        --     icons = angelsmods.functions.add_number_icon_layer(icons, 1, angelsmods.petrochem.number_tint)
-        -- end
-
-        return icons
-        -- -- using angels
-        -- carbon_crushing_1_recipe.icons = angelsmods.functions.add_icon_layer({
-        --     {
-        --         icon = vgal.icon.get("crusher")[1].icon,
-        --         icon_size = vgal.icon.get("crusher")[1].icon_size,
-        --         scale = 0.5,
-        --     },
-        -- }, angelsmods.functions.get_object_icons("carbonic-asteroid-chunk"), { -10, 10 }, 0.5)
+        return vgal.icon.create({
+            style = "angels-sorting",
+            inputs = { chunk_name },
+            outputs = extra_output and { extra_output },
+        })
     end
 
     -- carbonic
@@ -628,6 +597,7 @@ do
         carbon_crushing_2_recipe.results = vgal.build.io({
             { "angels-solid-coke",       4 },
             { "sulfur",                  2 },
+            { "angels-fluorite-ore",     1, { independent_probability = 0.05 } },
             { "carbonic-asteroid-chunk", 1, { independent_probability = 0.1 } },
         })
     end
@@ -677,6 +647,12 @@ do
         -- advanced
         local ice_crushing_2_recipe = data.raw["recipe"]["advanced-oxide-asteroid-crushing"]
         vgal.recipe.set_result_amount(ice_crushing_2_recipe, 4, "ice")
+        ice_crushing_2_recipe.results = vgal.build.io({
+            { "ice",                           4 },
+            { "calcite",                       2 },
+            { "angels-solid-ammonium-nitrate", 1 },
+            { "oxide-asteroid-chunk",          1, { independent_probability = 0.1 } },
+        })
         ice_crushing_2_recipe.icons = get_asteroid_crushing_icon("oxide-asteroid-chunk", "calcite")
 
         -- ammonia
@@ -687,6 +663,7 @@ do
     -- promethium
     do
         local promethium_crushing_1_recipe = data.raw["recipe"]["vgal-promethium-asteroid-chunk-crushing"]
+        vgal.recipe.replace_result(promethium_crushing_1_recipe, "holmium-ore", "vgal-holmium-fluoride")
         promethium_crushing_1_recipe.icons = get_asteroid_crushing_icon("promethium-asteroid-chunk")
     end
 end
@@ -729,7 +706,7 @@ end
 do
     local fuel_recipe_2 = data.raw["recipe"]["advanced-thruster-fuel"]
     fuel_recipe_2.ingredients = vgal.build.io({
-        { "angels-gas-methane", 50 },
+        { "angels-gas-methane", 100 },
     })
     fuel_recipe_2.icons = vgal.icon.create({
         inputs = { "angels-gas-methane" },

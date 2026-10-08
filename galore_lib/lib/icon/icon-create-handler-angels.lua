@@ -56,25 +56,48 @@ vgal.icon.create_handlers["angels-sorting"] = function(blueprint)
     return vgal.icon.merge_composites(composites)
 end
 
--- ---@param blueprint vgal.AngelsLiquidIconBlueprint
--- ---@return data.IconData[]
--- vgal.icon.create_handlers["angels-machine"] = function(blueprint)
---     local composites = {
---         {
---             {
---                 icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
---                 icon_size = 32,
---             },
---         }
---     }
+---@return data.IconData[]
+vgal.icon.create_handlers["angels-sort"] = function(blueprint)
+    local composites = {
+        {
+            {
+                icon = "__angelsrefininggraphics__/graphics/icons/sort-icon.png",
+                icon_size = 32,
+            },
+        }
+    }
 
---     if blueprint.inputs[1] then
---         table.insert(composites, vgal.icon.shift(vgal.icon.get(blueprint.inputs[1]), 0.5, { -8, -8 }))
---     end
+    if blueprint.inputs[1] then
+        table.insert(composites, vgal.icon.shift(vgal.icon.get(blueprint.inputs[1]), 0.25, { -10, -10 }))
+    end
 
---     if blueprint.outputs[1] then
---         table.insert(composites, vgal.icon.shift(vgal.icon.get(blueprint.outputs[1]), 0.5, { 8, 8 }))
---     end
+    if blueprint.inputs[2] then
+        table.insert(composites, vgal.icon.shift(vgal.icon.get(blueprint.inputs[2]), 0.25, { 10, -10 }))
+    end
 
---     return vgal.icon.merge_composites(composites)
--- end
+    if blueprint.inputs[3] then
+        table.insert(composites, vgal.icon.shift(vgal.icon.get(blueprint.inputs[3]), 0.25, { 0, -10 }))
+    end
+
+    if blueprint.outputs[1] then
+        table.insert(composites, vgal.icon.shift(vgal.icon.get(blueprint.outputs[1]), 0.25, { -10, 10 }))
+    end
+
+    if blueprint.outputs[2] then
+        table.insert(composites, vgal.icon.shift(vgal.icon.get(blueprint.outputs[2]), 0.25, { 10, 10 }))
+    end
+
+    if blueprint.outputs[3] then
+        table.insert(composites, vgal.icon.shift(vgal.icon.get(blueprint.outputs[3]), 0.25, { 0, 10 }))
+    end
+
+    local merged_composites = vgal.icon.merge_composites(composites)
+
+    ---@diagnostic disable-next-line: undefined-field
+    if blueprint.tier then
+        ---@diagnostic disable-next-line: undefined-field
+        merged_composites = angelsmods.functions.add_number_icon_layer(merged_composites, blueprint.tier, angelsmods.petrochem.number_tint)
+    end
+
+    return merged_composites
+end

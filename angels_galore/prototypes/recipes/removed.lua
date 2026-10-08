@@ -45,6 +45,28 @@ vgal.extend({
         localised_description = { "vgal-internal.insert-casting-recipe-desc" },
         localised_name = { "", { "item-name.engine-unit" }, " ", { "vgal-internal.casting-postfix" } },
     },
+    {
+        name = "angels-solid-sodium-chlorate-angels-liquid-hydrochloric-acid-angels-solid-salt",
+        prefix = "vgal",
+        icons = vgal.icon.merge_composites({
+            vgal.icon.get("angels-solid-salt"),
+            vgal.icon.get_in("angels-solid-sodium-chlorate"),
+            vgal.icon.get_in2("angels-liquid-hydrochloric-acid"),
+        }),
+        energy_required = 2,
+        technology = "angels-chlorine-processing-4",
+        ingredients = {
+            { "angels-solid-sodium-chlorate",    2 },  -- 10 cl
+            { "angels-liquid-hydrochloric-acid", 50 }, -- 50 cl, 50water
+        },
+        results = {
+            { "angels-solid-salt",        1 },  -- 40 cl
+            { "angels-water-green-waste", 50 }, -- 10 cl, 50water
+        },
+        category = "chemistry",
+        order = "a[salt]-b[from-sodium-chlorate]-b",
+        allow_productivity = false,
+    },
 }, {
     type = "recipe",
     groups = { "vgal-removed" },

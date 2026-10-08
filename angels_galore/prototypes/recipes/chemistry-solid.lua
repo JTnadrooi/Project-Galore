@@ -6,41 +6,19 @@ vgal.extend({
             vgal.icon.get("angels-solid-salt"),
             vgal.icon.get_in("angels-solid-sodium-chlorate"),
         }),
-        energy_required = 8,
+        energy_required = 10,
         technology = "angels-chlorine-processing-4",
         ingredients = {
-            { "angels-solid-sodium-chlorate", 8 }, -- 40cl, 32ox
+            { "angels-solid-sodium-chlorate", 15 }, -- 75cl, 60ox
         },
         results = {
             { "angels-solid-salt", 1 }, -- 40cl
-            { "angels-gas-oxygen", 30 },
+            { "angels-gas-oxygen", 50 },
         },
         category = "angels-liquifying",
 
         allow_productivity = false,
         order = "a[salt]-b[from-sodium-chlorate]-a"
-    },
-    {
-        name = "angels-solid-sodium-chlorate-angels-liquid-hydrochloric-acid-angels-solid-salt",
-        prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("angels-solid-salt"),
-            vgal.icon.get_in("angels-solid-sodium-chlorate"),
-            vgal.icon.get_in2("angels-liquid-hydrochloric-acid"),
-        }),
-        energy_required = 2,
-        technology = "angels-chlorine-processing-4",
-        ingredients = {
-            { "angels-solid-sodium-chlorate",    2 },  -- 10 cl
-            { "angels-liquid-hydrochloric-acid", 50 }, -- 50 cl, 50water
-        },
-        results = {
-            { "angels-solid-salt",        1 },  -- 40 cl
-            { "angels-water-green-waste", 50 }, -- 10 cl, 50water
-        },
-        category = "chemistry",
-        order = "a[salt]-b[from-sodium-chlorate]-b",
-        allow_productivity = false,
     },
     {
         name = "angels-solid-calcium-carbonate-angels-liquid-hydrochloric-acid-angels-solid-calcium-chloride",

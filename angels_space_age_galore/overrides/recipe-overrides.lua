@@ -569,6 +569,40 @@ vgal.recipe.add_ingredient("angels-gas-refinery", { "superconductor", 10 })
 --     vgal.recipe.add_ingredient(environment.farm, { "carbon-fiber", 10 })
 -- end
 
+-- lithium fixes
+do
+    do
+        local lithium_plate_recipe = data.raw.recipe["lithium-plate"]
+
+        lithium_plate_recipe.categories = { "angels-casting" }
+        lithium_plate_recipe.energy_required = 2
+        lithium_plate_recipe.ingredients = vgal.build.io({
+            { "vgal-molten-lithium", 50 }
+        })
+        vgal.recipe.set_result_amount(lithium_plate_recipe, 5)
+    end
+
+    do
+        local lithium_ore_recipe = data.raw.recipe["lithium"]
+
+        lithium_ore_recipe.categories = { "angels-petrochem-electrolyser" }
+        lithium_ore_recipe.energy_required = 2
+        lithium_ore_recipe.ingredients = vgal.build.io({
+            { "vgal-lithium-chloride", 5 },
+            { "angels-electrode",      1 },
+        })
+        lithium_ore_recipe.results = vgal.build.io({
+            { "lithium",               5 },
+            { "angels-gas-chlorine",   100 },
+            { "angels-electrode-used", 1 },
+        })
+        lithium_ore_recipe.allow_productivity = false
+        lithium_ore_recipe.main_product = "lithium"
+        lithium_ore_recipe.localised_name = { "recipe-name.lithium" }
+        lithium_ore_recipe.localised_description = { "recipe-description.lithium" }
+    end
+end
+
 -- crushing fixes
 do
     ---@param chunk_name string
@@ -597,7 +631,6 @@ do
         carbon_crushing_2_recipe.results = vgal.build.io({
             { "angels-solid-coke",       4 },
             { "sulfur",                  2 },
-            { "angels-fluorite-ore",     1, { independent_probability = 0.05 } },
             { "carbonic-asteroid-chunk", 1, { independent_probability = 0.1 } },
         })
     end

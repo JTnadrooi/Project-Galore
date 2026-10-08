@@ -105,6 +105,19 @@ if vgal.defines.flags["sagal"] then
         vgal.defines.metal_holmium.molten = "vgal-molten-holmium"
         vgal.defines.metal_holmium.roll = "vgal-roll-holmium"
     end
+
+    ---@type { name: string, ore: string, molten: string?, roll: string?, ingot: string?, plate: string}
+    vgal.defines.metal_lithium = {
+        name = "lithium",
+        ore = "lithium",
+        plate = "lithium-plate",
+    }
+
+    if vgal.defines.flags["asagal"] then
+        vgal.defines.metal_lithium.ingot = "vgal-ingot-lithium"
+        vgal.defines.metal_lithium.molten = "vgal-molten-lithium"
+        vgal.defines.metal_lithium.roll = "vgal-roll-lithium"
+    end
 end
 
 ---@type { name: string, plate: string, molten: string?, angels_plate_recipe_name: string?, ingot: string?, roll: string? }

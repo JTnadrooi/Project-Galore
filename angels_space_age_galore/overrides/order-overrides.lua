@@ -42,10 +42,6 @@ data.raw["item-subgroup"]["agriculture-products"].group = "angels-bio-processing
 
 data.raw["recipe"]["ice-melting"].order = "a[water]-b[from-not-water]"
 
-data.raw["item"]["lithium"].order = "f"
-data.raw["item"]["lithium"].subgroup = "vgal-petrochem-other-solids"
-vgal.subgroup.clean_recipe("lithium")
-
 data.raw["item-subgroup"]["vgal-fulgora-fluids"].order = "ebb"
 data.raw["item-subgroup"]["vgal-fulgora-fluids"].group = "angels-petrochem-refining"
 data.raw["fluid"]["holmium-solution"].order = "e"
@@ -58,9 +54,10 @@ data.raw["fluid"]["fluorine"].subgroup = "vgal-fluorine"
 data.raw["item"]["angels-powder-steel"].order = "b"
 data.raw["item"]["angels-powder-steel"].subgroup = "vgal-steel-processing"
 
-data.raw["item"]["lithium-plate"].order = "ia"
-data.raw["item"]["lithium-plate"].subgroup = "vgal-lithium-smelting"
-data.raw["item"]["lithium"].order = "a"
-data.raw["item"]["lithium"].subgroup = "vgal-lithium-processing"
 data.raw["fluid"]["lithium-brine"].order = "a"
 data.raw["fluid"]["lithium-brine"].subgroup = "vgal-lithium-processing"
+data.raw["item"]["lithium"].order = "f"
+data.raw["item"]["lithium"].subgroup = "vgal-lithium-processing"
+vgal.subgroup.clean_recipe("lithium")
+data.raw["item"]["lithium-plate"].order = "e"
+data.raw["item"]["lithium-plate"].subgroup = "vgal-lithium-smelting"

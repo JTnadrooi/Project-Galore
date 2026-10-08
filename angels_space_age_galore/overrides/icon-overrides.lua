@@ -3,12 +3,14 @@ if not mods["reskins-angels"] then
     vgal.icon.set_icons(data.raw["item"]["tungsten-plate"], vgal.icon.get("tungsten-plate"))
 
     vgal.icon.set_icons(data.raw["item"]["holmium-plate"], vgal.icon.get("holmium-plate"))
-
-    vgal.icon.set_icons(data.raw["fluid"]["fluorine"], vgal.icon.get("fluorine"))
-
-    data.raw["item"]["lithium-plate"].icon = "__angelssmeltinggraphics__/graphics/icons/plate-silver.png"
-    data.raw["item"]["lithium-plate"].icon_size = 32
 end
+
+vgal.icon.set_icons(data.raw["fluid"]["lithium-brine"], vgal.icon.get("lithium-brine"))
+vgal.icon.set_icons(data.raw["fluid"]["fluorine"], vgal.icon.get("fluorine"))
+data.raw["item"]["lithium-plate"].icon = "__angelssmeltinggraphics__/graphics/icons/plate-silver.png"
+data.raw["item"]["lithium-plate"].icon_size = 32
+
+data.raw["item"]["lithium"].icon = "__angels_space_age_galore__/graphics/icons/lithium.png"
 
 -- fix electrolyte icon (data in galorelib icons override section)
 vgal.icon.set_icons(data.raw["fluid"]["electrolyte"], vgal.icon.get("electrolyte", "fluid"))

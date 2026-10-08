@@ -185,6 +185,7 @@ vgal.extend({
         },
         category = "angels-blast-smelting",
 
+        main_recipe = true,
         allow_productivity = true,
     },
     {

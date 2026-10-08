@@ -63,6 +63,10 @@ vgal.tech.move_recipe("holmium-processing", "vgal-holmium-smelting-1", "holmium-
 -- puffer from gleba atm early tho
 vgal.tech.remove_recipe("angels-bio-refugium-puffer-1", "angels-gas-puffer-atmosphere")
 
+-- aquilo
+data.raw["technology"]["lithium-processing"].icon = "__angelssmeltinggraphics__/graphics/technology/casting-silver-tech.png"
+data.raw["technology"]["lithium-processing"].icon_size = 256
+
 -- make sure planets are possible with prereq techs
 vgal.tech.add_prerequisite("planet-discovery-vulcanus", "angels-ore-powderizer")
 vgal.tech.add_prerequisite("planet-discovery-vulcanus", "angels-slag-processing-1")

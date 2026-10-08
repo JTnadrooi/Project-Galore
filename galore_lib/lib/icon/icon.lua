@@ -597,4 +597,12 @@ if vgal.defines.flags["asagal"] then
             )
         end
     })
+    vgal.icon.add_override({
+        name = "lithium-brine",
+        source = "fluid",
+        composite_icon_override_function = function()
+            return angelsmods.functions.create_viscous_liquid_fluid_icon(nil, { { 202, 219, 179 }, nil, { 237, 240, 233 } })
+            -- return angelsmods.functions.create_viscous_liquid_fluid_icon(nil, { { 202, 219, 179 }, { 144, 158, 128 }, { 237, 240, 233 }, { 158, 170, 139, 0.8 } })
+        end
+    })
 end

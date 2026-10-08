@@ -16,6 +16,7 @@ require("setups.weight-setup")
 
 require("prototypes.recipes.space")
 require("prototypes.recipes.holmium")
+require("prototypes.recipes.lithium")
 require("prototypes.recipes.tungsten")
 require("prototypes.recipes.water-treatment")
 require("prototypes.recipes.resources")

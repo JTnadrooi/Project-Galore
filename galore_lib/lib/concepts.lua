@@ -25,6 +25,7 @@ do
     ---@field category string?
     ---@field override boolean?
     ---@field main_recipe boolean?
+    ---@field main_ingredient string?
 end
 
 do

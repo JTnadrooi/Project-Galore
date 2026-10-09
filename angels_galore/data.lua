@@ -1,6 +1,5 @@
 -- error
-vgal.throw.error_if_missing_galore({ "angels_space_age_galore", "Angel's+Space Age Galore" },
-    { "space_age_galore", "Space Age Galore" }, true)
+vgal.throw.error_if_missing_galore({ "angels_space_age_galore", "Angel's+Space Age Galore" }, { "space_age_galore", "Space Age Galore" }, true)
 
 -- setup
 vgal.table.extend_single(vgal.tech.units, {
@@ -31,7 +30,6 @@ require("prototypes.recipes.resources")
 require("prototypes.recipes.plastic")
 require("prototypes.recipes.intermediates")
 require("prototypes.recipes.bio")
-require("prototypes.recipes.seeds")
 require("prototypes.recipes.carbon")
 require("prototypes.recipes.petrochem")
 

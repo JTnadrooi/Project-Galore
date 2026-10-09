@@ -97,27 +97,6 @@ data.raw["furnace"]["angels-clarifier"].surface_conditions = vgal.get_surface_co
 
 -- recipe surface_conditions fixes
 data.raw["recipe"]["angels-gas-compressed-air"].surface_conditions = vgal.get_surface_conditions_for("nauvis")
-data.raw["recipe"]["vgal-temperate-seeds"].surface_conditions = {
-    {
-        property = "pressure",
-        min = 1000,
-        max = 2000
-    },
-}
-data.raw["recipe"]["vgal-swamp-seeds"].surface_conditions = {
-    {
-        property = "pressure",
-        min = 1000,
-        max = 2000
-    },
-}
-data.raw["recipe"]["vgal-desert-seeds"].surface_conditions = {
-    {
-        property = "pressure",
-        min = 1000,
-        max = 2000
-    },
-}
 
 data.raw["recipe"]["angels-pellet-press"].surface_conditions = vgal.get_surface_conditions_for("vulcanus")
 data.raw["recipe"]["angels-gas-refinery"].surface_conditions = vgal.get_surface_conditions_for("fulgora")
@@ -188,6 +167,7 @@ vgal.recipe.set_result_amount("angels-powder-steel", 2)
 data.raw["resource"]["tungsten-ore"].minable.mining_time = 5 -- og; 2
 
 data.raw["fusion-reactor"]["fusion-reactor"].burner.burnt_inventory_size = 1
+
 -- fusion item fixes
 do
     local spage_fusion_item = data.raw["item"]["fusion-power-cell"]

@@ -54,6 +54,7 @@ for _, environment in pairs(vgal.defines.environments) do
         { type = "item", name = environment.garden, amount = 1 },
     }
 end
+
 -- remove ore gen of removed ores.
 for _, ore_index in pairs(vgal.defines.removed_ore_indexes) do
     local ore = "angels-ore" .. ore_index

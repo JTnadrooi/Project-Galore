@@ -647,11 +647,6 @@ end
 vgal.recipe.all.remove_ingredient("angels-token-bio")
 vgal.recipe.all.remove_result("angels-token-bio")
 
-for _, environment in pairs(vgal.defines.environments) do
-    vgal.recipe.hide(environment.garden .. "-b")
-    vgal.recipe.hide(environment.garden .. "-cultivating-a")
-end
-
 -- commentedbc: its a pain, and slag should be the result from smelting, not processing
 -- -- add slag result to processing recipes.
 -- for _, metal in pairs(vgal.defines.metals) do
@@ -924,17 +919,27 @@ vgal.recipe.hide_and_queue_for_tech_removal("angels-garden-cultivating")
 
 -- for each environment logic
 for _, environment in pairs(vgal.defines.environments) do
+    vgal.recipe.hide(environment.garden .. "-b")
+    vgal.recipe.hide(environment.garden .. "-cultivating-a")
+
     -- remove garden duplication recipe
     vgal.recipe.hide_and_queue_for_tech_removal(environment.garden)
 
     -- buff garden to seeds recipe, so it returns all seeds and is slightly faster
     -- also allow it to be done by the player for some reason
-    local recipe = data.raw["recipe"][environment.garden .. "-a"]
-    for _, result in ipairs(recipe.results) do
-        result.independent_probability = nil
+    local garden_to_seeds_recipe = data.raw["recipe"][environment.garden .. "-a"]
+    local new_results = {}
+
+    for _, seed_name in ipairs(environment.seeds) do
+        local seed_data = vgal.defines.seeds[seed_name]
+        table.insert(new_results,
+            { type = "item", name = (seed_data.dormant or seed_data.name), amount = 5, independent_probability = math.min(1 - seed_data.tier * 0.2, 1) } --[[@as data.ItemProductPrototype]]
+        )
     end
-    recipe.energy_required = 100
-    vgal.recipe.add_category(recipe, "hand-crafting")
+
+    garden_to_seeds_recipe.results = new_results
+    garden_to_seeds_recipe.energy_required = 100
+    vgal.recipe.add_category(garden_to_seeds_recipe, "hand-crafting")
 end
 
 -- fix ceramic filter recipe
@@ -1208,7 +1213,6 @@ fix_catalyst("angels-gas-methanol")
 fix_catalyst("angels-cumene-process")
 fix_catalyst("angels-liquid-propionic-acid")
 fix_catalyst("angels-solid-sodium-perchlorate")
-
 
 -- fix copper cable decomposition (angels changes this on purpose)
 data.raw["recipe"]["angels-wire-copper-2"].allow_decomposition = false

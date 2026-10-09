@@ -115,3 +115,5 @@ vgal.recipe.set_icons("angels-liquid-tungstic-acid", vgal.icon.create({
     outputs = { "angels-liquid-tungstic-acid" },
     palette = { { 075, 026, 102 }, { 170, 170, 180 }, { 170, 170, 180 } }
 }))
+
+vgal.recipe.clear_icons("fluoroketone-cooling")

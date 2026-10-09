@@ -848,3 +848,7 @@ do
         end
     end
 end
+
+-- surface conditions fixes
+data.raw["recipe"]["vgal-angels-solid-coke-angels-gas-carbon-dioxide"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")
+data.raw["recipe"]["angels-gas-carbon-dioxide"].surface_conditions = vgal.get_surface_conditions_for("atmosphere")

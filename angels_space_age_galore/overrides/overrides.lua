@@ -18,10 +18,21 @@ do
     end
     foundry.graphics_set.animation.animation_speed = 2
 
+    foundry.energy_usage = "1808kW"
+
     -- allow angels casting
     table.insert(foundry.crafting_categories, "angels-casting")
     table.insert(foundry.crafting_categories, "angels-strand-casting")
     table.insert(foundry.crafting_categories, "angels-blast-smelting") -- bc of the "vgal-blast-chemistry" category, this does not include more chemistry like recipes (so ingot only)
+end
+
+-- cryogenic plant fixes
+do
+    local cryogenic_plant = data.raw["assembling-machine"]["cryogenic-plant"]
+
+    table.insert(cryogenic_plant.crafting_categories, "angels-cooling")
+
+    cryogenic_plant.energy_usage = "835kW"
 end
 
 -- remove vanilla tree farming
@@ -175,6 +186,3 @@ vgal.recipe.set_result_amount("angels-powder-steel", 2)
 
 -- make mining slower so t2/t3 tungsten processing will not just be ingored
 data.raw["resource"]["tungsten-ore"].minable.mining_time = 5 -- og; 2
-
-data.raw["assembling-machine"]["foundry"].energy_usage = "1808kW"
-data.raw["assembling-machine"]["cryogenic-plant"].energy_usage = "835kW"

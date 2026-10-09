@@ -320,8 +320,6 @@ local subgroups = {
         entries = {
             "angels-liquid-hydrochloric-acid",
             "angels-liquid-perchloric-acid",
-            "angels-liquid-ferric-chloride-solution", -- no effect, reinforced in final fixes
-            "angels-liquid-cupric-chloride-solution", -- no effect, reinforced in final fixes
         },
         cleaning_entries = {
             { "angels-liquid-hydrochloric-acid-solid-sodium-sulfate", "angels-liquid-hydrochloric-acid" },
@@ -625,8 +623,8 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { vgal.defines.metal_steel
         ["steel"] = "c",
     })[metal.name] or error(serpent.block(metal))
     local processing_entries = ({
-        ["copper"] = { metal.processed, metal.pellet, "angels-anode-copper", metal.ingot, },
-        ["iron"] = { metal.processed, metal.pellet, metal.ingot, },
+        ["copper"] = { metal.processed, metal.pellet, "angels-liquid-cupric-chloride-solution", "angels-anode-copper", metal.ingot, }, -- for solution: no effect, reinforced in final fixes
+        ["iron"] = { metal.processed, metal.pellet, "angels-liquid-ferric-chloride-solution", metal.ingot, },
         ["steel"] = { metal.ingot },
     })[metal.name] or error(serpent.block(metal))
 

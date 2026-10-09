@@ -119,9 +119,9 @@ for i = 1, 3 do
 end
 
 data.raw["fluid"]["angels-liquid-ferric-chloride-solution"].order = "c"
-data.raw["fluid"]["angels-liquid-cupric-chloride-solution"].order = "d"
-data.raw["fluid"]["angels-liquid-ferric-chloride-solution"].subgroup = "vgal-Cl-liquid"
-data.raw["fluid"]["angels-liquid-cupric-chloride-solution"].subgroup = "vgal-Cl-liquid"
+data.raw["fluid"]["angels-liquid-cupric-chloride-solution"].order = "c"
+data.raw["fluid"]["angels-liquid-ferric-chloride-solution"].subgroup = "vgal-iron-processing"
+data.raw["fluid"]["angels-liquid-cupric-chloride-solution"].subgroup = "vgal-copper-processing"
 
 data.raw["fluid"]["steam"].order = "b"
 data.raw["fluid"]["steam"].subgroup = "vgal-water"

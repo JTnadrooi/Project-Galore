@@ -44,8 +44,8 @@ data.raw["recipe"]["ice-melting"].order = "a[water]-b[from-not-water]"
 
 data.raw["item-subgroup"]["vgal-fulgora-fluids"].order = "ebb"
 data.raw["item-subgroup"]["vgal-fulgora-fluids"].group = "angels-petrochem-refining"
-data.raw["fluid"]["holmium-solution"].order = "e"
-data.raw["fluid"]["holmium-solution"].subgroup = "vgal-Cl-liquid"
+data.raw["fluid"]["holmium-solution"].order = "cac"
+data.raw["fluid"]["holmium-solution"].subgroup = "vgal-holmium-processing"
 
 data.raw["item-subgroup"]["angels-tungsten"].order = "b-d"
 data.raw["fluid"]["fluorine"].order = "-"

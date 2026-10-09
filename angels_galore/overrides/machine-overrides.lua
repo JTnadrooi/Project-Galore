@@ -186,3 +186,20 @@ do
 end
 
 table.insert(data.raw["assembling-machine"]["angels-blast-furnace"].crafting_categories, "vgal-blast-chemistry")
+
+do
+    ---@param machine data.CraftingMachinePrototype
+    local function handle_machine(machine)
+        if machine.icon_draw_specification and machine.icon_draw_specification.scale and (machine.icon_draw_specification.scale > 1.2) then
+            machine.icon_draw_specification.scale = nil
+            machine.icon_draw_specification.shift = nil
+        end
+    end
+
+    for _, machine in pairs(data.raw["assembling-machine"]) do
+        handle_machine(machine)
+    end
+    for _, machine in pairs(data.raw["furnace"]) do
+        handle_machine(machine)
+    end
+end

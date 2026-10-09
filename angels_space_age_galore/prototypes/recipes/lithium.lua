@@ -60,7 +60,7 @@ vgal.extend({
             { "vgal-concentrated-lithium-brine", 20 },
             { "angels-gas-ammonia",              20 },
             { "angels-solid-sodium-carbonate",   1 },
-            { "vgal-powder-holmium",             10 },
+            { "vgal-powder-holmium",             5 }, -- should actually be 4 to be inline with vanilla (but like, I gave players a way to double holmium yield, they better use it)
         },
         results = {
             { "vgal-lithium-carbonate", 6 },

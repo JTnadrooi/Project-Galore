@@ -598,7 +598,7 @@ do
             { "angels-electrode",      1 },
         })
         lithium_ore_recipe.results = vgal.build.io({
-            { "lithium",               5 },
+            { "lithium",               10 },
             { "angels-gas-chlorine",   100 },
             { "angels-electrode-used", 1 },
         })

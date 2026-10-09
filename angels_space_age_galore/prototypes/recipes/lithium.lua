@@ -60,6 +60,7 @@ vgal.extend({
             { "vgal-concentrated-lithium-brine", 20 },
             { "angels-gas-ammonia",              20 },
             { "angels-solid-sodium-carbonate",   1 },
+            { "vgal-powder-holmium",             10 },
         },
         results = {
             { "vgal-lithium-carbonate", 6 },
@@ -92,7 +93,7 @@ vgal.extend({
         energy_required = 4,
         technology = "lithium-processing",
         ingredients = {
-            { lithium.ore,                 6 },
+            { lithium.ore,                 12 },
             { "angels-liquid-mineral-oil", 50 },
         },
         results = {

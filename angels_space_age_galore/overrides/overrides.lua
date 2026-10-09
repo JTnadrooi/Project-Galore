@@ -177,3 +177,4 @@ vgal.recipe.set_result_amount("angels-powder-steel", 2)
 data.raw["resource"]["tungsten-ore"].minable.mining_time = 5 -- og; 2
 
 data.raw["assembling-machine"]["foundry"].energy_usage = "1808kW"
+data.raw["assembling-machine"]["cryogenic-plant"].energy_usage = "835kW"

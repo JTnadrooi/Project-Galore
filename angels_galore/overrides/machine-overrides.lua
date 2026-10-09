@@ -1,44 +1,44 @@
 -- PURGE EXTRA MACHINE TIERS
 
 ---@type table<string, string>
-for building_name, max_tier in pairs(vgal.defines.machine_max_tiers) do
-    local buildings = {}
+for machine_name, max_tier in pairs(vgal.defines.machine_max_tiers) do
+    local machines = {}
 
     -- for every tier except tier 1 trim if above max and edit module slots.
     for i = 2, 5 do
-        local building = data.raw["assembling-machine"][building_name .. "-" .. i]
-        if building then
-            building.module_slots = 1 + i
+        local machine = data.raw["assembling-machine"][machine_name .. "-" .. i]
+        if machine then
+            machine.module_slots = 1 + i
         end
-        if (i > max_tier) and building then
-            vgal.hide(building)
-            vgal.item.hide(building_name .. "-" .. i)
-            vgal.recipe.hide_and_queue_for_tech_removal(building_name .. "-" .. i)
-            building.next_upgrade = nil
+        if (i > max_tier) and machine then
+            vgal.hide(machine)
+            vgal.item.hide(machine_name .. "-" .. i)
+            vgal.recipe.hide_and_queue_for_tech_removal(machine_name .. "-" .. i)
+            machine.next_upgrade = nil
         else
-            table.insert(buildings, building)
+            table.insert(machines, machine)
         end
     end
 
     -- max tier should not have next_upgrade.
-    local building_max = data.raw["assembling-machine"][building_name .. "-" .. max_tier] or
-        data.raw["assembling-machine"][building_name]
-    if building_max then
-        building_max.next_upgrade = nil
+    local machine_max = data.raw["assembling-machine"][machine_name .. "-" .. max_tier] or
+        data.raw["assembling-machine"][machine_name]
+    if machine_max then
+        machine_max.next_upgrade = nil
     end
 
     -- base tier should be included in all the buildings and fix module slots.
-    local building_min = data.raw["assembling-machine"][building_name] or
-        data.raw["assembling-machine"][building_name .. "-" .. max_tier]
-    if building_min then
-        table.insert(buildings, building_min)
-        building_min.module_slots = 2
+    local machine = data.raw["assembling-machine"][machine_name] or
+        data.raw["assembling-machine"][machine_name .. "-" .. max_tier]
+    if machine then
+        table.insert(machines, machine)
+        machine.module_slots = 2
     end
 
     if max_tier == 0 then
-        vgal.hide(data.raw["assembling-machine"][building_name])
-        vgal.item.hide(building_name)
-        vgal.recipe.hide_and_queue_for_tech_removal(building_name)
+        vgal.hide(data.raw["assembling-machine"][machine_name])
+        vgal.item.hide(machine_name)
+        vgal.recipe.hide_and_queue_for_tech_removal(machine_name)
     end
 end
 

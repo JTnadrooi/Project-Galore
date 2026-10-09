@@ -13,6 +13,7 @@ require("prototypes.generation.vgal-ore")
 
 require("setups.spoilage-setup")
 require("setups.weight-setup")
+require("setups.heat-setup")
 
 require("prototypes.recipes.space")
 require("prototypes.recipes.holmium")

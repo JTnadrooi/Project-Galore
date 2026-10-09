@@ -73,3 +73,18 @@ for _, base_name in ipairs(expander_groups) do
         vgal.item.set_rocket_capacity(name, capacity)
     end
 end
+
+-- heat
+data.raw["roboport"]["angels-cargo-box"].heating_energy = "100kW"
+data.raw["roboport"]["angels-cargo-roboport"].heating_energy = "200kW"
+data.raw["roboport"]["angels-cargo-hub"].heating_energy = "400kW"
+data.raw["roboport"]["angels-zone-expander"].heating_energy = "40kW"
+data.raw["roboport"]["angels-zone-expander-2"].heating_energy = "100kW"
+data.raw["roboport"]["angels-zone-expander-3"].heating_energy = "200kW"
+data.raw["roboport"]["angels-construction-zone-expander"].heating_energy = "40kW"
+data.raw["roboport"]["angels-construction-zone-expander-2"].heating_energy = "100kW"
+data.raw["roboport"]["angels-construction-zone-expander-3"].heating_energy = "200kW"
+data.raw["roboport"]["angels-relay-station"].heating_energy = "40kW"
+data.raw["roboport"]["angels-relay-station-2"].heating_energy = "100kW"
+data.raw["roboport"]["angels-relay-station-3"].heating_energy = "200kW"
+data.raw["roboport"]["angels-charging-station"].heating_energy = "300kW"

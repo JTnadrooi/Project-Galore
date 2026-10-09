@@ -909,9 +909,9 @@ if vgal.defines.flags["asagal"] then
             energy_required = 5,
             colors = { { 200, 210, 250 }, { 140, 150, 215 }, { 80, 90, 180 } },
             results = {
-                { "angels-gas-oxygen",            5 },
-                { "angels-gas-ammonia",           70 },
-                { "angels-gas-hydrogen-fluoride", 25 },
+                { "angels-gas-oxygen",   10 },
+                { "angels-gas-ammonia",  20 },
+                { "angels-gas-nitrogen", 70 },
             }
         },
     }

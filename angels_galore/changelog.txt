@@ -1,4 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.5
+  Features:
+    - Added "vgal-angels-stone-crushed-angels-solid-limestone"
+    - Added "vgal-angels-gas-methane-angels-gas-synthesis"
+    - Added "vgal-angels-solid-ammonium-nitrate-angels-gas-ammonia"
+    - Added "vgal-angels-solid-sodium-nitrate-angels-solid-sodium"
+    - Improved solution UI orders.
+  Changes:
+    - Made machines automatically inline with Angel's icons.
+    - Replaced lime used in limefilter with limestone. (Has fluorite inclusions)
+    - Removed "vgal-angels-solid-sodium-chlorate-angels-liquid-hydrochloric-acid-angels-solid-salt"
+    - Reworked "vgal-angels-solid-sodium-chlorate-angels-solid-salt" to look nicer.
+    - Removed atm to seed recipes.
+  Bugfixes:
+    - Fixed garden to seed recipes.
+    - Fixed copper cables showing in raw materials view.
+    - Fixed "angels-solid-sodium-hypochlorite-angels-water-purified" main result.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.2
   Changes:
     - Made water treatment alt recipes fluid ports more inline with non-Galore recipes.

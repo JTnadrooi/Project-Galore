@@ -1,4 +1,28 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+  Features:
+    - Added many new thruster fuel and oxidizer recipes.
+    - Added lithium processing.
+    - Added "vgal-fluoroketone-coolant-cooling"
+  Changes:
+    - "advanced-oxide-asteroid-crushing" ammonium nitrate yield; 0 -> 1
+    - "advanced-thruster-oxidizer" iron ore needed; 0 -> 1
+    - "advanced-thruster-fuel" methane needed; 30 -> 50
+    - Made fluoroketone crafting more angel's-like.
+    - Made machines automatically inline with Angel's crafting icons scale.
+    - Reduced cryogenic plant energy usage.
+    - Made cryogenic plant able to do cooling tower recipes.
+    - Merged Angel's fusion with Space Age fusion.
+    - Halved solid chemicals rocket capacities.
+    - Reworked Aquilo atm composition.
+    - Made gardens also spawn on Gleba.
+    - Improved solution UI orders.
+    - Improved Space Age intermediates UI orders.
+  Bugfixes:
+    - Fixed missing VGAL item weights.
+    - Fixed chemical plant frozen texture not lining up with Angel's retexture.
+    - Fixed missing atm surface conditions for some chemistry recipes that use oxygen from atm.
+---------------------------------------------------------------------------------------------------
 Version: 0.9.1
   Features:
     - Implemented advanced thruster fuel/oxidizer recipes.

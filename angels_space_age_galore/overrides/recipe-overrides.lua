@@ -551,6 +551,7 @@ end
 do
     local ammoniacal_solution_separation = data.raw["recipe"]["ammoniacal-solution-separation"]
     vgal.recipe.replace_category(ammoniacal_solution_separation, "chemistry", "angels-liquifying")
+    vgal.recipe.set_result_amount(ammoniacal_solution_separation, 2, "ice")
     ammoniacal_solution_separation.icons = vgal.icon.create({
         style   = "angels-liquid",
         inputs  = { "ammoniacal-solution" },
@@ -558,6 +559,11 @@ do
         palette = "WsWsWs",
     })
 end
+
+-- misc ice fixes
+vgal.recipe.set_ingredient_amount("ice-platform", 25, "ice")
+vgal.recipe.set_ingredient_amount("vgal-low-density-structure-ice-platform", 10, "ice")
+vgal.recipe.set_ingredient_amount("cryogenic-science-pack", 1, "ice")
 
 -- recipe to planet moving
 vgal.recipe.replace_ingredient("angels-pellet-press", "steel-plate", "tungsten-plate")
@@ -601,6 +607,21 @@ do
         lithium_ore_recipe.localised_name = { "recipe-name.lithium" }
         lithium_ore_recipe.localised_description = { "recipe-description.lithium" }
     end
+end
+
+-- fk fixes
+do
+    local fk_recipe = data.raw["recipe"]["fluoroketone"]
+    fk_recipe.ingredients = vgal.build.io({
+        { "angels-gas-chlor-methane",     20 },
+        { "lithium",                      1 },
+        { "angels-gas-hydrogen-fluoride", 50 },
+    })
+    fk_recipe.results = vgal.build.io({
+        { "fluoroketone-hot",             50 },
+        { "angels-gas-hydrogen-chloride", 20, { allow_productivity = false } },
+    })
+    fk_recipe.main_product = "fluoroketone-hot"
 end
 
 -- crushing fixes

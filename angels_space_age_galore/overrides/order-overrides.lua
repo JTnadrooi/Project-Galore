@@ -61,3 +61,14 @@ data.raw["item"]["lithium"].subgroup = "vgal-lithium-processing"
 vgal.subgroup.clean_recipe("lithium")
 data.raw["item"]["lithium-plate"].order = "e"
 data.raw["item"]["lithium-plate"].subgroup = "vgal-lithium-smelting"
+
+data.raw["item"]["superconductor"].subgroup = "vgal-chemistry-products"
+data.raw["item"]["superconductor"].order = "c"
+data.raw["item"]["supercapacitor"].subgroup = "vgal-chemistry-products"
+data.raw["item"]["supercapacitor"].order = "d"
+
+data.raw["recipe"]["low-density-structure"].order = "d[lds]-a[basic]a"
+data.raw["recipe"]["casting-low-density-structure"].order = "d[lds]-a[basic]b"
+data.raw["recipe"]["vgal-carbon-fiber-low-density-structure"].order = "d[lds]-ba"
+data.raw["recipe"]["vgal-molten-copper-carbon-fiber-low-density-structure"].order = "d[lds]-bb"
+data.raw["recipe"]["vgal-lithium-plate-low-density-structure"].order = "d[lds]-c"

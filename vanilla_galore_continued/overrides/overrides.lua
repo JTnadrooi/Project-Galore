@@ -38,7 +38,7 @@ for _, am in pairs(data.raw["assembling-machine"]) do
     end
 end
 
-if mods["centrifuge-tint"] then
+if mods["Tintrifuge"] then
     data.raw["item"]["centrifuge"].icon = "__vanilla_galore_continued__/graphics/icons/centrifuge.png"
     data.raw["assembling-machine"]["centrifuge"].icon = "__vanilla_galore_continued__/graphics/icons/centrifuge.png"
 end

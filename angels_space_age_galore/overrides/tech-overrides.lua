@@ -67,6 +67,11 @@ vgal.tech.remove_recipe("angels-bio-refugium-puffer-1", "angels-gas-puffer-atmos
 data.raw["technology"]["lithium-processing"].icon = "__angelssmeltinggraphics__/graphics/technology/casting-silver-tech.png"
 data.raw["technology"]["lithium-processing"].icon_size = 256
 
+vgal.tech.add_prerequisite("angels-water-chemistry-1", "cryogenic-science-pack")
+vgal.tech.merge("angels-fusion-power-1", "fusion-reactor")
+vgal.tech.add_prerequisite("fusion-reactor", "angels-water-chemistry-2")
+vgal.tech.add_prerequisite("fusion-reactor", "angels-thorium-power")
+
 -- make sure planets are possible with prereq techs
 vgal.tech.add_prerequisite("planet-discovery-vulcanus", "angels-ore-powderizer")
 vgal.tech.add_prerequisite("planet-discovery-vulcanus", "angels-slag-processing-1")
@@ -77,6 +82,7 @@ local cache_space_sp = {}
 local cache_agri_sp = {}
 local cache_metal_sp = {}
 local cache_elec_sp = {}
+local cache_cryo_sp = {}
 
 for _, tech in pairs(data.raw["technology"]) do
     if vgal.is_angels(tech) then
@@ -93,6 +99,9 @@ for _, tech in pairs(data.raw["technology"]) do
             end
             if vgal.tech.has_prerequisite_recursive(cache_elec_sp, tech.name, "electromagnetic-science-pack") then
                 table.insert(tech.unit.ingredients, { "electromagnetic-science-pack", 1 })
+            end
+            if vgal.tech.has_prerequisite_recursive(cache_cryo_sp, tech.name, "cryogenic-science-pack") then
+                table.insert(tech.unit.ingredients, { "cryogenic-science-pack", 1 })
             end
         end
     end

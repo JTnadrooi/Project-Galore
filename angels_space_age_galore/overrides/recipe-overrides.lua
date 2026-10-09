@@ -62,6 +62,7 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-ice-solid-fuel-ammonia")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-scrap-sulfuric-acid-holmium-solution")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-sulfur-ammonia-nutrients")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-oxide-asteroid-chunk-ammoniacal-solution")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-depleted-uranium-fuel-cell-fusion-power-cell")
 
 -- vanilla trims
 -- bio stuff will be obtained through bioprocessing
@@ -814,6 +815,18 @@ do
     coal_synthesis_recipe.main_product = "coal"
 
     vgal.subgroup.clean(coal_synthesis_recipe)
+end
+
+-- fusion fixes
+do
+    local spage_fusion_recipe = data.raw["recipe"]["fusion-power-cell"]
+    local angels_fusion_recipe = data.raw["recipe"]["angels-deuterium-fuel-cell"]
+
+    spage_fusion_recipe.ingredients = table.deepcopy(angels_fusion_recipe.ingredients)
+    spage_fusion_recipe.energy_required = angels_fusion_recipe.energy_required
+    -- spage_fusion_recipe.categories = table.deepcopy(angels_fusion_recipe.categories)
+
+    vgal.recipe.hide_and_queue_for_tech_removal(angels_fusion_recipe)
 end
 
 -- reset_freshness_on_craft fixes

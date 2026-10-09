@@ -186,3 +186,19 @@ vgal.recipe.set_result_amount("angels-powder-steel", 2)
 
 -- make mining slower so t2/t3 tungsten processing will not just be ingored
 data.raw["resource"]["tungsten-ore"].minable.mining_time = 5 -- og; 2
+
+data.raw["fusion-reactor"]["fusion-reactor"].burner.burnt_inventory_size = 1
+-- fusion item fixes
+do
+    local spage_fusion_item = data.raw["item"]["fusion-power-cell"]
+    local angels_fusion_item = data.raw["item"]["angels-deuterium-fuel-cell"]
+
+    spage_fusion_item.burnt_result = angels_fusion_item.burnt_result
+    spage_fusion_item.fuel_value = angels_fusion_item.fuel_value
+    spage_fusion_item.icon = angels_fusion_item.icon
+    spage_fusion_item.icon_size = angels_fusion_item.icon_size
+    spage_fusion_item.subgroup = angels_fusion_item.subgroup
+    spage_fusion_item.order = angels_fusion_item.order
+
+    vgal.item.hide(angels_fusion_item)
+end

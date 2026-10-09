@@ -37,6 +37,8 @@ end
 data.raw["fluid"]["vgal-molten-" .. final_metal_name].base_color = { 213, 150, 175 }
 data.raw["fluid"]["vgal-molten-" .. final_metal_name].flow_color = { 213, 150, 175 }
 
+vgal.item.set_rocket_capacity("vgal-powder-holmium", 400)
+
 data:extend({
     {
         type = "item",
@@ -46,6 +48,7 @@ data:extend({
         subgroup = "vgal-holmium-processing",
         order = "ca",
         stack_size = 200,
+        weight = vgal.item.get_weight_from_rocket_capacity(200)
     },
     {
         type = "item",
@@ -55,6 +58,7 @@ data:extend({
         subgroup = "vgal-holmium-processing",
         order = "cb",
         stack_size = 200,
+        weight = vgal.item.get_weight_from_rocket_capacity(250)
     },
     {
         type = "item",
@@ -64,5 +68,6 @@ data:extend({
         subgroup = "vgal-holmium-processing",
         order = "cc",
         stack_size = 200,
+        weight = vgal.item.get_weight_from_rocket_capacity(200)
     },
 })

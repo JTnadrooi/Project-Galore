@@ -1,3 +1,7 @@
+require("setups.spoilage-setup")
+require("setups.weight-setup")
+require("setups.heat-setup")
+
 require("prototypes.items.dormant-seeds")
 require("prototypes.items.holmium-items")
 require("prototypes.items.lithium-items")
@@ -10,10 +14,6 @@ require("prototypes.technology")
 
 -- require("prototypes.generation.vgal-saline-fissure")
 require("prototypes.generation.vgal-ore")
-
-require("setups.spoilage-setup")
-require("setups.weight-setup")
-require("setups.heat-setup")
 
 require("prototypes.recipes.space")
 require("prototypes.recipes.holmium")

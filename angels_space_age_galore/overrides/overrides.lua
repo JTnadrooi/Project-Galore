@@ -199,6 +199,7 @@ do
     spage_fusion_item.icon_size = angels_fusion_item.icon_size
     spage_fusion_item.subgroup = angels_fusion_item.subgroup
     spage_fusion_item.order = angels_fusion_item.order
+    -- spage_fusion_item.weight = vgal.item.get_weight_from_rocket_capacity(20)
 
     vgal.item.hide(angels_fusion_item)
 end

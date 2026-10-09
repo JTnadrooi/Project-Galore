@@ -32,3 +32,9 @@ function vgal.item.set_rocket_capacity(item_or_item_name, rocket_capacity)
         item.weight = 1000000 / rocket_capacity
     end
 end
+
+---@param rocket_capacity integer
+---@return integer
+function vgal.item.get_weight_from_rocket_capacity(rocket_capacity)
+    return math.floor(1000000 / rocket_capacity)
+end

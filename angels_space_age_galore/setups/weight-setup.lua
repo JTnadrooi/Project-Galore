@@ -26,6 +26,13 @@ for metal in vgal.table.iter_all(vgal.defines.metals, { vgal.defines.metal_steel
     vgal.item.set_rocket_capacity(metal.roll, 200)
 end
 
+vgal.item.set_rocket_capacity("angels-powder-steel", 400)
+vgal.item.set_rocket_capacity("angels-powder-tungsten", 400)
+vgal.item.set_rocket_capacity("angels-processed-tungsten", 500)
+vgal.item.set_rocket_capacity("angels-pellet-tungsten", 500)
+vgal.item.set_rocket_capacity("angels-solid-tungsten-oxide", 200)
+vgal.item.set_rocket_capacity("angels-solid-ammonium-paratungstate", 200)
+
 -- stone/tiles
 vgal.item.set_rocket_capacity("angels-solid-lime", 400)
 vgal.item.set_rocket_capacity("angels-solid-limestone", 200)
@@ -57,25 +64,23 @@ for _, fuel_cell in pairs(vgal.defines.fuel_cells) do
 end
 
 vgal.item.set_rocket_capacity("angels-muon-fusion-catalyst", 1)
-vgal.item.set_rocket_capacity("angels-deuterium-fuel-cell", 5)
 vgal.item.set_rocket_capacity("angels-thorium-ore", 200)
 
 -- chem solids (square)
-vgal.item.set_rocket_capacity("angels-solid-calcium-chloride", 500)
-vgal.item.set_rocket_capacity("angels-solid-calcium-carbonate", 1000)
-vgal.item.set_rocket_capacity("angels-solid-sodium-hypochlorite", 500)
-vgal.item.set_rocket_capacity("angels-solid-sodium-perchlorate", 500)
-vgal.item.set_rocket_capacity("angels-solid-ammonium-nitrate", 500)
+vgal.item.set_rocket_capacity("angels-solid-calcium-chloride", 250)
+vgal.item.set_rocket_capacity("angels-solid-calcium-carbonate", 500)
+vgal.item.set_rocket_capacity("angels-solid-sodium-hypochlorite", 250)
+vgal.item.set_rocket_capacity("angels-solid-sodium-perchlorate", 250)
+vgal.item.set_rocket_capacity("angels-solid-ammonium-nitrate", 250)
 
 -- chem solids (round)
-vgal.item.set_rocket_capacity("angels-solid-salt", 1000)
-vgal.item.set_rocket_capacity("angels-solid-sodium-carbonate", 1000)
-vgal.item.set_rocket_capacity("angels-solid-sodium-hydroxide", 1000)
-vgal.item.set_rocket_capacity("angels-solid-sodium-sulfate", 1000)
-vgal.item.set_rocket_capacity("angels-solid-ammonium-perchlorate", 1000)
-vgal.item.set_rocket_capacity("angels-solid-ammonium-perchlorate", 500)
-vgal.item.set_rocket_capacity("angels-solid-sodium", 1000)
-vgal.item.set_rocket_capacity("angels-paste-cellulose", 1000)
+vgal.item.set_rocket_capacity("angels-solid-salt", 500)
+vgal.item.set_rocket_capacity("angels-solid-sodium-carbonate", 500)
+vgal.item.set_rocket_capacity("angels-solid-sodium-hydroxide", 500)
+vgal.item.set_rocket_capacity("angels-solid-sodium-sulfate", 500)
+vgal.item.set_rocket_capacity("angels-solid-ammonium-perchlorate", 250)
+vgal.item.set_rocket_capacity("angels-solid-sodium", 500)
+vgal.item.set_rocket_capacity("angels-paste-cellulose", 500)
 
 -- nuclear fuel
 vgal.item.set_rocket_capacity("angels-nuclear-fuel", 10)

@@ -45,6 +45,7 @@ data:extend({
         subgroup = "vgal-lithium-processing",
         order = "e",
         stack_size = 200,
+        weight = vgal.item.get_weight_from_rocket_capacity(200)
     },
     {
         type = "item",
@@ -54,6 +55,7 @@ data:extend({
         subgroup = "vgal-lithium-processing",
         order = "c",
         stack_size = 200,
+        weight = vgal.item.get_weight_from_rocket_capacity(250)
     },
     {
         type = "fluid",

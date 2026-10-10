@@ -197,12 +197,26 @@ local function assign_recipe_technologies_and_create_nodes()
     -- error(serpent.block(vgal.recipe_prerequisites_make))
     for _, recipe_prerequisites_entry in pairs(vgal.recipe_prerequisites_store) do
         local recipe = vgal.throw.if_recipe_not_found(recipe_prerequisites_entry.recipe)
-        -- p = {{"red-science", ""}}
         for i, prerequisite_group in ipairs(recipe_prerequisites_entry.prerequisite_groups) do
-            if #prerequisite_group == 1 then
-                vgal.tech.add_recipe(prerequisite_group[1], recipe.name)
+            local valid_prerequisites = {}
+            local function topmost(name)
+                local t = vgal.throw.if_tech_not_found(name)
+                if not t.hidden then return name end
+                for _, p in ipairs(t.prerequisites or {}) do
+                    local r = topmost(p)
+                    if r then return r end
+                end
+            end
+
+            for _, prereq_name in ipairs(prerequisite_group) do
+                local top = topmost(prereq_name)
+                if top then table.insert(valid_prerequisites, top) end
+            end
+
+            if #valid_prerequisites == 1 then
+                vgal.tech.add_recipe(valid_prerequisites[1], recipe.name)
             else
-                vgal.tech.create_node(recipe, prerequisite_group, i, recipe.hidden)
+                vgal.tech.create_node(recipe, valid_prerequisites, i, recipe.hidden)
             end
         end
     end

@@ -43,8 +43,8 @@ data:extend({
 
 vgal.extend({
     {
-        name = "biological-science-pack",
-        prefix = "vgal",
+        name = "vgal-biological-science-pack",
+        domain = "vgal",
         energy_required = 5,
         technology = "vgal-biological-science-pack",
         ingredients = {
@@ -55,11 +55,15 @@ vgal.extend({
             { "vgal-biological-science-pack", 1 },
         },
         category = "crafting",
+
+        main_recipe = true,
     },
 }, {
     type = "recipe",
 })
 
 for _, lab in pairs(data.raw["lab"]) do
-    table.insert(lab.inputs, "vgal-biological-science-pack")
+    if vgal.table.contains(lab.inputs, "military-science-pack") then
+        vgal.table.insert_after(lab.inputs, "military-science-pack", "vgal-biological-science-pack")
+    end
 end

@@ -67,6 +67,29 @@ vgal.extend({
         allow_productivity = false,
     },
     -- {
+    --     name = "angels-gas-synthesis-angels-gas-methane",
+    --     prefix = "vgal",
+    --     icons = vgal.icon.create({
+    --         style = "angels-gas",
+    --         outputs = { "angels-gas-methane" },
+    --         palette = { { 210, 120, 210 }, { 175, 100, 175 }, { 140, 080, 140 } },
+    --     }),
+    --     energy_required = 2,
+    --     technology = "angels-coal-processing-2",
+    --     ingredients = {
+    --         { "angels-gas-synthesis",         100 },
+    --         { "angels-catalyst-metal-yellow", 1 },
+    --     },
+    --     results = {
+    --         { "angels-gas-methane",            60 },
+    --         { "angels-water-purified",         40 },
+    --         { "angels-catalyst-metal-carrier", 1 },
+    --     },
+    --     category = "chemistry",
+
+    --     allow_productivity = false,
+    -- },
+    -- {
     --     name = "angels-gas-methane-angels-gas-carbon-monoxide",
     --     prefix = "vgal",
     --     icons = vgal.icon.create({

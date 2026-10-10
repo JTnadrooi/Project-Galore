@@ -430,3 +430,13 @@ function vgal.table.to_map(array)
 
     return output
 end
+
+function vgal.table.insert_after(array, prepending_value, value)
+    for i = 1, #array do
+        if array[i] == prepending_value then
+            table.insert(array, i + 1, value)
+            return
+        end
+    end
+    error("value not found in array", 2)
+end

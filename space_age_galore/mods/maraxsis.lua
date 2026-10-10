@@ -52,16 +52,16 @@ for _, recipe in vgal.domain_pairs("vgal", "recipe") do
             table.insert(data.raw["technology"]["maraxsis-deepsea-research"].effects,
                 { type = "unlock-recipe", recipe = new_recipe.name })
         end
-    elseif recipe.main_product == "electric-engine-unit" or recipe.main_product == "engine-unit" then
-        recipe.categories = { "advanced-crafting", "maraxsis-hydro-plant" }
-    elseif recipe.main_product == "chemical-plant" or
-        recipe.main_product == "pumpjack" or
-        recipe.main_product == "nuclear-reactor" or
-        recipe.main_product == "pipe" or
-        recipe.main_product == "pipe-to-ground" or
-        recipe.main_product == "offshore-pump" or
-        recipe.main_product == "pump" then
-        recipe.categories = { "crafting", "maraxsis-hydro-plant" }
+    elseif (recipe.main_product == "electric-engine-unit" or
+            recipe.main_product == "engine-unit" or
+            recipe.main_product == "chemical-plant" or
+            recipe.main_product == "pumpjack" or
+            recipe.main_product == "nuclear-reactor" or
+            recipe.main_product == "pipe" or
+            recipe.main_product == "pipe-to-ground" or
+            recipe.main_product == "offshore-pump" or
+            recipe.main_product == "pump") and (vgal.recipe.has_any_category(recipe, { "crafting", "crafting-with-fluid", "advanced-crafting" })) then
+        vgal.recipe.add_category(recipe, "maraxsis-hydro-plant")
     end
 end
 

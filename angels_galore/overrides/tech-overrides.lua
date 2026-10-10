@@ -34,6 +34,7 @@ for _, environment in ipairs({ "desert", "swamp", "temperate" }) do
 end
 
 vgal.recipe_prerequisites_store["vgal-sulfuric-acid-advanced-circuit"].prerequisite_groups = { { "advanced-circuit" } }
+vgal.recipe_prerequisites_store["vgal-heavy-oil-rail"].prerequisite_groups = { { "railway", "angels-oil-processing" } }
 
 -- vgal.tech.add_prerequisite("angels-water-treatment-3", "chemical-science-pack")
 -- vgal.tech.add_prerequisite("angels-bio-processing-blue", "chemical-science-pack")

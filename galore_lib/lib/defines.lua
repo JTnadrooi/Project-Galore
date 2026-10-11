@@ -872,8 +872,8 @@ if vgal.defines.flags["asagal"] then
             results = {
                 { "angels-gas-oxygen",         10 },
                 -- { "angels-gas-sulfur-dioxide", 20 },
-                { "angels-gas-carbon-dioxide", 60 },
                 { "angels-gas-nitrogen",       30 },
+                { "angels-gas-carbon-dioxide", 60 },
             }
         },
         ["fulgora"] = {
@@ -905,8 +905,8 @@ if vgal.defines.flags["asagal"] then
             colors = { { 200, 210, 250 }, { 140, 150, 215 }, { 80, 90, 180 } },
             results = {
                 { "angels-gas-oxygen",   10 },
-                { "angels-gas-ammonia",  20 },
                 { "angels-gas-nitrogen", 70 },
+                { "angels-gas-ammonia",  20 },
             }
         },
     }

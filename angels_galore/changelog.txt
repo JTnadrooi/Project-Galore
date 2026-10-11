@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.6
+  Features:
+    - Added fluorine processing technology.
+  Bugfixes:
+    - Fixed biological science in-lab order.
+    - Fixed unresearchable heavy oil rail tech.
+---------------------------------------------------------------------------------------------------
 Version: 1.3.5
   Features:
     - Added "vgal-angels-stone-crushed-angels-solid-limestone"

@@ -1,4 +1,15 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+  Features:
+    - Added fluorine processing technology.
+    - Added compressed atmosphere separation locale.
+  Changes:
+    - Made atmosphere separation fluidboxes more inline with eachother.
+  Bugfixes:
+    - Fixed rare crash caused by unreliable icon data copy.
+    - Fixed crash with maraxsis.
+    - Fixed unresearchable atomic bomb tech.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.0
   Features:
     - Added many new thruster fuel and oxidizer recipes.

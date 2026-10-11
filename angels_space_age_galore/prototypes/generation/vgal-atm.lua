@@ -1,0 +1,12 @@
+-- vgal.make_atmosphere({
+--     planet = "nauvis",
+--     prefix = "vgal",
+--     order = "a",
+--     colors = { { 180, 180, 225 }, { 150, 150, 187 }, { 120, 120, 150 } },
+--     results = {
+--         { "angels-gas-oxygen",   20 },
+--         { "angels-gas-nitrogen", 80 },
+--     }
+-- })
+
+-- vgal.defines.atmospheres

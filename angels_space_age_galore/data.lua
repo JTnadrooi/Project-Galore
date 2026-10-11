@@ -14,6 +14,7 @@ require("prototypes.technology")
 
 -- require("prototypes.generation.vgal-saline-fissure")
 require("prototypes.generation.vgal-ore")
+require("prototypes.generation.vgal-atm")
 
 require("prototypes.recipes.space")
 require("prototypes.recipes.holmium")

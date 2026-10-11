@@ -34,6 +34,10 @@ for _, atm in pairs(vgal.defines.atmospheres) do
             base_color = { r = atm.colors[1][1] / 255, g = atm.colors[1][2] / 255, b = atm.colors[1][3] / 255 },
             flow_color = { r = atm.colors[3][1] / 255, g = atm.colors[3][2] / 255, b = atm.colors[3][3] / 255 },
             max_temperature = 0,
+
+            -- localised_description = { "[img=space-location/" .. atm.planet .. "]" },
+            -- localised_description = { "[img=space-location/" .. atm.planet .. "]" },
+            -- localised_description = { "[img=space-location/nauvis]" },
         },
     })
 end

@@ -397,3 +397,8 @@ function vgal.force_require(path)
     package.loaded[normalized_path] = nil
     return require(normalized_path)
 end
+
+---@param atm_data any
+function vgal.create_atmosphere(atm_data)
+
+end

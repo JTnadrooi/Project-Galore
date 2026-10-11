@@ -58,6 +58,8 @@ for _, atm in pairs(vgal.defines.atmospheres) do
             results = atm.results,
             category = separation_category,
             order = "c" .. atm.order,
+
+            localised_description = { "", "[img=fluid/" .. atm.name .. "]", { "vgal-internal.atm-recipe-prepending" }, "[img=space-location/" .. atm.planet .. "]", { "vgal-internal.atm-recipe-appending" } }
         },
     }, {
         type = "recipe",

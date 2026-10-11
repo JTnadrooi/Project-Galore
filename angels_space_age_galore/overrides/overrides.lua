@@ -175,8 +175,9 @@ do
 
     spage_fusion_item.burnt_result = angels_fusion_item.burnt_result
     spage_fusion_item.fuel_value = angels_fusion_item.fuel_value
-    spage_fusion_item.icon = angels_fusion_item.icon
-    spage_fusion_item.icon_size = angels_fusion_item.icon_size
+    -- spage_fusion_item.icon = angels_fusion_item.icon
+    -- spage_fusion_item.icon_size = angels_fusion_item.icon_size
+    vgal.icon.copy_icon_data_from(angels_fusion_item, spage_fusion_item)
     spage_fusion_item.subgroup = angels_fusion_item.subgroup
     spage_fusion_item.order = angels_fusion_item.order
     -- spage_fusion_item.weight = vgal.item.get_weight_from_rocket_capacity(20)

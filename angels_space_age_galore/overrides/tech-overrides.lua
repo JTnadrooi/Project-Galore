@@ -71,6 +71,9 @@ vgal.tech.add_prerequisite("angels-water-chemistry-1", "cryogenic-science-pack")
 vgal.tech.merge("angels-fusion-power-1", "fusion-reactor")
 vgal.tech.add_prerequisite("fusion-reactor", "angels-water-chemistry-2")
 vgal.tech.add_prerequisite("fusion-reactor", "angels-thorium-power")
+vgal.tech.remove_prerequisite("atomic-bomb", "angels-fusion-power-1")
+vgal.tech.remove_recipe("atomic-bomb", "angels-atomic-bomb-2")
+vgal.tech.create_node("angels-atomic-bomb-2", { "atomic-bomb", "fusion-reactor" })
 
 -- make sure planets are possible with prereq techs
 vgal.tech.add_prerequisite("planet-discovery-vulcanus", "angels-ore-powderizer")
@@ -92,16 +95,16 @@ for _, tech in pairs(data.raw["technology"]) do
                 vgal.tech.ensure_unit_ingredient(tech.name, "chemical-science-pack")
             end
             if vgal.tech.has_prerequisite_recursive(cache_agri_sp, tech.name, "agricultural-science-pack") then
-                table.insert(tech.unit.ingredients, { "agricultural-science-pack", 1 })
+                vgal.tech.ensure_unit_ingredient(tech.name, "agricultural-science-pack")
             end
             if vgal.tech.has_prerequisite_recursive(cache_metal_sp, tech.name, "metallurgic-science-pack") then
-                table.insert(tech.unit.ingredients, { "metallurgic-science-pack", 1 })
+                vgal.tech.ensure_unit_ingredient(tech.name, "metallurgic-science-pack")
             end
             if vgal.tech.has_prerequisite_recursive(cache_elec_sp, tech.name, "electromagnetic-science-pack") then
-                table.insert(tech.unit.ingredients, { "electromagnetic-science-pack", 1 })
+                vgal.tech.ensure_unit_ingredient(tech.name, "electromagnetic-science-pack")
             end
             if vgal.tech.has_prerequisite_recursive(cache_cryo_sp, tech.name, "cryogenic-science-pack") then
-                table.insert(tech.unit.ingredients, { "cryogenic-science-pack", 1 })
+                vgal.tech.ensure_unit_ingredient(tech.name, "cryogenic-science-pack")
             end
         end
     end

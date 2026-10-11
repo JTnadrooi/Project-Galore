@@ -251,8 +251,7 @@ vgal.tech.add_prerequisite("angels-bio-refugium-puffer-1", "angels-thermal-water
 -- move all fluorite acid/gas recipes to thermal water tech
 vgal.tech.move_recipe("sulfur-processing", "angels-thermal-water-extraction", "angels-liquid-hydrofluoric-acid")
 vgal.tech.move_recipe("sulfur-processing", "angels-thermal-water-extraction", "angels-gas-hydrogen-fluoride")
-vgal.tech.move_recipe("angels-sulfur-processing-2", "angels-thermal-water-extraction",
-    "angels-hydrogen-fluoride-dissolving")
+vgal.tech.move_recipe("angels-sulfur-processing-2", "angels-thermal-water-extraction", "angels-hydrogen-fluoride-dissolving")
 
 -- remove military science from explosives alt techs
 vgal.tech.remove_unit("angels-explosives-2", "military-science-pack")

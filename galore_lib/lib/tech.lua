@@ -591,7 +591,7 @@ function vgal.tech.create_node(recipe_or_recipe_name, prerequisites, index, hidd
     tech.localised_name = {
         "?",
         { "", { "vgal-internal.tech-node" }, ": ", { "recipe-name." .. recipe.name } },
-        { "", { "vgal-internal.tech-node" }, ": ", vgal.locale.guess_locale(recipe.main_product) },
+        { "", { "vgal-internal.tech-node" }, ": ", vgal.locale.guess_locale(vgal.recipe.get_main_product_or_guess(recipe)) },
     }
     tech.localised_description = {
         "", { "recipe-description." .. recipe.name },

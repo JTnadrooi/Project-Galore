@@ -20,7 +20,6 @@ As for difficulty, it's harder than Krastorio 2 but not nearly as hard as AngelB
 -   **Recipes can be enabled or disabled in the mod settings. Make sure to review these settings before starting your game.**
 -   Unlike most large overhaul mods, ASAGAL's lack of Bob's mods has allowed me to make it very stable and compatible with other mods. Play however you like. No planet mods are necessary for this mod to run, ~~but ASAGAL includes many compatibility scripts for many different planet mods.~~ (not yet) Please create a suggestion thread if you wish for a mod compatibility patch to be added!
 -   All balance calculations are documented in the [GitHub repo](https://github.com/JTnadrooi/Project-Galore), both in the `docs/` folder and through comments in the scripts.
--   As of writing this, Aquilo content has not yet been completely implemented. This will change in the following week.
 
 ![Vulcanus 1](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/spaghetti/asagal-vulcanus-1.png?raw=true?raw=true)
 

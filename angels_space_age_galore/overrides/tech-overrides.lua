@@ -81,6 +81,8 @@ vgal.tech.add_prerequisite("planet-discovery-vulcanus", "angels-slag-processing-
 vgal.tech.add_prerequisite("planet-discovery-fulgora", "angels-slag-processing-1")
 vgal.tech.add_prerequisite("planet-discovery-gleba", "angels-slag-processing-1")
 
+vgal.tech.add_prerequisite("cryogenic-plant", "vgal-fluorine-processing-2")
+
 local cache_space_sp = {}
 local cache_agri_sp = {}
 local cache_metal_sp = {}

@@ -248,10 +248,13 @@ vgal.tech.move_recipe("angels-coolant-2", "angels-coolant-1", "angels-coolant-us
 vgal.tech.add_prerequisite("angels-thermal-water-extraction", "angels-chlorine-processing-2")
 vgal.tech.add_prerequisite("angels-bio-refugium-puffer-1", "angels-thermal-water-extraction")
 
--- move all fluorite acid/gas recipes to thermal water tech
-vgal.tech.move_recipe("sulfur-processing", "angels-thermal-water-extraction", "angels-liquid-hydrofluoric-acid")
-vgal.tech.move_recipe("sulfur-processing", "angels-thermal-water-extraction", "angels-gas-hydrogen-fluoride")
-vgal.tech.move_recipe("angels-sulfur-processing-2", "angels-thermal-water-extraction", "angels-hydrogen-fluoride-dissolving")
+-- remove all fluorite acid/gas recipes from sulfur tech as they are in the new fluorine processing tech now
+vgal.tech.remove_recipe("angels-sulfur-processing-2", "angels-liquid-hydrofluoric-acid")
+vgal.tech.remove_recipe("angels-sulfur-processing-2", "angels-gas-hydrogen-fluoride")
+vgal.tech.remove_recipe("angels-sulfur-processing-2", "angels-hydrogen-fluoride-dissolving")
+
+vgal.tech.add_prerequisite("angels-bio-refugium-puffer-1", "vgal-fluorine-processing-1")
+vgal.tech.add_prerequisite("kovarex-enrichment-process", "vgal-fluorine-processing-1")
 
 -- remove military science from explosives alt techs
 vgal.tech.remove_unit("angels-explosives-2", "military-science-pack")

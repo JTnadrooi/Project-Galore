@@ -9,7 +9,7 @@ vgal.extend({
             palette = "FHH",
         }),
         energy_required = 4,
-        technology = "cryogenic-plant",
+        technology = "vgal-fluorine-processing-2",
         ingredients = {
             { "fluorine", 50 },
             { "steam",    100 },
@@ -32,7 +32,7 @@ vgal.extend({
             palette = "FHH",
         }),
         energy_required = 2,
-        technology = "cryogenic-plant",
+        technology = "vgal-fluorine-processing-2",
         ingredients = {
             { "angels-gas-hydrogen-fluoride", 100 },
         },

@@ -105,4 +105,21 @@ data:extend({
         },
         order = "c-a",
     },
+    {
+        type = "technology",
+        name = "vgal-fluorine-processing-2",
+        icons = angelsmods.functions.create_gas_tech_icon("FFF"),
+        prerequisites = {
+            "vgal-fluorine-processing-1",
+            "angels-sulfur-processing-3",
+            "planet-discovery-aquilo",
+        },
+        effects = {},
+        research_trigger =
+        {
+            type = "mine-entity",
+            entities = { "fluorine-vent" }
+        },
+        order = "c-b",
+    },
 })

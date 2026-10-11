@@ -10,6 +10,20 @@ for _, atm in pairs(vgal.defines.atmospheres) do
     end
 
     local separation_energy_required = (separation_category == "chemistry") and 1 or 0.5
+    local compressing_energy_required = 1
+    if not data.raw["planet"][atm.planet] then
+        error("Planet doesn't exist: " .. atm.planet)
+    elseif data.raw["planet"][atm.planet].surface_properties and data.raw["planet"][atm.planet].surface_properties["pressure"] then
+        compressing_energy_required = (1000 / data.raw["planet"][atm.planet].surface_properties["pressure"]) ^ (10 / 7)
+        if compressing_energy_required > 5 then
+            compressing_energy_required = math.floor(compressing_energy_required)
+        elseif compressing_energy_required < 1 then
+            compressing_energy_required = 0.5
+        else
+            compressing_energy_required = math.ceil(compressing_energy_required)
+        end
+        compressing_energy_required = vgal.math.vanillize_number(compressing_energy_required, "time")
+    end
 
     vgal.extend({
         {
@@ -20,7 +34,7 @@ for _, atm in pairs(vgal.defines.atmospheres) do
                 outputs = { atm.name },
                 palette = atm.colors,
             }),
-            energy_required = atm.energy_required,
+            energy_required = compressing_energy_required,
             technology = unlock_tech,
             results = {
                 { atm.name, 200 }
@@ -43,7 +57,7 @@ for _, atm in pairs(vgal.defines.atmospheres) do
             },
             results = atm.results,
             category = separation_category,
-            order = "c" .. vgal.subgroup.order_from_number(atm.index),
+            order = "c" .. atm.order,
         },
     }, {
         type = "recipe",

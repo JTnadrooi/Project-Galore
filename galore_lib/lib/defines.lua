@@ -857,8 +857,7 @@ if vgal.defines.flags["asagal"] then
         ["nauvis"] = { -- not relevant in agal
             name = "vgal-atm-nauvis",
             planet = "nauvis",
-            index = 1,
-            energy_required = 1,
+            order = "a",
             colors = { { 180, 180, 225 }, { 150, 150, 187 }, { 120, 120, 150 } },
             results = {
                 { "angels-gas-oxygen",   20 },
@@ -868,8 +867,7 @@ if vgal.defines.flags["asagal"] then
         ["vulcanus"] = {
             name = "vgal-atm-vulcanus",
             planet = "vulcanus",
-            index = 2,
-            energy_required = 0.5,
+            order = "b",
             colors = { { 220, 200, 160 }, { 190, 170, 130 }, { 160, 140, 100 } },
             results = {
                 { "angels-gas-oxygen",         10 },
@@ -881,8 +879,7 @@ if vgal.defines.flags["asagal"] then
         ["fulgora"] = {
             name = "vgal-atm-fulgora",
             planet = "fulgora",
-            index = 3,
-            energy_required = 2,
+            order = "c",
             colors = { { 200, 170, 190 }, { 170, 140, 160 }, { 140, 110, 130 } },
             results = {
                 { "angels-gas-oxygen",   10 },
@@ -893,8 +890,7 @@ if vgal.defines.flags["asagal"] then
         ["gleba"] = {
             name = "vgal-atm-gleba",
             planet = "gleba",
-            index = 4,
-            energy_required = 0.5,
+            order = "d",
             colors = { { 180, 210, 180 }, { 150, 180, 150 }, { 120, 150, 120 } },
             results = {
                 { "angels-gas-oxygen",            40 },
@@ -905,8 +901,7 @@ if vgal.defines.flags["asagal"] then
         ["aquilo"] = {
             name = "vgal-atm-aquilo",
             planet = "aquilo",
-            index = 5,
-            energy_required = 5,
+            order = "e",
             colors = { { 200, 210, 250 }, { 140, 150, 215 }, { 80, 90, 180 } },
             results = {
                 { "angels-gas-oxygen",   10 },

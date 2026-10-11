@@ -27,7 +27,7 @@ for _, atm in pairs(vgal.defines.atmospheres) do
                 atm.colors
             ),
             subgroup = "angels-petrochem-basic-fluids",
-            order = "b" .. vgal.subgroup.order_from_number(atm.index),
+            order = "b" .. atm.order,
             default_temperature = 0,
             gas_temperature = 0,
             heat_capacity = "0.1kJ",

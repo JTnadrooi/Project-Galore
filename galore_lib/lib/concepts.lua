@@ -96,8 +96,7 @@ do
     ---@field planet string
     ---@field colors {[1]: {[1]: integer, [2]: integer, [3]: integer}, [2]: {[1]: integer, [2]: integer, [3]: integer}, [3]: {[1]: integer, [2]: integer, [3]: integer}}
     ---@field results vgal.ShorthandRecipeEntry[]?
-    ---@field index integer
-    ---@field energy_required number
+    ---@field order data.Order
 end
 
 do

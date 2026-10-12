@@ -228,6 +228,8 @@ function vgal.tech.move_recipe(tech_name_from, tech_name_to, recipe_name)
             return
         end
     end
+
+    error(("Recipe %q is not unlocked by technology %q"):format(recipe_name, tech_name_from))
 end
 
 ---@param tech_name (string)

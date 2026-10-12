@@ -162,8 +162,6 @@ data.raw["technology"]["angels-thorium-power"].prerequisites = {
     "angels-ore-refining",
 }
 
-vgal.tech.add_prerequisite("nuclear-power", "angels-thermal-water-extraction")
-
 -- fix roll casting tech prerequisites
 local funky_tech_names = {
     ["iron"] = { "-smelting-1", "-casting-2", "-casting-3" },
@@ -246,7 +244,6 @@ vgal.tech.move_recipe("angels-coolant-2", "angels-coolant-1", "angels-coolant-us
 
 -- fix stuff around new fluorite obtaining method (?) COMEBACKAT
 vgal.tech.add_prerequisite("angels-thermal-water-extraction", "angels-chlorine-processing-2")
-vgal.tech.add_prerequisite("angels-bio-refugium-puffer-1", "angels-thermal-water-extraction")
 
 -- remove all fluorite acid/gas recipes from sulfur tech as they are in the new fluorine processing tech now
 vgal.tech.remove_recipe("angels-sulfur-processing-2", "angels-liquid-hydrofluoric-acid")
@@ -271,11 +268,23 @@ vgal.tech.remove_prerequisite("angels-copper-smelting-2", "angels-powder-metallu
 -- flotation prerequisite from geode tech as flotation does not yield geodes anymore
 vgal.tech.remove_prerequisite("angels-geode-processing-1", "angels-ore-floatation")
 
+-- thermal water fluid removed, tech not really needed to get its replacement
+-- vgal.tech.remove_prerequisite("angels-ore-refining", "angels-advanced-ore-refining")
+vgal.tech.remove_prerequisite("angels-ore-refining", "angels-advanced-ore-refining-3")
+vgal.tech.remove_prerequisite("angels-bio-pressing-fish-1", "angels-thermal-water-extraction")
+vgal.tech.remove_prerequisite("angels-bio-processing-crystal-shard-1", "angels-ore-advanced-floatation")
+vgal.tech.remove_prerequisite("angels-bio-processing-red", "angels-thermal-water-extraction")
+data.raw["technology"]["angels-thermal-water-extraction"].prerequisites = {
+    "angels-water-treatment",
+    "fluid-handling",
+    -- "chemical-science-pack",
+}
+-- vgal.tech.add_ingredient("angels-thermal-water-extraction", "chemical-science-pack")
+
 -- remove chem refining prerequisite from chemistry 3 tech
 -- and removed adv gas processing prerequisite as its moved to purp science
 data.raw["technology"]["angels-advanced-chemistry-3"].prerequisites = {
     "angels-steam-cracking-2",
-    "angels-thermal-water-extraction",
 }
 
 -- move adv gas processing to purp science
@@ -284,6 +293,10 @@ vgal.tech.add_unit("angels-advanced-gas-processing", "production-science-pack")
 
 -- move all adv chem 4 recipes to chem 3 so they're blue science instead of purp science (also removes the tech)
 vgal.tech.move_effects("angels-advanced-chemistry-4", "angels-advanced-chemistry-3")
+
+-- move toluene to main techs
+vgal.tech.move_recipe("angels-explosives-3", "angels-advanced-chemistry-3", "angels-liquid-toluene-from-benzene")
+vgal.tech.move_recipe("angels-explosives-3", "angels-advanced-chemistry-3", "angels-liquid-toluene")
 
 -- rework sodium techs (and remove sodium 2)
 -- unlocking the reverse of a recipe a science pack later feels kinda silly
@@ -303,8 +316,8 @@ vgal.tech.add_prerequisite("angels-bio-processing-paste", "vgal-biological-scien
 -- Add vgal-biological-science-pack as unit to technologies that require the "vgal-biological-science-pack" tech.
 local cache_bio_sp = {}
 
-for tech_name, tech in pairs(data.raw["technology"]) do
-    if vgal.tech.has_prerequisite_recursive(cache_bio_sp, tech_name, "vgal-biological-science-pack") then
+for _, tech in pairs(data.raw["technology"]) do
+    if vgal.tech.has_unit_ingredient(tech.name, "logistic-science-pack") and vgal.tech.has_prerequisite_recursive(cache_bio_sp, tech.name, "vgal-biological-science-pack") then
         if tech.unit and tech.unit.ingredients then
             table.insert(tech.unit.ingredients, { "vgal-biological-science-pack", 1 })
         end

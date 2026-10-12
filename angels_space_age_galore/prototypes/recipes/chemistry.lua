@@ -61,6 +61,8 @@ vgal.extend({
         results = {
             { "angels-crystal-slurry", 100 },
         },
+
+        order = "gb"
     },
     {
         name = "naphtha-sludge-separation",

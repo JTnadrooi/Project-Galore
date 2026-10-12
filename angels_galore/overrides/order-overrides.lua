@@ -123,6 +123,17 @@ data.raw["fluid"]["angels-liquid-cupric-chloride-solution"].order = "c"
 data.raw["fluid"]["angels-liquid-ferric-chloride-solution"].subgroup = "vgal-iron-processing"
 data.raw["fluid"]["angels-liquid-cupric-chloride-solution"].subgroup = "vgal-copper-processing"
 
+for i, fluid_name in ipairs({
+    "angels-crystal-slurry",
+    "angels-crystal-seedling",
+    "angels-slag-slurry",
+    "angels-mineral-sludge",
+}) do
+    local fluid = data.raw["fluid"][fluid_name]
+    fluid.order = vgal.subgroup.order_from_number(i)
+    fluid.subgroup = "angels-liquifying"
+end
+
 data.raw["fluid"]["steam"].order = "b"
 data.raw["fluid"]["steam"].subgroup = "vgal-water"
 data.raw["item-subgroup"]["vgal-water"].group = "angels-water-treatment"

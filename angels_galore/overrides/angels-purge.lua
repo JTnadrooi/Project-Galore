@@ -188,7 +188,7 @@ data.raw.recipe["angels-liquid-glycerol"].ingredients = vgal.build.io({
 })
 data.raw.recipe["angels-liquid-glycerol"].results = vgal.build.io({
     { "angels-liquid-glycerol",       25 },
-    { "angels-gas-hydrogen-chloride", 100 },
+    { "angels-gas-hydrogen-chloride", 50 },
 })
 data.raw.recipe["angels-liquid-glycerol"].categories = { "angels-advanced-chemistry" }
 data.raw.recipe["angels-liquid-glycerol"].main_product = "angels-liquid-glycerol"

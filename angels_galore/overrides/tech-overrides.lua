@@ -499,7 +499,7 @@ for _, tech_info in ipairs(techs_with_tier) do
 end
 
 for name, adjustment in pairs(tech_adjustments) do
-    data.raw["technology"][name].unit.count = adjustment.new_count
+    data.raw["technology"][name].unit.count = vgal.math.vanillize_number(adjustment.new_count, "tech")
 end
 
 -- manual tech cost fixes

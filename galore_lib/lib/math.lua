@@ -30,7 +30,7 @@ function vgal.math.get_normalized_amount(result)
 end
 
 ---@param number number
----@param number_type "item"|"fluid"|"time"
+---@param number_type "item"|"fluid"|"time"|"tech"
 ---@return integer
 function vgal.math.vanillize_number(number, number_type)
     if number_type == "fluid" then
@@ -86,6 +86,26 @@ function vgal.math.vanillize_number(number, number_type)
         else
             return number
         end
+    end
+
+    if number_type == "tech" then
+        local round_to = nil
+
+        if number < 50 then
+            round_to = 5
+        elseif number < 100 then
+            round_to = 20
+        elseif number < 200 then
+            round_to = 25
+        elseif number < 400 then
+            round_to = 50
+        elseif number < 500 then
+            round_to = 100
+        else
+            round_to = 500
+        end
+
+        return math.floor(number / round_to + 0.5) * round_to
     end
 
     error("Invalid number type.")

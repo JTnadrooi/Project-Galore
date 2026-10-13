@@ -258,6 +258,13 @@ vgal.tech.remove_unit("angels-explosives-2", "military-science-pack")
 vgal.tech.remove_unit("angels-explosives-3", "military-science-pack")
 vgal.tech.remove_prerequisite("angels-explosives-2", "military-science-pack")
 
+-- move glycerol to main tech tree
+vgal.tech.move_recipe("angels-explosives-2", "angels-advanced-chemistry-2", "angels-liquid-glycerol")
+vgal.tech.add_prerequisite("angels-explosives-2", "angels-advanced-chemistry-2")
+vgal.tech.remove_prerequisite("angels-explosives-2", "angels-chlorine-processing-2")
+vgal.tech.add_unit("angels-explosives-2", "chemical-science-pack")
+vgal.tech.add_prerequisite("angels-advanced-chemistry-2", "angels-chlorine-processing-2")
+
 -- add sintering oven unlock to metallurgy 2
 vgal.tech.add_recipe("angels-metallurgy-2", "angels-sintering-oven")
 

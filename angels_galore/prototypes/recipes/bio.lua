@@ -57,7 +57,7 @@ vgal.extend({
             palette = { { 214, 146, 040 }, { 169, 130, 039 }, { 120, 083, 004 } },
         }),
         energy_required = 2,
-        technology = { "angels-bio-plastic-2", "angels-explosives-2", "angels-advanced-gas-processing" },
+        technology = { "angels-bio-plastic-2", "angels-advanced-chemistry-2", "angels-advanced-gas-processing" },
         ingredients = {
             { "angels-liquid-nutrient-pulp", 100 },
             { "angels-liquid-glycerol",      15 },

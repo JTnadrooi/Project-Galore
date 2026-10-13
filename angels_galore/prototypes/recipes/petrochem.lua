@@ -45,7 +45,7 @@ vgal.extend({
         groups = { "vgal-unsure" },
     },
     {
-        name = "angels-gas-methane-angels-liquid-acetic-acid",
+        name = "angels-liquid-acetic-acid-angels-gas-methane",
         prefix = "vgal",
         icons = vgal.icon.create({
             style = "angels-gas",
@@ -57,7 +57,7 @@ vgal.extend({
         technology = { "angels-bio-plastic-1", "angels-sodium-processing-1" },
         ingredients = {
             { "angels-liquid-acetic-acid",     50 },
-            { "angels-solid-sodium-hydroxide", 1 },
+            { "angels-solid-sodium-hydroxide", 2 },
         },
         results = {
             { "angels-gas-methane",            50 },

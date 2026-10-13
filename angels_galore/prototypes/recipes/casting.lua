@@ -19,6 +19,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_name = { "", { "item-name.iron-gear-wheel" }, " ", { "vgal-internal.casting-postfix" } },
+        can_set_quality = false,
     },
     {
         name = "angels-liquid-molten-iron-iron-stick",
@@ -39,6 +40,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_name = { "", { "item-name.iron-stick" }, " ", { "vgal-internal.casting-postfix" } },
+        can_set_quality = false,
     },
     {
         name = "angels-liquid-molten-copper-copper-cable",
@@ -59,6 +61,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_name = { "", { "item-name.copper-cable" }, " ", { "vgal-internal.casting-postfix" } },
+        can_set_quality = false,
     },
 
     -- recipe items
@@ -104,6 +107,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_name = { "", { "item-name.angels-solid-saw" }, " ", { "vgal-internal.casting-postfix" } },
+        can_set_quality = false,
     },
     {
         name = "angels-liquid-molten-steel-angels-solid-saw",
@@ -125,6 +129,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_name = { "", { "item-name.angels-solid-saw" }, " ", { "vgal-internal.casting-postfix" } },
+        can_set_quality = false,
     },
     {
         name = "angels-liquid-molten-steel-barrel",
@@ -145,6 +150,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_name = { "", { "item-name.barrel" }, " ", { "vgal-internal.casting-postfix" } },
+        can_set_quality = false,
     },
 
     -- placeables/buildings
@@ -190,6 +196,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_name = { "", { "entity-name.pipe" }, " ", { "vgal-internal.casting-postfix" } },
+        can_set_quality = false,
     },
     {
         name = "angels-liquid-molten-iron-pipe",
@@ -211,6 +218,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_name = { "", { "entity-name.pipe" }, " ", { "vgal-internal.casting-postfix" } },
+        can_set_quality = false,
     },
     {
         name = "angels-liquid-molten-steel-pipe-to-ground",

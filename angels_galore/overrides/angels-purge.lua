@@ -183,7 +183,7 @@ vgal.fluid.hide("angels-gas-formaldehyde")
 -- chloride variations
 data.raw.recipe["angels-liquid-glycerol"].ingredients = vgal.build.io({
     { "angels-gas-propene",    25 },
-    { "angels-water-purified", 100 },
+    { "angels-water-purified", 50 },
     { "angels-gas-chlorine",   50 },
 })
 data.raw.recipe["angels-liquid-glycerol"].results = vgal.build.io({

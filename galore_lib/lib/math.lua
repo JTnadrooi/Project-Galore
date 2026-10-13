@@ -93,8 +93,8 @@ function vgal.math.vanillize_number(number, number_type)
 
         if number < 50 then
             round_to = 5
-        elseif number < 100 then
-            round_to = 20
+        -- elseif number < 100 then
+        --     round_to = 20
         elseif number < 200 then
             round_to = 25
         elseif number < 400 then

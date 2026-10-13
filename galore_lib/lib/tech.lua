@@ -576,7 +576,7 @@ function vgal.tech.create_node(recipe_or_recipe_name, prerequisites, index, hidd
         tech_name,
         1,
         units,
-        #units * 5,
+        vgal.math.vanillize_number(#units * 5, "tech"),
         #units >= 4 and 30 or 15,
         prerequisites,
         "a",

@@ -65,7 +65,32 @@ vgal.extend({
         },
         category = "angels-liquifying",
 
-        groups = { "vgal-unsure" },
+        -- groups = { "vgal-unsure" },
+        allow_productivity = false,
+    },
+    {
+        name = "angels-liquid-propionic-acid-angels-gas-ethane",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "angels-liquid-propionic-acid" },
+            outputs = { "angels-gas-ethane" },
+            palette = "CHH",
+        }),
+        energy_required = 2,
+        technology = { "angels-bio-plastic-2", "angels-sodium-processing-1" },
+        ingredients = {
+            { "angels-liquid-propionic-acid",  50 },
+            { "angels-solid-sodium-hydroxide", 2 },
+        },
+        results = {
+            { "angels-gas-ethane",             50 },
+            { "angels-solid-sodium-carbonate", 1 },
+        },
+        category = "angels-liquifying",
+
+        -- groups = { "vgal-unsure" },
+        allow_productivity = false,
     },
     {
         name = "angels-gas-methanol-angels-gas-chlor-methane",

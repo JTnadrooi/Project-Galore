@@ -7,6 +7,10 @@ local function make_burnable(recipeable_name, fuel_value_megajoules)
     recipeable.fuel_categories = { "chemical" }
 end
 
+for _, nutrientable in pairs(vgal.defines.nutrientables) do
+    make_burnable(nutrientable.name, 0.2)
+end
+
 data.raw["item"]["angels-coal-crushed"].fuel_value = "2.5MJ"
 data.raw["item"]["angels-solid-coke"].fuel_value = "3.5MJ"
 data.raw["item"]["angels-pellet-coke"].fuel_value = "18MJ"

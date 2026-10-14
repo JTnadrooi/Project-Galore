@@ -63,10 +63,6 @@ vgal.extend({
     {
         name = "angels-solid-ammonium-nitrate-angels-liquid-fuel-oil-explosives",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("explosives"),
-            vgal.icon.get_in("angels-solid-ammonium-nitrate"),
-        }),
         energy_required = 8,
         technology = "angels-explosives-2",
         ingredients = {

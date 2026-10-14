@@ -824,7 +824,9 @@ do
 
     spage_fusion_recipe.ingredients = table.deepcopy(angels_fusion_recipe.ingredients)
     spage_fusion_recipe.energy_required = angels_fusion_recipe.energy_required
-    -- spage_fusion_recipe.categories = table.deepcopy(angels_fusion_recipe.categories)
+    vgal.recipe.replace_ingredient(spage_fusion_recipe, "steel-plate", "lithium-plate")
+    vgal.recipe.set_ingredient_amount(spage_fusion_recipe, 5, "lithium-plate")
+    spage_fusion_recipe.categories = table.deepcopy(angels_fusion_recipe.categories)
 
     vgal.recipe.hide_and_queue_for_tech_removal(angels_fusion_recipe)
 end

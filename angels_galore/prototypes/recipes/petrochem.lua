@@ -150,12 +150,14 @@ vgal.extend({
         energy_required = 2,
         technology = "angels-bio-fermentation",
         ingredients = {
-            { "angels-gas-ethanol", 50 },
-            { "angels-gas-oxygen",  20 },
+            { "angels-gas-ethanol",           70 },
+            { "angels-gas-oxygen",            30 },
+            { "angels-catalyst-metal-yellow", 1 },
         },
         results = {
-            { "angels-liquid-acetic-acid", 40 },
-            { "angels-water-purified",     20 },
+            { "angels-liquid-acetic-acid",     50 },
+            { "angels-catalyst-metal-carrier", 1 },
+            -- { "angels-water-purified",     20 },
         },
         category = "chemistry",
 

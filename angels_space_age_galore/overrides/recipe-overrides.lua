@@ -407,6 +407,8 @@ vgal.recipe.replace_result("vgal-metallic-asteroid-chunk-lava", "stone", "angels
 
 vgal.recipe.replace_result("vgal-spoilage-crude-oil", "crude-oil", "angels-liquid-multi-phase-oil")
 
+vgal.recipe.replace_category("vgal-lithium-plate-uranium-fuel-cell", "crafting", "centrifuging")
+
 -- simple coal liquifaction fixes
 do
     local simple_coal_cracking_recipe = data.raw["recipe"]["simple-coal-liquefaction"]

@@ -22,10 +22,6 @@ vgal.extend({
         type = "recipe",
         name = "depleted-uranium-fuel-cell-fusion-power-cell",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("fusion-power-cell"),
-            vgal.icon.get_in("depleted-uranium-fuel-cell"),
-        }),
         category = "cryogenics",
         energy_required = 20,
         technology = "fusion-reactor",
@@ -62,16 +58,11 @@ vgal.extend({
     {
         name = "fluorine-kovarex-enrichment-process",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            -- vgal.icon.get("kovarex-enrichment-process", "recipe"),
-            -- vgal.icon.get_overlay("plus"),
-            -- vgal.icon.get_placeholder(),
-            vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/fluorine-kovarex-enrichment-process.png"),
-        }),
+        icons = vgal.icon.get_from_path("__space_age_galore__/graphics/icons/recipe/fluorine-kovarex-enrichment-process.png"),
         energy_required = 30,
         technology = { "kovarex-enrichment-process", "cryogenic-plant" },
         ingredients = {
-            { "fluorine", 25 },
+            { "fluorine",    25 },
             { "uranium-235", 10 },
             { "uranium-238", 7 },
         },
@@ -86,20 +77,16 @@ vgal.extend({
     {
         name = "lithium-plate-uranium-fuel-cell",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("uranium-fuel-cell"),
-            vgal.icon.get_in("lithium-plate"),
-        }),
         technology = { "nuclear-power", "lithium-processing" },
         ingredients = {
-            { "lithium-plate", 1 },
+            { "lithium-plate", 5 },
             { "uranium-235",   1 },
             { "uranium-238",   9 },
         },
         results = {
-            { "uranium-fuel-cell", 10 },
+            { "uranium-fuel-cell", 15 },
         },
-        energy_required = 8,
+        energy_required = 10,
         category = "crafting",
     },
 }, {

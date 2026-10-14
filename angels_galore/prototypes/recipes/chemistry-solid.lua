@@ -1,5 +1,25 @@
 vgal.extend({
     {
+        name = "angels-gas-sulfur-dioxide-sulfur",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            inputs = { "angels-gas-sulfur-dioxide" },
+            outputs = { "sulfur" },
+        }),
+        energy_required = 1,
+        technology = "angels-sulfur-processing-2",
+        ingredients = {
+            { "angels-gas-hydrogen-sulfide", 20 }, -- 1sulf
+            { "angels-gas-sulfur-dioxide",   60 }, -- 1sulf
+        },
+        results = {
+            { "sulfur", 2 },
+        },
+        category = "chemistry",
+
+        allow_productivity = false,
+    },
+    {
         name = "angels-solid-sodium-chlorate-angels-solid-salt",
         prefix = "vgal",
         icons = vgal.icon.merge_composites({

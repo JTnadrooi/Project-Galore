@@ -266,6 +266,31 @@ vgal.extend({
         -- order = "b[O]-b"
     },
     {
+        name = "angels-gas-ethylene-angels-gas-ethanol",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style = "angels-gas",
+            inputs = { "steam" },
+            outputs = { "angels-gas-ethanol" },
+            palette = "COH",
+        }),
+        energy_required = 4,
+        technology = "angels-steam-cracking-1",
+        ingredients = {
+            { "angels-gas-ethylene", 80 },
+            { "steam",               80 },
+        },
+        results = {
+            { "angels-gas-ethanol",  60 },
+            { "angels-gas-residual", 20 },
+        },
+        category = "angels-steam-cracking",
+
+        allow_productivity = false,
+        -- subgroup = "vgal-COH-gas",
+        -- order = "a[steam-cracking]-ab"
+    },
+    {
         name = "angels-liquid-naphtha-angels-gas-propene-angels-gas-ethylene",
         prefix = "vgal",
         icons = vgal.icon.create({

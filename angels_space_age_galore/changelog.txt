@@ -1,4 +1,22 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+  Features:
+    - Added lithium plate nuclear recipes for Angel's fuel cells.
+    - Added "vgal-lithium-plate-low-density-structure"
+  Changes:
+    - Added nitric waste water as byproduct from most exposives recipes.
+    - Hid "vgal-pentapod-egg-bioflux-stone"
+    - Updated thumbail.
+    - Removed "vgal-water-low-pressure-boiling-steam"
+    - Made deuterium fuel cell craft in centrifuge.
+    - Replaced steel plate used for deuterium fuel cell with 5 lithium plates.
+  Bugfixes:
+    - Fixed "vgal-holmium-ore-angels-crystal-slurry" order and subgroup.
+    - Fixed unneeded Aquilo softlock.
+    - Fixed missing space-age crafting categories for recipes that should be able to use the new buildings.
+    - Fixed space vent item weight.
+    - Fixed lithium nuclear fuel cell crafting category.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.1
   Features:
     - Added fluorine processing technology.

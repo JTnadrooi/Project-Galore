@@ -1,4 +1,26 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.7
+  Features:
+    - Added "vgal-angels-liquid-propionic-acid-angels-gas-ethane"
+    - Added "vgal-angels-gas-sulfur-dioxide-sulfur"
+    - Added "vgal-angels-gas-ethylene-angels-gas-ethanol"
+  Changes:
+    - Made toluene and glycerol part of the main tech tree. (Instead of being isolated to explosives techs)
+    - Made thermal water extraction tech optional.
+    - Made tech unit counts round nicer.
+    - Removed subicon from toluene main recipe icon.
+    - Made asagal nutrientables burnable.
+    - Removed unsure tag from "vgal-angels-liquid-acetic-acid-angels-gas-methane"
+    - Overhauled "vgal-angels-gas-ethanol-angels-liquid-acetic-acid"
+    - [internal] Renamed "vgal-angels-gas-methane-angels-liquid-acetic-acid" to "vgal-angels-liquid-acetic-acid-angels-gas-methane"
+  Balancing:
+    - "vgal-angels-gas-methane-angels-liquid-acetic-acid" sodium hydroxide needed; 1 -> 2
+    - "angels-liquid-glycerol" hydrogen chloride yield; 100 -> 50
+    - "angels-liquid-glycerol" purified water needed; 100 -> 50
+    - Locked casting recipes that require sand as only item to normal quality.
+  Bugfixes:
+    - Fixed tier number still showing in washing plant locale. (Thanks Maltsi!)
+---------------------------------------------------------------------------------------------------
 Version: 1.3.6
   Features:
     - Added fluorine processing technology.

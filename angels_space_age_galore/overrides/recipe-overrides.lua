@@ -63,6 +63,7 @@ vgal.recipe.hide_and_queue_for_tech_removal("vgal-scrap-sulfuric-acid-holmium-so
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-sulfur-ammonia-nutrients")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-oxide-asteroid-chunk-ammoniacal-solution")
 vgal.recipe.hide_and_queue_for_tech_removal("vgal-depleted-uranium-fuel-cell-fusion-power-cell")
+vgal.recipe.hide_and_queue_for_tech_removal("vgal-pentapod-egg-bioflux-stone")
 
 -- vanilla trims
 -- bio stuff will be obtained through bioprocessing

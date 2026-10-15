@@ -70,7 +70,8 @@ vgal.extend({
             { "angels-liquid-fuel-oil",        20 }, -- 16
         },
         results = {
-            { "explosives", 4 }, -- 60
+            { "explosives",             4 }, -- 60
+            { "angels-water-red-waste", 20, { allow_productivity = false } },
         },
         category = "chemistry",
     },

@@ -976,3 +976,5 @@ vgal.tech.use_tech_locale("angels-strand-casting-1")
 vgal.tech.use_tech_locale("angels-sodium-processing-1")
 
 vgal.locale.clear(data.raw["recipe"]["angels-sintering-oven"])
+
+data.raw["item"]["angels-solid-sand"].localised_description = { "vgal-internal.not-a-quality-carrier" }

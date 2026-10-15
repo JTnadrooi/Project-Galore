@@ -103,23 +103,23 @@ local productivity_machines = {
 ---@type table<data.RecipeCategoryID, string>
 local productivity_categories = {}
 
--- make sure machines allow productivity.
-for _, machine_name in ipairs(productivity_machines) do
-    local machine = data.raw["assembling-machine"][machine_name] or data.raw["furnace"][machine_name]
-    if not machine then
-        error("Machine does not exist: " .. machine_name)
-    end
-    for i = 2, 6 do -- bc categories only get fixed in update subphase.
-        local max_tiered_machine = data.raw["assembling-machine"][machine_name .. "-" .. i] or
-            data.raw["furnace"][machine_name .. "-" .. i]
-        if max_tiered_machine then machine = max_tiered_machine end
-    end
-    local categories = machine.crafting_categories or {}
-    for _, category in ipairs(categories) do
-        productivity_categories[category] = machine_name
-    end
-    machine.allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" } -- might be a bit too hard-codey
-end
+-- -- make sure machines allow productivity.
+-- for _, machine_name in ipairs(productivity_machines) do
+--     local machine = data.raw["assembling-machine"][machine_name] or data.raw["furnace"][machine_name]
+--     if not machine then
+--         error("Machine does not exist: " .. machine_name)
+--     end
+--     for i = 2, 6 do -- bc categories only get fixed in update subphase.
+--         local max_tiered_machine = data.raw["assembling-machine"][machine_name .. "-" .. i] or
+--             data.raw["furnace"][machine_name .. "-" .. i]
+--         if max_tiered_machine then machine = max_tiered_machine end
+--     end
+--     local categories = machine.crafting_categories or {}
+--     for _, category in ipairs(categories) do
+--         productivity_categories[category] = machine_name
+--     end
+--     machine.allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" } -- might be a bit too hard-codey
+-- end
 
 for _, recipe in pairs(data.raw["recipe"]) do
     if vgal.recipe.has_any_category_in_category_map(recipe, productivity_categories) then

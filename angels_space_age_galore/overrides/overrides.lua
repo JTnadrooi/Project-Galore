@@ -140,8 +140,6 @@ do
     vent.icon = "__angels_space_age_galore__/graphics/icons/fluorine-vent.png"
 end
 
-data.raw["fluid"]["fluorine"].localised_description = settings.startup["angels-show-chemical-formula"].value and { "tooltip-description.chemical-formula", "F[font=default-tiny-bold]2[/font]" } or nil
-
 -- file ocean fluids
 data.raw.tile["oil-ocean-shallow"].fluid = "vgal-naphtha-sludge"
 data.raw.tile["oil-ocean-shallow-2"].fluid = "vgal-naphtha-sludge"

@@ -149,8 +149,7 @@ do
         -- add sand
         do
             -- molten metals are still using their vanilla variant here, they get replaced in final fixes though
-            local molten_metal_amount =
-                (vgal.recipe.get_ingredient_amount(recipe_name, "molten-iron") + vgal.recipe.get_ingredient_amount(recipe_name, "molten-copper"))
+            local molten_metal_amount = (vgal.recipe.get_ingredient_amount(recipe_name, "molten-iron") + vgal.recipe.get_ingredient_amount(recipe_name, "molten-copper"))
 
             local sand_amount = vgal.math.vanillize_number(molten_metal_amount / 60, "item")
             sand_amount = math.min(sand_amount, 10)
@@ -158,7 +157,20 @@ do
                 sand_amount = 2
             end
 
-            vgal.recipe.add_ingredient(recipe_name, { "angels-solid-sand", sand_amount })
+            local has_item_ingredient = false
+
+            for _, ingredient in ipairs(recipe.ingredients or {}) do
+                if ingredient.type == "item" then
+                    has_item_ingredient = true
+                    break
+                end
+            end
+
+            if not has_item_ingredient then
+                recipe.can_set_quality = false -- no sand quality cheese
+            end
+
+            vgal.recipe.add_ingredient(recipe, { "angels-solid-sand", sand_amount })
         end
 
         -- steel fixes

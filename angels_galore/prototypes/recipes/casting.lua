@@ -10,7 +10,7 @@ vgal.extend({
         energy_required = 2,
         technology = "angels-metallurgy-2",
         ingredients = {
-            { "angels-solid-sand",         1 },
+            { "angels-solid-sand",         1 }, -- ,  { quality_max = "normal" }
             { "angels-liquid-molten-iron", 100 },
         },
         results = {
@@ -20,6 +20,7 @@ vgal.extend({
 
         localised_name = { "", { "item-name.iron-gear-wheel" }, " ", { "vgal-internal.casting-postfix" } },
         can_set_quality = false,
+        -- allow_quality = true,
     },
     {
         name = "angels-liquid-molten-iron-iron-stick",

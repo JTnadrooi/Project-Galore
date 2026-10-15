@@ -221,6 +221,39 @@ do
     end
 end
 
+-- category fixes
+do
+    local function handle_plastic_recipe(recipe_name)
+        vgal.recipe.add_category(recipe_name, "cryogenics")
+        vgal.recipe.add_category(recipe_name, "organic")
+    end
+
+    vgal.recipe.add_category("angels-solid-sulfur", "cryogenics")
+    vgal.recipe.add_category("angels-solid-nitroglycerin", "cryogenics")
+    vgal.recipe.add_category("angels-solid-trinitrotoluene", "cryogenics")
+    vgal.recipe.add_category("vgal-angels-solid-ammonium-nitrate-angels-liquid-fuel-oil-explosives", "cryogenics")
+    vgal.recipe.add_category("vgal-angels-gas-sulfur-dioxide-sulfur", "cryogenics")
+
+    handle_plastic_recipe("vgal-angels-gas-propene-plastic-bar")
+    handle_plastic_recipe("vgal-angels-gas-propene-angels-gas-hydrogen-plastic-bar")
+    handle_plastic_recipe("vgal-angels-liquid-polyethylene-plastic-bar")
+    handle_plastic_recipe("vgal-angels-liquid-naphtha-plastic-bar")
+    handle_plastic_recipe("vgal-angels-gas-ethylene-angels-gas-chlorine-plastic-bar")
+    handle_plastic_recipe("vgal-angels-liquid-phenol-plastic-bar")
+    handle_plastic_recipe("vgal-angels-liquid-cellulose-acetate-mixture-plastic-bar")
+    handle_plastic_recipe("vgal-angels-liquid-acetic-acid-plastic-bar")
+    handle_plastic_recipe("vgal-angels-liquid-fermentation-raw-plastic-bar")
+    handle_plastic_recipe("vgal-angels-liquid-propionic-acid-plastic-bar")
+
+    vgal.recipe.add_category("rocket-fuel", "organic")
+    vgal.recipe.add_category("vgal-angels-gas-hydrogen-angels-gas-oxygen-rocket-fuel", "organic")
+    vgal.recipe.add_category("vgal-angels-solid-ammonium-perchlorate-rocket-fuel", "organic")
+
+    for _, biter in pairs(vgal.defines.angels_biters) do
+        vgal.recipe.add_category(biter.egg, "organic")
+    end
+end
+
 -- nutrient fixes
 -- all fauna recipes should use nutrients instead of nutrient pulp
 -- flora can stay using pulp, same goes for chem ofc

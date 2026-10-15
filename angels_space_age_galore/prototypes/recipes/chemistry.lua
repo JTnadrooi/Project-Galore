@@ -18,7 +18,7 @@ vgal.extend({
             { "steam",                       300, { temperature = 500 } },
             { "angels-solid-sodium-sulfate", 1,   { independent_probability = 0.25 } }
         },
-        category = "angels-liquifying",
+        categories = { "angels-liquifying", "cryogenics" },
 
         order = "c[acid-neutralisation]-b",
         subgroup = "vgal-water",

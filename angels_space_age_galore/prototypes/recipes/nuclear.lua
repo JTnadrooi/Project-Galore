@@ -21,7 +21,7 @@ vgal.extend({
         name = "lithium-plate-angels-mixed-oxide-cell",
         prefix = "vgal",
         energy_required = 80,
-        technology = { "nuclear-power", "lithium-processing" },
+        technology = { "kovarex-enrichment-process", "lithium-processing" },
         ingredients = {
             { "uranium-238",          15 },
             { "angels-plutonium-239", 2 },
@@ -39,7 +39,7 @@ vgal.extend({
         name = "lithium-plate-angels-thorium-fuel-cell",
         prefix = "vgal",
         energy_required = 500,
-        technology = { "nuclear-power", "lithium-processing" },
+        technology = { "angels-thorium-power", "lithium-processing" },
         ingredients = {
             { "angels-thorium-232",   17 },
             { "angels-plutonium-239", 8 },

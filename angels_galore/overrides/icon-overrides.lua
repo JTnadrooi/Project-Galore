@@ -148,10 +148,9 @@ data.raw.recipe["angels-liquid-toluene-from-benzene"].icons = vgal.icon.merge_co
     vgal.icon.get("angels-liquid-toluene"),
     vgal.icon.get_in("angels-gas-benzene"),
 })
--- data.raw.recipe["angels-liquid-toluene"].icons = vgal.icon.merge_composites({
---     vgal.icon.get("angels-liquid-toluene"),
---     vgal.icon.get_in("angels-liquid-naphtha"),
--- })
+
+data.raw.recipe["angels-liquid-toluene"].icons = nil
+data.raw.recipe["angels-liquid-toluene"].main_product = "angels-liquid-toluene"
 
 -- other
 data.raw.recipe["angels-garden-cultivating"].icons = vgal.icon.merge_composites({

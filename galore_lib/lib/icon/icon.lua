@@ -14,6 +14,7 @@ local angels_molecule_map = {
     ["angels-gas-ammonia"]              = { "__angelspetrochemgraphics__/graphics/icons/molecules/ammonia.png", 64 },
     ["angels-gas-nitrogen"]             = { "__angelspetrochemgraphics__/graphics/icons/molecules/nitrogen.png", 64 },
     ["angels-gas-hydrogen-fluoride"]    = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrofluoric-acid.png", 64 },
+    ["angels-gas-hydrogen-chloride"]    = { "__angelspetrochemgraphics__/graphics/icons/molecules/hydrogen-chloride.png", 64 },
     ["angels-gas-methanol"]             = { "__angelspetrochemgraphics__/graphics/icons/molecules/methanol.png", 64 },
     ["angels-gas-ethylene"]             = { "__angelspetrochemgraphics__/graphics/icons/molecules/ethylene.png", 72 },
     ["angels-gas-propene"]              = { "__angelspetrochemgraphics__/graphics/icons/molecules/propene.png", 72 },

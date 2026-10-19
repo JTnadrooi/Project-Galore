@@ -5,9 +5,7 @@ data:extend({
     {
         type = "technology",
         name = "vgal-puffer-atmosphere",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get_placeholder(),
-        }),
+        icons = angelsmods.functions.create_gas_tech_icon({ { 194, 227, 091 }, { 184, 239, 000 }, { 156, 207, 000 } }),
         effects =
         {
             {

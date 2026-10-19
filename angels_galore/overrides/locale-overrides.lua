@@ -906,6 +906,8 @@ end
 -- misc
 vgal.recipe.use_recipe_locale("angels-cellulose-fiber", true)
 
+vgal.recipe.use_recipe_locale("angels-coolant-cool-steam", true)
+
 data.raw["recipe"]["angels-solid-sulfur"].show_amount_in_title = true
 data.raw["recipe"]["angels-solid-sulfur"].localised_name = nil
 

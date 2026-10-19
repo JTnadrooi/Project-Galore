@@ -132,6 +132,31 @@ vgal.extend({
         allow_productivity = false,
         category = "angels-liquifying",
     },
+    {
+        name = "angels-liquid-coolant-steam-water",
+        prefix = "vgal",
+        icons = vgal.icon.create({
+            style   = "angels-liquid",
+            inputs  = { "steam", "angels-liquid-coolant" },
+            outputs = { "angels-water-purified" },
+            palette = "WsWsWs",
+        }),
+        energy_required = 0.5,
+        technology = "angels-coolant-1",
+        ingredients = {
+            { "steam",                 100 },
+            { "angels-liquid-coolant", 5 }
+        },
+        results = {
+            { "angels-water-purified",      100 },
+            { "angels-liquid-coolant-used", 5,  { temperature = 300 } },
+        },
+        category = "angels-cooling",
+
+        order = "ab",
+        subgroup = "angels-coolant",
+        allow_productivity = false,
+    },
 }, {
     type = "recipe",
 })

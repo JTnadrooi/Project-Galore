@@ -17,6 +17,7 @@ data.raw["recipe"]["angels-relay-station-3"].ingredients = vgal.build.io({
     { "angels-relay-station-2", 2 },
 })
 data.raw["recipe"]["angels-relay-station-3"].surface_conditions = vgal.get_surface_conditions_for("fulgora")
+data.raw["item"]["angels-relay-station-3"].default_import_location = "fulgora"
 vgal.recipe.replace_category("angels-relay-station-3", "crafting", "crafting-with-fluid")
 
 data.raw["recipe"]["angels-zone-expander-3"].ingredients = vgal.build.io({
@@ -26,6 +27,7 @@ data.raw["recipe"]["angels-zone-expander-3"].ingredients = vgal.build.io({
     { "angels-zone-expander-2", 2 },
 })
 data.raw["recipe"]["angels-zone-expander-3"].surface_conditions = vgal.get_surface_conditions_for("fulgora")
+data.raw["item"]["angels-zone-expander-3"].default_import_location = "fulgora"
 
 data.raw["recipe"]["angels-construction-zone-expander-3"].ingredients = vgal.build.io({
     { "superconductor",                      15 },
@@ -34,9 +36,11 @@ data.raw["recipe"]["angels-construction-zone-expander-3"].ingredients = vgal.bui
     { "angels-construction-zone-expander-2", 2 },
 })
 data.raw["recipe"]["angels-construction-zone-expander-3"].surface_conditions = vgal.get_surface_conditions_for("fulgora")
+data.raw["item"]["angels-construction-zone-expander-3"].default_import_location = "fulgora"
 
 vgal.recipe.add_ingredient("angels-cargo-hub", { "superconductor", 20 })
 data.raw["recipe"]["angels-cargo-hub"].surface_conditions = vgal.get_surface_conditions_for("fulgora")
+data.raw["item"]["angels-cargo-hub"].default_import_location = "fulgora"
 
 data.raw["recipe"]["angels-cargo-robot-2"].ingredients = vgal.build.io({
     { "superconductor",       1 },
@@ -46,6 +50,7 @@ data.raw["recipe"]["angels-cargo-robot-2"].ingredients = vgal.build.io({
     { "angels-cargo-robot",   1 },
 })
 data.raw["recipe"]["angels-cargo-robot-2"].surface_conditions = vgal.get_surface_conditions_for("fulgora")
+data.raw["item"]["angels-cargo-robot-2"].default_import_location = "fulgora"
 
 vgal.tech.move_recipe("angels-cargo-robots-2", "angels-cargo-robots-3", "angels-cargo-robot-2")
 

@@ -96,12 +96,13 @@ data.raw["assembling-machine"]["angels-air-filter"].surface_conditions = vgal.ge
 data.raw["furnace"]["angels-clarifier"].surface_conditions = vgal.get_surface_conditions_for("gravity")
 
 -- recipe surface_conditions fixes
-data.raw["recipe"]["angels-gas-compressed-air"].surface_conditions = vgal.get_surface_conditions_for("nauvis")
-
 data.raw["recipe"]["angels-pellet-press"].surface_conditions = vgal.get_surface_conditions_for("vulcanus")
+data.raw["item"]["angels-pellet-press"].default_import_location = "vulcanus"
 data.raw["recipe"]["angels-gas-refinery"].surface_conditions = vgal.get_surface_conditions_for("fulgora")
+data.raw["item"]["angels-gas-refinery"].default_import_location = "fulgora"
 for _, environment in pairs(vgal.defines.environments) do
     data.raw["recipe"][environment.farm].surface_conditions = vgal.get_surface_conditions_for("gleba")
+    data.raw["item"][environment.farm].default_import_location = "gleba"
 end
 
 data.raw["offshore-pump"]["angels-ground-water-pump"].surface_conditions = {

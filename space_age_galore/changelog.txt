@@ -1,4 +1,10 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.6.14
+  Changes:
+    - Slightly reworked "vgal-lithium-plate-uranium-fuel-cell"
+  Bugfixes:
+    - Fixed bioflux order.
+---------------------------------------------------------------------------------------------------
 Version: 1.6.13
   Features:
     - Improve maraxsis compat script.

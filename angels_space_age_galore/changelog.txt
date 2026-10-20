@@ -1,4 +1,19 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+  Features:
+    - Added puffer atm tech icon.
+  Changes:
+    - Made copper anode not craftable in foundry.
+    - Made "vgal-molten-copper-carbon-fiber-low-density-structure" not craftable in foundry.
+  Bugfixes:
+    - Fixed default imports for ASAGAL Angel's locked buildings still being Nauvis.
+    - Fixed holmium powder being locked behind what its used for.
+    - Fixed holmium and lithium missing the strandcasting prerequisite.
+    - Fixed ice melting allowing productivity.
+    - Fixed rocket fuel not being craftable in the cryogenic plant.
+    - Fixed "vgal-angels-liquid-acetic-acid-plastic-bar" showing up in biochamber ui.
+    - Fixed "vgal-lithium-plate-angels-thorium-fuel-cell" not being more "nuclear rock"-efficient than the default thorium-fuel-cell recipe.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.2
   Features:
     - Added lithium plate nuclear recipes for Angel's fuel cells.

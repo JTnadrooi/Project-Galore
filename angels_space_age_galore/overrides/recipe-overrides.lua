@@ -243,7 +243,7 @@ do
     handle_plastic_recipe("vgal-angels-gas-ethylene-angels-gas-chlorine-plastic-bar")
     handle_plastic_recipe("vgal-angels-liquid-phenol-plastic-bar")
     handle_plastic_recipe("vgal-angels-liquid-cellulose-acetate-mixture-plastic-bar")
-    handle_plastic_recipe("vgal-angels-liquid-acetic-acid-plastic-bar")
+    vgal.recipe.add_category("vgal-angels-liquid-acetic-acid-plastic-bar", "cryogenics")
     handle_plastic_recipe("vgal-angels-liquid-fermentation-raw-plastic-bar")
     handle_plastic_recipe("vgal-angels-liquid-propionic-acid-plastic-bar")
 
@@ -596,7 +596,7 @@ do
         palette = "WsWsWs",
     })
     ice_melting_recipe.allow_productivity = false
-    vgal.recipe.set_result_amount(ice_melting_recipe, 50)     -- og; 20
+    vgal.recipe.set_result_amount(ice_melting_recipe, 50) -- og; 20
 end
 
 -- ammonia separation fixes

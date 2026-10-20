@@ -1084,6 +1084,7 @@ data.raw["recipe"]["angels-catalyst-metal-carrier"].energy_required = 1
 
 -- blast chemistry fixes
 data.raw["recipe"]["angels-solid-lime"].categories = { "vgal-blast-chemistry" }
+data.raw["recipe"]["angels-anode-copper"].categories = { "vgal-blast-chemistry" }
 
 -- nerf coal cracking
 -- commetedbc; rember og OG:

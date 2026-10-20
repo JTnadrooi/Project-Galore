@@ -238,6 +238,7 @@ vgal.tech.add_prerequisite("angels-strand-casting-1", "angels-coolant-1")
 vgal.tech.add_prerequisite("angels-strand-casting-1", "angels-copper-smelting-1")
 vgal.tech.add_prerequisite("angels-strand-casting-1", "angels-iron-smelting-1")
 vgal.tech.add_prerequisite("angels-strand-casting-1", "angels-steel-smelting-1")
+vgal.tech.add_unit("angels-strand-casting-1", "chemical-science-pack")
 
 -- move coolant 2 filtering recipe to earlier (this removed coolant 2 tech as its empty now)
 vgal.tech.move_recipe("angels-coolant-2", "angels-coolant-1", "angels-coolant-used-filtration-2")

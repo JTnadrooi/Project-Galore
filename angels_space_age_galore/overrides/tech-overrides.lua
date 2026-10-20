@@ -82,6 +82,7 @@ vgal.tech.add_prerequisite("planet-discovery-fulgora", "angels-slag-processing-1
 vgal.tech.add_prerequisite("planet-discovery-gleba", "angels-slag-processing-2")
 vgal.tech.add_prerequisite("planet-discovery-aquilo", "angels-sulfur-processing-3")
 vgal.tech.add_prerequisite("planet-discovery-aquilo", "vgal-fluorine-processing-1")
+vgal.tech.add_prerequisite("planet-discovery-aquilo", "angels-strand-casting-1")
 
 vgal.tech.add_prerequisite("cryogenic-plant", "vgal-fluorine-processing-2")
 

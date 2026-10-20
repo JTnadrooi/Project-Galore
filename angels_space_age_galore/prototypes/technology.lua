@@ -59,6 +59,7 @@ data:extend({
             "vgal-holmium-smelting-1",
             "angels-ore-processing-1",
             "production-science-pack",
+            "angels-strand-casting-1",
         },
         effects = {},
         unit = {

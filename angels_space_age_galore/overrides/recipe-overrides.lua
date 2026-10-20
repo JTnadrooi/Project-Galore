@@ -89,6 +89,8 @@ vgal.recipe.hide_and_queue_for_tech_removal("angels-air-separation")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-compressed-air")
 vgal.fluid.hide("angels-gas-compressed-air")
 
+vgal.recipe.add_category("vgal-biological-science-pack", "organic")
+
 -- casting fixes
 do
     ---@param recipe data.RecipePrototype

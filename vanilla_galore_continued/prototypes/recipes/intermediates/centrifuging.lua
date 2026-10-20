@@ -47,7 +47,6 @@ for _, result in ipairs({
                 { result,  nil, { amount_min = 1, amount_max = 2 } }, -- 15
                 { "stone", 1,   { independent_probability = 0.2 } }   -- 2
             },
-            show_amount_in_title = false,
             crafting_machine_tint = vgal.defines.tints["black"],
             order = order,
             groups = { "vgal-renewable-ores" },
@@ -64,7 +63,7 @@ for _, result in ipairs({
             energy_required = 4,
             technology = { "uranium-processing", "electric-engine" },
             ingredients = {
-                { "water", 60 },
+                { "water",                60 },
                 { "electric-engine-unit", 1 }, -- 2
             },
             results = {
@@ -72,7 +71,6 @@ for _, result in ipairs({
                 { "stone",                1,   { independent_probability = 0.25 } }, -- 2.5
                 { "electric-engine-unit", 1,   { independent_probability = 0.98 } }, -- 0.02*180~=4
             },
-            show_amount_in_title = false,
             crafting_machine_tint = vgal.defines.tints["black"],
             order = order .. "b",
             groups = { "vgal-renewable-ores" },

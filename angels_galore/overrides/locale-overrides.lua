@@ -1,7 +1,7 @@
 for _, metal in pairs(vgal.defines.metals) do
     -- vgal.recipe.use_recipe_locale(metal.ingot)
-    vgal.recipe.use_recipe_locale(metal.ingot .. "-2", false) -- show amount in title gets faked
-    vgal.recipe.use_recipe_locale(metal.ingot .. "-3", false)
+    vgal.recipe.use_recipe_locale(metal.ingot .. "-2") -- show amount in title gets faked
+    vgal.recipe.use_recipe_locale(metal.ingot .. "-3")
 end
 
 ---@param catalyst string
@@ -904,14 +904,11 @@ for _, metal in pairs(vgal.defines.metals) do
 end
 
 -- misc
-vgal.recipe.use_recipe_locale("angels-cellulose-fiber", true)
+vgal.recipe.use_recipe_locale("angels-cellulose-fiber")
 
-vgal.recipe.use_recipe_locale("angels-coolant-cool-steam", true)
+vgal.recipe.use_recipe_locale("angels-coolant-cool-steam")
 
-data.raw["recipe"]["angels-solid-sulfur"].show_amount_in_title = true
 data.raw["recipe"]["angels-solid-sulfur"].localised_name = nil
-
-data.raw["recipe"]["angels-cellulose-fiber-raw-wood"].show_amount_in_title = true
 
 for _, metal in pairs(vgal.defines.metals) do
     for _, ore_state in ipairs(vgal.defines.ore_states) do

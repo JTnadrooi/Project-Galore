@@ -53,7 +53,6 @@ vgal.extend({
     --         { "uranium-238", 1, { independent_probability = 0.944 } },
     --     },
     --     category = "centrifuging",
-    --     show_amount_in_title = false,
     -- },
     {
         name = "fluorine-kovarex-enrichment-process",

@@ -56,7 +56,6 @@ vgal.extend({
     --     results = {
     --         { "calcite", 1 }, -- 10(vu), 115 import
     --     },
-    --     show_amount_in_title = false,
     -- },
     {
         type = "recipe",
@@ -138,7 +137,6 @@ vgal.extend({
     --         { "sulfur", 6 }, --
     --     },
     --     technology = "planet-discovery-fulgora",
-    --     show_amount_in_title = false,
     --     groups = { "vgal-convoluted" },
     -- },
     {
@@ -278,7 +276,6 @@ vgal.extend({
     --     results = {
     --         { "fluorine", 20 },
     --     },
-    --     show_amount_in_title = false,
     --     groups = { "vgal-unsure" },
     -- },
     -- {
@@ -302,7 +299,6 @@ vgal.extend({
     --     results = {
     --         { "tungsten-carbide", 5 },
     --     },
-    --     show_amount_in_title = false,
     --     groups = { "vgal-unsure" },
     -- },
     -- {
@@ -412,7 +408,6 @@ vgal.extend({
     --     results = {
     --         { "superconductor", 2 },
     --     },
-    --     show_amount_in_title = false,
     -- },
     {
         type = "recipe",

@@ -629,8 +629,7 @@ function vgal.recipe.get_localised_description_or_guess(recipe_or_recipe_name)
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype
----@param show_amount_in_title boolean?
-function vgal.recipe.use_recipe_locale(recipe_or_recipe_name, show_amount_in_title)
+function vgal.recipe.use_recipe_locale(recipe_or_recipe_name)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
     recipe.localised_name = { "?", { "recipe-name." .. recipe.name }, vgal.locale
@@ -639,10 +638,6 @@ function vgal.recipe.use_recipe_locale(recipe_or_recipe_name, show_amount_in_tit
     recipe.localised_description = { "?", { "recipe-description." .. recipe.name }, vgal.locale
         .get_backup_locale_for_recipeable(
             recipe.name, "description") }
-
-    if show_amount_in_title ~= nil then
-        recipe.show_amount_in_title = show_amount_in_title
-    end
 end
 
 ---@param raw_amount number

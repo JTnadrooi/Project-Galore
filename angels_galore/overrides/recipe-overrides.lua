@@ -704,9 +704,6 @@ data.raw["recipe"]["angels-nutrients-refining-1"].energy_required = 2
 data.raw["recipe"]["angels-nutrients-refining-2"].energy_required = 2
 data.raw["recipe"]["angels-nutrients-refining-3"].energy_required = 2
 
--- show_amount_in_title overrides (might move to locale overrides.lua)
-data.raw["recipe"]["angels-gas-methanol-from-wood"].show_amount_in_title = false
-
 -- misc balancing.
 data.raw["recipe"]["angels-ingot-copper-3"].energy_required = 3
 vgal.recipe.hide_and_queue_for_tech_removal("angels-solid-salt-from-saline") -- bc of productivity

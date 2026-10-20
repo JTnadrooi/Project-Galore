@@ -103,7 +103,6 @@ vgal.extend({
     --         -- { "angels-solid-limestone", 1,   { independent_probability = 0.25 } },
     --     },
     --     enabled = true,
-    --     show_amount_in_title = false,
     --     allow_productivity = false,
     --     category = "angels-manual-crafting",
     -- },

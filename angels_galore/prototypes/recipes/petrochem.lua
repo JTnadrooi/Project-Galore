@@ -363,7 +363,6 @@ vgal.extend({
     --     category = "chemistry",
 
     --     allow_productivity = false,
-    --     show_amount_in_title = false,
     --     groups = { "vgal-unsure" }
     -- },
     -- { -- commentedbc: syngas
@@ -412,7 +411,6 @@ vgal.extend({
     --     category = "angels-gas-refining",
 
     --     allow_productivity = false,
-    --     show_amount_in_title = false,
 
     --     subgroup = "vgal-bio-nutrient-chemistry",
     --     order = "d",

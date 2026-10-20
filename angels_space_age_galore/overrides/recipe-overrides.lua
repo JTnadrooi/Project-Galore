@@ -89,8 +89,6 @@ vgal.recipe.hide_and_queue_for_tech_removal("angels-air-separation")
 vgal.recipe.hide_and_queue_for_tech_removal("angels-gas-compressed-air")
 vgal.fluid.hide("angels-gas-compressed-air")
 
-vgal.recipe.add_category("vgal-biological-science-pack", "organic")
-
 -- casting fixes
 do
     ---@param recipe data.RecipePrototype
@@ -225,7 +223,7 @@ end
 
 -- category fixes
 do
-    local function handle_plastic_recipe(recipe_name)
+    local function make_organic_and_cryo(recipe_name)
         vgal.recipe.add_category(recipe_name, "cryogenics")
         vgal.recipe.add_category(recipe_name, "organic")
     end
@@ -236,24 +234,26 @@ do
     vgal.recipe.add_category("vgal-angels-solid-ammonium-nitrate-angels-liquid-fuel-oil-explosives", "cryogenics")
     vgal.recipe.add_category("vgal-angels-gas-sulfur-dioxide-sulfur", "cryogenics")
 
-    handle_plastic_recipe("vgal-angels-gas-propene-plastic-bar")
-    handle_plastic_recipe("vgal-angels-gas-propene-angels-gas-hydrogen-plastic-bar")
-    handle_plastic_recipe("vgal-angels-liquid-polyethylene-plastic-bar")
-    handle_plastic_recipe("vgal-angels-liquid-naphtha-plastic-bar")
-    handle_plastic_recipe("vgal-angels-gas-ethylene-angels-gas-chlorine-plastic-bar")
-    handle_plastic_recipe("vgal-angels-liquid-phenol-plastic-bar")
-    handle_plastic_recipe("vgal-angels-liquid-cellulose-acetate-mixture-plastic-bar")
+    make_organic_and_cryo("vgal-angels-gas-propene-plastic-bar")
+    make_organic_and_cryo("vgal-angels-gas-propene-angels-gas-hydrogen-plastic-bar")
+    make_organic_and_cryo("vgal-angels-liquid-polyethylene-plastic-bar")
+    make_organic_and_cryo("vgal-angels-liquid-naphtha-plastic-bar")
+    make_organic_and_cryo("vgal-angels-gas-ethylene-angels-gas-chlorine-plastic-bar")
+    make_organic_and_cryo("vgal-angels-liquid-phenol-plastic-bar")
+    make_organic_and_cryo("vgal-angels-liquid-cellulose-acetate-mixture-plastic-bar")
     vgal.recipe.add_category("vgal-angels-liquid-acetic-acid-plastic-bar", "cryogenics")
-    handle_plastic_recipe("vgal-angels-liquid-fermentation-raw-plastic-bar")
-    handle_plastic_recipe("vgal-angels-liquid-propionic-acid-plastic-bar")
+    make_organic_and_cryo("vgal-angels-liquid-fermentation-raw-plastic-bar")
+    make_organic_and_cryo("vgal-angels-liquid-propionic-acid-plastic-bar")
 
-    vgal.recipe.add_category("rocket-fuel", "organic")
-    vgal.recipe.add_category("vgal-angels-gas-hydrogen-angels-gas-oxygen-rocket-fuel", "organic")
-    vgal.recipe.add_category("vgal-angels-solid-ammonium-perchlorate-rocket-fuel", "organic")
+    make_organic_and_cryo("rocket-fuel")
+    make_organic_and_cryo("vgal-angels-gas-hydrogen-angels-gas-oxygen-rocket-fuel")
+    make_organic_and_cryo("vgal-angels-solid-ammonium-perchlorate-rocket-fuel")
 
     for _, biter in pairs(vgal.defines.angels_biters) do
         vgal.recipe.add_category(biter.egg, "organic")
     end
+
+    vgal.recipe.add_category("vgal-biological-science-pack", "organic")
 end
 
 -- nutrient fixes

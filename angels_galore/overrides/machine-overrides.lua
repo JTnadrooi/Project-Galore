@@ -164,43 +164,43 @@ do
     local baseline = { 0.2, 3 } -- from assembling machine 1
 
     local function fix_machine(machine)
-        -- fix machine mining speeds
-        if machine.minable then
-            local raw_value = baseline[1] * (vgal.entity.get_size(machine) / baseline[2])
+        if vgal.string.starts_with(machine.name, "angels") then
+            -- fix machine mining speeds
+            if machine.minable then
+                local raw_value = baseline[1] * (vgal.entity.get_size(machine) / baseline[2])
 
-            -- round to nearest multiple of 0.05
-            machine.minable.mining_time = math.floor(raw_value * 20 + 0.5) / 20
-        end
-
-        if machine.icon_draw_specification and machine.icon_draw_specification.scale and (machine.icon_draw_specification.scale > 1.2) then
-            machine.icon_draw_specification.scale = nil
-            machine.icon_draw_specification.shift = nil
-        end
-
-        if machine.allowed_effects then
-            if not vgal.table.contains(machine.allowed_effects, "productivity") then
-                table.insert(machine.allowed_effects, "productivity")
+                -- round to nearest multiple of 0.05
+                machine.minable.mining_time = math.floor(raw_value * 20 + 0.5) / 20
             end
-            if mods["quality"] then
-                if not vgal.table.contains(machine.allowed_effects, "quality") then
-                    table.insert(machine.allowed_effects, "quality")
-                end
-            end
-        else
+
+            -- if machine.allowed_effects then
+            --     if not vgal.table.contains(machine.allowed_effects, "productivity") then
+            --         table.insert(machine.allowed_effects, "productivity")
+            --     end
+            --     if mods["quality"] then
+            --         if not vgal.table.contains(machine.allowed_effects, "quality") then
+            --             table.insert(machine.allowed_effects, "quality")
+            --         end
+            --     end
+            -- else
+            --  machine.allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" }
+            -- end
             machine.allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" }
+        end
+
+        if machine.icon_draw_specification then
+            if machine.icon_draw_specification.scale and (machine.icon_draw_specification.scale > 1.2) then
+                machine.icon_draw_specification.scale = nil
+            end
+            machine.icon_draw_specification.shift = nil
         end
     end
 
     for _, machine in pairs(data.raw["assembling-machine"]) do
-        if vgal.string.starts_with(machine.name, "angels") then
-            fix_machine(machine)
-        end
+        fix_machine(machine)
     end
-
     for _, machine in pairs(data.raw["furnace"]) do
-        if vgal.string.starts_with(machine.name, "angels") then
-            fix_machine(machine)
-        end
+        fix_machine(machine)
     end
 end
 

@@ -595,7 +595,8 @@ do
         outputs = { "water" },
         palette = "WsWsWs",
     })
-    vgal.recipe.set_result_amount(ice_melting_recipe, 50) -- og; 20
+    ice_melting_recipe.allow_productivity = false
+    vgal.recipe.set_result_amount(ice_melting_recipe, 50)     -- og; 20
 end
 
 -- ammonia separation fixes

@@ -41,8 +41,8 @@ vgal.extend({
         energy_required = 500,
         technology = { "angels-thorium-power", "lithium-processing" },
         ingredients = {
-            { "angels-thorium-232",   17 },
-            { "angels-plutonium-239", 8 },
+            { "angels-thorium-232",   10 },
+            { "angels-plutonium-239", 5 },
             { "angels-curium-245",    1 },
             { "lithium-plate",        5 },
         },

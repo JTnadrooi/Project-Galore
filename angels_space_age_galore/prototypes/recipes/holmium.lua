@@ -72,7 +72,7 @@ vgal.extend({
         name = holmium.powder,
         domain = "vgal",
         energy_required = 0.5,
-        technology = "vgal-holmium-smelting-3",
+        technology = "vgal-holmium-smelting-1",
         ingredients = {
             { holmium.ingot, 1 },
         },

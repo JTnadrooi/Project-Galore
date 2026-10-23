@@ -233,6 +233,15 @@ function vgal.finalise()
     end
 end
 
+---@param message string
+function vgal.soft_error(message)
+    if vgal.defines.on_error_behavior == "stop" then
+        error(message)
+    else
+        vgal.log("Soft error (attempting continue): " .. message)
+    end
+end
+
 ---@param to_log number|string
 function vgal.log(to_log)
     if settings.startup["vgal-log"].value then

@@ -67,7 +67,7 @@ function vgal.tech.replace_recipe(tech_name, old_recipe, new_recipe)
     end
 
     if not replaced then
-        error("No effect with recipe: " .. old_recipe .. " found in technology: " .. tech_name)
+        vgal.soft_error("No effect with recipe: " .. old_recipe .. " found in technology: " .. tech_name)
     end
 end
 
@@ -101,8 +101,7 @@ function vgal.tech.remove_prerequisite(tech_name, prerequisite)
             return
         end
     end
-    error("Prerequisite '" .. prerequisite .. "' not found in " .. tech_name ..
-        ", prerequisites: " .. serpent.block(tech.prerequisites))
+    vgal.soft_error("Prerequisite '" .. prerequisite .. "' not found in " .. tech_name .. ", prerequisites: " .. serpent.block(tech.prerequisites))
 end
 
 ---Ensures a recipe is not in the effects of the technology.
@@ -229,7 +228,7 @@ function vgal.tech.move_recipe(tech_name_from, tech_name_to, recipe_name)
         end
     end
 
-    error(("Recipe %q is not unlocked by technology %q"):format(recipe_name, tech_name_from))
+    vgal.soft_error(("Recipe %q is not unlocked by technology %q"):format(recipe_name, tech_name_from))
 end
 
 ---@param tech_name (string)
@@ -366,7 +365,8 @@ function vgal.tech.set_unit_count(tech_name, unit_count)
     local tech = vgal.throw.if_tech_not_found(tech_name)
 
     if tech.research_trigger then
-        error("Cannot set unit count for trigger tech: " .. tech_name)
+        vgal.soft_error("Cannot set unit count for trigger tech: " .. tech_name)
+        return
     end
 
     for _, ingredient in ipairs(tech.unit.ingredients) do
@@ -619,6 +619,6 @@ function vgal.tech.replace_prerequisite(tech_name, old_prerequisite, new_prerequ
     end
 
     if not replaced then
-        error("No prerequisite with name: " .. old_prerequisite .. " found in technology: " .. tech_name)
+        vgal.soft_error("No prerequisite with name: " .. old_prerequisite .. " found in technology: " .. tech_name)
     end
 end

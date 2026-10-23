@@ -40,7 +40,8 @@ end
 ---@return data.Order
 function vgal.subgroup.order_from_number(number)
     if number > 26 then
-        error(number .. " is more than 26.")
+        vgal.soft_error(number .. " is more than 26.")
+        return "zzzz" -- gn
     end
     return string.sub("abcdefghijklmnopqrstuvwxyz", number, number)
 end

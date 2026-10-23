@@ -1,5 +1,5 @@
 -- error
-vgal.throw.error_if_missing_galore({ "angels_space_age_galore", "Angel's+Space Age Galore" }, { "space_age_galore", "Space Age Galore" }, true)
+vgal.throw.if_missing_galore({ "angels_space_age_galore", "Angel's+Space Age Galore" }, { "space_age_galore", "Space Age Galore" }, true)
 
 -- setup
 vgal.table.extend_single(vgal.tech.units, {

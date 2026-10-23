@@ -20,7 +20,8 @@ function vgal.math.get_normalized_amount(result)
     elseif result.amount_min and result.amount_max then
         amount = (result.amount_min + result.amount_max) / 2
     else
-        error("Invalid recipe result: " .. serpent.block(result))
+        vgal.soft_error("Invalid recipe result: " .. serpent.block(result))
+        return 1
     end
 
     if result.independent_probability then
@@ -93,8 +94,8 @@ function vgal.math.vanillize_number(number, number_type)
 
         if number < 50 then
             round_to = 5
-        -- elseif number < 100 then
-        --     round_to = 20
+            -- elseif number < 100 then
+            --     round_to = 20
         elseif number < 200 then
             round_to = 25
         elseif number < 400 then

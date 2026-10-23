@@ -44,7 +44,8 @@ function vgal.locale.bypass_max_locale_length(str)
     local num_chunks = math.ceil(#str / chunk_size)
 
     if num_chunks > max_concat_count then
-        error("String too long: requires " .. num_chunks .. " chunks, but maximum is " .. max_concat_count)
+        vgal.soft_error("String too long: requires " .. num_chunks .. " chunks, but maximum is " .. max_concat_count)
+        return { "vgal-internal.locale-limit-reached" }
     end
 
     local chunks = {}

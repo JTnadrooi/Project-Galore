@@ -410,7 +410,7 @@ function vgal.table.assign_keys_to_reference(target_table, keys, reference_table
                     target_table[key][ref_key] = ref_value
                 end
             else
-                error("Key " .. key .. " already in table.")
+                vgal.soft_error("Key " .. key .. " already in table.")
             end
         else
             target_table[key] = table.deepcopy(reference_table)

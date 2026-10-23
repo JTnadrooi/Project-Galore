@@ -14,7 +14,8 @@ function vgal.item.set_spoil_minutes(item_or_item_name, spoil_minutes, spoil_res
     local item = vgal.get_from_prototype_or_prototype_name(item_or_item_name, "recipeable-item")
 
     if spoil_minutes == 0 then
-        error("Invalid spoil_minutes: " .. spoil_minutes)
+        vgal.soft_error("Invalid spoil_minutes: " .. spoil_minutes)
+        return
     end
 
     item.spoil_ticks = spoil_minutes * 3600

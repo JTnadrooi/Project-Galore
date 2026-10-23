@@ -28,6 +28,16 @@ if mods["angels_space_age_galore"] then
     vgal.defines.flags["asagal"] = true
 end
 
+
+if vgal.defines.is_setting_phase then
+    ---@type "stop"|"continue"
+    vgal.defines.on_error_behavior = "stop"
+else
+    ---@type "stop"|"continue"
+    ---@diagnostic disable-next-line: assign-type-mismatch
+    vgal.defines.on_error_behavior = settings.startup["vgal-on-error"].value
+end
+
 vgal.defines.ignored_by_productivity_max = 65535
 
 ---@type table<string, vgal.Metal>

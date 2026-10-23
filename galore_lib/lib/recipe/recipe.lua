@@ -174,45 +174,6 @@ function vgal.recipe.smart_fix_stats(recipe_or_recipe_name)
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype
----@param result_name string
-function vgal.recipe.allow_productivity_for_result(recipe_or_recipe_name, result_name)
-    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
-
-    if not recipe.allow_productivity then
-        error("Recipe does not allow productivity.")
-    end
-
-    local found = false
-    for _, result in ipairs(recipe.results or {}) do
-        if result.name == result_name then
-            result.ignored_by_productivity = nil
-            found = true
-            break
-        end
-    end
-    if not found then
-        error("Recipe '" .. recipe.name .. "' does not have result '" .. result_name .. "'")
-    end
-end
-
----@param recipe_or_recipe_name string|data.RecipePrototype
----@param result_name string
-function vgal.recipe.disallow_productivity_for_result(recipe_or_recipe_name, result_name)
-    local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
-    local found = false
-    for _, result in ipairs(recipe.results or {}) do
-        if result.name == result_name then
-            result.ignored_by_productivity = vgal.defines.ignored_by_productivity_max
-            found = true
-            break
-        end
-    end
-    if not found then
-        error("Recipe '" .. recipe.name .. "' does not have result '" .. result_name .. "'")
-    end
-end
-
----@param recipe_or_recipe_name string|data.RecipePrototype
 function vgal.recipe.allow_productivity_for_all_results(recipe_or_recipe_name)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
 
@@ -271,7 +232,7 @@ function vgal.recipe.replace_ingredient(recipe_or_recipe_name, old_ingredient_na
         end
     end
     if (not no_throw) then
-        error("Ingredient '" .. old_ingredient_name .. "' not found in recipe '" .. recipe.name .. "', ingredients: " .. serpent.block(recipe.ingredients))
+        vgal.soft_error("Ingredient '" .. old_ingredient_name .. "' not found in recipe '" .. recipe.name .. "', ingredients: " .. serpent.block(recipe.ingredients))
     end
 end
 
@@ -287,7 +248,7 @@ function vgal.recipe.remove_ingredient(recipe_or_recipe_name, ingredient_name, n
         end
     end
     if (not no_throw) then
-        error("Ingredient '" .. ingredient_name .. "' not found in recipe '" .. recipe.name .. "', ingredients: " .. serpent.block(recipe.ingredients))
+        vgal.soft_error("Ingredient '" .. ingredient_name .. "' not found in recipe '" .. recipe.name .. "', ingredients: " .. serpent.block(recipe.ingredients))
     end
 end
 
@@ -309,9 +270,7 @@ function vgal.recipe.remove_result(recipe_or_recipe_name, result_name, no_throw)
         end
     end
     if (not no_throw) and (not found) then
-        error("Result '" ..
-            result_name ..
-            "' not found in recipe '" .. recipe.name .. "', results: " .. serpent.block(recipe.results))
+        vgal.soft_error("Result '" .. result_name .. "' not found in recipe '" .. recipe.name .. "', results: " .. serpent.block(recipe.results))
     end
 end
 
@@ -334,9 +293,7 @@ function vgal.recipe.replace_result(recipe_or_recipe_name, old_result_name, new_
         end
     end
     if (not no_throw) and (not found) then
-        error("Result '" ..
-            old_result_name ..
-            "' not found in recipe '" .. recipe.name .. "', results: " .. serpent.block(recipe.results))
+        vgal.soft_error("Result '" .. old_result_name .. "' not found in recipe '" .. recipe.name .. "', results: " .. serpent.block(recipe.results))
     end
 end
 
@@ -468,7 +425,8 @@ function vgal.recipe.get_main_product_amount(recipe_or_recipe_name, guess_main_p
     end
 
     if not main_product then
-        error("Recipe '" .. recipe.name .. "' does not have a main product.")
+        vgal.soft_error("Recipe '" .. recipe.name .. "' does not have a main product.")
+        return 0
     end
     return vgal.recipe.get_result_amount(recipe_or_recipe_name, main_product)
 end
@@ -486,11 +444,11 @@ function vgal.recipe.get_result_amount(recipe_or_recipe_name, result_name)
                 end
             end
         else
-            if #recipe.results ~= 1 then
-                error("Cannot get result count for recipe with multiple or no results.")
-            else
-                return vgal.math.get_normalized_amount(recipe.results[1])
+            local total = 0
+            for _, result in ipairs(recipe.results) do
+                total = total + vgal.math.get_normalized_amount(result)
             end
+            return total
         end
     end
     return 0
@@ -550,7 +508,7 @@ function vgal.recipe.set_result_amount(recipe_or_recipe_name, amount, result_nam
     end
 
     if result_name ~= nil and not found then
-        error("Result '" .. result_name .. "' not found in recipe '" .. recipe.name .. "'.")
+        vgal.soft_error("Result '" .. result_name .. "' not found in recipe '" .. recipe.name .. "'.")
     end
 end
 
@@ -573,7 +531,7 @@ function vgal.recipe.set_ingredient_amount(recipe_or_recipe_name, amount, ingred
     end
 
     if ingredient_name ~= nil and not found then -- I can't just add bc I need to know the type and im not guessing that.
-        error("Ingredient '" .. ingredient_name .. "' not found in recipe '" .. recipe.name .. "'.")
+        vgal.soft_error("Ingredient '" .. ingredient_name .. "' not found in recipe '" .. recipe.name .. "'.")
     end
 end
 
@@ -602,13 +560,14 @@ function vgal.recipe.get_crafting_machine_tint_or_guess(recipe_or_recipe_name)
 end
 
 ---@param recipe_or_recipe_name string|data.RecipePrototype
+---@return string
 function vgal.recipe.get_main_product_or_guess(recipe_or_recipe_name)
     local recipe = vgal.get_from_prototype_or_prototype_name(recipe_or_recipe_name, "recipe")
     if recipe.main_product then
         return recipe.main_product
     end
     if recipe.results and (#recipe.results > 0) then
-        return recipe.results[1].name or recipe.results[1][1] or error("Invalid recipe results for recipe " .. recipe.name .. ", see: " .. serpent.block(recipe.results[1]))
+        return recipe.results[1].name or error("Invalid recipe results for recipe " .. recipe.name .. ", see: " .. serpent.block(recipe.results[1]))
     end
     error("Could not get preferred main product for: " .. recipe.name)
 end
@@ -739,8 +698,11 @@ function vgal.recipe.get_category_map_for(machine_names)
     local result_map = {}
 
     for _, machine_name in ipairs(machine_names) do
-        local machine = data.raw["assembling-machine"][machine_name] or data.raw["furnace"][machine_name] or
-            error("Machine not found with name " .. machine_name)
+        local machine = data.raw["assembling-machine"][machine_name] or data.raw["furnace"][machine_name]
+        if not machine then
+            vgal.soft_error("Machine not found with name " .. machine_name)
+            return {}
+        end
 
         for _, category_name in ipairs(machine.crafting_categories or {}) do
             result_map[category_name] = machine_name

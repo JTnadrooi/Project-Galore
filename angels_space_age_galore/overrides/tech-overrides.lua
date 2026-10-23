@@ -1,6 +1,8 @@
 -- need water for steam for carbon
 vgal.tech.move_recipe("space-platform-thruster", "space-platform", "ice-melting")
 
+vgal.tech.add_ingredient("kovarex-enrichment-process", "production-science-pack")
+
 -- PLANET LOCKING
 -- vulcanus
 vgal.tech.add_prerequisite("angels-ore-processing-2", "metallurgic-science-pack")

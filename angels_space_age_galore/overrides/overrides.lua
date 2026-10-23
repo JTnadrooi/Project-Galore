@@ -8,8 +8,7 @@ do
     -- why? so I can use the base angels galore casting recipes without adding new slower ones (that would be as fast as the game) and/or make the casting machine speeds weird
     -- 4 is way to fast anyways....
     -- (its a few percent faster overall anyway)
-    foundry.crafting_speed = 2 -- og; 4
-    local anim = foundry.graphics_set.animation
+    foundry.crafting_speed = 2 -- og; 4\
 
     for _, direction in pairs({ "north", "east", "south", "west" }) do
         if foundry.graphics_set.animation[direction] then
@@ -184,4 +183,10 @@ do
     -- spage_fusion_item.weight = vgal.item.get_weight_from_rocket_capacity(20)
 
     vgal.item.hide(angels_fusion_item)
+end
+
+for _, environment in pairs(vgal.defines.environments) do
+    data.raw["assembling-machine"][environment.farm].effect_receiver = {
+        base_effect = { productivity = 0.5 },
+    }
 end

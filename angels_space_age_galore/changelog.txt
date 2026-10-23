@@ -1,10 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+  Changes:
+    - Made atm separation recipes possible in a cryogenic plant.
+    - Added 50% base productivity to environment-specific farms.
+  Bugfixes:
+    - Fixed plutonium power tech ingredients.
+---------------------------------------------------------------------------------------------------
 Version: 1.0.3
   Features:
     - Added puffer atm tech icon.
   Changes:
-    - Made copper anode not craftable in foundry.
-    - Made "vgal-molten-copper-carbon-fiber-low-density-structure" not craftable in foundry.
+    - Made copper anode not craftable in a foundry.
+    - Made "vgal-molten-copper-carbon-fiber-low-density-structure" not craftable in a foundry.
   Bugfixes:
     - Fixed default imports for ASAGAL Angel's locked buildings still being Nauvis.
     - Fixed holmium powder being locked behind what its used for.

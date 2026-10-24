@@ -2,11 +2,11 @@
 
 ![Galore Overview](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/overview-compact-horizontal.png?raw=true?raw=true)
 
-**SPACE AGE-LESS VERSION [HERE](https://mods.factorio.com/mod/angels_galore)**
+**SPACE AGE-LESS GALORE [HERE](https://mods.factorio.com/mod/angels_galore)**
 
 ## What To Expect
 
-Expect a complete overhaul of (bio-)chemistry, ore processing and metallurgy as inherited from Angel's mods, with their scope expanded to include Space Age. This is built on a modified version of Angel's Special Vanilla (as established in Angel's Galore). This allows for near-perfect integration into Space Age, but does not include the eight extra metals (which, without Bob's mods, would only be used for crafting buildings).
+A complete overhaul of (bio-)chemistry, ore processing and metallurgy as inherited from Angel's mods, with their scope expanded to include Space Age. This is built on a modified version of Angel's Special Vanilla (as established in Angel's Galore). This allows for near-perfect integration into Space Age, but does not include the eight extra metals (which, without Bob's mods, would only be used for crafting buildings).
 
 The inclusion of the entire Galore suite makes this probably _the_ "mod with the most ways to do something." Lots of choices will need to be made, all differing per save, so replay value is major. You could, for example, go full bioprocessing, or maybe have a metal-heavy base with a focus on maximum-efficiency metallurgy. This being a proper overhaul mod, I have been able to make the alternate production paths even more in-depth than I ever could in Vanilla Galore or Space Age Galore.
 

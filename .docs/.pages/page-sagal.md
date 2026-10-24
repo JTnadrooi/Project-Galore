@@ -1,12 +1,20 @@
 # Space Age Galore
 
+![Galore Overview](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/overview-compact-horizontal.png?raw=true?raw=true)
+
+**SPACE AGE-LESS GALORE [HERE](https://mods.factorio.com/mod/vanilla_galore_continued)**
+
+**ANGEL'S GALORE [HERE](https://mods.factorio.com/mod/angels_galore)**
+
+**ANGEL'S+SPACE AGE GALORE [HERE](https://mods.factorio.com/mod/angels_space_age_galore)**
+
+## What To Expect
+
 A large recipe pack that adds over 90 new recipes to the 110 already present in [Vanilla Galore](https://mods.factorio.com/mod/vanilla_galore_continued). This mod doesn't add new items, fluids, or buildings and can be safely added to a save at any time without causing issues.
 
 ![gleba](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/gleba_galore.png?raw=true)
 
 **MOD SPOTLIGHT [HERE](https://www.youtube.com/watch?v=xpqJSHA4Q5A&lc=Ugw0CpAURsOiowPeeEx4AaABAg)**
-
-**(NEW) ANGEL'S GALORE [HERE](https://mods.factorio.com/mod/angels_galore)**
 
 ## This mod is for you if...
 

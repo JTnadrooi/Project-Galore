@@ -1,6 +1,12 @@
 # Angel's Galore
 
-A large recipe pack for Angel's Mods (Full+Special vanilla). Also contains a collection of tweaks to bring more focus to open-ended production and alternate recipes.
+![Galore Overview](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/overview-compact-horizontal.png?raw=true?raw=true)
+
+**SPACE AGE SUPPORT [HERE](https://mods.factorio.com/mod/angels_space_age_galore)**
+
+## What To Expect
+
+A large recipe pack for Angel's Mods (Full+Special vanilla). Also contains a collection of tweaks to bring more focus to open-ended production and alternate recipes with overal improvements to the Angel's special vanilla experience.
 
 ## This mod is for you if...
 

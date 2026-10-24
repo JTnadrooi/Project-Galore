@@ -1,10 +1,16 @@
 # Vanilla Galore
 
-Adds **over 110** unique, well-balanced recipes to the base game, with the option to disable specific ones if desired. Vanilla Galore doesn't add any items, fluids, or buildings.
-
-**(NEW) ANGEL'S GALORE [HERE](https://mods.factorio.com/mod/angels_galore)**
+![Galore Overview](https://github.com/JTnadrooi/Project-Galore/blob/main/.media/overview-compact-horizontal.png?raw=true?raw=true)
 
 **SPACE AGE SUPPORT [HERE](https://mods.factorio.com/mod/space_age_galore)**
+
+**ANGEL'S GALORE [HERE](https://mods.factorio.com/mod/angels_galore)**
+
+**ANGEL'S+SPACE AGE GALORE [HERE](https://mods.factorio.com/mod/angels_space_age_galore)**
+
+## What To Expect
+
+A large recipe pack that adds many unique and well-balanced recipes to the base game, with the option to disable specific ones if desired. This mod doesn't add new items, fluids, or buildings and can be safely added to a save at any time without causing issues.
 
 **MOD SPOTLIGHT [HERE](https://www.youtube.com/watch?v=xpqJSHA4Q5A)**
 

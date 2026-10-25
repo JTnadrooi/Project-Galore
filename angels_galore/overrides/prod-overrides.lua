@@ -26,6 +26,8 @@ vgal.recipe.add_catalyst_group({
     "angels-catalyst-metal-carrier",
     "angels-catalyst-metal-blue",
     "angels-catalyst-metal-yellow",
+    "angels-catalyst-metal-red",
+    "angels-catalyst-metal-green",
 })
 vgal.recipe.add_catalyst_group({
     "angels-liquid-fish-atmosphere",

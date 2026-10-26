@@ -102,3 +102,6 @@ do
     map_settings.enemy_evolution.enabled = true
     map_settings.enemy_expansion.enabled = true
 end
+
+data.raw["item"]["chemical-plant"].stack_size = 20
+data.raw["item"]["angels-liquifier"].stack_size = 20

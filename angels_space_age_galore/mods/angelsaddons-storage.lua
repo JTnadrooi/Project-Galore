@@ -21,3 +21,8 @@ data.raw["storage-tank"]["angels-storage-tank-1"].heating_energy = "200kW"
 data.raw["storage-tank"]["angels-storage-tank-2"].heating_energy = "100kW"
 data.raw["storage-tank"]["angels-storage-tank-3"].heating_energy = "50kW"
 data.raw["storage-tank"]["angels-pressure-tank-1"].heating_energy = "250kW"
+
+vgal.item.set_rocket_capacity("angels-pressure-tank-1", 5)
+vgal.item.set_rocket_capacity("angels-storage-tank-1", 10)
+vgal.item.set_rocket_capacity("angels-storage-tank-2", 20)
+vgal.item.set_rocket_capacity("angels-storage-tank-3", 50)

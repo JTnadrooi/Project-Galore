@@ -1,6 +1,6 @@
 vgal.extend({
     {
-        name = "vgal-molten-lithium-low-density-structure",
+        name = "molten-lithium-low-density-structure",
         prefix = "vgal",
         -- icons = vgal.icon.create({
         --     inputs = {}

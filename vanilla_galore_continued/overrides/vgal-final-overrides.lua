@@ -96,6 +96,10 @@ if mods["quality"] then
             upgrade_recipes["vgal-holmium-plate-electronic-circuit"] = true
         end
 
+        if vgal.defines.flags["asagal"] then
+            upgrade_recipes["vgal-molten-lithium-low-density-structure"] = true
+        end
+
         local q_recipe_map = {}
 
         for _, recipe in vgal.domain_pairs("vgal", "recipe") do

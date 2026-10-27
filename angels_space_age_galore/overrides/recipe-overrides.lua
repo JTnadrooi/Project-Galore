@@ -390,16 +390,16 @@ do
 
     -- carbon fiber
     -- make only craftable on gleba
-    data.raw["recipe"]["carbon-fiber"].surface_conditions = {
-        {
-            property = "pressure",
-            min = 2000,
-            max = 2000,
-        },
-    }
+    -- data.raw["recipe"]["carbon-fiber"].surface_conditions = {
+    --     {
+    --         property = "pressure",
+    --         min = 2000,
+    --         max = 2000,
+    --     },
+    -- }
     data.raw["recipe"]["carbon-fiber"].ingredients = vgal.build.io({
         { "angels-solid-carbon",    1 },
-        { "angels-cellulose-fiber", 10 },
+        { "angels-cellulose-fiber", 5 },
         { "yumako-mash",            5 },
     })
 end

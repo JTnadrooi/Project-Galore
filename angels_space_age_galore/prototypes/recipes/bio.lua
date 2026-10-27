@@ -105,6 +105,23 @@ vgal.extend({
         },
         category = "angels-bio-pressing",
     },
+    {
+        name = "yumako-mash-angels-cellulose-fiber",
+        prefix = "vgal",
+        icons = vgal.icon.merge_composites({
+            vgal.icon.get("angels-cellulose-fiber"),
+            vgal.icon.get_in("yumako-mash"),
+        }),
+        energy_required = 1,
+        technology = "yumako",
+        ingredients = {
+            { "yumako-mash", 2 },
+        },
+        results = {
+            { "angels-cellulose-fiber", 3 },
+        },
+        category = "crafting",
+    },
 }, {
     type = "recipe",
 })

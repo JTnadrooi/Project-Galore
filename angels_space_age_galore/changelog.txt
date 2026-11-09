@@ -1,4 +1,16 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+  Features:
+    - Added "vgal-yumako-mash-angels-cellulose-fiber"
+  Changes:
+    - Removed carbon fiber surface conditions.
+    - Made casting locale more inline with space age.
+    - "carbon-fiber" cellulose fiber needed; 10 -> 5
+    - [internal] Renamed "vgal-vgal-molten-lithium-low-density-structure" to "vgal-molten-lithium-low-density-structure"
+  Bugfixes:
+    - [STORAGEADDON] Fixed missing rocket capacities for storage tanks.
+    - Added missing quality upgrade for "vgal-molten-lithium-low-density-structure"
+---------------------------------------------------------------------------------------------------
 Version: 1.0.4
   Changes:
     - Made atm separation recipes possible in a cryogenic plant.

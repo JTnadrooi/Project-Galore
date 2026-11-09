@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.4.12
+  Changes:
+    - "vgal-steel-plate-pipe" duration; 2 -> 5
+    - Made minor changes to alternative belts recipes to make the ingredients amounts more vanilla-like.
+  Bugfixes:
+    - Fixed AAI causing some galore recipes to only be craftable in a burner assembler. (Thanks DollarDrow!)
+---------------------------------------------------------------------------------------------------
 Version: 1.4.11
   Features:
     - Updated for Galorelib 2.6.0

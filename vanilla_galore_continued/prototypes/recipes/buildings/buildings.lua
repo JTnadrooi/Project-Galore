@@ -486,11 +486,7 @@ vgal.extend({
     {
         name = "steel-plate-pipe",
         prefix = "vgal",
-        icons = vgal.icon.merge_composites({
-            vgal.icon.get("pipe"),
-            vgal.icon.get_in("steel-plate"),
-        }),
-        energy_required = 2,
+        energy_required = 5,
         technology = "steel-processing",
         ingredients = {
             { "steel-plate", 1 },

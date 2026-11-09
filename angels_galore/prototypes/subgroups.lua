@@ -610,7 +610,6 @@ local subgroups = {
         },
         cleaning_entries = {
             "angels-filter-ceramic-refurbish",
-            "angels-filter-lime-used-cleaning",
         },
         should_reorder_entries = true,
     },

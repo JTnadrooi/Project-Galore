@@ -32,7 +32,8 @@
         "(?) angelspetrochem",
         "(?) angelsrefining",
         "(?) angelssmelting",
-        "(?) angelsbioprocessing"
+        "(?) angelsbioprocessing",
+        "(?) aai-industry"
     ],
     "description": "Adds 110+ unique and balanced alternate recipes to VANILLA!"
 }

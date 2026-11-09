@@ -249,6 +249,7 @@ vgal.recipe.allow_productivity_for_all_results("angels-oil-separation")
 -- disallow prod collection
 data.raw["recipe"]["angels-solid-salt-dissolving"].allow_productivity = false
 data.raw["recipe"]["angels-solid-salt"].allow_productivity = false
+data.raw["recipe"]["angels-solid-lime"].allow_productivity = false
 data.raw["recipe"]["angels-water-saline-from-water"].allow_productivity = false
 data.raw["recipe"]["angels-concrete-brick"].allow_productivity = false
 data.raw["recipe"]["angels-clay-brick"].allow_productivity = false

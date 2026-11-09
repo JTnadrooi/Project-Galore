@@ -18,8 +18,8 @@ vgal.extend({
         },
         category = "angels-casting",
 
-        localised_name = { "", { "item-name.iron-gear-wheel" }, " ", { "vgal-internal.casting-postfix" } },
         can_set_quality = false,
+        localised_name = { "?", { "recipe-name.casting-iron-gear-wheel" }, { "recipe-name.vgal-angels-liquid-molten-iron-iron-gear-wheel" } }
         -- allow_quality = true,
     },
     {
@@ -40,8 +40,8 @@ vgal.extend({
         },
         category = "angels-casting",
 
-        localised_name = { "", { "item-name.iron-stick" }, " ", { "vgal-internal.casting-postfix" } },
         can_set_quality = false,
+        localised_name = { "?", { "recipe-name.casting-iron-stick" }, { "recipe-name.vgal-angels-liquid-molten-iron-iron-stick" } }
     },
     {
         name = "angels-liquid-molten-copper-copper-cable",
@@ -61,8 +61,8 @@ vgal.extend({
         },
         category = "angels-casting",
 
-        localised_name = { "", { "item-name.copper-cable" }, " ", { "vgal-internal.casting-postfix" } },
         can_set_quality = false,
+        localised_name = { "?", { "recipe-name.casting-copper-cable" }, { "recipe-name.vgal-angels-liquid-molten-copper-copper-cable" } }
     },
 
     -- recipe items
@@ -86,7 +86,6 @@ vgal.extend({
         category = "angels-casting",
 
         localised_description = { "vgal-internal.insert-casting-recipe-desc" },
-        localised_name = { "", { "item-name.angels-filter-frame" }, " ", { "vgal-internal.casting-postfix" } },
     },
     {
         name = "angels-liquid-molten-iron-angels-solid-saw",
@@ -107,7 +106,6 @@ vgal.extend({
         order = "aab",
         category = "angels-casting",
 
-        localised_name = { "", { "item-name.angels-solid-saw" }, " ", { "vgal-internal.casting-postfix" } },
         can_set_quality = false,
     },
     {
@@ -129,7 +127,6 @@ vgal.extend({
         order = "abb",
         category = "angels-casting",
 
-        localised_name = { "", { "item-name.angels-solid-saw" }, " ", { "vgal-internal.casting-postfix" } },
         can_set_quality = false,
     },
     {
@@ -150,8 +147,8 @@ vgal.extend({
         },
         category = "angels-casting",
 
-        localised_name = { "", { "item-name.barrel" }, " ", { "vgal-internal.casting-postfix" } },
         can_set_quality = false,
+        -- localised_name = { "?", { "casting-barrel" }, { "vgal-angels-liquid-molten-steel-barrel" } }
     },
 
     -- placeables/buildings
@@ -175,7 +172,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_description = { "vgal-internal.insert-casting-recipe-desc" },
-        localised_name = { "", { "entity-name.burner-inserter" }, " ", { "vgal-internal.casting-postfix" } },
+        -- localised_name = { "?", { "casting-burner-inserter" }, { "vgal-angels-liquid-molten-iron-burner-inserter" } }
     },
     {
         name = "angels-liquid-molten-steel-pipe",
@@ -196,8 +193,8 @@ vgal.extend({
         order = "a[pipe]-a[pipe]-bb",
         category = "angels-casting",
 
-        localised_name = { "", { "entity-name.pipe" }, " ", { "vgal-internal.casting-postfix" } },
         can_set_quality = false,
+        localised_name = { "?", { "recipe-name.casting-pipe" }, { "recipe-name.vgal-angels-liquid-molten-steel-pipe" } }
     },
     {
         name = "angels-liquid-molten-iron-pipe",
@@ -218,8 +215,8 @@ vgal.extend({
         order = "a[pipe]-a[pipe]-ab",
         category = "angels-casting",
 
-        localised_name = { "", { "entity-name.pipe" }, " ", { "vgal-internal.casting-postfix" } },
         can_set_quality = false,
+        localised_name = { "?", { "recipe-name.casting-pipe" }, { "recipe-name.vgal-angels-liquid-molten-iron-pipe" } }
     },
     {
         name = "angels-liquid-molten-steel-pipe-to-ground",
@@ -242,7 +239,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_description = { "vgal-internal.insert-casting-recipe-desc" },
-        localised_name = { "", { "entity-name.pipe-to-ground" }, " ", { "vgal-internal.casting-postfix" } },
+        localised_name = { "?", { "recipe-name.casting-pipe-to-ground" }, { "recipe-name.vgal-angels-liquid-molten-steel-pipe-to-ground" } }
     },
     {
         name = "angels-liquid-molten-iron-pipe-to-ground",
@@ -265,7 +262,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_description = { "vgal-internal.insert-casting-recipe-desc" },
-        localised_name = { "", { "entity-name.pipe-to-ground" }, " ", { "vgal-internal.casting-postfix" } },
+        localised_name = { "?", { "recipe-name.casting-pipe-to-ground" }, { "recipe-name.vgal-angels-liquid-molten-iron-pipe-to-ground" } }
     },
     {
         name = "angels-liquid-molten-steel-angels-liquid-molten-copper-heat-pipe",
@@ -287,7 +284,7 @@ vgal.extend({
         category = "angels-casting",
 
         localised_description = { "vgal-internal.insert-casting-recipe-desc" },
-        localised_name = { "", { "entity-name.heat-pipe" }, " ", { "vgal-internal.casting-postfix" } },
+        localised_name = { "?", { "recipe-name.vgal-tungsten-carbide-heat-pipe" }, { "recipe-name.vgal-angels-liquid-molten-steel-angels-liquid-molten-copper-heat-pipe" } }
     },
 }, {
     type = "recipe",

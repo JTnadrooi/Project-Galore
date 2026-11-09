@@ -19,7 +19,6 @@ vgal.extend({
         },
         category = "angels-casting",
 
-        localised_name = { "", { "item-name.angels-catalyst-metal-carrier" }, " ", { "vgal-internal.casting-postfix" } },
         can_set_quality = false,
     },
     {

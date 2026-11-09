@@ -18,7 +18,7 @@ vgal.extend({
         },
         category = "metallurgy",
 
-        localised_name = { "", { "item-name.low-density-structure" }, " ", { "vgal-internal.casting-postfix" } },
+        localised_name = { "recipe-name.casting-low-density-structure" },
         -- allow_quality = true,
         order = "d[lds]-cb"
     },

@@ -20,7 +20,6 @@ vgal.extend({
         category = "angels-casting",
 
         localised_description = { "vgal-internal.insert-casting-recipe-desc" },
-        localised_name = { "", { "item-name.low-density-structure" }, " ", { "vgal-internal.casting-postfix" } },
     },
     {
         name = "angels-liquid-molten-steel-engine-unit",
@@ -43,7 +42,6 @@ vgal.extend({
         category = "angels-casting",
 
         localised_description = { "vgal-internal.insert-casting-recipe-desc" },
-        localised_name = { "", { "item-name.engine-unit" }, " ", { "vgal-internal.casting-postfix" } },
     },
     {
         name = "angels-solid-sodium-chlorate-angels-liquid-hydrochloric-acid-angels-solid-salt",

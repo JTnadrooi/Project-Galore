@@ -202,6 +202,11 @@ do
     for _, machine in pairs(data.raw["furnace"]) do
         fix_machine(machine)
     end
+
+    fix_machine(data.raw["assembling-machine"]["chemical-plant"])
+    data.raw["assembling-machine"]["chemical-plant"].allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" }
+    fix_machine(data.raw["assembling-machine"]["oil-refinery"])
+    data.raw["assembling-machine"]["oil-refinery"].allowed_effects = { "speed", "productivity", "consumption", "pollution", "quality" }
 end
 
 table.insert(data.raw["assembling-machine"]["angels-blast-furnace"].crafting_categories, "vgal-blast-chemistry")

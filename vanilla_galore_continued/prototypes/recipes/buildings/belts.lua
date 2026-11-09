@@ -106,7 +106,7 @@ vgal.extend({
             { "plastic-bar",         10 }, -- 150
             { "iron-gear-wheel",     2 },  -- 40
             { "fast-transport-belt", 1 },  -- 115
-            { "lubricant",           25 }, -- 50
+            { "lubricant",           20 }, -- 40
         },
         results = {
             { "express-transport-belt", 1 }, -- 365
@@ -161,8 +161,8 @@ vgal.extend({
         energy_required = 4,
         technology = "logistics-3",
         ingredients = {
-            { "steel-plate",           28 },
-            { "iron-gear-wheel",       10 },
+            { "steel-plate",           25 },
+            { "iron-gear-wheel",       15 },
             { "fast-underground-belt", 2 },
             { "lubricant",             40 },
         },

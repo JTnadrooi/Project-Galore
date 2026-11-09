@@ -152,14 +152,14 @@ vgal.extend({
             vgal.icon.get("plastic-bar"),
             vgal.icon.get_in("angels-gas-acetone"),
         }),
-        energy_required = 4,
+        energy_required = 3,
         technology = "angels-bio-plastic-1",
         ingredients = {
             { "angels-liquid-cellulose-acetate-mixture", 20 },
-            { "angels-gas-acetone",                      25 },
+            { "angels-gas-acetone",                      30 },
         },
         results = {
-            { "plastic-bar", 5 },
+            { "plastic-bar", 4 },
         },
         category = "chemistry",
         order = "ba"
@@ -220,7 +220,7 @@ vgal.extend({
         technology = "angels-bio-plastic-2",
         ingredients = {
             { "angels-cellulose-fiber",       5 },
-            { "angels-liquid-propionic-acid", 25 },
+            { "angels-liquid-propionic-acid", 20 },
             { "angels-liquid-acetic-acid",    20 },
         },
         results = {

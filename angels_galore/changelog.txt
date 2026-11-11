@@ -1,4 +1,8 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.3.12
+  Bugfixes:
+    - Fixed crash when Angel's storage addon is not enabled. (Thanks bcellis!)
+---------------------------------------------------------------------------------------------------
 Version: 1.3.11
   Bugfixes:
     - Fixed crash when any of the storage tanks in the storage addon are disabled through the modsettings. (Thanks Hunter-495!)
